@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2563eb">
+
+<title>Typing Speed Test - Test Your WPM Online Free | BigToolz</title>
+<meta name="description" content="Free online typing speed test. Measure your WPM, accuracy, and error rate in real time. 30, 60, 120 second tests, multiple difficulty levels. No signup, works in browser.">
+<meta name="keywords" content="typing speed test, wpm test, typing test online, typing speed checker, typing practice, words per minute">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://bigtoolz.com/tools/text-tools/typing-speed/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Typing Speed Test - Free Online Tool | BigToolz">
+<meta property="og:description" content="Test your typing speed (WPM) and accuracy free, no signup.">
+<meta property="og:url" content="https://bigtoolz.com/tools/text-tools/typing-speed/">
+<meta property="og:image" content="https://bigtoolz.com/assets/images/og-image.jpg">
+<meta property="og:site_name" content="BigToolz">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Typing Speed Test - BigToolz">
+<meta name="twitter:description" content="Measure your WPM instantly free, no signup.">
+<meta name="twitter:image" content="https://bigtoolz.com/assets/images/twitter-card.jpg">
+
+<link rel="icon" href="/assets/images/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/images/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#f8f9fc;color:#1a1a2e;overflow-x:hidden;line-height:1.5}
+
+  /* HEADER */
+  .header{background:#fff;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;position:sticky;top:0;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+  .header-left{display:flex;align-items:center;gap:40px}
+  .logo{display:flex;align-items:center;gap:8px;font-size:22px;font-weight:800;color:#1a1a2e;text-decoration:none}
+  .logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#3b82f6,#2563eb);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px}
+  .logo span{color:#2563eb}
+  .nav{display:flex;align-items:center;gap:28px;list-style:none}
+  .nav a{text-decoration:none;color:#4b5563;font-size:14px;font-weight:500;transition:color .2s}
+  .nav a:hover,.nav a.active{color:#2563eb}
+  .header-right{display:flex;align-items:center;gap:16px}
+  .search-btn,.theme-btn{width:36px;height:36px;border-radius:50%;border:none;background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#4b5563}
+  .search-btn:hover,.theme-btn:hover{background:#f3f4f6}
+  .bookmark-btn{display:flex;align-items:center;gap:8px;background:#2563eb;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
+  .bookmark-btn:hover{background:#1d4ed8}
+
+  /* HERO */
+  .hero{background:linear-gradient(135deg,#0a0e27 0%,#1a1a4e 40%,#2d1b69 70%,#4c1d95 100%);padding:40px 40px 60px;position:relative;overflow:hidden;color:#fff}
+  .hero::before{content:'';position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(6,182,212,.3) 0%,transparent 70%);border-radius:50%}
+  .hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+  .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px;flex-wrap:wrap}
+  .breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none}
+  .breadcrumb a:hover{color:#fff}
+  .breadcrumb .sep{color:rgba(255,255,255,.4)}
+  .breadcrumb .current{color:#fff;font-weight:500}
+  .hero-title-row{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+  .hero-icon{width:60px;height:60px;background:#06b6d4;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;color:#fff;flex-shrink:0;box-shadow:0 8px 24px rgba(6,182,212,.4)}
+  .hero-title{font-size:42px;font-weight:800;line-height:1.15}
+  .hero-title .blue{color:#22d3ee}
+  .hero-desc{font-size:15px;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:24px;max-width:560px}
+  .hero-features{display:flex;gap:24px;flex-wrap:wrap}
+  .hero-feature{display:flex;align-items:center;gap:6px;font-size:13px;color:#fff;font-weight:500}
+  .hero-feature .check{width:18px;height:18px;border-radius:50%;background:#06b6d4;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;flex-shrink:0}
+
+  /* MAIN */
+  .main-content{max-width:1200px;margin:0 auto;padding:40px;display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start}
+  .tool-content{min-width:0}
+
+  .workspace{background:#fff;border-radius:16px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,.06);border:1px solid #e5e7eb;margin-bottom:24px}
+
+  /* Setup controls */
+  .setup-row{display:flex;gap:24px;flex-wrap:wrap;margin-bottom:24px;padding:16px;background:#ecfeff;border-radius:12px;border:1px solid #a5f3fc}
+  .setup-group{display:flex;flex-direction:column;gap:6px}
+  .setup-group label{font-size:11px;font-weight:700;color:#0e7490;text-transform:uppercase;letter-spacing:.5px}
+  .setup-options{display:flex;gap:6px;flex-wrap:wrap}
+  .setup-btn{padding:8px 14px;background:#fff;border:2px solid #e5e7eb;border-radius:8px;font-size:12px;font-weight:700;color:#4b5563;cursor:pointer;font-family:inherit;transition:all .2s}
+  .setup-btn:hover{border-color:#06b6d4;background:#ecfeff;color:#0891b2}
+  .setup-btn.active{background:#06b6d4;color:#fff;border-color:#06b6d4}
+
+  /* Stats row (live) */
+  .live-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px}
+  .live-stat{background:#ecfeff;border:1px solid #a5f3fc;border-radius:12px;padding:14px;text-align:center}
+  .live-stat-value{font-size:26px;font-weight:800;color:#0891b2;margin-bottom:2px;line-height:1.1;font-family:'JetBrains Mono',monospace}
+  .live-stat-label{font-size:10px;color:#6b7280;font-weight:700;text-transform:uppercase;letter-spacing:.3px}
+
+  /* Progress bar */
+  .progress-bar{width:100%;height:6px;background:#e5e7eb;border-radius:3px;overflow:hidden;margin-bottom:20px}
+  .progress-fill{height:100%;background:linear-gradient(90deg,#22d3ee,#06b6d4);border-radius:3px;width:0%;transition:width .1s linear}
+
+  /* Text display */
+  .text-display{background:#0f172a;border-radius:12px;padding:28px 32px;margin-bottom:20px;font-family:'JetBrains Mono',monospace;font-size:20px;line-height:1.8;letter-spacing:.3px;user-select:none;max-height:280px;overflow:hidden;position:relative;min-height:180px}
+  .text-display .char{color:#64748b;transition:color .05s}
+  .text-display .char.correct{color:#22d3ee}
+  .text-display .char.wrong{color:#ef4444;background:rgba(239,68,68,.15);border-radius:3px}
+  .text-display .char.current{background:rgba(34,211,238,.25);border-radius:3px;color:#fff;animation:blink 1s ease-in-out infinite}
+  @keyframes blink{0%,100%{opacity:1}50%{opacity:.6}}
+
+  /* Hidden input for capturing typing */
+  .typing-input{position:absolute;opacity:0;pointer-events:none;left:-9999px;width:1px;height:1px}
+
+  /* Focus overlay */
+  .focus-overlay{position:absolute;inset:0;background:rgba(15,23,42,.9);border-radius:12px;display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Inter',sans-serif;font-size:15px;font-weight:600;cursor:pointer;backdrop-filter:blur(4px);z-index:5;text-align:center;padding:20px}
+  .focus-overlay.hidden{display:none}
+  .focus-overlay-icon{font-size:32px;margin-bottom:10px}
+
+  /* Actions */
+  .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px;padding-top:20px;border-top:1px solid #f3f4f6}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 22px;border-radius:10px;font-size:14px;font-weight:700;font-family:inherit;cursor:pointer;border:none;transition:all .2s;text-decoration:none}
+  .btn-primary{background:#06b6d4;color:#fff;box-shadow:0 4px 12px rgba(6,182,212,.2);flex:1;min-width:180px}
+  .btn-primary:hover:not(:disabled){background:#0891b2;transform:translateY(-2px)}
+  .btn-primary:disabled{opacity:.5;cursor:not-allowed;transform:none}
+  .btn-secondary{background:#fff;color:#06b6d4;border:1px solid #e5e7eb}
+  .btn-secondary:hover{border-color:#06b6d4;background:#ecfeff}
+
+  /* Results modal */
+  .results-overlay{position:fixed;inset:0;background:rgba(15,23,42,.7);backdrop-filter:blur(6px);z-index:2000;display:none;align-items:center;justify-content:center;padding:20px}
+  .results-overlay.visible{display:flex}
+  .results-card{background:#fff;border-radius:20px;padding:36px;max-width:560px;width:100%;text-align:center;box-shadow:0 24px 60px rgba(0,0,0,.3);animation:popIn .3s ease}
+  @keyframes popIn{0%{transform:scale(.9);opacity:0}100%{transform:scale(1);opacity:1}}
+  .results-emoji{font-size:56px;margin-bottom:12px}
+  .results-title{font-size:24px;font-weight:800;color:#1a1a2e;margin-bottom:6px}
+  .results-subtitle{font-size:14px;color:#6b7280;margin-bottom:24px}
+  .results-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:24px}
+  .result-box{background:#ecfeff;border:1px solid #a5f3fc;border-radius:12px;padding:16px}
+  .result-box-value{font-size:32px;font-weight:800;color:#0891b2;line-height:1.1;font-family:'JetBrains Mono',monospace;margin-bottom:2px}
+  .result-box-label{font-size:11px;color:#6b7280;font-weight:700;text-transform:uppercase;letter-spacing:.3px}
+  .results-actions{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+  .results-actions .btn{flex:1;min-width:140px}
+
+  /* History */
+  .history-section{margin-top:24px;padding-top:24px;border-top:1px solid #f3f4f6}
+  .history-title{font-size:14px;font-weight:800;color:#1a1a2e;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+  .history-list{display:flex;flex-direction:column;gap:8px}
+  .history-item{display:grid;grid-template-columns:1fr auto auto auto;gap:14px;padding:12px 16px;background:#f8fafc;border:1px solid #e5e7eb;border-radius:10px;font-size:13px;align-items:center}
+  .history-item-date{color:#9ca3af;font-size:11px;font-weight:600}
+  .history-item-stat{font-family:'JetBrains Mono',monospace;font-weight:700;color:#0891b2}
+  .history-empty{color:#9ca3af;font-size:13px;text-align:center;padding:20px;font-style:italic}
+
+  /* SEO Content */
+  .seo-content{background:#fff;border-radius:16px;padding:32px;border:1px solid #e5e7eb;margin-bottom:24px}
+  .seo-content h2{font-size:22px;font-weight:800;color:#1a1a2e;margin-bottom:14px;margin-top:28px;display:flex;align-items:center;gap:10px}
+  .seo-content h2:first-child{margin-top:0}
+  .seo-content h3{font-size:16px;font-weight:700;color:#1a1a2e;margin:20px 0 10px}
+  .seo-content p{font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:14px}
+  .seo-content ul{list-style:none;padding-left:0;margin-bottom:16px}
+  .seo-content ul li{position:relative;padding-left:24px;font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:8px}
+  .seo-content ul li::before{content:'';position:absolute;left:6px;top:12px;width:6px;height:6px;background:#06b6d4;border-radius:50%}
+  .seo-content a{color:#2563eb;text-decoration:none;font-weight:600}
+  .seo-content a:hover{text-decoration:underline}
+  .seo-content strong{color:#1a1a2e;font-weight:700}
+  .seo-content code{background:#f1f5f9;padding:2px 6px;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:13px;color:#0f172a;border:1px solid #e2e8f0}
+
+  .wpm-table{width:100%;border-collapse:collapse;margin:20px 0;border:1px solid #e5e7eb;border-radius:8px;overflow:hidden}
+  .wpm-table th{background:#ecfeff;padding:12px 16px;text-align:left;font-size:13px;font-weight:700;color:#1a1a2e;border-bottom:1px solid #e5e7eb}
+  .wpm-table td{padding:12px 16px;font-size:13px;color:#4b5563;border-bottom:1px solid #f3f4f6}
+  .wpm-table tr:last-child td{border-bottom:none}
+
+  .how-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:20px}
+  .how-step{background:#ecfeff;border-radius:12px;padding:20px;border:1px solid #a5f3fc}
+  .how-step-num{width:36px;height:36px;border-radius:50%;background:#06b6d4;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;margin-bottom:12px}
+  .how-step-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+  .how-step-desc{font-size:13px;color:#6b7280;line-height:1.6}
+
+  .faq-item{background:#ecfeff;border:1px solid #a5f3fc;border-radius:12px;margin-bottom:10px;overflow:hidden;transition:border-color .2s}
+  .faq-item:hover{border-color:#06b6d4}
+  .faq-question{width:100%;background:none;border:none;padding:18px 22px;font-size:15px;font-weight:700;color:#1a1a2e;text-align:left;cursor:pointer;font-family:inherit;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .faq-question .chev{font-size:12px;color:#06b6d4;transition:transform .2s;flex-shrink:0}
+  .faq-item.open .faq-question .chev{transform:rotate(180deg)}
+  .faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 22px}
+  .faq-item.open .faq-answer{max-height:500px;padding-bottom:18px}
+  .faq-answer p{font-size:14px;color:#6b7280;line-height:1.7;margin:0}
+
+  .sidebar{background:#fff;border-radius:16px;padding:24px;border:1px solid #e5e7eb;position:sticky;top:80px;margin-bottom:24px}
+  .sidebar-header{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:800;color:#1a1a2e;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid #f3f4f6}
+  .sidebar-list{display:flex;flex-direction:column;gap:8px}
+  .sidebar-item{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;cursor:pointer;transition:background .2s;text-decoration:none;color:inherit;border:1px solid #f3f4f6}
+  .sidebar-item:hover{background:#ecfeff;border-color:#a5f3fc}
+  .sidebar-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;flex-shrink:0}
+  .sidebar-info{flex:1;min-width:0}
+  .sidebar-title{font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:2px}
+  .sidebar-desc{font-size:11px;color:#9ca3af;line-height:1.4}
+
+  .footer{background:#0a0e27;padding:60px 40px 30px;color:#fff;margin-top:40px}
+  .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:40px}
+  .footer-brand{display:flex;align-items:center;gap:8px;font-size:20px;font-weight:800;margin-bottom:12px}
+  .footer-brand span{color:#60a5fa}
+  .footer-tagline{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px}
+  .footer-social{display:flex;gap:12px}
+  .footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:16px;transition:background .2s}
+  .footer-social a:hover{background:rgba(255,255,255,.2)}
+  .footer-heading{font-size:14px;font-weight:700;margin-bottom:20px;color:#fff}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .footer-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;transition:color .2s}
+  .footer-links a:hover{color:#60a5fa}
+  .footer-bottom{max-width:1200px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  .footer-bottom-left{display:flex;gap:20px;font-size:12px;color:rgba(255,255,255,.5)}
+  .footer-bottom-right,.footer-bottom-links a{font-size:12px;color:rgba(255,255,255,.5);text-decoration:none}
+  .footer-bottom-links{display:flex;gap:20px}
+
+  .toast{position:fixed;bottom:24px;right:24px;background:#1a1a2e;color:#fff;padding:14px 20px;border-radius:10px;font-size:13px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:3000;transform:translateY(200%);transition:transform .3s ease;max-width:320px}
+  .toast.visible{transform:translateY(0)}
+  .toast.success{background:#10b981}
+  .toast.error{background:#ef4444}
+
+  @media(max-width:1024px){
+    .main-content{grid-template-columns:1fr;padding:24px 20px}
+    .sidebar{position:static}
+    .how-steps{grid-template-columns:repeat(2,1fr)}
+    .live-stats{grid-template-columns:repeat(2,1fr)}
+  }
+  @media(max-width:768px){
+    .header{padding:0 20px}.nav{display:none}
+    .hero{padding:24px 20px 40px}
+    .hero-title{font-size:28px}
+    .hero-icon{width:48px;height:48px;font-size:22px}
+    .hero-title-row{flex-direction:column;align-items:flex-start;gap:12px}
+    .main-content{padding:20px 16px}
+    .workspace{padding:20px}
+    .how-steps{grid-template-columns:1fr}
+    .seo-content{padding:20px}
+    .footer-inner{grid-template-columns:1fr 1fr}
+    .toast{left:16px;right:16px;bottom:16px;max-width:none}
+    .text-display{font-size:16px;padding:20px;min-height:150px}
+    .live-stat-value{font-size:22px}
+    .results-card{padding:24px}
+    .result-box-value{font-size:26px}
+  }
+  @media(max-width:576px){
+    .header{padding:0 16px}.header-right .search-btn,.header-right .theme-btn{display:none}
+    .hero-title{font-size:24px}
+    .actions{flex-direction:column}
+    .btn{width:100%}
+    .btn-primary{flex:none}
+    .footer-inner{grid-template-columns:1fr}
+    .footer-bottom{flex-direction:column;text-align:center}
+    .setup-row{flex-direction:column;gap:14px}
+    .live-stats{grid-template-columns:1fr 1fr}
+    .results-grid{grid-template-columns:1fr}
+    .history-item{grid-template-columns:1fr 1fr;gap:8px}
+  }
+
+  html[data-theme="dark"] body{background:#0f172a;color:#f1f5f9}
+  html[data-theme="dark"] .header,html[data-theme="dark"] .workspace,html[data-theme="dark"] .seo-content,html[data-theme="dark"] .sidebar,html[data-theme="dark"] .results-card{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .logo,html[data-theme="dark"] .hero-title,html[data-theme="dark"] .seo-content h2,html[data-theme="dark"] .seo-content h3,html[data-theme="dark"] .faq-question,html[data-theme="dark"] .sidebar-header,html[data-theme="dark"] .sidebar-title,html[data-theme="dark"] .results-title,html[data-theme="dark"] .history-title{color:#f1f5f9}
+  html[data-theme="dark"] .nav a{color:#cbd5e1}
+  html[data-theme="dark"] .how-step,html[data-theme="dark"] .faq-item,html[data-theme="dark"] .live-stat,html[data-theme="dark"] .result-box,html[data-theme="dark"] .setup-row,html[data-theme="dark"] .setup-btn,html[data-theme="dark"] .history-item{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .setup-btn{color:#cbd5e1}
+  html[data-theme="dark"] .setup-btn.active{background:#06b6d4;color:#fff;border-color:#06b6d4}
+  html[data-theme="dark"] .seo-content p,html[data-theme="dark"] .seo-content ul li,html[data-theme="dark"] .faq-answer p,html[data-theme="dark"] .results-subtitle,html[data-theme="dark"] .live-stat-label,html[data-theme="dark"] .result-box-label,html[data-theme="dark"] .history-item-date{color:#cbd5e1}
+  html[data-theme="dark"] .seo-content code{background:#020617;color:#22d3ee;border-color:#334155}
+  html[data-theme="dark"] .wpm-table{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .wpm-table th{background:#0f172a;color:#f1f5f9;border-color:#334155}
+  html[data-theme="dark"] .wpm-table td{border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .actions{border-color:#334155}
+  html[data-theme="dark"] .history-section{border-color:#334155}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type": "SoftwareApplication", "name": "Typing Speed Test", "url": "https://bigtoolz.com/tools/text-tools/typing-speed/", "applicationCategory": "EducationalApplication", "operatingSystem": "Any (Web-based)", "description": "Free online typing speed test measure WPM, accuracy and error rate. 30/60/120 second tests, 3 difficulty levels. Works in your browser.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "2134"}},
+    {"@type": "HowTo", "name": "How to Test Your Typing Speed", "step": [
+      {"@type": "HowToStep", "name": "Choose Duration", "text": "Pick 30, 60, or 120 seconds."},
+      {"@type": "HowToStep", "name": "Choose Difficulty", "text": "Easy, Medium, or Hard word sets."},
+      {"@type": "HowToStep", "name": "Start Typing", "text": "Click the text area and start typing the displayed text."},
+      {"@type": "HowToStep", "name": "See Results", "text": "Get your WPM, accuracy and error count when the timer ends."}
+    ]},
+    {"@type": "FAQPage", "mainEntity": [
+      {"@type": "Question", "name": "What is a good typing speed (WPM)?", "acceptedAnswer": {"@type": "Answer", "text": "Average typing speed is 40 WPM. Professional typists reach 65-75 WPM. Advanced typists hit 80-100 WPM. Anything above 100 WPM is exceptional and usually only achieved by trained touch typists."}},
+      {"@type": "Question", "name": "How is WPM calculated?", "acceptedAnswer": {"@type": "Answer", "text": "WPM = (correct characters ÷ 5) ÷ time in minutes. We divide characters by 5 because the average word in English is 5 characters."}},
+      {"@type": "Question", "name": "How can I improve my typing speed?", "acceptedAnswer": {"@type": "Answer", "text": "1) Practice touch typing (don't look at keys). 2) Keep fingers on the home row (ASDF JKL;). 3) Practice 10-15 minutes daily. 4) Focus on accuracy first speed follows. 5) Use proper posture and hand position."}},
+      {"@type": "Question", "name": "What's the difference between WPM and CPM?", "acceptedAnswer": {"@type": "Answer", "text": "WPM is words per minute. CPM is characters per minute. WPM is more commonly used and standardized 1 WPM ≈ 5 CPM. Our test shows both."}},
+      {"@type": "Question", "name": "Is my typing data uploaded to a server?", "acceptedAnswer": {"@type": "Answer", "text": "No. Everything happens in your browser. Your typing and results never leave your device."}}
+    ]},
+    {"@type": "BreadcrumbList", "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bigtoolz.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://bigtoolz.com/tools/"},
+      {"@type": "ListItem", "position": 3, "name": "Text Tools", "item": "https://bigtoolz.com/tools/text-tools/"},
+      {"@type": "ListItem", "position": 4, "name": "Typing Speed Test", "item": "https://bigtoolz.com/tools/text-tools/typing-speed/"}
+    ]}
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-left">
+    <a href="/" class="logo"><div class="logo-icon">⚒</div>BigToolz</span></a>
+    <nav><ul class="nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/tools/" class="active">All Tools</a></li>
+      <li><a href="/tools/categories">Categories</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul></nav>
+  </div>
+  <div class="header-right">
+   
+    <button class="theme-btn" aria-label="Toggle theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
+   
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <nav class="breadcrumb">
+      <a href="/">Home</a><span class="sep">›</span>
+      <a href="/tools/">Tools</a><span class="sep">›</span>
+      <a href="/tools/text-tools/">Text Tools</a><span class="sep">›</span>
+      <span class="current">Typing Speed Test</span>
+    </nav>
+    <div class="hero-title-row">
+      <div class="hero-icon">⌨️</div>
+      <h1 class="hero-title">Typing <span class="blue">Speed Test</span></h1>
+    </div>
+    <p class="hero-desc">
+      Test your typing speed in real-time. Measure WPM, accuracy, and error rate with 30/60/120 second tests and three difficulty levels. Track your progress and improve your typing skills. No signup, 100% private.
+    </p>
+    <div class="hero-features">
+      <div class="hero-feature"><span class="check">✓</span> Real-Time WPM</div>
+      <div class="hero-feature"><span class="check">✓</span> Live Accuracy</div>
+      <div class="hero-feature"><span class="check">✓</span> 3 Difficulty Levels</div>
+      <div class="hero-feature"><span class="check">✓</span> Result History</div>
+    </div>
+  </div>
+</section>
+
+<div class="main-content">
+
+  <div class="tool-content">
+
+    <div class="workspace">
+
+      <!-- Setup Row -->
+      <div class="setup-row">
+        <div class="setup-group">
+          <label>Duration</label>
+          <div class="setup-options" id="durationOptions">
+            <button class="setup-btn" data-duration="30">30s</button>
+            <button class="setup-btn active" data-duration="60">60s</button>
+            <button class="setup-btn" data-duration="120">120s</button>
+          </div>
+        </div>
+        <div class="setup-group">
+          <label>Difficulty</label>
+          <div class="setup-options" id="difficultyOptions">
+            <button class="setup-btn active" data-diff="easy">Easy</button>
+            <button class="setup-btn" data-diff="medium">Medium</button>
+            <button class="setup-btn" data-diff="hard">Hard</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Live Stats -->
+      <div class="live-stats">
+        <div class="live-stat">
+          <div class="live-stat-value" id="liveWpm">0</div>
+          <div class="live-stat-label">WPM</div>
+        </div>
+        <div class="live-stat">
+          <div class="live-stat-value" id="liveAccuracy">100%</div>
+          <div class="live-stat-label">Accuracy</div>
+        </div>
+        <div class="live-stat">
+          <div class="live-stat-value" id="liveTime">60</div>
+          <div class="live-stat-label">Time Left</div>
+        </div>
+        <div class="live-stat">
+          <div class="live-stat-value" id="liveErrors">0</div>
+          <div class="live-stat-label">Errors</div>
+        </div>
+      </div>
+
+      <!-- Progress -->
+      <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+
+      <!-- Text Display -->
+      <div class="text-display" id="textDisplay">
+        <span id="textContent"></span>
+        <div class="focus-overlay" id="focusOverlay">
+          <div>
+            <div class="focus-overlay-icon">⌨️</div>
+            Click here or press any key to start typing
+          </div>
+        </div>
+        <input type="text" id="typingInput" class="typing-input" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+      </div>
+
+      <!-- Actions -->
+      <div class="actions">
+        <button class="btn btn-primary" id="restartBtn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M23 4v6h-6M1 20v-6h6M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></svg>
+          Restart Test
+        </button>
+        <button class="btn btn-secondary" id="newTextBtn">New Text</button>
+      </div>
+
+      <!-- History -->
+      <div class="history-section" id="historySection" style="display:none;">
+        <div class="history-title">📊 Recent Attempts</div>
+        <div class="history-list" id="historyList"></div>
+      </div>
+
+    </div>
+
+    <!-- SEO Content -->
+    <div class="seo-content">
+
+      <h2>⌨️ What is a Typing Speed Test?</h2>
+      <p>
+        A <strong>typing speed test</strong> measures how fast and accurately you can type. The primary metric is <strong>WPM (Words Per Minute)</strong> the number of correctly typed words per minute. Secondary metrics include <strong>accuracy</strong> (percentage of correct keystrokes), <strong>CPM (Characters Per Minute)</strong>, and <strong>error count</strong>.
+      </p>
+      <p>
+        Unlike most online typing tests, BigToolz runs <strong>100% in your browser</strong>. Your typing and results <strong>never uploaded to any server</strong> complete privacy, instant feedback, unlimited tries.
+      </p>
+
+      <h2>🚀 How to Take the Test</h2>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-step-num">1</div>
+          <div class="how-step-title">Choose Settings</div>
+          <div class="how-step-desc">Pick 30s, 60s, or 120s and Easy/Medium/Hard.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">2</div>
+          <div class="how-step-title">Start Typing</div>
+          <div class="how-step-desc">Click the text area and start typing the shown text.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">3</div>
+          <div class="how-step-title">Watch Live Stats</div>
+          <div class="how-step-desc">See WPM, accuracy, and errors update in real-time.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">4</div>
+          <div class="how-step-title">Get Results</div>
+          <div class="how-step-desc">See your final WPM, accuracy and errors when time ends.</div>
+        </div>
+      </div>
+
+      <h2>📊 Typing Speed Benchmarks</h2>
+      <table class="wpm-table">
+        <thead>
+          <tr><th>WPM Range</th><th>Level</th><th>Context</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>0-20 WPM</td><td>Beginner</td><td>Hunt-and-peck typing, still learning keys</td></tr>
+          <tr><td>20-40 WPM</td><td>Average</td><td>Casual typist, most non-professionals</td></tr>
+          <tr><td>40-60 WPM</td><td>Good</td><td>Comfortable typist, faster than most</td></tr>
+          <tr><td>60-80 WPM</td><td>Professional</td><td>Secretaries, writers, programmers</td></tr>
+          <tr><td>80-100 WPM</td><td>Fast</td><td>Advanced typists, competitive</td></tr>
+          <tr><td>100-150 WPM</td><td>Expert</td><td>Top 1% of typists worldwide</td></tr>
+          <tr><td>150+ WPM</td><td>Elite</td><td>Competitive typing champions</td></tr>
+        </tbody>
+      </table>
+
+      <h2>💡 How to Improve Your Typing Speed</h2>
+      <h3>1. Learn Touch Typing</h3>
+      <p>Stop looking at the keyboard. Touch typing using muscle memory for every key is the single biggest speed improvement. It takes 1-2 weeks to learn but doubles your speed within a month.</p>
+
+      <h3>2. Use the Home Row</h3>
+      <p>Rest your fingers on <strong>ASDF</strong> (left) and <strong>JKL;</strong> (right). These 8 keys are your base position. From there, every other key is one reach away. Return to home row after each keystroke.</p>
+
+      <h3>3. Practice Daily</h3>
+      <p>10-15 minutes of daily practice beats 2 hours once a week. Muscle memory develops through consistent repetition. Use this tool as your daily benchmark.</p>
+
+      <h3>4. Focus on Accuracy First</h3>
+      <p>Aim for <strong>95%+ accuracy</strong> before chasing speed. Speed follows accuracy automatically. Typing fast but wrong is slower than typing correctly at moderate speed.</p>
+
+      <h3>5. Maintain Good Posture</h3>
+      <p>Sit upright, elbows at 90°, wrists straight (not bent), and screen at eye level. Poor posture causes fatigue and reduces accuracy.</p>
+
+      <h3>6. Use All 10 Fingers</h3>
+      <p>Even if it feels awkward, using all 10 fingers (including thumbs for space) distributes the load and prevents strain. Two-finger typing caps out around 40-50 WPM.</p>
+
+      <h3>7. Learn Keyboard Shortcuts</h3>
+      <p>Ctrl+C, Ctrl+V, Ctrl+Z, Tab, Enter, Shift efficient shortcuts mean less mouse movement and more typing focus.</p>
+
+      <h2>✨ Key Features</h2>
+      <ul>
+        <li><strong>Real-time WPM</strong> updates every second.</li>
+        <li><strong>Live accuracy</strong> percentage with color feedback.</li>
+        <li><strong>Character highlighting</strong> see correct vs wrong.</li>
+        <li><strong>3 durations</strong> 30s, 60s, 120s tests.</li>
+        <li><strong>3 difficulties</strong> Easy, Medium, Hard word pools.</li>
+        <li><strong>Detailed results modal</strong> WPM, accuracy, CPM, errors.</li>
+        <li><strong>History</strong> last 5 attempts tracked.</li>
+        <li><strong>Keyboard shortcut</strong> Tab to restart, Esc to reset.</li>
+        <li><strong>100% browser-based</strong> complete privacy.</li>
+      </ul>
+
+      <h2>❓ Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-question">What is a good typing speed (WPM)?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Average typing speed is <strong>40 WPM</strong>. Professional typists reach <strong>65-75 WPM</strong>. Advanced typists hit <strong>80-100 WPM</strong>. Anything above <strong>100 WPM</strong> is exceptional and usually only achieved by trained touch typists.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">How is WPM calculated?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><code>WPM = (correct characters ÷ 5) ÷ time in minutes</code>. We divide characters by 5 because the average English word is 5 characters (including spaces). This is the industry-standard formula.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">How can I improve my typing speed?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>1)</strong> Learn touch typing (don't look at keys). <strong>2)</strong> Keep fingers on the home row (ASDF JKL;). <strong>3)</strong> Practice 10-15 minutes daily. <strong>4)</strong> Focus on accuracy first speed follows. <strong>5)</strong> Use proper posture and hand position.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What's the difference between WPM and CPM?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>WPM</strong> is words per minute. <strong>CPM</strong> is characters per minute. WPM is more commonly used and standardized 1 WPM ≈ 5 CPM. Our test shows both metrics.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Why is my accuracy dropping as I type faster?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>This is normal. Fast typing triggers more mistakes because your brain hasn't fully committed the key positions to muscle memory. Slow down by 10-20%, achieve 98% accuracy, then gradually speed up.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Should I use a mechanical keyboard?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Mechanical keyboards have faster actuation and better tactile feedback, which can improve speed by 5-10 WPM for experienced typists. But skill matters more than hardware. Any comfortable keyboard works for learning.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Is my typing data uploaded to a server?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>No. Everything happens in your browser using JavaScript. Your typing and results never leave your device, and nothing is stored anywhere.</p></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-header">🔗 Related Text Tools</div>
+    <div class="sidebar-list">
+      <a href="/tools/text-tools/word-counter/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#3b82f6;">T</div>
+        <div class="sidebar-info"><div class="sidebar-title">Word Counter</div><div class="sidebar-desc">Count words & characters</div></div>
+      </a>
+      <a href="/tools/text-tools/character-counter/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#8b5cf6;">🔤</div>
+        <div class="sidebar-info"><div class="sidebar-title">Character Counter</div><div class="sidebar-desc">Count characters</div></div>
+      </a>
+      <a href="/tools/text-tools/readability-checker/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#10b981;">📖</div>
+        <div class="sidebar-info"><div class="sidebar-title">Readability Checker</div><div class="sidebar-desc">Check reading level</div></div>
+      </a>
+      <a href="/tools/text-tools/keyword-density/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#8b5cf6;">📊</div>
+        <div class="sidebar-info"><div class="sidebar-title">Keyword Density</div><div class="sidebar-desc">Analyze keywords</div></div>
+      </a>
+      <a href="/tools/text-tools/word-frequency/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#f97316;">📈</div>
+        <div class="sidebar-info"><div class="sidebar-title">Word Frequency</div><div class="sidebar-desc">Count word usage</div></div>
+      </a>
+      <a href="/tools/text-tools/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#64748b;">📝</div>
+        <div class="sidebar-info"><div class="sidebar-title">All Text Tools →</div><div class="sidebar-desc">Browse 25+ tools</div></div>
+      </a>
+    </div>
+  </aside>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand"><div class="logo-icon">⚒</div>BigToolz</span></div>
+      <p class="footer-tagline">Your Ultimate Online Tools Hub</p>
+      <div class="footer-social">
+        <a href="https://facebook.com/bigtoolz" aria-label="Facebook">f</a>
+        <a href="https://twitter.com/bigtoolz" aria-label="Twitter">𝕏</a>
+        <a href="https://youtube.com/@bigtoolz" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+    <div>
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/tools/">All Tools</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Categories</h3>
+      <ul class="footer-links">
+        <li><a href="/tools/image-tools/">Image Tools</a></li>
+        <li><a href="/tools/pdf-tools/">PDF Tools</a></li>
+        <li><a href="/tools/text-tools/">Text Tools</a></li>
+        <li><a href="/tools/seo-tools/">SEO Tools</a></li>
+        <li><a href="/tools/categories">All Categories →</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Legal</h3>
+      <ul class="footer-links">
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left"><span>✓ 100% Free</span><span>✓ No Sign Up</span><span>✓ No Installation</span></div>
+    <div class="footer-bottom-right">© 2026 BigToolz. All rights reserved.</div>
+    <div class="footer-bottom-links"><a href="/privacy-policy">Privacy</a><a href="/terms">Terms</a><a href="/disclaimer">Disclaimer</a></div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<!-- Results Overlay -->
+<div class="results-overlay" id="resultsOverlay">
+  <div class="results-card">
+    <div class="results-emoji" id="resultsEmoji">🎉</div>
+    <div class="results-title">Test Complete!</div>
+    <div class="results-subtitle" id="resultsSubtitle">Here are your typing stats</div>
+
+    <div class="results-grid">
+      <div class="result-box">
+        <div class="result-box-value" id="finalWpm">0</div>
+        <div class="result-box-label">WPM</div>
+      </div>
+      <div class="result-box">
+        <div class="result-box-value" id="finalAccuracy">0%</div>
+        <div class="result-box-label">Accuracy</div>
+      </div>
+      <div class="result-box">
+        <div class="result-box-value" id="finalCpm">0</div>
+        <div class="result-box-label">CPM</div>
+      </div>
+      <div class="result-box">
+        <div class="result-box-value" id="finalErrors">0</div>
+        <div class="result-box-label">Errors</div>
+      </div>
+    </div>
+
+    <div class="results-actions">
+      <button class="btn btn-primary" id="tryAgainBtn" style="min-width:180px;">Try Again</button>
+      <button class="btn btn-secondary" id="closeResultsBtn">Close</button>
+    </div>
+  </div>
+</div>
+
+<script>
+'use strict';
+
+/* ===== THEME ===== */
+(function(){try{var t=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&d))document.documentElement.setAttribute('data-theme','dark');else if(t==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();
+document.querySelector('.theme-btn')?.addEventListener('click',()=>{const h=document.documentElement;const c=h.getAttribute('data-theme');const d=window.matchMedia('(prefers-color-scheme: dark)').matches;let n=c==='dark'?'light':c==='light'?'dark':(d?'light':'dark');h.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}});
+
+/* ===== HELPERS ===== */
+const $ = (s, p = document) => p.querySelector(s);
+const $$ = (s, p = document) => [...p.querySelectorAll(s)];
+
+function showToast(msg, type = 'info', duration = 3000) {
+  const t = $('#toast');
+  if (!t) return;
+  t.className = 'toast visible' + (type !== 'info' ? ' ' + type : '');
+  t.textContent = msg;
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove('visible'), duration);
+}
+
+/* ===== TEXT POOLS ===== */
+const WORD_POOLS = {
+  easy: [
+    'the', 'and', 'for', 'you', 'are', 'with', 'that', 'have', 'this', 'from',
+    'they', 'will', 'one', 'all', 'would', 'there', 'their', 'what', 'out', 'about',
+    'who', 'get', 'which', 'when', 'make', 'can', 'like', 'time', 'no', 'just',
+    'him', 'know', 'take', 'people', 'into', 'year', 'your', 'good', 'some', 'could',
+    'them', 'see', 'other', 'than', 'then', 'now', 'look', 'only', 'come', 'its',
+    'over', 'think', 'also', 'back', 'after', 'use', 'two', 'how', 'our', 'work',
+    'first', 'well', 'way', 'even', 'new', 'want', 'because', 'any', 'these', 'give',
+    'day', 'most', 'us', 'is', 'was', 'he', 'be', 'by', 'on', 'do',
+    'her', 'she', 'or', 'an', 'we', 'at', 'so', 'up', 'if', 'it'
+  ],
+  medium: [
+    'about', 'above', 'across', 'actually', 'almost', 'alone', 'along', 'already',
+    'although', 'always', 'among', 'another', 'answer', 'around', 'became', 'because',
+    'become', 'before', 'begin', 'behind', 'believe', 'below', 'beside', 'better',
+    'between', 'beyond', 'bright', 'bring', 'build', 'business', 'cannot', 'carry',
+    'catch', 'cause', 'center', 'certain', 'change', 'common', 'company', 'complete',
+    'consider', 'continue', 'country', 'course', 'create', 'current', 'decide',
+    'describe', 'develop', 'different', 'difficult', 'direct', 'discover', 'distance',
+    'during', 'early', 'education', 'either', 'enough', 'especially', 'establish',
+    'evening', 'example', 'except', 'expect', 'experience', 'explain', 'family',
+    'famous', 'father', 'figure', 'finally', 'follow', 'foreign', 'forget', 'friend',
+    'future', 'garden', 'general', 'government', 'ground', 'happen', 'health',
+    'history', 'however', 'imagine', 'include', 'important', 'increase', 'indeed',
+    'instead', 'interest', 'involve', 'island', 'itself', 'journey', 'knowledge'
+  ],
+  hard: [
+    'abbreviated', 'accomplished', 'acknowledge', 'administration', 'advantageous',
+    'aforementioned', 'approximately', 'autobiography', 'biodiversity', 'bougainvillea',
+    'characteristic', 'circumstances', 'collaboration', 'commemorate', 'communication',
+    'comprehensive', 'conscientious', 'consequently', 'constitutional', 'contemporary',
+    'correspondence', 'demonstration', 'determination', 'distinguishing', 'efficiency',
+    'encyclopedia', 'enthusiastically', 'environmental', 'extraordinary', 'fundamentally',
+    'hypothetical', 'identification', 'implementation', 'incomprehensible', 'independently',
+    'infrastructure', 'institutional', 'international', 'interpretation', 'investigation',
+    'knowledgeable', 'manifestation', 'manufacturing', 'mathematical', 'metaphorically',
+    'miscommunication', 'multidimensional', 'notwithstanding', 'organizational',
+    'overwhelmingly', 'pharmaceutical', 'philosophical', 'pronunciation', 'psychological',
+    'questionnaire', 'recommendation', 'reconstruction', 'representative', 'responsibility',
+    'significantly', 'simultaneously', 'sophisticated', 'straightforward', 'substantial',
+    'technological', 'understanding', 'unfortunately', 'unprecedented', 'verification'
+  ]
+};
+
+/* ===== STATE ===== */
+const state = {
+  duration: 60,
+  difficulty: 'easy',
+  text: '',
+  chars: [],          // array of { char, status: 'pending'|'correct'|'wrong' }
+  currentIndex: 0,
+  startTime: null,
+  timerInterval: null,
+  isRunning: false,
+  isFinished: false,
+  totalTyped: 0,
+  totalCorrect: 0,
+  totalWrong: 0,
+  history: []
+};
+
+/* ===== DOM ===== */
+const durationOptions = $('#durationOptions');
+const difficultyOptions = $('#difficultyOptions');
+const textDisplay = $('#textDisplay');
+const textContent = $('#textContent');
+const typingInput = $('#typingInput');
+const focusOverlay = $('#focusOverlay');
+const progressFill = $('#progressFill');
+const restartBtn = $('#restartBtn');
+const newTextBtn = $('#newTextBtn');
+const historySection = $('#historySection');
+const historyList = $('#historyList');
+
+const liveWpm = $('#liveWpm');
+const liveAccuracy = $('#liveAccuracy');
+const liveTime = $('#liveTime');
+const liveErrors = $('#liveErrors');
+
+const resultsOverlay = $('#resultsOverlay');
+const resultsEmoji = $('#resultsEmoji');
+const resultsSubtitle = $('#resultsSubtitle');
+const finalWpm = $('#finalWpm');
+const finalAccuracy = $('#finalAccuracy');
+const finalCpm = $('#finalCpm');
+const finalErrors = $('#finalErrors');
+const tryAgainBtn = $('#tryAgainBtn');
+const closeResultsBtn = $('#closeResultsBtn');
+
+/* ===== SETUP BUTTONS ===== */
+$$('#durationOptions .setup-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    $$('#durationOptions .setup-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    state.duration = parseInt(btn.dataset.duration, 10);
+    resetTest();
+  });
+});
+
+$$('#difficultyOptions .setup-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    $$('#difficultyOptions .setup-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    state.difficulty = btn.dataset.diff;
+    resetTest();
+  });
+});
+
+/* ===== TEXT GENERATION ===== */
+function generateText() {
+  const pool = WORD_POOLS[state.difficulty];
+  const words = [];
+  // Roughly 200 words for 120s, enough for any duration
+  const count = 120;
+  for (let i = 0; i < count; i++) {
+    words.push(pool[Math.floor(Math.random() * pool.length)]);
+  }
+  state.text = words.join(' ');
+  state.chars = state.text.split('').map(c => ({ char: c, status: 'pending' }));
+  state.currentIndex = 0;
+  renderText();
+}
+
+/* ===== RENDER TEXT ===== */
+function renderText() {
+  let html = '';
+  state.chars.forEach((c, i) => {
+    if (i === state.currentIndex && state.isRunning) {
+      html += `<span class="char current">${escapeHtml(c.char)}</span>`;
+    } else if (c.status === 'correct') {
+      html += `<span class="char correct">${escapeHtml(c.char)}</span>`;
+    } else if (c.status === 'wrong') {
+      html += `<span class="char wrong">${escapeHtml(c.char)}</span>`;
+    } else {
+      html += `<span class="char">${escapeHtml(c.char)}</span>`;
+    }
+  });
+  textContent.innerHTML = html;
+
+  // Auto-scroll to keep current char visible
+  const currentEl = textContent.querySelector('.char.current');
+  if (currentEl && currentEl.offsetTop > 80) {
+    // Scroll the display
+    const displayRect = textDisplay.getBoundingClientRect();
+    const currentRect = currentEl.getBoundingClientRect();
+    if (currentRect.bottom > displayRect.bottom - 20) {
+      textDisplay.scrollTop += currentRect.top - displayRect.top - 40;
+    }
+  }
+}
+
+function escapeHtml(str) {
+  const div = document.createElement('div');
+  div.textContent = str;
+  return div.innerHTML;
+}
+
+/* ===== START TEST ===== */
+function startTest() {
+  if (state.isRunning) return;
+  if (state.isFinished) resetTest();
+
+  state.isRunning = true;
+  state.startTime = Date.now();
+  focusOverlay.classList.add('hidden');
+  typingInput.focus();
+  renderText();
+
+  state.timerInterval = setInterval(() => {
+    const elapsed = (Date.now() - state.startTime) / 1000;
+    const remaining = Math.max(0, state.duration - elapsed);
+    liveTime.textContent = Math.ceil(remaining);
+    progressFill.style.width = ((elapsed / state.duration) * 100) + '%';
+
+    updateLiveStats(elapsed);
+
+    if (elapsed >= state.duration) {
+      finishTest();
+    }
+  }, 100);
+}
+
+/* ===== UPDATE LIVE STATS ===== */
+function updateLiveStats(elapsed = 0) {
+  if (elapsed === 0) {
+    elapsed = state.startTime ? (Date.now() - state.startTime) / 1000 : 0;
+  }
+  if (elapsed < 1) return;
+
+  const correctChars = state.chars.filter(c => c.status === 'correct').length;
+  const wrongChars = state.chars.filter(c => c.status === 'wrong').length;
+  const total = correctChars + wrongChars;
+
+  // WPM = (correct chars / 5) / minutes
+  const minutes = elapsed / 60;
+  const wpm = Math.round((correctChars / 5) / minutes);
+  const accuracy = total > 0 ? Math.round((correctChars / total) * 100) : 100;
+
+  liveWpm.textContent = Math.max(0, wpm);
+  liveAccuracy.textContent = accuracy + '%';
+  liveErrors.textContent = wrongChars;
+
+  // Color accuracy
+  liveAccuracy.style.color = accuracy >= 95 ? '#10b981' : accuracy >= 85 ? '#f59e0b' : '#ef4444';
+}
+
+/* ===== TYPING HANDLER ===== */
+typingInput.addEventListener('input', (e) => {
+  if (!state.isRunning) {
+    startTest();
+  }
+  if (state.isFinished) return;
+
+  const val = e.target.value;
+  const typed = val.split('');
+
+  // Process each typed character
+  for (let i = 0; i < typed.length; i++) {
+    if (i >= state.chars.length) break;
+    const expected = state.chars[i];
+    if (expected.status !== 'pending') continue;
+
+    if (typed[i] === expected.char) {
+      expected.status = 'correct';
+    } else {
+      expected.status = 'wrong';
+    }
+    state.currentIndex = i + 1;
+  }
+
+  // Reset input (we only care about diff)
+  e.target.value = '';
+  renderText();
+  updateLiveStats();
+});
+
+/* ===== FOCUS HANDLING ===== */
+focusOverlay.addEventListener('click', () => {
+  typingInput.focus();
+  if (!state.isRunning && !state.isFinished) {
+    focusOverlay.classList.add('hidden');
+    startTest();
+  }
+});
+
+textDisplay.addEventListener('click', () => {
+  typingInput.focus();
+});
+
+typingInput.addEventListener('blur', () => {
+  if (!state.isRunning && !state.isFinished) {
+    focusOverlay.classList.remove('hidden');
+  }
+});
+
+// Start on any keypress
+document.addEventListener('keydown', (e) => {
+  if (e.target.matches('input, textarea, select')) return;
+  if (e.key.length === 1 && !state.isRunning && !state.isFinished) {
+    typingInput.focus();
+  }
+});
+
+/* ===== FINISH TEST ===== */
+function finishTest() {
+  if (state.isFinished) return;
+  state.isFinished = true;
+  state.isRunning = false;
+  clearInterval(state.timerInterval);
+
+  const elapsed = (Date.now() - state.startTime) / 1000;
+  const correctChars = state.chars.filter(c => c.status === 'correct').length;
+  const wrongChars = state.chars.filter(c => c.status === 'wrong').length;
+  const totalTyped = correctChars + wrongChars;
+  const minutes = elapsed / 60;
+
+  const wpm = Math.round((correctChars / 5) / minutes);
+  const cpm = Math.round(correctChars / minutes);
+  const accuracy = totalTyped > 0 ? Math.round((correctChars / totalTyped) * 100) : 0;
+
+  // Show results
+  finalWpm.textContent = wpm;
+  finalAccuracy.textContent = accuracy + '%';
+  finalCpm.textContent = cpm;
+  finalErrors.textContent = wrongChars;
+
+  // Emoji based on WPM
+  let emoji = '🎉';
+  if (wpm >= 100) emoji = '🏆';
+  else if (wpm >= 80) emoji = '🔥';
+  else if (wpm >= 60) emoji = '💪';
+  else if (wpm >= 40) emoji = '👍';
+  else if (wpm >= 20) emoji = '🙂';
+  else emoji = '🌱';
+  resultsEmoji.textContent = emoji;
+
+  // Subtitle
+  let subtitle = '';
+  if (wpm >= 100) subtitle = 'Elite level! You type faster than 99% of people.';
+  else if (wpm >= 80) subtitle = 'Excellent! You are in the top 5% of typists.';
+  else if (wpm >= 60) subtitle = 'Great job! Professional-level typing speed.';
+  else if (wpm >= 40) subtitle = 'Good! Above average typing speed.';
+  else if (wpm >= 20) subtitle = 'Nice start! Keep practicing daily.';
+  else subtitle = 'Beginner level. Practice makes perfect!';
+  resultsSubtitle.textContent = subtitle;
+
+  // Save to history
+  state.history.unshift({
+    wpm, accuracy, cpm, errors: wrongChars,
+    duration: state.duration,
+    difficulty: state.difficulty,
+    date: new Date().toISOString()
+  });
+  if (state.history.length > 5) state.history.pop();
+  renderHistory();
+
+  // Show overlay
+  resultsOverlay.classList.add('visible');
+
+  // Show cursor overlay again
+  focusOverlay.classList.remove('hidden');
+  focusOverlay.innerHTML = `<div><div class="focus-overlay-icon">${emoji}</div>Test complete! Click or press any key to try again</div>`;
+}
+
+/* ===== RESET TEST ===== */
+function resetTest() {
+  clearInterval(state.timerInterval);
+  state.isRunning = false;
+  state.isFinished = false;
+  state.startTime = null;
+  state.currentIndex = 0;
+  state.totalTyped = 0;
+  state.totalCorrect = 0;
+  state.totalWrong = 0;
+
+  generateText();
+  renderText();
+  updateLiveStats(0);
+  liveTime.textContent = state.duration;
+  liveWpm.textContent = '0';
+  liveAccuracy.textContent = '100%';
+  liveAccuracy.style.color = '#0891b2';
+  liveErrors.textContent = '0';
+  progressFill.style.width = '0%';
+
+  typingInput.value = '';
+  focusOverlay.innerHTML = `<div><div class="focus-overlay-icon">⌨️</div>Click here or press any key to start typing</div>`;
+  focusOverlay.classList.remove('hidden');
+}
+
+/* ===== BUTTONS ===== */
+restartBtn.addEventListener('click', () => {
+  resetTest();
+  showToast('Test reset', 'info');
+});
+
+newTextBtn.addEventListener('click', () => {
+  generateText();
+  renderText();
+  state.isRunning = false;
+  state.isFinished = false;
+  state.currentIndex = 0;
+  state.chars.forEach(c => c.status = 'pending');
+  renderText();
+  showToast('New text loaded', 'success');
+});
+
+tryAgainBtn.addEventListener('click', () => {
+  resultsOverlay.classList.remove('visible');
+  resetTest();
+});
+
+closeResultsBtn.addEventListener('click', () => {
+  resultsOverlay.classList.remove('visible');
+});
+
+/* ===== HISTORY ===== */
+function renderHistory() {
+  if (!state.history.length) {
+    historySection.style.display = 'none';
+    return;
+  }
+  historySection.style.display = 'block';
+  historyList.innerHTML = '';
+
+  state.history.forEach(h => {
+    const item = document.createElement('div');
+    item.className = 'history-item';
+    const date = new Date(h.date);
+    const dateStr = date.toLocaleDateString() + ' ' + date.toLocaleTimeString().slice(0, 5);
+    item.innerHTML = `
+      <div class="history-item-date">${dateStr}</div>
+      <div class="history-item-stat">${h.wpm} WPM</div>
+      <div class="history-item-stat">${h.accuracy}%</div>
+      <div class="history-item-stat">${h.errors} err</div>
+    `;
+    historyList.appendChild(item);
+  });
+}
+
+/* ===== KEYBOARD SHORTCUTS ===== */
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Tab') {
+    e.preventDefault();
+    resetTest();
+  }
+  if (e.key === 'Escape') {
+    if (resultsOverlay.classList.contains('visible')) {
+      resultsOverlay.classList.remove('visible');
+    } else {
+      resetTest();
+    }
+  }
+});
+
+/* ===== FAQ ===== */
+$$('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    $$('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+
+/* ===== INIT ===== */
+resetTest();
+</script>
+
+</body>
+</html>

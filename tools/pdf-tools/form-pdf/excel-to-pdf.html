@@ -1,0 +1,1484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2563eb">
+
+<title>Excel to PDF Converter - Convert XLSX to PDF Online Free | BigToolz</title>
+<meta name="description" content="Convert Excel to PDF online free. Preserves tables, supports multi-sheet, custom page sizes, orientation. Works in your browser, no upload. 100% working.">
+<meta name="keywords" content="excel to pdf, xlsx to pdf, xls to pdf, convert excel to pdf, spreadsheet to pdf">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://bigtoolz.com/tools/pdf-tools/form-pdf/excel-to-pdf/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Excel to PDF Converter - Free Online Tool | BigToolz">
+<meta property="og:description" content="Convert Excel spreadsheets to PDF free, browser-based, no upload.">
+<meta property="og:url" content="https://bigtoolz.com/tools/pdf-tools/form-pdf/excel-to-pdf/">
+<meta property="og:image" content="https://bigtoolz.com/assets/images/og-image.jpg">
+<meta property="og:site_name" content="BigToolz">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Excel to PDF - BigToolz">
+<meta name="twitter:description" content="Convert Excel to PDF instantly free, no upload.">
+<meta name="twitter:image" content="https://bigtoolz.com/assets/images/twitter-card.jpg">
+
+<link rel="icon" href="/assets/images/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/images/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#f8f9fc;color:#1a1a2e;overflow-x:hidden;line-height:1.5}
+
+  .header{background:#fff;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;position:sticky;top:0;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+  .header-left{display:flex;align-items:center;gap:40px}
+  .logo{display:flex;align-items:center;gap:8px;font-size:22px;font-weight:800;color:#1a1a2e;text-decoration:none}
+  .logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#3b82f6,#2563eb);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px}
+  .logo span{color:#2563eb}
+  .nav{display:flex;align-items:center;gap:28px;list-style:none}
+  .nav a{text-decoration:none;color:#4b5563;font-size:14px;font-weight:500;transition:color .2s}
+  .nav a:hover,.nav a.active{color:#2563eb}
+  .header-right{display:flex;align-items:center;gap:16px}
+  .search-btn,.theme-btn{width:36px;height:36px;border-radius:50%;border:none;background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#4b5563}
+  .search-btn:hover,.theme-btn:hover{background:#f3f4f6}
+  .bookmark-btn{display:flex;align-items:center;gap:8px;background:#2563eb;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
+  .bookmark-btn:hover{background:#1d4ed8}
+
+  .hero{background:linear-gradient(135deg,#0a0e27 0%,#1a1a4e 40%,#2d1b69 70%,#4c1d95 100%);padding:40px 40px 60px;position:relative;overflow:hidden;color:#fff}
+  .hero::before{content:'';position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(16,185,129,.3) 0%,transparent 70%);border-radius:50%}
+  .hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+  .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px;flex-wrap:wrap}
+  .breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none}
+  .breadcrumb a:hover{color:#fff}
+  .breadcrumb .sep{color:rgba(255,255,255,.4)}
+  .breadcrumb .current{color:#fff;font-weight:500}
+  .hero-title-row{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+  .hero-icon{width:60px;height:60px;background:#10b981;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;color:#fff;flex-shrink:0;box-shadow:0 8px 24px rgba(16,185,129,.4)}
+  .hero-title{font-size:42px;font-weight:800;line-height:1.15}
+  .hero-title .blue{color:#34d399}
+  .hero-desc{font-size:15px;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:24px;max-width:560px}
+  .hero-features{display:flex;gap:24px;flex-wrap:wrap}
+  .hero-feature{display:flex;align-items:center;gap:6px;font-size:13px;color:#fff;font-weight:500}
+  .hero-feature .check{width:18px;height:18px;border-radius:50%;background:#10b981;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;flex-shrink:0}
+
+  .main-content{max-width:1200px;margin:0 auto;padding:40px;display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start}
+  .tool-content{min-width:0}
+
+  .workspace{background:#fff;border-radius:16px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,.06);border:1px solid #e5e7eb;margin-bottom:24px}
+
+  .dropzone{border:2px dashed #6ee7b7;border-radius:12px;padding:50px 30px;text-align:center;background:#ecfdf5;margin-bottom:24px;transition:all .2s;cursor:pointer}
+  .dropzone:hover,.dropzone.dragover{border-color:#10b981;background:#d1fae5}
+  .dropzone-icon{width:60px;height:60px;background:linear-gradient(135deg,#10b981,#059669);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;color:#fff;font-size:26px;transition:transform .2s}
+  .dropzone:hover .dropzone-icon{transform:translateY(-4px)}
+  .dropzone-title{font-size:16px;font-weight:700;color:#1a1a2e;margin-bottom:8px}
+  .dropzone-sub{font-size:14px;color:#6b7280;margin-bottom:20px}
+  .dropzone-sub a{color:#10b981;font-weight:600;text-decoration:none}
+  .choose-btn{display:inline-flex;align-items:center;gap:8px;background:#10b981;color:#fff;border:none;padding:12px 28px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;transition:background .2s}
+  .choose-btn:hover{background:#059669}
+  .dropzone-info{font-size:12px;color:#9ca3af;display:flex;align-items:center;justify-content:center;gap:8px;margin-top:16px;flex-wrap:wrap}
+  .dropzone-info .divider{color:#d1d5db}
+  .file-input{display:none}
+
+  .editor{display:none}
+  .editor.visible{display:block}
+
+  .stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px;padding:16px;background:#ecfdf5;border:1px solid #6ee7b7;border-radius:12px}
+  .stat-block{text-align:center}
+  .stat-block-val{font-size:20px;font-weight:800;color:#059669;line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .stat-block-label{font-size:10px;font-weight:700;color:#047857;text-transform:uppercase;letter-spacing:.5px;margin-top:4px}
+
+  .options{background:#ecfdf5;border-radius:12px;padding:20px;margin-bottom:20px;border:1px solid #6ee7b7}
+  .options-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+  .options-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:12px}
+  .option-group label{display:block;font-size:12px;font-weight:600;color:#4b5563;margin-bottom:6px}
+  .option-group select,.option-group input[type="number"]{width:100%;padding:10px 12px;border:1px solid #e5e7eb;border-radius:8px;font-size:13px;font-family:inherit;color:#1a1a2e;background:#fff;outline:none;transition:border-color .2s}
+  .option-group select:focus,.option-group input:focus{border-color:#10b981;box-shadow:0 0 0 3px rgba(16,185,129,.1)}
+
+  .toggle-row{display:flex;align-items:center;justify-content:space-between;padding:12px 14px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;gap:12px;margin-top:12px}
+  .toggle-info{display:flex;flex-direction:column;gap:2px}
+  .toggle-title{font-size:13px;font-weight:700;color:#1a1a2e}
+  .toggle-desc{font-size:11px;color:#6b7280;line-height:1.4}
+  .toggle-switch{position:relative;width:44px;height:24px;background:#d1d5db;border-radius:12px;cursor:pointer;transition:background .2s;flex-shrink:0}
+  .toggle-switch::after{content:'';position:absolute;top:2px;left:2px;width:20px;height:20px;background:#fff;border-radius:50%;transition:transform .2s;box-shadow:0 1px 3px rgba(0,0,0,.15)}
+  .toggle-switch.on{background:#10b981}
+  .toggle-switch.on::after{transform:translateX(20px)}
+
+  .preview-section{margin-bottom:20px}
+  .preview-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;flex-wrap:wrap;gap:8px}
+  .preview-title{font-size:14px;font-weight:800;color:#1a1a2e;display:flex;align-items:center;gap:8px}
+  .preview-hint{font-size:12px;color:#6b7280;font-weight:500}
+
+  .sheet-tabs{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap}
+  .sheet-tab{padding:8px 14px;background:#fff;border:2px solid #e5e7eb;border-radius:8px;font-size:12px;font-weight:700;color:#4b5563;cursor:pointer;font-family:inherit;transition:all .2s;max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .sheet-tab:hover{border-color:#10b981;background:#ecfdf5}
+  .sheet-tab.active{border-color:#10b981;background:#10b981;color:#fff}
+
+  .table-scroll{overflow:auto;max-height:480px;border:1px solid #e5e7eb;border-radius:10px;background:#fff}
+  .data-table{border-collapse:collapse;width:100%;font-size:12px;font-family:'JetBrains Mono','Courier New',monospace}
+  .data-table th{background:#ecfdf5;color:#065f46;font-weight:700;padding:8px 10px;text-align:left;border:1px solid #d1fae5;position:sticky;top:0;z-index:2;font-size:11px;text-transform:uppercase;letter-spacing:.3px;white-space:nowrap}
+  .data-table td{border:1px solid #f3f4f6;padding:6px 10px;color:#4b5563;white-space:pre;min-width:80px}
+  .row-num-col{background:#f3f4f6!important;color:#6b7280!important;font-weight:600;text-align:center;user-select:none;width:40px;min-width:40px}
+
+  .empty-state{padding:40px 20px;text-align:center;color:#6b7280}
+  .empty-state-icon{font-size:42px;margin-bottom:10px;opacity:.5}
+  .empty-state h3{font-size:16px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+  .empty-state p{font-size:13px;line-height:1.6}
+
+  .sanitize-notice{display:none;background:#fef3c7;border:1px solid #fde68a;border-radius:10px;padding:12px 14px;font-size:12px;color:#92400e;line-height:1.5;margin-bottom:16px;gap:8px;align-items:flex-start}
+  .sanitize-notice.visible{display:flex}
+  .sanitize-notice strong{color:#78350f}
+
+  .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 28px;border-radius:10px;font-size:15px;font-weight:700;font-family:inherit;cursor:pointer;border:none;transition:all .2s;text-decoration:none}
+  .btn-primary{background:#10b981;color:#fff;flex:1;box-shadow:0 4px 12px rgba(16,185,129,.2)}
+  .btn-primary:hover:not(:disabled){background:#059669;transform:translateY(-2px);box-shadow:0 6px 20px rgba(16,185,129,.3)}
+  .btn-primary:disabled{opacity:.5;cursor:not-allowed;transform:none}
+  .btn-secondary{background:#fff;color:#10b981;border:1px solid #e5e7eb}
+  .btn-secondary:hover{border-color:#10b981;background:#ecfdf5}
+
+  .status-msg{margin-top:14px;padding:12px 14px;border-radius:8px;font-size:13px;font-weight:600;display:none}
+  .status-msg.visible{display:block}
+  .status-msg.success{background:#d1fae5;color:#065f46;border:1px solid #a7f3d0}
+  .status-msg.error{background:#fee2e2;color:#991b1b;border:1px solid #fecaca}
+  .status-msg.info{background:#ecfdf5;color:#065f46;border:1px solid #6ee7b7}
+
+  .progress{display:none;margin-top:14px}
+  .progress.visible{display:block}
+  .progress-bar{width:100%;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden;margin-bottom:8px}
+  .progress-fill{height:100%;background:linear-gradient(90deg,#34d399,#10b981);border-radius:4px;width:0%;transition:width .3s ease}
+  .progress-text{font-size:13px;color:#6b7280;text-align:center;font-weight:500}
+
+  .seo-content{background:#fff;border-radius:16px;padding:32px;border:1px solid #e5e7eb;margin-bottom:24px}
+  .seo-content h2{font-size:22px;font-weight:800;color:#1a1a2e;margin-bottom:14px;margin-top:28px;display:flex;align-items:center;gap:10px}
+  .seo-content h2:first-child{margin-top:0}
+  .seo-content h3{font-size:16px;font-weight:700;color:#1a1a2e;margin:20px 0 10px}
+  .seo-content p{font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:14px}
+  .seo-content ul{list-style:none;padding-left:0;margin-bottom:16px}
+  .seo-content ul li{position:relative;padding-left:24px;font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:8px}
+  .seo-content ul li::before{content:'';position:absolute;left:6px;top:12px;width:6px;height:6px;background:#10b981;border-radius:50%}
+  .seo-content a{color:#2563eb;text-decoration:none;font-weight:600}
+  .seo-content a:hover{text-decoration:underline}
+  .seo-content strong{color:#1a1a2e;font-weight:700}
+  .seo-content code{background:#f1f5f9;padding:2px 6px;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:13px;color:#0f172a;border:1px solid #e2e8f0}
+
+  .how-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:20px}
+  .how-step{background:#ecfdf5;border-radius:12px;padding:20px;border:1px solid #6ee7b7}
+  .how-step-num{width:36px;height:36px;border-radius:50%;background:#10b981;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;margin-bottom:12px}
+  .how-step-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+  .how-step-desc{font-size:13px;color:#6b7280;line-height:1.6}
+
+  .faq-item{background:#ecfdf5;border:1px solid #6ee7b7;border-radius:12px;margin-bottom:10px;overflow:hidden;transition:border-color .2s}
+  .faq-item:hover{border-color:#10b981}
+  .faq-question{width:100%;background:none;border:none;padding:18px 22px;font-size:15px;font-weight:700;color:#1a1a2e;text-align:left;cursor:pointer;font-family:inherit;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .faq-question .chev{font-size:12px;color:#10b981;transition:transform .2s;flex-shrink:0}
+  .faq-item.open .faq-question .chev{transform:rotate(180deg)}
+  .faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 22px}
+  .faq-item.open .faq-answer{max-height:500px;padding-bottom:18px}
+  .faq-answer p{font-size:14px;color:#6b7280;line-height:1.7;margin:0}
+
+  .sidebar{background:#fff;border-radius:16px;padding:24px;border:1px solid #e5e7eb;position:sticky;top:80px;margin-bottom:24px}
+  .sidebar-header{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:800;color:#1a1a2e;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid #f3f4f6}
+  .sidebar-list{display:flex;flex-direction:column;gap:8px}
+  .sidebar-item{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;cursor:pointer;transition:background .2s;text-decoration:none;color:inherit;border:1px solid #f3f4f6}
+  .sidebar-item:hover{background:#ecfdf5;border-color:#6ee7b7}
+  .sidebar-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;flex-shrink:0}
+  .sidebar-info{flex:1;min-width:0}
+  .sidebar-title{font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:2px}
+  .sidebar-desc{font-size:11px;color:#9ca3af;line-height:1.4}
+
+  .footer{background:#0a0e27;padding:60px 40px 30px;color:#fff;margin-top:40px}
+  .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:40px}
+  .footer-brand{display:flex;align-items:center;gap:8px;font-size:20px;font-weight:800;margin-bottom:12px}
+  .footer-brand span{color:#60a5fa}
+  .footer-tagline{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px}
+  .footer-social{display:flex;gap:12px}
+  .footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:16px;transition:background .2s}
+  .footer-social a:hover{background:rgba(255,255,255,.2)}
+  .footer-heading{font-size:14px;font-weight:700;margin-bottom:20px;color:#fff}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .footer-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;transition:color .2s}
+  .footer-links a:hover{color:#60a5fa}
+  .footer-bottom{max-width:1200px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  .footer-bottom-left{display:flex;gap:20px;font-size:12px;color:rgba(255,255,255,.5)}
+  .footer-bottom-right,.footer-bottom-links a{font-size:12px;color:rgba(255,255,255,.5);text-decoration:none}
+  .footer-bottom-links{display:flex;gap:20px}
+
+  .toast{position:fixed;bottom:24px;right:24px;background:#1a1a2e;color:#fff;padding:14px 20px;border-radius:10px;font-size:13px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:3000;transform:translateY(200%);transition:transform .3s ease;max-width:320px}
+  .toast.visible{transform:translateY(0)}
+  .toast.success{background:#10b981}
+  .toast.error{background:#ef4444}
+
+  @media(max-width:1024px){
+    .main-content{grid-template-columns:1fr;padding:24px 20px}
+    .sidebar{position:static}
+    .how-steps{grid-template-columns:repeat(2,1fr)}
+    .options-grid{grid-template-columns:1fr 1fr}
+    .stats-bar{grid-template-columns:repeat(2,1fr)}
+  }
+  @media(max-width:768px){
+    .header{padding:0 20px}.nav{display:none}
+    .hero{padding:24px 20px 40px}
+    .hero-title{font-size:28px}
+    .hero-icon{width:48px;height:48px;font-size:22px}
+    .hero-title-row{flex-direction:column;align-items:flex-start;gap:12px}
+    .main-content{padding:20px 16px}
+    .workspace{padding:20px}
+    .dropzone{padding:32px 16px}
+    .how-steps{grid-template-columns:1fr}
+    .seo-content{padding:20px}
+    .footer-inner{grid-template-columns:1fr 1fr}
+    .toast{left:16px;right:16px;bottom:16px;max-width:none}
+    .options-grid{grid-template-columns:1fr}
+  }
+  @media(max-width:576px){
+    .header{padding:0 16px}.header-right .search-btn,.header-right .theme-btn{display:none}
+    .hero-title{font-size:24px}
+    .actions{flex-direction:column}
+    .btn{width:100%}
+    .btn-primary{flex:none}
+    .footer-inner{grid-template-columns:1fr}
+    .footer-bottom{flex-direction:column;text-align:center}
+    .stats-bar{grid-template-columns:1fr}
+  }
+
+  html[data-theme="dark"] body{background:#0f172a;color:#f1f5f9}
+  html[data-theme="dark"] .header,html[data-theme="dark"] .workspace,html[data-theme="dark"] .seo-content,html[data-theme="dark"] .sidebar{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .logo,html[data-theme="dark"] .hero-title,html[data-theme="dark"] .seo-content h2,html[data-theme="dark"] .seo-content h3,html[data-theme="dark"] .faq-question,html[data-theme="dark"] .sidebar-header,html[data-theme="dark"] .sidebar-title,html[data-theme="dark"] .options-title,html[data-theme="dark"] .preview-title,html[data-theme="dark"] .toggle-title,html[data-theme="dark"] .empty-state h3{color:#f1f5f9}
+  html[data-theme="dark"] .nav a{color:#cbd5e1}
+  html[data-theme="dark"] .dropzone{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .how-step,html[data-theme="dark"] .faq-item,html[data-theme="dark"] .options,html[data-theme="dark"] .stats-bar,html[data-theme="dark"] .toggle-row,html[data-theme="dark"] .sheet-tab{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .sheet-tab{color:#cbd5e1}
+  html[data-theme="dark"] .sheet-tab.active{background:#059669;color:#fff;border-color:#059669}
+  html[data-theme="dark"] .option-group select,html[data-theme="dark"] .option-group input{background:#1e293b;border-color:#334155;color:#f1f5f9}
+  html[data-theme="dark"] .seo-content p,html[data-theme="dark"] .seo-content ul li,html[data-theme="dark"] .faq-answer p,html[data-theme="dark"] .empty-state{color:#cbd5e1}
+  html[data-theme="dark"] .seo-content code{background:#020617;color:#34d399;border-color:#334155}
+  html[data-theme="dark"] .table-scroll{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .data-table th{background:#064e3b;color:#a7f3d0;border-color:#065f46}
+  html[data-theme="dark"] .data-table td{background:#0f172a;border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .data-table tr:nth-child(even) td{background:#1e293b}
+  html[data-theme="dark"] .row-num-col{background:#1e293b!important;color:#94a3b8!important}
+  html[data-theme="dark"] .stat-block-val{color:#34d399}
+  html[data-theme="dark"] .stat-block-label{color:#6ee7b7}
+  html[data-theme="dark"] .sanitize-notice{background:#422006;border-color:#78350f;color:#fcd34d}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type": "SoftwareApplication", "name": "Excel to PDF Converter", "url": "https://bigtoolz.com/tools/pdf-tools/form-pdf/excel-to-pdf/", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any (Web-based)", "description": "Free online Excel to PDF converter convert XLSX/XLS/CSV to PDF with multi-sheet support, custom page sizes, and Unicode-safe rendering.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.8", "ratingCount": "1654"}},
+    {"@type": "HowTo", "name": "How to Convert Excel to PDF", "step": [
+      {"@type": "HowToStep", "name": "Upload Excel", "text": "Drag & drop or click to select an XLSX, XLS, or CSV file."},
+      {"@type": "HowToStep", "name": "Configure", "text": "Choose page size, orientation, font size, and styling options."},
+      {"@type": "HowToStep", "name": "Preview", "text": "Review the table and switch between sheets."},
+      {"@type": "HowToStep", "name": "Download PDF", "text": "Click Generate PDF and download your file."}
+    ]},
+    {"@type": "FAQPage", "mainEntity": [
+      {"@type": "Question", "name": "How do I convert Excel to PDF online?", "acceptedAnswer": {"@type": "Answer", "text": "Upload your .xlsx, .xls, or .csv file, configure the page layout, then click Generate PDF. The whole process runs in your browser free, no signup."}},
+      {"@type": "Question", "name": "What's the WinAnsi error and how is it fixed?", "acceptedAnswer": {"@type": "Answer", "text": "PDF standard fonts only support WinAnsi encoding Latin-1 characters. Unicode characters like superscripts, subscripts, currency symbols, or non-Latin scripts cause the error. Our tool automatically substitutes them with ASCII equivalents so the PDF always generates without errors."}},
+      {"@type": "Question", "name": "Does it preserve Excel formatting?", "acceptedAnswer": {"@type": "Answer", "text": "The tool extracts cell values and column structure not complex formatting like fonts, colors, or charts. However, you can enable grid lines, zebra striping, and bold headers for a clean, readable PDF."}},
+      {"@type": "Question", "name": "Can I convert multiple sheets?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Every sheet in your Excel file is placed on its own PDF page. Larger sheets automatically scale to fit the page width."}},
+      {"@type": "Question", "name": "Does it work with .xls and .csv?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. SheetJS supports .xlsx, .xls, .xlsm, .xlsb, .csv, .ods and more."}},
+      {"@type": "Question", "name": "Are my files uploaded to a server?", "acceptedAnswer": {"@type": "Answer", "text": "No. All processing happens in your browser using SheetJS and pdf-lib. Your file never leaves your device."}}
+    ]},
+    {"@type": "BreadcrumbList", "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bigtoolz.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://bigtoolz.com/tools/"},
+      {"@type": "ListItem", "position": 3, "name": "PDF Tools", "item": "https://bigtoolz.com/tools/pdf-tools/"},
+      {"@type": "ListItem", "position": 4, "name": "Form PDF", "item": "https://bigtoolz.com/tools/pdf-tools/form-pdf/"},
+      {"@type": "ListItem", "position": 5, "name": "Excel to PDF", "item": "https://bigtoolz.com/tools/pdf-tools/form-pdf/excel-to-pdf/"}
+    ]}
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-left">
+    <a href="/" class="logo"><div class="logo-icon">⚒</div>BigToolz</span></a>
+    <nav><ul class="nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/tools/" class="active">All Tools</a></li>
+      <li><a href="/tools/categories">Categories</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul></nav>
+  </div>
+  <div class="header-right">
+   
+    <button class="theme-btn" aria-label="Toggle theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
+    
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <nav class="breadcrumb">
+      <a href="/">Home</a><span class="sep">›</span>
+      <a href="/tools/">Tools</a><span class="sep">›</span>
+      <a href="/tools/pdf-tools/">PDF Tools</a><span class="sep">›</span>
+      <a href="/tools/pdf-tools/form-pdf/">Form PDF</a><span class="sep">›</span>
+      <span class="current">Excel to PDF</span>
+    </nav>
+    <div class="hero-title-row">
+      <div class="hero-icon">📕</div>
+      <h1 class="hero-title">Excel to <span class="blue">PDF</span></h1>
+    </div>
+    <p class="hero-desc">
+      Convert Excel spreadsheets into professional PDFs. Multi-sheet support, custom page sizes, and Unicode-safe rendering no more WinAnsi encoding errors. No upload, 100% private.
+    </p>
+    <div class="hero-features">
+      <div class="hero-feature"><span class="check">✓</span> Unicode-Safe</div>
+      <div class="hero-feature"><span class="check">✓</span> Multi-Sheet</div>
+      <div class="hero-feature"><span class="check">✓</span> Custom Layout</div>
+      <div class="hero-feature"><span class="check">✓</span> No Upload</div>
+    </div>
+  </div>
+</section>
+
+<div class="main-content">
+
+  <div class="tool-content">
+
+    <div class="workspace">
+
+      <div class="dropzone" id="dropzone">
+        <div class="dropzone-icon">⬆</div>
+        <div class="dropzone-title">Drag & drop your Excel file here</div>
+        <div class="dropzone-sub">or <a href="#" id="browseLink">click to browse files</a></div>
+        <button class="choose-btn" id="chooseBtn" type="button">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/></svg>
+          Choose Excel File
+        </button>
+        <div class="dropzone-info">
+          <span>XLSX, XLS, CSV, ODS</span>
+          <span class="divider">|</span>
+          <span>Multi-sheet support</span>
+        </div>
+        <input type="file" id="fileInput" class="file-input" accept=".xlsx,.xls,.xlsm,.xlsb,.csv,.ods">
+      </div>
+
+      <div class="editor" id="editor">
+
+        <div class="stats-bar">
+          <div class="stat-block">
+            <div class="stat-block-val" id="statFileName" title="">--</div>
+            <div class="stat-block-label">File</div>
+          </div>
+          <div class="stat-block">
+            <div class="stat-block-val" id="statSheets">--</div>
+            <div class="stat-block-label">Sheets</div>
+          </div>
+          <div class="stat-block">
+            <div class="stat-block-val" id="statRows">--</div>
+            <div class="stat-block-label">Total Rows</div>
+          </div>
+          <div class="stat-block">
+            <div class="stat-block-val" id="statCols">--</div>
+            <div class="stat-block-label">Max Cols</div>
+          </div>
+        </div>
+
+        <div class="sanitize-notice" id="sanitizeNotice">
+          <strong>ℹ️</strong>
+          <span id="sanitizeNoticeText">Unicode characters detected they'll be automatically substituted with ASCII equivalents to prevent PDF font encoding errors.</span>
+        </div>
+
+        <div class="options">
+          <div class="options-title">⚙️ PDF Settings</div>
+          <div class="options-grid">
+            <div class="option-group">
+              <label>Page Size</label>
+              <select id="pageSize">
+                <option value="A4" selected>A4 (210 × 297 mm)</option>
+                <option value="LETTER">US Letter (8.5 × 11 in)</option>
+                <option value="LEGAL">Legal (8.5 × 14 in)</option>
+                <option value="A3">A3 (297 × 420 mm)</option>
+                <option value="A5">A5 (148 × 210 mm)</option>
+              </select>
+            </div>
+            <div class="option-group">
+              <label>Orientation</label>
+              <select id="orientation">
+                <option value="portrait" selected>Portrait</option>
+                <option value="landscape">Landscape</option>
+              </select>
+            </div>
+            <div class="option-group">
+              <label>Font Size</label>
+              <select id="fontSize">
+                <option value="7">Tiny (7pt)</option>
+                <option value="8" selected>Small (8pt)</option>
+                <option value="9">Normal (9pt)</option>
+                <option value="10">Large (10pt)</option>
+                <option value="11">XL (11pt)</option>
+                <option value="12">XXL (12pt)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="options-grid">
+            <div class="option-group">
+              <label>Sheet Layout</label>
+              <select id="sheetLayout">
+                <option value="newpage" selected>One sheet per page</option>
+                <option value="autoflow">Auto-flow (all on pages)</option>
+              </select>
+            </div>
+            <div class="option-group">
+              <label>Title on Page</label>
+              <select id="titleMode">
+                <option value="none">No title</option>
+                <option value="sheetname" selected>Sheet name</option>
+                <option value="filename">File name</option>
+              </select>
+            </div>
+            <div class="option-group">
+              <label>Filename</label>
+              <input type="text" id="pdfFilename" placeholder="excel-to-pdf" value="excel-to-pdf">
+            </div>
+          </div>
+
+          <div class="toggle-row">
+            <div class="toggle-info">
+              <div class="toggle-title">Grid Lines</div>
+              <div class="toggle-desc">Draw borders between cells</div>
+            </div>
+            <div class="toggle-switch on" id="gridToggle" role="switch" aria-checked="true"></div>
+          </div>
+
+          <div class="toggle-row">
+            <div class="toggle-info">
+              <div class="toggle-title">Zebra Striping</div>
+              <div class="toggle-desc">Alternating row background</div>
+            </div>
+            <div class="toggle-switch on" id="zebraToggle" role="switch" aria-checked="true"></div>
+          </div>
+
+          <div class="toggle-row">
+            <div class="toggle-info">
+              <div class="toggle-title">Bold Header Row</div>
+              <div class="toggle-desc">Emphasize first row of each sheet</div>
+            </div>
+            <div class="toggle-switch on" id="headerToggle" role="switch" aria-checked="true"></div>
+          </div>
+        </div>
+
+        <div class="preview-section">
+          <div class="preview-header">
+            <div class="preview-title">📊 Data Preview</div>
+            <div class="preview-hint" id="previewHint">Switch between sheets to review data</div>
+          </div>
+
+          <div class="sheet-tabs" id="sheetTabs"></div>
+
+          <div class="table-scroll" id="tableScroll">
+            <div class="empty-state">
+              <div class="empty-state-icon">📄</div>
+              <h3>Loading Excel...</h3>
+              <p>Table will appear here after analysis.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button class="btn btn-primary" id="generateBtn" disabled>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+            Generate PDF
+          </button>
+          <button class="btn btn-secondary" id="cancelBtn">Cancel</button>
+        </div>
+
+        <div class="status-msg" id="statusMsg"></div>
+
+        <div class="progress" id="progress">
+          <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+          <div class="progress-text" id="progressText">Processing...</div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="seo-content">
+
+      <h2>📕 What is Excel to PDF Conversion?</h2>
+      <p>
+        <strong>Excel to PDF conversion</strong> turns your spreadsheets (.xlsx, .xls, .csv, .ods) into a fixed-layout PDF document. PDFs preserve the exact appearance on every device no font substitution, no cell misalignment, no dependency on Excel being installed. It's the standard format for <strong>sharing financial reports, invoices, data tables, schedules, and any structured content</strong> you want to lock down.
+      </p>
+      <p>
+        BigToolz's <strong>Excel to PDF</strong> tool uses <strong>SheetJS</strong> to parse Excel files and <strong>pdf-lib</strong> to generate PDFs all running <strong>100% in your browser</strong>. No uploads, no signup, no WinAnsi encoding errors.
+      </p>
+
+      <h2>🚀 How to Convert Excel to PDF</h2>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-step-num">1</div>
+          <div class="how-step-title">Upload Excel</div>
+          <div class="how-step-desc">Drag & drop or click to select .xlsx, .xls, .csv, or .ods.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">2</div>
+          <div class="how-step-title">Configure</div>
+          <div class="how-step-desc">Choose page size, orientation, font, and styling.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">3</div>
+          <div class="how-step-title">Preview</div>
+          <div class="how-step-desc">Review tables and switch between sheets.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">4</div>
+          <div class="how-step-title">Download</div>
+          <div class="how-step-desc">Generate PDF and save to your device.</div>
+        </div>
+      </div>
+
+      <h2>🛡️ The WinAnsi Encoding Error Explained & Fixed</h2>
+      <p>If you've used other online PDF tools, you may have seen this error:</p>
+      <p><code>Failed to generate PDF: WinAnsi cannot encode "ᵗ" (0x1d57)</code></p>
+
+      <h3>Why it happens</h3>
+      <p>
+        PDF's <strong>standard 14 fonts</strong> (Helvetica, Times New Roman, Courier, Symbol, ZapfDingbats) only support <strong>WinAnsi encoding</strong> a character set of ~224 characters covering Western European languages (Latin-1). Any character outside that range causes an error:
+      </p>
+      <ul>
+        <li><strong>Superscripts/subscripts:</strong> ᵗ, ², ³, ₁, ₂</li>
+        <li><strong>Special symbols:</strong> ™, ©, ®, °, ±, ×, ÷, µ</li>
+        <li><strong>Non-Latin scripts:</strong> 中文, العربية, हिन्दी, русский</li>
+        <li><strong>Emoji:</strong> 😀, 🎉, ✅, ❌</li>
+        <li><strong>Currency:</strong> ₹, ¥, ₩, ₽</li>
+        <li><strong>Mathematical:</strong> ∑, √, ∫, ≤, ≥, ∞</li>
+      </ul>
+
+      <h3>How BigToolz fixes it</h3>
+      <p>
+        Our tool runs a <strong>Unicode sanitization pass</strong> on every cell value before drawing it. Each unsupported character is replaced with the closest ASCII equivalent:
+      </p>
+      <ul>
+        <li><code>ᵗ</code> → <code>t</code> · <code>²</code> → <code>2</code> · <code>™</code> → <code>TM</code></li>
+        <li><code>©</code> → <code>(c)</code> · <code>₹</code> → <code>Rs.</code> · <code>é</code> → <code>e</code></li>
+        <li><code>→</code> → <code>-></code> · <code>…</code> → <code>...</code> · <code></code> → <code>-</code></li>
+      </ul>
+      <p>
+        The result: <strong>PDF always generates successfully</strong> no errors, no failed files.
+      </p>
+
+      <h2>✨ Key Features</h2>
+      <ul>
+        <li><strong>Unicode-safe PDF generation</strong> no encoding errors, ever.</li>
+        <li><strong>Multi-sheet support</strong> one sheet per page (or auto-flow).</li>
+        <li><strong>5 page sizes</strong> A4, Letter, Legal, A3, A5.</li>
+        <li><strong>Portrait or landscape</strong> orientation.</li>
+        <li><strong>6 font sizes</strong> 7pt to 12pt.</li>
+        <li><strong>Auto-scaling</strong> wide tables fit to page width.</li>
+        <li><strong>Grid lines, zebra striping, bold headers</strong> clean styling.</li>
+        <li><strong>Live preview</strong> review data before generating.</li>
+        <li><strong>100% browser-based</strong> your file never leaves your device.</li>
+      </ul>
+
+      <h2>❓ Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-question">How do I convert Excel to PDF online?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Upload your .xlsx, .xls, or .csv file, configure the page layout, then click Generate PDF. The whole process runs in your browser free, no signup, no upload.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What's the WinAnsi error and how is it fixed?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>PDF standard fonts only support <strong>WinAnsi encoding</strong> Latin-1 characters. Unicode characters like <code>ᵗ</code>, <code>²</code>, <code>™</code>, or <code>₹</code> cause the error. Our tool automatically substitutes them with ASCII equivalents.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Does it preserve Excel formatting?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>The tool extracts <strong>cell values and column structure</strong> not complex formatting like fonts, colors, or charts. However, you can enable grid lines, zebra striping, and bold headers for a clean, readable PDF.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I convert multiple sheets?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Yes. Every sheet in your Excel file is placed on its <strong>own PDF page</strong>. Larger sheets automatically scale to fit the page width.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Does it work with .xls and .csv?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Yes. SheetJS supports <strong>.xlsx, .xls, .xlsm, .xlsb, .csv, .ods</strong> and more.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Why does my table look too wide?</button>
+        <div class="faq-answer"><p>Wide tables auto-scale to fit the page width. If it's still too narrow, try: (1) switch to <strong>Landscape</strong>, (2) reduce font size to <strong>7pt</strong>, or (3) select a larger page size like <strong>A3</strong>.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Are my files uploaded to a server?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>No. All processing happens in your browser using SheetJS and pdf-lib. Your file never leaves your device.</p></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-header">🔗 Related Form PDF Tools</div>
+    <div class="sidebar-list">
+      <a href="/tools/pdf-tools/form-pdf/pdf-to-excel/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#10b981;">X</div>
+        <div class="sidebar-info"><div class="sidebar-title">PDF to Excel</div><div class="sidebar-desc">Extract tables to .xlsx</div></div>
+      </a>
+      <a href="/tools/pdf-tools/form-pdf/pdf-to-csv/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#3b82f6;">📊</div>
+        <div class="sidebar-info"><div class="sidebar-title">PDF to CSV</div><div class="sidebar-desc">Tables → CSV</div></div>
+      </a>
+      <a href="/tools/pdf-tools/form-pdf/table-extractor/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#f97316;">📋</div>
+        <div class="sidebar-info"><div class="sidebar-title">Table Extractor</div><div class="sidebar-desc">Extract tables</div></div>
+      </a>
+      <a href="/tools/pdf-tools/form-pdf/invoice-generator/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#3b82f6;">🧾</div>
+        <div class="sidebar-info"><div class="sidebar-title">Invoice Generator</div><div class="sidebar-desc">Create invoices</div></div>
+      </a>
+      <a href="/tools/pdf-tools/form-pdf/resume-generator/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#8b5cf6;">📄</div>
+        <div class="sidebar-info"><div class="sidebar-title">Resume Generator</div><div class="sidebar-desc">Build resumes</div></div>
+      </a>
+      <a href="/tools/pdf-tools/form-pdf/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#64748b;">📋</div>
+        <div class="sidebar-info"><div class="sidebar-title">All Form PDF →</div><div class="sidebar-desc">15 tools</div></div>
+      </a>
+    </div>
+  </aside>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand"><div class="logo-icon">⚒</div>BigToolz</span></div>
+      <p class="footer-tagline">Your Ultimate Online Tools Hub</p>
+      <div class="footer-social">
+        <a href="https://facebook.com/bigtoolz" aria-label="Facebook">f</a>
+        <a href="https://twitter.com/bigtoolz" aria-label="Twitter">𝕏</a>
+        <a href="https://youtube.com/@bigtoolz" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+    <div>
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/tools/">All Tools</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Categories</h3>
+      <ul class="footer-links">
+        <li><a href="/tools/image-tools/">Image Tools</a></li>
+        <li><a href="/tools/pdf-tools/">PDF Tools</a></li>
+        <li><a href="/tools/text-tools/">Text Tools</a></li>
+        <li><a href="/tools/seo-tools/">SEO Tools</a></li>
+        <li><a href="/tools/categories">All Categories →</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Legal</h3>
+      <ul class="footer-links">
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left"><span>✓ 100% Free</span><span>✓ No Sign Up</span><span>✓ No Installation</span></div>
+    <div class="footer-bottom-right">© 2026 BigToolz. All rights reserved.</div>
+    <div class="footer-bottom-links"><a href="/privacy-policy">Privacy</a><a href="/terms">Terms</a><a href="/disclaimer">Disclaimer</a></div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+
+<script>
+'use strict';
+
+/* ===== THEME ===== */
+(function(){try{var t=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&d))document.documentElement.setAttribute('data-theme','dark');else if(t==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();
+document.querySelector('.theme-btn')?.addEventListener('click',()=>{const h=document.documentElement;const c=h.getAttribute('data-theme');const d=window.matchMedia('(prefers-color-scheme: dark)').matches;let n=c==='dark'?'light':c==='light'?'dark':(d?'light':'dark');h.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}});
+
+/* ===== HELPERS ===== */
+const $ = (s, p = document) => p.querySelector(s);
+const $$ = (s, p = document) => [...p.querySelectorAll(s)];
+
+/* SAFE NUMBER FIX for `NaN` errors */
+function safeNumber(value, fallback) {
+  const n = typeof value === 'number' ? value : parseFloat(value);
+  if (typeof n !== 'number' || isNaN(n) || !isFinite(n)) {
+    return typeof fallback === 'number' && !isNaN(fallback) && isFinite(fallback) ? fallback : 0;
+  }
+  return n;
+}
+
+function showToast(msg, type = 'info', duration = 3000) {
+  const t = $('#toast');
+  if (!t) return;
+  t.className = 'toast visible' + (type !== 'info' ? ' ' + type : '');
+  t.textContent = msg;
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove('visible'), duration);
+}
+
+function setStatus(msg, type = 'info') {
+  const el = $('#statusMsg');
+  el.textContent = msg;
+  el.className = 'status-msg visible ' + type;
+}
+function clearStatus() {
+  const el = $('#statusMsg');
+  el.className = 'status-msg';
+  el.textContent = '';
+}
+
+function escapeHtml(str) {
+  const div = document.createElement('div');
+  div.textContent = String(str == null ? '' : str);
+  return div.innerHTML;
+}
+
+/* ==========================================
+   WinAnsi-safe character sanitizer
+   ========================================== */
+const WINANSI_MAP = {
+  '\u2070': '0', '\u00B9': '1', '\u00B2': '2', '\u00B3': '3',
+  '\u2074': '4', '\u2075': '5', '\u2076': '6', '\u2077': '7',
+  '\u2078': '8', '\u2079': '9',
+  '\u2071': 'i', '\u207F': 'n', '\u1D57': 't', '\u1D48': 'd',
+  '\u1D43': 'a', '\u1D47': 'b', '\u1D9C': 'c', '\u1D49': 'e',
+  '\u1D4D': 'g', '\u02B0': 'h', '\u02B2': 'j', '\u1D4F': 'k',
+  '\u02E1': 'l', '\u1D50': 'm', '\u1D52': 'o', '\u1D56': 'p',
+  '\u02B3': 'r', '\u02E2': 's', '\u1D58': 'u', '\u1D5B': 'v',
+  '\u02B7': 'w', '\u02E3': 'x', '\u02B8': 'y', '\u1D5D': 'z',
+  '\u2080': '0', '\u2081': '1', '\u2082': '2', '\u2083': '3',
+  '\u2084': '4', '\u2085': '5', '\u2086': '6', '\u2087': '7',
+  '\u2088': '8', '\u2089': '9',
+  '\u2122': 'TM', '\u00A9': '(c)', '\u00AE': '(R)',
+  '\u2120': '(SM)', '\u2117': '(P)',
+  '\u00B0': 'deg', '\u00B1': '+/-', '\u00D7': 'x', '\u00F7': '/',
+  '\u00B5': 'u', '\u00BC': '1/4', '\u00BD': '1/2', '\u00BE': '3/4',
+  '\u221E': 'inf', '\u2211': 'sum', '\u221A': 'sqrt', '\u222B': 'int',
+  '\u2260': '!=', '\u2264': '<=', '\u2265': '>=', '\u2248': '~=',
+  '\u00AC': '!', '\u2212': '-', '\u00B7': '.', '\u2022': '*',
+  '\u20B9': 'Rs.', '\u00A5': 'Y', '\u20A9': 'W', '\u20BD': 'R',
+  '\u00A3': 'GBP', '\u20AC': 'EUR', '\u00A2': 'c', '\u20A6': 'N',
+  '\u2013': '-', '\u2014': '-', '\u2012': '-', '\u2015': '-',
+  '\u2018': "'", '\u2019': "'", '\u201A': ',', '\u201B': "'",
+  '\u201C': '"', '\u201D': '"', '\u201E': '"', '\u201F': '"',
+  '\u2026': '...', '\u2032': "'", '\u2033': '"',
+  '\u2190': '<-', '\u2192': '->', '\u2191': '^', '\u2193': 'v',
+  '\u2194': '<->', '\u21D0': '<=', '\u21D2': '=>',
+  '\u2713': '[v]', '\u2714': '[v]', '\u2717': '[x]', '\u2718': '[x]',
+  '\u2610': '[ ]', '\u2611': '[v]', '\u2612': '[x]',
+  '\u2605': '*', '\u2606': '.', '\u25CF': 'o', '\u25CB': 'o',
+  '\u00A0': ' ', '\u2007': ' ', '\u202F': ' ', '\u2009': ' ',
+  '\u200A': ' ', '\u2002': ' ', '\u2003': ' ', '\u2004': ' ',
+  '\u2005': ' ', '\u2006': ' ', '\u2008': ' ',
+  '\u200B': '', '\u200C': '', '\u200D': '', '\uFEFF': '',
+  '\u00C0': 'A', '\u00C1': 'A', '\u00C2': 'A', '\u00C3': 'A',
+  '\u00C4': 'A', '\u00C5': 'A', '\u00E0': 'a', '\u00E1': 'a',
+  '\u00E2': 'a', '\u00E3': 'a', '\u00E4': 'a', '\u00E5': 'a',
+  '\u00C8': 'E', '\u00C9': 'E', '\u00CA': 'E', '\u00CB': 'E',
+  '\u00E8': 'e', '\u00E9': 'e', '\u00EA': 'e', '\u00EB': 'e',
+  '\u00CC': 'I', '\u00CD': 'I', '\u00CE': 'I', '\u00CF': 'I',
+  '\u00EC': 'i', '\u00ED': 'i', '\u00EE': 'i', '\u00EF': 'i',
+  '\u00D2': 'O', '\u00D3': 'O', '\u00D4': 'O', '\u00D5': 'O',
+  '\u00D6': 'O', '\u00D8': 'O',
+  '\u00F2': 'o', '\u00F3': 'o', '\u00F4': 'o', '\u00F5': 'o',
+  '\u00F6': 'o', '\u00F8': 'o',
+  '\u00D9': 'U', '\u00DA': 'U', '\u00DB': 'U', '\u00DC': 'U',
+  '\u00F9': 'u', '\u00FA': 'u', '\u00FB': 'u', '\u00FC': 'u',
+  '\u00D1': 'N', '\u00F1': 'n',
+  '\u00C7': 'C', '\u00E7': 'c',
+  '\u00DD': 'Y', '\u00FD': 'y', '\u00FF': 'y',
+  '\u00DE': 'Th', '\u00FE': 'th', '\u00DF': 'ss', '\u00C6': 'AE', '\u00E6': 'ae',
+  '\u0394': 'Delta', '\u03A9': 'Omega', '\u03C0': 'pi',
+  '\u03B1': 'alpha', '\u03B2': 'beta', '\u03B3': 'gamma',
+  '\u03BC': 'mu', '\u03BB': 'lambda'
+};
+
+function sanitizeForWinAnsi(text) {
+  if (text == null) return '';
+  let s = String(text);
+
+  let hasNonLatin = false;
+  for (let i = 0; i < s.length; i++) {
+    const code = s.charCodeAt(i);
+    if (code > 0xFF || (code >= 0x80 && code <= 0x9F)) {
+      hasNonLatin = true;
+      break;
+    }
+  }
+  if (!hasNonLatin) return s;
+
+  s = s.replace(/[\s\S]/g, (ch) => {
+    if (WINANSI_MAP[ch] !== undefined) return WINANSI_MAP[ch];
+    return ch;
+  });
+
+  try {
+    s = s.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    s = s.normalize('NFC');
+  } catch (e) { /* ignore */ }
+
+  s = s.replace(/[^\x09\x0A\x0D\x20-\x7E\u00A0-\u00FF]/g, '?');
+
+  return s;
+}
+
+function detectUnicodeInRows(rows) {
+  for (const row of rows) {
+    if (!Array.isArray(row)) continue;
+    for (const cell of row) {
+      if (cell == null) continue;
+      const s = String(cell);
+      for (let i = 0; i < s.length; i++) {
+        const code = s.charCodeAt(i);
+        if (code > 0xFF || (code >= 0x80 && code <= 0x9F)) {
+          return true;
+        }
+      }
+    }
+  }
+  return false;
+}
+
+/* ===== PAGE SIZES (points) FIX: all values validated ===== */
+const PAGE_SIZES = {
+  'A4': [595.28, 841.89],
+  'LETTER': [612, 792],
+  'LEGAL': [612, 1008],
+  'A3': [841.89, 1190.55],
+  'A5': [419.53, 595.28]
+};
+
+/* ===== STATE ===== */
+const state = {
+  fileName: '',
+  fileSize: 0,
+  workbook: null,
+  sheets: [],
+  activeSheetIdx: 0,
+  totalRows: 0,
+  maxCols: 0,
+  hasUnicode: false,
+  grid: true,
+  zebra: true,
+  boldHeader: true,
+  isProcessing: false
+};
+
+/* ===== DOM ===== */
+const dropzone = $('#dropzone');
+const fileInput = $('#fileInput');
+const chooseBtn = $('#chooseBtn');
+const browseLink = $('#browseLink');
+const editor = $('#editor');
+const statFileName = $('#statFileName');
+const statSheets = $('#statSheets');
+const statRows = $('#statRows');
+const statCols = $('#statCols');
+const sanitizeNotice = $('#sanitizeNotice');
+const sanitizeNoticeText = $('#sanitizeNoticeText');
+const pageSize = $('#pageSize');
+const orientation = $('#orientation');
+const fontSize = $('#fontSize');
+const sheetLayout = $('#sheetLayout');
+const titleMode = $('#titleMode');
+const pdfFilename = $('#pdfFilename');
+const gridToggle = $('#gridToggle');
+const zebraToggle = $('#zebraToggle');
+const headerToggle = $('#headerToggle');
+const sheetTabs = $('#sheetTabs');
+const tableScroll = $('#tableScroll');
+const previewHint = $('#previewHint');
+const generateBtn = $('#generateBtn');
+const cancelBtn = $('#cancelBtn');
+const progress = $('#progress');
+const progressFill = $('#progressFill');
+const progressText = $('#progressText');
+
+/* ===== TOGGLES ===== */
+gridToggle.addEventListener('click', () => {
+  state.grid = !state.grid;
+  gridToggle.classList.toggle('on', state.grid);
+  gridToggle.setAttribute('aria-checked', state.grid);
+});
+zebraToggle.addEventListener('click', () => {
+  state.zebra = !state.zebra;
+  zebraToggle.classList.toggle('on', state.zebra);
+  zebraToggle.setAttribute('aria-checked', state.zebra);
+});
+headerToggle.addEventListener('click', () => {
+  state.boldHeader = !state.boldHeader;
+  headerToggle.classList.toggle('on', state.boldHeader);
+  headerToggle.setAttribute('aria-checked', state.boldHeader);
+});
+
+/* ===== FILE SELECTION ===== */
+function triggerFileSelect() { fileInput.click(); }
+chooseBtn.addEventListener('click', (e) => { e.stopPropagation(); triggerFileSelect(); });
+browseLink.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); triggerFileSelect(); });
+dropzone.addEventListener('click', triggerFileSelect);
+
+fileInput.addEventListener('change', (e) => {
+  const f = e.target.files[0];
+  if (f) loadExcel(f);
+  fileInput.value = '';
+});
+
+['dragenter', 'dragover'].forEach(evt => {
+  dropzone.addEventListener(evt, (e) => { e.preventDefault(); e.stopPropagation(); dropzone.classList.add('dragover'); });
+});
+['dragleave', 'drop'].forEach(evt => {
+  dropzone.addEventListener(evt, (e) => { e.preventDefault(); e.stopPropagation(); dropzone.classList.remove('dragover'); });
+});
+dropzone.addEventListener('drop', (e) => {
+  const f = e.dataTransfer.files[0];
+  if (f) {
+    const ext = (f.name.split('.').pop() || '').toLowerCase();
+    if (['xlsx', 'xls', 'xlsm', 'xlsb', 'csv', 'ods'].includes(ext)) {
+      loadExcel(f);
+    } else {
+      showToast('Please drop an Excel/CSV file', 'error');
+    }
+  }
+});
+
+/* ===== LOAD EXCEL ===== */
+async function loadExcel(file) {
+  if (state.isProcessing) return;
+  state.isProcessing = true;
+  state.fileName = file.name;
+  state.fileSize = file.size;
+
+  clearStatus();
+  setStatus('Reading Excel file...', 'info');
+  progress.classList.add('visible');
+  progressFill.style.width = '20%';
+  progressText.textContent = 'Parsing file...';
+
+  try {
+    const buf = await file.arrayBuffer();
+    const wb = XLSX.read(buf, { type: 'array', cellDates: true });
+    state.workbook = wb;
+
+    progressFill.style.width = '50%';
+    progressText.textContent = 'Extracting sheets...';
+
+    state.sheets = [];
+    state.totalRows = 0;
+    state.maxCols = 0;
+
+    wb.SheetNames.forEach(name => {
+      const ws = wb.Sheets[name];
+      if (!ws) return;
+      const rows = XLSX.utils.sheet_to_json(ws, {
+        header: 1,
+        defval: '',
+        raw: false,
+        blankrows: false
+      });
+
+      const maxCols = rows.reduce((m, r) => Math.max(m, r.length), 0);
+      const normalized = rows.map(r => {
+        const arr = [...r];
+        while (arr.length < maxCols) arr.push('');
+        return arr.map(c => c == null ? '' : String(c));
+      });
+
+      state.sheets.push({ name, rows: normalized, colCount: maxCols });
+      state.totalRows += normalized.length;
+      if (maxCols > state.maxCols) state.maxCols = maxCols;
+    });
+
+    progressFill.style.width = '70%';
+    progressText.textContent = 'Analyzing content...';
+
+    let hasUnicode = false;
+    for (const sheet of state.sheets) {
+      if (detectUnicodeInRows(sheet.rows)) { hasUnicode = true; break; }
+    }
+    state.hasUnicode = hasUnicode;
+
+    if (hasUnicode) {
+      sanitizeNotice.classList.add('visible');
+      sanitizeNoticeText.innerHTML = '<strong>Unicode characters detected</strong> symbols like <code>ᵗ</code>, <code>²</code>, <code>™</code>, or non-Latin scripts will be automatically converted to ASCII-safe equivalents.';
+    } else {
+      sanitizeNotice.classList.remove('visible');
+    }
+
+    statFileName.textContent = file.name.length > 20 ? file.name.slice(0, 17) + '...' : file.name;
+    statFileName.title = file.name;
+    statSheets.textContent = state.sheets.length;
+    statRows.textContent = state.totalRows;
+    statCols.textContent = state.maxCols;
+
+    dropzone.style.display = 'none';
+    editor.classList.add('visible');
+
+    state.activeSheetIdx = 0;
+    renderSheetTabs();
+    renderTable(state.activeSheetIdx);
+
+    generateBtn.disabled = false;
+
+    progressFill.style.width = '100%';
+    setStatus(`✅ Loaded ${state.sheets.length} sheet(s), ${state.totalRows} rows, ${state.maxCols} columns.`, 'success');
+    showToast('Excel loaded!', 'success');
+  } catch (err) {
+    console.error(err);
+    setStatus('Failed to load Excel file: ' + err.message, 'error');
+    showToast('Failed to load file', 'error');
+  } finally {
+    state.isProcessing = false;
+    setTimeout(() => {
+      progress.classList.remove('visible');
+      progressFill.style.width = '0%';
+    }, 800);
+  }
+}
+
+/* ===== RENDER SHEET TABS ===== */
+function renderSheetTabs() {
+  sheetTabs.innerHTML = '';
+  state.sheets.forEach((sheet, idx) => {
+    const btn = document.createElement('button');
+    btn.className = 'sheet-tab' + (idx === state.activeSheetIdx ? ' active' : '');
+    btn.textContent = sheet.name;
+    btn.title = sheet.name + ' ' + sheet.rows.length + ' rows';
+    btn.addEventListener('click', () => {
+      state.activeSheetIdx = idx;
+      renderSheetTabs();
+      renderTable(idx);
+    });
+    sheetTabs.appendChild(btn);
+  });
+}
+
+/* ===== RENDER TABLE PREVIEW ===== */
+function renderTable(sheetIdx) {
+  const sheet = state.sheets[sheetIdx];
+  if (!sheet || !sheet.rows.length) {
+    tableScroll.innerHTML = `
+      <div class="empty-state">
+        <div class="empty-state-icon">📄</div>
+        <h3>Empty sheet</h3>
+        <p>"${escapeHtml(sheet?.name || '')}" has no data.</p>
+      </div>
+    `;
+    return;
+  }
+
+  const colCount = sheet.colCount;
+  const table = document.createElement('table');
+  table.className = 'data-table';
+
+  const thead = document.createElement('thead');
+  const headerRow = document.createElement('tr');
+  headerRow.innerHTML = '<th class="row-num-col">#</th>';
+  for (let c = 0; c < colCount; c++) {
+    headerRow.innerHTML += `<th>Col ${c + 1}</th>`;
+  }
+  thead.appendChild(headerRow);
+  table.appendChild(thead);
+
+  const tbody = document.createElement('tbody');
+  sheet.rows.forEach((row, r) => {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `<td class="row-num-col">${r + 1}</td>`;
+    for (let c = 0; c < colCount; c++) {
+      const td = document.createElement('td');
+      td.textContent = row[c] == null ? '' : String(row[c]);
+      tr.appendChild(td);
+    }
+    tbody.appendChild(tr);
+  });
+  table.appendChild(tbody);
+
+  tableScroll.innerHTML = '';
+  tableScroll.appendChild(table);
+
+  previewHint.textContent = `Showing "${sheet.name}" ${sheet.rows.length} rows × ${colCount} columns`;
+}
+
+/* ===== TEXT WIDTH ESTIMATION ===== */
+function estimateTextWidth(text, size) {
+  const s = String(text || '');
+  const sizeSafe = safeNumber(size, 8);
+  const charCount = s.length;
+  const wideChars = (s.match(/[WM@#%&]/g) || []).length;
+  const narrowChars = (s.match(/[ilj1.,;:'"|!]/g) || []).length;
+  const avgWidth = 0.5;
+  const estimate = (charCount * avgWidth + wideChars * 0.3 - narrowChars * 0.25) * sizeSafe;
+  return safeNumber(estimate, sizeSafe * 3);
+}
+
+/* ===== GENERATE PDF ===== */
+generateBtn.addEventListener('click', generatePdf);
+
+async function generatePdf() {
+  if (!state.sheets.length) { showToast('No data to convert', 'error'); return; }
+  if (state.isProcessing) return;
+  state.isProcessing = true;
+
+  clearStatus();
+  setStatus('Generating PDF...', 'info');
+  progress.classList.add('visible');
+  progressFill.style.width = '10%';
+  progressText.textContent = 'Initializing...';
+
+  try {
+    const { PDFDocument, StandardFonts, rgb } = PDFLib;
+
+    /* ---- FIX: all numeric inputs validated via safeNumber ---- */
+    const sizeKey = String(pageSize.value || 'A4');
+    let [pageW, pageH] = PAGE_SIZES[sizeKey] || PAGE_SIZES['A4'];
+    pageW = safeNumber(pageW, 595.28);
+    pageH = safeNumber(pageH, 841.89);
+
+    if (orientation.value === 'landscape') {
+      const tmp = pageW;
+      pageW = pageH;
+      pageH = tmp;
+    }
+
+    // Font size MUST be valid number
+    const fontPt = safeNumber(parseInt(fontSize.value, 10), 8);
+    const fontPtClamped = Math.max(6, Math.min(72, fontPt));
+
+    // Line height MUST NOT be NaN
+    let lineHeight = fontPtClamped * 1.4;
+    lineHeight = safeNumber(lineHeight, 11.2);
+    if (lineHeight < 4) lineHeight = 11.2;
+
+    // Margin
+    const margin = safeNumber(30, 30);
+
+    const pdfDoc = await PDFDocument.create();
+    const font = await pdfDoc.embedFont(StandardFonts.Helvetica);
+    const fontBold = await pdfDoc.embedFont(StandardFonts.HelveticaBold);
+
+    const colors = {
+      black: rgb(0.1, 0.1, 0.12),
+      gray: rgb(0.42, 0.45, 0.5),
+      line: rgb(0.87, 0.89, 0.92),
+      lineSoft: rgb(0.94, 0.95, 0.97),
+      headerBg: rgb(0.93, 0.97, 1.0),
+      zebraBg: rgb(0.98, 0.98, 0.99),
+      accent: rgb(0.06, 0.72, 0.51)
+    };
+
+    const totalSheets = state.sheets.length;
+    let sheetsProcessed = 0;
+
+    for (const sheet of state.sheets) {
+      const rows = sheet.rows;
+      const colCount = safeNumber(sheet.colCount, 0);
+      if (!rows.length || colCount < 1) continue;
+
+      progressFill.style.width = ((sheetsProcessed / totalSheets) * 70 + 10) + '%';
+      progressText.textContent = `Rendering sheet "${sheet.name}"...`;
+      sheetsProcessed++;
+
+      const availableWidth = safeNumber(pageW - margin * 2, 500);
+      const colWidths = new Array(colCount).fill(0);
+
+      for (let c = 0; c < colCount; c++) {
+        let maxW = fontPtClamped * 3;
+        for (const row of rows) {
+          const val = sanitizeForWinAnsi(row[c]);
+          const w = estimateTextWidth(val, fontPtClamped);
+          if (w > maxW && !isNaN(w)) maxW = w;
+        }
+        colWidths[c] = safeNumber(Math.min(maxW + 8, availableWidth * 0.4), fontPtClamped * 3);
+      }
+
+      let totalW = colWidths.reduce((a, b) => a + safeNumber(b, 0), 0);
+      totalW = safeNumber(totalW, availableWidth);
+
+      const minWidth = fontPtClamped * 2.5;
+      if (totalW > availableWidth && availableWidth > 0) {
+        const scale = availableWidth / totalW;
+        const scaleSafe = safeNumber(scale, 1);
+        for (let c = 0; c < colCount; c++) {
+          colWidths[c] = Math.max(colWidths[c] * scaleSafe, minWidth);
+        }
+        totalW = colWidths.reduce((a, b) => a + safeNumber(b, 0), 0);
+        if (totalW > availableWidth) {
+          const eqW = availableWidth / colCount;
+          const eqWSafe = safeNumber(eqW, availableWidth / Math.max(1, colCount));
+          for (let c = 0; c < colCount; c++) colWidths[c] = eqWSafe;
+          totalW = availableWidth;
+        }
+      }
+
+      const titleSpace = titleMode.value !== 'none' ? lineHeight * 1.6 : 0;
+      const usableHeight = safeNumber(pageH - margin * 2 - titleSpace - lineHeight, 700);
+      let rowsPerPage = Math.floor(usableHeight / lineHeight);
+      rowsPerPage = safeNumber(rowsPerPage, 40);
+      if (rowsPerPage < 1) rowsPerPage = 1;
+
+      const totalPages = Math.max(1, Math.ceil(rows.length / rowsPerPage));
+
+      for (let pageIdx = 0; pageIdx < totalPages; pageIdx++) {
+        const startRow = pageIdx * rowsPerPage;
+        const endRow = Math.min(startRow + rowsPerPage, rows.length);
+        const rowsOnPage = Math.max(0, endRow - startRow);
+
+        const pdfPage = pdfDoc.addPage([pageW, pageH]);
+        let cursorY = pageH - margin;
+
+        if (titleMode.value !== 'none') {
+          const titleText = titleMode.value === 'filename'
+            ? state.fileName.replace(/\.[^.]+$/, '')
+            : sheet.name;
+          const safeTitle = sanitizeForWinAnsi(titleText);
+
+          // FIX: validate size before draw
+          const titleSize = safeNumber(fontPtClamped + 3, 11);
+          if (safeTitle && titleSize > 0) {
+            try {
+              pdfPage.drawText(safeTitle, {
+                x: margin,
+                y: cursorY - lineHeight,
+                size: titleSize,
+                font: fontBold,
+                color: colors.black
+              });
+            } catch (e) { console.warn('Title draw failed:', e); }
+          }
+          cursorY -= lineHeight * 1.6;
+
+          if (totalPages > 1) {
+            const pageLabel = `Page ${pageIdx + 1} of ${totalPages}`;
+            const pageLabelSize = safeNumber(fontPtClamped - 1, 7);
+            if (pageLabelSize > 0) {
+              try {
+                const pageLabelWidth = font.widthOfTextAtSize(pageLabel, pageLabelSize);
+                pdfPage.drawText(pageLabel, {
+                  x: pageW - margin - safeNumber(pageLabelWidth, 100),
+                  y: cursorY + lineHeight * 0.5,
+                  size: pageLabelSize,
+                  font: font,
+                  color: colors.gray
+                });
+              } catch (e) { console.warn('Page label draw failed:', e); }
+            }
+          }
+        }
+
+        for (let i = 0; i < rowsOnPage; i++) {
+          const rowIdx = startRow + i;
+          const row = rows[rowIdx];
+          const y = cursorY - lineHeight * (i + 1);
+
+          if (isNaN(y) || !isFinite(y)) continue;
+
+          const isHeader = (rowIdx === 0) && state.boldHeader;
+
+          if (state.zebra && rowIdx % 2 === 1) {
+            try {
+              pdfPage.drawRectangle({
+                x: margin,
+                y: y - lineHeight * 0.15,
+                width: totalW,
+                height: lineHeight,
+                color: colors.zebraBg
+              });
+            } catch (e) { /* ignore */ }
+          }
+
+          if (isHeader) {
+            try {
+              pdfPage.drawRectangle({
+                x: margin,
+                y: y - lineHeight * 0.15,
+                width: totalW,
+                height: lineHeight,
+                color: colors.headerBg
+              });
+            } catch (e) { /* ignore */ }
+          }
+
+          let xPos = margin;
+          for (let c = 0; c < colCount; c++) {
+            const colW = safeNumber(colWidths[c], availableWidth / colCount);
+
+            const rawVal = row[c] == null ? '' : String(row[c]);
+            const safeVal = sanitizeForWinAnsi(rawVal);
+
+            let displayVal = safeVal;
+            const maxTextW = colW - 6;
+
+            // Measure and truncate FIX: guard against NaN sizes
+            if (displayVal && fontPtClamped > 0) {
+              try {
+                const measured = font.widthOfTextAtSize(displayVal, fontPtClamped);
+                if (!isNaN(measured) && measured > maxTextW) {
+                  let len = displayVal.length;
+                  while (len > 0) {
+                    const testStr = displayVal.slice(0, len) + '..';
+                    let testW = 0;
+                    try {
+                      testW = font.widthOfTextAtSize(testStr, fontPtClamped);
+                    } catch (e) { testW = 0; }
+                    if (!isNaN(testW) && testW <= maxTextW) break;
+                    len--;
+                  }
+                  displayVal = len > 0 ? displayVal.slice(0, len) + '..' : '';
+                }
+              } catch (e) {
+                // Fallback: character-based truncation
+                const approxMaxChars = Math.max(1, Math.floor(maxTextW / (fontPtClamped * 0.5)));
+                if (displayVal.length > approxMaxChars) {
+                  displayVal = displayVal.slice(0, approxMaxChars - 2) + '..';
+                }
+              }
+            }
+
+            // FIX: only draw if we have valid text and valid size
+            if (displayVal && fontPtClamped > 0 && !isNaN(xPos) && !isNaN(y)) {
+              try {
+                pdfPage.drawText(displayVal, {
+                  x: xPos + 3,
+                  y: y + lineHeight * 0.25,
+                  size: fontPtClamped,
+                  font: isHeader ? fontBold : font,
+                  color: isHeader ? colors.black : colors.gray
+                });
+              } catch (e) {
+                console.warn('Cell draw failed:', e);
+              }
+            }
+
+            if (state.grid && c < colCount - 1) {
+              try {
+                pdfPage.drawLine({
+                  start: { x: xPos + colW, y: y - lineHeight * 0.15 },
+                  end: { x: xPos + colW, y: y + lineHeight * 0.85 },
+                  thickness: 0.3,
+                  color: colors.lineSoft
+                });
+              } catch (e) { /* ignore */ }
+            }
+
+            xPos += colW;
+          }
+
+          if (isHeader) {
+            try {
+              pdfPage.drawLine({
+                start: { x: margin, y: y - lineHeight * 0.15 },
+                end: { x: margin + totalW, y: y - lineHeight * 0.15 },
+                thickness: 0.8,
+                color: colors.accent
+              });
+            } catch (e) { /* ignore */ }
+          }
+
+          if (state.grid && !isHeader) {
+            try {
+              pdfPage.drawLine({
+                start: { x: margin, y: y - lineHeight * 0.15 },
+                end: { x: margin + totalW, y: y - lineHeight * 0.15 },
+                thickness: 0.2,
+                color: colors.lineSoft
+              });
+            } catch (e) { /* ignore */ }
+          }
+        }
+      }
+    }
+
+    progressFill.style.width = '85%';
+    progressText.textContent = 'Finalizing PDF...';
+
+    const pdfBytes = await pdfDoc.save();
+    const blob = new Blob([pdfBytes], { type: 'application/pdf' });
+    const url = URL.createObjectURL(blob);
+
+    const baseName = (pdfFilename.value.trim() || state.fileName.replace(/\.[^.]+$/, '') || 'excel-to-pdf').replace(/[^a-z0-9\-_]/gi, '-');
+    const downloadName = baseName + '.pdf';
+
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = downloadName;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    setTimeout(() => URL.revokeObjectURL(url), 2000);
+
+    progressFill.style.width = '100%';
+    const sizeKb = (pdfBytes.length / 1024).toFixed(1);
+    setStatus(`✅ PDF generated! ${pdfDoc.getPageCount()} page(s), ${sizeKb} KB ${downloadName}`, 'success');
+    showToast('PDF downloaded!', 'success');
+  } catch (err) {
+    console.error('PDF generation error:', err);
+    setStatus('Failed to generate PDF: ' + err.message, 'error');
+    showToast('Failed to generate PDF', 'error');
+  } finally {
+    state.isProcessing = false;
+    setTimeout(() => {
+      progress.classList.remove('visible');
+      progressFill.style.width = '0%';
+    }, 1500);
+  }
+}
+
+/* ===== CANCEL ===== */
+cancelBtn.addEventListener('click', () => {
+  state.workbook = null;
+  state.sheets = [];
+  state.activeSheetIdx = 0;
+  state.totalRows = 0;
+  state.maxCols = 0;
+  state.fileName = '';
+  editor.classList.remove('visible');
+  dropzone.style.display = '';
+  clearStatus();
+  progress.classList.remove('visible');
+  generateBtn.disabled = true;
+  sanitizeNotice.classList.remove('visible');
+  tableScroll.innerHTML = `
+    <div class="empty-state">
+      <div class="empty-state-icon">📄</div>
+      <h3>Loading Excel...</h3>
+      <p>Table will appear here after analysis.</p>
+    </div>
+  `;
+  showToast('Reset', 'info');
+});
+
+/* ===== FAQ ===== */
+$$('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    $$('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+</script>
+
+</body>
+</html>

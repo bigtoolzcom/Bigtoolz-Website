@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#2563eb">
+<title>All Blog Posts - BigToolz Admin</title>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+    background:#f8f9fc;color:#1a1a2e;line-height:1.5;
+    min-height:100vh;-webkit-font-smoothing:antialiased;
+    padding-bottom:env(safe-area-inset-bottom,0);
+  }
+
+  /* ========== HEADER ========== */
+  .admin-header{
+    background:#fff;height:68px;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:0 32px;padding-top:env(safe-area-inset-top,0);
+    box-shadow:0 1px 3px rgba(0,0,0,.06);
+    position:sticky;top:0;z-index:100;
+    border-bottom:1px solid #e5e7eb;
+  }
+  .admin-logo{
+    display:flex;align-items:center;gap:10px;
+    font-size:20px;font-weight:800;color:#1a1a2e;
+    text-decoration:none;letter-spacing:-.5px;
+  }
+  .admin-logo-icon{
+    width:36px;height:36px;
+    background:linear-gradient(135deg,#3b82f6,#2563eb);
+    border-radius:10px;display:flex;align-items:center;justify-content:center;
+    color:#fff;font-size:18px;
+    box-shadow:0 4px 12px rgba(37,99,235,.3);
+  }
+  .admin-logo span{color:#2563eb}
+
+  .admin-header-right{display:flex;align-items:center;gap:12px}
+  .admin-nav-btn{
+    display:flex;align-items:center;gap:6px;
+    background:#fff;color:#4b5563;border:1px solid #e5e7eb;
+    padding:9px 14px;border-radius:10px;
+    font-size:13px;font-weight:600;cursor:pointer;
+    transition:all .2s;font-family:inherit;text-decoration:none;
+    min-height:40px;
+  }
+  .admin-nav-btn:hover{border-color:#2563eb;color:#2563eb;background:#eff6ff}
+
+  .logout-btn{
+    display:flex;align-items:center;gap:6px;
+    background:#fff;color:#ef4444;border:1px solid #e5e7eb;
+    padding:9px 14px;border-radius:10px;
+    font-size:13px;font-weight:600;cursor:pointer;
+    transition:all .2s;font-family:inherit;min-height:40px;
+  }
+  .logout-btn:hover{border-color:#ef4444;background:#fef2f2}
+
+  /* ========== MAIN ========== */
+  .admin-main{max-width:1280px;margin:0 auto;padding:32px}
+
+  .page-header{
+    display:flex;justify-content:space-between;align-items:flex-start;
+    margin-bottom:28px;flex-wrap:wrap;gap:16px;
+  }
+  .page-header-left
+  .page-title{
+    font-size:28px;font-weight:800;color:#0a0e27;
+    margin-bottom:6px;letter-spacing:-.5px;
+    display:flex;align-items:center;gap:10px;
+  }
+  .page-title-icon{
+    width:40px;height:40px;border-radius:12px;
+    background:linear-gradient(135deg,#3b82f6,#1e40af);
+    display:flex;align-items:center;justify-content:center;
+    color:#fff;font-size:20px;
+    box-shadow:0 6px 16px rgba(37,99,235,.3);
+  }
+  .page-sub{
+    font-size:14px;color:#6b7280;font-weight:500;
+    padding-left:50px;
+  }
+
+  .new-btn{
+    display:inline-flex;align-items:center;gap:8px;
+    background:#2563eb;color:#fff;border:none;
+    padding:12px 22px;border-radius:10px;
+    font-size:14px;font-weight:700;cursor:pointer;
+    transition:all .2s;text-decoration:none;font-family:inherit;
+    min-height:46px;
+    box-shadow:0 4px 12px rgba(37,99,235,.2);
+  }
+  .new-btn:hover{background:#1d4ed8;transform:translateY(-1px);box-shadow:0 6px 18px rgba(37,99,235,.3)}
+
+  /* ========== FILTERS BAR ========== */
+  .filters-bar{
+    background:#fff;border:1px solid #e5e7eb;border-radius:14px;
+    padding:16px;margin-bottom:20px;
+    display:flex;gap:12px;align-items:center;flex-wrap:wrap;
+    box-shadow:0 1px 3px rgba(0,0,0,.04);
+  }
+  .search-box{
+    position:relative;flex:1;min-width:220px;
+    display:flex;align-items:center;
+    background:#f8fafc;border:1px solid #e5e7eb;
+    border-radius:10px;padding:0 14px;transition:border-color .2s;
+  }
+  .search-box:focus-within{
+    border-color:#2563eb;background:#fff;
+    box-shadow:0 0 0 3px rgba(37,99,235,.1);
+  }
+  .search-box svg{color:#9ca3af;flex-shrink:0}
+  .search-box input{
+    flex:1;border:none;outline:none;background:transparent;
+    padding:11px 8px;font-size:14px;font-family:inherit;
+    color:#1a1a2e;min-width:0;
+  }
+  .search-box input::placeholder{color:#9ca3af}
+
+  .filter-select{
+    padding:11px 14px;border:1px solid #e5e7eb;
+    border-radius:10px;font-size:13px;font-weight:600;
+    color:#374151;background:#fff;cursor:pointer;
+    outline:none;font-family:inherit;
+    transition:border-color .2s;min-height:44px;
+  }
+  .filter-select:hover{border-color:#2563eb}
+  .filter-select:focus{border-color:#2563eb;box-shadow:0 0 0 3px rgba(37,99,235,.1)}
+
+  /* ========== BULK ACTIONS ========== */
+  .bulk-actions{
+    background:#eff6ff;border:1px solid #93c5fd;border-radius:12px;
+    padding:12px 16px;margin-bottom:16px;
+    display:none;align-items:center;justify-content:space-between;
+    gap:12px;flex-wrap:wrap;
+  }
+  .bulk-actions.visible{display:flex}
+  .bulk-count{font-size:13px;font-weight:700;color:#1e40af}
+  .bulk-buttons{display:flex;gap:8px}
+  .bulk-btn{
+    padding:8px 14px;border-radius:8px;font-size:12px;
+    font-weight:700;cursor:pointer;border:none;
+    font-family:inherit;transition:all .2s;min-height:36px;
+  }
+  .bulk-btn.delete{background:#ef4444;color:#fff}
+  .bulk-btn.delete:hover{background:#dc2626}
+  .bulk-btn.cancel{background:#fff;color:#4b5563;border:1px solid #e5e7eb}
+  .bulk-btn.cancel:hover{border-color:#2563eb;color:#2563eb}
+
+  /* ========== POSTS LIST ========== */
+  .posts-list{display:flex;flex-direction:column;gap:12px;margin-bottom:24px}
+
+  .post-item{
+    background:#fff;border:1px solid #e5e7eb;border-radius:14px;
+    padding:16px;display:flex;gap:16px;align-items:flex-start;
+    transition:all .2s;box-shadow:0 1px 3px rgba(0,0,0,.04);
+  }
+  .post-item:hover{border-color:#2563eb;box-shadow:0 8px 20px rgba(37,99,235,.1)}
+  .post-item.selected{border-color:#2563eb;background:#eff6ff}
+
+  .post-checkbox{
+    width:20px;height:20px;accent-color:#2563eb;
+    cursor:pointer;flex-shrink:0;margin-top:8px;
+  }
+
+  .post-thumb{
+    width:80px;height:80px;border-radius:12px;flex-shrink:0;
+    background:linear-gradient(135deg,#2563eb,#1e40af);
+    background-size:cover;background-position:center;
+    display:flex;align-items:center;justify-content:center;
+    color:#fff;font-size:32px;overflow:hidden;
+  }
+  .post-thumb img{width:100%;height:100%;object-fit:cover}
+
+  .post-info{flex:1;min-width:0}
+  .post-title{
+    font-size:16px;font-weight:700;color:#0a0e27;
+    margin-bottom:6px;line-height:1.35;
+    word-break:break-word;
+  }
+  .post-meta{
+    display:flex;flex-wrap:wrap;gap:10px;align-items:center;
+    font-size:12px;color:#9ca3af;font-weight:500;
+    margin-bottom:10px;
+  }
+  .post-meta-item{display:flex;align-items:center;gap:4px}
+
+  .post-badges{display:flex;flex-wrap:wrap;gap:6px}
+  .post-badge{
+    font-size:10px;font-weight:700;
+    padding:4px 10px;border-radius:8px;
+    text-transform:uppercase;letter-spacing:.4px;
+  }
+  .post-badge.published{background:#d1fae5;color:#065f46}
+  .post-badge.draft{background:#fef3c7;color:#92400e}
+  .post-badge.category{background:#dbeafe;color:#1e40af}
+
+  .post-actions{display:flex;gap:8px;flex-shrink:0;align-items:flex-start}
+  .action-btn{
+    width:40px;height:40px;border-radius:10px;border:1px solid #e5e7eb;
+    background:#fff;color:#4b5563;cursor:pointer;
+    display:flex;align-items:center;justify-content:center;
+    transition:all .2s;flex-shrink:0;
+  }
+  .action-btn:hover{border-color:#2563eb;color:#2563eb;background:#eff6ff}
+  .action-btn.delete:hover{border-color:#ef4444;color:#ef4444;background:#fef2f2}
+
+  /* ========== SKELETON ========== */
+  .skeleton{
+    background:#fff;border:1px solid #e5e7eb;border-radius:14px;
+    padding:16px;display:flex;gap:16px;
+  }
+  .skeleton-thumb{
+    width:80px;height:80px;border-radius:12px;flex-shrink:0;
+    background:linear-gradient(90deg,#f3f4f6 25%,#e5e7eb 50%,#f3f4f6 75%);
+    background-size:200% 100%;animation:shimmer 1.5s infinite;
+  }
+  .skeleton-info{flex:1}
+  .skeleton-line{
+    height:14px;border-radius:6px;margin-bottom:10px;
+    background:linear-gradient(90deg,#f3f4f6 25%,#e5e7eb 50%,#f3f4f6 75%);
+    background-size:200% 100%;animation:shimmer 1.5s infinite;
+  }
+  .skeleton-line.short{width:60%}
+  .skeleton-line.tiny{width:35%;height:10px}
+  @keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
+
+  /* ========== EMPTY ========== */
+  .empty-state{
+    display:none;text-align:center;padding:60px 20px;
+    background:#fff;border:1px dashed #e5e7eb;border-radius:16px;
+  }
+  .empty-state.visible{display:block}
+  .empty-icon{font-size:56px;opacity:.4;margin-bottom:14px}
+  .empty-title{font-size:18px;font-weight:700;color:#0a0e27;margin-bottom:6px}
+  .empty-desc{font-size:14px;color:#6b7280;margin-bottom:20px}
+
+  /* ========== PAGINATION ========== */
+  .pagination{
+    display:flex;justify-content:center;align-items:center;
+    gap:6px;flex-wrap:wrap;margin-top:8px;
+  }
+  .page-btn{
+    min-width:40px;height:40px;padding:0 12px;
+    border:1px solid #e5e7eb;background:#fff;color:#4b5563;
+    border-radius:10px;font-size:14px;font-weight:600;
+    cursor:pointer;font-family:inherit;
+    display:inline-flex;align-items:center;justify-content:center;
+    transition:all .2s;
+  }
+  .page-btn:hover:not(:disabled):not(.active){
+    border-color:#2563eb;color:#2563eb;background:#eff6ff;
+  }
+  .page-btn.active{background:#2563eb;color:#fff;border-color:#2563eb;cursor:default}
+  .page-btn:disabled{opacity:.4;cursor:not-allowed}
+  .page-btn.dots{border:none;background:transparent;cursor:default}
+  .page-btn.dots:hover{background:transparent}
+
+  /* ========== TOAST ========== */
+  .toast{
+    position:fixed;bottom:24px;right:24px;background:#0a0e27;color:#fff;
+    padding:14px 22px;border-radius:12px;font-size:13px;font-weight:600;
+    box-shadow:0 12px 32px rgba(0,0,0,.25);z-index:3000;
+    transform:translateY(200%);
+    transition:transform .3s cubic-bezier(.4,0,.2,1);
+    max-width:340px;
+  }
+  .toast.visible{transform:translateY(0)}
+  .toast.success{background:#10b981}
+  .toast.error{background:#ef4444}
+
+  /* ========== MODAL ========== */
+  .modal-overlay{
+    position:fixed;inset:0;background:rgba(0,0,0,.6);
+    z-index:2000;display:none;align-items:center;justify-content:center;
+    padding:20px;backdrop-filter:blur(4px);
+  }
+  .modal-overlay.visible{display:flex}
+  .modal{
+    background:#fff;border-radius:16px;padding:28px;
+    max-width:440px;width:100%;
+    box-shadow:0 20px 60px rgba(0,0,0,.3);
+    animation:modalIn .25s cubic-bezier(.4,0,.2,1);
+  }
+  @keyframes modalIn{from{transform:scale(.94);opacity:0}to{transform:scale(1);opacity:1}}
+  .modal-icon{
+    width:56px;height:56px;border-radius:16px;
+    background:#fef2f2;color:#ef4444;
+    display:flex;align-items:center;justify-content:center;
+    font-size:26px;margin:0 auto 16px;
+  }
+  .modal-title{
+    font-size:20px;font-weight:800;color:#0a0e27;
+    text-align:center;margin-bottom:10px;
+  }
+  .modal-desc{
+    font-size:14px;color:#6b7280;text-align:center;
+    line-height:1.6;margin-bottom:24px;
+  }
+  .modal-actions{display:flex;gap:10px}
+  .modal-btn{
+    flex:1;padding:12px;border-radius:10px;font-size:14px;
+    font-weight:700;cursor:pointer;border:none;font-family:inherit;
+    transition:all .2s;min-height:46px;
+  }
+  .modal-btn.cancel{background:#f3f4f6;color:#374151}
+  .modal-btn.cancel:hover{background:#e5e7eb}
+  .modal-btn.confirm{background:#ef4444;color:#fff}
+  .modal-btn.confirm:hover{background:#dc2626}
+
+  /* ========== MOBILE ========== */
+  @media(max-width:768px){
+    .admin-header{padding:0 16px;height:60px}
+    .admin-logo{font-size:16px;gap:8px}
+    .admin-logo-icon{width:32px;height:32px;font-size:15px}
+    .admin-nav-btn span{display:none}
+    .admin-nav-btn{padding:8px 10px}
+    .logout-btn{padding:8px 10px}
+    .logout-btn span{display:none}
+
+    .admin-main{padding:20px 16px}
+    .page-title{font-size:22px;gap:8px}
+    .page-title-icon{width:36px;height:36px;font-size:18px}
+    .page-sub{padding-left:44px;font-size:13px}
+    .new-btn{padding:11px 18px;font-size:13px;min-height:44px}
+
+    .filters-bar{padding:12px;gap:10px}
+    .search-box{width:100%;min-width:0;order:1}
+    .filter-select{flex:1;min-width:0;order:2;font-size:12px;padding:10px 12px}
+
+    .post-item{padding:14px;gap:12px;flex-wrap:wrap}
+    .post-thumb{width:64px;height:64px;font-size:26px;border-radius:10px}
+    .post-title{font-size:14px}
+    .post-meta{font-size:11px;gap:8px}
+    .post-actions{width:100%;justify-content:flex-end;padding-top:10px;border-top:1px solid #f3f4f6;margin-top:4px}
+
+    .page-btn{min-width:38px;height:38px;padding:0 10px;font-size:13px}
+  }
+
+  @media(max-width:480px){
+    .admin-main{padding:16px 12px}
+    .page-title{font-size:20px}
+    .page-sub{padding-left:0;font-size:12px}
+    .new-btn{width:100%;justify-content:center}
+
+    .post-checkbox{margin-top:0}
+    .post-item{padding:12px}
+    .post-thumb{width:56px;height:56px;font-size:22px}
+    .post-title{font-size:13.5px}
+    .post-badges{gap:5px}
+    .post-badge{font-size:9px;padding:3px 8px}
+  }
+
+  /* ========== DARK MODE ========== */
+  html[data-theme="dark"] body{background:#0f172a;color:#f1f5f9}
+  html[data-theme="dark"] .admin-header{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .admin-logo{color:#f1f5f9}
+  html[data-theme="dark"] .admin-nav-btn,
+  html[data-theme="dark"] .logout-btn{background:#1e293b;border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .admin-nav-btn:hover{background:#1e3a8a;color:#93c5fd;border-color:#3b82f6}
+  html[data-theme="dark"] .logout-btn:hover{background:#7f1d1d;color:#fca5a5;border-color:#ef4444}
+  html[data-theme="dark"] .page-title{color:#f1f5f9}
+  html[data-theme="dark"] .page-sub{color:#94a3b8}
+
+  html[data-theme="dark"] .filters-bar{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .search-box{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .search-box input{color:#f1f5f9}
+  html[data-theme="dark"] .filter-select{background:#0f172a;border-color:#334155;color:#cbd5e1}
+
+  html[data-theme="dark"] .bulk-actions{background:#1e3a8a;border-color:#3b82f6}
+  html[data-theme="dark"] .bulk-count{color:#93c5fd}
+  html[data-theme="dark"] .bulk-btn.cancel{background:#0f172a;border-color:#334155;color:#cbd5e1}
+
+  html[data-theme="dark"] .post-item{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .post-item:hover{border-color:#3b82f6;background:#1e3a8a}
+  html[data-theme="dark"] .post-item.selected{background:#1e3a8a;border-color:#3b82f6}
+  html[data-theme="dark"] .post-title{color:#f1f5f9}
+  html[data-theme="dark"] .post-meta{color:#94a3b8}
+  html[data-theme="dark"] .post-badge.category{background:#1e3a8a;color:#93c5fd}
+  html[data-theme="dark"] .post-badge.published{background:#064e3b;color:#6ee7b7}
+  html[data-theme="dark"] .post-badge.draft{background:#78350f;color:#fcd34d}
+
+  html[data-theme="dark"] .action-btn{background:#0f172a;border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .action-btn:hover{background:#1e3a8a;border-color:#3b82f6;color:#93c5fd}
+  html[data-theme="dark"] .action-btn.delete:hover{background:#7f1d1d;border-color:#ef4444;color:#fca5a5}
+
+  html[data-theme="dark"] .skeleton{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .skeleton-thumb,
+  html[data-theme="dark"] .skeleton-line{
+    background:linear-gradient(90deg,#1e293b 25%,#334155 50%,#1e293b 75%);
+    background-size:200% 100%;
+  }
+
+  html[data-theme="dark"] .empty-state{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .empty-title{color:#f1f5f9}
+
+  html[data-theme="dark"] .page-btn{background:#1e293b;border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .page-btn:hover:not(:disabled):not(.active){background:#1e3a8a;color:#93c5fd;border-color:#3b82f6}
+  html[data-theme="dark"] .page-btn.active{background:#2563eb;color:#fff;border-color:#2563eb}
+
+  html[data-theme="dark"] .modal{background:#1e293b}
+  html[data-theme="dark"] .modal-title{color:#f1f5f9}
+  html[data-theme="dark"] .modal-btn.cancel{background:#0f172a;color:#cbd5e1}
+</style>
+</head>
+<body>
+
+<!-- ========== HEADER ========== -->
+<header class="admin-header">
+  <a href="/admin/" class="admin-logo">
+    <div class="admin-logo-icon">⚒</div>
+    BigToolz</span> Admin
+  </a>
+  <div class="admin-header-right">
+    <a href="/admin/" class="admin-nav-btn">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><path d="M9 22V12h6v10"/></svg>
+      <span>Dashboard</span>
+    </a>
+    <button class="logout-btn" id="logoutBtn">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4M16 17l5-5-5-5M21 12H9"/></svg>
+      <span>Logout</span>
+    </button>
+  </div>
+</header>
+
+<!-- ========== MAIN ========== -->
+<main class="admin-main">
+
+  <div class="page-header">
+    <div class="page-header-left">
+      <h1 class="page-title">
+        <div class="page-title-icon">📝</div>
+        All Blog Posts
+      </h1>
+      <p class="page-sub" id="pageSub">Loading posts...</p>
+    </div>
+    <a href="/admin/editor/" class="new-btn">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
+      New Post
+    </a>
+  </div>
+
+  <!-- Filters -->
+  <div class="filters-bar">
+    <div class="search-box">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+      <input type="text" id="searchInput" placeholder="Search by title or slug..." autocomplete="off">
+    </div>
+    <select class="filter-select" id="statusFilter">
+      <option value="all">All Status</option>
+      <option value="published">Published</option>
+      <option value="draft">Drafts</option>
+    </select>
+    <select class="filter-select" id="categoryFilter">
+      <option value="all">All Categories</option>
+    </select>
+    <select class="filter-select" id="sortFilter">
+      <option value="newest">Newest First</option>
+      <option value="oldest">Oldest First</option>
+      <option value="views">Most Viewed</option>
+      <option value="az">A-Z</option>
+    </select>
+  </div>
+
+  <!-- Bulk Actions -->
+  <div class="bulk-actions" id="bulkActions">
+    <div class="bulk-count"><span id="bulkCount">0</span> selected</div>
+    <div class="bulk-buttons">
+      <button class="bulk-btn delete" id="bulkDeleteBtn">🗑 Delete Selected</button>
+      <button class="bulk-btn cancel" id="bulkCancelBtn">Cancel</button>
+    </div>
+  </div>
+
+  <!-- Posts List -->
+  <div class="posts-list" id="postsList">
+    <div class="skeleton">
+      <div class="skeleton-thumb"></div>
+      <div class="skeleton-info">
+        <div class="skeleton-line"></div>
+        <div class="skeleton-line short"></div>
+        <div class="skeleton-line tiny"></div>
+      </div>
+    </div>
+    <div class="skeleton">
+      <div class="skeleton-thumb"></div>
+      <div class="skeleton-info">
+        <div class="skeleton-line"></div>
+        <div class="skeleton-line short"></div>
+        <div class="skeleton-line tiny"></div>
+      </div>
+    </div>
+    <div class="skeleton">
+      <div class="skeleton-thumb"></div>
+      <div class="skeleton-info">
+        <div class="skeleton-line"></div>
+        <div class="skeleton-line short"></div>
+        <div class="skeleton-line tiny"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Empty -->
+  <div class="empty-state" id="emptyState">
+    <div class="empty-icon">📭</div>
+    <div class="empty-title">No posts found</div>
+    <div class="empty-desc">Try a different search or filter, or create your first post.</div>
+    <a href="/admin/editor/" class="new-btn" style="display:inline-flex;">+ Create Post</a>
+  </div>
+
+  <!-- Pagination -->
+  <div class="pagination" id="pagination" style="display:none;"></div>
+
+</main>
+
+<!-- ========== DELETE MODAL ========== -->
+<div class="modal-overlay" id="deleteModal">
+  <div class="modal">
+    <div class="modal-icon">🗑</div>
+    <div class="modal-title">Delete Post?</div>
+    <div class="modal-desc" id="deleteDesc">
+      This action cannot be undone. The post will be permanently removed.
+    </div>
+    <div class="modal-actions">
+      <button class="modal-btn cancel" id="modalCancelBtn">Cancel</button>
+      <button class="modal-btn confirm" id="modalConfirmBtn">Delete</button>
+    </div>
+  </div>
+</div>
+
+<!-- ========== TOAST ========== -->
+<div class="toast" id="toast"></div>
+
+<script>
+'use strict';
+
+/* ===== SUPABASE CONFIG ===== */
+const SUPABASE_URL = 'https://btmeygsirnyuzsubscde.supabase.co';
+const SUPABASE_KEY = 'sb_publishable_rncmFbKPlBLxkeIEXaFxfQ_rIbjebnJ';
+
+const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+/* ===== CONSTANTS ===== */
+const POSTS_PER_PAGE = 10;
+
+/* ===== THEME ===== */
+(function(){
+  try{
+    var t = localStorage.getItem('theme');
+    var d = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if(t === 'dark' || (!t && d)) document.documentElement.setAttribute('data-theme','dark');
+    else if(t === 'light') document.documentElement.setAttribute('data-theme','light');
+  }catch(e){}
+})();
+
+/* ===== STATE ===== */
+const state = {
+  allPosts: [],
+  filteredPosts: [],
+  query: '',
+  status: 'all',
+  category: 'all',
+  sort: 'newest',
+  currentPage: 1,
+  totalPages: 1,
+  selected: new Set(),
+  deleteTargetId: null,
+  deleteAll: false
+};
+
+/* ===== DOM ===== */
+const postsList = document.getElementById('postsList');
+const emptyState = document.getElementById('emptyState');
+const pageSub = document.getElementById('pageSub');
+const searchInput = document.getElementById('searchInput');
+const statusFilter = document.getElementById('statusFilter');
+const categoryFilter = document.getElementById('categoryFilter');
+const sortFilter = document.getElementById('sortFilter');
+const pagination = document.getElementById('pagination');
+const bulkActions = document.getElementById('bulkActions');
+const bulkCount = document.getElementById('bulkCount');
+const bulkDeleteBtn = document.getElementById('bulkDeleteBtn');
+const bulkCancelBtn = document.getElementById('bulkCancelBtn');
+const deleteModal = document.getElementById('deleteModal');
+const modalCancelBtn = document.getElementById('modalCancelBtn');
+const modalConfirmBtn = document.getElementById('modalConfirmBtn');
+const deleteDesc = document.getElementById('deleteDesc');
+
+/* ===== TOAST ===== */
+function showToast(msg, type, duration) {
+  type = type || 'info';
+  duration = duration || 2800;
+  const t = document.getElementById('toast');
+  t.className = 'toast visible' + (type !== 'info' ? ' ' + type : '');
+  t.textContent = msg;
+  clearTimeout(t._timer);
+  t._timer = setTimeout(function(){ t.classList.remove('visible'); }, duration);
+}
+
+/* ===== HELPERS ===== */
+function escapeHtml(str) {
+  const div = document.createElement('div');
+  div.textContent = str || '';
+  return div.innerHTML;
+}
+
+function formatDate(dateStr) {
+  if (!dateStr) return '';
+  try {
+    return new Date(dateStr).toLocaleDateString('en-US', {
+      month:'short', day:'numeric', year:'numeric'
+    });
+  } catch(e) { return ''; }
+}
+
+function formatViews(n) {
+  n = parseInt(n, 10) || 0;
+  if (n >= 1000000) return (n / 1000000).toFixed(1) + 'M';
+  if (n >= 1000) return (n / 1000).toFixed(1) + 'k';
+  return n.toString();
+}
+
+const CATEGORY_EMOJI = {
+  'Tools Guide': '🛠', 'Tools': '🛠', 'SEO': '🔍', 'How-To': '📚',
+  'Tips': '💡', 'News': '📰', 'General': '📝', 'Technology': '💻',
+  'Productivity': '⚡', 'AI': '🤖', 'AI & Technology': '🤖',
+  'Web Development': '💻', 'Design': '🎨', 'Tutorial': '📚',
+  'Online Business': '📺', 'Website Tips': '🌐', 'Design & Graphics': '🎨'
+};
+
+/* ===== AUTH CHECK ===== */
+(async function init() {
+  try {
+    const sessionResult = await sb.auth.getSession();
+    const session = sessionResult.data && sessionResult.data.session;
+    if (!session) {
+      window.location.href = /admin/login';
+      return;
+    }
+    loadPosts();
+  } catch (err) {
+    console.error('Auth error:', err);
+    window.location.href = /admin/login';
+  }
+})();
+
+/* ===== LOAD POSTS ===== */
+async function loadPosts() {
+  try {
+    const { data, error } = await sb
+      .from('posts')
+      .select('id, title, slug, excerpt, featured_image, category, status, views, created_at, published_at, updated_at')
+      .order('created_at', { ascending: false });
+
+    if (error) throw error;
+
+    state.allPosts = data || [];
+    renderCategoryFilter();
+    applyFilters();
+
+  } catch (err) {
+    console.error('Load error:', err);
+    postsList.innerHTML = '';
+    emptyState.classList.add('visible');
+    emptyState.querySelector('.empty-title').textContent = 'Error loading posts';
+    emptyState.querySelector('.empty-desc').textContent = err.message || 'Please try again.';
+    pageSub.textContent = 'Error';
+  }
+}
+
+/* ===== CATEGORY FILTER ===== */
+function renderCategoryFilter() {
+  const cats = new Set();
+  state.allPosts.forEach(p => {
+    if (p.category) cats.add(p.category);
+  });
+
+  categoryFilter.innerHTML = '<option value="all">All Categories</option>';
+  Array.from(cats).sort().forEach(cat => {
+    const opt = document.createElement('option');
+    opt.value = cat;
+    opt.textContent = (CATEGORY_EMOJI[cat] || '📌') + ' ' + cat;
+    categoryFilter.appendChild(opt);
+  });
+}
+
+/* ===== APPLY FILTERS ===== */
+function applyFilters() {
+  const q = state.query.toLowerCase().trim();
+
+  let filtered = state.allPosts.filter(function(p) {
+    if (state.status !== 'all' && p.status !== state.status) return false;
+    if (state.category !== 'all' && p.category !== state.category) return false;
+    if (!q) return true;
+    const title = (p.title || '').toLowerCase();
+    const slug = (p.slug || '').toLowerCase();
+    const excerpt = (p.excerpt || '').toLowerCase();
+    return title.includes(q) || slug.includes(q) || excerpt.includes(q);
+  });
+
+  // Sort
+  if (state.sort === 'newest') {
+    filtered.sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
+  } else if (state.sort === 'oldest') {
+    filtered.sort((a, b) => new Date(a.created_at) - new Date(b.created_at));
+  } else if (state.sort === 'views') {
+    filtered.sort((a, b) => (b.views || 0) - (a.views || 0));
+  } else if (state.sort === 'az') {
+    filtered.sort((a, b) => (a.title || '').localeCompare(b.title || ''));
+  }
+
+  state.filteredPosts = filtered;
+
+  const total = filtered.length;
+  const totalPages = Math.max(1, Math.ceil(total / POSTS_PER_PAGE));
+  state.totalPages = totalPages;
+  if (state.currentPage > totalPages) state.currentPage = totalPages;
+  if (state.currentPage < 1) state.currentPage = 1;
+
+  renderPosts();
+}
+
+/* ===== RENDER POSTS ===== */
+function renderPosts() {
+  const startIdx = (state.currentPage - 1) * POSTS_PER_PAGE;
+  const endIdx = startIdx + POSTS_PER_PAGE;
+  const pagePosts = state.filteredPosts.slice(startIdx, endIdx);
+
+  const total = state.filteredPosts.length;
+  if (total === 0) {
+    postsList.innerHTML = '';
+    postsList.style.display = 'none';
+    emptyState.classList.add('visible');
+    pagination.style.display = 'none';
+    pageSub.textContent = 'No posts found';
+    updateBulkActions();
+    return;
+  }
+
+  postsList.style.display = 'flex';
+  emptyState.classList.remove('visible');
+  pageSub.textContent = 'Showing ' + (startIdx + 1) + '–' + Math.min(endIdx, total) + ' of ' + total + ' post' + (total !== 1 ? 's' : '');
+
+  postsList.innerHTML = '';
+
+  pagePosts.forEach(post => {
+    const cat = post.category || 'General';
+    const emoji = CATEGORY_EMOJI[cat] || '📝';
+    const img = post.featured_image || '';
+    const isSelected = state.selected.has(post.id);
+
+    const item = document.createElement('div');
+    item.className = 'post-item' + (isSelected ? ' selected' : '');
+    item.dataset.id = post.id;
+
+    const thumbInner = img
+      ? '<img src="' + escapeHtml(img) + '" alt="" loading="lazy">'
+      : emoji;
+
+    item.innerHTML = `
+      <input type="checkbox" class="post-checkbox" ${isSelected ? 'checked' : ''} data-id="${post.id}">
+      <div class="post-thumb">${thumbInner}</div>
+      <div class="post-info">
+        <div class="post-title">${escapeHtml(post.title || 'Untitled')}</div>
+        <div class="post-meta">
+          <span class="post-meta-item">/${escapeHtml(post.slug || '')}</span>
+          <span>•</span>
+          <span class="post-meta-item">📅 ${formatDate(post.published_at || post.created_at)}</span>
+          <span>•</span>
+          <span class="post-meta-item">👁 ${formatViews(post.views)} views</span>
+        </div>
+        <div class="post-badges">
+          <span class="post-badge category">${escapeHtml(cat)}</span>
+          <span class="post-badge ${post.status}">${post.status}</span>
+        </div>
+      </div>
+      <div class="post-actions">
+        <a href="/blog/${encodeURIComponent(post.slug)}/" target="_blank" class="action-btn" title="View">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+        </a>
+        <a href="/admin/editor/?id=${post.id}" class="action-btn" title="Edit">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+        </a>
+        <button class="action-btn delete" data-delete="${post.id}" title="Delete">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 6h18M8 6V4a2 2 0 012-2h4a2 2 0 012 2v2M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/></svg>
+        </button>
+      </div>
+    `;
+
+    postsList.appendChild(item);
+  });
+
+  // Attach handlers
+  postsList.querySelectorAll('.post-checkbox').forEach(cb => {
+    cb.addEventListener('change', function() {
+      const id = cb.dataset.id;
+      if (cb.checked) state.selected.add(id);
+      else state.selected.delete(id);
+      const parent = cb.closest('.post-item');
+      parent.classList.toggle('selected', cb.checked);
+      updateBulkActions();
+    });
+  });
+
+  postsList.querySelectorAll('[data-delete]').forEach(btn => {
+    btn.addEventListener('click', function() {
+      state.deleteTargetId = btn.dataset.delete;
+      state.deleteAll = false;
+      deleteDesc.textContent = 'This post will be permanently deleted. This action cannot be undone.';
+      deleteModal.classList.add('visible');
+    });
+  });
+
+  renderPagination();
+  updateBulkActions();
+}
+
+/* ===== PAGINATION ===== */
+function renderPagination() {
+  if (state.totalPages <= 1) {
+    pagination.style.display = 'none';
+    return;
+  }
+
+  pagination.style.display = 'flex';
+  pagination.innerHTML = '';
+
+  const prev = document.createElement('button');
+  prev.className = 'page-btn';
+  prev.innerHTML = '‹';
+  prev.disabled = state.currentPage === 1;
+  prev.addEventListener('click', () => {
+    if (state.currentPage > 1) {
+      state.currentPage--;
+      renderPosts();
+      scrollToTop();
+    }
+  });
+  pagination.appendChild(prev);
+
+  const pages = getPageNumbers(state.currentPage, state.totalPages);
+  pages.forEach(p => {
+    if (p === '...') {
+      const d = document.createElement('span');
+      d.className = 'page-btn dots';
+      d.textContent = '…';
+      pagination.appendChild(d);
+    } else {
+      const btn = document.createElement('button');
+      btn.className = 'page-btn' + (p === state.currentPage ? ' active' : '');
+      btn.textContent = p;
+      if (p === state.currentPage) {
+        btn.disabled = true;
+      } else {
+        btn.addEventListener('click', () => {
+          state.currentPage = p;
+          renderPosts();
+          scrollToTop();
+        });
+      }
+      pagination.appendChild(btn);
+    }
+  });
+
+  const next = document.createElement('button');
+  next.className = 'page-btn';
+  next.innerHTML = '›';
+  next.disabled = state.currentPage === state.totalPages;
+  next.addEventListener('click', () => {
+    if (state.currentPage < state.totalPages) {
+      state.currentPage++;
+      renderPosts();
+      scrollToTop();
+    }
+  });
+  pagination.appendChild(next);
+}
+
+function getPageNumbers(current, total) {
+  const delta = 1;
+  const range = [];
+  for (let i = Math.max(2, current - delta); i <= Math.min(total - 1, current + delta); i++) {
+    range.push(i);
+  }
+  const out = [];
+  if (current - delta > 2) out.push(1, '...');
+  else out.push(1);
+  out.push(...range);
+  if (current + delta < total - 1) out.push('...', total);
+  else if (total > 1) out.push(total);
+  return out;
+}
+
+function scrollToTop() {
+  const top = postsList.getBoundingClientRect().top + window.scrollY - 100;
+  window.scrollTo({ top: top, behavior: 'smooth' });
+}
+
+/* ===== BULK ACTIONS ===== */
+function updateBulkActions() {
+  const count = state.selected.size;
+  if (count > 0) {
+    bulkActions.classList.add('visible');
+    bulkCount.textContent = count;
+  } else {
+    bulkActions.classList.remove('visible');
+  }
+}
+
+bulkCancelBtn.addEventListener('click', function() {
+  state.selected.clear();
+  postsList.querySelectorAll('.post-checkbox').forEach(cb => {
+    cb.checked = false;
+    cb.closest('.post-item').classList.remove('selected');
+  });
+  updateBulkActions();
+});
+
+bulkDeleteBtn.addEventListener('click', function() {
+  if (state.selected.size === 0) return;
+  state.deleteTargetId = null;
+  state.deleteAll = true;
+  deleteDesc.textContent = 'You are about to delete ' + state.selected.size + ' post(s). This action cannot be undone.';
+  deleteModal.classList.add('visible');
+});
+
+/* ===== DELETE MODAL ===== */
+modalCancelBtn.addEventListener('click', function() {
+  deleteModal.classList.remove('visible');
+  state.deleteTargetId = null;
+  state.deleteAll = false;
+});
+
+deleteModal.addEventListener('click', function(e) {
+  if (e.target.id === 'deleteModal') {
+    deleteModal.classList.remove('visible');
+    state.deleteTargetId = null;
+    state.deleteAll = false;
+  }
+});
+
+modalConfirmBtn.addEventListener('click', async function() {
+  modalConfirmBtn.disabled = true;
+  modalConfirmBtn.textContent = 'Deleting...';
+
+  try {
+    if (state.deleteAll && state.selected.size > 0) {
+      // Bulk delete
+      const ids = Array.from(state.selected);
+      const { error } = await sb.from('posts').delete().in('id', ids);
+      if (error) throw error;
+      showToast('✅ ' + ids.length + ' posts deleted', 'success');
+      state.selected.clear();
+    } else if (state.deleteTargetId) {
+      // Single delete
+      const { error } = await sb.from('posts').delete().eq('id', state.deleteTargetId);
+      if (error) throw error;
+      state.selected.delete(state.deleteTargetId);
+      showToast('✅ Post deleted', 'success');
+    }
+
+    deleteModal.classList.remove('visible');
+    state.deleteTargetId = null;
+    state.deleteAll = false;
+    loadPosts();
+
+  } catch (err) {
+    console.error('Delete error:', err);
+    showToast('❌ Delete failed: ' + err.message, 'error');
+  } finally {
+    modalConfirmBtn.disabled = false;
+    modalConfirmBtn.textContent = 'Delete';
+  }
+});
+
+/* ===== FILTERS ===== */
+let searchTimer;
+searchInput.addEventListener('input', function(e) {
+  clearTimeout(searchTimer);
+  searchTimer = setTimeout(function() {
+    state.query = e.target.value;
+    state.currentPage = 1;
+    applyFilters();
+  }, 250);
+});
+
+statusFilter.addEventListener('change', function(e) {
+  state.status = e.target.value;
+  state.currentPage = 1;
+  applyFilters();
+});
+
+categoryFilter.addEventListener('change', function(e) {
+  state.category = e.target.value;
+  state.currentPage = 1;
+  applyFilters();
+});
+
+sortFilter.addEventListener('change', function(e) {
+  state.sort = e.target.value;
+  state.currentPage = 1;
+  applyFilters();
+});
+
+/* ===== LOGOUT ===== */
+document.getElementById('logoutBtn').addEventListener('click', async function() {
+  if (!confirm('Are you sure you want to logout?')) return;
+  try {
+    await sb.auth.signOut();
+    localStorage.removeItem('blog_admin_session');
+    window.location.href = /admin/login';
+  } catch (err) {
+    window.location.href = /admin/login';
+  }
+});
+</script>
+
+</body>
+</html>

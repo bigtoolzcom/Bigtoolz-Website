@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2563eb">
+
+<title>Box Shadow Generator - CSS Box Shadow Maker Online Free | BigToolz</title>
+<meta name="description" content="Free CSS box shadow generator online. Visual editor with multi-layer support, presets, live preview. Copy CSS, Tailwind, React instantly. No upload, browser-based.">
+<meta name="keywords" content="box shadow generator, css box shadow, box-shadow generator, css shadow maker, box shadow css, shadow generator">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://bigtoolz.com/tools/developer-tools/box-shadow/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Box Shadow Generator - Free CSS Tool | BigToolz">
+<meta property="og:description" content="Visual CSS box-shadow generator with presets, multi-layer, live preview.">
+<meta property="og:url" content="https://bigtoolz.com/tools/developer-tools/box-shadow/">
+<meta property="og:image" content="https://bigtoolz.com/assets/images/og-image.jpg">
+<meta property="og:site_name" content="BigToolz">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Box Shadow Generator - BigToolz">
+<meta name="twitter:description" content="Generate perfect CSS box shadows visually free, no upload.">
+<meta name="twitter:image" content="https://bigtoolz.com/assets/images/twitter-card.jpg">
+
+<link rel="icon" href="/assets/images/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/images/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#f8f9fc;color:#1a1a2e;overflow-x:hidden;line-height:1.5}
+
+  .header{background:#fff;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;position:sticky;top:0;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+  .header-left{display:flex;align-items:center;gap:40px}
+  .logo{display:flex;align-items:center;gap:8px;font-size:22px;font-weight:800;color:#1a1a2e;text-decoration:none}
+  .logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#3b82f6,#2563eb);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px}
+  .logo span{color:#2563eb}
+  .nav{display:flex;align-items:center;gap:28px;list-style:none}
+  .nav a{text-decoration:none;color:#4b5563;font-size:14px;font-weight:500;transition:color .2s}
+  .nav a:hover,.nav a.active{color:#2563eb}
+  .header-right{display:flex;align-items:center;gap:16px}
+  .search-btn,.theme-btn{width:36px;height:36px;border-radius:50%;border:none;background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#4b5563}
+  .search-btn:hover,.theme-btn:hover{background:#f3f4f6}
+  .bookmark-btn{display:flex;align-items:center;gap:8px;background:#2563eb;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
+  .bookmark-btn:hover{background:#1d4ed8}
+
+  .hero{background:linear-gradient(135deg,#0a0e27 0%,#1a1a4e 40%,#2d1b69 70%,#4c1d95 100%);padding:40px 40px 60px;position:relative;overflow:hidden;color:#fff}
+  .hero::before{content:'';position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(139,92,246,.35) 0%,transparent 70%);border-radius:50%}
+  .hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+  .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px;flex-wrap:wrap}
+  .breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none}
+  .breadcrumb a:hover{color:#fff}
+  .breadcrumb .sep{color:rgba(255,255,255,.4)}
+  .breadcrumb .current{color:#fff;font-weight:500}
+  .hero-title-row{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+  .hero-icon{width:60px;height:60px;background:#8b5cf6;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px;color:#fff;flex-shrink:0;box-shadow:0 8px 24px rgba(139,92,246,.4)}
+  .hero-title{font-size:42px;font-weight:800;line-height:1.15}
+  .hero-title .blue{color:#a78bfa}
+  .hero-desc{font-size:15px;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:24px;max-width:560px}
+  .hero-features{display:flex;gap:24px;flex-wrap:wrap}
+  .hero-feature{display:flex;align-items:center;gap:6px;font-size:13px;color:#fff;font-weight:500}
+  .hero-feature .check{width:18px;height:18px;border-radius:50%;background:#8b5cf6;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;flex-shrink:0}
+
+  .main-content{max-width:1200px;margin:0 auto;padding:40px;display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start}
+  .tool-content{min-width:0}
+
+  .workspace{background:#fff;border-radius:16px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,.06);border:1px solid #e5e7eb;margin-bottom:24px}
+
+  /* Preview */
+  .preview-panel{background:#f1f5f9;background-image:linear-gradient(45deg,#e2e8f0 25%,transparent 25%,transparent 75%,#e2e8f0 75%,#e2e8f0),linear-gradient(45deg,#e2e8f0 25%,transparent 25%,transparent 75%,#e2e8f0 75%,#e2e8f0);background-size:20px 20px;background-position:0 0,10px 10px;border-radius:12px;padding:60px 20px;margin-bottom:24px;display:flex;align-items:center;justify-content:center;min-height:280px;transition:background .3s}
+  .preview-panel.dark-bg{background:#1a1a2e;background-image:none}
+
+  .preview-shape{width:180px;height:180px;background:#fff;border-radius:16px;transition:box-shadow .2s,background .3s}
+  .preview-panel.dark-bg .preview-shape{background:#334155}
+  .preview-shape.round{border-radius:50%}
+  .preview-shape.square{border-radius:8px}
+
+  /* Preview shapes tabs */
+  .shape-tabs{display:flex;gap:6px;margin-bottom:16px;justify-content:center;flex-wrap:wrap}
+  .shape-btn{padding:8px 16px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;font-size:12px;font-weight:600;color:#4b5563;cursor:pointer;font-family:inherit;transition:all .2s}
+  .shape-btn:hover{border-color:#8b5cf6;color:#8b5cf6}
+  .shape-btn.active{background:#8b5cf6;color:#fff;border-color:#8b5cf6}
+
+  /* CSS Output */
+  .css-output-wrap{position:relative;margin-bottom:24px}
+  .css-output{background:#0f172a;color:#e2e8f0;padding:18px 20px;border-radius:12px;font-family:'JetBrains Mono','Fira Code',Consolas,monospace;font-size:13px;line-height:1.7;overflow-x:auto;white-space:pre-wrap;word-break:break-word;border:1px solid #1e293b}
+  .css-output .prop{color:#a78bfa}
+  .css-output .val{color:#34d399}
+  .css-output .num{color:#fbbf24}
+  .css-output .com{color:#64748b}
+
+  /* Shadow tabs (multi-layer) */
+  .layer-tabs{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap;align-items:center}
+  .layer-tab{padding:8px 14px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;font-size:12px;font-weight:600;color:#4b5563;cursor:pointer;font-family:inherit;transition:all .2s}
+  .layer-tab.active{background:#8b5cf6;color:#fff;border-color:#8b5cf6}
+  .layer-tab:hover:not(.active){border-color:#8b5cf6;color:#8b5cf6}
+  .add-layer-btn{padding:8px 14px;background:#10b981;color:#fff;border:none;border-radius:8px;font-size:12px;font-weight:600;cursor:pointer;font-family:inherit}
+  .add-layer-btn:hover{background:#059669}
+  .add-layer-btn:disabled{opacity:.5;cursor:not-allowed}
+  .remove-layer-btn{padding:8px 12px;background:#fef2f2;color:#ef4444;border:1px solid #fecaca;border-radius:8px;font-size:12px;font-weight:600;cursor:pointer;font-family:inherit}
+  .remove-layer-btn:hover{background:#fee2e2}
+
+  /* Options */
+  .options{background:#faf5ff;border-radius:12px;padding:20px;margin-bottom:20px;border:1px solid #ede9fe}
+  .options-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:16px;display:flex;align-items:center;gap:8px;justify-content:space-between}
+
+  .slider-group{margin-bottom:16px}
+  .slider-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+  .slider-header label{font-size:13px;font-weight:600;color:#4b5563}
+  .slider-header .val{font-size:13px;font-weight:800;color:#7c3aed;background:#fff;padding:4px 10px;border-radius:8px;border:1px solid #ede9fe;min-width:70px;text-align:center;font-family:'JetBrains Mono',monospace}
+  .range-slider{width:100%;-webkit-appearance:none;appearance:none;height:8px;background:#ddd6fe;border-radius:4px;outline:none}
+  .range-slider::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:20px;height:20px;background:#8b5cf6;border-radius:50%;cursor:pointer;box-shadow:0 2px 6px rgba(139,92,246,.4);transition:transform .15s;border:3px solid #fff}
+  .range-slider::-webkit-slider-thumb:hover{transform:scale(1.15)}
+  .range-slider::-moz-range-thumb{width:20px;height:20px;background:#8b5cf6;border:3px solid #fff;border-radius:50%;cursor:pointer}
+
+  .options-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+  .option-group label{display:block;font-size:12px;font-weight:600;color:#4b5563;margin-bottom:6px}
+  .option-group input[type="text"],.option-group input[type="number"],.option-group select{width:100%;padding:10px 12px;border:1px solid #e5e7eb;border-radius:8px;font-size:13px;font-family:inherit;color:#1a1a2e;background:#fff;outline:none}
+  .option-group input:focus,.option-group select:focus{border-color:#8b5cf6;box-shadow:0 0 0 3px rgba(139,92,246,.1)}
+  .option-group input[type="color"]{width:100%;height:42px;border:1px solid #e5e7eb;border-radius:8px;cursor:pointer;padding:2px;background:#fff}
+
+  .toggle-row{display:flex;align-items:center;justify-content:space-between;padding:12px 14px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;gap:12px;grid-column:span 2;margin-top:8px}
+  .toggle-info{display:flex;flex-direction:column;gap:2px}
+  .toggle-title{font-size:13px;font-weight:700;color:#1a1a2e}
+  .toggle-desc{font-size:11px;color:#6b7280;line-height:1.4}
+  .toggle-switch{position:relative;width:44px;height:24px;background:#d1d5db;border-radius:12px;cursor:pointer;transition:background .2s;flex-shrink:0}
+  .toggle-switch::after{content:'';position:absolute;top:2px;left:2px;width:20px;height:20px;background:#fff;border-radius:50%;transition:transform .2s;box-shadow:0 1px 3px rgba(0,0,0,.15)}
+  .toggle-switch.on{background:#8b5cf6}
+  .toggle-switch.on::after{transform:translateX(20px)}
+
+  /* Presets */
+  .presets-section{margin-bottom:24px}
+  .presets-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+  .presets-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:12px}
+  .preset-card{background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:16px 12px;cursor:pointer;transition:all .2s;font-family:inherit;text-align:center}
+  .preset-card:hover{border-color:#8b5cf6;background:#faf5ff;transform:translateY(-2px)}
+  .preset-preview{width:100%;height:60px;background:#fff;border-radius:8px;margin-bottom:10px;transition:box-shadow .2s}
+  .preset-label{font-size:12px;font-weight:700;color:#1a1a2e}
+
+  /* Output format tabs */
+  .format-tabs{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap}
+  .format-tab{padding:8px 14px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;font-size:12px;font-weight:600;color:#4b5563;cursor:pointer;font-family:inherit;transition:all .2s}
+  .format-tab:hover:not(.active){border-color:#8b5cf6;color:#8b5cf6}
+  .format-tab.active{background:#8b5cf6;color:#fff;border-color:#8b5cf6}
+
+  .action-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+  .copy-btn{display:inline-flex;align-items:center;gap:6px;padding:10px 18px;background:#8b5cf6;color:#fff;border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit;transition:all .2s;flex:1;justify-content:center}
+  .copy-btn:hover{background:#7c3aed;transform:translateY(-1px)}
+  .copy-btn.copied{background:#10b981}
+  .secondary-btn{display:inline-flex;align-items:center;gap:6px;padding:10px 18px;background:#fff;color:#8b5cf6;border:1px solid #e5e7eb;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit;transition:all .2s}
+  .secondary-btn:hover{border-color:#8b5cf6;background:#faf5ff}
+
+  /* SEO */
+  .seo-content{background:#fff;border-radius:16px;padding:32px;border:1px solid #e5e7eb;margin-bottom:24px}
+  .seo-content h2{font-size:22px;font-weight:800;color:#1a1a2e;margin-bottom:14px;margin-top:28px;display:flex;align-items:center;gap:10px}
+  .seo-content h2:first-child{margin-top:0}
+  .seo-content h3{font-size:16px;font-weight:700;color:#1a1a2e;margin:20px 0 10px}
+  .seo-content p{font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:14px}
+  .seo-content ul{list-style:none;padding-left:0;margin-bottom:16px}
+  .seo-content ul li{position:relative;padding-left:24px;font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:8px}
+  .seo-content ul li::before{content:'';position:absolute;left:6px;top:12px;width:6px;height:6px;background:#8b5cf6;border-radius:50%}
+  .seo-content a{color:#2563eb;text-decoration:none;font-weight:600}
+  .seo-content a:hover{text-decoration:underline}
+  .seo-content strong{color:#1a1a2e;font-weight:700}
+  .seo-content code{background:#f1f5f9;padding:2px 6px;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:13px;color:#7c3aed;border:1px solid #e2e8f0}
+
+  .code-block{background:#1a1a2e;color:#e2e8f0;padding:16px;border-radius:8px;font-family:'JetBrains Mono','Fira Code',Consolas,monospace;font-size:12px;line-height:1.7;overflow-x:auto;margin:14px 0;white-space:pre-wrap}
+  .code-block .lbl{display:block;font-family:'Inter',sans-serif;font-size:10px;color:#64748b;text-transform:uppercase;letter-spacing:.5px;font-weight:700;margin-bottom:8px}
+  .code-block .hl{color:#a78bfa}
+  .code-block .str{color:#34d399}
+  .code-block .num{color:#fbbf24}
+
+  .how-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:20px}
+  .how-step{background:#faf5ff;border-radius:12px;padding:20px;border:1px solid #ede9fe}
+  .how-step-num{width:36px;height:36px;border-radius:50%;background:#8b5cf6;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;margin-bottom:12px}
+  .how-step-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+  .how-step-desc{font-size:13px;color:#6b7280;line-height:1.6}
+
+  .faq-item{background:#faf5ff;border:1px solid #ede9fe;border-radius:12px;margin-bottom:10px;overflow:hidden;transition:border-color .2s}
+  .faq-item:hover{border-color:#8b5cf6}
+  .faq-question{width:100%;background:none;border:none;padding:18px 22px;font-size:15px;font-weight:700;color:#1a1a2e;text-align:left;cursor:pointer;font-family:inherit;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .faq-question .chev{font-size:12px;color:#8b5cf6;transition:transform .2s;flex-shrink:0}
+  .faq-item.open .faq-question .chev{transform:rotate(180deg)}
+  .faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 22px}
+  .faq-item.open .faq-answer{max-height:500px;padding-bottom:18px}
+  .faq-answer p{font-size:14px;color:#6b7280;line-height:1.7;margin:0}
+
+  .sidebar{background:#fff;border-radius:16px;padding:24px;border:1px solid #e5e7eb;position:sticky;top:80px;margin-bottom:24px}
+  .sidebar-header{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:800;color:#1a1a2e;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid #f3f4f6}
+  .sidebar-list{display:flex;flex-direction:column;gap:8px}
+  .sidebar-item{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;cursor:pointer;transition:background .2s;text-decoration:none;color:inherit;border:1px solid #f3f4f6}
+  .sidebar-item:hover{background:#faf5ff;border-color:#ede9fe}
+  .sidebar-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:16px;color:#fff;flex-shrink:0;font-family:'JetBrains Mono',monospace;font-weight:700}
+  .sidebar-info{flex:1;min-width:0}
+  .sidebar-title{font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:2px}
+  .sidebar-desc{font-size:11px;color:#9ca3af;line-height:1.4}
+
+  .footer{background:#0a0e27;padding:60px 40px 30px;color:#fff;margin-top:40px}
+  .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:40px}
+  .footer-brand{display:flex;align-items:center;gap:8px;font-size:20px;font-weight:800;margin-bottom:12px}
+  .footer-brand span{color:#60a5fa}
+  .footer-tagline{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px}
+  .footer-social{display:flex;gap:12px}
+  .footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:16px;transition:background .2s}
+  .footer-social a:hover{background:rgba(255,255,255,.2)}
+  .footer-heading{font-size:14px;font-weight:700;margin-bottom:20px;color:#fff}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .footer-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;transition:color .2s}
+  .footer-links a:hover{color:#60a5fa}
+  .footer-bottom{max-width:1200px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  .footer-bottom-left{display:flex;gap:20px;font-size:12px;color:rgba(255,255,255,.5)}
+  .footer-bottom-right,.footer-bottom-links a{font-size:12px;color:rgba(255,255,255,.5);text-decoration:none}
+  .footer-bottom-links{display:flex;gap:20px}
+
+  .toast{position:fixed;bottom:24px;right:24px;background:#1a1a2e;color:#fff;padding:14px 20px;border-radius:10px;font-size:13px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:3000;transform:translateY(200%);transition:transform .3s ease;max-width:320px}
+  .toast.visible{transform:translateY(0)}
+  .toast.success{background:#10b981}
+  .toast.error{background:#ef4444}
+
+  @media(max-width:1024px){
+    .main-content{grid-template-columns:1fr;padding:24px 20px}
+    .sidebar{position:static}
+    .how-steps{grid-template-columns:repeat(2,1fr)}
+    .options-grid{grid-template-columns:1fr}
+    .toggle-row{grid-column:span 1}
+    .presets-grid{grid-template-columns:repeat(auto-fill,minmax(110px,1fr))}
+  }
+  @media(max-width:768px){
+    .header{padding:0 20px}.nav{display:none}
+    .hero{padding:24px 20px 40px}
+    .hero-title{font-size:28px}
+    .hero-icon{width:48px;height:48px;font-size:20px}
+    .hero-title-row{flex-direction:column;align-items:flex-start;gap:12px}
+    .main-content{padding:20px 16px}
+    .workspace{padding:20px}
+    .how-steps{grid-template-columns:1fr}
+    .seo-content{padding:20px}
+    .footer-inner{grid-template-columns:1fr 1fr}
+    .toast{left:16px;right:16px;bottom:16px;max-width:none}
+    .preview-shape{width:140px;height:140px}
+  }
+  @media(max-width:576px){
+    .header{padding:0 16px}.header-right .search-btn,.header-right .theme-btn{display:none}
+    .hero-title{font-size:24px}
+    .footer-inner{grid-template-columns:1fr}
+    .footer-bottom{flex-direction:column;text-align:center}
+    .action-row{flex-direction:column}
+    .copy-btn,.secondary-btn{width:100%;flex:none}
+    .preset-preview{height:50px}
+  }
+
+  html[data-theme="dark"] body{background:#0f172a;color:#f1f5f9}
+  html[data-theme="dark"] .header,html[data-theme="dark"] .workspace,html[data-theme="dark"] .seo-content,html[data-theme="dark"] .sidebar{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .logo,html[data-theme="dark"] .hero-title,html[data-theme="dark"] .seo-content h2,html[data-theme="dark"] .seo-content h3,html[data-theme="dark"] .faq-question,html[data-theme="dark"] .sidebar-header,html[data-theme="dark"] .sidebar-title,html[data-theme="dark"] .options-title,html[data-theme="dark"] .presets-title,html[data-theme="dark"] .toggle-title{color:#f1f5f9}
+  html[data-theme="dark"] .nav a{color:#cbd5e1}
+  html[data-theme="dark"] .options,html[data-theme="dark"] .how-step,html[data-theme="dark"] .faq-item,html[data-theme="dark"] .layer-tab,html[data-theme="dark"] .format-tab,html[data-theme="dark"] .shape-btn,html[data-theme="dark"] .preset-card{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .layer-tab,html[data-theme="dark"] .format-tab,html[data-theme="dark"] .shape-btn,html[data-theme="dark"] .preset-label{color:#cbd5e1}
+  html[data-theme="dark"] .layer-tab.active,html[data-theme="dark"] .format-tab.active,html[data-theme="dark"] .shape-btn.active{background:#8b5cf6;color:#fff;border-color:#8b5cf6}
+  html[data-theme="dark"] .preset-card{background:#0f172a}
+  html[data-theme="dark"] .preset-preview{background:#1e293b}
+  html[data-theme="dark"] .preset-card:hover{background:#1e293b}
+  html[data-theme="dark"] .option-group input,html[data-theme="dark"] .option-group select{background:#0f172a;border-color:#334155;color:#f1f5f9}
+  html[data-theme="dark"] .toggle-row{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .seo-content p,html[data-theme="dark"] .seo-content ul li,html[data-theme="dark"] .faq-answer p{color:#cbd5e1}
+  html[data-theme="dark"] .seo-content code{background:#020617;color:#a78bfa;border-color:#334155}
+  html[data-theme="dark"] .slider-header .val{background:#0f172a;border-color:#334155;color:#a78bfa}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type": "SoftwareApplication", "name": "Box Shadow Generator", "url": "https://bigtoolz.com/tools/developer-tools/box-shadow/", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any (Web-based)", "description": "Free CSS box-shadow generator visual editor with multi-layer support, 12 presets, live preview, copy in CSS/Tailwind/React formats.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "2567"}},
+    {"@type": "HowTo", "name": "How to Generate CSS Box Shadow", "step": [
+      {"@type": "HowToStep", "name": "Choose a preset or start from scratch", "text": "Pick a preset or adjust sliders manually."},
+      {"@type": "HowToStep", "name": "Adjust values", "text": "Tune X, Y, blur, spread, color, opacity."},
+      {"@type": "HowToStep", "name": "Copy the CSS", "text": "Click Copy CSS to copy the code."},
+      {"@type": "HowToStep", "name": "Paste in your project", "text": "Paste into your CSS file."}
+    ]},
+    {"@type": "FAQPage", "mainEntity": [
+      {"@type": "Question", "name": "What is the CSS box-shadow property?", "acceptedAnswer": {"@type": "Answer", "text": "The box-shadow property adds shadows to elements. Syntax: box-shadow: offset-x offset-y blur spread color. You can also add inset keyword for inner shadows."}},
+      {"@type": "Question", "name": "What do X and Y offsets mean?", "acceptedAnswer": {"@type": "Answer", "text": "X controls horizontal offset (positive = right, negative = left). Y controls vertical offset (positive = down, negative = up)."}},
+      {"@type": "Question", "name": "What's the difference between blur and spread?", "acceptedAnswer": {"@type": "Answer", "text": "Blur softens the shadow edges (higher = more diffuse). Spread expands or shrinks the shadow size (positive = larger, negative = smaller)."}},
+      {"@type": "Question", "name": "Can I have multiple shadows on one element?", "acceptedAnswer": {"@type": "Answer", "text": "Yes! CSS allows multiple box-shadows separated by commas. Use our layer feature to stack shadows for realistic depth like combining a soft ambient shadow with a sharp directional shadow."}},
+      {"@type": "Question", "name": "Does box-shadow affect performance?", "acceptedAnswer": {"@type": "Answer", "text": "Single shadows are cheap. Multiple stacked shadows or shadows with large blur radii can impact paint performance on low-end devices. For animations, prefer transform over animating box-shadow."}}
+    ]},
+    {"@type": "BreadcrumbList", "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bigtoolz.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://bigtoolz.com/tools/"},
+      {"@type": "ListItem", "position": 3, "name": "Developer Tools", "item": "https://bigtoolz.com/tools/developer-tools/"},
+      {"@type": "ListItem", "position": 4, "name": "Box Shadow Generator", "item": "https://bigtoolz.com/tools/developer-tools/box-shadow/"}
+    ]}
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-left">
+    <a href="/" class="logo"><div class="logo-icon">⚒</div>BigToolz</span></a>
+    <nav><ul class="nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/tools/" class="active">All Tools</a></li>
+      <li><a href="/tools/categories">Categories</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul></nav>
+  </div>
+  <div class="header-right">
+    
+    <button class="theme-btn" aria-label="Toggle theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
+   
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <nav class="breadcrumb">
+      <a href="/">Home</a><span class="sep">›</span>
+      <a href="/tools/">Tools</a><span class="sep">›</span>
+      <a href="/tools/developer-tools/">Developer Tools</a><span class="sep">›</span>
+      <span class="current">Box Shadow Generator</span>
+    </nav>
+    <div class="hero-title-row">
+      <div class="hero-icon">▢</div>
+      <h1 class="hero-title">Box <span class="blue">Shadow</span> Generator</h1>
+    </div>
+    <p class="hero-desc">
+      Design perfect CSS box-shadows visually multi-layer support, 12 ready-made presets, live preview. Copy as CSS, Tailwind, React, or SCSS instantly.
+    </p>
+    <div class="hero-features">
+      <div class="hero-feature"><span class="check">✓</span> Multi-Layer</div>
+      <div class="hero-feature"><span class="check">✓</span> 12 Presets</div>
+      <div class="hero-feature"><span class="check">✓</span> 4 Copy Formats</div>
+      <div class="hero-feature"><span class="check">✓</span> Live Preview</div>
+    </div>
+  </div>
+</section>
+
+<div class="main-content">
+
+  <div class="tool-content">
+
+    <div class="workspace">
+
+      <!-- Shape tabs -->
+      <div class="shape-tabs">
+        <button class="shape-btn active" data-shape="rounded">Rounded Card</button>
+        <button class="shape-btn" data-shape="square">Square Box</button>
+        <button class="shape-btn" data-shape="round">Circle</button>
+        <button class="shape-btn" data-bg="dark">🌙 Dark BG</button>
+      </div>
+
+      <!-- Preview -->
+      <div class="preview-panel" id="previewPanel">
+        <div class="preview-shape" id="previewShape"></div>
+      </div>
+
+      <!-- CSS Output -->
+      <div class="css-output-wrap">
+        <div class="css-output" id="cssOutput"></div>
+      </div>
+
+      <!-- Output format tabs -->
+      <div class="format-tabs" id="formatTabs">
+        <button class="format-tab active" data-format="css">CSS</button>
+        <button class="format-tab" data-format="tailwind">Tailwind</button>
+        <button class="format-tab" data-format="react">React</button>
+        <button class="format-tab" data-format="scss">SCSS</button>
+      </div>
+
+      <div class="action-row">
+        <button class="copy-btn" id="copyBtn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+          Copy CSS
+        </button>
+        <button class="secondary-btn" id="resetBtn">↺ Reset</button>
+      </div>
+
+      <!-- Layer tabs -->
+      <div class="layer-tabs" style="margin-top:24px;">
+        <span style="font-size:12px;font-weight:700;color:#4b5563;margin-right:6px;">LAYERS:</span>
+        <div id="layerTabsContainer" style="display:flex;gap:6px;flex-wrap:wrap;"></div>
+        <button class="add-layer-btn" id="addLayerBtn">+ Add Layer</button>
+      </div>
+
+      <!-- Options -->
+      <div class="options">
+        <div class="options-title">⚙️ Layer Settings</div>
+
+        <div class="slider-group">
+          <div class="slider-header">
+            <label>Horizontal Offset (X)</label>
+            <span class="val" id="xVal">0px</span>
+          </div>
+          <input type="range" id="xSlider" class="range-slider" min="-50" max="50" value="0" step="1">
+        </div>
+
+        <div class="slider-group">
+          <div class="slider-header">
+            <label>Vertical Offset (Y)</label>
+            <span class="val" id="yVal">10px</span>
+          </div>
+          <input type="range" id="ySlider" class="range-slider" min="-50" max="50" value="10" step="1">
+        </div>
+
+        <div class="slider-group">
+          <div class="slider-header">
+            <label>Blur Radius</label>
+            <span class="val" id="blurVal">20px</span>
+          </div>
+          <input type="range" id="blurSlider" class="range-slider" min="0" max="100" value="20" step="1">
+        </div>
+
+        <div class="slider-group">
+          <div class="slider-header">
+            <label>Spread</label>
+            <span class="val" id="spreadVal">0px</span>
+          </div>
+          <input type="range" id="spreadSlider" class="range-slider" min="-50" max="50" value="0" step="1">
+        </div>
+
+        <div class="slider-group">
+          <div class="slider-header">
+            <label>Opacity</label>
+            <span class="val" id="opacityVal">15%</span>
+          </div>
+          <input type="range" id="opacitySlider" class="range-slider" min="0" max="100" value="15" step="1">
+        </div>
+
+        <div class="options-grid">
+          <div class="option-group">
+            <label>Shadow Color</label>
+            <input type="color" id="colorPicker" value="#000000">
+          </div>
+          <div class="option-group">
+            <label>Hex Value</label>
+            <input type="text" id="hexInput" value="#000000" maxlength="7">
+          </div>
+        </div>
+
+        <div class="toggle-row">
+          <div class="toggle-info">
+            <div class="toggle-title">Inset Shadow</div>
+            <div class="toggle-desc">Draw the shadow inside the element (inner shadow)</div>
+          </div>
+          <div class="toggle-switch" id="insetToggle" role="switch" aria-checked="false"></div>
+        </div>
+
+      </div>
+
+      <!-- Presets -->
+      <div class="presets-section">
+        <div class="presets-title">🎨 Quick Presets</div>
+        <div class="presets-grid" id="presetsGrid"></div>
+      </div>
+
+    </div>
+
+    <div class="seo-content">
+
+      <h2>▢ What is a Box Shadow Generator?</h2>
+      <p>
+        A <strong>box shadow generator</strong> is a visual tool for creating CSS <code>box-shadow</code> values without writing code by hand. You adjust sliders for offset, blur, spread, color, and opacity and see the result live on a preview shape. When satisfied, copy the CSS and paste it into your stylesheet.
+      </p>
+      <p>
+        Shadows add depth, hierarchy, and polish to UI design. From subtle card elevations to dramatic glow effects, mastering <code>box-shadow</code> is essential for modern web developers and designers.
+      </p>
+
+      <h2>🚀 How to Use the Generator</h2>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-step-num">1</div>
+          <div class="how-step-title">Pick a Shape</div>
+          <div class="how-step-desc">Choose card, square, circle, or dark background.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">2</div>
+          <div class="how-step-title">Adjust Sliders</div>
+          <div class="how-step-desc">Fine-tune X, Y, blur, spread, opacity, and color.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">3</div>
+          <div class="how-step-title">Try Presets</div>
+          <div class="how-step-desc">Click a preset for instant Material, Soft, or Neon effects.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">4</div>
+          <div class="how-step-title">Copy Code</div>
+          <div class="how-step-desc">Copy as CSS, Tailwind, React, or SCSS.</div>
+        </div>
+      </div>
+
+      <h2>📐 Understanding box-shadow Syntax</h2>
+      <div class="code-block">
+        <span class="lbl">CSS Syntax</span>
+box-shadow: <span class="num">offset-x</span> <span class="num">offset-y</span> <span class="num">blur</span> <span class="num">spread</span> <span class="hl">color</span> <span class="hl">inset</span>;
+
+        <span class="lbl">Example</span>
+box-shadow: <span class="num">0px 4px 12px 0px</span> <span class="hl">rgba(0,0,0,0.15)</span>;
+      </div>
+
+      <h3>Every parameter explained:</h3>
+      <ul>
+        <li><strong>offset-x</strong> Horizontal shift. Positive = right, negative = left.</li>
+        <li><strong>offset-y</strong> Vertical shift. Positive = down, negative = up.</li>
+        <li><strong>blur</strong> Softness of edges. 0 = sharp, higher = softer.</li>
+        <li><strong>spread</strong> Expands (positive) or shrinks (negative) the shadow.</li>
+        <li><strong>color</strong> Shadow color, usually with alpha (rgba or hex + opacity).</li>
+        <li><strong>inset</strong> Optional keyword for inner shadow.</li>
+      </ul>
+
+      <h2>🎨 12 Presets Explained</h2>
+      <ul>
+        <li><strong>Subtle</strong> Very light elevation, great for cards.</li>
+        <li><strong>Soft</strong> Gentle drop shadow, blog or hero images.</li>
+        <li><strong>Card</strong> Classic elevation with directional offset.</li>
+        <li><strong>Elevated</strong> Prominent lift, like Material Design "level 3".</li>
+        <li><strong>Floating</strong> Larger blur, feels like the element is off the page.</li>
+        <li><strong>Sharp</strong> No blur, hard edge. Brutalist / neo-brutalist style.</li>
+        <li><strong>Hard Drop</strong> Solid offset with no blur, comic-book look.</li>
+        <li><strong>Inner</strong> Inset shadow for inset buttons and pressed states.</li>
+        <li><strong>Pressed</strong> Inner shadow that simulates a button being pressed.</li>
+        <li><strong>Neon</strong> Colored glow around the element.</li>
+        <li><strong>Layered</strong> Multiple shadows for realistic depth.</li>
+        <li><strong>Retro</strong> Vintage inspired shadow with a colored offset.</li>
+      </ul>
+
+      <h2>💡 Box Shadow Best Practices</h2>
+      <ul>
+        <li><strong>Use rgba or hsla for shadow colors</strong> full opacity black looks harsh; 5-20% opacity is usually ideal.</li>
+        <li><strong>Blur ≈ 2× Y-offset</strong> for natural-looking shadows. Example: Y=8px, blur=16px.</li>
+        <li><strong>Down shadows look natural</strong> the sun is above. Y should usually be positive.</li>
+        <li><strong>Match the design system</strong> use consistent shadow scales (like <code>shadow-sm</code>, <code>shadow-md</code>, <code>shadow-lg</code>).</li>
+        <li><strong>Layer two shadows</strong> one tight, one soft for realistic depth.</li>
+        <li><strong>Animate transform, not box-shadow</strong> changing box-shadow on hover causes repaints; use transform: translateY instead.</li>
+      </ul>
+
+      <h2>✨ Key Features</h2>
+      <ul>
+        <li><strong>Multi-layer shadows</strong> stack up to 5 shadow layers.</li>
+        <li><strong>12 quick presets</strong> Material, Soft, Neon, Retro, etc.</li>
+        <li><strong>Live preview</strong> on 4 different shapes/backgrounds.</li>
+        <li><strong>4 copy formats</strong> CSS, Tailwind, React, SCSS.</li>
+        <li><strong>Full control</strong> X, Y, blur, spread, opacity, color, inset.</li>
+        <li><strong>Color picker + hex input</strong> choose visually or paste a hex.</li>
+        <li><strong>Copy to clipboard</strong> one-click copy of the code.</li>
+        <li><strong>100% browser-based</strong> no uploads, no signup.</li>
+      </ul>
+
+      <h2>❓ Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-question">What is the CSS box-shadow property?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>The <code>box-shadow</code> property adds shadows to elements. Syntax: <code>box-shadow: offset-x offset-y blur spread color</code>. Add the <code>inset</code> keyword for inner shadows. You can also chain multiple shadows with commas.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What do X and Y offsets mean?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>X</strong> is horizontal offset positive moves right, negative moves left. <strong>Y</strong> is vertical offset positive moves down, negative moves up. For natural-looking shadows, keep Y positive (light comes from above).</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What's the difference between blur and spread?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>Blur</strong> softens the shadow edges a higher value makes the shadow more diffuse and less defined. <strong>Spread</strong> expands (positive) or shrinks (negative) the shadow's size without changing the softness. Blur affects edge quality; spread affects size.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I have multiple shadows on one element?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Yes! CSS allows comma-separated box-shadows. Use our layer feature to stack shadows for realistic depth like combining a tight, sharp shadow with a large, soft one. The first shadow in the list is drawn on top.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">How do I make a soft shadow?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Use a low opacity color (<code>rgba(0,0,0,0.1)</code>), moderate Y-offset (8-16px), and blur about 2× the Y-offset (16-32px). Example: <code>0 8px 24px rgba(0,0,0,0.1)</code>.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Does box-shadow affect performance?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Single shadows are cheap. Multiple stacked shadows or shadows with huge blur radii can impact paint performance on low-end devices. For hover animations, prefer animating <code>transform</code> or <code>opacity</code> over <code>box-shadow</code> the latter causes full repaints.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I use this on mobile?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Yes! The tool is fully responsive with touch-friendly sliders and buttons. Works on phones, tablets, and desktops. The output is standard CSS that works in every modern browser.</p></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-header">🔗 Related Developer Tools</div>
+    <div class="sidebar-list">
+      <a href="/tools/developer-tools/css-gradient/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#8b5cf6;">🌈</div>
+        <div class="sidebar-info"><div class="sidebar-title">CSS Gradient Generator</div><div class="sidebar-desc">Create gradients</div></div>
+      </a>
+      <a href="/tools/developer-tools/border-radius/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#3b82f6;">▢</div>
+        <div class="sidebar-info"><div class="sidebar-title">Border Radius</div><div class="sidebar-desc">Round corners</div></div>
+      </a>
+      <a href="/tools/developer-tools/flexbox/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#10b981;">⇄</div>
+        <div class="sidebar-info"><div class="sidebar-title">Flexbox Playground</div><div class="sidebar-desc">Learn Flexbox</div></div>
+      </a>
+      <a href="/tools/developer-tools/css-grid/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#8b5cf6;">⊞</div>
+        <div class="sidebar-info"><div class="sidebar-title">CSS Grid Generator</div><div class="sidebar-desc">Build grid layouts</div></div>
+      </a>
+      <a href="/tools/developer-tools/hex-to-rgb/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#f59e0b;">🎨</div>
+        <div class="sidebar-info"><div class="sidebar-title">HEX to RGB</div><div class="sidebar-desc">Color converter</div></div>
+      </a>
+      <a href="/tools/developer-tools/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#64748b;">&lt;/&gt;</div>
+        <div class="sidebar-info"><div class="sidebar-title">All Dev Tools →</div><div class="sidebar-desc">Browse 25+ tools</div></div>
+      </a>
+    </div>
+  </aside>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand"><div class="logo-icon">⚒</div>BigToolz</span></div>
+      <p class="footer-tagline">Your Ultimate Online Tools Hub</p>
+      <div class="footer-social">
+        <a href="https://facebook.com/bigtoolz" aria-label="Facebook">f</a>
+        <a href="https://twitter.com/bigtoolz" aria-label="Twitter">𝕏</a>
+        <a href="https://youtube.com/@bigtoolz" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+    <div>
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/tools/">All Tools</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Categories</h3>
+      <ul class="footer-links">
+        <li><a href="/tools/image-tools/">Image Tools</a></li>
+        <li><a href="/tools/pdf-tools/">PDF Tools</a></li>
+        <li><a href="/tools/developer-tools/">Developer Tools</a></li>
+        <li><a href="/tools/seo-tools/">SEO Tools</a></li>
+        <li><a href="/tools/categories">All Categories →</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Legal</h3>
+      <ul class="footer-links">
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left"><span>✓ 100% Free</span><span>✓ No Sign Up</span><span>✓ No Installation</span></div>
+    <div class="footer-bottom-right">© 2026 BigToolz. All rights reserved.</div>
+    <div class="footer-bottom-links"><a href="/privacy-policy">Privacy</a><a href="/terms">Terms</a><a href="/disclaimer">Disclaimer</a></div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+'use strict';
+
+/* ===== THEME ===== */
+(function(){try{var t=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&d))document.documentElement.setAttribute('data-theme','dark');else if(t==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();
+document.querySelector('.theme-btn')?.addEventListener('click',()=>{const h=document.documentElement;const c=h.getAttribute('data-theme');const d=window.matchMedia('(prefers-color-scheme: dark)').matches;let n=c==='dark'?'light':c==='light'?'dark':(d?'light':'dark');h.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}});
+
+/* ===== HELPERS ===== */
+const $ = (s, p = document) => p.querySelector(s);
+const $$ = (s, p = document) => [...p.querySelectorAll(s)];
+
+function showToast(msg, type = 'info', duration = 3000) {
+  const t = $('#toast');
+  if (!t) return;
+  t.className = 'toast visible' + (type !== 'info' ? ' ' + type : '');
+  t.textContent = msg;
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove('visible'), duration);
+}
+
+function hexToRgb(hex) {
+  const h = hex.replace('#', '');
+  return {
+    r: parseInt(h.substring(0, 2), 16),
+    g: parseInt(h.substring(2, 4), 16),
+    b: parseInt(h.substring(4, 6), 16)
+  };
+}
+
+function rgbToHex(r, g, b) {
+  return '#' + [r, g, b].map(v => v.toString(16).padStart(2, '0')).join('');
+}
+
+/* ===== STATE ===== */
+const state = {
+  layers: [
+    { x: 0, y: 10, blur: 20, spread: 0, color: '#000000', opacity: 15, inset: false }
+  ],
+  activeLayer: 0,
+  format: 'css',
+  shape: 'rounded',
+  darkBg: false
+};
+
+/* ===== DOM ===== */
+const previewShape = $('#previewShape');
+const previewPanel = $('#previewPanel');
+const cssOutput = $('#cssOutput');
+const layerTabsContainer = $('#layerTabsContainer');
+const addLayerBtn = $('#addLayerBtn');
+const xSlider = $('#xSlider');
+const ySlider = $('#ySlider');
+const blurSlider = $('#blurSlider');
+const spreadSlider = $('#spreadSlider');
+const opacitySlider = $('#opacitySlider');
+const xVal = $('#xVal');
+const yVal = $('#yVal');
+const blurVal = $('#blurVal');
+const spreadVal = $('#spreadVal');
+const opacityVal = $('#opacityVal');
+const colorPicker = $('#colorPicker');
+const hexInput = $('#hexInput');
+const insetToggle = $('#insetToggle');
+const copyBtn = $('#copyBtn');
+const resetBtn = $('#resetBtn');
+const presetsGrid = $('#presetsGrid');
+
+/* ===== PRESETS ===== */
+const PRESETS = [
+  { name: 'Subtle', shadows: [{ x: 0, y: 1, blur: 3, spread: 0, color: '#000000', opacity: 8 }] },
+  { name: 'Soft', shadows: [{ x: 0, y: 4, blur: 16, spread: 0, color: '#000000', opacity: 10 }] },
+  { name: 'Card', shadows: [{ x: 0, y: 4, blur: 12, spread: 0, color: '#000000', opacity: 12 }] },
+  { name: 'Elevated', shadows: [{ x: 0, y: 10, blur: 25, spread: -5, color: '#000000', opacity: 15 }] },
+  { name: 'Floating', shadows: [{ x: 0, y: 20, blur: 40, spread: -10, color: '#000000', opacity: 20 }] },
+  { name: 'Sharp', shadows: [{ x: 4, y: 4, blur: 0, spread: 0, color: '#000000', opacity: 100 }] },
+  { name: 'Hard Drop', shadows: [{ x: 6, y: 6, blur: 0, spread: 0, color: '#000000', opacity: 100 }] },
+  { name: 'Inner', shadows: [{ x: 0, y: 2, blur: 8, spread: 0, color: '#000000', opacity: 20, inset: true }] },
+  { name: 'Pressed', shadows: [{ x: 0, y: 4, blur: 8, spread: 0, color: '#000000', opacity: 30, inset: true }] },
+  { name: 'Neon', shadows: [{ x: 0, y: 0, blur: 30, spread: 5, color: '#8b5cf6', opacity: 60 }] },
+  { name: 'Layered', shadows: [
+    { x: 0, y: 1, blur: 2, spread: 0, color: '#000000', opacity: 8 },
+    { x: 0, y: 4, blur: 8, spread: 0, color: '#000000', opacity: 8 },
+    { x: 0, y: 12, blur: 24, spread: -4, color: '#000000', opacity: 10 }
+  ] },
+  { name: 'Retro', shadows: [{ x: 6, y: 6, blur: 0, spread: 0, color: '#ef4444', opacity: 100 }] }
+];
+
+/* ===== BUILD PRESETS UI ===== */
+PRESETS.forEach(preset => {
+  const card = document.createElement('button');
+  card.className = 'preset-card';
+  const shadowCss = preset.shadows.map(s => {
+    const rgb = hexToRgb(s.color);
+    const rgba = `rgba(${rgb.r},${rgb.g},${rgb.b},${s.opacity / 100})`;
+    return `${s.x}px ${s.y}px ${s.blur}px ${s.spread}px ${rgba}${s.inset ? ' inset' : ''}`;
+  }).join(', ');
+  card.innerHTML = `
+    <div class="preset-preview" style="box-shadow: ${shadowCss};"></div>
+    <div class="preset-label">${preset.name}</div>
+  `;
+  card.addEventListener('click', () => {
+    state.layers = preset.shadows.map(s => ({ ...s }));
+    state.activeLayer = 0;
+    renderLayerTabs();
+    loadActiveLayer();
+    update();
+    showToast(`Applied: ${preset.name}`, 'success', 1500);
+  });
+  presetsGrid.appendChild(card);
+});
+
+/* ===== RENDER LAYER TABS ===== */
+function renderLayerTabs() {
+  layerTabsContainer.innerHTML = '';
+  state.layers.forEach((layer, i) => {
+    const tab = document.createElement('button');
+    tab.className = 'layer-tab' + (i === state.activeLayer ? ' active' : '');
+    tab.textContent = 'Layer ' + (i + 1);
+    tab.addEventListener('click', () => {
+      state.activeLayer = i;
+      renderLayerTabs();
+      loadActiveLayer();
+    });
+    layerTabsContainer.appendChild(tab);
+  });
+
+  // Remove button
+  if (state.layers.length > 1) {
+    const rm = document.createElement('button');
+    rm.className = 'remove-layer-btn';
+    rm.textContent = '✕ Remove';
+    rm.addEventListener('click', () => {
+      state.layers.splice(state.activeLayer, 1);
+      state.activeLayer = Math.max(0, state.activeLayer - 1);
+      renderLayerTabs();
+      loadActiveLayer();
+      update();
+    });
+    layerTabsContainer.appendChild(rm);
+  }
+
+  addLayerBtn.disabled = state.layers.length >= 5;
+}
+
+addLayerBtn.addEventListener('click', () => {
+  if (state.layers.length >= 5) return;
+  state.layers.push({ x: 0, y: 4, blur: 12, spread: 0, color: '#000000', opacity: 10, inset: false });
+  state.activeLayer = state.layers.length - 1;
+  renderLayerTabs();
+  loadActiveLayer();
+  update();
+});
+
+/* ===== LOAD ACTIVE LAYER VALUES INTO CONTROLS ===== */
+function loadActiveLayer() {
+  const layer = state.layers[state.activeLayer];
+  if (!layer) return;
+
+  xSlider.value = layer.x;
+  ySlider.value = layer.y;
+  blurSlider.value = layer.blur;
+  spreadSlider.value = layer.spread;
+  opacitySlider.value = layer.opacity;
+  colorPicker.value = layer.color;
+  hexInput.value = layer.color;
+  insetToggle.classList.toggle('on', layer.inset);
+  insetToggle.setAttribute('aria-checked', layer.inset);
+
+  xVal.textContent = layer.x + 'px';
+  yVal.textContent = layer.y + 'px';
+  blurVal.textContent = layer.blur + 'px';
+  spreadVal.textContent = layer.spread + 'px';
+  opacityVal.textContent = layer.opacity + '%';
+}
+
+/* ===== SLIDER HANDLERS ===== */
+xSlider.addEventListener('input', (e) => {
+  state.layers[state.activeLayer].x = parseInt(e.target.value, 10);
+  xVal.textContent = state.layers[state.activeLayer].x + 'px';
+  update();
+});
+
+ySlider.addEventListener('input', (e) => {
+  state.layers[state.activeLayer].y = parseInt(e.target.value, 10);
+  yVal.textContent = state.layers[state.activeLayer].y + 'px';
+  update();
+});
+
+blurSlider.addEventListener('input', (e) => {
+  state.layers[state.activeLayer].blur = parseInt(e.target.value, 10);
+  blurVal.textContent = state.layers[state.activeLayer].blur + 'px';
+  update();
+});
+
+spreadSlider.addEventListener('input', (e) => {
+  state.layers[state.activeLayer].spread = parseInt(e.target.value, 10);
+  spreadVal.textContent = state.layers[state.activeLayer].spread + 'px';
+  update();
+});
+
+opacitySlider.addEventListener('input', (e) => {
+  state.layers[state.activeLayer].opacity = parseInt(e.target.value, 10);
+  opacityVal.textContent = state.layers[state.activeLayer].opacity + '%';
+  update();
+});
+
+colorPicker.addEventListener('input', (e) => {
+  state.layers[state.activeLayer].color = e.target.value;
+  hexInput.value = e.target.value;
+  update();
+});
+
+hexInput.addEventListener('input', (e) => {
+  let v = e.target.value.trim();
+  if (v && !v.startsWith('#')) v = '#' + v;
+  if (/^#[0-9a-fA-F]{6}$/.test(v)) {
+    state.layers[state.activeLayer].color = v;
+    colorPicker.value = v;
+    update();
+  }
+});
+
+insetToggle.addEventListener('click', () => {
+  state.layers[state.activeLayer].inset = !state.layers[state.activeLayer].inset;
+  insetToggle.classList.toggle('on', state.layers[state.activeLayer].inset);
+  insetToggle.setAttribute('aria-checked', state.layers[state.activeLayer].inset);
+  update();
+});
+
+/* ===== SHAPE TABS ===== */
+$$('.shape-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    if (btn.dataset.shape) {
+      $$('.shape-btn[data-shape]').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      state.shape = btn.dataset.shape;
+      previewShape.classList.remove('rounded', 'square', 'round');
+      previewShape.classList.add(state.shape);
+    } else if (btn.dataset.bg === 'dark') {
+      state.darkBg = !state.darkBg;
+      previewPanel.classList.toggle('dark-bg', state.darkBg);
+      btn.classList.toggle('active', state.darkBg);
+    }
+  });
+});
+
+/* ===== FORMAT TABS ===== */
+$$('.format-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    $$('.format-tab').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    state.format = tab.dataset.format;
+    update();
+  });
+});
+
+/* ===== BUILD CSS ===== */
+function buildShadowCss(layers) {
+  return layers.map(layer => {
+    const rgb = hexToRgb(layer.color);
+    const rgba = `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${(layer.opacity / 100).toFixed(2)})`;
+    const inset = layer.inset ? ' inset' : '';
+    return `${layer.x}px ${layer.y}px ${layer.blur}px ${layer.spread}px ${rgba}${inset}`;
+  }).join(', ');
+}
+
+function buildCssForFormat(shadowCss) {
+  switch (state.format) {
+    case 'css':
+      return `box-shadow: ${shadowCss};`;
+    case 'tailwind':
+      return `shadow-[${shadowCss.replace(/\s/g, '_').replace(/,/g, ',')}]`;
+    case 'react':
+      return `style={{ boxShadow: '${shadowCss}' }}`;
+    case 'scss':
+      return `$shadow: ${shadowCss};\nbox-shadow: $shadow;`;
+    default:
+      return shadowCss;
+  }
+}
+
+/* ===== UPDATE PREVIEW + CSS ===== */
+function update() {
+  const shadowCss = buildShadowCss(state.layers);
+
+  // Preview
+  previewShape.style.boxShadow = shadowCss;
+
+  // CSS output
+  const output = buildCssForFormat(shadowCss);
+  cssOutput.innerHTML = highlightCss(output);
+
+  // Update copy button label
+  const labels = { css: 'Copy CSS', tailwind: 'Copy Tailwind', react: 'Copy React', scss: 'Copy SCSS' };
+  copyBtn.innerHTML = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg> ${labels[state.format]}`;
+}
+
+function highlightCss(css) {
+  return css
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/(box-shadow|boxShadow|\$shadow)/g, '<span class="prop">$1</span>')
+    .replace(/(#[0-9a-fA-F]{6})/g, '<span class="val">$1</span>')
+    .replace(/(rgba\([^)]+\))/g, '<span class="val">$1</span>')
+    .replace(/(-?\d+px)/g, '<span class="num">$1</span>')
+    .replace(/(\d+%)/g, '<span class="num">$1</span>');
+}
+
+/* ===== COPY ===== */
+copyBtn.addEventListener('click', async () => {
+  const shadowCss = buildShadowCss(state.layers);
+  const code = buildCssForFormat(shadowCss);
+
+  try {
+    await navigator.clipboard.writeText(code);
+    copyBtn.classList.add('copied');
+    const orig = copyBtn.innerHTML;
+    copyBtn.innerHTML = '✓ Copied!';
+    setTimeout(() => {
+      copyBtn.classList.remove('copied');
+      copyBtn.innerHTML = orig;
+    }, 2000);
+    showToast('Copied to clipboard!', 'success');
+  } catch (err) {
+    showToast('Copy failed', 'error');
+  }
+});
+
+/* ===== RESET ===== */
+resetBtn.addEventListener('click', () => {
+  state.layers = [{ x: 0, y: 10, blur: 20, spread: 0, color: '#000000', opacity: 15, inset: false }];
+  state.activeLayer = 0;
+  state.shape = 'rounded';
+  state.darkBg = false;
+  previewShape.classList.remove('rounded', 'square', 'round');
+  previewShape.classList.add('rounded');
+  previewPanel.classList.remove('dark-bg');
+  $$('.shape-btn').forEach(b => {
+    b.classList.remove('active');
+    if (b.dataset.shape === 'rounded') b.classList.add('active');
+  });
+  renderLayerTabs();
+  loadActiveLayer();
+  update();
+  showToast('Reset to default');
+});
+
+/* ===== KEYBOARD ===== */
+document.addEventListener('keydown', (e) => {
+  if ((e.ctrlKey || e.metaKey) && e.key === 'c' && !window.getSelection().toString()) {
+    // Don't intercept if user has selected text
+    return;
+  }
+});
+
+/* ===== INIT ===== */
+renderLayerTabs();
+loadActiveLayer();
+update();
+
+/* ===== FAQ ===== */
+$$('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    $$('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+</script>
+
+</body>
+</html>

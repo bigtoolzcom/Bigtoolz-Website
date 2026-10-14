@@ -1,0 +1,1170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2563eb">
+
+<title>PDF Text Extractor - Extract Text from PDF Online Free | BigToolz</title>
+<meta name="description" content="Extract text from PDF online free. Copy all text, download as .txt file, search within. No upload, works in your browser. Fast, private, accurate extraction.">
+<meta name="keywords" content="pdf text extractor, extract text from pdf, pdf to text, pdf text extractor online, get text from pdf">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://bigtoolz.com/tools/pdf-tools/security-pdf/text-extractor/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="PDF Text Extractor - Free Online Tool | BigToolz">
+<meta property="og:description" content="Extract all text from PDF copy, download as .txt, search inside.">
+<meta property="og:url" content="https://bigtoolz.com/tools/pdf-tools/security-pdf/text-extractor/">
+<meta property="og:image" content="https://bigtoolz.com/assets/images/og-image.jpg">
+<meta property="og:site_name" content="BigToolz">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="PDF Text Extractor - BigToolz">
+<meta name="twitter:description" content="Extract text from PDF instantly free, no upload.">
+<meta name="twitter:image" content="https://bigtoolz.com/assets/images/twitter-card.jpg">
+
+<link rel="icon" href="/assets/images/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/images/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#f8f9fc;color:#1a1a2e;overflow-x:hidden;line-height:1.5}
+
+  .header{background:#fff;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;position:sticky;top:0;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+  .header-left{display:flex;align-items:center;gap:40px}
+  .logo{display:flex;align-items:center;gap:8px;font-size:22px;font-weight:800;color:#1a1a2e;text-decoration:none}
+  .logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#3b82f6,#2563eb);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px}
+  .logo span{color:#2563eb}
+  .nav{display:flex;align-items:center;gap:28px;list-style:none}
+  .nav a{text-decoration:none;color:#4b5563;font-size:14px;font-weight:500;transition:color .2s}
+  .nav a:hover,.nav a.active{color:#2563eb}
+  .header-right{display:flex;align-items:center;gap:16px}
+  .search-btn,.theme-btn{width:36px;height:36px;border-radius:50%;border:none;background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#4b5563}
+  .search-btn:hover,.theme-btn:hover{background:#f3f4f6}
+  .bookmark-btn{display:flex;align-items:center;gap:8px;background:#2563eb;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
+  .bookmark-btn:hover{background:#1d4ed8}
+
+  .hero{background:linear-gradient(135deg,#0a0e27 0%,#1a1a4e 40%,#2d1b69 70%,#4c1d95 100%);padding:40px 40px 60px;position:relative;overflow:hidden;color:#fff}
+  .hero::before{content:'';position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(16,185,129,.25) 0%,transparent 70%);border-radius:50%}
+  .hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+  .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px;flex-wrap:wrap}
+  .breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none}
+  .breadcrumb a:hover{color:#fff}
+  .breadcrumb .sep{color:rgba(255,255,255,.4)}
+  .breadcrumb .current{color:#fff;font-weight:500}
+  .hero-title-row{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+  .hero-icon{width:60px;height:60px;background:#10b981;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px;color:#fff;flex-shrink:0;box-shadow:0 8px 24px rgba(16,185,129,.4)}
+  .hero-title{font-size:42px;font-weight:800;line-height:1.15}
+  .hero-title .blue{color:#34d399}
+  .hero-desc{font-size:15px;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:24px;max-width:560px}
+  .hero-features{display:flex;gap:24px;flex-wrap:wrap}
+  .hero-feature{display:flex;align-items:center;gap:6px;font-size:13px;color:#fff;font-weight:500}
+  .hero-feature .check{width:18px;height:18px;border-radius:50%;background:#10b981;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;flex-shrink:0}
+
+  .main-content{max-width:1200px;margin:0 auto;padding:40px;display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start}
+  .tool-content{min-width:0}
+
+  .workspace{background:#fff;border-radius:16px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,.06);border:1px solid #e5e7eb;margin-bottom:24px}
+
+  .dropzone{border:2px dashed #a7f3d0;border-radius:12px;padding:50px 30px;text-align:center;background:#f0fdf4;margin-bottom:24px;transition:all .2s;cursor:pointer}
+  .dropzone:hover,.dropzone.dragover{border-color:#10b981;background:#d1fae5}
+  .dropzone-icon{width:60px;height:60px;background:linear-gradient(135deg,#10b981,#059669);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;color:#fff;font-size:26px;transition:transform .2s}
+  .dropzone:hover .dropzone-icon{transform:translateY(-4px)}
+  .dropzone-title{font-size:16px;font-weight:700;color:#1a1a2e;margin-bottom:8px}
+  .dropzone-sub{font-size:14px;color:#6b7280;margin-bottom:20px}
+  .dropzone-sub a{color:#10b981;font-weight:600;text-decoration:none}
+  .choose-btn{display:inline-flex;align-items:center;gap:8px;background:#10b981;color:#fff;border:none;padding:12px 28px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;transition:background .2s}
+  .choose-btn:hover{background:#059669}
+  .dropzone-info{font-size:12px;color:#9ca3af;display:flex;align-items:center;justify-content:center;gap:8px;margin-top:16px;flex-wrap:wrap}
+  .dropzone-info .divider{color:#d1d5db}
+  .file-input{display:none}
+
+  .pdf-info{display:none;background:#f0fdf4;border-radius:12px;padding:16px 20px;margin-bottom:20px;border:1px solid #a7f3d0;align-items:center;gap:16px;flex-wrap:wrap}
+  .pdf-info.visible{display:flex}
+  .pdf-info-icon{width:44px;height:44px;background:#10b981;border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:18px;flex-shrink:0}
+  .pdf-info-details{flex:1;min-width:0}
+  .pdf-info-name{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .pdf-info-meta{font-size:12px;color:#6b7280}
+
+  /* Options */
+  .options{background:#f0fdf4;border-radius:12px;padding:20px;margin-bottom:20px;border:1px solid #a7f3d0}
+  .options-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+
+  .options-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+  .option-group label{display:block;font-size:12px;font-weight:600;color:#4b5563;margin-bottom:6px}
+  .option-group input,.option-group select{width:100%;padding:10px 12px;border:1px solid #e5e7eb;border-radius:8px;font-size:13px;font-family:inherit;color:#1a1a2e;background:#fff;outline:none;transition:border-color .2s}
+  .option-group input:focus,.option-group select:focus{border-color:#10b981;box-shadow:0 0 0 3px rgba(16,185,129,.1)}
+
+  /* Toggle */
+  .toggle-row{display:flex;align-items:center;justify-content:space-between;padding:12px 14px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;gap:12px;grid-column:span 2}
+  .toggle-info{display:flex;flex-direction:column;gap:2px}
+  .toggle-title{font-size:13px;font-weight:700;color:#1a1a2e}
+  .toggle-desc{font-size:11px;color:#6b7280;line-height:1.4}
+  .toggle-switch{position:relative;width:44px;height:24px;background:#d1d5db;border-radius:12px;cursor:pointer;transition:background .2s;flex-shrink:0}
+  .toggle-switch::after{content:'';position:absolute;top:2px;left:2px;width:20px;height:20px;background:#fff;border-radius:50%;transition:transform .2s;box-shadow:0 1px 3px rgba(0,0,0,.15)}
+  .toggle-switch.on{background:#10b981}
+  .toggle-switch.on::after{transform:translateX(20px)}
+
+  .actions{display:flex;gap:12px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 28px;border-radius:10px;font-size:15px;font-weight:700;font-family:inherit;cursor:pointer;border:none;transition:all .2s;text-decoration:none}
+  .btn-primary{background:#10b981;color:#fff;flex:1;box-shadow:0 4px 12px rgba(16,185,129,.2)}
+  .btn-primary:hover:not(:disabled){background:#059669;transform:translateY(-2px);box-shadow:0 6px 20px rgba(16,185,129,.3)}
+  .btn-primary:disabled{opacity:.5;cursor:not-allowed;transform:none}
+  .btn-secondary{background:#fff;color:#10b981;border:1px solid #e5e7eb}
+  .btn-secondary:hover{border-color:#10b981;background:#f0fdf4}
+  .btn-success{background:#10b981;color:#fff}
+  .btn-success:hover{background:#059669}
+
+  .progress{display:none;margin-top:20px}
+  .progress.visible{display:block}
+  .progress-bar{width:100%;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden;margin-bottom:8px}
+  .progress-fill{height:100%;background:linear-gradient(90deg,#34d399,#10b981);border-radius:4px;width:0%;transition:width .3s ease}
+  .progress-text{font-size:13px;color:#6b7280;text-align:center;font-weight:500}
+
+  /* Results area */
+  .results{display:none;margin-top:20px}
+  .results.visible{display:block}
+  .results-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:12px}
+  .results-title{font-size:16px;font-weight:700;color:#1a1a2e;display:flex;align-items:center;gap:8px}
+  .results-title .success-icon{width:24px;height:24px;background:#10b981;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px}
+
+  /* Stats bar */
+  .stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:16px}
+  .stat{background:#f0fdf4;border:1px solid #a7f3d0;border-radius:10px;padding:12px;text-align:center}
+  .stat-value{font-size:20px;font-weight:800;color:#059669;margin-bottom:2px;line-height:1.2}
+  .stat-label{font-size:10px;color:#6b7280;font-weight:600;text-transform:uppercase;letter-spacing:.3px}
+
+  /* Search bar */
+  .search-bar{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap}
+  .search-bar input{flex:1;min-width:200px;padding:12px 14px;border:1px solid #e5e7eb;border-radius:8px;font-size:13px;font-family:inherit;color:#1a1a2e;background:#fff;outline:none;transition:border-color .2s}
+  .search-bar input:focus{border-color:#10b981;box-shadow:0 0 0 3px rgba(16,185,129,.1)}
+  .search-bar .search-count{display:flex;align-items:center;font-size:12px;font-weight:600;color:#059669;background:#f0fdf4;padding:0 14px;border-radius:8px;border:1px solid #a7f3d0;white-space:nowrap}
+
+  /* Text output */
+  .text-output{background:#f8fafc;border:1px solid #cbd5e1;border-radius:10px;padding:0;overflow:hidden;max-height:600px;display:flex;flex-direction:column}
+  .text-output-header{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:#e2e8f0;border-bottom:1px solid #cbd5e1;font-size:12px;font-weight:700;color:#475569;flex-wrap:wrap;gap:8px}
+  .text-output-content{overflow-y:auto;padding:16px 20px;font-family:'JetBrains Mono','Courier New',monospace;font-size:13px;line-height:1.7;color:#1a1a2e;white-space:pre-wrap;word-break:break-word}
+  .text-output-content mark{background:#fef08a;color:#1a1a2e;padding:1px 3px;border-radius:3px;font-weight:700}
+
+  .page-divider{border-top:1px dashed #cbd5e1;margin:16px 0;position:relative}
+  .page-divider::before{content:attr(data-page);position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:#f8fafc;padding:0 10px;font-size:10px;font-weight:700;color:#10b981;letter-spacing:.5px;text-transform:uppercase;font-family:'Inter',sans-serif}
+
+  .empty-text{color:#9ca3af;font-style:italic;font-family:'Inter',sans-serif;font-size:13px}
+
+  /* Action row */
+  .action-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
+  .sub-btn{display:inline-flex;align-items:center;gap:6px;padding:10px 16px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;font-size:12px;font-weight:600;color:#4b5563;cursor:pointer;font-family:inherit;transition:all .2s}
+  .sub-btn:hover{border-color:#10b981;color:#10b981;background:#f0fdf4}
+  .sub-btn.copied{background:#10b981;color:#fff;border-color:#10b981}
+
+  .seo-content{background:#fff;border-radius:16px;padding:32px;border:1px solid #e5e7eb;margin-bottom:24px}
+  .seo-content h2{font-size:22px;font-weight:800;color:#1a1a2e;margin-bottom:14px;margin-top:28px;display:flex;align-items:center;gap:10px}
+  .seo-content h2:first-child{margin-top:0}
+  .seo-content h3{font-size:16px;font-weight:700;color:#1a1a2e;margin:20px 0 10px}
+  .seo-content p{font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:14px}
+  .seo-content ul{list-style:none;padding-left:0;margin-bottom:16px}
+  .seo-content ul li{position:relative;padding-left:24px;font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:8px}
+  .seo-content ul li::before{content:'';position:absolute;left:6px;top:12px;width:6px;height:6px;background:#10b981;border-radius:50%}
+  .seo-content a{color:#2563eb;text-decoration:none;font-weight:600}
+  .seo-content a:hover{text-decoration:underline}
+  .seo-content strong{color:#1a1a2e;font-weight:700}
+  .seo-content code{background:#f1f5f9;padding:2px 6px;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:13px;color:#0f172a;border:1px solid #e2e8f0}
+
+  .how-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:20px}
+  .how-step{background:#f0fdf4;border-radius:12px;padding:20px;border:1px solid #a7f3d0}
+  .how-step-num{width:36px;height:36px;border-radius:50%;background:#10b981;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;margin-bottom:12px}
+  .how-step-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+  .how-step-desc{font-size:13px;color:#6b7280;line-height:1.6}
+
+  .faq-item{background:#f0fdf4;border:1px solid #a7f3d0;border-radius:12px;margin-bottom:10px;overflow:hidden;transition:border-color .2s}
+  .faq-item:hover{border-color:#10b981}
+  .faq-question{width:100%;background:none;border:none;padding:18px 22px;font-size:15px;font-weight:700;color:#1a1a2e;text-align:left;cursor:pointer;font-family:inherit;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .faq-question .chev{font-size:12px;color:#10b981;transition:transform .2s;flex-shrink:0}
+  .faq-item.open .faq-question .chev{transform:rotate(180deg)}
+  .faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 22px}
+  .faq-item.open .faq-answer{max-height:500px;padding-bottom:18px}
+  .faq-answer p{font-size:14px;color:#6b7280;line-height:1.7;margin:0}
+
+  .sidebar{background:#fff;border-radius:16px;padding:24px;border:1px solid #e5e7eb;position:sticky;top:80px;margin-bottom:24px}
+  .sidebar-header{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:800;color:#1a1a2e;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid #f3f4f6}
+  .sidebar-list{display:flex;flex-direction:column;gap:8px}
+  .sidebar-item{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;cursor:pointer;transition:background .2s;text-decoration:none;color:inherit;border:1px solid #f3f4f6}
+  .sidebar-item:hover{background:#f0fdf4;border-color:#a7f3d0}
+  .sidebar-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;flex-shrink:0}
+  .sidebar-info{flex:1;min-width:0}
+  .sidebar-title{font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:2px}
+  .sidebar-desc{font-size:11px;color:#9ca3af;line-height:1.4}
+
+  .footer{background:#0a0e27;padding:60px 40px 30px;color:#fff;margin-top:40px}
+  .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:40px}
+  .footer-brand{display:flex;align-items:center;gap:8px;font-size:20px;font-weight:800;margin-bottom:12px}
+  .footer-brand span{color:#60a5fa}
+  .footer-tagline{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px}
+  .footer-social{display:flex;gap:12px}
+  .footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:16px;transition:background .2s}
+  .footer-social a:hover{background:rgba(255,255,255,.2)}
+  .footer-heading{font-size:14px;font-weight:700;margin-bottom:20px;color:#fff}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .footer-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;transition:color .2s}
+  .footer-links a:hover{color:#60a5fa}
+  .footer-bottom{max-width:1200px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  .footer-bottom-left{display:flex;gap:20px;font-size:12px;color:rgba(255,255,255,.5)}
+  .footer-bottom-right,.footer-bottom-links a{font-size:12px;color:rgba(255,255,255,.5);text-decoration:none}
+  .footer-bottom-links{display:flex;gap:20px}
+
+  .toast{position:fixed;bottom:24px;right:24px;background:#1a1a2e;color:#fff;padding:14px 20px;border-radius:10px;font-size:13px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:3000;transform:translateY(200%);transition:transform .3s ease;max-width:320px}
+  .toast.visible{transform:translateY(0)}
+  .toast.success{background:#10b981}
+  .toast.error{background:#ef4444}
+  .toast.info{background:#3b82f6}
+
+  @media(max-width:1024px){
+    .main-content{grid-template-columns:1fr;padding:24px 20px}
+    .sidebar{position:static}
+    .how-steps{grid-template-columns:repeat(2,1fr)}
+    .stats-bar{grid-template-columns:repeat(2,1fr)}
+  }
+  @media(max-width:768px){
+    .header{padding:0 20px}.nav{display:none}
+    .hero{padding:24px 20px 40px}
+    .hero-title{font-size:28px}
+    .hero-icon{width:48px;height:48px;font-size:20px}
+    .hero-title-row{flex-direction:column;align-items:flex-start;gap:12px}
+    .main-content{padding:20px 16px}
+    .workspace{padding:20px}
+    .dropzone{padding:32px 16px}
+    .how-steps{grid-template-columns:1fr}
+    .seo-content{padding:20px}
+    .footer-inner{grid-template-columns:1fr 1fr}
+    .options-grid{grid-template-columns:1fr}
+    .toggle-row{grid-column:span 1}
+    .toast{left:16px;right:16px;bottom:16px;max-width:none}
+    .text-output-content{font-size:12px;padding:12px 14px}
+  }
+  @media(max-width:576px){
+    .header{padding:0 16px}.header-right .search-btn,.header-right .theme-btn{display:none}
+    .hero-title{font-size:24px}
+    .actions{flex-direction:column}
+    .btn{width:100%}
+    .btn-primary{flex:none}
+    .footer-inner{grid-template-columns:1fr}
+    .footer-bottom{flex-direction:column;text-align:center}
+    .stats-bar{grid-template-columns:1fr 1fr}
+  }
+
+  html[data-theme="dark"] body{background:#0f172a;color:#f1f5f9}
+  html[data-theme="dark"] .header,html[data-theme="dark"] .workspace,html[data-theme="dark"] .seo-content,html[data-theme="dark"] .sidebar{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .logo,html[data-theme="dark"] .hero-title,html[data-theme="dark"] .seo-content h2,html[data-theme="dark"] .seo-content h3,html[data-theme="dark"] .faq-question,html[data-theme="dark"] .results-title,html[data-theme="dark"] .sidebar-header,html[data-theme="dark"] .sidebar-title,html[data-theme="dark"] .pdf-info-name,html[data-theme="dark"] .options-title,html[data-theme="dark"] .toggle-title{color:#f1f5f9}
+  html[data-theme="dark"] .nav a{color:#cbd5e1}
+  html[data-theme="dark"] .dropzone{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .how-step,html[data-theme="dark"] .faq-item,html[data-theme="dark"] .pdf-info,html[data-theme="dark"] .options,html[data-theme="dark"] .toggle-row,html[data-theme="dark"] .stat{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .option-group input,html[data-theme="dark"] .option-group select{background:#0f172a;border-color:#334155;color:#f1f5f9}
+  html[data-theme="dark"] .seo-content p,html[data-theme="dark"] .seo-content ul li,html[data-theme="dark"] .faq-answer p,html[data-theme="dark"] .pdf-info-meta,html[data-theme="dark"] .stat-label{color:#cbd5e1}
+  html[data-theme="dark"] .seo-content code{background:#020617;color:#94a3b8;border-color:#334155}
+  html[data-theme="dark"] .text-output{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .text-output-header{background:#1e293b;border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .text-output-content{color:#cbd5e1}
+  html[data-theme="dark"] .page-divider{border-color:#334155}
+  html[data-theme="dark"] .page-divider::before{background:#0f172a}
+  html[data-theme="dark"] .sub-btn{background:#1e293b;border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .search-bar input{background:#0f172a;border-color:#334155;color:#f1f5f9}
+  html[data-theme="dark"] .search-bar .search-count{background:#0f172a;border-color:#334155;color:#34d399}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type": "SoftwareApplication", "name": "PDF Text Extractor", "url": "https://bigtoolz.com/tools/pdf-tools/security-pdf/text-extractor/", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any (Web-based)", "description": "Free online tool to extract text from PDF copy all, download as .txt, search inside. Works in your browser.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.8", "ratingCount": "1654"}},
+    {"@type": "HowTo", "name": "How to Extract Text from PDF", "step": [
+      {"@type": "HowToStep", "name": "Upload PDF", "text": "Drag & drop or click to select a PDF file."},
+      {"@type": "HowToStep", "name": "Extract", "text": "Click Extract Text to process all pages."},
+      {"@type": "HowToStep", "name": "Copy or Download", "text": "Copy the text or download as .txt file."},
+      {"@type": "HowToStep", "name": "Search", "text": "Optionally search within the extracted text."}
+    ]},
+    {"@type": "FAQPage", "mainEntity": [
+      {"@type": "Question", "name": "How do I extract text from a PDF?", "acceptedAnswer": {"@type": "Answer", "text": "Upload your PDF, choose your page range, then click Extract Text. The full text from all selected pages is displayed copy it or download as a .txt file."}},
+      {"@type": "Question", "name": "Does this work with scanned PDFs?", "acceptedAnswer": {"@type": "Answer", "text": "Not directly. Scanned PDFs are images, not text you'd need OCR (Optical Character Recognition). Our tool extracts text from PDFs that already contain real text (from Word exports, eBooks, digital documents)."}},
+      {"@type": "Question", "name": "Will the extracted text keep formatting?", "acceptedAnswer": {"@type": "Answer", "text": "Basic layout is preserved (line breaks, paragraph structure), but advanced formatting like bold, italic, colors and precise positioning are lost. The text content itself is 100% accurate."}},
+      {"@type": "Question", "name": "Can I extract text from specific pages?", "acceptedAnswer": {"@type": "Answer", "text": "Yes! Use the Page Range field to specify which pages to extract. Enter something like '2-5,7,9-11' to extract only those pages."}},
+      {"@type": "Question", "name": "Are my PDFs uploaded to a server?", "acceptedAnswer": {"@type": "Answer", "text": "No. All processing happens in your browser using pdf.js. Your PDF never leaves your device."}}
+    ]},
+    {"@type": "BreadcrumbList", "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bigtoolz.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://bigtoolz.com/tools/"},
+      {"@type": "ListItem", "position": 3, "name": "PDF Tools", "item": "https://bigtoolz.com/tools/pdf-tools/"},
+      {"@type": "ListItem", "position": 4, "name": "Security PDF", "item": "https://bigtoolz.com/tools/pdf-tools/security-pdf/"},
+      {"@type": "ListItem", "position": 5, "name": "Text Extractor", "item": "https://bigtoolz.com/tools/pdf-tools/security-pdf/text-extractor/"}
+    ]}
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-left">
+    <a href="/" class="logo"><div class="logo-icon">⚒</div>BigToolz</span></a>
+    <nav><ul class="nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/tools/" class="active">All Tools</a></li>
+      <li><a href="/tools/categories">Categories</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul></nav>
+  </div>
+  <div class="header-right">
+   
+    <button class="theme-btn" aria-label="Toggle theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
+    
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <nav class="breadcrumb">
+      <a href="/">Home</a><span class="sep">›</span>
+      <a href="/tools/">Tools</a><span class="sep">›</span>
+      <a href="/tools/pdf-tools/">PDF Tools</a><span class="sep">›</span>
+      <a href="/tools/pdf-tools/security-pdf/">Security PDF</a><span class="sep">›</span>
+      <span class="current">Text Extractor</span>
+    </nav>
+    <div class="hero-title-row">
+      <div class="hero-icon">📝</div>
+      <h1 class="hero-title">PDF <span class="blue">Text Extractor</span></h1>
+    </div>
+    <p class="hero-desc">
+      Extract all text from any PDF copy to clipboard, download as .txt, search inside. Get word/character counts instantly. No upload, 100% private, browser-based.
+    </p>
+    <div class="hero-features">
+      <div class="hero-feature"><span class="check">✓</span> Copy to Clipboard</div>
+      <div class="hero-feature"><span class="check">✓</span> Download .txt</div>
+      <div class="hero-feature"><span class="check">✓</span> Search Inside</div>
+      <div class="hero-feature"><span class="check">✓</span> No Upload</div>
+    </div>
+  </div>
+</section>
+
+<div class="main-content">
+
+  <div class="tool-content">
+
+    <div class="workspace">
+
+      <div class="dropzone" id="dropzone">
+        <div class="dropzone-icon">⬆</div>
+        <div class="dropzone-title">Drag & drop your PDF here</div>
+        <div class="dropzone-sub">or <a href="#" id="browseLink">click to browse files</a></div>
+        <button class="choose-btn" id="chooseBtn" type="button">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/></svg>
+          Choose PDF File
+        </button>
+        <div class="dropzone-info">
+          <span>PDF files only</span>
+          <span class="divider">|</span>
+          <span>Single file at a time</span>
+        </div>
+        <input type="file" id="fileInput" class="file-input" accept=".pdf,application/pdf">
+      </div>
+
+      <!-- PDF Info Bar -->
+      <div class="pdf-info" id="pdfInfo">
+        <div class="pdf-info-icon">📕</div>
+        <div class="pdf-info-details">
+          <div class="pdf-info-name" id="pdfName">document.pdf</div>
+          <div class="pdf-info-meta" id="pdfMeta">0 pages · 0 KB</div>
+        </div>
+      </div>
+
+      <div class="options">
+        <div class="options-title">⚙️ Extraction Settings</div>
+        <div class="options-grid">
+          <div class="option-group">
+            <label>Page Range (empty = all)</label>
+            <input type="text" id="pageRange" placeholder="e.g. 2-5,7,9-11">
+          </div>
+          <div class="option-group">
+            <label>Page Separator</label>
+            <select id="separator">
+              <option value="page">Show "Page X" divider</option>
+              <option value="dash">--- (dashed line)</option>
+              <option value="blank">Blank line only</option>
+              <option value="none">No separator (concatenate)</option>
+            </select>
+          </div>
+          <div class="toggle-row">
+            <div class="toggle-info">
+              <div class="toggle-title">Preserve Line Breaks</div>
+              <div class="toggle-desc">Keep original paragraph and line structure from PDF</div>
+            </div>
+            <div class="toggle-switch on" id="preserveLinesToggle" role="switch" aria-checked="true"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button class="btn btn-primary" id="extractBtn" disabled>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+          Extract Text
+        </button>
+        <button class="btn btn-secondary" id="clearBtn">Clear</button>
+      </div>
+
+      <div class="progress" id="progress">
+        <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+        <div class="progress-text" id="progressText">Extracting...</div>
+      </div>
+
+      <!-- Results -->
+      <div class="results" id="results">
+        <div class="results-header">
+          <div class="results-title"><span class="success-icon">✓</span> Text Extracted Successfully</div>
+        </div>
+
+        <!-- Stats -->
+        <div class="stats-bar">
+          <div class="stat">
+            <div class="stat-value" id="statChars">0</div>
+            <div class="stat-label">Characters</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value" id="statWords">0</div>
+            <div class="stat-label">Words</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value" id="statLines">0</div>
+            <div class="stat-label">Lines</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value" id="statPages">0</div>
+            <div class="stat-label">Pages</div>
+          </div>
+        </div>
+
+        <!-- Search bar -->
+        <div class="search-bar">
+          <input type="text" id="searchInput" placeholder="Search within extracted text...">
+          <div class="search-count" id="searchCount">0 matches</div>
+        </div>
+
+        <!-- Text output -->
+        <div class="text-output">
+          <div class="text-output-header">
+            <span>📄 Extracted Text</span>
+            <span id="outputInfo"></span>
+          </div>
+          <div class="text-output-content" id="textOutput"></div>
+        </div>
+
+        <!-- Action row -->
+        <div class="action-row">
+          <button class="sub-btn" id="copyBtn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+            Copy All Text
+          </button>
+          <button class="sub-btn" id="downloadTxtBtn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+            Download .txt
+          </button>
+          <button class="sub-btn" id="startOverBtn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 109-9 9.75 9.75 0 00-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+            Start Over
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="seo-content">
+
+      <h2>📝 What is PDF Text Extractor?</h2>
+      <p>
+        <strong>PDF Text Extractor</strong> pulls all the actual text content out of a PDF file. This is useful when you need to <strong>copy text from a PDF</strong> into Word or Google Docs, <strong>search within a document</strong> for specific phrases, <strong>repurpose content</strong> for a blog or report, or <strong>analyze word counts</strong>.
+      </p>
+      <p>
+        Unlike most online tools, BigToolz processes everything <strong>100% in your browser</strong> using <strong>pdf.js</strong> (Mozilla's open-source PDF engine, same as Firefox uses). Your PDF <strong>never uploaded to any server</strong> complete privacy, instant results.
+      </p>
+
+      <h2>🚀 How to Extract Text from PDF</h2>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-step-num">1</div>
+          <div class="how-step-title">Upload PDF</div>
+          <div class="how-step-desc">Drag & drop or click "Choose PDF File" to select a PDF.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">2</div>
+          <div class="how-step-title">Set Range</div>
+          <div class="how-step-desc">Optional choose specific pages or extract all.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">3</div>
+          <div class="how-step-title">Extract</div>
+          <div class="how-step-desc">Click "Extract Text" to process all pages.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">4</div>
+          <div class="how-step-title">Copy/Download</div>
+          <div class="how-step-desc">Copy to clipboard or download as .txt file.</div>
+        </div>
+      </div>
+
+      <h2>📌 What Gets Extracted</h2>
+      <ul>
+        <li><strong>All text content</strong> paragraphs, headings, lists, tables (as plain text).</li>
+        <li><strong>Line breaks</strong> preserved based on PDF layout.</li>
+        <li><strong>Page structure</strong> option to separate pages with dividers.</li>
+        <li><strong>Special characters</strong> supported (including Unicode, accents, symbols).</li>
+        <li><strong>Text from multiple languages</strong> any language the PDF contains.</li>
+      </ul>
+
+      <h3>What Doesn't Get Extracted</h3>
+      <ul>
+        <li><strong>Formatting</strong> bold, italic, colors, font sizes, precise positions are not preserved.</li>
+        <li><strong>Images</strong> text inside images is not extracted (needs OCR).</li>
+        <li><strong>Scanned PDFs</strong> scanned documents are images, not text. You need OCR.</li>
+        <li><strong>Tables as tables</strong> table content comes out as plain text lines, not structured tables.</li>
+      </ul>
+
+      <h2>💡 Common Use Cases</h2>
+      <ul>
+        <li><strong>Copy from PDF</strong> quotes, research, or documentation into another doc.</li>
+        <li><strong>Word count</strong> analyze a document's length for translation or editing quotes.</li>
+        <li><strong>Search inside PDF</strong> find specific phrases across a large document.</li>
+        <li><strong>Content repurposing</strong> pull text into blog posts, articles, or notes.</li>
+        <li><strong>Data extraction</strong> pull lists, emails, or addresses from PDFs.</li>
+        <li><strong>Accessibility</strong> extract text for screen readers or translation tools.</li>
+      </ul>
+
+      <h2>✨ Key Features</h2>
+      <ul>
+        <li><strong>100% browser-based</strong> no uploads, complete privacy.</li>
+        <li><strong>pdf.js engine</strong> accurate extraction, handles most PDFs.</li>
+        <li><strong>Page range</strong> extract specific pages only.</li>
+        <li><strong>Custom separators</strong> page divider, dashes, blank lines, or none.</li>
+        <li><strong>Live word count</strong> see characters, words, lines, pages.</li>
+        <li><strong>Search inside</strong> find text with highlighted matches.</li>
+        <li><strong>Copy to clipboard</strong> one click for full text.</li>
+        <li><strong>Download .txt</strong> save as plain text file.</li>
+        <li><strong>Preserve line breaks</strong> keep paragraph structure.</li>
+      </ul>
+
+      <h2>❓ Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-question">How do I extract text from a PDF?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Upload your PDF, choose your page range, then click "Extract Text". The full text from all selected pages is displayed copy it or download as a .txt file. Free, no signup.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Does this work with scanned PDFs?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>Not directly.</strong> Scanned PDFs are images, not text they contain no extractable characters. You need <strong>OCR (Optical Character Recognition)</strong> software to convert the images to text first. Our tool extracts text from PDFs that already contain real text (from Word exports, eBooks, digital reports).</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Will the extracted text keep formatting?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>Basic layout is preserved</strong> (line breaks, paragraph structure, spacing), but advanced formatting like bold, italic, colors, and precise positioning is lost. The <strong>text content itself is 100% accurate</strong>. If you need rich formatting, use PDF to Word instead.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I extract text from specific pages?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Yes! Use the <strong>Page Range</strong> field to specify which pages to extract. Enter <code>2-5,7,9-11</code> to extract only pages 2,3,4,5,7,9,10,11. Leave empty to extract the entire PDF.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I search within the extracted text?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Yes! After extraction, use the <strong>search bar</strong> to find specific words or phrases. Matches are highlighted in yellow and the count is displayed. Great for finding things in large documents.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What can I do with the extracted text?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Copy it into Word/Google Docs, save it as a .txt file, use it for translation, count words for quotes, search for information, or feed it into other tools. The plain text format works with everything.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Are my PDFs uploaded to a server?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>No. All processing happens in your browser using pdf.js. Your PDF never leaves your device, and nothing is stored anywhere.</p></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-header">🔗 Related PDF Tools</div>
+    <div class="sidebar-list">
+      <a href="/tools/pdf-tools/security-pdf/metadata-viewer/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#3b82f6;">ℹ️</div>
+        <div class="sidebar-info"><div class="sidebar-title">Metadata Viewer</div><div class="sidebar-desc">View PDF info</div></div>
+      </a>
+      <a href="/tools/pdf-tools/security-pdf/protect-pdf/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#10b981;">🔒</div>
+        <div class="sidebar-info"><div class="sidebar-title">Protect PDF</div><div class="sidebar-desc">Add password</div></div>
+      </a>
+      <a href="/tools/pdf-tools/security-pdf/unlock-pdf/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#3b82f6;">🔓</div>
+        <div class="sidebar-info"><div class="sidebar-title">Unlock PDF</div><div class="sidebar-desc">Remove password</div></div>
+      </a>
+      <a href="/tools/pdf-tools/convert-pdf/pdf-to-jpg/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#ef4444;">🖼</div>
+        <div class="sidebar-info"><div class="sidebar-title">PDF to JPG</div><div class="sidebar-desc">Extract as images</div></div>
+      </a>
+      <a href="/tools/pdf-tools/organize-pdf/delete-pages/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#ef4444;">🗑</div>
+        <div class="sidebar-info"><div class="sidebar-title">Delete Pages</div><div class="sidebar-desc">Remove pages</div></div>
+      </a>
+      <a href="/tools/pdf-tools/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#64748b;">📕</div>
+        <div class="sidebar-info"><div class="sidebar-title">All PDF Tools →</div><div class="sidebar-desc">Browse 100+ tools</div></div>
+      </a>
+    </div>
+  </aside>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand"><div class="logo-icon">⚒</div>BigToolz</span></div>
+      <p class="footer-tagline">Your Ultimate Online Tools Hub</p>
+      <div class="footer-social">
+        <a href="https://facebook.com/bigtoolz" aria-label="Facebook">f</a>
+        <a href="https://twitter.com/bigtoolz" aria-label="Twitter">𝕏</a>
+        <a href="https://youtube.com/@bigtoolz" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+    <div>
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/tools/">All Tools</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Categories</h3>
+      <ul class="footer-links">
+        <li><a href="/tools/image-tools/">Image Tools</a></li>
+        <li><a href="/tools/pdf-tools/">PDF Tools</a></li>
+        <li><a href="/tools/text-tools/">Text Tools</a></li>
+        <li><a href="/tools/seo-tools/">SEO Tools</a></li>
+        <li><a href="/tools/categories">All Categories →</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Legal</h3>
+      <ul class="footer-links">
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left"><span>✓ 100% Free</span><span>✓ No Sign Up</span><span>✓ No Installation</span></div>
+    <div class="footer-bottom-right">© 2026 BigToolz. All rights reserved.</div>
+    <div class="footer-bottom-links"><a href="/privacy-policy">Privacy</a><a href="/terms">Terms</a><a href="/disclaimer">Disclaimer</a></div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<!-- Libraries -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+
+<script>
+'use strict';
+
+/* ===== THEME ===== */
+(function(){try{var t=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&d))document.documentElement.setAttribute('data-theme','dark');else if(t==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();
+document.querySelector('.theme-btn')?.addEventListener('click',()=>{const h=document.documentElement;const c=h.getAttribute('data-theme');const d=window.matchMedia('(prefers-color-scheme: dark)').matches;let n=c==='dark'?'light':c==='light'?'dark':(d?'light':'dark');h.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}});
+
+/* ===== HELPERS ===== */
+const $ = (s, p = document) => p.querySelector(s);
+const $$ = (s, p = document) => [...p.querySelectorAll(s)];
+
+function formatBytes(b) {
+  if (b === 0) return '0 B';
+  const k = 1024, sizes = ['B', 'KB', 'MB', 'GB'];
+  const i = Math.floor(Math.log(b) / Math.log(k));
+  return (b / Math.pow(k, i)).toFixed(i === 0 ? 0 : 1) + ' ' + sizes[i];
+}
+
+function showToast(msg, type = 'info', duration = 3000) {
+  const t = $('#toast');
+  if (!t) return;
+  t.className = 'toast visible' + (type !== 'info' ? ' ' + type : '');
+  t.textContent = msg;
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove('visible'), duration);
+}
+
+function escapeHtml(str) {
+  const div = document.createElement('div');
+  div.textContent = str;
+  return div.innerHTML;
+}
+
+async function copyToClipboard(text) {
+  try {
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(text);
+      return true;
+    }
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.cssText = 'position:fixed;opacity:0;';
+    document.body.appendChild(ta);
+    ta.select();
+    const ok = document.execCommand('copy');
+    document.body.removeChild(ta);
+    return ok;
+  } catch (e) { return false; }
+}
+
+/* ===== PDF.js Setup ===== */
+if (window.pdfjsLib) {
+  pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+}
+
+/* ===== STATE ===== */
+const state = {
+  pdfFile: null,
+  pdfDoc: null,
+  pdfName: '',
+  pdfPages: 0,
+  pdfSize: 0,
+  pdfArrayBuffer: null,
+  pageTexts: [], // { pageNum, text }
+  fullText: '',
+  isProcessing: false
+};
+
+/* ===== DOM ===== */
+const dropzone = $('#dropzone');
+const fileInput = $('#fileInput');
+const chooseBtn = $('#chooseBtn');
+const browseLink = $('#browseLink');
+const extractBtn = $('#extractBtn');
+const clearBtn = $('#clearBtn');
+const progress = $('#progress');
+const progressFill = $('#progressFill');
+const progressText = $('#progressText');
+const pdfInfo = $('#pdfInfo');
+const pdfName = $('#pdfName');
+const pdfMeta = $('#pdfMeta');
+const pageRange = $('#pageRange');
+const separator = $('#separator');
+const preserveLinesToggle = $('#preserveLinesToggle');
+const results = $('#results');
+const statChars = $('#statChars');
+const statWords = $('#statWords');
+const statLines = $('#statLines');
+const statPages = $('#statPages');
+const searchInput = $('#searchInput');
+const searchCount = $('#searchCount');
+const textOutput = $('#textOutput');
+const outputInfo = $('#outputInfo');
+const copyBtn = $('#copyBtn');
+const downloadTxtBtn = $('#downloadTxtBtn');
+const startOverBtn = $('#startOverBtn');
+
+/* ===== TOGGLE ===== */
+preserveLinesToggle.addEventListener('click', () => {
+  const on = !preserveLinesToggle.classList.contains('on');
+  preserveLinesToggle.classList.toggle('on', on);
+  preserveLinesToggle.setAttribute('aria-checked', on);
+});
+
+/* ===== FILE SELECTION ===== */
+function triggerFileSelect() { fileInput.click(); }
+chooseBtn.addEventListener('click', (e) => { e.stopPropagation(); triggerFileSelect(); });
+browseLink.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); triggerFileSelect(); });
+dropzone.addEventListener('click', triggerFileSelect);
+
+fileInput.addEventListener('change', (e) => {
+  const f = e.target.files[0];
+  if (f && (f.type === 'application/pdf' || f.name.toLowerCase().endsWith('.pdf'))) loadPDF(f);
+  fileInput.value = '';
+});
+
+['dragenter', 'dragover'].forEach(evt => {
+  dropzone.addEventListener(evt, (e) => { e.preventDefault(); e.stopPropagation(); dropzone.classList.add('dragover'); });
+});
+['dragleave', 'drop'].forEach(evt => {
+  dropzone.addEventListener(evt, (e) => { e.preventDefault(); e.stopPropagation(); dropzone.classList.remove('dragover'); });
+});
+dropzone.addEventListener('drop', (e) => {
+  const f = e.dataTransfer.files[0];
+  if (f && (f.type === 'application/pdf' || f.name.toLowerCase().endsWith('.pdf'))) loadPDF(f);
+  else showToast('Please drop a PDF file', 'error');
+});
+
+/* ===== LOAD PDF ===== */
+async function loadPDF(file) {
+  if (!window.pdfjsLib) {
+    showToast('PDF library not loaded. Check your internet.', 'error');
+    return;
+  }
+
+  state.pdfFile = file;
+  state.pdfName = file.name;
+  state.pdfSize = file.size;
+  state.pageTexts = [];
+  state.fullText = '';
+
+  showToast('Loading PDF...', 'info', 2000);
+
+  try {
+    const arrayBuffer = await file.arrayBuffer();
+    state.pdfArrayBuffer = arrayBuffer.slice(0);
+
+    const loadingTask = pdfjsLib.getDocument({ data: arrayBuffer.slice(0) });
+    const pdf = await loadingTask.promise;
+
+    state.pdfDoc = pdf;
+    state.pdfPages = pdf.numPages;
+
+    pdfName.textContent = file.name;
+    pdfMeta.textContent = `${pdf.numPages} page${pdf.numPages > 1 ? 's' : ''} · ${formatBytes(file.size)}`;
+    pdfInfo.classList.add('visible');
+    dropzone.style.display = 'none';
+    results.classList.remove('visible');
+    extractBtn.disabled = false;
+
+    showToast(`✅ PDF loaded: ${pdf.numPages} pages`, 'success');
+  } catch (err) {
+    console.error('PDF load failed:', err);
+    showToast('Failed to load PDF file may be corrupted or password-protected', 'error', 5000);
+    state.pdfDoc = null;
+    extractBtn.disabled = true;
+  }
+}
+
+/* ===== PARSE PAGE RANGE ===== */
+function parsePageRange(rangeStr, totalPages) {
+  const str = (rangeStr || '').trim();
+  if (!str) return Array.from({ length: totalPages }, (_, i) => i + 1);
+  const pages = new Set();
+  for (const part of str.split(',')) {
+    const trimmed = part.trim();
+    if (!trimmed) continue;
+    if (trimmed.includes('-')) {
+      const [s, e] = trimmed.split('-');
+      const start = parseInt(s, 10);
+      const end = parseInt(e, 10);
+      if (isNaN(start) || isNaN(end)) continue;
+      const lo = Math.max(1, Math.min(start, end));
+      const hi = Math.min(totalPages, Math.max(start, end));
+      for (let i = lo; i <= hi; i++) pages.add(i);
+    } else {
+      const num = parseInt(trimmed, 10);
+      if (!isNaN(num) && num >= 1 && num <= totalPages) pages.add(num);
+    }
+  }
+  return [...pages].sort((a, b) => a - b);
+}
+
+/* ===== EXTRACT ===== */
+extractBtn.addEventListener('click', extractText);
+
+async function extractText() {
+  if (state.isProcessing || !state.pdfDoc) return;
+
+  state.isProcessing = true;
+  extractBtn.disabled = true;
+  extractBtn.innerHTML = 'Extracting...';
+  results.classList.remove('visible');
+  state.pageTexts = [];
+
+  const preserveLines = preserveLinesToggle.classList.contains('on');
+  const pageList = parsePageRange(pageRange.value, state.pdfPages);
+
+  progress.classList.add('visible');
+  progressFill.style.width = '0%';
+
+  const total = pageList.length;
+  let completed = 0;
+
+  for (const pageNum of pageList) {
+    try {
+      const page = await state.pdfDoc.getPage(pageNum);
+      const textContent = await page.getTextContent();
+
+      // Combine text items with proper spacing
+      let text = '';
+      let lastY = null;
+      let lastX = null;
+
+      for (const item of textContent.items) {
+        if (!item.str) continue;
+
+        const currentY = item.transform ? item.transform[5] : null;
+        const currentX = item.transform ? item.transform[4] : null;
+
+        if (preserveLines && lastY !== null && currentY !== null) {
+          // If Y changed significantly, add a line break
+          if (Math.abs(currentY - lastY) > 5) {
+            text += '\n';
+          } else if (lastX !== null && currentX !== null && currentX - lastX > 20) {
+            // Significant gap horizontally add space
+            text += ' ';
+          }
+        }
+
+        text += item.str;
+        lastY = currentY;
+        lastX = currentX + (item.width || 0);
+      }
+
+      // Clean up excessive newlines
+      if (preserveLines) {
+        text = text.replace(/\n{3,}/g, '\n\n').trim();
+      } else {
+        text = text.replace(/\s+/g, ' ').trim();
+      }
+
+      state.pageTexts.push({ pageNum, text });
+    } catch (err) {
+      console.warn('Page ' + pageNum + ' extraction failed:', err);
+      state.pageTexts.push({ pageNum, text: '' });
+    }
+    completed++;
+    progressFill.style.width = Math.round((completed / total) * 100) + '%';
+    progressText.textContent = `Extracting ${completed} of ${total}...`;
+  }
+
+  // Build full text with chosen separator
+  const sepMode = separator.value;
+  let full = '';
+
+  state.pageTexts.forEach((pt, idx) => {
+    if (idx > 0) {
+      if (sepMode === 'page') {
+        full += '\n\n───── PAGE ' + pt.pageNum + ' ─────\n\n';
+      } else if (sepMode === 'dash') {
+        full += '\n\n---\n\n';
+      } else if (sepMode === 'blank') {
+        full += '\n\n';
+      }
+      // 'none' → no separator
+    }
+    if (sepMode === 'page') {
+      // Add leading page header for first page too
+      if (idx === 0) full += '───── PAGE ' + pt.pageNum + ' ─────\n\n';
+    }
+    full += pt.text;
+  });
+
+  state.fullText = full;
+  progress.classList.remove('visible');
+
+  renderResults();
+
+  state.isProcessing = false;
+  extractBtn.disabled = false;
+  extractBtn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg> Extract Text';
+
+  if (state.fullText.trim()) {
+    results.classList.add('visible');
+    showToast(`✅ Extracted ${state.fullText.length.toLocaleString()} characters`, 'success');
+  } else {
+    showToast('No text found PDF may be scanned or image-based', 'error', 5000);
+  }
+}
+
+/* ===== RENDER RESULTS ===== */
+function renderResults() {
+  const text = state.fullText;
+
+  // Stats
+  const chars = text.length;
+  const words = text.trim() ? text.trim().split(/\s+/).length : 0;
+  const lines = text.split('\n').length;
+  const pages = state.pageTexts.filter(p => p.text).length;
+
+  statChars.textContent = chars.toLocaleString();
+  statWords.textContent = words.toLocaleString();
+  statLines.textContent = lines.toLocaleString();
+  statPages.textContent = pages.toString();
+
+  outputInfo.textContent = `${state.pageTexts.length} page${state.pageTexts.length > 1 ? 's' : ''}`;
+
+  // Render text (with page dividers if needed)
+  renderTextOutput(text);
+
+  // Reset search
+  searchInput.value = '';
+  searchCount.textContent = '0 matches';
+}
+
+function renderTextOutput(text) {
+  if (!text || !text.trim()) {
+    textOutput.innerHTML = '<div class="empty-text">No text content found in this PDF. It may be a scanned or image-based PDF try OCR software.</div>';
+    return;
+  }
+
+  // Split by page dividers for pretty display
+  let html = '';
+  const sepMode = separator.value;
+
+  if (sepMode === 'page') {
+    state.pageTexts.forEach((pt, idx) => {
+      if (idx > 0) {
+        html += `<div class="page-divider" data-page="Page ${pt.pageNum}"></div>`;
+      }
+      if (!pt.text) {
+        html += `<div class="empty-text">(No text on this page)</div>`;
+      } else {
+        html += escapeHtml(pt.text);
+      }
+      if (idx < state.pageTexts.length - 1) html += '\n';
+    });
+  } else {
+    html = escapeHtml(text);
+  }
+
+  textOutput.innerHTML = html;
+}
+
+/* ===== SEARCH ===== */
+searchInput.addEventListener('input', () => {
+  const q = searchInput.value.trim();
+
+  // Re-render base text first
+  renderTextOutput(state.fullText);
+
+  if (!q) {
+    searchCount.textContent = '0 matches';
+    return;
+  }
+
+  // Find all matches
+  const escaped = q.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const regex = new RegExp(escaped, 'gi');
+  const matches = state.fullText.match(regex);
+  const count = matches ? matches.length : 0;
+
+  searchCount.textContent = `${count} match${count !== 1 ? 'es' : ''}`;
+
+  if (count === 0) return;
+
+  // Highlight in HTML (escape first, then replace)
+  const div = document.createElement('div');
+  div.textContent = state.fullText;
+  let safeHtml = div.innerHTML;
+
+  // Re-insert page dividers if using page mode
+  if (separator.value === 'page') {
+    safeHtml = '';
+    state.pageTexts.forEach((pt, idx) => {
+      if (idx > 0) {
+        safeHtml += `\x00DIVIDER\x00${pt.pageNum}\x00`;
+      }
+      if (!pt.text) {
+        safeHtml += `\x00EMPTY\x00`;
+      } else {
+        const tmp = document.createElement('div');
+        tmp.textContent = pt.text;
+        safeHtml += tmp.innerHTML;
+      }
+      if (idx < state.pageTexts.length - 1) safeHtml += '\n';
+    });
+  }
+
+  // Highlight
+  const safeRegex = new RegExp('(' + escaped + ')', 'gi');
+  safeHtml = safeHtml.replace(safeRegex, '<mark>$1</mark>');
+
+  // Convert markers back to dividers/empties
+  safeHtml = safeHtml.replace(/\x00DIVIDER\x00(\d+)\x00/g, '<div class="page-divider" data-page="Page $1"></div>');
+  safeHtml = safeHtml.replace(/\x00EMPTY\x00/g, '<div class="empty-text">(No text on this page)</div>');
+
+  textOutput.innerHTML = safeHtml;
+});
+
+/* ===== COPY ===== */
+copyBtn.addEventListener('click', async () => {
+  if (!state.fullText) { showToast('Nothing to copy', 'error'); return; }
+  const ok = await copyToClipboard(state.fullText);
+  if (ok) {
+    copyBtn.classList.add('copied');
+    copyBtn.innerHTML = '✓ Copied!';
+    setTimeout(() => {
+      copyBtn.classList.remove('copied');
+      copyBtn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg> Copy All Text';
+    }, 2000);
+    showToast('Copied to clipboard!', 'success');
+  } else {
+    showToast('Copy failed', 'error');
+  }
+});
+
+/* ===== DOWNLOAD .TXT ===== */
+downloadTxtBtn.addEventListener('click', () => {
+  if (!state.fullText) { showToast('Nothing to download', 'error'); return; }
+  const blob = new Blob([state.fullText], { type: 'text/plain;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const baseName = state.pdfName.replace(/\.[^.]+$/, '');
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `${baseName}-text.txt`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+  showToast('Downloaded .txt file', 'success');
+});
+
+/* ===== RESET ===== */
+startOverBtn.addEventListener('click', resetAll);
+clearBtn.addEventListener('click', resetAll);
+
+function resetAll() {
+  if (state.pdfDoc) {
+    try { state.pdfDoc.destroy(); } catch (e) {}
+  }
+  state.pdfDoc = null;
+  state.pdfFile = null;
+  state.pdfArrayBuffer = null;
+  state.pageTexts = [];
+  state.fullText = '';
+  state.pdfPages = 0;
+
+  pdfInfo.classList.remove('visible');
+  results.classList.remove('visible');
+  progress.classList.remove('visible');
+  dropzone.style.display = '';
+  extractBtn.disabled = true;
+  pageRange.value = '';
+  searchInput.value = '';
+  searchCount.textContent = '0 matches';
+  textOutput.innerHTML = '';
+
+  showToast('Cleared');
+}
+
+/* ===== FAQ ===== */
+$$('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    $$('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+</script>
+
+</body>
+</html>

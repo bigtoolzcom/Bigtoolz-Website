@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2563eb">
+
+<title>Anchor Text Analyzer - Check Anchor Text Distribution Free | BigToolz</title>
+<meta name="description" content="Free online anchor text analyzer. Paste HTML or text to check anchor text distribution exact match, branded, generic, naked URL. Detect over-optimization instantly.">
+<meta name="keywords" content="anchor text analyzer, anchor text checker, backlink anchor text, seo anchor text, anchor text distribution">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://bigtoolz.com/tools/seo-tools/anchor-text/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Anchor Text Analyzer - Free Online Tool | BigToolz">
+<meta property="og:description" content="Analyze anchor text distribution instantly free, no signup.">
+<meta property="og:url" content="https://bigtoolz.com/tools/seo-tools/anchor-text/">
+<meta property="og:image" content="https://bigtoolz.com/assets/images/og-image.jpg">
+<meta property="og:site_name" content="BigToolz">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Anchor Text Analyzer - BigToolz">
+<meta name="twitter:description" content="Analyze anchor text distribution instantly free.">
+<meta name="twitter:image" content="https://bigtoolz.com/assets/images/twitter-card.jpg">
+
+<link rel="icon" href="/assets/images/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/images/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#f8f9fc;color:#1a1a2e;overflow-x:hidden;line-height:1.5}
+
+  .header{background:#fff;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;position:sticky;top:0;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+  .header-left{display:flex;align-items:center;gap:40px}
+  .logo{display:flex;align-items:center;gap:8px;font-size:22px;font-weight:800;color:#1a1a2e;text-decoration:none}
+  .logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#3b82f6,#2563eb);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px}
+  .logo span{color:#2563eb}
+  .nav{display:flex;align-items:center;gap:28px;list-style:none}
+  .nav a{text-decoration:none;color:#4b5563;font-size:14px;font-weight:500;transition:color .2s}
+  .nav a:hover,.nav a.active{color:#2563eb}
+  .header-right{display:flex;align-items:center;gap:16px}
+  .search-btn,.theme-btn{width:36px;height:36px;border-radius:50%;border:none;background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#4b5563}
+  .search-btn:hover,.theme-btn:hover{background:#f3f4f6}
+  .bookmark-btn{display:flex;align-items:center;gap:8px;background:#2563eb;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
+  .bookmark-btn:hover{background:#1d4ed8}
+
+  .hero{background:linear-gradient(135deg,#0a0e27 0%,#1a1a4e 40%,#2d1b69 70%,#4c1d95 100%);padding:40px 40px 60px;position:relative;overflow:hidden;color:#fff}
+  .hero::before{content:'';position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(139,92,246,.3) 0%,transparent 70%);border-radius:50%}
+  .hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+  .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px;flex-wrap:wrap}
+  .breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none}
+  .breadcrumb a:hover{color:#fff}
+  .breadcrumb .sep{color:rgba(255,255,255,.4)}
+  .breadcrumb .current{color:#fff;font-weight:500}
+  .hero-title-row{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+  .hero-icon{width:60px;height:60px;background:#8b5cf6;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px;color:#fff;flex-shrink:0;box-shadow:0 8px 24px rgba(139,92,246,.4)}
+  .hero-title{font-size:42px;font-weight:800;line-height:1.15}
+  .hero-title .blue{color:#a78bfa}
+  .hero-desc{font-size:15px;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:24px;max-width:560px}
+  .hero-features{display:flex;gap:24px;flex-wrap:wrap}
+  .hero-feature{display:flex;align-items:center;gap:6px;font-size:13px;color:#fff;font-weight:500}
+  .hero-feature .check{width:18px;height:18px;border-radius:50%;background:#8b5cf6;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;flex-shrink:0}
+
+  .main-content{max-width:1200px;margin:0 auto;padding:40px;display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start}
+  .tool-content{min-width:0}
+
+  .workspace{background:#fff;border-radius:16px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,.06);border:1px solid #e5e7eb;margin-bottom:24px}
+
+  /* Textarea */
+  .input-section{margin-bottom:24px}
+  .input-label{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;flex-wrap:wrap;gap:8px}
+  .input-label-text{font-size:14px;font-weight:700;color:#1a1a2e;display:flex;align-items:center;gap:8px}
+  .input-actions{display:flex;gap:8px;flex-wrap:wrap}
+  .mini-btn{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;font-size:12px;font-weight:600;color:#4b5563;cursor:pointer;font-family:inherit;transition:all .2s}
+  .mini-btn:hover{border-color:#8b5cf6;color:#8b5cf6;background:#faf5ff}
+  .mini-btn.copied{background:#10b981;color:#fff;border-color:#10b981}
+
+  .big-textarea{width:100%;min-height:220px;padding:16px;border:2px solid #e5e7eb;border-radius:12px;font-family:'JetBrains Mono','Courier New',monospace;font-size:12px;line-height:1.6;color:#4b5563;background:#f8fafc;outline:none;resize:vertical;transition:border-color .2s}
+  .big-textarea:focus{border-color:#8b5cf6;background:#fff;box-shadow:0 0 0 3px rgba(139,92,246,.1)}
+  .big-textarea::placeholder{color:#9ca3af;font-family:'Inter',sans-serif;font-size:13px}
+
+  /* Stats row */
+  .stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:24px}
+  .stat-card{background:#faf5ff;border:1px solid #c4b5fd;border-radius:12px;padding:16px;text-align:center;transition:all .2s}
+  .stat-card:hover{border-color:#8b5cf6;transform:translateY(-2px);box-shadow:0 4px 12px rgba(139,92,246,.1)}
+  .stat-label{font-size:10px;font-weight:700;color:#7c3aed;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+  .stat-value{font-size:22px;font-weight:800;color:#1a1a2e;line-height:1}
+  .stat-value.internal{color:#3b82f6}
+  .stat-value.external{color:#f97316}
+  .stat-value.follow{color:#10b981}
+  .stat-value.nofollow{color:#ef4444}
+
+  /* Charts */
+  .charts-grid{display:grid;grid-template-columns:280px 1fr;gap:24px;margin-bottom:24px;align-items:start}
+  .chart-card{background:#faf5ff;border:1px solid #c4b5fd;border-radius:12px;padding:20px}
+  .chart-title{font-size:13px;font-weight:700;color:#5b21b6;margin-bottom:14px;text-transform:uppercase;letter-spacing:.5px;display:flex;align-items:center;gap:6px}
+  .chart-canvas-wrap{display:flex;justify-content:center;align-items:center;padding:10px 0}
+
+  /* Legend/distribution */
+  .dist-list{display:flex;flex-direction:column;gap:10px}
+  .dist-item{display:flex;align-items:center;gap:12px;padding:10px 12px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;transition:all .2s}
+  .dist-item:hover{border-color:#8b5cf6;background:#faf5ff}
+  .dist-color{width:12px;height:12px;border-radius:3px;flex-shrink:0}
+  .dist-label{flex:1;font-size:12px;font-weight:700;color:#1a1a2e}
+  .dist-value{font-size:13px;font-weight:800;color:#5b21b6;font-family:'JetBrains Mono',monospace}
+  .dist-bar{width:100%;height:6px;background:#f3f4f6;border-radius:3px;overflow:hidden;margin-top:4px}
+  .dist-bar-fill{height:100%;border-radius:3px;transition:width .4s}
+
+  /* Links table */
+  .links-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:12px}
+  .links-title{font-size:16px;font-weight:800;color:#1a1a2e;display:flex;align-items:center;gap:8px}
+  .links-title .count{background:#faf5ff;color:#8b5cf6;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:800;border:1px solid #c4b5fd}
+
+  .table-wrap{overflow-x:auto;border:1px solid #e5e7eb;border-radius:12px;background:#fff;max-height:500px}
+  .links-table{width:100%;border-collapse:collapse;min-width:780px}
+  .links-table th{background:#faf5ff;padding:12px 14px;text-align:left;font-size:11px;font-weight:700;color:#5b21b6;text-transform:uppercase;letter-spacing:.5px;border-bottom:1px solid #e5e7eb;position:sticky;top:0;z-index:2}
+  .links-table td{padding:11px 14px;font-size:12px;color:#1a1a2e;border-bottom:1px solid #f3f4f6;vertical-align:top;word-break:break-word}
+  .links-table tr:hover td{background:#faf5ff}
+  .links-table tr:last-child td{border-bottom:none}
+  .link-anchor{font-weight:700;color:#1a1a2e;font-family:'JetBrains Mono',monospace;font-size:11px}
+  .link-url{font-size:10px;color:#6b7280;font-family:'JetBrains Mono',monospace;word-break:break-all}
+
+  /* Badges */
+  .badge{display:inline-block;padding:3px 8px;border-radius:12px;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.3px;white-space:nowrap}
+  .badge-exact{background:#fef3c7;color:#92400e}
+  .badge-partial{background:#dbeafe;color:#1d4ed8}
+  .badge-branded{background:#d1fae5;color:#065f46}
+  .badge-generic{background:#f3f4f6;color:#4b5563}
+  .badge-naked{background:#fee2e2;color:#991b1b}
+  .badge-image{background:#fce7f3;color:#9d174d}
+  .badge-follow{background:#d1fae5;color:#065f46;font-family:'JetBrains Mono',monospace}
+  .badge-nofollow{background:#fee2e2;color:#991b1b;font-family:'JetBrains Mono',monospace}
+
+  /* Empty/analysis */
+  .empty-state{text-align:center;padding:50px 20px;color:#6b7280}
+  .empty-icon{font-size:48px;margin-bottom:14px;opacity:.5}
+  .empty-state h3{font-size:18px;font-weight:700;color:#1a1a2e;margin-bottom:8px}
+  .empty-state p{font-size:14px;max-width:500px;margin:0 auto 20px}
+
+  /* SEO */
+  .seo-content{background:#fff;border-radius:16px;padding:32px;border:1px solid #e5e7eb;margin-bottom:24px}
+  .seo-content h2{font-size:22px;font-weight:800;color:#1a1a2e;margin-bottom:14px;margin-top:28px;display:flex;align-items:center;gap:10px}
+  .seo-content h2:first-child{margin-top:0}
+  .seo-content h3{font-size:16px;font-weight:700;color:#1a1a2e;margin:20px 0 10px}
+  .seo-content p{font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:14px}
+  .seo-content ul{list-style:none;padding-left:0;margin-bottom:16px}
+  .seo-content ul li{position:relative;padding-left:24px;font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:8px}
+  .seo-content ul li::before{content:'';position:absolute;left:6px;top:12px;width:6px;height:6px;background:#8b5cf6;border-radius:50%}
+  .seo-content a{color:#2563eb;text-decoration:none;font-weight:600}
+  .seo-content a:hover{text-decoration:underline}
+  .seo-content strong{color:#1a1a2e;font-weight:700}
+  .seo-content code{background:#f1f5f9;padding:2px 6px;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:13px;color:#0f172a;border:1px solid #e2e8f0}
+
+  .type-table{width:100%;border-collapse:collapse;margin:20px 0;border:1px solid #e5e7eb;border-radius:8px;overflow:hidden}
+  .type-table th{background:#faf5ff;padding:12px 16px;text-align:left;font-size:13px;font-weight:700;color:#1a1a2e;border-bottom:1px solid #e5e7eb}
+  .type-table td{padding:12px 16px;font-size:13px;color:#4b5563;border-bottom:1px solid #f3f4f6}
+  .type-table tr:last-child td{border-bottom:none}
+
+  .how-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:20px}
+  .how-step{background:#faf5ff;border-radius:12px;padding:20px;border:1px solid #c4b5fd}
+  .how-step-num{width:36px;height:36px;border-radius:50%;background:#8b5cf6;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;margin-bottom:12px}
+  .how-step-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+  .how-step-desc{font-size:13px;color:#6b7280;line-height:1.6}
+
+  .faq-item{background:#faf5ff;border:1px solid #c4b5fd;border-radius:12px;margin-bottom:10px;overflow:hidden;transition:border-color .2s}
+  .faq-item:hover{border-color:#8b5cf6}
+  .faq-question{width:100%;background:none;border:none;padding:18px 22px;font-size:15px;font-weight:700;color:#1a1a2e;text-align:left;cursor:pointer;font-family:inherit;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .faq-question .chev{font-size:12px;color:#8b5cf6;transition:transform .2s;flex-shrink:0}
+  .faq-item.open .faq-question .chev{transform:rotate(180deg)}
+  .faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 22px}
+  .faq-item.open .faq-answer{max-height:500px;padding-bottom:18px}
+  .faq-answer p{font-size:14px;color:#6b7280;line-height:1.7;margin:0}
+
+  .sidebar{background:#fff;border-radius:16px;padding:24px;border:1px solid #e5e7eb;position:sticky;top:80px;margin-bottom:24px}
+  .sidebar-header{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:800;color:#1a1a2e;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid #f3f4f6}
+  .sidebar-list{display:flex;flex-direction:column;gap:8px}
+  .sidebar-item{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;cursor:pointer;transition:background .2s;text-decoration:none;color:inherit;border:1px solid #f3f4f6}
+  .sidebar-item:hover{background:#faf5ff;border-color:#c4b5fd}
+  .sidebar-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;flex-shrink:0}
+  .sidebar-info{flex:1;min-width:0}
+  .sidebar-title{font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:2px}
+  .sidebar-desc{font-size:11px;color:#9ca3af;line-height:1.4}
+
+  .footer{background:#0a0e27;padding:60px 40px 30px;color:#fff;margin-top:40px}
+  .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:40px}
+  .footer-brand{display:flex;align-items:center;gap:8px;font-size:20px;font-weight:800;margin-bottom:12px}
+  .footer-brand span{color:#60a5fa}
+  .footer-tagline{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px}
+  .footer-social{display:flex;gap:12px}
+  .footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:16px;transition:background .2s}
+  .footer-social a:hover{background:rgba(255,255,255,.2)}
+  .footer-heading{font-size:14px;font-weight:700;margin-bottom:20px;color:#fff}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .footer-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;transition:color .2s}
+  .footer-links a:hover{color:#60a5fa}
+  .footer-bottom{max-width:1200px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  .footer-bottom-left{display:flex;gap:20px;font-size:12px;color:rgba(255,255,255,.5)}
+  .footer-bottom-right,.footer-bottom-links a{font-size:12px;color:rgba(255,255,255,.5);text-decoration:none}
+  .footer-bottom-links{display:flex;gap:20px}
+
+  .toast{position:fixed;bottom:24px;right:24px;background:#1a1a2e;color:#fff;padding:14px 20px;border-radius:10px;font-size:13px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:3000;transform:translateY(200%);transition:transform .3s ease;max-width:320px}
+  .toast.visible{transform:translateY(0)}
+  .toast.success{background:#10b981}
+  .toast.error{background:#ef4444}
+
+  @media(max-width:1024px){
+    .main-content{grid-template-columns:1fr;padding:24px 20px}
+    .sidebar{position:static}
+    .how-steps{grid-template-columns:repeat(2,1fr)}
+    .charts-grid{grid-template-columns:1fr}
+  }
+  @media(max-width:768px){
+    .header{padding:0 20px}.nav{display:none}
+    .hero{padding:24px 20px 40px}
+    .hero-title{font-size:28px}
+    .hero-icon{width:48px;height:48px;font-size:20px}
+    .hero-title-row{flex-direction:column;align-items:flex-start;gap:12px}
+    .main-content{padding:20px 16px}
+    .workspace{padding:20px}
+    .how-steps{grid-template-columns:1fr}
+    .seo-content{padding:20px}
+    .footer-inner{grid-template-columns:1fr 1fr}
+    .toast{left:16px;right:16px;bottom:16px;max-width:none}
+    .stats-row{grid-template-columns:repeat(2,1fr)}
+  }
+  @media(max-width:576px){
+    .header{padding:0 16px}.header-right .search-btn,.header-right .theme-btn{display:none}
+    .hero-title{font-size:24px}
+    .footer-inner{grid-template-columns:1fr}
+    .footer-bottom{flex-direction:column;text-align:center}
+    .stats-row{grid-template-columns:1fr}
+    .big-textarea{min-height:160px;font-size:11px}
+  }
+
+  html[data-theme="dark"] body{background:#0f172a;color:#f1f5f9}
+  html[data-theme="dark"] .header,html[data-theme="dark"] .workspace,html[data-theme="dark"] .seo-content,html[data-theme="dark"] .sidebar{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .logo,html[data-theme="dark"] .hero-title,html[data-theme="dark"] .seo-content h2,html[data-theme="dark"] .seo-content h3,html[data-theme="dark"] .faq-question,html[data-theme="dark"] .sidebar-header,html[data-theme="dark"] .sidebar-title,html[data-theme="dark"] .links-title,html[data-theme="dark"] .empty-state h3{color:#f1f5f9}
+  html[data-theme="dark"] .nav a{color:#cbd5e1}
+  html[data-theme="dark"] .how-step,html[data-theme="dark"] .faq-item,html[data-theme="dark"] .stat-card,html[data-theme="dark"] .chart-card{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .big-textarea{background:#0f172a;border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .big-textarea:focus{background:#0f172a}
+  html[data-theme="dark"] .seo-content p,html[data-theme="dark"] .seo-content ul li,html[data-theme="dark"] .faq-answer p,html[data-theme="dark"] .empty-state p{color:#cbd5e1}
+  html[data-theme="dark"] .seo-content code{background:#0f172a;color:#94a3b8;border-color:#334155}
+  html[data-theme="dark"] .table-wrap{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .links-table th{background:#0f172a;color:#c4b5fd;border-color:#334155}
+  html[data-theme="dark"] .links-table td{border-color:#1e293b;color:#e2e8f0}
+  html[data-theme="dark"] .links-table tr:hover td{background:#1e293b}
+  html[data-theme="dark"] .link-anchor{color:#f1f5f9}
+  html[data-theme="dark"] .mini-btn{background:#0f172a;border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .dist-item{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .dist-label{color:#f1f5f9}
+  html[data-theme="dark"] .type-table{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .type-table th{background:#0f172a;color:#f1f5f9;border-color:#334155}
+  html[data-theme="dark"] .type-table td{border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .dist-bar{background:#334155}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type": "SoftwareApplication", "name": "Anchor Text Analyzer", "url": "https://bigtoolz.com/tools/seo-tools/anchor-text/", "applicationCategory": "BusinessApplication", "operatingSystem": "Any (Web-based)", "description": "Free online anchor text analyzer. Paste HTML or text to check anchor text distribution and detect over-optimization.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.7", "ratingCount": "678"}},
+    {"@type": "HowTo", "name": "How to Analyze Anchor Text", "step": [
+      {"@type": "HowToStep", "name": "Paste HTML/Text", "text": "Paste your page HTML or plain text with links."},
+      {"@type": "HowToStep", "name": "Auto-Detect Links", "text": "The tool extracts all links and anchor text."},
+      {"@type": "HowToStep", "name": "View Distribution", "text": "See breakdown: exact match, branded, generic, naked URL."},
+      {"@type": "HowToStep", "name": "Fix Issues", "text": "Balance anchor types to avoid over-optimization penalties."}
+    ]},
+    {"@type": "FAQPage", "mainEntity": [
+      {"@type": "Question", "name": "What is anchor text?", "acceptedAnswer": {"@type": "Answer", "text": "Anchor text is the visible, clickable text of a hyperlink. Example: in '<a href=\"/seo\">SEO tips</a>', the anchor text is 'SEO tips'. It tells Google what the linked page is about and influences rankings."}},
+      {"@type": "Question", "name": "What's a healthy anchor text distribution?", "acceptedAnswer": {"@type": "Answer", "text": "Recommended mix: branded 40-50%, naked URL 20-25%, generic 10-15%, partial match 10-15%, exact match 3-5%, image 2-5%. Exact match over 10% risks over-optimization penalty."}},
+      {"@type": "Question", "name": "What is over-optimization in anchor text?", "acceptedAnswer": {"@type": "Answer", "text": "Using too many exact-match anchor texts (like 'best image compressor' pointed at /image-compressor) creates an unnatural pattern that looks manipulated. Google's Penguin algorithm penalises this. Keep exact-match under 5%."}},
+      {"@type": "Question", "name": "Should I use follow or nofollow?", "acceptedAnswer": {"@type": "Answer", "text": "Use regular (follow) links for internal links and trusted external sites. Use rel='nofollow' for sponsored, paid, or untrusted links. Mix is natural most sites are 80-90% follow, 10-20% nofollow."}}
+    ]},
+    {"@type": "BreadcrumbList", "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bigtoolz.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://bigtoolz.com/tools/"},
+      {"@type": "ListItem", "position": 3, "name": "SEO Tools", "item": "https://bigtoolz.com/tools/seo-tools/"},
+      {"@type": "ListItem", "position": 4, "name": "Anchor Text Analyzer", "item": "https://bigtoolz.com/tools/seo-tools/anchor-text/"}
+    ]}
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-left">
+    <a href="/" class="logo"><div class="logo-icon">⚒</div>BigToolz</span></a>
+    <nav><ul class="nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/tools/" class="active">All Tools</a></li>
+      <li><a href="/tools/categories">Categories</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul></nav>
+  </div>
+  <div class="header-right">
+   
+    <button class="theme-btn" aria-label="Toggle theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
+    
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <nav class="breadcrumb">
+      <a href="/">Home</a><span class="sep">›</span>
+      <a href="/tools/">Tools</a><span class="sep">›</span>
+      <a href="/tools/seo-tools/">SEO Tools</a><span class="sep">›</span>
+      <span class="current">Anchor Text Analyzer</span>
+    </nav>
+    <div class="hero-title-row">
+      <div class="hero-icon">🔗</div>
+      <h1 class="hero-title">Anchor Text <span class="blue">Analyzer</span></h1>
+    </div>
+    <p class="hero-desc">
+      Paste HTML or text and instantly see your anchor text distribution. Detect over-optimization, spot follow/nofollow ratios, and export a full link report. No signup, 100% private.
+    </p>
+    <div class="hero-features">
+      <div class="hero-feature"><span class="check">✓</span> Auto-Extract Links</div>
+      <div class="hero-feature"><span class="check">✓</span> 6 Anchor Types</div>
+      <div class="hero-feature"><span class="check">✓</span> Follow/Nofollow</div>
+      <div class="hero-feature"><span class="check">✓</span> CSV Export</div>
+    </div>
+  </div>
+</section>
+
+<div class="main-content">
+
+  <div class="tool-content">
+
+    <div class="workspace">
+
+      <!-- Input -->
+      <div class="input-section">
+        <div class="input-label">
+          <div class="input-label-text">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2.5"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
+            Paste HTML or Text
+          </div>
+          <div class="input-actions">
+            <button class="mini-btn" id="sampleBtn">Load Sample</button>
+            <button class="mini-btn" id="clearBtn">Clear</button>
+          </div>
+        </div>
+        <textarea class="big-textarea" id="inputText" placeholder="Paste your page HTML here...
+
+Example:
+<a href="/tools/image-compressor/">Image Compressor</a>
+Check out our <a href="https://example.com" rel="nofollow">partner site</a>
+<a href="/blog/">Read our blog</a>
+<a href="https://bigtoolz.com/">https://bigtoolz.com</a>
+..."></textarea>
+      </div>
+
+      <!-- Empty state -->
+      <div class="empty-state" id="emptyState">
+        <div class="empty-icon">🔗</div>
+        <h3>No links detected yet</h3>
+        <p>Paste HTML or text with links above. The tool will auto-extract every link and analyze the anchor text.</p>
+      </div>
+
+      <!-- Results -->
+      <div id="resultsSection" style="display:none;">
+
+        <!-- Stats -->
+        <div class="stats-row">
+          <div class="stat-card">
+            <div class="stat-label">Total Links</div>
+            <div class="stat-value" id="statTotal">0</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Internal</div>
+            <div class="stat-value internal" id="statInternal">0</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">External</div>
+            <div class="stat-value external" id="statExternal">0</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Nofollow</div>
+            <div class="stat-value nofollow" id="statNofollow">0</div>
+          </div>
+        </div>
+
+        <!-- Charts -->
+        <div class="charts-grid">
+          <div class="chart-card">
+            <div class="chart-title">📊 Distribution</div>
+            <div class="chart-canvas-wrap">
+              <canvas id="doughnut" width="220" height="220"></canvas>
+            </div>
+          </div>
+          <div class="chart-card">
+            <div class="chart-title">📋 Anchor Types</div>
+            <div class="dist-list" id="distList"></div>
+          </div>
+        </div>
+
+        <!-- Links table -->
+        <div class="links-header">
+          <div class="links-title">
+            🔗 All Links
+            <span class="count" id="linksCount">0</span>
+          </div>
+          <div class="input-actions">
+            <button class="mini-btn" id="copyBtn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+              Copy Report
+            </button>
+            <button class="mini-btn" id="csvBtn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+              CSV
+            </button>
+          </div>
+        </div>
+
+        <div class="table-wrap">
+          <table class="links-table">
+            <thead>
+              <tr>
+                <th>Anchor Text</th>
+                <th>Type</th>
+                <th>Rel</th>
+                <th>Target URL</th>
+              </tr>
+            </thead>
+            <tbody id="linksBody"></tbody>
+          </table>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- SEO Content -->
+    <div class="seo-content">
+
+      <h2>🔗 What is Anchor Text?</h2>
+      <p>
+        <strong>Anchor text</strong> is the visible, clickable text of a hyperlink. In this example <code>&lt;a href="/seo"&gt;SEO tips&lt;/a&gt;</code> the anchor text is <strong>"SEO tips"</strong>. It's one of the most important on-page and off-page SEO signals because it tells search engines <strong>what the linked page is about</strong>.
+      </p>
+      <p>
+        Anchor text matters in two directions:
+      </p>
+      <ul>
+        <li><strong>Internal links</strong> anchor text helps Google understand your site's structure and page topics.</li>
+        <li><strong>Backlinks</strong> anchor text from other sites is a strong ranking signal, but it can also trigger penalties if over-optimised.</li>
+      </ul>
+
+      <h2>🚀 How to Use This Analyzer</h2>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-step-num">1</div>
+          <div class="how-step-title">Paste HTML/Text</div>
+          <div class="how-step-desc">Paste any content that contains links.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">2</div>
+          <div class="how-step-title">Auto-Extract</div>
+          <div class="how-step-desc">Tool finds every link and its anchor text.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">3</div>
+          <div class="how-step-title">View Distribution</div>
+          <div class="how-step-desc">See counts by type, follow/nofollow split.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">4</div>
+          <div class="how-step-title">Fix & Export</div>
+          <div class="how-step-desc">Balance anchors, then copy or export report.</div>
+        </div>
+      </div>
+
+      <h2>📊 The 6 Anchor Text Types</h2>
+      <table class="type-table">
+        <thead>
+          <tr><th>Type</th><th>Example</th><th>Use</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Exact Match</strong></td><td>"image compressor"</td><td>Strongest signal, but risky if overused (target 3-5%)</td></tr>
+          <tr><td><strong>Partial Match</strong></td><td>"best image compressor online"</td><td>Safer than exact, still keyword-rich (10-15%)</td></tr>
+          <tr><td><strong>Branded</strong></td><td>"BigToolz" or "bigtoolz.com tools"</td><td>Most natural, safest (40-50%)</td></tr>
+          <tr><td><strong>Generic</strong></td><td>"click here", "read more"</td><td>Low SEO value, natural (10-15%)</td></tr>
+          <tr><td><strong>Naked URL</strong></td><td>"https://bigtoolz.com"</td><td>Neutral signal, natural (20-25%)</td></tr>
+          <tr><td><strong>Image Link</strong></td><td>anchor is an image</td><td>Alt text replaces anchor (2-5%)</td></tr>
+        </tbody>
+      </table>
+
+      <h2>💡 Healthy Distribution Targets</h2>
+      <ul>
+        <li><strong>Branded:</strong> 40-50% brand mentions build trust</li>
+        <li><strong>Naked URL:</strong> 20-25% copy-pasted links look organic</li>
+        <li><strong>Generic:</strong> 10-15% "click here" from user-generated content</li>
+        <li><strong>Partial match:</strong> 10-15% semantic variations</li>
+        <li><strong>Exact match:</strong> 3-5% keep this low to avoid penalties</li>
+        <li><strong>Image:</strong> 2-5% natural for some niches</li>
+      </ul>
+      <p>
+        <strong>Warning:</strong> If exact-match anchor text exceeds <strong>10%</strong>, you're at risk of over-optimization penalties. Google's Penguin algorithm (now part of core) detects unnatural anchor patterns. Diversify.
+      </p>
+
+      <h2>⚖️ Follow vs Nofollow</h2>
+      <p>
+        Links have a <code>rel</code> attribute:
+      </p>
+      <ul>
+        <li><strong>Follow</strong> (no rel, or rel="") passes PageRank. Default for internal links and trusted sites.</li>
+        <li><strong>Nofollow</strong> (rel="nofollow") tells Google not to pass ranking signal. Used for sponsored, paid, or untrusted links.</li>
+        <li><strong>UGC</strong> (rel="ugc") for user-generated content (comments, forums).</li>
+        <li><strong>Sponsored</strong> (rel="sponsored") for paid/affiliate links.</li>
+      </ul>
+      <p>
+        A natural link profile is usually <strong>80-90% follow</strong> and <strong>10-20% nofollow</strong>. If 100% of links are follow, that itself can look suspicious.
+      </p>
+
+      <h2>❓ Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-question">What is anchor text?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>Anchor text</strong> is the visible, clickable text of a hyperlink. Example: in <code>&lt;a href="/seo"&gt;SEO tips&lt;/a&gt;</code>, the anchor text is "SEO tips". It tells Google what the linked page is about and influences rankings.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What's a healthy anchor text distribution?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Recommended mix: <strong>branded 40-50%, naked URL 20-25%, generic 10-15%, partial match 10-15%, exact match 3-5%, image 2-5%</strong>. Exact match over 10% risks over-optimization penalty.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What is over-optimization in anchor text?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Using too many <strong>exact-match anchor texts</strong> (like "best image compressor" pointed at /image-compressor) creates an unnatural pattern that looks manipulated. Google's Penguin algorithm penalises this. Keep exact-match under 5%.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Should I use follow or nofollow?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Use regular (follow) links for <strong>internal links</strong> and trusted external sites. Use <code>rel="nofollow"</code> for sponsored, paid, or untrusted links. A natural mix is 80-90% follow, 10-20% nofollow.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Does anchor text still matter for SEO?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>Yes.</strong> Anchor text is one of the strongest ranking signals, especially for <strong>internal links</strong> and for <strong>backlinks</strong> with brand mentions. Google's BERT and MUM models also use anchor text for topical context.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What's the difference between exact and partial match?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>Exact match</strong> = anchor text exactly equals the keyword ("image compressor"). <strong>Partial match</strong> = anchor contains the keyword plus other words ("best image compressor online" or "learn about image compressor"). Partial match is safer and still effective.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Is my HTML data uploaded anywhere?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>No.</strong> All parsing and analysis happens 100% in your browser using JavaScript. Nothing is sent to a server, and nothing is stored.</p></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-header">🔗 Related SEO Tools</div>
+    <div class="sidebar-list">
+      <a href="/tools/seo-tools/keyword-planner/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#8b5cf6;">🎯</div>
+        <div class="sidebar-info"><div class="sidebar-title">Keyword Planner</div><div class="sidebar-desc">Keyword ideas</div></div>
+      </a>
+      <a href="/tools/seo-tools/keyword-density-checker/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#10b981;">📊</div>
+        <div class="sidebar-info"><div class="sidebar-title">Keyword Density</div><div class="sidebar-desc">Check keyword usage</div></div>
+      </a>
+      <a href="/tools/seo-tools/serp-preview/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#3b82f6;">🔍</div>
+        <div class="sidebar-info"><div class="sidebar-title">SERP Preview</div><div class="sidebar-desc">Google preview</div></div>
+      </a>
+      <a href="/tools/seo-tools/meta-description/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#8b5cf6;">📝</div>
+        <div class="sidebar-info"><div class="sidebar-title">Meta Description</div><div class="sidebar-desc">Generate meta tags</div></div>
+      </a>
+      <a href="/tools/seo-tools/schema-markup/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#f59e0b;">🏗</div>
+        <div class="sidebar-info"><div class="sidebar-title">Schema Markup</div><div class="sidebar-desc">Structured data</div></div>
+      </a>
+      <a href="/tools/seo-tools/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#64748b;">📈</div>
+        <div class="sidebar-info"><div class="sidebar-title">All SEO Tools →</div><div class="sidebar-desc">Browse 25+ tools</div></div>
+      </a>
+    </div>
+  </aside>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand"><div class="logo-icon">⚒</div>BigToolz</span></div>
+      <p class="footer-tagline">Your Ultimate Online Tools Hub</p>
+      <div class="footer-social">
+        <a href="https://facebook.com/bigtoolz" aria-label="Facebook">f</a>
+        <a href="https://twitter.com/bigtoolz" aria-label="Twitter">𝕏</a>
+        <a href="https://youtube.com/@bigtoolz" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+    <div>
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/tools/">All Tools</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Categories</h3>
+      <ul class="footer-links">
+        <li><a href="/tools/image-tools/">Image Tools</a></li>
+        <li><a href="/tools/seo-tools/">SEO Tools</a></li>
+        <li><a href="/tools/text-tools/">Text Tools</a></li>
+        <li><a href="/tools/developer-tools/">Developer Tools</a></li>
+        <li><a href="/tools/categories">All Categories →</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Legal</h3>
+      <ul class="footer-links">
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left"><span>✓ 100% Free</span><span>✓ No Sign Up</span><span>✓ No Installation</span></div>
+    <div class="footer-bottom-right">© 2026 BigToolz. All rights reserved.</div>
+    <div class="footer-bottom-links"><a href="/privacy-policy">Privacy</a><a href="/terms">Terms</a><a href="/disclaimer">Disclaimer</a></div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+'use strict';
+
+/* ===== THEME ===== */
+(function(){try{var t=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&d))document.documentElement.setAttribute('data-theme','dark');else if(t==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();
+document.querySelector('.theme-btn')?.addEventListener('click',()=>{const h=document.documentElement;const c=h.getAttribute('data-theme');const d=window.matchMedia('(prefers-color-scheme: dark)').matches;let n=c==='dark'?'light':c==='light'?'dark':(d?'light':'dark');h.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}});
+
+/* ===== HELPERS ===== */
+const $ = (s, p = document) => p.querySelector(s);
+const $$ = (s, p = document) => [...p.querySelectorAll(s)];
+
+function showToast(msg, type = 'info', duration = 3000) {
+  const t = $('#toast');
+  if (!t) return;
+  t.className = 'toast visible' + (type !== 'info' ? ' ' + type : '');
+  t.textContent = msg;
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove('visible'), duration);
+}
+
+async function copyToClipboard(text) {
+  try {
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(text);
+      return true;
+    }
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.cssText = 'position:fixed;opacity:0;';
+    document.body.appendChild(ta);
+    ta.select();
+    const ok = document.execCommand('copy');
+    document.body.removeChild(ta);
+    return ok;
+  } catch (e) { return false; }
+}
+
+function escapeHtml(str) {
+  const div = document.createElement('div');
+  div.textContent = str;
+  return div.innerHTML;
+}
+
+/* ===== STATE ===== */
+const state = {
+  links: []
+};
+
+const COLORS = {
+  exact: '#f59e0b',
+  partial: '#3b82f6',
+  branded: '#10b981',
+  generic: '#6b7280',
+  naked: '#ef4444',
+  image: '#ec4899'
+};
+
+/* ===== LINK EXTRACTION ===== */
+function extractLinks(input) {
+  const links = [];
+  const seen = new Set();
+
+  // Try HTML parsing first
+  try {
+    const doc = new DOMParser().parseFromString(input, 'text/html');
+    const anchors = doc.querySelectorAll('a');
+
+    if (anchors.length > 0) {
+      anchors.forEach(a => {
+        const href = a.getAttribute('href') || '';
+        const rel = a.getAttribute('rel') || '';
+        const imgChild = a.querySelector('img');
+        const anchorText = imgChild
+          ? '[Image: ' + (imgChild.getAttribute('alt') || 'no alt') + ']'
+          : (a.textContent || '').trim();
+
+        const key = href + '||' + anchorText;
+        if (seen.has(key)) return;
+        seen.add(key);
+
+        if (!href) return;
+
+        links.push({
+          anchor: anchorText || '[empty]',
+          url: href,
+          rel,
+          isImage: !!imgChild
+        });
+      });
+      return links;
+    }
+  } catch (e) {
+    // fall through to regex
+  }
+
+  // Fallback: regex for text input with URLs
+  const urlRegex = /(https?:\/\/[^\s<>"']+|\/[a-z0-9\-_\/\.]+)/gi;
+  const found = input.match(urlRegex) || [];
+  found.forEach(url => {
+    if (seen.has(url)) return;
+    seen.add(url);
+    links.push({
+      anchor: url,
+      url,
+      rel: '',
+      isImage: false
+    });
+  });
+
+  return links;
+}
+
+/* ===== ANCHOR CLASSIFICATION ===== */
+function classifyAnchor(link) {
+  if (link.isImage) return 'image';
+
+  const text = link.anchor.trim();
+  const lower = text.toLowerCase();
+
+  // Generic
+  const genericWords = ['click here', 'here', 'read more', 'learn more', 'more', 'this', 'link', 'website', 'view', 'see more', 'check this', 'details'];
+  if (genericWords.includes(lower)) return 'generic';
+
+  // Naked URL
+  if (/^https?:\/\//i.test(text) || /^www\./i.test(text) || /^[a-z0-9-]+\.[a-z]{2,}/i.test(text)) {
+    return 'naked';
+  }
+
+  // Branded anchor contains a known brand pattern
+  // Simple heuristic: single word, capitalized, or contains "bigtoolz"
+  if (/bigtoolz/i.test(text)) return 'branded';
+  if (/^[A-Z][a-z]+$/.test(text) && text.length < 20) return 'branded';
+
+  // Exact match anchor is a short phrase (2-3 words) that appears in URL
+  const url = link.url.toLowerCase();
+  const anchorSlug = lower.replace(/\s+/g, '-').replace(/[^a-z0-9\-]/g, '');
+  if (anchorSlug.length > 3 && url.includes(anchorSlug)) {
+    return 'exact';
+  }
+
+  // Partial match some anchor words appear in URL
+  const anchorWords = lower.split(/\s+/).filter(w => w.length > 3);
+  const matched = anchorWords.filter(w => url.includes(w));
+  if (matched.length > 0 && anchorWords.length > 0) return 'partial';
+
+  // Default: branded if capitalized, else generic
+  return text.length > 0 && text.length < 30 ? 'partial' : 'generic';
+}
+
+/* ===== ANALYSIS ===== */
+function analyze() {
+  const input = $('#inputText').value;
+  if (!input.trim()) {
+    $('#emptyState').style.display = 'block';
+    $('#resultsSection').style.display = 'none';
+    return;
+  }
+
+  const rawLinks = extractLinks(input);
+
+  if (rawLinks.length === 0) {
+    $('#emptyState').style.display = 'block';
+    $('#resultsSection').style.display = 'none';
+    return;
+  }
+
+  // Classify
+  const links = rawLinks.map(l => ({
+    anchor: l.anchor,
+    url: l.url,
+    rel: l.rel,
+    type: classifyAnchor(l),
+    isInternal: !/^https?:\/\//i.test(l.url) || /bigtoolz\.com/i.test(l.url),
+    isNofollow: /nofollow|sponsored|ugc/i.test(l.rel)
+  }));
+
+  state.links = links;
+
+  $('#emptyState').style.display = 'none';
+  $('#resultsSection').style.display = 'block';
+
+  renderStats(links);
+  renderDistribution(links);
+  renderDoughnut(links);
+  renderTable(links);
+}
+
+/* ===== RENDER STATS ===== */
+function renderStats(links) {
+  const total = links.length;
+  const internal = links.filter(l => l.isInternal).length;
+  const external = total - internal;
+  const nofollow = links.filter(l => l.isNofollow).length;
+
+  $('#statTotal').textContent = total;
+  $('#statInternal').textContent = internal;
+  $('#statExternal').textContent = external;
+  $('#statNofollow').textContent = nofollow;
+}
+
+/* ===== RENDER DISTRIBUTION ===== */
+function renderDistribution(links) {
+  const counts = { exact: 0, partial: 0, branded: 0, generic: 0, naked: 0, image: 0 };
+  links.forEach(l => counts[l.type]++);
+
+  const total = links.length;
+  const labels = {
+    exact: 'Exact Match',
+    partial: 'Partial Match',
+    branded: 'Branded',
+    generic: 'Generic',
+    naked: 'Naked URL',
+    image: 'Image Link'
+  };
+
+  const list = $('#distList');
+  list.innerHTML = '';
+
+  Object.keys(counts).forEach(type => {
+    const pct = total > 0 ? Math.round((counts[type] / total) * 100) : 0;
+    const div = document.createElement('div');
+    div.className = 'dist-item';
+    div.innerHTML = `
+      <div class="dist-color" style="background:${COLORS[type]}"></div>
+      <div style="flex:1;">
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;">
+          <span class="dist-label">${labels[type]}</span>
+          <span class="dist-value">${counts[type]} (${pct}%)</span>
+        </div>
+        <div class="dist-bar"><div class="dist-bar-fill" style="width:${pct}%;background:${COLORS[type]};"></div></div>
+      </div>
+    `;
+    list.appendChild(div);
+  });
+}
+
+/* ===== RENDER DOUGHNUT ===== */
+function renderDoughnut(links) {
+  const canvas = $('#doughnut');
+  const ctx = canvas.getContext('2d');
+
+  const counts = { exact: 0, partial: 0, branded: 0, generic: 0, naked: 0, image: 0 };
+  links.forEach(l => counts[l.type]++);
+  const total = links.length;
+
+  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+  const W = 220, H = 220;
+  const cx = W / 2, cy = H / 2;
+  const outerR = 90, innerR = 55;
+
+  ctx.clearRect(0, 0, W, H);
+
+  let startAngle = -Math.PI / 2;
+  Object.keys(counts).forEach(type => {
+    const count = counts[type];
+    if (count === 0) return;
+    const sliceAngle = (count / total) * Math.PI * 2;
+
+    ctx.beginPath();
+    ctx.arc(cx, cy, outerR, startAngle, startAngle + sliceAngle);
+    ctx.arc(cx, cy, innerR, startAngle + sliceAngle, startAngle, true);
+    ctx.closePath();
+    ctx.fillStyle = COLORS[type];
+    ctx.fill();
+
+    // Small white gap between slices
+    ctx.strokeStyle = isDark ? '#1e293b' : '#fff';
+    ctx.lineWidth = 2;
+    ctx.stroke();
+
+    startAngle += sliceAngle;
+  });
+
+  // Center text
+  ctx.fillStyle = isDark ? '#f1f5f9' : '#1a1a2e';
+  ctx.font = 'bold 22px Inter, sans-serif';
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+  ctx.fillText(total, cx, cy - 5);
+  ctx.font = 'bold 10px Inter, sans-serif';
+  ctx.fillStyle = '#6b7280';
+  ctx.fillText('LINKS', cx, cy + 14);
+}
+
+/* ===== RENDER TABLE ===== */
+function renderTable(links) {
+  const body = $('#linksBody');
+  body.innerHTML = '';
+
+  const typeLabels = {
+    exact: 'Exact',
+    partial: 'Partial',
+    branded: 'Branded',
+    generic: 'Generic',
+    naked: 'Naked URL',
+    image: 'Image'
+  };
+
+  const typeBadgeClass = {
+    exact: 'badge-exact',
+    partial: 'badge-partial',
+    branded: 'badge-branded',
+    generic: 'badge-generic',
+    naked: 'badge-naked',
+    image: 'badge-image'
+  };
+
+  links.forEach(l => {
+    const relDisplay = l.rel ? l.rel : '(follow)';
+    const relClass = l.isNofollow ? 'badge-nofollow' : 'badge-follow';
+
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td class="link-anchor">${escapeHtml(l.anchor)}</td>
+      <td><span class="badge ${typeBadgeClass[l.type]}">${typeLabels[l.type]}</span></td>
+      <td><span class="badge ${relClass}">${escapeHtml(relDisplay)}</span></td>
+      <td class="link-url">${escapeHtml(l.url)}</td>
+    `;
+    body.appendChild(tr);
+  });
+
+  $('#linksCount').textContent = links.length;
+}
+
+/* ===== EVENT BINDINGS ===== */
+let debounceTimer;
+$('#inputText').addEventListener('input', () => {
+  clearTimeout(debounceTimer);
+  debounceTimer = setTimeout(analyze, 400);
+});
+
+$('#clearBtn').addEventListener('click', () => {
+  $('#inputText').value = '';
+  $('#emptyState').style.display = 'block';
+  $('#resultsSection').style.display = 'none';
+  showToast('Cleared');
+});
+
+$('#sampleBtn').addEventListener('click', () => {
+  $('#inputText').value = `<h2>Welcome to BigToolz</h2>
+<p>Check out our <a href="/tools/image-tools/image-compressor/">image compressor</a> it's the best free image compressor online.</p>
+<p>Read our <a href="/blog/seo-guide-2026/">complete SEO guide</a> for beginners.</p>
+<p>Visit our <a href="https://bigtoolz.com/tools/">tools directory</a> to browse all 300+ tools.</p>
+<p>Partner site: <a href="https://example-partner.com" rel="nofollow">click here</a></p>
+<p>Connect with us: <a href="https://twitter.com/bigtoolz" rel="nofollow sponsored">BigToolz on Twitter</a></p>
+<p>More info at <a href="https://bigtoolz.com">https://bigtoolz.com</a></p>
+<p><a href="/blog/"><img src="/images/blog.jpg" alt="Our blog"></a></p>`;
+  analyze();
+  showToast('Sample loaded!', 'success');
+});
+
+/* ===== COPY REPORT ===== */
+$('#copyBtn').addEventListener('click', async () => {
+  if (!state.links.length) return;
+
+  const typeLabels = { exact: 'Exact', partial: 'Partial', branded: 'Branded', generic: 'Generic', naked: 'Naked URL', image: 'Image' };
+  const lines = ['=== Anchor Text Analysis ==='];
+  lines.push(`Total Links: ${state.links.length}`);
+  lines.push(`Internal: ${state.links.filter(l => l.isInternal).length}`);
+  lines.push(`External: ${state.links.filter(l => !l.isInternal).length}`);
+  lines.push(`Nofollow: ${state.links.filter(l => l.isNofollow).length}`);
+  lines.push('');
+  lines.push('Anchor Text | Type | Rel | URL');
+  lines.push('---');
+  state.links.forEach(l => {
+    lines.push(`${l.anchor} | ${typeLabels[l.type]} | ${l.rel || 'follow'} | ${l.url}`);
+  });
+
+  const ok = await copyToClipboard(lines.join('\n'));
+  if (ok) {
+    const btn = $('#copyBtn');
+    btn.classList.add('copied');
+    const orig = btn.innerHTML;
+    btn.innerHTML = '✓ Copied!';
+    setTimeout(() => {
+      btn.classList.remove('copied');
+      btn.innerHTML = orig;
+    }, 2000);
+    showToast('Report copied!', 'success');
+  } else {
+    showToast('Copy failed', 'error');
+  }
+});
+
+/* ===== CSV ===== */
+$('#csvBtn').addEventListener('click', () => {
+  if (!state.links.length) return;
+
+  const rows = [['Anchor Text', 'Type', 'Rel', 'Target URL', 'Internal/External', 'Follow/Nofollow']];
+  state.links.forEach(l => {
+    rows.push([
+      `"${l.anchor.replace(/"/g, '""')}"`,
+      l.type,
+      l.rel || 'follow',
+      `"${l.url.replace(/"/g, '""')}"`,
+      l.isInternal ? 'Internal' : 'External',
+      l.isNofollow ? 'Nofollow' : 'Follow'
+    ]);
+  });
+
+  const csv = rows.map(r => r.join(',')).join('\n');
+  const blob = new Blob([csv], { type: 'text/csv;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'anchor-text-report.csv';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+  showToast('CSV downloaded!', 'success');
+});
+
+/* ===== FAQ ===== */
+$$('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    $$('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+
+/* ===== REDRAW ON THEME CHANGE ===== */
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+  if (state.links.length) renderDoughnut(state.links);
+});
+</script>
+
+</body>
+</html>

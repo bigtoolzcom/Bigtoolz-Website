@@ -1,0 +1,944 @@
+<!-- ===========================================
+     BigToolz - Newsletter Signup Component
+     Version: 1.0.0
+     Purpose: Reusable newsletter widget
+     
+     USAGE:
+     
+     Inline (sidebar/widget):
+     <div data-newsletter data-newsletter-variant="inline"></div>
+     
+     Footer:
+     <div data-newsletter data-newsletter-variant="footer"></div>
+     
+     Boxed (card, homepage):
+     <div data-newsletter data-newsletter-variant="boxed"></div>
+     
+     Banner (full-width, blog):
+     <div data-newsletter data-newsletter-variant="banner"></div>
+     
+     REQUIREMENTS:
+     - Set FORM_ENDPOINT below (Formspree / Mailchimp / custom)
+     =========================================== -->
+
+<!-- ===========================================
+     STYLES
+     =========================================== -->
+<style>
+  /* ========== BASE ========== */
+  .newsletter {
+    font-family: inherit;
+  }
+
+  .newsletter-form {
+    display: flex;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .newsletter-input-wrap {
+    position: relative;
+    flex: 1;
+    min-width: 0;
+  }
+
+  .newsletter-input {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1px solid #e5e7eb;
+    background: #fff;
+    color: #1a1a2e;
+    font-size: 14px;
+    font-family: inherit;
+    outline: none;
+    transition: all 0.2s ease;
+  }
+
+  .newsletter-input:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+  }
+
+  .newsletter-input::placeholder {
+    color: #9ca3af;
+  }
+
+  .newsletter-input.error {
+    border-color: #ef4444;
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+  }
+
+  .newsletter-input.success {
+    border-color: #10b981;
+  }
+
+  .newsletter-btn {
+    padding: 12px 24px;
+    border-radius: 10px;
+    background: #2563eb;
+    color: #fff;
+    border: none;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+  }
+
+  .newsletter-btn:hover:not(:disabled) {
+    background: #1d4ed8;
+    transform: translateY(-1px);
+  }
+
+  .newsletter-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+  }
+
+  .newsletter-btn.loading {
+    position: relative;
+    color: transparent;
+  }
+
+  .newsletter-btn.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 16px;
+    height: 16px;
+    margin: -8px 0 0 -8px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: newsletterSpin 0.8s linear infinite;
+  }
+
+  @keyframes newsletterSpin {
+    to { transform: rotate(360deg); }
+  }
+
+  /* Status message */
+  .newsletter-status {
+    margin-top: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.4;
+    display: none;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .newsletter-status.visible {
+    display: flex;
+  }
+
+  .newsletter-status.success {
+    color: #10b981;
+  }
+
+  .newsletter-status.error {
+    color: #ef4444;
+  }
+
+  .newsletter-status svg {
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  /* Privacy text */
+  .newsletter-privacy {
+    margin-top: 10px;
+    font-size: 11px;
+    color: #9ca3af;
+    line-height: 1.5;
+  }
+
+  .newsletter-privacy a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .newsletter-privacy a:hover {
+    text-decoration: underline;
+  }
+
+  /* Honeypot (hidden) */
+  .newsletter-honeypot {
+    position: absolute;
+    left: -9999px;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  /* ========== INLINE VARIANT ========== */
+  .newsletter-inline {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    padding: 22px;
+  }
+
+  .newsletter-inline .newsletter-title {
+    font-size: 15px;
+    font-weight: 800;
+    color: #1a1a2e;
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .newsletter-inline .newsletter-desc {
+    font-size: 12px;
+    color: #6b7280;
+    line-height: 1.5;
+    margin-bottom: 14px;
+  }
+
+  /* ========== FOOTER VARIANT ========== */
+  .newsletter-footer {
+    width: 100%;
+  }
+
+  .newsletter-footer .newsletter-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 10px;
+  }
+
+  .newsletter-footer .newsletter-desc {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.5;
+    margin-bottom: 12px;
+  }
+
+  .newsletter-footer .newsletter-form {
+    gap: 8px;
+  }
+
+  .newsletter-footer .newsletter-input {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.15);
+    color: #fff;
+  }
+
+  .newsletter-footer .newsletter-input::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+  }
+
+  .newsletter-footer .newsletter-input:focus {
+    border-color: #60a5fa;
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  .newsletter-footer .newsletter-btn {
+    background: #2563eb;
+  }
+
+  .newsletter-footer .newsletter-btn:hover:not(:disabled) {
+    background: #1d4ed8;
+  }
+
+  .newsletter-footer .newsletter-status.success {
+    color: #34d399;
+  }
+
+  .newsletter-footer .newsletter-status.error {
+    color: #f87171;
+  }
+
+  .newsletter-footer .newsletter-privacy {
+    color: rgba(255, 255, 255, 0.4);
+  }
+
+  .newsletter-footer .newsletter-privacy a {
+    color: #60a5fa;
+  }
+
+  /* ========== BOXED VARIANT (card) ========== */
+  .newsletter-boxed {
+    background: linear-gradient(135deg, #2563eb, #4f46e5);
+    border-radius: 20px;
+    padding: 40px 32px;
+    text-align: center;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .newsletter-boxed::before {
+    content: '';
+    position: absolute;
+    top: -60px;
+    right: -60px;
+    width: 200px;
+    height: 200px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .newsletter-boxed::after {
+    content: '';
+    position: absolute;
+    bottom: -80px;
+    left: -80px;
+    width: 250px;
+    height: 250px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .newsletter-boxed .newsletter-icon {
+    font-size: 44px;
+    margin-bottom: 12px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .newsletter-boxed .newsletter-title {
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 8px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .newsletter-boxed .newsletter-desc {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.6;
+    margin-bottom: 22px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    z-index: 2;
+  }
+
+  .newsletter-boxed .newsletter-form {
+    max-width: 480px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+
+  .newsletter-boxed .newsletter-input {
+    background: #fff;
+    border-color: #fff;
+  }
+
+  .newsletter-boxed .newsletter-btn {
+    background: #1e3a8a;
+  }
+
+  .newsletter-boxed .newsletter-btn:hover:not(:disabled) {
+    background: #1e40af;
+  }
+
+  .newsletter-boxed .newsletter-status {
+    justify-content: center;
+  }
+
+  .newsletter-boxed .newsletter-status.success {
+    color: #d1fae5;
+  }
+
+  .newsletter-boxed .newsletter-status.error {
+    color: #fecaca;
+  }
+
+  .newsletter-boxed .newsletter-privacy {
+    color: rgba(255, 255, 255, 0.7);
+    position: relative;
+    z-index: 2;
+  }
+
+  .newsletter-boxed .newsletter-privacy a {
+    color: #fff;
+    text-decoration: underline;
+  }
+
+  /* ========== BANNER VARIANT (full-width) ========== */
+  .newsletter-banner {
+    background: linear-gradient(135deg, #0a0e27 0%, #1e1b4b 50%, #4c1d95 100%);
+    padding: 48px 40px;
+    border-radius: 20px;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    margin: 40px 0;
+  }
+
+  .newsletter-banner::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.3), transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .newsletter-banner-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  .newsletter-banner .newsletter-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 14px;
+    backdrop-filter: blur(10px);
+  }
+
+  .newsletter-banner .newsletter-title {
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 12px;
+  }
+
+  .newsletter-banner .newsletter-title .accent {
+    color: #a78bfa;
+  }
+
+  .newsletter-banner .newsletter-desc {
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 1.6;
+    margin-bottom: 0;
+  }
+
+  .newsletter-banner .newsletter-features {
+    display: flex;
+    gap: 16px;
+    margin-top: 16px;
+    flex-wrap: wrap;
+  }
+
+  .newsletter-banner .newsletter-feature {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.85);
+    font-weight: 500;
+  }
+
+  .newsletter-banner .newsletter-feature::before {
+    content: '✓';
+    color: #a78bfa;
+    font-weight: 800;
+  }
+
+  .newsletter-banner .newsletter-form {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .newsletter-banner .newsletter-form .newsletter-input-wrap {
+    width: 100%;
+  }
+
+  .newsletter-banner .newsletter-input {
+    padding: 14px 16px;
+    font-size: 15px;
+    background: #fff;
+    border-color: #fff;
+  }
+
+  .newsletter-banner .newsletter-btn {
+    padding: 14px 24px;
+    font-size: 15px;
+    justify-content: center;
+    width: 100%;
+  }
+
+  /* ========== DARK MODE ========== */
+  [data-theme="dark"] .newsletter-inline {
+    background: #1e293b;
+    border-color: #334155;
+  }
+
+  [data-theme="dark"] .newsletter-inline .newsletter-title {
+    color: #f1f5f9;
+  }
+
+  [data-theme="dark"] .newsletter-inline .newsletter-desc {
+    color: #94a3b8;
+  }
+
+  [data-theme="dark"] .newsletter-inline .newsletter-input {
+    background: #0f172a;
+    border-color: #334155;
+    color: #f1f5f9;
+  }
+
+  /* ========== RESPONSIVE ========== */
+  @media (max-width: 768px) {
+    .newsletter-banner {
+      padding: 32px 20px;
+    }
+
+    .newsletter-banner-inner {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    .newsletter-banner .newsletter-title {
+      font-size: 24px;
+    }
+
+    .newsletter-boxed {
+      padding: 32px 20px;
+    }
+
+    .newsletter-boxed .newsletter-title {
+      font-size: 20px;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .newsletter-form {
+      flex-direction: column;
+    }
+
+    .newsletter-btn {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+</style>
+
+<!-- ===========================================
+     RENDER SCRIPT
+     =========================================== -->
+<script>
+(function () {
+  'use strict';
+
+  /* ===== CONFIG ===== */
+  const CONFIG = {
+    // Replace with your form endpoint
+    // Options:
+    //   Formspree: 'https://formspree.io/f/YOUR_FORM_ID'
+    //   Mailchimp: 'https://xxx.us1.list-manage.com/subscribe/post?u=xxx&id=xxx'
+    //   Custom:    '/api/newsletter'
+    endpoint: '', // ⚠️ SET YOUR ENDPOINT HERE
+    method: 'POST',
+    // localStorage key to remember subscribers
+    storageKey: 'bigtoolz_newsletter_subscribed',
+    // Minimum wait between submissions (ms)
+    cooldown: 60000,
+    debug: false
+  };
+
+  /* ===== STATE ===== */
+  const state = {
+    isSubmitting: false,
+    lastSubmit: 0
+  };
+
+  /* ===== HELPERS ===== */
+  function log(...args) {
+    if (CONFIG.debug) console.log('[Newsletter]', ...args);
+  }
+
+  function isValidEmail(email) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email);
+  }
+
+  function alreadySubscribed() {
+    try {
+      return localStorage.getItem(CONFIG.storageKey) === 'true';
+    } catch (e) {
+      return false;
+    }
+  }
+
+  function markSubscribed() {
+    try {
+      localStorage.setItem(CONFIG.storageKey, 'true');
+    } catch (e) {}
+  }
+
+  function escapeHtml(str) {
+    const d = document.createElement('div');
+    d.textContent = String(str || '');
+    return d.innerHTML;
+  }
+
+  /* ===== BUILD HTML ===== */
+  function buildNewsletter(variant, customTitle, customDesc) {
+    const defaultTitles = {
+      inline: '✉️ Subscribe to Newsletter',
+      footer: 'Stay Connected',
+      boxed: 'Get the Latest Tools & Tips',
+      banner: 'Never Miss a New Tool'
+    };
+
+    const defaultDescs = {
+      inline: 'Get the latest tools, tips and blog updates delivered to your inbox.',
+      footer: 'Subscribe to our newsletter',
+      boxed: 'Join thousands of subscribers and get exclusive updates, new tools, and pro tips — straight to your inbox.',
+      banner: 'Subscribe to our newsletter and be the first to know about new tools, blog posts, and productivity hacks.'
+    };
+
+    const title = customTitle || defaultTitles[variant] || defaultTitles.inline;
+    const desc = customDesc || defaultDescs[variant] || defaultDescs.inline;
+
+    const formHtml = `
+      <form class="newsletter-form" novalidate>
+        <div class="newsletter-input-wrap">
+          <input type="email" 
+                 class="newsletter-input" 
+                 placeholder="Enter your email address"
+                 aria-label="Email address"
+                 autocomplete="email"
+                 required>
+        </div>
+        <button type="submit" class="newsletter-btn">
+          <span>Subscribe</span>
+        </button>
+        <!-- Honeypot field -->
+        <input type="text" 
+               class="newsletter-honeypot" 
+               name="_gotcha" 
+               tabindex="-1" 
+               autocomplete="off"
+               aria-hidden="true">
+      </form>
+      <div class="newsletter-status" role="alert"></div>
+      <div class="newsletter-privacy">
+        We respect your privacy. <a href="/privacy-policy">Read our policy</a>. Unsubscribe anytime.
+      </div>
+    `;
+
+    // Variant-specific wrappers
+    if (variant === 'footer') {
+      return `
+        <div class="newsletter newsletter-footer">
+          <div class="newsletter-title">${escapeHtml(title)}</div>
+          <div class="newsletter-desc">${escapeHtml(desc)}</div>
+          ${formHtml}
+        </div>
+      `;
+    }
+
+    if (variant === 'boxed') {
+      return `
+        <div class="newsletter newsletter-boxed">
+          <div class="newsletter-icon">✉️</div>
+          <div class="newsletter-title">${escapeHtml(title)}</div>
+          <div class="newsletter-desc">${escapeHtml(desc)}</div>
+          ${formHtml}
+        </div>
+      `;
+    }
+
+    if (variant === 'banner') {
+      return `
+        <div class="newsletter newsletter-banner">
+          <div class="newsletter-banner-inner">
+            <div>
+              <div class="newsletter-badge">✉️ Newsletter</div>
+              <div class="newsletter-title">${escapeHtml(title).replace('New Tool', '<span class="accent">New Tool</span>')}</div>
+              <div class="newsletter-desc">${escapeHtml(desc)}</div>
+              <div class="newsletter-features">
+                <span class="newsletter-feature">Weekly updates</span>
+                <span class="newsletter-feature">No spam</span>
+                <span class="newsletter-feature">Free forever</span>
+              </div>
+            </div>
+            <div>
+              ${formHtml}
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    // Default = inline
+    return `
+      <div class="newsletter newsletter-inline">
+        <div class="newsletter-title">${escapeHtml(title)}</div>
+        <div class="newsletter-desc">${escapeHtml(desc)}</div>
+        ${formHtml}
+      </div>
+    `;
+  }
+
+  /* ===== STATUS ===== */
+  function setStatus(container, type, message) {
+    const status = container.querySelector('.newsletter-status');
+    if (!status) return;
+
+    const iconSvg = type === 'success'
+      ? '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>'
+      : '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>';
+
+    status.className = 'newsletter-status visible ' + type;
+    status.innerHTML = `${iconSvg}<span>${escapeHtml(message)}</span>`;
+  }
+
+  function clearStatus(container) {
+    const status = container.querySelector('.newsletter-status');
+    if (status) {
+      status.className = 'newsletter-status';
+      status.innerHTML = '';
+    }
+  }
+
+  /* ===== SUBMIT HANDLER ===== */
+  async function handleSubmit(container, form) {
+    if (state.isSubmitting) return;
+
+    const input = form.querySelector('.newsletter-input');
+    const btn = form.querySelector('.newsletter-btn');
+    const honeypot = form.querySelector('.newsletter-honeypot');
+    const email = input.value.trim();
+
+    clearStatus(container);
+    input.classList.remove('error', 'success');
+
+    // Honeypot check (spam bot trap)
+    if (honeypot && honeypot.value) {
+      log('Honeypot triggered — ignoring');
+      return;
+    }
+
+    // Already subscribed check
+    if (alreadySubscribed()) {
+      setStatus(container, 'success', 'You\'re already subscribed! 🎉');
+      return;
+    }
+
+    // Cooldown check
+    const now = Date.now();
+    if (now - state.lastSubmit < CONFIG.cooldown) {
+      setStatus(container, 'error', 'Please wait a moment before trying again.');
+      return;
+    }
+
+    // Email validation
+    if (!email) {
+      input.classList.add('error');
+      input.focus();
+      setStatus(container, 'error', 'Please enter your email address.');
+      return;
+    }
+
+    if (!isValidEmail(email)) {
+      input.classList.add('error');
+      input.focus();
+      setStatus(container, 'error', 'Please enter a valid email address.');
+      return;
+    }
+
+    // If no endpoint configured, show demo message
+    if (!CONFIG.endpoint) {
+      log('No endpoint configured — demo mode');
+      input.classList.add('success');
+      setStatus(container, 'success', '✅ Subscribed! (Demo mode — configure endpoint to enable)');
+      markSubscribed();
+      form.reset();
+      return;
+    }
+
+    // Submit
+    state.isSubmitting = true;
+    state.lastSubmit = now;
+    btn.disabled = true;
+    btn.classList.add('loading');
+
+    try {
+      const payload = new FormData();
+      payload.append('email', email);
+      payload.append('source', 'bigtoolz_website');
+      payload.append('page', window.location.pathname);
+
+      const res = await fetch(CONFIG.endpoint, {
+        method: CONFIG.method,
+        body: payload,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+
+      // Success
+      input.classList.add('success');
+      setStatus(container, 'success', '🎉 Thanks! Check your inbox to confirm.');
+      markSubscribed();
+      form.reset();
+
+      // Analytics
+      if (window.BigToolzAnalytics?.track) {
+        window.BigToolzAnalytics.track('newsletter_signup', {
+          page: window.location.pathname
+        });
+      }
+
+      log('Subscribed:', email);
+    } catch (err) {
+      console.error('[Newsletter] Submit failed:', err);
+      input.classList.add('error');
+      setStatus(container, 'error', 'Something went wrong. Please try again.');
+    } finally {
+      state.isSubmitting = false;
+      btn.disabled = false;
+      btn.classList.remove('loading');
+    }
+  }
+
+  /* ===== RENDER ===== */
+  function render(container) {
+    const variant = container.dataset.newsletterVariant || 'inline';
+    const title = container.dataset.newsletterTitle || '';
+    const desc = container.dataset.newsletterDesc || '';
+
+    container.innerHTML = buildNewsletter(variant, title, desc);
+
+    // If already subscribed, show message
+    if (alreadySubscribed()) {
+      setStatus(container, 'success', 'You\'re already subscribed! 🎉');
+    }
+
+    // Attach submit handler
+    const form = container.querySelector('.newsletter-form');
+    if (form) {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        handleSubmit(container, form);
+      });
+
+      // Clear error on input
+      const input = form.querySelector('.newsletter-input');
+      input.addEventListener('input', () => {
+        input.classList.remove('error');
+        clearStatus(container);
+      });
+    }
+  }
+
+  /* ===== INIT ===== */
+  function init() {
+    const containers = document.querySelectorAll('[data-newsletter]');
+    containers.forEach(render);
+    log('Initialized', containers.length, 'newsletter(s)');
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+
+  /* ===== PUBLIC API ===== */
+  window.BigToolzNewsletter = {
+    render: (selector) => {
+      const el = typeof selector === 'string' ? document.querySelector(selector) : selector;
+      if (el) render(el);
+    },
+    isSubscribed: alreadySubscribed,
+    reset: () => {
+      try { localStorage.removeItem(CONFIG.storageKey); } catch (e) {}
+    },
+    setEndpoint: (url) => { CONFIG.endpoint = url; }
+  };
+
+})();
+</script>
+
+<!-- ===========================================
+     USAGE EXAMPLES
+     =========================================== -->
+
+<!-- EXAMPLE 1: Inline (sidebar widget) -->
+<!--
+<aside class="sidebar">
+  <div data-newsletter data-newsletter-variant="inline"></div>
+</aside>
+-->
+
+<!-- EXAMPLE 2: Footer variant -->
+<!--
+<footer>
+  <div data-newsletter data-newsletter-variant="footer"></div>
+</footer>
+-->
+
+<!-- EXAMPLE 3: Boxed (homepage mid-section) -->
+<!--
+<section>
+  <div data-newsletter data-newsletter-variant="boxed"></div>
+</section>
+-->
+
+<!-- EXAMPLE 4: Banner (blog page, full-width) -->
+<!--
+<div data-newsletter data-newsletter-variant="banner"></div>
+-->
+
+<!-- EXAMPLE 5: Custom title + description -->
+<!--
+<div data-newsletter 
+     data-newsletter-variant="boxed"
+     data-newsletter-title="Join 10,000+ Subscribers"
+     data-newsletter-desc="Weekly tips, new tools, and exclusive guides."></div>
+-->
+
+<!-- ===========================================
+     HOW TO INCLUDE IN A PAGE
+     ===========================================
+     
+     1. Paste the <style> block (once) — in <head>.
+     2. Paste the <script> block (once) — before </body>.
+     3. Add containers wherever needed.
+     4. Configure FORM_ENDPOINT in the script:
+        
+        Option A — Formspree (easiest):
+          1. Sign up at formspree.io
+          2. Create form → get form ID
+          3. Set: endpoint: 'https://formspree.io/f/YOUR_ID'
+        
+        Option B — Mailchimp:
+          1. Create Mailchimp account
+          2. Get embedded form action URL
+          3. Set: endpoint: '<mailchimp-url>'
+        
+        Option C — Custom backend:
+          1. Build endpoint at /api/newsletter
+          2. Accept FormData with 'email' field
+          3. Set: endpoint: '/api/newsletter'
+     
+     Done. Form validates + submits automatically.
+     =========================================== -->

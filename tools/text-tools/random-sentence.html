@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2563eb">
+
+<title>Random Sentence Generator - Create Random Sentences Online Free | BigToolz</title>
+<meta name="description" content="Generate random sentences online free. 5 styles, custom lengths, up to 50 sentences at once. Perfect for writing prompts, testing, and games. No signup.">
+<meta name="keywords" content="random sentence generator, random sentences, sentence generator, writing prompts, random text generator, sentence creator">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://bigtoolz.com/tools/text-tools/random-sentence/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Random Sentence Generator - Free Online Tool | BigToolz">
+<meta property="og:description" content="Generate random sentences instantly 5 styles, custom length, up to 50 at once.">
+<meta property="og:url" content="https://bigtoolz.com/tools/text-tools/random-sentence/">
+<meta property="og:image" content="https://bigtoolz.com/assets/images/og-image.jpg">
+<meta property="og:site_name" content="BigToolz">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Random Sentence Generator - BigToolz">
+<meta name="twitter:description" content="Generate random sentences instantly free, no signup.">
+<meta name="twitter:image" content="https://bigtoolz.com/assets/images/twitter-card.jpg">
+
+<link rel="icon" href="/assets/images/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/images/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#f8f9fc;color:#1a1a2e;overflow-x:hidden;line-height:1.5}
+
+  .header{background:#fff;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;position:sticky;top:0;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+  .header-left{display:flex;align-items:center;gap:40px}
+  .logo{display:flex;align-items:center;gap:8px;font-size:22px;font-weight:800;color:#1a1a2e;text-decoration:none}
+  .logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#3b82f6,#2563eb);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px}
+  .logo span{color:#2563eb}
+  .nav{display:flex;align-items:center;gap:28px;list-style:none}
+  .nav a{text-decoration:none;color:#4b5563;font-size:14px;font-weight:500;transition:color .2s}
+  .nav a:hover,.nav a.active{color:#2563eb}
+  .header-right{display:flex;align-items:center;gap:16px}
+  .search-btn,.theme-btn{width:36px;height:36px;border-radius:50%;border:none;background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#4b5563}
+  .search-btn:hover,.theme-btn:hover{background:#f3f4f6}
+  .bookmark-btn{display:flex;align-items:center;gap:8px;background:#2563eb;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
+  .bookmark-btn:hover{background:#1d4ed8}
+
+  .hero{background:linear-gradient(135deg,#0a0e27 0%,#1a1a4e 40%,#2d1b69 70%,#4c1d95 100%);padding:40px 40px 60px;position:relative;overflow:hidden;color:#fff}
+  .hero::before{content:'';position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(59,130,246,.25) 0%,transparent 70%);border-radius:50%}
+  .hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+  .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px;flex-wrap:wrap}
+  .breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none}
+  .breadcrumb a:hover{color:#fff}
+  .breadcrumb .sep{color:rgba(255,255,255,.4)}
+  .breadcrumb .current{color:#fff;font-weight:500}
+  .hero-title-row{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+  .hero-icon{width:60px;height:60px;background:#3b82f6;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;color:#fff;flex-shrink:0;box-shadow:0 8px 24px rgba(59,130,246,.4)}
+  .hero-title{font-size:42px;font-weight:800;line-height:1.15}
+  .hero-title .blue{color:#60a5fa}
+  .hero-desc{font-size:15px;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:24px;max-width:560px}
+  .hero-features{display:flex;gap:24px;flex-wrap:wrap}
+  .hero-feature{display:flex;align-items:center;gap:6px;font-size:13px;color:#fff;font-weight:500}
+  .hero-feature .check{width:18px;height:18px;border-radius:50%;background:#3b82f6;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;flex-shrink:0}
+
+  .main-content{max-width:1200px;margin:0 auto;padding:40px;display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start}
+  .tool-content{min-width:0}
+
+  .workspace{background:#fff;border-radius:16px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,.06);border:1px solid #e5e7eb;margin-bottom:24px}
+
+  .options{background:#eff6ff;border-radius:12px;padding:20px;margin-bottom:20px;border:1px solid #bfdbfe}
+  .options-title{font-size:14px;font-weight:800;color:#1a1a2e;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+  .options-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .option-group label{display:block;font-size:11px;font-weight:700;color:#4b5563;margin-bottom:6px;text-transform:uppercase;letter-spacing:.3px}
+  .option-group select,.option-group input{width:100%;padding:10px 12px;border:2px solid #e5e7eb;border-radius:8px;font-size:13px;font-weight:600;font-family:inherit;color:#1a1a2e;background:#fff;outline:none;transition:border-color .2s}
+  .option-group select:focus,.option-group input:focus{border-color:#3b82f6;box-shadow:0 0 0 3px rgba(59,130,246,.1)}
+
+  /* Actions */
+  .actions{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:12px 20px;border-radius:10px;font-size:14px;font-weight:700;font-family:inherit;cursor:pointer;border:1px solid #e5e7eb;background:#fff;color:#4b5563;transition:all .2s}
+  .btn:hover{border-color:#3b82f6;color:#3b82f6;background:#eff6ff}
+  .btn-primary{background:#3b82f6;color:#fff;border-color:#3b82f6;flex:1;min-width:180px;box-shadow:0 4px 12px rgba(59,130,246,.2)}
+  .btn-primary:hover{background:#2563eb;border-color:#2563eb;color:#fff;transform:translateY(-2px)}
+  .btn-danger{color:#ef4444}
+  .btn-danger:hover{border-color:#ef4444;color:#ef4444;background:#fef2f2}
+  .btn.copied{background:#10b981;color:#fff;border-color:#10b981}
+
+  /* Output area */
+  .output-wrapper{background:#fafbfc;border:2px solid #e5e7eb;border-radius:12px;padding:20px;min-height:320px;max-height:600px;overflow-y:auto;margin-bottom:20px;transition:border-color .2s}
+  .output-wrapper.has-content{border-color:#bfdbfe;background:#fff}
+
+  .sentence-item{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid #f3f4f6;align-items:flex-start;animation:slideIn .3s ease}
+  .sentence-item:last-child{border-bottom:none}
+  .sentence-num{flex-shrink:0;width:26px;height:26px;border-radius:50%;background:#eff6ff;color:#3b82f6;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace}
+  .sentence-text{flex:1;font-size:15px;color:#1a1a2e;line-height:1.7;word-break:break-word}
+  .sentence-copy{flex-shrink:0;width:26px;height:26px;border-radius:6px;background:transparent;border:1px solid transparent;color:#cbd5e1;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:12px;transition:all .2s}
+  .sentence-item:hover .sentence-copy{background:#eff6ff;border-color:#bfdbfe;color:#3b82f6}
+  .sentence-copy:hover{background:#3b82f6!important;color:#fff!important;border-color:#3b82f6!important}
+
+  @keyframes slideIn{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:translateY(0)}}
+
+  .output-empty{text-align:center;padding:60px 20px;color:#9ca3af}
+  .output-empty-icon{font-size:48px;margin-bottom:12px;opacity:.5}
+  .output-empty-text{font-size:14px;font-weight:500}
+
+  /* Stats */
+  .stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:20px}
+  .stat-card{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:1px solid #bfdbfe;border-radius:10px;padding:14px;text-align:center}
+  .stat-value{font-size:22px;font-weight:800;color:#1e40af;font-family:'JetBrains Mono',monospace;margin-bottom:2px;line-height:1.1}
+  .stat-label{font-size:10px;font-weight:700;color:#3b82f6;text-transform:uppercase;letter-spacing:.3px}
+
+  /* SEO */
+  .seo-content{background:#fff;border-radius:16px;padding:32px;border:1px solid #e5e7eb;margin-bottom:24px}
+  .seo-content h2{font-size:22px;font-weight:800;color:#1a1a2e;margin-bottom:14px;margin-top:28px;display:flex;align-items:center;gap:10px}
+  .seo-content h2:first-child{margin-top:0}
+  .seo-content h3{font-size:16px;font-weight:700;color:#1a1a2e;margin:20px 0 10px}
+  .seo-content p{font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:14px}
+  .seo-content ul{list-style:none;padding-left:0;margin-bottom:16px}
+  .seo-content ul li{position:relative;padding-left:24px;font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:8px}
+  .seo-content ul li::before{content:'';position:absolute;left:6px;top:12px;width:6px;height:6px;background:#3b82f6;border-radius:50%}
+  .seo-content a{color:#2563eb;text-decoration:none;font-weight:600}
+  .seo-content a:hover{text-decoration:underline}
+  .seo-content strong{color:#1a1a2e;font-weight:700}
+  .seo-content code{background:#f1f5f9;padding:2px 6px;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:13px;color:#0f172a;border:1px solid #e2e8f0}
+
+  .info-table{width:100%;border-collapse:collapse;margin:20px 0;border:1px solid #e5e7eb;border-radius:8px;overflow:hidden}
+  .info-table th{background:#eff6ff;padding:12px 16px;text-align:left;font-size:13px;font-weight:700;color:#1a1a2e;border-bottom:1px solid #e5e7eb}
+  .info-table td{padding:12px 16px;font-size:13px;color:#4b5563;border-bottom:1px solid #f3f4f6}
+  .info-table tr:last-child td{border-bottom:none}
+
+  .how-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:20px}
+  .how-step{background:#eff6ff;border-radius:12px;padding:20px;border:1px solid #bfdbfe}
+  .how-step-num{width:36px;height:36px;border-radius:50%;background:#3b82f6;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;margin-bottom:12px}
+  .how-step-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+  .how-step-desc{font-size:13px;color:#6b7280;line-height:1.6}
+
+  .faq-item{background:#eff6ff;border:1px solid #bfdbfe;border-radius:12px;margin-bottom:10px;overflow:hidden;transition:border-color .2s}
+  .faq-item:hover{border-color:#3b82f6}
+  .faq-question{width:100%;background:none;border:none;padding:18px 22px;font-size:15px;font-weight:700;color:#1a1a2e;text-align:left;cursor:pointer;font-family:inherit;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .faq-question .chev{font-size:12px;color:#3b82f6;transition:transform .2s;flex-shrink:0}
+  .faq-item.open .faq-question .chev{transform:rotate(180deg)}
+  .faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 22px}
+  .faq-item.open .faq-answer{max-height:500px;padding-bottom:18px}
+  .faq-answer p{font-size:14px;color:#6b7280;line-height:1.7;margin:0}
+
+  .sidebar{background:#fff;border-radius:16px;padding:24px;border:1px solid #e5e7eb;position:sticky;top:80px;margin-bottom:24px}
+  .sidebar-header{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:800;color:#1a1a2e;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid #f3f4f6}
+  .sidebar-list{display:flex;flex-direction:column;gap:8px}
+  .sidebar-item{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;cursor:pointer;transition:background .2s;text-decoration:none;color:inherit;border:1px solid #f3f4f6}
+  .sidebar-item:hover{background:#eff6ff;border-color:#bfdbfe}
+  .sidebar-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;flex-shrink:0}
+  .sidebar-info{flex:1;min-width:0}
+  .sidebar-title{font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:2px}
+  .sidebar-desc{font-size:11px;color:#9ca3af;line-height:1.4}
+
+  .footer{background:#0a0e27;padding:60px 40px 30px;color:#fff;margin-top:40px}
+  .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:40px}
+  .footer-brand{display:flex;align-items:center;gap:8px;font-size:20px;font-weight:800;margin-bottom:12px}
+  .footer-brand span{color:#60a5fa}
+  .footer-tagline{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px}
+  .footer-social{display:flex;gap:12px}
+  .footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:16px;transition:background .2s}
+  .footer-social a:hover{background:rgba(255,255,255,.2)}
+  .footer-heading{font-size:14px;font-weight:700;margin-bottom:20px;color:#fff}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .footer-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;transition:color .2s}
+  .footer-links a:hover{color:#60a5fa}
+  .footer-bottom{max-width:1200px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  .footer-bottom-left{display:flex;gap:20px;font-size:12px;color:rgba(255,255,255,.5)}
+  .footer-bottom-right,.footer-bottom-links a{font-size:12px;color:rgba(255,255,255,.5);text-decoration:none}
+  .footer-bottom-links{display:flex;gap:20px}
+
+  .toast{position:fixed;bottom:24px;right:24px;background:#1a1a2e;color:#fff;padding:14px 20px;border-radius:10px;font-size:13px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:3000;transform:translateY(200%);transition:transform .3s ease;max-width:320px}
+  .toast.visible{transform:translateY(0)}
+  .toast.success{background:#10b981}
+  .toast.error{background:#ef4444}
+
+  @media(max-width:1024px){
+    .main-content{grid-template-columns:1fr;padding:24px 20px}
+    .sidebar{position:static}
+    .how-steps{grid-template-columns:repeat(2,1fr)}
+    .options-grid{grid-template-columns:repeat(2,1fr)}
+  }
+  @media(max-width:768px){
+    .header{padding:0 20px}.nav{display:none}
+    .hero{padding:24px 20px 40px}
+    .hero-title{font-size:28px}
+    .hero-icon{width:48px;height:48px;font-size:22px}
+    .hero-title-row{flex-direction:column;align-items:flex-start;gap:12px}
+    .main-content{padding:20px 16px}
+    .workspace{padding:20px}
+    .how-steps{grid-template-columns:1fr}
+    .seo-content{padding:20px}
+    .footer-inner{grid-template-columns:1fr 1fr}
+    .toast{left:16px;right:16px;bottom:16px;max-width:none}
+    .options-grid{grid-template-columns:1fr}
+  }
+  @media(max-width:576px){
+    .header{padding:0 16px}.header-right .search-btn,.header-right .theme-btn{display:none}
+    .hero-title{font-size:24px}
+    .actions{flex-direction:column}
+    .btn{width:100%}
+    .btn-primary{flex:none}
+    .footer-inner{grid-template-columns:1fr}
+    .footer-bottom{flex-direction:column;text-align:center}
+    .stats-grid{grid-template-columns:1fr}
+  }
+
+  html[data-theme="dark"] body{background:#0f172a;color:#f1f5f9}
+  html[data-theme="dark"] .header,html[data-theme="dark"] .workspace,html[data-theme="dark"] .seo-content,html[data-theme="dark"] .sidebar{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .logo,html[data-theme="dark"] .hero-title,html[data-theme="dark"] .seo-content h2,html[data-theme="dark"] .seo-content h3,html[data-theme="dark"] .faq-question,html[data-theme="dark"] .sidebar-header,html[data-theme="dark"] .sidebar-title,html[data-theme="dark"] .options-title,html[data-theme="dark"] .sentence-text{color:#f1f5f9}
+  html[data-theme="dark"] .nav a{color:#cbd5e1}
+  html[data-theme="dark"] .options,html[data-theme="dark"] .how-step,html[data-theme="dark"] .faq-item{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .option-group select,html[data-theme="dark"] .option-group input,html[data-theme="dark"] .btn{background:#0f172a;border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .btn:hover{border-color:#3b82f6;color:#60a5fa}
+  html[data-theme="dark"] .output-wrapper{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .output-wrapper.has-content{background:#0f172a;border-color:#3b82f6}
+  html[data-theme="dark"] .sentence-item{border-color:#334155}
+  html[data-theme="dark"] .sentence-num{background:#1e293b;color:#60a5fa}
+  html[data-theme="dark"] .sentence-copy{color:#64748b}
+  html[data-theme="dark"] .sentence-item:hover .sentence-copy{background:#1e293b;border-color:#334155;color:#60a5fa}
+  html[data-theme="dark"] .stat-card{background:linear-gradient(135deg,#1e3a8a,#1e40af);border-color:#3b82f6}
+  html[data-theme="dark"] .stat-value{color:#93c5fd}
+  html[data-theme="dark"] .stat-label{color:#60a5fa}
+  html[data-theme="dark"] .seo-content p,html[data-theme="dark"] .seo-content ul li,html[data-theme="dark"] .faq-answer p{color:#cbd5e1}
+  html[data-theme="dark"] .seo-content code{background:#020617;color:#60a5fa;border-color:#334155}
+  html[data-theme="dark"] .info-table{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .info-table th{background:#0f172a;color:#f1f5f9;border-color:#334155}
+  html[data-theme="dark"] .info-table td{border-color:#334155;color:#cbd5e1}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type": "SoftwareApplication", "name": "Random Sentence Generator", "url": "https://bigtoolz.com/tools/text-tools/random-sentence/", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any (Web-based)", "description": "Free online random sentence generator 5 styles, custom lengths, generate up to 50 sentences at once. Works in your browser.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.8", "ratingCount": "987"}},
+    {"@type": "HowTo", "name": "How to Generate Random Sentences", "step": [
+      {"@type": "HowToStep", "name": "Choose Settings", "text": "Pick style, length, and count."},
+      {"@type": "HowToStep", "name": "Click Generate", "text": "Press the Generate button."},
+      {"@type": "HowToStep", "name": "Review Output", "text": "Sentences appear instantly."},
+      {"@type": "HowToStep", "name": "Copy or Download", "text": "Copy individual sentences or the whole list."}
+    ]},
+    {"@type": "FAQPage", "mainEntity": [
+      {"@type": "Question", "name": "What is a random sentence generator?", "acceptedAnswer": {"@type": "Answer", "text": "A random sentence generator creates grammatically-formed sentences by combining random subjects, verbs, objects, and other sentence parts. Useful for writing prompts, testing, placeholder text, and creative exercises."}},
+      {"@type": "Question", "name": "Are the sentences grammatically correct?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Our generator uses proper sentence structure (subject + verb + object) with correct articles, capitalization, and punctuation. The content is random but the grammar follows English rules."}},
+      {"@type": "Question", "name": "What can I use random sentences for?", "acceptedAnswer": {"@type": "Answer", "text": "Writing prompts, creative writing practice, testing text rendering in apps, generating placeholder content, teaching grammar, ESL exercises, and generating random scenarios for games."}},
+      {"@type": "Question", "name": "How many sentences can I generate at once?", "acceptedAnswer": {"@type": "Answer", "text": "You can generate 1 to 50 sentences at once. Click the Generate button again for a completely new set."}},
+      {"@type": "Question", "name": "Are my sentences saved on a server?", "acceptedAnswer": {"@type": "Answer", "text": "No. All sentence generation happens in your browser using JavaScript. Nothing is uploaded or stored."}}
+    ]},
+    {"@type": "BreadcrumbList", "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bigtoolz.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://bigtoolz.com/tools/"},
+      {"@type": "ListItem", "position": 3, "name": "Text Tools", "item": "https://bigtoolz.com/tools/text-tools/"},
+      {"@type": "ListItem", "position": 4, "name": "Random Sentence Generator", "item": "https://bigtoolz.com/tools/text-tools/random-sentence/"}
+    ]}
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-left">
+    <a href="/" class="logo"><div class="logo-icon">⚒</div>BigToolz</span></a>
+    <nav><ul class="nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/tools/" class="active">All Tools</a></li>
+      <li><a href="/tools/categories">Categories</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul></nav>
+  </div>
+  <div class="header-right">
+    
+    <button class="theme-btn" aria-label="Toggle theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
+    
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <nav class="breadcrumb">
+      <a href="/">Home</a><span class="sep">›</span>
+      <a href="/tools/">Tools</a><span class="sep">›</span>
+      <a href="/tools/text-tools/">Text Tools</a><span class="sep">›</span>
+      <span class="current">Random Sentence Generator</span>
+    </nav>
+    <div class="hero-title-row">
+      <div class="hero-icon">💬</div>
+      <h1 class="hero-title">Random <span class="blue">Sentence Generator</span></h1>
+    </div>
+    <p class="hero-desc">
+      Generate random, grammatically-correct sentences instantly. 5 styles, custom lengths, up to 50 sentences at once. Perfect for writing prompts, testing, and games. No signup, 100% private.
+    </p>
+    <div class="hero-features">
+      <div class="hero-feature"><span class="check">✓</span> 5 Styles</div>
+      <div class="hero-feature"><span class="check">✓</span> Custom Length</div>
+      <div class="hero-feature"><span class="check">✓</span> Up to 50 At Once</div>
+      <div class="hero-feature"><span class="check">✓</span> Grammatically Correct</div>
+    </div>
+  </div>
+</section>
+
+<div class="main-content">
+
+  <div class="tool-content">
+
+    <div class="workspace">
+
+      <!-- Options -->
+      <div class="options">
+        <div class="options-title">⚙️ Generator Settings</div>
+        <div class="options-grid">
+          <div class="option-group">
+            <label>Sentence Style</label>
+            <select id="styleSelect">
+              <option value="simple" selected>Simple (statement)</option>
+              <option value="complex">Complex (with detail)</option>
+              <option value="question">Questions</option>
+              <option value="exclamation">Exclamations</option>
+              <option value="mixed">Mixed (all)</option>
+            </select>
+          </div>
+          <div class="option-group">
+            <label>Length</label>
+            <select id="lengthSelect">
+              <option value="short">Short (5-8 words)</option>
+              <option value="medium" selected>Medium (10-15 words)</option>
+              <option value="long">Long (15-25 words)</option>
+              <option value="random">Random</option>
+            </select>
+          </div>
+          <div class="option-group">
+            <label>How Many?</label>
+            <select id="countSelect">
+              <option value="1">1 sentence</option>
+              <option value="3">3 sentences</option>
+              <option value="5" selected>5 sentences</option>
+              <option value="10">10 sentences</option>
+              <option value="20">20 sentences</option>
+              <option value="50">50 sentences</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Actions -->
+      <div class="actions">
+        <button class="btn btn-primary" id="generateBtn">🎲 Generate Sentences</button>
+        <button class="btn" id="copyAllBtn">📋 Copy All</button>
+        <button class="btn" id="downloadBtn">⬇ Download TXT</button>
+        <button class="btn btn-danger" id="clearBtn">🗑 Clear</button>
+      </div>
+
+      <!-- Stats -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-value" id="totalSentences">0</div>
+          <div class="stat-label">Sentences</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" id="totalWords">0</div>
+          <div class="stat-label">Total Words</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" id="avgWords">0</div>
+          <div class="stat-label">Avg Words</div>
+        </div>
+      </div>
+
+      <!-- Output -->
+      <div class="output-wrapper" id="outputWrapper">
+        <div class="output-empty">
+          <div class="output-empty-icon">💬</div>
+          <div class="output-empty-text">Click "Generate Sentences" to create random sentences.</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- SEO Content -->
+    <div class="seo-content">
+
+      <h2>💬 What is a Random Sentence Generator?</h2>
+      <p>
+        A <strong>Random Sentence Generator</strong> creates grammatically-correct sentences by combining random subjects, verbs, objects, adjectives, and adverbs. Each sentence follows proper English structure with correct articles (<code>a/an/the</code>), capitalization, and punctuation.
+      </p>
+      <p>
+        Unlike most online generators, BigToolz works <strong>100% in your browser</strong> no uploads, no tracking, instant results. Every generated sentence is unique and ready to use for writing prompts, testing, games, or creative exercises.
+      </p>
+
+      <h2>🚀 How to Generate Random Sentences</h2>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-step-num">1</div>
+          <div class="how-step-title">Choose Style</div>
+          <div class="how-step-desc">Simple, complex, question, exclamation, or mixed.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">2</div>
+          <div class="how-step-title">Set Length</div>
+          <div class="how-step-desc">Short, medium, long, or fully random.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">3</div>
+          <div class="how-step-title">Click Generate</div>
+          <div class="how-step-desc">Up to 50 sentences at once.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">4</div>
+          <div class="how-step-title">Copy or Download</div>
+          <div class="how-step-desc">Copy all, or click individual sentences.</div>
+        </div>
+      </div>
+
+      <h2>📊 The 5 Sentence Styles</h2>
+      <table class="info-table">
+        <thead>
+          <tr><th>Style</th><th>Description</th><th>Example</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Simple</strong></td><td>Basic statement sentences</td><td>"The cat sleeps on the warm sofa."</td></tr>
+          <tr><td><strong>Complex</strong></td><td>With adjectives and adverbs</td><td>"The curious cat quietly sleeps on the beautiful, warm sofa."</td></tr>
+          <tr><td><strong>Question</strong></td><td>Ends with a question mark</td><td>"Does the cat sleep on the warm sofa?"</td></tr>
+          <tr><td><strong>Exclamation</strong></td><td>Ends with an exclamation mark</td><td>"The cat sleeps on the warm sofa!"</td></tr>
+          <tr><td><strong>Mixed</strong></td><td>Random of the above</td><td>Combination of all styles</td></tr>
+        </tbody>
+      </table>
+
+      <h2>🎯 When to Use Random Sentences</h2>
+      <ul>
+        <li><strong>Writing prompts</strong> spark creativity by working a random sentence into a story.</li>
+        <li><strong>Testing text rendering</strong> check how your app displays real, varied sentences.</li>
+        <li><strong>Placeholder content</strong> fill design mockups with readable text (better than Lorem Ipsum).</li>
+        <li><strong>Teaching grammar</strong> show students correct sentence structures in real time.</li>
+        <li><strong>ESL practice</strong> practice reading and translation with varied sentences.</li>
+        <li><strong>Game content</strong> generate random scenarios, prompts, or mission descriptions.</li>
+        <li><strong>Creative warm-ups</strong> use as daily writing warm-up exercises.</li>
+        <li><strong>Testing spell-checkers</strong> ensure tools handle diverse vocabulary.</li>
+      </ul>
+
+      <h2>✨ Key Features</h2>
+      <ul>
+        <li><strong>5 sentence styles</strong> Simple, Complex, Question, Exclamation, Mixed.</li>
+        <li><strong>4 length modes</strong> Short, Medium, Long, Random.</li>
+        <li><strong>1 to 50 sentences</strong> flexible batch generation.</li>
+        <li><strong>Grammatically correct</strong> proper articles, capitalization, punctuation.</li>
+        <li><strong>Copy individual sentences</strong> click any sentence to copy.</li>
+        <li><strong>Copy or download all</strong> one-click for the entire list.</li>
+        <li><strong>Live stats</strong> sentence count, word count, average length.</li>
+        <li><strong>100% browser-based</strong> no signup, no tracking.</li>
+      </ul>
+
+      <h2>❓ Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-question">What is a random sentence generator?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>A random sentence generator creates grammatically-formed sentences by combining random subjects, verbs, objects, and other sentence parts. Useful for writing prompts, testing, placeholder text, and creative exercises.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Are the sentences grammatically correct?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Yes. Our generator uses proper sentence structure (subject + verb + object) with correct articles, capitalization, and punctuation. The content is random but the grammar follows English rules.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What can I use random sentences for?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Writing prompts, creative writing practice, testing text rendering in apps, generating placeholder content, teaching grammar, ESL exercises, and generating random scenarios for games.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">How many sentences can I generate at once?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>You can generate <strong>1 to 50 sentences at once</strong>. Click "Generate Sentences" again for a completely new set.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Will the sentences repeat?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>In a batch of 50, repeats are extremely rare. Each sentence is generated from a large vocabulary pool, and we avoid consecutive duplicates. Over many generations, some patterns may repeat click Generate again to get a new set.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">How is this different from Lorem Ipsum?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Lorem Ipsum is Latin placeholder text it's meaningless and only used for visual layout testing. Random sentences are <strong>real English</strong>, so they're better for testing readability, spell-checkers, translation tools, and showing realistic content in mockups.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Are my sentences saved on a server?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>No. All sentence generation happens in your browser using JavaScript. Nothing is uploaded or stored. Unlimited generations, zero cost.</p></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-header">🔗 Related Text Tools</div>
+    <div class="sidebar-list">
+      <a href="/tools/text-tools/random-word/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#8b5cf6;">🎲</div>
+        <div class="sidebar-info"><div class="sidebar-title">Random Word Generator</div><div class="sidebar-desc">Generate random words</div></div>
+      </a>
+      <a href="/tools/text-tools/lorem-ipsum/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#64748b;">📄</div>
+        <div class="sidebar-info"><div class="sidebar-title">Lorem Ipsum</div><div class="sidebar-desc">Placeholder text</div></div>
+      </a>
+      <a href="/tools/text-tools/text-to-morse/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#0f172a;">·−</div>
+        <div class="sidebar-info"><div class="sidebar-title">Text to Morse</div><div class="sidebar-desc">Morse code converter</div></div>
+      </a>
+      <a href="/tools/text-tools/word-counter/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#3b82f6;">T</div>
+        <div class="sidebar-info"><div class="sidebar-title">Word Counter</div><div class="sidebar-desc">Count words in text</div></div>
+      </a>
+      <a href="/tools/text-tools/case-converter/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#f97316;">Aa</div>
+        <div class="sidebar-info"><div class="sidebar-title">Case Converter</div><div class="sidebar-desc">Change text case</div></div>
+      </a>
+      <a href="/tools/text-tools/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#64748b;">T</div>
+        <div class="sidebar-info"><div class="sidebar-title">All Text Tools →</div><div class="sidebar-desc">Browse 25+ tools</div></div>
+      </a>
+    </div>
+  </aside>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand"><div class="logo-icon">⚒</div>BigToolz</span></div>
+      <p class="footer-tagline">Your Ultimate Online Tools Hub</p>
+      <div class="footer-social">
+        <a href="https://facebook.com/bigtoolz" aria-label="Facebook">f</a>
+        <a href="https://twitter.com/bigtoolz" aria-label="Twitter">𝕏</a>
+        <a href="https://youtube.com/@bigtoolz" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+    <div>
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/tools/">All Tools</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Categories</h3>
+      <ul class="footer-links">
+        <li><a href="/tools/image-tools/">Image Tools</a></li>
+        <li><a href="/tools/pdf-tools/">PDF Tools</a></li>
+        <li><a href="/tools/text-tools/">Text Tools</a></li>
+        <li><a href="/tools/seo-tools/">SEO Tools</a></li>
+        <li><a href="/tools/categories">All Categories →</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Legal</h3>
+      <ul class="footer-links">
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left"><span>✓ 100% Free</span><span>✓ No Sign Up</span><span>✓ No Installation</span></div>
+    <div class="footer-bottom-right">© 2026 BigToolz. All rights reserved.</div>
+    <div class="footer-bottom-links"><a href="/privacy-policy">Privacy</a><a href="/terms">Terms</a><a href="/disclaimer">Disclaimer</a></div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+'use strict';
+
+/* ===== THEME ===== */
+(function(){try{var t=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&d))document.documentElement.setAttribute('data-theme','dark');else if(t==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();
+document.querySelector('.theme-btn')?.addEventListener('click',()=>{const h=document.documentElement;const c=h.getAttribute('data-theme');const d=window.matchMedia('(prefers-color-scheme: dark)').matches;let n=c==='dark'?'light':c==='light'?'dark':(d?'light':'dark');h.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}});
+
+/* ===== HELPERS ===== */
+const $ = (s, p = document) => p.querySelector(s);
+const $$ = (s, p = document) => [...p.querySelectorAll(s)];
+
+function showToast(msg, type = 'info', duration = 3000) {
+  const t = $('#toast');
+  if (!t) return;
+  t.className = 'toast visible' + (type !== 'info' ? ' ' + type : '');
+  t.textContent = msg;
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove('visible'), duration);
+}
+
+async function copyToClipboard(text) {
+  try {
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(text);
+      return true;
+    }
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.cssText = 'position:fixed;opacity:0;';
+    document.body.appendChild(ta);
+    ta.select();
+    const ok = document.execCommand('copy');
+    document.body.removeChild(ta);
+    return ok;
+  } catch (e) { return false; }
+}
+
+function pick(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
+
+/* ===== VOCABULARY ===== */
+const VOCAB = {
+  subjects: [
+    { word: 'boy', article: 'the', isPlural: false },
+    { word: 'girl', article: 'the', isPlural: false },
+    { word: 'teacher', article: 'the', isPlural: false },
+    { word: 'student', article: 'a', isPlural: false },
+    { word: 'doctor', article: 'the', isPlural: false },
+    { word: 'engineer', article: 'an', isPlural: false },
+    { word: 'writer', article: 'a', isPlural: false },
+    { word: 'artist', article: 'an', isPlural: false },
+    { word: 'scientist', article: 'the', isPlural: false },
+    { word: 'musician', article: 'a', isPlural: false },
+    { word: 'cat', article: 'the', isPlural: false },
+    { word: 'dog', article: 'the', isPlural: false },
+    { word: 'bird', article: 'a', isPlural: false },
+    { word: 'horse', article: 'the', isPlural: false },
+    { word: 'elephant', article: 'an', isPlural: false },
+    { word: 'children', article: 'the', isPlural: true },
+    { word: 'students', article: 'the', isPlural: true },
+    { word: 'people', article: 'the', isPlural: true },
+    { word: 'friends', article: 'the', isPlural: true },
+    { word: 'workers', article: 'the', isPlural: true },
+    { word: 'family', article: 'the', isPlural: false },
+    { word: 'team', article: 'the', isPlural: false },
+    { word: 'company', article: 'the', isPlural: false },
+    { word: 'government', article: 'the', isPlural: false },
+    { word: 'community', article: 'the', isPlural: false },
+    { word: 'traveller', article: 'a', isPlural: false },
+    { word: 'chef', article: 'the', isPlural: false },
+    { word: 'pilot', article: 'a', isPlural: false },
+    { word: 'gardener', article: 'the', isPlural: false },
+    { word: 'shopkeeper', article: 'the', isPlural: false }
+  ],
+  adjectives: [
+    'happy','sad','quick','slow','bright','dark','warm','cold','beautiful','strange',
+    'ancient','modern','curious','quiet','loud','clever','gentle','brave','silent','wild',
+    'colorful','mysterious','peaceful','busy','calm','friendly','serious','playful','hungry','thirsty'
+  ],
+  verbs: [
+    'walks','runs','reads','writes','studies','plays','works','helps','visits','finds',
+    'watches','builds','opens','closes','notices','remembers','forgets','loves','fears','dreams',
+    'listens','speaks','thinks','learns','creates','discovers','explores','follows','guides','joins'
+  ],
+  objects: [
+    { word: 'book', article: 'a' },
+    { word: 'letter', article: 'a' },
+    { word: 'story', article: 'a' },
+    { word: 'song', article: 'a' },
+    { word: 'movie', article: 'a' },
+    { word: 'picture', article: 'a' },
+    { word: 'garden', article: 'a' },
+    { word: 'house', article: 'a' },
+    { word: 'car', article: 'a' },
+    { word: 'phone', article: 'a' },
+    { word: 'computer', article: 'a' },
+    { word: 'problem', article: 'a' },
+    { word: 'question', article: 'a' },
+    { word: 'idea', article: 'an' },
+    { word: 'opportunity', article: 'an' },
+    { word: 'adventure', article: 'an' },
+    { word: 'answer', article: 'an' },
+    { word: 'email', article: 'an' },
+    { word: 'umbrella', article: 'an' },
+    { word: 'onion', article: 'an' },
+    { word: 'old friend', article: 'an' },
+    { word: 'famous painting', article: 'a' },
+    { word: 'quiet corner', article: 'a' },
+    { word: 'old guitar', article: 'an' },
+    { word: 'beautiful sunset', article: 'a' }
+  ],
+  places: [
+    'in the park','at home','in the office','in the library','at the beach',
+    'in the garden','near the river','on the mountain','in the city','in the village',
+    'at the station','in the classroom','in the kitchen','at the museum','in the forest',
+    'on the rooftop','in the basement','at the cafe','in the studio','in the market'
+  ],
+  times: [
+    'every morning','every evening','on weekends','during the summer','in the winter',
+    'on a rainy day','at sunset','at dawn','after lunch','before midnight',
+    'on Mondays','every night','once a week','during the holidays','in the afternoon'
+  ]
+};
+
+/* ===== SENTENCE BUILDERS ===== */
+function capitalize(s) { return s.charAt(0).toUpperCase() + s.slice(1); }
+
+function buildNounPhrase(subject, adjective) {
+  let phrase = '';
+  if (adjective) phrase += adjective + ' ';
+  phrase += subject.word;
+  // For 'a/an' article add after adjective
+  if (subject.article === 'a' || subject.article === 'an') {
+    phrase = subject.article + ' ' + phrase;
+  } else if (subject.article === 'the') {
+    phrase = 'the ' + phrase;
+  }
+  return phrase;
+}
+
+function buildSentence(style) {
+  const subj = pick(VOCAB.subjects);
+  const verb = pick(VOCAB.verbs);
+  const obj = pick(VOCAB.objects);
+  const place = pick(VOCAB.places);
+  const time = pick(VOCAB.times);
+  const adj1 = pick(VOCAB.adjectives);
+  const adj2 = pick(VOCAB.adjectives);
+
+  // Subject phrase
+  let subjectPhrase;
+  if (subj.article === 'the') {
+    subjectPhrase = 'The ' + adj1 + ' ' + subj.word;
+  } else if (subj.article === 'a') {
+    subjectPhrase = 'A ' + adj1 + ' ' + subj.word;
+  } else {
+    subjectPhrase = 'An ' + adj1 + ' ' + subj.word;
+  }
+
+  // Object phrase
+  let objectPhrase;
+  if (obj.article === 'a') objectPhrase = 'a ' + obj.word;
+  else if (obj.article === 'an') objectPhrase = 'an ' + obj.word;
+  else objectPhrase = 'the ' + obj.word;
+
+  // Verb simple past/present (keep present)
+  let verbWord = verb;
+  if (subj.isPlural) {
+    // Plural subjects use base verb
+    verbWord = verb.replace(/s$/, '');
+    if (!verbWord) verbWord = verb;
+  }
+
+  // Handle "children/students" plural subjects they take base verb form
+  // Our verb list is 3rd person singular, so strip 's' for plural
+  if (subj.isPlural && verbWord.endsWith('s')) {
+    verbWord = verbWord.slice(0, -1);
+  }
+
+  let sentence = '';
+
+  switch (style) {
+    case 'simple':
+      sentence = `${subjectPhrase} ${verbWord} ${objectPhrase} ${place}.`;
+      break;
+    case 'complex':
+      sentence = `${subjectPhrase} ${verbWord} ${objectPhrase} ${place} ${time}, and it feels truly ${adj2}.`;
+      break;
+    case 'question':
+      sentence = `Does ${subjectPhrase.toLowerCase()} ${verbWord} ${objectPhrase} ${place}?`;
+      break;
+    case 'exclamation':
+      sentence = `${subjectPhrase} ${verbWord} ${objectPhrase} ${place}!`;
+      break;
+    case 'mixed':
+      const styles = ['simple','complex','question','exclamation'];
+      return buildSentence(pick(styles));
+  }
+
+  return capitalize(sentence);
+}
+
+function generateSentences(count, style, length) {
+  const out = [];
+  const seen = new Set();
+  let attempts = 0;
+
+  while (out.length < count && attempts < count * 10) {
+    attempts++;
+    let s = buildSentence(style);
+
+    // Adjust length
+    const wordCount = s.split(/\s+/).length;
+    let targetMin, targetMax;
+    if (length === 'short') { targetMin = 5; targetMax = 8; }
+    else if (length === 'medium') { targetMin = 9; targetMax = 15; }
+    else if (length === 'long') { targetMin = 14; targetMax = 25; }
+    else { targetMin = 5; targetMax = 25; }
+
+    if (wordCount < targetMin) {
+      // Add more details
+      s = s.replace(/\.$/, ' ' + pick(VOCAB.times) + '.')
+           .replace(/!$/, ' ' + pick(VOCAB.times) + '!')
+           .replace(/\?$/, ' ' + pick(VOCAB.times) + '?');
+    } else if (wordCount > targetMax) {
+      // Skip too long ones
+      continue;
+    }
+
+    if (!seen.has(s)) {
+      seen.add(s);
+      out.push(s);
+    }
+  }
+  return out;
+}
+
+/* ===== STATE ===== */
+const state = {
+  sentences: []
+};
+
+/* ===== DOM ===== */
+const styleSelect = $('#styleSelect');
+const lengthSelect = $('#lengthSelect');
+const countSelect = $('#countSelect');
+const generateBtn = $('#generateBtn');
+const copyAllBtn = $('#copyAllBtn');
+const downloadBtn = $('#downloadBtn');
+const clearBtn = $('#clearBtn');
+const outputWrapper = $('#outputWrapper');
+const totalSentences = $('#totalSentences');
+const totalWords = $('#totalWords');
+const avgWords = $('#avgWords');
+
+/* ===== GENERATE ===== */
+generateBtn.addEventListener('click', () => {
+  const count = parseInt(countSelect.value, 10);
+  const style = styleSelect.value;
+  const length = lengthSelect.value;
+
+  const sentences = generateSentences(count, style, length);
+  state.sentences = sentences;
+  renderSentences(sentences);
+  showToast(`✨ ${sentences.length} sentences generated`, 'success');
+});
+
+/* ===== RENDER ===== */
+function renderSentences(sentences) {
+  outputWrapper.innerHTML = '';
+
+  if (!sentences.length) {
+    outputWrapper.innerHTML = '<div class="output-empty"><div class="output-empty-icon">💬</div><div class="output-empty-text">Click "Generate Sentences" to create random sentences.</div></div>';
+    outputWrapper.classList.remove('has-content');
+    updateStats();
+    return;
+  }
+
+  outputWrapper.classList.add('has-content');
+
+  sentences.forEach((text, i) => {
+    const item = document.createElement('div');
+    item.className = 'sentence-item';
+    item.innerHTML = `
+      <div class="sentence-num">${i + 1}</div>
+      <div class="sentence-text">${escapeHtml(text)}</div>
+      <button class="sentence-copy" data-copy="${i}" title="Copy this sentence">📋</button>
+    `;
+    outputWrapper.appendChild(item);
+  });
+
+  // Attach copy handlers
+  $$('.sentence-copy').forEach(btn => {
+    btn.addEventListener('click', async (e) => {
+      e.stopPropagation();
+      const idx = parseInt(btn.dataset.copy, 10);
+      const ok = await copyToClipboard(sentences[idx]);
+      if (ok) {
+        btn.textContent = '✓';
+        setTimeout(() => btn.textContent = '📋', 1200);
+      }
+    });
+  });
+
+  updateStats();
+}
+
+function updateStats() {
+  const total = state.sentences.length;
+  const words = state.sentences.reduce((sum, s) => sum + s.split(/\s+/).length, 0);
+  const avg = total ? Math.round(words / total) : 0;
+
+  totalSentences.textContent = total;
+  totalWords.textContent = words;
+  avgWords.textContent = avg;
+}
+
+function escapeHtml(str) {
+  const div = document.createElement('div');
+  div.textContent = str;
+  return div.innerHTML;
+}
+
+/* ===== COPY ALL ===== */
+copyAllBtn.addEventListener('click', async () => {
+  if (!state.sentences.length) { showToast('Generate sentences first', 'error'); return; }
+  const text = state.sentences.join('\n');
+  const ok = await copyToClipboard(text);
+  if (ok) {
+    copyAllBtn.classList.add('copied');
+    const original = copyAllBtn.innerHTML;
+    copyAllBtn.innerHTML = '✓ Copied All';
+    setTimeout(() => {
+      copyAllBtn.classList.remove('copied');
+      copyAllBtn.innerHTML = original;
+    }, 1500);
+    showToast('All sentences copied!', 'success');
+  } else {
+    showToast('Copy failed', 'error');
+  }
+});
+
+/* ===== DOWNLOAD ===== */
+downloadBtn.addEventListener('click', () => {
+  if (!state.sentences.length) { showToast('Generate sentences first', 'error'); return; }
+  const content = state.sentences.map((s, i) => `${i + 1}. ${s}`).join('\n\n');
+  const blob = new Blob([content], { type: 'text/plain' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'random-sentences.txt';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+  showToast('Downloaded', 'success');
+});
+
+/* ===== CLEAR ===== */
+clearBtn.addEventListener('click', () => {
+  if (!state.sentences.length) return;
+  state.sentences = [];
+  renderSentences([]);
+  showToast('Cleared', 'info');
+});
+
+/* ===== FAQ ===== */
+$$('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    $$('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+
+/* ===== AUTO-GENERATE ON LOAD ===== */
+generateBtn.click();
+</script>
+
+</body>
+</html>

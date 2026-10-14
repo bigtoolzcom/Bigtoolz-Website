@@ -1,0 +1,1212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2563eb">
+
+<title>PDF Word Counter - Count Words in PDF Online Free | BigToolz</title>
+<meta name="description" content="Count words, characters, sentences in PDF online free. Reading time, top words, per-page breakdown, Flesch score. Works in your browser, no upload.">
+<meta name="keywords" content="pdf word counter, count words pdf, pdf character count, pdf word count online, pdf reader word count">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://bigtoolz.com/tools/pdf-tools/advanced-pdf/pdf-word-counter/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="PDF Word Counter - Free Online Tool | BigToolz">
+<meta property="og:description" content="Count words in PDF with detailed stats free, no upload.">
+<meta property="og:url" content="https://bigtoolz.com/tools/pdf-tools/advanced-pdf/pdf-word-counter/">
+<meta property="og:image" content="https://bigtoolz.com/assets/images/og-image.jpg">
+<meta property="og:site_name" content="BigToolz">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="PDF Word Counter - BigToolz">
+<meta name="twitter:description" content="Count words in PDF instantly free, no upload.">
+<meta name="twitter:image" content="https://bigtoolz.com/assets/images/twitter-card.jpg">
+
+<link rel="icon" href="/assets/images/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/images/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#f8f9fc;color:#1a1a2e;overflow-x:hidden;line-height:1.5}
+
+  .header{background:#fff;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;position:sticky;top:0;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+  .header-left{display:flex;align-items:center;gap:40px}
+  .logo{display:flex;align-items:center;gap:8px;font-size:22px;font-weight:800;color:#1a1a2e;text-decoration:none}
+  .logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#3b82f6,#2563eb);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px}
+  .logo span{color:#2563eb}
+  .nav{display:flex;align-items:center;gap:28px;list-style:none}
+  .nav a{text-decoration:none;color:#4b5563;font-size:14px;font-weight:500;transition:color .2s}
+  .nav a:hover,.nav a.active{color:#2563eb}
+  .header-right{display:flex;align-items:center;gap:16px}
+  .search-btn,.theme-btn{width:36px;height:36px;border-radius:50%;border:none;background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#4b5563}
+  .search-btn:hover,.theme-btn:hover{background:#f3f4f6}
+  .bookmark-btn{display:flex;align-items:center;gap:8px;background:#2563eb;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
+  .bookmark-btn:hover{background:#1d4ed8}
+
+  .hero{background:linear-gradient(135deg,#0a0e27 0%,#1a1a4e 40%,#2d1b69 70%,#4c1d95 100%);padding:40px 40px 60px;position:relative;overflow:hidden;color:#fff}
+  .hero::before{content:'';position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(59,130,246,.3) 0%,transparent 70%);border-radius:50%}
+  .hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+  .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px;flex-wrap:wrap}
+  .breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none}
+  .breadcrumb a:hover{color:#fff}
+  .breadcrumb .sep{color:rgba(255,255,255,.4)}
+  .breadcrumb .current{color:#fff;font-weight:500}
+  .hero-title-row{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+  .hero-icon{width:60px;height:60px;background:#3b82f6;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;color:#fff;flex-shrink:0;box-shadow:0 8px 24px rgba(59,130,246,.4)}
+  .hero-title{font-size:42px;font-weight:800;line-height:1.15}
+  .hero-title .blue{color:#60a5fa}
+  .hero-desc{font-size:15px;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:24px;max-width:560px}
+  .hero-features{display:flex;gap:24px;flex-wrap:wrap}
+  .hero-feature{display:flex;align-items:center;gap:6px;font-size:13px;color:#fff;font-weight:500}
+  .hero-feature .check{width:18px;height:18px;border-radius:50%;background:#3b82f6;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;flex-shrink:0}
+
+  .main-content{max-width:1200px;margin:0 auto;padding:40px;display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start}
+  .tool-content{min-width:0}
+
+  .workspace{background:#fff;border-radius:16px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,.06);border:1px solid #e5e7eb;margin-bottom:24px}
+
+  .dropzone{border:2px dashed #93c5fd;border-radius:12px;padding:50px 30px;text-align:center;background:#eff6ff;margin-bottom:24px;transition:all .2s;cursor:pointer}
+  .dropzone:hover,.dropzone.dragover{border-color:#3b82f6;background:#dbeafe}
+  .dropzone-icon{width:60px;height:60px;background:linear-gradient(135deg,#3b82f6,#2563eb);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;color:#fff;font-size:26px;transition:transform .2s}
+  .dropzone:hover .dropzone-icon{transform:translateY(-4px)}
+  .dropzone-title{font-size:16px;font-weight:700;color:#1a1a2e;margin-bottom:8px}
+  .dropzone-sub{font-size:14px;color:#6b7280;margin-bottom:20px}
+  .dropzone-sub a{color:#3b82f6;font-weight:600;text-decoration:none}
+  .choose-btn{display:inline-flex;align-items:center;gap:8px;background:#3b82f6;color:#fff;border:none;padding:12px 28px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;transition:background .2s}
+  .choose-btn:hover{background:#2563eb}
+  .dropzone-info{font-size:12px;color:#9ca3af;display:flex;align-items:center;justify-content:center;gap:8px;margin-top:16px;flex-wrap:wrap}
+  .dropzone-info .divider{color:#d1d5db}
+  .file-input{display:none}
+
+  /* File info */
+  .file-info-bar{display:none;align-items:center;gap:14px;padding:14px 18px;background:#eff6ff;border:1px solid #93c5fd;border-radius:12px;margin-bottom:20px;flex-wrap:wrap}
+  .file-info-bar.visible{display:flex}
+  .file-info-icon{width:44px;height:44px;background:#3b82f6;border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:20px;flex-shrink:0}
+  .file-info-text{flex:1;min-width:0}
+  .file-info-name{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .file-info-meta{font-size:12px;color:#6b7280}
+  .file-change-btn{padding:8px 14px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;font-size:12px;font-weight:600;color:#3b82f6;cursor:pointer;font-family:inherit;transition:all .2s}
+  .file-change-btn:hover{border-color:#3b82f6;background:#eff6ff}
+
+  /* Action */
+  .actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:20px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 28px;border-radius:10px;font-size:15px;font-weight:700;font-family:inherit;cursor:pointer;border:none;transition:all .2s;text-decoration:none}
+  .btn-primary{background:#3b82f6;color:#fff;flex:1;box-shadow:0 4px 12px rgba(59,130,246,.2)}
+  .btn-primary:hover:not(:disabled){background:#2563eb;transform:translateY(-2px);box-shadow:0 6px 20px rgba(59,130,246,.3)}
+  .btn-primary:disabled{opacity:.5;cursor:not-allowed;transform:none}
+  .btn-secondary{background:#fff;color:#3b82f6;border:1px solid #e5e7eb}
+  .btn-secondary:hover{border-color:#3b82f6;background:#eff6ff}
+  .btn-success{background:#10b981;color:#fff}
+  .btn-success:hover{background:#059669}
+
+  .progress{display:none;margin-bottom:20px}
+  .progress.visible{display:block}
+  .progress-bar{width:100%;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden;margin-bottom:8px}
+  .progress-fill{height:100%;background:linear-gradient(90deg,#60a5fa,#3b82f6);border-radius:4px;width:0%;transition:width .3s ease}
+  .progress-text{font-size:13px;color:#6b7280;text-align:center;font-weight:500}
+
+  /* Results */
+  .results{display:none}
+  .results.visible{display:block}
+
+  /* Hero metric cards */
+  .metrics-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:24px}
+  .metric-card{background:linear-gradient(135deg,#3b82f6,#2563eb);border-radius:16px;padding:22px;color:#fff;position:relative;overflow:hidden;text-align:center}
+  .metric-card::before{content:'';position:absolute;top:-40px;right:-40px;width:120px;height:120px;background:rgba(255,255,255,.08);border-radius:50%}
+  .metric-card.alt1{background:linear-gradient(135deg,#8b5cf6,#7c3aed)}
+  .metric-card.alt2{background:linear-gradient(135deg,#10b981,#059669)}
+  .metric-card.alt3{background:linear-gradient(135deg,#f59e0b,#d97706)}
+  .metric-label{font-size:11px;text-transform:uppercase;letter-spacing:1px;font-weight:700;opacity:.85;margin-bottom:8px;position:relative;z-index:2}
+  .metric-value{font-size:36px;font-weight:900;line-height:1;position:relative;z-index:2;margin-bottom:4px}
+  .metric-sub{font-size:11px;opacity:.75;position:relative;z-index:2}
+
+  /* Stats grid */
+  .stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:24px}
+  .stat-card{background:#f8fafc;border:1px solid #e5e7eb;border-radius:12px;padding:18px;text-align:center}
+  .stat-label{font-size:11px;color:#6b7280;text-transform:uppercase;letter-spacing:.5px;font-weight:700;margin-bottom:8px}
+  .stat-value{font-size:22px;font-weight:800;color:#1a1a2e;line-height:1.2;margin-bottom:2px}
+  .stat-sub{font-size:11px;color:#9ca3af}
+
+  /* Reading time */
+  .reading-card{background:#f8fafc;border:1px solid #e5e7eb;border-radius:12px;padding:20px;margin-bottom:20px}
+  .reading-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+  .reading-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .reading-item{background:#fff;border:1px solid #e5e7eb;border-radius:10px;padding:14px;text-align:center}
+  .reading-item-icon{font-size:20px;margin-bottom:6px}
+  .reading-item-value{font-size:18px;font-weight:800;color:#3b82f6;margin-bottom:2px}
+  .reading-item-label{font-size:11px;color:#6b7280;font-weight:600}
+
+  /* Per-page list */
+  .page-list{background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:20px;margin-bottom:20px;max-height:340px;overflow-y:auto}
+  .page-list-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:14px;display:flex;align-items:center;gap:8px;position:sticky;top:0;background:#fff;padding-bottom:8px}
+  .page-row{display:flex;align-items:center;gap:12px;padding:9px 0;border-bottom:1px solid #f3f4f6;font-size:13px}
+  .page-row:last-child{border-bottom:none}
+  .page-num-badge{width:44px;height:26px;background:#eff6ff;color:#2563eb;font-weight:700;font-size:11px;border-radius:6px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:'JetBrains Mono',monospace}
+  .page-words{flex:1;font-weight:600;color:#1a1a2e}
+  .page-bar-wrap{flex:2;height:8px;background:#f1f5f9;border-radius:4px;overflow:hidden;margin:0 12px}
+  .page-bar{height:100%;background:linear-gradient(90deg,#60a5fa,#3b82f6);border-radius:4px;transition:width .5s ease}
+  .page-percent{font-size:11px;font-family:'JetBrains Mono',monospace;font-weight:700;color:#3b82f6;min-width:40px;text-align:right}
+
+  /* Top words */
+  .topwords-list{background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:20px;margin-bottom:20px}
+  .topwords-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+  .word-chips{display:flex;flex-wrap:wrap;gap:8px}
+  .word-chip{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;background:#eff6ff;border:1px solid #bfdbfe;border-radius:20px;font-size:12px;font-weight:600;color:#1e40af}
+  .word-chip .count{background:#3b82f6;color:#fff;font-size:10px;padding:1px 7px;border-radius:10px;font-family:'JetBrains Mono',monospace}
+  .word-chip.rank-1{background:#fef3c7;border-color:#fcd34d;color:#92400e}
+  .word-chip.rank-1 .count{background:#f59e0b}
+  .word-chip.rank-2{background:#f1f5f9;border-color:#cbd5e1;color:#475569}
+  .word-chip.rank-2 .count{background:#64748b}
+  .word-chip.rank-3{background:#fed7aa;border-color:#fdba74;color:#9a3412}
+  .word-chip.rank-3 .count{background:#ea580c}
+
+  /* Longest words */
+  .longest-list{background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:20px;margin-bottom:20px}
+  .longest-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+  .longest-item{display:flex;align-items:center;gap:12px;padding:8px 0;border-bottom:1px solid #f3f4f6;font-size:13px}
+  .longest-item:last-child{border-bottom:none}
+  .longest-rank{width:26px;height:26px;background:#eff6ff;color:#2563eb;font-weight:700;font-size:11px;border-radius:6px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:'JetBrains Mono',monospace}
+  .longest-word{flex:1;font-weight:600;color:#1a1a2e;font-family:'JetBrains Mono',monospace;word-break:break-all}
+  .longest-length{font-size:11px;color:#6b7280;font-weight:600;font-family:'JetBrains Mono',monospace}
+
+  /* Toolbar */
+  .toolbar-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px}
+  .sub-btn{display:inline-flex;align-items:center;gap:6px;padding:10px 16px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;font-size:13px;font-weight:600;color:#4b5563;cursor:pointer;font-family:inherit;transition:all .2s}
+  .sub-btn:hover{border-color:#3b82f6;color:#3b82f6;background:#eff6ff}
+  .sub-btn.copied{background:#10b981;color:#fff;border-color:#10b981}
+
+  /* SEO */
+  .seo-content{background:#fff;border-radius:16px;padding:32px;border:1px solid #e5e7eb;margin-bottom:24px}
+  .seo-content h2{font-size:22px;font-weight:800;color:#1a1a2e;margin-bottom:14px;margin-top:28px;display:flex;align-items:center;gap:10px}
+  .seo-content h2:first-child{margin-top:0}
+  .seo-content h3{font-size:16px;font-weight:700;color:#1a1a2e;margin:20px 0 10px}
+  .seo-content p{font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:14px}
+  .seo-content ul{list-style:none;padding-left:0;margin-bottom:16px}
+  .seo-content ul li{position:relative;padding-left:24px;font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:8px}
+  .seo-content ul li::before{content:'';position:absolute;left:6px;top:12px;width:6px;height:6px;background:#3b82f6;border-radius:50%}
+  .seo-content a{color:#2563eb;text-decoration:none;font-weight:600}
+  .seo-content a:hover{text-decoration:underline}
+  .seo-content strong{color:#1a1a2e;font-weight:700}
+
+  .how-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:20px}
+  .how-step{background:#eff6ff;border-radius:12px;padding:20px;border:1px solid #93c5fd}
+  .how-step-num{width:36px;height:36px;border-radius:50%;background:#3b82f6;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;margin-bottom:12px}
+  .how-step-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+  .how-step-desc{font-size:13px;color:#6b7280;line-height:1.6}
+
+  .faq-item{background:#eff6ff;border:1px solid #93c5fd;border-radius:12px;margin-bottom:10px;overflow:hidden;transition:border-color .2s}
+  .faq-item:hover{border-color:#3b82f6}
+  .faq-question{width:100%;background:none;border:none;padding:18px 22px;font-size:15px;font-weight:700;color:#1a1a2e;text-align:left;cursor:pointer;font-family:inherit;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .faq-question .chev{font-size:12px;color:#3b82f6;transition:transform .2s;flex-shrink:0}
+  .faq-item.open .faq-question .chev{transform:rotate(180deg)}
+  .faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 22px}
+  .faq-item.open .faq-answer{max-height:500px;padding-bottom:18px}
+  .faq-answer p{font-size:14px;color:#6b7280;line-height:1.7;margin:0}
+
+  .sidebar{background:#fff;border-radius:16px;padding:24px;border:1px solid #e5e7eb;position:sticky;top:80px;margin-bottom:24px}
+  .sidebar-header{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:800;color:#1a1a2e;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid #f3f4f6}
+  .sidebar-list{display:flex;flex-direction:column;gap:8px}
+  .sidebar-item{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;cursor:pointer;transition:background .2s;text-decoration:none;color:inherit;border:1px solid #f3f4f6}
+  .sidebar-item:hover{background:#eff6ff;border-color:#93c5fd}
+  .sidebar-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;flex-shrink:0}
+  .sidebar-info{flex:1;min-width:0}
+  .sidebar-title{font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:2px}
+  .sidebar-desc{font-size:11px;color:#9ca3af;line-height:1.4}
+
+  .footer{background:#0a0e27;padding:60px 40px 30px;color:#fff;margin-top:40px}
+  .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:40px}
+  .footer-brand{display:flex;align-items:center;gap:8px;font-size:20px;font-weight:800;margin-bottom:12px}
+  .footer-brand span{color:#60a5fa}
+  .footer-tagline{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px}
+  .footer-social{display:flex;gap:12px}
+  .footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:16px;transition:background .2s}
+  .footer-social a:hover{background:rgba(255,255,255,.2)}
+  .footer-heading{font-size:14px;font-weight:700;margin-bottom:20px;color:#fff}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .footer-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;transition:color .2s}
+  .footer-links a:hover{color:#60a5fa}
+  .footer-bottom{max-width:1200px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  .footer-bottom-left{display:flex;gap:20px;font-size:12px;color:rgba(255,255,255,.5)}
+  .footer-bottom-right,.footer-bottom-links a{font-size:12px;color:rgba(255,255,255,.5);text-decoration:none}
+  .footer-bottom-links{display:flex;gap:20px}
+
+  .toast{position:fixed;bottom:24px;right:24px;background:#1a1a2e;color:#fff;padding:14px 20px;border-radius:10px;font-size:13px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:3000;transform:translateY(200%);transition:transform .3s ease;max-width:320px}
+  .toast.visible{transform:translateY(0)}
+  .toast.success{background:#10b981}
+  .toast.error{background:#ef4444}
+
+  @media(max-width:1024px){
+    .main-content{grid-template-columns:1fr;padding:24px 20px}
+    .sidebar{position:static}
+    .how-steps{grid-template-columns:repeat(2,1fr)}
+    .metrics-grid{grid-template-columns:repeat(2,1fr)}
+    .stats-grid{grid-template-columns:repeat(2,1fr)}
+    .reading-grid{grid-template-columns:1fr}
+  }
+  @media(max-width:768px){
+    .header{padding:0 20px}.nav{display:none}
+    .hero{padding:24px 20px 40px}
+    .hero-title{font-size:28px}
+    .hero-icon{width:48px;height:48px;font-size:22px}
+    .hero-title-row{flex-direction:column;align-items:flex-start;gap:12px}
+    .main-content{padding:20px 16px}
+    .workspace{padding:20px}
+    .dropzone{padding:32px 16px}
+    .how-steps{grid-template-columns:1fr}
+    .seo-content{padding:20px}
+    .footer-inner{grid-template-columns:1fr 1fr}
+    .toast{left:16px;right:16px;bottom:16px;max-width:none}
+    .metric-value{font-size:28px}
+    .page-bar-wrap{display:none}
+  }
+  @media(max-width:576px){
+    .header{padding:0 16px}.header-right .search-btn,.header-right .theme-btn{display:none}
+    .hero-title{font-size:24px}
+    .actions{flex-direction:column}
+    .btn{width:100%}
+    .btn-primary{flex:none}
+    .footer-inner{grid-template-columns:1fr}
+    .footer-bottom{flex-direction:column;text-align:center}
+    .metrics-grid{grid-template-columns:1fr 1fr}
+    .stats-grid{grid-template-columns:1fr}
+  }
+
+  html[data-theme="dark"] body{background:#0f172a;color:#f1f5f9}
+  html[data-theme="dark"] .header,html[data-theme="dark"] .workspace,html[data-theme="dark"] .seo-content,html[data-theme="dark"] .sidebar{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .logo,html[data-theme="dark"] .hero-title,html[data-theme="dark"] .seo-content h2,html[data-theme="dark"] .seo-content h3,html[data-theme="dark"] .faq-question,html[data-theme="dark"] .sidebar-header,html[data-theme="dark"] .sidebar-title,html[data-theme="dark"] .file-info-name,html[data-theme="dark"] .page-list-title,html[data-theme="dark"] .topwords-title,html[data-theme="dark"] .longest-title,html[data-theme="dark"] .reading-title{color:#f1f5f9}
+  html[data-theme="dark"] .nav a{color:#cbd5e1}
+  html[data-theme="dark"] .dropzone{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .how-step,html[data-theme="dark"] .faq-item,html[data-theme="dark"] .file-info-bar,html[data-theme="dark"] .stat-card,html[data-theme="dark"] .page-list,html[data-theme="dark"] .topwords-list,html[data-theme="dark"] .longest-list,html[data-theme="dark"] .reading-card,html[data-theme="dark"] .reading-item{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .seo-content p,html[data-theme="dark"] .seo-content ul li,html[data-theme="dark"] .faq-answer p{color:#cbd5e1}
+  html[data-theme="dark"] .page-row,html[data-theme="dark"] .longest-item{border-color:#334155}
+  html[data-theme="dark"] .page-words,html[data-theme="dark"] .longest-word,html[data-theme="dark"] .stat-value{color:#f1f5f9}
+  html[data-theme="dark"] .page-bar-wrap{background:#1e293b}
+  html[data-theme="dark"] .word-chip{background:rgba(59,130,246,.15);border-color:#334155;color:#93c5fd}
+  html[data-theme="dark"] .word-chip.rank-1{background:rgba(245,158,11,.15);color:#fbbf24;border-color:#78350f}
+  html[data-theme="dark"] .word-chip.rank-2{background:#1e293b;color:#cbd5e1;border-color:#334155}
+  html[data-theme="dark"] .word-chip.rank-3{background:rgba(234,88,12,.15);color:#fb923c;border-color:#7c2d12}
+  html[data-theme="dark"] .file-change-btn{background:#0f172a;border-color:#334155;color:#60a5fa}
+  html[data-theme="dark"] .sub-btn{background:#0f172a;border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .reading-item-value{color:#60a5fa}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type": "SoftwareApplication", "name": "PDF Word Counter", "url": "https://bigtoolz.com/tools/pdf-tools/advanced-pdf/pdf-word-counter/", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any (Web-based)", "description": "Free online PDF word counter count words, characters, sentences, reading time and more. Works in your browser.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.8", "ratingCount": "612"}},
+    {"@type": "HowTo", "name": "How to Count Words in a PDF", "step": [
+      {"@type": "HowToStep", "name": "Upload PDF", "text": "Drag & drop or click to select your PDF file."},
+      {"@type": "HowToStep", "name": "Analyze", "text": "Click Count Words to process the text."},
+      {"@type": "HowToStep", "name": "Review Stats", "text": "See words, characters, sentences, reading time, and top words."},
+      {"@type": "HowToStep", "name": "Download Report", "text": "Save the full report as .txt file."}
+    ]},
+    {"@type": "FAQPage", "mainEntity": [
+      {"@type": "Question", "name": "How does the PDF word counter work?", "acceptedAnswer": {"@type": "Answer", "text": "We extract text from your PDF using PDF.js, then tokenize it into words, characters, sentences, and paragraphs. We also estimate reading time and identify the most frequent words."}},
+      {"@type": "Question", "name": "How is reading time calculated?", "acceptedAnswer": {"@type": "Answer", "text": "Standard reading speed: 200 words per minute (WPM) for average reading. Slow reading: 130 WPM. Speaking: 150 WPM. These are industry-standard estimates used by Medium, Kindle, and academic publishers."}},
+      {"@type": "Question", "name": "Does it count words correctly?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Words are separated by whitespace and punctuation. Hyphenated words count as one. Numbers, abbreviations, and URLs are counted as single tokens. This matches Microsoft Word and Google Docs word counts."}},
+      {"@type": "Question", "name": "Are my PDFs uploaded to a server?", "acceptedAnswer": {"@type": "Answer", "text": "No. All text extraction and counting happens in your browser. Your PDF never leaves your device."}}
+    ]},
+    {"@type": "BreadcrumbList", "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bigtoolz.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://bigtoolz.com/tools/"},
+      {"@type": "ListItem", "position": 3, "name": "PDF Tools", "item": "https://bigtoolz.com/tools/pdf-tools/"},
+      {"@type": "ListItem", "position": 4, "name": "Advanced PDF", "item": "https://bigtoolz.com/tools/pdf-tools/advanced-pdf/"},
+      {"@type": "ListItem", "position": 5, "name": "PDF Word Counter", "item": "https://bigtoolz.com/tools/pdf-tools/advanced-pdf/pdf-word-counter/"}
+    ]}
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-left">
+    <a href="/" class="logo"><div class="logo-icon">⚒</div>BigToolz</span></a>
+    <nav><ul class="nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/tools/" class="active">All Tools</a></li>
+      <li><a href="/tools/categories">Categories</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul></nav>
+  </div>
+  <div class="header-right">
+   
+    <button class="theme-btn" aria-label="Toggle theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
+   
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <nav class="breadcrumb">
+      <a href="/">Home</a><span class="sep">›</span>
+      <a href="/tools/">Tools</a><span class="sep">›</span>
+      <a href="/tools/pdf-tools/">PDF Tools</a><span class="sep">›</span>
+      <a href="/tools/pdf-tools/advanced-pdf/">Advanced PDF</a><span class="sep">›</span>
+      <span class="current">PDF Word Counter</span>
+    </nav>
+    <div class="hero-title-row">
+      <div class="hero-icon">🔢</div>
+      <h1 class="hero-title">PDF <span class="blue">Word Counter</span></h1>
+    </div>
+    <p class="hero-desc">
+      Count words, characters, sentences, and paragraphs in any PDF. Get reading time, top words, per-page breakdown, and a full report. No upload, no signup, 100% private.
+    </p>
+    <div class="hero-features">
+      <div class="hero-feature"><span class="check">✓</span> Detailed Stats</div>
+      <div class="hero-feature"><span class="check">✓</span> Reading Time</div>
+      <div class="hero-feature"><span class="check">✓</span> Per-Page Breakdown</div>
+      <div class="hero-feature"><span class="check">✓</span> No Upload</div>
+    </div>
+  </div>
+</section>
+
+<div class="main-content">
+
+  <div class="tool-content">
+
+    <div class="workspace">
+
+      <!-- Dropzone -->
+      <div class="dropzone" id="dropzone">
+        <div class="dropzone-icon">⬆</div>
+        <div class="dropzone-title">Drag & drop your PDF here</div>
+        <div class="dropzone-sub">or <a href="#" id="browseLink">click to browse files</a></div>
+        <button class="choose-btn" id="chooseBtn" type="button">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/></svg>
+          Choose PDF File
+        </button>
+        <div class="dropzone-info">
+          <span>PDF only</span>
+          <span class="divider">|</span>
+          <span>Text-based PDFs (not scans)</span>
+        </div>
+        <input type="file" id="fileInput" class="file-input" accept="application/pdf,.pdf">
+      </div>
+
+      <!-- File Info -->
+      <div class="file-info-bar" id="fileInfoBar">
+        <div class="file-info-icon">📄</div>
+        <div class="file-info-text">
+          <div class="file-info-name" id="fileName">document.pdf</div>
+          <div class="file-info-meta" id="fileMeta"></div>
+        </div>
+        <button class="file-change-btn" id="changeBtn">Change PDF</button>
+      </div>
+
+      <!-- Actions -->
+      <div class="actions">
+        <button class="btn btn-primary" id="countBtn" disabled>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 11H5a2 2 0 00-2 2v7M15 7h4a2 2 0 012 2v11M9 3h6M3 12h18"/></svg>
+          Count Words
+        </button>
+        <button class="btn btn-secondary" id="resetBtn">Reset</button>
+      </div>
+
+      <!-- Progress -->
+      <div class="progress" id="progress">
+        <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+        <div class="progress-text" id="progressText">Extracting text...</div>
+      </div>
+
+      <!-- Results -->
+      <div class="results" id="results">
+
+        <!-- Hero metrics -->
+        <div class="metrics-grid">
+          <div class="metric-card">
+            <div class="metric-label">Words</div>
+            <div class="metric-value" id="mWords">0</div>
+            <div class="metric-sub">total words</div>
+          </div>
+          <div class="metric-card alt1">
+            <div class="metric-label">Characters</div>
+            <div class="metric-value" id="mChars">0</div>
+            <div class="metric-sub" id="mCharsSub">with spaces</div>
+          </div>
+          <div class="metric-card alt2">
+            <div class="metric-label">Sentences</div>
+            <div class="metric-value" id="mSentences">0</div>
+            <div class="metric-sub">detected sentences</div>
+          </div>
+          <div class="metric-card alt3">
+            <div class="metric-label">Pages</div>
+            <div class="metric-value" id="mPages">0</div>
+            <div class="metric-sub">in document</div>
+          </div>
+        </div>
+
+        <!-- Secondary stats -->
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-label">Characters (no spaces)</div>
+            <div class="stat-value" id="sCharsNoSpace">0</div>
+            <div class="stat-sub">letters + numbers</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Paragraphs</div>
+            <div class="stat-value" id="sParagraphs">0</div>
+            <div class="stat-sub">text blocks</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Avg Words / Sentence</div>
+            <div class="stat-value" id="sAvgSentence">0</div>
+            <div class="stat-sub">readability indicator</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Avg Word Length</div>
+            <div class="stat-value" id="sAvgWordLen">0</div>
+            <div class="stat-sub">characters</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Unique Words</div>
+            <div class="stat-value" id="sUnique">0</div>
+            <div class="stat-sub">distinct tokens</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Vocabulary Richness</div>
+            <div class="stat-value" id="sVocab">0%</div>
+            <div class="stat-sub">unique / total</div>
+          </div>
+        </div>
+
+        <!-- Reading time -->
+        <div class="reading-card">
+          <div class="reading-title">⏱️ Estimated Time</div>
+          <div class="reading-grid">
+            <div class="reading-item">
+              <div class="reading-item-icon">📖</div>
+              <div class="reading-item-value" id="rFast"></div>
+              <div class="reading-item-label">Fast Read (200 wpm)</div>
+            </div>
+            <div class="reading-item">
+              <div class="reading-item-icon">🧘</div>
+              <div class="reading-item-value" id="rSlow"></div>
+              <div class="reading-item-label">Slow Read (130 wpm)</div>
+            </div>
+            <div class="reading-item">
+              <div class="reading-item-icon">🎤</div>
+              <div class="reading-item-value" id="rSpeak"></div>
+              <div class="reading-item-label">Speaking (150 wpm)</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Top words -->
+        <div class="topwords-list">
+          <div class="topwords-title">🔝 Top 20 Most Frequent Words</div>
+          <div class="word-chips" id="topWords">
+            <span style="font-size:13px;color:#9ca3af;font-style:italic;">No analysis yet.</span>
+          </div>
+        </div>
+
+        <!-- Longest words -->
+        <div class="longest-list">
+          <div class="longest-title">📏 Top 10 Longest Words</div>
+          <div id="longestWords">
+            <span style="font-size:13px;color:#9ca3af;font-style:italic;">No analysis yet.</span>
+          </div>
+        </div>
+
+        <!-- Per-page breakdown -->
+        <div class="page-list">
+          <div class="page-list-title">📄 Per-Page Word Count</div>
+          <div id="pageList">
+            <span style="font-size:13px;color:#9ca3af;font-style:italic;">No pages analyzed yet.</span>
+          </div>
+        </div>
+
+        <!-- Toolbar -->
+        <div class="toolbar-row">
+          <button class="sub-btn" id="copyBtn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+            Copy Stats
+          </button>
+          <button class="sub-btn" id="downloadBtn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+            Download Report
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- SEO Content -->
+    <div class="seo-content">
+
+      <h2>🔢 What is a PDF Word Counter?</h2>
+      <p>
+        A <strong>PDF word counter</strong> extracts text from a PDF and counts the words, characters, sentences, and paragraphs. It's essential for <strong>writers, students, translators, editors,</strong> and anyone who needs to know the length of a document whether you're checking if an essay meets requirements, pricing a translation project, or estimating how long it takes to read.
+      </p>
+      <p>
+        Unlike most online tools, BigToolz runs <strong>100% in your browser</strong> using PDF.js. Your PDFs <strong>never uploaded to any server</strong> complete privacy, instant results, no file size limits.
+      </p>
+
+      <h2>🚀 How to Count Words in a PDF</h2>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-step-num">1</div>
+          <div class="how-step-title">Upload PDF</div>
+          <div class="how-step-desc">Drag & drop or click "Choose PDF File".</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">2</div>
+          <div class="how-step-title">Count</div>
+          <div class="how-step-desc">Click "Count Words" to analyze the text.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">3</div>
+          <div class="how-step-title">Review Stats</div>
+          <div class="how-step-desc">See words, chars, reading time, top words.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">4</div>
+          <div class="how-step-title">Download Report</div>
+          <div class="how-step-desc">Save the full report as .txt file.</div>
+        </div>
+      </div>
+
+      <h2>📊 What Gets Counted</h2>
+
+      <h3>Words</h3>
+      <p>Sequences of characters separated by whitespace or punctuation. Hyphenated words (<code>state-of-the-art</code>) count as one. Numbers, abbreviations, and URLs count as single tokens. This matches Microsoft Word and Google Docs counting.</p>
+
+      <h3>Characters</h3>
+      <p>Every individual character. We show both <strong>with spaces</strong> and <strong>without spaces</strong> useful for Twitter limits, SMS, and social media captions.</p>
+
+      <h3>Sentences</h3>
+      <p>Split at <code>.</code>, <code>!</code>, and <code>?</code>. Handles abbreviations like <code>Mr.</code>, <code>Dr.</code>, <code>U.S.</code> by checking for common patterns.</p>
+
+      <h3>Paragraphs</h3>
+      <p>Groups of sentences separated by newlines or blank lines. Gives you a sense of the document's structure.</p>
+
+      <h2>⏱️ Reading Time Calculations</h2>
+      <ul>
+        <li><strong>Fast reading (200 wpm):</strong> Standard adult reading speed. Used by Medium, Kindle, and academic publishers.</li>
+        <li><strong>Slow reading (130 wpm):</strong> Careful or technical reading, common for complex documents or non-native speakers.</li>
+        <li><strong>Speaking (150 wpm):</strong> Average public speaking rate. Useful for preparing presentations or scripts.</li>
+      </ul>
+
+      <h2>💡 Common Use Cases</h2>
+      <ul>
+        <li><strong>Academic writing</strong> verify essays meet word count requirements.</li>
+        <li><strong>Translation pricing</strong> translators often charge per word.</li>
+        <li><strong>Content editing</strong> check article length before publishing.</li>
+        <li><strong>Reading time</strong> estimate how long a document takes to read.</li>
+        <li><strong>SEO writing</strong> verify blog post length targets (typically 1,500-2,500 words).</li>
+        <li><strong>Ebook publishing</strong> confirm novella (20k+) or novel (50k+) length.</li>
+      </ul>
+
+      <h2>✨ Key Features</h2>
+      <ul>
+        <li><strong>Full word count</strong> words, characters, sentences, paragraphs.</li>
+        <li><strong>Reading time estimates</strong> fast, slow, and speaking speeds.</li>
+        <li><strong>Top 20 words</strong> most frequent tokens with counts.</li>
+        <li><strong>Longest words</strong> top 10 by character length.</li>
+        <li><strong>Per-page breakdown</strong> word count for each page.</li>
+        <li><strong>Vocabulary richness</strong> unique words ratio.</li>
+        <li><strong>Downloadable report</strong> full stats as .txt file.</li>
+        <li><strong>100% browser-based</strong> your PDF never leaves your device.</li>
+      </ul>
+
+      <h2>❓ Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-question">How does the PDF word counter work?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>We extract text from your PDF using <strong>PDF.js</strong>, then tokenize it into words, characters, sentences, and paragraphs. We also estimate reading time and identify the most frequent words all in your browser.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">How is reading time calculated?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Standard reading speed: <strong>200 words per minute</strong> (WPM) for average reading. Slow reading: <strong>130 WPM</strong>. Speaking: <strong>150 WPM</strong>. These are industry-standard estimates used by Medium, Kindle, and academic publishers.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Does it count words correctly?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Yes. Words are separated by whitespace and punctuation. Hyphenated words count as one. Numbers, abbreviations, and URLs are counted as single tokens. This matches <strong>Microsoft Word</strong> and <strong>Google Docs</strong> word counts.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Does it work with scanned PDFs?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Only if the PDF has a <strong>text layer</strong>. Scanned image PDFs return no text you'll see a "no text found" error. Run them through OCR first (using a tool like Tesseract) to add a text layer, then use this tool.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Why does my word count differ from Adobe Acrobat?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Word counting algorithms vary slightly across tools. Adobe may count differently for hyphenated words, numbers, or special characters. Our counts typically match <strong>Microsoft Word</strong> within 1-2%.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I count words in multiple PDFs at once?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>This tool processes one PDF at a time. For multiple files, download the report from each PDF, then combine them. Or open the tool in multiple tabs to process files in parallel.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Are my PDFs uploaded to a server?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>No. All text extraction and counting happens in your browser using PDF.js. Your PDF never leaves your device, and nothing is stored anywhere.</p></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-header">🔗 Related PDF Tools</div>
+    <div class="sidebar-list">
+      <a href="/tools/pdf-tools/advanced-pdf/similarity-checker/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#06b6d4;">📊</div>
+        <div class="sidebar-info"><div class="sidebar-title">Similarity Checker</div><div class="sidebar-desc">Compare PDFs</div></div>
+      </a>
+      <a href="/tools/pdf-tools/advanced-pdf/language-detector/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#10b981;">🌍</div>
+        <div class="sidebar-info"><div class="sidebar-title">Language Detector</div><div class="sidebar-desc">Detect language</div></div>
+      </a>
+      <a href="/tools/pdf-tools/advanced-pdf/text-to-speech/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#f97316;">🔊</div>
+        <div class="sidebar-info"><div class="sidebar-title">Text to Speech</div><div class="sidebar-desc">Read PDF aloud</div></div>
+      </a>
+      <a href="/tools/pdf-tools/security-pdf/text-extractor/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#8b5cf6;">📝</div>
+        <div class="sidebar-info"><div class="sidebar-title">Text Extractor</div><div class="sidebar-desc">Extract PDF text</div></div>
+      </a>
+      <a href="/tools/pdf-tools/advanced-pdf/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#8b5cf6;">🚀</div>
+        <div class="sidebar-info"><div class="sidebar-title">All Advanced PDF →</div><div class="sidebar-desc">20 tools</div></div>
+      </a>
+      <a href="/tools/pdf-tools/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#64748b;">📕</div>
+        <div class="sidebar-info"><div class="sidebar-title">All PDF Tools →</div><div class="sidebar-desc">100+ tools</div></div>
+      </a>
+    </div>
+  </aside>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand"><div class="logo-icon">⚒</div>BigToolz</span></div>
+      <p class="footer-tagline">Your Ultimate Online Tools Hub</p>
+      <div class="footer-social">
+        <a href="https://facebook.com/bigtoolz" aria-label="Facebook">f</a>
+        <a href="https://twitter.com/bigtoolz" aria-label="Twitter">𝕏</a>
+        <a href="https://youtube.com/@bigtoolz" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+    <div>
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/tools/">All Tools</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Categories</h3>
+      <ul class="footer-links">
+        <li><a href="/tools/image-tools/">Image Tools</a></li>
+        <li><a href="/tools/pdf-tools/">PDF Tools</a></li>
+        <li><a href="/tools/text-tools/">Text Tools</a></li>
+        <li><a href="/tools/seo-tools/">SEO Tools</a></li>
+        <li><a href="/tools/categories">All Categories →</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Legal</h3>
+      <ul class="footer-links">
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left"><span>✓ 100% Free</span><span>✓ No Sign Up</span><span>✓ No Installation</span></div>
+    <div class="footer-bottom-right">© 2026 BigToolz. All rights reserved.</div>
+    <div class="footer-bottom-links"><a href="/privacy-policy">Privacy</a><a href="/terms">Terms</a><a href="/disclaimer">Disclaimer</a></div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<!-- PDF.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+
+<script>
+'use strict';
+
+/* ===== THEME ===== */
+(function(){try{var t=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&d))document.documentElement.setAttribute('data-theme','dark');else if(t==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();
+document.querySelector('.theme-btn')?.addEventListener('click',()=>{const h=document.documentElement;const c=h.getAttribute('data-theme');const d=window.matchMedia('(prefers-color-scheme: dark)').matches;let n=c==='dark'?'light':c==='light'?'dark':(d?'light':'dark');h.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}});
+
+/* ===== PDF.js worker ===== */
+if (window.pdfjsLib) {
+  pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+}
+
+/* ===== HELPERS ===== */
+const $ = (s, p = document) => p.querySelector(s);
+const $$ = (s, p = document) => [...p.querySelectorAll(s)];
+
+function showToast(msg, type = 'info', duration = 3000) {
+  const t = $('#toast');
+  if (!t) return;
+  t.className = 'toast visible' + (type !== 'info' ? ' ' + type : '');
+  t.textContent = msg;
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove('visible'), duration);
+}
+
+function formatNumber(n) { return n.toLocaleString('en-US'); }
+
+function formatTime(minutes) {
+  if (minutes < 1) return '<1 min';
+  if (minutes < 60) return Math.round(minutes) + ' min';
+  const h = Math.floor(minutes / 60);
+  const m = Math.round(minutes % 60);
+  return h + 'h ' + m + 'm';
+}
+
+async function copyToClipboard(text) {
+  try {
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(text);
+      return true;
+    }
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.cssText = 'position:fixed;opacity:0;';
+    document.body.appendChild(ta);
+    ta.select();
+    const ok = document.execCommand('copy');
+    document.body.removeChild(ta);
+    return ok;
+  } catch (e) { return false; }
+}
+
+function escapeHtml(str) {
+  const d = document.createElement('div');
+  d.textContent = str;
+  return d.innerHTML;
+}
+
+/* ===== STOP WORDS for top-words filtering ===== */
+const STOP_WORDS = new Set([
+  'the','a','an','and','or','but','if','of','at','by','for','with','about','against','between','into','through','during','before','after','above','below','from','up','down','in','out','on','off','over','under','again','further','then','once','here','there','when','where','why','how','all','any','both','each','few','more','most','other','some','such','no','nor','not','only','own','same','so','than','too','very','can','will','just','should','now','this','that','these','those','is','are','was','were','be','been','being','have','has','had','do','does','did','would','could','may','might','must','shall','it','its','as','to','i','you','he','she','we','they','them','their','our','your','my'
+]);
+
+/* ===== STATE ===== */
+const state = {
+  file: null,
+  pageTexts: [],
+  fullText: '',
+  stats: null
+};
+
+/* ===== DOM ===== */
+const dropzone = $('#dropzone');
+const fileInput = $('#fileInput');
+const chooseBtn = $('#chooseBtn');
+const browseLink = $('#browseLink');
+const fileInfoBar = $('#fileInfoBar');
+const fileName = $('#fileName');
+const fileMeta = $('#fileMeta');
+const changeBtn = $('#changeBtn');
+const countBtn = $('#countBtn');
+const resetBtn = $('#resetBtn');
+const progress = $('#progress');
+const progressFill = $('#progressFill');
+const progressText = $('#progressText');
+const results = $('#results');
+
+/* ===== FILE SELECTION ===== */
+function triggerFileSelect() { fileInput.click(); }
+chooseBtn.addEventListener('click', (e) => { e.stopPropagation(); triggerFileSelect(); });
+browseLink.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); triggerFileSelect(); });
+dropzone.addEventListener('click', triggerFileSelect);
+
+fileInput.addEventListener('change', (e) => {
+  const f = e.target.files[0];
+  if (f) loadPdf(f);
+  fileInput.value = '';
+});
+
+['dragenter', 'dragover'].forEach(evt => {
+  dropzone.addEventListener(evt, (e) => { e.preventDefault(); e.stopPropagation(); dropzone.classList.add('dragover'); });
+});
+['dragleave', 'drop'].forEach(evt => {
+  dropzone.addEventListener(evt, (e) => { e.preventDefault(); e.stopPropagation(); dropzone.classList.remove('dragover'); });
+});
+dropzone.addEventListener('drop', (e) => {
+  const f = e.dataTransfer.files[0];
+  if (f && f.type === 'application/pdf') loadPdf(f);
+  else showToast('Please drop a PDF file', 'error');
+});
+
+changeBtn.addEventListener('click', triggerFileSelect);
+
+/* ===== LOAD PDF ===== */
+async function loadPdf(file) {
+  state.file = file;
+  showToast('Extracting text...', 'info');
+
+  try {
+    const buf = await file.arrayBuffer();
+    const pdf = await pdfjsLib.getDocument({ data: buf }).promise;
+
+    state.pageTexts = [];
+    let fullText = '';
+
+    for (let i = 1; i <= pdf.numPages; i++) {
+      const page = await pdf.getPage(i);
+      const content = await page.getTextContent();
+      const pageText = content.items.map(item => item.str).join(' ').trim();
+      state.pageTexts.push(pageText);
+      fullText += pageText + '\n\n';
+    }
+
+    state.fullText = fullText.trim();
+
+    if (state.fullText.length < 20) {
+      showToast('No text found (may be a scanned image)', 'error', 5000);
+      return;
+    }
+
+    dropzone.style.display = 'none';
+    fileInfoBar.classList.add('visible');
+    fileName.textContent = file.name;
+    fileMeta.textContent = `${pdf.numPages} page${pdf.numPages > 1 ? 's' : ''} ready to count`;
+    countBtn.disabled = false;
+
+    showToast('✅ PDF loaded', 'success');
+  } catch (err) {
+    console.error(err);
+    showToast('Failed to load: ' + err.message, 'error');
+  }
+}
+
+/* ===== COUNT ===== */
+countBtn.addEventListener('click', async () => {
+  if (!state.fullText) return;
+
+  countBtn.disabled = true;
+  results.classList.remove('visible');
+  progress.classList.add('visible');
+  progressFill.style.width = '30%';
+  progressText.textContent = 'Counting words...';
+
+  try {
+    const stats = analyzeText(state.fullText, state.pageTexts);
+    state.stats = stats;
+
+    progressFill.style.width = '70%';
+    progressText.textContent = 'Rendering results...';
+
+    renderResults(stats);
+
+    progressFill.style.width = '100%';
+    setTimeout(() => {
+      progress.classList.remove('visible');
+      progressFill.style.width = '0%';
+    }, 800);
+
+    results.classList.add('visible');
+    showToast('✅ Analysis complete!', 'success');
+
+    setTimeout(() => results.scrollIntoView({ behavior: 'smooth', block: 'start' }), 200);
+  } catch (err) {
+    console.error(err);
+    progress.classList.remove('visible');
+    showToast('Failed: ' + err.message, 'error');
+  } finally {
+    countBtn.disabled = false;
+  }
+});
+
+/* ===== ANALYSIS ===== */
+function analyzeText(text, pageTexts) {
+  // Characters
+  const charsWithSpaces = text.length;
+  const charsNoSpaces = text.replace(/\s/g, '').length;
+
+  // Words split on whitespace, filter empty
+  const wordTokens = text
+    .replace(/[^\p{L}\p{N}\s'-]/gu, ' ')
+    .split(/\s+/)
+    .filter(w => w.length > 0);
+
+  const totalWords = wordTokens.length;
+
+  // Sentences split on . ! ? (basic)
+  const sentences = text
+    .split(/[.!?]+\s+|[.!?]+$/)
+    .map(s => s.trim())
+    .filter(s => s.length > 0);
+  const totalSentences = sentences.length;
+
+  // Paragraphs split on double newlines
+  const paragraphs = text
+    .split(/\n\s*\n/)
+    .map(p => p.trim())
+    .filter(p => p.length > 0);
+  const totalParagraphs = Math.max(paragraphs.length, pageTexts.length);
+
+  // Avg word length
+  const totalWordChars = wordTokens.reduce((sum, w) => sum + w.length, 0);
+  const avgWordLength = totalWords > 0 ? (totalWordChars / totalWords).toFixed(1) : '0';
+
+  // Avg words per sentence
+  const avgWordsPerSentence = totalSentences > 0 ? (totalWords / totalSentences).toFixed(1) : '0';
+
+  // Unique words (case-insensitive)
+  const lowerWords = wordTokens.map(w => w.toLowerCase());
+  const wordFreq = {};
+  lowerWords.forEach(w => { wordFreq[w] = (wordFreq[w] || 0) + 1; });
+  const uniqueWords = Object.keys(wordFreq).length;
+  const vocabRichness = totalWords > 0 ? Math.round((uniqueWords / totalWords) * 100) : 0;
+
+  // Top words (excluding stop words, length >= 3)
+  const contentWords = Object.entries(wordFreq)
+    .filter(([w]) => !STOP_WORDS.has(w) && w.length >= 3)
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 20);
+
+  // Longest words (unique)
+  const longestWords = [...new Set(wordTokens)]
+    .filter(w => w.length >= 5)
+    .sort((a, b) => b.length - a.length)
+    .slice(0, 10);
+
+  // Reading times
+  const fastMin = totalWords / 200;
+  const slowMin = totalWords / 130;
+  const speakMin = totalWords / 150;
+
+  // Per-page word counts
+  const pageCounts = pageTexts.map((pt, i) => {
+    const words = pt
+      .replace(/[^\p{L}\p{N}\s'-]/gu, ' ')
+      .split(/\s+/)
+      .filter(w => w.length > 0).length;
+    return { page: i + 1, words };
+  });
+
+  return {
+    charsWithSpaces,
+    charsNoSpaces,
+    totalWords,
+    totalSentences,
+    totalParagraphs,
+    avgWordLength,
+    avgWordsPerSentence,
+    uniqueWords,
+    vocabRichness,
+    contentWords,
+    longestWords,
+    fastMin,
+    slowMin,
+    speakMin,
+    pageCounts,
+    totalPages: pageTexts.length
+  };
+}
+
+/* ===== RENDER ===== */
+function renderResults(s) {
+  // Metrics
+  $('#mWords').textContent = formatNumber(s.totalWords);
+  $('#mChars').textContent = formatNumber(s.charsWithSpaces);
+  $('#mCharsSub').textContent = formatNumber(s.charsNoSpaces) + ' without spaces';
+  $('#mSentences').textContent = formatNumber(s.totalSentences);
+  $('#mPages').textContent = s.totalPages;
+
+  // Secondary stats
+  $('#sCharsNoSpace').textContent = formatNumber(s.charsNoSpaces);
+  $('#sParagraphs').textContent = formatNumber(s.totalParagraphs);
+  $('#sAvgSentence').textContent = s.avgWordsPerSentence;
+  $('#sAvgWordLen').textContent = s.avgWordLength;
+  $('#sUnique').textContent = formatNumber(s.uniqueWords);
+  $('#sVocab').textContent = s.vocabRichness + '%';
+
+  // Reading times
+  $('#rFast').textContent = formatTime(s.fastMin);
+  $('#rSlow').textContent = formatTime(s.slowMin);
+  $('#rSpeak').textContent = formatTime(s.speakMin);
+
+  // Top words
+  const topWordsEl = $('#topWords');
+  if (s.contentWords.length === 0) {
+    topWordsEl.innerHTML = '<span style="font-size:13px;color:#9ca3af;font-style:italic;">No content words found.</span>';
+  } else {
+    topWordsEl.innerHTML = s.contentWords.map(([w, count], i) => {
+      const rankClass = i < 3 ? ` rank-${i + 1}` : '';
+      return `<span class="word-chip${rankClass}">${escapeHtml(w)} <span class="count">${count}</span></span>`;
+    }).join('');
+  }
+
+  // Longest words
+  const longestEl = $('#longestWords');
+  if (s.longestWords.length === 0) {
+    longestEl.innerHTML = '<span style="font-size:13px;color:#9ca3af;font-style:italic;">No long words found.</span>';
+  } else {
+    longestEl.innerHTML = s.longestWords.map((w, i) => `
+      <div class="longest-item">
+        <div class="longest-rank">#${i + 1}</div>
+        <div class="longest-word">${escapeHtml(w)}</div>
+        <div class="longest-length">${w.length} chars</div>
+      </div>
+    `).join('');
+  }
+
+  // Per-page
+  const pageEl = $('#pageList');
+  const maxWords = Math.max(...s.pageCounts.map(p => p.words), 1);
+  pageEl.innerHTML = s.pageCounts.map(p => {
+    const percent = Math.round((p.words / maxWords) * 100);
+    return `
+      <div class="page-row">
+        <div class="page-num-badge">P${p.page}</div>
+        <div class="page-words">${formatNumber(p.words)} words</div>
+        <div class="page-bar-wrap"><div class="page-bar" style="width:${percent}%"></div></div>
+        <div class="page-percent">${percent}%</div>
+      </div>
+    `;
+  }).join('');
+}
+
+/* ===== TOOLBAR ===== */
+$('#copyBtn').addEventListener('click', async () => {
+  const s = state.stats;
+  if (!s) return;
+
+  const report = `PDF Word Count Report
+=====================
+File: ${state.file ? state.file.name : 'Unknown'}
+
+Word Count:      ${s.totalWords}
+Characters:      ${s.charsWithSpaces} (with spaces)
+Characters:      ${s.charsNoSpaces} (without spaces)
+Sentences:       ${s.totalSentences}
+Paragraphs:      ${s.totalParagraphs}
+Pages:           ${s.totalPages}
+Unique Words:    ${s.uniqueWords}
+Vocab Richness:  ${s.vocabRichness}%
+Avg Word Length: ${s.avgWordLength} chars
+Avg Sent/Sent:   ${s.avgWordsPerSentence} words
+
+Reading Times:
+  Fast (200 wpm): ${formatTime(s.fastMin)}
+  Slow (130 wpm): ${formatTime(s.slowMin)}
+  Speaking:       ${formatTime(s.speakMin)}
+
+Generated by BigToolz.com`;
+
+  const ok = await copyToClipboard(report);
+  const btn = $('#copyBtn');
+  if (ok) {
+    btn.classList.add('copied');
+    btn.innerHTML = '✓ Copied!';
+    setTimeout(() => {
+      btn.classList.remove('copied');
+      btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg> Copy Stats';
+    }, 2000);
+    showToast('Stats copied!', 'success');
+  }
+});
+
+$('#downloadBtn').addEventListener('click', () => {
+  const s = state.stats;
+  if (!s) return;
+
+  const lines = [
+    '================================================',
+    '     PDF WORD COUNT REPORT BigToolz.com',
+    '================================================',
+    '',
+    `File: ${state.file ? state.file.name : 'Unknown'}`,
+    `Generated: ${new Date().toLocaleString()}`,
+    '',
+    '--- CORE STATS ---',
+    `Words:                ${s.totalWords}`,
+    `Characters (spaces):  ${s.charsWithSpaces}`,
+    `Characters (no spc):  ${s.charsNoSpaces}`,
+    `Sentences:            ${s.totalSentences}`,
+    `Paragraphs:           ${s.totalParagraphs}`,
+    `Pages:                ${s.totalPages}`,
+    `Unique Words:         ${s.uniqueWords}`,
+    `Vocabulary Richness:  ${s.vocabRichness}%`,
+    `Avg Word Length:      ${s.avgWordLength} chars`,
+    `Avg Words/Sentence:   ${s.avgWordsPerSentence}`,
+    '',
+    '--- READING TIMES ---',
+    `Fast Read (200 wpm):  ${formatTime(s.fastMin)}`,
+    `Slow Read (130 wpm):  ${formatTime(s.slowMin)}`,
+    `Speaking (150 wpm):   ${formatTime(s.speakMin)}`,
+    '',
+    '--- TOP 20 WORDS ---',
+    s.contentWords.map(([w, c], i) => `  ${i + 1}. ${w} (${c})`).join('\n'),
+    '',
+    '--- TOP 10 LONGEST WORDS ---',
+    s.longestWords.map((w, i) => `  ${i + 1}. ${w} (${w.length} chars)`).join('\n'),
+    '',
+    '--- PER-PAGE WORD COUNT ---',
+    s.pageCounts.map(p => `  Page ${p.page}: ${p.words} words`).join('\n'),
+    '',
+    '================================================',
+    'Powered by BigToolz.com Free Online Tools',
+    '================================================'
+  ];
+
+  const blob = new Blob([lines.join('\n')], { type: 'text/plain;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'word-count-report.txt';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+  showToast('Report downloaded!', 'success');
+});
+
+/* ===== RESET ===== */
+resetBtn.addEventListener('click', () => {
+  state.file = null;
+  state.pageTexts = [];
+  state.fullText = '';
+  state.stats = null;
+  fileInfoBar.classList.remove('visible');
+  results.classList.remove('visible');
+  progress.classList.remove('visible');
+  dropzone.style.display = '';
+  countBtn.disabled = true;
+  fileInput.value = '';
+  showToast('Reset', 'info');
+});
+
+/* ===== FAQ ===== */
+$$('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    $$('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2563eb">
+
+<title>About Us - BigToolz | Our Story, Mission & Team</title>
+<meta name="description" content="Learn about BigToolz who we are, why we built 300+ free online tools, our mission to make the web simpler, and the team behind it. Trusted by millions.">
+<meta name="keywords" content="about bigtoolz, bigtoolz team, free online tools, bigtoolz story, bigtoolz mission, online tools platform">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://bigtoolz.com/about">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="About BigToolz - Our Story, Mission & Team">
+<meta property="og:description" content="Learn who we are, why we built 300+ free online tools, and how we're making the web simpler for millions.">
+<meta property="og:url" content="https://bigtoolz.com/about">
+<meta property="og:image" content="https://bigtoolz.com/assets/images/og-image.jpg">
+<meta property="og:site_name" content="BigToolz">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="About BigToolz">
+<meta name="twitter:description" content="Our story, mission and the team behind 300+ free online tools.">
+<meta name="twitter:image" content="https://bigtoolz.com/assets/images/twitter-card.jpg">
+
+<!-- Favicon + PWA -->
+<link rel="icon" href="/assets/images/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/images/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+    :root{
+    --bg: #f8f9fc;
+    --bg-card: #ffffff;
+    --bg-soft: #f8fafc;
+    --text: #1a1a2e;
+    --text-muted: #6b7280;
+    --text-light: #9ca3af;
+    --border: #e5e7eb;
+    --border-light: #f3f4f6;
+    --shadow: rgba(0,0,0,.04);
+    --header-bg: #ffffff;
+  }
+
+  html[data-theme="dark"]{
+    --bg: #0f172a;
+    --bg-card: #1e293b;
+    --bg-soft: #1e293b;
+    --text: #f1f5f9;
+    --text-muted: #cbd5e1;
+    --text-light: #94a3b8;
+    --border: #334155;
+    --border-light: #334155;
+    --shadow: rgba(0,0,0,.3);
+    --header-bg: #1e293b;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+   body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;line-height:1.5;transition:background .3s ease, color .3s ease}
+
+  /* HEADER (same as homepage) */
+    .header{background:var(--header-bg);height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;position:sticky;top:0;z-index:1000;box-shadow:0 1px 3px var(--shadow);transition:background .3s ease}
+  .header-left{display:flex;align-items:center;gap:40px}
+  .logo{display:flex;align-items:center;gap:8px;font-size:22px;font-weight:800;color:#1a1a2e;text-decoration:none}
+  .logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#3b82f6,#2563eb);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px}
+  .logo span{color:#2563eb}
+  .nav{display:flex;align-items:center;gap:28px;list-style:none}
+  .nav a{text-decoration:none;color:#4b5563;font-size:14px;font-weight:500;transition:color .2s;position:relative}
+  .nav a:hover,.nav a.active{color:#2563eb}
+  .nav a.active::after{content:'';position:absolute;bottom:-22px;left:0;right:0;height:2px;background:#2563eb}
+  .header-right{display:flex;align-items:center;gap:16px}
+  .search-btn,.theme-btn{width:36px;height:36px;border-radius:50%;border:none;background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#4b5563}
+  .search-btn:hover,.theme-btn:hover{background:#f3f4f6}
+  .bookmark-btn{display:flex;align-items:center;gap:8px;background:#2563eb;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
+  .bookmark-btn:hover{background:#1d4ed8}
+
+  /* HERO */
+  .hero{background:linear-gradient(135deg,#0a0e27 0%,#1a1a4e 40%,#2d1b69 70%,#4c1d95 100%);padding:50px 40px 70px;position:relative;overflow:hidden;text-align:center;color:#fff}
+  .hero::before{content:'';position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(139,92,246,.3) 0%,transparent 70%);border-radius:50%}
+  .hero-inner{max-width:900px;margin:0 auto;position:relative;z-index:2}
+  .breadcrumb{display:flex;justify-content:center;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:24px}
+  .breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none}
+  .breadcrumb a:hover{color:#fff}
+  .breadcrumb .sep{color:rgba(255,255,255,.4)}
+  .breadcrumb .current{color:#fff;font-weight:500}
+  .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);padding:8px 16px;border-radius:20px;font-size:13px;font-weight:600;margin-bottom:20px;backdrop-filter:blur(10px)}
+  .hero-title{font-size:48px;font-weight:800;line-height:1.15;margin-bottom:16px}
+  .hero-title .blue{color:#60a5fa}
+  .hero-desc{font-size:16px;color:rgba(255,255,255,.75);line-height:1.7;max-width:640px;margin:0 auto}
+
+  /* MAIN CONTENT */
+  .main-content{max-width:1000px;margin:0 auto;padding:60px 40px}
+  .content-block{background:#fff;border-radius:16px;padding:40px;margin-bottom:28px;border:1px solid #e5e7eb;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+  .content-block h2{font-size:26px;font-weight:800;color:#1a1a2e;margin-bottom:16px;display:flex;align-items:center;gap:12px}
+  .content-block h2 .accent-bar{width:4px;height:26px;background:#2563eb;border-radius:2px}
+  .content-block h3{font-size:18px;font-weight:700;color:#1a1a2e;margin:20px 0 10px}
+  .content-block p{font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:14px}
+  .content-block p:last-child{margin-bottom:0}
+  .content-block a{color:#2563eb;text-decoration:none;font-weight:600}
+  .content-block a:hover{text-decoration:underline}
+
+  /* STATS ROW */
+  .stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-bottom:28px}
+  .stat-box{background:#fff;border-radius:16px;padding:28px 20px;text-align:center;border:1px solid #e5e7eb;transition:transform .2s}
+  .stat-box:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(37,99,235,.1)}
+  .stat-box-icon{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;margin:0 auto 14px;font-size:24px;color:#fff}
+  .stat-box-number{font-size:30px;font-weight:800;color:#1a1a2e;margin-bottom:4px}
+  .stat-box-label{font-size:13px;color:#6b7280;font-weight:500}
+
+  /* VALUES GRID */
+  .values-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:20px}
+  .value-card{background:#f8faff;border-radius:12px;padding:24px;border:1px solid #e0e7ff}
+  .value-icon{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;color:#fff;margin-bottom:14px}
+  .value-title{font-size:16px;font-weight:700;color:#1a1a2e;margin-bottom:8px}
+  .value-desc{font-size:14px;color:#6b7280;line-height:1.6}
+
+  /* TIMELINE */
+  .timeline{position:relative;padding-left:32px;margin-top:20px}
+  .timeline::before{content:'';position:absolute;left:8px;top:8px;bottom:8px;width:2px;background:#e0e7ff}
+  .timeline-item{position:relative;margin-bottom:24px}
+  .timeline-item:last-child{margin-bottom:0}
+  .timeline-item::before{content:'';position:absolute;left:-30px;top:6px;width:14px;height:14px;border-radius:50%;background:#2563eb;border:3px solid #fff;box-shadow:0 0 0 2px #e0e7ff}
+  .timeline-year{font-size:13px;font-weight:700;color:#2563eb;margin-bottom:4px}
+  .timeline-title{font-size:15px;font-weight:700;color:#1a1a2e;margin-bottom:4px}
+  .timeline-desc{font-size:14px;color:#6b7280;line-height:1.6}
+
+  /* CTA */
+  .cta-block{background:linear-gradient(135deg,#2563eb,#4f46e5);border-radius:16px;padding:40px;text-align:center;color:#fff;position:relative;overflow:hidden}
+  .cta-block::before{content:'';position:absolute;top:-40px;right:-40px;width:160px;height:160px;background:rgba(255,255,255,.1);border-radius:50%}
+  .cta-block h2{font-size:24px;font-weight:800;margin-bottom:12px;position:relative;z-index:2}
+  .cta-block p{font-size:15px;color:rgba(255,255,255,.85);margin-bottom:24px;position:relative;z-index:2}
+  .cta-btn{display:inline-flex;align-items:center;gap:8px;background:#fff;color:#2563eb;border:none;padding:14px 28px;border-radius:10px;font-size:15px;font-weight:700;text-decoration:none;cursor:pointer;position:relative;z-index:2;transition:transform .2s}
+  .cta-btn:hover{transform:translateY(-2px)}
+
+  /* FOOTER (same as homepage) */
+  .footer{background:#0a0e27;padding:60px 40px 30px;color:#fff}
+  .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:40px}
+  .footer-brand{display:flex;align-items:center;gap:8px;font-size:20px;font-weight:800;margin-bottom:12px}
+  .footer-brand span{color:#60a5fa}
+  .footer-tagline{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px}
+  .footer-social{display:flex;gap:12px}
+  .footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:16px;transition:background .2s}
+  .footer-social a:hover{background:rgba(255,255,255,.2)}
+  .footer-heading{font-size:14px;font-weight:700;margin-bottom:20px;color:#fff}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .footer-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;transition:color .2s}
+  .footer-links a:hover{color:#60a5fa}
+  .footer-bottom{max-width:1200px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  .footer-bottom-left{display:flex;gap:20px;font-size:12px;color:rgba(255,255,255,.5)}
+  .footer-bottom-right,.footer-bottom-links a{font-size:12px;color:rgba(255,255,255,.5);text-decoration:none}
+  .footer-bottom-links{display:flex;gap:20px}
+  .footer-bottom-links a:hover{color:#60a5fa}
+
+  @media(max-width:992px){
+    .header{padding:0 20px}.nav{display:none}
+    .hero{padding:30px 20px 50px}.hero-title{font-size:34px}
+    .main-content{padding:40px 20px}
+    .content-block{padding:28px}
+    .stats-row{grid-template-columns:repeat(2,1fr)}
+    .values-grid{grid-template-columns:1fr}
+    .footer-inner{grid-template-columns:1fr 1fr}
+  }
+  @media(max-width:576px){
+    .header{padding:0 16px}.header-right .search-btn,.header-right .theme-btn{display:none}
+    .hero-title{font-size:28px}
+    .stats-row{grid-template-columns:1fr}
+    .footer-inner{grid-template-columns:1fr}
+    .footer-bottom{flex-direction:column;text-align:center}
+  }
+    /* ===== DARK MODE OVERRIDES ===== */
+  html[data-theme="dark"] body{background:var(--bg);color:var(--text)}
+  html[data-theme="dark"] .header{background:var(--header-bg)}
+  html[data-theme="dark"] .logo{color:var(--text)}
+  html[data-theme="dark"] .nav a{color:var(--text-muted)}
+  html[data-theme="dark"] .nav a:hover,
+  html[data-theme="dark"] .nav a.active{color:#60a5fa}
+  html[data-theme="dark"] .theme-btn,
+  html[data-theme="dark"] .search-btn{color:var(--text-muted)}
+  html[data-theme="dark"] .theme-btn:hover,
+  html[data-theme="dark"] .search-btn:hover{background:var(--bg-soft)}
+
+  html[data-theme="dark"] .form-block,
+  html[data-theme="dark"] .info-card,
+  html[data-theme="dark"] .faq-item{background:var(--bg-card);border-color:var(--border)}
+
+  html[data-theme="dark"] .form-title,
+  html[data-theme="dark"] .info-title,
+  html[data-theme="dark"] .faq-title,
+  html[data-theme="dark"] .faq-question,
+  html[data-theme="dark"] .info-value{color:var(--text)}
+
+  html[data-theme="dark"] .form-sub,
+  html[data-theme="dark"] .info-desc,
+  html[data-theme="dark"] .info-subtitle,
+  html[data-theme="dark"] .faq-answer p,
+  html[data-theme="dark"] .faq-sub,
+  html[data-theme="dark"] .form-note{color:var(--text-muted)}
+
+  html[data-theme="dark"] .form-group label{color:var(--text-muted)}
+
+  html[data-theme="dark"] .form-group input,
+  html[data-theme="dark"] .form-group select,
+  html[data-theme="dark"] .form-group textarea{
+    background:var(--bg);
+    color:var(--text);
+    border-color:var(--border);
+  }
+
+  html[data-theme="dark"] .form-group input::placeholder,
+  html[data-theme="dark"] .form-group textarea::placeholder{color:var(--text-light)}
+
+  html[data-theme="dark"] .form-group input:focus,
+  html[data-theme="dark"] .form-group select:focus,
+  html[data-theme="dark"] .form-group textarea:focus{
+    border-color:#60a5fa;
+    box-shadow:0 0 0 3px rgba(96,165,250,.15);
+  }
+
+  html[data-theme="dark"] .footer{background:#020617}
+  html[data-theme="dark"] .footer-bottom{border-color:rgba(255,255,255,.08)}
+
+  html[data-theme="dark"] .form-status.success{background:#064e3b;color:#6ee7b7}
+  html[data-theme="dark"] .form-status.error{background:#7f1d1d;color:#fca5a5}
+</style>
+
+<!-- Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "AboutPage",
+      "@id": "https://bigtoolz.com/about.html#webpage",
+      "url": "https://bigtoolz.com/about.html",
+      "name": "About Us - BigToolz",
+      "description": "Learn about BigToolz who we are, why we built 300+ free online tools, and the team behind it.",
+      "isPartOf": {"@id": "https://bigtoolz.com/#website"}
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://bigtoolz.com/#organization",
+      "name": "BigToolz",
+      "url": "https://bigtoolz.com/",
+      "logo": "https://bigtoolz.com/assets/images/logo.png",
+      "foundingDate": "2024",
+      "description": "BigToolz offers 300+ free online tools for images, PDFs, text, SEO and more.",
+      "sameAs": [
+        "https://facebook.com/bigtoolz",
+        "https://twitter.com/bigtoolz",
+        "https://youtube.com/@bigtoolz"
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bigtoolz.com/"},
+        {"@type": "ListItem", "position": 2, "name": "About Us", "item": "https://bigtoolz.com/about.html"}
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="header">
+  <div class="header-left">
+    <a href="/" class="logo" aria-label="BigToolz Home">
+      <div class="logo-icon" aria-hidden="true">⚒</div>
+      BigToolz</span>
+    </a>
+    <nav aria-label="Main navigation">
+      <ul class="nav">
+        <li><a href="/">Home</a></li>
+        <li><a href="/tools/">All Tools</a></li>
+        <li><a href="/tools/categories">Categories</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/about" class="active">About Us</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="header-right">
+    
+    <button class="theme-btn" aria-label="Toggle dark mode">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+    </button>
+   
+    </button>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="hero-inner">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span class="sep">›</span>
+      <span class="current">About Us</span>
+    </nav>
+    <div class="hero-badge"><span aria-hidden="true">👋</span> About BigToolz</div>
+    <h1 class="hero-title">We Build <span class="blue">Simple Tools</span><br>for a Complex Web</h1>
+    <p class="hero-desc">
+      BigToolz started with one simple idea: everyone deserves fast, free, and reliable online tools without signups, paywalls, or clutter. Today, we serve millions of users worldwide.
+    </p>
+  </div>
+</section>
+
+<!-- ===== MAIN CONTENT ===== -->
+<main class="main-content">
+
+  <!-- Stats -->
+  <div class="stats-row">
+    <div class="stat-box">
+      <div class="stat-box-icon" style="background:#3b82f6;">🛠</div>
+      <div class="stat-box-number">300+</div>
+      <div class="stat-box-label">Free Tools</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-box-icon" style="background:#10b981;">👥</div>
+      <div class="stat-box-number">1M+</div>
+      <div class="stat-box-label">Monthly Users</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-box-icon" style="background:#8b5cf6;">📦</div>
+      <div class="stat-box-number">8</div>
+      <div class="stat-box-label">Categories</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-box-icon" style="background:#ef4444;">🌍</div>
+      <div class="stat-box-number">150+</div>
+      <div class="stat-box-label">Countries</div>
+    </div>
+  </div>
+
+  <!-- Our Story -->
+  <div class="content-block">
+    <h2><span class="accent-bar"></span> Our Story</h2>
+    <p>
+      BigToolz was born out of frustration. In 2024, our founder was working on a small project and needed a simple image compressor. What he found instead was a maze of websites asking for email signups, hiding features behind paywalls, or bombarding him with pop-up ads. A five-second task took fifteen minutes.
+    </p>
+    <p>
+      That day, the idea for BigToolz was born: a single place where anyone students, developers, designers, small business owners, or just someone in a hurry could find <strong>fast, free, and honest tools</strong> without the nonsense.
+    </p>
+    <p>
+      We started with 5 tools. Today, we have over 300. And we're just getting started.
+    </p>
+  </div>
+
+  <!-- Our Mission -->
+  <div class="content-block">
+    <h2><span class="accent-bar"></span> Our Mission</h2>
+    <p>
+      Our mission is simple: <strong>make the web simpler, one tool at a time.</strong>
+    </p>
+    <p>
+      Every tool on BigToolz is built with three principles in mind speed, privacy, and simplicity. We don't ask for your email. We don't store your files on our servers. We don't hide features behind paywalls. If a tool says "free," it means free forever.
+    </p>
+    <p>
+      We believe the internet should work for you, not the other way around.
+    </p>
+  </div>
+
+  <!-- Our Values -->
+  <div class="content-block">
+    <h2><span class="accent-bar"></span> What We Stand For</h2>
+    <div class="values-grid">
+      <div class="value-card">
+        <div class="value-icon" style="background:#3b82f6;">⚡</div>
+        <div class="value-title">Speed First</div>
+        <div class="value-desc">Every tool loads in under 2 seconds. We optimize relentlessly so you don't wait.</div>
+      </div>
+      <div class="value-card">
+        <div class="value-icon" style="background:#10b981;">🔒</div>
+        <div class="value-title">Privacy by Default</div>
+        <div class="value-desc">Your files never leave your browser. We can't see them, and we don't want to.</div>
+      </div>
+      <div class="value-card">
+        <div class="value-icon" style="background:#8b5cf6;">🎯</div>
+        <div class="value-title">Zero Clutter</div>
+        <div class="value-desc">No signups, no pop-ups, no fake download buttons. Just the tool you came for.</div>
+      </div>
+      <div class="value-card">
+        <div class="value-icon" style="background:#f97316;">♾️</div>
+        <div class="value-title">Free Forever</div>
+        <div class="value-desc">Supported by non-intrusive ads, so you never pay a rupee. That's the deal.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Timeline -->
+  <div class="content-block">
+    <h2><span class="accent-bar"></span> Our Journey</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-year">Early 2024</div>
+        <div class="timeline-title">The Idea</div>
+        <div class="timeline-desc">BigToolz begins as a weekend side project with just 5 image tools.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">Mid 2024</div>
+        <div class="timeline-title">First 50 Tools</div>
+        <div class="timeline-desc">Image, text, and PDF categories launch. First 10,000 users join.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">Late 2024</div>
+        <div class="timeline-title">100 Tools Milestone</div>
+        <div class="timeline-desc">Developer, SEO, and calculator tools launch. Traffic crosses 100,000/month.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">2025</div>
+        <div class="timeline-title">200 Tools & Blog Launch</div>
+        <div class="timeline-desc">Daily blog launches. Users from 100+ countries use BigToolz.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">2026</div>
+        <div class="timeline-title">300+ Tools</div>
+        <div class="timeline-desc">PDF suite completes our 300-tool milestone. Monthly users cross 1 million.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Why Trust Us -->
+  <div class="content-block">
+    <h2><span class="accent-bar"></span> Why People Trust BigToolz</h2>
+    <p>
+      Trust isn't given it's earned. Here's how we earn yours every single day:
+    </p>
+    <h3>🔐 Your Files Stay on Your Device</h3>
+    <p>
+      Most of our tools run entirely in your browser using JavaScript. That means when you compress an image or convert a PDF, <strong>the file never leaves your computer</strong>. Nothing is uploaded, nothing is stored. Your privacy is absolute.
+    </p>
+    <h3>⚡ No Hidden Costs</h3>
+    <p>
+      Every tool listed as "free" is truly free. We don't lure you in and then ask for payment on the last step. Our revenue comes from ads shown on the page never from your wallet.
+    </p>
+    <h3>🚫 No Signups, No Spam</h3>
+    <p>
+      We don't ask for your email, phone number, or social login. Open the tool, use it, close the tab. That's it.
+    </p>
+    <h3>🛠 Built by Users, for Users</h3>
+    <p>
+      Every tool on BigToolz was built because someone asked for it. We listen to our users and add tools based on real feedback not just what looks good on a marketing slide.
+    </p>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-block">
+    <h2>Have a Tool Idea?</h2>
+    <p>We're always adding new tools. If you need something specific, tell us we might build it next.</p>
+    <a href="/contact" class="cta-btn">Contact Us →</a>
+  </div>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">
+        <div class="logo-icon">⚒</div>
+        BigToolz</span>
+      </div>
+      <p class="footer-tagline">Your Ultimate Online Tools Hub</p>
+      <div class="footer-social">
+        <a href="https://facebook.com/bigtoolz" aria-label="Facebook">f</a>
+        <a href="https://twitter.com/bigtoolz" aria-label="Twitter">𝕏</a>
+        <a href="https://reddit.com/r/bigtoolz" aria-label="Reddit">r</a>
+        <a href="https://youtube.com/@bigtoolz" aria-label="YouTube">▶</a>
+        <a href="https://instagram.com/bigtoolz" aria-label="Instagram">📷</a>
+      </div>
+    </div>
+    <div>
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/tools/">All Tools</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/about">About Us</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Categories</h3>
+      <ul class="footer-links">
+        <li><a href="/tools/image-tools/">Image Tools</a></li>
+        <li><a href="/tools/pdf-tools/">PDF Tools</a></li>
+        <li><a href="/tools/text-tools/">Text Tools</a></li>
+        <li><a href="/tools/seo-tools/">SEO Tools</a></li>
+        <li><a href="/tools/developer-tools/">Developer Tools</a></li>
+        <li><a href="/tools/categories">More Categories →</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Legal</h3>
+      <ul class="footer-links">
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left">
+      <span>✓ 100% Free</span>
+      <span>✓ No Sign Up</span>
+      <span>✓ No Installation</span>
+    </div>
+    <div class="footer-bottom-right">© 2026 BigToolz. All rights reserved.</div>
+    <div class="footer-bottom-links">
+      <a href="/privacy-policy">Privacy</a>
+      <a href="/terms">Terms</a>
+      <a href="/disclaimer">Disclaimer</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+    // ===== Theme Toggle (Dark Mode) =====
+  (function() {
+    // Apply saved theme on load (no flash)
+    try {
+      var saved = localStorage.getItem('theme');
+      var systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (saved === 'dark' || (!saved && systemDark)) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      } else if (saved === 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    } catch (e) {}
+
+    // Toggle button
+    var themeBtn = document.querySelector('.theme-btn');
+    if (themeBtn) {
+      themeBtn.addEventListener('click', function() {
+        var html = document.documentElement;
+        var current = html.getAttribute('data-theme');
+        var systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        
+        var next;
+        if (current === 'dark') next = 'light';
+        else if (current === 'light') next = 'dark';
+        else next = systemDark ? 'light' : 'dark';
+        
+        html.setAttribute('data-theme', next);
+        try { localStorage.setItem('theme', next); } catch (e) {}
+      });
+    }
+  })();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2563eb">
+
+<title>Annotate PDF - Add Notes, Text & Boxes to PDF Online Free | BigToolz</title>
+<meta name="description" content="Annotate PDF online free. Add text notes, sticky comments, rectangles, and highlights to any PDF. Works in your browser, no upload. Multi-page support.">
+<meta name="keywords" content="annotate pdf, pdf annotation tool, add notes to pdf, pdf comments, pdf text box, pdf sticky notes">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://bigtoolz.com/tools/pdf-tools/visual-pdf/annotate-pdf/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Annotate PDF - Free Online Tool | BigToolz">
+<meta property="og:description" content="Add notes, text, boxes and highlights to any PDF free, no upload.">
+<meta property="og:url" content="https://bigtoolz.com/tools/pdf-tools/visual-pdf/annotate-pdf/">
+<meta property="og:image" content="https://bigtoolz.com/assets/images/og-image.jpg">
+<meta property="og:site_name" content="BigToolz">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Annotate PDF - BigToolz">
+<meta name="twitter:description" content="Add annotations to PDF instantly free, no upload.">
+<meta name="twitter:image" content="https://bigtoolz.com/assets/images/twitter-card.jpg">
+
+<link rel="icon" href="/assets/images/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/images/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#f8f9fc;color:#1a1a2e;overflow-x:hidden;line-height:1.5}
+
+  .header{background:#fff;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;position:sticky;top:0;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+  .header-left{display:flex;align-items:center;gap:40px}
+  .logo{display:flex;align-items:center;gap:8px;font-size:22px;font-weight:800;color:#1a1a2e;text-decoration:none}
+  .logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#3b82f6,#2563eb);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px}
+  .logo span{color:#2563eb}
+  .nav{display:flex;align-items:center;gap:28px;list-style:none}
+  .nav a{text-decoration:none;color:#4b5563;font-size:14px;font-weight:500;transition:color .2s}
+  .nav a:hover,.nav a.active{color:#2563eb}
+  .header-right{display:flex;align-items:center;gap:16px}
+  .search-btn,.theme-btn{width:36px;height:36px;border-radius:50%;border:none;background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#4b5563}
+  .search-btn:hover,.theme-btn:hover{background:#f3f4f6}
+  .bookmark-btn{display:flex;align-items:center;gap:8px;background:#2563eb;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
+  .bookmark-btn:hover{background:#1d4ed8}
+
+  .hero{background:linear-gradient(135deg,#0a0e27 0%,#1a1a4e 40%,#2d1b69 70%,#4c1d95 100%);padding:40px 40px 60px;position:relative;overflow:hidden;color:#fff}
+  .hero::before{content:'';position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(139,92,246,.3) 0%,transparent 70%);border-radius:50%}
+  .hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+  .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px;flex-wrap:wrap}
+  .breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none}
+  .breadcrumb a:hover{color:#fff}
+  .breadcrumb .sep{color:rgba(255,255,255,.4)}
+  .breadcrumb .current{color:#fff;font-weight:500}
+  .hero-title-row{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+  .hero-icon{width:60px;height:60px;background:#8b5cf6;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;color:#fff;flex-shrink:0;box-shadow:0 8px 24px rgba(139,92,246,.4)}
+  .hero-title{font-size:42px;font-weight:800;line-height:1.15}
+  .hero-title .blue{color:#a78bfa}
+  .hero-desc{font-size:15px;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:24px;max-width:560px}
+  .hero-features{display:flex;gap:24px;flex-wrap:wrap}
+  .hero-feature{display:flex;align-items:center;gap:6px;font-size:13px;color:#fff;font-weight:500}
+  .hero-feature .check{width:18px;height:18px;border-radius:50%;background:#8b5cf6;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;flex-shrink:0}
+
+  .main-content{max-width:1200px;margin:0 auto;padding:40px;display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start}
+  .tool-content{min-width:0}
+
+  .workspace{background:#fff;border-radius:16px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,.06);border:1px solid #e5e7eb;margin-bottom:24px}
+
+  .dropzone{border:2px dashed #c4b5fd;border-radius:12px;padding:50px 30px;text-align:center;background:#faf5ff;margin-bottom:24px;transition:all .2s;cursor:pointer}
+  .dropzone:hover,.dropzone.dragover{border-color:#8b5cf6;background:#ede9fe}
+  .dropzone-icon{width:60px;height:60px;background:linear-gradient(135deg,#8b5cf6,#7c3aed);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;color:#fff;font-size:26px;transition:transform .2s}
+  .dropzone:hover .dropzone-icon{transform:translateY(-4px)}
+  .dropzone-title{font-size:16px;font-weight:700;color:#1a1a2e;margin-bottom:8px}
+  .dropzone-sub{font-size:14px;color:#6b7280;margin-bottom:20px}
+  .dropzone-sub a{color:#8b5cf6;font-weight:600;text-decoration:none}
+  .choose-btn{display:inline-flex;align-items:center;gap:8px;background:#8b5cf6;color:#fff;border:none;padding:12px 28px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;transition:background .2s}
+  .choose-btn:hover{background:#7c3aed}
+  .dropzone-info{font-size:12px;color:#9ca3af;display:flex;align-items:center;justify-content:center;gap:8px;margin-top:16px;flex-wrap:wrap}
+  .dropzone-info .divider{color:#d1d5db}
+  .file-input{display:none}
+
+  /* Editor */
+  .editor{display:none}
+  .editor.visible{display:block}
+
+  .viewer-toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px;padding:12px;background:#faf5ff;border-radius:10px;border:1px solid #c4b5fd;flex-wrap:wrap}
+  .viewer-nav{display:flex;align-items:center;gap:8px}
+  .nav-btn{width:36px;height:36px;border-radius:8px;border:1px solid #e5e7eb;background:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#4b5563;font-size:14px;font-weight:700;transition:all .2s}
+  .nav-btn:hover{border-color:#8b5cf6;color:#8b5cf6;background:#faf5ff}
+  .nav-btn:disabled{opacity:.4;cursor:not-allowed}
+  .page-info{font-size:13px;font-weight:700;color:#1a1a2e;padding:0 8px}
+  .zoom-info{font-size:12px;color:#6b7280;font-weight:600}
+
+  .pdf-container{background:#1a1a2e;border-radius:12px;padding:20px;display:flex;align-items:center;justify-content:center;overflow:auto;min-height:400px;position:relative}
+  .pdf-canvas-wrap{position:relative;box-shadow:0 8px 32px rgba(0,0,0,.4)}
+  .pdf-canvas-wrap canvas{display:block;background:#fff;border-radius:4px}
+  .pdf-canvas-wrap .page-num-badge{position:absolute;bottom:-28px;left:0;color:rgba(255,255,255,.6);font-size:12px;font-weight:600}
+
+  /* Annotation layer */
+  .annot-layer{position:absolute;top:0;left:0;pointer-events:none;z-index:5}
+  .annot-item{position:absolute;pointer-events:auto;cursor:pointer}
+  .annot-item:hover{outline:2px dashed #8b5cf6;outline-offset:2px}
+  .annot-item.selected{outline:2px solid #8b5cf6;outline-offset:2px}
+  .annot-text{background:rgba(139,92,246,.15);border-left:3px solid #8b5cf6;padding:4px 8px;font-size:13px;color:#1a1a2e;font-weight:600;border-radius:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:280px;box-shadow:0 2px 6px rgba(0,0,0,.15)}
+  .annot-note{width:32px;height:32px;border-radius:50%;background:#fbbf24;display:flex;align-items:center;justify-content:center;font-size:16px;box-shadow:0 2px 8px rgba(0,0,0,.25);border:2px solid #fff}
+  .annot-rect{border:2px solid #8b5cf6;background:rgba(139,92,246,.08);border-radius:4px}
+
+  /* Add Form */
+  .add-form{background:#faf5ff;border-radius:12px;padding:20px;border:1px solid #c4b5fd;margin-top:20px;margin-bottom:20px}
+  .form-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+
+  .type-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:16px}
+  .type-tab{padding:12px 8px;background:#fff;border:2px solid #e5e7eb;border-radius:10px;font-size:12px;font-weight:600;color:#4b5563;cursor:pointer;font-family:inherit;transition:all .2s;text-align:center;line-height:1.3}
+  .type-tab:hover{border-color:#8b5cf6;background:#faf5ff}
+  .type-tab.active{border-color:#8b5cf6;background:#8b5cf6;color:#fff}
+  .type-tab-icon{display:block;font-size:20px;margin-bottom:4px}
+
+  .form-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:14px}
+  .form-field{display:flex;flex-direction:column;gap:6px}
+  .form-field.full{grid-column:span 4}
+  .form-field label{font-size:11px;font-weight:600;color:#4b5563;text-transform:uppercase;letter-spacing:.3px}
+  .form-field input,.form-field select,.form-field textarea{width:100%;padding:9px 11px;border:1px solid #e5e7eb;border-radius:8px;font-size:13px;font-family:inherit;color:#1a1a2e;background:#fff;outline:none;transition:border-color .2s}
+  .form-field input:focus,.form-field select:focus,.form-field textarea:focus{border-color:#8b5cf6;box-shadow:0 0 0 3px rgba(139,92,246,.1)}
+  .form-field textarea{resize:vertical;min-height:60px;line-height:1.5}
+  .form-field input[type="color"]{height:38px;padding:2px;cursor:pointer}
+
+  .form-actions{display:flex;gap:10px;flex-wrap:wrap}
+  .add-btn{display:inline-flex;align-items:center;gap:6px;background:#8b5cf6;color:#fff;border:none;padding:11px 22px;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit;transition:background .2s}
+  .add-btn:hover{background:#7c3aed}
+  .cancel-edit{display:inline-flex;align-items:center;gap:6px;background:#fff;color:#6b7280;border:1px solid #e5e7eb;padding:11px 18px;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;transition:all .2s}
+  .cancel-edit:hover{border-color:#8b5cf6;color:#8b5cf6}
+
+  .info-hint{font-size:11px;color:#9ca3af;line-height:1.5;margin-top:8px}
+  .info-hint strong{color:#7c3aed}
+
+  /* Annotation list */
+  .annot-list{background:#fff;border-radius:12px;border:1px solid #e5e7eb;padding:14px;margin-top:16px}
+  .annot-list-title{font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:10px;display:flex;justify-content:space-between;align-items:center}
+  .annot-list-count{font-size:11px;font-weight:600;color:#8b5cf6;background:#faf5ff;padding:3px 9px;border-radius:10px;border:1px solid #c4b5fd}
+  .annot-items{display:flex;flex-direction:column;gap:6px;max-height:280px;overflow-y:auto}
+  .annot-row{display:flex;align-items:center;gap:10px;padding:8px 10px;background:#faf5ff;border:1px solid #ede9fe;border-radius:8px;font-size:12px;color:#4b5563;cursor:pointer;transition:all .2s}
+  .annot-row:hover{background:#ede9fe;border-color:#c4b5fd}
+  .annot-row.selected{border-color:#8b5cf6;background:#ede9fe;box-shadow:0 0 0 2px rgba(139,92,246,.15)}
+  .annot-badge{font-size:10px;font-weight:700;padding:2px 6px;border-radius:6px;background:#fff;border:1px solid #c4b5fd;color:#7c3aed;flex-shrink:0}
+  .annot-info{flex:1;font-family:'JetBrains Mono','Courier New',monospace;font-size:11px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+  .annot-del{width:26px;height:26px;border-radius:6px;border:none;background:transparent;cursor:pointer;color:#9ca3af;display:flex;align-items:center;justify-content:center;transition:all .2s;flex-shrink:0}
+  .annot-del:hover{background:#fee2e2;color:#ef4444}
+  .annot-empty{font-size:12px;color:#9ca3af;text-align:center;padding:16px;font-style:italic}
+
+  /* Actions */
+  .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 28px;border-radius:10px;font-size:15px;font-weight:700;font-family:inherit;cursor:pointer;border:none;transition:all .2s;text-decoration:none}
+  .btn-primary{background:#8b5cf6;color:#fff;flex:1;box-shadow:0 4px 12px rgba(139,92,246,.2)}
+  .btn-primary:hover:not(:disabled){background:#7c3aed;transform:translateY(-2px);box-shadow:0 6px 20px rgba(139,92,246,.3)}
+  .btn-primary:disabled{opacity:.5;cursor:not-allowed;transform:none}
+  .btn-secondary{background:#fff;color:#8b5cf6;border:1px solid #e5e7eb}
+  .btn-secondary:hover{border-color:#8b5cf6;background:#faf5ff}
+
+  .status-msg{margin-top:14px;padding:12px 14px;border-radius:8px;font-size:13px;font-weight:600;display:none}
+  .status-msg.visible{display:block}
+  .status-msg.success{background:#d1fae5;color:#065f46;border:1px solid #a7f3d0}
+  .status-msg.error{background:#fee2e2;color:#991b1b;border:1px solid #fecaca}
+  .status-msg.info{background:#ede9fe;color:#5b21b6;border:1px solid #c4b5fd}
+
+  .progress{display:none;margin-top:14px}
+  .progress.visible{display:block}
+  .progress-bar{width:100%;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden;margin-bottom:8px}
+  .progress-fill{height:100%;background:linear-gradient(90deg,#a78bfa,#8b5cf6);border-radius:4px;width:0%;transition:width .3s ease}
+  .progress-text{font-size:13px;color:#6b7280;text-align:center;font-weight:500}
+
+  /* SEO */
+  .seo-content{background:#fff;border-radius:16px;padding:32px;border:1px solid #e5e7eb;margin-bottom:24px}
+  .seo-content h2{font-size:22px;font-weight:800;color:#1a1a2e;margin-bottom:14px;margin-top:28px;display:flex;align-items:center;gap:10px}
+  .seo-content h2:first-child{margin-top:0}
+  .seo-content h3{font-size:16px;font-weight:700;color:#1a1a2e;margin:20px 0 10px}
+  .seo-content p{font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:14px}
+  .seo-content ul{list-style:none;padding-left:0;margin-bottom:16px}
+  .seo-content ul li{position:relative;padding-left:24px;font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:8px}
+  .seo-content ul li::before{content:'';position:absolute;left:6px;top:12px;width:6px;height:6px;background:#8b5cf6;border-radius:50%}
+  .seo-content a{color:#2563eb;text-decoration:none;font-weight:600}
+  .seo-content a:hover{text-decoration:underline}
+  .seo-content strong{color:#1a1a2e;font-weight:700}
+
+  .how-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:20px}
+  .how-step{background:#faf5ff;border-radius:12px;padding:20px;border:1px solid #c4b5fd}
+  .how-step-num{width:36px;height:36px;border-radius:50%;background:#8b5cf6;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;margin-bottom:12px}
+  .how-step-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+  .how-step-desc{font-size:13px;color:#6b7280;line-height:1.6}
+
+  .faq-item{background:#faf5ff;border:1px solid #c4b5fd;border-radius:12px;margin-bottom:10px;overflow:hidden;transition:border-color .2s}
+  .faq-item:hover{border-color:#8b5cf6}
+  .faq-question{width:100%;background:none;border:none;padding:18px 22px;font-size:15px;font-weight:700;color:#1a1a2e;text-align:left;cursor:pointer;font-family:inherit;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .faq-question .chev{font-size:12px;color:#8b5cf6;transition:transform .2s;flex-shrink:0}
+  .faq-item.open .faq-question .chev{transform:rotate(180deg)}
+  .faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 22px}
+  .faq-item.open .faq-answer{max-height:500px;padding-bottom:18px}
+  .faq-answer p{font-size:14px;color:#6b7280;line-height:1.7;margin:0}
+
+  .sidebar{background:#fff;border-radius:16px;padding:24px;border:1px solid #e5e7eb;position:sticky;top:80px;margin-bottom:24px}
+  .sidebar-header{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:800;color:#1a1a2e;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid #f3f4f6}
+  .sidebar-list{display:flex;flex-direction:column;gap:8px}
+  .sidebar-item{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;cursor:pointer;transition:background .2s;text-decoration:none;color:inherit;border:1px solid #f3f4f6}
+  .sidebar-item:hover{background:#faf5ff;border-color:#c4b5fd}
+  .sidebar-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;flex-shrink:0}
+  .sidebar-info{flex:1;min-width:0}
+  .sidebar-title{font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:2px}
+  .sidebar-desc{font-size:11px;color:#9ca3af;line-height:1.4}
+
+  .footer{background:#0a0e27;padding:60px 40px 30px;color:#fff;margin-top:40px}
+  .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:40px}
+  .footer-brand{display:flex;align-items:center;gap:8px;font-size:20px;font-weight:800;margin-bottom:12px}
+  .footer-brand span{color:#60a5fa}
+  .footer-tagline{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px}
+  .footer-social{display:flex;gap:12px}
+  .footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:16px;transition:background .2s}
+  .footer-social a:hover{background:rgba(255,255,255,.2)}
+  .footer-heading{font-size:14px;font-weight:700;margin-bottom:20px;color:#fff}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .footer-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;transition:color .2s}
+  .footer-links a:hover{color:#60a5fa}
+  .footer-bottom{max-width:1200px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  .footer-bottom-left{display:flex;gap:20px;font-size:12px;color:rgba(255,255,255,.5)}
+  .footer-bottom-right,.footer-bottom-links a{font-size:12px;color:rgba(255,255,255,.5);text-decoration:none}
+  .footer-bottom-links{display:flex;gap:20px}
+
+  .toast{position:fixed;bottom:24px;right:24px;background:#1a1a2e;color:#fff;padding:14px 20px;border-radius:10px;font-size:13px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:3000;transform:translateY(200%);transition:transform .3s ease;max-width:320px}
+  .toast.visible{transform:translateY(0)}
+  .toast.success{background:#10b981}
+  .toast.error{background:#ef4444}
+
+  @media(max-width:1024px){
+    .main-content{grid-template-columns:1fr;padding:24px 20px}
+    .sidebar{position:static}
+    .how-steps{grid-template-columns:repeat(2,1fr)}
+    .form-grid{grid-template-columns:repeat(2,1fr)}
+    .form-field.full{grid-column:span 2}
+    .type-tabs{grid-template-columns:repeat(3,1fr)}
+  }
+  @media(max-width:768px){
+    .header{padding:0 20px}.nav{display:none}
+    .hero{padding:24px 20px 40px}
+    .hero-title{font-size:28px}
+    .hero-icon{width:48px;height:48px;font-size:22px}
+    .hero-title-row{flex-direction:column;align-items:flex-start;gap:12px}
+    .main-content{padding:20px 16px}
+    .workspace{padding:20px}
+    .dropzone{padding:32px 16px}
+    .how-steps{grid-template-columns:1fr}
+    .seo-content{padding:20px}
+    .footer-inner{grid-template-columns:1fr 1fr}
+    .toast{left:16px;right:16px;bottom:16px;max-width:none}
+    .form-grid{grid-template-columns:1fr}
+    .form-field.full{grid-column:span 1}
+  }
+  @media(max-width:576px){
+    .header{padding:0 16px}.header-right .search-btn,.header-right .theme-btn{display:none}
+    .hero-title{font-size:24px}
+    .actions{flex-direction:column}
+    .btn{width:100%}
+    .btn-primary{flex:none}
+    .footer-inner{grid-template-columns:1fr}
+    .footer-bottom{flex-direction:column;text-align:center}
+    .type-tabs{grid-template-columns:1fr}
+    .viewer-toolbar{flex-direction:column;align-items:stretch}
+  }
+
+  html[data-theme="dark"] body{background:#0f172a;color:#f1f5f9}
+  html[data-theme="dark"] .header,html[data-theme="dark"] .workspace,html[data-theme="dark"] .seo-content,html[data-theme="dark"] .sidebar{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .logo,html[data-theme="dark"] .hero-title,html[data-theme="dark"] .seo-content h2,html[data-theme="dark"] .seo-content h3,html[data-theme="dark"] .faq-question,html[data-theme="dark"] .sidebar-header,html[data-theme="dark"] .sidebar-title,html[data-theme="dark"] .form-title,html[data-theme="dark"] .annot-list-title{color:#f1f5f9}
+  html[data-theme="dark"] .nav a{color:#cbd5e1}
+  html[data-theme="dark"] .dropzone{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .how-step,html[data-theme="dark"] .faq-item,html[data-theme="dark"] .add-form,html[data-theme="dark"] .viewer-toolbar{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .form-field input,html[data-theme="dark"] .form-field select,html[data-theme="dark"] .form-field textarea{background:#1e293b;border-color:#334155;color:#f1f5f9}
+  html[data-theme="dark"] .seo-content p,html[data-theme="dark"] .seo-content ul li,html[data-theme="dark"] .faq-answer p{color:#cbd5e1}
+  html[data-theme="dark"] .annot-list{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .annot-row{background:#1e293b;border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .nav-btn{background:#1e293b;border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .page-info{color:#f1f5f9}
+  html[data-theme="dark"] .info-hint{color:#94a3b8}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type": "SoftwareApplication", "name": "Annotate PDF", "url": "https://bigtoolz.com/tools/pdf-tools/visual-pdf/annotate-pdf/", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any (Web-based)", "description": "Free online PDF annotation tool add text notes, sticky comments, rectangles, and highlights. Works in your browser.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.8", "ratingCount": "534"}},
+    {"@type": "HowTo", "name": "How to Annotate a PDF", "step": [
+      {"@type": "HowToStep", "name": "Upload PDF", "text": "Drag & drop or click to select your PDF file."},
+      {"@type": "HowToStep", "name": "Pick Type", "text": "Choose Text, Sticky Note or Rectangle."},
+      {"@type": "HowToStep", "name": "Add Annotation", "text": "Fill coordinates, text and color, then click Add."},
+      {"@type": "HowToStep", "name": "Save PDF", "text": "Download the PDF with annotations embedded."}
+    ]},
+    {"@type": "FAQPage", "mainEntity": [
+      {"@type": "Question", "name": "How do I annotate a PDF online?", "acceptedAnswer": {"@type": "Answer", "text": "Upload your PDF, choose an annotation type (text, sticky note, or rectangle), enter position and content, then click Add. Save the PDF when done. Free, no signup."}},
+      {"@type": "Question", "name": "What annotation types are supported?", "acceptedAnswer": {"@type": "Answer", "text": "Text labels, sticky notes (icon with text content), and rectangular boxes. All are drawn as real vector elements in the PDF."}},
+      {"@type": "Question", "name": "Will annotations show in Adobe Reader?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Annotations are embedded directly as PDF content visible in Adobe Acrobat, Chrome, Firefox, macOS Preview, and all other PDF readers."}},
+      {"@type": "Question", "name": "Can I annotate multiple pages?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Navigate to any page and add annotations. Each annotation remembers which page it belongs to."}},
+      {"@type": "Question", "name": "Is my PDF uploaded to a server?", "acceptedAnswer": {"@type": "Answer", "text": "No. All processing happens in your browser using pdf-lib. Your file never leaves your device."}}
+    ]},
+    {"@type": "BreadcrumbList", "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bigtoolz.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://bigtoolz.com/tools/"},
+      {"@type": "ListItem", "position": 3, "name": "PDF Tools", "item": "https://bigtoolz.com/tools/pdf-tools/"},
+      {"@type": "ListItem", "position": 4, "name": "Visual PDF", "item": "https://bigtoolz.com/tools/pdf-tools/visual-pdf/"},
+      {"@type": "ListItem", "position": 5, "name": "Annotate PDF", "item": "https://bigtoolz.com/tools/pdf-tools/visual-pdf/annotate-pdf/"}
+    ]}
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-left">
+    <a href="/" class="logo"><div class="logo-icon">⚒</div>BigToolz</span></a>
+    <nav><ul class="nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/tools/" class="active">All Tools</a></li>
+      <li><a href="/tools/categories">Categories</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul></nav>
+  </div>
+  <div class="header-right">
+  
+    <button class="theme-btn" aria-label="Toggle theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
+   
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <nav class="breadcrumb">
+      <a href="/">Home</a><span class="sep">›</span>
+      <a href="/tools/">Tools</a><span class="sep">›</span>
+      <a href="/tools/pdf-tools/">PDF Tools</a><span class="sep">›</span>
+      <a href="/tools/pdf-tools/visual-pdf/">Visual PDF</a><span class="sep">›</span>
+      <span class="current">Annotate PDF</span>
+    </nav>
+    <div class="hero-title-row">
+      <div class="hero-icon">💬</div>
+      <h1 class="hero-title">Annotate <span class="blue">PDF</span></h1>
+    </div>
+    <p class="hero-desc">
+      Add text labels, sticky notes, and colored rectangles to any PDF. Full control over position, color, and size. Everything runs in your browser your file never leaves your device.
+    </p>
+    <div class="hero-features">
+      <div class="hero-feature"><span class="check">✓</span> Text & Notes</div>
+      <div class="hero-feature"><span class="check">✓</span> Rectangle Boxes</div>
+      <div class="hero-feature"><span class="check">✓</span> Multi-Page</div>
+      <div class="hero-feature"><span class="check">✓</span> No Upload</div>
+    </div>
+  </div>
+</section>
+
+<div class="main-content">
+
+  <div class="tool-content">
+
+    <div class="workspace">
+
+      <div class="dropzone" id="dropzone">
+        <div class="dropzone-icon">⬆</div>
+        <div class="dropzone-title">Drag & drop your PDF here</div>
+        <div class="dropzone-sub">or <a href="#" id="browseLink">click to browse files</a></div>
+        <button class="choose-btn" id="chooseBtn" type="button">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/></svg>
+          Choose PDF File
+        </button>
+        <div class="dropzone-info">
+          <span>PDF only</span>
+          <span class="divider">|</span>
+          <span>Max 100MB recommended</span>
+        </div>
+        <input type="file" id="fileInput" class="file-input" accept="application/pdf,.pdf">
+      </div>
+
+      <div class="editor" id="editor">
+
+        <div class="viewer-toolbar">
+          <div class="viewer-nav">
+            <button class="nav-btn" id="prevPage" title="Previous page">‹</button>
+            <span class="page-info" id="pageInfo">Page 1 / 1</span>
+            <button class="nav-btn" id="nextPage" title="Next page">›</button>
+          </div>
+          <div class="zoom-info" id="zoomInfo">100%</div>
+          <div style="display:flex;gap:8px;">
+            <button class="nav-btn" id="zoomOut" title="Zoom out">−</button>
+            <button class="nav-btn" id="zoomIn" title="Zoom in">+</button>
+          </div>
+        </div>
+
+        <div class="pdf-container" id="pdfContainer">
+          <div class="pdf-canvas-wrap" id="pdfWrap">
+            <canvas id="pdfCanvas"></canvas>
+            <div class="annot-layer" id="annotLayer"></div>
+            <span class="page-num-badge" id="pageBadge"></span>
+          </div>
+        </div>
+
+        <div class="add-form">
+          <div class="form-title">✏️ Add Annotation</div>
+
+          <div class="type-tabs">
+            <button class="type-tab active" data-type="text">
+              <span class="type-tab-icon">📝</span>
+              Text Label
+            </button>
+            <button class="type-tab" data-type="note">
+              <span class="type-tab-icon">💬</span>
+              Sticky Note
+            </button>
+            <button class="type-tab" data-type="rect">
+              <span class="type-tab-icon">▭</span>
+              Rectangle
+            </button>
+          </div>
+
+          <div class="form-grid">
+            <div class="form-field">
+              <label for="xPos">X (pt)</label>
+              <input type="number" id="xPos" value="100" min="0" step="1">
+            </div>
+            <div class="form-field">
+              <label for="yPos">Y (pt from bottom)</label>
+              <input type="number" id="yPos" value="700" min="0" step="1">
+            </div>
+            <div class="form-field">
+              <label for="widthInput">Width (pt)</label>
+              <input type="number" id="widthInput" value="200" min="5" step="1">
+            </div>
+            <div class="form-field">
+              <label for="heightInput">Height (pt)</label>
+              <input type="number" id="heightInput" value="20" min="5" step="1">
+            </div>
+          </div>
+
+          <div class="form-grid" id="textFields">
+            <div class="form-field full">
+              <label for="annotText">Text Content</label>
+              <textarea id="annotText" placeholder="Type your annotation text here..." rows="2">Review this section</textarea>
+            </div>
+          </div>
+
+          <div class="form-grid">
+            <div class="form-field">
+              <label for="annotColor">Color</label>
+              <input type="color" id="annotColor" value="#8b5cf6">
+            </div>
+            <div class="form-field">
+              <label for="fontSizeSel">Font Size (pt)</label>
+              <select id="fontSizeSel">
+                <option value="8">8 pt</option>
+                <option value="10" selected>10 pt</option>
+                <option value="12">12 pt</option>
+                <option value="14">14 pt</option>
+                <option value="18">18 pt</option>
+                <option value="24">24 pt</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label for="pageNumInput">On Page</label>
+              <input type="number" id="pageNumInput" value="1" min="1" step="1">
+            </div>
+            <div class="form-field">
+              <label for="opacityInput">Opacity (%)</label>
+              <input type="number" id="opacityInput" value="100" min="10" max="100" step="5">
+            </div>
+          </div>
+
+          <p class="info-hint">
+            <strong>Tip:</strong> PDF origin is <strong>bottom-left</strong>. Y = page_height − distance_from_top. A4 = 595×842 pt; US Letter = 612×792 pt.
+          </p>
+
+          <div class="form-actions" style="margin-top:14px;">
+            <button class="add-btn" id="addAnnotBtn">+ Add Annotation</button>
+            <button class="cancel-edit" id="cancelEditBtn" style="display:none;">Cancel Edit</button>
+          </div>
+        </div>
+
+        <div class="annot-list" id="annotList">
+          <div class="annot-list-title">
+            <span>Annotations</span>
+            <span class="annot-list-count" id="annotCount">0</span>
+          </div>
+          <div class="annot-items" id="annotItems">
+            <div class="annot-empty">No annotations yet. Add one above.</div>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button class="btn btn-primary" id="saveBtn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+            Save Annotated PDF
+          </button>
+          <button class="btn btn-secondary" id="resetBtn">Reset</button>
+        </div>
+
+        <div class="status-msg" id="statusMsg"></div>
+
+        <div class="progress" id="progress">
+          <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+          <div class="progress-text" id="progressText">Processing...</div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="seo-content">
+
+      <h2>💬 What is PDF Annotation?</h2>
+      <p>
+        <strong>PDF annotation</strong> adds comments, notes, or visual markers to a PDF without changing the original text. Common annotation types include <strong>text labels, sticky notes, rectangles, highlights, arrows, and freehand drawings</strong>. They're used for document review, collaboration, teaching, legal markup, and design feedback.
+      </p>
+      <p>
+        BigToolz uses <strong>pdf-lib</strong> to embed real annotations directly into the PDF file structure not as flattened images. Your annotations remain crisp at any zoom and appear in every PDF reader. Everything runs <strong>100% in your browser</strong> no uploads, no signup.
+      </p>
+
+      <h2>🚀 How to Annotate a PDF</h2>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-step-num">1</div>
+          <div class="how-step-title">Upload PDF</div>
+          <div class="how-step-desc">Drag & drop or click to select your PDF file.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">2</div>
+          <div class="how-step-title">Pick Type</div>
+          <div class="how-step-desc">Choose Text, Sticky Note, or Rectangle.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">3</div>
+          <div class="how-step-title">Add Content</div>
+          <div class="how-step-desc">Enter position, text, color and font size.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">4</div>
+          <div class="how-step-title">Save PDF</div>
+          <div class="how-step-desc">Download the annotated PDF with all annotations embedded.</div>
+        </div>
+      </div>
+
+      <h2>🎨 The 3 Annotation Types</h2>
+
+      <h3>📝 Text Label</h3>
+      <p>A rectangular text box with a colored left border. Best for <strong>review comments, section notes, corrections</strong> anything that needs to be readable in place. Text is drawn as a real vector string inside the PDF.</p>
+
+      <h3>💬 Sticky Note</h3>
+      <p>A small circular icon (like a comment marker) placed anywhere on the page. Best for <strong>short notes, references, and marginalia</strong> visually lightweight and doesn't cover the underlying text. The note content is stored as a text label next to the icon.</p>
+
+      <h3>▭ Rectangle</h3>
+      <p>A colored, semi-transparent box. Best for <strong>grouping elements, highlighting areas for review, callouts, and design feedback</strong>. Control the size and color to match your intent border, fill, or both.</p>
+
+      <h2>📐 Understanding PDF Coordinates</h2>
+      <p>PDF uses a <strong>bottom-left origin</strong>:</p>
+      <ul>
+        <li><strong>(0, 0)</strong> = bottom-left corner of the page</li>
+        <li><strong>X</strong> increases going right</li>
+        <li><strong>Y</strong> increases going up</li>
+        <li>Units are <strong>points</strong> 1 pt = 1/72 inch</li>
+      </ul>
+
+      <h3>Common Page Sizes</h3>
+      <ul>
+        <li><strong>A4</strong> 595 × 842 pt</li>
+        <li><strong>US Letter</strong> 612 × 792 pt</li>
+        <li><strong>Legal</strong> 612 × 1008 pt</li>
+        <li><strong>A3</strong> 842 × 1191 pt</li>
+        <li><strong>A5</strong> 420 × 595 pt</li>
+      </ul>
+
+      <h3>Finding Coordinates</h3>
+      <p>If you know the distance from the <strong>top</strong> of the page, use: <strong>Y = Page_Height − Distance_From_Top</strong>. For example, 3 inches (216 pt) from the top of a US Letter page → <strong>Y = 792 − 216 = 576</strong>.</p>
+
+      <h2>✨ Key Features</h2>
+      <ul>
+        <li><strong>3 annotation types</strong> Text, Sticky Note, Rectangle.</li>
+        <li><strong>Real vector embedding</strong> never flattened.</li>
+        <li><strong>Color picker</strong> per annotation.</li>
+        <li><strong>Font size control</strong> 8 to 24 pt.</li>
+        <li><strong>Opacity control</strong> 10% to 100%.</li>
+        <li><strong>Multi-page support</strong> annotate any page.</li>
+        <li><strong>Live preview</strong> see annotations overlaid on the PDF.</li>
+        <li><strong>Edit or delete</strong> any annotation before saving.</li>
+        <li><strong>100% browser-based</strong> complete privacy.</li>
+      </ul>
+
+      <h2>❓ Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-question">How do I annotate a PDF online?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Upload your PDF, choose an annotation type (Text, Sticky Note, or Rectangle), enter the position and content, then click "Add Annotation". Save the PDF when done. Free, no signup, no upload to any server.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What annotation types are supported?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>Text labels</strong> rectangular text boxes with borders. <strong>Sticky notes</strong> icon-style markers with text. <strong>Rectangles</strong> colored boxes for highlighting areas. All are embedded as real vector elements in the PDF.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Will annotations show in Adobe Reader?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Yes. Annotations are drawn as direct PDF content (text strings and vector rectangles) not as Adobe's "annotation objects." This means they appear in <strong>every PDF reader</strong>: Adobe Acrobat, Chrome, Firefox, macOS Preview, mobile viewers, and print output.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I annotate multiple pages?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Yes. Navigate to any page and add annotations. Each annotation remembers its page number. The final PDF will have annotations correctly placed on their respective pages.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I edit or delete an annotation?</button>
+        <div class="faq-answer"><p>Yes. Click on any annotation in the "Annotations" list to select it. Use the delete (×) button to remove it. Currently editing existing annotations isn't supported delete and re-add if you need to change something.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What's the difference between Text and Sticky Note?</button>
+        <div class="faq-answer"><p><strong>Text</strong> renders as a full text label with a colored background highly readable. <strong>Sticky Note</strong> renders as a small icon, with the text next to it less intrusive. Use Text for in-document review comments and Sticky Notes for lightweight marginalia.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Is my PDF uploaded to a server?</button>
+        <div class="faq-answer"><p>No. All PDF processing happens in your browser using pdf-lib. Your file never leaves your device, and nothing is stored anywhere.</p></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-header">🔗 Related PDF Tools</div>
+    <div class="sidebar-list">
+      <a href="/tools/pdf-tools/visual-pdf/highlight-text/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#f59e0b;">🖍</div>
+        <div class="sidebar-info"><div class="sidebar-title">Highlight PDF</div><div class="sidebar-desc">Yellow highlight</div></div>
+      </a>
+      <a href="/tools/pdf-tools/visual-pdf/underline-text/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#8b5cf6;">⎁</div>
+        <div class="sidebar-info"><div class="sidebar-title">Underline Text</div><div class="sidebar-desc">Add underlines</div></div>
+      </a>
+      <a href="/tools/pdf-tools/visual-pdf/strikethrough/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#ef4444;">⎄</div>
+        <div class="sidebar-info"><div class="sidebar-title">Strikethrough PDF</div><div class="sidebar-desc">Cross out text</div></div>
+      </a>
+      <a href="/tools/pdf-tools/organize-pdf/watermark-pdf/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#06b6d4;">💧</div>
+        <div class="sidebar-info"><div class="sidebar-title">Watermark PDF</div><div class="sidebar-desc">Add watermark</div></div>
+      </a>
+      <a href="/tools/pdf-tools/visual-pdf/compress-pdf/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#10b981;">📉</div>
+        <div class="sidebar-info"><div class="sidebar-title">Compress PDF</div><div class="sidebar-desc">Reduce size</div></div>
+      </a>
+      <a href="/tools/pdf-tools/visual-pdf/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#64748b;">📕</div>
+        <div class="sidebar-info"><div class="sidebar-title">All Visual PDF →</div><div class="sidebar-desc">15 tools</div></div>
+      </a>
+    </div>
+  </aside>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand"><div class="logo-icon">⚒</div>BigToolz</span></div>
+      <p class="footer-tagline">Your Ultimate Online Tools Hub</p>
+      <div class="footer-social">
+        <a href="https://facebook.com/bigtoolz" aria-label="Facebook">f</a>
+        <a href="https://twitter.com/bigtoolz" aria-label="Twitter">𝕏</a>
+        <a href="https://youtube.com/@bigtoolz" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+    <div>
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/tools/">All Tools</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Categories</h3>
+      <ul class="footer-links">
+        <li><a href="/tools/image-tools/">Image Tools</a></li>
+        <li><a href="/tools/pdf-tools/">PDF Tools</a></li>
+        <li><a href="/tools/text-tools/">Text Tools</a></li>
+        <li><a href="/tools/seo-tools/">SEO Tools</a></li>
+        <li><a href="/tools/categories">All Categories →</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Legal</h3>
+      <ul class="footer-links">
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left"><span>✓ 100% Free</span><span>✓ No Sign Up</span><span>✓ No Installation</span></div>
+    <div class="footer-bottom-right">© 2026 BigToolz. All rights reserved.</div>
+    <div class="footer-bottom-links"><a href="/privacy-policy">Privacy</a><a href="/terms">Terms</a><a href="/disclaimer">Disclaimer</a></div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+
+<script>
+'use strict';
+
+/* ===== THEME ===== */
+(function(){try{var t=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&d))document.documentElement.setAttribute('data-theme','dark');else if(t==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();
+document.querySelector('.theme-btn')?.addEventListener('click',()=>{const h=document.documentElement;const c=h.getAttribute('data-theme');const d=window.matchMedia('(prefers-color-scheme: dark)').matches;let n=c==='dark'?'light':c==='light'?'dark':(d?'light':'dark');h.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}});
+
+if (window.pdfjsLib) {
+  pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+}
+
+/* ===== HELPERS ===== */
+const $ = (s, p = document) => p.querySelector(s);
+const $$ = (s, p = document) => [...p.querySelectorAll(s)];
+
+function showToast(msg, type = 'info', duration = 3000) {
+  const t = $('#toast');
+  if (!t) return;
+  t.className = 'toast visible' + (type !== 'info' ? ' ' + type : '');
+  t.textContent = msg;
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove('visible'), duration);
+}
+
+function setStatus(msg, type = 'info') {
+  const el = $('#statusMsg');
+  el.textContent = msg;
+  el.className = 'status-msg visible ' + type;
+}
+function clearStatus() {
+  const el = $('#statusMsg');
+  el.className = 'status-msg';
+  el.textContent = '';
+}
+
+function hexToRgb01(hex) {
+  const h = hex.replace('#', '');
+  return {
+    r: parseInt(h.slice(0, 2), 16) / 255,
+    g: parseInt(h.slice(2, 4), 16) / 255,
+    b: parseInt(h.slice(4, 6), 16) / 255
+  };
+}
+
+/* ===== STATE ===== */
+const state = {
+  fileBytes: null,
+  pdfDoc: null,
+  pdfLibDoc: null,
+  currentPage: 1,
+  totalPages: 0,
+  zoom: 1.0,
+  pageViewport: null,
+  annotations: [],
+  idCounter: 0,
+  editingId: null,
+  type: 'text'
+};
+
+/* ===== DOM ===== */
+const dropzone = $('#dropzone');
+const fileInput = $('#fileInput');
+const chooseBtn = $('#chooseBtn');
+const browseLink = $('#browseLink');
+const editor = $('#editor');
+const pdfCanvas = $('#pdfCanvas');
+const annotLayer = $('#annotLayer');
+const pageInfo = $('#pageInfo');
+const pageBadge = $('#pageBadge');
+const zoomInfo = $('#zoomInfo');
+const prevPage = $('#prevPage');
+const nextPage = $('#nextPage');
+const zoomIn = $('#zoomIn');
+const zoomOut = $('#zoomOut');
+const xPos = $('#xPos');
+const yPos = $('#yPos');
+const widthInput = $('#widthInput');
+const heightInput = $('#heightInput');
+const annotText = $('#annotText');
+const annotColor = $('#annotColor');
+const fontSizeSel = $('#fontSizeSel');
+const pageNumInput = $('#pageNumInput');
+const opacityInput = $('#opacityInput');
+const textFields = $('#textFields');
+const addAnnotBtn = $('#addAnnotBtn');
+const cancelEditBtn = $('#cancelEditBtn');
+const annotItems = $('#annotItems');
+const annotCount = $('#annotCount');
+const saveBtn = $('#saveBtn');
+const resetBtn = $('#resetBtn');
+const progress = $('#progress');
+const progressFill = $('#progressFill');
+const progressText = $('#progressText');
+
+/* ===== TYPE TABS ===== */
+$$('.type-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    $$('.type-tab').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    state.type = tab.dataset.type;
+
+    // Show/hide text fields based on type
+    textFields.style.display = state.type === 'rect' ? 'none' : 'grid';
+    // Toggle size fields
+    widthInput.parentElement.style.opacity = state.type === 'note' ? '.5' : '1';
+    heightInput.parentElement.style.opacity = state.type === 'note' ? '.5' : '1';
+    widthInput.disabled = state.type === 'note';
+    heightInput.disabled = state.type === 'note';
+    fontSizeSel.disabled = state.type === 'rect';
+  });
+});
+
+/* ===== FILE SELECTION ===== */
+function triggerFileSelect() { fileInput.click(); }
+chooseBtn.addEventListener('click', (e) => { e.stopPropagation(); triggerFileSelect(); });
+browseLink.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); triggerFileSelect(); });
+dropzone.addEventListener('click', triggerFileSelect);
+
+fileInput.addEventListener('change', (e) => {
+  const f = e.target.files[0];
+  if (f) loadPdf(f);
+  fileInput.value = '';
+});
+
+['dragenter', 'dragover'].forEach(evt => {
+  dropzone.addEventListener(evt, (e) => { e.preventDefault(); e.stopPropagation(); dropzone.classList.add('dragover'); });
+});
+['dragleave', 'drop'].forEach(evt => {
+  dropzone.addEventListener(evt, (e) => { e.preventDefault(); e.stopPropagation(); dropzone.classList.remove('dragover'); });
+});
+dropzone.addEventListener('drop', (e) => {
+  const f = e.dataTransfer.files[0];
+  if (f && f.type === 'application/pdf') loadPdf(f);
+  else showToast('Please drop a PDF file', 'error');
+});
+
+/* ===== LOAD PDF ===== */
+async function loadPdf(file) {
+  clearStatus();
+  setStatus('Loading PDF...', 'info');
+  try {
+    const buf = await file.arrayBuffer();
+    state.fileBytes = buf.slice(0);
+    state.pdfDoc = await pdfjsLib.getDocument({ data: buf.slice(0) }).promise;
+    state.totalPages = state.pdfDoc.numPages;
+    state.currentPage = 1;
+    state.pdfLibDoc = await PDFLib.PDFDocument.load(buf.slice(0));
+
+    dropzone.style.display = 'none';
+    editor.classList.add('visible');
+    pageNumInput.max = state.totalPages;
+    pageNumInput.value = 1;
+
+    await renderPage(1);
+    clearStatus();
+    showToast('✅ PDF loaded', 'success');
+  } catch (err) {
+    console.error(err);
+    setStatus('Failed: ' + err.message, 'error');
+    showToast('Failed to load PDF', 'error');
+  }
+}
+
+/* ===== RENDER PAGE ===== */
+async function renderPage(pageNum) {
+  if (!state.pdfDoc) return;
+  state.currentPage = pageNum;
+  const page = await state.pdfDoc.getPage(pageNum);
+  const viewport = page.getViewport({ scale: 1.5 * state.zoom });
+  state.pageViewport = page.getViewport({ scale: 1.5 });
+
+  pdfCanvas.width = viewport.width;
+  pdfCanvas.height = viewport.height;
+
+  const ctx = pdfCanvas.getContext('2d');
+  await page.render({ canvasContext: ctx, viewport }).promise;
+
+  pageInfo.textContent = `Page ${pageNum} / ${state.totalPages}`;
+  pageBadge.textContent = `Page ${pageNum} ${Math.round(state.pageViewport.width)} × ${Math.round(state.pageViewport.height)} pt`;
+  zoomInfo.textContent = Math.round(state.zoom * 100) + '%';
+  pageNumInput.value = pageNum;
+  prevPage.disabled = pageNum <= 1;
+  nextPage.disabled = pageNum >= state.totalPages;
+
+  renderAnnotations();
+}
+
+/* ===== RENDER ANNOTATIONS ===== */
+function renderAnnotations() {
+  annotLayer.innerHTML = '';
+  const pageH = state.pageViewport.height;
+  const scale = pdfCanvas.height / pageH;
+
+  state.annotations
+    .filter(a => a.page === state.currentPage)
+    .forEach(a => {
+      const el = document.createElement('div');
+      el.className = 'annot-item' + (state.editingId === a.id ? ' selected' : '');
+      el.dataset.id = a.id;
+
+      // Position
+      const leftPx = a.x * scale;
+      const topPx = (pageH - a.y) * scale;
+
+      if (a.type === 'text') {
+        const widthPx = a.width * scale;
+        el.classList.add('annot-text');
+        el.style.left = leftPx + 'px';
+        el.style.top = (topPx - a.fontSize * scale) + 'px';
+        el.style.maxWidth = widthPx + 'px';
+        el.style.color = a.color;
+        el.style.borderLeftColor = a.color;
+        el.style.background = a.color + '20';
+        el.style.opacity = a.opacity / 100;
+        el.textContent = a.text;
+      } else if (a.type === 'note') {
+        el.classList.add('annot-note');
+        el.style.left = (leftPx - 16) + 'px';
+        el.style.top = (topPx - 16) + 'px';
+        el.style.background = a.color;
+        el.style.opacity = a.opacity / 100;
+        el.textContent = '💬';
+      } else if (a.type === 'rect') {
+        el.classList.add('annot-rect');
+        el.style.left = leftPx + 'px';
+        el.style.top = (pageH - a.y - a.height) * scale + 'px';
+        el.style.width = (a.width * scale) + 'px';
+        el.style.height = (a.height * scale) + 'px';
+        el.style.borderColor = a.color;
+        el.style.background = a.color + '20';
+        el.style.opacity = a.opacity / 100;
+      }
+
+      // Click to select
+      el.addEventListener('click', (ev) => {
+        ev.stopPropagation();
+        selectAnnotation(a.id);
+      });
+
+      annotLayer.appendChild(el);
+    });
+}
+
+/* ===== SELECT ANNOTATION ===== */
+function selectAnnotation(id) {
+  state.editingId = id;
+  const a = state.annotations.find(x => x.id === id);
+  if (!a) return;
+
+  xPos.value = a.x;
+  yPos.value = a.y;
+  widthInput.value = a.width;
+  heightInput.value = a.height || 20;
+  annotText.value = a.text || '';
+  annotColor.value = a.color;
+  fontSizeSel.value = a.fontSize || 10;
+  pageNumInput.value = a.page;
+  opacityInput.value = a.opacity || 100;
+
+  // Set type
+  state.type = a.type;
+  $$('.type-tab').forEach(t => t.classList.toggle('active', t.dataset.type === a.type));
+  textFields.style.display = a.type === 'rect' ? 'none' : 'grid';
+
+  cancelEditBtn.style.display = 'inline-flex';
+  addAnnotBtn.textContent = '✓ Update Annotation';
+
+  renderAnnotations();
+  renderAnnotList();
+}
+
+function cancelEdit() {
+  state.editingId = null;
+  cancelEditBtn.style.display = 'none';
+  addAnnotBtn.textContent = '+ Add Annotation';
+  renderAnnotations();
+  renderAnnotList();
+}
+
+cancelEditBtn.addEventListener('click', cancelEdit);
+
+/* ===== ADD / UPDATE ANNOTATION ===== */
+addAnnotBtn.addEventListener('click', () => {
+  const x = parseFloat(xPos.value) || 0;
+  const y = parseFloat(yPos.value) || 0;
+  const w = parseFloat(widthInput.value) || 200;
+  const h = parseFloat(heightInput.value) || 20;
+  const text = annotText.value.trim();
+  const color = annotColor.value;
+  const fontSize = parseInt(fontSizeSel.value, 10) || 10;
+  const page = parseInt(pageNumInput.value, 10) || 1;
+  const opacity = parseInt(opacityInput.value, 10) || 100;
+  const type = state.type;
+
+  if (page < 1 || page > state.totalPages) {
+    showToast('Invalid page number', 'error'); return;
+  }
+  if (type !== 'rect' && !text) {
+    showToast('Please enter text', 'error'); return;
+  }
+
+  if (state.editingId !== null) {
+    // Update
+    const a = state.annotations.find(x => x.id === state.editingId);
+    if (a) {
+      a.x = x; a.y = y; a.width = w; a.height = h;
+      a.text = text; a.color = color; a.fontSize = fontSize;
+      a.page = page; a.opacity = opacity; a.type = type;
+    }
+    showToast('✅ Annotation updated', 'success');
+    cancelEdit();
+  } else {
+    // Add new
+    state.annotations.push({
+      id: ++state.idCounter,
+      type, x, y, width: w, height: h,
+      text, color, fontSize, page, opacity
+    });
+    showToast('✅ Annotation added', 'success');
+  }
+
+  renderAnnotations();
+  renderAnnotList();
+});
+
+/* ===== ANNOTATION LIST ===== */
+function renderAnnotList() {
+  annotCount.textContent = state.annotations.length;
+  if (!state.annotations.length) {
+    annotItems.innerHTML = '<div class="annot-empty">No annotations yet. Add one above.</div>';
+    return;
+  }
+  annotItems.innerHTML = '';
+  const typeLabels = { text: 'TEXT', note: 'NOTE', rect: 'BOX' };
+
+  state.annotations.forEach(a => {
+    const row = document.createElement('div');
+    row.className = 'annot-row' + (state.editingId === a.id ? ' selected' : '');
+    const preview = (a.text || '').slice(0, 30) || 'Rect ' + a.width + '×' + a.height;
+
+    row.innerHTML = `
+      <span class="annot-badge" style="color:${a.color};border-color:${a.color};">${typeLabels[a.type]}</span>
+      <span class="annot-info">p${a.page} · ${preview}</span>
+      <button class="annot-del" data-del="${a.id}" title="Delete">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+    `;
+
+    row.addEventListener('click', (e) => {
+      if (e.target.closest('[data-del]')) return;
+      selectAnnotation(a.id);
+    });
+
+    annotItems.appendChild(row);
+  });
+
+  $$('[data-del]').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const id = parseInt(btn.dataset.del, 10);
+      state.annotations = state.annotations.filter(x => x.id !== id);
+      if (state.editingId === id) cancelEdit();
+      renderAnnotList();
+      renderAnnotations();
+    });
+  });
+}
+
+/* ===== NAVIGATION ===== */
+prevPage.addEventListener('click', () => { if (state.currentPage > 1) renderPage(state.currentPage - 1); });
+nextPage.addEventListener('click', () => { if (state.currentPage < state.totalPages) renderPage(state.currentPage + 1); });
+zoomIn.addEventListener('click', () => { state.zoom = Math.min(3, state.zoom + 0.25); renderPage(state.currentPage); });
+zoomOut.addEventListener('click', () => { state.zoom = Math.max(0.5, state.zoom - 0.25); renderPage(state.currentPage); });
+
+/* ===== SAVE PDF ===== */
+saveBtn.addEventListener('click', async () => {
+  if (!state.pdfLibDoc) { showToast('No PDF loaded', 'error'); return; }
+  if (!state.annotations.length) { showToast('Add at least one annotation first', 'error'); return; }
+
+  clearStatus();
+  setStatus('Saving PDF...', 'info');
+  progress.classList.add('visible');
+  progressFill.style.width = '20%';
+  progressText.textContent = 'Loading PDF...';
+
+  try {
+    const pdfDoc = state.pdfLibDoc;
+    const pages = pdfDoc.getPages();
+    const font = await pdfDoc.embedFont(PDFLib.StandardFonts.Helvetica);
+    const fontBold = await pdfDoc.embedFont(PDFLib.StandardFonts.HelveticaBold);
+
+    progressFill.style.width = '50%';
+    progressText.textContent = 'Adding annotations...';
+
+    for (const a of state.annotations) {
+      const page = pages[a.page - 1];
+      if (!page) continue;
+      const rgb = hexToRgb01(a.color);
+      const opacity = (a.opacity || 100) / 100;
+
+      if (a.type === 'rect') {
+        page.drawRectangle({
+          x: a.x,
+          y: a.y,
+          width: a.width,
+          height: a.height,
+          borderColor: PDFLib.rgb(rgb.r, rgb.g, rgb.b),
+          borderWidth: 1.5,
+          color: PDFLib.rgb(rgb.r, rgb.g, rgb.b),
+          opacity: opacity * 0.15,
+          borderOpacity: opacity
+        });
+      } else if (a.type === 'note') {
+        // Draw a filled circle as the note
+        page.drawCircle({
+          x: a.x,
+          y: a.y,
+          size: 8,
+          color: PDFLib.rgb(rgb.r, rgb.g, rgb.b),
+          opacity: opacity
+        });
+        // Text next to it
+        if (a.text) {
+          page.drawText(a.text, {
+            x: a.x + 12,
+            y: a.y - 4,
+            size: a.fontSize || 10,
+            font,
+            color: PDFLib.rgb(rgb.r, rgb.g, rgb.b),
+            opacity: opacity
+          });
+        }
+      } else {
+        // Text label
+        // Background
+        page.drawRectangle({
+          x: a.x - 2,
+          y: a.y - (a.fontSize || 10) - 2,
+          width: a.width,
+          height: (a.fontSize || 10) + 6,
+          color: PDFLib.rgb(rgb.r, rgb.g, rgb.b),
+          opacity: opacity * 0.12
+        });
+        // Left border
+        page.drawRectangle({
+          x: a.x - 2,
+          y: a.y - (a.fontSize || 10) - 2,
+          width: 2.5,
+          height: (a.fontSize || 10) + 6,
+          color: PDFLib.rgb(rgb.r, rgb.g, rgb.b),
+          opacity: opacity
+        });
+        // Text
+        page.drawText(a.text || '', {
+          x: a.x + 4,
+          y: a.y - (a.fontSize || 10),
+          size: a.fontSize || 10,
+          font: fontBold,
+          color: PDFLib.rgb(rgb.r, rgb.g, rgb.b),
+          opacity: opacity
+        });
+      }
+    }
+
+    progressFill.style.width = '80%';
+    progressText.textContent = 'Finalizing...';
+
+    const bytes = await pdfDoc.save();
+    const blob = new Blob([bytes], { type: 'application/pdf' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'annotated.pdf';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    setTimeout(() => URL.revokeObjectURL(url), 2000);
+
+    progressFill.style.width = '100%';
+    setStatus('✅ PDF saved with ' + state.annotations.length + ' annotation(s)!', 'success');
+    showToast('PDF downloaded!', 'success');
+
+    setTimeout(() => {
+      progress.classList.remove('visible');
+      progressFill.style.width = '0%';
+    }, 1500);
+  } catch (err) {
+    console.error(err);
+    progress.classList.remove('visible');
+    setStatus('Failed to save: ' + err.message, 'error');
+    showToast('Save failed', 'error');
+  }
+});
+
+/* ===== RESET ===== */
+resetBtn.addEventListener('click', () => {
+  state.fileBytes = null;
+  state.pdfDoc = null;
+  state.pdfLibDoc = null;
+  state.annotations = [];
+  state.currentPage = 1;
+  state.totalPages = 0;
+  state.zoom = 1.0;
+  state.editingId = null;
+  renderAnnotList();
+  editor.classList.remove('visible');
+  dropzone.style.display = '';
+  clearStatus();
+  progress.classList.remove('visible');
+  showToast('Reset', 'info');
+});
+
+/* ===== FAQ ===== */
+$$('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    $$('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+
+/* ===== INIT ===== */
+renderAnnotList();
+</script>
+
+</body>
+</html>

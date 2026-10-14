@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2563eb">
+
+<title>All Tools - 300+ Free Online Tools in One Place | BigToolz</title>
+<meta name="description" content="Browse 300+ free online tools across 8 categories image, PDF, text, developer, calculator, SEO, social and utility tools. No signup, works in your browser.">
+<meta name="keywords" content="all tools, free online tools, tools directory, image tools, pdf tools, developer tools, seo tools, calculator tools">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://bigtoolz.com/tools/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="All Tools - 300+ Free Online Tools | BigToolz">
+<meta property="og:description" content="Browse 300+ free online tools across 8 categories all in one place.">
+<meta property="og:url" content="https://bigtoolz.com/tools/">
+<meta property="og:image" content="https://bigtoolz.com/assets/images/og-image.jpg">
+<meta property="og:site_name" content="BigToolz">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="All Tools - BigToolz">
+<meta name="twitter:description" content="Browse 300+ free online tools across 8 categories.">
+<meta name="twitter:image" content="https://bigtoolz.com/assets/images/twitter-card.jpg">
+
+<link rel="icon" href="/assets/images/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/images/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#f8f9fc;color:#1a1a2e;overflow-x:hidden;line-height:1.5}
+
+  /* HEADER */
+  .header{background:#fff;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;position:sticky;top:0;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+  .header-left{display:flex;align-items:center;gap:40px}
+  .logo{display:flex;align-items:center;gap:8px;font-size:22px;font-weight:800;color:#1a1a2e;text-decoration:none}
+  .logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#3b82f6,#2563eb);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px}
+  .logo span{color:#2563eb}
+  .nav{display:flex;align-items:center;gap:28px;list-style:none}
+  .nav a{text-decoration:none;color:#4b5563;font-size:14px;font-weight:500;transition:color .2s}
+  .nav a:hover,.nav a.active{color:#2563eb}
+  .header-right{display:flex;align-items:center;gap:16px}
+  .search-btn,.theme-btn{width:36px;height:36px;border-radius:50%;border:none;background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#4b5563}
+  .search-btn:hover,.theme-btn:hover{background:#f3f4f6}
+  .bookmark-btn{display:flex;align-items:center;gap:8px;background:#2563eb;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
+  .bookmark-btn:hover{background:#1d4ed8}
+
+  /* HERO */
+  .hero{background:linear-gradient(135deg,#0a0e27 0%,#1a1a4e 40%,#2d1b69 70%,#4c1d95 100%);padding:50px 40px 60px;position:relative;overflow:hidden;color:#fff;text-align:center}
+  .hero::before{content:'';position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(139,92,246,.3) 0%,transparent 70%);border-radius:50%}
+  .hero::after{content:'';position:absolute;bottom:-50%;left:-10%;width:500px;height:500px;background:radial-gradient(circle,rgba(59,130,246,.25) 0%,transparent 70%);border-radius:50%}
+  .hero-inner{max-width:900px;margin:0 auto;position:relative;z-index:2}
+  .breadcrumb{display:flex;justify-content:center;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:24px}
+  .breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none}
+  .breadcrumb a:hover{color:#fff}
+  .breadcrumb .sep{color:rgba(255,255,255,.4)}
+  .breadcrumb .current{color:#fff;font-weight:500}
+  .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);padding:8px 16px;border-radius:20px;font-size:13px;font-weight:600;margin-bottom:20px;backdrop-filter:blur(10px)}
+  .hero-title{font-size:48px;font-weight:800;line-height:1.15;margin-bottom:16px}
+  .hero-title .blue{color:#60a5fa}
+  .hero-desc{font-size:16px;color:rgba(255,255,255,.75);line-height:1.7;max-width:640px;margin:0 auto 28px}
+  .hero-stats{display:flex;justify-content:center;gap:40px;flex-wrap:wrap}
+  .hero-stat{display:flex;flex-direction:column;gap:2px}
+  .hero-stat-num{font-size:28px;font-weight:800;color:#60a5fa}
+  .hero-stat-label{font-size:12px;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;font-weight:600}
+
+  /* MAIN */
+  .main-content{max-width:1200px;margin:0 auto;padding:50px 40px}
+
+  /* Search & Filter */
+  .toolbar{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:32px;flex-wrap:wrap}
+  .toolbar-left{display:flex;align-items:center;gap:12px;flex:1;min-width:260px}
+  .search-box{position:relative;flex:1;background:#fff;border:2px solid #e5e7eb;border-radius:12px;display:flex;align-items:center;padding:0 14px;transition:border-color .2s}
+  .search-box:focus-within{border-color:#2563eb;box-shadow:0 0 0 3px rgba(37,99,235,.1)}
+  .search-box svg{color:#9ca3af;flex-shrink:0}
+  .search-box input{flex:1;border:none;outline:none;padding:12px 10px;font-size:14px;font-family:inherit;background:transparent;color:#1a1a2e}
+  .search-box input::placeholder{color:#9ca3af}
+  .clear-search{background:none;border:none;color:#9ca3af;cursor:pointer;padding:4px;display:none;font-size:16px;line-height:1}
+  .clear-search.visible{display:block}
+  .sort-select{background:#fff;border:2px solid #e5e7eb;border-radius:12px;padding:12px 16px;font-size:13px;font-family:inherit;font-weight:600;color:#1a1a2e;cursor:pointer;outline:none;transition:border-color .2s}
+  .sort-select:focus{border-color:#2563eb}
+
+  /* Section headers */
+  .section-label{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:700;color:#2563eb;text-transform:uppercase;letter-spacing:.5px;margin-bottom:12px}
+  .section-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:28px;flex-wrap:wrap;gap:16px}
+  .section-title{font-size:28px;font-weight:800;color:#1a1a2e;margin-bottom:6px}
+  .section-subtitle{font-size:14px;color:#6b7280;line-height:1.6;max-width:600px}
+  .section-count{font-size:13px;font-weight:700;color:#2563eb;background:#eff6ff;padding:6px 14px;border-radius:20px;white-space:nowrap}
+
+  /* Category cards - Large */
+  .categories-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:50px}
+  .category-card{background:#fff;border:2px solid #e5e7eb;border-radius:16px;padding:24px 20px;text-decoration:none;color:inherit;transition:all .25s;position:relative;overflow:hidden;display:flex;flex-direction:column;gap:14px;cursor:pointer}
+  .category-card:hover{border-color:#2563eb;transform:translateY(-4px);box-shadow:0 12px 32px rgba(37,99,235,.15)}
+  .category-card:hover .category-icon{transform:scale(1.1) rotate(-5deg)}
+  .category-card::before{content:'';position:absolute;top:0;right:0;width:80px;height:80px;background:radial-gradient(circle,currentColor 0%,transparent 70%);opacity:.06;pointer-events:none}
+  .category-icon{width:56px;height:56px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;color:#fff;flex-shrink:0;transition:transform .3s;box-shadow:0 6px 16px rgba(0,0,0,.1)}
+  .category-info{display:flex;flex-direction:column;gap:4px}
+  .category-name{font-size:16px;font-weight:800;color:#1a1a2e}
+  .category-desc{font-size:12px;color:#6b7280;line-height:1.5;min-height:36px}
+  .category-meta{display:flex;justify-content:space-between;align-items:center;padding-top:12px;border-top:1px solid #f3f4f6;margin-top:auto}
+  .category-count-txt{font-size:12px;font-weight:700;color:#2563eb}
+  .category-arrow{width:28px;height:28px;border-radius:50%;background:#eff6ff;display:flex;align-items:center;justify-content:center;color:#2563eb;font-size:14px;transition:transform .2s}
+  .category-card:hover .category-arrow{transform:translateX(4px)}
+
+  /* Category color variants */
+  .cat-image{color:#10b981}
+  .cat-image .category-icon{background:linear-gradient(135deg,#34d399,#10b981)}
+  .cat-image .category-arrow{background:#d1fae5;color:#059669}
+  .cat-image:hover{border-color:#10b981;box-shadow:0 12px 32px rgba(16,185,129,.15)}
+  .cat-image .category-count-txt{color:#059669}
+
+  .cat-text{color:#3b82f6}
+  .cat-text .category-icon{background:linear-gradient(135deg,#60a5fa,#3b82f6)}
+  .cat-text .category-arrow{background:#dbeafe;color:#2563eb}
+  .cat-text:hover{border-color:#3b82f6;box-shadow:0 12px 32px rgba(59,130,246,.15)}
+  .cat-text .category-count-txt{color:#2563eb}
+
+  .cat-dev{color:#f97316}
+  .cat-dev .category-icon{background:linear-gradient(135deg,#fb923c,#f97316)}
+  .cat-dev .category-arrow{background:#ffedd5;color:#ea580c}
+  .cat-dev:hover{border-color:#f97316;box-shadow:0 12px 32px rgba(249,115,22,.15)}
+  .cat-dev .category-count-txt{color:#ea580c}
+
+  .cat-calc{color:#8b5cf6}
+  .cat-calc .category-icon{background:linear-gradient(135deg,#a78bfa,#8b5cf6)}
+  .cat-calc .category-arrow{background:#ede9fe;color:#7c3aed}
+  .cat-calc:hover{border-color:#8b5cf6;box-shadow:0 12px 32px rgba(139,92,246,.15)}
+  .cat-calc .category-count-txt{color:#7c3aed}
+
+  .cat-seo{color:#ef4444}
+  .cat-seo .category-icon{background:linear-gradient(135deg,#f87171,#ef4444)}
+  .cat-seo .category-arrow{background:#fee2e2;color:#dc2626}
+  .cat-seo:hover{border-color:#ef4444;box-shadow:0 12px 32px rgba(239,68,68,.15)}
+  .cat-seo .category-count-txt{color:#dc2626}
+
+  .cat-social{color:#ec4899}
+  .cat-social .category-icon{background:linear-gradient(135deg,#f472b6,#ec4899)}
+  .cat-social .category-arrow{background:#fce7f3;color:#db2777}
+  .cat-social:hover{border-color:#ec4899;box-shadow:0 12px 32px rgba(236,72,153,.15)}
+  .cat-social .category-count-txt{color:#db2777}
+
+  .cat-utility{color:#06b6d4}
+  .cat-utility .category-icon{background:linear-gradient(135deg,#22d3ee,#06b6d4)}
+  .cat-utility .category-arrow{background:#cffafe;color:#0891b2}
+  .cat-utility:hover{border-color:#06b6d4;box-shadow:0 12px 32px rgba(6,182,212,.15)}
+  .cat-utility .category-count-txt{color:#0891b2}
+
+  .cat-pdf{color:#dc2626}
+  .cat-pdf .category-icon{background:linear-gradient(135deg,#ef4444,#dc2626)}
+  .cat-pdf .category-arrow{background:#fee2e2;color:#b91c1c}
+  .cat-pdf:hover{border-color:#dc2626;box-shadow:0 12px 32px rgba(220,38,38,.15)}
+  .cat-pdf .category-count-txt{color:#b91c1c}
+
+  /* Popular tools */
+  .popular-section{margin-bottom:50px}
+  .popular-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+  .pop-tool{background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:16px;display:flex;gap:12px;align-items:center;text-decoration:none;color:inherit;transition:all .2s;position:relative}
+  .pop-tool:hover{border-color:#2563eb;box-shadow:0 6px 20px rgba(37,99,235,.1);transform:translateY(-2px)}
+  .pop-icon{width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;flex-shrink:0}
+  .pop-info{flex:1;min-width:0}
+  .pop-name{font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .pop-cat{font-size:10px;color:#9ca3af;font-weight:600;text-transform:uppercase;letter-spacing:.3px}
+
+  /* Category details grid */
+  .cat-detail-section{margin-bottom:50px}
+  .cat-detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  .cat-detail{background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:24px;transition:all .2s}
+  .cat-detail:hover{border-color:#2563eb;box-shadow:0 8px 24px rgba(37,99,235,.08)}
+  .cat-detail-header{display:flex;align-items:center;gap:14px;margin-bottom:16px;padding-bottom:16px;border-bottom:1px solid #f3f4f6}
+  .cat-detail-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;color:#fff;flex-shrink:0}
+  .cat-detail-title-wrap{flex:1}
+  .cat-detail-title{font-size:16px;font-weight:800;color:#1a1a2e;margin-bottom:2px}
+  .cat-detail-desc{font-size:12px;color:#6b7280;line-height:1.5}
+  .cat-detail-links{display:flex;flex-direction:column;gap:6px;margin-bottom:14px}
+  .cat-detail-links a{font-size:13px;color:#4b5563;text-decoration:none;padding:6px 10px;border-radius:6px;transition:all .2s;display:flex;align-items:center;gap:8px}
+  .cat-detail-links a:hover{background:#eff6ff;color:#2563eb;padding-left:14px}
+  .cat-detail-links a::before{content:'›';color:#2563eb;font-weight:700}
+  .cat-detail-more{font-size:12px;font-weight:700;color:#2563eb;text-decoration:none;display:inline-flex;align-items:center;gap:4px}
+  .cat-detail-more:hover{text-decoration:underline}
+
+  /* No results */
+  .no-results{display:none;text-align:center;padding:60px 20px;color:#6b7280;background:#fff;border-radius:16px;border:1px solid #e5e7eb}
+  .no-results.visible{display:block}
+  .no-results-icon{font-size:48px;margin-bottom:12px;opacity:.5}
+  .no-results h3{font-size:18px;font-weight:700;color:#1a1a2e;margin-bottom:8px}
+  .no-results p{font-size:14px}
+  .no-results a{color:#2563eb;font-weight:600;text-decoration:none}
+  .no-results a:hover{text-decoration:underline}
+
+  /* CTA */
+  .cta-block{background:linear-gradient(135deg,#2563eb,#4f46e5);border-radius:20px;padding:40px;text-align:center;color:#fff;position:relative;overflow:hidden;margin-top:30px}
+  .cta-block::before{content:'';position:absolute;top:-40px;right:-40px;width:200px;height:200px;background:rgba(255,255,255,.1);border-radius:50%}
+  .cta-block::after{content:'';position:absolute;bottom:-60px;left:-40px;width:240px;height:240px;background:rgba(255,255,255,.08);border-radius:50%}
+  .cta-block h2{font-size:24px;font-weight:800;margin-bottom:12px;position:relative;z-index:2}
+  .cta-block p{font-size:14px;color:rgba(255,255,255,.9);margin-bottom:24px;position:relative;z-index:2}
+  .cta-btn{display:inline-flex;align-items:center;gap:8px;background:#fff;color:#2563eb;padding:14px 28px;border-radius:10px;font-size:14px;font-weight:700;text-decoration:none;position:relative;z-index:2;transition:transform .2s}
+  .cta-btn:hover{transform:translateY(-2px)}
+
+  /* FOOTER */
+  .footer{background:#0a0e27;padding:60px 40px 30px;color:#fff;margin-top:60px}
+  .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:40px}
+  .footer-brand{display:flex;align-items:center;gap:8px;font-size:20px;font-weight:800;margin-bottom:12px}
+  .footer-brand span{color:#60a5fa}
+  .footer-tagline{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px}
+  .footer-social{display:flex;gap:12px}
+  .footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:16px;transition:background .2s}
+  .footer-social a:hover{background:rgba(255,255,255,.2)}
+  .footer-heading{font-size:14px;font-weight:700;margin-bottom:20px;color:#fff}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .footer-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;transition:color .2s}
+  .footer-links a:hover{color:#60a5fa}
+  .footer-bottom{max-width:1200px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  .footer-bottom-left{display:flex;gap:20px;font-size:12px;color:rgba(255,255,255,.5)}
+  .footer-bottom-right,.footer-bottom-links a{font-size:12px;color:rgba(255,255,255,.5);text-decoration:none}
+  .footer-bottom-links{display:flex;gap:20px}
+
+  /* RESPONSIVE */
+  @media(max-width:1200px){
+    .categories-grid{grid-template-columns:repeat(3,1fr)}
+    .popular-grid{grid-template-columns:repeat(3,1fr)}
+  }
+  @media(max-width:992px){
+    .header{padding:0 20px}.nav{display:none}
+    .hero{padding:40px 20px 50px}
+    .hero-title{font-size:34px}
+    .main-content{padding:40px 20px}
+    .categories-grid{grid-template-columns:repeat(2,1fr)}
+    .popular-grid{grid-template-columns:repeat(2,1fr)}
+    .cat-detail-grid{grid-template-columns:1fr}
+    .footer-inner{grid-template-columns:1fr 1fr}
+  }
+  @media(max-width:576px){
+    .header{padding:0 16px}.header-right .search-btn,.header-right .theme-btn{display:none}
+    .hero{padding:30px 16px 40px}
+    .hero-title{font-size:26px}
+    .hero-desc{font-size:14px}
+    .hero-stats{gap:20px}
+    .hero-stat-num{font-size:22px}
+    .main-content{padding:30px 16px}
+    .section-title{font-size:22px}
+    .categories-grid{grid-template-columns:1fr}
+    .popular-grid{grid-template-columns:1fr}
+    .toolbar{flex-direction:column;align-items:stretch}
+    .sort-select{width:100%}
+    .footer-inner{grid-template-columns:1fr}
+    .footer-bottom{flex-direction:column;text-align:center}
+  }
+
+  /* DARK MODE */
+  html[data-theme="dark"] body{background:#0f172a;color:#f1f5f9}
+  html[data-theme="dark"] .header,html[data-theme="dark"] .category-card,html[data-theme="dark"] .pop-tool,html[data-theme="dark"] .cat-detail,html[data-theme="dark"] .no-results{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .logo{color:#f1f5f9}
+  html[data-theme="dark"] .nav a{color:#cbd5e1}
+  html[data-theme="dark"] .section-title{color:#f1f5f9}
+  html[data-theme="dark"] .category-name,html[data-theme="dark"] .cat-detail-title,html[data-theme="dark"] .pop-name,html[data-theme="dark"] .no-results h3{color:#f1f5f9}
+  html[data-theme="dark"] .category-desc,html[data-theme="dark"] .cat-detail-desc,html[data-theme="dark"] .section-subtitle,html[data-theme="dark"] .no-results p{color:#94a3b8}
+  html[data-theme="dark"] .category-meta{border-color:#334155}
+  html[data-theme="dark"] .cat-detail-header{border-color:#334155}
+  html[data-theme="dark"] .cat-detail-links a{color:#cbd5e1}
+  html[data-theme="dark"] .cat-detail-links a:hover{background:#0f172a;color:#60a5fa}
+  html[data-theme="dark"] .search-box,html[data-theme="dark"] .sort-select{background:#1e293b;border-color:#334155;color:#f1f5f9}
+  html[data-theme="dark"] .search-box input{color:#f1f5f9}
+  html[data-theme="dark"] .section-count{background:#1e3a8a;color:#93c5fd}
+  html[data-theme="dark"] .category-card::before{opacity:.12}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "https://bigtoolz.com/tools/#webpage",
+      "url": "https://bigtoolz.com/tools/",
+      "name": "All Tools - 300+ Free Online Tools",
+      "description": "Browse 300+ free online tools across 8 categories.",
+      "isPartOf": {"@id": "https://bigtoolz.com/#website"}
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bigtoolz.com/"},
+        {"@type": "ListItem", "position": 2, "name": "All Tools", "item": "https://bigtoolz.com/tools/"}
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "name": "Categories",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Image Tools", "url": "https://bigtoolz.com/tools/image-tools/"},
+        {"@type": "ListItem", "position": 2, "name": "Text Tools", "url": "https://bigtoolz.com/tools/text-tools/"},
+        {"@type": "ListItem", "position": 3, "name": "Developer Tools", "url": "https://bigtoolz.com/tools/developer-tools/"},
+        {"@type": "ListItem", "position": 4, "name": "Calculator Tools", "url": "https://bigtoolz.com/tools/calculator-tools/"},
+        {"@type": "ListItem", "position": 5, "name": "SEO Tools", "url": "https://bigtoolz.com/tools/seo-tools/"},
+        {"@type": "ListItem", "position": 6, "name": "Social Tools", "url": "https://bigtoolz.com/tools/social-tools/"},
+        {"@type": "ListItem", "position": 7, "name": "Utility Tools", "url": "https://bigtoolz.com/tools/utility-tools/"},
+        {"@type": "ListItem", "position": 8, "name": "PDF Tools", "url": "https://bigtoolz.com/tools/pdf-tools/"}
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="header">
+  <div class="header-left">
+    <a href="/" class="logo"><div class="logo-icon">⚒</div>BigToolz</span></a>
+    <nav><ul class="nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/tools/" class="active">All Tools</a></li>
+      <li><a href="/tools/categories">Categories</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul></nav>
+  </div>
+  <div class="header-right">
+  
+    <button class="theme-btn" aria-label="Toggle theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
+    
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="hero-inner">
+    <nav class="breadcrumb">
+      <a href="/">Home</a><span class="sep">›</span>
+      <span class="current">All Tools</span>
+    </nav>
+    <div class="hero-badge">🔥 300+ Free Online Tools</div>
+    <h1 class="hero-title">All <span class="blue">Tools</span></h1>
+    <p class="hero-desc">
+      Browse 300+ free online tools across 8 categories. Every tool works in your browser no signup, no installation, no watermark.
+    </p>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="hero-stat-num">300+</div><div class="hero-stat-label">Tools</div></div>
+      <div class="hero-stat"><div class="hero-stat-num">8</div><div class="hero-stat-label">Categories</div></div>
+      <div class="hero-stat"><div class="hero-stat-num">100%</div><div class="hero-stat-label">Free</div></div>
+      <div class="hero-stat"><div class="hero-stat-num">0</div><div class="hero-stat-label">Uploads</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== MAIN ===== -->
+<main class="main-content">
+
+  <!-- Toolbar -->
+  <div class="toolbar">
+    <div class="toolbar-left">
+      <div class="search-box">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        <input type="text" id="toolSearch" placeholder="Search tools..." autocomplete="off">
+        <button class="clear-search" id="clearSearch" aria-label="Clear">✕</button>
+      </div>
+    </div>
+    <select class="sort-select" id="sortSelect">
+      <option value="popular">Sort: Most Popular</option>
+      <option value="az">Sort: A-Z</option>
+      <option value="za">Sort: Z-A</option>
+    </select>
+  </div>
+
+  <!-- ===== CATEGORIES SECTION ===== -->
+  <section class="category-section" id="categorySection">
+    <div class="section-header">
+      <div>
+        <div class="section-label">📂 Browse by Category</div>
+        <h2 class="section-title">Explore 300+ Tools in 8 Categories</h2>
+        <p class="section-subtitle">Find the perfect tool for your needs. Each category contains dozens of specialized tools.</p>
+      </div>
+      <span class="section-count">8 Categories</span>
+    </div>
+
+    <div class="categories-grid" id="categoriesGrid">
+
+      <a href="/tools/image-tools/" class="category-card cat-image" data-name="image tools">
+        <div class="category-icon">🖼</div>
+        <div class="category-info">
+          <div class="category-name">Image Tools</div>
+          <div class="category-desc">Compress, resize, crop, convert, edit and optimize images.</div>
+        </div>
+        <div class="category-meta">
+          <span class="category-count-txt">25 Tools</span>
+          <div class="category-arrow">→</div>
+        </div>
+      </a>
+
+      <a href="/tools/text-tools/" class="category-card cat-text" data-name="text tools">
+        <div class="category-icon">T</div>
+        <div class="category-info">
+          <div class="category-name">Text Tools</div>
+          <div class="category-desc">Count, convert, format, analyze and transform text content.</div>
+        </div>
+        <div class="category-meta">
+          <span class="category-count-txt">25 Tools</span>
+          <div class="category-arrow">→</div>
+        </div>
+      </a>
+
+      <a href="/tools/developer-tools/" class="category-card cat-dev" data-name="developer tools">
+        <div class="category-icon">&lt;/&gt;</div>
+        <div class="category-info">
+          <div class="category-name">Developer Tools</div>
+          <div class="category-desc">Format, minify, encode, validate code and data structures.</div>
+        </div>
+        <div class="category-meta">
+          <span class="category-count-txt">25 Tools</span>
+          <div class="category-arrow">→</div>
+        </div>
+      </a>
+
+      <a href="/tools/calculator-tools/" class="category-card cat-calc" data-name="calculator tools">
+        <div class="category-icon">🧮</div>
+        <div class="category-info">
+          <div class="category-name">Calculator Tools</div>
+          <div class="category-desc">Calculate EMI, BMI, age, tax, unit conversions and more.</div>
+        </div>
+        <div class="category-meta">
+          <span class="category-count-txt">25 Tools</span>
+          <div class="category-arrow">→</div>
+        </div>
+      </a>
+
+      <a href="/tools/seo-tools/" class="category-card cat-seo" data-name="seo tools">
+        <div class="category-icon">📈</div>
+        <div class="category-info">
+          <div class="category-name">SEO Tools</div>
+          <div class="category-desc">Analyze, optimize and improve your website's search rankings.</div>
+        </div>
+        <div class="category-meta">
+          <span class="category-count-txt">25 Tools</span>
+          <div class="category-arrow">→</div>
+        </div>
+      </a>
+
+      <a href="/tools/social-tools/" class="category-card cat-social" data-name="social tools">
+        <div class="category-icon">📱</div>
+        <div class="category-info">
+          <div class="category-name">Social Tools</div>
+          <div class="category-desc">Download, generate and manage content for social media.</div>
+        </div>
+        <div class="category-meta">
+          <span class="category-count-txt">25 Tools</span>
+          <div class="category-arrow">→</div>
+        </div>
+      </a>
+
+      <a href="/tools/utility-tools/" class="category-card cat-utility" data-name="utility tools">
+        <div class="category-icon">⚙️</div>
+        <div class="category-info">
+          <div class="category-name">Utility Tools</div>
+          <div class="category-desc">Passwords, generators, games, timers and everyday utilities.</div>
+        </div>
+        <div class="category-meta">
+          <span class="category-count-txt">50 Tools</span>
+          <div class="category-arrow">→</div>
+        </div>
+      </a>
+
+      <a href="/tools/pdf-tools/" class="category-card cat-pdf" data-name="pdf tools">
+        <div class="category-icon">📕</div>
+        <div class="category-info">
+          <div class="category-name">PDF Tools</div>
+          <div class="category-desc">Convert, merge, split, compress, protect and edit PDFs.</div>
+        </div>
+        <div class="category-meta">
+          <span class="category-count-txt">100 Tools</span>
+          <div class="category-arrow">→</div>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ===== POPULAR TOOLS ===== -->
+  <section class="popular-section" id="popularSection">
+    <div class="section-header">
+      <div>
+        <div class="section-label">⭐ Most Popular</div>
+        <h2 class="section-title">Trending Tools</h2>
+        <p class="section-subtitle">The most used tools by our community right now.</p>
+      </div>
+    </div>
+    <div class="popular-grid">
+
+      <a href="/tools/image-tools/image-compressor/" class="pop-tool" data-name="image compressor">
+        <div class="pop-icon" style="background:linear-gradient(135deg,#34d399,#10b981);">🖼</div>
+        <div class="pop-info">
+          <div class="pop-name">Image Compressor</div>
+          <div class="pop-cat">Image Tools</div>
+        </div>
+      </a>
+
+      <a href="/tools/pdf-tools/convert-pdf/jpg-to-pdf/" class="pop-tool" data-name="jpg to pdf">
+        <div class="pop-icon" style="background:linear-gradient(135deg,#ef4444,#dc2626);">📕</div>
+        <div class="pop-info">
+          <div class="pop-name">JPG to PDF</div>
+          <div class="pop-cat">PDF Tools</div>
+        </div>
+      </a>
+
+      <a href="/tools/pdf-tools/organize-pdf/merge-pdf/" class="pop-tool" data-name="merge pdf">
+        <div class="pop-icon" style="background:linear-gradient(135deg,#60a5fa,#3b82f6);">📚</div>
+        <div class="pop-info">
+          <div class="pop-name">Merge PDF</div>
+          <div class="pop-cat">PDF Tools</div>
+        </div>
+      </a>
+
+      <a href="/tools/text-tools/word-counter/" class="pop-tool" data-name="word counter">
+        <div class="pop-icon" style="background:linear-gradient(135deg,#60a5fa,#3b82f6);">T</div>
+        <div class="pop-info">
+          <div class="pop-name">Word Counter</div>
+          <div class="pop-cat">Text Tools</div>
+        </div>
+      </a>
+
+      <a href="/tools/image-tools/qr-code-generator/" class="pop-tool" data-name="qr code generator">
+        <div class="pop-icon" style="background:linear-gradient(135deg,#60a5fa,#3b82f6);">▦</div>
+        <div class="pop-info">
+          <div class="pop-name">QR Code Generator</div>
+          <div class="pop-cat">Image Tools</div>
+        </div>
+      </a>
+
+      <a href="/tools/utility-tools/password-generator/" class="pop-tool" data-name="password generator">
+        <div class="pop-icon" style="background:linear-gradient(135deg,#a78bfa,#8b5cf6);">🔒</div>
+        <div class="pop-info">
+          <div class="pop-name">Password Generator</div>
+          <div class="pop-cat">Utility Tools</div>
+        </div>
+      </a>
+
+      <a href="/tools/calculator-tools/age-calculator/" class="pop-tool" data-name="age calculator">
+        <div class="pop-icon" style="background:linear-gradient(135deg,#22d3ee,#06b6d4);">🎂</div>
+        <div class="pop-info">
+          <div class="pop-name">Age Calculator</div>
+          <div class="pop-cat">Calculator Tools</div>
+        </div>
+      </a>
+
+      <a href="/tools/developer-tools/json-formatter/" class="pop-tool" data-name="json formatter">
+        <div class="pop-icon" style="background:linear-gradient(135deg,#34d399,#10b981);">{ }</div>
+        <div class="pop-info">
+          <div class="pop-name">JSON Formatter</div>
+          <div class="pop-cat">Developer Tools</div>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ===== CATEGORY DETAILS ===== -->
+  <section class="cat-detail-section" id="catDetailSection">
+    <div class="section-header">
+      <div>
+        <div class="section-label">📖 Detailed Overview</div>
+        <h2 class="section-title">What You'll Find in Each Category</h2>
+        <p class="section-subtitle">Quick previews of the most useful tools in every category.</p>
+      </div>
+    </div>
+
+    <div class="cat-detail-grid">
+
+      <div class="cat-detail cat-image" data-name="image tools">
+        <div class="cat-detail-header">
+          <div class="cat-detail-icon" style="background:linear-gradient(135deg,#34d399,#10b981);">🖼</div>
+          <div class="cat-detail-title-wrap">
+            <div class="cat-detail-title">Image Tools 25 Tools</div>
+            <div class="cat-detail-desc">Everything you need to work with images.</div>
+          </div>
+        </div>
+        <div class="cat-detail-links">
+          <a href="/tools/image-tools/image-compressor/">Image Compressor</a>
+          <a href="/tools/image-tools/png-to-jpg/">PNG to JPG</a>
+          <a href="/tools/image-tools/image-resizer/">Image Resizer</a>
+          <a href="/tools/image-tools/qr-code-generator/">QR Code Generator</a>
+        </div>
+        <a href="/tools/image-tools/" class="cat-detail-more">View All 25 Image Tools →</a>
+      </div>
+
+      <div class="cat-detail cat-text" data-name="text tools">
+        <div class="cat-detail-header">
+          <div class="cat-detail-icon" style="background:linear-gradient(135deg,#60a5fa,#3b82f6);">T</div>
+          <div class="cat-detail-title-wrap">
+            <div class="cat-detail-title">Text Tools 25 Tools</div>
+            <div class="cat-detail-desc">Analyze, convert and transform text.</div>
+          </div>
+        </div>
+        <div class="cat-detail-links">
+          <a href="/tools/text-tools/word-counter/">Word Counter</a>
+          <a href="/tools/text-tools/case-converter/">Case Converter</a>
+          <a href="/tools/text-tools/lorem-ipsum/">Lorem Ipsum Generator</a>
+          <a href="/tools/text-tools/text-to-binary/">Text to Binary</a>
+        </div>
+        <a href="/tools/text-tools/" class="cat-detail-more">View All 25 Text Tools →</a>
+      </div>
+
+      <div class="cat-detail cat-dev" data-name="developer tools">
+        <div class="cat-detail-header">
+          <div class="cat-detail-icon" style="background:linear-gradient(135deg,#fb923c,#f97316);">&lt;/&gt;</div>
+          <div class="cat-detail-title-wrap">
+            <div class="cat-detail-title">Developer Tools 25 Tools</div>
+            <div class="cat-detail-desc">Format, minify and validate code.</div>
+          </div>
+        </div>
+        <div class="cat-detail-links">
+          <a href="/tools/developer-tools/json-formatter/">JSON Formatter</a>
+          <a href="/tools/developer-tools/html-formatter/">HTML Formatter</a>
+          <a href="/tools/developer-tools/base64-encoder/">Base64 Encoder</a>
+          <a href="/tools/developer-tools/meta-tag/">Meta Tag Generator</a>
+        </div>
+        <a href="/tools/developer-tools/" class="cat-detail-more">View All 25 Developer Tools →</a>
+      </div>
+
+      <div class="cat-detail cat-calc" data-name="calculator tools">
+        <div class="cat-detail-header">
+          <div class="cat-detail-icon" style="background:linear-gradient(135deg,#a78bfa,#8b5cf6);">🧮</div>
+          <div class="cat-detail-title-wrap">
+            <div class="cat-detail-title">Calculator Tools 25 Tools</div>
+            <div class="cat-detail-desc">Financial, health and unit conversions.</div>
+          </div>
+        </div>
+        <div class="cat-detail-links">
+          <a href="/tools/calculator-tools/percentage-calculator/">Percentage Calculator</a>
+          <a href="/tools/calculator-tools/age-calculator/">Age Calculator</a>
+          <a href="/tools/calculator-tools/loan-emi/">Loan EMI Calculator</a>
+          <a href="/tools/calculator-tools/bmi-calculator/">BMI Calculator</a>
+        </div>
+        <a href="/tools/calculator-tools/" class="cat-detail-more">View All 25 Calculator Tools →</a>
+      </div>
+
+      <div class="cat-detail cat-seo" data-name="seo tools">
+        <div class="cat-detail-header">
+          <div class="cat-detail-icon" style="background:linear-gradient(135deg,#f87171,#ef4444);">📈</div>
+          <div class="cat-detail-title-wrap">
+            <div class="cat-detail-title">SEO Tools 25 Tools</div>
+            <div class="cat-detail-desc">Optimize your site for search engines.</div>
+          </div>
+        </div>
+        <div class="cat-detail-links">
+          <a href="/tools/seo-tools/meta-description/">Meta Description Generator</a>
+          <a href="/tools/seo-tools/serp-preview/">SERP Preview</a>
+          <a href="/tools/seo-tools/schema-markup/">Schema Markup Generator</a>
+          <a href="/tools/seo-tools/utm-builder/">UTM Builder</a>
+        </div>
+        <a href="/tools/seo-tools/" class="cat-detail-more">View All 25 SEO Tools →</a>
+      </div>
+
+      <div class="cat-detail cat-social" data-name="social tools">
+        <div class="cat-detail-header">
+          <div class="cat-detail-icon" style="background:linear-gradient(135deg,#f472b6,#ec4899);">📱</div>
+          <div class="cat-detail-title-wrap">
+            <div class="cat-detail-title">Social Tools 25 Tools</div>
+            <div class="cat-detail-desc">Everything for social media creators.</div>
+          </div>
+        </div>
+        <div class="cat-detail-links">
+          <a href="/tools/social-tools/youtube-thumbnail/">YouTube Thumbnail</a>
+          <a href="/tools/social-tools/instagram-reels/">Instagram Reels Downloader</a>
+          <a href="/tools/social-tools/hashtag-generator/">Hashtag Generator</a>
+          <a href="/tools/social-tools/caption-generator/">Caption Generator</a>
+        </div>
+        <a href="/tools/social-tools/" class="cat-detail-more">View All 25 Social Tools →</a>
+      </div>
+
+      <div class="cat-detail cat-utility" data-name="utility tools">
+        <div class="cat-detail-header">
+          <div class="cat-detail-icon" style="background:linear-gradient(135deg,#22d3ee,#06b6d4);">⚙️</div>
+          <div class="cat-detail-title-wrap">
+            <div class="cat-detail-title">Utility Tools 50 Tools</div>
+            <div class="cat-detail-desc">Everyday tools, generators and games.</div>
+          </div>
+        </div>
+        <div class="cat-detail-links">
+          <a href="/tools/utility-tools/password-generator/">Password Generator</a>
+          <a href="/tools/utility-tools/coin-flip/">Coin Flip</a>
+          <a href="/tools/utility-tools/stopwatch/">Stopwatch</a>
+          <a href="/tools/utility-tools/wheel-names/">Wheel of Names</a>
+        </div>
+        <a href="/tools/utility-tools/" class="cat-detail-more">View All 50 Utility Tools →</a>
+      </div>
+
+      <div class="cat-detail cat-pdf" data-name="pdf tools">
+        <div class="cat-detail-header">
+          <div class="cat-detail-icon" style="background:linear-gradient(135deg,#ef4444,#dc2626);">📕</div>
+          <div class="cat-detail-title-wrap">
+            <div class="cat-detail-title">PDF Tools 100 Tools</div>
+            <div class="cat-detail-desc">The most complete PDF toolkit online.</div>
+          </div>
+        </div>
+        <div class="cat-detail-links">
+          <a href="/tools/pdf-tools/convert-pdf/jpg-to-pdf/">JPG to PDF</a>
+          <a href="/tools/pdf-tools/organize-pdf/merge-pdf/">Merge PDF</a>
+          <a href="/tools/pdf-tools/visual-pdf/compress-pdf/">Compress PDF</a>
+          <a href="/tools/pdf-tools/security-pdf/protect-pdf/">Protect PDF</a>
+        </div>
+        <a href="/tools/pdf-tools/" class="cat-detail-more">View All 100 PDF Tools →</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- No results -->
+  <div class="no-results" id="noResults">
+    <div class="no-results-icon">🔍</div>
+    <h3>No tools found</h3>
+    <p>Try different keywords or <a href="/">browse from the homepage</a>.</p>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-block">
+    <h2>Can't find what you're looking for?</h2>
+    <p>Tell us what tool you need we add new tools every week based on user requests.</p>
+    <a href="/contact" class="cta-btn">Request a Tool →</a>
+  </div>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand"><div class="logo-icon">⚒</div>BigToolz</span></div>
+      <p class="footer-tagline">Your Ultimate Online Tools Hub</p>
+      <div class="footer-social">
+        <a href="https://facebook.com/bigtoolz" aria-label="Facebook">f</a>
+        <a href="https://twitter.com/bigtoolz" aria-label="Twitter">𝕏</a>
+        <a href="https://youtube.com/@bigtoolz" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+    <div>
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/tools/">All Tools</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Categories</h3>
+      <ul class="footer-links">
+        <li><a href="/tools/image-tools/">Image Tools</a></li>
+        <li><a href="/tools/pdf-tools/">PDF Tools</a></li>
+        <li><a href="/tools/text-tools/">Text Tools</a></li>
+        <li><a href="/tools/developer-tools/">Developer Tools</a></li>
+        <li><a href="/tools/categories">All Categories →</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Legal</h3>
+      <ul class="footer-links">
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left"><span>✓ 100% Free</span><span>✓ No Sign Up</span><span>✓ No Installation</span></div>
+    <div class="footer-bottom-right">© 2026 BigToolz. All rights reserved.</div>
+    <div class="footer-bottom-links"><a href="/privacy-policy">Privacy</a><a href="/terms">Terms</a><a href="/disclaimer">Disclaimer</a></div>
+  </div>
+</footer>
+
+<script>
+'use strict';
+
+/* ===== THEME ===== */
+(function(){
+  try {
+    var t = localStorage.getItem('theme');
+    var d = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (t === 'dark' || (!t && d)) document.documentElement.setAttribute('data-theme', 'dark');
+    else if (t === 'light') document.documentElement.setAttribute('data-theme', 'light');
+  } catch(e) {}
+})();
+document.querySelector('.theme-btn')?.addEventListener('click', function() {
+  var h = document.documentElement;
+  var c = h.getAttribute('data-theme');
+  var d = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  var n = c === 'dark' ? 'light' : c === 'light' ? 'dark' : (d ? 'light' : 'dark');
+  h.setAttribute('data-theme', n);
+  try { localStorage.setItem('theme', n); } catch(e) {}
+});
+
+/* ===== LIVE SEARCH & FILTER ===== */
+var searchInput = document.getElementById('toolSearch');
+var clearSearch = document.getElementById('clearSearch');
+var categoryCards = Array.prototype.slice.call(document.querySelectorAll('.category-card'));
+var popTools = Array.prototype.slice.call(document.querySelectorAll('.pop-tool'));
+var catDetails = Array.prototype.slice.call(document.querySelectorAll('.cat-detail'));
+var categorySection = document.getElementById('categorySection');
+var popularSection = document.getElementById('popularSection');
+var catDetailSection = document.getElementById('catDetailSection');
+var noResults = document.getElementById('noResults');
+var sortSelect = document.getElementById('sortSelect');
+
+function performSearch() {
+  var q = searchInput.value.trim().toLowerCase();
+  clearSearch.classList.toggle('visible', q.length > 0);
+
+  if (!q) {
+    // Reset
+    categoryCards.forEach(function(c) { c.style.display = ''; });
+    popTools.forEach(function(t) { t.style.display = ''; });
+    catDetails.forEach(function(d) { d.style.display = ''; });
+    categorySection.style.display = '';
+    popularSection.style.display = '';
+    catDetailSection.style.display = '';
+    noResults.classList.remove('visible');
+    return;
+  }
+
+  var visibleCats = 0;
+  var visiblePops = 0;
+  var visibleDetails = 0;
+
+  categoryCards.forEach(function(card) {
+    var name = card.dataset.name || '';
+    var text = card.textContent.toLowerCase();
+    var match = name.indexOf(q) !== -1 || text.indexOf(q) !== -1;
+    card.style.display = match ? '' : 'none';
+    if (match) visibleCats++;
+  });
+
+  popTools.forEach(function(tool) {
+    var name = tool.dataset.name || '';
+    var text = tool.textContent.toLowerCase();
+    var match = name.indexOf(q) !== -1 || text.indexOf(q) !== -1;
+    tool.style.display = match ? '' : 'none';
+    if (match) visiblePops++;
+  });
+
+  catDetails.forEach(function(detail) {
+    var name = detail.dataset.name || '';
+    var text = detail.textContent.toLowerCase();
+    var match = name.indexOf(q) !== -1 || text.indexOf(q) !== -1;
+    detail.style.display = match ? '' : 'none';
+    if (match) visibleDetails++;
+  });
+
+  // Show/hide sections
+  categorySection.style.display = visibleCats > 0 ? '' : 'none';
+  popularSection.style.display = visiblePops > 0 ? '' : 'none';
+  catDetailSection.style.display = visibleDetails > 0 ? '' : 'none';
+  noResults.classList.toggle('visible', visibleCats + visiblePops + visibleDetails === 0);
+}
+
+searchInput.addEventListener('input', performSearch);
+
+clearSearch.addEventListener('click', function() {
+  searchInput.value = '';
+  performSearch();
+  searchInput.focus();
+});
+
+/* ===== SORT ===== */
+sortSelect.addEventListener('change', function() {
+  var mode = this.value;
+  var grid = document.getElementById('categoriesGrid');
+  var sorted = categoryCards.slice().sort(function(a, b) {
+    var an = (a.dataset.name || '').toLowerCase();
+    var bn = (b.dataset.name || '').toLowerCase();
+    if (mode === 'az') return an.localeCompare(bn);
+    if (mode === 'za') return bn.localeCompare(an);
+    return 0;
+  });
+  sorted.forEach(function(c) { grid.appendChild(c); });
+});
+
+/* ===== KEYBOARD ===== */
+document.addEventListener('keydown', function(e) {
+  // Ctrl+K or / to focus search
+  if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+    e.preventDefault();
+    searchInput.focus();
+  }
+});
+</script>
+
+</body>
+</html>

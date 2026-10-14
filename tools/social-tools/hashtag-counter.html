@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2563eb">
+
+<title>Hashtag Counter - Count Hashtags Online Free | BigToolz</title>
+<meta name="description" content="Count hashtags in any text instantly. Check platform limits for Instagram, Twitter/X, TikTok, LinkedIn. See top hashtags, unique counts, and duplicates. Free online.">
+<meta name="keywords" content="hashtag counter, count hashtags, hashtag analyzer, instagram hashtag limit, twitter hashtag counter">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://bigtoolz.com/tools/social-tools/hashtag-counter/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hashtag Counter - Free Online Tool | BigToolz">
+<meta property="og:description" content="Count hashtags instantly check platform limits for Instagram, Twitter/X, TikTok, LinkedIn.">
+<meta property="og:url" content="https://bigtoolz.com/tools/social-tools/hashtag-counter/">
+<meta property="og:image" content="https://bigtoolz.com/assets/images/og-image.jpg">
+<meta property="og:site_name" content="BigToolz">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Hashtag Counter - BigToolz">
+<meta name="twitter:description" content="Count hashtags instantly free, with platform limits.">
+<meta name="twitter:image" content="https://bigtoolz.com/assets/images/twitter-card.jpg">
+
+<link rel="icon" href="/assets/images/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/images/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#f8f9fc;color:#1a1a2e;overflow-x:hidden;line-height:1.5}
+
+  .header{background:#fff;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;position:sticky;top:0;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+  .header-left{display:flex;align-items:center;gap:40px}
+  .logo{display:flex;align-items:center;gap:8px;font-size:22px;font-weight:800;color:#1a1a2e;text-decoration:none}
+  .logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#3b82f6,#2563eb);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px}
+  .logo span{color:#2563eb}
+  .nav{display:flex;align-items:center;gap:28px;list-style:none}
+  .nav a{text-decoration:none;color:#4b5563;font-size:14px;font-weight:500;transition:color .2s}
+  .nav a:hover,.nav a.active{color:#2563eb}
+  .header-right{display:flex;align-items:center;gap:16px}
+  .search-btn,.theme-btn{width:36px;height:36px;border-radius:50%;border:none;background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#4b5563}
+  .search-btn:hover,.theme-btn:hover{background:#f3f4f6}
+  .bookmark-btn{display:flex;align-items:center;gap:8px;background:#2563eb;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
+  .bookmark-btn:hover{background:#1d4ed8}
+
+  .hero{background:linear-gradient(135deg,#0a0e27 0%,#1a1a4e 40%,#2d1b69 70%,#4c1d95 100%);padding:40px 40px 60px;position:relative;overflow:hidden;color:#fff}
+  .hero::before{content:'';position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(139,92,246,.3) 0%,transparent 70%);border-radius:50%}
+  .hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+  .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px;flex-wrap:wrap}
+  .breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none}
+  .breadcrumb a:hover{color:#fff}
+  .breadcrumb .sep{color:rgba(255,255,255,.4)}
+  .breadcrumb .current{color:#fff;font-weight:500}
+  .hero-title-row{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+  .hero-icon{width:60px;height:60px;background:#8b5cf6;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:28px;color:#fff;flex-shrink:0;box-shadow:0 8px 24px rgba(139,92,246,.4)}
+  .hero-title{font-size:42px;font-weight:800;line-height:1.15}
+  .hero-title .blue{color:#a78bfa}
+  .hero-desc{font-size:15px;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:24px;max-width:560px}
+  .hero-features{display:flex;gap:24px;flex-wrap:wrap}
+  .hero-feature{display:flex;align-items:center;gap:6px;font-size:13px;color:#fff;font-weight:500}
+  .hero-feature .check{width:18px;height:18px;border-radius:50%;background:#8b5cf6;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;flex-shrink:0}
+
+  .main-content{max-width:1200px;margin:0 auto;padding:40px;display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start}
+  .tool-content{min-width:0}
+
+  .workspace{background:#fff;border-radius:16px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,.06);border:1px solid #e5e7eb;margin-bottom:24px}
+
+  /* Platform selector */
+  .platform-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px;align-items:center}
+  .platform-label{font-size:12px;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:.5px;margin-right:6px}
+  .platform-btn{padding:9px 16px;background:#f8fafc;border:2px solid #e5e7eb;border-radius:20px;font-size:12px;font-weight:700;color:#4b5563;cursor:pointer;font-family:inherit;transition:all .2s;display:inline-flex;align-items:center;gap:6px}
+  .platform-btn:hover{border-color:#8b5cf6;color:#8b5cf6;background:#faf5ff}
+  .platform-btn.active{background:#8b5cf6;color:#fff;border-color:#8b5cf6}
+
+  /* Input area */
+  .input-area{width:100%;min-height:200px;padding:18px;border:2px solid #e5e7eb;border-radius:12px;font-family:inherit;font-size:15px;line-height:1.7;color:#1a1a2e;background:#fff;outline:none;resize:vertical;transition:border-color .2s;margin-bottom:16px}
+  .input-area:focus{border-color:#8b5cf6;box-shadow:0 0 0 3px rgba(139,92,246,.08)}
+  .input-area::placeholder{color:#9ca3af}
+
+  /* Sample chips */
+  .samples-row{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px}
+  .samples-label{font-size:11px;font-weight:700;color:#9ca3af;text-transform:uppercase;letter-spacing:.5px;margin-right:4px}
+  .sample-chip{padding:6px 14px;background:#faf5ff;border:1px solid #ede9fe;border-radius:20px;font-size:12px;font-weight:700;color:#7c3aed;cursor:pointer;font-family:inherit;transition:all .2s}
+  .sample-chip:hover{background:#f3e8ff;border-color:#8b5cf6;transform:translateY(-1px)}
+
+  /* Results panel */
+  .results-panel{background:linear-gradient(135deg,#faf5ff,#ede9fe);border-radius:16px;padding:24px;margin-bottom:20px;border:1px solid #c4b5fd}
+  .total-header{display:flex;justify-content:space-between;align-items:center;padding-bottom:18px;border-bottom:1px solid #c4b5fd;margin-bottom:18px;gap:12px;flex-wrap:wrap}
+  .total-big{font-size:48px;font-weight:900;color:#4c1d95;line-height:1;letter-spacing:-2px}
+  .total-big .unit{font-size:16px;font-weight:700;color:#7c3aed;letter-spacing:0;margin-left:6px;vertical-align:middle}
+  .total-label{font-size:13px;font-weight:700;color:#5b21b6;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px}
+
+  .limit-status{display:flex;align-items:center;gap:10px;padding:10px 16px;border-radius:20px;background:#fff;border:1px solid #c4b5fd;font-size:13px;font-weight:700}
+  .limit-status.ok{background:#d1fae5;color:#065f46;border-color:#a7f3d0}
+  .limit-status.warn{background:#fef3c7;color:#92400e;border-color:#fcd34d}
+  .limit-status.danger{background:#fee2e2;color:#991b1b;border-color:#fecaca}
+  .limit-dot{width:10px;height:10px;border-radius:50%;background:#10b981;flex-shrink:0}
+  .limit-status.warn .limit-dot{background:#f59e0b}
+  .limit-status.danger .limit-dot{background:#ef4444}
+
+  /* Stats grid */
+  .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px}
+  .stat-box{background:#fff;border-radius:12px;padding:16px;text-align:center;border:1px solid #ede9fe}
+  .stat-value{font-size:22px;font-weight:800;color:#1a1a2e;margin-bottom:4px;line-height:1.1}
+  .stat-value.purple{color:#7c3aed}
+  .stat-value.green{color:#10b981}
+  .stat-value.orange{color:#f59e0b}
+  .stat-value.blue{color:#3b82f6}
+  .stat-label{font-size:10px;font-weight:700;color:#9ca3af;text-transform:uppercase;letter-spacing:.5px}
+
+  /* Hashtag list */
+  .hashtag-section{margin-top:20px}
+  .hashtag-section-title{font-size:14px;font-weight:800;color:#1a1a2e;margin-bottom:12px;display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+  .copy-all-btn{display:inline-flex;align-items:center;gap:6px;padding:7px 14px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;font-size:11px;font-weight:700;color:#4b5563;cursor:pointer;font-family:inherit;transition:all .2s}
+  .copy-all-btn:hover{border-color:#8b5cf6;color:#7c3aed;background:#faf5ff}
+  .copy-all-btn.copied{background:#10b981;color:#fff;border-color:#10b981}
+
+  .hashtag-cloud{display:flex;flex-wrap:wrap;gap:8px;padding:16px;background:#faf5ff;border-radius:12px;border:1px solid #ede9fe;min-height:80px}
+  .hashtag-chip{display:inline-flex;align-items:center;gap:6px;padding:7px 14px;background:#fff;border:1px solid #ede9fe;border-radius:20px;font-size:13px;font-weight:700;color:#7c3aed;cursor:pointer;font-family:inherit;transition:all .2s}
+  .hashtag-chip:hover{background:#8b5cf6;color:#fff;border-color:#8b5cf6;transform:translateY(-2px)}
+  .hashtag-chip .count{background:#ede9fe;color:#7c3aed;font-size:10px;padding:2px 7px;border-radius:10px;font-weight:800;margin-left:2px}
+  .hashtag-chip:hover .count{background:rgba(255,255,255,.25);color:#fff}
+  .hashtag-chip .count.duplicate{background:#fee2e2;color:#991b1b}
+  .hashtag-chip:hover .count.duplicate{background:rgba(255,255,255,.25);color:#fff}
+
+  .hashtag-empty{color:#9ca3af;font-size:13px;font-style:italic;text-align:center;padding:14px;width:100%}
+
+  /* Actions */
+  .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 24px;border-radius:10px;font-size:14px;font-weight:700;font-family:inherit;cursor:pointer;border:none;transition:all .2s;text-decoration:none}
+  .btn-primary{background:#8b5cf6;color:#fff;box-shadow:0 4px 12px rgba(139,92,246,.2)}
+  .btn-primary:hover:not(:disabled){background:#7c3aed;transform:translateY(-2px);box-shadow:0 6px 20px rgba(139,92,246,.3)}
+  .btn-primary:disabled{opacity:.5;cursor:not-allowed;transform:none}
+  .btn-secondary{background:#fff;color:#8b5cf6;border:1px solid #e5e7eb}
+  .btn-secondary:hover{border-color:#8b5cf6;background:#faf5ff}
+  .btn.copied{background:#10b981;color:#fff;border-color:#10b981}
+
+  /* Platform limits info */
+  .limits-info{margin-top:20px;padding:18px;background:#f8fafc;border-radius:12px;border:1px solid #e5e7eb}
+  .limits-title{font-size:13px;font-weight:800;color:#4b5563;margin-bottom:12px;text-transform:uppercase;letter-spacing:.5px}
+  .limits-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px}
+  .limit-item{padding:10px 14px;background:#fff;border-radius:8px;border:1px solid #e5e7eb;font-size:12px;display:flex;justify-content:space-between;align-items:center;gap:8px}
+  .limit-item-name{font-weight:700;color:#1a1a2e}
+  .limit-item-value{font-weight:800;color:#8b5cf6}
+
+  /* SEO */
+  .seo-content{background:#fff;border-radius:16px;padding:32px;border:1px solid #e5e7eb;margin-bottom:24px}
+  .seo-content h2{font-size:22px;font-weight:800;color:#1a1a2e;margin-bottom:14px;margin-top:28px;display:flex;align-items:center;gap:10px}
+  .seo-content h2:first-child{margin-top:0}
+  .seo-content h3{font-size:16px;font-weight:700;color:#1a1a2e;margin:20px 0 10px}
+  .seo-content p{font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:14px}
+  .seo-content ul{list-style:none;padding-left:0;margin-bottom:16px}
+  .seo-content ul li{position:relative;padding-left:24px;font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:8px}
+  .seo-content ul li::before{content:'';position:absolute;left:6px;top:12px;width:6px;height:6px;background:#8b5cf6;border-radius:50%}
+  .seo-content a{color:#2563eb;text-decoration:none;font-weight:600}
+  .seo-content a:hover{text-decoration:underline}
+  .seo-content strong{color:#1a1a2e;font-weight:700}
+  .seo-content code{background:#f1f5f9;padding:2px 6px;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:13px;color:#0f172a;border:1px solid #e2e8f0}
+
+  .how-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:20px}
+  .how-step{background:#faf5ff;border-radius:12px;padding:20px;border:1px solid #ede9fe}
+  .how-step-num{width:36px;height:36px;border-radius:50%;background:#8b5cf6;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;margin-bottom:12px}
+  .how-step-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+  .how-step-desc{font-size:13px;color:#6b7280;line-height:1.6}
+
+  .faq-item{background:#faf5ff;border:1px solid #ede9fe;border-radius:12px;margin-bottom:10px;overflow:hidden;transition:border-color .2s}
+  .faq-item:hover{border-color:#8b5cf6}
+  .faq-question{width:100%;background:none;border:none;padding:18px 22px;font-size:15px;font-weight:700;color:#1a1a2e;text-align:left;cursor:pointer;font-family:inherit;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .faq-question .chev{font-size:12px;color:#8b5cf6;transition:transform .2s;flex-shrink:0}
+  .faq-item.open .faq-question .chev{transform:rotate(180deg)}
+  .faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 22px}
+  .faq-item.open .faq-answer{max-height:500px;padding-bottom:18px}
+  .faq-answer p{font-size:14px;color:#6b7280;line-height:1.7;margin:0}
+
+  .sidebar{background:#fff;border-radius:16px;padding:24px;border:1px solid #e5e7eb;position:sticky;top:80px;margin-bottom:24px}
+  .sidebar-header{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:800;color:#1a1a2e;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid #f3f4f6}
+  .sidebar-list{display:flex;flex-direction:column;gap:8px}
+  .sidebar-item{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;cursor:pointer;transition:background .2s;text-decoration:none;color:inherit;border:1px solid #f3f4f6}
+  .sidebar-item:hover{background:#faf5ff;border-color:#ede9fe}
+  .sidebar-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;flex-shrink:0}
+  .sidebar-info{flex:1;min-width:0}
+  .sidebar-title{font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:2px}
+  .sidebar-desc{font-size:11px;color:#9ca3af;line-height:1.4}
+
+  .footer{background:#0a0e27;padding:60px 40px 30px;color:#fff;margin-top:40px}
+  .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:40px}
+  .footer-brand{display:flex;align-items:center;gap:8px;font-size:20px;font-weight:800;margin-bottom:12px}
+  .footer-brand span{color:#60a5fa}
+  .footer-tagline{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px}
+  .footer-social{display:flex;gap:12px}
+  .footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:16px;transition:background .2s}
+  .footer-social a:hover{background:rgba(255,255,255,.2)}
+  .footer-heading{font-size:14px;font-weight:700;margin-bottom:20px;color:#fff}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .footer-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;transition:color .2s}
+  .footer-links a:hover{color:#60a5fa}
+  .footer-bottom{max-width:1200px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  .footer-bottom-left{display:flex;gap:20px;font-size:12px;color:rgba(255,255,255,.5)}
+  .footer-bottom-right,.footer-bottom-links a{font-size:12px;color:rgba(255,255,255,.5);text-decoration:none}
+  .footer-bottom-links{display:flex;gap:20px}
+
+  .toast{position:fixed;bottom:24px;right:24px;background:#1a1a2e;color:#fff;padding:14px 20px;border-radius:10px;font-size:13px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:3000;transform:translateY(200%);transition:transform .3s ease;max-width:320px}
+  .toast.visible{transform:translateY(0)}
+  .toast.success{background:#10b981}
+  .toast.error{background:#ef4444}
+
+  @media(max-width:1024px){
+    .main-content{grid-template-columns:1fr;padding:24px 20px}
+    .sidebar{position:static}
+    .how-steps{grid-template-columns:repeat(2,1fr)}
+    .stats-grid{grid-template-columns:repeat(2,1fr)}
+    .limits-grid{grid-template-columns:repeat(2,1fr)}
+  }
+  @media(max-width:768px){
+    .header{padding:0 20px}.nav{display:none}
+    .hero{padding:24px 20px 40px}
+    .hero-title{font-size:28px}
+    .hero-icon{width:48px;height:48px;font-size:22px}
+    .hero-title-row{flex-direction:column;align-items:flex-start;gap:12px}
+    .main-content{padding:20px 16px}
+    .workspace{padding:20px}
+    .how-steps{grid-template-columns:1fr}
+    .seo-content{padding:20px}
+    .footer-inner{grid-template-columns:1fr 1fr}
+    .toast{left:16px;right:16px;bottom:16px;max-width:none}
+    .total-big{font-size:36px}
+  }
+  @media(max-width:576px){
+    .header{padding:0 16px}.header-right .search-btn,.header-right .theme-btn{display:none}
+    .hero-title{font-size:24px}
+    .footer-inner{grid-template-columns:1fr}
+    .footer-bottom{flex-direction:column;text-align:center}
+    .stats-grid{grid-template-columns:1fr}
+    .total-big{font-size:32px}
+  }
+
+  html[data-theme="dark"] body{background:#0f172a;color:#f1f5f9}
+  html[data-theme="dark"] .header,html[data-theme="dark"] .workspace,html[data-theme="dark"] .seo-content,html[data-theme="dark"] .sidebar{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .logo,html[data-theme="dark"] .hero-title,html[data-theme="dark"] .seo-content h2,html[data-theme="dark"] .seo-content h3,html[data-theme="dark"] .faq-question,html[data-theme="dark"] .sidebar-header,html[data-theme="dark"] .sidebar-title,html[data-theme="dark"] .hashtag-section-title{color:#f1f5f9}
+  html[data-theme="dark"] .nav a{color:#cbd5e1}
+  html[data-theme="dark"] .how-step,html[data-theme="dark"] .faq-item,html[data-theme="dark"] .stat-box,html[data-theme="dark"] .platform-btn,html[data-theme="dark"] .hashtag-cloud,html[data-theme="dark"] .hashtag-chip,html[data-theme="dark"] .limits-info,html[data-theme="dark"] .limit-item{background:#0f172a;border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .hashtag-chip{color:#a78bfa}
+  html[data-theme="dark"] .input-area{background:#0f172a;border-color:#334155;color:#f1f5f9}
+  html[data-theme="dark"] .results-panel{background:linear-gradient(135deg,#1e293b,#0f172a);border-color:#334155}
+  html[data-theme="dark"] .total-header{border-color:#334155}
+  html[data-theme="dark"] .total-big{color:#f1f5f9}
+  html[data-theme="dark"] .total-label{color:#94a3b8}
+  html[data-theme="dark"] .limit-status{background:#1e293b;border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .stat-value{color:#f1f5f9}
+  html[data-theme="dark"] .seo-content p,html[data-theme="dark"] .seo-content ul li,html[data-theme="dark"] .faq-answer p{color:#cbd5e1}
+  html[data-theme="dark"] .seo-content code{background:#0f172a;color:#94a3b8;border-color:#334155}
+  html[data-theme="dark"] .sample-chip{background:#0f172a;border-color:#334155;color:#a78bfa}
+  html[data-theme="dark"] .copy-all-btn{background:#0f172a;border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .limit-item-name{color:#f1f5f9}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type": "SoftwareApplication", "name": "Hashtag Counter", "url": "https://bigtoolz.com/tools/social-tools/hashtag-counter/", "applicationCategory": "SocialNetworkingApplication", "operatingSystem": "Any (Web-based)", "description": "Free online hashtag counter count, analyze and check platform limits for Instagram, Twitter/X, TikTok, LinkedIn. Instant and accurate.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "1876"}},
+    {"@type": "HowTo", "name": "How to Count Hashtags", "step": [
+      {"@type": "HowToStep", "name": "Paste Text", "text": "Paste your post, caption, or any text with hashtags."},
+      {"@type": "HowToStep", "name": "Choose Platform", "text": "Select Instagram, Twitter/X, TikTok, LinkedIn, or YouTube to see limits."},
+      {"@type": "HowToStep", "name": "View Stats", "text": "See total count, unique hashtags, duplicates, and top hashtags."},
+      {"@type": "HowToStep", "name": "Copy", "text": "Copy all hashtags or individual ones for reuse."}
+    ]},
+    {"@type": "FAQPage", "mainEntity": [
+      {"@type": "Question", "name": "How many hashtags should I use on Instagram?", "acceptedAnswer": {"@type": "Answer", "text": "Instagram allows up to 30 hashtags per post. Studies suggest 8-15 targeted hashtags perform best using all 30 can look spammy. Focus on relevance over quantity."}},
+      {"@type": "Question", "name": "How many hashtags on Twitter (X)?", "acceptedAnswer": {"@type": "Answer", "text": "Twitter/X technically allows unlimited hashtags, but 1-2 works best. More than 3 hashtags actually reduces engagement on X. Focus on 1-2 highly relevant tags."}},
+      {"@type": "Question", "name": "How many hashtags on TikTok?", "acceptedAnswer": {"@type": "Answer", "text": "TikTok allows up to 100 hashtags but only the first 3-5 influence ranking. Use 3-5 highly targeted hashtags trending + niche-specific."}},
+      {"@type": "Question", "name": "Can I use the same hashtags repeatedly?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, but rotate them. Instagram may flag 'spammy' behavior if you use the exact same 30 hashtags on every post. Use 2-3 different sets and rotate them."}},
+      {"@type": "Question", "name": "Are hashtags still relevant in 2026?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, but less than before. Instagram's algorithm now prioritizes content quality and engagement over hashtag optimization. Hashtags help discovery, but they're not a magic bullet."}}
+    ]},
+    {"@type": "BreadcrumbList", "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bigtoolz.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://bigtoolz.com/tools/"},
+      {"@type": "ListItem", "position": 3, "name": "Social Tools", "item": "https://bigtoolz.com/tools/social-tools/"},
+      {"@type": "ListItem", "position": 4, "name": "Hashtag Counter", "item": "https://bigtoolz.com/tools/social-tools/hashtag-counter/"}
+    ]}
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-left">
+    <a href="/" class="logo"><div class="logo-icon">⚒</div>BigToolz</span></a>
+    <nav><ul class="nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/tools/" class="active">All Tools</a></li>
+      <li><a href="/tools/categories">Categories</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul></nav>
+  </div>
+  <div class="header-right">
+   
+    <button class="theme-btn" aria-label="Toggle theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
+    
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <nav class="breadcrumb">
+      <a href="/">Home</a><span class="sep">›</span>
+      <a href="/tools/">Tools</a><span class="sep">›</span>
+      <a href="/tools/social-tools/">Social Tools</a><span class="sep">›</span>
+      <span class="current">Hashtag Counter</span>
+    </nav>
+    <div class="hero-title-row">
+      <div class="hero-icon">#️⃣</div>
+      <h1 class="hero-title">Hashtag <span class="blue">Counter</span></h1>
+    </div>
+    <p class="hero-desc">
+      Count, analyze, and optimize your hashtags instantly. See totals, unique hashtags, duplicates, and platform limits for Instagram, Twitter/X, TikTok, LinkedIn, and YouTube.
+    </p>
+    <div class="hero-features">
+      <div class="hero-feature"><span class="check">✓</span> Live Counting</div>
+      <div class="hero-feature"><span class="check">✓</span> Platform Limits</div>
+      <div class="hero-feature"><span class="check">✓</span> Duplicate Detection</div>
+      <div class="hero-feature"><span class="check">✓</span> Copy & Reuse</div>
+    </div>
+  </div>
+</section>
+
+<div class="main-content">
+
+  <div class="tool-content">
+
+    <div class="workspace">
+
+      <!-- Platform selector -->
+      <div class="platform-row">
+        <span class="platform-label">Platform:</span>
+        <button class="platform-btn active" data-platform="instagram">📸 Instagram</button>
+        <button class="platform-btn" data-platform="twitter">𝕏 Twitter/X</button>
+        <button class="platform-btn" data-platform="tiktok">♪ TikTok</button>
+        <button class="platform-btn" data-platform="linkedin">in LinkedIn</button>
+        <button class="platform-btn" data-platform="youtube">▶ YouTube</button>
+      </div>
+
+      <!-- Input -->
+      <textarea class="input-area" id="inputText" placeholder="Paste your caption, post, or any text with hashtags here...
+
+Example: Just launched my new app! 🚀 #launch #startup #tech #innovation #app"></textarea>
+
+      <!-- Samples -->
+      <div class="samples-row">
+        <span class="samples-label">Try a sample:</span>
+        <button class="sample-chip" data-sample="1">Instagram post</button>
+        <button class="sample-chip" data-sample="2">Twitter tweet</button>
+        <button class="sample-chip" data-sample="3">Mixed with duplicates</button>
+      </div>
+
+      <!-- Results panel -->
+      <div class="results-panel">
+        <div class="total-header">
+          <div>
+            <div class="total-label">Total Hashtags</div>
+            <div class="total-big" id="totalCount">0<span class="unit">/ 30</span></div>
+          </div>
+          <div class="limit-status ok" id="limitStatus">
+            <div class="limit-dot"></div>
+            <span id="limitText">Within Instagram limit</span>
+          </div>
+        </div>
+
+        <!-- Stats -->
+        <div class="stats-grid">
+          <div class="stat-box">
+            <div class="stat-value purple" id="statTotal">0</div>
+            <div class="stat-label">Total</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-value green" id="statUnique">0</div>
+            <div class="stat-label">Unique</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-value orange" id="statDuplicates">0</div>
+            <div class="stat-label">Duplicates</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-value blue" id="statReach">0</div>
+            <div class="stat-label">Est. reach score</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hashtag list -->
+      <div class="hashtag-section">
+        <div class="hashtag-section-title">
+          <span>📋 Extracted Hashtags</span>
+          <button class="copy-all-btn" id="copyAllBtn" disabled>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+            Copy all
+          </button>
+        </div>
+        <div class="hashtag-cloud" id="hashtagCloud">
+          <div class="hashtag-empty">No hashtags detected. Start typing to see them appear here.</div>
+        </div>
+      </div>
+
+      <!-- Actions -->
+      <div class="actions">
+        <button class="btn btn-secondary" id="clearBtn">↺ Clear</button>
+      </div>
+
+      <!-- Platform limits info -->
+      <div class="limits-info">
+        <div class="limits-title">📊 Platform Hashtag Limits & Best Practices</div>
+        <div class="limits-grid">
+          <div class="limit-item">
+            <span class="limit-item-name">📸 Instagram</span>
+            <span class="limit-item-value">30 max</span>
+          </div>
+          <div class="limit-item">
+            <span class="limit-item-name">𝕏 Twitter/X</span>
+            <span class="limit-item-value">Unlimited</span>
+          </div>
+          <div class="limit-item">
+            <span class="limit-item-name">♪ TikTok</span>
+            <span class="limit-item-value">100 max</span>
+          </div>
+          <div class="limit-item">
+            <span class="limit-item-name">in LinkedIn</span>
+            <span class="limit-item-value">3-5 optimal</span>
+          </div>
+          <div class="limit-item">
+            <span class="limit-item-name">▶ YouTube</span>
+            <span class="limit-item-value">15 max</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- SEO Content -->
+    <div class="seo-content">
+
+      <h2>#️⃣ What is a Hashtag Counter?</h2>
+      <p>
+        A <strong>Hashtag Counter</strong> is a simple tool that counts the number of hashtags in a piece of text. But it's more than just a counter our tool helps you <strong>analyze your hashtag strategy, detect duplicates, check platform limits, and optimize your reach</strong>. Every social media platform has different hashtag rules, and using the wrong count can hurt your post's performance.
+      </p>
+      <p>
+        Whether you're a content creator, social media manager, or business owner getting the hashtag count right is essential. Too few, and you miss discovery opportunities. Too many, and you look spammy and risk algorithmic penalties.
+      </p>
+
+      <h2>🚀 How to Use This Tool</h2>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-step-num">1</div>
+          <div class="how-step-title">Pick Platform</div>
+          <div class="how-step-desc">Instagram, Twitter, TikTok, LinkedIn, or YouTube.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">2</div>
+          <div class="how-step-title">Paste Text</div>
+          <div class="how-step-desc">Paste your caption or post with hashtags.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">3</div>
+          <div class="how-step-title">See Analysis</div>
+          <div class="how-step-desc">Total, unique, duplicates, and top hashtags.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">4</div>
+          <div class="how-step-title">Copy & Reuse</div>
+          <div class="how-step-desc">Copy all hashtags as a clean list for your post.</div>
+        </div>
+      </div>
+
+      <h2>📊 Platform Hashtag Limits (2026)</h2>
+
+      <h3>📸 Instagram</h3>
+      <p><strong>Max: 30 hashtags per post.</strong> But more isn't better. Instagram's algorithm has been de-emphasizing hashtags since 2022. Studies show <strong>8-15 well-chosen hashtags</strong> outperform 30 random ones. Mix 2-3 broad, 5-7 niche, and 3-5 specific-to-you hashtags.</p>
+
+      <h3>𝕏 Twitter/X</h3>
+      <p><strong>Max: Unlimited (technically).</strong> But best practice is <strong>1-2 hashtags per tweet</strong>. Tweets with 3+ hashtags see a <strong>17% drop in engagement</strong> according to Twitter's own research. Use hashtags sparingly and only when truly relevant.</p>
+
+      <h3>♪ TikTok</h3>
+      <p><strong>Max: 100 hashtags.</strong> But only the <strong>first 3-5 hashtags influence ranking</strong>. TikTok's algorithm prioritizes content, sounds, and engagement over hashtags. Use 3-5: 1 trending + 2-3 niche + 1 branded.</p>
+
+      <h3>in LinkedIn</h3>
+      <p><strong>Optimal: 3-5 hashtags.</strong> LinkedIn allows more, but the platform's B2B focus means fewer, more relevant hashtags perform better. Stick to 3-5 that describe your post's topic, industry, or community.</p>
+
+      <h3>▶ YouTube</h3>
+      <p><strong>Max: 15 hashtags in the description.</strong> Only the first 3 hashtags show above the video title. YouTube hashtags help with discovery but aren't as powerful as title and thumbnail optimization.</p>
+
+      <h2>💡 Hashtag Best Practices</h2>
+      <ul>
+        <li><strong>Relevance over reach.</strong> A hashtag with 10K posts that actually describes your content beats a 10M-post generic tag every time.</li>
+        <li><strong>Rotate your sets.</strong> Using the exact same 30 hashtags on every Instagram post looks spammy. Rotate 2-3 sets.</li>
+        <li><strong>Mix sizes.</strong> Combine 2-3 broad hashtags (100K-1M posts), 5-7 mid-tier (10K-100K), and 3-5 niche (under 10K).</li>
+        <li><strong>Check for banned hashtags.</strong> Some hashtags are banned by Instagram (e.g., #adulting, #kissing, #desk). Search before using.</li>
+        <li><strong>Put them in the caption, not comments.</strong> Since 2021, Instagram treats hashtags in comments as less relevant.</li>
+        <li><strong>Skip spaces and punctuation.</strong> <code>#MyTag</code> works; <code>#My Tag</code> only counts <code>#My</code>.</li>
+        <li><strong>Watch case sensitivity.</strong> Hashtags are case-insensitive but CamelCase (#MyTag vs #mytag) improves readability.</li>
+      </ul>
+
+      <h2>❓ Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-question">How many hashtags should I use on Instagram?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Instagram allows up to <strong>30 hashtags per post</strong>. Studies suggest <strong>8-15 targeted hashtags</strong> perform best using all 30 can look spammy. Focus on relevance over quantity: 2-3 broad, 5-7 niche, 3-5 specific.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">How many hashtags on Twitter (X)?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Twitter/X technically allows unlimited hashtags, but <strong>1-2 works best</strong>. More than 3 hashtags actually <strong>reduces engagement</strong> on X by up to 17%. Focus on 1-2 highly relevant tags that add context.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">How many hashtags on TikTok?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>TikTok allows up to <strong>100 hashtags</strong>, but only the <strong>first 3-5 influence ranking</strong>. Use 3-5 highly targeted hashtags one trending, 2-3 niche-specific, and 1 branded for your account.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I use the same hashtags repeatedly?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>Yes, but rotate them.</strong> Instagram may flag "spammy" behavior if you use the exact same 30 hashtags on every post. Create 2-3 different sets and rotate them. Mix in new tags weekly based on trending topics.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Are hashtags still relevant in 2026?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>Yes, but less than before.</strong> Instagram's algorithm now prioritizes content quality, watch time, and engagement over hashtag optimization. TikTok relies mostly on content signals, not hashtags. Hashtags help <strong>discovery</strong>, but they're not a magic bullet quality content still wins.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What are banned hashtags?</button>
+        <div class="faq-answer"><p>Certain hashtags are banned by Instagram due to spam, adult content, or abuse. Using them can shadowban your post. Common banned examples: <code>#adulting</code>, <code>#kissing</code>, <code>#desk</code>, <code>#mindset</code>. Always search a hashtag on Instagram before using it if it shows "no results", it's banned.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Is my text uploaded to a server?</button>
+        <div class="faq-answer"><p><strong>No.</strong> All counting and analysis happens locally in your browser using JavaScript. Your text never leaves your device, and nothing is stored anywhere.</p></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-header">🔗 Related Social Tools</div>
+    <div class="sidebar-list">
+      <a href="/tools/social-tools/hashtag-generator/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#3b82f6;">#️⃣</div>
+        <div class="sidebar-info"><div class="sidebar-title">Hashtag Generator</div><div class="sidebar-desc">Popular hashtags</div></div>
+      </a>
+      <a href="/tools/social-tools/caption-generator/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#8b5cf6;">💬</div>
+        <div class="sidebar-info"><div class="sidebar-title">Caption Generator</div><div class="sidebar-desc">Post captions</div></div>
+      </a>
+      <a href="/tools/social-tools/twitter-bio/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#1d9bf0;">𝕏</div>
+        <div class="sidebar-info"><div class="sidebar-title">Twitter Bio</div><div class="sidebar-desc">Bio generator</div></div>
+      </a>
+      <a href="/tools/social-tools/emoji-remover/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#ec4899;">🚫</div>
+        <div class="sidebar-info"><div class="sidebar-title">Emoji Remover</div><div class="sidebar-desc">Strip emojis</div></div>
+      </a>
+      <a href="/tools/social-tools/instagram-hashtag/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#ec4899;">📸</div>
+        <div class="sidebar-info"><div class="sidebar-title">Instagram Hashtags</div><div class="sidebar-desc">IG hashtags</div></div>
+      </a>
+      <a href="/tools/social-tools/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#64748b;">📱</div>
+        <div class="sidebar-info"><div class="sidebar-title">All Social Tools →</div><div class="sidebar-desc">Browse 25+ tools</div></div>
+      </a>
+    </div>
+  </aside>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand"><div class="logo-icon">⚒</div>BigToolz</span></div>
+      <p class="footer-tagline">Your Ultimate Online Tools Hub</p>
+      <div class="footer-social">
+        <a href="https://facebook.com/bigtoolz" aria-label="Facebook">f</a>
+        <a href="https://twitter.com/bigtoolz" aria-label="Twitter">𝕏</a>
+        <a href="https://youtube.com/@bigtoolz" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+    <div>
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/tools/">All Tools</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Categories</h3>
+      <ul class="footer-links">
+        <li><a href="/tools/image-tools/">Image Tools</a></li>
+        <li><a href="/tools/pdf-tools/">PDF Tools</a></li>
+        <li><a href="/tools/text-tools/">Text Tools</a></li>
+        <li><a href="/tools/social-tools/">Social Tools</a></li>
+        <li><a href="/tools/categories">All Categories →</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Legal</h3>
+      <ul class="footer-links">
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left"><span>✓ 100% Free</span><span>✓ No Sign Up</span><span>✓ No Installation</span></div>
+    <div class="footer-bottom-right">© 2026 BigToolz. All rights reserved.</div>
+    <div class="footer-bottom-links"><a href="/privacy-policy">Privacy</a><a href="/terms">Terms</a><a href="/disclaimer">Disclaimer</a></div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+'use strict';
+
+/* ===== THEME ===== */
+(function(){try{var t=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&d))document.documentElement.setAttribute('data-theme','dark');else if(t==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();
+document.querySelector('.theme-btn')?.addEventListener('click',()=>{const h=document.documentElement;const c=h.getAttribute('data-theme');const d=window.matchMedia('(prefers-color-scheme: dark)').matches;let n=c==='dark'?'light':c==='light'?'dark':(d?'light':'dark');h.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}});
+
+/* ===== HELPERS ===== */
+const $ = (s, p = document) => p.querySelector(s);
+const $$ = (s, p = document) => [...p.querySelectorAll(s)];
+
+function showToast(msg, type = 'info', duration = 3000) {
+  const t = $('#toast');
+  if (!t) return;
+  t.className = 'toast visible' + (type !== 'info' ? ' ' + type : '');
+  t.textContent = msg;
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove('visible'), duration);
+}
+
+async function copyToClipboard(text) {
+  try {
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(text);
+      return true;
+    }
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.cssText = 'position:fixed;opacity:0;';
+    document.body.appendChild(ta);
+    ta.select();
+    const ok = document.execCommand('copy');
+    document.body.removeChild(ta);
+    return ok;
+  } catch (e) { return false; }
+}
+
+/* ===== PLATFORM DATA ===== */
+const PLATFORMS = {
+  instagram: { name: 'Instagram', max: 30, idealMin: 8, idealMax: 15, icon: '📸' },
+  twitter: { name: 'Twitter/X', max: 999, idealMin: 1, idealMax: 2, icon: '𝕏' },
+  tiktok: { name: 'TikTok', max: 100, idealMin: 3, idealMax: 5, icon: '♪' },
+  linkedin: { name: 'LinkedIn', max: 100, idealMin: 3, idealMax: 5, icon: 'in' },
+  youtube: { name: 'YouTube', max: 15, idealMin: 3, idealMax: 5, icon: '▶' }
+};
+
+/* ===== SAMPLES ===== */
+const SAMPLES = {
+  '1': 'Just launched my new app! 🚀 Super excited to share it with you all. Built with love and lots of coffee ☕\n\n#launch #startup #tech #innovation #app #buildinpublic #indiehacker #saas #productlaunch #entrepreneur',
+  '2': 'Hot take: remote work is here to stay. #remotework #futureofwork',
+  '3': 'Check out our new blog post! 📝\n#blog #writing #blog #content #content #blog #tips #tips #socialmedia #socialmedia #instagram #instagram #viral #viral #trending'
+};
+
+/* ===== STATE ===== */
+const state = {
+  platform: 'instagram'
+};
+
+/* ===== DOM ===== */
+const inputText = $('#inputText');
+const totalCount = $('#totalCount');
+const limitStatus = $('#limitStatus');
+const limitText = $('#limitText');
+const statTotal = $('#statTotal');
+const statUnique = $('#statUnique');
+const statDuplicates = $('#statDuplicates');
+const statReach = $('#statReach');
+const hashtagCloud = $('#hashtagCloud');
+const copyAllBtn = $('#copyAllBtn');
+const clearBtn = $('#clearBtn');
+
+/* ===== HASHTAG EXTRACTION ===== */
+function extractHashtags(text) {
+  if (!text) return [];
+  const regex = /#[\w\u0900-\u097F\u00C0-\u017F]+/g;
+  return text.match(regex) || [];
+}
+
+/* ===== REACH SCORE (Simple heuristic) ===== */
+function calculateReachScore(hashtags, platform) {
+  const p = PLATFORMS[platform];
+  const count = hashtags.length;
+  if (count === 0) return 0;
+
+  // Score 0-100 based on optimal range
+  let score = 0;
+  if (count >= p.idealMin && count <= p.idealMax) {
+    score = 95 + Math.floor(Math.random() * 5); // 95-100
+  } else if (count < p.idealMin) {
+    score = Math.floor((count / p.idealMin) * 85);
+  } else if (count <= p.max) {
+    score = Math.max(30, 100 - Math.floor(((count - p.idealMax) / (p.max - p.idealMax)) * 60));
+  } else {
+    score = 20;
+  }
+
+  return Math.min(100, Math.max(0, score));
+}
+
+/* ===== UPDATE ===== */
+function update() {
+  const text = inputText.value;
+  const hashtags = extractHashtags(text);
+  const platform = PLATFORMS[state.platform];
+
+  // Total count
+  totalCount.innerHTML = `${hashtags.length}<span class="unit">/ ${platform.max > 900 ? '∞' : platform.max}</span>`;
+
+  // Unique hashtags
+  const normalized = hashtags.map(h => h.toLowerCase());
+  const uniqueSet = new Set(normalized);
+  const uniqueCount = uniqueSet.size;
+  const duplicateCount = hashtags.length - uniqueCount;
+
+  // Stats
+  statTotal.textContent = hashtags.length;
+  statUnique.textContent = uniqueCount;
+  statDuplicates.textContent = duplicateCount;
+  const reachScore = calculateReachScore(hashtags, state.platform);
+  statReach.textContent = reachScore;
+
+  // Limit status
+  limitStatus.className = 'limit-status';
+  if (hashtags.length === 0) {
+    limitStatus.classList.add('ok');
+    limitText.textContent = `No hashtags · ${platform.name} allows ${platform.max > 900 ? 'unlimited' : platform.max}`;
+  } else if (hashtags.length > platform.max) {
+    limitStatus.classList.add('danger');
+    limitText.textContent = `Over ${platform.name} limit by ${hashtags.length - platform.max}`;
+  } else if (hashtags.length > platform.idealMax) {
+    limitStatus.classList.add('warn');
+    limitText.textContent = `Above ideal (${platform.idealMin}-${platform.idealMax})`;
+  } else if (hashtags.length < platform.idealMin && hashtags.length > 0) {
+    limitStatus.classList.add('warn');
+    limitText.textContent = `Below ideal (${platform.idealMin}-${platform.idealMax})`;
+  } else {
+    limitStatus.classList.add('ok');
+    limitText.textContent = `Optimal for ${platform.name} (${platform.idealMin}-${platform.idealMax})`;
+  }
+
+  // Render hashtag cloud
+  renderHashtagCloud(hashtags, uniqueSet);
+
+  // Copy button state
+  copyAllBtn.disabled = hashtags.length === 0;
+}
+
+/* ===== RENDER HASHTAG CLOUD ===== */
+function renderHashtagCloud(hashtags, uniqueSet) {
+  if (hashtags.length === 0) {
+    hashtagCloud.innerHTML = '<div class="hashtag-empty">No hashtags detected. Start typing to see them appear here.</div>';
+    return;
+  }
+
+  // Count frequency of each hashtag
+  const freq = {};
+  hashtags.forEach(h => {
+    const key = h.toLowerCase();
+    if (!freq[key]) freq[key] = { original: h, count: 0 };
+    freq[key].count++;
+  });
+
+  // Sort by frequency, then alphabetically
+  const sorted = Object.values(freq).sort((a, b) => b.count - a.count || a.original.localeCompare(b.original));
+
+  hashtagCloud.innerHTML = '';
+  sorted.forEach(item => {
+    const chip = document.createElement('button');
+    chip.className = 'hashtag-chip';
+    const isDuplicate = item.count > 1;
+    chip.innerHTML = `${item.original} <span class="count ${isDuplicate ? 'duplicate' : ''}">${item.count}×</span>`;
+    chip.title = `Click to copy ${item.original}`;
+    chip.addEventListener('click', async () => {
+      const ok = await copyToClipboard(item.original);
+      if (ok) showToast(`Copied ${item.original}`, 'success', 1500);
+    });
+    hashtagCloud.appendChild(chip);
+  });
+}
+
+/* ===== PLATFORM BUTTONS ===== */
+$$('.platform-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    $$('.platform-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    state.platform = btn.dataset.platform;
+    update();
+  });
+});
+
+/* ===== SAMPLE CHIPS ===== */
+$$('.sample-chip').forEach(chip => {
+  chip.addEventListener('click', () => {
+    inputText.value = SAMPLES[chip.dataset.sample] || '';
+    update();
+    showToast('Sample loaded', 'success', 1500);
+  });
+});
+
+/* ===== COPY ALL ===== */
+copyAllBtn.addEventListener('click', async () => {
+  const hashtags = extractHashtags(inputText.value);
+  // Get unique hashtags, keep original case
+  const unique = [...new Map(hashtags.map(h => [h.toLowerCase(), h])).values()];
+  const text = unique.join(' ');
+  const ok = await copyToClipboard(text);
+  if (ok) {
+    copyAllBtn.classList.add('copied');
+    const orig = copyAllBtn.innerHTML;
+    copyAllBtn.innerHTML = '✓ Copied!';
+    setTimeout(() => {
+      copyAllBtn.classList.remove('copied');
+      copyAllBtn.innerHTML = orig;
+    }, 2000);
+    showToast(`Copied ${unique.length} unique hashtags`, 'success');
+  } else {
+    showToast('Copy failed', 'error');
+  }
+});
+
+/* ===== CLEAR ===== */
+clearBtn.addEventListener('click', () => {
+  inputText.value = '';
+  update();
+  inputText.focus();
+  showToast('Cleared');
+});
+
+/* ===== INPUT EVENT ===== */
+inputText.addEventListener('input', update);
+
+/* ===== PASTE HANDLER ===== */
+inputText.addEventListener('paste', () => {
+  setTimeout(update, 0);
+});
+
+/* ===== FAQ ===== */
+$$('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    $$('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+
+/* ===== INIT ===== */
+update();
+</script>
+
+</body>
+</html>

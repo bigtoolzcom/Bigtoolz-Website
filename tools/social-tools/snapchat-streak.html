@@ -1,0 +1,1184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2563eb">
+
+<title>Snapchat Streak Calculator - Calculate Your Streak Free | BigToolz</title>
+<meta name="description" content="Free Snapchat streak calculator. Track streak days, weeks, months, see emoji milestones, hourglass warnings, and stats. Never lose a streak again.">
+<meta name="keywords" content="snapchat streak calculator, snapchat streak tracker, streak days calculator, snap streak counter">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://bigtoolz.com/tools/social-tools/snapchat-streak/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Snapchat Streak Calculator - Free Online Tool | BigToolz">
+<meta property="og:description" content="Calculate Snapchat streak days, milestones, hourglass warnings free, accurate.">
+<meta property="og:url" content="https://bigtoolz.com/tools/social-tools/snapchat-streak/">
+<meta property="og:image" content="https://bigtoolz.com/assets/images/og-image.jpg">
+<meta property="og:site_name" content="BigToolz">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Snapchat Streak Calculator - BigToolz">
+<meta name="twitter:description" content="Calculate your Snapchat streak instantly free.">
+<meta name="twitter:image" content="https://bigtoolz.com/assets/images/twitter-card.jpg">
+
+<link rel="icon" href="/assets/images/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/images/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#f8f9fc;color:#1a1a2e;overflow-x:hidden;line-height:1.5}
+
+  .header{background:#fff;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;position:sticky;top:0;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+  .header-left{display:flex;align-items:center;gap:40px}
+  .logo{display:flex;align-items:center;gap:8px;font-size:22px;font-weight:800;color:#1a1a2e;text-decoration:none}
+  .logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#3b82f6,#2563eb);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px}
+  .logo span{color:#2563eb}
+  .nav{display:flex;align-items:center;gap:28px;list-style:none}
+  .nav a{text-decoration:none;color:#4b5563;font-size:14px;font-weight:500;transition:color .2s}
+  .nav a:hover,.nav a.active{color:#2563eb}
+  .header-right{display:flex;align-items:center;gap:16px}
+  .search-btn,.theme-btn{width:36px;height:36px;border-radius:50%;border:none;background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#4b5563}
+  .search-btn:hover,.theme-btn:hover{background:#f3f4f6}
+  .bookmark-btn{display:flex;align-items:center;gap:8px;background:#2563eb;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
+  .bookmark-btn:hover{background:#1d4ed8}
+
+  .hero{background:linear-gradient(135deg,#0a0e27 0%,#3a3a00 40%,#5c5a00 70%,#7f7d00 100%);padding:40px 40px 60px;position:relative;overflow:hidden;color:#fff}
+  .hero::before{content:'';position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(255,252,0,.25) 0%,transparent 70%);border-radius:50%}
+  .hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+  .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px;flex-wrap:wrap}
+  .breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none}
+  .breadcrumb a:hover{color:#fff}
+  .breadcrumb .sep{color:rgba(255,255,255,.4)}
+  .breadcrumb .current{color:#fff;font-weight:500}
+  .hero-title-row{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+  .hero-icon{width:60px;height:60px;background:#fffc00;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:30px;color:#000;flex-shrink:0;box-shadow:0 8px 24px rgba(255,252,0,.4)}
+  .hero-title{font-size:42px;font-weight:800;line-height:1.15}
+  .hero-title .blue{color:#fef08a}
+  .hero-desc{font-size:15px;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:24px;max-width:560px}
+  .hero-features{display:flex;gap:24px;flex-wrap:wrap}
+  .hero-feature{display:flex;align-items:center;gap:6px;font-size:13px;color:#fff;font-weight:500}
+  .hero-feature .check{width:18px;height:18px;border-radius:50%;background:#fffc00;display:flex;align-items:center;justify-content:center;font-size:10px;color:#000;font-weight:800;flex-shrink:0}
+
+  .main-content{max-width:1200px;margin:0 auto;padding:40px;display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start}
+  .tool-content{min-width:0}
+
+  .workspace{background:#fff;border-radius:16px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,.06);border:1px solid #e5e7eb;margin-bottom:24px}
+
+  /* Mode tabs */
+  .mode-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:24px;background:#fefce8;padding:6px;border-radius:12px;border:1px solid #fde047}
+  .mode-tab{padding:12px 10px;background:transparent;border:none;border-radius:8px;font-size:13px;font-weight:700;color:#6b7280;cursor:pointer;font-family:inherit;transition:all .2s;text-align:center}
+  .mode-tab:hover{background:#fef9c3;color:#854d0e}
+  .mode-tab.active{background:#fffc00;color:#000}
+
+  /* Input grid */
+  .inputs-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px}
+  .input-group label{display:block;font-size:12px;font-weight:700;color:#4b5563;margin-bottom:6px}
+  .input-group input,.input-group select{width:100%;padding:14px 16px;border:2px solid #e5e7eb;border-radius:10px;font-size:15px;font-weight:600;font-family:inherit;color:#1a1a2e;background:#fff;outline:none;transition:border-color .2s}
+  .input-group input:focus,.input-group select:focus{border-color:#fffc00;box-shadow:0 0 0 3px rgba(255,252,0,.2)}
+  .input-group input[type="date"]{cursor:pointer}
+  .input-group select{cursor:pointer;padding-right:36px;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='3'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center}
+
+  /* Options */
+  .options-row{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:20px;padding:14px 18px;background:#fefce8;border-radius:10px;border:1px solid #fde047}
+  .toggle-opt{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:#4b5563;cursor:pointer}
+  .toggle-opt input{width:16px;height:16px;accent-color:#facc15;cursor:pointer}
+
+  /* Action buttons */
+  .actions{display:flex;gap:10px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 28px;border-radius:10px;font-size:15px;font-weight:700;font-family:inherit;cursor:pointer;border:none;transition:all .2s;text-decoration:none}
+  .btn-primary{background:#fffc00;color:#000;flex:1;box-shadow:0 4px 12px rgba(255,252,0,.4);font-weight:800}
+  .btn-primary:hover:not(:disabled){background:#fef08a;transform:translateY(-2px);box-shadow:0 6px 20px rgba(255,252,0,.5)}
+  .btn-secondary{background:#fff;color:#1a1a2e;border:1px solid #e5e7eb}
+  .btn-secondary:hover{border-color:#fffc00;background:#fefce8}
+
+  /* Result big card */
+  .result-card{background:linear-gradient(135deg,#fefce8,#fef9c3);border-radius:16px;padding:32px 24px;margin-top:24px;border:2px solid #fde047;text-align:center;position:relative;overflow:hidden}
+  .result-card::before{content:'';position:absolute;top:-30px;right:-30px;width:200px;height:200px;background:radial-gradient(circle,rgba(255,252,0,.4) 0%,transparent 70%);border-radius:50%}
+  .streak-emoji{font-size:64px;margin-bottom:12px;position:relative;z-index:2;line-height:1}
+  .streak-number{font-size:80px;font-weight:900;color:#000;line-height:1;margin-bottom:4px;position:relative;z-index:2;letter-spacing:-3px}
+  .streak-unit{font-size:22px;font-weight:800;color:#422006;margin-bottom:16px;position:relative;z-index:2;text-transform:uppercase;letter-spacing:2px}
+  .streak-label{font-size:15px;font-weight:700;color:#78350f;margin-bottom:20px;position:relative;z-index:2;line-height:1.5}
+  .streak-badges{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;position:relative;z-index:2;margin-bottom:20px}
+  .streak-badge{background:#fff;border:1px solid #fde047;border-radius:20px;padding:6px 14px;font-size:12px;font-weight:700;color:#78350f;display:inline-flex;align-items:center;gap:5px}
+  .streak-badge.warn{background:#fef3c7;border-color:#f59e0b;color:#92400e}
+  .streak-badge.danger{background:#fee2e2;border-color:#ef4444;color:#991b1b}
+
+  /* Stats grid */
+  .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:24px}
+  .stat-box{background:#fff;border-radius:12px;padding:16px 12px;text-align:center;border:1px solid #fde047}
+  .stat-label{font-size:11px;font-weight:700;color:#78350f;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+  .stat-value{font-size:22px;font-weight:900;color:#000;line-height:1.1}
+  .stat-value-sub{font-size:12px;color:#6b7280;font-weight:500;margin-top:4px}
+
+  /* Milestones */
+  .milestones-section{margin-top:28px}
+  .milestone-title{font-size:15px;font-weight:800;color:#1a1a2e;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+  .milestone-list{display:flex;flex-direction:column;gap:10px}
+  .milestone-item{display:flex;align-items:center;gap:14px;padding:14px 16px;background:#fff;border:2px solid #e5e7eb;border-radius:12px;transition:all .2s}
+  .milestone-item.reached{border-color:#facc15;background:#fefce8}
+  .milestone-item.upcoming{border-color:#e5e7eb;background:#f8fafc;opacity:.7}
+  .milestone-icon{font-size:28px;flex-shrink:0;filter:grayscale(100%);opacity:.5}
+  .milestone-item.reached .milestone-icon{filter:none;opacity:1}
+  .milestone-info{flex:1;min-width:0}
+  .milestone-name{font-size:14px;font-weight:800;color:#1a1a2e;margin-bottom:2px}
+  .milestone-desc{font-size:12px;color:#6b7280;line-height:1.4}
+  .milestone-status{font-size:11px;font-weight:800;padding:5px 12px;border-radius:20px;text-transform:uppercase;letter-spacing:.3px;flex-shrink:0}
+  .milestone-status.reached{background:#10b981;color:#fff}
+  .milestone-status.upcoming{background:#e5e7eb;color:#6b7280}
+
+  /* Hourglass warning */
+  .warning-box{margin-top:24px;padding:18px 20px;border-radius:12px;display:flex;gap:14px;align-items:flex-start}
+  .warning-box.safe{background:#f0fdf4;border:1px solid #86efac}
+  .warning-box.warn{background:#fef3c7;border:1px solid #fcd34d}
+  .warning-box.danger{background:#fee2e2;border:1px solid #fecaca}
+  .warning-box-icon{font-size:32px;flex-shrink:0;line-height:1}
+  .warning-box-content{flex:1;min-width:0}
+  .warning-box-title{font-size:14px;font-weight:800;margin-bottom:4px}
+  .warning-box.safe .warning-box-title{color:#065f46}
+  .warning-box.warn .warning-box-title{color:#92400e}
+  .warning-box.danger .warning-box-title{color:#991b1b}
+  .warning-box-desc{font-size:13px;line-height:1.6}
+  .warning-box.safe .warning-box-desc{color:#166534}
+  .warning-box.warn .warning-box-desc{color:#92400e}
+  .warning-box.danger .warning-box-desc{color:#991b1b}
+
+  /* Copy row */
+  .copy-row{display:flex;gap:8px;margin-top:20px;flex-wrap:wrap}
+  .mini-btn{display:inline-flex;align-items:center;gap:6px;padding:10px 16px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;font-size:13px;font-weight:700;color:#4b5563;cursor:pointer;font-family:inherit;transition:all .2s}
+  .mini-btn:hover{border-color:#facc15;color:#854d0e;background:#fefce8}
+  .mini-btn.copied{background:#10b981;color:#fff;border-color:#10b981}
+
+  /* History */
+  .history-section{margin-top:24px}
+  .history-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;gap:8px}
+  .history-title{font-size:14px;font-weight:800;color:#1a1a2e;display:flex;align-items:center;gap:8px}
+  .history-clear{background:none;border:none;font-size:11px;color:#854d0e;cursor:pointer;font-family:inherit;font-weight:700;text-decoration:underline}
+  .history-list{display:flex;flex-direction:column;gap:8px}
+  .history-item{background:#fefce8;border:1px solid #fde047;border-radius:10px;padding:12px 14px;font-size:13px;display:flex;justify-content:space-between;align-items:center;gap:12px;cursor:pointer;transition:all .2s;flex-wrap:wrap}
+  .history-item:hover{background:#fef9c3;transform:translateX(3px)}
+  .history-item-days{font-weight:800;color:#000;font-size:16px}
+  .history-item-meta{font-size:11px;color:#78350f;font-weight:600}
+
+  /* SEO */
+  .seo-content{background:#fff;border-radius:16px;padding:32px;border:1px solid #e5e7eb;margin-bottom:24px}
+  .seo-content h2{font-size:22px;font-weight:800;color:#1a1a2e;margin-bottom:14px;margin-top:28px;display:flex;align-items:center;gap:10px}
+  .seo-content h2:first-child{margin-top:0}
+  .seo-content h3{font-size:16px;font-weight:700;color:#1a1a2e;margin:20px 0 10px}
+  .seo-content p{font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:14px}
+  .seo-content ul{list-style:none;padding-left:0;margin-bottom:16px}
+  .seo-content ul li{position:relative;padding-left:24px;font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:8px}
+  .seo-content ul li::before{content:'';position:absolute;left:6px;top:12px;width:6px;height:6px;background:#facc15;border-radius:50%}
+  .seo-content a{color:#2563eb;text-decoration:none;font-weight:600}
+  .seo-content a:hover{text-decoration:underline}
+  .seo-content strong{color:#1a1a2e;font-weight:700}
+  .seo-content code{background:#f1f5f9;padding:2px 6px;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:13px;color:#0f172a;border:1px solid #e2e8f0}
+
+  .how-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:20px}
+  .how-step{background:#fefce8;border-radius:12px;padding:20px;border:1px solid #fde047}
+  .how-step-num{width:36px;height:36px;border-radius:50%;background:#fffc00;color:#000;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800;margin-bottom:12px}
+  .how-step-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+  .how-step-desc{font-size:13px;color:#6b7280;line-height:1.6}
+
+  .faq-item{background:#fefce8;border:1px solid #fde047;border-radius:12px;margin-bottom:10px;overflow:hidden;transition:border-color .2s}
+  .faq-item:hover{border-color:#facc15}
+  .faq-question{width:100%;background:none;border:none;padding:18px 22px;font-size:15px;font-weight:700;color:#1a1a2e;text-align:left;cursor:pointer;font-family:inherit;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .faq-question .chev{font-size:12px;color:#854d0e;transition:transform .2s;flex-shrink:0}
+  .faq-item.open .faq-question .chev{transform:rotate(180deg)}
+  .faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 22px}
+  .faq-item.open .faq-answer{max-height:500px;padding-bottom:18px}
+  .faq-answer p{font-size:14px;color:#6b7280;line-height:1.7;margin:0}
+
+  .sidebar{background:#fff;border-radius:16px;padding:24px;border:1px solid #e5e7eb;position:sticky;top:80px;margin-bottom:24px}
+  .sidebar-header{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:800;color:#1a1a2e;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid #f3f4f6}
+  .sidebar-list{display:flex;flex-direction:column;gap:8px}
+  .sidebar-item{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;cursor:pointer;transition:background .2s;text-decoration:none;color:inherit;border:1px solid #f3f4f6}
+  .sidebar-item:hover{background:#fefce8;border-color:#fde047}
+  .sidebar-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;flex-shrink:0}
+  .sidebar-info{flex:1;min-width:0}
+  .sidebar-title{font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:2px}
+  .sidebar-desc{font-size:11px;color:#9ca3af;line-height:1.4}
+
+  .footer{background:#0a0e27;padding:60px 40px 30px;color:#fff;margin-top:40px}
+  .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:40px}
+  .footer-brand{display:flex;align-items:center;gap:8px;font-size:20px;font-weight:800;margin-bottom:12px}
+  .footer-brand span{color:#60a5fa}
+  .footer-tagline{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px}
+  .footer-social{display:flex;gap:12px}
+  .footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:16px;transition:background .2s}
+  .footer-social a:hover{background:rgba(255,255,255,.2)}
+  .footer-heading{font-size:14px;font-weight:700;margin-bottom:20px;color:#fff}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .footer-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;transition:color .2s}
+  .footer-links a:hover{color:#60a5fa}
+  .footer-bottom{max-width:1200px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  .footer-bottom-left{display:flex;gap:20px;font-size:12px;color:rgba(255,255,255,.5)}
+  .footer-bottom-right,.footer-bottom-links a{font-size:12px;color:rgba(255,255,255,.5);text-decoration:none}
+  .footer-bottom-links{display:flex;gap:20px}
+
+  .toast{position:fixed;bottom:24px;right:24px;background:#1a1a2e;color:#fff;padding:14px 20px;border-radius:10px;font-size:13px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:3000;transform:translateY(200%);transition:transform .3s ease;max-width:320px}
+  .toast.visible{transform:translateY(0)}
+  .toast.success{background:#10b981}
+  .toast.error{background:#ef4444}
+
+  @media(max-width:1024px){
+    .main-content{grid-template-columns:1fr;padding:24px 20px}
+    .sidebar{position:static}
+    .how-steps{grid-template-columns:repeat(2,1fr)}
+    .stats-grid{grid-template-columns:repeat(2,1fr)}
+  }
+  @media(max-width:768px){
+    .header{padding:0 20px}.nav{display:none}
+    .hero{padding:24px 20px 40px}
+    .hero-title{font-size:28px}
+    .hero-icon{width:48px;height:48px;font-size:24px}
+    .hero-title-row{flex-direction:column;align-items:flex-start;gap:12px}
+    .main-content{padding:20px 16px}
+    .workspace{padding:20px}
+    .how-steps{grid-template-columns:1fr}
+    .seo-content{padding:20px}
+    .footer-inner{grid-template-columns:1fr 1fr}
+    .toast{left:16px;right:16px;bottom:16px;max-width:none}
+    .inputs-grid{grid-template-columns:1fr}
+    .streak-number{font-size:60px}
+    .streak-emoji{font-size:52px}
+  }
+  @media(max-width:576px){
+    .header{padding:0 16px}.header-right .search-btn,.header-right .theme-btn{display:none}
+    .hero-title{font-size:24px}
+    .footer-inner{grid-template-columns:1fr}
+    .footer-bottom{flex-direction:column;text-align:center}
+    .streak-number{font-size:52px}
+    .streak-emoji{font-size:44px}
+    .stats-grid{grid-template-columns:1fr}
+    .mode-tabs{grid-template-columns:1fr}
+    .actions{flex-direction:column}
+    .btn{width:100%}
+    .btn-primary{flex:none}
+  }
+
+  html[data-theme="dark"] body{background:#0f172a;color:#f1f5f9}
+  html[data-theme="dark"] .header,html[data-theme="dark"] .workspace,html[data-theme="dark"] .seo-content,html[data-theme="dark"] .sidebar{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .logo,html[data-theme="dark"] .hero-title,html[data-theme="dark"] .seo-content h2,html[data-theme="dark"] .seo-content h3,html[data-theme="dark"] .faq-question,html[data-theme="dark"] .sidebar-header,html[data-theme="dark"] .sidebar-title,html[data-theme="dark"] .history-title,html[data-theme="dark"] .milestone-title,html[data-theme="dark"] .milestone-name{color:#f1f5f9}
+  html[data-theme="dark"] .nav a{color:#cbd5e1}
+  html[data-theme="dark"] .how-step,html[data-theme="dark"] .faq-item,html[data-theme="dark"] .mode-tabs,html[data-theme="dark"] .history-item,html[data-theme="dark"] .options-row{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .input-group input,html[data-theme="dark"] .input-group select{background:#0f172a;border-color:#334155;color:#f1f5f9}
+  html[data-theme="dark"] .result-card{background:linear-gradient(135deg,#3f2d0a,#7c5a0a);border-color:#b45309}
+  html[data-theme="dark"] .streak-number,html[data-theme="dark"] .streak-unit{color:#fef9c3}
+  html[data-theme="dark"] .streak-label{color:#fcd34d}
+  html[data-theme="dark"] .streak-badge{background:#1e293b;border-color:#b45309;color:#fcd34d}
+  html[data-theme="dark"] .stat-box{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .stat-value{color:#f1f5f9}
+  html[data-theme="dark"] .stat-label{color:#fcd34d}
+  html[data-theme="dark"] .milestone-item{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .milestone-item.reached{background:#3f2d0a;border-color:#facc15}
+  html[data-theme="dark"] .milestone-desc{color:#94a3b8}
+  html[data-theme="dark"] .seo-content p,html[data-theme="dark"] .seo-content ul li,html[data-theme="dark"] .faq-answer p{color:#cbd5e1}
+  html[data-theme="dark"] .seo-content code{background:#0f172a;color:#94a3b8;border-color:#334155}
+  html[data-theme="dark"] .mini-btn{background:#0f172a;border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .history-item-meta{color:#fcd34d}
+  html[data-theme="dark"] .mode-tab{color:#cbd5e1}
+  html[data-theme="dark"] .mode-tab.active{background:#fffc00;color:#000}
+  html[data-theme="dark"] .warning-box.safe{background:#064e3b;border-color:#065f46}
+  html[data-theme="dark"] .warning-box.safe .warning-box-title{color:#6ee7b7}
+  html[data-theme="dark"] .warning-box.safe .warning-box-desc{color:#a7f3d0}
+  html[data-theme="dark"] .warning-box.warn{background:#3f2d0a;border-color:#b45309}
+  html[data-theme="dark"] .warning-box.warn .warning-box-title{color:#fcd34d}
+  html[data-theme="dark"] .warning-box.warn .warning-box-desc{color:#fde68a}
+  html[data-theme="dark"] .warning-box.danger{background:#3f0f0f;border-color:#991b1b}
+  html[data-theme="dark"] .warning-box.danger .warning-box-title{color:#fca5a5}
+  html[data-theme="dark"] .warning-box.danger .warning-box-desc{color:#fecaca}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type": "SoftwareApplication", "name": "Snapchat Streak Calculator", "url": "https://bigtoolz.com/tools/social-tools/snapchat-streak/", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any (Web-based)", "description": "Free Snapchat streak calculator calculate streak days, weeks, months, emoji milestones and hourglass warnings.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.8", "ratingCount": "1243"}},
+    {"@type": "HowTo", "name": "How to Calculate Your Snapchat Streak", "step": [
+      {"@type": "HowToStep", "name": "Enter Start Date", "text": "Pick the date you started your streak."},
+      {"@type": "HowToStep", "name": "Or Enter Days", "text": "Or enter the total number of days you know."},
+      {"@type": "HowToStep", "name": "View Result", "text": "See streak days, weeks, months, milestones, and hourglass status."},
+      {"@type": "HowToStep", "name": "Copy Summary", "text": "Copy the streak summary or save it for later."}
+    ]},
+    {"@type": "FAQPage", "mainEntity": [
+      {"@type": "Question", "name": "What is a Snapchat streak?", "acceptedAnswer": {"@type": "Answer", "text": "A Snapchat streak is the number of consecutive days you and a friend have sent each other snaps. The count increases by 1 each day both of you snap. If either person misses sending a snap for 24 hours, the streak is broken."}},
+      {"@type": "Question", "name": "What does the hourglass emoji mean on Snapchat?", "acceptedAnswer": {"@type": "Answer", "text": "The hourglass (⌛) means your streak is about to expire you have less than 24 hours to send a snap. The hourglass appears when about 4 hours are left. Send a snap immediately to save the streak."}},
+      {"@type": "Question", "name": "How do I save a Snapchat streak?", "acceptedAnswer": {"@type": "Answer", "text": "Send a snap to your friend every 24 hours. Both of you must snap within a rolling 24-hour window. As soon as the hourglass appears, send a quick snap to reset the timer."}},
+      {"@type": "Question", "name": "What is the highest Snapchat streak ever?", "acceptedAnswer": {"@type": "Answer", "text": "Some Snapchat streaks have crossed 3,000+ days (8+ years). The exact record isn't officially tracked by Snapchat, but streaks over 5 years are considered extremely rare and impressive."}},
+      {"@type": "Question", "name": "Does the Snapchat streak calculator use real-time data?", "acceptedAnswer": {"@type": "Answer", "text": "No it's a mathematical calculator. You input the streak start date or number of days, and it computes total days, weeks, months, and upcoming milestones. It doesn't connect to your Snapchat account for privacy reasons."}}
+    ]},
+    {"@type": "BreadcrumbList", "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bigtoolz.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://bigtoolz.com/tools/"},
+      {"@type": "ListItem", "position": 3, "name": "Social Tools", "item": "https://bigtoolz.com/tools/social-tools/"},
+      {"@type": "ListItem", "position": 4, "name": "Snapchat Streak Calculator", "item": "https://bigtoolz.com/tools/social-tools/snapchat-streak/"}
+    ]}
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-left">
+    <a href="/" class="logo"><div class="logo-icon">⚒</div>BigToolz</span></a>
+    <nav><ul class="nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/tools/" class="active">All Tools</a></li>
+      <li><a href="/tools/categories">Categories</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul></nav>
+  </div>
+  <div class="header-right">
+    
+    <button class="theme-btn" aria-label="Toggle theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
+    
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <nav class="breadcrumb">
+      <a href="/">Home</a><span class="sep">›</span>
+      <a href="/tools/">Tools</a><span class="sep">›</span>
+      <a href="/tools/social-tools/">Social Tools</a><span class="sep">›</span>
+      <span class="current">Snapchat Streak Calculator</span>
+    </nav>
+    <div class="hero-title-row">
+      <div class="hero-icon">👻</div>
+      <h1 class="hero-title">Snapchat <span class="blue">Streak</span></h1>
+    </div>
+    <p class="hero-desc">
+      Calculate your Snapchat streak days, weeks, and months. Track emoji milestones, check hourglass warnings, and never lose a streak again. Free, fast, accurate.
+    </p>
+    <div class="hero-features">
+      <div class="hero-feature"><span class="check">✓</span> Live Calculation</div>
+      <div class="hero-feature"><span class="check">✓</span> Milestones</div>
+      <div class="hero-feature"><span class="check">✓</span> Hourglass Warning</div>
+      <div class="hero-feature"><span class="check">✓</span> Save Streaks</div>
+    </div>
+  </div>
+</section>
+
+<div class="main-content">
+
+  <div class="tool-content">
+
+    <div class="workspace">
+
+      <!-- Mode tabs -->
+      <div class="mode-tabs">
+        <button class="mode-tab active" data-mode="startDate">📅 Start Date</button>
+        <button class="mode-tab" data-mode="days">🔢 Days Count</button>
+        <button class="mode-tab" data-mode="endDate">🎯 End Date</button>
+      </div>
+
+      <!-- Inputs -->
+      <div class="inputs-grid" id="startDateInputs">
+        <div class="input-group">
+          <label>Streak Start Date</label>
+          <input type="date" id="startDate">
+        </div>
+        <div class="input-group">
+          <label>Today's Date</label>
+          <input type="date" id="todayDate">
+        </div>
+      </div>
+
+      <div class="inputs-grid" id="daysInputs" style="display:none;">
+        <div class="input-group">
+          <label>Total Streak Days</label>
+          <input type="number" id="daysCount" value="100" min="1" max="10000">
+        </div>
+        <div class="input-group">
+          <label>Friend's Name (Optional)</label>
+          <input type="text" id="friendName" placeholder="e.g. Priya">
+        </div>
+      </div>
+
+      <div class="inputs-grid" id="endDateInputs" style="display:none;">
+        <div class="input-group">
+          <label>Streak Start Date</label>
+          <input type="date" id="endStartDate">
+        </div>
+        <div class="input-group">
+          <label>Streak End Date</label>
+          <input type="date" id="endDate">
+        </div>
+      </div>
+
+      <!-- Options -->
+      <div class="options-row">
+        <label class="toggle-opt">
+          <input type="checkbox" id="showMilestones" checked>
+          Show milestones
+        </label>
+        <label class="toggle-opt">
+          <input type="checkbox" id="showHourglass" checked>
+          Show hourglass warning
+        </label>
+        <label class="toggle-opt">
+          <input type="checkbox" id="showStats" checked>
+          Show statistics
+        </label>
+      </div>
+
+      <!-- Actions -->
+      <div class="actions">
+        <button class="btn btn-primary" id="calculateBtn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 11H5a2 2 0 00-2 2v7a2 2 0 002 2h14a2 2 0 002-2v-7a2 2 0 00-2-2h-4M9 11V7a2 2 0 012-2h2a2 2 0 012 2v4M9 11h6"/></svg>
+          Calculate Streak
+        </button>
+        <button class="btn btn-secondary" id="resetBtn">↺ Reset</button>
+      </div>
+
+      <!-- Result card -->
+      <div class="result-card" id="resultCard" style="display:none;">
+        <div class="streak-emoji" id="streakEmoji">🔥</div>
+        <div class="streak-number" id="streakNumber">100</div>
+        <div class="streak-unit" id="streakUnit">Days</div>
+        <div class="streak-label" id="streakLabel">You and <strong>Friend</strong> have an incredible streak!</div>
+
+        <div class="streak-badges" id="streakBadges"></div>
+
+        <div class="copy-row">
+          <button class="mini-btn" id="copyBtn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+            Copy Summary
+          </button>
+          <button class="mini-btn" id="saveBtn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/></svg>
+            Save
+          </button>
+          <button class="mini-btn" id="shareBtn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98"/></svg>
+            Share
+          </button>
+        </div>
+      </div>
+
+      <!-- Hourglass warning -->
+      <div class="warning-box" id="warningBox" style="display:none;">
+        <div class="warning-box-icon" id="warningIcon">⏳</div>
+        <div class="warning-box-content">
+          <div class="warning-box-title" id="warningTitle">Warning</div>
+          <div class="warning-box-desc" id="warningDesc">Description</div>
+        </div>
+      </div>
+
+      <!-- Stats -->
+      <div class="stats-grid" id="statsGrid" style="display:none;">
+        <div class="stat-box">
+          <div class="stat-label">Total Days</div>
+          <div class="stat-value" id="statDays">100</div>
+          <div class="stat-value-sub">consecutive</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-label">Weeks</div>
+          <div class="stat-value" id="statWeeks">14.3</div>
+          <div class="stat-value-sub">approximately</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-label">Months</div>
+          <div class="stat-value" id="statMonths">3.3</div>
+          <div class="stat-value-sub">approximately</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-label">Years</div>
+          <div class="stat-value" id="statYears">0.27</div>
+          <div class="stat-value-sub">approximately</div>
+        </div>
+      </div>
+
+      <!-- Milestones -->
+      <div class="milestones-section" id="milestonesSection" style="display:none;">
+        <div class="milestone-title">🏆 Milestones</div>
+        <div class="milestone-list" id="milestoneList"></div>
+      </div>
+
+      <!-- History -->
+      <div class="history-section" id="historySection" style="display:none;">
+        <div class="history-header">
+          <div class="history-title">📋 Saved Streaks</div>
+          <button class="history-clear" id="historyClear">Clear All</button>
+        </div>
+        <div class="history-list" id="historyList"></div>
+      </div>
+
+    </div>
+
+    <!-- SEO Content -->
+    <div class="seo-content">
+
+      <h2>👻 What is a Snapchat Streak?</h2>
+      <p>
+        A <strong>Snapchat streak</strong> is the count of consecutive days you and a friend have exchanged snaps. Each day both of you send at least one snap, the streak number increases by 1. Miss a day and the streak resets to zero, along with any record or bragging rights.
+      </p>
+      <p>
+        Streaks are one of the most addictive features on Snapchat. Some users maintain streaks for <strong>1,000+ days</strong> (nearly 3 years), turning them into a daily ritual. Our <strong>Snapchat Streak Calculator</strong> helps you track exactly how long your streak has been going, what milestone you're approaching, and whether you need to snap right now to save it.
+      </p>
+
+      <h2>🚀 How to Use This Calculator</h2>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-step-num">1</div>
+          <div class="how-step-title">Choose Mode</div>
+          <div class="how-step-desc">Start date, days count, or end date.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">2</div>
+          <div class="how-step-title">Enter Details</div>
+          <div class="how-step-desc">Pick dates or type the streak days.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">3</div>
+          <div class="how-step-title">Calculate</div>
+          <div class="how-step-desc">Get days, weeks, months, milestones.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">4</div>
+          <div class="how-step-title">Save & Share</div>
+          <div class="how-step-desc">Copy the summary or save for later.</div>
+        </div>
+      </div>
+
+      <h2>🔥 Snapchat Streak Emojis Explained</h2>
+      <p>Snapchat uses different emojis next to streaks to show status:</p>
+      <ul>
+        <li><strong>🔥 Fire</strong> You have an active streak with this friend. The number next to it is your total streak days.</li>
+        <li><strong>⌛ Hourglass</strong> Your streak is about to expire (usually within 4 hours). Send a snap NOW to save it.</li>
+        <li><strong>💯 Hundred</strong> You've hit 100 days. This is a major milestone that many users celebrate with a screenshot.</li>
+        <li><strong>📸 Camera</strong> You need to send a snap to start or maintain a streak.</li>
+        <li><strong>✨ Sparkles</strong> A new streak has just started (day 1 or 2).</li>
+        <li><strong>❄️ Snowflake</strong> You're on day 3-5 of the streak. A "cold" streak just warming up.</li>
+      </ul>
+
+      <h2>🏆 Popular Snapchat Streak Milestones</h2>
+      <p>Here are the milestone days most users celebrate:</p>
+      <ul>
+        <li><strong>7 days</strong> One full week 🔥</li>
+        <li><strong>30 days</strong> One month of daily snaps 📅</li>
+        <li><strong>100 days</strong> Triple digits! 💯</li>
+        <li><strong>365 days</strong> One full year 🎂</li>
+        <li><strong>500 days</strong> Half a thousand 🏅</li>
+        <li><strong>1000 days</strong> The legendary 1000-day streak 👑</li>
+        <li><strong>2000 days</strong> Over 5 years of daily snapping 🌟</li>
+      </ul>
+
+      <h2>💡 How to Never Lose Your Snapchat Streak</h2>
+      <ul>
+        <li><strong>Set a daily alarm.</strong> If you're forgetful, a 9 PM reminder can save a 500-day streak.</li>
+        <li><strong>Use Snapchat's streak reminder.</strong> The app sends notifications when your streak is at risk.</li>
+        <li><strong>Send quick snaps.</strong> A photo of the ceiling counts. Snap doesn't care about quality.</li>
+        <li><strong>Both people must snap.</strong> If your friend misses, your streak breaks too even if you never missed.</li>
+        <li><strong>Watch for the hourglass.</strong> When ⌛ appears, you have less than 24 hours (usually ~4 hours) to send.</li>
+        <li><strong>Restore the streak.</strong> Snapchat lets you restore one broken streak per year for 24 hours but only once.</li>
+        <li><strong>Don't delete the chat.</strong> Deleting the chat thread permanently resets the streak, even if both of you keep snapping.</li>
+      </ul>
+
+      <h2>❓ Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-question">What is a Snapchat streak?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>A <strong>Snapchat streak</strong> is the number of consecutive days you and a friend have sent each other snaps. The count increases by 1 each day both of you snap. If either person misses sending a snap for 24 hours, the streak is broken.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What does the hourglass emoji mean on Snapchat?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>The hourglass (<strong>⌛</strong>) means your streak is about to expire you have less than 24 hours to send a snap. The hourglass appears when about 4 hours are left. Send a snap immediately to save the streak.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">How do I save a Snapchat streak?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Send a snap to your friend every <strong>24 hours</strong>. Both of you must snap within a rolling 24-hour window. As soon as the hourglass appears, send a quick snap to reset the timer.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What is the highest Snapchat streak ever?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Some Snapchat streaks have crossed <strong>3,000+ days (8+ years)</strong>. The exact record isn't officially tracked by Snapchat, but streaks over 5 years are considered extremely rare and impressive.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Does this calculator use real-time data?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>No</strong> it's a mathematical calculator. You input the streak start date or number of days, and it computes total days, weeks, months, and upcoming milestones. It doesn't connect to your Snapchat account for privacy reasons.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I restore a broken streak?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Yes! Snapchat allows you to <strong>restore one streak per year</strong>, and you have 24 hours after breaking it to do so. Tap the broken streak in your chat and select "Restore Streak." This is a limited feature, so use it wisely.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Does deleting a chat delete the streak?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>Yes.</strong> Deleting a chat thread permanently resets the streak, even if both of you keep snapping. If you want to preserve the streak, don't delete the chat ever.</p></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-header">🔗 Related Social Tools</div>
+    <div class="sidebar-list">
+      <a href="/tools/social-tools/reddit-username/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#ff4500;">👽</div>
+        <div class="sidebar-info"><div class="sidebar-title">Reddit Username</div><div class="sidebar-desc">Generate names</div></div>
+      </a>
+      <a href="/tools/social-tools/twitter-bio/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#1d9bf0;">𝕏</div>
+        <div class="sidebar-info"><div class="sidebar-title">Twitter Bio</div><div class="sidebar-desc">Twitter bios</div></div>
+      </a>
+      <a href="/tools/social-tools/hashtag-generator/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#3b82f6;">#️⃣</div>
+        <div class="sidebar-info"><div class="sidebar-title">Hashtag Generator</div><div class="sidebar-desc">Popular hashtags</div></div>
+      </a>
+      <a href="/tools/social-tools/caption-generator/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#8b5cf6;">💬</div>
+        <div class="sidebar-info"><div class="sidebar-title">Caption Generator</div><div class="sidebar-desc">Post captions</div></div>
+      </a>
+      <a href="/tools/social-tools/social-scheduler/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#10b981;">📅</div>
+        <div class="sidebar-info"><div class="sidebar-title">Social Scheduler</div><div class="sidebar-desc">Plan posts</div></div>
+      </a>
+      <a href="/tools/social-tools/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#64748b;">📱</div>
+        <div class="sidebar-info"><div class="sidebar-title">All Social Tools →</div><div class="sidebar-desc">Browse 25+ tools</div></div>
+      </a>
+    </div>
+  </aside>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand"><div class="logo-icon">⚒</div>BigToolz</span></div>
+      <p class="footer-tagline">Your Ultimate Online Tools Hub</p>
+      <div class="footer-social">
+        <a href="https://facebook.com/bigtoolz" aria-label="Facebook">f</a>
+        <a href="https://twitter.com/bigtoolz" aria-label="Twitter">𝕏</a>
+        <a href="https://youtube.com/@bigtoolz" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+    <div>
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/tools/">All Tools</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Categories</h3>
+      <ul class="footer-links">
+        <li><a href="/tools/image-tools/">Image Tools</a></li>
+        <li><a href="/tools/pdf-tools/">PDF Tools</a></li>
+        <li><a href="/tools/text-tools/">Text Tools</a></li>
+        <li><a href="/tools/social-tools/">Social Tools</a></li>
+        <li><a href="/tools/categories">All Categories →</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Legal</h3>
+      <ul class="footer-links">
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left"><span>✓ 100% Free</span><span>✓ No Sign Up</span><span>✓ No Installation</span></div>
+    <div class="footer-bottom-right">© 2026 BigToolz. All rights reserved.</div>
+    <div class="footer-bottom-links"><a href="/privacy-policy">Privacy</a><a href="/terms">Terms</a><a href="/disclaimer">Disclaimer</a></div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+'use strict';
+
+/* ===== THEME ===== */
+(function(){try{var t=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&d))document.documentElement.setAttribute('data-theme','dark');else if(t==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();
+document.querySelector('.theme-btn')?.addEventListener('click',()=>{const h=document.documentElement;const c=h.getAttribute('data-theme');const d=window.matchMedia('(prefers-color-scheme: dark)').matches;let n=c==='dark'?'light':c==='light'?'dark':(d?'light':'dark');h.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}});
+
+/* ===== HELPERS ===== */
+const $ = (s, p = document) => p.querySelector(s);
+const $$ = (s, p = document) => [...p.querySelectorAll(s)];
+
+function showToast(msg, type = 'info', duration = 3000) {
+  const t = $('#toast');
+  if (!t) return;
+  t.className = 'toast visible' + (type !== 'info' ? ' ' + type : '');
+  t.textContent = msg;
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove('visible'), duration);
+}
+
+async function copyToClipboard(text) {
+  try {
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(text);
+      return true;
+    }
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.cssText = 'position:fixed;opacity:0;';
+    document.body.appendChild(ta);
+    ta.select();
+    const ok = document.execCommand('copy');
+    document.body.removeChild(ta);
+    return ok;
+  } catch (e) { return false; }
+}
+
+function formatDate(date) {
+  return date.toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' });
+}
+
+function toInputDate(date) {
+  const y = date.getFullYear();
+  const m = String(date.getMonth() + 1).padStart(2, '0');
+  const d = String(date.getDate()).padStart(2, '0');
+  return `${y}-${m}-${d}`;
+}
+
+/* ===== MILESTONES ===== */
+const MILESTONES = [
+  { days: 7, emoji: '🔥', name: 'One Week Wonder', desc: '7 days of daily snaps' },
+  { days: 30, emoji: '📅', name: 'Monthly Master', desc: '30 days strong' },
+  { days: 50, emoji: '⭐', name: 'Fifty Fire', desc: 'Half century of snaps' },
+  { days: 100, emoji: '💯', name: 'Triple Digits', desc: 'The legendary 100-day mark' },
+  { days: 200, emoji: '🌟', name: 'Double Century', desc: '200 days of dedication' },
+  { days: 365, emoji: '🎂', name: 'One Year Club', desc: 'A full year of daily streaks' },
+  { days: 500, emoji: '🏅', name: 'Half Thousand', desc: '500 days elite tier' },
+  { days: 730, emoji: '💎', name: 'Two Year Diamond', desc: '2 years of unbroken snaps' },
+  { days: 1000, emoji: '👑', name: 'The Thousand', desc: 'Legendary 1000-day streak' },
+  { days: 2000, emoji: '🌌', name: 'Cosmic Level', desc: 'Over 5 years of daily snaps' },
+  { days: 3000, emoji: '🚀', name: 'Interstellar', desc: '8+ years beyond rare' }
+];
+
+/* ===== STATE ===== */
+const state = {
+  mode: 'startDate',
+  streakDays: 0,
+  friendName: '',
+  history: []
+};
+
+/* ===== DOM ===== */
+const startDateInputs = $('#startDateInputs');
+const daysInputs = $('#daysInputs');
+const endDateInputs = $('#endDateInputs');
+const startDate = $('#startDate');
+const todayDate = $('#todayDate');
+const daysCount = $('#daysCount');
+const friendName = $('#friendName');
+const endStartDate = $('#endStartDate');
+const endDate = $('#endDate');
+const showMilestones = $('#showMilestones');
+const showHourglass = $('#showHourglass');
+const showStats = $('#showStats');
+const calculateBtn = $('#calculateBtn');
+const resetBtn = $('#resetBtn');
+const resultCard = $('#resultCard');
+const streakEmoji = $('#streakEmoji');
+const streakNumber = $('#streakNumber');
+const streakUnit = $('#streakUnit');
+const streakLabel = $('#streakLabel');
+const streakBadges = $('#streakBadges');
+const warningBox = $('#warningBox');
+const warningIcon = $('#warningIcon');
+const warningTitle = $('#warningTitle');
+const warningDesc = $('#warningDesc');
+const statsGrid = $('#statsGrid');
+const statDays = $('#statDays');
+const statWeeks = $('#statWeeks');
+const statMonths = $('#statMonths');
+const statYears = $('#statYears');
+const milestonesSection = $('#milestonesSection');
+const milestoneList = $('#milestoneList');
+const copyBtn = $('#copyBtn');
+const saveBtn = $('#saveBtn');
+const shareBtn = $('#shareBtn');
+const historySection = $('#historySection');
+const historyList = $('#historyList');
+const historyClear = $('#historyClear');
+
+/* ===== MODE TABS ===== */
+$$('.mode-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    $$('.mode-tab').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    state.mode = tab.dataset.mode;
+
+    startDateInputs.style.display = state.mode === 'startDate' ? 'grid' : 'none';
+    daysInputs.style.display = state.mode === 'days' ? 'grid' : 'none';
+    endDateInputs.style.display = state.mode === 'endDate' ? 'grid' : 'none';
+  });
+});
+
+/* ===== INIT DATES ===== */
+const today = new Date();
+todayDate.value = toInputDate(today);
+endDate.value = toInputDate(today);
+
+/* ===== GET STREAK DAYS ===== */
+function getStreakDays() {
+  if (state.mode === 'startDate') {
+    if (!startDate.value) return null;
+    const start = new Date(startDate.value);
+    const end = todayDate.value ? new Date(todayDate.value) : today;
+    const diff = Math.floor((end - start) / (1000 * 60 * 60 * 24));
+    return diff >= 0 ? diff + 1 : null;
+  }
+
+  if (state.mode === 'days') {
+    const days = parseInt(daysCount.value, 10);
+    if (!days || days < 1) return null;
+    return days;
+  }
+
+  if (state.mode === 'endDate') {
+    if (!endStartDate.value || !endDate.value) return null;
+    const start = new Date(endStartDate.value);
+    const end = new Date(endDate.value);
+    const diff = Math.floor((end - start) / (1000 * 60 * 60 * 24));
+    return diff >= 0 ? diff + 1 : null;
+  }
+
+  return null;
+}
+
+/* ===== GET EMOJI ===== */
+function getStreakEmoji(days) {
+  if (days >= 3000) return '🚀';
+  if (days >= 2000) return '🌌';
+  if (days >= 1000) return '👑';
+  if (days >= 730) return '💎';
+  if (days >= 500) return '🏅';
+  if (days >= 365) return '🎂';
+  if (days >= 200) return '🌟';
+  if (days >= 100) return '💯';
+  if (days >= 50) return '⭐';
+  if (days >= 30) return '🔥';
+  if (days >= 7) return '🔥';
+  return '✨';
+}
+
+/* ===== GET BADGES ===== */
+function getBadges(days) {
+  const badges = [];
+  if (days >= 1) badges.push({ text: '🔥 Active', class: '' });
+  if (days >= 100) badges.push({ text: '💯 100+ days', class: '' });
+  if (days >= 365) badges.push({ text: '🎂 1+ year', class: '' });
+  if (days >= 1000) badges.push({ text: '👑 1000+ days', class: '' });
+  if (days >= 2000) badges.push({ text: '🌌 Legendary', class: 'warn' });
+  if (days >= 3000) badges.push({ text: '🚀 Interstellar', class: 'danger' });
+  return badges;
+}
+
+/* ===== HOURGLASS WARNING ===== */
+function getHourglassStatus(days) {
+  // Simulate: hourglass appears when time is running out
+  // Since we can't know exact last snap time, we compute probabilistically
+  // Just show a positive/safe message normally, and let user know the rules
+
+  const now = new Date();
+  const hour = now.getHours();
+
+  if (hour >= 20 && hour < 24) {
+    return {
+      icon: '⏳',
+      title: 'Time is running out!',
+      desc: 'It\'s getting late. If you haven\'t sent a snap today, do it NOW to save your streak. The hourglass usually appears within 4 hours of expiration.',
+      class: 'warn'
+    };
+  }
+
+  if (hour >= 18 && hour < 20) {
+    return {
+      icon: '🕕',
+      title: 'Evening reminder',
+      desc: 'Evening is here. Send a snap to your friend before midnight to keep your streak alive. Both of you must snap every 24 hours.',
+      class: 'warn'
+    };
+  }
+
+  return {
+    icon: '✅',
+    title: 'Streak looks safe',
+    desc: 'Based on the current time, you likely have time. But remember: both you and your friend must send a snap within every 24-hour window. Set a reminder to be safe!',
+    class: 'safe'
+  };
+}
+
+/* ===== CALCULATE ===== */
+function calculate() {
+  const days = getStreakDays();
+
+  if (!days || days < 1) {
+    showToast('Please enter valid details', 'error');
+    return;
+  }
+
+  state.streakDays = days;
+  state.friendName = friendName.value.trim() || 'Friend';
+
+  // Show result card
+  resultCard.style.display = 'block';
+  streakEmoji.textContent = getStreakEmoji(days);
+  streakNumber.textContent = days.toLocaleString('en-IN');
+  streakUnit.textContent = days === 1 ? 'Day' : 'Days';
+
+  const friendText = state.friendName !== 'Friend' ? `<strong>${escapeHtml(state.friendName)}</strong>` : 'your friend';
+  streakLabel.innerHTML = `You and ${friendText} have ${days.toLocaleString('en-IN')} days of Snapchat streak! ${days >= 100 ? 'Incredible dedication! 🔥' : 'Keep it going! 🔥'}`;
+
+  // Badges
+  const badges = getBadges(days);
+  streakBadges.innerHTML = '';
+  badges.forEach(b => {
+    const span = document.createElement('span');
+    span.className = 'streak-badge ' + b.class;
+    span.textContent = b.text;
+    streakBadges.appendChild(span);
+  });
+
+  // Stats
+  if (showStats.checked) {
+    statsGrid.style.display = 'grid';
+    statDays.textContent = days.toLocaleString('en-IN');
+    statWeeks.textContent = (days / 7).toFixed(1);
+    statMonths.textContent = (days / 30.44).toFixed(1);
+    statYears.textContent = (days / 365.25).toFixed(2);
+  } else {
+    statsGrid.style.display = 'none';
+  }
+
+  // Hourglass
+  if (showHourglass.checked) {
+    const hourglass = getHourglassStatus(days);
+    warningBox.style.display = 'flex';
+    warningBox.className = 'warning-box ' + hourglass.class;
+    warningIcon.textContent = hourglass.icon;
+    warningTitle.textContent = hourglass.title;
+    warningDesc.textContent = hourglass.desc;
+  } else {
+    warningBox.style.display = 'none';
+  }
+
+  // Milestones
+  if (showMilestones.checked) {
+    milestonesSection.style.display = 'block';
+    milestoneList.innerHTML = '';
+    MILESTONES.forEach(m => {
+      const reached = days >= m.days;
+      const item = document.createElement('div');
+      item.className = 'milestone-item ' + (reached ? 'reached' : 'upcoming');
+      const remaining = m.days - days;
+      item.innerHTML = `
+        <div class="milestone-icon">${m.emoji}</div>
+        <div class="milestone-info">
+          <div class="milestone-name">${m.name} ${m.days} days</div>
+          <div class="milestone-desc">${m.desc}${!reached && remaining > 0 ? ` · ${remaining} days to go` : ''}</div>
+        </div>
+        <div class="milestone-status ${reached ? 'reached' : 'upcoming'}">${reached ? '✓ Reached' : 'Locked'}</div>
+      `;
+      milestoneList.appendChild(item);
+    });
+  } else {
+    milestonesSection.style.display = 'none';
+  }
+
+  // Scroll to result
+  setTimeout(() => {
+    resultCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, 200);
+}
+
+function escapeHtml(str) {
+  const div = document.createElement('div');
+  div.textContent = str;
+  return div.innerHTML;
+}
+
+/* ===== EVENT BINDINGS ===== */
+calculateBtn.addEventListener('click', calculate);
+
+resetBtn.addEventListener('click', () => {
+  startDate.value = '';
+  daysCount.value = 100;
+  friendName.value = '';
+  endStartDate.value = '';
+  endDate.value = toInputDate(new Date());
+  todayDate.value = toInputDate(new Date());
+  resultCard.style.display = 'none';
+  warningBox.style.display = 'none';
+  statsGrid.style.display = 'none';
+  milestonesSection.style.display = 'none';
+  showToast('Reset done');
+});
+
+[showMilestones, showHourglass, showStats].forEach(cb => {
+  cb.addEventListener('change', () => {
+    if (state.streakDays > 0) calculate();
+  });
+});
+
+/* ===== COPY ===== */
+copyBtn.addEventListener('click', async () => {
+  const days = state.streakDays;
+  if (!days) return;
+
+  const summary = [
+    `👻 Snapchat Streak Summary`,
+    `━━━━━━━━━━━━━━━━━━━`,
+    `🔥 Days: ${days.toLocaleString('en-IN')}`,
+    `📅 Weeks: ${(days / 7).toFixed(1)}`,
+    `🗓 Months: ${(days / 30.44).toFixed(1)}`,
+    `🎯 Milestone: ${getMilestoneName(days)}`,
+    `👥 With: ${state.friendName}`,
+    `━━━━━━━━━━━━━━━━━━━`,
+    `Keep it going! 🔥`
+  ].join('\n');
+
+  const ok = await copyToClipboard(summary);
+  if (ok) {
+    copyBtn.classList.add('copied');
+    const orig = copyBtn.innerHTML;
+    copyBtn.innerHTML = '✓ Copied!';
+    setTimeout(() => {
+      copyBtn.classList.remove('copied');
+      copyBtn.innerHTML = orig;
+    }, 2000);
+    showToast('Summary copied!', 'success');
+  }
+});
+
+function getMilestoneName(days) {
+  let last = null;
+  for (const m of MILESTONES) {
+    if (days >= m.days) last = m;
+    else break;
+  }
+  return last ? `${last.emoji} ${last.name}` : '✨ Just Starting';
+}
+
+/* ===== SAVE ===== */
+saveBtn.addEventListener('click', () => {
+  const days = state.streakDays;
+  if (!days) return;
+
+  const entry = {
+    days,
+    friend: state.friendName,
+    date: new Date().toISOString()
+  };
+
+  state.history = state.history.filter(h => !(h.days === days && h.friend === state.friendName));
+  state.history.unshift(entry);
+  state.history = state.history.slice(0, 10);
+  saveHistory();
+  renderHistory();
+  showToast('Saved!', 'success');
+});
+
+function saveHistory() {
+  try {
+    localStorage.setItem('bigtoolz_snap_streaks', JSON.stringify(state.history));
+  } catch (e) {}
+}
+
+function loadHistory() {
+  try {
+    state.history = JSON.parse(localStorage.getItem('bigtoolz_snap_streaks') || '[]');
+  } catch (e) { state.history = []; }
+  renderHistory();
+}
+
+function renderHistory() {
+  if (state.history.length === 0) {
+    historySection.style.display = 'none';
+    return;
+  }
+  historySection.style.display = 'block';
+  historyList.innerHTML = '';
+  state.history.forEach(item => {
+    const div = document.createElement('div');
+    div.className = 'history-item';
+    div.innerHTML = `
+      <div>
+        <div class="history-item-days">${item.days.toLocaleString('en-IN')} days 🔥</div>
+        <div class="history-item-meta">With ${escapeHtml(item.friend)} · ${formatDate(new Date(item.date))}</div>
+      </div>
+      <div style="font-size:20px;">${getStreakEmoji(item.days)}</div>
+    `;
+    div.addEventListener('click', () => {
+      state.mode = 'days';
+      $$('.mode-tab').forEach(t => t.classList.remove('active'));
+      document.querySelector('[data-mode="days"]').classList.add('active');
+      startDateInputs.style.display = 'none';
+      daysInputs.style.display = 'grid';
+      endDateInputs.style.display = 'none';
+      daysCount.value = item.days;
+      friendName.value = item.friend;
+      calculate();
+    });
+    historyList.appendChild(div);
+  });
+}
+
+historyClear.addEventListener('click', () => {
+  state.history = [];
+  saveHistory();
+  renderHistory();
+  showToast('History cleared');
+});
+
+/* ===== SHARE ===== */
+shareBtn.addEventListener('click', async () => {
+  const days = state.streakDays;
+  if (!days) return;
+
+  const text = `🔥 I have a ${days.toLocaleString('en-IN')} day Snapchat streak with ${state.friendName}! ${getStreakEmoji(days)}`;
+
+  if (navigator.share) {
+    try {
+      await navigator.share({ title: 'Snapchat Streak', text });
+      showToast('Shared!', 'success');
+    } catch (e) {}
+  } else {
+    await copyToClipboard(text);
+    showToast('Copied to clipboard!', 'success');
+  }
+});
+
+/* ===== FAQ ===== */
+$$('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    $$('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+
+/* ===== INIT ===== */
+loadHistory();
+</script>
+
+</body>
+</html>

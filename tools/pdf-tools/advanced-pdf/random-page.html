@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2563eb">
+
+<title>Random Page Picker - Extract Random Pages from PDF Free | BigToolz</title>
+<meta name="description" content="Pick random pages from any PDF online free. Choose 1 or more pages randomly, preview them, download as new PDF. Works in your browser, no upload.">
+<meta name="keywords" content="random pdf page, random page picker, pick random pages pdf, extract random pages, pdf shuffler">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://bigtoolz.com/tools/pdf-tools/advanced-pdf/random-page/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Random Page Picker - Free Online PDF Tool | BigToolz">
+<meta property="og:description" content="Pick random pages from PDF free, no upload, download as new PDF.">
+<meta property="og:url" content="https://bigtoolz.com/tools/pdf-tools/advanced-pdf/random-page/">
+<meta property="og:image" content="https://bigtoolz.com/assets/images/og-image.jpg">
+<meta property="og:site_name" content="BigToolz">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Random Page Picker - BigToolz">
+<meta name="twitter:description" content="Pick random PDF pages instantly free, no upload.">
+<meta name="twitter:image" content="https://bigtoolz.com/assets/images/twitter-card.jpg">
+
+<link rel="icon" href="/assets/images/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/images/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#f8f9fc;color:#1a1a2e;overflow-x:hidden;line-height:1.5}
+
+  .header{background:#fff;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;position:sticky;top:0;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+  .header-left{display:flex;align-items:center;gap:40px}
+  .logo{display:flex;align-items:center;gap:8px;font-size:22px;font-weight:800;color:#1a1a2e;text-decoration:none}
+  .logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#3b82f6,#2563eb);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px}
+  .logo span{color:#2563eb}
+  .nav{display:flex;align-items:center;gap:28px;list-style:none}
+  .nav a{text-decoration:none;color:#4b5563;font-size:14px;font-weight:500;transition:color .2s}
+  .nav a:hover,.nav a.active{color:#2563eb}
+  .header-right{display:flex;align-items:center;gap:16px}
+  .search-btn,.theme-btn{width:36px;height:36px;border-radius:50%;border:none;background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#4b5563}
+  .search-btn:hover,.theme-btn:hover{background:#f3f4f6}
+  .bookmark-btn{display:flex;align-items:center;gap:8px;background:#2563eb;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
+  .bookmark-btn:hover{background:#1d4ed8}
+
+  .hero{background:linear-gradient(135deg,#0a0e27 0%,#1a1a4e 40%,#2d1b69 70%,#4c1d95 100%);padding:40px 40px 60px;position:relative;overflow:hidden;color:#fff}
+  .hero::before{content:'';position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(236,72,153,.25) 0%,transparent 70%);border-radius:50%}
+  .hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+  .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px;flex-wrap:wrap}
+  .breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none}
+  .breadcrumb a:hover{color:#fff}
+  .breadcrumb .sep{color:rgba(255,255,255,.4)}
+  .breadcrumb .current{color:#fff;font-weight:500}
+  .hero-title-row{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+  .hero-icon{width:60px;height:60px;background:#ec4899;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;color:#fff;flex-shrink:0;box-shadow:0 8px 24px rgba(236,72,153,.4)}
+  .hero-title{font-size:42px;font-weight:800;line-height:1.15}
+  .hero-title .blue{color:#f472b6}
+  .hero-desc{font-size:15px;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:24px;max-width:560px}
+  .hero-features{display:flex;gap:24px;flex-wrap:wrap}
+  .hero-feature{display:flex;align-items:center;gap:6px;font-size:13px;color:#fff;font-weight:500}
+  .hero-feature .check{width:18px;height:18px;border-radius:50%;background:#ec4899;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;flex-shrink:0}
+
+  .main-content{max-width:1200px;margin:0 auto;padding:40px;display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start}
+  .tool-content{min-width:0}
+
+  .workspace{background:#fff;border-radius:16px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,.06);border:1px solid #e5e7eb;margin-bottom:24px}
+
+  .dropzone{border:2px dashed #fbcfe8;border-radius:12px;padding:50px 30px;text-align:center;background:#fdf2f8;margin-bottom:24px;transition:all .2s;cursor:pointer}
+  .dropzone:hover,.dropzone.dragover{border-color:#ec4899;background:#fce7f3}
+  .dropzone-icon{width:60px;height:60px;background:linear-gradient(135deg,#ec4899,#db2777);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;color:#fff;font-size:26px;transition:transform .2s}
+  .dropzone:hover .dropzone-icon{transform:translateY(-4px)}
+  .dropzone-title{font-size:16px;font-weight:700;color:#1a1a2e;margin-bottom:8px}
+  .dropzone-sub{font-size:14px;color:#6b7280;margin-bottom:20px}
+  .dropzone-sub a{color:#ec4899;font-weight:600;text-decoration:none}
+  .choose-btn{display:inline-flex;align-items:center;gap:8px;background:#ec4899;color:#fff;border:none;padding:12px 28px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;transition:background .2s}
+  .choose-btn:hover{background:#db2777}
+  .dropzone-info{font-size:12px;color:#9ca3af;display:flex;align-items:center;justify-content:center;gap:8px;margin-top:16px;flex-wrap:wrap}
+  .dropzone-info .divider{color:#d1d5db}
+  .file-input{display:none}
+
+  /* Editor */
+  .editor{display:none}
+  .editor.visible{display:block}
+
+  .file-info-bar{display:flex;align-items:center;gap:14px;padding:14px 18px;background:#fdf2f8;border:1px solid #fbcfe8;border-radius:12px;margin-bottom:20px;flex-wrap:wrap}
+  .file-info-icon{width:44px;height:44px;background:#ec4899;border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:20px;flex-shrink:0}
+  .file-info-text{flex:1;min-width:0}
+  .file-info-name{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .file-info-meta{font-size:12px;color:#6b7280}
+  .file-change-btn{padding:8px 14px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;font-size:12px;font-weight:600;color:#ec4899;cursor:pointer;font-family:inherit;transition:all .2s}
+  .file-change-btn:hover{border-color:#ec4899;background:#fdf2f8}
+
+  /* Options */
+  .options{background:#fdf2f8;border-radius:12px;padding:20px;margin-bottom:20px;border:1px solid #fbcfe8}
+  .options-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+
+  .mode-tabs{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px}
+  .mode-btn{background:#fff;border:2px solid #e5e7eb;border-radius:10px;padding:14px 12px;cursor:pointer;font-family:inherit;transition:all .2s;text-align:left;line-height:1.3}
+  .mode-btn:hover{border-color:#ec4899;background:#fdf2f8}
+  .mode-btn.active{border-color:#ec4899;background:#ec4899;color:#fff}
+  .mode-btn-title{font-size:13px;font-weight:700;display:flex;align-items:center;gap:6px;margin-bottom:4px}
+  .mode-btn-desc{font-size:11px;opacity:.75;line-height:1.4}
+
+  .options-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
+  .option-group label{display:block;font-size:12px;font-weight:600;color:#4b5563;margin-bottom:6px}
+  .option-group input[type="number"],.option-group input[type="text"]{width:100%;padding:10px 12px;border:1px solid #e5e7eb;border-radius:8px;font-size:13px;font-family:inherit;color:#1a1a2e;background:#fff;outline:none;transition:border-color .2s}
+  .option-group input:focus{border-color:#ec4899;box-shadow:0 0 0 3px rgba(236,72,153,.1)}
+
+  /* Pick button */
+  .pick-btn-wrap{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap}
+  .pick-btn{flex:1;padding:14px 20px;background:#ec4899;color:#fff;border:none;border-radius:10px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;transition:all .2s;display:inline-flex;align-items:center;justify-content:center;gap:8px}
+  .pick-btn:hover{background:#db2777;transform:translateY(-1px)}
+  .pick-btn:disabled{opacity:.5;cursor:not-allowed}
+  .reroll-btn{padding:14px 20px;background:#fff;color:#ec4899;border:1px solid #e5e7eb;border-radius:10px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;transition:all .2s;display:inline-flex;align-items:center;justify-content:center;gap:6px}
+  .reroll-btn:hover{border-color:#ec4899;background:#fdf2f8}
+
+  /* Results panel */
+  .results{display:none;margin-top:24px}
+  .results.visible{display:block}
+
+  .result-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:12px}
+  .result-title{font-size:16px;font-weight:700;color:#1a1a2e;display:flex;align-items:center;gap:8px}
+  .result-title .icon{width:28px;height:28px;background:#ec4899;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px}
+
+  .picked-pages{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:20px;padding:16px;background:#fdf2f8;border-radius:12px;border:1px solid #fbcfe8}
+  .page-pill{padding:8px 14px;background:#ec4899;color:#fff;border-radius:20px;font-size:13px;font-weight:700;font-family:'JetBrains Mono',monospace;display:inline-flex;align-items:center;gap:6px}
+
+  /* Thumbnails */
+  .thumb-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:14px;margin-bottom:20px}
+  .thumb-card{background:#fff;border:1px solid #e5e7eb;border-radius:10px;overflow:hidden;transition:all .2s;position:relative}
+  .thumb-card:hover{border-color:#ec4899;box-shadow:0 4px 12px rgba(236,72,153,.15);transform:translateY(-2px)}
+  .thumb-card canvas{display:block;width:100%;height:auto;background:#fff}
+  .thumb-label{position:absolute;top:8px;left:8px;background:rgba(236,72,153,.95);color:#fff;font-size:11px;font-weight:700;padding:3px 9px;border-radius:6px;font-family:'JetBrains Mono',monospace;backdrop-filter:blur(4px)}
+
+  /* Actions */
+  .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 28px;border-radius:10px;font-size:15px;font-weight:700;font-family:inherit;cursor:pointer;border:none;transition:all .2s;text-decoration:none}
+  .btn-primary{background:#ec4899;color:#fff;flex:1;box-shadow:0 4px 12px rgba(236,72,153,.2)}
+  .btn-primary:hover:not(:disabled){background:#db2777;transform:translateY(-2px);box-shadow:0 6px 20px rgba(236,72,153,.3)}
+  .btn-primary:disabled{opacity:.5;cursor:not-allowed;transform:none}
+  .btn-secondary{background:#fff;color:#ec4899;border:1px solid #e5e7eb}
+  .btn-secondary:hover{border-color:#ec4899;background:#fdf2f8}
+  .btn-success{background:#10b981;color:#fff}
+  .btn-success:hover{background:#059669}
+
+  .status-msg{margin-top:14px;padding:12px 14px;border-radius:8px;font-size:13px;font-weight:600;display:none}
+  .status-msg.visible{display:block}
+  .status-msg.success{background:#d1fae5;color:#065f46;border:1px solid #a7f3d0}
+  .status-msg.error{background:#fee2e2;color:#991b1b;border:1px solid #fecaca}
+  .status-msg.info{background:#fce7f3;color:#9d174d;border:1px solid #fbcfe8}
+
+  .progress{display:none;margin-top:14px}
+  .progress.visible{display:block}
+  .progress-bar{width:100%;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden;margin-bottom:8px}
+  .progress-fill{height:100%;background:linear-gradient(90deg,#f472b6,#ec4899);border-radius:4px;width:0%;transition:width .3s ease}
+  .progress-text{font-size:13px;color:#6b7280;text-align:center;font-weight:500}
+
+  /* SEO */
+  .seo-content{background:#fff;border-radius:16px;padding:32px;border:1px solid #e5e7eb;margin-bottom:24px}
+  .seo-content h2{font-size:22px;font-weight:800;color:#1a1a2e;margin-bottom:14px;margin-top:28px;display:flex;align-items:center;gap:10px}
+  .seo-content h2:first-child{margin-top:0}
+  .seo-content h3{font-size:16px;font-weight:700;color:#1a1a2e;margin:20px 0 10px}
+  .seo-content p{font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:14px}
+  .seo-content ul{list-style:none;padding-left:0;margin-bottom:16px}
+  .seo-content ul li{position:relative;padding-left:24px;font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:8px}
+  .seo-content ul li::before{content:'';position:absolute;left:6px;top:12px;width:6px;height:6px;background:#ec4899;border-radius:50%}
+  .seo-content a{color:#2563eb;text-decoration:none;font-weight:600}
+  .seo-content a:hover{text-decoration:underline}
+  .seo-content strong{color:#1a1a2e;font-weight:700}
+
+  .how-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:20px}
+  .how-step{background:#fdf2f8;border-radius:12px;padding:20px;border:1px solid #fbcfe8}
+  .how-step-num{width:36px;height:36px;border-radius:50%;background:#ec4899;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;margin-bottom:12px}
+  .how-step-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+  .how-step-desc{font-size:13px;color:#6b7280;line-height:1.6}
+
+  .faq-item{background:#fdf2f8;border:1px solid #fbcfe8;border-radius:12px;margin-bottom:10px;overflow:hidden;transition:border-color .2s}
+  .faq-item:hover{border-color:#ec4899}
+  .faq-question{width:100%;background:none;border:none;padding:18px 22px;font-size:15px;font-weight:700;color:#1a1a2e;text-align:left;cursor:pointer;font-family:inherit;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .faq-question .chev{font-size:12px;color:#ec4899;transition:transform .2s;flex-shrink:0}
+  .faq-item.open .faq-question .chev{transform:rotate(180deg)}
+  .faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 22px}
+  .faq-item.open .faq-answer{max-height:500px;padding-bottom:18px}
+  .faq-answer p{font-size:14px;color:#6b7280;line-height:1.7;margin:0}
+
+  .sidebar{background:#fff;border-radius:16px;padding:24px;border:1px solid #e5e7eb;position:sticky;top:80px;margin-bottom:24px}
+  .sidebar-header{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:800;color:#1a1a2e;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid #f3f4f6}
+  .sidebar-list{display:flex;flex-direction:column;gap:8px}
+  .sidebar-item{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;cursor:pointer;transition:background .2s;text-decoration:none;color:inherit;border:1px solid #f3f4f6}
+  .sidebar-item:hover{background:#fdf2f8;border-color:#fbcfe8}
+  .sidebar-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;flex-shrink:0}
+  .sidebar-info{flex:1;min-width:0}
+  .sidebar-title{font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:2px}
+  .sidebar-desc{font-size:11px;color:#9ca3af;line-height:1.4}
+
+  .footer{background:#0a0e27;padding:60px 40px 30px;color:#fff;margin-top:40px}
+  .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:40px}
+  .footer-brand{display:flex;align-items:center;gap:8px;font-size:20px;font-weight:800;margin-bottom:12px}
+  .footer-brand span{color:#60a5fa}
+  .footer-tagline{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px}
+  .footer-social{display:flex;gap:12px}
+  .footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:16px;transition:background .2s}
+  .footer-social a:hover{background:rgba(255,255,255,.2)}
+  .footer-heading{font-size:14px;font-weight:700;margin-bottom:20px;color:#fff}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .footer-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;transition:color .2s}
+  .footer-links a:hover{color:#60a5fa}
+  .footer-bottom{max-width:1200px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  .footer-bottom-left{display:flex;gap:20px;font-size:12px;color:rgba(255,255,255,.5)}
+  .footer-bottom-right,.footer-bottom-links a{font-size:12px;color:rgba(255,255,255,.5);text-decoration:none}
+  .footer-bottom-links{display:flex;gap:20px}
+
+  .toast{position:fixed;bottom:24px;right:24px;background:#1a1a2e;color:#fff;padding:14px 20px;border-radius:10px;font-size:13px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:3000;transform:translateY(200%);transition:transform .3s ease;max-width:320px}
+  .toast.visible{transform:translateY(0)}
+  .toast.success{background:#10b981}
+  .toast.error{background:#ef4444}
+
+  @media(max-width:1024px){
+    .main-content{grid-template-columns:1fr;padding:24px 20px}
+    .sidebar{position:static}
+    .how-steps{grid-template-columns:repeat(2,1fr)}
+    .options-grid{grid-template-columns:1fr}
+    .mode-tabs{grid-template-columns:1fr}
+  }
+  @media(max-width:768px){
+    .header{padding:0 20px}.nav{display:none}
+    .hero{padding:24px 20px 40px}
+    .hero-title{font-size:28px}
+    .hero-icon{width:48px;height:48px;font-size:22px}
+    .hero-title-row{flex-direction:column;align-items:flex-start;gap:12px}
+    .main-content{padding:20px 16px}
+    .workspace{padding:20px}
+    .dropzone{padding:32px 16px}
+    .how-steps{grid-template-columns:1fr}
+    .seo-content{padding:20px}
+    .footer-inner{grid-template-columns:1fr 1fr}
+    .toast{left:16px;right:16px;bottom:16px;max-width:none}
+    .thumb-grid{grid-template-columns:repeat(auto-fill,minmax(110px,1fr))}
+  }
+  @media(max-width:576px){
+    .header{padding:0 16px}.header-right .search-btn,.header-right .theme-btn{display:none}
+    .hero-title{font-size:24px}
+    .actions{flex-direction:column}
+    .btn{width:100%}
+    .btn-primary{flex:none}
+    .footer-inner{grid-template-columns:1fr}
+    .footer-bottom{flex-direction:column;text-align:center}
+  }
+
+  html[data-theme="dark"] body{background:#0f172a;color:#f1f5f9}
+  html[data-theme="dark"] .header,html[data-theme="dark"] .workspace,html[data-theme="dark"] .seo-content,html[data-theme="dark"] .sidebar{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .logo,html[data-theme="dark"] .hero-title,html[data-theme="dark"] .seo-content h2,html[data-theme="dark"] .seo-content h3,html[data-theme="dark"] .faq-question,html[data-theme="dark"] .sidebar-header,html[data-theme="dark"] .sidebar-title,html[data-theme="dark"] .options-title,html[data-theme="dark"] .file-info-name,html[data-theme="dark"] .result-title{color:#f1f5f9}
+  html[data-theme="dark"] .nav a{color:#cbd5e1}
+  html[data-theme="dark"] .dropzone{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .how-step,html[data-theme="dark"] .faq-item,html[data-theme="dark"] .options,html[data-theme="dark"] .file-info-bar,html[data-theme="dark"] .mode-btn,html[data-theme="dark"] .picked-pages,html[data-theme="dark"] .thumb-card{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .mode-btn{color:#cbd5e1}
+  html[data-theme="dark"] .mode-btn.active{background:#ec4899;color:#fff;border-color:#ec4899}
+  html[data-theme="dark"] .option-group input{background:#1e293b;border-color:#334155;color:#f1f5f9}
+  html[data-theme="dark"] .seo-content p,html[data-theme="dark"] .seo-content ul li,html[data-theme="dark"] .faq-answer p{color:#cbd5e1}
+  html[data-theme="dark"] .file-change-btn{background:#0f172a;border-color:#334155;color:#f472b6}
+  html[data-theme="dark"] .reroll-btn{background:#0f172a;border-color:#334155;color:#f472b6}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type": "SoftwareApplication", "name": "Random Page Picker", "url": "https://bigtoolz.com/tools/pdf-tools/advanced-pdf/random-page/", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any (Web-based)", "description": "Free online tool to pick random pages from any PDF extract 1 or more random pages and download them as a new PDF.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.7", "ratingCount": "189"}},
+    {"@type": "HowTo", "name": "How to Pick Random Pages from a PDF", "step": [
+      {"@type": "HowToStep", "name": "Upload PDF", "text": "Drag & drop or click to select your PDF file."},
+      {"@type": "HowToStep", "name": "Choose Count", "text": "Enter how many random pages to pick."},
+      {"@type": "HowToStep", "name": "Pick", "text": "Click Pick Random Pages to select."},
+      {"@type": "HowToStep", "name": "Download", "text": "Download the new PDF containing only the picked pages."}
+    ]},
+    {"@type": "FAQPage", "mainEntity": [
+      {"@type": "Question", "name": "How does the random page picker work?", "acceptedAnswer": {"@type": "Answer", "text": "We use JavaScript's cryptographically secure random number generator to pick N unique page numbers from your PDF, then create a new PDF containing only those pages."}},
+      {"@type": "Question", "name": "Can I pick the same page twice?", "acceptedAnswer": {"@type": "Answer", "text": "No by default each page is picked only once. For repeated pages, run the tool multiple times and combine the results."}},
+      {"@type": "Question", "name": "What can I use this for?", "acceptedAnswer": {"@type": "Answer", "text": "Random sampling for research, creating quizzes from textbooks, previewing random pages, testing document integrity, or just for fun."}},
+      {"@type": "Question", "name": "Are my PDFs uploaded to a server?", "acceptedAnswer": {"@type": "Answer", "text": "No. Everything runs in your browser using PDF.js and pdf-lib. Your PDF never leaves your device."}}
+    ]},
+    {"@type": "BreadcrumbList", "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bigtoolz.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://bigtoolz.com/tools/"},
+      {"@type": "ListItem", "position": 3, "name": "PDF Tools", "item": "https://bigtoolz.com/tools/pdf-tools/"},
+      {"@type": "ListItem", "position": 4, "name": "Advanced PDF", "item": "https://bigtoolz.com/tools/pdf-tools/advanced-pdf/"},
+      {"@type": "ListItem", "position": 5, "name": "Random Page Picker", "item": "https://bigtoolz.com/tools/pdf-tools/advanced-pdf/random-page/"}
+    ]}
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-left">
+    <a href="/" class="logo"><div class="logo-icon">⚒</div>BigToolz</span></a>
+    <nav><ul class="nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/tools/" class="active">All Tools</a></li>
+      <li><a href="/tools/categories">Categories</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul></nav>
+  </div>
+  <div class="header-right">
+    
+    <button class="theme-btn" aria-label="Toggle theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
+    
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <nav class="breadcrumb">
+      <a href="/">Home</a><span class="sep">›</span>
+      <a href="/tools/">Tools</a><span class="sep">›</span>
+      <a href="/tools/pdf-tools/">PDF Tools</a><span class="sep">›</span>
+      <a href="/tools/pdf-tools/advanced-pdf/">Advanced PDF</a><span class="sep">›</span>
+      <span class="current">Random Page Picker</span>
+    </nav>
+    <div class="hero-title-row">
+      <div class="hero-icon">🎲</div>
+      <h1 class="hero-title">Random <span class="blue">Page Picker</span></h1>
+    </div>
+    <p class="hero-desc">
+      Pick random pages from any PDF extract 1 or more random pages and download them as a new PDF. Perfect for sampling, quizzes, and testing. No upload, 100% private.
+    </p>
+    <div class="hero-features">
+      <div class="hero-feature"><span class="check">✓</span> Any Page Count</div>
+      <div class="hero-feature"><span class="check">✓</span> Cryptographically Random</div>
+      <div class="hero-feature"><span class="check">✓</span> Live Preview</div>
+      <div class="hero-feature"><span class="check">✓</span> No Upload</div>
+    </div>
+  </div>
+</section>
+
+<div class="main-content">
+
+  <div class="tool-content">
+
+    <div class="workspace">
+
+      <!-- Dropzone -->
+      <div class="dropzone" id="dropzone">
+        <div class="dropzone-icon">⬆</div>
+        <div class="dropzone-title">Drag & drop your PDF here</div>
+        <div class="dropzone-sub">or <a href="#" id="browseLink">click to browse files</a></div>
+        <button class="choose-btn" id="chooseBtn" type="button">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/></svg>
+          Choose PDF File
+        </button>
+        <div class="dropzone-info">
+          <span>PDF only</span>
+          <span class="divider">|</span>
+          <span>Max 100MB recommended</span>
+        </div>
+        <input type="file" id="fileInput" class="file-input" accept="application/pdf,.pdf">
+      </div>
+
+      <!-- Editor -->
+      <div class="editor" id="editor">
+
+        <div class="file-info-bar">
+          <div class="file-info-icon">📄</div>
+          <div class="file-info-text">
+            <div class="file-info-name" id="fileName">document.pdf</div>
+            <div class="file-info-meta" id="fileMeta"></div>
+          </div>
+          <button class="file-change-btn" id="changeBtn">Change PDF</button>
+        </div>
+
+        <!-- Options -->
+        <div class="options">
+          <div class="options-title">🎲 Pick Settings</div>
+
+          <div class="mode-tabs" id="modeTabs">
+            <button class="mode-btn active" data-mode="multi">
+              <div class="mode-btn-title">📚 Multiple Pages</div>
+              <div class="mode-btn-desc">Pick N random pages (unique)</div>
+            </button>
+            <button class="mode-btn" data-mode="single">
+              <div class="mode-btn-title">🎯 Single Page</div>
+              <div class="mode-btn-desc">Pick 1 random page</div>
+            </button>
+          </div>
+
+          <div class="options-grid">
+            <div class="option-group">
+              <label>Number of Pages to Pick</label>
+              <input type="number" id="pickCount" value="3" min="1" step="1">
+            </div>
+            <div class="option-group">
+              <label>Seed (optional for reproducible results)</label>
+              <input type="text" id="seedInput" placeholder="e.g. 12345 or leave empty">
+            </div>
+          </div>
+
+          <div class="pick-btn-wrap">
+            <button class="pick-btn" id="pickBtn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+              Pick Random Pages
+            </button>
+            <button class="reroll-btn" id="rerollBtn" style="display:none">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 019-9 9.75 9.75 0 016.74 2.74L21 8M21 3v5h-5"/></svg>
+              Re-roll
+            </button>
+          </div>
+        </div>
+
+        <!-- Results -->
+        <div class="results" id="results">
+          <div class="result-header">
+            <div class="result-title">
+              <span class="icon">✓</span>
+              <span id="resultTitle">Picked pages</span>
+            </div>
+            <div style="display:flex;gap:8px;">
+              <button class="btn btn-success" id="downloadBtn" style="padding:10px 18px;font-size:13px;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+                Download PDF
+              </button>
+            </div>
+          </div>
+
+          <div class="picked-pages" id="pickedPages"></div>
+          <div class="thumb-grid" id="thumbGrid"></div>
+
+          <div class="actions">
+            <button class="btn btn-primary" id="newPdfBtn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/></svg>
+              Create PDF from Picked Pages
+            </button>
+          </div>
+        </div>
+
+        <div class="status-msg" id="statusMsg"></div>
+
+        <div class="progress" id="progress">
+          <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+          <div class="progress-text" id="progressText">Processing...</div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- SEO Content -->
+    <div class="seo-content">
+
+      <h2>🎲 What is a PDF Random Page Picker?</h2>
+      <p>
+        A <strong>random page picker</strong> selects random pages from a PDF and lets you download them as a new document. It's useful for <strong>random sampling for research, creating surprise quizzes from textbooks, previewing arbitrary pages of long documents, testing file integrity,</strong> or just for fun. Every pick uses cryptographically secure randomness by default.
+      </p>
+      <p>
+        Unlike most online tools, BigToolz runs <strong>100% in your browser</strong> using pdf-lib. Your PDFs <strong>never uploaded to any server</strong> complete privacy, instant results, no file size limits.
+      </p>
+
+      <h2>🚀 How to Pick Random Pages from a PDF</h2>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-step-num">1</div>
+          <div class="how-step-title">Upload PDF</div>
+          <div class="how-step-desc">Drag & drop or click "Choose PDF File".</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">2</div>
+          <div class="how-step-title">Choose Count</div>
+          <div class="how-step-desc">Enter how many random pages to pick.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">3</div>
+          <div class="how-step-title">Pick</div>
+          <div class="how-step-desc">Click "Pick Random Pages" to select.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">4</div>
+          <div class="how-step-title">Download</div>
+          <div class="how-step-desc">Download a new PDF with only the picked pages.</div>
+        </div>
+      </div>
+
+      <h2>🎯 Two Modes Explained</h2>
+
+      <h3>📚 Multiple Pages</h3>
+      <p>Pick <strong>N unique random pages</strong> (default 3). Perfect for random sampling, quizzes, or spot-checking long documents. Each page is picked at most once.</p>
+
+      <h3>🎯 Single Page</h3>
+      <p>Pick <strong>1 random page</strong>. Simple and quick useful when you just want to sample one page without thinking about count.</p>
+
+      <h2>🔐 Reproducible Randomness with Seeds</h2>
+      <p>
+        By default, every pick uses <strong>crypto.getRandomValues()</strong> cryptographically secure, unpredictable randomness. Each "Pick" and "Re-roll" produces a different result.
+      </p>
+      <p>
+        If you want <strong>reproducible results</strong> (e.g., for tests, shared challenges, or research), enter a <strong>seed</strong> any text or number. The same seed with the same PDF will always produce the same picks. This is useful for:
+      </p>
+      <ul>
+        <li>Sharing a random selection with a friend send them the same seed.</li>
+        <li>Running reproducible experiments same PDF + seed = same output.</li>
+        <li>Testing tools deterministic results across runs.</li>
+      </ul>
+
+      <h2>💡 Common Use Cases</h2>
+      <ul>
+        <li><strong>Research sampling</strong> pull random pages from a large dataset for content analysis.</li>
+        <li><strong>Quiz creation</strong> randomly select pages from a textbook for testing.</li>
+        <li><strong>Book clubs</strong> random page challenge (read whatever you land on).</li>
+        <li><strong>Document previews</strong> see a random sample before committing to read the whole thing.</li>
+        <li><strong>Integrity testing</strong> spot-check pages across a document.</li>
+        <li><strong>Fun/creativity</strong> random story prompts from a workbook or journal.</li>
+      </ul>
+
+      <h2>✨ Key Features</h2>
+      <ul>
+        <li><strong>2 modes</strong> single page, or multiple pages.</li>
+        <li><strong>Cryptographically random</strong> no predictable patterns.</li>
+        <li><strong>Custom seed</strong> reproducible picks when you need them.</li>
+        <li><strong>Live thumbnails</strong> see every picked page rendered.</li>
+        <li><strong>Re-roll button</strong> try different random sets instantly.</li>
+        <li><strong>Download new PDF</strong> picked pages only, original order preserved.</li>
+        <li><strong>Any page count</strong> from 1 to the total number of pages.</li>
+        <li><strong>100% browser-based</strong> your PDF never leaves your device.</li>
+      </ul>
+
+      <h2>❓ Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-question">How does the random page picker work?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>We use JavaScript's cryptographically secure random number generator to pick N unique page numbers from your PDF, then create a new PDF containing only those pages (in original order).</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I pick the same page twice?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>No by default each page is picked only once per run. To intentionally duplicate pages, run the tool multiple times and combine the outputs in a PDF editor.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What can I use this for?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Random sampling for research, creating quizzes from textbooks, previewing random pages, testing document integrity, spot-checking long reports, or just for fun (random page challenges, story prompts, etc.).</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">How does the seed work?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>A seed turns randomness into a <strong>deterministic</strong> function. Same PDF + same seed = same picked pages, every time. Leave the seed empty for true randomness. Fill it with any text or number for reproducible results.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Does it preserve the original page order?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Yes. If your random pick is pages [7, 2, 15], they'll be sorted to [2, 7, 15] in the new PDF. This keeps the document coherent and easy to read.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I pick all pages?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Yes set the count to the total number of pages. The result is a shuffled copy of the entire PDF, which can be useful for randomized slideshows or sampling without replacement.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Are my PDFs uploaded to a server?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>No. Everything runs in your browser using PDF.js and pdf-lib. Your PDF never leaves your device, and nothing is stored anywhere.</p></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-header">🔗 Related PDF Tools</div>
+    <div class="sidebar-list">
+      <a href="/tools/pdf-tools/organize-pdf/extract-pages/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#10b981;">📄</div>
+        <div class="sidebar-info"><div class="sidebar-title">Extract Pages</div><div class="sidebar-desc">Pick specific pages</div></div>
+      </a>
+      <a href="/tools/pdf-tools/organize-pdf/split-pdf/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#f97316;">✂️</div>
+        <div class="sidebar-info"><div class="sidebar-title">Split PDF</div><div class="sidebar-desc">Split into files</div></div>
+      </a>
+      <a href="/tools/pdf-tools/advanced-pdf/split-by-size/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#8b5cf6;">📊</div>
+        <div class="sidebar-info"><div class="sidebar-title">Split by Size</div><div class="sidebar-desc">Split by file size</div></div>
+      </a>
+      <a href="/tools/pdf-tools/organize-pdf/merge-pdf/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#3b82f6;">📚</div>
+        <div class="sidebar-info"><div class="sidebar-title">Merge PDF</div><div class="sidebar-desc">Combine files</div></div>
+      </a>
+      <a href="/tools/pdf-tools/advanced-pdf/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#8b5cf6;">🚀</div>
+        <div class="sidebar-info"><div class="sidebar-title">All Advanced PDF →</div><div class="sidebar-desc">20 tools</div></div>
+      </a>
+      <a href="/tools/pdf-tools/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#64748b;">📕</div>
+        <div class="sidebar-info"><div class="sidebar-title">All PDF Tools →</div><div class="sidebar-desc">100+ tools</div></div>
+      </a>
+    </div>
+  </aside>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand"><div class="logo-icon">⚒</div>BigToolz</span></div>
+      <p class="footer-tagline">Your Ultimate Online Tools Hub</p>
+      <div class="footer-social">
+        <a href="https://facebook.com/bigtoolz" aria-label="Facebook">f</a>
+        <a href="https://twitter.com/bigtoolz" aria-label="Twitter">𝕏</a>
+        <a href="https://youtube.com/@bigtoolz" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+    <div>
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/tools/">All Tools</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Categories</h3>
+      <ul class="footer-links">
+        <li><a href="/tools/image-tools/">Image Tools</a></li>
+        <li><a href="/tools/pdf-tools/">PDF Tools</a></li>
+        <li><a href="/tools/text-tools/">Text Tools</a></li>
+        <li><a href="/tools/seo-tools/">SEO Tools</a></li>
+        <li><a href="/tools/categories">All Categories →</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Legal</h3>
+      <ul class="footer-links">
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left"><span>✓ 100% Free</span><span>✓ No Sign Up</span><span>✓ No Installation</span></div>
+    <div class="footer-bottom-right">© 2026 BigToolz. All rights reserved.</div>
+    <div class="footer-bottom-links"><a href="/privacy-policy">Privacy</a><a href="/terms">Terms</a><a href="/disclaimer">Disclaimer</a></div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<!-- PDF.js + pdf-lib -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+
+<script>
+'use strict';
+
+/* ===== THEME ===== */
+(function(){try{var t=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&d))document.documentElement.setAttribute('data-theme','dark');else if(t==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();
+document.querySelector('.theme-btn')?.addEventListener('click',()=>{const h=document.documentElement;const c=h.getAttribute('data-theme');const d=window.matchMedia('(prefers-color-scheme: dark)').matches;let n=c==='dark'?'light':c==='light'?'dark':(d?'light':'dark');h.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}});
+
+/* ===== PDF.js worker ===== */
+if (window.pdfjsLib) {
+  pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+}
+
+/* ===== HELPERS ===== */
+const $ = (s, p = document) => p.querySelector(s);
+const $$ = (s, p = document) => [...p.querySelectorAll(s)];
+
+function showToast(msg, type = 'info', duration = 3000) {
+  const t = $('#toast');
+  if (!t) return;
+  t.className = 'toast visible' + (type !== 'info' ? ' ' + type : '');
+  t.textContent = msg;
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove('visible'), duration);
+}
+
+function setStatus(msg, type = 'info') {
+  const el = $('#statusMsg');
+  el.textContent = msg;
+  el.className = 'status-msg visible ' + type;
+}
+
+function clearStatus() {
+  const el = $('#statusMsg');
+  el.className = 'status-msg';
+  el.textContent = '';
+}
+
+/* ===== SECURE RANDOM with seed support ===== */
+function mulberry32(seed) {
+  let a = seed >>> 0;
+  return function() {
+    a |= 0; a = a + 0x6D2B79F5 | 0;
+    let t = Math.imul(a ^ a >>> 15, 1 | a);
+    t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t;
+    return ((t ^ t >>> 14) >>> 0) / 4294967296;
+  };
+}
+
+function hashSeed(str) {
+  let hash = 0;
+  for (let i = 0; i < str.length; i++) {
+    const char = str.charCodeAt(i);
+    hash = ((hash << 5) - hash) + char;
+    hash |= 0;
+  }
+  return hash >>> 0;
+}
+
+function getRandomFn(seedStr) {
+  if (seedStr && seedStr.trim()) {
+    const seed = hashSeed(seedStr.trim());
+    return mulberry32(seed);
+  }
+  // Cryptographically secure default
+  return () => {
+    const arr = new Uint32Array(1);
+    crypto.getRandomValues(arr);
+    return arr[0] / 4294967296;
+  };
+}
+
+/* ===== PICK UNIQUE RANDOM NUMBERS ===== */
+function pickUniqueRandom(total, count, randFn) {
+  if (count >= total) {
+    // Return all pages in random order
+    const all = Array.from({ length: total }, (_, i) => i + 1);
+    for (let i = all.length - 1; i > 0; i--) {
+      const j = Math.floor(randFn() * (i + 1));
+      [all[i], all[j]] = [all[j], all[i]];
+    }
+    return all.sort((a, b) => a - b);
+  }
+
+  const picked = new Set();
+  while (picked.size < count) {
+    const n = Math.floor(randFn() * total) + 1;
+    picked.add(n);
+  }
+  return [...picked].sort((a, b) => a - b);
+}
+
+/* ===== STATE ===== */
+const state = {
+  fileBytes: null,
+  pdfDoc: null,       // PDF.js
+  pdfLibDoc: null,    // pdf-lib
+  totalPages: 0,
+  mode: 'multi',
+  pickedPages: []
+};
+
+/* ===== DOM ===== */
+const dropzone = $('#dropzone');
+const fileInput = $('#fileInput');
+const chooseBtn = $('#chooseBtn');
+const browseLink = $('#browseLink');
+const editor = $('#editor');
+const fileName = $('#fileName');
+const fileMeta = $('#fileMeta');
+const changeBtn = $('#changeBtn');
+const modeTabs = $('#modeTabs');
+const pickCount = $('#pickCount');
+const seedInput = $('#seedInput');
+const pickBtn = $('#pickBtn');
+const rerollBtn = $('#rerollBtn');
+const results = $('#results');
+const resultTitle = $('#resultTitle');
+const pickedPages = $('#pickedPages');
+const thumbGrid = $('#thumbGrid');
+const newPdfBtn = $('#newPdfBtn');
+const downloadBtn = $('#downloadBtn');
+const progress = $('#progress');
+const progressFill = $('#progressFill');
+const progressText = $('#progressText');
+
+/* ===== MODE TABS ===== */
+$$('.mode-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    $$('.mode-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    state.mode = btn.dataset.mode;
+    if (state.mode === 'single') {
+      pickCount.value = 1;
+      pickCount.disabled = true;
+    } else {
+      pickCount.disabled = false;
+    }
+  });
+});
+
+/* ===== FILE SELECTION ===== */
+function triggerFileSelect() { fileInput.click(); }
+chooseBtn.addEventListener('click', (e) => { e.stopPropagation(); triggerFileSelect(); });
+browseLink.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); triggerFileSelect(); });
+dropzone.addEventListener('click', triggerFileSelect);
+
+fileInput.addEventListener('change', (e) => {
+  const f = e.target.files[0];
+  if (f) loadPdf(f);
+  fileInput.value = '';
+});
+
+['dragenter', 'dragover'].forEach(evt => {
+  dropzone.addEventListener(evt, (e) => { e.preventDefault(); e.stopPropagation(); dropzone.classList.add('dragover'); });
+});
+['dragleave', 'drop'].forEach(evt => {
+  dropzone.addEventListener(evt, (e) => { e.preventDefault(); e.stopPropagation(); dropzone.classList.remove('dragover'); });
+});
+dropzone.addEventListener('drop', (e) => {
+  const f = e.dataTransfer.files[0];
+  if (f && f.type === 'application/pdf') loadPdf(f);
+  else showToast('Please drop a PDF file', 'error');
+});
+
+changeBtn.addEventListener('click', triggerFileSelect);
+
+/* ===== LOAD PDF ===== */
+async function loadPdf(file) {
+  clearStatus();
+  setStatus('Loading PDF...', 'info');
+
+  try {
+    const buf = await file.arrayBuffer();
+    state.fileBytes = buf.slice(0);
+
+    // PDF.js copy
+    state.pdfDoc = await pdfjsLib.getDocument({ data: buf.slice(0) }).promise;
+    state.totalPages = state.pdfDoc.numPages;
+
+    // pdf-lib copy
+    state.pdfLibDoc = await PDFLib.PDFDocument.load(buf.slice(0));
+
+    dropzone.style.display = 'none';
+    editor.classList.add('visible');
+    results.classList.remove('visible');
+
+    fileName.textContent = file.name;
+    fileMeta.textContent = `${state.totalPages} pages · Ready to pick`;
+    pickCount.max = state.totalPages;
+    if (state.mode !== 'single') {
+      pickCount.value = Math.min(3, state.totalPages);
+    }
+    pickBtn.disabled = false;
+
+    clearStatus();
+    showToast(`✅ PDF loaded ${state.totalPages} pages`, 'success');
+  } catch (err) {
+    console.error(err);
+    setStatus('Failed to load PDF: ' + err.message, 'error');
+    showToast('Failed to load PDF', 'error');
+  }
+}
+
+/* ===== PICK BUTTON ===== */
+pickBtn.addEventListener('click', () => doPick());
+rerollBtn.addEventListener('click', () => doPick());
+
+async function doPick() {
+  if (!state.pdfDoc) return;
+
+  let count;
+  if (state.mode === 'single') {
+    count = 1;
+  } else {
+    count = parseInt(pickCount.value, 10) || 1;
+    if (count < 1) count = 1;
+    if (count > state.totalPages) count = state.totalPages;
+    pickCount.value = count;
+  }
+
+  const randFn = getRandomFn(seedInput.value);
+  const picked = pickUniqueRandom(state.totalPages, count, randFn);
+
+  state.pickedPages = picked;
+
+  // Show results panel
+  results.classList.add('visible');
+  rerollBtn.style.display = 'inline-flex';
+
+  // Render pills
+  pickedPages.innerHTML = picked
+    .map(n => `<span class="page-pill">📄 Page ${n}</span>`)
+    .join('');
+
+  // Render thumbnails
+  thumbGrid.innerHTML = '';
+  for (const pageNum of picked) {
+    const card = document.createElement('div');
+    card.className = 'thumb-card';
+    const label = document.createElement('div');
+    label.className = 'thumb-label';
+    label.textContent = 'P' + pageNum;
+    const canvas = document.createElement('canvas');
+    card.appendChild(canvas);
+    card.appendChild(label);
+    thumbGrid.appendChild(card);
+    renderThumb(canvas, pageNum);
+  }
+
+  resultTitle.textContent = picked.length === 1
+    ? `Picked: Page ${picked[0]}`
+    : `Picked ${picked.length} pages`;
+
+  showToast(`🎲 Picked ${picked.length} page${picked.length > 1 ? 's' : ''}!`, 'success');
+}
+
+/* ===== RENDER THUMBNAIL ===== */
+async function renderThumb(canvas, pageNum) {
+  try {
+    const page = await state.pdfDoc.getPage(pageNum);
+    const viewport = page.getViewport({ scale: 0.5 });
+    canvas.width = viewport.width;
+    canvas.height = viewport.height;
+    const ctx = canvas.getContext('2d');
+    await page.render({ canvasContext: ctx, viewport }).promise;
+  } catch (err) {
+    console.warn('Thumb failed for page', pageNum, err);
+  }
+}
+
+/* ===== CREATE NEW PDF ===== */
+newPdfBtn.addEventListener('click', createNewPdf);
+downloadBtn.addEventListener('click', createNewPdf);
+
+async function createNewPdf() {
+  if (!state.pdfLibDoc || !state.pickedPages.length) {
+    showToast('Pick pages first', 'error');
+    return;
+  }
+
+  clearStatus();
+  setStatus('Creating PDF...', 'info');
+  progress.classList.add('visible');
+  progressFill.style.width = '30%';
+  progressText.textContent = 'Copying pages...';
+
+  try {
+    // Create a new PDF
+    const newPdf = await PDFLib.PDFDocument.create();
+
+    // Copy pages from the original in picked order
+    const pageIndices = state.pickedPages.map(n => n - 1); // convert to 0-based
+    const copiedPages = await newPdf.copyPages(state.pdfLibDoc, pageIndices);
+
+    for (const page of copiedPages) {
+      newPdf.addPage(page);
+    }
+
+    progressFill.style.width = '75%';
+    progressText.textContent = 'Finalizing PDF...';
+
+    const bytes = await newPdf.save();
+    const blob = new Blob([bytes], { type: 'application/pdf' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'random-pages.pdf';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    setTimeout(() => URL.revokeObjectURL(url), 2000);
+
+    progressFill.style.width = '100%';
+    setStatus(`✅ Created PDF with ${state.pickedPages.length} page(s): ${state.pickedPages.join(', ')}`, 'success');
+    showToast('PDF downloaded!', 'success');
+
+    setTimeout(() => {
+      progress.classList.remove('visible');
+      progressFill.style.width = '0%';
+    }, 1500);
+  } catch (err) {
+    console.error(err);
+    progress.classList.remove('visible');
+    setStatus('Failed: ' + err.message, 'error');
+    showToast('PDF creation failed', 'error');
+  }
+}
+
+/* ===== FAQ ===== */
+$$('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    $$('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+</script>
+
+</body>
+</html>

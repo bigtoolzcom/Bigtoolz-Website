@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2563eb">
+
+<title>Base64 to PDF Converter - Decode Base64 to PDF Online Free | BigToolz</title>
+<meta name="description" content="Decode Base64 strings back into PDF files online free. Paste Data URL or plain Base64, preview, and download. No upload, works in your browser instantly.">
+<meta name="keywords" content="base64 to pdf, base64 decoder, decode base64 pdf, data url to pdf, base64 pdf converter, convert base64 to pdf">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://bigtoolz.com/tools/pdf-tools/convert-pdf/base64-to-pdf/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Base64 to PDF Converter - Free Online Tool | BigToolz">
+<meta property="og:description" content="Decode Base64 strings into PDF files free, no upload, live preview.">
+<meta property="og:url" content="https://bigtoolz.com/tools/pdf-tools/convert-pdf/base64-to-pdf/">
+<meta property="og:image" content="https://bigtoolz.com/assets/images/og-image.jpg">
+<meta property="og:site_name" content="BigToolz">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Base64 to PDF - BigToolz">
+<meta name="twitter:description" content="Decode Base64 to PDF instantly free, no upload.">
+<meta name="twitter:image" content="https://bigtoolz.com/assets/images/twitter-card.jpg">
+
+<link rel="icon" href="/assets/images/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/images/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#f8f9fc;color:#1a1a2e;overflow-x:hidden;line-height:1.5}
+
+  .header{background:#fff;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;position:sticky;top:0;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+  .header-left{display:flex;align-items:center;gap:40px}
+  .logo{display:flex;align-items:center;gap:8px;font-size:22px;font-weight:800;color:#1a1a2e;text-decoration:none}
+  .logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#3b82f6,#2563eb);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px}
+  .logo span{color:#2563eb}
+  .nav{display:flex;align-items:center;gap:28px;list-style:none}
+  .nav a{text-decoration:none;color:#4b5563;font-size:14px;font-weight:500;transition:color .2s}
+  .nav a:hover,.nav a.active{color:#2563eb}
+  .header-right{display:flex;align-items:center;gap:16px}
+  .search-btn,.theme-btn{width:36px;height:36px;border-radius:50%;border:none;background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#4b5563}
+  .search-btn:hover,.theme-btn:hover{background:#f3f4f6}
+  .bookmark-btn{display:flex;align-items:center;gap:8px;background:#2563eb;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
+  .bookmark-btn:hover{background:#1d4ed8}
+
+  .hero{background:linear-gradient(135deg,#0a0e27 0%,#1a1a4e 40%,#2d1b69 70%,#4c1d95 100%);padding:40px 40px 60px;position:relative;overflow:hidden;color:#fff}
+  .hero::before{content:'';position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(16,185,129,.25) 0%,transparent 70%);border-radius:50%}
+  .hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+  .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px;flex-wrap:wrap}
+  .breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none}
+  .breadcrumb a:hover{color:#fff}
+  .breadcrumb .sep{color:rgba(255,255,255,.4)}
+  .breadcrumb .current{color:#fff;font-weight:500}
+  .hero-title-row{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+  .hero-icon{width:60px;height:60px;background:#10b981;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px;color:#fff;flex-shrink:0;box-shadow:0 8px 24px rgba(16,185,129,.4)}
+  .hero-title{font-size:42px;font-weight:800;line-height:1.15}
+  .hero-title .blue{color:#34d399}
+  .hero-desc{font-size:15px;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:24px;max-width:560px}
+  .hero-features{display:flex;gap:24px;flex-wrap:wrap}
+  .hero-feature{display:flex;align-items:center;gap:6px;font-size:13px;color:#fff;font-weight:500}
+  .hero-feature .check{width:18px;height:18px;border-radius:50%;background:#10b981;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;flex-shrink:0}
+
+  .main-content{max-width:1200px;margin:0 auto;padding:40px;display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start}
+  .tool-content{min-width:0}
+
+  .workspace{background:#fff;border-radius:16px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,.06);border:1px solid #e5e7eb;margin-bottom:24px}
+
+  .input-section{margin-bottom:24px}
+  .input-label{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;flex-wrap:wrap;gap:8px}
+  .input-label-text{font-size:14px;font-weight:700;color:#1a1a2e;display:flex;align-items:center;gap:8px}
+  .input-hint{font-size:11px;color:#9ca3af;font-weight:500}
+  .input-textarea{width:100%;min-height:200px;padding:16px;border:2px solid #e5e7eb;border-radius:12px;font-family:'JetBrains Mono','Fira Code',Consolas,monospace;font-size:12px;line-height:1.6;color:#4b5563;background:#fafafa;outline:none;resize:vertical;transition:border-color .2s}
+  .input-textarea:focus{border-color:#10b981;background:#fff;box-shadow:0 0 0 3px rgba(16,185,129,.1)}
+  .input-textarea::placeholder{color:#9ca3af;font-family:'Inter',sans-serif;font-size:13px;line-height:1.6}
+
+  .input-actions{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+  .input-action-btn{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;font-size:12px;font-weight:600;color:#4b5563;cursor:pointer;font-family:inherit;transition:all .2s}
+  .input-action-btn:hover{border-color:#10b981;color:#10b981;background:#f0fdf4}
+  .input-action-btn.danger:hover{border-color:#ef4444;color:#ef4444;background:#fef2f2}
+
+  /* Error */
+  .error-box{display:none;background:#fef2f2;border:1px solid #fecaca;border-radius:10px;padding:14px 18px;margin-top:16px;font-size:13px;color:#991b1b;align-items:flex-start;gap:10px;line-height:1.6}
+  .error-box.visible{display:flex}
+  .error-box strong{font-weight:700}
+
+  /* Info box */
+  .info-box{background:#f0fdf4;border:1px solid #a7f3d0;border-radius:10px;padding:14px 18px;margin-bottom:16px;font-size:13px;color:#065f46;line-height:1.6}
+  .info-box strong{font-weight:700}
+
+  .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 28px;border-radius:10px;font-size:15px;font-weight:700;font-family:inherit;cursor:pointer;border:none;transition:all .2s;text-decoration:none}
+  .btn-primary{background:#10b981;color:#fff;flex:1;box-shadow:0 4px 12px rgba(16,185,129,.2)}
+  .btn-primary:hover:not(:disabled){background:#059669;transform:translateY(-2px);box-shadow:0 6px 20px rgba(16,185,129,.3)}
+  .btn-primary:disabled{opacity:.5;cursor:not-allowed;transform:none}
+  .btn-secondary{background:#fff;color:#10b981;border:1px solid #e5e7eb}
+  .btn-secondary:hover{border-color:#10b981;background:#f0fdf4}
+  .btn-success{background:#10b981;color:#fff}
+  .btn-success:hover{background:#059669}
+
+  .progress{display:none;margin-top:20px}
+  .progress.visible{display:block}
+  .progress-bar{width:100%;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden;margin-bottom:8px}
+  .progress-fill{height:100%;background:linear-gradient(90deg,#34d399,#10b981);border-radius:4px;width:0%;transition:width .3s ease}
+  .progress-text{font-size:13px;color:#6b7280;text-align:center;font-weight:500}
+
+  /* Result */
+  .result-area{display:none;margin-top:24px}
+  .result-area.visible{display:block}
+
+  .result-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:12px}
+  .result-title{font-size:16px;font-weight:700;color:#1a1a2e;display:flex;align-items:center;gap:8px}
+  .result-title .success-icon{width:24px;height:24px;background:#10b981;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px}
+
+  .result-meta{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:16px}
+  .stat-box{background:#f0fdf4;border:1px solid #a7f3d0;border-radius:10px;padding:14px;text-align:center}
+  .stat-box-value{font-size:16px;font-weight:800;color:#059669;margin-bottom:2px}
+  .stat-box-label{font-size:11px;color:#6b7280;font-weight:600;text-transform:uppercase;letter-spacing:.3px}
+
+  /* PDF Preview */
+  .pdf-preview{background:#0f172a;border-radius:12px;padding:24px;margin-bottom:16px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;min-height:240px}
+  .pdf-preview canvas{max-width:100%;max-height:400px;border-radius:8px;box-shadow:0 4px 16px rgba(0,0,0,.3);background:#fff}
+  .pdf-preview-icon{font-size:48px;margin-bottom:8px}
+  .pdf-preview-label{font-size:13px;color:#94a3b8;font-weight:500}
+  .pdf-preview.loading::after{content:'';width:32px;height:32px;border:3px solid rgba(255,255,255,.2);border-top-color:#10b981;border-radius:50%;animation:spin 0.8s linear infinite;display:block}
+  @keyframes spin{to{transform:rotate(360deg)}}
+
+  .result-actions{display:flex;gap:8px;flex-wrap:wrap}
+  .result-btn{display:inline-flex;align-items:center;gap:6px;padding:12px 20px;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit;border:none;background:#10b981;color:#fff;transition:all .2s}
+  .result-btn:hover{background:#059669;transform:translateY(-1px)}
+  .result-btn.secondary{background:#fff;color:#10b981;border:1px solid #e5e7eb}
+  .result-btn.secondary:hover{background:#f0fdf4;border-color:#10b981}
+
+  .seo-content{background:#fff;border-radius:16px;padding:32px;border:1px solid #e5e7eb;margin-bottom:24px}
+  .seo-content h2{font-size:22px;font-weight:800;color:#1a1a2e;margin-bottom:14px;margin-top:28px;display:flex;align-items:center;gap:10px}
+  .seo-content h2:first-child{margin-top:0}
+  .seo-content h3{font-size:16px;font-weight:700;color:#1a1a2e;margin:20px 0 10px}
+  .seo-content p{font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:14px}
+  .seo-content ul{list-style:none;padding-left:0;margin-bottom:16px}
+  .seo-content ul li{position:relative;padding-left:24px;font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:8px}
+  .seo-content ul li::before{content:'';position:absolute;left:6px;top:12px;width:6px;height:6px;background:#10b981;border-radius:50%}
+  .seo-content a{color:#2563eb;text-decoration:none;font-weight:600}
+  .seo-content a:hover{text-decoration:underline}
+  .seo-content strong{color:#1a1a2e;font-weight:700}
+  .seo-content code{background:#f1f5f9;padding:2px 6px;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:13px;color:#0f172a;border:1px solid #e2e8f0}
+
+  .code-block{background:#1a1a2e;color:#e2e8f0;padding:16px;border-radius:8px;font-family:'JetBrains Mono','Fira Code',Consolas,monospace;font-size:13px;line-height:1.6;overflow-x:auto;margin:14px 0}
+  .code-block .hl{color:#34d399}
+
+  .how-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:20px}
+  .how-step{background:#f0fdf4;border-radius:12px;padding:20px;border:1px solid #a7f3d0}
+  .how-step-num{width:36px;height:36px;border-radius:50%;background:#10b981;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;margin-bottom:12px}
+  .how-step-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+  .how-step-desc{font-size:13px;color:#6b7280;line-height:1.6}
+
+  .faq-item{background:#f0fdf4;border:1px solid #a7f3d0;border-radius:12px;margin-bottom:10px;overflow:hidden;transition:border-color .2s}
+  .faq-item:hover{border-color:#10b981}
+  .faq-question{width:100%;background:none;border:none;padding:18px 22px;font-size:15px;font-weight:700;color:#1a1a2e;text-align:left;cursor:pointer;font-family:inherit;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .faq-question .chev{font-size:12px;color:#10b981;transition:transform .2s;flex-shrink:0}
+  .faq-item.open .faq-question .chev{transform:rotate(180deg)}
+  .faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 22px}
+  .faq-item.open .faq-answer{max-height:500px;padding-bottom:18px}
+  .faq-answer p{font-size:14px;color:#6b7280;line-height:1.7;margin:0}
+
+  .sidebar{background:#fff;border-radius:16px;padding:24px;border:1px solid #e5e7eb;position:sticky;top:80px;margin-bottom:24px}
+  .sidebar-header{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:800;color:#1a1a2e;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid #f3f4f6}
+  .sidebar-list{display:flex;flex-direction:column;gap:8px}
+  .sidebar-item{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;cursor:pointer;transition:background .2s;text-decoration:none;color:inherit;border:1px solid #f3f4f6}
+  .sidebar-item:hover{background:#f0fdf4;border-color:#a7f3d0}
+  .sidebar-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;flex-shrink:0}
+  .sidebar-info{flex:1;min-width:0}
+  .sidebar-title{font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:2px}
+  .sidebar-desc{font-size:11px;color:#9ca3af;line-height:1.4}
+
+  .footer{background:#0a0e27;padding:60px 40px 30px;color:#fff;margin-top:40px}
+  .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:40px}
+  .footer-brand{display:flex;align-items:center;gap:8px;font-size:20px;font-weight:800;margin-bottom:12px}
+  .footer-brand span{color:#60a5fa}
+  .footer-tagline{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px}
+  .footer-social{display:flex;gap:12px}
+  .footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:16px;transition:background .2s}
+  .footer-social a:hover{background:rgba(255,255,255,.2)}
+  .footer-heading{font-size:14px;font-weight:700;margin-bottom:20px;color:#fff}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .footer-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;transition:color .2s}
+  .footer-links a:hover{color:#60a5fa}
+  .footer-bottom{max-width:1200px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  .footer-bottom-left{display:flex;gap:20px;font-size:12px;color:rgba(255,255,255,.5)}
+  .footer-bottom-right,.footer-bottom-links a{font-size:12px;color:rgba(255,255,255,.5);text-decoration:none}
+  .footer-bottom-links{display:flex;gap:20px}
+
+  .toast{position:fixed;bottom:24px;right:24px;background:#1a1a2e;color:#fff;padding:14px 20px;border-radius:10px;font-size:13px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:3000;transform:translateY(200%);transition:transform .3s ease;max-width:320px}
+  .toast.visible{transform:translateY(0)}
+  .toast.success{background:#10b981}
+  .toast.error{background:#ef4444}
+  .toast.info{background:#3b82f6}
+
+  @media(max-width:1024px){
+    .main-content{grid-template-columns:1fr;padding:24px 20px}
+    .sidebar{position:static}
+    .how-steps{grid-template-columns:repeat(2,1fr)}
+  }
+  @media(max-width:768px){
+    .header{padding:0 20px}.nav{display:none}
+    .hero{padding:24px 20px 40px}
+    .hero-title{font-size:28px}
+    .hero-icon{width:48px;height:48px;font-size:20px}
+    .hero-title-row{flex-direction:column;align-items:flex-start;gap:12px}
+    .main-content{padding:20px 16px}
+    .workspace{padding:20px}
+    .how-steps{grid-template-columns:1fr}
+    .seo-content{padding:20px}
+    .footer-inner{grid-template-columns:1fr 1fr}
+    .toast{left:16px;right:16px;bottom:16px;max-width:none}
+    .result-meta{grid-template-columns:repeat(2,1fr)}
+    .input-textarea{min-height:150px;font-size:11px}
+  }
+  @media(max-width:576px){
+    .header{padding:0 16px}.header-right .search-btn,.header-right .theme-btn{display:none}
+    .hero-title{font-size:24px}
+    .actions{flex-direction:column}
+    .btn{width:100%}
+    .btn-primary{flex:none}
+    .footer-inner{grid-template-columns:1fr}
+    .footer-bottom{flex-direction:column;text-align:center}
+    .result-meta{grid-template-columns:1fr}
+  }
+
+  html[data-theme="dark"] body{background:#0f172a;color:#f1f5f9}
+  html[data-theme="dark"] .header,html[data-theme="dark"] .workspace,html[data-theme="dark"] .seo-content,html[data-theme="dark"] .sidebar{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .logo,html[data-theme="dark"] .hero-title,html[data-theme="dark"] .seo-content h2,html[data-theme="dark"] .seo-content h3,html[data-theme="dark"] .faq-question,html[data-theme="dark"] .result-title,html[data-theme="dark"] .sidebar-header,html[data-theme="dark"] .sidebar-title,html[data-theme="dark"] .input-label-text{color:#f1f5f9}
+  html[data-theme="dark"] .nav a{color:#cbd5e1}
+  html[data-theme="dark"] .how-step,html[data-theme="dark"] .faq-item,html[data-theme="dark"] .stat-box{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .input-textarea{background:#0f172a;border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .input-textarea:focus{background:#0f172a}
+  html[data-theme="dark"] .input-action-btn{background:#1e293b;border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .seo-content p,html[data-theme="dark"] .seo-content ul li,html[data-theme="dark"] .faq-answer p{color:#cbd5e1}
+  html[data-theme="dark"] .seo-content code{background:#020617;color:#94a3b8;border-color:#334155}
+  html[data-theme="dark"] .result-btn.secondary{background:#0f172a;border-color:#334155;color:#34d399}
+  html[data-theme="dark"] .stat-box-value{color:#34d399}
+  html[data-theme="dark"] .info-box{background:#0f172a;border-color:#334155;color:#34d399}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type": "SoftwareApplication", "name": "Base64 to PDF Converter", "url": "https://bigtoolz.com/tools/pdf-tools/convert-pdf/base64-to-pdf/", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any (Web-based)", "description": "Free online Base64 to PDF decoder convert Data URLs or plain Base64 strings into downloadable PDF files. Works in your browser.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "456"}},
+    {"@type": "HowTo", "name": "How to Convert Base64 to PDF", "step": [
+      {"@type": "HowToStep", "name": "Paste Base64", "text": "Paste a Data URL or plain Base64 string into the input."},
+      {"@type": "HowToStep", "name": "Decode", "text": "Click Decode to PDF."},
+      {"@type": "HowToStep", "name": "Preview", "text": "See the first page of your PDF rendered."},
+      {"@type": "HowToStep", "name": "Download", "text": "Download the PDF file."}
+    ]},
+    {"@type": "FAQPage", "mainEntity": [
+      {"@type": "Question", "name": "How do I convert Base64 to PDF?", "acceptedAnswer": {"@type": "Answer", "text": "Paste your Base64 string (or Data URL) into the input, then click Decode to PDF. The PDF is previewed and ready to download."}},
+      {"@type": "Question", "name": "What formats of Base64 input are supported?", "acceptedAnswer": {"@type": "Answer", "text": "Our tool auto-detects Data URLs (data:application/pdf;base64,...), plain Base64 strings, CSS url() values, HTML embed src, and JavaScript strings."}},
+      {"@type": "Question", "name": "Why is my Base64 invalid?", "acceptedAnswer": {"@type": "Answer", "text": "Common issues: missing padding (=), extra whitespace, truncated string, or non-PDF data. Make sure the full string is copied without line breaks inside it."}},
+      {"@type": "Question", "name": "Can I convert PDF to Base64 too?", "acceptedAnswer": {"@type": "Answer", "text": "Yes! Use our PDF to Base64 tool for the reverse operation."}},
+      {"@type": "Question", "name": "Is my Base64 data sent to a server?", "acceptedAnswer": {"@type": "Answer", "text": "No. All decoding happens in your browser using the FileReader and Blob APIs. Your Base64 never leaves your device."}}
+    ]},
+    {"@type": "BreadcrumbList", "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bigtoolz.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://bigtoolz.com/tools/"},
+      {"@type": "ListItem", "position": 3, "name": "PDF Tools", "item": "https://bigtoolz.com/tools/pdf-tools/"},
+      {"@type": "ListItem", "position": 4, "name": "Convert PDF", "item": "https://bigtoolz.com/tools/pdf-tools/convert-pdf/"},
+      {"@type": "ListItem", "position": 5, "name": "Base64 to PDF", "item": "https://bigtoolz.com/tools/pdf-tools/convert-pdf/base64-to-pdf/"}
+    ]}
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-left">
+    <a href="/" class="logo"><div class="logo-icon">⚒</div>BigToolz</span></a>
+    <nav><ul class="nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/tools/" class="active">All Tools</a></li>
+      <li><a href="/tools/categories">Categories</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul></nav>
+  </div>
+  <div class="header-right">
+     
+    <button class="theme-btn" aria-label="Toggle theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
+    
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <nav class="breadcrumb">
+      <a href="/">Home</a><span class="sep">›</span>
+      <a href="/tools/">Tools</a><span class="sep">›</span>
+      <a href="/tools/pdf-tools/">PDF Tools</a><span class="sep">›</span>
+      <a href="/tools/pdf-tools/convert-pdf/">Convert PDF</a><span class="sep">›</span>
+      <span class="current">Base64 to PDF</span>
+    </nav>
+    <div class="hero-title-row">
+      <div class="hero-icon">🖼</div>
+      <h1 class="hero-title">Base64 to <span class="blue">PDF</span></h1>
+    </div>
+    <p class="hero-desc">
+      Decode Base64 strings back into downloadable PDF files. Auto-detects Data URLs, plain Base64, CSS, HTML and JS formats. Live preview. No upload, 100% private.
+    </p>
+    <div class="hero-features">
+      <div class="hero-feature"><span class="check">✓</span> Auto-Detect Format</div>
+      <div class="hero-feature"><span class="check">✓</span> Live Preview</div>
+      <div class="hero-feature"><span class="check">✓</span> Upload .txt</div>
+      <div class="hero-feature"><span class="check">✓</span> No Upload</div>
+    </div>
+  </div>
+</section>
+
+<div class="main-content">
+
+  <div class="tool-content">
+
+    <div class="workspace">
+
+      <!-- Input Section -->
+      <div class="input-section">
+        <div class="input-label">
+          <div class="input-label-text">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><path d="M4 17l6-6-6-6M12 19h8"/></svg>
+            Paste Base64 or Data URL
+          </div>
+          <div class="input-hint">Auto-detects: data:application/pdf;..., plain Base64, CSS, HTML, JS</div>
+        </div>
+        <textarea id="base64Input" class="input-textarea" placeholder="Paste your Base64 string here...
+
+Examples:
+• data:application/pdf;base64,JVBERi0xLjQKJeLjz9MK...
+• JVBERi0xLjQKJeLjz9MK...
+• <embed src="data:application/pdf;base64,...">
+• const pdfData = "data:application/pdf;base64,...";"></textarea>
+        <div class="input-actions">
+          <button class="input-action-btn" id="pasteBtn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+            Paste from Clipboard
+          </button>
+          <button class="input-action-btn" id="uploadTxtBtn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>
+            Upload .txt File
+          </button>
+          <button class="input-action-btn danger" id="clearInputBtn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+            Clear
+          </button>
+          <input type="file" id="txtFileInput" accept=".txt,text/plain" style="display:none;">
+        </div>
+      </div>
+
+      <div class="error-box" id="errorBox">
+        <strong>⚠️</strong>
+        <span id="errorMsg"></span>
+      </div>
+
+      <div class="actions">
+        <button class="btn btn-primary" id="decodeBtn" disabled>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 17l6-6-6-6M12 19h8"/></svg>
+          Decode to PDF
+        </button>
+      </div>
+
+      <!-- Result -->
+      <div class="result-area" id="resultArea">
+        <div class="result-header">
+          <div class="result-title"><span class="success-icon">✓</span> PDF Decoded Successfully</div>
+        </div>
+
+        <div class="result-meta">
+          <div class="stat-box">
+            <div class="stat-box-value" id="statSize">0 B</div>
+            <div class="stat-box-label">PDF Size</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-box-value" id="statPages"></div>
+            <div class="stat-box-label">Pages</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-box-value" id="statFormat">PDF</div>
+            <div class="stat-box-label">Format</div>
+          </div>
+        </div>
+
+        <div class="pdf-preview loading" id="pdfPreview">
+          <div class="pdf-preview-icon">📕</div>
+          <div class="pdf-preview-label">Loading preview...</div>
+        </div>
+
+        <div class="result-actions">
+          <button class="result-btn" id="downloadBtn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+            Download PDF
+          </button>
+          <button class="result-btn secondary" id="openBtn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+            Open in New Tab
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="seo-content">
+
+      <h2>🖼 What is Base64 to PDF Conversion?</h2>
+      <p>
+        <strong>Base64 to PDF</strong> decoding takes an ASCII-encoded string and turns it back into a <strong>binary PDF file</strong>. Base64 is a way to represent binary data as text commonly used to <strong>embed PDFs in HTML emails, JSON APIs, data URIs, and web pages</strong>. Our tool reverses that encoding so you can recover the original PDF for download.
+      </p>
+      <p>
+        Unlike most online decoders, BigToolz processes everything <strong>100% in your browser</strong>. Your Base64 data <strong>never uploaded to any server</strong> complete privacy, instant results.
+      </p>
+
+      <h2>🚀 How to Convert Base64 to PDF</h2>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-step-num">1</div>
+          <div class="how-step-title">Paste Base64</div>
+          <div class="how-step-desc">Paste a Data URL, plain Base64, or code snippet.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">2</div>
+          <div class="how-step-title">Decode</div>
+          <div class="how-step-desc">Click "Decode to PDF" to process the string.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">3</div>
+          <div class="how-step-title">Preview</div>
+          <div class="how-step-desc">See the first page of your PDF rendered.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">4</div>
+          <div class="how-step-title">Download</div>
+          <div class="how-step-desc">Download the PDF file or open in new tab.</div>
+        </div>
+      </div>
+
+      <h2>📌 Supported Input Formats</h2>
+      <p>Our tool <strong>auto-detects</strong> the format of your Base64 string:</p>
+
+      <h3>1. Data URL (Most Common)</h3>
+      <div class="code-block">
+<span class="hl">data:application/pdf;base64,</span>JVBERi0xLjQKJeLjz9MKMyAwIG9iag...</div>
+
+      <h3>2. Plain Base64 String</h3>
+      <div class="code-block">
+<span class="hl">JVBERi0xLjQKJeLjz9MKMyAwIG9iag...</span></div>
+      <p>Note: A valid Base64-encoded PDF usually starts with <code>JVBERi</code> (which decodes to <code>%PDF-</code>).</p>
+
+      <h3>3. CSS url()</h3>
+      <div class="code-block">
+background-image: url(<span class="hl">"data:application/pdf;base64,..."</span>);</div>
+
+      <h3>4. HTML embed</h3>
+      <div class="code-block">
+&lt;embed src=<span class="hl">"data:application/pdf;base64,..."</span> type="application/pdf"&gt;</div>
+
+      <h3>5. JavaScript String</h3>
+      <div class="code-block">
+const pdfData = <span class="hl">"data:application/pdf;base64,..."</span>;</div>
+
+      <h2>💡 Common Use Cases</h2>
+      <ul>
+        <li><strong>Extract PDFs from API responses</strong> APIs often return PDFs as Base64 in JSON.</li>
+        <li><strong>Recover PDFs from HTML emails</strong> inline Base64 PDFs can be extracted and downloaded.</li>
+        <li><strong>Decode from databases</strong> recover PDFs stored as Base64 in SQL/NoSQL databases.</li>
+        <li><strong>Debug code</strong> extract PDFs from hard-coded Base64 in source code.</li>
+        <li><strong>Reverse our encoder</strong> undo the PDF to Base64 conversion.</li>
+        <li><strong>Inspect JSON payloads</strong> decode PDFs from webhooks and logs.</li>
+      </ul>
+
+      <h2>✨ Key Features</h2>
+      <ul>
+        <li><strong>Auto-detect format</strong> Data URL, plain Base64, CSS, HTML, JS.</li>
+        <li><strong>Live PDF preview</strong> see the first page rendered before downloading.</li>
+        <li><strong>PDF metadata</strong> file size and page count.</li>
+        <li><strong>Paste from clipboard</strong> button for convenience.</li>
+        <li><strong>Upload .txt files</strong> with Base64 content.</li>
+        <li><strong>Download PDF</strong> or open in a new browser tab.</li>
+        <li><strong>100% browser-based</strong> complete privacy.</li>
+        <li><strong>Error handling</strong> clear messages for invalid Base64.</li>
+      </ul>
+
+      <h2>❓ Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-question">How do I convert Base64 to PDF?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Paste your Base64 string (or Data URL) into the input, then click "Decode to PDF". The PDF is previewed and ready to download free, no signup.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What formats of Base64 input are supported?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Our tool auto-detects: <strong>Data URLs</strong> (<code>data:application/pdf;base64,...</code>), <strong>plain Base64</strong> strings, <strong>CSS url()</strong>, <strong>HTML embed src</strong>, and <strong>JavaScript strings</strong>. Just paste the full snippet.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Why is my Base64 invalid?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Common issues: <strong>missing padding</strong> (<code>=</code> at end), <strong>extra whitespace or line breaks</strong>, <strong>truncated string</strong>, or non-PDF data. Make sure you copied the complete string without internal line breaks. A valid PDF Base64 usually starts with <code>JVBERi</code>.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I convert PDF to Base64 too?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Yes! Use our <a href="/tools/pdf-tools/convert-pdf/pdf-to-base64/">PDF to Base64</a> tool for the reverse operation.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">How do I know if my Base64 is a PDF?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Valid Base64-encoded PDFs start with <code>JVBERi</code> (which decodes to <code>%PDF-</code>, the PDF file signature). If your string starts with something else, it might be an image, text, or other file type.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I decode multiple Base64 strings at once?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Not currently each PDF is decoded one at a time. Process them sequentially by pasting one string, downloading, then pasting the next.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Is my Base64 data sent to a server?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>No. All decoding happens in your browser using the FileReader and Blob APIs. Your Base64 never leaves your device, and nothing is stored anywhere.</p></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-header">🔗 Related PDF Tools</div>
+    <div class="sidebar-list">
+      <a href="/tools/pdf-tools/convert-pdf/pdf-to-base64/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#8b5cf6;">🔤</div>
+        <div class="sidebar-info"><div class="sidebar-title">PDF to Base64</div><div class="sidebar-desc">Reverse conversion</div></div>
+      </a>
+      <a href="/tools/pdf-tools/convert-pdf/pdf-to-jpg/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#ef4444;">🖼</div>
+        <div class="sidebar-info"><div class="sidebar-title">PDF to JPG</div><div class="sidebar-desc">Pages to images</div></div>
+      </a>
+      <a href="/tools/pdf-tools/convert-pdf/pdf-to-png/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#10b981;">🖼</div>
+        <div class="sidebar-info"><div class="sidebar-title">PDF to PNG</div><div class="sidebar-desc">Lossless images</div></div>
+      </a>
+      <a href="/tools/image-tools/base64-to-image/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#10b981;">🖼</div>
+        <div class="sidebar-info"><div class="sidebar-title">Base64 to Image</div><div class="sidebar-desc">Decode images</div></div>
+      </a>
+      <a href="/tools/pdf-tools/organize-pdf/merge-pdf/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#3b82f6;">📚</div>
+        <div class="sidebar-info"><div class="sidebar-title">Merge PDF</div><div class="sidebar-desc">Combine files</div></div>
+      </a>
+      <a href="/tools/pdf-tools/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#64748b;">📕</div>
+        <div class="sidebar-info"><div class="sidebar-title">All PDF Tools →</div><div class="sidebar-desc">Browse 100+ tools</div></div>
+      </a>
+    </div>
+  </aside>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand"><div class="logo-icon">⚒</div>BigToolz</span></div>
+      <p class="footer-tagline">Your Ultimate Online Tools Hub</p>
+      <div class="footer-social">
+        <a href="https://facebook.com/bigtoolz" aria-label="Facebook">f</a>
+        <a href="https://twitter.com/bigtoolz" aria-label="Twitter">𝕏</a>
+        <a href="https://youtube.com/@bigtoolz" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+    <div>
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/tools/">All Tools</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Categories</h3>
+      <ul class="footer-links">
+        <li><a href="/tools/image-tools/">Image Tools</a></li>
+        <li><a href="/tools/pdf-tools/">PDF Tools</a></li>
+        <li><a href="/tools/text-tools/">Text Tools</a></li>
+        <li><a href="/tools/seo-tools/">SEO Tools</a></li>
+        <li><a href="/tools/categories">All Categories →</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Legal</h3>
+      <ul class="footer-links">
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left"><span>✓ 100% Free</span><span>✓ No Sign Up</span><span>✓ No Installation</span></div>
+    <div class="footer-bottom-right">© 2026 BigToolz. All rights reserved.</div>
+    <div class="footer-bottom-links"><a href="/privacy-policy">Privacy</a><a href="/terms">Terms</a><a href="/disclaimer">Disclaimer</a></div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<!-- pdf.js for preview -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+
+<script>
+'use strict';
+
+/* ===== THEME ===== */
+(function(){try{var t=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&d))document.documentElement.setAttribute('data-theme','dark');else if(t==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();
+document.querySelector('.theme-btn')?.addEventListener('click',()=>{const h=document.documentElement;const c=h.getAttribute('data-theme');const d=window.matchMedia('(prefers-color-scheme: dark)').matches;let n=c==='dark'?'light':c==='light'?'dark':(d?'light':'dark');h.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}});
+
+/* ===== pdf.js worker ===== */
+if (window.pdfjsLib) {
+  pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+}
+
+/* ===== HELPERS ===== */
+const $ = (s, p = document) => p.querySelector(s);
+const $$ = (s, p = document) => [...p.querySelectorAll(s)];
+
+function formatBytes(b) {
+  if (b === 0) return '0 B';
+  const k = 1024, sizes = ['B', 'KB', 'MB', 'GB'];
+  const i = Math.floor(Math.log(b) / Math.log(k));
+  return (b / Math.pow(k, i)).toFixed(i === 0 ? 0 : 1) + ' ' + sizes[i];
+}
+
+function showToast(msg, type = 'info', duration = 3000) {
+  const t = $('#toast');
+  if (!t) return;
+  t.className = 'toast visible' + (type !== 'info' ? ' ' + type : '');
+  t.textContent = msg;
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove('visible'), duration);
+}
+
+/* ===== STATE ===== */
+const state = {
+  blob: null,
+  url: null,
+  name: 'decoded.pdf',
+  size: 0,
+  pages: 0
+};
+
+/* ===== DOM ===== */
+const base64Input = $('#base64Input');
+const decodeBtn = $('#decodeBtn');
+const pasteBtn = $('#pasteBtn');
+const uploadTxtBtn = $('#uploadTxtBtn');
+const clearInputBtn = $('#clearInputBtn');
+const txtFileInput = $('#txtFileInput');
+const errorBox = $('#errorBox');
+const errorMsg = $('#errorMsg');
+const resultArea = $('#resultArea');
+const pdfPreview = $('#pdfPreview');
+const statSize = $('#statSize');
+const statPages = $('#statPages');
+const statFormat = $('#statFormat');
+const downloadBtn = $('#downloadBtn');
+const openBtn = $('#openBtn');
+
+/* ===== INPUT ENABLE ===== */
+base64Input.addEventListener('input', () => {
+  decodeBtn.disabled = !base64Input.value.trim();
+  hideError();
+});
+
+function showError(msg) {
+  errorMsg.textContent = msg;
+  errorBox.classList.add('visible');
+}
+function hideError() {
+  errorBox.classList.remove('visible');
+}
+
+/* ===== PASTE FROM CLIPBOARD ===== */
+pasteBtn.addEventListener('click', async () => {
+  try {
+    if (navigator.clipboard && navigator.clipboard.readText) {
+      const text = await navigator.clipboard.readText();
+      base64Input.value = text;
+      decodeBtn.disabled = !text.trim();
+      showToast('Pasted from clipboard', 'success');
+    } else {
+      base64Input.focus();
+      showToast('Press Ctrl+V to paste', 'info');
+    }
+  } catch (err) {
+    showToast('Clipboard access denied paste manually', 'error');
+    base64Input.focus();
+  }
+});
+
+/* ===== UPLOAD .TXT ===== */
+uploadTxtBtn.addEventListener('click', () => txtFileInput.click());
+
+txtFileInput.addEventListener('change', (e) => {
+  const file = e.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = (ev) => {
+    base64Input.value = ev.target.result;
+    decodeBtn.disabled = false;
+    showToast('Loaded from file', 'success');
+  };
+  reader.readAsText(file);
+  txtFileInput.value = '';
+});
+
+/* ===== CLEAR INPUT ===== */
+clearInputBtn.addEventListener('click', () => {
+  base64Input.value = '';
+  decodeBtn.disabled = true;
+  hideError();
+  resultArea.classList.remove('visible');
+  if (state.url) URL.revokeObjectURL(state.url);
+  state.blob = null;
+  state.url = null;
+});
+
+/* ===== EXTRACT BASE64 ===== */
+function extractBase64(input) {
+  if (!input) return null;
+  let text = input.trim();
+
+  // 1. Data URL for PDF
+  const dataUrlMatch = text.match(/data:application\/pdf[^,]*;base64,([A-Za-z0-9+/=\s]+)/);
+  if (dataUrlMatch) {
+    return {
+      base64: dataUrlMatch[1].replace(/\s/g, ''),
+      full: 'data:application/pdf;base64,' + dataUrlMatch[1].replace(/\s/g, '')
+    };
+  }
+
+  // 2. Generic data URL (maybe mislabelled) accept any
+  const genericDataUrl = text.match(/data:[^;,]+;base64,([A-Za-z0-9+/=\s]+)/);
+  if (genericDataUrl) {
+    return {
+      base64: genericDataUrl[1].replace(/\s/g, ''),
+      full: 'data:application/pdf;base64,' + genericDataUrl[1].replace(/\s/g, '')
+    };
+  }
+
+  // 3. CSS url() or HTML src="..."
+  const urlMatch = text.match(/url\(['"]?(data:[^'")]+)['"]?\)/) || text.match(/src=['"](data:[^'"]+)['"]/);
+  if (urlMatch && urlMatch[1]) {
+    const inner = urlMatch[1];
+    const innerMatch = inner.match(/data:[^;,]+;base64,(.+)/);
+    if (innerMatch) {
+      return {
+        base64: innerMatch[1].replace(/\s/g, ''),
+        full: 'data:application/pdf;base64,' + innerMatch[1].replace(/\s/g, '')
+      };
+    }
+  }
+
+  // 4. JS string with data: prefix inside quotes
+  const jsMatch = text.match(/['"](data:application\/pdf[^'"]+)['"]/);
+  if (jsMatch && jsMatch[1]) {
+    const innerMatch = jsMatch[1].match(/data:[^;,]+;base64,(.+)/);
+    if (innerMatch) {
+      return {
+        base64: innerMatch[1].replace(/\s/g, ''),
+        full: 'data:application/pdf;base64,' + innerMatch[1].replace(/\s/g, '')
+      };
+    }
+  }
+
+  // 5. Plain Base64 strip whitespace
+  const cleanBase64 = text.replace(/\s/g, '');
+  if (/^[A-Za-z0-9+/=]+$/.test(cleanBase64) && cleanBase64.length > 20) {
+    return {
+      base64: cleanBase64,
+      full: 'data:application/pdf;base64,' + cleanBase64
+    };
+  }
+
+  return null;
+}
+
+/* ===== DECODE ===== */
+decodeBtn.addEventListener('click', decodeBase64);
+
+async function decodeBase64() {
+  hideError();
+  const raw = base64Input.value.trim();
+  if (!raw) { showError('Please paste a Base64 string.'); return; }
+
+  const extracted = extractBase64(raw);
+  if (!extracted) {
+    showError('❌ Could not detect valid Base64. Please check the string it might be truncated, contain extra characters, or not be a PDF.');
+    return;
+  }
+
+  try {
+    // Decode base64 → binary
+    let byteString;
+    try {
+      byteString = atob(extracted.base64);
+    } catch (e) {
+      showError('❌ Invalid Base64 encoding (corrupted or incomplete). Please verify the string.');
+      return;
+    }
+
+    const arr = new Uint8Array(byteString.length);
+    for (let i = 0; i < byteString.length; i++) arr[i] = byteString.charCodeAt(i);
+
+    // Validate PDF signature: %PDF- = 0x25 0x50 0x44 0x46 0x2D
+    const isPDF = arr.length >= 5 &&
+      arr[0] === 0x25 && arr[1] === 0x50 &&
+      arr[2] === 0x44 && arr[3] === 0x46 &&
+      arr[4] === 0x2D;
+
+    if (!isPDF) {
+      showError('❌ The decoded data is not a valid PDF (missing %PDF- signature). Make sure you pasted a PDF Base64 string.');
+      return;
+    }
+
+    // Create blob
+    const blob = new Blob([arr], { type: 'application/pdf' });
+    if (state.url) URL.revokeObjectURL(state.url);
+    state.blob = blob;
+    state.url = URL.createObjectURL(blob);
+    state.size = blob.size;
+
+    // Fill stats
+    statSize.textContent = formatBytes(blob.size);
+    statFormat.textContent = 'PDF';
+
+    resultArea.classList.add('visible');
+
+    // Load preview with pdf.js
+    await loadPreview(blob);
+
+    showToast('✅ PDF decoded successfully!', 'success');
+  } catch (err) {
+    console.error('Decode failed:', err);
+    showError('❌ Decode failed. Please check your Base64 string.');
+  }
+}
+
+async function loadPreview(blob) {
+  pdfPreview.classList.add('loading');
+  pdfPreview.innerHTML = '<div class="pdf-preview-icon">📕</div><div class="pdf-preview-label">Loading preview...</div>';
+  statPages.textContent = '';
+
+  if (!window.pdfjsLib) {
+    pdfPreview.classList.remove('loading');
+    pdfPreview.innerHTML = '<div class="pdf-preview-icon">📕</div><div class="pdf-preview-label">Preview unavailable (offline)</div>';
+    return;
+  }
+
+  try {
+    const arrayBuffer = await blob.arrayBuffer();
+    const pdf = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
+    state.pages = pdf.numPages;
+    statPages.textContent = pdf.numPages;
+
+    const page = await pdf.getPage(1);
+    const baseViewport = page.getViewport({ scale: 1 });
+    // Fit into ~500px wide / 400px tall
+    const targetW = 500;
+    const targetH = 400;
+    const scaleW = targetW / baseViewport.width;
+    const scaleH = targetH / baseViewport.height;
+    const scale = Math.min(scaleW, scaleH, 2);
+
+    const viewport = page.getViewport({ scale });
+    const canvas = document.createElement('canvas');
+    canvas.width = Math.round(viewport.width);
+    canvas.height = Math.round(viewport.height);
+    const ctx = canvas.getContext('2d');
+    ctx.fillStyle = '#ffffff';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    await page.render({ canvasContext: ctx, viewport }).promise;
+
+    pdfPreview.classList.remove('loading');
+    pdfPreview.innerHTML = '';
+    pdfPreview.appendChild(canvas);
+
+    // Label
+    const label = document.createElement('div');
+    label.className = 'pdf-preview-label';
+    label.textContent = `Preview · Page 1 of ${pdf.numPages}`;
+    pdfPreview.appendChild(label);
+  } catch (err) {
+    console.warn('Preview render failed:', err);
+    pdfPreview.classList.remove('loading');
+    pdfPreview.innerHTML = '<div class="pdf-preview-icon">📕</div><div class="pdf-preview-label">Preview not available</div>';
+  }
+}
+
+/* ===== DOWNLOAD ===== */
+downloadBtn.addEventListener('click', () => {
+  if (!state.url) return;
+  const a = document.createElement('a');
+  a.href = state.url;
+  a.download = 'decoded.pdf';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  showToast('Download started!', 'success');
+});
+
+/* ===== OPEN IN NEW TAB ===== */
+openBtn.addEventListener('click', () => {
+  if (!state.url) return;
+  window.open(state.url, '_blank', 'noopener');
+});
+
+/* ===== FAQ ===== */
+$$('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    $$('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+</script>
+
+</body>
+</html>

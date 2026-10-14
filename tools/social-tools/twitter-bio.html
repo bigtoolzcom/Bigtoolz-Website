@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2563eb">
+
+<title>Twitter Bio Generator - Create Perfect X Bio Online Free | BigToolz</title>
+<meta name="description" content="Free Twitter (X) bio generator. Create engaging bios in seconds with templates, fields, emojis. 160 character counter included. Copy and paste instantly.">
+<meta name="keywords" content="twitter bio generator, x bio generator, twitter bio ideas, bio creator, twitter profile bio">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://bigtoolz.com/tools/social-tools/twitter-bio/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Twitter Bio Generator - Free Online Tool | BigToolz">
+<meta property="og:description" content="Create the perfect Twitter (X) bio in seconds free, with templates and emoji support.">
+<meta property="og:url" content="https://bigtoolz.com/tools/social-tools/twitter-bio/">
+<meta property="og:image" content="https://bigtoolz.com/assets/images/og-image.jpg">
+<meta property="og:site_name" content="BigToolz">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Twitter Bio Generator - BigToolz">
+<meta name="twitter:description" content="Create the perfect Twitter bio instantly free.">
+<meta name="twitter:image" content="https://bigtoolz.com/assets/images/twitter-card.jpg">
+
+<link rel="icon" href="/assets/images/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/images/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#f8f9fc;color:#1a1a2e;overflow-x:hidden;line-height:1.5}
+
+  .header{background:#fff;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;position:sticky;top:0;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+  .header-left{display:flex;align-items:center;gap:40px}
+  .logo{display:flex;align-items:center;gap:8px;font-size:22px;font-weight:800;color:#1a1a2e;text-decoration:none}
+  .logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#3b82f6,#2563eb);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px}
+  .logo span{color:#2563eb}
+  .nav{display:flex;align-items:center;gap:28px;list-style:none}
+  .nav a{text-decoration:none;color:#4b5563;font-size:14px;font-weight:500;transition:color .2s}
+  .nav a:hover,.nav a.active{color:#2563eb}
+  .header-right{display:flex;align-items:center;gap:16px}
+  .search-btn,.theme-btn{width:36px;height:36px;border-radius:50%;border:none;background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#4b5563}
+  .search-btn:hover,.theme-btn:hover{background:#f3f4f6}
+  .bookmark-btn{display:flex;align-items:center;gap:8px;background:#2563eb;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
+  .bookmark-btn:hover{background:#1d4ed8}
+
+  .hero{background:linear-gradient(135deg,#0a0e27 0%,#1a1a4e 40%,#2d1b69 70%,#4c1d95 100%);padding:40px 40px 60px;position:relative;overflow:hidden;color:#fff}
+  .hero::before{content:'';position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(59,130,246,.3) 0%,transparent 70%);border-radius:50%}
+  .hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+  .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px;flex-wrap:wrap}
+  .breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none}
+  .breadcrumb a:hover{color:#fff}
+  .breadcrumb .sep{color:rgba(255,255,255,.4)}
+  .breadcrumb .current{color:#fff;font-weight:500}
+  .hero-title-row{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+  .hero-icon{width:60px;height:60px;background:#1d9bf0;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:30px;color:#fff;flex-shrink:0;box-shadow:0 8px 24px rgba(29,155,240,.4)}
+  .hero-title{font-size:42px;font-weight:800;line-height:1.15}
+  .hero-title .blue{color:#60a5fa}
+  .hero-desc{font-size:15px;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:24px;max-width:560px}
+  .hero-features{display:flex;gap:24px;flex-wrap:wrap}
+  .hero-feature{display:flex;align-items:center;gap:6px;font-size:13px;color:#fff;font-weight:500}
+  .hero-feature .check{width:18px;height:18px;border-radius:50%;background:#1d9bf0;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;flex-shrink:0}
+
+  .main-content{max-width:1200px;margin:0 auto;padding:40px;display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start}
+  .tool-content{min-width:0}
+
+  .workspace{background:#fff;border-radius:16px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,.06);border:1px solid #e5e7eb;margin-bottom:24px}
+
+  /* Twitter Preview */
+  .twitter-preview{background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:20px;margin-bottom:24px;transition:all .2s}
+  .twitter-preview-inner{display:flex;gap:14px;align-items:flex-start}
+  .avatar{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,#1d9bf0,#3b82f6);flex-shrink:0;display:flex;align-items:center;justify-content:center;color:#fff;font-size:26px;font-weight:800;border:3px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.08)}
+  .preview-info{flex:1;min-width:0}
+  .preview-name-row{display:flex;align-items:center;gap:6px;margin-bottom:2px;flex-wrap:wrap}
+  .preview-name{font-size:17px;font-weight:800;color:#1a1a2e}
+  .verified-badge{width:18px;height:18px;background:#1d9bf0;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:10px;flex-shrink:0}
+  .preview-handle{font-size:14px;color:#9ca3af;font-weight:500;margin-bottom:10px}
+  .preview-bio{font-size:14px;line-height:1.6;color:#1a1a2e;margin-bottom:12px;white-space:pre-wrap;word-break:break-word}
+  .preview-meta{display:flex;gap:16px;font-size:13px;color:#9ca3af;flex-wrap:wrap}
+  .preview-meta-item{display:flex;align-items:center;gap:4px}
+  .preview-follow{display:flex;gap:16px;font-size:13px;color:#9ca3af;margin-top:8px}
+
+  /* Character counter */
+  .char-counter-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;padding:14px 18px;background:#f8fafc;border-radius:10px;border:1px solid #e5e7eb;gap:12px;flex-wrap:wrap}
+  .char-counter-info{display:flex;align-items:center;gap:10px;font-size:13px;color:#4b5563;font-weight:600}
+  .char-counter-badge{padding:4px 10px;border-radius:20px;background:#10b981;color:#fff;font-size:12px;font-weight:800;transition:all .2s}
+  .char-counter-badge.warn{background:#f59e0b}
+  .char-counter-badge.danger{background:#ef4444}
+  .char-counter-progress{flex:1;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden;min-width:120px}
+  .char-counter-fill{height:100%;background:#10b981;border-radius:4px;transition:all .2s;width:0%}
+  .char-counter-fill.warn{background:#f59e0b}
+  .char-counter-fill.danger{background:#ef4444}
+
+  /* Mode tabs */
+  .mode-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:20px;background:#f8fafc;padding:6px;border-radius:12px;border:1px solid #e5e7eb}
+  .mode-tab{padding:12px 10px;background:transparent;border:none;border-radius:8px;font-size:13px;font-weight:700;color:#6b7280;cursor:pointer;font-family:inherit;transition:all .2s;text-align:center}
+  .mode-tab:hover{background:#f1f5f9;color:#1e293b}
+  .mode-tab.active{background:#1d9bf0;color:#fff}
+
+  .mode-panel{display:none}
+  .mode-panel.active{display:block}
+
+  /* Inputs */
+  .inputs-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-bottom:16px}
+  .form-group{margin-bottom:16px}
+  .form-group label{display:block;font-size:12px;font-weight:700;color:#4b5563;margin-bottom:6px}
+  .form-group input,.form-group textarea,.form-group select{width:100%;padding:12px 14px;border:2px solid #e5e7eb;border-radius:10px;font-size:14px;font-family:inherit;color:#1a1a2e;background:#fff;outline:none;transition:border-color .2s}
+  .form-group input:focus,.form-group textarea:focus,.form-group select:focus{border-color:#1d9bf0;box-shadow:0 0 0 3px rgba(29,155,240,.1)}
+  .form-group textarea{resize:vertical;min-height:120px;line-height:1.6;font-size:15px}
+  .form-group select{font-size:13px;cursor:pointer;padding-right:36px;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='3'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center}
+
+  /* Emoji picker */
+  .emoji-row{display:flex;gap:4px;flex-wrap:wrap;padding:10px;background:#f8fafc;border-radius:10px;border:1px solid #e5e7eb;margin-bottom:16px}
+  .emoji-btn{width:36px;height:36px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;font-size:18px;cursor:pointer;transition:all .15s;display:flex;align-items:center;justify-content:center;padding:0}
+  .emoji-btn:hover{background:#eff6ff;border-color:#1d9bf0;transform:scale(1.1)}
+  .emoji-label{font-size:11px;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px;display:block}
+
+  /* Templates */
+  .templates-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+  .template-card{padding:14px;background:#fff;border:2px solid #e5e7eb;border-radius:10px;cursor:pointer;transition:all .2s;text-align:left;font-family:inherit;font-size:12px;line-height:1.5;color:#4b5563}
+  .template-card:hover{border-color:#1d9bf0;background:#eff6ff;transform:translateY(-2px)}
+  .template-card-title{font-size:13px;font-weight:800;color:#1a1a2e;margin-bottom:6px;display:flex;align-items:center;gap:6px}
+  .template-card-preview{color:#6b7280;font-size:11px;white-space:pre-line;line-height:1.5}
+
+  /* Actions */
+  .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 24px;border-radius:10px;font-size:14px;font-weight:700;font-family:inherit;cursor:pointer;border:none;transition:all .2s;text-decoration:none}
+  .btn-primary{background:#1d9bf0;color:#fff;flex:1;box-shadow:0 4px 12px rgba(29,155,240,.2)}
+  .btn-primary:hover:not(:disabled){background:#1a8cd8;transform:translateY(-2px);box-shadow:0 6px 20px rgba(29,155,240,.3)}
+  .btn-secondary{background:#fff;color:#1d9bf0;border:1px solid #e5e7eb}
+  .btn-secondary:hover{border-color:#1d9bf0;background:#eff6ff}
+  .btn.copied{background:#10b981;color:#fff;border-color:#10b981}
+
+  /* History */
+  .history-section{margin-top:24px}
+  .history-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:12px;display:flex;justify-content:space-between;align-items:center;gap:8px}
+  .history-clear{background:none;border:none;font-size:11px;color:#1d9bf0;cursor:pointer;font-family:inherit;font-weight:600;text-decoration:underline}
+  .history-list{display:flex;flex-direction:column;gap:8px}
+  .history-item{background:#f8fafc;border:1px solid #e5e7eb;border-radius:10px;padding:12px 14px;font-size:12px;line-height:1.5;color:#4b5563;cursor:pointer;transition:all .2s;display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+  .history-item:hover{border-color:#1d9bf0;background:#eff6ff;transform:translateX(2px)}
+  .history-text{flex:1;white-space:pre-wrap;word-break:break-word}
+  .history-len{font-size:10px;font-weight:800;color:#9ca3af;flex-shrink:0;padding:3px 8px;background:#fff;border-radius:10px}
+
+  /* SEO */
+  .seo-content{background:#fff;border-radius:16px;padding:32px;border:1px solid #e5e7eb;margin-bottom:24px}
+  .seo-content h2{font-size:22px;font-weight:800;color:#1a1a2e;margin-bottom:14px;margin-top:28px;display:flex;align-items:center;gap:10px}
+  .seo-content h2:first-child{margin-top:0}
+  .seo-content h3{font-size:16px;font-weight:700;color:#1a1a2e;margin:20px 0 10px}
+  .seo-content p{font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:14px}
+  .seo-content ul{list-style:none;padding-left:0;margin-bottom:16px}
+  .seo-content ul li{position:relative;padding-left:24px;font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:8px}
+  .seo-content ul li::before{content:'';position:absolute;left:6px;top:12px;width:6px;height:6px;background:#1d9bf0;border-radius:50%}
+  .seo-content a{color:#2563eb;text-decoration:none;font-weight:600}
+  .seo-content a:hover{text-decoration:underline}
+  .seo-content strong{color:#1a1a2e;font-weight:700}
+  .seo-content code{background:#f1f5f9;padding:2px 6px;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:13px;color:#0f172a;border:1px solid #e2e8f0}
+
+  .how-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:20px}
+  .how-step{background:#eff6ff;border-radius:12px;padding:20px;border:1px solid #bfdbfe}
+  .how-step-num{width:36px;height:36px;border-radius:50%;background:#1d9bf0;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;margin-bottom:12px}
+  .how-step-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+  .how-step-desc{font-size:13px;color:#6b7280;line-height:1.6}
+
+  .faq-item{background:#eff6ff;border:1px solid #bfdbfe;border-radius:12px;margin-bottom:10px;overflow:hidden;transition:border-color .2s}
+  .faq-item:hover{border-color:#1d9bf0}
+  .faq-question{width:100%;background:none;border:none;padding:18px 22px;font-size:15px;font-weight:700;color:#1a1a2e;text-align:left;cursor:pointer;font-family:inherit;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .faq-question .chev{font-size:12px;color:#1d9bf0;transition:transform .2s;flex-shrink:0}
+  .faq-item.open .faq-question .chev{transform:rotate(180deg)}
+  .faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 22px}
+  .faq-item.open .faq-answer{max-height:500px;padding-bottom:18px}
+  .faq-answer p{font-size:14px;color:#6b7280;line-height:1.7;margin:0}
+
+  .sidebar{background:#fff;border-radius:16px;padding:24px;border:1px solid #e5e7eb;position:sticky;top:80px;margin-bottom:24px}
+  .sidebar-header{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:800;color:#1a1a2e;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid #f3f4f6}
+  .sidebar-list{display:flex;flex-direction:column;gap:8px}
+  .sidebar-item{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;cursor:pointer;transition:background .2s;text-decoration:none;color:inherit;border:1px solid #f3f4f6}
+  .sidebar-item:hover{background:#eff6ff;border-color:#bfdbfe}
+  .sidebar-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;flex-shrink:0}
+  .sidebar-info{flex:1;min-width:0}
+  .sidebar-title{font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:2px}
+  .sidebar-desc{font-size:11px;color:#9ca3af;line-height:1.4}
+
+  .footer{background:#0a0e27;padding:60px 40px 30px;color:#fff;margin-top:40px}
+  .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:40px}
+  .footer-brand{display:flex;align-items:center;gap:8px;font-size:20px;font-weight:800;margin-bottom:12px}
+  .footer-brand span{color:#60a5fa}
+  .footer-tagline{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px}
+  .footer-social{display:flex;gap:12px}
+  .footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:16px;transition:background .2s}
+  .footer-social a:hover{background:rgba(255,255,255,.2)}
+  .footer-heading{font-size:14px;font-weight:700;margin-bottom:20px;color:#fff}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .footer-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;transition:color .2s}
+  .footer-links a:hover{color:#60a5fa}
+  .footer-bottom{max-width:1200px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  .footer-bottom-left{display:flex;gap:20px;font-size:12px;color:rgba(255,255,255,.5)}
+  .footer-bottom-right,.footer-bottom-links a{font-size:12px;color:rgba(255,255,255,.5);text-decoration:none}
+  .footer-bottom-links{display:flex;gap:20px}
+
+  .toast{position:fixed;bottom:24px;right:24px;background:#1a1a2e;color:#fff;padding:14px 20px;border-radius:10px;font-size:13px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:3000;transform:translateY(200%);transition:transform .3s ease;max-width:320px}
+  .toast.visible{transform:translateY(0)}
+  .toast.success{background:#10b981}
+  .toast.error{background:#ef4444}
+
+  @media(max-width:1024px){
+    .main-content{grid-template-columns:1fr;padding:24px 20px}
+    .sidebar{position:static}
+    .how-steps{grid-template-columns:repeat(2,1fr)}
+    .templates-grid{grid-template-columns:1fr}
+  }
+  @media(max-width:768px){
+    .header{padding:0 20px}.nav{display:none}
+    .hero{padding:24px 20px 40px}
+    .hero-title{font-size:28px}
+    .hero-icon{width:48px;height:48px;font-size:22px}
+    .hero-title-row{flex-direction:column;align-items:flex-start;gap:12px}
+    .main-content{padding:20px 16px}
+    .workspace{padding:20px}
+    .how-steps{grid-template-columns:1fr}
+    .seo-content{padding:20px}
+    .footer-inner{grid-template-columns:1fr 1fr}
+    .toast{left:16px;right:16px;bottom:16px;max-width:none}
+    .inputs-grid{grid-template-columns:1fr}
+    .mode-tabs{grid-template-columns:1fr}
+  }
+  @media(max-width:576px){
+    .header{padding:0 16px}.header-right .search-btn,.header-right .theme-btn{display:none}
+    .hero-title{font-size:24px}
+    .footer-inner{grid-template-columns:1fr}
+    .footer-bottom{flex-direction:column;text-align:center}
+    .avatar{width:52px;height:52px;font-size:22px}
+    .preview-name{font-size:15px}
+    .actions{flex-direction:column}
+    .btn{width:100%}
+    .btn-primary{flex:none}
+  }
+
+  html[data-theme="dark"] body{background:#0f172a;color:#f1f5f9}
+  html[data-theme="dark"] .header,html[data-theme="dark"] .workspace,html[data-theme="dark"] .seo-content,html[data-theme="dark"] .sidebar{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .logo,html[data-theme="dark"] .hero-title,html[data-theme="dark"] .seo-content h2,html[data-theme="dark"] .seo-content h3,html[data-theme="dark"] .faq-question,html[data-theme="dark"] .sidebar-header,html[data-theme="dark"] .sidebar-title,html[data-theme="dark"] .history-title{color:#f1f5f9}
+  html[data-theme="dark"] .nav a{color:#cbd5e1}
+  html[data-theme="dark"] .how-step,html[data-theme="dark"] .faq-item,html[data-theme="dark"] .mode-tabs,html[data-theme="dark"] .history-item,html[data-theme="dark"] .emoji-row,html[data-theme="dark"] .char-counter-row{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .form-group input,html[data-theme="dark"] .form-group textarea,html[data-theme="dark"] .form-group select{background:#0f172a;border-color:#334155;color:#f1f5f9}
+  html[data-theme="dark"] .template-card{background:#0f172a;border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .template-card:hover{background:#1e293b;border-color:#1d9bf0}
+  html[data-theme="dark"] .template-card-title{color:#f1f5f9}
+  html[data-theme="dark"] .emoji-btn{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .seo-content p,html[data-theme="dark"] .seo-content ul li,html[data-theme="dark"] .faq-answer p{color:#cbd5e1}
+  html[data-theme="dark"] .seo-content code{background:#0f172a;color:#94a3b8;border-color:#334155}
+  html[data-theme="dark"] .twitter-preview{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .preview-name{color:#f1f5f9}
+  html[data-theme="dark"] .preview-bio{color:#e2e8f0}
+  html[data-theme="dark"] .mode-tab{color:#cbd5e1}
+  html[data-theme="dark"] .mode-tab.active{background:#1d9bf0;color:#fff}
+  html[data-theme="dark"] .history-item{color:#cbd5e1}
+  html[data-theme="dark"] .history-len{background:#1e293b;color:#94a3b8}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type": "SoftwareApplication", "name": "Twitter Bio Generator", "url": "https://bigtoolz.com/tools/social-tools/twitter-bio/", "applicationCategory": "SocialNetworkingApplication", "operatingSystem": "Any (Web-based)", "description": "Free Twitter (X) bio generator with templates, field-based building, and emoji support. 160 character counter included.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.8", "ratingCount": "1247"}},
+    {"@type": "HowTo", "name": "How to Create a Twitter Bio", "step": [
+      {"@type": "HowToStep", "name": "Choose Mode", "text": "Use templates, fill fields, or auto-generate."},
+      {"@type": "HowToStep", "name": "Add Details", "text": "Enter your name, role, skills, and interests."},
+      {"@type": "HowToStep", "name": "Customize", "text": "Add emojis and fine-tune wording."},
+      {"@type": "HowToStep", "name": "Copy", "text": "Copy the bio and paste it into your Twitter profile."}
+    ]},
+    {"@type": "FAQPage", "mainEntity": [
+      {"@type": "Question", "name": "What is the Twitter bio character limit?", "acceptedAnswer": {"@type": "Answer", "text": "Twitter (X) bios have a maximum of 160 characters. Our tool shows a live counter so you always know how many characters are left."}},
+      {"@type": "Question", "name": "What makes a good Twitter bio?", "acceptedAnswer": {"@type": "Answer", "text": "A good bio answers three questions quickly: Who are you? What do you do? Why should someone follow you? Use 1-2 emojis, avoid buzzwords, and include a call-to-action if relevant."}},
+      {"@type": "Question", "name": "Should I use emojis in my Twitter bio?", "acceptedAnswer": {"@type": "Answer", "text": "Yes but sparingly. 2-4 emojis work well as visual breaks. Too many look spammy. Use them at the start of lines for a listicle feel."}},
+      {"@type": "Question", "name": "Can I include a link in my Twitter bio?", "acceptedAnswer": {"@type": "Answer", "text": "Twitter has a separate 'Website' field below your bio don't waste bio characters on URLs. Use the bio to describe yourself and the website field for your link."}}
+    ]},
+    {"@type": "BreadcrumbList", "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bigtoolz.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://bigtoolz.com/tools/"},
+      {"@type": "ListItem", "position": 3, "name": "Social Tools", "item": "https://bigtoolz.com/tools/social-tools/"},
+      {"@type": "ListItem", "position": 4, "name": "Twitter Bio Generator", "item": "https://bigtoolz.com/tools/social-tools/twitter-bio/"}
+    ]}
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-left">
+    <a href="/" class="logo"><div class="logo-icon">⚒</div>BigToolz</span></a>
+    <nav><ul class="nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/tools/" class="active">All Tools</a></li>
+      <li><a href="/tools/categories">Categories</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul></nav>
+  </div>
+  <div class="header-right">
+   
+    <button class="theme-btn" aria-label="Toggle theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
+   
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <nav class="breadcrumb">
+      <a href="/">Home</a><span class="sep">›</span>
+      <a href="/tools/">Tools</a><span class="sep">›</span>
+      <a href="/tools/social-tools/">Social Tools</a><span class="sep">›</span>
+      <span class="current">Twitter Bio Generator</span>
+    </nav>
+    <div class="hero-title-row">
+      <div class="hero-icon">𝕏</div>
+      <h1 class="hero-title">Twitter <span class="blue">Bio Generator</span></h1>
+    </div>
+    <p class="hero-desc">
+      Create the perfect Twitter (X) bio in seconds. Templates, fields, and auto-generator modes. Live 160-character counter, emoji support, and copy-ready output.
+    </p>
+    <div class="hero-features">
+      <div class="hero-feature"><span class="check">✓</span> 3 Modes</div>
+      <div class="hero-feature"><span class="check">✓</span> 160-Char Counter</div>
+      <div class="hero-feature"><span class="check">✓</span> Emoji Support</div>
+      <div class="hero-feature"><span class="check">✓</span> Instant Copy</div>
+    </div>
+  </div>
+</section>
+
+<div class="main-content">
+
+  <div class="tool-content">
+
+    <div class="workspace">
+
+      <!-- Twitter Preview -->
+      <div class="twitter-preview">
+        <div class="twitter-preview-inner">
+          <div class="avatar" id="avatarPreview">Y</div>
+          <div class="preview-info">
+            <div class="preview-name-row">
+              <div class="preview-name" id="previewName">Your Name</div>
+              <div class="verified-badge">✓</div>
+            </div>
+            <div class="preview-handle" id="previewHandle">@yourhandle</div>
+            <div class="preview-bio" id="previewBio">Your bio will appear here...</div>
+            <div class="preview-follow">
+              <span><strong style="color:#1a1a2e;">142</strong> Following</span>
+              <span><strong style="color:#1a1a2e;">2,847</strong> Followers</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Character Counter -->
+      <div class="char-counter-row">
+        <div class="char-counter-info">
+          <span>Character Count:</span>
+          <span class="char-counter-badge" id="charBadge">0 / 160</span>
+        </div>
+        <div class="char-counter-progress">
+          <div class="char-counter-fill" id="charFill"></div>
+        </div>
+      </div>
+
+      <!-- Mode tabs -->
+      <div class="mode-tabs">
+        <button class="mode-tab active" data-mode="templates">📝 Templates</button>
+        <button class="mode-tab" data-mode="fields">🎯 Fill Fields</button>
+        <button class="mode-tab" data-mode="auto">⚡ Auto Generate</button>
+      </div>
+
+      <!-- Templates Panel -->
+      <div class="mode-panel active" data-panel="templates">
+        <div class="templates-grid" id="templatesGrid"></div>
+      </div>
+
+      <!-- Fields Panel -->
+      <div class="mode-panel" data-panel="fields">
+        <div class="inputs-grid">
+          <div class="form-group">
+            <label>Name</label>
+            <input type="text" id="fieldName" placeholder="e.g. Sarah" value="Sarah">
+          </div>
+          <div class="form-group">
+            <label>Role / Title</label>
+            <input type="text" id="fieldRole" placeholder="e.g. Designer, Developer, Writer" value="Designer">
+          </div>
+          <div class="form-group">
+            <label>Skills (comma-separated)</label>
+            <input type="text" id="fieldSkills" placeholder="e.g. UI/UX, Figma, Webflow" value="UI/UX, Figma, Webflow">
+          </div>
+          <div class="form-group">
+            <label>Location</label>
+            <input type="text" id="fieldLocation" placeholder="e.g. Mumbai, India" value="Mumbai">
+          </div>
+          <div class="form-group">
+            <label>Interests / Hobbies</label>
+            <input type="text" id="fieldInterests" placeholder="e.g. Coffee, Photography, Travel" value="Coffee, Photography">
+          </div>
+          <div class="form-group">
+            <label>Call to Action</label>
+            <input type="text" id="fieldCTA" placeholder="e.g. DM for collabs, Say hi 👋" value="DM for collabs">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Custom Bio (Optional)</label>
+          <textarea id="fieldBio" placeholder="Type your custom bio here. Or use the fields above and click 'Generate from Fields' to auto-fill."></textarea>
+        </div>
+
+        <div class="actions">
+          <button class="btn btn-primary" id="generateFieldsBtn">✨ Generate from Fields</button>
+        </div>
+      </div>
+
+      <!-- Auto Generate Panel -->
+      <div class="mode-panel" data-panel="auto">
+        <p style="font-size:14px;color:#6b7280;margin-bottom:16px;line-height:1.6;">
+          Click below to randomly generate a unique bio. Great for inspiration then edit it to make it yours.
+        </p>
+        <div class="actions">
+          <button class="btn btn-primary" id="autoGenBtn">🎲 Generate Random Bio</button>
+        </div>
+      </div>
+
+      <!-- Emoji Row -->
+      <div style="margin-top:20px;">
+        <span class="emoji-label">Quick Emojis (click to append)</span>
+        <div class="emoji-row" id="emojiRow"></div>
+      </div>
+
+      <!-- Main Actions -->
+      <div class="actions">
+        <button class="btn btn-primary" id="copyBtn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+          Copy Bio
+        </button>
+        <button class="btn btn-secondary" id="saveBtn">💾 Save to History</button>
+        <button class="btn btn-secondary" id="clearBtn">↺ Clear</button>
+      </div>
+
+      <!-- History -->
+      <div class="history-section" id="historySection" style="display:none;">
+        <div class="history-title">
+          <span>📋 Saved Bios</span>
+          <button class="history-clear" id="historyClear">Clear All</button>
+        </div>
+        <div class="history-list" id="historyList"></div>
+      </div>
+
+    </div>
+
+    <!-- SEO Content -->
+    <div class="seo-content">
+
+      <h2>𝕏 What is a Twitter Bio Generator?</h2>
+      <p>
+        A <strong>Twitter Bio Generator</strong> helps you craft the perfect profile bio for Twitter (now X). Your bio is 160 characters of prime real estate that appears in every profile view, search result, and follow notification. A good bio turns visitors into followers; a bad one loses them in seconds.
+      </p>
+      <p>
+        Our tool generates bio ideas in three ways: <strong>pre-built templates</strong> for common roles (designer, developer, writer, founder, student), <strong>field-based building</strong> where you fill in name/role/skills/etc., and <strong>random generator</strong> for inspiration when you're stuck.
+      </p>
+
+      <h2>🚀 How to Use This Tool</h2>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-step-num">1</div>
+          <div class="how-step-title">Choose Mode</div>
+          <div class="how-step-desc">Templates, fields, or auto-generate.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">2</div>
+          <div class="how-step-title">Customize</div>
+          <div class="how-step-desc">Edit the generated bio and add emojis.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">3</div>
+          <div class="how-step-title">Check Length</div>
+          <div class="how-step-desc">Live 160-char counter keeps you under limit.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">4</div>
+          <div class="how-step-title">Copy & Paste</div>
+          <div class="how-step-desc">Copy bio, paste into Twitter profile.</div>
+        </div>
+      </div>
+
+      <h2>📏 Anatomy of a Great Twitter Bio</h2>
+
+      <h3>Line 1: Who You Are</h3>
+      <p>Your name and role. Example: <em>"Sarah Product Designer"</em>. Keep it clear, avoid vague titles like "Dreamer" or "Explorer."</p>
+
+      <h3>Line 2: What You Do</h3>
+      <p>Your skills, niche, or current project. Example: <em>"UI/UX · Figma · Webflow"</em>. Include relevant keywords these help with Twitter search.</p>
+
+      <h3>Line 3: Why Follow You</h3>
+      <p>Your value proposition or CTA. Example: <em>"Sharing design tips daily · DM for collabs"</em>. Give people a reason to follow.</p>
+
+      <h3>Optional: Location, Interests, Fun Facts</h3>
+      <p>Add personality with location, hobbies, or a quirky fact. Example: <em>"Mumbai · Coffee addict ☕ · Dog dad 🐕"</em>.</p>
+
+      <h2>💡 Twitter Bio Best Practices</h2>
+      <ul>
+        <li><strong>Stay under 160 characters.</strong> Twitter's limit is 160 go 130-155 to leave breathing room.</li>
+        <li><strong>Use 2-4 emojis</strong>, not more. Too many looks spammy.</li>
+        <li><strong>Include keywords</strong> for search. People search "designer in Mumbai" make sure those words are in your bio.</li>
+        <li><strong>Add a CTA</strong> "DM me", "Check my link", "Say hi".</li>
+        <li><strong>Update regularly.</strong> Your bio should reflect what you're working on now.</li>
+        <li><strong>Skip buzzwords.</strong> "Hustler", "Guru", "Thought leader" overused and eye-roll-worthy.</li>
+        <li><strong>Don't waste chars on URLs.</strong> Use Twitter's separate Website field instead.</li>
+      </ul>
+
+      <h2>🎨 Emoji Guide for Twitter Bios</h2>
+      <ul>
+        <li><strong>💼 Professional:</strong> 📊, 💻, 🎯, 📈, ✨</li>
+        <li><strong>Creative:</strong> 🎨, 📸, 🎬, 🎵, ✏️</li>
+        <li><strong>Tech:</strong> 💻, 🚀, ⚡, 🔧, 🧠</li>
+        <li><strong>Friendly:</strong> 👋, 😊, 🌟, ☕, 🐕</li>
+        <li><strong>Location:</strong> 📍, 🗺, 🌏, 🏙</li>
+      </ul>
+
+      <h2>❓ Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-question">What is the Twitter bio character limit?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Twitter (X) bios have a maximum of <strong>160 characters</strong>. Our tool shows a live counter so you always know how many characters are left.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What makes a good Twitter bio?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>A good bio answers three questions: <strong>Who are you? What do you do? Why should someone follow you?</strong> Use 1-2 emojis, avoid buzzwords, and include a call-to-action if relevant.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Should I use emojis in my Twitter bio?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>Yes but sparingly.</strong> 2-4 emojis work well as visual breaks. Too many look spammy. Use them at the start of lines for a listicle feel, or after keywords to highlight them.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I include a link in my Twitter bio?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Twitter has a separate <strong>"Website"</strong> field below your bio don't waste bio characters on URLs. Use the bio to describe yourself and the website field for your link.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">How often should I update my Twitter bio?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Whenever your work or focus changes usually every 3-6 months. Update when you: change jobs, launch a product, hit a milestone, or want to test different positioning for followers.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Should I include my location?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Only if location matters for your niche (like local services, events, or regional content). For global audiences, location wastes characters. Pro tip: use a broad location ("India", "NYC") to connect with more people.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Are my bios stored on your server?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>No. All generation and history saving happens in your browser using localStorage. Your bios never leave your device.</p></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-header">🔗 Related Social Tools</div>
+    <div class="sidebar-list">
+      <a href="/tools/social-tools/twitter-trends/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#1e293b;">📈</div>
+        <div class="sidebar-info"><div class="sidebar-title">Twitter Trends</div><div class="sidebar-desc">Viral topics</div></div>
+      </a>
+      <a href="/tools/social-tools/instagram-font/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#ec4899;">𝓐</div>
+        <div class="sidebar-info"><div class="sidebar-title">Instagram Font</div><div class="sidebar-desc">Bio fonts</div></div>
+      </a>
+      <a href="/tools/social-tools/caption-generator/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#8b5cf6;">💬</div>
+        <div class="sidebar-info"><div class="sidebar-title">Caption Generator</div><div class="sidebar-desc">Post captions</div></div>
+      </a>
+      <a href="/tools/social-tools/hashtag-generator/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#3b82f6;">#️⃣</div>
+        <div class="sidebar-info"><div class="sidebar-title">Hashtag Generator</div><div class="sidebar-desc">Popular hashtags</div></div>
+      </a>
+      <a href="/tools/social-tools/whatsapp-link/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#25d366;">💬</div>
+        <div class="sidebar-info"><div class="sidebar-title">WhatsApp Link</div><div class="sidebar-desc">Chat links</div></div>
+      </a>
+      <a href="/tools/social-tools/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#64748b;">📱</div>
+        <div class="sidebar-info"><div class="sidebar-title">All Social Tools →</div><div class="sidebar-desc">Browse 25+ tools</div></div>
+      </a>
+    </div>
+  </aside>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand"><div class="logo-icon">⚒</div>BigToolz</span></div>
+      <p class="footer-tagline">Your Ultimate Online Tools Hub</p>
+      <div class="footer-social">
+        <a href="https://facebook.com/bigtoolz" aria-label="Facebook">f</a>
+        <a href="https://twitter.com/bigtoolz" aria-label="Twitter">𝕏</a>
+        <a href="https://youtube.com/@bigtoolz" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+    <div>
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/tools/">All Tools</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Categories</h3>
+      <ul class="footer-links">
+        <li><a href="/tools/image-tools/">Image Tools</a></li>
+        <li><a href="/tools/pdf-tools/">PDF Tools</a></li>
+        <li><a href="/tools/text-tools/">Text Tools</a></li>
+        <li><a href="/tools/social-tools/">Social Tools</a></li>
+        <li><a href="/tools/categories">All Categories →</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Legal</h3>
+      <ul class="footer-links">
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left"><span>✓ 100% Free</span><span>✓ No Sign Up</span><span>✓ No Installation</span></div>
+    <div class="footer-bottom-right">© 2026 BigToolz. All rights reserved.</div>
+    <div class="footer-bottom-links"><a href="/privacy-policy">Privacy</a><a href="/terms">Terms</a><a href="/disclaimer">Disclaimer</a></div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+'use strict';
+
+/* ===== THEME ===== */
+(function(){try{var t=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&d))document.documentElement.setAttribute('data-theme','dark');else if(t==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();
+document.querySelector('.theme-btn')?.addEventListener('click',()=>{const h=document.documentElement;const c=h.getAttribute('data-theme');const d=window.matchMedia('(prefers-color-scheme: dark)').matches;let n=c==='dark'?'light':c==='light'?'dark':(d?'light':'dark');h.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}});
+
+/* ===== HELPERS ===== */
+const $ = (s, p = document) => p.querySelector(s);
+const $$ = (s, p = document) => [...p.querySelectorAll(s)];
+
+function showToast(msg, type = 'info', duration = 3000) {
+  const t = $('#toast');
+  if (!t) return;
+  t.className = 'toast visible' + (type !== 'info' ? ' ' + type : '');
+  t.textContent = msg;
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove('visible'), duration);
+}
+
+async function copyToClipboard(text) {
+  try {
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(text);
+      return true;
+    }
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.cssText = 'position:fixed;opacity:0;';
+    document.body.appendChild(ta);
+    ta.select();
+    const ok = document.execCommand('copy');
+    document.body.removeChild(ta);
+    return ok;
+  } catch (e) { return false; }
+}
+
+/* ===== DATA ===== */
+const TEMPLATES = [
+  { title: '💼 Product Designer', preview: 'Product Designer | UI/UX\nHelping startups ship beautiful products\n📍 Mumbai · Open to collabs', bio: '🎨 Product Designer | UI/UX\nHelping startups ship beautiful products\n📍 Mumbai · Open to collabs' },
+  { title: '💻 Full-Stack Developer', preview: 'Full-Stack Dev · JS/TS/Node\nBuilding cool stuff on the web\nOpen source contributor\n📧 hello@example.com', bio: '💻 Full-Stack Dev · JS/TS/Node\nBuilding cool stuff on the web\nOpen source contributor\n📧 hello@example.com' },
+  { title: '✍️ Writer / Blogger', preview: 'Writer · Essayist · Content Creator\nWords in @Medium @Substack\nNew essay every Sunday\n📖 Reading: 52 books in 2026', bio: '✍️ Writer · Essayist · Content Creator\nWords in @Medium @Substack\nNew essay every Sunday\n📖 Reading: 52 books in 2026' },
+  { title: '🚀 Startup Founder', preview: 'Founder @ YourStartup\nBuilding the future of X\nEx-Google · IIT · YC W22\nDMs open · Always hiring', bio: '🚀 Founder @ YourStartup\nBuilding the future of X\nEx-Google · IIT · YC W22\nDMs open · Always hiring' },
+  { title: '📸 Photographer', preview: '📸 Photographer · Filmmaker\nChasing light around the world\n📍 Based in Delhi · Prints ↓', bio: '📸 Photographer · Filmmaker\nChasing light around the world\n📍 Based in Delhi · Prints ↓' },
+  { title: '🎓 Student', preview: 'CS Student · 3rd year\nLearning ML + Web Dev\nBuilding side projects daily\nLet\'s connect! 👋', bio: '🎓 CS Student · 3rd year\nLearning ML + Web Dev\nBuilding side projects daily\nLet\'s connect! 👋' },
+  { title: '📊 Marketer', preview: 'Growth Marketer · SEO · Content\nScaling D2C brands\n$10M+ revenue driven\nNewsletter ↓', bio: '📊 Growth Marketer · SEO · Content\nScaling D2C brands\n$10M+ revenue driven\nNewsletter ↓' },
+  { title: '🎬 Content Creator', preview: 'Content Creator · 100K+ community\nVideos on tech, tools & productivity\nNew video every Friday 🎥', bio: '🎬 Content Creator · 100K+ community\nVideos on tech, tools & productivity\nNew video every Friday 🎥' },
+  { title: '💪 Fitness Coach', preview: '💪 Fitness Coach · Nutritionist\nHelping busy people get fit\n10+ years experience\nFree plan ↓', bio: '💪 Fitness Coach · Nutritionist\nHelping busy people get fit\n10+ years experience\nFree plan ↓' },
+  { title: '🎵 Musician', preview: '🎵 Indie Musician · Producer\nNew single "Midnight" out now\n📍 Bombay · Tour dates ↓', bio: '🎵 Indie Musician · Producer\nNew single "Midnight" out now\n📍 Bombay · Tour dates ↓' }
+];
+
+const EMOJIS = ['😊','👋','🚀','💻','🎨','📸','✍️','💼','🌱','✨','⚡','🔥','💡','📊','📈','🎯','🌟','☕','🍕','🎵','📚','🎬','🐕','🌸','📍','🌍','💪','❤️','🎉','🎓'];
+
+const AUTO_PARTS = {
+  openings: ['Building', 'Creating', 'Designing', 'Writing about', 'Exploring', 'Learning', 'Sharing'],
+  subjects: ['products people love', 'clean code', 'beautiful UIs', 'growth stories', 'the future of AI', 'side projects', 'design systems', 'web3 tools'],
+  roles: ['Developer', 'Designer', 'Writer', 'Founder', 'Creator', 'Marketer', 'Engineer', 'Photographer'],
+  interests: ['☕ Coffee', '📚 Books', '🎵 Music', '🎮 Gaming', '🏃 Running', '📸 Photos', '🌱 Plants', '✈️ Travel'],
+  ctas: ['DM me 👋', 'Links below ↓', 'Say hi!', 'Always learning', 'Open to collabs', 'Free newsletter ↓']
+};
+
+/* ===== STATE ===== */
+const state = {
+  mode: 'templates',
+  currentBio: '',
+  history: []
+};
+
+/* ===== DOM ===== */
+const previewName = $('#previewName');
+const previewBio = $('#previewBio');
+const avatarPreview = $('#avatarPreview');
+const charBadge = $('#charBadge');
+const charFill = $('#charFill');
+const templatesGrid = $('#templatesGrid');
+const emojiRow = $('#emojiRow');
+const fieldName = $('#fieldName');
+const fieldRole = $('#fieldRole');
+const fieldSkills = $('#fieldSkills');
+const fieldLocation = $('#fieldLocation');
+const fieldInterests = $('#fieldInterests');
+const fieldCTA = $('#fieldCTA');
+const fieldBio = $('#fieldBio');
+const generateFieldsBtn = $('#generateFieldsBtn');
+const autoGenBtn = $('#autoGenBtn');
+const copyBtn = $('#copyBtn');
+const saveBtn = $('#saveBtn');
+const clearBtn = $('#clearBtn');
+const historySection = $('#historySection');
+const historyList = $('#historyList');
+const historyClear = $('#historyClear');
+
+/* ===== MODE TABS ===== */
+$$('.mode-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    $$('.mode-tab').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    state.mode = tab.dataset.mode;
+    $$('.mode-panel').forEach(p => p.classList.toggle('active', p.dataset.panel === state.mode));
+  });
+});
+
+/* ===== TEMPLATES ===== */
+function renderTemplates() {
+  templatesGrid.innerHTML = '';
+  TEMPLATES.forEach(t => {
+    const btn = document.createElement('button');
+    btn.className = 'template-card';
+    btn.innerHTML = `
+      <div class="template-card-title">${t.title}</div>
+      <div class="template-card-preview">${t.preview}</div>
+    `;
+    btn.addEventListener('click', () => {
+      updateBio(t.bio);
+      updateNameFromBio(t.bio);
+      showToast('Template loaded!', 'success');
+    });
+    templatesGrid.appendChild(btn);
+  });
+}
+
+/* ===== EMOJI ===== */
+function renderEmojis() {
+  emojiRow.innerHTML = '';
+  EMOJIS.forEach(e => {
+    const btn = document.createElement('button');
+    btn.className = 'emoji-btn';
+    btn.textContent = e;
+    btn.type = 'button';
+    btn.addEventListener('click', () => {
+      const newBio = state.currentBio + ' ' + e;
+      if (newBio.length <= 160) {
+        updateBio(newBio);
+      } else {
+        showToast('Would exceed 160 characters', 'error');
+      }
+    });
+    emojiRow.appendChild(btn);
+  });
+}
+
+/* ===== UPDATE BIO ===== */
+function updateBio(text) {
+  state.currentBio = text;
+  previewBio.textContent = text || 'Your bio will appear here...';
+  updateCharCount();
+  fieldBio.value = text;
+}
+
+function updateCharCount() {
+  const len = state.currentBio.length;
+  charBadge.textContent = `${len} / 160`;
+
+  const pct = Math.min(100, (len / 160) * 100);
+  charFill.style.width = pct + '%';
+
+  charBadge.classList.remove('warn', 'danger');
+  charFill.classList.remove('warn', 'danger');
+
+  if (len > 160) {
+    charBadge.classList.add('danger');
+    charFill.classList.add('danger');
+  } else if (len > 140) {
+    charBadge.classList.add('warn');
+    charFill.classList.add('warn');
+  }
+}
+
+function updateNameFromBio(bio) {
+  const firstLine = bio.split('\n')[0].replace(/[^\w\s\u0900-\u097F]/g, '').trim();
+  if (firstLine) {
+    const nameWords = firstLine.split(' ').slice(0, 2).join(' ');
+    if (nameWords.length <= 30) {
+      previewName.textContent = nameWords;
+      avatarPreview.textContent = nameWords[0].toUpperCase();
+    }
+  }
+}
+
+/* ===== GENERATE FROM FIELDS ===== */
+generateFieldsBtn.addEventListener('click', () => {
+  const name = fieldName.value.trim();
+  const role = fieldRole.value.trim();
+  const skills = fieldSkills.value.trim();
+  const location = fieldLocation.value.trim();
+  const interests = fieldInterests.value.trim();
+  const cta = fieldCTA.value.trim();
+
+  const lines = [];
+  if (name && role) lines.push(`${name} · ${role}`);
+  else if (name) lines.push(name);
+  else if (role) lines.push(role);
+
+  if (skills) lines.push(skills);
+  if (interests) lines.push('☕ ' + interests);
+  if (location) lines.push('📍 ' + location);
+  if (cta) lines.push(cta);
+
+  const bio = lines.join('\n');
+  updateBio(bio);
+
+  if (name) {
+    previewName.textContent = name;
+    avatarPreview.textContent = name[0].toUpperCase();
+  }
+
+  showToast('Bio generated from fields!', 'success');
+});
+
+/* ===== AUTO GENERATE ===== */
+autoGenBtn.addEventListener('click', () => {
+  const r = (arr) => arr[Math.floor(Math.random() * arr.length)];
+
+  const opening = r(AUTO_PARTS.openings);
+  const subject = r(AUTO_PARTS.subjects);
+  const role = r(AUTO_PARTS.roles);
+  const interest = r(AUTO_PARTS.interests);
+  const cta = r(AUTO_PARTS.ctas);
+
+  const lines = [
+    `${opening} ${subject}`,
+    `${role} · Learner · Doer`,
+    `${interest}`,
+    `${cta}`
+  ];
+
+  updateBio(lines.join('\n'));
+  showToast('Random bio generated!', 'success');
+});
+
+/* ===== COPY ===== */
+copyBtn.addEventListener('click', async () => {
+  const bio = state.currentBio || fieldBio.value;
+  if (!bio) {
+    showToast('No bio to copy', 'error');
+    return;
+  }
+  const ok = await copyToClipboard(bio);
+  if (ok) {
+    copyBtn.classList.add('copied');
+    const orig = copyBtn.innerHTML;
+    copyBtn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg> Copied!';
+    setTimeout(() => {
+      copyBtn.classList.remove('copied');
+      copyBtn.innerHTML = orig;
+    }, 2000);
+    showToast('Bio copied to clipboard!', 'success');
+  } else {
+    showToast('Copy failed', 'error');
+  }
+});
+
+/* ===== SAVE ===== */
+saveBtn.addEventListener('click', () => {
+  const bio = state.currentBio || fieldBio.value;
+  if (!bio) {
+    showToast('No bio to save', 'error');
+    return;
+  }
+  state.history = state.history.filter(h => h !== bio);
+  state.history.unshift(bio);
+  state.history = state.history.slice(0, 10);
+  saveHistory();
+  renderHistory();
+  showToast('Bio saved to history!', 'success');
+});
+
+function saveHistory() {
+  try {
+    localStorage.setItem('bigtoolz_bio_history', JSON.stringify(state.history));
+  } catch (e) {}
+}
+
+function loadHistory() {
+  try {
+    state.history = JSON.parse(localStorage.getItem('bigtoolz_bio_history') || '[]');
+  } catch (e) { state.history = []; }
+  renderHistory();
+}
+
+function renderHistory() {
+  if (state.history.length === 0) {
+    historySection.style.display = 'none';
+    return;
+  }
+  historySection.style.display = 'block';
+  historyList.innerHTML = '';
+  state.history.forEach(bio => {
+    const item = document.createElement('div');
+    item.className = 'history-item';
+    item.innerHTML = `
+      <span class="history-text">${bio.replace(/\n/g, ' · ')}</span>
+      <span class="history-len">${bio.length}</span>
+    `;
+    item.addEventListener('click', () => {
+      updateBio(bio);
+      showToast('Bio loaded', 'success', 1500);
+    });
+    historyList.appendChild(item);
+  });
+}
+
+historyClear.addEventListener('click', () => {
+  state.history = [];
+  saveHistory();
+  renderHistory();
+  showToast('History cleared');
+});
+
+/* ===== CLEAR ===== */
+clearBtn.addEventListener('click', () => {
+  updateBio('');
+  fieldBio.value = '';
+  previewName.textContent = 'Your Name';
+  avatarPreview.textContent = 'Y';
+  previewBio.textContent = 'Your bio will appear here...';
+  showToast('Cleared');
+});
+
+/* ===== CUSTOM BIO INPUT ===== */
+fieldBio.addEventListener('input', () => {
+  if (fieldBio.value.length <= 160) {
+    updateBio(fieldBio.value);
+  } else {
+    fieldBio.value = fieldBio.value.slice(0, 160);
+    updateBio(fieldBio.value);
+  }
+});
+
+/* ===== FAQ ===== */
+$$('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    $$('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+
+/* ===== INIT ===== */
+renderTemplates();
+renderEmojis();
+loadHistory();
+updateCharCount();
+</script>
+
+</body>
+</html>

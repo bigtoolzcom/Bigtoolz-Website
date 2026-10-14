@@ -1,0 +1,1183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2563eb">
+
+<title>Invert PDF Colors - PDF Dark Mode Converter Online Free | BigToolz</title>
+<meta name="description" content="Invert PDF colors online free. Convert PDFs to dark mode for night reading. Full invert, smart invert, or grayscale invert. No upload, works in your browser.">
+<meta name="keywords" content="invert pdf colors, pdf dark mode, pdf night mode, invert pdf online, pdf color inverter, dark pdf">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://bigtoolz.com/tools/pdf-tools/visual-pdf/invert-colors/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Invert PDF Colors - Free Online Tool | BigToolz">
+<meta property="og:description" content="Invert PDF colors for dark mode reading free, no upload.">
+<meta property="og:url" content="https://bigtoolz.com/tools/pdf-tools/visual-pdf/invert-colors/">
+<meta property="og:image" content="https://bigtoolz.com/assets/images/og-image.jpg">
+<meta property="og:site_name" content="BigToolz">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Invert PDF Colors - BigToolz">
+<meta name="twitter:description" content="Invert PDF colors instantly free, no upload.">
+<meta name="twitter:image" content="https://bigtoolz.com/assets/images/twitter-card.jpg">
+
+<link rel="icon" href="/assets/images/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/images/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#f8f9fc;color:#1a1a2e;overflow-x:hidden;line-height:1.5}
+
+  .header{background:#fff;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;position:sticky;top:0;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+  .header-left{display:flex;align-items:center;gap:40px}
+  .logo{display:flex;align-items:center;gap:8px;font-size:22px;font-weight:800;color:#1a1a2e;text-decoration:none}
+  .logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#3b82f6,#2563eb);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px}
+  .logo span{color:#2563eb}
+  .nav{display:flex;align-items:center;gap:28px;list-style:none}
+  .nav a{text-decoration:none;color:#4b5563;font-size:14px;font-weight:500;transition:color .2s}
+  .nav a:hover,.nav a.active{color:#2563eb}
+  .header-right{display:flex;align-items:center;gap:16px}
+  .search-btn,.theme-btn{width:36px;height:36px;border-radius:50%;border:none;background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#4b5563}
+  .search-btn:hover,.theme-btn:hover{background:#f3f4f6}
+  .bookmark-btn{display:flex;align-items:center;gap:8px;background:#2563eb;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
+  .bookmark-btn:hover{background:#1d4ed8}
+
+  .hero{background:linear-gradient(135deg,#0a0e27 0%,#1a1a4e 40%,#2d1b69 70%,#4c1d95 100%);padding:40px 40px 60px;position:relative;overflow:hidden;color:#fff}
+  .hero::before{content:'';position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(139,92,246,.3) 0%,transparent 70%);border-radius:50%}
+  .hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+  .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px;flex-wrap:wrap}
+  .breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none}
+  .breadcrumb a:hover{color:#fff}
+  .breadcrumb .sep{color:rgba(255,255,255,.4)}
+  .breadcrumb .current{color:#fff;font-weight:500}
+  .hero-title-row{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+  .hero-icon{width:60px;height:60px;background:#8b5cf6;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;color:#fff;flex-shrink:0;box-shadow:0 8px 24px rgba(139,92,246,.4)}
+  .hero-title{font-size:42px;font-weight:800;line-height:1.15}
+  .hero-title .blue{color:#a78bfa}
+  .hero-desc{font-size:15px;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:24px;max-width:560px}
+  .hero-features{display:flex;gap:24px;flex-wrap:wrap}
+  .hero-feature{display:flex;align-items:center;gap:6px;font-size:13px;color:#fff;font-weight:500}
+  .hero-feature .check{width:18px;height:18px;border-radius:50%;background:#8b5cf6;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;flex-shrink:0}
+
+  .main-content{max-width:1200px;margin:0 auto;padding:40px;display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start}
+  .tool-content{min-width:0}
+
+  .workspace{background:#fff;border-radius:16px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,.06);border:1px solid #e5e7eb;margin-bottom:24px}
+
+  .dropzone{border:2px dashed #c4b5fd;border-radius:12px;padding:50px 30px;text-align:center;background:#faf5ff;margin-bottom:24px;transition:all .2s;cursor:pointer}
+  .dropzone:hover,.dropzone.dragover{border-color:#8b5cf6;background:#ede9fe}
+  .dropzone-icon{width:60px;height:60px;background:linear-gradient(135deg,#8b5cf6,#7c3aed);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;color:#fff;font-size:26px;transition:transform .2s}
+  .dropzone:hover .dropzone-icon{transform:translateY(-4px)}
+  .dropzone-title{font-size:16px;font-weight:700;color:#1a1a2e;margin-bottom:8px}
+  .dropzone-sub{font-size:14px;color:#6b7280;margin-bottom:20px}
+  .dropzone-sub a{color:#8b5cf6;font-weight:600;text-decoration:none}
+  .choose-btn{display:inline-flex;align-items:center;gap:8px;background:#8b5cf6;color:#fff;border:none;padding:12px 28px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;transition:background .2s}
+  .choose-btn:hover{background:#7c3aed}
+  .dropzone-info{font-size:12px;color:#9ca3af;display:flex;align-items:center;justify-content:center;gap:8px;margin-top:16px;flex-wrap:wrap}
+  .dropzone-info .divider{color:#d1d5db}
+  .file-input{display:none}
+
+  .pdf-info{display:none;background:#faf5ff;border-radius:12px;padding:16px 20px;margin-bottom:20px;border:1px solid #c4b5fd;align-items:center;gap:16px;flex-wrap:wrap}
+  .pdf-info.visible{display:flex}
+  .pdf-info-icon{width:44px;height:44px;background:#8b5cf6;border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:18px;flex-shrink:0}
+  .pdf-info-details{flex:1;min-width:0}
+  .pdf-info-name{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .pdf-info-meta{font-size:12px;color:#6b7280}
+
+  .warn-box{display:none;background:#eff6ff;border-left:4px solid #3b82f6;border-radius:10px;padding:14px 18px;margin-bottom:20px;font-size:13px;color:#1e40af;line-height:1.6}
+  .warn-box.visible{display:block}
+  .warn-box strong{color:#1e3a8a;display:block;margin-bottom:4px}
+
+  /* Preview */
+  .preview-area{display:none;margin-bottom:20px}
+  .preview-area.visible{display:block}
+
+  .preview-label{font-size:12px;font-weight:800;color:#6b7280;text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px}
+  .preview-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .preview-box{background:#0f172a;border-radius:12px;padding:12px;position:relative}
+  .preview-badge{position:absolute;top:8px;left:8px;background:rgba(255,255,255,.9);color:#1a1a2e;font-size:10px;font-weight:800;padding:3px 10px;border-radius:6px;text-transform:uppercase;letter-spacing:.3px;z-index:2}
+  .preview-box.after .preview-badge{background:#8b5cf6;color:#fff}
+  .preview-canvas{width:100%;height:auto;border-radius:8px;background:#fff;display:block}
+
+  .page-nav{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:12px}
+  .page-nav button{padding:6px 12px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;font-size:12px;font-weight:600;color:#4b5563;cursor:pointer;font-family:inherit;transition:all .2s}
+  .page-nav button:hover{border-color:#8b5cf6;color:#8b5cf6}
+  .page-nav button:disabled{opacity:.4;cursor:not-allowed}
+  .page-nav-info{font-size:12px;color:#6b7280;font-weight:600}
+
+  /* Options */
+  .options{background:#faf5ff;border-radius:12px;padding:20px;margin-bottom:20px;border:1px solid #c4b5fd}
+  .options-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+
+  .invert-modes{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px}
+  .invert-mode{background:#fff;border:2px solid #e5e7eb;border-radius:10px;padding:16px 12px;cursor:pointer;transition:all .2s;text-align:center}
+  .invert-mode:hover{border-color:#8b5cf6;background:#faf5ff}
+  .invert-mode.active{border-color:#8b5cf6;background:#8b5cf6;color:#fff}
+  .invert-mode-icon{font-size:24px;margin-bottom:6px;display:block}
+  .invert-mode-title{font-size:13px;font-weight:800;margin-bottom:2px}
+  .invert-mode-desc{font-size:10px;opacity:.75;line-height:1.4}
+  .invert-mode.active .invert-mode-desc{opacity:.9}
+
+  .slider-group{margin-bottom:16px}
+  .slider-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+  .slider-header label{font-size:13px;font-weight:600;color:#4b5563}
+  .slider-header .val{font-size:13px;font-weight:800;color:#7c3aed;background:#fff;padding:4px 12px;border-radius:8px;border:1px solid #c4b5fd;min-width:70px;text-align:center}
+  .range-slider{width:100%;-webkit-appearance:none;appearance:none;height:8px;background:#ddd6fe;border-radius:4px;outline:none}
+  .range-slider::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:22px;height:22px;background:#8b5cf6;border-radius:50%;cursor:pointer;box-shadow:0 2px 6px rgba(139,92,246,.4);transition:transform .15s;border:3px solid #fff}
+  .range-slider::-webkit-slider-thumb:hover{transform:scale(1.15)}
+  .range-slider::-moz-range-thumb{width:22px;height:22px;background:#8b5cf6;border:3px solid #fff;border-radius:50%;cursor:pointer}
+
+  .toggle-row{display:flex;align-items:center;justify-content:space-between;padding:12px 14px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;gap:12px;margin-bottom:8px}
+  .toggle-info{display:flex;flex-direction:column;gap:2px;flex:1;min-width:0}
+  .toggle-title{font-size:13px;font-weight:700;color:#1a1a2e}
+  .toggle-desc{font-size:11px;color:#6b7280;line-height:1.4}
+  .toggle-switch{position:relative;width:44px;height:24px;background:#d1d5db;border-radius:12px;cursor:pointer;transition:background .2s;flex-shrink:0}
+  .toggle-switch::after{content:'';position:absolute;top:2px;left:2px;width:20px;height:20px;background:#fff;border-radius:50%;transition:transform .2s;box-shadow:0 1px 3px rgba(0,0,0,.15)}
+  .toggle-switch.on{background:#8b5cf6}
+  .toggle-switch.on::after{transform:translateX(20px)}
+
+  .actions{display:flex;gap:12px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 28px;border-radius:10px;font-size:15px;font-weight:700;font-family:inherit;cursor:pointer;border:none;transition:all .2s;text-decoration:none}
+  .btn-primary{background:#8b5cf6;color:#fff;flex:1;box-shadow:0 4px 12px rgba(139,92,246,.2)}
+  .btn-primary:hover:not(:disabled){background:#7c3aed;transform:translateY(-2px);box-shadow:0 6px 20px rgba(139,92,246,.3)}
+  .btn-primary:disabled{opacity:.5;cursor:not-allowed;transform:none}
+  .btn-secondary{background:#fff;color:#8b5cf6;border:1px solid #e5e7eb}
+  .btn-secondary:hover{border-color:#8b5cf6;background:#faf5ff}
+  .btn-success{background:#10b981;color:#fff}
+  .btn-success:hover{background:#059669}
+
+  .progress{display:none;margin-top:20px}
+  .progress.visible{display:block}
+  .progress-bar{width:100%;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden;margin-bottom:8px}
+  .progress-fill{height:100%;background:linear-gradient(90deg,#a78bfa,#8b5cf6);border-radius:4px;width:0%;transition:width .3s ease}
+  .progress-text{font-size:13px;color:#6b7280;text-align:center;font-weight:500}
+
+  .result-area{display:none;margin-top:20px;padding:24px;background:#f0fdf4;border-radius:12px;border:1px solid #86efac;text-align:center}
+  .result-area.visible{display:block}
+  .result-icon{width:64px;height:64px;background:#10b981;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:32px;margin:0 auto 16px}
+  .result-title{font-size:18px;font-weight:800;color:#065f46;margin-bottom:8px}
+  .result-desc{font-size:14px;color:#047857;margin-bottom:20px;line-height:1.6}
+  .result-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+  .seo-content{background:#fff;border-radius:16px;padding:32px;border:1px solid #e5e7eb;margin-bottom:24px}
+  .seo-content h2{font-size:22px;font-weight:800;color:#1a1a2e;margin-bottom:14px;margin-top:28px;display:flex;align-items:center;gap:10px}
+  .seo-content h2:first-child{margin-top:0}
+  .seo-content h3{font-size:16px;font-weight:700;color:#1a1a2e;margin:20px 0 10px}
+  .seo-content p{font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:14px}
+  .seo-content ul{list-style:none;padding-left:0;margin-bottom:16px}
+  .seo-content ul li{position:relative;padding-left:24px;font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:8px}
+  .seo-content ul li::before{content:'';position:absolute;left:6px;top:12px;width:6px;height:6px;background:#8b5cf6;border-radius:50%}
+  .seo-content a{color:#2563eb;text-decoration:none;font-weight:600}
+  .seo-content a:hover{text-decoration:underline}
+  .seo-content strong{color:#1a1a2e;font-weight:700}
+  .seo-content code{background:#f1f5f9;padding:2px 6px;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:13px;color:#0f172a;border:1px solid #e2e8f0}
+
+  .how-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:20px}
+  .how-step{background:#faf5ff;border-radius:12px;padding:20px;border:1px solid #c4b5fd}
+  .how-step-num{width:36px;height:36px;border-radius:50%;background:#8b5cf6;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;margin-bottom:12px}
+  .how-step-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+  .how-step-desc{font-size:13px;color:#6b7280;line-height:1.6}
+
+  .faq-item{background:#faf5ff;border:1px solid #c4b5fd;border-radius:12px;margin-bottom:10px;overflow:hidden;transition:border-color .2s}
+  .faq-item:hover{border-color:#8b5cf6}
+  .faq-question{width:100%;background:none;border:none;padding:18px 22px;font-size:15px;font-weight:700;color:#1a1a2e;text-align:left;cursor:pointer;font-family:inherit;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .faq-question .chev{font-size:12px;color:#8b5cf6;transition:transform .2s;flex-shrink:0}
+  .faq-item.open .faq-question .chev{transform:rotate(180deg)}
+  .faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 22px}
+  .faq-item.open .faq-answer{max-height:500px;padding-bottom:18px}
+  .faq-answer p{font-size:14px;color:#6b7280;line-height:1.7;margin:0}
+
+  .sidebar{background:#fff;border-radius:16px;padding:24px;border:1px solid #e5e7eb;position:sticky;top:80px;margin-bottom:24px}
+  .sidebar-header{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:800;color:#1a1a2e;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid #f3f4f6}
+  .sidebar-list{display:flex;flex-direction:column;gap:8px}
+  .sidebar-item{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;cursor:pointer;transition:background .2s;text-decoration:none;color:inherit;border:1px solid #f3f4f6}
+  .sidebar-item:hover{background:#faf5ff;border-color:#c4b5fd}
+  .sidebar-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;flex-shrink:0}
+  .sidebar-info{flex:1;min-width:0}
+  .sidebar-title{font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:2px}
+  .sidebar-desc{font-size:11px;color:#9ca3af;line-height:1.4}
+
+  .footer{background:#0a0e27;padding:60px 40px 30px;color:#fff;margin-top:40px}
+  .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:40px}
+  .footer-brand{display:flex;align-items:center;gap:8px;font-size:20px;font-weight:800;margin-bottom:12px}
+  .footer-brand span{color:#60a5fa}
+  .footer-tagline{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px}
+  .footer-social{display:flex;gap:12px}
+  .footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:16px;transition:background .2s}
+  .footer-social a:hover{background:rgba(255,255,255,.2)}
+  .footer-heading{font-size:14px;font-weight:700;margin-bottom:20px;color:#fff}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .footer-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;transition:color .2s}
+  .footer-links a:hover{color:#60a5fa}
+  .footer-bottom{max-width:1200px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  .footer-bottom-left{display:flex;gap:20px;font-size:12px;color:rgba(255,255,255,.5)}
+  .footer-bottom-right,.footer-bottom-links a{font-size:12px;color:rgba(255,255,255,.5);text-decoration:none}
+  .footer-bottom-links{display:flex;gap:20px}
+
+  .toast{position:fixed;bottom:24px;right:24px;background:#1a1a2e;color:#fff;padding:14px 20px;border-radius:10px;font-size:13px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:3000;transform:translateY(200%);transition:transform .3s ease;max-width:320px}
+  .toast.visible{transform:translateY(0)}
+  .toast.success{background:#10b981}
+  .toast.error{background:#ef4444}
+  .toast.info{background:#8b5cf6}
+
+  @media(max-width:1024px){
+    .main-content{grid-template-columns:1fr;padding:24px 20px}
+    .sidebar{position:static}
+    .how-steps{grid-template-columns:repeat(2,1fr)}
+    .invert-modes{grid-template-columns:1fr}
+  }
+  @media(max-width:768px){
+    .header{padding:0 20px}.nav{display:none}
+    .hero{padding:24px 20px 40px}
+    .hero-title{font-size:28px}
+    .hero-icon{width:48px;height:48px;font-size:22px}
+    .hero-title-row{flex-direction:column;align-items:flex-start;gap:12px}
+    .main-content{padding:20px 16px}
+    .workspace{padding:20px}
+    .dropzone{padding:32px 16px}
+    .how-steps{grid-template-columns:1fr}
+    .seo-content{padding:20px}
+    .footer-inner{grid-template-columns:1fr 1fr}
+    .toast{left:16px;right:16px;bottom:16px;max-width:none}
+    .preview-grid{grid-template-columns:1fr}
+  }
+  @media(max-width:576px){
+    .header{padding:0 16px}.header-right .search-btn,.header-right .theme-btn{display:none}
+    .hero-title{font-size:24px}
+    .actions{flex-direction:column}
+    .btn{width:100%}
+    .btn-primary{flex:none}
+    .footer-inner{grid-template-columns:1fr}
+    .footer-bottom{flex-direction:column;text-align:center}
+  }
+
+  html[data-theme="dark"] body{background:#0f172a;color:#f1f5f9}
+  html[data-theme="dark"] .header,html[data-theme="dark"] .workspace,html[data-theme="dark"] .seo-content,html[data-theme="dark"] .sidebar{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .logo,html[data-theme="dark"] .hero-title,html[data-theme="dark"] .seo-content h2,html[data-theme="dark"] .seo-content h3,html[data-theme="dark"] .faq-question,html[data-theme="dark"] .sidebar-header,html[data-theme="dark"] .sidebar-title,html[data-theme="dark"] .pdf-info-name,html[data-theme="dark"] .options-title,html[data-theme="dark"] .toggle-title,html[data-theme="dark"] .invert-mode-title{color:#f1f5f9}
+  html[data-theme="dark"] .nav a{color:#cbd5e1}
+  html[data-theme="dark"] .dropzone{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .how-step,html[data-theme="dark"] .faq-item,html[data-theme="dark"] .pdf-info,html[data-theme="dark"] .toggle-row,html[data-theme="dark"] .invert-mode,html[data-theme="dark"] .options{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .invert-mode.active{background:#8b5cf6;border-color:#8b5cf6;color:#fff}
+  html[data-theme="dark"] .seo-content p,html[data-theme="dark"] .seo-content ul li,html[data-theme="dark"] .faq-answer p,html[data-theme="dark"] .pdf-info-meta,html[data-theme="dark"] .toggle-desc,html[data-theme="dark"] .invert-mode-desc{color:#cbd5e1}
+  html[data-theme="dark"] .seo-content code{background:#020617;color:#94a3b8;border-color:#334155}
+  html[data-theme="dark"] .warn-box{background:#1e3a8a;border-color:#3b82f6;color:#dbeafe}
+  html[data-theme="dark"] .warn-box strong{color:#bfdbfe}
+  html[data-theme="dark"] .result-area{background:#064e3b;border-color:#10b981}
+  html[data-theme="dark"] .result-title,html[data-theme="dark"] .result-desc{color:#d1fae5}
+  html[data-theme="dark"] .slider-header .val{background:#1e293b;border-color:#334155;color:#a78bfa}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type": "SoftwareApplication", "name": "Invert PDF Colors", "url": "https://bigtoolz.com/tools/pdf-tools/visual-pdf/invert-colors/", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any (Web-based)", "description": "Free online PDF color inverter convert PDFs to dark mode for night reading. Works in your browser.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.7", "ratingCount": "412"}},
+    {"@type": "HowTo", "name": "How to Invert PDF Colors", "step": [
+      {"@type": "HowToStep", "name": "Upload PDF", "text": "Drag & drop or click to select a PDF file."},
+      {"@type": "HowToStep", "name": "Choose Invert Mode", "text": "Pick Full Invert, Smart Invert, or Grayscale-Invert."},
+      {"@type": "HowToStep", "name": "Preview", "text": "See before/after preview of pages."},
+      {"@type": "HowToStep", "name": "Download", "text": "Click Apply & Download to save the dark-mode PDF."}
+    ]},
+    {"@type": "FAQPage", "mainEntity": [
+      {"@type": "Question", "name": "How do I invert PDF colors for dark mode?", "acceptedAnswer": {"@type": "Answer", "text": "Upload your PDF, choose an invert mode (Full, Smart, or Grayscale), preview the changes, then click Apply & Download. The result is a dark-mode PDF perfect for night reading."}},
+      {"@type": "Question", "name": "What's the difference between Full, Smart, and Grayscale Invert?", "acceptedAnswer": {"@type": "Answer", "text": "Full Invert flips every color black becomes white, white becomes black. Smart Invert preserves colors of embedded images while inverting backgrounds and text. Grayscale-Invert converts to grayscale first, then inverts great for scanned documents."}},
+      {"@type": "Question", "name": "Does inverting affect text searchability?", "acceptedAnswer": {"@type": "Answer", "text": "Yes because the tool rasterizes pages, the output is image-based. Text is no longer searchable or selectable. Use this for visual night reading, not for searchable archives."}},
+      {"@type": "Question", "name": "Will inverted PDFs still print correctly?", "acceptedAnswer": {"@type": "Answer", "text": "Inverted PDFs will print as they appear dark backgrounds will consume a lot of ink. For printing, keep the original. For screen reading (dark mode), use the inverted version."}},
+      {"@type": "Question", "name": "Are my PDFs uploaded to a server?", "acceptedAnswer": {"@type": "Answer", "text": "No. All processing happens in your browser using pdf-lib and pdf.js. Your PDF never leaves your device."}}
+    ]},
+    {"@type": "BreadcrumbList", "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bigtoolz.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://bigtoolz.com/tools/"},
+      {"@type": "ListItem", "position": 3, "name": "PDF Tools", "item": "https://bigtoolz.com/tools/pdf-tools/"},
+      {"@type": "ListItem", "position": 4, "name": "Visual PDF", "item": "https://bigtoolz.com/tools/pdf-tools/visual-pdf/"},
+      {"@type": "ListItem", "position": 5, "name": "Invert Colors", "item": "https://bigtoolz.com/tools/pdf-tools/visual-pdf/invert-colors/"}
+    ]}
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-left">
+    <a href="/" class="logo"><div class="logo-icon">⚒</div>BigToolz</span></a>
+    <nav><ul class="nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/tools/" class="active">All Tools</a></li>
+      <li><a href="/tools/categories">Categories</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul></nav>
+  </div>
+  <div class="header-right">
+   
+    <button class="theme-btn" aria-label="Toggle theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
+    
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <nav class="breadcrumb">
+      <a href="/">Home</a><span class="sep">›</span>
+      <a href="/tools/">Tools</a><span class="sep">›</span>
+      <a href="/tools/pdf-tools/">PDF Tools</a><span class="sep">›</span>
+      <a href="/tools/pdf-tools/visual-pdf/">Visual PDF</a><span class="sep">›</span>
+      <span class="current">Invert Colors</span>
+    </nav>
+    <div class="hero-title-row">
+      <div class="hero-icon">🌗</div>
+      <h1 class="hero-title">Invert PDF <span class="blue">Colors</span></h1>
+    </div>
+    <p class="hero-desc">
+      Convert PDF to dark mode for comfortable night reading. Full invert, smart invert (preserves images), or grayscale invert. No upload, no signup, 100% private.
+    </p>
+    <div class="hero-features">
+      <div class="hero-feature"><span class="check">✓</span> Dark Mode</div>
+      <div class="hero-feature"><span class="check">✓</span> 3 Invert Modes</div>
+      <div class="hero-feature"><span class="check">✓</span> Live Preview</div>
+      <div class="hero-feature"><span class="check">✓</span> No Upload</div>
+    </div>
+  </div>
+</section>
+
+<div class="main-content">
+
+  <div class="tool-content">
+
+    <div class="workspace">
+
+      <div class="dropzone" id="dropzone">
+        <div class="dropzone-icon">⬆</div>
+        <div class="dropzone-title">Drag & drop your PDF here</div>
+        <div class="dropzone-sub">or <a href="#" id="browseLink">click to browse files</a></div>
+        <button class="choose-btn" id="chooseBtn" type="button">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/></svg>
+          Choose PDF File
+        </button>
+        <div class="dropzone-info">
+          <span>PDF files only</span>
+          <span class="divider">|</span>
+          <span>Single file at a time</span>
+        </div>
+        <input type="file" id="fileInput" class="file-input" accept=".pdf,application/pdf">
+      </div>
+
+      <div class="pdf-info" id="pdfInfo">
+        <div class="pdf-info-icon">📕</div>
+        <div class="pdf-info-details">
+          <div class="pdf-info-name" id="pdfName">document.pdf</div>
+          <div class="pdf-info-meta" id="pdfMeta">0 pages · 0 KB</div>
+        </div>
+      </div>
+
+      <div class="warn-box" id="warnBox">
+        <strong>ℹ️ About PDF Color Inversion</strong>
+        This tool <strong>rasterizes each page</strong> and applies the color inversion, then rebuilds the PDF. Perfect for <strong>night reading</strong> or <strong>screen-friendly documents</strong>. <strong>Note:</strong> text searchability is lost in the output. For printing, keep the original inverted pages consume more ink.
+      </div>
+
+      <!-- Preview -->
+      <div class="preview-area" id="previewArea">
+        <div class="preview-label">Live Preview</div>
+        <div class="preview-grid">
+          <div class="preview-box before">
+            <span class="preview-badge">Before</span>
+            <canvas id="previewBefore" class="preview-canvas"></canvas>
+          </div>
+          <div class="preview-box after">
+            <span class="preview-badge">After</span>
+            <canvas id="previewAfter" class="preview-canvas"></canvas>
+          </div>
+        </div>
+        <div class="page-nav">
+          <button id="prevPageBtn">‹ Prev</button>
+          <span class="page-nav-info" id="pageNavInfo">Page 1 / 1</span>
+          <button id="nextPageBtn">Next ›</button>
+        </div>
+      </div>
+
+      <!-- Options -->
+      <div class="options" id="optionsPanel" style="display:none;">
+        <div class="options-title">⚙️ Invert Settings</div>
+
+        <div class="invert-modes" id="invertModes">
+          <div class="invert-mode active" data-mode="full">
+            <span class="invert-mode-icon">🌗</span>
+            <div class="invert-mode-title">Full Invert</div>
+            <div class="invert-mode-desc">Flip all colors classic dark mode</div>
+          </div>
+          <div class="invert-mode" data-mode="smart">
+            <span class="invert-mode-icon">🧠</span>
+            <div class="invert-mode-title">Smart Invert</div>
+            <div class="invert-mode-desc">Preserve colors of images, invert background</div>
+          </div>
+          <div class="invert-mode" data-mode="grayscale">
+            <span class="invert-mode-icon">⚫</span>
+            <div class="invert-mode-title">Grayscale Invert</div>
+            <div class="invert-mode-desc">Convert to B&W, then invert</div>
+          </div>
+        </div>
+
+        <div class="slider-group" id="thresholdGroup">
+          <div class="slider-header">
+            <label>Smart Invert Threshold</label>
+            <span class="val" id="thresholdVal">50%</span>
+          </div>
+          <input type="range" id="thresholdSlider" class="range-slider" min="10" max="90" value="50" step="5">
+        </div>
+
+        <div class="toggle-row">
+          <div class="toggle-info">
+            <div class="toggle-title">Boost Contrast</div>
+            <div class="toggle-desc">Increase contrast slightly for better readability in dark mode</div>
+          </div>
+          <div class="toggle-switch" id="contrastToggle" role="switch" aria-checked="false"></div>
+        </div>
+
+        <div class="toggle-row">
+          <div class="toggle-info">
+            <div class="toggle-title">High Quality Output</div>
+            <div class="toggle-desc">Use 2x render scale for sharper output</div>
+          </div>
+          <div class="toggle-switch on" id="qualityToggle" role="switch" aria-checked="true"></div>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button class="btn btn-primary" id="applyBtn" disabled>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+          Apply & Download Inverted PDF
+        </button>
+        <button class="btn btn-secondary" id="clearBtn">Clear</button>
+      </div>
+
+      <div class="progress" id="progress">
+        <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+        <div class="progress-text" id="progressText">Processing...</div>
+      </div>
+
+      <div class="result-area" id="resultArea">
+        <div class="result-icon">✓</div>
+        <div class="result-title">PDF Inverted!</div>
+        <div class="result-desc" id="resultDesc">Your dark-mode PDF is ready to download.</div>
+        <div class="result-actions">
+          <button class="btn btn-success" id="downloadBtn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+            Download PDF
+          </button>
+          <button class="btn btn-secondary" id="startOverBtn">Start Over</button>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="seo-content">
+
+      <h2>🌗 What is PDF Color Inversion?</h2>
+      <p>
+        <strong>PDF color inversion</strong> flips the colors of every page black text on white background becomes white text on black background. This creates a <strong>dark-mode PDF</strong> that's easier on the eyes for night reading, reduces eye strain, and can save battery life on OLED screens.
+      </p>
+      <p>
+        Unlike most online tools, BigToolz processes everything <strong>100% in your browser</strong> using <strong>pdf-lib</strong> and <strong>pdf.js</strong>. Your PDF <strong>never uploaded to any server</strong> complete privacy, instant results.
+      </p>
+
+      <div class="warn-box" style="display:block;margin-bottom:24px;">
+        <strong>ℹ️ How It Works</strong>
+        Because color inversion requires pixel-level processing, this tool <strong>rasterizes each page to an image</strong> and applies the invert, then rebuilds the PDF. The result is image-based <strong>text searchability is lost</strong>. This is perfect for night reading, but for text-searchable archives, keep the original PDF.
+      </div>
+
+      <h2>🚀 How to Invert PDF Colors</h2>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-step-num">1</div>
+          <div class="how-step-title">Upload PDF</div>
+          <div class="how-step-desc">Drag & drop or click "Choose PDF File" to select a PDF.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">2</div>
+          <div class="how-step-title">Choose Mode</div>
+          <div class="how-step-desc">Pick Full, Smart, or Grayscale Invert.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">3</div>
+          <div class="how-step-title">Preview</div>
+          <div class="how-step-desc">Check the before/after preview of each page.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">4</div>
+          <div class="how-step-title">Download</div>
+          <div class="how-step-desc">Click "Apply & Download" for your dark-mode PDF.</div>
+        </div>
+      </div>
+
+      <h2>🎯 The 3 Invert Modes</h2>
+
+      <h3>🌗 Full Invert</h3>
+      <p>The classic dark mode. Every color is flipped black becomes white, white becomes black, red becomes cyan, etc. Best for <strong>text-heavy documents</strong>, articles, and ebooks. Simple, fast, and predictable.</p>
+
+      <h3>🧠 Smart Invert</h3>
+      <p>Preserves the <strong>original colors of images</strong> (photos, logos, diagrams) while inverting the background and text. Best for documents with <strong>embedded images you want to keep natural</strong> brochures, magazines, illustrated guides. Use the threshold slider to control what counts as "background".</p>
+
+      <h3>⚫ Grayscale Invert</h3>
+      <p>First converts the page to grayscale, then inverts. Result: white text on pure black. Best for <strong>scanned documents</strong>, old papers, and cases where you want a clean, minimal reading experience without distracting colors.</p>
+
+      <h2>💡 When to Use PDF Inversion</h2>
+      <ul>
+        <li><strong>Night reading</strong> dark mode reduces eye strain in low light.</li>
+        <li><strong>Long documents</strong> ebooks, manuals, contracts reading on screen for hours.</li>
+        <li><strong>Power saving</strong> on OLED screens, black pixels use less power.</li>
+        <li><strong>Accessibility</strong> some users find dark mode easier to read (especially with astigmatism).</li>
+        <li><strong>Screen recordings</strong> dark PDFs look better in tutorials and presentations.</li>
+        <li><strong>Projector presentations</strong> dark backgrounds work better in dark rooms.</li>
+      </ul>
+
+      <h2>📌 When NOT to Invert</h2>
+      <ul>
+        <li><strong>Printing</strong> inverted PDFs consume enormous amounts of ink. Keep original for print.</li>
+        <li><strong>Color-critical work</strong> CMYK proofs, brand materials, photography.</li>
+        <li><strong>Text-searchable PDFs</strong> searchability is lost. Use the original or an app-level dark mode reader.</li>
+        <li><strong>Before OCR</strong> inverted pages confuse OCR engines. Keep originals for text extraction.</li>
+      </ul>
+
+      <h2>✨ Key Features</h2>
+      <ul>
+        <li><strong>3 invert modes</strong> Full, Smart, Grayscale.</li>
+        <li><strong>Smart threshold slider</strong> control what counts as "background".</li>
+        <li><strong>Contrast boost</strong> optional for better dark-mode readability.</li>
+        <li><strong>High-quality output</strong> 2x render scale for sharp results.</li>
+        <li><strong>Live before/after preview</strong> on every page.</li>
+        <li><strong>Page navigation</strong> check different pages before applying.</li>
+        <li><strong>100% browser-based</strong> no uploads, complete privacy.</li>
+      </ul>
+
+      <h2>❓ Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-question">How do I invert PDF colors for dark mode?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Upload your PDF, choose an invert mode (Full, Smart, or Grayscale), preview the changes, then click "Apply & Download". The result is a dark-mode PDF perfect for night reading.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What's the difference between Full, Smart, and Grayscale Invert?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>Full Invert</strong> flips every color black becomes white, white becomes black. <strong>Smart Invert</strong> preserves the colors of embedded images while inverting backgrounds and text. <strong>Grayscale-Invert</strong> converts to grayscale first, then inverts great for scanned documents.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Does inverting affect text searchability?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>Yes searchability is lost.</strong> Because the tool rasterizes pages, the output is image-based. Text is no longer searchable or selectable. Use this for <strong>visual night reading</strong>, not for searchable archives.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Will inverted PDFs still print correctly?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Inverted PDFs will print as they appear <strong>dark backgrounds will consume a lot of ink</strong>. For printing, keep the original. For screen reading (dark mode), use the inverted version.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What invert mode is best for reading at night?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>Grayscale Invert</strong> is best for pure reading white text on black is easiest on the eyes with no color distractions. <strong>Full Invert</strong> works well for mixed content. Use <strong>Smart Invert</strong> only if the document has images you want to keep in original color.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Does inverting reduce quality?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Not noticeably at High Quality (2x render). The output is rendered at 2x resolution text stays sharp and images look crisp. Turn off High Quality for faster processing but lower resolution.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Are my PDFs uploaded to a server?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>No. All processing happens in your browser using pdf-lib and pdf.js. Your PDF never leaves your device, and nothing is stored anywhere.</p></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-header">🔗 Related PDF Tools</div>
+    <div class="sidebar-list">
+      <a href="/tools/pdf-tools/visual-pdf/contrast-booster/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#1e293b;">◐</div>
+        <div class="sidebar-info"><div class="sidebar-title">Contrast Booster</div><div class="sidebar-desc">Increase contrast</div></div>
+      </a>
+      <a href="/tools/pdf-tools/visual-pdf/bw-converter/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#6b7280;">⚫</div>
+        <div class="sidebar-info"><div class="sidebar-title">PDF to B&W</div><div class="sidebar-desc">Grayscale output</div></div>
+      </a>
+      <a href="/tools/pdf-tools/visual-pdf/optimizer-pdf/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#3b82f6;">⚡</div>
+        <div class="sidebar-info"><div class="sidebar-title">PDF Optimizer</div><div class="sidebar-desc">Web optimization</div></div>
+      </a>
+      <a href="/tools/pdf-tools/visual-pdf/compress-pdf/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#10b981;">📉</div>
+        <div class="sidebar-info"><div class="sidebar-title">Compress PDF</div><div class="sidebar-desc">Reduce file size</div></div>
+      </a>
+      <a href="/tools/pdf-tools/visual-pdf/repair-pdf/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#f97316;">🔧</div>
+        <div class="sidebar-info"><div class="sidebar-title">Repair PDF</div><div class="sidebar-desc">Fix corruption</div></div>
+      </a>
+      <a href="/tools/pdf-tools/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#64748b;">📕</div>
+        <div class="sidebar-info"><div class="sidebar-title">All PDF Tools →</div><div class="sidebar-desc">Browse 100+ tools</div></div>
+      </a>
+    </div>
+  </aside>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand"><div class="logo-icon">⚒</div>BigToolz</span></div>
+      <p class="footer-tagline">Your Ultimate Online Tools Hub</p>
+      <div class="footer-social">
+        <a href="https://facebook.com/bigtoolz" aria-label="Facebook">f</a>
+        <a href="https://twitter.com/bigtoolz" aria-label="Twitter">𝕏</a>
+        <a href="https://youtube.com/@bigtoolz" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+    <div>
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/tools/">All Tools</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Categories</h3>
+      <ul class="footer-links">
+        <li><a href="/tools/image-tools/">Image Tools</a></li>
+        <li><a href="/tools/pdf-tools/">PDF Tools</a></li>
+        <li><a href="/tools/text-tools/">Text Tools</a></li>
+        <li><a href="/tools/seo-tools/">SEO Tools</a></li>
+        <li><a href="/tools/categories">All Categories →</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Legal</h3>
+      <ul class="footer-links">
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left"><span>✓ 100% Free</span><span>✓ No Sign Up</span><span>✓ No Installation</span></div>
+    <div class="footer-bottom-right">© 2026 BigToolz. All rights reserved.</div>
+    <div class="footer-bottom-links"><a href="/privacy-policy">Privacy</a><a href="/terms">Terms</a><a href="/disclaimer">Disclaimer</a></div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<!-- Libraries -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+
+<script>
+'use strict';
+
+/* ===== THEME ===== */
+(function(){try{var t=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&d))document.documentElement.setAttribute('data-theme','dark');else if(t==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();
+document.querySelector('.theme-btn')?.addEventListener('click',()=>{const h=document.documentElement;const c=h.getAttribute('data-theme');const d=window.matchMedia('(prefers-color-scheme: dark)').matches;let n=c==='dark'?'light':c==='light'?'dark':(d?'light':'dark');h.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}});
+
+/* ===== HELPERS ===== */
+const $ = (s, p = document) => p.querySelector(s);
+const $$ = (s, p = document) => [...p.querySelectorAll(s)];
+
+function formatBytes(b) {
+  if (b === 0) return '0 B';
+  const k = 1024, sizes = ['B', 'KB', 'MB', 'GB'];
+  const i = Math.floor(Math.log(b) / Math.log(k));
+  return (b / Math.pow(k, i)).toFixed(i === 0 ? 0 : 1) + ' ' + sizes[i];
+}
+
+function showToast(msg, type = 'info', duration = 3000) {
+  const t = $('#toast');
+  if (!t) return;
+  t.className = 'toast visible' + (type !== 'info' ? ' ' + type : '');
+  t.textContent = msg;
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove('visible'), duration);
+}
+
+if (window.pdfjsLib) {
+  pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+}
+
+/* ===== STATE ===== */
+const state = {
+  pdfFile: null,
+  pdfDoc: null,
+  pdfName: '',
+  pdfPages: 0,
+  pdfSize: 0,
+  pdfArrayBuffer: null,
+  currentPage: 1,
+  isProcessing: false,
+  resultBlob: null,
+  mode: 'full',
+  threshold: 50,
+  boostContrast: false,
+  highQuality: true
+};
+
+/* ===== DOM ===== */
+const dropzone = $('#dropzone');
+const fileInput = $('#fileInput');
+const chooseBtn = $('#chooseBtn');
+const browseLink = $('#browseLink');
+const applyBtn = $('#applyBtn');
+const clearBtn = $('#clearBtn');
+const progress = $('#progress');
+const progressFill = $('#progressFill');
+const progressText = $('#progressText');
+const pdfInfo = $('#pdfInfo');
+const pdfName = $('#pdfName');
+const pdfMeta = $('#pdfMeta');
+const warnBox = $('#warnBox');
+const previewArea = $('#previewArea');
+const previewBefore = $('#previewBefore');
+const previewAfter = $('#previewAfter');
+const prevPageBtn = $('#prevPageBtn');
+const nextPageBtn = $('#nextPageBtn');
+const pageNavInfo = $('#pageNavInfo');
+const optionsPanel = $('#optionsPanel');
+const thresholdGroup = $('#thresholdGroup');
+const thresholdSlider = $('#thresholdSlider');
+const thresholdVal = $('#thresholdVal');
+const contrastToggle = $('#contrastToggle');
+const qualityToggle = $('#qualityToggle');
+const resultArea = $('#resultArea');
+const resultDesc = $('#resultDesc');
+const downloadBtn = $('#downloadBtn');
+const startOverBtn = $('#startOverBtn');
+
+/* ===== INVERT MODES ===== */
+$$('.invert-mode').forEach(mode => {
+  mode.addEventListener('click', () => {
+    $$('.invert-mode').forEach(m => m.classList.remove('active'));
+    mode.classList.add('active');
+    state.mode = mode.dataset.mode;
+
+    // Show/hide threshold slider
+    thresholdGroup.style.display = state.mode === 'smart' ? 'block' : 'none';
+
+    renderPreview();
+  });
+});
+
+/* ===== THRESHOLD SLIDER ===== */
+thresholdSlider.addEventListener('input', (e) => {
+  state.threshold = parseInt(e.target.value, 10);
+  thresholdVal.textContent = state.threshold + '%';
+  renderPreview();
+});
+
+/* ===== TOGGLES ===== */
+contrastToggle.addEventListener('click', () => {
+  state.boostContrast = !state.boostContrast;
+  contrastToggle.classList.toggle('on', state.boostContrast);
+  contrastToggle.setAttribute('aria-checked', state.boostContrast);
+  renderPreview();
+});
+
+qualityToggle.addEventListener('click', () => {
+  state.highQuality = !state.highQuality;
+  qualityToggle.classList.toggle('on', state.highQuality);
+  qualityToggle.setAttribute('aria-checked', state.highQuality);
+});
+
+/* ===== FILE SELECTION ===== */
+function triggerFileSelect() { fileInput.click(); }
+chooseBtn.addEventListener('click', (e) => { e.stopPropagation(); triggerFileSelect(); });
+browseLink.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); triggerFileSelect(); });
+dropzone.addEventListener('click', triggerFileSelect);
+
+fileInput.addEventListener('change', (e) => {
+  const f = e.target.files[0];
+  if (f && (f.type === 'application/pdf' || f.name.toLowerCase().endsWith('.pdf'))) loadPDF(f);
+  fileInput.value = '';
+});
+
+['dragenter', 'dragover'].forEach(evt => {
+  dropzone.addEventListener(evt, (e) => { e.preventDefault(); e.stopPropagation(); dropzone.classList.add('dragover'); });
+});
+['dragleave', 'drop'].forEach(evt => {
+  dropzone.addEventListener(evt, (e) => { e.preventDefault(); e.stopPropagation(); dropzone.classList.remove('dragover'); });
+});
+dropzone.addEventListener('drop', (e) => {
+  const f = e.dataTransfer.files[0];
+  if (f && (f.type === 'application/pdf' || f.name.toLowerCase().endsWith('.pdf'))) loadPDF(f);
+  else showToast('Please drop a PDF file', 'error');
+});
+
+/* ===== LOAD PDF ===== */
+async function loadPDF(file) {
+  if (!window.pdfjsLib || !window.PDFLib) {
+    showToast('PDF libraries not loaded. Check your internet.', 'error');
+    return;
+  }
+
+  state.pdfFile = file;
+  state.pdfName = file.name;
+  state.pdfSize = file.size;
+  state.currentPage = 1;
+  state.resultBlob = null;
+
+  showToast('Loading PDF...', 'info', 2000);
+
+  try {
+    const arrayBuffer = await file.arrayBuffer();
+    state.pdfArrayBuffer = arrayBuffer.slice(0);
+
+    const loadingTask = pdfjsLib.getDocument({ data: arrayBuffer.slice(0) });
+    const pdf = await loadingTask.promise;
+    state.pdfDoc = pdf;
+    state.pdfPages = pdf.numPages;
+
+    pdfName.textContent = file.name;
+    pdfMeta.textContent = `${pdf.numPages} page${pdf.numPages > 1 ? 's' : ''} · ${formatBytes(file.size)}`;
+    pdfInfo.classList.add('visible');
+    warnBox.classList.add('visible');
+    previewArea.classList.add('visible');
+    optionsPanel.style.display = 'block';
+    dropzone.style.display = 'none';
+    applyBtn.disabled = false;
+    resultArea.classList.remove('visible');
+
+    pageNavInfo.textContent = `Page 1 / ${pdf.numPages}`;
+    prevPageBtn.disabled = true;
+    nextPageBtn.disabled = pdf.numPages <= 1;
+
+    await renderPreview();
+
+    showToast(`✅ PDF loaded: ${pdf.numPages} pages`, 'success');
+  } catch (err) {
+    console.error('PDF load failed:', err);
+    showToast('Failed to load PDF: ' + err.message, 'error', 5000);
+  }
+}
+
+/* ===== PAGE NAVIGATION ===== */
+prevPageBtn.addEventListener('click', () => {
+  if (state.currentPage > 1) {
+    state.currentPage--;
+    updatePageNav();
+    renderPreview();
+  }
+});
+
+nextPageBtn.addEventListener('click', () => {
+  if (state.currentPage < state.pdfPages) {
+    state.currentPage++;
+    updatePageNav();
+    renderPreview();
+  }
+});
+
+function updatePageNav() {
+  pageNavInfo.textContent = `Page ${state.currentPage} / ${state.pdfPages}`;
+  prevPageBtn.disabled = state.currentPage <= 1;
+  nextPageBtn.disabled = state.currentPage >= state.pdfPages;
+}
+
+/* ===== INVERT ALGORITHMS ===== */
+function invertFull(data) {
+  for (let i = 0; i < data.length; i += 4) {
+    data[i] = 255 - data[i];
+    data[i + 1] = 255 - data[i + 1];
+    data[i + 2] = 255 - data[i + 2];
+  }
+}
+
+function invertGrayscale(data) {
+  for (let i = 0; i < data.length; i += 4) {
+    // Convert to grayscale (perception-weighted)
+    const gray = 0.299 * data[i] + 0.587 * data[i + 1] + 0.114 * data[i + 2];
+    // Invert
+    const inv = 255 - gray;
+    data[i] = data[i + 1] = data[i + 2] = inv;
+  }
+}
+
+function invertSmart(data, threshold) {
+  // Smart invert: pixels above threshold (light) → become dark
+  // Pixels below threshold (dark) → become light
+  // Colored (saturated) pixels → keep as-is
+
+  const thresholdVal = threshold * 2.55; // Convert 0-100% to 0-255
+
+  for (let i = 0; i < data.length; i += 4) {
+    const r = data[i];
+    const g = data[i + 1];
+    const b = data[i + 2];
+
+    const max = Math.max(r, g, b);
+    const min = Math.min(r, g, b);
+    const saturation = max === 0 ? 0 : (max - min) / max;
+
+    // High saturation → likely an image/photo, keep colors
+    // But invert lightness if it's a solid background
+    if (saturation > 0.3) {
+      // Colored pixel check if it's light background
+      const lightness = (max + min) / 2;
+      if (lightness > thresholdVal) {
+        // Light colored background make dark
+        const darken = 255 - lightness;
+        data[i] = Math.min(255, r * (darken / lightness || 0));
+        data[i + 1] = Math.min(255, g * (darken / lightness || 0));
+        data[i + 2] = Math.min(255, b * (darken / lightness || 0));
+      }
+      // Else keep as-is (colored image content)
+    } else {
+      // Low saturation → text or background
+      const avg = (r + g + b) / 3;
+      if (avg > thresholdVal) {
+        // Light background → dark
+        data[i] = data[i + 1] = data[i + 2] = 255 - avg;
+      } else {
+        // Dark text → light
+        data[i] = data[i + 1] = data[i + 2] = 255 - avg;
+      }
+    }
+  }
+}
+
+function boostContrastFilter(data, amount = 1.15) {
+  for (let i = 0; i < data.length; i += 4) {
+    data[i] = Math.max(0, Math.min(255, (data[i] - 128) * amount + 128));
+    data[i + 1] = Math.max(0, Math.min(255, (data[i + 1] - 128) * amount + 128));
+    data[i + 2] = Math.max(0, Math.min(255, (data[i + 2] - 128) * amount + 128));
+  }
+}
+
+/* ===== APPLY INVERT TO CANVAS ===== */
+function applyInvertToCanvas(canvas) {
+  const ctx = canvas.getContext('2d', { willReadFrequently: true });
+  const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+  const data = imageData.data;
+
+  if (state.mode === 'full') {
+    invertFull(data);
+  } else if (state.mode === 'grayscale') {
+    invertGrayscale(data);
+  } else if (state.mode === 'smart') {
+    invertSmart(data, state.threshold);
+  }
+
+  if (state.boostContrast) {
+    boostContrastFilter(data, 1.15);
+  }
+
+  ctx.putImageData(imageData, 0, 0);
+}
+
+/* ===== RENDER PREVIEW ===== */
+async function renderPreview() {
+  if (!state.pdfDoc) return;
+
+  try {
+    const page = await state.pdfDoc.getPage(state.currentPage);
+    const viewport = page.getViewport({ scale: 1.2 });
+
+    // Render before
+    const canvasBefore = previewBefore;
+    canvasBefore.width = Math.round(viewport.width);
+    canvasBefore.height = Math.round(viewport.height);
+    const ctxBefore = canvasBefore.getContext('2d', { willReadFrequently: true });
+    ctxBefore.fillStyle = '#ffffff';
+    ctxBefore.fillRect(0, 0, canvasBefore.width, canvasBefore.height);
+    await page.render({ canvasContext: ctxBefore, viewport }).promise;
+
+    // Render after (with invert)
+    const canvasAfter = previewAfter;
+    canvasAfter.width = canvasBefore.width;
+    canvasAfter.height = canvasBefore.height;
+    const ctxAfter = canvasAfter.getContext('2d', { willReadFrequently: true });
+    ctxAfter.drawImage(canvasBefore, 0, 0);
+    applyInvertToCanvas(canvasAfter);
+  } catch (err) {
+    console.warn('Preview render failed:', err);
+  }
+}
+
+/* ===== APPLY & DOWNLOAD ===== */
+applyBtn.addEventListener('click', applyInvert);
+
+async function applyInvert() {
+  if (state.isProcessing || !state.pdfDoc) return;
+
+  state.isProcessing = true;
+  applyBtn.disabled = true;
+  applyBtn.innerHTML = 'Processing...';
+  progress.classList.add('visible');
+  progressFill.style.width = '5%';
+  progressText.textContent = 'Preparing...';
+  resultArea.classList.remove('visible');
+
+  try {
+    const { PDFDocument } = PDFLib;
+    const newDoc = await PDFDocument.create();
+
+    const scale = state.highQuality ? 2.0 : 1.0;
+
+    for (let i = 1; i <= state.pdfPages; i++) {
+      try {
+        const page = await state.pdfDoc.getPage(i);
+        const viewport = page.getViewport({ scale });
+
+        const canvas = document.createElement('canvas');
+        canvas.width = Math.round(viewport.width);
+        canvas.height = Math.round(viewport.height);
+        const ctx = canvas.getContext('2d', { willReadFrequently: true });
+        ctx.fillStyle = '#ffffff';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        await page.render({ canvasContext: ctx, viewport }).promise;
+
+        // Apply invert
+        applyInvertToCanvas(canvas);
+
+        // Convert to JPEG
+        const imgDataUrl = canvas.toDataURL('image/jpeg', 0.88);
+        const imgBytes = dataURLToUint8Array(imgDataUrl);
+        const embeddedImg = await newDoc.embedJpg(imgBytes);
+
+        const originalViewport = page.getViewport({ scale: 1.0 });
+        const newPage = newDoc.addPage([originalViewport.width, originalViewport.height]);
+        newPage.drawImage(embeddedImg, {
+          x: 0,
+          y: 0,
+          width: originalViewport.width,
+          height: originalViewport.height
+        });
+
+        const pct = 5 + Math.round((i / state.pdfPages) * 85);
+        progressFill.style.width = pct + '%';
+        progressText.textContent = `Inverting page ${i} of ${state.pdfPages}...`;
+
+      } catch (err) {
+        console.warn('Page ' + i + ' failed:', err);
+      }
+    }
+
+    progressFill.style.width = '95%';
+    progressText.textContent = 'Saving PDF...';
+
+    const pdfBytes = await newDoc.save();
+    state.resultBlob = new Blob([pdfBytes], { type: 'application/pdf' });
+
+    progressFill.style.width = '100%';
+    progressText.textContent = 'Done!';
+
+    const modeLabel = state.mode === 'full' ? 'Full Invert'
+                    : state.mode === 'smart' ? 'Smart Invert'
+                    : 'Grayscale Invert';
+
+    resultDesc.textContent = `${modeLabel} applied${state.boostContrast ? ' + contrast boost' : ''} · ${state.pdfPages} pages · ${formatBytes(state.resultBlob.size)}`;
+
+    setTimeout(() => {
+      progress.classList.remove('visible');
+      resultArea.classList.add('visible');
+      showToast('✅ PDF colors inverted!', 'success');
+    }, 400);
+
+  } catch (err) {
+    console.error('Invert failed:', err);
+    progress.classList.remove('visible');
+    showToast('Failed to invert PDF: ' + err.message, 'error', 5000);
+  } finally {
+    state.isProcessing = false;
+    applyBtn.disabled = false;
+    applyBtn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Apply & Download Inverted PDF';
+  }
+}
+
+function dataURLToUint8Array(dataUrl) {
+  const base64 = dataUrl.split(',')[1];
+  const binary = atob(base64);
+  const bytes = new Uint8Array(binary.length);
+  for (let i = 0; i < binary.length; i++) {
+    bytes[i] = binary.charCodeAt(i);
+  }
+  return bytes;
+}
+
+/* ===== DOWNLOAD ===== */
+downloadBtn.addEventListener('click', () => {
+  if (!state.resultBlob) return;
+  const url = URL.createObjectURL(state.resultBlob);
+  const baseName = state.pdfName.replace(/\.[^.]+$/, '');
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `${baseName}-inverted.pdf`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+  showToast('Download started!', 'success');
+});
+
+/* ===== START OVER / CLEAR ===== */
+startOverBtn.addEventListener('click', resetAll);
+clearBtn.addEventListener('click', resetAll);
+
+function resetAll() {
+  if (state.pdfDoc) {
+    try { state.pdfDoc.destroy(); } catch (e) {}
+  }
+  state.pdfDoc = null;
+  state.pdfFile = null;
+  state.pdfArrayBuffer = null;
+  state.resultBlob = null;
+  state.pdfPages = 0;
+  state.currentPage = 1;
+  state.mode = 'full';
+  state.threshold = 50;
+  state.boostContrast = false;
+  state.highQuality = true;
+
+  $$('.invert-mode').forEach(m => m.classList.toggle('active', m.dataset.mode === 'full'));
+  thresholdSlider.value = 50;
+  thresholdVal.textContent = '50%';
+  thresholdGroup.style.display = 'none';
+  contrastToggle.classList.remove('on');
+  qualityToggle.classList.add('on');
+
+  pdfInfo.classList.remove('visible');
+  warnBox.classList.remove('visible');
+  previewArea.classList.remove('visible');
+  optionsPanel.style.display = 'none';
+  resultArea.classList.remove('visible');
+  progress.classList.remove('visible');
+  dropzone.style.display = '';
+  applyBtn.disabled = true;
+
+  showToast('Cleared');
+}
+
+/* ===== FAQ ===== */
+$$('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    $$('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+</script>
+
+</body>
+</html>

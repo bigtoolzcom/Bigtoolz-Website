@@ -1,0 +1,1194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2563eb">
+
+<title>Eye Test - Free Online Vision Test & Eye Exam | BigToolz</title>
+<meta name="description" content="Free online eye test. Check your visual acuity, astigmatism and color vision in minutes. Snellen-style chart, instant results. For education only, not medical diagnosis.">
+<meta name="keywords" content="eye test, online eye test, vision test, snellen test, visual acuity test, astigmatism test, eye check online">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://bigtoolz.com/tools/utility-tools/eye-test/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Eye Test - Free Online Vision Check | BigToolz">
+<meta property="og:description" content="Test your vision online visual acuity, astigmatism, color vision. Free, instant, no signup.">
+<meta property="og:url" content="https://bigtoolz.com/tools/utility-tools/eye-test/">
+<meta property="og:image" content="https://bigtoolz.com/assets/images/og-image.jpg">
+<meta property="og:site_name" content="BigToolz">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Eye Test - BigToolz">
+<meta name="twitter:description" content="Check your vision instantly free, Snellen-style.">
+<meta name="twitter:image" content="https://bigtoolz.com/assets/images/twitter-card.jpg">
+
+<link rel="icon" href="/assets/images/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/images/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#f8f9fc;color:#1a1a2e;overflow-x:hidden;line-height:1.5}
+
+  .header{background:#fff;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;position:sticky;top:0;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+  .header-left{display:flex;align-items:center;gap:40px}
+  .logo{display:flex;align-items:center;gap:8px;font-size:22px;font-weight:800;color:#1a1a2e;text-decoration:none}
+  .logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#3b82f6,#2563eb);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px}
+  .logo span{color:#2563eb}
+  .nav{display:flex;align-items:center;gap:28px;list-style:none}
+  .nav a{text-decoration:none;color:#4b5563;font-size:14px;font-weight:500;transition:color .2s}
+  .nav a:hover,.nav a.active{color:#2563eb}
+  .header-right{display:flex;align-items:center;gap:16px}
+  .search-btn,.theme-btn{width:36px;height:36px;border-radius:50%;border:none;background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#4b5563}
+  .search-btn:hover,.theme-btn:hover{background:#f3f4f6}
+  .bookmark-btn{display:flex;align-items:center;gap:8px;background:#2563eb;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
+  .bookmark-btn:hover{background:#1d4ed8}
+
+  .hero{background:linear-gradient(135deg,#0a0e27 0%,#1a1a4e 40%,#2d1b69 70%,#4c1d95 100%);padding:40px 40px 60px;position:relative;overflow:hidden;color:#fff}
+  .hero::before{content:'';position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(59,130,246,.3) 0%,transparent 70%);border-radius:50%}
+  .hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+  .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px;flex-wrap:wrap}
+  .breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none}
+  .breadcrumb a:hover{color:#fff}
+  .breadcrumb .sep{color:rgba(255,255,255,.4)}
+  .breadcrumb .current{color:#fff;font-weight:500}
+  .hero-title-row{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+  .hero-icon{width:60px;height:60px;background:#3b82f6;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;color:#fff;flex-shrink:0;box-shadow:0 8px 24px rgba(59,130,246,.4)}
+  .hero-title{font-size:42px;font-weight:800;line-height:1.15}
+  .hero-title .blue{color:#60a5fa}
+  .hero-desc{font-size:15px;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:24px;max-width:560px}
+  .hero-features{display:flex;gap:24px;flex-wrap:wrap}
+  .hero-feature{display:flex;align-items:center;gap:6px;font-size:13px;color:#fff;font-weight:500}
+  .hero-feature .check{width:18px;height:18px;border-radius:50%;background:#3b82f6;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;flex-shrink:0}
+
+  .main-content{max-width:1200px;margin:0 auto;padding:40px;display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start}
+  .tool-content{min-width:0}
+
+  .workspace{background:#fff;border-radius:16px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,.06);border:1px solid #e5e7eb;margin-bottom:24px}
+
+  /* Info panel */
+  .info-panel{background:#eff6ff;border-radius:12px;padding:18px;border:1px solid #bfdbfe;margin-bottom:24px}
+  .info-panel-title{font-size:13px;font-weight:800;color:#1e40af;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px;display:flex;align-items:center;gap:6px}
+  .info-panel-text{font-size:13px;color:#1e3a8a;line-height:1.6}
+
+  /* Test type tabs */
+  .test-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:24px;background:#eff6ff;padding:6px;border-radius:12px;border:1px solid #bfdbfe}
+  .test-tab{padding:14px 12px;background:transparent;border:none;border-radius:8px;font-size:13px;font-weight:700;color:#6b7280;cursor:pointer;font-family:inherit;transition:all .2s;display:flex;flex-direction:column;gap:4px;align-items:center;text-align:center}
+  .test-tab:hover{background:#dbeafe;color:#1e40af}
+  .test-tab.active{background:#3b82f6;color:#fff}
+  .test-tab-title{font-size:13px;font-weight:700}
+  .test-tab-desc{font-size:10px;opacity:.8;font-weight:500}
+
+  /* Test panel */
+  .test-panel{display:none}
+  .test-panel.active{display:block}
+
+  /* Snellen chart */
+  .snellen-chart{background:#fff;border-radius:12px;padding:30px;border:2px solid #e5e7eb;margin-bottom:20px;text-align:center;min-height:400px;display:flex;flex-direction:column;justify-content:center;gap:18px}
+  .snellen-line{display:flex;justify-content:center;gap:16px;align-items:center;transition:opacity .3s}
+  .snellen-line.active{background:#fef3c7;padding:10px 16px;border-radius:10px;animation:pulseLine 1.5s ease-in-out infinite}
+  @keyframes pulseLine{0%,100%{opacity:1}50%{opacity:0.85}}
+  .snellen-letter{font-weight:900;font-family:Arial,Helvetica,sans-serif;line-height:1;color:#1a1a2e;user-select:none}
+  .snellen-line.hidden{opacity:.15}
+
+  .snellen-info{text-align:center;margin-bottom:16px;font-size:14px;font-weight:700;color:#6b7280}
+
+  .answer-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:16px}
+  .answer-btn{padding:14px 24px;background:#fff;border:2px solid #e5e7eb;border-radius:10px;font-size:15px;font-weight:700;color:#4b5563;cursor:pointer;font-family:inherit;transition:all .2s;min-width:100px}
+  .answer-btn:hover{border-color:#3b82f6;background:#eff6ff;color:#1e40af;transform:translateY(-2px)}
+  .answer-btn.correct{border-color:#10b981;background:#f0fdf4;color:#047857}
+  .answer-btn.wrong{border-color:#ef4444;background:#fef2f2;color:#dc2626}
+
+  /* Astigmatism grid */
+  .astig-grid{background:#fff;border-radius:12px;padding:24px;border:2px solid #e5e7eb;margin-bottom:20px;text-align:center}
+  .astig-canvas-wrap{display:inline-block;background:#fff;border-radius:50%;padding:16px}
+  .astig-canvas-wrap canvas{display:block;border-radius:50%;background:#fff}
+
+  /* Color plates */
+  .color-plate-canvas{display:block;margin:0 auto;border-radius:50%;background:#f8fafc;box-shadow:0 4px 16px rgba(0,0,0,.08)}
+
+  /* Progress */
+  .progress-info{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;font-size:12px;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:.5px}
+  .progress-track{height:6px;background:#e5e7eb;border-radius:3px;overflow:hidden;margin-bottom:24px}
+  .progress-fill{height:100%;background:linear-gradient(90deg,#60a5fa,#3b82f6);border-radius:3px;transition:width .4s ease;width:0%}
+
+  /* Result panel */
+  .result-panel{display:none;background:linear-gradient(135deg,#eff6ff,#dbeafe);border-radius:16px;padding:32px 24px;border:1px solid #bfdbfe;margin-bottom:20px;text-align:center}
+  .result-panel.visible{display:block;animation:slideDown .4s ease}
+  @keyframes slideDown{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}
+  .result-icon{font-size:64px;line-height:1;margin-bottom:14px}
+  .result-title{font-size:24px;font-weight:800;color:#1e3a8a;margin-bottom:8px}
+  .result-sub{font-size:15px;color:#1e40af;line-height:1.6;margin-bottom:20px;max-width:520px;margin-left:auto;margin-right:auto}
+  .result-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:20px;max-width:500px;margin-left:auto;margin-right:auto}
+  .result-stat{background:#fff;border-radius:10px;padding:14px 10px;border:1px solid #bfdbfe}
+  .result-stat-label{font-size:10px;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px}
+  .result-stat-value{font-size:18px;font-weight:800;color:#1a1a2e}
+
+  /* Actions */
+  .actions{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:20px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 24px;border-radius:10px;font-size:14px;font-weight:700;font-family:inherit;cursor:pointer;border:none;transition:all .2s}
+  .btn-primary{background:#3b82f6;color:#fff;box-shadow:0 4px 12px rgba(59,130,246,.2)}
+  .btn-primary:hover:not(:disabled){background:#2563eb;transform:translateY(-2px);box-shadow:0 6px 20px rgba(59,130,246,.3)}
+  .btn-primary:disabled{opacity:.5;cursor:not-allowed}
+  .btn-secondary{background:#fff;color:#3b82f6;border:2px solid #3b82f6}
+  .btn-secondary:hover{background:#eff6ff}
+
+  /* History */
+  .history-section{margin-top:24px}
+  .history-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:12px;display:flex;justify-content:space-between;align-items:center;gap:8px}
+  .history-clear{background:none;border:none;font-size:11px;color:#3b82f6;cursor:pointer;font-family:inherit;font-weight:600;text-decoration:underline}
+  .history-list{display:flex;flex-direction:column;gap:8px}
+  .history-item{display:flex;justify-content:space-between;align-items:center;padding:12px 14px;background:#eff6ff;border:1px solid #bfdbfe;border-radius:10px;font-size:13px}
+  .history-text{color:#6b7280;font-weight:600}
+  .history-value{color:#1e40af;font-weight:800;font-size:15px}
+
+  /* SEO */
+  .seo-content{background:#fff;border-radius:16px;padding:32px;border:1px solid #e5e7eb;margin-bottom:24px}
+  .seo-content h2{font-size:22px;font-weight:800;color:#1a1a2e;margin-bottom:14px;margin-top:28px;display:flex;align-items:center;gap:10px}
+  .seo-content h2:first-child{margin-top:0}
+  .seo-content h3{font-size:16px;font-weight:700;color:#1a1a2e;margin:20px 0 10px}
+  .seo-content p{font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:14px}
+  .seo-content ul{list-style:none;padding-left:0;margin-bottom:16px}
+  .seo-content ul li{position:relative;padding-left:24px;font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:8px}
+  .seo-content ul li::before{content:'';position:absolute;left:6px;top:12px;width:6px;height:6px;background:#3b82f6;border-radius:50%}
+  .seo-content a{color:#2563eb;text-decoration:none;font-weight:600}
+  .seo-content a:hover{text-decoration:underline}
+  .seo-content strong{color:#1a1a2e;font-weight:700}
+  .seo-content code{background:#f1f5f9;padding:2px 6px;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:13px;color:#0f172a;border:1px solid #e2e8f0}
+
+  .rating-table{width:100%;border-collapse:collapse;margin:20px 0;border:1px solid #e5e7eb;border-radius:8px;overflow:hidden}
+  .rating-table th{background:#eff6ff;padding:12px 16px;text-align:left;font-size:13px;font-weight:700;color:#1a1a2e;border-bottom:1px solid #e5e7eb}
+  .rating-table td{padding:12px 16px;font-size:13px;color:#4b5563;border-bottom:1px solid #f3f4f6}
+  .rating-table tr:last-child td{border-bottom:none}
+
+  .how-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:20px}
+  .how-step{background:#eff6ff;border-radius:12px;padding:20px;border:1px solid #bfdbfe}
+  .how-step-num{width:36px;height:36px;border-radius:50%;background:#3b82f6;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;margin-bottom:12px}
+  .how-step-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+  .how-step-desc{font-size:13px;color:#6b7280;line-height:1.6}
+
+  .faq-item{background:#eff6ff;border:1px solid #bfdbfe;border-radius:12px;margin-bottom:10px;overflow:hidden;transition:border-color .2s}
+  .faq-item:hover{border-color:#3b82f6}
+  .faq-question{width:100%;background:none;border:none;padding:18px 22px;font-size:15px;font-weight:700;color:#1a1a2e;text-align:left;cursor:pointer;font-family:inherit;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .faq-question .chev{font-size:12px;color:#3b82f6;transition:transform .2s;flex-shrink:0}
+  .faq-item.open .faq-question .chev{transform:rotate(180deg)}
+  .faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 22px}
+  .faq-item.open .faq-answer{max-height:500px;padding-bottom:18px}
+  .faq-answer p{font-size:14px;color:#6b7280;line-height:1.7;margin:0}
+
+  .sidebar{background:#fff;border-radius:16px;padding:24px;border:1px solid #e5e7eb;position:sticky;top:80px;margin-bottom:24px}
+  .sidebar-header{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:800;color:#1a1a2e;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid #f3f4f6}
+  .sidebar-list{display:flex;flex-direction:column;gap:8px}
+  .sidebar-item{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;cursor:pointer;transition:background .2s;text-decoration:none;color:inherit;border:1px solid #f3f4f6}
+  .sidebar-item:hover{background:#eff6ff;border-color:#bfdbfe}
+  .sidebar-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;flex-shrink:0}
+  .sidebar-info{flex:1;min-width:0}
+  .sidebar-title{font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:2px}
+  .sidebar-desc{font-size:11px;color:#9ca3af;line-height:1.4}
+
+  .footer{background:#0a0e27;padding:60px 40px 30px;color:#fff;margin-top:40px}
+  .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:40px}
+  .footer-brand{display:flex;align-items:center;gap:8px;font-size:20px;font-weight:800;margin-bottom:12px}
+  .footer-brand span{color:#60a5fa}
+  .footer-tagline{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px}
+  .footer-social{display:flex;gap:12px}
+  .footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:16px;transition:background .2s}
+  .footer-social a:hover{background:rgba(255,255,255,.2)}
+  .footer-heading{font-size:14px;font-weight:700;margin-bottom:20px;color:#fff}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .footer-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;transition:color .2s}
+  .footer-links a:hover{color:#60a5fa}
+  .footer-bottom{max-width:1200px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  .footer-bottom-left{display:flex;gap:20px;font-size:12px;color:rgba(255,255,255,.5)}
+  .footer-bottom-right,.footer-bottom-links a{font-size:12px;color:rgba(255,255,255,.5);text-decoration:none}
+  .footer-bottom-links{display:flex;gap:20px}
+
+  .toast{position:fixed;bottom:24px;right:24px;background:#1a1a2e;color:#fff;padding:14px 20px;border-radius:10px;font-size:13px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:3000;transform:translateY(200%);transition:transform .3s ease;max-width:320px}
+  .toast.visible{transform:translateY(0)}
+  .toast.success{background:#10b981}
+  .toast.error{background:#ef4444}
+
+  @media(max-width:1024px){
+    .main-content{grid-template-columns:1fr;padding:24px 20px}
+    .sidebar{position:static}
+    .how-steps{grid-template-columns:repeat(2,1fr)}
+  }
+  @media(max-width:768px){
+    .header{padding:0 20px}.nav{display:none}
+    .hero{padding:24px 20px 40px}
+    .hero-title{font-size:28px}
+    .hero-icon{width:48px;height:48px;font-size:22px}
+    .hero-title-row{flex-direction:column;align-items:flex-start;gap:12px}
+    .main-content{padding:20px 16px}
+    .workspace{padding:20px}
+    .how-steps{grid-template-columns:1fr}
+    .seo-content{padding:20px}
+    .footer-inner{grid-template-columns:1fr 1fr}
+    .toast{left:16px;right:16px;bottom:16px;max-width:none}
+    .test-tabs{grid-template-columns:1fr}
+    .snellen-chart{padding:20px}
+    .result-stats{grid-template-columns:1fr}
+    .answer-btn{min-width:80px;padding:12px 16px;font-size:14px}
+  }
+  @media(max-width:576px){
+    .header{padding:0 16px}.header-right .search-btn,.header-right .theme-btn{display:none}
+    .hero-title{font-size:24px}
+    .footer-inner{grid-template-columns:1fr}
+    .footer-bottom{flex-direction:column;text-align:center}
+    .actions{flex-direction:column;width:100%}
+    .btn{width:100%}
+    .snellen-line{gap:10px}
+  }
+
+  html[data-theme="dark"] body{background:#0f172a;color:#f1f5f9}
+  html[data-theme="dark"] .header,html[data-theme="dark"] .workspace,html[data-theme="dark"] .seo-content,html[data-theme="dark"] .sidebar{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .logo,html[data-theme="dark"] .hero-title,html[data-theme="dark"] .seo-content h2,html[data-theme="dark"] .seo-content h3,html[data-theme="dark"] .faq-question,html[data-theme="dark"] .sidebar-header,html[data-theme="dark"] .sidebar-title,html[data-theme="dark"] .history-title{color:#f1f5f9}
+  html[data-theme="dark"] .nav a{color:#cbd5e1}
+  html[data-theme="dark"] .how-step,html[data-theme="dark"] .faq-item,html[data-theme="dark"] .test-tabs,html[data-theme="dark"] .answer-btn{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .snellen-chart,html[data-theme="dark"] .astig-grid{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .snellen-letter{color:#f1f5f9}
+  html[data-theme="dark"] .snellen-line.active{background:#334155}
+  html[data-theme="dark"] .answer-btn{color:#cbd5e1}
+  html[data-theme="dark"] .answer-btn:hover{background:#1e293b;color:#60a5fa}
+  html[data-theme="dark"] .test-tab{color:#cbd5e1}
+  html[data-theme="dark"] .test-tab.active{background:#3b82f6;color:#fff}
+  html[data-theme="dark"] .seo-content p,html[data-theme="dark"] .seo-content ul li,html[data-theme="dark"] .faq-answer p{color:#cbd5e1}
+  html[data-theme="dark"] .seo-content code{background:#0f172a;color:#94a3b8;border-color:#334155}
+  html[data-theme="dark"] .btn-secondary{background:#0f172a;border-color:#3b82f6;color:#60a5fa}
+  html[data-theme="dark"] .rating-table{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .rating-table th{background:#0f172a;color:#f1f5f9;border-color:#334155}
+  html[data-theme="dark"] .rating-table td{border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .history-item{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .result-panel{background:linear-gradient(135deg,#1e293b,#0f172a);border-color:#334155}
+  html[data-theme="dark"] .result-title,html[data-theme="dark"] .result-sub{color:#f1f5f9}
+  html[data-theme="dark"] .result-stat{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .result-stat-value{color:#f1f5f9}
+  html[data-theme="dark"] .info-panel{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .info-panel-title{color:#94a3b8}
+  html[data-theme="dark"] .info-panel-text{color:#cbd5e1}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type": "SoftwareApplication", "name": "Eye Test", "url": "https://bigtoolz.com/tools/utility-tools/eye-test/", "applicationCategory": "HealthApplication", "operatingSystem": "Any (Web-based)", "description": "Free online eye test visual acuity, astigmatism, and color vision screening. Educational only, not medical diagnosis.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.7", "ratingCount": "987"}},
+    {"@type": "HowTo", "name": "How to Take an Online Eye Test", "step": [
+      {"@type": "HowToStep", "name": "Sit Comfortably", "text": "Sit 40-50 cm from the screen in a well-lit room."},
+      {"@type": "HowToStep", "name": "Choose Test", "text": "Pick Visual Acuity, Astigmatism, or Color Vision test."},
+      {"@type": "HowToStep", "name": "Answer", "text": "Read the letters or identify what you see on each level."},
+      {"@type": "HowToStep", "name": "See Result", "text": "Complete the test to see your score and interpretation."}
+    ]},
+    {"@type": "FAQPage", "mainEntity": [
+      {"@type": "Question", "name": "Is this eye test accurate?", "acceptedAnswer": {"@type": "Answer", "text": "This test is a rough screening tool, not a medical diagnosis. It can indicate potential vision issues but should never replace a professional eye exam. See an ophthalmologist or optometrist for accurate results."}},
+      {"@type": "Question", "name": "What is 20/20 vision?", "acceptedAnswer": {"@type": "Answer", "text": "20/20 vision means you can see at 20 feet what a person with normal vision can see at 20 feet. It's considered standard normal vision. 20/40 means you see at 20 feet what most people see at 40 feet (poorer vision)."}},
+      {"@type": "Question", "name": "How often should I get an eye exam?", "acceptedAnswer": {"@type": "Answer", "text": "Every 1-2 years for adults under 60. Every year for adults over 60, people with diabetes, or anyone with a family history of eye disease. Children should have exams at ages 3, 5, and every 1-2 years after."}},
+      {"@type": "Question", "name": "What causes blurry vision?", "acceptedAnswer": {"@type": "Answer", "text": "Common causes: refractive errors (nearsightedness, farsightedness, astigmatism), presbyopia (age-related), dry eye, cataracts, glaucoma, diabetes. Only a professional exam can determine the exact cause."}},
+      {"@type": "Question", "name": "At what age does vision start to decline?", "acceptedAnswer": {"@type": "Answer", "text": "Vision changes can begin in childhood (nearsightedness often develops ages 6-14). Presbyopia (difficulty reading close up) typically starts around age 40. Cataracts often appear after 60. Regular exams catch issues early."}}
+    ]},
+    {"@type": "BreadcrumbList", "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bigtoolz.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://bigtoolz.com/tools/"},
+      {"@type": "ListItem", "position": 3, "name": "Utility Tools", "item": "https://bigtoolz.com/tools/utility-tools/"},
+      {"@type": "ListItem", "position": 4, "name": "Eye Test", "item": "https://bigtoolz.com/tools/utility-tools/eye-test/"}
+    ]}
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-left">
+    <a href="/" class="logo"><div class="logo-icon">⚒</div>BigToolz</span></a>
+    <nav><ul class="nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/tools/" class="active">All Tools</a></li>
+      <li><a href="/tools/categories">Categories</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul></nav>
+  </div>
+  <div class="header-right">
+   
+    <button class="theme-btn" aria-label="Toggle theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
+    
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <nav class="breadcrumb">
+      <a href="/">Home</a><span class="sep">›</span>
+      <a href="/tools/">Tools</a><span class="sep">›</span>
+      <a href="/tools/utility-tools/">Utility Tools</a><span class="sep">›</span>
+      <span class="current">Eye Test</span>
+    </nav>
+    <div class="hero-title-row">
+      <div class="hero-icon">👁</div>
+      <h1 class="hero-title">Eye <span class="blue">Test</span></h1>
+    </div>
+    <p class="hero-desc">
+      Quick vision screening visual acuity (Snellen-style), astigmatism, and color vision. 3 tests in one, instant interpretation. Educational only, not a substitute for a professional eye exam.
+    </p>
+    <div class="hero-features">
+      <div class="hero-feature"><span class="check">✓</span> Visual Acuity</div>
+      <div class="hero-feature"><span class="check">✓</span> Astigmatism Grid</div>
+      <div class="hero-feature"><span class="check">✓</span> Color Vision</div>
+      <div class="hero-feature"><span class="check">✓</span> Instant Result</div>
+    </div>
+  </div>
+</section>
+
+<div class="main-content">
+
+  <div class="tool-content">
+
+    <div class="workspace">
+
+      <!-- Info panel -->
+      <div class="info-panel">
+        <div class="info-panel-title">ℹ️ Before you start</div>
+        <div class="info-panel-text">
+          Sit about <strong>40-50 cm</strong> from the screen. Use a well-lit room, clean your screen, and remove glasses only if you wear them for distance. This is an educational screening always see a professional for a proper eye exam.
+        </div>
+      </div>
+
+      <!-- Test tabs -->
+      <div class="test-tabs">
+        <button class="test-tab active" data-test="acuity">
+          <span class="test-tab-title">📖 Visual Acuity</span>
+          <span class="test-tab-desc">Snellen letters</span>
+        </button>
+        <button class="test-tab" data-test="astigmatism">
+          <span class="test-tab-title">🎯 Astigmatism</span>
+          <span class="test-tab-desc">Line grid test</span>
+        </button>
+        <button class="test-tab" data-test="color">
+          <span class="test-tab-title">🎨 Color Vision</span>
+          <span class="test-tab-desc">Quick plate test</span>
+        </button>
+      </div>
+
+      <!-- Progress -->
+      <div class="progress-info">
+        <span>Test Progress</span>
+        <span id="progressText">Level 0 / 6</span>
+      </div>
+      <div class="progress-track">
+        <div class="progress-fill" id="progressFill" style="width:0%"></div>
+      </div>
+
+      <!-- ============ PANEL 1: VISUAL ACUITY ============ -->
+      <div class="test-panel active" data-panel="acuity">
+        <div class="snellen-info" id="snellenInfo">Level 1 Read the letters aloud or in your mind</div>
+        <div class="snellen-chart" id="snellenChart">
+          <!-- dynamically generated -->
+        </div>
+        <div class="answer-row" id="snellenAnswers">
+          <!-- dynamically generated -->
+        </div>
+      </div>
+
+      <!-- ============ PANEL 2: ASTIGMATISM ============ -->
+      <div class="test-panel" data-panel="astigmatism">
+        <div class="snellen-info">Look at the grid. Are all lines equally dark and clear?</div>
+        <div class="astig-grid">
+          <div class="astig-canvas-wrap">
+            <canvas id="astigCanvas" width="440" height="440"></canvas>
+          </div>
+        </div>
+        <div class="answer-row" id="astigAnswers">
+          <button class="answer-btn" data-astig="all">All lines equal</button>
+          <button class="answer-btn" data-astig="some">Some lines darker/blurrier</button>
+          <button class="answer-btn" data-astig="unsure">Not sure</button>
+        </div>
+      </div>
+
+      <!-- ============ PANEL 3: COLOR VISION ============ -->
+      <div class="test-panel" data-panel="color">
+        <div class="snellen-info">What number do you see in the dots?</div>
+        <div style="display:flex;justify-content:center;margin-bottom:20px;">
+          <div style="background:#fff;border-radius:50%;padding:16px;box-shadow:0 4px 16px rgba(0,0,0,.08);">
+            <canvas id="colorCanvas" width="360" height="360" class="color-plate-canvas"></canvas>
+          </div>
+        </div>
+        <div class="answer-row" id="colorAnswers">
+          <!-- dynamically generated -->
+        </div>
+      </div>
+
+      <!-- Result -->
+      <div class="result-panel" id="resultPanel">
+        <div class="result-icon" id="resultIcon">✅</div>
+        <div class="result-title" id="resultTitle">Test Complete</div>
+        <div class="result-sub" id="resultSub">Your vision appears normal.</div>
+        <div class="result-stats" id="resultStats">
+          <div class="result-stat">
+            <div class="result-stat-label">Score</div>
+            <div class="result-stat-value" id="resultScore">0%</div>
+          </div>
+          <div class="result-stat">
+            <div class="result-stat-label">Level Reached</div>
+            <div class="result-stat-value" id="resultLevel"></div>
+          </div>
+          <div class="result-stat">
+            <div class="result-stat-label">Test</div>
+            <div class="result-stat-value" id="resultTestType"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Actions -->
+      <div class="actions">
+        <button class="btn btn-primary" id="restartBtn" style="display:none;">🔄 Retake Test</button>
+        <button class="btn btn-secondary" id="shareBtn" style="display:none;">📋 Share Result</button>
+      </div>
+
+      <!-- History -->
+      <div class="history-section" id="historySection" style="display:none;">
+        <div class="history-title">
+          <span>📋 Recent Results</span>
+          <button class="history-clear" id="historyClear">Clear</button>
+        </div>
+        <div class="history-list" id="historyList"></div>
+      </div>
+
+    </div>
+
+    <!-- SEO Content -->
+    <div class="seo-content">
+
+      <h2>👁 What is an Online Eye Test?</h2>
+      <p>
+        An <strong>online eye test</strong> is a quick screening tool that checks basic aspects of your vision visual acuity (how sharp you see), astigmatism (blurred/distorted vision), and color vision. It's useful for <strong>early detection of potential issues</strong>, tracking changes over time, or just satisfying curiosity.
+      </p>
+      <p>
+        <strong>Important:</strong> This is an <strong>educational screening</strong>, not a medical diagnosis. Online tests cannot replace a comprehensive eye exam by an ophthalmologist or optometrist. If you notice any vision problems, please see a professional.
+      </p>
+
+      <h2>📊 The 3 Vision Tests Explained</h2>
+
+      <h3>📖 Visual Acuity (Snellen Test)</h3>
+      <p>The classic "20/20 vision" test. You read letters of progressively smaller sizes. If you can read smaller lines, your vision is sharper. Standard 20/20 vision means you can see at 20 feet what a person with normal vision sees at 20 feet.</p>
+
+      <h3>🎯 Astigmatism Test</h3>
+      <p>A grid of lines radiating from a center point. If all lines appear equal in darkness and sharpness, you likely have no significant astigmatism. If some lines look darker, blurrier, or doubled, you may have astigmatism (an irregular cornea shape).</p>
+
+      <h3>🎨 Color Vision Test</h3>
+      <p>Ishihara-style plates with numbers hidden in colored dots. This checks for red-green and blue-yellow color vision deficiency one of the most common inherited vision conditions (affecting ~8% of men).</p>
+
+      <h2>🚀 How to Take the Test</h2>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-step-num">1</div>
+          <div class="how-step-title">Sit Comfortably</div>
+          <div class="how-step-desc">40-50 cm from screen. Well-lit room.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">2</div>
+          <div class="how-step-title">Choose Test</div>
+          <div class="how-step-desc">Acuity, Astigmatism, or Color Vision.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">3</div>
+          <div class="how-step-title">Answer</div>
+          <div class="how-step-desc">Read letters, check grid, or spot numbers.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">4</div>
+          <div class="how-step-title">See Result</div>
+          <div class="how-step-desc">Instant interpretation of your vision.</div>
+        </div>
+      </div>
+
+      <h2>📏 Understanding 20/20 Vision</h2>
+      <table class="rating-table">
+        <thead>
+          <tr><th>Vision</th><th>Meaning</th><th>Context</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>20/10</strong></td><td>Better than normal</td><td>Super-sharp rare, often in young athletes</td></tr>
+          <tr><td><strong>20/15</strong></td><td>Excellent</td><td>Very sharp vision</td></tr>
+          <tr><td><strong>20/20</strong></td><td>Normal</td><td>The standard for good vision</td></tr>
+          <tr><td><strong>20/25</strong></td><td>Slightly below normal</td><td>Might need glasses for driving</td></tr>
+          <tr><td><strong>20/40</strong></td><td>Moderate impairment</td><td>Most states require 20/40+ for driving without correction</td></tr>
+          <tr><td><strong>20/70</strong></td><td>Significant impairment</td><td>Difficulty with daily tasks; glasses needed</td></tr>
+          <tr><td><strong>20/200</strong></td><td>Legal blindness</td><td>Severe vision loss in better eye with correction</td></tr>
+        </tbody>
+      </table>
+
+      <h2>💡 Signs You Should See an Eye Doctor</h2>
+      <ul>
+        <li><strong>Blurry or double vision</strong> that doesn't clear up with blinking.</li>
+        <li><strong>Frequent headaches</strong> or eye strain after reading/screen use.</li>
+        <li><strong>Squinting</strong> to see clearly at distance or close-up.</li>
+        <li><strong>Halos or glare</strong> around lights at night.</li>
+        <li><strong>Floaters or flashes</strong> of light in your vision (emergency retinal issue).</li>
+        <li><strong>Loss of peripheral vision</strong> or tunnel vision.</li>
+        <li><strong>Difficulty distinguishing colors</strong> red/green especially.</li>
+        <li><strong>Frequent prescription changes</strong> vision declining faster than expected.</li>
+        <li><strong>Family history</strong> of glaucoma, macular degeneration, or cataracts.</li>
+      </ul>
+
+      <h2>🛡️ How to Protect Your Eyes</h2>
+      <ul>
+        <li><strong>20-20-20 rule:</strong> Every 20 minutes, look 20 feet away for 20 seconds.</li>
+        <li><strong>Wear sunglasses</strong> with UV protection prevents cataracts and macular degeneration.</li>
+        <li><strong>Eat eye-friendly foods:</strong> leafy greens, carrots, fish, citrus fruits (rich in lutein, zeaxanthin, omega-3).</li>
+        <li><strong>Don't smoke:</strong> smoking doubles the risk of macular degeneration and cataracts.</li>
+        <li><strong>Screen distance:</strong> Keep monitors an arm's length away; adjust brightness to match surroundings.</li>
+        <li><strong>Regular exams:</strong> Even if you see fine, get checked every 1-2 years.</li>
+        <li><strong>Manage diabetes:</strong> High blood sugar damages retinal blood vessels.</li>
+        <li><strong>Stay hydrated:</strong> Dry eyes worsen blurry vision.</li>
+      </ul>
+
+      <h2>❓ Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-question">Is this eye test accurate?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>This test is a <strong>rough screening tool</strong>, not a medical diagnosis. It can indicate potential vision issues but should never replace a professional eye exam. See an ophthalmologist or optometrist for accurate results.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What is 20/20 vision?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>20/20 vision</strong> means you can see at 20 feet what a person with normal vision can see at 20 feet. It's considered standard normal vision. <strong>20/40</strong> means you see at 20 feet what most people see at 40 feet (poorer vision).</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">How often should I get an eye exam?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>Every 1-2 years</strong> for adults under 60. <strong>Every year</strong> for adults over 60, people with diabetes, or anyone with a family history of eye disease. Children should have exams at ages 3, 5, and every 1-2 years after.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What causes blurry vision?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Common causes: <strong>refractive errors</strong> (nearsightedness, farsightedness, astigmatism), <strong>presbyopia</strong> (age-related), dry eye, cataracts, glaucoma, diabetes. Only a professional exam can determine the exact cause.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">At what age does vision start to decline?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Vision changes can begin in childhood (nearsightedness often develops ages 6-14). <strong>Presbyopia</strong> (difficulty reading close up) typically starts around <strong>age 40</strong>. Cataracts often appear after 60. Regular exams catch issues early.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I take this test with glasses or contacts?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Yes but choose carefully. If you want to test your <strong>corrected vision</strong> (with glasses/contacts), keep them on. If you want to test your <strong>natural vision</strong>, remove them. Document which you're testing so results are comparable across sessions.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Are my test results saved?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>No. Everything happens in your browser nothing is uploaded to any server. The test history shown on this page is saved only in your browser session and disappears when you close the tab.</p></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-header">🔗 Related Utility Tools</div>
+    <div class="sidebar-list">
+      <a href="/tools/utility-tools/color-blind/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#10b981;">👁</div>
+        <div class="sidebar-info"><div class="sidebar-title">Color Blind Test</div><div class="sidebar-desc">Detailed Ishihara test</div></div>
+      </a>
+      <a href="/tools/utility-tools/hearing-test/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#f59e0b;">👂</div>
+        <div class="sidebar-info"><div class="sidebar-title">Hearing Test</div><div class="sidebar-desc">Audio range test</div></div>
+      </a>
+      <a href="/tools/utility-tools/reaction-time/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#f97316;">⚡</div>
+        <div class="sidebar-info"><div class="sidebar-title">Reaction Time</div><div class="sidebar-desc">Reflex speed test</div></div>
+      </a>
+      <a href="/tools/utility-tools/aim-trainer/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#ef4444;">🎯</div>
+        <div class="sidebar-info"><div class="sidebar-title">Aim Trainer</div><div class="sidebar-desc">Test your aim</div></div>
+      </a>
+      <a href="/tools/utility-tools/iq-test/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#8b5cf6;">🧠</div>
+        <div class="sidebar-info"><div class="sidebar-title">IQ Test</div><div class="sidebar-desc">Intelligence test</div></div>
+      </a>
+      <a href="/tools/utility-tools/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#64748b;">⚙️</div>
+        <div class="sidebar-info"><div class="sidebar-title">All Utility Tools →</div><div class="sidebar-desc">Browse 50+ tools</div></div>
+      </a>
+    </div>
+  </aside>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand"><div class="logo-icon">⚒</div>BigToolz</span></div>
+      <p class="footer-tagline">Your Ultimate Online Tools Hub</p>
+      <div class="footer-social">
+        <a href="https://facebook.com/bigtoolz" aria-label="Facebook">f</a>
+        <a href="https://twitter.com/bigtoolz" aria-label="Twitter">𝕏</a>
+        <a href="https://youtube.com/@bigtoolz" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+    <div>
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/tools/">All Tools</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Categories</h3>
+      <ul class="footer-links">
+        <li><a href="/tools/image-tools/">Image Tools</a></li>
+        <li><a href="/tools/pdf-tools/">PDF Tools</a></li>
+        <li><a href="/tools/text-tools/">Text Tools</a></li>
+        <li><a href="/tools/utility-tools/">Utility Tools</a></li>
+        <li><a href="/tools/categories">All Categories →</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Legal</h3>
+      <ul class="footer-links">
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left"><span>✓ 100% Free</span><span>✓ No Sign Up</span><span>✓ No Installation</span></div>
+    <div class="footer-bottom-right">© 2026 BigToolz. All rights reserved.</div>
+    <div class="footer-bottom-links"><a href="/privacy-policy">Privacy</a><a href="/terms">Terms</a><a href="/disclaimer">Disclaimer</a></div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+'use strict';
+
+/* ===== THEME ===== */
+(function(){try{var t=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&d))document.documentElement.setAttribute('data-theme','dark');else if(t==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();
+document.querySelector('.theme-btn')?.addEventListener('click',()=>{const h=document.documentElement;const c=h.getAttribute('data-theme');const d=window.matchMedia('(prefers-color-scheme: dark)').matches;let n=c==='dark'?'light':c==='light'?'dark':(d?'light':'dark');h.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}});
+
+/* ===== HELPERS ===== */
+const $ = (s, p = document) => p.querySelector(s);
+const $$ = (s, p = document) => [...p.querySelectorAll(s)];
+
+function showToast(msg, type = 'info', duration = 2500) {
+  const t = $('#toast');
+  if (!t) return;
+  t.className = 'toast visible' + (type !== 'info' ? ' ' + type : '');
+  t.textContent = msg;
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove('visible'), duration);
+}
+
+/* ===== CONFIG ===== */
+const SNELLEN_LINES = [
+  { size: 60, letters: 'E', level: 1 },
+  { size: 46, letters: 'FP', level: 2 },
+  { size: 36, letters: 'TOZ', level: 3 },
+  { size: 28, letters: 'LPED', level: 4 },
+  { size: 22, letters: 'PECFD', level: 5 },
+  { size: 16, letters: 'EDFCZP', level: 6 }
+];
+
+const COLOR_PLATES = [
+  { number: '12', numColor: [220, 70, 40], bgColor: [140, 180, 90] },
+  { number: '8', numColor: [200, 90, 50], bgColor: [120, 160, 80] },
+  { number: '29', numColor: [220, 100, 40], bgColor: [140, 180, 90] }
+];
+
+/* ===== STATE ===== */
+const state = {
+  testType: 'acuity',
+  level: 0, // for acuity
+  score: 0,
+  maxLevel: 0,
+  phase: 'idle', // idle | testing | complete
+  colorIndex: 0,
+  colorCorrect: 0,
+  history: []
+};
+
+/* ===== DOM ===== */
+const testTabs = $$('.test-tab');
+const testPanels = $$('.test-panel');
+const snellenChart = $('#snellenChart');
+const snellenInfo = $('#snellenInfo');
+const snellenAnswers = $('#snellenAnswers');
+const astigCanvas = $('#astigCanvas');
+const astigAnswers = $('#astigAnswers');
+const colorCanvas = $('#colorCanvas');
+const colorAnswers = $('#colorAnswers');
+const progressText = $('#progressText');
+const progressFill = $('#progressFill');
+const resultPanel = $('#resultPanel');
+const resultIcon = $('#resultIcon');
+const resultTitle = $('#resultTitle');
+const resultSub = $('#resultSub');
+const resultScore = $('#resultScore');
+const resultLevel = $('#resultLevel');
+const resultTestType = $('#resultTestType');
+const restartBtn = $('#restartBtn');
+const shareBtn = $('#shareBtn');
+const historySection = $('#historySection');
+const historyList = $('#historyList');
+const historyClear = $('#historyClear');
+
+/* ===== TEST TABS ===== */
+testTabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    testTabs.forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    state.testType = tab.dataset.test;
+    testPanels.forEach(p => p.classList.toggle('active', p.dataset.panel === state.testType));
+    resetTest();
+  });
+});
+
+/* ===== SNELLEN TEST ===== */
+function buildSnellen() {
+  snellenChart.innerHTML = '';
+  SNELLEN_LINES.forEach((line, i) => {
+    const div = document.createElement('div');
+    div.className = 'snellen-line';
+    if (i === state.level) div.classList.add('active');
+    else if (i > state.level) div.classList.add('hidden');
+
+    for (const ch of line.letters) {
+      const span = document.createElement('span');
+      span.className = 'snellen-letter';
+      span.textContent = ch;
+      span.style.fontSize = line.size + 'px';
+      div.appendChild(span);
+    }
+    snellenChart.appendChild(div);
+  });
+
+  snellenInfo.textContent = `Level ${state.level + 1} of ${SNELLEN_LINES.length} Read the letters`;
+
+  // Build answer buttons
+  const currentLine = SNELLEN_LINES[state.level];
+  const correct = currentLine.letters;
+
+  // Generate 3 distractors
+  const options = new Set([correct]);
+  const allLetters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  while (options.size < 4) {
+    let d = '';
+    for (let i = 0; i < correct.length; i++) {
+      d += allLetters[Math.floor(Math.random() * allLetters.length)];
+    }
+    if (d !== correct) options.add(d);
+  }
+
+  const shuffled = [...options].sort(() => Math.random() - 0.5);
+
+  snellenAnswers.innerHTML = '';
+  shuffled.forEach(opt => {
+    const btn = document.createElement('button');
+    btn.className = 'answer-btn';
+    btn.textContent = opt;
+    btn.addEventListener('click', () => submitAcuity(opt, correct));
+    snellenAnswers.appendChild(btn);
+  });
+
+  // Progress
+  progressText.textContent = `Level ${state.level + 1} / ${SNELLEN_LINES.length}`;
+  progressFill.style.width = ((state.level / SNELLEN_LINES.length) * 100) + '%';
+}
+
+function submitAcuity(answer, correct) {
+  if (state.phase !== 'testing') return;
+  const isCorrect = answer === correct;
+
+  // Highlight
+  $$('#snellenAnswers .answer-btn').forEach(btn => {
+    btn.disabled = true;
+    if (btn.textContent === correct) btn.classList.add('correct');
+    else if (btn.textContent === answer && !isCorrect) btn.classList.add('wrong');
+  });
+
+  if (isCorrect) {
+    state.score++;
+    state.maxLevel = state.level + 1;
+    state.level++;
+    setTimeout(() => {
+      if (state.level >= SNELLEN_LINES.length) {
+        completeAcuity();
+      } else {
+        buildSnellen();
+      }
+    }, 600);
+  } else {
+    setTimeout(() => completeAcuity(), 800);
+  }
+}
+
+function completeAcuity() {
+  state.phase = 'complete';
+
+  const levels = SNELLEN_LINES.length;
+  const score = Math.round((state.score / levels) * 100);
+  const levelReached = state.maxLevel;
+
+  // Interpret
+  let icon, title, sub;
+  if (levelReached === 6) {
+    icon = '✅';
+    title = 'Excellent Vision';
+    sub = 'You read all 6 levels clearly vision appears normal. Keep regular checks every 1-2 years.';
+  } else if (levelReached >= 4) {
+    icon = '👍';
+    title = 'Good Vision';
+    sub = `You reached level ${levelReached}. Vision appears mostly normal, but you may benefit from a professional eye exam.`;
+  } else if (levelReached >= 2) {
+    icon = '⚠️';
+    title = 'Vision May Need Correction';
+    sub = `You stopped at level ${levelReached}. This could indicate nearsightedness, farsightedness, or astigmatism. Please see an eye doctor.`;
+  } else {
+    icon = '🔶';
+    title = 'Vision Concern';
+    sub = 'You had difficulty with the basic levels. Please consult an ophthalmologist for a comprehensive exam.';
+  }
+
+  showResult(icon, title, sub, score + '%', `Level ${levelReached} / 6`, 'Visual Acuity');
+}
+
+/* ===== ASTIGMATISM TEST ===== */
+function drawAstig() {
+  const ctx = astigCanvas.getContext('2d');
+  const W = astigCanvas.width;
+  const H = astigCanvas.height;
+  const cx = W / 2;
+  const cy = H / 2;
+
+  ctx.fillStyle = '#fff';
+  ctx.fillRect(0, 0, W, H);
+
+  // Draw radial lines
+  const numLines = 24;
+  const outerRadius = Math.min(cx, cy) - 20;
+
+  ctx.strokeStyle = '#1a1a2e';
+  ctx.lineWidth = 4;
+  ctx.lineCap = 'round';
+
+  for (let i = 0; i < numLines; i++) {
+    const angle = (i / numLines) * Math.PI * 2;
+    const x1 = cx + Math.cos(angle) * 20;
+    const y1 = cy + Math.sin(angle) * 20;
+    const x2 = cx + Math.cos(angle) * outerRadius;
+    const y2 = cy + Math.sin(angle) * outerRadius;
+
+    ctx.beginPath();
+    ctx.moveTo(x1, y1);
+    ctx.lineTo(x2, y2);
+    ctx.stroke();
+  }
+
+  // Center dot
+  ctx.fillStyle = '#1a1a2e';
+  ctx.beginPath();
+  ctx.arc(cx, cy, 8, 0, Math.PI * 2);
+  ctx.fill();
+}
+
+astigAnswers.addEventListener('click', (e) => {
+  const btn = e.target.closest('.answer-btn');
+  if (!btn || state.phase !== 'testing') return;
+
+  const answer = btn.dataset.astig;
+  let icon, title, sub;
+
+  if (answer === 'all') {
+    icon = '✅';
+    title = 'No Significant Astigmatism';
+    sub = 'All lines appeared equal no obvious sign of astigmatism in this screening.';
+  } else if (answer === 'some') {
+    icon = '⚠️';
+    title = 'Possible Astigmatism';
+    sub = 'Some lines looked darker or blurrier. This can indicate astigmatism. Please see an eye doctor for a proper test.';
+  } else {
+    icon = 'ℹ️';
+    title = 'Retest Recommended';
+    sub = 'When unsure, retake the test in a well-lit room at proper distance. If concerns remain, consult a professional.';
+  }
+
+  showResult(icon, title, sub, '', 'N/A', 'Astigmatism');
+});
+
+/* ===== COLOR VISION TEST ===== */
+function drawColorPlate() {
+  const plate = COLOR_PLATES[state.colorIndex];
+  const ctx = colorCanvas.getContext('2d');
+  const W = colorCanvas.width;
+  const H = colorCanvas.height;
+
+  ctx.fillStyle = '#f8fafc';
+  ctx.fillRect(0, 0, W, H);
+
+  const cx = W / 2;
+  const cy = H / 2;
+  const radius = Math.min(cx, cy) - 15;
+
+  // Hidden number mask
+  const numCanvas = document.createElement('canvas');
+  numCanvas.width = W;
+  numCanvas.height = H;
+  const numCtx = numCanvas.getContext('2d');
+  numCtx.fillStyle = '#000';
+  numCtx.font = `900 ${W * 0.55}px Inter, Arial, sans-serif`;
+  numCtx.textAlign = 'center';
+  numCtx.textBaseline = 'middle';
+  numCtx.fillText(plate.number, cx, cy);
+  const numData = numCtx.getImageData(0, 0, W, H).data;
+
+  // Dots
+  const dotCount = 500;
+  const cellSize = W * 0.03;
+  const gridW = Math.ceil(W / cellSize);
+  const gridH = Math.ceil(H / cellSize);
+  const grid = Array.from({ length: gridH }, () => Array(gridW).fill(false));
+
+  for (let attempt = 0; attempt < dotCount * 3 && grid.flat().filter(v => v).length < dotCount; attempt++) {
+    const a = Math.random() * Math.PI * 2;
+    const r = Math.sqrt(Math.random()) * (radius - 5);
+    const x = cx + r * Math.cos(a);
+    const y = cy + r * Math.sin(a);
+
+    const gx = Math.floor(x / cellSize);
+    const gy = Math.floor(y / cellSize);
+    if (gx < 0 || gy < 0 || gx >= gridW || gy >= gridH) continue;
+    if (grid[gy][gx]) continue;
+
+    grid[gy][gx] = true;
+
+    const px = Math.floor(x);
+    const py = Math.floor(y);
+    const idx = (py * W + px) * 4;
+    const isNumber = numData[idx + 3] > 128;
+
+    const color = isNumber ? plate.numColor : plate.bgColor;
+    const variation = (Math.random() - 0.5) * 30;
+    const dotColor = color.map(c => Math.max(0, Math.min(255, c + variation)));
+
+    const dotRadius = W * 0.012 + Math.random() * (W * 0.015);
+
+    ctx.beginPath();
+    ctx.arc(x, y, dotRadius, 0, Math.PI * 2);
+    ctx.fillStyle = `rgb(${dotRadius}, ${dotRadius}, ${dotRadius})`.replace(String(dotRadius), `${dotColor[0]}, ${dotColor[1]}, ${dotColor[2]}`).replace(`, ${dotRadius}, ${dotRadius}`, '');
+    // Simplified: use fillStyle string directly
+    ctx.fillStyle = `rgb(${dotColor[0]}, ${dotColor[1]}, ${dotColor[2]})`;
+    ctx.fill();
+  }
+}
+
+function buildColorAnswers() {
+  const currentPlate = COLOR_PLATES[state.colorIndex];
+  const correct = currentPlate.number;
+  const options = new Set([correct]);
+
+  while (options.size < 4) {
+    const len = correct.length;
+    let d = '';
+    for (let i = 0; i < len; i++) d += Math.floor(Math.random() * 10);
+    if (d[0] !== '0' && d !== correct) options.add(d);
+  }
+
+  const shuffled = [...options].sort(() => Math.random() - 0.5);
+  colorAnswers.innerHTML = '';
+
+  shuffled.forEach(opt => {
+    const btn = document.createElement('button');
+    btn.className = 'answer-btn';
+    btn.textContent = opt;
+    btn.addEventListener('click', () => submitColor(opt, correct));
+    colorAnswers.appendChild(btn);
+  });
+
+  // Don't know
+  const dk = document.createElement('button');
+  dk.className = 'answer-btn';
+  dk.textContent = "Don't know";
+  dk.style.fontSize = '13px';
+  dk.addEventListener('click', () => submitColor(null, correct));
+  colorAnswers.appendChild(dk);
+}
+
+function submitColor(answer, correct) {
+  if (state.phase !== 'testing') return;
+
+  const isCorrect = answer === correct;
+  if (isCorrect) state.colorCorrect++;
+
+  $$('#colorAnswers .answer-btn').forEach(btn => {
+    btn.disabled = true;
+    if (btn.textContent === correct) btn.classList.add('correct');
+    else if (btn.textContent === answer && !isCorrect) btn.classList.add('wrong');
+  });
+
+  state.colorIndex++;
+  setTimeout(() => {
+    if (state.colorIndex >= COLOR_PLATES.length) {
+      completeColor();
+    } else {
+      drawColorPlate();
+      buildColorAnswers();
+      progressText.textContent = `Plate ${state.colorIndex + 1} / ${COLOR_PLATES.length}`;
+      progressFill.style.width = ((state.colorIndex / COLOR_PLATES.length) * 100) + '%';
+    }
+  }, 600);
+}
+
+function completeColor() {
+  state.phase = 'complete';
+  const total = COLOR_PLATES.length;
+  const score = Math.round((state.colorCorrect / total) * 100);
+
+  let icon, title, sub;
+  if (score === 100) {
+    icon = '✅';
+    title = 'Normal Color Vision';
+    sub = 'You correctly identified all color plates. No sign of color vision deficiency.';
+  } else if (score >= 66) {
+    icon = '👍';
+    title = 'Mild Color Vision Issue';
+    sub = 'You got most plates right. Minor difficulty may be due to lighting or screen. If concerned, take the full color blind test.';
+  } else {
+    icon = '⚠️';
+    title = 'Possible Color Vision Deficiency';
+    sub = 'You struggled with multiple plates. This may indicate red-green color blindness. Please take the detailed color blind test and see a doctor.';
+  }
+
+  showResult(icon, title, sub, score + '%', `${state.colorCorrect} / ${total}`, 'Color Vision');
+}
+
+/* ===== SHOW RESULT ===== */
+function showResult(icon, title, sub, score, levelText, testName) {
+  resultIcon.textContent = icon;
+  resultTitle.textContent = title;
+  resultSub.textContent = sub;
+  resultScore.textContent = score;
+  resultLevel.textContent = levelText;
+  resultTestType.textContent = testName;
+
+  resultPanel.classList.add('visible');
+  restartBtn.style.display = 'inline-flex';
+  shareBtn.style.display = 'inline-flex';
+
+  // Hide test panel
+  testPanels.forEach(p => p.classList.remove('active'));
+
+  // Save history
+  state.history.unshift({
+    type: testName,
+    score,
+    level: levelText,
+    date: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' })
+  });
+  if (state.history.length > 5) state.history = state.history.slice(0, 5);
+  renderHistory();
+
+  setTimeout(() => resultPanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 200);
+}
+
+/* ===== RENDER HISTORY ===== */
+function renderHistory() {
+  if (state.history.length === 0) {
+    historySection.style.display = 'none';
+    return;
+  }
+  historySection.style.display = 'block';
+  historyList.innerHTML = '';
+
+  state.history.forEach(h => {
+    const div = document.createElement('div');
+    div.className = 'history-item';
+    div.innerHTML = `
+      <span class="history-text">${h.type} · ${h.level}</span>
+      <span class="history-value">${h.score}</span>
+    `;
+    historyList.appendChild(div);
+  });
+}
+
+historyClear.addEventListener('click', () => {
+  state.history = [];
+  renderHistory();
+  showToast('History cleared');
+});
+
+/* ===== RESET ===== */
+function resetTest() {
+  state.level = 0;
+  state.score = 0;
+  state.maxLevel = 0;
+  state.colorIndex = 0;
+  state.colorCorrect = 0;
+  state.phase = 'testing';
+
+  resultPanel.classList.remove('visible');
+  restartBtn.style.display = 'none';
+  shareBtn.style.display = 'none';
+
+  testPanels.forEach(p => p.classList.toggle('active', p.dataset.panel === state.testType));
+
+  progressFill.style.width = '0%';
+
+  if (state.testType === 'acuity') {
+    progressText.textContent = `Level 1 / ${SNELLEN_LINES.length}`;
+    buildSnellen();
+  } else if (state.testType === 'astigmatism') {
+    progressText.textContent = 'Grid Test';
+    progressFill.style.width = '50%';
+    drawAstig();
+  } else {
+    progressText.textContent = `Plate 1 / ${COLOR_PLATES.length}`;
+    drawColorPlate();
+    buildColorAnswers();
+  }
+}
+
+/* ===== RESTART & SHARE ===== */
+restartBtn.addEventListener('click', resetTest);
+
+shareBtn.addEventListener('click', async () => {
+  const text = `👁 Eye Test Result ${resultTestType.textContent}: ${resultScore.textContent} (${resultLevel.textContent})\nTry it: https://bigtoolz.com/tools/utility-tools/eye-test/`;
+
+  try {
+    if (navigator.share) {
+      await navigator.share({ title: 'Eye Test Result', text });
+    } else {
+      await navigator.clipboard.writeText(text);
+      showToast('Result copied!', 'success');
+    }
+  } catch (e) {}
+});
+
+/* ===== FAQ ===== */
+$$('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    $$('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+
+/* ===== INIT ===== */
+resetTest();
+</script>
+
+</body>
+</html>

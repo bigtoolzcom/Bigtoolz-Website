@@ -1,0 +1,631 @@
+<!-- ===========================================
+     BigToolz - FAQ Section Component
+     Version: 1.0.0
+     Purpose: Reusable FAQ accordion widget
+     
+     USAGE:
+     
+     Basic:
+     <section data-faq></section>
+     
+     With custom questions:
+     <section data-faq data-faq-file="/data/faq/word-counter.json"></section>
+     
+     Inline questions:
+     <section data-faq data-faq-items='[
+       {"q":"Question 1?","a":"Answer 1"},
+       {"q":"Question 2?","a":"Answer 2"}
+     ]'></section>
+     
+     REQUIREMENTS:
+     - Style with .faq-* classes below
+     - Optional: JSON file per tool
+     =========================================== -->
+
+<!-- ===========================================
+     STYLES
+     =========================================== -->
+<style>
+  /* ========== FAQ CONTAINER ========== */
+  .faq-section {
+    background: #fff;
+    border-radius: 16px;
+    padding: 32px;
+    border: 1px solid #e5e7eb;
+    margin-bottom: 24px;
+  }
+
+  .faq-section.compact {
+    padding: 24px;
+  }
+
+  .faq-section.boxed {
+    background: #f8fafc;
+    border: none;
+  }
+
+  .faq-header {
+    margin-bottom: 24px;
+  }
+
+  .faq-title {
+    font-size: 22px;
+    font-weight: 800;
+    color: #1a1a2e;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .faq-title::before {
+    content: '❓';
+    font-size: 24px;
+  }
+
+  .faq-subtitle {
+    font-size: 14px;
+    color: #6b7280;
+    line-height: 1.6;
+  }
+
+  /* ========== FAQ ITEMS ========== */
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .faq-item {
+    background: #faf5ff;
+    border: 1px solid #ede9fe;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: border-color 0.2s ease;
+  }
+
+  .faq-section.boxed .faq-item {
+    background: #fff;
+    border-color: #e5e7eb;
+  }
+
+  .faq-item:hover {
+    border-color: #8b5cf6;
+  }
+
+  .faq-item.open {
+    border-color: #8b5cf6;
+    background: #faf5ff;
+  }
+
+  .faq-section.boxed .faq-item.open {
+    background: #f8faff;
+  }
+
+  /* ========== FAQ QUESTION ========== */
+  .faq-question {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 18px 22px;
+    font-size: 15px;
+    font-weight: 700;
+    color: #1a1a2e;
+    text-align: left;
+    cursor: pointer;
+    font-family: inherit;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    transition: color 0.2s ease;
+  }
+
+  .faq-section.compact .faq-question {
+    padding: 14px 18px;
+    font-size: 14px;
+  }
+
+  .faq-question:hover {
+    color: #8b5cf6;
+  }
+
+  .faq-question:focus-visible {
+    outline: 2px solid #8b5cf6;
+    outline-offset: -2px;
+  }
+
+  .faq-item.open .faq-question {
+    color: #8b5cf6;
+  }
+
+  .faq-chevron {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    color: #8b5cf6;
+    transition: transform 0.3s ease;
+  }
+
+  .faq-item.open .faq-chevron {
+    transform: rotate(180deg);
+  }
+
+  /* ========== FAQ ANSWER ========== */
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease, padding 0.35s ease;
+    padding: 0 22px;
+  }
+
+  .faq-section.compact .faq-answer {
+    padding: 0 18px;
+  }
+
+  .faq-item.open .faq-answer {
+    max-height: 800px;
+    padding-bottom: 18px;
+  }
+
+  .faq-answer p {
+    font-size: 14px;
+    color: #6b7280;
+    line-height: 1.75;
+    margin: 0;
+  }
+
+  .faq-answer p + p {
+    margin-top: 12px;
+  }
+
+  .faq-answer a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .faq-answer a:hover {
+    text-decoration: underline;
+  }
+
+  .faq-answer strong {
+    color: #1a1a2e;
+    font-weight: 700;
+  }
+
+  .faq-answer ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 10px 0;
+  }
+
+  .faq-answer ul li {
+    position: relative;
+    padding-left: 20px;
+    font-size: 14px;
+    color: #6b7280;
+    line-height: 1.7;
+    margin-bottom: 6px;
+  }
+
+  .faq-answer ul li::before {
+    content: '';
+    position: absolute;
+    left: 4px;
+    top: 10px;
+    width: 5px;
+    height: 5px;
+    background: #8b5cf6;
+    border-radius: 50%;
+  }
+
+  /* ========== FOOTER CTA ========== */
+  .faq-footer {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #e5e7eb;
+    text-align: center;
+    font-size: 13px;
+    color: #6b7280;
+  }
+
+  .faq-footer a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .faq-footer a:hover {
+    text-decoration: underline;
+  }
+
+  /* ========== DARK MODE ========== */
+  [data-theme="dark"] .faq-section {
+    background: #1e293b;
+    border-color: #334155;
+  }
+
+  [data-theme="dark"] .faq-section.boxed {
+    background: #0f172a;
+  }
+
+  [data-theme="dark"] .faq-title,
+  [data-theme="dark"] .faq-question,
+  [data-theme="dark"] .faq-answer strong {
+    color: #f1f5f9;
+  }
+
+  [data-theme="dark"] .faq-subtitle,
+  [data-theme="dark"] .faq-answer p,
+  [data-theme="dark"] .faq-answer ul li,
+  [data-theme="dark"] .faq-footer {
+    color: #cbd5e1;
+  }
+
+  [data-theme="dark"] .faq-item {
+    background: #0f172a;
+    border-color: #334155;
+  }
+
+  [data-theme="dark"] .faq-item:hover,
+  [data-theme="dark"] .faq-item.open {
+    border-color: #8b5cf6;
+    background: #1e293b;
+  }
+
+  [data-theme="dark"] .faq-footer {
+    border-color: #334155;
+  }
+
+  /* ========== RESPONSIVE ========== */
+  @media (max-width: 768px) {
+    .faq-section {
+      padding: 20px;
+    }
+
+    .faq-title {
+      font-size: 18px;
+    }
+
+    .faq-question {
+      padding: 16px 18px;
+      font-size: 14px;
+    }
+
+    .faq-answer {
+      padding: 0 18px;
+    }
+
+    .faq-item.open .faq-answer {
+      padding-bottom: 16px;
+    }
+  }
+</style>
+
+<!-- ===========================================
+     AUTO-RENDER SCRIPT
+     (Include once per page)
+     =========================================== -->
+<script>
+(function () {
+  'use strict';
+
+  // ---- Default FAQ sets per category ----
+  const DEFAULT_FAQS = {
+    'image-tools': [
+      {
+        q: 'Are these image tools really free to use?',
+        a: 'Yes. All image tools on BigToolz are 100% free. No signup, no watermark, no hidden charges — just open the tool and use it.'
+      },
+      {
+        q: 'Are my images uploaded to a server?',
+        a: 'No. All image processing happens in your browser using the HTML5 Canvas API. Your images never leave your device, ensuring complete privacy.'
+      },
+      {
+        q: 'What image formats are supported?',
+        a: 'We support all common image formats including JPG, JPEG, PNG, WebP, GIF, BMP, and SVG. Output formats vary by tool — usually JPEG, PNG, or WebP.'
+      },
+      {
+        q: 'Is there a file size limit?',
+        a: 'There is no hard limit, but very large files (20MB+) may take longer to process. Best results are achieved with images under 10MB each.'
+      },
+      {
+        q: 'Can I process multiple images at once?',
+        a: 'Yes. Most of our image tools support batch processing. Upload multiple files and process them all in one go.'
+      }
+    ],
+    'pdf-tools': [
+      {
+        q: 'Are these PDF tools free?',
+        a: 'Yes. All PDF tools on BigToolz are completely free with no signup required. Just upload and use.'
+      },
+      {
+        q: 'Are my PDF files uploaded to a server?',
+        a: 'No. All PDF processing happens locally in your browser using pdf-lib and PDF.js. Your files never leave your device.'
+      },
+      {
+        q: 'What is the maximum PDF file size?',
+        a: 'There is no hard limit, but very large PDFs (over 100MB) may take longer to process or use more browser memory. For best performance, keep files under 50MB.'
+      },
+      {
+        q: 'Can I use these tools on a password-protected PDF?',
+        a: 'Some tools require an unlocked PDF. Use our Unlock PDF tool first if the file is password-protected, then run other operations.'
+      },
+      {
+        q: 'Do these tools work on mobile devices?',
+        a: 'Yes. All PDF tools are fully responsive and work on smartphones, tablets, and desktops. For very large files, desktop is recommended.'
+      }
+    ],
+    'text-tools': [
+      {
+        q: 'Are text tools free to use?',
+        a: 'Yes, all text tools on BigToolz are 100% free with no signup required.'
+      },
+      {
+        q: 'Is my text safe?',
+        a: 'Yes. All processing happens in your browser. Your text never leaves your device, so privacy is guaranteed.'
+      },
+      {
+        q: 'Is there a character limit?',
+        a: 'There is no strict limit, but very large text blocks (over 1MB) may slow down your browser. For best results, keep texts under 500KB.'
+      },
+      {
+        q: 'Can I copy the results easily?',
+        a: 'Yes. All text tools include a copy-to-clipboard button so you can paste the result anywhere instantly.'
+      }
+    ],
+    'default': [
+      {
+        q: 'Is this tool really free?',
+        a: 'Yes. All tools on BigToolz are 100% free to use. No signup, no watermark, no hidden fees.'
+      },
+      {
+        q: 'Is my data safe?',
+        a: 'Yes. All processing happens in your browser — your files never leave your device.'
+      },
+      {
+        q: 'Do I need to install anything?',
+        a: 'No. All tools work directly in your browser. No downloads, no extensions, no setup required.'
+      },
+      {
+        q: 'Can I use these tools on mobile?',
+        a: 'Yes. All tools are fully responsive and work perfectly on phones, tablets, and desktops.'
+      },
+      {
+        q: 'Do you offer any premium version?',
+        a: 'No. Everything is free. We are supported by non-intrusive ads so the tools stay free forever.'
+      }
+    ]
+  };
+
+  // ---- Init on DOM ready ----
+  function init() {
+    const containers = document.querySelectorAll('[data-faq]');
+    containers.forEach(renderFaq);
+  }
+
+  // ---- Render FAQ ----
+  async function renderFaq(container) {
+    const variant = container.dataset.faqVariant || 'default';
+    const category = container.dataset.faqCategory || 'default';
+    const title = container.dataset.faqTitle || 'Frequently Asked Questions';
+    const subtitle = container.dataset.faqSubtitle || 'Quick answers to the most common questions.';
+    const footerText = container.dataset.faqFooter || '';
+    const limit = parseInt(container.dataset.faqLimit, 10) || 0;
+    const inlineItems = container.dataset.faqItems;
+    const fileUrl = container.dataset.faqFile;
+
+    let items = [];
+
+    // Priority: file > inline > category defaults
+    if (fileUrl) {
+      try {
+        const res = await fetch(fileUrl);
+        if (res.ok) items = await res.json();
+      } catch (e) {
+        console.warn('[FAQ] Failed to load file:', fileUrl);
+      }
+    } else if (inlineItems) {
+      try {
+        items = JSON.parse(inlineItems);
+      } catch (e) {
+        console.warn('[FAQ] Invalid JSON in data-faq-items');
+      }
+    }
+
+    if (!items.length) {
+      items = DEFAULT_FAQS[category] || DEFAULT_FAQS['default'];
+    }
+
+    if (limit > 0) items = items.slice(0, limit);
+
+    render(container, { items, variant, title, subtitle, footerText });
+  }
+
+  // ---- Build HTML ----
+  function render(container, opts) {
+    const { items, variant, title, subtitle, footerText } = opts;
+
+    const itemsHtml = items.map((item, i) => `
+      <div class="faq-item" data-faq-index="${i}">
+        <button class="faq-question" 
+                type="button" 
+                aria-expanded="false"
+                aria-controls="faq-answer-${i}-${randId()}">
+          <span>${escapeHtml(item.q)}</span>
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M6 9l6 6 6-6"/>
+          </svg>
+        </button>
+        <div class="faq-answer" role="region">
+          ${formatAnswer(item.a)}
+        </div>
+      </div>
+    `).join('');
+
+    container.innerHTML = `
+      <div class="faq-section ${variant}">
+        <div class="faq-header">
+          <h2 class="faq-title">${escapeHtml(title)}</h2>
+          ${subtitle ? `<p class="faq-subtitle">${escapeHtml(subtitle)}</p>` : ''}
+        </div>
+        <div class="faq-list">
+          ${itemsHtml}
+        </div>
+        ${footerText ? `<div class="faq-footer">${footerText}</div>` : ''}
+      </div>
+    `;
+
+    // Attach accordion handlers
+    container.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => toggleFaq(btn));
+    });
+
+    // Attach JSON-LD schema
+    attachSchema(items);
+  }
+
+  // ---- Toggle open/close ----
+  function toggleFaq(btn) {
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+
+    // Close all in same list
+    item.parentElement.querySelectorAll('.faq-item').forEach(i => {
+      i.classList.remove('open');
+      i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+    });
+
+    if (!isOpen) {
+      item.classList.add('open');
+      btn.setAttribute('aria-expanded', 'true');
+    }
+  }
+
+  // ---- JSON-LD FAQPage schema ----
+  function attachSchema(items) {
+    // Remove any existing FAQ schema on page
+    document.querySelectorAll('script[data-faq-schema]').forEach(s => s.remove());
+
+    const schema = {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: items.map(item => ({
+        '@type': 'Question',
+        name: item.q,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: item.a
+        }
+      }))
+    };
+
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.setAttribute('data-faq-schema', '');
+    script.textContent = JSON.stringify(schema);
+    document.head.appendChild(script);
+  }
+
+  // ---- Helpers ----
+  function escapeHtml(str) {
+    const d = document.createElement('div');
+    d.textContent = String(str || '');
+    return d.innerHTML;
+  }
+
+  function formatAnswer(ans) {
+    // Convert plain text to <p>, or keep HTML if it already has tags
+    const hasHtml = /<\/?[a-z][\s\S]*>/i.test(ans);
+    if (hasHtml) return ans;
+    return String(ans)
+      .split(/\n\n+/)
+      .map(p => `<p>${escapeHtml(p)}</p>`)
+      .join('');
+  }
+
+  function randId() {
+    return Math.random().toString(36).slice(2, 8);
+  }
+
+  // ---- Init ----
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>
+
+<!-- ===========================================
+     USAGE EXAMPLES
+     =========================================== -->
+
+<!-- EXAMPLE 1: Default FAQ (uses generic questions) -->
+<!--
+<section data-faq></section>
+-->
+
+<!-- EXAMPLE 2: Category-based FAQ (image tools) -->
+<!--
+<section data-faq 
+         data-faq-category="image-tools"
+         data-faq-title="Frequently Asked Questions About Image Tools"
+         data-faq-subtitle="Everything you need to know about our image tools."
+></section>
+-->
+
+<!-- EXAMPLE 3: PDF category FAQ with custom footer -->
+<!--
+<section data-faq 
+         data-faq-category="pdf-tools"
+         data-faq-title="PDF Tools - FAQs"
+         data-faq-footer='Still have questions? <a href="/contact">Contact us</a>.'
+></section>
+-->
+
+<!-- EXAMPLE 4: Custom inline questions -->
+<!--
+<section data-faq 
+         data-faq-title="Custom FAQ"
+         data-faq-items='[
+           {"q":"What is BigToolz?","a":"BigToolz is a free online tools hub."},
+           {"q":"How many tools do you have?","a":"We have 300+ free tools across 8 categories."},
+           {"q":"Do you have mobile apps?","a":"No, but our website works perfectly on mobile."}
+         ]'></section>
+-->
+
+<!-- EXAMPLE 5: Load from JSON file (per tool) -->
+<!--
+<section data-faq 
+         data-faq-file="/data/faq/image-compressor.json"></section>
+-->
+
+<!-- EXAMPLE 6: Compact variant with limit -->
+<!--
+<section data-faq 
+         data-faq-category="text-tools"
+         data-faq-variant="compact"
+         data-faq-limit="3"></section>
+-->
+
+<!-- EXAMPLE 7: Boxed variant -->
+<!--
+<section data-faq 
+         data-faq-variant="boxed"
+         data-faq-category="pdf-tools"></section>
+-->
+
+<!-- ===========================================
+     HOW TO INCLUDE IN A PAGE
+     ===========================================
+     
+     1. Paste the <style> block (once) — usually in <head>.
+     2. Paste the <script> block (once) — usually before </body>.
+     3. Add one or more <section data-faq> containers
+        wherever you want an FAQ on the page.
+     
+     Done. The component auto-populates from
+     data-faq-category or data-faq-items.
+     =========================================== -->

@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2563eb">
+
+<title>Open Graph Generator - Create OG Meta Tags & Preview | BigToolz</title>
+<meta name="description" content="Free Open Graph meta tag generator. Create OG tags for Facebook, Twitter, LinkedIn, WhatsApp with live social preview. Copy-ready HTML output instantly.">
+<meta name="keywords" content="open graph generator, og meta tags, facebook og tags, twitter card generator, social media preview">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://bigtoolz.com/tools/seo-tools/open-graph/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Open Graph Generator - Free Online Tool | BigToolz">
+<meta property="og:description" content="Generate Open Graph meta tags with live social previews free, no signup.">
+<meta property="og:url" content="https://bigtoolz.com/tools/seo-tools/open-graph/">
+<meta property="og:image" content="https://bigtoolz.com/assets/images/og-image.jpg">
+<meta property="og:site_name" content="BigToolz">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Open Graph Generator - BigToolz">
+<meta name="twitter:description" content="Generate OG tags instantly free.">
+<meta name="twitter:image" content="https://bigtoolz.com/assets/images/twitter-card.jpg">
+
+<link rel="icon" href="/assets/images/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/images/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#f8f9fc;color:#1a1a2e;overflow-x:hidden;line-height:1.5}
+
+  .header{background:#fff;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;position:sticky;top:0;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+  .header-left{display:flex;align-items:center;gap:40px}
+  .logo{display:flex;align-items:center;gap:8px;font-size:22px;font-weight:800;color:#1a1a2e;text-decoration:none}
+  .logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#3b82f6,#2563eb);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px}
+  .logo span{color:#2563eb}
+  .nav{display:flex;align-items:center;gap:28px;list-style:none}
+  .nav a{text-decoration:none;color:#4b5563;font-size:14px;font-weight:500;transition:color .2s}
+  .nav a:hover,.nav a.active{color:#2563eb}
+  .header-right{display:flex;align-items:center;gap:16px}
+  .search-btn,.theme-btn{width:36px;height:36px;border-radius:50%;border:none;background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#4b5563}
+  .search-btn:hover,.theme-btn:hover{background:#f3f4f6}
+  .bookmark-btn{display:flex;align-items:center;gap:8px;background:#2563eb;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
+  .bookmark-btn:hover{background:#1d4ed8}
+
+  .hero{background:linear-gradient(135deg,#0a0e27 0%,#1a1a4e 40%,#2d1b69 70%,#4c1d95 100%);padding:40px 40px 60px;position:relative;overflow:hidden;color:#fff}
+  .hero::before{content:'';position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(59,130,246,.3) 0%,transparent 70%);border-radius:50%}
+  .hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+  .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px;flex-wrap:wrap}
+  .breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none}
+  .breadcrumb a:hover{color:#fff}
+  .breadcrumb .sep{color:rgba(255,255,255,.4)}
+  .breadcrumb .current{color:#fff;font-weight:500}
+  .hero-title-row{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+  .hero-icon{width:60px;height:60px;background:#3b82f6;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px;color:#fff;flex-shrink:0;box-shadow:0 8px 24px rgba(59,130,246,.4)}
+  .hero-title{font-size:42px;font-weight:800;line-height:1.15}
+  .hero-title .blue{color:#60a5fa}
+  .hero-desc{font-size:15px;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:24px;max-width:560px}
+  .hero-features{display:flex;gap:24px;flex-wrap:wrap}
+  .hero-feature{display:flex;align-items:center;gap:6px;font-size:13px;color:#fff;font-weight:500}
+  .hero-feature .check{width:18px;height:18px;border-radius:50%;background:#3b82f6;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;flex-shrink:0}
+
+  .main-content{max-width:1200px;margin:0 auto;padding:40px;display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start}
+  .tool-content{min-width:0}
+
+  .workspace{background:#fff;border-radius:16px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,.06);border:1px solid #e5e7eb;margin-bottom:24px}
+
+  /* Preview tabs */
+  .preview-tabs{display:flex;gap:6px;margin-bottom:16px;background:#f8fafc;padding:5px;border-radius:10px;border:1px solid #e5e7eb;flex-wrap:wrap}
+  .preview-tab{padding:9px 16px;background:transparent;border:none;border-radius:7px;font-size:13px;font-weight:700;color:#6b7280;cursor:pointer;font-family:inherit;transition:all .2s;display:flex;align-items:center;gap:6px}
+  .preview-tab:hover{color:#3b82f6}
+  .preview-tab.active{background:#3b82f6;color:#fff}
+
+  /* Social preview cards */
+  .social-preview{display:none;margin-bottom:24px}
+  .social-preview.visible{display:block}
+
+  /* Facebook-style preview */
+  .fb-preview{background:#fff;border:1px solid #e5e7eb;border-radius:12px;overflow:hidden;max-width:520px}
+  .fb-image{width:100%;height:274px;background:linear-gradient(135deg,#dbeafe,#bfdbfe);display:flex;align-items:center;justify-content:center;color:#3b82f6;font-size:48px;position:relative;overflow:hidden;background-size:cover;background-position:center}
+  .fb-body{padding:12px 16px 16px}
+  .fb-domain{font-size:12px;color:#6b7280;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px}
+  .fb-title{font-size:16px;font-weight:700;color:#1a1a2e;line-height:1.3;margin-bottom:4px;display:-webkit-box;-webkit-line-clamp-webkit-box-orient:vertical;overflow:hidden}
+  .fb-desc{font-size:13px;color:#6b7280;line-height:1.4;display:-webkit-box;-webkit-line-clamp-webkit-box-orient:vertical;overflow:hidden}
+
+  /* Twitter-style preview */
+  .tw-preview{background:#fff;border:1px solid #e5e7eb;border-radius:16px;overflow:hidden;max-width:520px}
+  .tw-image{width:100%;height:260px;background:linear-gradient(135deg,#dbeafe,#bfdbfe);display:flex;align-items:center;justify-content:center;color:#3b82f6;font-size:48px;position:relative;overflow:hidden;background-size:cover;background-position:center}
+  .tw-body{padding:12px 16px}
+  .tw-title{font-size:15px;font-weight:400;color:#1a1a2e;line-height:1.3;margin-bottom:4px}
+  .tw-domain{font-size:13px;color:#6b7280}
+
+  /* LinkedIn preview */
+  .li-preview{background:#fff;border:1px solid #e5e7eb;border-radius:8px;overflow:hidden;max-width:520px}
+  .li-image{width:100%;height:274px;background:linear-gradient(135deg,#dbeafe,#bfdbfe);display:flex;align-items:center;justify-content:center;color:#3b82f6;font-size:48px;position:relative;overflow:hidden;background-size:cover;background-position:center}
+  .li-body{padding:12px 16px}
+  .li-title{font-size:16px;font-weight:600;color:#1a1a2e;line-height:1.3;margin-bottom:4px;display:-webkit-box;-webkit-line-clamp-webkit-box-orient:vertical;overflow:hidden}
+  .li-domain{font-size:12px;color:#6b7280}
+
+  /* WhatsApp preview */
+  .wa-preview{background:#d9fdd3;border-radius:12px;padding:8px;max-width:400px}
+  .wa-bubble{background:#fff;border-radius:8px;overflow:hidden}
+  .wa-image{width:100%;height:200px;background:linear-gradient(135deg,#dbeafe,#bfdbfe);display:flex;align-items:center;justify-content:center;color:#3b82f6;font-size:40px;background-size:cover;background-position:center}
+  .wa-body{padding:10px 12px}
+  .wa-title{font-size:14px;font-weight:600;color:#1a1a2e;line-height:1.3;margin-bottom:4px}
+  .wa-desc{font-size:12px;color:#6b7280;line-height:1.4;display:-webkit-box;-webkit-line-clamp-webkit-box-orient:vertical;overflow:hidden}
+  .wa-domain{font-size:11px;color:#9ca3af;margin-top:6px;text-transform:uppercase;letter-spacing:.5px}
+
+  /* Slack preview */
+  .slack-preview{background:#fff;border-left:4px solid #3b82f6;border-radius:6px;padding:12px 16px;max-width:520px}
+  .slack-title{font-size:14px;font-weight:700;color:#1264a3;margin-bottom:6px;line-height:1.3}
+  .slack-desc{font-size:13px;color:#1d1c1d;line-height:1.4;margin-bottom:8px;display:-webkit-box;-webkit-line-clamp-webkit-box-orient:vertical;overflow:hidden}
+  .slack-image{margin-top:8px;max-width:360px;border-radius:6px;overflow:hidden}
+  .slack-image-inner{width:100%;height:180px;background:linear-gradient(135deg,#dbeafe,#bfdbfe);display:flex;align-items:center;justify-content:center;color:#3b82f6;font-size:32px;background-size:cover;background-position:center}
+  .slack-domain{font-size:11px;color:#616061;margin-top:6px}
+
+  /* Discord preview */
+  .dc-preview{background:#2b2d31;border-radius:8px;padding:12px;max-width:520px;border-left:4px solid #5865f2}
+  .dc-title{font-size:14px;font-weight:700;color:#00a8fc;margin-bottom:6px}
+  .dc-desc{font-size:13px;color:#dbdee1;line-height:1.4;margin-bottom:8px;display:-webkit-box;-webkit-line-clamp-webkit-box-orient:vertical;overflow:hidden}
+  .dc-image{margin-top:8px;max-width:400px;border-radius:6px;overflow:hidden}
+  .dc-image-inner{width:100%;height:180px;background:linear-gradient(135deg,#3b82f6,#2563eb);display:flex;align-items:center;justify-content:center;color:#fff;font-size:32px;background-size:cover;background-position:center}
+
+  /* Form */
+  .section{background:#f8fafc;border-radius:12px;padding:20px;margin-bottom:20px;border:1px solid #e5e7eb}
+  .section-title{font-size:13px;font-weight:800;color:#1a1a2e;margin-bottom:14px;display:flex;align-items:center;gap:8px;text-transform:uppercase;letter-spacing:.5px}
+  .section-title .badge{background:#3b82f6;color:#fff;font-size:9px;padding:3px 8px;border-radius:10px;font-weight:700}
+
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:12px}
+  .form-row.full{grid-template-columns:1fr}
+  .form-group label{display:flex;justify-content:space-between;align-items:center;font-size:12px;font-weight:700;color:#4b5563;margin-bottom:6px;gap:8px}
+  .form-group label .counter{font-size:10px;color:#9ca3af;font-weight:600;background:#fff;padding:2px 8px;border-radius:6px;border:1px solid #e5e7eb}
+  .form-group label .counter.warn{color:#f59e0b;border-color:#fcd34d;background:#fffbeb}
+  .form-group label .counter.error{color:#dc2626;border-color:#fecaca;background:#fef2f2}
+  .form-group input,.form-group textarea,.form-group select{width:100%;padding:10px 14px;border:1px solid #e5e7eb;border-radius:8px;font-size:13px;font-family:inherit;color:#1a1a2e;background:#fff;outline:none;transition:border-color .2s}
+  .form-group input:focus,.form-group textarea:focus,.form-group select:focus{border-color:#3b82f6;box-shadow:0 0 0 3px rgba(59,130,246,.1)}
+  .form-group textarea{resize:vertical;min-height:70px;line-height:1.5}
+
+  /* Output */
+  .output-wrap{background:#0f172a;border-radius:12px;padding:20px;margin-top:16px;position:relative}
+  .output-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+  .output-title{font-size:12px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.5px}
+  .copy-btn{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;background:#3b82f6;color:#fff;border:none;border-radius:8px;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit;transition:all .2s}
+  .copy-btn:hover{background:#2563eb}
+  .copy-btn.copied{background:#10b981}
+  .output-code{font-family:'JetBrains Mono','Courier New',monospace;font-size:12px;color:#e2e8f0;line-height:1.7;white-space:pre-wrap;word-break:break-all;max-height:400px;overflow-y:auto}
+  .output-code .tag{color:#94a3b8}
+  .output-code .attr{color:#60a5fa}
+  .output-code .val{color:#34d399}
+  .output-code .comment{color:#64748b;font-style:italic}
+
+  /* Actions */
+  .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 28px;border-radius:10px;font-size:15px;font-weight:700;font-family:inherit;cursor:pointer;border:none;transition:all .2s;text-decoration:none}
+  .btn-primary{background:#3b82f6;color:#fff;flex:1;box-shadow:0 4px 12px rgba(59,130,246,.2)}
+  .btn-primary:hover:not(:disabled){background:#2563eb;transform:translateY(-2px);box-shadow:0 6px 20px rgba(59,130,246,.3)}
+  .btn-secondary{background:#fff;color:#3b82f6;border:1px solid #e5e7eb}
+  .btn-secondary:hover{border-color:#3b82f6;background:#eff6ff}
+
+  .options-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:16px}
+  .option-group label{display:block;font-size:12px;font-weight:600;color:#4b5563;margin-bottom:6px}
+  .option-group select{width:100%;padding:10px 12px;border:1px solid #e5e7eb;border-radius:8px;font-size:13px;font-family:inherit;color:#1a1a2e;background:#fff;outline:none}
+
+  /* SEO */
+  .seo-content{background:#fff;border-radius:16px;padding:32px;border:1px solid #e5e7eb;margin-bottom:24px}
+  .seo-content h2{font-size:22px;font-weight:800;color:#1a1a2e;margin-bottom:14px;margin-top:28px;display:flex;align-items:center;gap:10px}
+  .seo-content h2:first-child{margin-top:0}
+  .seo-content h3{font-size:16px;font-weight:700;color:#1a1a2e;margin:20px 0 10px}
+  .seo-content p{font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:14px}
+  .seo-content ul{list-style:none;padding-left:0;margin-bottom:16px}
+  .seo-content ul li{position:relative;padding-left:24px;font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:8px}
+  .seo-content ul li::before{content:'';position:absolute;left:6px;top:12px;width:6px;height:6px;background:#3b82f6;border-radius:50%}
+  .seo-content a{color:#2563eb;text-decoration:none;font-weight:600}
+  .seo-content a:hover{text-decoration:underline}
+  .seo-content strong{color:#1a1a2e;font-weight:700}
+  .seo-content code{background:#f1f5f9;padding:2px 6px;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:13px;color:#0f172a;border:1px solid #e2e8f0}
+
+  .og-table{width:100%;border-collapse:collapse;margin:20px 0;border:1px solid #e5e7eb;border-radius:8px;overflow:hidden}
+  .og-table th{background:#eff6ff;padding:12px 16px;text-align:left;font-size:13px;font-weight:700;color:#1a1a2e;border-bottom:1px solid #e5e7eb}
+  .og-table td{padding:12px 16px;font-size:13px;color:#4b5563;border-bottom:1px solid #f3f4f6}
+  .og-table tr:last-child td{border-bottom:none}
+
+  .how-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:20px}
+  .how-step{background:#eff6ff;border-radius:12px;padding:20px;border:1px solid #bfdbfe}
+  .how-step-num{width:36px;height:36px;border-radius:50%;background:#3b82f6;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;margin-bottom:12px}
+  .how-step-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+  .how-step-desc{font-size:13px;color:#6b7280;line-height:1.6}
+
+  .faq-item{background:#eff6ff;border:1px solid #bfdbfe;border-radius:12px;margin-bottom:10px;overflow:hidden;transition:border-color .2s}
+  .faq-item:hover{border-color:#3b82f6}
+  .faq-question{width:100%;background:none;border:none;padding:18px 22px;font-size:15px;font-weight:700;color:#1a1a2e;text-align:left;cursor:pointer;font-family:inherit;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .faq-question .chev{font-size:12px;color:#3b82f6;transition:transform .2s;flex-shrink:0}
+  .faq-item.open .faq-question .chev{transform:rotate(180deg)}
+  .faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 22px}
+  .faq-item.open .faq-answer{max-height:500px;padding-bottom:18px}
+  .faq-answer p{font-size:14px;color:#6b7280;line-height:1.7;margin:0}
+
+  .sidebar{background:#fff;border-radius:16px;padding:24px;border:1px solid #e5e7eb;position:sticky;top:80px;margin-bottom:24px}
+  .sidebar-header{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:800;color:#1a1a2e;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid #f3f4f6}
+  .sidebar-list{display:flex;flex-direction:column;gap:8px}
+  .sidebar-item{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;cursor:pointer;transition:background .2s;text-decoration:none;color:inherit;border:1px solid #f3f4f6}
+  .sidebar-item:hover{background:#eff6ff;border-color:#bfdbfe}
+  .sidebar-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;flex-shrink:0}
+  .sidebar-info{flex:1;min-width:0}
+  .sidebar-title{font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:2px}
+  .sidebar-desc{font-size:11px;color:#9ca3af;line-height:1.4}
+
+  .footer{background:#0a0e27;padding:60px 40px 30px;color:#fff;margin-top:40px}
+  .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:40px}
+  .footer-brand{display:flex;align-items:center;gap:8px;font-size:20px;font-weight:800;margin-bottom:12px}
+  .footer-brand span{color:#60a5fa}
+  .footer-tagline{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px}
+  .footer-social{display:flex;gap:12px}
+  .footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:16px;transition:background .2s}
+  .footer-social a:hover{background:rgba(255,255,255,.2)}
+  .footer-heading{font-size:14px;font-weight:700;margin-bottom:20px;color:#fff}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .footer-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;transition:color .2s}
+  .footer-links a:hover{color:#60a5fa}
+  .footer-bottom{max-width:1200px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  .footer-bottom-left{display:flex;gap:20px;font-size:12px;color:rgba(255,255,255,.5)}
+  .footer-bottom-right,.footer-bottom-links a{font-size:12px;color:rgba(255,255,255,.5);text-decoration:none}
+  .footer-bottom-links{display:flex;gap:20px}
+
+  .toast{position:fixed;bottom:24px;right:24px;background:#1a1a2e;color:#fff;padding:14px 20px;border-radius:10px;font-size:13px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:3000;transform:translateY(200%);transition:transform .3s ease;max-width:320px}
+  .toast.visible{transform:translateY(0)}
+  .toast.success{background:#10b981}
+  .toast.error{background:#ef4444}
+
+  @media(max-width:1024px){
+    .main-content{grid-template-columns:1fr;padding:24px 20px}
+    .sidebar{position:static}
+    .how-steps{grid-template-columns:repeat(2,1fr)}
+    .form-row{grid-template-columns:1fr}
+  }
+  @media(max-width:768px){
+    .header{padding:0 20px}.nav{display:none}
+    .hero{padding:24px 20px 40px}
+    .hero-title{font-size:28px}
+    .hero-icon{width:48px;height:48px;font-size:20px}
+    .hero-title-row{flex-direction:column;align-items:flex-start;gap:12px}
+    .main-content{padding:20px 16px}
+    .workspace{padding:20px}
+    .how-steps{grid-template-columns:1fr}
+    .seo-content{padding:20px}
+    .footer-inner{grid-template-columns:1fr 1fr}
+    .toast{left:16px;right:16px;bottom:16px;max-width:none}
+  }
+  @media(max-width:576px){
+    .header{padding:0 16px}.header-right .search-btn,.header-right .theme-btn{display:none}
+    .hero-title{font-size:24px}
+    .footer-inner{grid-template-columns:1fr}
+    .footer-bottom{flex-direction:column;text-align:center}
+    .actions{flex-direction:column}
+    .btn{width:100%}
+    .btn-primary{flex:none}
+  }
+
+  html[data-theme="dark"] body{background:#0f172a;color:#f1f5f9}
+  html[data-theme="dark"] .header,html[data-theme="dark"] .workspace,html[data-theme="dark"] .seo-content,html[data-theme="dark"] .sidebar{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .logo,html[data-theme="dark"] .hero-title,html[data-theme="dark"] .seo-content h2,html[data-theme="dark"] .seo-content h3,html[data-theme="dark"] .faq-question,html[data-theme="dark"] .sidebar-header,html[data-theme="dark"] .sidebar-title,html[data-theme="dark"] .section-title{color:#f1f5f9}
+  html[data-theme="dark"] .nav a{color:#cbd5e1}
+  html[data-theme="dark"] .section,html[data-theme="dark"] .how-step,html[data-theme="dark"] .faq-item,html[data-theme="dark"] .preview-tabs{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .form-group input,html[data-theme="dark"] .form-group textarea,html[data-theme="dark"] .form-group select,html[data-theme="dark"] .option-group select{background:#0f172a;border-color:#334155;color:#f1f5f9}
+  html[data-theme="dark"] .form-group label .counter{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .seo-content p,html[data-theme="dark"] .seo-content ul li,html[data-theme="dark"] .faq-answer p{color:#cbd5e1}
+  html[data-theme="dark"] .seo-content code{background:#0f172a;color:#94a3b8;border-color:#334155}
+  html[data-theme="dark"] .preview-tab{color:#cbd5e1}
+  html[data-theme="dark"] .preview-tab.active{background:#3b82f6;color:#fff}
+  html[data-theme="dark"] .fb-preview,html[data-theme="dark"] .tw-preview,html[data-theme="dark"] .li-preview,html[data-theme="dark"] .wa-bubble,html[data-theme="dark"] .slack-preview{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .fb-title,html[data-theme="dark"] .tw-title,html[data-theme="dark"] .li-title,html[data-theme="dark"] .wa-title,html[data-theme="dark"] .slack-title{color:#f1f5f9}
+  html[data-theme="dark"] .og-table{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .og-table th{background:#0f172a;color:#f1f5f9;border-color:#334155}
+  html[data-theme="dark"] .og-table td{border-color:#334155;color:#cbd5e1}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type": "SoftwareApplication", "name": "Open Graph Generator", "url": "https://bigtoolz.com/tools/seo-tools/open-graph/", "applicationCategory": "SEOApplication", "operatingSystem": "Any (Web-based)", "description": "Free Open Graph meta tag generator with live social media previews for Facebook, Twitter, LinkedIn, WhatsApp, Slack, and Discord.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "1832"}},
+    {"@type": "HowTo", "name": "How to Generate Open Graph Meta Tags", "step": [
+      {"@type": "HowToStep", "name": "Fill OG details", "text": "Enter OG title, description, image URL, and other fields."},
+      {"@type": "HowToStep", "name": "Preview", "text": "See how the link will look on Facebook, Twitter, LinkedIn."},
+      {"@type": "HowToStep", "name": "Generate", "text": "Click Generate to build the OG tags."},
+      {"@type": "HowToStep", "name": "Copy", "text": "Copy the meta tags and add them to your HTML head."}
+    ]},
+    {"@type": "FAQPage", "mainEntity": [
+      {"@type": "Question", "name": "What is Open Graph?", "acceptedAnswer": {"@type": "Answer", "text": "Open Graph is a protocol created by Facebook that controls how web pages appear when shared on social media. It uses meta tags prefixed with og: to define the title, description, image, and other details shown in link previews."}},
+      {"@type": "Question", "name": "What is the difference between Open Graph and Twitter Card?", "acceptedAnswer": {"@type": "Answer", "text": "Open Graph (og:) is used by Facebook, LinkedIn, WhatsApp, Slack, Discord and most platforms. Twitter Card (twitter:) is specific to X/Twitter. Twitter falls back to OG tags if Twitter tags are missing, but including both gives the best results."}},
+      {"@type": "Question", "name": "What image size should I use for OG?", "acceptedAnswer": {"@type": "Answer", "text": "Recommended: 1200x630 pixels (1.91:1 aspect ratio). Minimum: 600x315. This works well for Facebook, LinkedIn, Twitter summary_large_image, and most other platforms. Use PNG or JPG, under 1MB."}},
+      {"@type": "Question", "name": "How do I test my OG tags?", "acceptedAnswer": {"@type": "Answer", "text": "Use Facebook Sharing Debugger (developers.facebook.com/tools/debug/), Twitter Card Validator (cards-dev.twitter.com/validator), and LinkedIn Post Inspector (linkedin.com/post-inspector). Our tool also provides live previews for major platforms."}},
+      {"@type": "Question", "name": "Do I need Open Graph tags for SEO?", "acceptedAnswer": {"@type": "Answer", "text": "OG tags are not a direct Google ranking factor, but they significantly improve click-through rates when your pages are shared on social media. Better social previews = more clicks = more traffic = indirect SEO benefit."}}
+    ]},
+    {"@type": "BreadcrumbList", "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bigtoolz.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://bigtoolz.com/tools/"},
+      {"@type": "ListItem", "position": 3, "name": "SEO Tools", "item": "https://bigtoolz.com/tools/seo-tools/"},
+      {"@type": "ListItem", "position": 4, "name": "Open Graph Generator", "item": "https://bigtoolz.com/tools/seo-tools/open-graph/"}
+    ]}
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-left">
+    <a href="/" class="logo"><div class="logo-icon">⚒</div>BigToolz</span></a>
+    <nav><ul class="nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/tools/" class="active">All Tools</a></li>
+      <li><a href="/tools/categories">Categories</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul></nav>
+  </div>
+  <div class="header-right">
+   
+    <button class="theme-btn" aria-label="Toggle theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
+    
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <nav class="breadcrumb">
+      <a href="/">Home</a><span class="sep">›</span>
+      <a href="/tools/">Tools</a><span class="sep">›</span>
+      <a href="/tools/seo-tools/">SEO Tools</a><span class="sep">›</span>
+      <span class="current">Open Graph Generator</span>
+    </nav>
+    <div class="hero-title-row">
+      <div class="hero-icon">📘</div>
+      <h1 class="hero-title">Open <span class="blue">Graph</span></h1>
+    </div>
+    <p class="hero-desc">
+      Generate Open Graph meta tags with live social previews for Facebook, Twitter/X, LinkedIn, WhatsApp, Slack, and Discord. Copy-ready HTML output instantly.
+    </p>
+    <div class="hero-features">
+      <div class="hero-feature"><span class="check">✓</span> 6 Social Previews</div>
+      <div class="hero-feature"><span class="check">✓</span> Twitter Card Support</div>
+      <div class="hero-feature"><span class="check">✓</span> Multi-format Output</div>
+      <div class="hero-feature"><span class="check">✓</span> 100% Free</div>
+    </div>
+  </div>
+</section>
+
+<div class="main-content">
+
+  <div class="tool-content">
+
+    <div class="workspace">
+
+      <!-- Preview Tabs -->
+      <div class="preview-tabs">
+        <button class="preview-tab active" data-preview="facebook">📘 Facebook</button>
+        <button class="preview-tab" data-preview="twitter">𝕏 Twitter</button>
+        <button class="preview-tab" data-preview="linkedin">💼 LinkedIn</button>
+        <button class="preview-tab" data-preview="whatsapp">💬 WhatsApp</button>
+        <button class="preview-tab" data-preview="slack">💬 Slack</button>
+        <button class="preview-tab" data-preview="discord">🎮 Discord</button>
+      </div>
+
+      <!-- Facebook Preview -->
+      <div class="social-preview visible" data-preview-panel="facebook">
+        <div class="fb-preview">
+          <div class="fb-image" id="fbImage">🖼</div>
+          <div class="fb-body">
+            <div class="fb-domain" id="fbDomain">example.com</div>
+            <div class="fb-title" id="fbTitle">Your Page Title Will Appear Here</div>
+            <div class="fb-desc" id="fbDesc">Your meta description will appear here.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Twitter Preview -->
+      <div class="social-preview" data-preview-panel="twitter">
+        <div class="tw-preview">
+          <div class="tw-image" id="twImage">🖼</div>
+          <div class="tw-body">
+            <div class="tw-title" id="twTitle">Your Page Title</div>
+            <div class="tw-domain" id="twDomain">example.com</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- LinkedIn Preview -->
+      <div class="social-preview" data-preview-panel="linkedin">
+        <div class="li-preview">
+          <div class="li-image" id="liImage">🖼</div>
+          <div class="li-body">
+            <div class="li-title" id="liTitle">Your Page Title</div>
+            <div class="li-domain" id="liDomain">example.com</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- WhatsApp Preview -->
+      <div class="social-preview" data-preview-panel="whatsapp">
+        <div class="wa-preview">
+          <div class="wa-bubble">
+            <div class="wa-image" id="waImage">🖼</div>
+            <div class="wa-body">
+              <div class="wa-title" id="waTitle">Your Page Title</div>
+              <div class="wa-desc" id="waDesc">Your description</div>
+              <div class="wa-domain" id="waDomain">example.com</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slack Preview -->
+      <div class="social-preview" data-preview-panel="slack">
+        <div class="slack-preview">
+          <div class="slack-title" id="slackTitle">Your Page Title</div>
+          <div class="slack-desc" id="slackDesc">Your description</div>
+          <div class="slack-image">
+            <div class="slack-image-inner" id="slackImage">🖼</div>
+          </div>
+          <div class="slack-domain" id="slackDomain">example.com</div>
+        </div>
+      </div>
+
+      <!-- Discord Preview -->
+      <div class="social-preview" data-preview-panel="discord">
+        <div class="dc-preview">
+          <div class="dc-title" id="dcTitle">Your Page Title</div>
+          <div class="dc-desc" id="dcDesc">Your description</div>
+          <div class="dc-image">
+            <div class="dc-image-inner" id="dcImage">🖼</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Basic OG -->
+      <div class="section">
+        <div class="section-title">📘 Basic Open Graph <span class="badge">REQUIRED</span></div>
+        <div class="form-group" style="margin-bottom:12px;">
+          <label>OG Title <span class="counter" id="ogTitleCounter">0 / 60</span></label>
+          <input type="text" id="ogTitle" placeholder="e.g. Free Image Compressor - Compress Photos Online" maxlength="200">
+        </div>
+        <div class="form-group" style="margin-bottom:12px;">
+          <label>OG Description <span class="counter" id="ogDescCounter">0 / 100</span></label>
+          <textarea id="ogDesc" placeholder="e.g. Compress JPG, PNG and WebP images online for free..." maxlength="300"></textarea>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>OG URL</label>
+            <input type="url" id="ogUrl" placeholder="https://example.com/page">
+          </div>
+          <div class="form-group">
+            <label>OG Type</label>
+            <select id="ogType">
+              <option value="website" selected>website</option>
+              <option value="article">article</option>
+              <option value="product">product</option>
+              <option value="video.movie">video.movie</option>
+              <option value="profile">profile</option>
+              <option value="book">book</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Site Name</label>
+            <input type="text" id="ogSiteName" placeholder="e.g. BigToolz">
+          </div>
+          <div class="form-group">
+            <label>Locale</label>
+            <select id="ogLocale">
+              <option value="en_US" selected>en_US (English - US)</option>
+              <option value="en_GB">en_GB (English - UK)</option>
+              <option value="hi_IN">hi_IN (Hindi - India)</option>
+              <option value="es_ES">es_ES (Spanish)</option>
+              <option value="fr_FR">fr_FR (French)</option>
+              <option value="de_DE">de_DE (German)</option>
+              <option value="ja_JP">ja_JP (Japanese)</option>
+              <option value="zh_CN">zh_CN (Chinese Simplified)</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- OG Image -->
+      <div class="section">
+        <div class="section-title">🖼 Open Graph Image</div>
+        <div class="form-group" style="margin-bottom:12px;">
+          <label>Image URL <span class="counter" id="ogImageHint">1200 × 630 recommended</span></label>
+          <input type="url" id="ogImage" placeholder="https://example.com/og-image.jpg">
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Image Width (px)</label>
+            <input type="number" id="ogImageWidth" value="1200" min="200" max="5000">
+          </div>
+          <div class="form-group">
+            <label>Image Height (px)</label>
+            <input type="number" id="ogImageHeight" value="630" min="200" max="5000">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Image Alt Text</label>
+          <input type="text" id="ogImageAlt" placeholder="Description of the image for accessibility">
+        </div>
+      </div>
+
+      <!-- Twitter Card -->
+      <div class="section">
+        <div class="section-title">𝕏 Twitter Card</div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Card Type</label>
+            <select id="twitterCard">
+              <option value="summary_large_image" selected>summary_large_image</option>
+              <option value="summary">summary</option>
+              <option value="app">app</option>
+              <option value="player">player</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>@Site Handle</label>
+            <input type="text" id="twitterSite" placeholder="@yoursite">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>@Creator Handle</label>
+          <input type="text" id="twitterCreator" placeholder="@author">
+        </div>
+      </div>
+
+      <!-- Output Options -->
+      <div class="options-grid">
+        <div class="option-group">
+          <label>Output Format</label>
+          <select id="outputFormat">
+            <option value="html" selected>HTML (for &lt;head&gt;)</option>
+            <option value="nextjs">Next.js metadata</option>
+            <option value="nuxt">Nuxt.js useHead</option>
+            <option value="json">JSON</option>
+          </select>
+        </div>
+        <div class="option-group">
+          <label>Include Comments</label>
+          <select id="includeComments">
+            <option value="yes" selected>Yes (with section headers)</option>
+            <option value="no">No (clean output)</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Actions -->
+      <div class="actions">
+        <button class="btn btn-primary" id="generateBtn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2v20M2 12h20"/></svg>
+          Generate OG Tags
+        </button>
+        <button class="btn btn-secondary" id="resetBtn">↺ Reset</button>
+      </div>
+
+      <!-- Output -->
+      <div class="output-wrap" id="outputWrap" style="display:none;">
+        <div class="output-header">
+          <div class="output-title">📋 Generated Open Graph Tags</div>
+          <button class="copy-btn" id="copyBtn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+            Copy
+          </button>
+        </div>
+        <div class="output-code" id="outputCode"></div>
+      </div>
+
+    </div>
+
+    <!-- SEO Content -->
+    <div class="seo-content">
+
+      <h2>📘 What is Open Graph?</h2>
+      <p>
+        <strong>Open Graph (OG)</strong> is a protocol created by Facebook in 2010 that controls how web pages appear when shared on social media. It uses HTML meta tags prefixed with <code>og:</code> to define the title, description, image, and other details shown in link previews.
+      </p>
+      <p>
+        Without OG tags, social platforms scrape whatever they can find usually the page title and a random image. With proper OG tags, you control exactly how your content appears, dramatically improving <strong>click-through rates</strong> when shared.
+      </p>
+
+      <h2>🚀 How to Use This Generator</h2>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-step-num">1</div>
+          <div class="how-step-title">Fill Details</div>
+          <div class="how-step-desc">Enter OG title, description, image, and URL.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">2</div>
+          <div class="how-step-title">Preview</div>
+          <div class="how-step-desc">See how it looks on 6 social platforms.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">3</div>
+          <div class="how-step-title">Generate</div>
+          <div class="how-step-desc">Click Generate OG Tags to build HTML.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">4</div>
+          <div class="how-step-title">Copy & Paste</div>
+          <div class="how-step-desc">Add to your HTML &lt;head&gt; section.</div>
+        </div>
+      </div>
+
+      <h2>📋 Essential Open Graph Tags</h2>
+      <table class="og-table">
+        <thead>
+          <tr><th>Tag</th><th>Purpose</th><th>Example</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>og:title</code></td><td>Page title in preview</td><td>Free Image Compressor</td></tr>
+          <tr><td><code>og:description</code></td><td>Short description</td><td>Compress images online free...</td></tr>
+          <tr><td><code>og:image</code></td><td>Preview image</td><td>https://example.com/og.jpg</td></tr>
+          <tr><td><code>og:url</code></td><td>Canonical URL</td><td>https://example.com/page</td></tr>
+          <tr><td><code>og:type</code></td><td>Content type</td><td>website / article</td></tr>
+          <tr><td><code>og:site_name</code></td><td>Site/brand name</td><td>BigToolz</td></tr>
+          <tr><td><code>og:locale</code></td><td>Language</td><td>en_US</td></tr>
+        </tbody>
+      </table>
+
+      <h2>🖼 Ideal Image Sizes</h2>
+      <ul>
+        <li><strong>Facebook / LinkedIn / WhatsApp:</strong> 1200 × 630 px (1.91:1)</li>
+        <li><strong>Twitter summary_large_image:</strong> 1200 × 628 px</li>
+        <li><strong>Twitter summary (square):</strong> 400 × 400 px</li>
+        <li><strong>Minimum:</strong> 600 × 315 px</li>
+        <li><strong>Format:</strong> PNG or JPG, under 1MB</li>
+        <li><strong>Safe zone:</strong> Keep important content in center 80%</li>
+      </ul>
+
+      <h2>🎯 OG vs Twitter Card</h2>
+      <p>
+        <strong>Open Graph</strong> is used by Facebook, LinkedIn, WhatsApp, Slack, Discord, Pinterest, and most platforms. <strong>Twitter Card</strong> is specific to X/Twitter. Twitter falls back to OG tags if Twitter-specific tags are missing, but including both gives the best preview quality.
+      </p>
+
+      <h2>❓ Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-question">What is Open Graph?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>Open Graph</strong> is a protocol created by Facebook that controls how web pages appear when shared on social media. It uses meta tags prefixed with <code>og:</code> to define the title, description, image, and other details shown in link previews.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What's the difference between Open Graph and Twitter Card?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>Open Graph (og:)</strong> is used by Facebook, LinkedIn, WhatsApp, Slack, Discord, and most platforms. <strong>Twitter Card (twitter:)</strong> is X/Twitter-specific. Twitter falls back to OG tags if Twitter tags are missing, but including both gives the best preview.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What image size should I use for OG?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Recommended: <strong>1200 × 630 pixels</strong> (1.91:1 aspect ratio). Minimum: 600 × 315. This works for Facebook, LinkedIn, Twitter summary_large_image, and most other platforms. Use PNG or JPG, under 1MB.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">How do I test my OG tags?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Use <strong>Facebook Sharing Debugger</strong>, <strong>Twitter Card Validator</strong>, and <strong>LinkedIn Post Inspector</strong>. Our tool also provides live previews for 6 platforms. After adding tags to your site, clear the cache in these debuggers to see updated previews.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Do I need Open Graph tags for SEO?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>OG tags are <strong>not a direct Google ranking factor</strong>, but they significantly improve click-through rates when your pages are shared on social media. Better social previews = more clicks = more traffic = indirect SEO benefit.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Why isn't my OG image showing?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Common reasons: <strong>image below minimum size</strong> (600×315), <strong>URL not absolute</strong> (must be https://...), <strong>image blocked by robots.txt</strong>, <strong>too large</strong> (over 8MB), or <strong>platform cache</strong>. Use the platform's debugger to force refresh.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Should I use OG tags on every page?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>Yes</strong> every page should have unique OG tags. Each page's title, description, and image should reflect that specific page's content. Generic OG tags (same on all pages) hurt social sharing performance.</p></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-header">🔗 Related SEO Tools</div>
+    <div class="sidebar-list">
+      <a href="/tools/seo-tools/serp-preview/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#3b82f6;">🔍</div>
+        <div class="sidebar-info"><div class="sidebar-title">SERP Preview</div><div class="sidebar-desc">Google preview</div></div>
+      </a>
+      <a href="/tools/seo-tools/twitter-card/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#1e293b;">𝕏</div>
+        <div class="sidebar-info"><div class="sidebar-title">Twitter Card Generator</div><div class="sidebar-desc">X/Twitter tags</div></div>
+      </a>
+      <a href="/tools/seo-tools/schema-markup/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#8b5cf6;">🏗</div>
+        <div class="sidebar-info"><div class="sidebar-title">Schema Markup</div><div class="sidebar-desc">Structured data</div></div>
+      </a>
+      <a href="/tools/seo-tools/meta-description/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#10b981;">📝</div>
+        <div class="sidebar-info"><div class="sidebar-title">Meta Description</div><div class="sidebar-desc">SEO descriptions</div></div>
+      </a>
+      <a href="/tools/seo-tools/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#64748b;">📈</div>
+        <div class="sidebar-info"><div class="sidebar-title">All SEO Tools →</div><div class="sidebar-desc">Browse 25+ tools</div></div>
+      </a>
+    </div>
+  </aside>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand"><div class="logo-icon">⚒</div>BigToolz</span></div>
+      <p class="footer-tagline">Your Ultimate Online Tools Hub</p>
+      <div class="footer-social">
+        <a href="https://facebook.com/bigtoolz" aria-label="Facebook">f</a>
+        <a href="https://twitter.com/bigtoolz" aria-label="Twitter">𝕏</a>
+        <a href="https://youtube.com/@bigtoolz" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+    <div>
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/tools/">All Tools</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Categories</h3>
+      <ul class="footer-links">
+        <li><a href="/tools/image-tools/">Image Tools</a></li>
+        <li><a href="/tools/pdf-tools/">PDF Tools</a></li>
+        <li><a href="/tools/seo-tools/">SEO Tools</a></li>
+        <li><a href="/tools/developer-tools/">Developer Tools</a></li>
+        <li><a href="/tools/categories">All Categories →</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Legal</h3>
+      <ul class="footer-links">
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left"><span>✓ 100% Free</span><span>✓ No Sign Up</span><span>✓ No Installation</span></div>
+    <div class="footer-bottom-right">© 2026 BigToolz. All rights reserved.</div>
+    <div class="footer-bottom-links"><a href="/privacy-policy">Privacy</a><a href="/terms">Terms</a><a href="/disclaimer">Disclaimer</a></div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+'use strict';
+
+/* ===== THEME ===== */
+(function(){try{var t=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&d))document.documentElement.setAttribute('data-theme','dark');else if(t==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();
+document.querySelector('.theme-btn')?.addEventListener('click',()=>{const h=document.documentElement;const c=h.getAttribute('data-theme');const d=window.matchMedia('(prefers-color-scheme: dark)').matches;let n=c==='dark'?'light':c==='light'?'dark':(d?'light':'dark');h.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}});
+
+/* ===== HELPERS ===== */
+const $ = (s, p = document) => p.querySelector(s);
+const $$ = (s, p = document) => [...p.querySelectorAll(s)];
+
+function showToast(msg, type = 'info', duration = 3000) {
+  const t = $('#toast');
+  if (!t) return;
+  t.className = 'toast visible' + (type !== 'info' ? ' ' + type : '');
+  t.textContent = msg;
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove('visible'), duration);
+}
+
+async function copyToClipboard(text) {
+  try {
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(text);
+      return true;
+    }
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.cssText = 'position:fixed;opacity:0;';
+    document.body.appendChild(ta);
+    ta.select();
+    const ok = document.execCommand('copy');
+    document.body.removeChild(ta);
+    return ok;
+  } catch (e) { return false; }
+}
+
+function escapeHtml(str) {
+  const div = document.createElement('div');
+  div.textContent = str;
+  return div.innerHTML;
+}
+
+function getDomain(url) {
+  try {
+    return new URL(url).hostname.replace('www.', '');
+  } catch (e) {
+    return 'example.com';
+  }
+}
+
+/* ===== STATE ===== */
+const state = {
+  generated: '',
+  preview: 'facebook'
+};
+
+/* ===== PREVIEW TABS ===== */
+$$('.preview-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    $$('.preview-tab').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    state.preview = tab.dataset.preview;
+    $$('.social-preview').forEach(p => {
+      p.classList.toggle('visible', p.dataset.previewPanel === state.preview);
+    });
+  });
+});
+
+/* ===== DOM REFS ===== */
+const ogTitle = $('#ogTitle');
+const ogDesc = $('#ogDesc');
+const ogUrl = $('#ogUrl');
+const ogImage = $('#ogImage');
+const ogSiteName = $('#ogSiteName');
+const ogType = $('#ogType');
+const ogLocale = $('#ogLocale');
+const ogImageWidth = $('#ogImageWidth');
+const ogImageHeight = $('#ogImageHeight');
+const ogImageAlt = $('#ogImageAlt');
+const twitterCard = $('#twitterCard');
+const twitterSite = $('#twitterSite');
+const twitterCreator = $('#twitterCreator');
+const outputFormat = $('#outputFormat');
+const includeComments = $('#includeComments');
+
+/* ===== LIVE PREVIEW UPDATE ===== */
+function updatePreviews() {
+  const title = ogTitle.value.trim() || 'Your Page Title Will Appear Here';
+  const desc = ogDesc.value.trim() || 'Your meta description will appear here. Add a compelling description to encourage clicks.';
+  const url = ogUrl.value.trim() || 'https://example.com';
+  const domain = getDomain(url);
+  const imageUrl = ogImage.value.trim();
+
+  // Facebook
+  $('#fbDomain').textContent = domain.toUpperCase();
+  $('#fbTitle').textContent = title;
+  $('#fbDesc').textContent = desc;
+  applyImage('fbImage', imageUrl);
+
+  // Twitter
+  $('#twTitle').textContent = title;
+  $('#twDomain').textContent = domain;
+  applyImage('twImage', imageUrl);
+
+  // LinkedIn
+  $('#liTitle').textContent = title;
+  $('#liDomain').textContent = domain;
+  applyImage('liImage', imageUrl);
+
+  // WhatsApp
+  $('#waTitle').textContent = title;
+  $('#waDesc').textContent = desc;
+  $('#waDomain').textContent = domain.toUpperCase();
+  applyImage('waImage', imageUrl);
+
+  // Slack
+  $('#slackTitle').textContent = title;
+  $('#slackDesc').textContent = desc;
+  $('#slackDomain').textContent = domain;
+  applyImage('slackImage', imageUrl);
+
+  // Discord
+  $('#dcTitle').textContent = title;
+  $('#dcDesc').textContent = desc;
+  applyImage('dcImage', imageUrl);
+
+  // Counters
+  updateCounter('ogTitleCounter', title.length, 60, 70);
+  updateCounter('ogDescCounter', desc.length, 100, 200);
+}
+
+function applyImage(elId, imageUrl) {
+  const el = $('#' + elId);
+  if (!el) return;
+  if (imageUrl && /^https?:\/\//.test(imageUrl)) {
+    el.style.backgroundImage = `url('${imageUrl.replace(/'/g, "\\'")}')`;
+    el.textContent = '';
+  } else {
+    el.style.backgroundImage = '';
+    el.textContent = '🖼';
+  }
+}
+
+function updateCounter(id, len, optimal, max) {
+  const el = $('#' + id);
+  if (!el) return;
+  el.textContent = `${len} / ${optimal}`;
+  el.className = 'counter';
+  if (len > max) el.classList.add('error');
+  else if (len > optimal) el.classList.add('warn');
+}
+
+// Bind inputs
+[ogTitle, ogDesc, ogUrl, ogImage].forEach(el => {
+  el.addEventListener('input', updatePreviews);
+});
+
+/* ===== GENERATE ===== */
+$('#generateBtn').addEventListener('click', () => {
+  const title = ogTitle.value.trim();
+  if (!title) {
+    showToast('OG title is required', 'error');
+    ogTitle.focus();
+    return;
+  }
+
+  const data = {
+    title: title,
+    desc: ogDesc.value.trim(),
+    url: ogUrl.value.trim(),
+    type: ogType.value,
+    siteName: ogSiteName.value.trim(),
+    locale: ogLocale.value,
+    image: ogImage.value.trim(),
+    imageWidth: ogImageWidth.value,
+    imageHeight: ogImageHeight.value,
+    imageAlt: ogImageAlt.value.trim(),
+    twitterCard: twitterCard.value,
+    twitterSite: twitterSite.value.trim(),
+    twitterCreator: twitterCreator.value.trim()
+  };
+
+  const format = outputFormat.value;
+  const withComments = includeComments.value === 'yes';
+
+  let output = '';
+  if (format === 'html') output = generateHtml(data, withComments);
+  else if (format === 'nextjs') output = generateNextJs(data);
+  else if (format === 'nuxt') output = generateNuxt(data);
+  else if (format === 'json') output = generateJson(data);
+
+  state.generated = output;
+  $('#outputCode').innerHTML = format === 'html' ? highlightHtml(output) : escapeHtml(output);
+  $('#outputWrap').style.display = 'block';
+  showToast('✅ OG tags generated!', 'success');
+});
+
+/* ===== RESET ===== */
+$('#resetBtn').addEventListener('click', () => {
+  ogTitle.value = '';
+  ogDesc.value = '';
+  ogUrl.value = '';
+  ogImage.value = '';
+  ogSiteName.value = '';
+  ogType.value = 'website';
+  ogLocale.value = 'en_US';
+  ogImageWidth.value = '1200';
+  ogImageHeight.value = '630';
+  ogImageAlt.value = '';
+  twitterCard.value = 'summary_large_image';
+  twitterSite.value = '';
+  twitterCreator.value = '';
+  $('#outputWrap').style.display = 'none';
+  updatePreviews();
+  showToast('Reset done', 'info');
+});
+
+/* ===== COPY ===== */
+$('#copyBtn').addEventListener('click', async () => {
+  if (!state.generated) return;
+  const ok = await copyToClipboard(state.generated);
+  if (ok) {
+    const btn = $('#copyBtn');
+    btn.classList.add('copied');
+    btn.innerHTML = '✓ Copied!';
+    setTimeout(() => {
+      btn.classList.remove('copied');
+      btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg> Copy';
+    }, 2000);
+    showToast('Copied to clipboard!', 'success');
+  } else {
+    showToast('Copy failed', 'error');
+  }
+});
+
+/* ===== GENERATORS ===== */
+function generateHtml(d, withComments) {
+  const lines = [];
+  const c = (str) => withComments ? `<!-- ${str} -->\n` : '';
+
+  lines.push(c('Open Graph / Facebook'));
+  lines.push(`<meta property="og:type" content="${d.type}">`);
+  lines.push(`<meta property="og:title" content="${escapeHtml(d.title)}">`);
+  if (d.desc) lines.push(`<meta property="og:description" content="${escapeHtml(d.desc)}">`);
+  if (d.url) lines.push(`<meta property="og:url" content="${escapeHtml(d.url)}">`);
+  if (d.siteName) lines.push(`<meta property="og:site_name" content="${escapeHtml(d.siteName)}">`);
+  if (d.locale) lines.push(`<meta property="og:locale" content="${d.locale}">`);
+  if (d.image) {
+    lines.push(`<meta property="og:image" content="${escapeHtml(d.image)}">`);
+    if (d.imageWidth) lines.push(`<meta property="og:image:width" content="${d.imageWidth}">`);
+    if (d.imageHeight) lines.push(`<meta property="og:image:height" content="${d.imageHeight}">`);
+    if (d.imageAlt) lines.push(`<meta property="og:image:alt" content="${escapeHtml(d.imageAlt)}">`);
+  }
+
+  lines.push('');
+  lines.push(c('Twitter Card'));
+  lines.push(`<meta name="twitter:card" content="${d.twitterCard}">`);
+  lines.push(`<meta name="twitter:title" content="${escapeHtml(d.title)}">`);
+  if (d.desc) lines.push(`<meta name="twitter:description" content="${escapeHtml(d.desc)}">`);
+  if (d.image) lines.push(`<meta name="twitter:image" content="${escapeHtml(d.image)}">`);
+  if (d.imageAlt) lines.push(`<meta name="twitter:image:alt" content="${escapeHtml(d.imageAlt)}">`);
+  if (d.twitterSite) {
+    const h = d.twitterSite.startsWith('@') ? d.twitterSite : '@' + d.twitterSite;
+    lines.push(`<meta name="twitter:site" content="${h}">`);
+  }
+  if (d.twitterCreator) {
+    const h = d.twitterCreator.startsWith('@') ? d.twitterCreator : '@' + d.twitterCreator;
+    lines.push(`<meta name="twitter:creator" content="${h}">`);
+  }
+
+  return lines.join('\n');
+}
+
+function generateNextJs(d) {
+  const lines = [];
+  lines.push(`// Add to your page.tsx or layout.tsx`);
+  lines.push(`export const metadata = {`);
+  lines.push(`  title: '${d.title.replace(/'/g, "\\'")}',`);
+  if (d.desc) lines.push(`  description: '${d.desc.replace(/'/g, "\\'")}',`);
+  if (d.url) lines.push(`  alternates: { canonical: '${d.url}' },`);
+  lines.push(`  openGraph: {`);
+  lines.push(`    type: '${d.type}',`);
+  lines.push(`    title: '${d.title.replace(/'/g, "\\'")}',`);
+  if (d.desc) lines.push(`    description: '${d.desc.replace(/'/g, "\\'")}',`);
+  if (d.url) lines.push(`    url: '${d.url}',`);
+  if (d.siteName) lines.push(`    siteName: '${d.siteName.replace(/'/g, "\\'")}',`);
+  if (d.locale) lines.push(`    locale: '${d.locale}',`);
+  if (d.image) {
+    lines.push(`    images: [{`);
+    lines.push(`      url: '${d.image}',`);
+    if (d.imageWidth) lines.push(`      width: ${d.imageWidth},`);
+    if (d.imageHeight) lines.push(`      height: ${d.imageHeight},`);
+    if (d.imageAlt) lines.push(`      alt: '${d.imageAlt.replace(/'/g, "\\'")}',`);
+    lines.push(`    }],`);
+  }
+  lines.push(`  },`);
+  lines.push(`  twitter: {`);
+  lines.push(`    card: '${d.twitterCard}',`);
+  lines.push(`    title: '${d.title.replace(/'/g, "\\'")}',`);
+  if (d.desc) lines.push(`    description: '${d.desc.replace(/'/g, "\\'")}',`);
+  if (d.image) lines.push(`    images: ['${d.image}'],`);
+  if (d.twitterSite) lines.push(`    site: '${d.twitterSite}',`);
+  if (d.twitterCreator) lines.push(`    creator: '${d.twitterCreator}',`);
+  lines.push(`  },`);
+  lines.push(`};`);
+  return lines.join('\n');
+}
+
+function generateNuxt(d) {
+  const lines = [];
+  lines.push(`// In your Nuxt page or layout`);
+  lines.push(`useHead({`);
+  lines.push(`  title: '${d.title.replace(/'/g, "\\'")}',`);
+  lines.push(`  meta: [`);
+  if (d.desc) lines.push(`    { name: 'description', content: '${d.desc.replace(/'/g, "\\'")}' },`);
+  lines.push(`    { property: 'og:type', content: '${d.type}' },`);
+  lines.push(`    { property: 'og:title', content: '${d.title.replace(/'/g, "\\'")}' },`);
+  if (d.desc) lines.push(`    { property: 'og:description', content: '${d.desc.replace(/'/g, "\\'")}' },`);
+  if (d.url) lines.push(`    { property: 'og:url', content: '${d.url}' },`);
+  if (d.siteName) lines.push(`    { property: 'og:site_name', content: '${d.siteName}' },`);
+  if (d.image) lines.push(`    { property: 'og:image', content: '${d.image}' },`);
+  lines.push(`    { name: 'twitter:card', content: '${d.twitterCard}' },`);
+  lines.push(`  ],`);
+  lines.push(`});`);
+  return lines.join('\n');
+}
+
+function generateJson(d) {
+  const obj = {
+    openGraph: {
+      type: d.type,
+      title: d.title,
+      description: d.desc || undefined,
+      url: d.url || undefined,
+      siteName: d.siteName || undefined,
+      locale: d.locale || undefined,
+      image: d.image ? {
+        url: d.image,
+        width: d.imageWidth ? parseInt(d.imageWidth) : undefined,
+        height: d.imageHeight ? parseInt(d.imageHeight) : undefined,
+        alt: d.imageAlt || undefined
+      } : undefined
+    },
+    twitter: {
+      card: d.twitterCard,
+      title: d.title,
+      description: d.desc || undefined,
+      image: d.image || undefined,
+      site: d.twitterSite || undefined,
+      creator: d.twitterCreator || undefined
+    }
+  };
+  const clean = JSON.parse(JSON.stringify(obj));
+  return JSON.stringify(clean, null, 2);
+}
+
+function highlightHtml(html) {
+  return html
+    .split('\n')
+    .map(line => {
+      if (line.trim().startsWith('<!--')) {
+        return `<span class="comment">${escapeHtml(line)}</span>`;
+      }
+      return escapeHtml(line)
+        .replace(/(&lt;\/?)([\w:]+)/g, '$1<span class="tag">$2</span>')
+        .replace(/([\w:-]+)=/g, '<span class="attr">$1</span>=')
+        .replace(/&quot;([^&]*)&quot;/g, '&quot;<span class="val">$1</span>&quot;');
+    })
+    .join('\n');
+}
+
+/* ===== FAQ ===== */
+$$('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    $$('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+
+/* ===== INIT ===== */
+updatePreviews();
+</script>
+
+</body>
+</html>

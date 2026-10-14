@@ -1,0 +1,1529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2563eb">
+
+<title>Affirmation Generator - Positive Daily Affirmations Free | BigToolz</title>
+<meta name="description" content="Generate positive daily affirmations free. 500+ affirmations across 10 categories confidence, success, love, health, gratitude. Copy, save, download as image.">
+<meta name="keywords" content="affirmation generator, positive affirmations, daily affirmations, self-love affirmations, confidence affirmations">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://bigtoolz.com/tools/utility-tools/affirmation-generator/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Affirmation Generator - Free Online Tool | BigToolz">
+<meta property="og:description" content="Generate 500+ positive affirmations across 10 categories. Free, private, browser-based.">
+<meta property="og:url" content="https://bigtoolz.com/tools/utility-tools/affirmation-generator/">
+<meta property="og:image" content="https://bigtoolz.com/assets/images/og-image.jpg">
+<meta property="og:site_name" content="BigToolz">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Affirmation Generator - BigToolz">
+<meta name="twitter:description" content="Generate positive affirmations instantly free.">
+<meta name="twitter:image" content="https://bigtoolz.com/assets/images/twitter-card.jpg">
+
+<link rel="icon" href="/assets/images/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/images/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@600;700;800&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#f8f9fc;color:#1a1a2e;overflow-x:hidden;line-height:1.5}
+
+  .header{background:#fff;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;position:sticky;top:0;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+  .header-left{display:flex;align-items:center;gap:40px}
+  .logo{display:flex;align-items:center;gap:8px;font-size:22px;font-weight:800;color:#1a1a2e;text-decoration:none}
+  .logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#3b82f6,#2563eb);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px}
+  .logo span{color:#2563eb}
+  .nav{display:flex;align-items:center;gap:28px;list-style:none}
+  .nav a{text-decoration:none;color:#4b5563;font-size:14px;font-weight:500;transition:color .2s}
+  .nav a:hover,.nav a.active{color:#2563eb}
+  .header-right{display:flex;align-items:center;gap:16px}
+  .search-btn,.theme-btn{width:36px;height:36px;border-radius:50%;border:none;background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#4b5563}
+  .search-btn:hover,.theme-btn:hover{background:#f3f4f6}
+  .bookmark-btn{display:flex;align-items:center;gap:8px;background:#2563eb;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
+  .bookmark-btn:hover{background:#1d4ed8}
+
+  .hero{background:linear-gradient(135deg,#0a0e27 0%,#1a1a4e 40%,#2d1b69 70%,#4c1d95 100%);padding:40px 40px 60px;position:relative;overflow:hidden;color:#fff}
+  .hero::before{content:'';position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(236,72,153,.3) 0%,transparent 70%);border-radius:50%}
+  .hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+  .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px;flex-wrap:wrap}
+  .breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none}
+  .breadcrumb a:hover{color:#fff}
+  .breadcrumb .sep{color:rgba(255,255,255,.4)}
+  .breadcrumb .current{color:#fff;font-weight:500}
+  .hero-title-row{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+  .hero-icon{width:60px;height:60px;background:#ec4899;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;color:#fff;flex-shrink:0;box-shadow:0 8px 24px rgba(236,72,153,.4)}
+  .hero-title{font-size:42px;font-weight:800;line-height:1.15}
+  .hero-title .blue{color:#f472b6}
+  .hero-desc{font-size:15px;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:24px;max-width:560px}
+  .hero-features{display:flex;gap:24px;flex-wrap:wrap}
+  .hero-feature{display:flex;align-items:center;gap:6px;font-size:13px;color:#fff;font-weight:500}
+  .hero-feature .check{width:18px;height:18px;border-radius:50%;background:#ec4899;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;flex-shrink:0}
+
+  .main-content{max-width:1200px;margin:0 auto;padding:40px;display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start}
+  .tool-content{min-width:0}
+
+  /* Affirmation card */
+  .aff-card{background:linear-gradient(135deg,#fdf2f8,#fce7f3);border-radius:20px;padding:48px 40px;margin-bottom:24px;position:relative;overflow:hidden;border:1px solid #fbcfe8;box-shadow:0 4px 20px rgba(236,72,153,.1);min-height:280px;display:flex;flex-direction:column;justify-content:center;text-align:center}
+  .aff-card::before{content:'✦';position:absolute;top:20px;left:24px;font-size:80px;color:rgba(236,72,153,.15);line-height:1;pointer-events:none}
+  .aff-card::after{content:'✦';position:absolute;bottom:20px;right:24px;font-size:80px;color:rgba(236,72,153,.15);line-height:1;pointer-events:none}
+  .aff-category{display:inline-block;font-size:11px;font-weight:700;color:#9d174d;background:rgba(255,255,255,.75);padding:5px 14px;border-radius:20px;text-transform:uppercase;letter-spacing:.5px;margin-bottom:20px;position:relative;z-index:2;align-self:center}
+  .aff-text{font-family:'Playfair Display',serif;font-size:32px;font-weight:700;color:#831843;line-height:1.4;margin-bottom:16px;position:relative;z-index:2;letter-spacing:-.5px}
+  .aff-meta{font-size:13px;color:#9d174d;position:relative;z-index:2;font-weight:600}
+
+  /* Category tabs */
+  .cat-tabs{display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap}
+  .cat-tab{padding:9px 14px;background:#fff;border:1px solid #e5e7eb;border-radius:20px;font-size:12px;font-weight:700;color:#6b7280;cursor:pointer;font-family:inherit;transition:all .2s;display:flex;align-items:center;gap:6px}
+  .cat-tab:hover{border-color:#ec4899;background:#fdf2f8;color:#db2777}
+  .cat-tab.active{background:#ec4899;color:#fff;border-color:#ec4899}
+  .cat-tab .count{font-size:10px;opacity:.7}
+
+  /* Action buttons */
+  .action-row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:24px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 22px;border-radius:10px;font-size:14px;font-weight:700;font-family:inherit;cursor:pointer;border:none;transition:all .2s;text-decoration:none}
+  .btn-primary{background:#ec4899;color:#fff;box-shadow:0 4px 12px rgba(236,72,153,.3)}
+  .btn-primary:hover{background:#db2777;transform:translateY(-2px)}
+  .btn-secondary{background:#fff;color:#6b7280;border:1px solid #e5e7eb}
+  .btn-secondary:hover{border-color:#ec4899;background:#fdf2f8;color:#db2777}
+  .btn-secondary.fav-active{background:#fbbf24;color:#78350f;border-color:#fbbf24}
+
+  /* Custom builder */
+  .customize-section{background:#fff;border-radius:16px;padding:24px;border:1px solid #e5e7eb;margin-bottom:24px}
+  .customize-title{font-size:14px;font-weight:800;color:#1a1a2e;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+  .customize-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+  .customize-group label{display:block;font-size:11px;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+  .customize-group select,.customize-group input{width:100%;padding:10px 12px;border:1px solid #e5e7eb;border-radius:8px;font-size:13px;font-weight:600;font-family:inherit;color:#1a1a2e;background:#fff;outline:none}
+  .customize-group select:focus,.customize-group input:focus{border-color:#ec4899;box-shadow:0 0 0 3px rgba(236,72,153,.1)}
+
+  /* Custom mode */
+  .mode-tabs{display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap}
+  .mode-tab{padding:10px 16px;background:#fff;border:1px solid #e5e7eb;border-radius:10px;font-size:12px;font-weight:700;color:#6b7280;cursor:pointer;font-family:inherit;transition:all .2s}
+  .mode-tab:hover{border-color:#ec4899;color:#db2777}
+  .mode-tab.active{background:#ec4899;color:#fff;border-color:#ec4899}
+
+  /* Favorites */
+  .favorites-section{margin-bottom:24px}
+  .section-title{font-size:16px;font-weight:800;color:#1a1a2e;margin-bottom:16px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+  .section-title .count-badge{font-size:11px;background:#ec4899;color:#fff;padding:2px 10px;border-radius:10px;font-weight:700}
+  .fav-list{display:flex;flex-direction:column;gap:10px}
+  .fav-item{background:#fdf2f8;border:1px solid #fbcfe8;border-radius:12px;padding:16px;display:flex;gap:12px;align-items:flex-start;transition:all .2s}
+  .fav-item:hover{border-color:#ec4899;transform:translateX(4px)}
+  .fav-content{flex:1;min-width:0}
+  .fav-text{font-family:'Playfair Display',serif;font-size:14px;font-weight:600;color:#831843;line-height:1.5;margin-bottom:4px}
+  .fav-cat{font-size:11px;font-weight:700;color:#db2777;text-transform:uppercase;letter-spacing:.3px}
+  .fav-remove{background:transparent;border:none;cursor:pointer;color:#9ca3af;font-size:16px;padding:4px;transition:color .2s;flex-shrink:0}
+  .fav-remove:hover{color:#ef4444}
+
+  .empty-state{text-align:center;padding:32px 16px;color:#9ca3af;font-size:14px}
+  .empty-state .icon{font-size:40px;margin-bottom:8px;display:block;opacity:.5}
+
+  /* SEO */
+  .seo-content{background:#fff;border-radius:16px;padding:32px;border:1px solid #e5e7eb;margin-bottom:24px}
+  .seo-content h2{font-size:22px;font-weight:800;color:#1a1a2e;margin-bottom:14px;margin-top:28px;display:flex;align-items:center;gap:10px}
+  .seo-content h2:first-child{margin-top:0}
+  .seo-content h3{font-size:16px;font-weight:700;color:#1a1a2e;margin:20px 0 10px}
+  .seo-content p{font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:14px}
+  .seo-content ul{list-style:none;padding-left:0;margin-bottom:16px}
+  .seo-content ul li{position:relative;padding-left:24px;font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:8px}
+  .seo-content ul li::before{content:'';position:absolute;left:6px;top:12px;width:6px;height:6px;background:#ec4899;border-radius:50%}
+  .seo-content a{color:#2563eb;text-decoration:none;font-weight:600}
+  .seo-content a:hover{text-decoration:underline}
+  .seo-content strong{color:#1a1a2e;font-weight:700}
+  .seo-content blockquote{background:#fdf2f8;border-left:4px solid #ec4899;padding:16px 20px;border-radius:0 8px 8px 0;margin:16px 0;font-style:italic;color:#831843;font-family:'Playfair Display',serif;font-size:15px;line-height:1.7}
+
+  .how-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:20px}
+  .how-step{background:#fdf2f8;border-radius:12px;padding:20px;border:1px solid #fbcfe8}
+  .how-step-num{width:36px;height:36px;border-radius:50%;background:#ec4899;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;margin-bottom:12px}
+  .how-step-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+  .how-step-desc{font-size:13px;color:#6b7280;line-height:1.6}
+
+  .faq-item{background:#fdf2f8;border:1px solid #fbcfe8;border-radius:12px;margin-bottom:10px;overflow:hidden;transition:border-color .2s}
+  .faq-item:hover{border-color:#ec4899}
+  .faq-question{width:100%;background:none;border:none;padding:18px 22px;font-size:15px;font-weight:700;color:#1a1a2e;text-align:left;cursor:pointer;font-family:inherit;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .faq-question .chev{font-size:12px;color:#ec4899;transition:transform .2s;flex-shrink:0}
+  .faq-item.open .faq-question .chev{transform:rotate(180deg)}
+  .faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 22px}
+  .faq-item.open .faq-answer{max-height:500px;padding-bottom:18px}
+  .faq-answer p{font-size:14px;color:#6b7280;line-height:1.7;margin:0}
+
+  .sidebar{background:#fff;border-radius:16px;padding:24px;border:1px solid #e5e7eb;position:sticky;top:80px;margin-bottom:24px}
+  .sidebar-header{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:800;color:#1a1a2e;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid #f3f4f6}
+  .sidebar-list{display:flex;flex-direction:column;gap:8px}
+  .sidebar-item{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;cursor:pointer;transition:background .2s;text-decoration:none;color:inherit;border:1px solid #f3f4f6}
+  .sidebar-item:hover{background:#fdf2f8;border-color:#fbcfe8}
+  .sidebar-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;flex-shrink:0}
+  .sidebar-info{flex:1;min-width:0}
+  .sidebar-title{font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:2px}
+  .sidebar-desc{font-size:11px;color:#9ca3af;line-height:1.4}
+
+  .footer{background:#0a0e27;padding:60px 40px 30px;color:#fff;margin-top:40px}
+  .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:40px}
+  .footer-brand{display:flex;align-items:center;gap:8px;font-size:20px;font-weight:800;margin-bottom:12px}
+  .footer-brand span{color:#60a5fa}
+  .footer-tagline{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px}
+  .footer-social{display:flex;gap:12px}
+  .footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:16px;transition:background .2s}
+  .footer-social a:hover{background:rgba(255,255,255,.2)}
+  .footer-heading{font-size:14px;font-weight:700;margin-bottom:20px;color:#fff}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .footer-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;transition:color .2s}
+  .footer-links a:hover{color:#60a5fa}
+  .footer-bottom{max-width:1200px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  .footer-bottom-left{display:flex;gap:20px;font-size:12px;color:rgba(255,255,255,.5)}
+  .footer-bottom-right,.footer-bottom-links a{font-size:12px;color:rgba(255,255,255,.5);text-decoration:none}
+  .footer-bottom-links{display:flex;gap:20px}
+
+  .toast{position:fixed;bottom:24px;right:24px;background:#1a1a2e;color:#fff;padding:14px 20px;border-radius:10px;font-size:13px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:3000;transform:translateY(200%);transition:transform .3s ease;max-width:320px}
+  .toast.visible{transform:translateY(0)}
+  .toast.success{background:#10b981}
+  .toast.error{background:#ef4444}
+
+  @media(max-width:1024px){
+    .main-content{grid-template-columns:1fr;padding:24px 20px}
+    .sidebar{position:static}
+    .how-steps{grid-template-columns:repeat(2,1fr)}
+    .customize-grid{grid-template-columns:1fr}
+  }
+  @media(max-width:768px){
+    .header{padding:0 20px}.nav{display:none}
+    .hero{padding:24px 20px 40px}
+    .hero-title{font-size:28px}
+    .hero-icon{width:48px;height:48px;font-size:22px}
+    .hero-title-row{flex-direction:column;align-items:flex-start;gap:12px}
+    .main-content{padding:20px 16px}
+    .aff-card{padding:32px 24px}
+    .aff-text{font-size:24px}
+    .how-steps{grid-template-columns:1fr}
+    .seo-content{padding:20px}
+    .footer-inner{grid-template-columns:1fr 1fr}
+    .toast{left:16px;right:16px;bottom:16px;max-width:none}
+  }
+  @media(max-width:576px){
+    .header{padding:0 16px}.header-right .search-btn,.header-right .theme-btn{display:none}
+    .hero-title{font-size:24px}
+    .footer-inner{grid-template-columns:1fr}
+    .footer-bottom{flex-direction:column;text-align:center}
+    .aff-card{padding:28px 20px}
+    .aff-card::before,.aff-card::after{font-size:60px}
+    .aff-text{font-size:20px}
+    .action-row .btn{flex:1;min-width:calc(50% - 5px)}
+  }
+
+  html[data-theme="dark"] body{background:#0f172a;color:#f1f5f9}
+  html[data-theme="dark"] .header,html[data-theme="dark"] .seo-content,html[data-theme="dark"] .sidebar,html[data-theme="dark"] .customize-section{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .logo,html[data-theme="dark"] .hero-title,html[data-theme="dark"] .seo-content h2,html[data-theme="dark"] .seo-content h3,html[data-theme="dark"] .faq-question,html[data-theme="dark"] .sidebar-header,html[data-theme="dark"] .sidebar-title,html[data-theme="dark"] .section-title,html[data-theme="dark"] .customize-title{color:#f1f5f9}
+  html[data-theme="dark"] .nav a{color:#cbd5e1}
+  html[data-theme="dark"] .how-step,html[data-theme="dark"] .faq-item,html[data-theme="dark"] .fav-item,html[data-theme="dark"] .cat-tab,html[data-theme="dark"] .mode-tab{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .cat-tab,html[data-theme="dark"] .mode-tab{color:#cbd5e1}
+  html[data-theme="dark"] .cat-tab.active,html[data-theme="dark"] .mode-tab.active{background:#ec4899;color:#fff;border-color:#ec4899}
+  html[data-theme="dark"] .seo-content p,html[data-theme="dark"] .seo-content ul li,html[data-theme="dark"] .faq-answer p{color:#cbd5e1}
+  html[data-theme="dark"] .btn-secondary{background:#0f172a;border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .customize-group select,html[data-theme="dark"] .customize-group input{background:#0f172a;border-color:#334155;color:#f1f5f9}
+  html[data-theme="dark"] .seo-content blockquote{background:#0f172a;border-color:#ec4899;color:#f9a8d4}
+  html[data-theme="dark"] .aff-card{background:linear-gradient(135deg,#1e293b,#0f172a);border-color:#334155}
+  html[data-theme="dark"] .aff-text{color:#f9a8d4}
+  html[data-theme="dark"] .aff-category{background:#0f172a;color:#f472b6}
+  html[data-theme="dark"] .aff-meta{color:#f472b6}
+  html[data-theme="dark"] .fav-text{color:#f9a8d4}
+  html[data-theme="dark"] .fav-cat{color:#f472b6}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type": "SoftwareApplication", "name": "Affirmation Generator", "url": "https://bigtoolz.com/tools/utility-tools/affirmation-generator/", "applicationCategory": "LifestyleApplication", "operatingSystem": "Any (Web-based)", "description": "Free online affirmation generator. 500+ positive affirmations across 10 categories. Copy, save, download as image.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "1234"}},
+    {"@type": "HowTo", "name": "How to Use Affirmation Generator", "step": [
+      {"@type": "HowToStep", "name": "Pick Category", "text": "Choose confidence, success, love, health, gratitude, or more."},
+      {"@type": "HowToStep", "name": "Read Affirmation", "text": "See a positive affirmation from that category."},
+      {"@type": "HowToStep", "name": "Copy or Save", "text": "Copy the affirmation or save to favorites."},
+      {"@type": "HowToStep", "name": "Practice Daily", "text": "Repeat each morning for best results."}
+    ]},
+    {"@type": "FAQPage", "mainEntity": [
+      {"@type": "Question", "name": "What are affirmations?", "acceptedAnswer": {"@type": "Answer", "text": "Affirmations are positive, present-tense statements you repeat to yourself to shift your mindset. Examples: 'I am enough', 'I attract success'. They work by rewiring negative thought patterns over time."}},
+      {"@type": "Question", "name": "Do affirmations actually work?", "acceptedAnswer": {"@type": "Answer", "text": "Research suggests affirmations can reduce stress, boost self-esteem, and improve performance. They work best when combined with action they're not a replacement for effort, but a mindset tool to support it."}},
+      {"@type": "Question", "name": "How often should I repeat affirmations?", "acceptedAnswer": {"@type": "Answer", "text": "Best results come from repeating an affirmation 3-5 times per day morning, before bed, or during stressful moments. Consistency matters more than duration. A few weeks of daily practice builds real change."}},
+      {"@type": "Question", "name": "What's the best time of day for affirmations?", "acceptedAnswer": {"@type": "Answer", "text": "Two optimal times: (1) right after waking up when your mind is still quiet and open, (2) right before sleeping when your subconscious is more receptive. Say them out loud if possible."}}
+    ]},
+    {"@type": "BreadcrumbList", "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bigtoolz.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://bigtoolz.com/tools/"},
+      {"@type": "ListItem", "position": 3, "name": "Utility Tools", "item": "https://bigtoolz.com/tools/utility-tools/"},
+      {"@type": "ListItem", "position": 4, "name": "Affirmation Generator", "item": "https://bigtoolz.com/tools/utility-tools/affirmation-generator/"}
+    ]}
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-left">
+    <a href="/" class="logo"><div class="logo-icon">⚒</div>BigToolz</span></a>
+    <nav><ul class="nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/tools/" class="active">All Tools</a></li>
+      <li><a href="/tools/categories">Categories</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul></nav>
+  </div>
+  <div class="header-right">
+    
+    <button class="theme-btn" aria-label="Toggle theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
+    
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <nav class="breadcrumb">
+      <a href="/">Home</a><span class="sep">›</span>
+      <a href="/tools/">Tools</a><span class="sep">›</span>
+      <a href="/tools/utility-tools/">Utility Tools</a><span class="sep">›</span>
+      <span class="current">Affirmation Generator</span>
+    </nav>
+    <div class="hero-title-row">
+      <div class="hero-icon">✨</div>
+      <h1 class="hero-title">Affirmation <span class="blue">Generator</span></h1>
+    </div>
+    <p class="hero-desc">
+      Generate 500+ positive affirmations across 10 categories confidence, success, love, health, gratitude. Copy, save favorites, or download as a beautiful image. Free forever.
+    </p>
+    <div class="hero-features">
+      <div class="hero-feature"><span class="check">✓</span> 500+ Affirmations</div>
+      <div class="hero-feature"><span class="check">✓</span> 10 Categories</div>
+      <div class="hero-feature"><span class="check">✓</span> Custom Builder</div>
+      <div class="hero-feature"><span class="check">✓</span> Download as Image</div>
+    </div>
+  </div>
+</section>
+
+<div class="main-content">
+
+  <div class="tool-content">
+
+    <!-- Category tabs -->
+    <div class="cat-tabs" id="catTabs"></div>
+
+    <!-- Affirmation card -->
+    <div class="aff-card">
+      <div class="aff-category" id="affCategory">Confidence</div>
+      <div class="aff-text" id="affText">Loading affirmation...</div>
+      <div class="aff-meta" id="affMeta">✦ Repeat this daily for 21 days ✦</div>
+    </div>
+
+    <!-- Action buttons -->
+    <div class="action-row">
+      <button class="btn btn-primary" id="newAffBtn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M23 4v6h-6M1 20v-6h6M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></svg>
+        New Affirmation
+      </button>
+      <button class="btn btn-secondary" id="copyBtn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+        Copy
+      </button>
+      <button class="btn btn-secondary" id="favBtn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        Favorite
+      </button>
+      <button class="btn btn-secondary" id="tweetBtn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        Tweet
+      </button>
+      <button class="btn btn-secondary" id="downloadBtn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+        Download Image
+      </button>
+    </div>
+
+    <!-- Custom builder -->
+    <div class="customize-section">
+      <div class="customize-title">🎨 Customize Image (for download)</div>
+      <div class="customize-grid">
+        <div class="customize-group">
+          <label>Background Theme</label>
+          <select id="themeSelect">
+            <option value="rose" selected>Rose (Pink)</option>
+            <option value="lavender">Lavender (Purple)</option>
+            <option value="ocean">Ocean (Blue)</option>
+            <option value="forest">Forest (Green)</option>
+            <option value="sunset">Sunset (Orange)</option>
+            <option value="midnight">Midnight (Dark)</option>
+            <option value="minimal">Minimal (White)</option>
+          </select>
+        </div>
+        <div class="customize-group">
+          <label>Font Size</label>
+          <select id="fontSizeSelect">
+            <option value="small">Small</option>
+            <option value="medium" selected>Medium</option>
+            <option value="large">Large</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- Custom affirmation builder -->
+    <div class="customize-section">
+      <div class="customize-title">🛠 Build Your Own Affirmation</div>
+      <div class="customize-grid">
+        <div class="customize-group">
+          <label>Starter</label>
+          <select id="customStarter">
+            <option>I am</option>
+            <option>I have</option>
+            <option>I attract</option>
+            <option>I deserve</option>
+            <option>I choose</option>
+            <option>I trust</option>
+            <option>I release</option>
+          </select>
+        </div>
+        <div class="customize-group">
+          <label>Your Words</label>
+          <input type="text" id="customWords" placeholder="e.g. strong, confident, at peace" maxlength="80">
+        </div>
+      </div>
+      <button class="btn btn-primary" id="useCustomBtn" style="margin-top:16px;width:100%;">
+        Use This Affirmation
+      </button>
+    </div>
+
+    <!-- Favorites -->
+    <div class="favorites-section">
+      <div class="section-title">
+        <span>⭐ Your Favorites <span class="count-badge" id="favCount">0</span></span>
+      </div>
+      <div id="favWrap">
+        <div class="empty-state">
+          <span class="icon">⭐</span>
+          No favorites yet. Star affirmations you love to save them here.
+        </div>
+      </div>
+    </div>
+
+    <!-- SEO Content -->
+    <div class="seo-content">
+
+      <h2>✨ What is an Affirmation Generator?</h2>
+      <p>
+        An <strong>affirmation generator</strong> creates positive, present-tense statements designed to shift your mindset. Affirmations are short, powerful phrases you repeat to yourself like <em>"I am enough"</em> or <em>"I attract success"</em> and they work by gradually rewiring negative thought patterns that hold you back.
+      </p>
+      <p>
+        Our tool includes <strong>500+ affirmations</strong> across 10 categories Confidence, Success, Love, Health, Gratitude, Calm, Abundance, Self-Worth, Focus, and Healing. Choose a category, hit "New Affirmation" to shuffle, or build your own with the custom builder. Copy it, save it to favorites, tweet it, or download it as a beautiful image.
+      </p>
+
+      <h2>🚀 How to Use Affirmation Generator</h2>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-step-num">1</div>
+          <div class="how-step-title">Pick Category</div>
+          <div class="how-step-desc">Confidence, success, love, health, gratitude, and more.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">2</div>
+          <div class="how-step-title">Read Affirmation</div>
+          <div class="how-step-desc">A random affirmation from that category appears.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">3</div>
+          <div class="how-step-title">Copy or Save</div>
+          <div class="how-step-desc">Copy the affirmation or save to favorites.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">4</div>
+          <div class="how-step-title">Practice Daily</div>
+          <div class="how-step-desc">Repeat 3-5 times a day for 21+ days.</div>
+        </div>
+      </div>
+
+      <h2>📚 The 10 Affirmation Categories</h2>
+      <ul>
+        <li><strong>💪 Confidence</strong> build unshakable self-belief and inner strength.</li>
+        <li><strong>🏆 Success</strong> attract achievement, abundance, and results.</li>
+        <li><strong>❤️ Love</strong> nurture self-love and attract loving relationships.</li>
+        <li><strong>🌿 Health</strong> support physical healing and wellbeing.</li>
+        <li><strong>🙏 Gratitude</strong> cultivate appreciation for what you have.</li>
+        <li><strong>🕊 Calm</strong> reduce anxiety and invite inner peace.</li>
+        <li><strong>💰 Abundance</strong> welcome financial flow and prosperity.</li>
+        <li><strong>✨ Self-Worth</strong> remember your inherent value and worthiness.</li>
+        <li><strong>🎯 Focus</strong> sharpen clarity and stay on track.</li>
+        <li><strong>💚 Healing</strong> support emotional and physical recovery.</li>
+      </ul>
+
+      <h2>💡 How to Use Affirmations Effectively</h2>
+
+      <h3>1. Say Them Out Loud</h3>
+      <p>Speaking affirmations aloud engages more senses than reading silently. Your brain treats spoken words as more "real" increasing their impact on your subconscious.</p>
+
+      <h3>2. Repeat 3-5 Times a Day</h3>
+      <p>Best times: right after waking, before bed, and during stressful moments. Consistency matters more than duration. A few weeks of daily practice builds real change.</p>
+
+      <h3>3. Use Present Tense</h3>
+      <p>Always "I am", not "I will be". Your brain responds to what you say exists now, not what you hope for later. Present-tense affirmations create the reality you're speaking.</p>
+
+      <h3>4. Feel It, Don't Just Say It</h3>
+      <p>Say the affirmation and try to <em>feel</em> the emotion behind it warmth, strength, peace. Emotional engagement is what separates affirmations that work from those that don't.</p>
+
+      <h3>5. Pair with Action</h3>
+      <p>Affirmations are a mindset tool, not a replacement for effort. Use them to align your thoughts with your actions. Belief + action creates change.</p>
+
+      <h3>6. Be Patient</h3>
+      <p>Real change takes 21-90 days. Don't judge after a week. Trust the process you're rewiring habits of thought that took years to build.</p>
+
+      <h2>❓ Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-question">What are affirmations?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>Affirmations</strong> are positive, present-tense statements you repeat to yourself to shift your mindset. Examples: <em>"I am enough"</em>, <em>"I attract success"</em>. They work by rewiring negative thought patterns over time through repetition and belief.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Do affirmations actually work?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Research suggests affirmations can <strong>reduce stress, boost self-esteem, and improve performance</strong>. They work best when combined with action they're not a replacement for effort, but a mindset tool that supports it. The key is consistency and emotional engagement.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">How often should I repeat affirmations?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Best results come from repeating an affirmation <strong>3-5 times per day</strong> morning, before bed, or during stressful moments. Consistency matters more than duration. A few weeks of daily practice builds real change.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What's the best time of day for affirmations?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Two optimal times: <strong>(1) right after waking up</strong> when your mind is still quiet and open, <strong>(2) right before sleeping</strong> when your subconscious is more receptive. Say them out loud if possible.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I create my own affirmations?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Yes! Use the <strong>Custom Affirmation Builder</strong> in the tool. Pick a starter like <em>"I am"</em> or <em>"I attract"</em>, then add your own words. Personal affirmations often feel more powerful because they're tailored to your specific situation.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Are these affirmations based on science?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Yes affirmations are a form of <strong>cognitive reframing</strong>, a well-studied technique in psychology. Research by pioneers like Claude Steele (1988) and Joanne Wood (2009) shows self-affirmation activates brain regions associated with self-processing and reward, leading to measurable changes in behavior and wellbeing.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Does the tool save my favorites?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Yes. Affirmations you star are saved in your browser's localStorage. They stay until you clear your browser data or remove them manually. Your favorites are private stored only on your device, never sent to any server.</p></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-header">🔗 Related Utility Tools</div>
+    <div class="sidebar-list">
+      <a href="/tools/utility-tools/daily-quote/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#fbbf24;">💭</div>
+        <div class="sidebar-info"><div class="sidebar-title">Daily Quote</div><div class="sidebar-desc">Motivational quotes</div></div>
+      </a>
+      <a href="/tools/utility-tools/mood-tracker/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#fbbf24;">😊</div>
+        <div class="sidebar-info"><div class="sidebar-title">Mood Tracker</div><div class="sidebar-desc">Track daily mood</div></div>
+      </a>
+      <a href="/tools/utility-tools/gratitude-journal/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#10b981;">🙏</div>
+        <div class="sidebar-info"><div class="sidebar-title">Gratitude Journal</div><div class="sidebar-desc">Daily gratitude</div></div>
+      </a>
+      <a href="/tools/utility-tools/habit-tracker/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#8b5cf6;">✅</div>
+        <div class="sidebar-info"><div class="sidebar-title">Habit Tracker</div><div class="sidebar-desc">Build daily habits</div></div>
+      </a>
+      <a href="/tools/utility-tools/manifestation-journal/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#8b5cf6;">🌟</div>
+        <div class="sidebar-info"><div class="sidebar-title">Manifestation Journal</div><div class="sidebar-desc">Manifest dreams</div></div>
+      </a>
+      <a href="/tools/utility-tools/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#64748b;">⚙️</div>
+        <div class="sidebar-info"><div class="sidebar-title">All Utility Tools →</div><div class="sidebar-desc">Browse 50+ tools</div></div>
+      </a>
+    </div>
+  </aside>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand"><div class="logo-icon">⚒</div>BigToolz</span></div>
+      <p class="footer-tagline">Your Ultimate Online Tools Hub</p>
+      <div class="footer-social">
+        <a href="https://facebook.com/bigtoolz" aria-label="Facebook">f</a>
+        <a href="https://twitter.com/bigtoolz" aria-label="Twitter">𝕏</a>
+        <a href="https://youtube.com/@bigtoolz" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+    <div>
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/tools/">All Tools</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Categories</h3>
+      <ul class="footer-links">
+        <li><a href="/tools/image-tools/">Image Tools</a></li>
+        <li><a href="/tools/pdf-tools/">PDF Tools</a></li>
+        <li><a href="/tools/text-tools/">Text Tools</a></li>
+        <li><a href="/tools/utility-tools/">Utility Tools</a></li>
+        <li><a href="/tools/categories">All Categories →</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Legal</h3>
+      <ul class="footer-links">
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left"><span>✓ 100% Free</span><span>✓ No Sign Up</span><span>✓ No Installation</span></div>
+    <div class="footer-bottom-right">© 2026 BigToolz. All rights reserved.</div>
+    <div class="footer-bottom-links"><a href="/privacy-policy">Privacy</a><a href="/terms">Terms</a><a href="/disclaimer">Disclaimer</a></div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+'use strict';
+
+/* ===== THEME ===== */
+(function(){try{var t=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&d))document.documentElement.setAttribute('data-theme','dark');else if(t==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();
+document.querySelector('.theme-btn')?.addEventListener('click',()=>{const h=document.documentElement;const c=h.getAttribute('data-theme');const d=window.matchMedia('(prefers-color-scheme: dark)').matches;let n=c==='dark'?'light':c==='light'?'dark':(d?'light':'dark');h.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}});
+
+/* ===== HELPERS ===== */
+const $ = (s, p = document) => p.querySelector(s);
+const $$ = (s, p = document) => [...p.querySelectorAll(s)];
+
+function showToast(msg, type = 'info', duration = 3000) {
+  const t = $('#toast');
+  if (!t) return;
+  t.className = 'toast visible' + (type !== 'info' ? ' ' + type : '');
+  t.textContent = msg;
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove('visible'), duration);
+}
+
+async function copyToClipboard(text) {
+  try {
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(text);
+      return true;
+    }
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.cssText = 'position:fixed;opacity:0;';
+    document.body.appendChild(ta);
+    ta.select();
+    const ok = document.execCommand('copy');
+    document.body.removeChild(ta);
+    return ok;
+  } catch (e) { return false; }
+}
+
+/* ===== AFFIRMATIONS DATABASE ===== */
+const AFFIRMATIONS = {
+  confidence: {
+    label: '💪 Confidence',
+    items: [
+      "I am confident in my abilities and trust my decisions.",
+      "I am worthy of everything I desire.",
+      "I believe in myself completely.",
+      "I am powerful beyond measure.",
+      "I am enough, exactly as I am.",
+      "I trust myself to handle any challenge.",
+      "I stand tall in my truth.",
+      "I am capable of achieving anything I set my mind to.",
+      "My voice matters and deserves to be heard.",
+      "I am bold, brave, and unstoppable.",
+      "I radiate confidence and self-assurance.",
+      "I am at peace with who I am.",
+      "My confidence grows stronger every day.",
+      "I face challenges with courage and grace.",
+      "I am worthy of love, success, and happiness.",
+      "I believe in my dreams and my ability to achieve them.",
+      "I am proud of the person I am becoming.",
+      "My self-worth is not dependent on anyone else's opinion.",
+      "I trust my intuition and act on it.",
+      "I am confident in every room I walk into.",
+      "I choose to believe in myself every single day.",
+      "I am my own biggest supporter.",
+      "I am strong, capable, and resilient.",
+      "I embrace my uniqueness and celebrate my strengths.",
+      "I have everything I need within me to succeed.",
+      "I am not afraid to take up space in the world.",
+      "I trust myself to make the right choices.",
+      "I am grounded in who I am.",
+      "I show up as my authentic self without apology.",
+      "My potential is limitless and I honor it.",
+      "I am ready to receive all the good life has to offer.",
+      "I am worthy of being seen and heard.",
+      "I am confident in my own unique journey.",
+      "I trust the timing of my life.",
+      "I choose courage over comfort.",
+      "I am fully equipped for everything ahead of me.",
+      "My confidence is my superpower.",
+      "I am worthy of the abundance coming my way.",
+      "I speak my truth with kindness and clarity.",
+      "I am a powerful creator of my life.",
+      "I believe in the limitless possibilities ahead.",
+      "I am stronger than any obstacle in my path.",
+      "My uniqueness is my greatest asset.",
+      "I am enough and I always have been.",
+      "I walk my path with head held high.",
+      "I release all self-doubt and step into my power.",
+      "My confidence comes from within, not from praise.",
+      "I am valued and valuable.",
+      "I love and respect myself deeply.",
+      "I am becoming the best version of myself."
+    ]
+  },
+  success: {
+    label: '🏆 Success',
+    items: [
+      "I am a magnet for success.",
+      "I attract opportunities that align with my goals.",
+      "I am destined for greatness.",
+      "Success flows to me easily and effortlessly.",
+      "I achieve every goal I set.",
+      "I am committed to my success and nothing stops me.",
+      "I deserve to succeed in every area of my life.",
+      "I am willing to do the work that success requires.",
+      "I attract abundance in all its forms.",
+      "Every day I get closer to my dreams.",
+      "I am worthy of my biggest goals.",
+      "I am a powerful force in my own success story.",
+      "I celebrate my wins, big and small.",
+      "The universe is conspiring in my favor.",
+      "I trust the process of my own growth.",
+      "I am focused, disciplined, and unstoppable.",
+      "Success is my natural state of being.",
+      "I create my own opportunities.",
+      "I am always in the right place at the right time.",
+      "I think, feel, and act like a successful person.",
+      "I am aligned with my highest purpose.",
+      "The doors of opportunity open for me every day.",
+      "I have the power to achieve anything I truly want.",
+      "I am a success in the making.",
+      "I take consistent action toward my dreams.",
+      "I am fully responsible for my own success.",
+      "I embrace the journey as much as the destination.",
+      "I am a masterpiece in progress.",
+      "Everything I do leads me to success.",
+      "My potential is infinite and I honor it every day.",
+      "I choose to see obstacles as opportunities.",
+      "I surround myself with people who lift me higher.",
+      "I am the CEO of my own life.",
+      "I decide, I commit, I conquer.",
+      "Success lives on the other side of my comfort zone.",
+      "I am a doer, not just a dreamer.",
+      "I trust that every step is leading me somewhere great.",
+      "I am open to receiving greater success than I can imagine.",
+      "I attract opportunities because I take action.",
+      "My persistence is stronger than any rejection.",
+      "I create value everywhere I go.",
+      "Money flows to me in expected and unexpected ways.",
+      "I am always growing, always evolving, always winning.",
+      "I have everything it takes to succeed.",
+      "I release the need to be perfect and choose to be productive.",
+      "I show up fully, every single day.",
+      "The best is yet to come and I'm ready.",
+      "I embody the success I wish to see.",
+      "I take inspired action toward my biggest goals.",
+      "My success is inevitable because I refuse to quit."
+    ]
+  },
+  love: {
+    label: '❤️ Love',
+    items: [
+      "I am worthy of love and affection.",
+      "I love myself unconditionally.",
+      "I am open to giving and receiving love.",
+      "I attract loving, kind, and caring people.",
+      "I deserve a healthy, loving relationship.",
+      "I am enough for the people I love.",
+      "My heart is open and ready for love.",
+      "I am surrounded by people who love and appreciate me.",
+      "I am at peace in my relationships.",
+      "I love deeply and am loved deeply in return.",
+      "I release past hurt and open myself to new love.",
+      "My love is a gift that I give freely.",
+      "I am a loving and loveable person.",
+      "I forgive myself and others with an open heart.",
+      "I trust love to find me.",
+      "I am worthy of being loved just as I am.",
+      "I choose to see the best in others.",
+      "My relationships are full of joy, respect, and trust.",
+      "I am deeply connected with the people I care about.",
+      "Love is my natural state of being.",
+      "I radiate love and attract it back to me.",
+      "I am enough, and I always will be.",
+      "My heart is full of compassion and warmth.",
+      "I choose love over fear, every single day.",
+      "I am learning to love myself more every day.",
+      "I trust the love I give and receive.",
+      "I deserve the very best in relationships.",
+      "I release all fear of being hurt and choose love.",
+      "I love who I am becoming.",
+      "My relationships deepen with honesty and vulnerability.",
+      "I am loved exactly as I am, right now.",
+      "I create space in my heart for pure, unconditional love.",
+      "Love is safe for me to feel and express.",
+      "I am a safe place for the people I love.",
+      "I accept love in all the forms it comes to me.",
+      "My heart knows how to heal, and I trust that process.",
+      "I am open to receiving love in ways I never imagined.",
+      "I greet every day with an open, loving heart.",
+      "I am worthy of being loved deeply and completely.",
+      "I choose to let love in and let love flow out.",
+      "My vulnerability is my greatest strength in love.",
+      "I am grateful for all the love in my life.",
+      "I trust myself to choose love that is right for me.",
+      "Every day, my capacity for love grows.",
+      "I am a channel for love to move through.",
+      "I am at peace with the love in my life.",
+      "I love and accept all parts of myself.",
+      "I am learning that love begins within.",
+      "I attract love by being a loving person.",
+      "I am infinitely loved and infinitely loving."
+    ]
+  },
+  health: {
+    label: '🌿 Health',
+    items: [
+      "My body is healthy, strong, and full of energy.",
+      "I nourish my body with healthy food and water.",
+      "Every cell in my body vibrates with life and vitality.",
+      "I am in perfect harmony with my body.",
+      "My immune system is strong and protective.",
+      "I heal quickly and completely.",
+      "My body knows how to repair itself, and I trust it.",
+      "I am grateful for the beautiful gift of my body.",
+      "I choose thoughts and habits that support my health.",
+      "I sleep deeply and wake up fully refreshed.",
+      "I am full of energy and vitality.",
+      "My body is a temple, and I honor it.",
+      "I love and accept my body exactly as it is.",
+      "Every breath I take fills me with life.",
+      "I am healthy, whole, and complete.",
+      "I release stress and invite calm into my body.",
+      "My body is at peace and my mind is at ease.",
+      "I am capable of healing myself.",
+      "I treat my body with kindness and respect.",
+      "My health improves every day in every way.",
+      "I am filled with vibrant, radiant health.",
+      "I move my body with joy and gratitude.",
+      "My body is strong, flexible, and capable.",
+      "I listen to my body's wisdom.",
+      "I am mindful of what I put into my body.",
+      "I choose rest when I need it, without guilt.",
+      "My heart is healthy and beats with strength.",
+      "I am at peace with the state of my health.",
+      "I breathe deeply and feel calm wash over me.",
+      "I am worthy of optimal health.",
+      "My body responds perfectly to positive thoughts.",
+      "I am grateful for every healthy day.",
+      "Water cleanses and renews my body.",
+      "I am stronger and healthier than I've ever been.",
+      "My energy flows freely and abundantly.",
+      "I trust my body to heal what needs healing.",
+      "Every meal I eat nourishes me.",
+      "Movement is medicine, and I embrace it.",
+      "I prioritize my health and wellbeing.",
+      "My mind and body work in perfect harmony.",
+      "I release all that no longer serves my health.",
+      "I am in charge of my own wellbeing.",
+      "I radiate health and vitality to everyone I meet.",
+      "My body is my home, and I care for it well.",
+      "I am thankful for my body's resilience.",
+      "Today, I choose health, one small choice at a time.",
+      "I am healing and I am whole.",
+      "My body is a miracle, and I honor it.",
+      "I feel good, and I get better every day.",
+      "I am alive, healthy, and grateful."
+    ]
+  },
+  gratitude: {
+    label: '🙏 Gratitude',
+    items: [
+      "I am grateful for everything I have.",
+      "I wake up each morning with a thankful heart.",
+      "I see beauty and blessings all around me.",
+      "I am grateful for my health, my family, my life.",
+      "Every day, I find something new to be grateful for.",
+      "I am blessed beyond measure.",
+      "I choose to focus on what I have, not what I lack.",
+      "Gratitude fills my heart with peace.",
+      "I appreciate the small things in life.",
+      "The more grateful I am, the more I have to be grateful for.",
+      "I thank my body for carrying me through each day.",
+      "I am grateful for the people who love me.",
+      "I am grateful for the lessons my challenges have taught me.",
+      "I find joy in the simplest moments.",
+      "I see the good in every situation.",
+      "I thank the universe for the abundance in my life.",
+      "I am grateful for my past, present, and future.",
+      "My heart overflows with thankfulness.",
+      "I say thank you and I mean it.",
+      "Today, I choose to notice what's going right.",
+      "I am grateful for this breath, this moment, this day.",
+      "I appreciate the people who make my life better.",
+      "I am grateful for my home, my work, my purpose.",
+      "I find blessings in the unexpected.",
+      "I honor the good that surrounds me.",
+      "My cup runneth over.",
+      "I am grateful for all the ways life supports me.",
+      "I release complaints and welcome gratitude.",
+      "I am grateful for the opportunities coming my way.",
+      "I see miracles in the ordinary.",
+      "I thank my younger self for the choices that brought me here.",
+      "Every setback taught me something I needed.",
+      "I am grateful for every sunrise I get to see.",
+      "I appreciate my strength, my courage, my resilience.",
+      "I thank the people who believed in me when I didn't.",
+      "I am thankful for what is, and open to what will be.",
+      "I am filled with deep, abiding gratitude.",
+      "I find joy in giving thanks.",
+      "I am grateful for my ability to choose my thoughts.",
+      "I honor every small grace in my life.",
+      "I am grateful for today, exactly as it is.",
+      "The universe has been generous to me.",
+      "I am grateful for who I am becoming.",
+      "I appreciate my own path, even on the hard days.",
+      "I let gratitude guide my decisions.",
+      "I am rich in the things that matter most.",
+      "I give thanks for the beauty in this world.",
+      "I honor my journey with gratitude.",
+      "I am grateful for all that I am, all that I have, all that I give.",
+      "Thank you, life. Thank you, me."
+    ]
+  },
+  calm: {
+    label: '🕊 Calm',
+    items: [
+      "I am calm, centered, and at peace.",
+      "My mind is quiet and my heart is at rest.",
+      "I release all worry and trust the process.",
+      "I am safe, I am grounded, I am present.",
+      "Every breath calms me more.",
+      "I let go of what I cannot control.",
+      "Peace flows through me with every inhale.",
+      "I am the calm in the middle of every storm.",
+      "My anxiety does not define me.",
+      "I choose peace over perfection.",
+      "I am at peace with this moment.",
+      "I trust that everything is unfolding as it should.",
+      "My nervous system is calm and regulated.",
+      "I release the tension in my body.",
+      "Calm is my natural state.",
+      "I return to my center with every breath.",
+      "I am enough, and I am at ease.",
+      "I let my thoughts pass like clouds.",
+      "Stress leaves my body as I exhale.",
+      "I am present. I am peaceful. I am here.",
+      "I choose to be still within.",
+      "Nothing has power over my inner peace.",
+      "I am safe right now, in this moment.",
+      "My mind is a peaceful place to be.",
+      "I release all that doesn't serve me.",
+      "I am relaxed and in control of my reactions.",
+      "I forgive myself for what I thought I should be.",
+      "I breathe in calm, I breathe out stress.",
+      "My peace is mine to protect.",
+      "Today, I choose tranquility.",
+      "I am at peace with my past, present, and future.",
+      "Serenity is my home.",
+      "I relax into this moment completely.",
+      "My breath is my anchor.",
+      "I am fully present, fully alive, fully at ease.",
+      "I release the need to rush.",
+      "Calmness is my superpower.",
+      "I trust my body's wisdom to restore itself.",
+      "I let go of what I can't fix.",
+      "Peace begins with me.",
+      "I am still, and I am safe.",
+      "I embrace the quiet within.",
+      "I choose to move through this day with ease.",
+      "My mind is clear and my heart is quiet.",
+      "I find calm in the chaos.",
+      "I allow myself to simply be.",
+      "I am grounded, centered, and steady.",
+      "Every day I grow calmer and more centered.",
+      "I am peace, I am love, I am here.",
+      "All is well in my world."
+    ]
+  },
+  abundance: {
+    label: '💰 Abundance',
+    items: [
+      "I am an abundant being.",
+      "Money flows to me easily and often.",
+      "I deserve wealth, success, and abundance.",
+      "I am open to receiving all the good life has for me.",
+      "Abundance is my birthright.",
+      "I attract opportunities for financial growth.",
+      "The universe is rich, and so am I.",
+      "I release all money fears and welcome abundance.",
+      "I have more than enough.",
+      "I am a magnet for prosperity.",
+      "Wealth flows to me from expected and unexpected sources.",
+      "I am grateful for the abundance in my life.",
+      "I am worthy of financial freedom.",
+      "I choose to think thoughts of abundance, not lack.",
+      "My income increases every day.",
+      "I trust that money comes to me when I need it.",
+      "I am a smart, capable money manager.",
+      "I value myself, and my value is rewarded.",
+      "I release the belief that money is hard to come by.",
+      "I open my arms to receive abundance.",
+      "Every day I am becoming more abundant.",
+      "I live in a generous, abundant universe.",
+      "Money is a tool that multiplies in my hands.",
+      "I am financially free.",
+      "I have the power to create wealth.",
+      "I invest in myself and my future.",
+      "I am aligned with the flow of abundance.",
+      "I let go of money fears and welcome prosperity.",
+      "I am ready for more.",
+      "I accept financial blessings with gratitude.",
+      "Wealth is my natural state.",
+      "I love what I do, and I am well compensated.",
+      "I attract abundance with ease.",
+      "I have faith in the flow of life.",
+      "I think big, and I receive big.",
+      "I release scarcity thinking and embrace enoughness.",
+      "I open myself to receive more than I ever imagined.",
+      "My wealth grows as I grow.",
+      "I am blessed with all the resources I need.",
+      "I trust the universe to provide.",
+      "I am open to multiple streams of income.",
+      "My financial situation improves every day.",
+      "I am generous, and generosity returns to me multiplied.",
+      "I release what I have outgrown and welcome the new.",
+      "I am ready to receive my next big break.",
+      "Abundance flows through me and to me.",
+      "I am rich in love, health, and wealth.",
+      "I have unlimited potential for prosperity.",
+      "I am the creator of my financial reality.",
+      "Thank you, abundance, for flowing my way."
+    ]
+  },
+  selfworth: {
+    label: '✨ Self-Worth',
+    items: [
+      "I am worthy, exactly as I am.",
+      "I do not need to prove my worth to anyone.",
+      "I am valuable and valued.",
+      "My worth is not determined by my achievements.",
+      "I am enough, right now, in this moment.",
+      "I deserve all the good things life offers.",
+      "I release the need for external validation.",
+      "I respect myself deeply.",
+      "I honor my needs and boundaries.",
+      "I am my own greatest ally.",
+      "I treat myself with the same kindness I offer others.",
+      "I am not my mistakes.",
+      "I forgive myself and set myself free.",
+      "My value is intrinsic and unchanging.",
+      "I am deserving of love without conditions.",
+      "I choose to speak to myself kindly.",
+      "I am worthy of joy, peace, and happiness.",
+      "I do not shrink to make others comfortable.",
+      "I am unapologetically myself.",
+      "My voice deserves to be heard.",
+      "I celebrate my uniqueness.",
+      "I am my own home.",
+      "I belong here.",
+      "I am allowed to take up space.",
+      "My feelings are valid.",
+      "I am exactly where I need to be.",
+      "I trust myself.",
+      "I am not too much and I am not too little I am enough.",
+      "I stand up for myself.",
+      "I choose myself.",
+      "I love myself unconditionally.",
+      "I am proud of who I am becoming.",
+      "I do not compare myself to others.",
+      "My worth is fixed and infinite.",
+      "I accept all parts of myself, even the messy ones.",
+      "I am worthy of rest and replenishment.",
+      "I am the author of my own story.",
+      "I honor the wisdom in my body and heart.",
+      "I let go of what other people think.",
+      "I respect my own timing.",
+      "I am worthy of the life I dream of.",
+      "I deserve to be treated with respect and love.",
+      "I choose relationships that honor my worth.",
+      "I am gentle with myself.",
+      "I am proud of the person I am, even as I grow.",
+      "I forgive myself for not knowing what I didn't know.",
+      "I release shame and embrace my humanness.",
+      "I am not my past.",
+      "I am precious beyond measure.",
+      "I am, and that is enough."
+    ]
+  },
+  focus: {
+    label: '🎯 Focus',
+    items: [
+      "I am focused and productive.",
+      "I know what matters, and I give it my full attention.",
+      "Distractions slip away from me easily.",
+      "I am clear about my goals.",
+      "I complete what I start.",
+      "I say no to what doesn't serve me.",
+      "My mind is sharp and steady.",
+      "I release overwhelm and focus on one thing at a time.",
+      "My energy is precious, and I use it wisely.",
+      "I am present in every task I do.",
+      "I trust my ability to concentrate deeply.",
+      "I honor my commitments, especially to myself.",
+      "I create the conditions for my success.",
+      "I prioritize what matters most.",
+      "My attention is my superpower.",
+      "I am disciplined and consistent.",
+      "I do not let the noise of the world shake my focus.",
+      "I choose depth over distraction.",
+      "I finish strong, one step at a time.",
+      "I channel my energy toward my highest goals.",
+      "I show up for the work that matters.",
+      "I release perfectionism and embrace progress.",
+      "My focus sharpens with every practice.",
+      "I have time for what I choose to have time for.",
+      "I choose to be here now.",
+      "My mind is calm, clear, and directed.",
+      "I am the master of my attention.",
+      "I do one thing well at a time.",
+      "I trust the process more than the outcome.",
+      "I release urgency and embrace patience.",
+      "I do deep work with ease.",
+      "I have the power to say yes and no.",
+      "I create momentum with small, consistent actions.",
+      "I focus on what I can control.",
+      "I let go of what I can't.",
+      "I choose today to move forward, not to look back.",
+      "I am intentional with my time.",
+      "My goals guide my daily decisions.",
+      "I stay in my lane, working on my own race.",
+      "I trust that steady focus leads to real results.",
+      "I am focused on my mission.",
+      "I keep going, even when it's hard.",
+      "I release excuses and embrace action.",
+      "I show up, no matter what.",
+      "I choose discipline over motivation.",
+      "I am committed, no matter how slow the progress.",
+      "I am building the life I want, one focused day at a time.",
+      "I trust myself to stay the course.",
+      "My future self thanks me for today's focus.",
+      "I am exactly where I need to be."
+    ]
+  },
+  healing: {
+    label: '💚 Healing',
+    items: [
+      "I am healing in my own perfect time.",
+      "Every day, I grow stronger and more whole.",
+      "I release the past with love and move forward.",
+      "My body and mind know how to heal.",
+      "I forgive myself completely.",
+      "I am gentle with my healing heart.",
+      "I choose peace over pain, every day.",
+      "I honor every emotion as part of my healing.",
+      "I am not broken. I am becoming.",
+      "My wounds are becoming wisdom.",
+      "I trust the process of my own healing.",
+      "I allow myself to rest when I need to.",
+      "I release what no longer serves me.",
+      "I give myself permission to feel everything.",
+      "I am safe to heal at my own pace.",
+      "I choose to move forward with courage and grace.",
+      "I am proud of how far I've come.",
+      "My healing is not linear, and that's okay.",
+      "I love myself through every step of this journey.",
+      "I deserve to be happy and whole.",
+      "The pain I've felt has shaped me, not defined me.",
+      "I am worthy of a fresh start.",
+      "I choose to let go of the heavy things.",
+      "I am becoming the person I was always meant to be.",
+      "I honor the version of me that survived.",
+      "I trust that lighter days are ahead.",
+      "I release the need to have it all figured out.",
+      "I am patient with my own growth.",
+      "Every small step forward counts.",
+      "I am allowed to outgrow people and places.",
+      "I am stronger than what broke me.",
+      "My heart is resilient.",
+      "I choose healing over staying stuck.",
+      "I am safe to feel, safe to heal, safe to be.",
+      "I give myself the grace I would give a friend.",
+      "My worth isn't tied to what happened to me.",
+      "I release the grip of the past.",
+      "I am learning to trust again myself first.",
+      "I welcome every layer of healing with love.",
+      "I am not behind; I am becoming.",
+      "Today, I choose one small act of self-love.",
+      "My future is bigger than my past.",
+      "I release guilt and embrace grace.",
+      "I am the healer I've been waiting for.",
+      "Every day I choose myself a little more.",
+      "I am worthy of a beautiful life.",
+      "I accept where I am, even as I reach for more.",
+      "I am whole, even while I heal.",
+      "My healing honors everyone who loves me.",
+      "I am becoming more myself every day."
+    ]
+  }
+};
+
+/* ===== STATE ===== */
+const STORAGE_KEY = 'bigtoolz_favorites_affirmations';
+
+const state = {
+  category: 'confidence',
+  current: null,
+  favorites: []
+};
+
+/* ===== DOM ===== */
+const catTabs = $('#catTabs');
+const affCategory = $('#affCategory');
+const affText = $('#affText');
+const newAffBtn = $('#newAffBtn');
+const copyBtn = $('#copyBtn');
+const favBtn = $('#favBtn');
+const tweetBtn = $('#tweetBtn');
+const downloadBtn = $('#downloadBtn');
+const themeSelect = $('#themeSelect');
+const fontSizeSelect = $('#fontSizeSelect');
+const customStarter = $('#customStarter');
+const customWords = $('#customWords');
+const useCustomBtn = $('#useCustomBtn');
+const favWrap = $('#favWrap');
+const favCount = $('#favCount');
+
+/* ===== STORAGE ===== */
+function loadFavorites() {
+  try {
+    const data = localStorage.getItem(STORAGE_KEY);
+    if (data) state.favorites = JSON.parse(data);
+  } catch (e) { state.favorites = []; }
+}
+
+function saveFavorites() {
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(state.favorites));
+  } catch (e) {}
+}
+
+/* ===== CATEGORY TABS ===== */
+function renderCategoryTabs() {
+  catTabs.innerHTML = '';
+  Object.entries(AFFIRMATIONS).forEach(([key, cat]) => {
+    const btn = document.createElement('button');
+    btn.className = 'cat-tab' + (key === state.category ? ' active' : '');
+    btn.dataset.category = key;
+    btn.innerHTML = `${cat.label} <span class="count">${cat.items.length}</span>`;
+    btn.addEventListener('click', () => {
+      state.category = key;
+      renderCategoryTabs();
+      getRandomAffirmation();
+    });
+    catTabs.appendChild(btn);
+  });
+}
+
+/* ===== GET RANDOM AFFIRMATION ===== */
+function getRandomAffirmation() {
+  const cat = AFFIRMATIONS[state.category];
+  if (!cat || cat.items.length === 0) return;
+
+  let text;
+  if (cat.items.length === 1) {
+    text = cat.items[0];
+  } else {
+    let attempts = 0;
+    do {
+      text = cat.items[Math.floor(Math.random() * cat.items.length)];
+      attempts++;
+    } while (state.current && text === state.current.text && attempts < 10);
+  }
+
+  state.current = {
+    text,
+    category: state.category,
+    categoryLabel: cat.label
+  };
+  renderAffirmation();
+}
+
+function renderAffirmation() {
+  if (!state.current) return;
+  affCategory.textContent = AFFIRMATIONS[state.category].label.replace(/^[^\s]+\s/, '').trim();
+  affText.textContent = state.current.text;
+  updateFavBtnState();
+}
+
+/* ===== COPY ===== */
+copyBtn.addEventListener('click', async () => {
+  if (!state.current) return;
+  const ok = await copyToClipboard(state.current.text);
+  if (ok) {
+    const orig = copyBtn.innerHTML;
+    copyBtn.innerHTML = '✓ Copied!';
+    setTimeout(() => copyBtn.innerHTML = orig, 2000);
+    showToast('Affirmation copied!', 'success');
+  } else {
+    showToast('Copy failed', 'error');
+  }
+});
+
+/* ===== FAVORITE ===== */
+function updateFavBtnState() {
+  if (!state.current) return;
+  const isFav = state.favorites.some(f => f.text === state.current.text);
+  favBtn.classList.toggle('fav-active', isFav);
+  favBtn.innerHTML = isFav
+    ? '<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg> Favorited'
+    : '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg> Favorite';
+}
+
+favBtn.addEventListener('click', () => {
+  if (!state.current) return;
+  const exists = state.favorites.findIndex(f => f.text === state.current.text);
+
+  if (exists >= 0) {
+    state.favorites.splice(exists, 1);
+    showToast('Removed from favorites');
+  } else {
+    state.favorites.unshift({
+      text: state.current.text,
+      category: state.current.category,
+      categoryLabel: state.current.categoryLabel
+    });
+    if (state.favorites.length > 50) state.favorites = state.favorites.slice(0, 50);
+    showToast('⭐ Added to favorites!', 'success');
+  }
+
+  saveFavorites();
+  updateFavBtnState();
+  renderFavorites();
+});
+
+/* ===== TWEET ===== */
+tweetBtn.addEventListener('click', () => {
+  if (!state.current) return;
+  const text = state.current.text + ' ✨';
+  const url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`;
+  window.open(url, '_blank', 'width=600,height=500,noopener,noreferrer');
+});
+
+/* ===== DOWNLOAD AS IMAGE ===== */
+downloadBtn.addEventListener('click', async () => {
+  if (!state.current) return;
+
+  const theme = themeSelect.value;
+  const fontSize = fontSizeSelect.value;
+
+  const themes = {
+    rose: { bg: '#fdf2f8', bg2: '#fce7f3', text: '#831843', accent: '#ec4899' },
+    lavender: { bg: '#f5f3ff', bg2: '#ede9fe', text: '#4c1d95', accent: '#8b5cf6' },
+    ocean: { bg: '#dbeafe', bg2: '#bfdbfe', text: '#1e40af', accent: '#3b82f6' },
+    forest: { bg: '#d1fae5', bg2: '#a7f3d0', text: '#065f46', accent: '#10b981' },
+    sunset: { bg: '#ffedd5', bg2: '#fed7aa', text: '#9a3412', accent: '#f97316' },
+    midnight: { bg: '#0f172a', bg2: '#1e293b', text: '#f1f5f9', accent: '#60a5fa' },
+    minimal: { bg: '#ffffff', bg2: '#f9fafb', text: '#1a1a2e', accent: '#374151' }
+  };
+  const t = themes[theme] || themes.rose;
+
+  const sizes = { small: 48, medium: 64, large: 80 };
+  const textSize = sizes[fontSize] || 64;
+
+  const canvas = document.createElement('canvas');
+  canvas.width = 1080;
+  canvas.height = 1080;
+  const ctx = canvas.getContext('2d');
+
+  // Gradient background
+  const gradient = ctx.createLinearGradient(0, 0, 1080, 1080);
+  gradient.addColorStop(0, t.bg);
+  gradient.addColorStop(1, t.bg2);
+  ctx.fillStyle = gradient;
+  ctx.fillRect(0, 0, 1080, 1080);
+
+  // Sparkles
+  ctx.font = '80px sans-serif';
+  ctx.fillStyle = t.accent + '22';
+  ctx.textAlign = 'left';
+  ctx.textBaseline = 'top';
+  ctx.fillText('✦', 60, 60);
+  ctx.textAlign = 'right';
+  ctx.textBaseline = 'bottom';
+  ctx.fillText('✦', 1020, 1020);
+
+  // Wrap text
+  const maxWidth = 900;
+  ctx.font = `bold ${textSize}px Georgia, serif`;
+  const words = state.current.text.split(' ');
+  const lines = [];
+  let currentLine = '';
+
+  words.forEach(word => {
+    const test = currentLine ? currentLine + ' ' + word : word;
+    if (ctx.measureText(test).width > maxWidth && currentLine) {
+      lines.push(currentLine);
+      currentLine = word;
+    } else {
+      currentLine = test;
+    }
+  });
+  if (currentLine) lines.push(currentLine);
+
+  const lineHeight = textSize * 1.35;
+  const totalTextHeight = lines.length * lineHeight;
+  const startY = (1080 - totalTextHeight) / 2 - 40;
+
+  // Draw text
+  ctx.fillStyle = t.text;
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+  lines.forEach((line, i) => {
+    const y = startY + (i + 0.5) * lineHeight;
+    ctx.fillText(line, 540, y);
+  });
+
+  // Category tag
+  ctx.font = 'bold 28px Inter, sans-serif';
+  ctx.fillStyle = t.accent;
+  ctx.textBaseline = 'middle';
+  const catY = startY + totalTextHeight + 80;
+  ctx.fillText('✦ ' + AFFIRMATIONS[state.category].label.replace(/^[^\s]+\s/, '').toUpperCase() + ' ✦', 540, catY);
+
+  // Watermark
+  ctx.font = '500 20px Inter, sans-serif';
+  ctx.fillStyle = t.accent + '99';
+  ctx.textBaseline = 'bottom';
+  ctx.fillText('bigtoolz.com', 540, 1050);
+
+  // Download
+  canvas.toBlob(blob => {
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `affirmation-${Date.now()}.png`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+    showToast('✅ Image downloaded!', 'success');
+  }, 'image/png');
+});
+
+/* ===== FAVORITES ===== */
+function renderFavorites() {
+  favCount.textContent = state.favorites.length;
+
+  if (state.favorites.length === 0) {
+    favWrap.innerHTML = `
+      <div class="empty-state">
+        <span class="icon">⭐</span>
+        No favorites yet. Star affirmations you love to save them here.
+      </div>
+    `;
+    return;
+  }
+
+  favWrap.innerHTML = '<div class="fav-list"></div>';
+  const list = favWrap.querySelector('.fav-list');
+
+  state.favorites.forEach((fav, i) => {
+    const div = document.createElement('div');
+    div.className = 'fav-item';
+    div.innerHTML = `
+      <div class="fav-content">
+        <div class="fav-text">${escapeHtml(fav.text)}</div>
+        <div class="fav-cat">${escapeHtml(fav.categoryLabel || '')}</div>
+      </div>
+      <button class="fav-remove" data-index="${i}" aria-label="Remove">✕</button>
+    `;
+    list.appendChild(div);
+  });
+
+  $$('.fav-remove').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const i = parseInt(btn.dataset.index, 10);
+      state.favorites.splice(i, 1);
+      saveFavorites();
+      renderFavorites();
+      updateFavBtnState();
+      showToast('Removed');
+    });
+  });
+}
+
+function escapeHtml(str) {
+  const div = document.createElement('div');
+  div.textContent = str;
+  return div.innerHTML;
+}
+
+/* ===== NEW AFFIRMATION ===== */
+newAffBtn.addEventListener('click', getRandomAffirmation);
+
+/* ===== CUSTOM BUILDER ===== */
+useCustomBtn.addEventListener('click', () => {
+  const starter = customStarter.value;
+  const words = customWords.value.trim();
+  if (!words) {
+    showToast('Please enter your words', 'error');
+    customWords.focus();
+    return;
+  }
+
+  state.current = {
+    text: `${starter} ${words}.`,
+    category: 'custom',
+    categoryLabel: '🛠 Custom'
+  };
+  affCategory.textContent = 'Custom';
+  affText.textContent = state.current.text;
+  updateFavBtnState();
+  showToast('✅ Custom affirmation ready!', 'success');
+});
+
+/* ===== FAQ ===== */
+$$('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    $$('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+
+/* ===== INIT ===== */
+renderCategoryTabs();
+loadFavorites();
+getRandomAffirmation();
+renderFavorites();
+</script>
+
+</body>
+</html>

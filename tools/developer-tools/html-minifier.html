@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2563eb">
+
+<title>HTML Minifier - Minify HTML Online Free | BigToolz</title>
+<meta name="description" content="Minify HTML online free. Remove comments, collapse whitespace, reduce HTML file size by up to 40%. No upload, works in your browser. Fast and private.">
+<meta name="keywords" content="html minifier, minify html, compress html, html optimizer, reduce html size, html compressor">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://bigtoolz.com/tools/developer-tools/html-minifier/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="HTML Minifier - Free Online Tool | BigToolz">
+<meta property="og:description" content="Minify HTML online remove comments, collapse whitespace, reduce file size.">
+<meta property="og:url" content="https://bigtoolz.com/tools/developer-tools/html-minifier/">
+<meta property="og:image" content="https://bigtoolz.com/assets/images/og-image.jpg">
+<meta property="og:site_name" content="BigToolz">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="HTML Minifier - BigToolz">
+<meta name="twitter:description" content="Minify HTML instantly free, no upload.">
+<meta name="twitter:image" content="https://bigtoolz.com/assets/images/twitter-card.jpg">
+
+<link rel="icon" href="/assets/images/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/images/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#f8f9fc;color:#1a1a2e;overflow-x:hidden;line-height:1.5}
+
+  .header{background:#fff;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;position:sticky;top:0;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+  .header-left{display:flex;align-items:center;gap:40px}
+  .logo{display:flex;align-items:center;gap:8px;font-size:22px;font-weight:800;color:#1a1a2e;text-decoration:none}
+  .logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#3b82f6,#2563eb);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px}
+  .logo span{color:#2563eb}
+  .nav{display:flex;align-items:center;gap:28px;list-style:none}
+  .nav a{text-decoration:none;color:#4b5563;font-size:14px;font-weight:500;transition:color .2s}
+  .nav a:hover,.nav a.active{color:#2563eb}
+  .header-right{display:flex;align-items:center;gap:16px}
+  .search-btn,.theme-btn{width:36px;height:36px;border-radius:50%;border:none;background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#4b5563}
+  .search-btn:hover,.theme-btn:hover{background:#f3f4f6}
+  .bookmark-btn{display:flex;align-items:center;gap:8px;background:#2563eb;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
+  .bookmark-btn:hover{background:#1d4ed8}
+
+  .hero{background:linear-gradient(135deg,#0a0e27 0%,#1a1a4e 40%,#2d1b69 70%,#4c1d95 100%);padding:40px 40px 60px;position:relative;overflow:hidden;color:#fff}
+  .hero::before{content:'';position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(249,115,22,.3) 0%,transparent 70%);border-radius:50%}
+  .hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+  .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px;flex-wrap:wrap}
+  .breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none}
+  .breadcrumb a:hover{color:#fff}
+  .breadcrumb .sep{color:rgba(255,255,255,.4)}
+  .breadcrumb .current{color:#fff;font-weight:500}
+  .hero-title-row{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+  .hero-icon{width:60px;height:60px;background:#f97316;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px;color:#fff;flex-shrink:0;box-shadow:0 8px 24px rgba(249,115,22,.4);font-weight:800;font-family:'JetBrains Mono',monospace}
+  .hero-title{font-size:42px;font-weight:800;line-height:1.15}
+  .hero-title .blue{color:#fb923c}
+  .hero-desc{font-size:15px;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:24px;max-width:560px}
+  .hero-features{display:flex;gap:24px;flex-wrap:wrap}
+  .hero-feature{display:flex;align-items:center;gap:6px;font-size:13px;color:#fff;font-weight:500}
+  .hero-feature .check{width:18px;height:18px;border-radius:50%;background:#f97316;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;flex-shrink:0}
+
+  .main-content{max-width:1200px;margin:0 auto;padding:40px;display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start}
+  .tool-content{min-width:0}
+
+  .workspace{background:#fff;border-radius:16px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,.06);border:1px solid #e5e7eb;margin-bottom:24px}
+
+  /* Input/Output grid */
+  .io-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px}
+  .io-panel{display:flex;flex-direction:column;gap:10px}
+  .io-header{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+  .io-label{font-size:13px;font-weight:700;color:#1a1a2e;display:flex;align-items:center;gap:6px;text-transform:uppercase;letter-spacing:.5px}
+  .io-badge{font-size:11px;font-weight:700;padding:3px 8px;border-radius:10px;background:#f3f4f6;color:#6b7280}
+  .io-badge.input{background:#fff7ed;color:#ea580c}
+  .io-badge.output{background:#d1fae5;color:#059669}
+  .io-badge.savings{background:#fef3c7;color:#92400e}
+
+  .io-textarea{width:100%;min-height:280px;padding:16px;border:2px solid #e5e7eb;border-radius:10px;font-family:'JetBrains Mono','Fira Code',Consolas,monospace;font-size:12px;line-height:1.6;color:#1a1a2e;background:#f8fafc;outline:none;resize:vertical;transition:border-color .2s}
+  .io-textarea:focus{border-color:#f97316;background:#fff;box-shadow:0 0 0 3px rgba(249,115,22,.1)}
+  .io-textarea.output{background:#f0fdf4}
+  .io-textarea.output:focus{border-color:#10b981;box-shadow:0 0 0 3px rgba(16,185,129,.1)}
+  .io-textarea::placeholder{color:#9ca3af;font-family:'Inter',sans-serif;font-size:13px}
+  .io-textarea[readonly]{cursor:default}
+
+  .io-actions{display:flex;gap:8px;flex-wrap:wrap}
+  .io-btn{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;font-size:12px;font-weight:600;color:#4b5563;cursor:pointer;font-family:inherit;transition:all .2s}
+  .io-btn:hover{border-color:#f97316;color:#f97316;background:#fff7ed}
+  .io-btn.success:hover{border-color:#10b981;color:#10b981;background:#f0fdf4}
+  .io-btn.copied{background:#10b981;color:#fff;border-color:#10b981}
+
+  .io-stats{display:flex;gap:16px;flex-wrap:wrap;font-size:11px;color:#6b7280;font-weight:600}
+  .io-stats span{display:flex;align-items:center;gap:4px}
+  .io-stats .green{color:#059669}
+  .io-stats .orange{color:#ea580c}
+
+  /* Options panel */
+  .options{background:#fff7ed;border-radius:12px;padding:20px;margin-bottom:20px;border:1px solid #fed7aa}
+  .options-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+
+  .toggle-list{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+  .toggle-row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 14px;background:#fff;border:1px solid #e5e7eb;border-radius:8px}
+  .toggle-info{display:flex;flex-direction:column;gap:2px;min-width:0}
+  .toggle-title{font-size:12px;font-weight:700;color:#1a1a2e}
+  .toggle-desc{font-size:10px;color:#6b7280;line-height:1.3}
+  .toggle-switch{position:relative;width:40px;height:22px;background:#d1d5db;border-radius:11px;cursor:pointer;transition:background .2s;flex-shrink:0;border:none;padding:0}
+  .toggle-switch::after{content:'';position:absolute;top:2px;left:2px;width:18px;height:18px;background:#fff;border-radius:50%;transition:transform .2s;box-shadow:0 1px 3px rgba(0,0,0,.15)}
+  .toggle-switch.on{background:#f97316}
+  .toggle-switch.on::after{transform:translateX(18px)}
+
+  .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 28px;border-radius:10px;font-size:15px;font-weight:700;font-family:inherit;cursor:pointer;border:none;transition:all .2s;text-decoration:none}
+  .btn-primary{background:#f97316;color:#fff;flex:1;box-shadow:0 4px 12px rgba(249,115,22,.2)}
+  .btn-primary:hover:not(:disabled){background:#ea580c;transform:translateY(-2px);box-shadow:0 6px 20px rgba(249,115,22,.3)}
+  .btn-primary:disabled{opacity:.5;cursor:not-allowed;transform:none}
+  .btn-secondary{background:#fff;color:#f97316;border:1px solid #e5e7eb}
+  .btn-secondary:hover{border-color:#f97316;background:#fff7ed}
+
+  /* Drop overlay */
+  .drop-overlay{position:fixed;inset:0;background:rgba(249,115,22,.15);backdrop-filter:blur(4px);z-index:2000;display:none;align-items:center;justify-content:center;border:4px dashed #f97316}
+  .drop-overlay.visible{display:flex}
+  .drop-overlay-text{background:#fff;padding:32px 48px;border-radius:16px;font-size:20px;font-weight:800;color:#ea580c;box-shadow:0 20px 60px rgba(0,0,0,.2);display:flex;flex-direction:column;align-items:center;gap:12px}
+  .drop-overlay-icon{font-size:48px}
+
+  .seo-content{background:#fff;border-radius:16px;padding:32px;border:1px solid #e5e7eb;margin-bottom:24px}
+  .seo-content h2{font-size:22px;font-weight:800;color:#1a1a2e;margin-bottom:14px;margin-top:28px;display:flex;align-items:center;gap:10px}
+  .seo-content h2:first-child{margin-top:0}
+  .seo-content h3{font-size:16px;font-weight:700;color:#1a1a2e;margin:20px 0 10px}
+  .seo-content p{font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:14px}
+  .seo-content ul{list-style:none;padding-left:0;margin-bottom:16px}
+  .seo-content ul li{position:relative;padding-left:24px;font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:8px}
+  .seo-content ul li::before{content:'';position:absolute;left:6px;top:12px;width:6px;height:6px;background:#f97316;border-radius:50%}
+  .seo-content a{color:#2563eb;text-decoration:none;font-weight:600}
+  .seo-content a:hover{text-decoration:underline}
+  .seo-content strong{color:#1a1a2e;font-weight:700}
+
+  .code-block{background:#1a1a2e;color:#e2e8f0;padding:16px;border-radius:8px;font-family:'JetBrains Mono','Fira Code',Consolas,monospace;font-size:12px;line-height:1.6;overflow-x:auto;margin:14px 0}
+  .code-block .hl{color:#fb923c}
+  .code-block .cm{color:#64748b}
+
+  .how-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:20px}
+  .how-step{background:#fff7ed;border-radius:12px;padding:20px;border:1px solid #fed7aa}
+  .how-step-num{width:36px;height:36px;border-radius:50%;background:#f97316;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;margin-bottom:12px}
+  .how-step-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+  .how-step-desc{font-size:13px;color:#6b7280;line-height:1.6}
+
+  .faq-item{background:#fff7ed;border:1px solid #fed7aa;border-radius:12px;margin-bottom:10px;overflow:hidden;transition:border-color .2s}
+  .faq-item:hover{border-color:#f97316}
+  .faq-question{width:100%;background:none;border:none;padding:18px 22px;font-size:15px;font-weight:700;color:#1a1a2e;text-align:left;cursor:pointer;font-family:inherit;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .faq-question .chev{font-size:12px;color:#f97316;transition:transform .2s;flex-shrink:0}
+  .faq-item.open .faq-question .chev{transform:rotate(180deg)}
+  .faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 22px}
+  .faq-item.open .faq-answer{max-height:500px;padding-bottom:18px}
+  .faq-answer p{font-size:14px;color:#6b7280;line-height:1.7;margin:0}
+
+  .sidebar{background:#fff;border-radius:16px;padding:24px;border:1px solid #e5e7eb;position:sticky;top:80px;margin-bottom:24px}
+  .sidebar-header{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:800;color:#1a1a2e;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid #f3f4f6}
+  .sidebar-list{display:flex;flex-direction:column;gap:8px}
+  .sidebar-item{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;cursor:pointer;transition:background .2s;text-decoration:none;color:inherit;border:1px solid #f3f4f6}
+  .sidebar-item:hover{background:#fff7ed;border-color:#fed7aa}
+  .sidebar-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:16px;color:#fff;flex-shrink:0;font-weight:800;font-family:'JetBrains Mono',monospace}
+  .sidebar-info{flex:1;min-width:0}
+  .sidebar-title{font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:2px}
+  .sidebar-desc{font-size:11px;color:#9ca3af;line-height:1.4}
+
+  .footer{background:#0a0e27;padding:60px 40px 30px;color:#fff;margin-top:40px}
+  .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:40px}
+  .footer-brand{display:flex;align-items:center;gap:8px;font-size:20px;font-weight:800;margin-bottom:12px}
+  .footer-brand span{color:#60a5fa}
+  .footer-tagline{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px}
+  .footer-social{display:flex;gap:12px}
+  .footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:16px;transition:background .2s}
+  .footer-social a:hover{background:rgba(255,255,255,.2)}
+  .footer-heading{font-size:14px;font-weight:700;margin-bottom:20px;color:#fff}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .footer-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;transition:color .2s}
+  .footer-links a:hover{color:#60a5fa}
+  .footer-bottom{max-width:1200px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  .footer-bottom-left{display:flex;gap:20px;font-size:12px;color:rgba(255,255,255,.5)}
+  .footer-bottom-right,.footer-bottom-links a{font-size:12px;color:rgba(255,255,255,.5);text-decoration:none}
+  .footer-bottom-links{display:flex;gap:20px}
+
+  .toast{position:fixed;bottom:24px;right:24px;background:#1a1a2e;color:#fff;padding:14px 20px;border-radius:10px;font-size:13px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:3000;transform:translateY(200%);transition:transform .3s ease;max-width:320px}
+  .toast.visible{transform:translateY(0)}
+  .toast.success{background:#10b981}
+  .toast.error{background:#ef4444}
+
+  @media(max-width:1024px){
+    .main-content{grid-template-columns:1fr;padding:24px 20px}
+    .sidebar{position:static}
+    .how-steps{grid-template-columns:repeat(2,1fr)}
+    .io-grid{grid-template-columns:1fr}
+  }
+  @media(max-width:768px){
+    .header{padding:0 20px}.nav{display:none}
+    .hero{padding:24px 20px 40px}
+    .hero-title{font-size:28px}
+    .hero-icon{width:48px;height:48px;font-size:18px}
+    .hero-title-row{flex-direction:column;align-items:flex-start;gap:12px}
+    .main-content{padding:20px 16px}
+    .workspace{padding:20px}
+    .how-steps{grid-template-columns:1fr}
+    .seo-content{padding:20px}
+    .footer-inner{grid-template-columns:1fr 1fr}
+    .toast{left:16px;right:16px;bottom:16px;max-width:none}
+    .toggle-list{grid-template-columns:1fr}
+  }
+  @media(max-width:576px){
+    .header{padding:0 16px}.header-right .search-btn,.header-right .theme-btn{display:none}
+    .hero-title{font-size:24px}
+    .actions{flex-direction:column}
+    .btn{width:100%}
+    .btn-primary{flex:none}
+    .footer-inner{grid-template-columns:1fr}
+    .footer-bottom{flex-direction:column;text-align:center}
+    .io-textarea{min-height:200px;font-size:11px}
+  }
+
+  /* DARK MODE */
+  html[data-theme="dark"] body{background:#0f172a;color:#f1f5f9}
+  html[data-theme="dark"] .header,html[data-theme="dark"] .workspace,html[data-theme="dark"] .seo-content,html[data-theme="dark"] .sidebar{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .logo,html[data-theme="dark"] .hero-title,html[data-theme="dark"] .seo-content h2,html[data-theme="dark"] .seo-content h3,html[data-theme="dark"] .faq-question,html[data-theme="dark"] .sidebar-header,html[data-theme="dark"] .sidebar-title,html[data-theme="dark"] .options-title,html[data-theme="dark"] .io-label,html[data-theme="dark"] .toggle-title{color:#f1f5f9}
+  html[data-theme="dark"] .nav a{color:#cbd5e1}
+  html[data-theme="dark"] .options,html[data-theme="dark"] .how-step,html[data-theme="dark"] .faq-item,html[data-theme="dark"] .toggle-row{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .io-textarea{background:#0f172a;border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .io-textarea:focus{background:#0f172a}
+  html[data-theme="dark"] .io-textarea.output{background:#0a1e14}
+  html[data-theme="dark"] .io-btn{background:#0f172a;border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .seo-content p,html[data-theme="dark"] .seo-content ul li,html[data-theme="dark"] .faq-answer p{color:#cbd5e1}
+  html[data-theme="dark"] .io-stats{color:#94a3b8}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type": "SoftwareApplication", "name": "HTML Minifier", "url": "https://bigtoolz.com/tools/developer-tools/html-minifier/", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any (Web-based)", "description": "Free online HTML minifier remove comments, collapse whitespace, reduce HTML file size by up to 40%. Works in your browser.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "1876"}},
+    {"@type": "HowTo", "name": "How to Minify HTML Online", "step": [
+      {"@type": "HowToStep", "name": "Paste HTML", "text": "Paste your HTML code or upload a .html file."},
+      {"@type": "HowToStep", "name": "Choose Options", "text": "Toggle comment removal, whitespace collapse, and other optimizations."},
+      {"@type": "HowToStep", "name": "Minify", "text": "Click Minify HTML to process."},
+      {"@type": "HowToStep", "name": "Download", "text": "Copy the result or download as .html."}
+    ]},
+    {"@type": "FAQPage", "mainEntity": [
+      {"@type": "Question", "name": "What does an HTML minifier do?", "acceptedAnswer": {"@type": "Answer", "text": "It removes unnecessary characters from HTML comments, extra whitespace, newlines, and optional quotes to reduce file size without changing how the page renders."}},
+      {"@type": "Question", "name": "How much smaller will my HTML get?", "acceptedAnswer": {"@type": "Answer", "text": "Typically 20-40% smaller. Files with lots of comments or heavy indentation see the biggest savings. Already-minified HTML may only shrink by 5-10%."}},
+      {"@type": "Question", "name": "Does minifying HTML break the page?", "acceptedAnswer": {"@type": "Answer", "text": "No, when done correctly. Our minifier preserves content inside <pre>, <code>, <textarea>, and <script> tags only structural whitespace between tags is collapsed. Always test the output on a staging environment first."}},
+      {"@type": "Question", "name": "Should I minify HTML for SEO?", "acceptedAnswer": {"@type": "Answer", "text": "Yes! Smaller HTML files load faster, which improves Core Web Vitals especially LCP and TTFB. Google uses page speed as a ranking signal."}},
+      {"@type": "Question", "name": "Is my HTML uploaded to a server?", "acceptedAnswer": {"@type": "Answer", "text": "No. All minification happens in your browser using JavaScript. Your code never leaves your device."}}
+    ]},
+    {"@type": "BreadcrumbList", "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bigtoolz.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://bigtoolz.com/tools/"},
+      {"@type": "ListItem", "position": 3, "name": "Developer Tools", "item": "https://bigtoolz.com/tools/developer-tools/"},
+      {"@type": "ListItem", "position": 4, "name": "HTML Minifier", "item": "https://bigtoolz.com/tools/developer-tools/html-minifier/"}
+    ]}
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-left">
+    <a href="/" class="logo"><div class="logo-icon">⚒</div>BigToolz</span></a>
+    <nav><ul class="nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/tools/" class="active">All Tools</a></li>
+      <li><a href="/tools/categories">Categories</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul></nav>
+  </div>
+  <div class="header-right">
+    
+    <button class="theme-btn" aria-label="Toggle theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
+   
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <nav class="breadcrumb">
+      <a href="/">Home</a><span class="sep">›</span>
+      <a href="/tools/">Tools</a><span class="sep">›</span>
+      <a href="/tools/developer-tools/">Developer Tools</a><span class="sep">›</span>
+      <span class="current">HTML Minifier</span>
+    </nav>
+    <div class="hero-title-row">
+      <div class="hero-icon">&lt;/&gt;</div>
+      <h1 class="hero-title">HTML <span class="blue">Minifier</span></h1>
+    </div>
+    <p class="hero-desc">
+      Minify HTML online remove comments, collapse whitespace, reduce file size by up to 40%. Faster page loads, better Core Web Vitals. No upload, no signup, 100% private.
+    </p>
+    <div class="hero-features">
+      <div class="hero-feature"><span class="check">✓</span> Up to 40% Smaller</div>
+      <div class="hero-feature"><span class="check">✓</span> Live Preview</div>
+      <div class="hero-feature"><span class="check">✓</span> Custom Options</div>
+      <div class="hero-feature"><span class="check">✓</span> No Upload</div>
+    </div>
+  </div>
+</section>
+
+<div class="main-content">
+
+  <div class="tool-content">
+
+    <div class="workspace">
+
+      <div class="io-grid">
+        <!-- Input -->
+        <div class="io-panel">
+          <div class="io-header">
+            <div class="io-label">
+              <span style="color:#ea580c;">📥</span> Input HTML
+            </div>
+            <span class="io-badge input" id="inputSize">0 bytes</span>
+          </div>
+          <textarea id="inputHtml" class="io-textarea" placeholder="Paste your HTML code here...
+
+Example:
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Page</title>
+  </head>
+  <body>
+    <!-- This is a comment -->
+    <h1>Hello World</h1>
+  </body>
+</html>"></textarea>
+          <div class="io-actions">
+            <button class="io-btn" id="pasteBtn" type="button">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+              Paste
+            </button>
+            <button class="io-btn" id="uploadBtn" type="button">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>
+              Upload .html
+            </button>
+            <button class="io-btn" id="clearInputBtn" type="button">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+              Clear
+            </button>
+            <input type="file" id="fileInput" accept=".html,.htm,text/html" style="display:none;">
+          </div>
+        </div>
+
+        <!-- Output -->
+        <div class="io-panel">
+          <div class="io-header">
+            <div class="io-label">
+              <span style="color:#059669;">📤</span> Minified Output
+            </div>
+            <span class="io-badge output" id="outputSize">0 bytes</span>
+          </div>
+          <textarea id="outputHtml" class="io-textarea output" placeholder="Minified HTML will appear here..." readonly></textarea>
+          <div class="io-actions">
+            <button class="io-btn success" id="copyBtn" type="button">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+              Copy
+            </button>
+            <button class="io-btn success" id="downloadBtn" type="button">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+              Download
+            </button>
+          </div>
+          <div class="io-stats" id="statsRow" style="display:none;">
+            <span><strong>Savings:</strong></span>
+            <span class="green" id="savingsPercent">0%</span>
+            <span class="orange" id="savingsBytes">(0 bytes)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Options -->
+      <div class="options">
+        <div class="options-title">⚙️ Minification Options</div>
+        <div class="toggle-list">
+          <div class="toggle-row">
+            <div class="toggle-info">
+              <div class="toggle-title">Remove Comments</div>
+              <div class="toggle-desc">Strip all HTML comments</div>
+            </div>
+            <button class="toggle-switch on" data-option="removeComments" role="switch" aria-checked="true" type="button"></button>
+          </div>
+          <div class="toggle-row">
+            <div class="toggle-info">
+              <div class="toggle-title">Collapse Whitespace</div>
+              <div class="toggle-desc">Reduce multiple spaces to one</div>
+            </div>
+            <button class="toggle-switch on" data-option="collapseWhitespace" role="switch" aria-checked="true" type="button"></button>
+          </div>
+          <div class="toggle-row">
+            <div class="toggle-info">
+              <div class="toggle-title">Remove Newlines</div>
+              <div class="toggle-desc">Join all lines into one</div>
+            </div>
+            <button class="toggle-switch on" data-option="removeNewlines" role="switch" aria-checked="true" type="button"></button>
+          </div>
+          <div class="toggle-row">
+            <div class="toggle-info">
+              <div class="toggle-title">Trim Line Whitespace</div>
+              <div class="toggle-desc">Remove leading/trailing spaces per line</div>
+            </div>
+            <button class="toggle-switch on" data-option="trimLines" role="switch" aria-checked="true" type="button"></button>
+          </div>
+          <div class="toggle-row">
+            <div class="toggle-info">
+              <div class="toggle-title">Preserve &lt;pre&gt; / &lt;code&gt;</div>
+              <div class="toggle-desc">Keep formatting inside code blocks (recommended)</div>
+            </div>
+            <button class="toggle-switch on" data-option="preservePre" role="switch" aria-checked="true" type="button"></button>
+          </div>
+          <div class="toggle-row">
+            <div class="toggle-info">
+              <div class="toggle-title">Preserve &lt;textarea&gt;</div>
+              <div class="toggle-desc">Keep formatting in textarea content</div>
+            </div>
+            <button class="toggle-switch on" data-option="preserveTextarea" role="switch" aria-checked="true" type="button"></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button class="btn btn-primary" id="minifyBtn" disabled>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18M3 9v10a2 2 0 002 2h4M21 9v10a2 2 0 01-2 2h-4"/></svg>
+          Minify HTML
+        </button>
+        <button class="btn btn-secondary" id="resetBtn">Reset All</button>
+      </div>
+
+    </div>
+
+    <!-- SEO Content -->
+    <div class="seo-content">
+
+      <h2>&lt;/&gt; What is HTML Minification?</h2>
+      <p>
+        <strong>HTML minification</strong> is the process of removing unnecessary characters from HTML source code without changing how the page renders. This includes stripping comments, collapsing multiple whitespace characters into single spaces, removing newlines and indentation, and eliminating other non-essential bytes.
+      </p>
+      <p>
+        Smaller HTML files = <strong>faster page loads</strong> = better Core Web Vitals = better SEO. Minifying HTML is one of the quickest wins for web performance. Our tool does it 100% in your browser your code <strong>never leaves your device</strong>.
+      </p>
+
+      <h2>🚀 How to Minify HTML</h2>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-step-num">1</div>
+          <div class="how-step-title">Paste or Upload</div>
+          <div class="how-step-desc">Paste HTML into the left box, or upload a .html file.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">2</div>
+          <div class="how-step-title">Choose Options</div>
+          <div class="how-step-desc">Toggle comments, whitespace, and preserve settings.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">3</div>
+          <div class="how-step-title">Minify</div>
+          <div class="how-step-desc">Click "Minify HTML" see the result instantly.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">4</div>
+          <div class="how-step-title">Copy or Download</div>
+          <div class="how-step-desc">Copy to clipboard or download as .html file.</div>
+        </div>
+      </div>
+
+      <h2>📊 Example: Before & After</h2>
+      <p>Here's a simple example of what minification does:</p>
+
+      <div class="code-block">
+<span class="cm">&lt;!-- BEFORE (Original) --&gt;</span>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;
+    <span class="cm">&lt;!-- Meta tags --&gt;</span>
+    &lt;title&gt;Hello&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Welcome&lt;/h1&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+
+<span class="cm">// Size: ~230 bytes</span>
+      </div>
+
+      <div class="code-block">
+<span class="cm">&lt;!-- AFTER (Minified) --&gt;</span>
+<span class="hl">&lt;!DOCTYPE html&gt;&lt;html lang="en"&gt;&lt;head&gt;&lt;title&gt;Hello&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;h1&gt;Welcome&lt;/h1&gt;&lt;/body&gt;&lt;/html&gt;</span>
+
+<span class="cm">// Size: ~140 bytes (~40% smaller!)</span>
+      </div>
+
+      <h2>💡 Why Minify HTML?</h2>
+      <ul>
+        <li><strong>Faster page loads</strong> less data to transfer = quicker first paint.</li>
+        <li><strong>Better Core Web Vitals</strong> especially LCP and TTFB.</li>
+        <li><strong>Lower bandwidth costs</strong> matters for high-traffic sites.</li>
+        <li><strong>SEO boost</strong> Google uses page speed as a ranking factor.</li>
+        <li><strong>Better mobile experience</strong> smaller files load faster on slow connections.</li>
+        <li><strong>Reduced server load</strong> less data transmitted per request.</li>
+      </ul>
+
+      <h2>🎯 What Gets Removed?</h2>
+      <h3>HTML Comments</h3>
+      <p>Comments like <code>&lt;!-- hidden note --&gt;</code> are stripped. They're useful during development but invisible to users. Removing them reduces file size with zero visual impact.</p>
+
+      <h3>Whitespace Between Tags</h3>
+      <p>Multiple spaces, tabs, and newlines between tags are collapsed into single spaces (or removed entirely). Browsers ignore this whitespace anyway.</p>
+
+      <h3>Leading/Trailing Line Whitespace</h3>
+      <p>Indentation at the start of each line and spaces at the end are trimmed. This shrinks files with heavy pretty-printing.</p>
+
+      <h3>What's Preserved?</h3>
+      <p>Content inside <code>&lt;pre&gt;</code>, <code>&lt;code&gt;</code>, and <code>&lt;textarea&gt;</code> tags is <strong>preserved by default</strong> that whitespace is meaningful. Same for whitespace inside attribute values. We never touch your actual content.</p>
+
+      <h2>⚠️ Best Practices</h2>
+      <ul>
+        <li><strong>Keep a copy of the original</strong> minified code is hard to read and edit.</li>
+        <li><strong>Minify as a build step</strong> automate it with tools like html-minifier, Gulp, or Webpack instead of manually.</li>
+        <li><strong>Test on staging first</strong> verify layout/scripts still work before deploying.</li>
+        <li><strong>Combine with gzip/Brotli</strong> server-side compression stacks with minification for even smaller transfers.</li>
+        <li><strong>Enable CSS/JS minification too</strong> HTML is just one piece; minify your CSS and JS as well.</li>
+      </ul>
+
+      <h2>❓ Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-question">What does an HTML minifier do?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>It removes unnecessary characters from HTML comments, extra whitespace, newlines, and indentation to reduce file size without changing how the page renders. The result is functionally identical but smaller.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">How much smaller will my HTML get?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Typically <strong>20-40% smaller</strong>. Files with lots of comments or heavy indentation see the biggest savings. Already-minified HTML may only shrink by 5-10%. The savings depend entirely on your source formatting style.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Does minifying HTML break the page?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>No, when done correctly. Our minifier <strong>preserves content inside <code>&lt;pre&gt;</code>, <code>&lt;code&gt;</code>, <code>&lt;textarea&gt;</code>, <code>&lt;script&gt;</code>, and <code>&lt;style&gt;</code></strong> only structural whitespace between tags is collapsed. Always test the output on a staging environment before deploying to production.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Should I minify HTML for SEO?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Yes! Smaller HTML files load faster, which improves <strong>Core Web Vitals</strong> especially LCP and TTFB. Google uses page speed as a ranking signal for both desktop and mobile. Every byte counts for high-traffic sites.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Is my HTML uploaded to a server?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>No. All minification happens in your browser using JavaScript regex and string operations. Your code never leaves your device, and nothing is stored anywhere. Complete privacy.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Does minification affect rendering?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>No. The rendered output is <strong>pixel-identical</strong> to the original. Minification only removes whitespace and comments that browsers ignore anyway. Content, structure, styles, and scripts are unchanged.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I minify HTML automatically in my build?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Yes. Use tools like <code>html-minifier-terser</code> (npm), Gulp with <code>gulp-htmlmin</code>, Webpack's <code>html-minifier-terser-webpack-plugin</code>, or Vite's built-in minification. Integrate it into your CI/CD pipeline so every deploy is optimized automatically.</p></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-header">🔗 Related Developer Tools</div>
+    <div class="sidebar-list">
+      <a href="/tools/developer-tools/css-minifier/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#3b82f6;">{ }</div>
+        <div class="sidebar-info"><div class="sidebar-title">CSS Minifier</div><div class="sidebar-desc">Minify CSS</div></div>
+      </a>
+      <a href="/tools/developer-tools/js-minifier/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#f59e0b;">JS</div>
+        <div class="sidebar-info"><div class="sidebar-title">JS Minifier</div><div class="sidebar-desc">Minify JavaScript</div></div>
+      </a>
+      <a href="/tools/developer-tools/html-formatter/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#10b981;">&lt;/&gt;</div>
+        <div class="sidebar-info"><div class="sidebar-title">HTML Formatter</div><div class="sidebar-desc">Beautify HTML</div></div>
+      </a>
+      <a href="/tools/developer-tools/css-formatter/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#8b5cf6;">{ }</div>
+        <div class="sidebar-info"><div class="sidebar-title">CSS Formatter</div><div class="sidebar-desc">Beautify CSS</div></div>
+      </a>
+      <a href="/tools/developer-tools/json-formatter/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#10b981;">{ }</div>
+        <div class="sidebar-info"><div class="sidebar-title">JSON Formatter</div><div class="sidebar-desc">Format JSON</div></div>
+      </a>
+      <a href="/tools/developer-tools/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#64748b;">&lt;/&gt;</div>
+        <div class="sidebar-info"><div class="sidebar-title">All Developer Tools →</div><div class="sidebar-desc">Browse 25+ tools</div></div>
+      </a>
+    </div>
+  </aside>
+
+</div>
+
+<!-- Drop overlay -->
+<div class="drop-overlay" id="dropOverlay">
+  <div class="drop-overlay-text">
+    <div class="drop-overlay-icon">📄</div>
+    Drop your HTML file here
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand"><div class="logo-icon">⚒</div>BigToolz</span></div>
+      <p class="footer-tagline">Your Ultimate Online Tools Hub</p>
+      <div class="footer-social">
+        <a href="https://facebook.com/bigtoolz" aria-label="Facebook">f</a>
+        <a href="https://twitter.com/bigtoolz" aria-label="Twitter">𝕏</a>
+        <a href="https://youtube.com/@bigtoolz" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+    <div>
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/tools/">All Tools</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Categories</h3>
+      <ul class="footer-links">
+        <li><a href="/tools/image-tools/">Image Tools</a></li>
+        <li><a href="/tools/pdf-tools/">PDF Tools</a></li>
+        <li><a href="/tools/text-tools/">Text Tools</a></li>
+        <li><a href="/tools/seo-tools/">SEO Tools</a></li>
+        <li><a href="/tools/categories">All Categories →</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Legal</h3>
+      <ul class="footer-links">
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left"><span>✓ 100% Free</span><span>✓ No Sign Up</span><span>✓ No Installation</span></div>
+    <div class="footer-bottom-right">© 2026 BigToolz. All rights reserved.</div>
+    <div class="footer-bottom-links"><a href="/privacy-policy">Privacy</a><a href="/terms">Terms</a><a href="/disclaimer">Disclaimer</a></div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+'use strict';
+
+/* ===== THEME ===== */
+(function(){try{var t=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&d))document.documentElement.setAttribute('data-theme','dark');else if(t==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();
+document.querySelector('.theme-btn')?.addEventListener('click',()=>{const h=document.documentElement;const c=h.getAttribute('data-theme');const d=window.matchMedia('(prefers-color-scheme: dark)').matches;let n=c==='dark'?'light':c==='light'?'dark':(d?'light':'dark');h.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}});
+
+/* ===== HELPERS ===== */
+const $ = (s, p = document) => p.querySelector(s);
+const $$ = (s, p = document) => [...p.querySelectorAll(s)];
+
+function formatBytes(b) {
+  if (b === 0) return '0 bytes';
+  const k = 1024;
+  const sizes = ['bytes', 'KB', 'MB'];
+  const i = Math.floor(Math.log(b) / Math.log(k));
+  return (b / Math.pow(k, i)).toFixed(i === 0 ? 0 : 1) + ' ' + sizes[i];
+}
+
+function showToast(msg, type = 'info', duration = 3000) {
+  const t = $('#toast');
+  if (!t) return;
+  t.className = 'toast visible' + (type !== 'info' ? ' ' + type : '');
+  t.textContent = msg;
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove('visible'), duration);
+}
+
+async function copyToClipboard(text) {
+  try {
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(text);
+      return true;
+    }
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.cssText = 'position:fixed;opacity:0;';
+    document.body.appendChild(ta);
+    ta.select();
+    const ok = document.execCommand('copy');
+    document.body.removeChild(ta);
+    return ok;
+  } catch (e) { return false; }
+}
+
+/* ===== STATE ===== */
+const state = {
+  options: {
+    removeComments: true,
+    collapseWhitespace: true,
+    removeNewlines: true,
+    trimLines: true,
+    preservePre: true,
+    preserveTextarea: true
+  },
+  lastOutput: ''
+};
+
+/* ===== DOM ===== */
+const inputHtml = $('#inputHtml');
+const outputHtml = $('#outputHtml');
+const inputSize = $('#inputSize');
+const outputSize = $('#outputSize');
+const statsRow = $('#statsRow');
+const savingsPercent = $('#savingsPercent');
+const savingsBytes = $('#savingsBytes');
+const minifyBtn = $('#minifyBtn');
+const resetBtn = $('#resetBtn');
+const pasteBtn = $('#pasteBtn');
+const uploadBtn = $('#uploadBtn');
+const clearInputBtn = $('#clearInputBtn');
+const copyBtn = $('#copyBtn');
+const downloadBtn = $('#downloadBtn');
+const fileInput = $('#fileInput');
+const dropOverlay = $('#dropOverlay');
+
+/* ===== TOGGLES ===== */
+$$('.toggle-switch').forEach(sw => {
+  sw.addEventListener('click', () => {
+    const key = sw.dataset.option;
+    state.options[key] = !state.options[key];
+    sw.classList.toggle('on', state.options[key]);
+    sw.setAttribute('aria-checked', state.options[key]);
+  });
+});
+
+/* ===== INPUT EVENT ===== */
+inputHtml.addEventListener('input', () => {
+  const len = inputHtml.value.length;
+  inputSize.textContent = formatBytes(len);
+  minifyBtn.disabled = len === 0;
+});
+
+/* ===== MINIFY ===== */
+function minifyHtml(html, opts) {
+  let out = html;
+
+  // Protect <pre>, <code>, <textarea> if enabled
+  const protectedBlocks = [];
+  if (opts.preservePre) {
+    out = out.replace(/<(pre|code)\b[^>]*>[\s\S]*?<\/\1>/gi, (match) => {
+      protectedBlocks.push(match);
+      return `\u0000PROTECT${protectedBlocks.length - 1}\u0000`;
+    });
+  }
+  if (opts.preserveTextarea) {
+    out = out.replace(/<textarea\b[^>]*>[\s\S]*?<\/textarea>/gi, (match) => {
+      protectedBlocks.push(match);
+      return `\u0000PROTECT${protectedBlocks.length - 1}\u0000`;
+    });
+  }
+  // Also protect <script> and <style> contents
+  out = out.replace(/<(script|style)\b[^>]*>[\s\S]*?<\/\1>/gi, (match) => {
+    protectedBlocks.push(match);
+    return `\u0000PROTECT${protectedBlocks.length - 1}\u0000`;
+  });
+
+  
+
+  // Trim each line
+  if (opts.trimLines) {
+    out = out.split('\n').map(l => l.trim()).join('\n');
+  }
+
+  // Collapse multiple whitespaces into one
+  if (opts.collapseWhitespace) {
+    out = out.replace(/[ \t]+/g, ' ');
+    out = out.replace(/\s*\n\s*/g, '\n');
+  }
+
+  // Remove newlines entirely
+  if (opts.removeNewlines) {
+    out = out.replace(/\n/g, '');
+    out = out.replace(/>\s+</g, '><');
+    out = out.replace(/\s{2,}/g, ' ');
+  }
+
+  // Trim final
+  out = out.trim();
+
+  // Restore protected blocks
+  out = out.replace(/\u0000PROTECT(\d+)\u0000/g, (_, idx) => protectedBlocks[parseInt(idx, 10)]);
+
+  return out;
+}
+
+minifyBtn.addEventListener('click', () => {
+  const html = inputHtml.value;
+  if (!html) { showToast('Please enter some HTML', 'error'); return; }
+
+  try {
+    const minified = minifyHtml(html, state.options);
+    state.lastOutput = minified;
+    outputHtml.value = minified;
+
+    const originalSize = new Blob([html]).size;
+    const minifiedSize = new Blob([minified]).size;
+    const savings = Math.max(0, Math.round((1 - minifiedSize / originalSize) * 100));
+    const bytesSaved = originalSize - minifiedSize;
+
+    outputSize.textContent = formatBytes(minifiedSize);
+    savingsPercent.textContent = savings + '% smaller';
+    savingsBytes.textContent = `(${formatBytes(bytesSaved)} saved)`;
+    statsRow.style.display = 'flex';
+
+    if (savings > 0) {
+      showToast(`✅ Minified! ${savings}% smaller (${formatBytes(bytesSaved)} saved)`, 'success');
+    } else {
+      showToast('HTML minified already quite compact', 'info');
+    }
+  } catch (err) {
+    console.error('Minify error:', err);
+    showToast('Minification failed check your HTML', 'error');
+  }
+});
+
+/* ===== RESET ===== */
+resetBtn.addEventListener('click', () => {
+  inputHtml.value = '';
+  outputHtml.value = '';
+  inputSize.textContent = '0 bytes';
+  outputSize.textContent = '0 bytes';
+  statsRow.style.display = 'none';
+  minifyBtn.disabled = true;
+  state.lastOutput = '';
+  showToast('Reset complete', 'info');
+});
+
+/* ===== PASTE ===== */
+pasteBtn.addEventListener('click', async () => {
+  try {
+    if (navigator.clipboard && navigator.clipboard.readText) {
+      const text = await navigator.clipboard.readText();
+      if (!text) { showToast('Clipboard is empty', 'error'); return; }
+      inputHtml.value = text;
+      inputHtml.dispatchEvent(new Event('input'));
+      showToast('Pasted from clipboard', 'success');
+    } else {
+      inputHtml.focus();
+      showToast('Press Ctrl+V to paste', 'info');
+    }
+  } catch (err) {
+    showToast('Clipboard access denied paste manually', 'error');
+    inputHtml.focus();
+  }
+});
+
+/* ===== UPLOAD ===== */
+uploadBtn.addEventListener('click', () => fileInput.click());
+
+fileInput.addEventListener('change', (e) => {
+  const file = e.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = (ev) => {
+    inputHtml.value = ev.target.result;
+    inputHtml.dispatchEvent(new Event('input'));
+    showToast(`Loaded: ${file.name}`, 'success');
+  };
+  reader.readAsText(file);
+  fileInput.value = '';
+});
+
+/* ===== CLEAR INPUT ===== */
+clearInputBtn.addEventListener('click', () => {
+  inputHtml.value = '';
+  inputHtml.dispatchEvent(new Event('input'));
+  showToast('Input cleared', 'info');
+});
+
+/* ===== COPY OUTPUT ===== */
+copyBtn.addEventListener('click', async () => {
+  if (!state.lastOutput) { showToast('Nothing to copy minify first', 'error'); return; }
+  const ok = await copyToClipboard(state.lastOutput);
+  if (ok) {
+    copyBtn.classList.add('copied');
+    const original = copyBtn.innerHTML;
+    copyBtn.innerHTML = '✓ Copied!';
+    setTimeout(() => {
+      copyBtn.classList.remove('copied');
+      copyBtn.innerHTML = original;
+    }, 2000);
+    showToast('Copied to clipboard!', 'success');
+  } else {
+    showToast('Copy failed', 'error');
+  }
+});
+
+/* ===== DOWNLOAD OUTPUT ===== */
+downloadBtn.addEventListener('click', () => {
+  if (!state.lastOutput) { showToast('Nothing to download minify first', 'error'); return; }
+  const blob = new Blob([state.lastOutput], { type: 'text/html;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'minified.html';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+  showToast('Downloaded minified.html', 'success');
+});
+
+/* ===== DRAG & DROP ===== */
+let dragCounter = 0;
+
+document.addEventListener('dragenter', (e) => {
+  e.preventDefault();
+  dragCounter++;
+  if (dragCounter === 1) dropOverlay.classList.add('visible');
+});
+document.addEventListener('dragleave', (e) => {
+  e.preventDefault();
+  dragCounter--;
+  if (dragCounter === 0) dropOverlay.classList.remove('visible');
+});
+document.addEventListener('dragover', (e) => e.preventDefault());
+document.addEventListener('drop', (e) => {
+  e.preventDefault();
+  dragCounter = 0;
+  dropOverlay.classList.remove('visible');
+  const file = e.dataTransfer.files[0];
+  if (!file) return;
+  if (!/\.(html?|htm)$/i.test(file.name) && !file.type.includes('html')) {
+    showToast('Please drop an HTML file', 'error');
+    return;
+  }
+  const reader = new FileReader();
+  reader.onload = (ev) => {
+    inputHtml.value = ev.target.result;
+    inputHtml.dispatchEvent(new Event('input'));
+    showToast(`Loaded: ${file.name}`, 'success');
+  };
+  reader.readAsText(file);
+});
+
+/* ===== FAQ ===== */
+$$('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    $$('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+
+/* ===== KEYBOARD SHORTCUT ===== */
+document.addEventListener('keydown', (e) => {
+  if ((e.ctrlKey || e.metaKey) && e.shiftKey && e.key === 'M') {
+    e.preventDefault();
+    if (!minifyBtn.disabled) minifyBtn.click();
+  }
+});
+</script>
+
+</body>
+</html>

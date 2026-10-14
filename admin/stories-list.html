@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#2563eb">
+<title>All Web Stories - BigToolz Admin</title>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#f8f9fc;color:#1a1a2e;line-height:1.5;min-height:100vh;-webkit-font-smoothing:antialiased;padding-bottom:env(safe-area-inset-bottom,0)}
+
+  /* ========== HEADER ========== */
+  .admin-header{background:#fff;height:68px;display:flex;align-items:center;justify-content:space-between;padding:0 32px;padding-top:env(safe-area-inset-top,0);box-shadow:0 1px 3px rgba(0,0,0,.06);position:sticky;top:0;z-index:100;border-bottom:1px solid #e5e7eb}
+  .admin-logo{display:flex;align-items:center;gap:10px;font-size:20px;font-weight:800;color:#1a1a2e;text-decoration:none;letter-spacing:-.5px}
+  .admin-logo-icon{width:36px;height:36px;background:linear-gradient(135deg,#3b82f6,#2563eb);border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:18px;box-shadow:0 4px 12px rgba(37,99,235,.3)}
+  .admin-logo span{color:#2563eb}
+  .admin-header-right{display:flex;align-items:center;gap:12px}
+  .back-btn{display:flex;align-items:center;gap:6px;background:#fff;color:#4b5563;border:1px solid #e5e7eb;padding:9px 16px;border-radius:10px;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;font-family:inherit;text-decoration:none;min-height:40px}
+  .back-btn:hover{border-color:#2563eb;color:#2563eb}
+  .new-btn{display:flex;align-items:center;gap:6px;background:#8b5cf6;color:#fff;border:none;padding:10px 18px;border-radius:10px;font-size:13px;font-weight:700;cursor:pointer;transition:all .2s;font-family:inherit;text-decoration:none;min-height:42px;box-shadow:0 4px 12px rgba(139,92,246,.25)}
+  .new-btn:hover{background:#7c3aed;transform:translateY(-1px)}
+  .new-btn:active{background:#6d28d9}
+
+  /* ========== MAIN ========== */
+  .admin-main{max-width:1280px;margin:0 auto;padding:32px}
+
+  /* ========== PAGE HEADER ========== */
+  .page-header{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;margin-bottom:24px;flex-wrap:wrap}
+  .page-header-left h1{font-size:28px;font-weight:800;color:#0a0e27;margin-bottom:6px;letter-spacing:-.6px;display:flex;align-items:center;gap:12px}
+  .page-header-left h1 .icon{width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,#8b5cf6,#6d28d9);display:flex;align-items:center;justify-content:center;font-size:22px;color:#fff;box-shadow:0 8px 20px rgba(139,92,246,.3)}
+  .page-header-left p{font-size:14px;color:#6b7280;font-weight:500}
+
+  /* ========== STATS BAR ========== */
+  .stats-bar{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:24px}
+  .stat-box{background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:16px 20px;display:flex;align-items:center;gap:14px;transition:all .2s}
+  .stat-box:hover{border-color:#8b5cf6;box-shadow:0 4px 12px rgba(139,92,246,.08)}
+  .stat-box-icon{width:44px;height:44px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:20px;color:#fff;flex-shrink:0}
+  .stat-box-icon.total{background:linear-gradient(135deg,#8b5cf6,#6d28d9)}
+  .stat-box-icon.published{background:linear-gradient(135deg,#10b981,#059669)}
+  .stat-box-icon.draft{background:linear-gradient(135deg,#f59e0b,#d97706)}
+  .stat-box-info{min-width:0}
+  .stat-box-value{font-size:24px;font-weight:800;color:#0a0e27;line-height:1;letter-spacing:-.5px;margin-bottom:2px}
+  .stat-box-label{font-size:12px;color:#9ca3af;font-weight:600;text-transform:uppercase;letter-spacing:.4px}
+
+  /* ========== CONTROLS ========== */
+  .controls-bar{background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:14px;display:flex;gap:12px;margin-bottom:20px;flex-wrap:wrap;align-items:center}
+  .search-wrap{position:relative;flex:1;min-width:240px}
+  .search-wrap svg{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:#9ca3af;pointer-events:none}
+  .search-wrap input{width:100%;padding:11px 14px 11px 42px;border:1px solid #e5e7eb;border-radius:10px;font-size:14px;font-family:inherit;background:#fff;color:#1a1a2e;outline:none;transition:border-color .2s,box-shadow .2s;min-height:44px}
+  .search-wrap input:focus{border-color:#8b5cf6;box-shadow:0 0 0 3px rgba(139,92,246,.1)}
+  .filter-select{padding:11px 14px;border:1px solid #e5e7eb;border-radius:10px;font-size:13px;font-weight:600;font-family:inherit;background:#fff;color:#374151;outline:none;cursor:pointer;min-height:44px;transition:border-color .2s}
+  .filter-select:focus{border-color:#8b5cf6}
+  .refresh-btn{display:flex;align-items:center;gap:6px;padding:11px 16px;border:1px solid #e5e7eb;background:#fff;color:#4b5563;border-radius:10px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;transition:all .2s;min-height:44px}
+  .refresh-btn:hover{border-color:#8b5cf6;color:#8b5cf6}
+
+  /* ========== STORIES GRID ========== */
+  .stories-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-bottom:28px}
+
+  .story-card{background:#fff;border:1px solid #e5e7eb;border-radius:14px;overflow:hidden;transition:all .25s cubic-bezier(.4,0,.2,1);box-shadow:0 1px 3px rgba(0,0,0,.04);display:flex;flex-direction:column;position:relative}
+  .story-card:hover{transform:translateY(-4px);box-shadow:0 12px 28px rgba(139,92,246,.13);border-color:#8b5cf6}
+
+  .story-cover{position:relative;aspect-ratio:9/16;background:linear-gradient(135deg,#8b5cf6,#6d28d9);overflow:hidden;display:flex;align-items:center;justify-content:center}
+  .story-cover img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s cubic-bezier(.4,0,.2,1)}
+  .story-card:hover .story-cover img{transform:scale(1.06)}
+  .story-cover-emoji{font-size:64px;filter:drop-shadow(0 4px 12px rgba(0,0,0,.3));z-index:2;position:relative}
+  .story-cover-overlay{position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(0,0,0,.7) 100%);z-index:2;pointer-events:none}
+
+  .story-status-badge{position:absolute;top:12px;right:12px;font-size:10px;font-weight:700;padding:4px 10px;border-radius:10px;text-transform:uppercase;letter-spacing:.4px;z-index:3;backdrop-filter:blur(10px)}
+  .story-status-badge.published{background:rgba(16,185,129,.95);color:#fff}
+  .story-status-badge.draft{background:rgba(245,158,11,.95);color:#fff}
+
+  .story-slides-count{position:absolute;top:12px;left:12px;background:rgba(255,255,255,.95);color:#0a0e27;font-size:10px;font-weight:700;padding:4px 10px;border-radius:10px;z-index:3;backdrop-filter:blur(10px)}
+
+  .story-cover-title{position:absolute;bottom:0;left:0;right:0;padding:16px 14px;color:#fff;z-index:3;font-size:15px;font-weight:800;line-height:1.3;text-shadow:0 2px 8px rgba(0,0,0,.5);display:-webkit-box;-webkit-line-clamp-webkit-box-orient:vertical;overflow:hidden}
+
+  .story-body{padding:14px 16px 16px;display:flex;flex-direction:column;flex:1;gap:10px}
+  .story-meta{display:flex;align-items:center;gap:10px;font-size:11px;color:#9ca3af;font-weight:500;flex-wrap:wrap}
+  .story-meta-item{display:flex;align-items:center;gap:3px}
+  .story-category{font-size:10px;font-weight:700;padding:3px 9px;border-radius:8px;background:#f3e8ff;color:#7c3aed;text-transform:uppercase;letter-spacing:.3px}
+
+  .story-actions{display:flex;gap:6px;padding-top:12px;border-top:1px solid #f3f4f6;margin-top:auto}
+  .action-btn{flex:1;display:flex;align-items:center;justify-content:center;gap:4px;padding:8px 6px;border-radius:8px;font-size:11px;font-weight:700;cursor:pointer;font-family:inherit;border:1px solid transparent;transition:all .2s;text-decoration:none;min-height:36px}
+  .action-btn.view{background:#f3f4f6;color:#4b5563}
+  .action-btn.view:hover{background:#e5e7eb}
+  .action-btn.edit{background:#eff6ff;color:#2563eb}
+  .action-btn.edit:hover{background:#dbeafe}
+  .action-btn.delete{background:#fef2f2;color:#ef4444}
+  .action-btn.delete:hover{background:#fee2e2}
+
+  /* ========== LOADING SKELETON ========== */
+  .skeleton-card{background:#fff;border:1px solid #e5e7eb;border-radius:14px;overflow:hidden}
+  .skeleton-cover{aspect-ratio:9/16;background:linear-gradient(90deg,#f3f4f6 25%,#e5e7eb 50%,#f3f4f6 75%);background-size:200% 100%;animation:shimmer 1.5s infinite}
+  .skeleton-body{padding:14px 16px 16px}
+  .skeleton-line{height:12px;background:linear-gradient(90deg,#f3f4f6 25%,#e5e7eb 50%,#f3f4f6 75%);background-size:200% 100%;animation:shimmer 1.5s infinite;border-radius:6px;margin-bottom:10px}
+  .skeleton-line.short{width:60%}
+  @keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
+
+  /* ========== EMPTY STATE ========== */
+  .empty-state{display:none;text-align:center;padding:80px 24px;background:#fff;border:1px solid #e5e7eb;border-radius:16px}
+  .empty-state.visible{display:block}
+  .empty-icon{font-size:64px;margin-bottom:16px;opacity:.4}
+  .empty-title{font-size:20px;font-weight:800;color:#0a0e27;margin-bottom:8px}
+  .empty-desc{font-size:14px;color:#6b7280;margin-bottom:22px;max-width:400px;margin-left:auto;margin-right:auto;line-height:1.6}
+  .empty-cta{display:inline-flex;align-items:center;gap:8px;background:#8b5cf6;color:#fff;padding:13px 24px;border-radius:10px;font-size:14px;font-weight:700;text-decoration:none;transition:all .2s;box-shadow:0 4px 12px rgba(139,92,246,.25)}
+  .empty-cta:hover{background:#7c3aed;transform:translateY(-1px)}
+
+  /* ========== PAGINATION ========== */
+  .pagination{display:flex;justify-content:center;align-items:center;gap:6px;margin-top:8px;flex-wrap:wrap}
+  .page-btn{min-width:40px;height:40px;padding:0 12px;border-radius:9px;border:1px solid #e5e7eb;background:#fff;color:#4b5563;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;display:inline-flex;align-items:center;justify-content:center;transition:all .2s;user-select:none}
+  .page-btn:hover:not(:disabled):not(.active){border-color:#8b5cf6;color:#8b5cf6;background:#faf5ff}
+  .page-btn.active{background:#8b5cf6;border-color:#8b5cf6;color:#fff;cursor:default;box-shadow:0 4px 12px rgba(139,92,246,.25)}
+  .page-btn:disabled{opacity:.4;cursor:not-allowed}
+  .page-btn.dots{border:none;background:transparent;cursor:default;min-width:24px;padding:0 2px}
+
+  /* ========== TOAST ========== */
+  .toast{position:fixed;bottom:24px;right:24px;background:#0a0e27;color:#fff;padding:14px 22px;border-radius:12px;font-size:13px;font-weight:600;box-shadow:0 12px 32px rgba(0,0,0,.25);z-index:3000;transform:translateY(200%);transition:transform .3s cubic-bezier(.4,0,.2,1);max-width:340px;backdrop-filter:blur(10px)}
+  .toast.visible{transform:translateY(0)}
+  .toast.success{background:#10b981}
+  .toast.error{background:#ef4444}
+
+  /* ========== MODAL ========== */
+  .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:2000;display:none;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(4px)}
+  .modal-overlay.visible{display:flex}
+  .modal-box{background:#fff;border-radius:16px;max-width:420px;width:100%;padding:28px;box-shadow:0 24px 60px rgba(0,0,0,.3)}
+  .modal-icon{width:60px;height:60px;border-radius:50%;background:#fef2f2;color:#ef4444;display:flex;align-items:center;justify-content:center;font-size:28px;margin:0 auto 16px}
+  .modal-title{font-size:19px;font-weight:800;color:#0a0e27;text-align:center;margin-bottom:8px}
+  .modal-desc{font-size:14px;color:#6b7280;text-align:center;line-height:1.6;margin-bottom:22px}
+  .modal-desc strong{color:#0a0e27;font-weight:700;word-break:break-word}
+  .modal-actions{display:flex;gap:10px}
+  .modal-btn{flex:1;padding:12px;border-radius:10px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;transition:all .2s;border:none;min-height:46px}
+  .modal-btn.cancel{background:#f3f4f6;color:#374151}
+  .modal-btn.cancel:hover{background:#e5e7eb}
+  .modal-btn.confirm{background:#ef4444;color:#fff}
+  .modal-btn.confirm:hover{background:#dc2626}
+  .modal-btn.confirm:disabled{opacity:.6;cursor:not-allowed}
+
+  /* ========== RESPONSIVE ========== */
+  @media(max-width:1024px){
+    .stories-grid{grid-template-columns:repeat(3,1fr)}
+  }
+
+  @media(max-width:768px){
+    .admin-header{padding:0 16px;height:64px}
+    .admin-logo{font-size:16px;gap:8px}
+    .admin-logo-icon{width:32px;height:32px;font-size:16px}
+    .new-btn{padding:9px 14px;font-size:12px}
+    .new-btn span{display:none}
+    .back-btn span{display:none}
+    .back-btn{padding:9px 12px}
+
+    .admin-main{padding:20px 16px}
+    .page-header-left h1{font-size:22px}
+    .page-header-left h1 .icon{width:38px;height:38px;font-size:18px}
+    .page-header-left p{font-size:13px}
+
+    .stats-bar{grid-template-columns:1fr;gap:10px}
+    .stat-box{padding:14px 16px}
+    .stat-box-value{font-size:20px}
+
+    .controls-bar{padding:12px;gap:10px}
+    .search-wrap{min-width:100%}
+    .filter-select,.refresh-btn{flex:1;min-width:120px}
+
+    .stories-grid{grid-template-columns:repeat(2,1fr);gap:12px}
+    .story-cover-title{font-size:13px;padding:12px 10px}
+    .story-body{padding:12px 12px 14px}
+    .story-actions{flex-direction:column;gap:6px}
+    .action-btn{width:100%}
+
+    .toast{left:16px;right:16px;bottom:16px;max-width:none}
+  }
+
+  @media(max-width:480px){
+    .admin-main{padding:16px 12px}
+    .page-header-left h1{font-size:20px}
+    .stories-grid{grid-template-columns:1fr;gap:14px}
+    .story-actions{flex-direction:row}
+    .action-btn{width:auto}
+  }
+
+  /* ========== DARK MODE ========== */
+  html[data-theme="dark"] body{background:#0f172a;color:#f1f5f9}
+  html[data-theme="dark"] .admin-header{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .admin-logo{color:#f1f5f9}
+  html[data-theme="dark"] .back-btn{background:#1e293b;border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .back-btn:hover{border-color:#8b5cf6;color:#c4b5fd}
+  html[data-theme="dark"] .page-header-left h1{color:#f1f5f9}
+  html[data-theme="dark"] .page-header-left p{color:#94a3b8}
+  html[data-theme="dark"] .stat-box,
+  html[data-theme="dark"] .story-card,
+  html[data-theme="dark"] .controls-bar,
+  html[data-theme="dark"] .empty-state,
+  html[data-theme="dark"] .modal-box,
+  html[data-theme="dark"] .skeleton-card{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .stat-box-value{color:#f1f5f9}
+  html[data-theme="dark"] .stat-box-label{color:#94a3b8}
+  html[data-theme="dark"] .search-wrap input,
+  html[data-theme="dark"] .filter-select,
+  html[data-theme="dark"] .refresh-btn{background:#0f172a;border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .search-wrap input::placeholder{color:#64748b}
+  html[data-theme="dark"] .story-meta{color:#94a3b8}
+  html[data-theme="dark"] .story-category{background:#4c1d95;color:#c4b5fd}
+  html[data-theme="dark"] .story-actions{border-color:#334155}
+  html[data-theme="dark"] .action-btn.view{background:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .action-btn.view:hover{background:#475569}
+  html[data-theme="dark"] .action-btn.edit{background:#1e3a8a;color:#93c5fd}
+  html[data-theme="dark"] .action-btn.edit:hover{background:#1e40af}
+  html[data-theme="dark"] .action-btn.delete{background:#7f1d1d;color:#fca5a5}
+  html[data-theme="dark"] .action-btn.delete:hover{background:#991b1b}
+  html[data-theme="dark"] .empty-title{color:#f1f5f9}
+  html[data-theme="dark"] .empty-desc{color:#94a3b8}
+  html[data-theme="dark"] .modal-title{color:#f1f5f9}
+  html[data-theme="dark"] .modal-desc{color:#94a3b8}
+  html[data-theme="dark"] .modal-desc strong{color:#f1f5f9}
+  html[data-theme="dark"] .modal-btn.cancel{background:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .modal-btn.cancel:hover{background:#475569}
+  html[data-theme="dark"] .page-btn{background:#1e293b;border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .page-btn:hover:not(:disabled):not(.active){background:#334155;color:#c4b5fd;border-color:#8b5cf6}
+  html[data-theme="dark"] .page-btn.active{background:#8b5cf6;color:#fff;border-color:#8b5cf6}
+  html[data-theme="dark"] .skeleton-cover,
+  html[data-theme="dark"] .skeleton-line{background:linear-gradient(90deg,#1e293b 25%,#334155 50%,#1e293b 75%);background-size:200% 100%}
+</style>
+</head>
+<body>
+
+<!-- ========== HEADER ========== -->
+<header class="admin-header">
+  <a href="/admin/" class="admin-logo">
+    <div class="admin-logo-icon">⚒</div>
+    BigToolz</span>
+  </a>
+  <div class="admin-header-right">
+    <a href="/admin/" class="back-btn">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      <span>Dashboard</span>
+    </a>
+    <a href="/admin/story-editor" class="new-btn">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
+      <span>New Story</span>
+    </a>
+  </div>
+</header>
+
+<!-- ========== MAIN ========== -->
+<main class="admin-main">
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <div class="page-header-left">
+      <h1>
+        <span class="icon">📱</span>
+        All Web Stories
+      </h1>
+      <p>Manage, edit and publish your web stories</p>
+    </div>
+  </div>
+
+  <!-- STATS BAR -->
+  <div class="stats-bar">
+    <div class="stat-box">
+      <div class="stat-box-icon total">📊</div>
+      <div class="stat-box-info">
+        <div class="stat-box-value" id="statTotal">—</div>
+        <div class="stat-box-label">Total</div>
+      </div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-box-icon published">✅</div>
+      <div class="stat-box-info">
+        <div class="stat-box-value" id="statPublished">—</div>
+        <div class="stat-box-label">Published</div>
+      </div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-box-icon draft">📝</div>
+      <div class="stat-box-info">
+        <div class="stat-box-value" id="statDraft">—</div>
+        <div class="stat-box-label">Drafts</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTROLS -->
+  <div class="controls-bar">
+    <div class="search-wrap">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+      <input type="text" id="searchInput" placeholder="Search stories by title or slug..." autocomplete="off">
+    </div>
+    <select class="filter-select" id="statusFilter">
+      <option value="all">All Status</option>
+      <option value="published">Published</option>
+      <option value="draft">Draft</option>
+    </select>
+    <select class="filter-select" id="sortFilter">
+      <option value="newest">Newest First</option>
+      <option value="oldest">Oldest First</option>
+      <option value="az">A - Z</option>
+    </select>
+    <button class="refresh-btn" id="refreshBtn">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M23 4v6h-6M1 20v-6h6M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></svg>
+      Refresh
+    </button>
+  </div>
+
+  <!-- STORIES GRID -->
+  <div class="stories-grid" id="storiesGrid">
+    <div class="skeleton-card">
+      <div class="skeleton-cover"></div>
+      <div class="skeleton-body">
+        <div class="skeleton-line"></div>
+        <div class="skeleton-line short"></div>
+      </div>
+    </div>
+    <div class="skeleton-card">
+      <div class="skeleton-cover"></div>
+      <div class="skeleton-body">
+        <div class="skeleton-line"></div>
+        <div class="skeleton-line short"></div>
+      </div>
+    </div>
+    <div class="skeleton-card">
+      <div class="skeleton-cover"></div>
+      <div class="skeleton-body">
+        <div class="skeleton-line"></div>
+        <div class="skeleton-line short"></div>
+      </div>
+    </div>
+    <div class="skeleton-card">
+      <div class="skeleton-cover"></div>
+      <div class="skeleton-body">
+        <div class="skeleton-line"></div>
+        <div class="skeleton-line short"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EMPTY STATE -->
+  <div class="empty-state" id="emptyState">
+    <div class="empty-icon">📱</div>
+    <div class="empty-title" id="emptyTitle">No stories yet</div>
+    <div class="empty-desc" id="emptyDesc">Create your first web story and it will appear here.</div>
+    <a href="/admin/story-editor" class="empty-cta">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
+      Create Your First Story
+    </a>
+  </div>
+
+  <!-- PAGINATION -->
+  <div class="pagination" id="pagination" style="display:none;"></div>
+
+</main>
+
+<!-- ========== DELETE MODAL ========== -->
+<div class="modal-overlay" id="deleteModal">
+  <div class="modal-box">
+    <div class="modal-icon">🗑</div>
+    <div class="modal-title">Delete this story?</div>
+    <div class="modal-desc">
+      <strong id="deleteStoryTitle">this story</strong> will be permanently deleted. This action cannot be undone.
+    </div>
+    <div class="modal-actions">
+      <button class="modal-btn cancel" id="cancelDelete">Cancel</button>
+      <button class="modal-btn confirm" id="confirmDelete">Delete</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+'use strict';
+
+/* ===== SUPABASE CONFIG ===== */
+const SUPABASE_URL = 'https://btmeygsirnyuzsubscde.supabase.co';
+const SUPABASE_KEY = 'sb_publishable_rncmFbKPlBLxkeIEXaFxfQ_rIbjebnJ';
+
+const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+/* ===== CONSTANTS ===== */
+const STORIES_PER_PAGE = 12;
+
+/* ===== THEME ===== */
+(function(){
+  try{
+    var t = localStorage.getItem('theme');
+    var d = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if(t === 'dark' || (!t && d)) document.documentElement.setAttribute('data-theme','dark');
+    else if(t === 'light') document.documentElement.setAttribute('data-theme','light');
+  }catch(e){}
+})();
+
+/* ===== STATE ===== */
+const state = {
+  allStories: [],
+  filtered: [],
+  query: '',
+  status: 'all',
+  sort: 'newest',
+  currentPage: 1,
+  totalPages: 1,
+  deleteId: null
+};
+
+/* ===== DOM ===== */
+const storiesGrid = document.getElementById('storiesGrid');
+const emptyState = document.getElementById('emptyState');
+const emptyTitle = document.getElementById('emptyTitle');
+const emptyDesc = document.getElementById('emptyDesc');
+const pagination = document.getElementById('pagination');
+const searchInput = document.getElementById('searchInput');
+const statusFilter = document.getElementById('statusFilter');
+const sortFilter = document.getElementById('sortFilter');
+const refreshBtn = document.getElementById('refreshBtn');
+const statTotal = document.getElementById('statTotal');
+const statPublished = document.getElementById('statPublished');
+const statDraft = document.getElementById('statDraft');
+const deleteModal = document.getElementById('deleteModal');
+const deleteStoryTitle = document.getElementById('deleteStoryTitle');
+const cancelDelete = document.getElementById('cancelDelete');
+const confirmDelete = document.getElementById('confirmDelete');
+
+/* ===== HELPERS ===== */
+function escapeHtml(str) {
+  const div = document.createElement('div');
+  div.textContent = str || '';
+  return div.innerHTML;
+}
+
+function formatDate(dateStr) {
+  if (!dateStr) return '';
+  try {
+    return new Date(dateStr).toLocaleDateString('en-US', {
+      month:'short', day:'numeric', year:'numeric'
+    });
+  } catch(e) { return ''; }
+}
+
+function getStoryEmoji(cat) {
+  const map = {
+    'Technology':'💻','AI':'🤖','Business':'💼','Sports':'⚽',
+    'Entertainment':'🎬','Breaking News':'🔴','Politics':'🏛',
+    'World':'🌍','India':'🇮🇳','General':'📱'
+  };
+  return map[cat] || '📱';
+}
+
+function showToast(msg, type, duration) {
+  type = type || 'info';
+  duration = duration || 2500;
+  const t = document.getElementById('toast');
+  if (!t) return;
+  t.className = 'toast visible' + (type !== 'info' ? ' ' + type : '');
+  t.textContent = msg;
+  clearTimeout(t._timer);
+  t._timer = setTimeout(function(){ t.classList.remove('visible'); }, duration);
+}
+
+/* ===== AUTH CHECK ===== */
+async function checkAuth() {
+  try {
+    const result = await sb.auth.getSession();
+    const session = result.data && result.data.session;
+    if (!session) {
+      window.location.href = /admin/login';
+      return false;
+    }
+    return true;
+  } catch (err) {
+    console.error('Auth error:', err);
+    window.location.href = /admin/login';
+    return false;
+  }
+}
+
+/* ===== LOAD STORIES ===== */
+async function loadStories() {
+  try {
+    const result = await sb
+      .from('webstories')
+      .select('*')
+      .order('created_at', { ascending: false });
+
+    if (result.error) throw result.error;
+
+    state.allStories = result.data || [];
+    updateStats();
+    applyFilters();
+
+  } catch (err) {
+    console.error('Load stories error:', err);
+    storiesGrid.innerHTML = '';
+    emptyTitle.textContent = 'Could not load stories';
+    emptyDesc.textContent = err.message || 'Please check your Supabase connection.';
+    emptyState.classList.add('visible');
+    emptyState.querySelector('.empty-cta').style.display = 'none';
+  }
+}
+
+/* ===== STATS ===== */
+function updateStats() {
+  const total = state.allStories.length;
+  const published = state.allStories.filter(s => s.status === 'published').length;
+  const draft = state.allStories.filter(s => s.status === 'draft').length;
+
+  statTotal.textContent = total;
+  statPublished.textContent = published;
+  statDraft.textContent = draft;
+}
+
+/* ===== FILTERS ===== */
+function applyFilters() {
+  let list = [...state.allStories];
+
+  // Search
+  if (state.query.trim()) {
+    const q = state.query.toLowerCase().trim();
+    list = list.filter(s =>
+      (s.title || '').toLowerCase().includes(q) ||
+      (s.slug || '').toLowerCase().includes(q)
+    );
+  }
+
+  // Status
+  if (state.status !== 'all') {
+    list = list.filter(s => s.status === state.status);
+  }
+
+  // Sort
+  if (state.sort === 'newest') {
+    list.sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
+  } else if (state.sort === 'oldest') {
+    list.sort((a, b) => new Date(a.created_at) - new Date(b.created_at));
+  } else if (state.sort === 'az') {
+    list.sort((a, b) => (a.title || '').localeCompare(b.title || ''));
+  }
+
+  state.filtered = list;
+  state.currentPage = 1;
+  render();
+}
+
+/* ===== RENDER ===== */
+function render() {
+  const total = state.filtered.length;
+  state.totalPages = Math.max(1, Math.ceil(total / STORIES_PER_PAGE));
+
+  if (state.currentPage > state.totalPages) state.currentPage = state.totalPages;
+  if (state.currentPage < 1) state.currentPage = 1;
+
+  const startIdx = (state.currentPage - 1) * STORIES_PER_PAGE;
+  const endIdx = startIdx + STORIES_PER_PAGE;
+  const pageItems = state.filtered.slice(startIdx, endIdx);
+
+  storiesGrid.innerHTML = '';
+
+  if (pageItems.length === 0) {
+    emptyState.classList.add('visible');
+    if (state.query || state.status !== 'all') {
+      emptyTitle.textContent = 'No stories found';
+      emptyDesc.textContent = 'Try a different search or filter.';
+      emptyState.querySelector('.empty-cta').style.display = 'none';
+    } else {
+      emptyTitle.textContent = 'No stories yet';
+      emptyDesc.textContent = 'Create your first web story and it will appear here.';
+      emptyState.querySelector('.empty-cta').style.display = 'inline-flex';
+    }
+    pagination.style.display = 'none';
+    return;
+  }
+
+  emptyState.classList.remove('visible');
+
+  pageItems.forEach(story => {
+    const cover = story.cover_image || '';
+    const cat = story.category || 'General';
+    const emoji = getStoryEmoji(cat);
+    const slidesCount = Array.isArray(story.slides) ? story.slides.length : 0;
+
+    const card = document.createElement('div');
+    card.className = 'story-card';
+
+    const coverInner = cover
+      ? '<img src="' + escapeHtml(cover) + '" alt="' + escapeHtml(story.title) + '" loading="lazy"><div class="story-cover-overlay"></div>'
+      : '<div class="story-cover-emoji">' + emoji + '</div><div class="story-cover-overlay"></div>';
+
+    card.innerHTML = `
+      <div class="story-cover">
+        ${coverInner}
+        <span class="story-status-badge ${story.status}">${story.status}</span>
+        <span class="story-slides-count">${slidesCount} slide${slidesCount !== 1 ? 's' : ''}</span>
+        <div class="story-cover-title">${escapeHtml(story.title || 'Untitled')}</div>
+      </div>
+      <div class="story-body">
+        <div class="story-meta">
+          <span class="story-category">${escapeHtml(cat)}</span>
+          <span class="story-meta-item">📅 ${formatDate(story.created_at)}</span>
+        </div>
+        <div class="story-actions">
+          <a href="/webstories/${encodeURIComponent(story.slug)}/" target="_blank" class="action-btn view" title="View">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            View
+          </a>
+          <a href="/admin/story-editor?id=${story.id}" class="action-btn edit" title="Edit">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+            Edit
+          </a>
+          <button class="action-btn delete" data-id="${story.id}" data-title="${escapeHtml(story.title)}" title="Delete">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 6h18M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"/></svg>
+            Delete
+          </button>
+        </div>
+      </div>
+    `;
+    storiesGrid.appendChild(card);
+  });
+
+  // Attach delete handlers
+  storiesGrid.querySelectorAll('.action-btn.delete').forEach(btn => {
+    btn.addEventListener('click', function() {
+      openDeleteModal(btn.dataset.id, btn.dataset.title);
+    });
+  });
+
+  renderPagination();
+}
+
+/* ===== PAGINATION ===== */
+function renderPagination() {
+  if (state.totalPages <= 1) {
+    pagination.style.display = 'none';
+    return;
+  }
+
+  pagination.style.display = 'flex';
+  pagination.innerHTML = '';
+
+  const prev = document.createElement('button');
+  prev.className = 'page-btn';
+  prev.innerHTML = '‹';
+  prev.disabled = state.currentPage === 1;
+  prev.addEventListener('click', () => goToPage(state.currentPage - 1));
+  pagination.appendChild(prev);
+
+  const pages = getPageNumbers(state.currentPage, state.totalPages);
+  pages.forEach(p => {
+    if (p === '...') {
+      const dots = document.createElement('span');
+      dots.className = 'page-btn dots';
+      dots.textContent = '…';
+      pagination.appendChild(dots);
+    } else {
+      const btn = document.createElement('button');
+      btn.className = 'page-btn' + (p === state.currentPage ? ' active' : '');
+      btn.textContent = p;
+      if (p === state.currentPage) {
+        btn.disabled = true;
+      } else {
+        btn.addEventListener('click', () => goToPage(p));
+      }
+      pagination.appendChild(btn);
+    }
+  });
+
+  const next = document.createElement('button');
+  next.className = 'page-btn';
+  next.innerHTML = '›';
+  next.disabled = state.currentPage === state.totalPages;
+  next.addEventListener('click', () => goToPage(state.currentPage + 1));
+  pagination.appendChild(next);
+}
+
+function getPageNumbers(current, total) {
+  const delta = 1;
+  const range = [];
+  const withDots = [];
+
+  for (let i = Math.max(2, current - delta); i <= Math.min(total - 1, current + delta); i++) {
+    range.push(i);
+  }
+
+  if (current - delta > 2) withDots.push(1, '...');
+  else withDots.push(1);
+
+  withDots.push(...range);
+
+  if (current + delta < total - 1) withDots.push('...', total);
+  else if (total > 1) withDots.push(total);
+
+  return withDots;
+}
+
+function goToPage(page) {
+  state.currentPage = page;
+  render();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+/* ===== DELETE MODAL ===== */
+function openDeleteModal(id, title) {
+  state.deleteId = id;
+  deleteStoryTitle.textContent = '"' + title + '"';
+  deleteModal.classList.add('visible');
+}
+
+function closeDeleteModal() {
+  state.deleteId = null;
+  deleteModal.classList.remove('visible');
+  confirmDelete.disabled = false;
+  confirmDelete.textContent = 'Delete';
+}
+
+cancelDelete.addEventListener('click', closeDeleteModal);
+
+deleteModal.addEventListener('click', function(e) {
+  if (e.target === deleteModal) closeDeleteModal();
+});
+
+confirmDelete.addEventListener('click', async function() {
+  if (!state.deleteId) return;
+
+  confirmDelete.disabled = true;
+  confirmDelete.textContent = 'Deleting...';
+
+  try {
+    const result = await sb.from('webstories').delete().eq('id', state.deleteId);
+    if (result.error) throw result.error;
+
+    showToast('✅ Story deleted', 'success');
+    closeDeleteModal();
+
+    // Reload
+    state.allStories = state.allStories.filter(s => s.id !== state.deleteId);
+    updateStats();
+    state.filtered = state.filtered.filter(s => s.id !== state.deleteId);
+    render();
+
+  } catch (err) {
+    console.error('Delete error:', err);
+    showToast('❌ Delete failed: ' + err.message, 'error');
+    confirmDelete.disabled = false;
+    confirmDelete.textContent = 'Delete';
+  }
+});
+
+/* ===== EVENT LISTENERS ===== */
+let searchTimer;
+searchInput.addEventListener('input', function(e) {
+  clearTimeout(searchTimer);
+  searchTimer = setTimeout(function() {
+    state.query = e.target.value;
+    applyFilters();
+  }, 250);
+});
+
+statusFilter.addEventListener('change', function(e) {
+  state.status = e.target.value;
+  applyFilters();
+});
+
+sortFilter.addEventListener('change', function(e) {
+  state.sort = e.target.value;
+  applyFilters();
+});
+
+refreshBtn.addEventListener('click', function() {
+  showToast('Refreshing...', 'info', 800);
+  loadStories();
+});
+
+/* ===== INIT ===== */
+(async function init() {
+  const ok = await checkAuth();
+  if (!ok) return;
+  loadStories();
+})();
+</script>
+
+</body>
+</html>

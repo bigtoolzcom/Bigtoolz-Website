@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2563eb">
+
+<title>404 - Page Not Found | BigToolz</title>
+<meta name="description" content="The page you're looking for doesn't exist. Explore 300+ free online tools on BigToolz instead.">
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="https://bigtoolz.com/404.html">
+
+<link rel="icon" href="/assets/images/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/images/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#f8f9fc;color:#1a1a2e;overflow-x:hidden;line-height:1.5}
+
+  .header{background:#fff;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;position:sticky;top:0;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+  .header-left{display:flex;align-items:center;gap:40px}
+  .logo{display:flex;align-items:center;gap:8px;font-size:22px;font-weight:800;color:#1a1a2e;text-decoration:none}
+  .logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#3b82f6,#2563eb);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px}
+  .logo span{color:#2563eb}
+  .nav{display:flex;align-items:center;gap:28px;list-style:none}
+  .nav a{text-decoration:none;color:#4b5563;font-size:14px;font-weight:500;transition:color .2s}
+  .nav a:hover{color:#2563eb}
+  .header-right{display:flex;align-items:center;gap:16px}
+  .search-btn,.theme-btn{width:36px;height:36px;border-radius:50%;border:none;background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#4b5563}
+  .search-btn:hover,.theme-btn:hover{background:#f3f4f6}
+  .bookmark-btn{display:flex;align-items:center;gap:8px;background:#2563eb;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
+  .bookmark-btn:hover{background:#1d4ed8}
+
+  /* HERO */
+  .hero{background:linear-gradient(135deg,#0a0e27 0%,#1a1a4e 40%,#2d1b69 70%,#4c1d95 100%);padding:80px 40px 100px;position:relative;overflow:hidden;text-align:center;color:#fff}
+  .hero::before{content:'';position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(139,92,246,.3) 0%,transparent 70%);border-radius:50%}
+  .hero-inner{max-width:700px;margin:0 auto;position:relative;z-index:2}
+  .error-code{font-size:120px;font-weight:900;line-height:1;background:linear-gradient(135deg,#60a5fa,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:16px;letter-spacing:-4px}
+  .hero-title{font-size:36px;font-weight:800;line-height:1.2;margin-bottom:14px}
+  .hero-title .blue{color:#60a5fa}
+  .hero-desc{font-size:16px;color:rgba(255,255,255,.75);line-height:1.7;max-width:520px;margin:0 auto 32px}
+  .hero-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:32px}
+  .btn-primary{display:inline-flex;align-items:center;gap:8px;background:#2563eb;color:#fff;border:none;padding:14px 28px;border-radius:10px;font-size:15px;font-weight:700;text-decoration:none;cursor:pointer;transition:background .2s,transform .2s}
+  .btn-primary:hover{background:#1d4ed8;transform:translateY(-2px)}
+  .btn-secondary{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.2);padding:14px 28px;border-radius:10px;font-size:15px;font-weight:700;text-decoration:none;cursor:pointer;transition:background .2s}
+  .btn-secondary:hover{background:rgba(255,255,255,.2)}
+  .search-box{max-width:520px;margin:0 auto;display:flex;background:#fff;border-radius:12px;padding:6px;box-shadow:0 4px 20px rgba(0,0,0,.15)}
+  .search-box input{flex:1;border:none;outline:none;font-size:14px;color:#1a1a2e;padding:10px 16px;font-family:inherit;background:transparent}
+  .search-box input::placeholder{color:#9ca3af}
+  .search-box button{background:#2563eb;color:#fff;border:none;padding:10px 24px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;transition:background .2s}
+  .search-box button:hover{background:#1d4ed8}
+
+  /* MAIN */
+  .main-content{max-width:1200px;margin:0 auto;padding:60px 40px}
+  .section-title{font-size:24px;font-weight:800;color:#1a1a2e;margin-bottom:8px;text-align:center}
+  .section-sub{font-size:15px;color:#6b7280;text-align:center;margin-bottom:32px}
+
+  .categories-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:50px}
+  .category-card{background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:24px 16px;text-align:center;text-decoration:none;color:inherit;transition:all .2s}
+  .category-card:hover{border-color:#2563eb;box-shadow:0 4px 16px rgba(37,99,235,.1);transform:translateY(-2px)}
+  .category-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;font-size:22px;color:#fff}
+  .category-name{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:4px}
+  .category-count{font-size:12px;color:#9ca3af;font-weight:500}
+
+  .popular-tools{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .tool-card{background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:18px;display:flex;align-items:center;gap:14px;text-decoration:none;color:inherit;transition:all .2s}
+  .tool-card:hover{border-color:#2563eb;box-shadow:0 4px 16px rgba(37,99,235,.1)}
+  .tool-icon{width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;flex-shrink:0}
+  .tool-name{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:2px}
+  .tool-desc{font-size:12px;color:#6b7280;line-height:1.4}
+
+  /* FOOTER */
+  .footer{background:#0a0e27;padding:60px 40px 30px;color:#fff}
+  .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:40px}
+  .footer-brand{display:flex;align-items:center;gap:8px;font-size:20px;font-weight:800;margin-bottom:12px}
+  .footer-brand span{color:#60a5fa}
+  .footer-tagline{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px}
+  .footer-social{display:flex;gap:12px}
+  .footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:16px;transition:background .2s}
+  .footer-social a:hover{background:rgba(255,255,255,.2)}
+  .footer-heading{font-size:14px;font-weight:700;margin-bottom:20px;color:#fff}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .footer-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;transition:color .2s}
+  .footer-links a:hover{color:#60a5fa}
+  .footer-bottom{max-width:1200px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  .footer-bottom-left{display:flex;gap:20px;font-size:12px;color:rgba(255,255,255,.5)}
+  .footer-bottom-right,.footer-bottom-links a{font-size:12px;color:rgba(255,255,255,.5);text-decoration:none}
+  .footer-bottom-links{display:flex;gap:20px}
+  .footer-bottom-links a:hover{color:#60a5fa}
+
+  @media(max-width:992px){
+    .header{padding:0 20px}.nav{display:none}
+    .error-code{font-size:90px}
+    .hero-title{font-size:28px}
+    .categories-grid{grid-template-columns:repeat(2,1fr)}
+    .popular-tools{grid-template-columns:1fr}
+    .footer-inner{grid-template-columns:1fr 1fr}
+  }
+  @media(max-width:576px){
+    .header{padding:0 16px}.header-right .search-btn,.header-right .theme-btn{display:none}
+    .hero{padding:50px 20px 70px}
+    .error-code{font-size:72px}
+    .hero-title{font-size:22px}
+    .main-content{padding:40px 20px}
+    .categories-grid{grid-template-columns:1fr}
+    .footer-inner{grid-template-columns:1fr}
+    .footer-bottom{flex-direction:column;text-align:center}
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="header">
+  <div class="header-left">
+    <a href="/" class="logo" aria-label="BigToolz Home">
+      <div class="logo-icon" aria-hidden="true">⚒</div>
+      BigToolz</span>
+    </a>
+    <nav aria-label="Main navigation">
+      <ul class="nav">
+        <li><a href="/">Home</a></li>
+        <li><a href="/tools/">All Tools</a></li>
+        <li><a href="/tools/">Categories</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/about.html">About Us</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="header-right">
+    <button class="search-btn" aria-label="Search tools">
+      
+    <button class="theme-btn" aria-label="Toggle dark mode">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+    </button>
+    
+    </button>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="error-code">404</div>
+    <h1 class="hero-title">Oops! <span class="blue">Page Not Found</span></h1>
+    <p class="hero-desc">
+      The page you're looking for doesn't exist, was moved, or is temporarily unavailable. But don't worry we've got 300+ tools waiting for you.
+    </p>
+    <div class="hero-actions">
+      <a href="/" class="btn-primary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><path d="M9 22V12h6v10"/></svg>
+        Back to Home
+      </a>
+      <a href="/tools/" class="btn-secondary">Browse All Tools →</a>
+    </div>
+    <form class="search-box" role="search" action="/search" method="get" onsubmit="return handleSearch(event)">
+      <input type="search" name="q" placeholder="Search for tools (e.g. image compressor, PDF...)" aria-label="Search tools" id="searchInput">
+      <button type="submit">Search</button>
+    </form>
+  </div>
+</section>
+
+<!-- ===== MAIN ===== -->
+<main class="main-content">
+
+  <!-- Categories -->
+  <h2 class="section-title">Explore Popular Categories</h2>
+  <p class="section-sub">Jump straight into what you need — 300+ tools across 8 categories.</p>
+
+  <div class="categories-grid">
+    <a href="/tools/image-tools/" class="category-card">
+      <div class="category-icon" style="background:#10b981;">🖼</div>
+      <div class="category-name">Image Tools</div>
+      <div class="category-count">25 Tools</div>
+    </a>
+    <a href="/tools/pdf-tools/" class="category-card">
+      <div class="category-icon" style="background:#ef4444;">📕</div>
+      <div class="category-name">PDF Tools</div>
+      <div class="category-count">100 Tools</div>
+    </a>
+    <a href="/tools/text-tools/" class="category-card">
+      <div class="category-icon" style="background:#3b82f6;">T</div>
+      <div class="category-name">Text Tools</div>
+      <div class="category-count">25 Tools</div>
+    </a>
+    <a href="/tools/seo-tools/" class="category-card">
+      <div class="category-icon" style="background:#8b5cf6;">📈</div>
+      <div class="category-name">SEO Tools</div>
+      <div class="category-count">25 Tools</div>
+    </a>
+    <a href="/tools/developer-tools/" class="category-card">
+      <div class="category-icon" style="background:#f97316;">&lt;/&gt;</div>
+      <div class="category-name">Developer Tools</div>
+      <div class="category-count">25 Tools</div>
+    </a>
+    <a href="/tools/calculator-tools/" class="category-card">
+      <div class="category-icon" style="background:#06b6d4;">🧮</div>
+      <div class="category-name">Calculator Tools</div>
+      <div class="category-count">25 Tools</div>
+    </a>
+    <a href="/tools/social-tools/" class="category-card">
+      <div class="category-icon" style="background:#ec4899;">📱</div>
+      <div class="category-name">Social Tools</div>
+      <div class="category-count">25 Tools</div>
+    </a>
+    <a href="/tools/utility-tools/" class="category-card">
+      <div class="category-icon" style="background:#8b5cf6;">⚙️</div>
+      <div class="category-name">Utility Tools</div>
+      <div class="category-count">50 Tools</div>
+    </a>
+  </div>
+
+  <!-- Popular Tools -->
+  <h2 class="section-title">Most Popular Tools</h2>
+  <p class="section-sub">These are the tools our users love the most.</p>
+
+  <div class="popular-tools">
+    <a href="/tools/pdf-tools/convert-pdf/jpg-to-pdf/" class="tool-card">
+      <div class="tool-icon" style="background:#ef4444;">📕</div>
+      <div>
+        <div class="tool-name">Image to PDF</div>
+        <div class="tool-desc">Convert images to PDF instantly.</div>
+      </div>
+    </a>
+    <a href="/tools/image-tools/image-compressor/" class="tool-card">
+      <div class="tool-icon" style="background:#10b981;">🖼</div>
+      <div>
+        <div class="tool-name">Image Compressor</div>
+        <div class="tool-desc">Reduce image size without losing quality.</div>
+      </div>
+    </a>
+    <a href="/tools/text-tools/word-counter/" class="tool-card">
+      <div class="tool-icon" style="background:#3b82f6;">T</div>
+      <div>
+        <div class="tool-name">Word Counter</div>
+        <div class="tool-desc">Count words, characters and more.</div>
+      </div>
+    </a>
+    <a href="/tools/utility-tools/password-generator/" class="tool-card">
+      <div class="tool-icon" style="background:#8b5cf6;">🔒</div>
+      <div>
+        <div class="tool-name">Password Generator</div>
+        <div class="tool-desc">Generate strong and secure passwords.</div>
+      </div>
+    </a>
+    <a href="/tools/image-tools/qr-code-generator/" class="tool-card">
+      <div class="tool-icon" style="background:#06b6d4;">▦</div>
+      <div>
+        <div class="tool-name">QR Code Generator</div>
+        <div class="tool-desc">Create QR codes for text and links.</div>
+      </div>
+    </a>
+    <a href="/tools/calculator-tools/age-calculator/" class="tool-card">
+      <div class="tool-icon" style="background:#f97316;">🎂</div>
+      <div>
+        <div class="tool-name">Age Calculator</div>
+        <div class="tool-desc">Calculate exact age in seconds.</div>
+      </div>
+    </a>
+  </div>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">
+        <div class="logo-icon">⚒</div>
+        BigToolz</span>
+      </div>
+      <p class="footer-tagline">Your Ultimate Online Tools Hub</p>
+      <div class="footer-social">
+        <a href="https://facebook.com/bigtoolz" aria-label="Facebook">f</a>
+        <a href="https://twitter.com/bigtoolz" aria-label="Twitter">𝕏</a>
+        <a href="https://reddit.com/r/bigtoolz" aria-label="Reddit">r</a>
+        <a href="https://youtube.com/@bigtoolz" aria-label="YouTube">▶</a>
+        <a href="https://instagram.com/bigtoolz" aria-label="Instagram">📷</a>
+      </div>
+    </div>
+    <div>
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/tools/">All Tools</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/about.html">About Us</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Categories</h3>
+      <ul class="footer-links">
+        <li><a href="/tools/image-tools/">Image Tools</a></li>
+        <li><a href="/tools/pdf-tools/">PDF Tools</a></li>
+        <li><a href="/tools/text-tools/">Text Tools</a></li>
+        <li><a href="/tools/seo-tools/">SEO Tools</a></li>
+        <li><a href="/tools/developer-tools/">Developer Tools</a></li>
+        <li><a href="/tools/categories.html">More Categories →</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Legal</h3>
+      <ul class="footer-links">
+        <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="/terms.html">Terms of Service</a></li>
+        <li><a href="/disclaimer.html">Disclaimer</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left">
+      <span>✓ 100% Free</span>
+      <span>✓ No Sign Up</span>
+      <span>✓ No Installation</span>
+    </div>
+    <div class="footer-bottom-right">© 2026 BigToolz. All rights reserved.</div>
+    <div class="footer-bottom-links">
+      <a href="/privacy-policy.html">Privacy</a>
+      <a href="/terms.html">Terms</a>
+      <a href="/disclaimer.html">Disclaimer</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Live search redirect
+  function handleSearch(e) {
+    e.preventDefault();
+    const q = document.getElementById('searchInput').value.trim();
+    if (q) window.location.href = '/search?q=' + encodeURIComponent(q);
+    return false;
+  }
+
+  // Theme toggle
+  const themeBtn = document.querySelector('.theme-btn');
+  themeBtn.addEventListener('click', () => {
+    document.documentElement.classList.toggle('dark');
+    localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+  });
+  if (localStorage.getItem('theme') === 'dark') document.documentElement.classList.add('dark');
+</script>
+
+</body>
+</html>

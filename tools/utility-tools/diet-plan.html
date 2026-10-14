@@ -1,0 +1,1198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2563eb">
+
+<title>Diet Plan Generator - Free Personalized Meal Plan | BigToolz</title>
+<meta name="description" content="Generate a personalized 7-day diet plan. Calculate BMR, TDEE, calorie target, and macros. Get meal-by-meal plan for weight loss, muscle gain or maintenance.">
+<meta name="keywords" content="diet plan generator, meal plan, calorie calculator, weight loss diet, muscle gain diet, bmr calculator, tdee calculator">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://bigtoolz.com/tools/utility-tools/diet-plan/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Diet Plan Generator - Free Personalized Meal Plan | BigToolz">
+<meta property="og:description" content="Get a personalized 7-day diet plan with calorie and macro targets. Free, no signup.">
+<meta property="og:url" content="https://bigtoolz.com/tools/utility-tools/diet-plan/">
+<meta property="og:image" content="https://bigtoolz.com/assets/images/og-image.jpg">
+<meta property="og:site_name" content="BigToolz">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Diet Plan Generator - BigToolz">
+<meta name="twitter:description" content="Generate your personalized 7-day diet plan instantly.">
+<meta name="twitter:image" content="https://bigtoolz.com/assets/images/twitter-card.jpg">
+
+<link rel="icon" href="/assets/images/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/images/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#f8f9fc;color:#1a1a2e;overflow-x:hidden;line-height:1.5}
+
+  .header{background:#fff;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;position:sticky;top:0;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+  .header-left{display:flex;align-items:center;gap:40px}
+  .logo{display:flex;align-items:center;gap:8px;font-size:22px;font-weight:800;color:#1a1a2e;text-decoration:none}
+  .logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#3b82f6,#2563eb);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px}
+  .logo span{color:#2563eb}
+  .nav{display:flex;align-items:center;gap:28px;list-style:none}
+  .nav a{text-decoration:none;color:#4b5563;font-size:14px;font-weight:500;transition:color .2s}
+  .nav a:hover,.nav a.active{color:#2563eb}
+  .header-right{display:flex;align-items:center;gap:16px}
+  .search-btn,.theme-btn{width:36px;height:36px;border-radius:50%;border:none;background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#4b5563}
+  .search-btn:hover,.theme-btn:hover{background:#f3f4f6}
+  .bookmark-btn{display:flex;align-items:center;gap:8px;background:#2563eb;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
+  .bookmark-btn:hover{background:#1d4ed8}
+
+  .hero{background:linear-gradient(135deg,#0a0e27 0%,#1a1a4e 40%,#2d1b69 70%,#4c1d95 100%);padding:40px 40px 60px;position:relative;overflow:hidden;color:#fff}
+  .hero::before{content:'';position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(16,185,129,.3) 0%,transparent 70%);border-radius:50%}
+  .hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+  .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px;flex-wrap:wrap}
+  .breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none}
+  .breadcrumb a:hover{color:#fff}
+  .breadcrumb .sep{color:rgba(255,255,255,.4)}
+  .breadcrumb .current{color:#fff;font-weight:500}
+  .hero-title-row{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+  .hero-icon{width:60px;height:60px;background:#10b981;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:28px;color:#fff;flex-shrink:0;box-shadow:0 8px 24px rgba(16,185,129,.4)}
+  .hero-title{font-size:42px;font-weight:800;line-height:1.15}
+  .hero-title .blue{color:#34d399}
+  .hero-desc{font-size:15px;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:24px;max-width:560px}
+  .hero-features{display:flex;gap:24px;flex-wrap:wrap}
+  .hero-feature{display:flex;align-items:center;gap:6px;font-size:13px;color:#fff;font-weight:500}
+  .hero-feature .check{width:18px;height:18px;border-radius:50%;background:#10b981;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;flex-shrink:0}
+
+  .main-content{max-width:1200px;margin:0 auto;padding:40px;display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start}
+  .tool-content{min-width:0}
+
+  .workspace{background:#fff;border-radius:16px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,.06);border:1px solid #e5e7eb;margin-bottom:24px}
+
+  /* Goal tabs */
+  .goal-tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:24px}
+  .goal-btn{padding:14px 8px;background:#fff;border:2px solid #e5e7eb;border-radius:12px;cursor:pointer;font-family:inherit;transition:all .2s;text-align:center;display:flex;flex-direction:column;gap:6px;align-items:center}
+  .goal-btn:hover{border-color:#10b981;background:#ecfdf5}
+  .goal-btn.active{border-color:#10b981;background:#10b981;color:#fff}
+  .goal-icon{font-size:22px}
+  .goal-name{font-size:11px;font-weight:700}
+
+  /* Inputs */
+  .inputs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:24px}
+  .input-group label{display:block;font-size:12px;font-weight:700;color:#4b5563;margin-bottom:6px}
+  .input-wrap{position:relative;display:flex;align-items:center}
+  .input-wrap input,.input-wrap select{width:100%;padding:12px 14px;border:2px solid #e5e7eb;border-radius:10px;font-size:14px;font-weight:600;font-family:inherit;color:#1a1a2e;background:#fff;outline:none;transition:border-color .2s}
+  .input-wrap input:focus,.input-wrap select:focus{border-color:#10b981;box-shadow:0 0 0 3px rgba(16,185,129,.1)}
+  .input-wrap select{cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='3'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px}
+  .input-wrap .suffix{position:absolute;right:14px;font-size:12px;font-weight:700;color:#9ca3af;pointer-events:none}
+  .input-wrap select + .suffix{display:none}
+
+  /* Activity radio */
+  .activity-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:8px}
+  .activity-btn{padding:12px 8px;background:#fff;border:2px solid #e5e7eb;border-radius:10px;cursor:pointer;font-family:inherit;transition:all .2s;text-align:center;font-size:11px;font-weight:600;color:#4b5563}
+  .activity-btn:hover{border-color:#10b981}
+  .activity-btn.active{border-color:#10b981;background:#10b981;color:#fff}
+  .activity-btn-name{font-size:12px;font-weight:700;display:block;margin-bottom:2px}
+
+  /* Generate button */
+  .generate-btn{width:100%;padding:16px;background:#10b981;color:#fff;border:none;border-radius:12px;font-size:15px;font-weight:800;cursor:pointer;font-family:inherit;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:10px;margin-top:8px}
+  .generate-btn:hover{background:#059669;transform:translateY(-2px);box-shadow:0 8px 20px rgba(16,185,129,.3)}
+
+  /* Results summary */
+  .results-summary{display:none;margin-top:28px;background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-radius:16px;padding:24px;border:1px solid #a7f3d0}
+  .results-summary.visible{display:block}
+  .summary-title{font-size:14px;font-weight:800;color:#065f46;text-transform:uppercase;letter-spacing:.5px;margin-bottom:16px}
+  .calories-main{text-align:center;padding:12px 0 20px;border-bottom:1px solid #a7f3d0;margin-bottom:20px}
+  .calories-label{font-size:12px;font-weight:700;color:#065f46;text-transform:uppercase;letter-spacing:.8px;margin-bottom:8px}
+  .calories-value{font-size:44px;font-weight:800;color:#064e3b;line-height:1;letter-spacing:-1px}
+  .calories-value .unit{font-size:18px;font-weight:700;color:#10b981;margin-left:6px}
+  .calories-sub{font-size:12px;color:#059669;margin-top:8px;font-weight:600}
+
+  .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px}
+  .stat-box{background:#fff;border-radius:12px;padding:14px;text-align:center;border:1px solid #d1fae5}
+  .stat-label{font-size:10px;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px}
+  .stat-value{font-size:16px;font-weight:800;color:#1a1a2e}
+
+  /* Macros */
+  .macros-title{font-size:12px;font-weight:800;color:#065f46;text-transform:uppercase;letter-spacing:.5px;margin-bottom:12px}
+  .macros-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  .macro-box{background:#fff;border-radius:12px;padding:16px;border:1px solid #d1fae5}
+  .macro-name{font-size:11px;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px;display:flex;align-items:center;gap:6px}
+  .macro-dot{width:10px;height:10px;border-radius:50%}
+  .macro-value{font-size:20px;font-weight:800;color:#1a1a2e;line-height:1}
+  .macro-value .unit{font-size:12px;color:#6b7280;font-weight:600;margin-left:2px}
+  .macro-bar{height:6px;border-radius:3px;margin-top:10px;background:#f3f4f6;overflow:hidden}
+  .macro-bar-fill{height:100%;border-radius:3px}
+
+  /* Meal plan */
+  .plan-output{display:none;margin-top:32px}
+  .plan-output.visible{display:block}
+  .plan-header{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap;margin-bottom:20px;padding-bottom:20px;border-bottom:2px solid #d1fae5}
+  .plan-title{font-size:22px;font-weight:800;color:#1a1a2e;margin-bottom:6px}
+  .plan-subtitle{font-size:13px;color:#6b7280}
+  .plan-actions{display:flex;gap:8px;flex-wrap:wrap}
+  .mini-btn{display:inline-flex;align-items:center;gap:6px;padding:10px 16px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;font-size:12px;font-weight:600;color:#4b5563;cursor:pointer;font-family:inherit;transition:all .2s}
+  .mini-btn:hover{border-color:#10b981;color:#10b981;background:#ecfdf5}
+  .mini-btn.primary{background:#10b981;color:#fff;border-color:#10b981}
+  .mini-btn.primary:hover{background:#059669;border-color:#059669;color:#fff}
+
+  /* Days */
+  .days-grid{display:grid;grid-template-columns:1fr;gap:16px}
+  .day-card{background:#f8fafc;border:2px solid #e5e7eb;border-radius:14px;overflow:hidden;transition:border-color .2s}
+  .day-card:hover{border-color:#10b981}
+  .day-header{padding:14px 18px;background:#fff;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;border-bottom:1px solid #f3f4f6}
+  .day-name{font-size:15px;font-weight:800;color:#1a1a2e;display:flex;align-items:center;gap:10px}
+  .day-num{width:34px;height:34px;border-radius:10px;background:#10b981;color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;flex-shrink:0}
+  .day-totals{font-size:11px;color:#6b7280;font-weight:700;display:flex;gap:14px}
+  .day-totals span{display:flex;align-items:center;gap:4px}
+
+  .meal-list{padding:6px 0}
+  .meal-item{padding:12px 18px;border-bottom:1px solid #f3f4f6}
+  .meal-item:last-child{border-bottom:none}
+  .meal-top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:6px;flex-wrap:wrap}
+  .meal-type{font-size:12px;font-weight:800;color:#10b981;text-transform:uppercase;letter-spacing:.5px}
+  .meal-cals{font-size:11px;color:#6b7280;font-weight:700}
+  .meal-items{font-size:13px;color:#4b5563;line-height:1.6}
+  .meal-items strong{color:#1a1a2e;font-weight:700}
+
+  /* Water */
+  .water-box{background:linear-gradient(135deg,#06b6d4,#0891b2);color:#fff;border-radius:14px;padding:20px;margin-top:24px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+  .water-icon{font-size:32px}
+  .water-text{flex:1;min-width:200px}
+  .water-title{font-size:14px;font-weight:800;margin-bottom:4px}
+  .water-value{font-size:22px;font-weight:800}
+
+  /* SEO */
+  .seo-content{background:#fff;border-radius:16px;padding:32px;border:1px solid #e5e7eb;margin-bottom:24px}
+  .seo-content h2{font-size:22px;font-weight:800;color:#1a1a2e;margin-bottom:14px;margin-top:28px;display:flex;align-items:center;gap:10px}
+  .seo-content h2:first-child{margin-top:0}
+  .seo-content h3{font-size:16px;font-weight:700;color:#1a1a2e;margin:20px 0 10px}
+  .seo-content p{font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:14px}
+  .seo-content ul{list-style:none;padding-left:0;margin-bottom:16px}
+  .seo-content ul li{position:relative;padding-left:24px;font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:8px}
+  .seo-content ul li::before{content:'';position:absolute;left:6px;top:12px;width:6px;height:6px;background:#10b981;border-radius:50%}
+  .seo-content a{color:#2563eb;text-decoration:none;font-weight:600}
+  .seo-content a:hover{text-decoration:underline}
+  .seo-content strong{color:#1a1a2e;font-weight:700}
+  .seo-content code{background:#f1f5f9;padding:2px 6px;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:13px;color:#0f172a;border:1px solid #e2e8f0}
+
+  .formula-box{background:#0f172a;color:#e2e8f0;padding:18px 20px;border-radius:10px;font-family:'JetBrains Mono',monospace;font-size:13px;line-height:1.8;margin:16px 0;overflow-x:auto}
+  .formula-box .hl{color:#34d399;font-weight:700}
+
+  .how-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:20px}
+  .how-step{background:#ecfdf5;border-radius:12px;padding:20px;border:1px solid #d1fae5}
+  .how-step-num{width:36px;height:36px;border-radius:50%;background:#10b981;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;margin-bottom:12px}
+  .how-step-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+  .how-step-desc{font-size:13px;color:#6b7280;line-height:1.6}
+
+  .faq-item{background:#ecfdf5;border:1px solid #d1fae5;border-radius:12px;margin-bottom:10px;overflow:hidden;transition:border-color .2s}
+  .faq-item:hover{border-color:#10b981}
+  .faq-question{width:100%;background:none;border:none;padding:18px 22px;font-size:15px;font-weight:700;color:#1a1a2e;text-align:left;cursor:pointer;font-family:inherit;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .faq-question .chev{font-size:12px;color:#10b981;transition:transform .2s;flex-shrink:0}
+  .faq-item.open .faq-question .chev{transform:rotate(180deg)}
+  .faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 22px}
+  .faq-item.open .faq-answer{max-height:600px;padding-bottom:18px}
+  .faq-answer p{font-size:14px;color:#6b7280;line-height:1.7;margin:0}
+
+  .sidebar{background:#fff;border-radius:16px;padding:24px;border:1px solid #e5e7eb;position:sticky;top:80px;margin-bottom:24px}
+  .sidebar-header{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:800;color:#1a1a2e;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid #f3f4f6}
+  .sidebar-list{display:flex;flex-direction:column;gap:8px}
+  .sidebar-item{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;cursor:pointer;transition:background .2s;text-decoration:none;color:inherit;border:1px solid #f3f4f6}
+  .sidebar-item:hover{background:#ecfdf5;border-color:#d1fae5}
+  .sidebar-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;flex-shrink:0}
+  .sidebar-info{flex:1;min-width:0}
+  .sidebar-title{font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:2px}
+  .sidebar-desc{font-size:11px;color:#9ca3af;line-height:1.4}
+
+  .footer{background:#0a0e27;padding:60px 40px 30px;color:#fff;margin-top:40px}
+  .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:40px}
+  .footer-brand{display:flex;align-items:center;gap:8px;font-size:20px;font-weight:800;margin-bottom:12px}
+  .footer-brand span{color:#60a5fa}
+  .footer-tagline{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px}
+  .footer-social{display:flex;gap:12px}
+  .footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:16px;transition:background .2s}
+  .footer-social a:hover{background:rgba(255,255,255,.2)}
+  .footer-heading{font-size:14px;font-weight:700;margin-bottom:20px;color:#fff}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .footer-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;transition:color .2s}
+  .footer-links a:hover{color:#60a5fa}
+  .footer-bottom{max-width:1200px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  .footer-bottom-left{display:flex;gap:20px;font-size:12px;color:rgba(255,255,255,.5)}
+  .footer-bottom-right,.footer-bottom-links a{font-size:12px;color:rgba(255,255,255,.5);text-decoration:none}
+  .footer-bottom-links{display:flex;gap:20px}
+
+  .toast{position:fixed;bottom:24px;right:24px;background:#1a1a2e;color:#fff;padding:14px 20px;border-radius:10px;font-size:13px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:3000;transform:translateY(200%);transition:transform .3s ease;max-width:320px}
+  .toast.visible{transform:translateY(0)}
+  .toast.success{background:#10b981}
+  .toast.error{background:#ef4444}
+
+  @media(max-width:1024px){
+    .main-content{grid-template-columns:1fr;padding:24px 20px}
+    .sidebar{position:static}
+    .how-steps{grid-template-columns:repeat(2,1fr)}
+  }
+  @media(max-width:768px){
+    .header{padding:0 20px}.nav{display:none}
+    .hero{padding:24px 20px 40px}
+    .hero-title{font-size:28px}
+    .hero-icon{width:48px;height:48px;font-size:22px}
+    .hero-title-row{flex-direction:column;align-items:flex-start;gap:12px}
+    .main-content{padding:20px 16px}
+    .workspace{padding:20px}
+    .how-steps{grid-template-columns:1fr}
+    .seo-content{padding:20px}
+    .footer-inner{grid-template-columns:1fr 1fr}
+    .toast{left:16px;right:16px;bottom:16px;max-width:none}
+    .goal-tabs{grid-template-columns:repeat(2,1fr)}
+    .inputs-grid{grid-template-columns:1fr 1fr}
+    .activity-grid{grid-template-columns:repeat(2,1fr)}
+    .stats-grid{grid-template-columns:repeat(2,1fr)}
+    .macros-grid{grid-template-columns:1fr}
+    .calories-value{font-size:36px}
+    .day-totals{width:100%;justify-content:flex-start}
+  }
+  @media(max-width:576px){
+    .header{padding:0 16px}.header-right .search-btn,.header-right .theme-btn{display:none}
+    .hero-title{font-size:24px}
+    .footer-inner{grid-template-columns:1fr}
+    .footer-bottom{flex-direction:column;text-align:center}
+    .calories-value{font-size:30px}
+    .inputs-grid{grid-template-columns:1fr}
+  }
+
+  html[data-theme="dark"] body{background:#0f172a;color:#f1f5f9}
+  html[data-theme="dark"] .header,html[data-theme="dark"] .workspace,html[data-theme="dark"] .seo-content,html[data-theme="dark"] .sidebar{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .logo,html[data-theme="dark"] .hero-title,html[data-theme="dark"] .seo-content h2,html[data-theme="dark"] .seo-content h3,html[data-theme="dark"] .faq-question,html[data-theme="dark"] .sidebar-header,html[data-theme="dark"] .sidebar-title,html[data-theme="dark"] .plan-title,html[data-theme="dark"] .day-name{color:#f1f5f9}
+  html[data-theme="dark"] .nav a{color:#cbd5e1}
+  html[data-theme="dark"] .how-step,html[data-theme="dark"] .faq-item,html[data-theme="dark"] .day-card,html[data-theme="dark"] .goal-btn,html[data-theme="dark"] .activity-btn,html[data-theme="dark"] .mini-btn{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .input-wrap input,html[data-theme="dark"] .input-wrap select{background:#0f172a;border-color:#334155;color:#f1f5f9}
+  html[data-theme="dark"] .day-header{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .meal-item{border-color:#334155}
+  html[data-theme="dark"] .meal-items strong{color:#f1f5f9}
+  html[data-theme="dark"] .results-summary{background:linear-gradient(135deg,#0f172a,#1e293b);border-color:#334155}
+  html[data-theme="dark"] .calories-main{border-color:#334155}
+  html[data-theme="dark"] .calories-label,html[data-theme="dark"] .stat-label,html[data-theme="dark"] .macro-name{color:#94a3b8}
+  html[data-theme="dark"] .calories-value{color:#f1f5f9}
+  html[data-theme="dark"] .stat-box,html[data-theme="dark"] .macro-box{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .stat-value,html[data-theme="dark"] .macro-value{color:#f1f5f9}
+  html[data-theme="dark"] .seo-content p,html[data-theme="dark"] .seo-content ul li,html[data-theme="dark"] .faq-answer p,html[data-theme="dark"] .meal-items{color:#cbd5e1}
+  html[data-theme="dark"] .seo-content code{background:#0f172a;color:#94a3b8;border-color:#334155}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type": "SoftwareApplication", "name": "Diet Plan Generator", "url": "https://bigtoolz.com/tools/utility-tools/diet-plan/", "applicationCategory": "HealthApplication", "operatingSystem": "Any (Web-based)", "description": "Free personalized 7-day diet plan generator. Calculates BMR, TDEE, calorie and macro targets, and builds meal-by-meal plans for weight loss, muscle gain, or maintenance.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.8", "ratingCount": "1876"}},
+    {"@type": "HowTo", "name": "How to Generate a Diet Plan", "step": [
+      {"@type": "HowToStep", "name": "Choose Goal", "text": "Lose Weight, Maintain, Build Muscle or Gain Weight."},
+      {"@type": "HowToStep", "name": "Enter Stats", "text": "Age, gender, height, weight and activity level."},
+      {"@type": "HowToStep", "name": "Pick Diet Type", "text": "Balanced, Vegetarian, or High-Protein."},
+      {"@type": "HowToStep", "name": "Generate Plan", "text": "Get a 7-day meal plan with calorie and macro targets."}
+    ]},
+    {"@type": "FAQPage", "mainEntity": [
+      {"@type": "Question", "name": "How many calories should I eat to lose weight?", "acceptedAnswer": {"@type": "Answer", "text": "A safe deficit is 300-500 calories below your TDEE (maintenance). This produces 0.25-0.5 kg weight loss per week. Faster loss risks muscle loss and metabolic slowdown. Never go below 1200 (women) or 1500 (men) calories per day without medical supervision."}},
+      {"@type": "Question", "name": "How much protein do I need to build muscle?", "acceptedAnswer": {"@type": "Answer", "text": "1.6-2.2 grams of protein per kg of body weight per day. For a 70 kg person: 112-154 g/day. Split into 3-5 meals of 25-40 g each for optimal muscle protein synthesis."}},
+      {"@type": "Question", "name": "What is BMR?", "acceptedAnswer": {"@type": "Answer", "text": "BMR (Basal Metabolic Rate) is the calories your body burns at complete rest to keep your heart beating, lungs breathing, and cells functioning. It's typically 60-70% of your total daily calorie burn."}},
+      {"@type": "Question", "name": "What is TDEE?", "acceptedAnswer": {"@type": "Answer", "text": "TDEE (Total Daily Energy Expenditure) is BMR plus all calories burned through activity, exercise, and digestion. It's your true maintenance calorie level eat at TDEE to maintain weight, below to lose, above to gain."}},
+      {"@type": "Question", "name": "Is this diet plan safe?", "acceptedAnswer": {"@type": "Answer", "text": "The plan uses standard nutritional formulas (Mifflin-St Jeor for BMR) and evidence-based macro ratios. It's safe for healthy adults. However, always consult a doctor or registered dietitian if you're pregnant, breastfeeding, diabetic, or have any medical condition."}}
+    ]},
+    {"@type": "BreadcrumbList", "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bigtoolz.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://bigtoolz.com/tools/"},
+      {"@type": "ListItem", "position": 3, "name": "Utility Tools", "item": "https://bigtoolz.com/tools/utility-tools/"},
+      {"@type": "ListItem", "position": 4, "name": "Diet Plan Generator", "item": "https://bigtoolz.com/tools/utility-tools/diet-plan/"}
+    ]}
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-left">
+    <a href="/" class="logo"><div class="logo-icon">⚒</div>BigToolz</span></a>
+    <nav><ul class="nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/tools/" class="active">All Tools</a></li>
+      <li><a href="/tools/categories">Categories</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul></nav>
+  </div>
+  <div class="header-right">
+   
+    <button class="theme-btn" aria-label="Toggle theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
+    
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <nav class="breadcrumb">
+      <a href="/">Home</a><span class="sep">›</span>
+      <a href="/tools/">Tools</a><span class="sep">›</span>
+      <a href="/tools/utility-tools/">Utility Tools</a><span class="sep">›</span>
+      <span class="current">Diet Plan Generator</span>
+    </nav>
+    <div class="hero-title-row">
+      <div class="hero-icon">🥗</div>
+      <h1 class="hero-title">Diet Plan <span class="blue">Generator</span></h1>
+    </div>
+    <p class="hero-desc">
+      Get a personalized 7-day meal plan with calorie and macro targets. Based on your stats, goal, and diet preference built on evidence-based formulas.
+    </p>
+    <div class="hero-features">
+      <div class="hero-feature"><span class="check">✓</span> BMR + TDEE</div>
+      <div class="hero-feature"><span class="check">✓</span> 7-Day Meal Plan</div>
+      <div class="hero-feature"><span class="check">✓</span> Macro Breakdown</div>
+      <div class="hero-feature"><span class="check">✓</span> Print Ready</div>
+    </div>
+  </div>
+</section>
+
+<div class="main-content">
+
+  <div class="tool-content">
+
+    <div class="workspace">
+
+      <!-- Goal tabs -->
+      <div class="goal-tabs" id="goalTabs">
+        <button class="goal-btn active" data-goal="lose">
+          <span class="goal-icon">🔥</span>
+          <span class="goal-name">Lose Weight</span>
+        </button>
+        <button class="goal-btn" data-goal="maintain">
+          <span class="goal-icon">⚖️</span>
+          <span class="goal-name">Maintain</span>
+        </button>
+        <button class="goal-btn" data-goal="muscle">
+          <span class="goal-icon">💪</span>
+          <span class="goal-name">Build Muscle</span>
+        </button>
+        <button class="goal-btn" data-goal="gain">
+          <span class="goal-icon">📈</span>
+          <span class="goal-name">Gain Weight</span>
+        </button>
+      </div>
+
+      <!-- Inputs -->
+      <div class="inputs-grid">
+        <div class="input-group">
+          <label>Age</label>
+          <div class="input-wrap">
+            <input type="number" id="age" value="30" min="10" max="100">
+            <span class="suffix">yrs</span>
+          </div>
+        </div>
+        <div class="input-group">
+          <label>Gender</label>
+          <div class="input-wrap">
+            <select id="gender">
+              <option value="male" selected>Male</option>
+              <option value="female">Female</option>
+            </select>
+          </div>
+        </div>
+        <div class="input-group">
+          <label>Weight</label>
+          <div class="input-wrap">
+            <input type="number" id="weight" value="70" min="20" max="300" step="0.5">
+            <span class="suffix">kg</span>
+          </div>
+        </div>
+        <div class="input-group">
+          <label>Height</label>
+          <div class="input-wrap">
+            <input type="number" id="height" value="170" min="100" max="250">
+            <span class="suffix">cm</span>
+          </div>
+        </div>
+        <div class="input-group">
+          <label>Diet Type</label>
+          <div class="input-wrap">
+            <select id="dietType">
+              <option value="balanced" selected>Balanced (Mixed)</option>
+              <option value="veg">Vegetarian</option>
+              <option value="highprotein">High-Protein</option>
+            </select>
+          </div>
+        </div>
+        <div class="input-group">
+          <label>Meals Per Day</label>
+          <div class="input-wrap">
+            <select id="mealsCount">
+              <option value="3">3 meals (B/L/D)</option>
+              <option value="4" selected>4 meals (+ snack)</option>
+              <option value="5">5 meals (+ 2 snacks)</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Activity -->
+      <div class="input-group" style="margin-bottom:24px;">
+        <label>Activity Level</label>
+        <div class="activity-grid" id="activityGrid">
+          <button class="activity-btn" data-activity="1.2">
+            <span class="activity-btn-name">Sedentary</span>
+            Desk job
+          </button>
+          <button class="activity-btn" data-activity="1.375">
+            <span class="activity-btn-name">Light</span>
+            1-3 days/wk
+          </button>
+          <button class="activity-btn active" data-activity="1.55">
+            <span class="activity-btn-name">Moderate</span>
+            3-5 days/wk
+          </button>
+          <button class="activity-btn" data-activity="1.725">
+            <span class="activity-btn-name">Very Active</span>
+            6-7 days/wk
+          </button>
+          <button class="activity-btn" data-activity="1.9">
+            <span class="activity-btn-name">Athlete</span>
+            Twice daily
+          </button>
+        </div>
+      </div>
+
+      <button class="generate-btn" id="generateBtn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        Generate My Diet Plan
+      </button>
+
+      <!-- Summary -->
+      <div class="results-summary" id="resultsSummary">
+        <div class="summary-title">🎯 Your Daily Targets</div>
+        <div class="calories-main">
+          <div class="calories-label">Calorie Target</div>
+          <div class="calories-value"><span id="calorieTarget">2000</span><span class="unit">kcal</span></div>
+          <div class="calories-sub" id="calorieSub">~500 kcal deficit · Expected: -0.5 kg/week</div>
+        </div>
+        <div class="stats-grid">
+          <div class="stat-box">
+            <div class="stat-label">BMR</div>
+            <div class="stat-value" id="bmrValue">1650</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-label">TDEE</div>
+            <div class="stat-value" id="tdeeValue">2550</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-label">BMI</div>
+            <div class="stat-value" id="bmiValue">24.2</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-label">Water</div>
+            <div class="stat-value" id="waterValue">2.5L</div>
+          </div>
+        </div>
+        <div class="macros-title">Macro Breakdown</div>
+        <div class="macros-grid">
+          <div class="macro-box">
+            <div class="macro-name"><span class="macro-dot" style="background:#3b82f6;"></span>Protein</div>
+            <div class="macro-value"><span id="proteinG">150</span><span class="unit">g</span></div>
+            <div class="macro-bar"><div class="macro-bar-fill" id="proteinBar" style="background:#3b82f6;width:30%;"></div></div>
+          </div>
+          <div class="macro-box">
+            <div class="macro-name"><span class="macro-dot" style="background:#f59e0b;"></span>Carbs</div>
+            <div class="macro-value"><span id="carbsG">200</span><span class="unit">g</span></div>
+            <div class="macro-bar"><div class="macro-bar-fill" id="carbsBar" style="background:#f59e0b;width:40%;"></div></div>
+          </div>
+          <div class="macro-box">
+            <div class="macro-name"><span class="macro-dot" style="background:#ec4899;"></span>Fat</div>
+            <div class="macro-value"><span id="fatG">67</span><span class="unit">g</span></div>
+            <div class="macro-bar"><div class="macro-bar-fill" id="fatBar" style="background:#ec4899;width:30%;"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Plan -->
+      <div class="plan-output" id="planOutput">
+        <div class="plan-header">
+          <div>
+            <div class="plan-title">Your 7-Day Meal Plan</div>
+            <div class="plan-subtitle" id="planSubtitle">Balanced · 4 meals · ~2000 kcal/day</div>
+          </div>
+          <div class="plan-actions">
+            <button class="mini-btn" id="regenerateBtn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 4v6h-6M1 20v-6h6M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></svg>
+              Regenerate
+            </button>
+            <button class="mini-btn primary" id="printBtn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+              Print Plan
+            </button>
+          </div>
+        </div>
+
+        <div class="days-grid" id="daysGrid"></div>
+
+        <div class="water-box">
+          <div class="water-icon">💧</div>
+          <div class="water-text">
+            <div class="water-title">Daily Water Target</div>
+            <div class="water-value" id="waterBig">2.5 liters</div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- SEO Content -->
+    <div class="seo-content">
+
+      <h2>🥗 What is a Diet Plan Generator?</h2>
+      <p>
+        A <strong>diet plan generator</strong> creates a personalized meal schedule based on your body stats (age, gender, height, weight), activity level, and goal. It first calculates your <strong>BMR</strong> (Basal Metabolic Rate) and <strong>TDEE</strong> (Total Daily Energy Expenditure), then sets your daily calorie and macro targets, and finally spreads those calories across the day with specific meals.
+      </p>
+      <p>
+        Our <strong>free diet plan generator</strong> uses the <strong>Mifflin-St Jeor equation</strong> the most accurate BMR formula for the general population, according to the American Dietetic Association. All calculations run in your browser no signup, no tracking, no BS.
+      </p>
+
+      <h2>📐 The Formulas Behind Your Plan</h2>
+
+      <h3>1. BMR Mifflin-St Jeor</h3>
+      <div class="formula-box">
+        <span class="hl">Men:</span> BMR = (10 × weight kg) + (6.25 × height cm) − (5 × age) + 5<br>
+        <span class="hl">Women:</span> BMR = (10 × weight kg) + (6.25 × height cm) − (5 × age) − 161
+      </div>
+      <p>BMR is the calories your body burns at complete rest. Most people burn 60-70% of their daily calories just keeping the body alive.</p>
+
+      <h3>2. TDEE Activity Multiplier</h3>
+      <div class="formula-box">
+        TDEE = BMR × Activity Factor<br><br>
+        <span class="hl">1.2</span>  Sedentary (desk job, little exercise)<br>
+        <span class="hl">1.375</span> Lightly active (1-3 days/week)<br>
+        <span class="hl">1.55</span> Moderately active (3-5 days/week)<br>
+        <span class="hl">1.725</span> Very active (6-7 days/week)<br>
+        <span class="hl">1.9</span>  Extra active (athlete, 2×/day)
+      </div>
+
+      <h3>3. Calorie Target by Goal</h3>
+      <div class="formula-box">
+        <span class="hl">Lose Weight:</span>     TDEE − 500 kcal (~0.5 kg/week loss)<br>
+        <span class="hl">Maintain:</span>        TDEE<br>
+        <span class="hl">Build Muscle:</span>     TDEE + 300 kcal (~0.25 kg/week gain)<br>
+        <span class="hl">Gain Weight:</span>      TDEE + 500 kcal (~0.5 kg/week gain)
+      </div>
+
+      <h3>4. Macro Split</h3>
+      <p>Based on goal, the daily calories are split:</p>
+      <ul>
+        <li><strong>Lose Weight:</strong> 40% protein / 30% carbs / 30% fat (high protein preserves muscle)</li>
+        <li><strong>Maintain:</strong> 30% protein / 40% carbs / 30% fat (balanced)</li>
+        <li><strong>Build Muscle:</strong> 30% protein / 45% carbs / 25% fat (higher carbs fuel training)</li>
+        <li><strong>Gain Weight:</strong> 25% protein / 50% carbs / 25% fat (calorie-dense)</li>
+      </ul>
+      <p>Protein per gram = 4 kcal, Carbs = 4 kcal, Fat = 9 kcal.</p>
+
+      <h2>🚀 How to Use This Tool</h2>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-step-num">1</div>
+          <div class="how-step-title">Choose Goal</div>
+          <div class="how-step-desc">Lose, maintain, build muscle, or gain weight.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">2</div>
+          <div class="how-step-title">Enter Stats</div>
+          <div class="how-step-desc">Age, gender, weight, height, activity level.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">3</div>
+          <div class="how-step-title">Pick Diet Type</div>
+          <div class="how-step-desc">Balanced, vegetarian, or high-protein.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">4</div>
+          <div class="how-step-title">Get Plan</div>
+          <div class="how-step-desc">7 days of meals with calories and macros.</div>
+        </div>
+      </div>
+
+      <h2>💡 Nutrition Principles</h2>
+      <ul>
+        <li><strong>Protein is king</strong> 1.6-2.2 g/kg supports muscle and keeps you full. Highest priority macro.</li>
+        <li><strong>Fiber 25-35 g/day</strong> Whole grains, vegetables, fruit. Aids digestion and satiety.</li>
+        <li><strong>Eat whole foods 80% of the time</strong> Leave 20% for treats. Perfection isn't sustainable.</li>
+        <li><strong>Don't drink your calories</strong> Soda, juice, and fancy coffees add 200-800 kcal without satiety.</li>
+        <li><strong>Sleep 7-9 hours</strong> Poor sleep raises hunger hormones (ghrelin) and drops leptin you'll eat more.</li>
+        <li><strong>Weigh yourself weekly, not daily</strong> Daily weight fluctuates 1-2 kg from water and food.</li>
+        <li><strong>Track for 2 weeks</strong> Learn what portions actually look like, then stop tracking if you prefer.</li>
+        <li><strong>Consistency > perfection</strong> 80% adherence for a year beats 100% for a month.</li>
+      </ul>
+
+      <h2>❓ Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-question">How many calories should I eat to lose weight?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>A safe deficit is <strong>300-500 calories below your TDEE</strong>. This produces 0.25-0.5 kg weight loss per week. Faster loss risks muscle loss and metabolic slowdown. Never go below <strong>1200 kcal (women)</strong> or <strong>1500 kcal (men)</strong> per day without medical supervision.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">How much protein do I need to build muscle?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>1.6-2.2 grams of protein per kg of body weight</strong> per day. For a 70 kg person: 112-154 g/day. Split across 3-5 meals of 25-40 g each for optimal muscle protein synthesis. Going above 2.2 g/kg provides no extra muscle-building benefit.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What is BMR?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>BMR (Basal Metabolic Rate)</strong> is the calories your body burns at complete rest to keep your heart beating, lungs breathing, and cells functioning. It's typically <strong>60-70%</strong> of your total daily calorie burn. Higher muscle mass = higher BMR.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What is TDEE?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>TDEE (Total Daily Energy Expenditure)</strong> is BMR plus all calories burned through activity, exercise, and digestion. It's your true maintenance calorie level eat at TDEE to maintain weight, below to lose, above to gain. TDEE varies daily based on activity.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Is this diet plan safe?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>The plan uses standard nutritional formulas (Mifflin-St Jeor for BMR) and evidence-based macro ratios. It's safe for healthy adults. However, always consult a doctor or registered dietitian if you're <strong>pregnant, breastfeeding, diabetic, have kidney disease</strong>, or have any medical condition. This is educational information, not medical advice.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">How long until I see results?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Weight changes: <strong>1-2 weeks</strong> (mostly water at first). Visible body changes: <strong>4-6 weeks</strong>. Strength changes: <strong>2-4 weeks</strong>. Full body composition change: <strong>3-6 months</strong> of consistent adherence. Be patient quick fixes don't last.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Do I have to count calories forever?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>No. Track strictly for <strong>2-4 weeks</strong> to learn portion sizes and calorie values. After that, many people maintain results by eating intuitively applying what they learned. Some prefer tracking long-term because it's simple and effective. Both approaches work.</p></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-header">🔗 Related Utility Tools</div>
+    <div class="sidebar-list">
+      <a href="/tools/utility-tools/workout-plan/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#ef4444;">💪</div>
+        <div class="sidebar-info"><div class="sidebar-title">Workout Plan</div><div class="sidebar-desc">7-day training plan</div></div>
+      </a>
+      <a href="/tools/utility-tools/water-intake/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#06b6d4;">💧</div>
+        <div class="sidebar-info"><div class="sidebar-title">Water Intake</div><div class="sidebar-desc">Daily hydration</div></div>
+      </a>
+      <a href="/tools/utility-tools/heart-rate/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#ef4444;">❤️</div>
+        <div class="sidebar-info"><div class="sidebar-title">Heart Rate</div><div class="sidebar-desc">Target HR zones</div></div>
+      </a>
+      <a href="/tools/calculator-tools/bmi-calculator/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#10b981;">⚖️</div>
+        <div class="sidebar-info"><div class="sidebar-title">BMI Calculator</div><div class="sidebar-desc">Body mass index</div></div>
+      </a>
+      <a href="/tools/utility-tools/yoga-pose/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#8b5cf6;">🧘</div>
+        <div class="sidebar-info"><div class="sidebar-title">Yoga Pose Guide</div><div class="sidebar-desc">45+ poses</div></div>
+      </a>
+      <a href="/tools/utility-tools/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#64748b;">⚙️</div>
+        <div class="sidebar-info"><div class="sidebar-title">All Utility Tools →</div><div class="sidebar-desc">Browse 50+ tools</div></div>
+      </a>
+    </div>
+  </aside>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand"><div class="logo-icon">⚒</div>BigToolz</span></div>
+      <p class="footer-tagline">Your Ultimate Online Tools Hub</p>
+      <div class="footer-social">
+        <a href="https://facebook.com/bigtoolz" aria-label="Facebook">f</a>
+        <a href="https://twitter.com/bigtoolz" aria-label="Twitter">𝕏</a>
+        <a href="https://youtube.com/@bigtoolz" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+    <div>
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/tools/">All Tools</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Categories</h3>
+      <ul class="footer-links">
+        <li><a href="/tools/image-tools/">Image Tools</a></li>
+        <li><a href="/tools/pdf-tools/">PDF Tools</a></li>
+        <li><a href="/tools/text-tools/">Text Tools</a></li>
+        <li><a href="/tools/utility-tools/">Utility Tools</a></li>
+        <li><a href="/tools/categories">All Categories →</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Legal</h3>
+      <ul class="footer-links">
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left"><span>✓ 100% Free</span><span>✓ No Sign Up</span><span>✓ No Installation</span></div>
+    <div class="footer-bottom-right">© 2026 BigToolz. All rights reserved.</div>
+    <div class="footer-bottom-links"><a href="/privacy-policy">Privacy</a><a href="/terms">Terms</a><a href="/disclaimer">Disclaimer</a></div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+'use strict';
+
+/* ===== THEME ===== */
+(function(){try{var t=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&d))document.documentElement.setAttribute('data-theme','dark');else if(t==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();
+document.querySelector('.theme-btn')?.addEventListener('click',()=>{const h=document.documentElement;const c=h.getAttribute('data-theme');const d=window.matchMedia('(prefers-color-scheme: dark)').matches;let n=c==='dark'?'light':c==='light'?'dark':(d?'light':'dark');h.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}});
+
+/* ===== HELPERS ===== */
+const $ = (s, p = document) => p.querySelector(s);
+const $$ = (s, p = document) => [...p.querySelectorAll(s)];
+
+function showToast(msg, type = 'info', duration = 2500) {
+  const t = $('#toast');
+  if (!t) return;
+  t.className = 'toast visible' + (type !== 'info' ? ' ' + type : '');
+  t.textContent = msg;
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove('visible'), duration);
+}
+
+/* ===== FOOD DATABASE ===== */
+const FOODS = {
+  balanced: {
+    breakfast: [
+      { name: 'Oats with milk, banana & almonds', cals: 400, p: 15, c: 60, f: 10 },
+      { name: 'Whole wheat toast + eggs + avocado', cals: 420, p: 22, c: 40, f: 18 },
+      { name: 'Greek yogurt bowl with berries & granola', cals: 380, p: 20, c: 55, f: 8 },
+      { name: 'Vegetable omelette + multigrain toast', cals: 400, p: 24, c: 35, f: 18 },
+      { name: 'Peanut butter smoothie + oats', cals: 450, p: 18, c: 55, f: 16 },
+      { name: 'Poha with peanuts + boiled egg', cals: 380, p: 16, c: 55, f: 10 },
+      { name: 'Idli + sambar + coconut chutney', cals: 350, p: 12, c: 60, f: 8 }
+    ],
+    lunch: [
+      { name: 'Grilled chicken + brown rice + salad', cals: 550, p: 40, c: 60, f: 12 },
+      { name: 'Fish curry + rice + sautéed veggies', cals: 600, p: 35, c: 70, f: 15 },
+      { name: 'Chicken wrap + fruit bowl', cals: 520, p: 32, c: 55, f: 16 },
+      { name: 'Rajma (kidney beans) + rice + raita', cals: 550, p: 22, c: 85, f: 12 },
+      { name: 'Paneer tikka + roti + salad', cals: 580, p: 30, c: 55, f: 22 },
+      { name: 'Egg fried rice + mixed veggies', cals: 520, p: 25, c: 65, f: 15 },
+      { name: 'Quinoa bowl + chickpeas + tahini', cals: 560, p: 24, c: 70, f: 18 }
+    ],
+    dinner: [
+      { name: 'Grilled salmon + roasted veggies + quinoa', cals: 500, p: 35, c: 40, f: 20 },
+      { name: 'Chicken stir-fry + brown rice', cals: 520, p: 38, c: 55, f: 14 },
+      { name: 'Vegetable dal + roti + salad', cals: 480, p: 20, c: 70, f: 12 },
+      { name: 'Tofu curry + rice + green beans', cals: 500, p: 25, c: 60, f: 18 },
+      { name: 'Palak paneer + roti', cals: 520, p: 24, c: 50, f: 24 },
+      { name: 'Grilled chicken salad with olive oil', cals: 450, p: 40, c: 25, f: 20 },
+      { name: 'Vegetable soup + whole wheat bread + eggs', cals: 480, p: 22, c: 60, f: 14 }
+    ],
+    snacks: [
+      { name: 'Apple + peanut butter', cals: 200, p: 6, c: 25, f: 10 },
+      { name: 'Mixed nuts (30g)', cals: 180, p: 6, c: 8, f: 15 },
+      { name: 'Greek yogurt + honey', cals: 150, p: 12, c: 20, f: 3 },
+      { name: 'Protein shake with milk', cals: 250, p: 25, c: 20, f: 6 },
+      { name: 'Boiled eggs (2)', cals: 140, p: 12, c: 1, f: 10 },
+      { name: 'Cottage cheese + fruit', cals: 180, p: 15, c: 15, f: 5 },
+      { name: 'Whole grain crackers + hummus', cals: 200, p: 8, c: 25, f: 8 }
+    ]
+  },
+  veg: {
+    breakfast: [
+      { name: 'Oats with almond milk, banana & chia', cals: 380, p: 14, c: 60, f: 10 },
+      { name: 'Besan chilla (gram flour pancake) + chutney', cals: 350, p: 16, c: 40, f: 12 },
+      { name: 'Vegetable poha + peanuts', cals: 380, p: 12, c: 60, f: 10 },
+      { name: 'Paneer bhurji + multigrain toast', cals: 420, p: 22, c: 35, f: 20 },
+      { name: 'Upma with veggies + coconut', cals: 350, p: 10, c: 55, f: 10 },
+      { name: 'Smoothie bowl with peanut butter', cals: 420, p: 18, c: 50, f: 16 },
+      { name: 'Sprouts + veggies + lemon', cals: 300, p: 18, c: 40, f: 6 }
+    ],
+    lunch: [
+      { name: 'Rajma curry + brown rice + salad', cals: 550, p: 22, c: 85, f: 12 },
+      { name: 'Paneer tikka masala + roti', cals: 600, p: 28, c: 60, f: 25 },
+      { name: 'Chole (chickpea curry) + rice', cals: 580, p: 22, c: 90, f: 14 },
+      { name: 'Dal makhani + jeera rice + raita', cals: 620, p: 20, c: 85, f: 18 },
+      { name: 'Mixed vegetable curry + roti + curd', cals: 520, p: 18, c: 70, f: 16 },
+      { name: 'Quinoa + chickpeas + avocado bowl', cals: 580, p: 22, c: 75, f: 18 },
+      { name: 'Paneer wrap + mint chutney', cals: 550, p: 25, c: 55, f: 22 }
+    ],
+    dinner: [
+      { name: 'Palak paneer + roti + salad', cals: 520, p: 24, c: 50, f: 24 },
+      { name: 'Vegetable dal + roti + cucumber', cals: 480, p: 20, c: 70, f: 12 },
+      { name: 'Tofu stir-fry + brown rice', cals: 500, p: 25, c: 60, f: 18 },
+      { name: 'Vegetable khichdi + curd', cals: 450, p: 16, c: 70, f: 10 },
+      { name: 'Mixed vegetable sabzi + 2 rotis', cals: 480, p: 16, c: 65, f: 14 },
+      { name: 'Soya chunk curry + roti', cals: 520, p: 35, c: 55, f: 14 },
+      { name: 'Vegetable soup + grilled paneer + salad', cals: 480, p: 26, c: 40, f: 20 }
+    ],
+    snacks: [
+      { name: 'Roasted chana (30g)', cals: 120, p: 6, c: 20, f: 2 },
+      { name: 'Mixed nuts & seeds', cals: 180, p: 6, c: 8, f: 15 },
+      { name: 'Fruit bowl (apple, orange, grapes)', cals: 150, p: 2, c: 38, f: 0 },
+      { name: 'Greek yogurt + honey', cals: 150, p: 12, c: 20, f: 3 },
+      { name: 'Makhana (foxnuts) roasted', cals: 130, p: 4, c: 25, f: 2 },
+      { name: 'Peanut butter + banana', cals: 220, p: 6, c: 30, f: 10 },
+      { name: 'Sprout chaat', cals: 180, p: 12, c: 28, f: 3 }
+    ]
+  },
+  highprotein: {
+    breakfast: [
+      { name: '4 egg omelette + avocado + toast', cals: 450, p: 32, c: 30, f: 22 },
+      { name: 'Greek yogurt + protein powder + berries', cals: 400, p: 35, c: 40, f: 8 },
+      { name: 'Protein pancakes + whey', cals: 420, p: 30, c: 45, f: 10 },
+      { name: 'Chicken sausage + eggs + spinach', cals: 450, p: 35, c: 20, f: 25 },
+      { name: 'Cottage cheese + fruit + seeds', cals: 380, p: 28, c: 35, f: 12 },
+      { name: 'Smoked salmon + cream cheese + toast', cals: 420, p: 28, c: 35, f: 18 },
+      { name: 'Egg white scramble + chicken', cals: 380, p: 40, c: 15, f: 12 }
+    ],
+    lunch: [
+      { name: 'Grilled chicken breast (200g) + quinoa + broccoli', cals: 600, p: 55, c: 55, f: 14 },
+      { name: 'Tuna salad + whole wheat bread', cals: 550, p: 42, c: 45, f: 18 },
+      { name: 'Lean beef + sweet potato + salad', cals: 620, p: 45, c: 60, f: 20 },
+      { name: 'Chicken + rice + black beans', cals: 600, p: 48, c: 70, f: 12 },
+      { name: 'Turkey + brown rice + veggies', cals: 580, p: 45, c: 65, f: 14 },
+      { name: 'Paneer (150g) + roti + salad', cals: 620, p: 32, c: 55, f: 28 },
+      { name: 'Salmon + sweet potato + asparagus', cals: 580, p: 40, c: 45, f: 24 }
+    ],
+    dinner: [
+      { name: 'Grilled chicken breast (200g) + steamed veggies', cals: 450, p: 50, c: 25, f: 12 },
+      { name: 'Baked fish + quinoa + spinach', cals: 500, p: 42, c: 40, f: 16 },
+      { name: 'Lean steak + cauliflower rice + broccoli', cals: 520, p: 45, c: 25, f: 24 },
+      { name: 'Tofu (200g) + soba noodles + veggies', cals: 520, p: 32, c: 55, f: 18 },
+      { name: 'Chicken curry + brown rice', cals: 550, p: 40, c: 55, f: 16 },
+      { name: 'Shrimp + quinoa + salad', cals: 480, p: 38, c: 45, f: 14 },
+      { name: 'Egg curry (3 eggs) + roti', cals: 500, p: 26, c: 45, f: 24 }
+    ],
+    snacks: [
+      { name: 'Protein shake (whey)', cals: 150, p: 25, c: 5, f: 2 },
+      { name: 'Boiled eggs (2)', cals: 140, p: 12, c: 1, f: 10 },
+      { name: 'Beef jerky (30g)', cals: 120, p: 12, c: 5, f: 5 },
+      { name: 'Greek yogurt + protein powder', cals: 180, p: 22, c: 10, f: 4 },
+      { name: 'Cottage cheese bowl', cals: 200, p: 20, c: 12, f: 6 },
+      { name: 'Tuna + crackers', cals: 200, p: 18, c: 15, f: 6 },
+      { name: 'Turkey slices + cheese', cals: 180, p: 20, c: 2, f: 10 }
+    ]
+  }
+};
+
+/* ===== STATE ===== */
+const state = {
+  goal: 'lose',
+  activity: 1.55,
+  dietType: 'balanced',
+  mealsCount: 4,
+  plan: null
+};
+
+/* ===== DOM ===== */
+const goalTabs = $('#goalTabs');
+const age = $('#age');
+const gender = $('#gender');
+const weight = $('#weight');
+const height = $('#height');
+const dietType = $('#dietType');
+const mealsCount = $('#mealsCount');
+const activityGrid = $('#activityGrid');
+const generateBtn = $('#generateBtn');
+const resultsSummary = $('#resultsSummary');
+const planOutput = $('#planOutput');
+const planSubtitle = $('#planSubtitle');
+const daysGrid = $('#daysGrid');
+const regenerateBtn = $('#regenerateBtn');
+const printBtn = $('#printBtn');
+const calorieTarget = $('#calorieTarget');
+const calorieSub = $('#calorieSub');
+const bmrValue = $('#bmrValue');
+const tdeeValue = $('#tdeeValue');
+const bmiValue = $('#bmiValue');
+const waterValue = $('#waterValue');
+const waterBig = $('#waterBig');
+const proteinG = $('#proteinG');
+const carbsG = $('#carbsG');
+const fatG = $('#fatG');
+const proteinBar = $('#proteinBar');
+const carbsBar = $('#carbsBar');
+const fatBar = $('#fatBar');
+
+/* ===== GOAL TABS ===== */
+$$('.goal-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    $$('.goal-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    state.goal = btn.dataset.goal;
+  });
+});
+
+/* ===== ACTIVITY ===== */
+$$('.activity-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    $$('.activity-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    state.activity = parseFloat(btn.dataset.activity);
+  });
+});
+
+/* ===== CALCULATIONS ===== */
+function calcBMR() {
+  const w = parseFloat(weight.value) || 70;
+  const h = parseFloat(height.value) || 170;
+  const a = parseFloat(age.value) || 30;
+  const g = gender.value;
+
+  // Mifflin-St Jeor
+  if (g === 'male') return (10 * w) + (6.25 * h) - (5 * a) + 5;
+  return (10 * w) + (6.25 * h) - (5 * a) - 161;
+}
+
+function calcTDEE(bmr) {
+  return bmr * state.activity;
+}
+
+function calcCalorieTarget(tdee) {
+  if (state.goal === 'lose') return tdee - 500;
+  if (state.goal === 'muscle') return tdee + 300;
+  if (state.goal === 'gain') return tdee + 500;
+  return tdee;
+}
+
+function getMacroSplit() {
+  // Returns % of calories
+  if (state.dietType === 'highprotein') return { p: 35, c: 40, f: 25 };
+  if (state.goal === 'lose') return { p: 40, c: 30, f: 30 };
+  if (state.goal === 'muscle') return { p: 30, c: 45, f: 25 };
+  if (state.goal === 'gain') return { p: 25, c: 50, f: 25 };
+  return { p: 30, c: 40, f: 30 }; // maintain
+}
+
+function calcMacros(cal, split) {
+  return {
+    p: Math.round((cal * split.p / 100) / 4),
+    c: Math.round((cal * split.c / 100) / 4),
+    f: Math.round((cal * split.f / 100) / 9)
+  };
+}
+
+function calcBMI() {
+  const w = parseFloat(weight.value) || 70;
+  const h = (parseFloat(height.value) || 170) / 100;
+  return w / (h * h);
+}
+
+function calcWater() {
+  const w = parseFloat(weight.value) || 70;
+  return (w * 0.035).toFixed(1); // 35 ml per kg
+}
+
+/* ===== GENERATE PLAN ===== */
+function generateDietPlan() {
+  state.dietType = dietType.value;
+  state.mealsCount = parseInt(mealsCount.value, 10);
+
+  const bmr = calcBMR();
+  const tdee = calcTDEE(bmr);
+  const target = calcCalorieTarget(tdee);
+  const split = getMacroSplit();
+  const macros = calcMacros(target, split);
+  const bmi = calcBMI();
+  const water = calcWater();
+
+  // Update UI summary
+  calorieTarget.textContent = Math.round(target);
+  const diff = Math.round(tdee - target);
+
+  if (state.goal === 'lose') {
+    calorieSub.textContent = `${diff} kcal deficit · Expected: -0.5 kg/week`;
+  } else if (state.goal === 'muscle') {
+    calorieSub.textContent = `${Math.abs(diff)} kcal surplus · Expected: +0.25 kg/week`;
+  } else if (state.goal === 'gain') {
+    calorieSub.textContent = `${Math.abs(diff)} kcal surplus · Expected: +0.5 kg/week`;
+  } else {
+    calorieSub.textContent = 'Maintenance calories · Weight stable';
+  }
+
+  bmrValue.textContent = Math.round(bmr);
+  tdeeValue.textContent = Math.round(tdee);
+  bmiValue.textContent = bmi.toFixed(1);
+  waterValue.textContent = water + 'L';
+  waterBig.textContent = water + ' liters';
+
+  proteinG.textContent = macros.p;
+  carbsG.textContent = macros.c;
+  fatG.textContent = macros.f;
+
+  // Macro bars
+  proteinBar.style.width = split.p + '%';
+  carbsBar.style.width = split.c + '%';
+  fatBar.style.width = split.f + '%';
+
+  resultsSummary.classList.add('visible');
+
+  // Build meal plan
+  state.plan = buildMealPlan(target, macros, split);
+  renderPlan(target, macros);
+}
+
+/* ===== BUILD MEAL PLAN ===== */
+function buildMealPlan(targetCal, macros, split) {
+  const foods = FOODS[state.dietType];
+  const mealsCountLocal = state.mealsCount;
+
+  // Calorie distribution across meals
+  let distribution;
+  if (mealsCountLocal === 3) {
+    distribution = [0.30, 0.40, 0.30]; // B / L / D
+  } else if (mealsCountLocal === 4) {
+    distribution = [0.25, 0.35, 0.30, 0.10]; // B / L / D / Snack
+  } else {
+    distribution = [0.22, 0.30, 0.25, 0.11, 0.12]; // B / L / D / Snack1 / Snack2
+  }
+
+  const plan = [];
+  const daysOfWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+
+  for (let d = 0; d < 7; d++) {
+    const meals = [];
+
+    const pickRandom = (arr) => arr[Math.floor(Math.random() * arr.length)];
+
+    meals.push({
+      type: 'Breakfast',
+      icon: '🌅',
+      ...pickRandom(foods.breakfast)
+    });
+
+    meals.push({
+      type: 'Lunch',
+      icon: '☀️',
+      ...pickRandom(foods.lunch)
+    });
+
+    if (mealsCountLocal >= 4) {
+      meals.push({
+        type: 'Snack 1',
+        icon: '🍎',
+        ...pickRandom(foods.snacks)
+      });
+    }
+
+    meals.push({
+      type: 'Dinner',
+      icon: '🌙',
+      ...pickRandom(foods.dinner)
+    });
+
+    if (mealsCountLocal >= 5) {
+      meals.push({
+        type: 'Snack 2',
+        icon: '🥜',
+        ...pickRandom(foods.snacks)
+      });
+    }
+
+    const totalCals = meals.reduce((s, m) => s + m.cals, 0);
+    const totalP = meals.reduce((s, m) => s + m.p, 0);
+    const totalC = meals.reduce((s, m) => s + m.c, 0);
+    const totalF = meals.reduce((s, m) => s + m.f, 0);
+
+    plan.push({
+      day: daysOfWeek[d],
+      dayNum: d + 1,
+      meals,
+      totals: { cals: totalCals, p: totalP, c: totalC, f: totalF }
+    });
+  }
+
+  return plan;
+}
+
+/* ===== RENDER PLAN ===== */
+function renderPlan(targetCal, macros) {
+  const dietLabels = { balanced: 'Balanced', veg: 'Vegetarian', highprotein: 'High-Protein' };
+  const goalLabels = { lose: 'Weight Loss', maintain: 'Maintenance', muscle: 'Muscle Gain', gain: 'Weight Gain' };
+  const mealsLabels = { 3: '3 meals', 4: '4 meals', 5: '5 meals' };
+
+  planSubtitle.textContent = `${dietLabels[state.dietType]} · ${mealsLabels[state.mealsCount]} · ~${Math.round(targetCal)} kcal/day · Goal: ${goalLabels[state.goal]}`;
+
+  daysGrid.innerHTML = '';
+
+  state.plan.forEach(day => {
+    const card = document.createElement('div');
+    card.className = 'day-card';
+    card.innerHTML = `
+      <div class="day-header">
+        <div class="day-name">
+          <div class="day-num">${day.dayNum}</div>
+          ${day.day}
+        </div>
+        <div class="day-totals">
+          <span>🔥 ${day.totals.cals} kcal</span>
+          <span>🥩 ${day.totals.p}g P</span>
+          <span>🍞 ${day.totals.c}g C</span>
+          <span>🥑 ${day.totals.f}g F</span>
+        </div>
+      </div>
+      <div class="meal-list">
+        ${day.meals.map(m => `
+          <div class="meal-item">
+            <div class="meal-top">
+              <div class="meal-type">${m.icon} ${m.type}</div>
+              <div class="meal-cals">${m.cals} kcal · ${m.p}g P</div>
+            </div>
+            <div class="meal-items"><strong>${m.name}</strong></div>
+          </div>
+        `).join('')}
+      </div>
+    `;
+    daysGrid.appendChild(card);
+  });
+
+  planOutput.classList.add('visible');
+  planOutput.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+/* ===== BUTTONS ===== */
+generateBtn.addEventListener('click', () => {
+  generateDietPlan();
+  showToast('🥗 Diet plan generated!', 'success');
+});
+
+regenerateBtn.addEventListener('click', () => {
+  generateDietPlan();
+  showToast('🔄 New plan generated', 'success');
+});
+
+printBtn.addEventListener('click', () => {
+  window.print();
+});
+
+/* ===== FAQ ===== */
+$$('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    $$('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+
+/* ===== INIT ===== */
+generateDietPlan();
+</script>
+
+</body>
+</html>

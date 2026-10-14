@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#2563eb">
+<title>Admin Dashboard - BigToolz</title>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+    background:#f8f9fc;color:#1a1a2e;line-height:1.5;
+    min-height:100vh;-webkit-font-smoothing:antialiased;
+    padding-bottom:env(safe-area-inset-bottom,0);
+  }
+
+  /* ========== HEADER ========== */
+  .admin-header{
+    background:#fff;height:68px;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:0 32px;padding-top:env(safe-area-inset-top,0);
+    box-shadow:0 1px 3px rgba(0,0,0,.06);
+    position:sticky;top:0;z-index:100;
+    border-bottom:1px solid #e5e7eb;
+  }
+  .admin-logo{
+    display:flex;align-items:center;gap:10px;
+    font-size:20px;font-weight:800;color:#1a1a2e;
+    text-decoration:none;letter-spacing:-.5px;
+  }
+  .admin-logo-icon{
+    width:36px;height:36px;
+    background:linear-gradient(135deg,#3b82f6,#2563eb);
+    border-radius:10px;display:flex;align-items:center;justify-content:center;
+    color:#fff;font-size:18px;
+    box-shadow:0 4px 12px rgba(37,99,235,.3);
+  }
+  .admin-logo span{color:#2563eb}
+
+  .admin-header-right{
+    display:flex;align-items:center;gap:12px;
+  }
+  .user-info{
+    display:flex;align-items:center;gap:8px;
+    padding:8px 14px;background:#f3f4f6;border-radius:10px;
+    font-size:13px;font-weight:600;color:#374151;
+  }
+  .user-avatar{
+    width:28px;height:28px;border-radius:50%;
+    background:linear-gradient(135deg,#3b82f6,#2563eb);
+    display:flex;align-items:center;justify-content:center;
+    color:#fff;font-size:12px;font-weight:700;
+  }
+  .logout-btn{
+    display:flex;align-items:center;gap:6px;
+    background:#fff;color:#ef4444;border:1px solid #e5e7eb;
+    padding:9px 16px;border-radius:10px;
+    font-size:13px;font-weight:600;cursor:pointer;
+    transition:all .2s;font-family:inherit;min-height:40px;
+  }
+  .logout-btn:hover{border-color:#ef4444;background:#fef2f2}
+  .logout-btn:active{background:#fee2e2}
+
+  /* ========== MAIN ========== */
+  .admin-main{
+    max-width:1280px;margin:0 auto;padding:40px 32px;
+  }
+
+  .page-title{
+    font-size:32px;font-weight:800;color:#0a0e27;
+    margin-bottom:8px;letter-spacing:-.6px;
+  }
+  .page-sub{
+    font-size:15px;color:#6b7280;margin-bottom:36px;
+    font-weight:500;
+  }
+
+  /* ========== STATS CARDS ========== */
+  .stats-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);
+    gap:22px;margin-bottom:44px;
+  }
+  .stat-card{
+    background:#fff;border:1px solid #e5e7eb;border-radius:18px;
+    padding:28px 24px;position:relative;overflow:hidden;
+    transition:all .3s cubic-bezier(.4,0,.2,1);
+    box-shadow:0 1px 3px rgba(0,0,0,.04);
+    text-decoration:none;color:inherit;display:flex;flex-direction:column;
+  }
+  .stat-card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 16px 32px rgba(37,99,235,.13);
+    border-color:#2563eb;
+  }
+  .stat-card::before{
+    content:'';position:absolute;top:-40px;right:-40px;
+    width:140px;height:140px;border-radius:50%;opacity:.08;
+  }
+  .stat-card.blog::before{background:#3b82f6}
+  .stat-card.news::before{background:#10b981}
+  .stat-card.story::before{background:#8b5cf6}
+
+  .stat-header{
+    display:flex;justify-content:space-between;align-items:flex-start;
+    margin-bottom:20px;position:relative;z-index:2;
+  }
+  .stat-icon{
+    width:56px;height:56px;border-radius:16px;
+    display:flex;align-items:center;justify-content:center;
+    font-size:26px;color:#fff;flex-shrink:0;
+    box-shadow:0 8px 20px rgba(0,0,0,.15);
+  }
+  .stat-icon.blog{background:linear-gradient(135deg,#3b82f6,#1e40af)}
+  .stat-icon.news{background:linear-gradient(135deg,#10b981,#059669)}
+  .stat-icon.story{background:linear-gradient(135deg,#8b5cf6,#6d28d9)}
+
+  .stat-label{
+    font-size:13px;font-weight:700;color:#6b7280;
+    text-transform:uppercase;letter-spacing:.6px;
+    margin-bottom:6px;
+  }
+  .stat-number{
+    font-size:44px;font-weight:900;color:#0a0e27;
+    line-height:1;letter-spacing:-1.5px;
+    margin-bottom:4px;
+  }
+  .stat-sublabel{
+    font-size:13px;color:#9ca3af;font-weight:500;
+    margin-bottom:20px;
+  }
+
+  .stat-actions{
+    display:flex;gap:8px;margin-top:auto;
+    position:relative;z-index:2;
+  }
+  .stat-btn{
+    flex:1;display:flex;align-items:center;justify-content:center;gap:6px;
+    padding:11px 16px;border-radius:10px;
+    font-size:13px;font-weight:700;
+    cursor:pointer;font-family:inherit;
+    border:none;transition:all .2s;text-decoration:none;
+    min-height:44px;
+  }
+  .stat-btn.primary{background:#2563eb;color:#fff}
+  .stat-btn.primary:hover{background:#1d4ed8;transform:translateY(-1px)}
+  .stat-btn.primary:active{background:#1e40af}
+  .stat-btn.secondary{
+    background:#f3f4f6;color:#374151;flex:0.7;
+  }
+  .stat-btn.secondary:hover{background:#e5e7eb}
+
+  /* ========== SECTION ========== */
+  .section{
+    background:#fff;border:1px solid #e5e7eb;border-radius:18px;
+    padding:28px;margin-bottom:24px;
+    box-shadow:0 1px 3px rgba(0,0,0,.04);
+  }
+  .section-header{
+    display:flex;justify-content:space-between;align-items:center;
+    margin-bottom:20px;padding-bottom:16px;
+    border-bottom:2px solid #f3f4f6;
+  }
+  .section-title{
+    font-size:18px;font-weight:800;color:#0a0e27;
+    letter-spacing:-.3px;display:flex;align-items:center;gap:10px;
+  }
+  .section-title-icon{
+    width:32px;height:32px;border-radius:9px;
+    display:flex;align-items:center;justify-content:center;
+    background:#eff6ff;color:#2563eb;font-size:16px;
+  }
+  .section-link{
+    font-size:13px;font-weight:700;color:#2563eb;
+    text-decoration:none;display:inline-flex;align-items:center;gap:4px;
+    transition:gap .2s;
+  }
+  .section-link:hover{gap:8px}
+
+  /* ========== RECENT LIST ========== */
+  .recent-list{display:flex;flex-direction:column;gap:2px}
+  .recent-item{
+    display:flex;align-items:center;gap:14px;
+    padding:14px 12px;border-radius:10px;
+    transition:background .2s;text-decoration:none;color:inherit;
+    min-height:60px;
+  }
+  .recent-item:hover{background:#f8faff}
+  .recent-icon{
+    width:40px;height:40px;border-radius:10px;
+    display:flex;align-items:center;justify-content:center;
+    font-size:18px;color:#fff;flex-shrink:0;
+  }
+  .recent-icon.blog{background:#3b82f6}
+  .recent-icon.news{background:#10b981}
+  .recent-icon.story{background:#8b5cf6}
+  .recent-info{flex:1;min-width:0}
+  .recent-title{
+    font-size:14px;font-weight:700;color:#0a0e27;
+    margin-bottom:3px;white-space:nowrap;
+    overflow:hidden;text-overflow:ellipsis;
+  }
+  .recent-meta{
+    font-size:12px;color:#9ca3af;
+    display:flex;gap:10px;flex-wrap:wrap;
+  }
+  .recent-status{
+    font-size:10px;font-weight:700;
+    padding:3px 10px;border-radius:10px;
+    text-transform:uppercase;letter-spacing:.4px;
+    flex-shrink:0;
+  }
+  .recent-status.published{background:#d1fae5;color:#065f46}
+  .recent-status.draft{background:#fef3c7;color:#92400e}
+
+  .loading-text{
+    text-align:center;padding:40px 20px;
+    font-size:14px;color:#9ca3af;font-weight:500;
+  }
+  .empty-text{
+    text-align:center;padding:40px 20px;
+    font-size:14px;color:#9ca3af;font-weight:500;
+  }
+
+  /* ========== QUICK LINKS ========== */
+  .quick-links{
+    display:grid;grid-template-columns:repeat(3,1fr);
+    gap:12px;
+  }
+  .quick-link{
+    display:flex;align-items:center;justify-content:center;gap:8px;
+    padding:14px 16px;border-radius:12px;
+    background:#f8fafc;border:1px solid #e5e7eb;
+    color:#374151;text-decoration:none;
+    font-size:13px;font-weight:600;
+    transition:all .2s;min-height:48px;
+  }
+  .quick-link:hover{
+    background:#eff6ff;border-color:#2563eb;color:#2563eb;
+    transform:translateY(-2px);
+  }
+
+  /* ========== MOBILE ========== */
+  @media(max-width:1024px){
+    .stats-grid{grid-template-columns:repeat(2,1fr)}
+    .quick-links{grid-template-columns:repeat(2,1fr)}
+  }
+
+  @media(max-width:768px){
+    .admin-header{padding:0 16px;height:64px}
+    .admin-logo{font-size:17px;gap:8px}
+    .admin-logo-icon{width:32px;height:32px;font-size:16px}
+    .user-info{display:none}
+    .logout-btn{padding:8px 12px;font-size:12px}
+    .logout-btn span{display:none}
+
+    .admin-main{padding:24px 16px}
+    .page-title{font-size:24px}
+    .page-sub{font-size:14px;margin-bottom:24px}
+
+    .stats-grid{grid-template-columns:1fr;gap:16px;margin-bottom:28px}
+    .stat-card{padding:22px 20px}
+    .stat-icon{width:48px;height:48px;font-size:22px;border-radius:14px}
+    .stat-number{font-size:36px}
+    .stat-actions{gap:10px}
+    .stat-btn{min-height:46px;font-size:13px}
+
+    .section{padding:22px 18px;border-radius:14px}
+    .section-title{font-size:16px}
+    .section-title-icon{width:28px;height:28px;font-size:14px}
+
+    .recent-item{padding:12px 8px;gap:12px}
+    .recent-icon{width:36px;height:36px;font-size:16px}
+    .recent-title{font-size:13px}
+    .recent-meta{font-size:11px}
+
+    .quick-links{grid-template-columns:1fr;gap:10px}
+  }
+
+  @media(max-width:480px){
+    .admin-main{padding:20px 14px}
+    .page-title{font-size:22px}
+    .stat-card{padding:20px 18px}
+    .stat-number{font-size:32px}
+    .stat-actions{flex-direction:column}
+    .stat-btn.secondary{flex:1}
+  }
+
+  /* ========== DARK MODE ========== */
+  html[data-theme="dark"] body{background:#0f172a;color:#f1f5f9}
+  html[data-theme="dark"] .admin-header{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .admin-logo{color:#f1f5f9}
+  html[data-theme="dark"] .user-info{background:#0f172a;color:#cbd5e1}
+  html[data-theme="dark"] .logout-btn{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .logout-btn:hover{background:#7f1d1d;border-color:#ef4444}
+  html[data-theme="dark"] .page-title{color:#f1f5f9}
+  html[data-theme="dark"] .page-sub{color:#94a3b8}
+  html[data-theme="dark"] .stat-card{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .stat-number{color:#f1f5f9}
+  html[data-theme="dark"] .stat-label{color:#94a3b8}
+  html[data-theme="dark"] .stat-sublabel{color:#64748b}
+  html[data-theme="dark"] .stat-btn.secondary{background:#0f172a;color:#cbd5e1}
+  html[data-theme="dark"] .stat-btn.secondary:hover{background:#334155}
+  html[data-theme="dark"] .section{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .section-header{border-color:#334155}
+  html[data-theme="dark"] .section-title{color:#f1f5f9}
+  html[data-theme="dark"] .section-title-icon{background:#1e3a8a;color:#93c5fd}
+  html[data-theme="dark"] .recent-item:hover{background:#0f172a}
+  html[data-theme="dark"] .recent-title{color:#f1f5f9}
+  html[data-theme="dark"] .recent-meta{color:#94a3b8}
+  html[data-theme="dark"] .recent-status.published{background:#064e3b;color:#6ee7b7}
+  html[data-theme="dark"] .recent-status.draft{background:#78350f;color:#fcd34d}
+  html[data-theme="dark"] .quick-link{background:#0f172a;border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .quick-link:hover{background:#1e3a8a;color:#93c5fd}
+</style>
+</head>
+<body>
+
+<!-- ========== HEADER ========== -->
+<header class="admin-header">
+  <a href="/admin/" class="admin-logo">
+    <div class="admin-logo-icon">⚒</div>
+    BigToolz</span> Admin
+  </a>
+  <div class="admin-header-right">
+    <div class="user-info" id="userInfo" style="display:none;">
+      <div class="user-avatar" id="userAvatar">A</div>
+      <span id="userEmail">Admin</span>
+    </div>
+    <button class="logout-btn" id="logoutBtn" aria-label="Logout">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4M16 17l5-5-5-5M21 12H9"/>
+      </svg>
+      <span>Logout</span>
+    </button>
+  </div>
+</header>
+
+<!-- ========== MAIN ========== -->
+<main class="admin-main">
+
+  <h1 class="page-title">📊 Dashboard</h1>
+  <p class="page-sub">Manage your blog, news and web stories all in one place.</p>
+
+  <!-- ========== STATS CARDS ========== -->
+  <div class="stats-grid">
+
+    <!-- Blog Card -->
+    <a href="/admin/posts.html" class="stat-card blog">
+      <div class="stat-header">
+        <div>
+          <div class="stat-label">Blog Posts</div>
+          <div class="stat-number" id="blogCount">—</div>
+          <div class="stat-sublabel" id="blogSublabel">Loading...</div>
+        </div>
+        <div class="stat-icon blog">📝</div>
+      </div>
+      <div class="stat-actions">
+        <a href="/admin/editor.html" class="stat-btn primary" onclick="event.stopPropagation()">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
+          New Post
+        </a>
+        <a href="/admin/posts.html" class="stat-btn secondary" onclick="event.stopPropagation()">All Posts</a>
+      </div>
+    </a>
+
+    <!-- News Card -->
+    <a href="/admin/news-list.html" class="stat-card news">
+      <div class="stat-header">
+        <div>
+          <div class="stat-label">News Articles</div>
+          <div class="stat-number" id="newsCount">—</div>
+          <div class="stat-sublabel" id="newsSublabel">Loading...</div>
+        </div>
+        <div class="stat-icon news">📰</div>
+      </div>
+      <div class="stat-actions">
+        <a href="/admin/news-editor.html" class="stat-btn primary" onclick="event.stopPropagation()">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
+          New News
+        </a>
+        <a href="/admin/news-list.html" class="stat-btn secondary" onclick="event.stopPropagation()">All News</a>
+      </div>
+    </a>
+
+    <!-- Story Card -->
+    <a href="/admin/stories-list.html" class="stat-card story">
+      <div class="stat-header">
+        <div>
+          <div class="stat-label">Web Stories</div>
+          <div class="stat-number" id="storyCount">—</div>
+          <div class="stat-sublabel" id="storySublabel">Loading...</div>
+        </div>
+        <div class="stat-icon story">📱</div>
+      </div>
+      <div class="stat-actions">
+        <a href="/admin/story-editor.html" class="stat-btn primary" onclick="event.stopPropagation()">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
+          New Story
+        </a>
+        <a href="/admin/stories-list.html" class="stat-btn secondary" onclick="event.stopPropagation()">All Stories</a>
+      </div>
+    </a>
+
+  </div>
+
+  <!-- ========== RECENT ACTIVITY ========== -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-title">
+        <div class="section-title-icon">🕐</div>
+        Recent Activity
+      </div>
+    </div>
+    <div class="recent-list" id="recentList">
+      <div class="loading-text">Loading recent activity...</div>
+    </div>
+  </section>
+
+  <!-- ========== QUICK LINKS ========== -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-title">
+        <div class="section-title-icon">🔗</div>
+        Quick Links
+      </div>
+    </div>
+    <div class="quick-links">
+      <a href="/blog/" target="_blank" class="quick-link">
+        🌐 View Blog
+      </a>
+      <a href="/news/" target="_blank" class="quick-link">
+        📰 View News
+      </a>
+      <a href="/webstories/" target="_blank" class="quick-link">
+        📱 View Stories
+      </a>
+      <a href="/" target="_blank" class="quick-link">
+        ⚒ Main Site
+      </a>
+      <a href="/admin/posts.html" class="quick-link">
+        📋 All Posts
+      </a>
+      <a href="/admin/news-list.html" class="quick-link">
+        📋 All News
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<script>
+'use strict';
+
+/* ===== SUPABASE CONFIG ===== */
+const SUPABASE_URL = 'https://btmeygsirnyuzsubscde.supabase.co';
+const SUPABASE_KEY = 'sb_publishable_rncmFbKPlBLxkeIEXaFxfQ_rIbjebnJ';
+
+const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+/* ===== THEME (sync with main site) ===== */
+(function(){
+  try{
+    var t = localStorage.getItem('theme');
+    var d = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if(t === 'dark' || (!t && d)) document.documentElement.setAttribute('data-theme','dark');
+    else if(t === 'light') document.documentElement.setAttribute('data-theme','light');
+  }catch(e){}
+})();
+
+/* ===== HELPERS ===== */
+function escapeHtml(str) {
+  const div = document.createElement('div');
+  div.textContent = str || '';
+  return div.innerHTML;
+}
+
+function formatDate(dateStr) {
+  if (!dateStr) return '';
+  try {
+    return new Date(dateStr).toLocaleDateString('en-US', {
+      month:'short', day:'numeric', year:'numeric'
+    });
+  } catch(e) { return ''; }
+}
+
+function timeAgo(dateStr) {
+  if (!dateStr) return '';
+  try {
+    const now = new Date();
+    const d = new Date(dateStr);
+    const diff = Math.floor((now - d) / 1000);
+
+    if (diff < 60) return 'just now';
+    if (diff < 3600) return Math.floor(diff / 60) + 'm ago';
+    if (diff < 86400) return Math.floor(diff / 3600) + 'h ago';
+    if (diff < 604800) return Math.floor(diff / 86400) + 'd ago';
+    return formatDate(dateStr);
+  } catch(e) { return ''; }
+}
+
+/* ===== AUTH CHECK ===== */
+(async function init() {
+  try {
+    const sessionResult = await sb.auth.getSession();
+    const session = sessionResult.data && sessionResult.data.session;
+
+    if (!session) {
+      // Not logged in — redirect to login
+      window.location.href = '/admin/login.html';
+      return;
+    }
+
+    // Show user info
+    const email = session.user.email || 'Admin';
+    const userInfo = document.getElementById('userInfo');
+    const userEmail = document.getElementById('userEmail');
+    const userAvatar = document.getElementById('userAvatar');
+
+    userInfo.style.display = 'flex';
+    userEmail.textContent = email;
+    userAvatar.textContent = email.charAt(0).toUpperCase();
+
+    // Load stats + recent activity
+    loadStats();
+    loadRecentActivity();
+
+  } catch (err) {
+    console.error('Auth error:', err);
+    window.location.href = '/admin/login.html';
+  }
+})();
+
+/* ===== LOAD STATS ===== */
+async function loadStats() {
+  try {
+    // Blog posts
+    const { count: blogTotal } = await sb
+      .from('posts')
+      .select('*', { count: 'exact', head: true });
+
+    const { count: blogPublished } = await sb
+      .from('posts')
+      .select('*', { count: 'exact', head: true })
+      .eq('status', 'published');
+
+    document.getElementById('blogCount').textContent = blogTotal || 0;
+    document.getElementById('blogSublabel').textContent =
+      (blogPublished || 0) + ' published';
+
+  } catch (err) {
+    console.error('Blog stats error:', err);
+    document.getElementById('blogCount').textContent = '0';
+    document.getElementById('blogSublabel').textContent = 'Error loading';
+  }
+
+  try {
+    // News
+    const { count: newsTotal } = await sb
+      .from('news')
+      .select('*', { count: 'exact', head: true });
+
+    const { count: newsPublished } = await sb
+      .from('news')
+      .select('*', { count: 'exact', head: true })
+      .eq('status', 'published');
+
+    document.getElementById('newsCount').textContent = newsTotal || 0;
+    document.getElementById('newsSublabel').textContent =
+      (newsPublished || 0) + ' published';
+
+  } catch (err) {
+    console.error('News stats error:', err);
+    document.getElementById('newsCount').textContent = '0';
+    document.getElementById('newsSublabel').textContent = 'Table not ready';
+  }
+
+  try {
+    // Stories
+    const { count: storyTotal } = await sb
+      .from('webstories')
+      .select('*', { count: 'exact', head: true });
+
+    const { count: storyPublished } = await sb
+      .from('webstories')
+      .select('*', { count: 'exact', head: true })
+      .eq('status', 'published');
+
+    document.getElementById('storyCount').textContent = storyTotal || 0;
+    document.getElementById('storySublabel').textContent =
+      (storyPublished || 0) + ' published';
+
+  } catch (err) {
+    console.error('Story stats error:', err);
+    document.getElementById('storyCount').textContent = '0';
+    document.getElementById('storySublabel').textContent = 'Table not ready';
+  }
+}
+
+/* ===== LOAD RECENT ACTIVITY ===== */
+async function loadRecentActivity() {
+  const container = document.getElementById('recentList');
+
+  try {
+    // Fetch last 4 from each table
+    const [postsRes, newsRes, storiesRes] = await Promise.all([
+      sb.from('posts')
+        .select('id, title, slug, status, created_at, category')
+        .order('created_at', { ascending: false })
+        .limit(4),
+      sb.from('news')
+        .select('id, title, slug, status, created_at, category')
+        .order('created_at', { ascending: false })
+        .limit(4)
+        .then(r => r)
+        .catch(() => ({ data: null, error: true })),
+      sb.from('webstories')
+        .select('id, title, slug, status, created_at, category')
+        .order('created_at', { ascending: false })
+        .limit(4)
+        .then(r => r)
+        .catch(() => ({ data: null, error: true }))
+    ]);
+
+    const allItems = [];
+
+    if (postsRes.data && !postsRes.error) {
+      postsRes.data.forEach(p => {
+        allItems.push({
+          type: 'blog',
+          title: p.title,
+          slug: p.slug,
+          status: p.status,
+          date: p.created_at,
+          icon: '📝',
+          url: '/blog/post.html?slug=' + encodeURIComponent(p.slug)
+        });
+      });
+    }
+
+    if (newsRes.data && !newsRes.error) {
+      newsRes.data.forEach(n => {
+        allItems.push({
+          type: 'news',
+          title: n.title,
+          slug: n.slug,
+          status: n.status,
+          date: n.created_at,
+          icon: '📰',
+          url: '/news/article.html?slug=' + encodeURIComponent(n.slug)
+        });
+      });
+    }
+
+    if (storiesRes.data && !storiesRes.error) {
+      storiesRes.data.forEach(s => {
+        allItems.push({
+          type: 'story',
+          title: s.title,
+          slug: s.slug,
+          status: s.status,
+          date: s.created_at,
+          icon: '📱',
+          url: '/webstories/view.html?slug=' + encodeURIComponent(s.slug)
+        });
+      });
+    }
+
+    // Sort by date desc
+    allItems.sort((a, b) => new Date(b.date) - new Date(a.date));
+    const recent = allItems.slice(0, 8);
+
+    if (recent.length === 0) {
+      container.innerHTML = '<div class="empty-text">No content yet. Start by creating your first post, news article or story!</div>';
+      return;
+    }
+
+    container.innerHTML = recent.map(item => `
+      <a href="${item.url}" class="recent-item" target="_blank">
+        <div class="recent-icon ${item.type}">${item.icon}</div>
+        <div class="recent-info">
+          <div class="recent-title">${escapeHtml(item.title || 'Untitled')}</div>
+          <div class="recent-meta">
+            <span>${timeAgo(item.date)}</span>
+            <span>•</span>
+            <span>${item.type.charAt(0).toUpperCase() + item.type.slice(1)}</span>
+          </div>
+        </div>
+        <span class="recent-status ${item.status}">${item.status}</span>
+      </a>
+    `).join('');
+
+  } catch (err) {
+    console.error('Recent activity error:', err);
+    container.innerHTML = '<div class="empty-text">Could not load recent activity.</div>';
+  }
+}
+
+/* ===== LOGOUT ===== */
+document.getElementById('logoutBtn').addEventListener('click', async function() {
+  if (!confirm('Are you sure you want to logout?')) return;
+
+  try {
+    await sb.auth.signOut();
+    localStorage.removeItem('blog_admin_session');
+    window.location.href = '/admin/login.html';
+  } catch (err) {
+    console.error('Logout error:', err);
+    window.location.href = '/admin/login.html';
+  }
+});
+</script>
+
+</body>
+</html>

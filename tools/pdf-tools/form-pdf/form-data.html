@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2563eb">
+
+<title>Extract PDF Form Data - Export Fillable Form to CSV/JSON Free | BigToolz</title>
+<meta name="description" content="Extract form data from PDF online free. Export text fields, checkboxes, dropdowns, radio values to CSV, JSON, TSV or TXT. Works in your browser, no upload.">
+<meta name="keywords" content="extract pdf form data, pdf form to csv, pdf form to json, export form data pdf, pdf form extractor">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://bigtoolz.com/tools/pdf-tools/form-pdf/form-data/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Extract PDF Form Data - Free Online Tool | BigToolz">
+<meta property="og:description" content="Export PDF form data to CSV, JSON or TXT free, no upload.">
+<meta property="og:url" content="https://bigtoolz.com/tools/pdf-tools/form-pdf/form-data/">
+<meta property="og:image" content="https://bigtoolz.com/assets/images/og-image.jpg">
+<meta property="og:site_name" content="BigToolz">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Extract PDF Form Data - BigToolz">
+<meta name="twitter:description" content="Extract fillable PDF form data instantly free, no upload.">
+<meta name="twitter:image" content="https://bigtoolz.com/assets/images/twitter-card.jpg">
+
+<link rel="icon" href="/assets/images/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/images/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#f8f9fc;color:#1a1a2e;overflow-x:hidden;line-height:1.5}
+
+  .header{background:#fff;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;position:sticky;top:0;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+  .header-left{display:flex;align-items:center;gap:40px}
+  .logo{display:flex;align-items:center;gap:8px;font-size:22px;font-weight:800;color:#1a1a2e;text-decoration:none}
+  .logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#3b82f6,#2563eb);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px}
+  .logo span{color:#2563eb}
+  .nav{display:flex;align-items:center;gap:28px;list-style:none}
+  .nav a{text-decoration:none;color:#4b5563;font-size:14px;font-weight:500;transition:color .2s}
+  .nav a:hover,.nav a.active{color:#2563eb}
+  .header-right{display:flex;align-items:center;gap:16px}
+  .search-btn,.theme-btn{width:36px;height:36px;border-radius:50%;border:none;background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#4b5563}
+  .search-btn:hover,.theme-btn:hover{background:#f3f4f6}
+  .bookmark-btn{display:flex;align-items:center;gap:8px;background:#2563eb;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
+  .bookmark-btn:hover{background:#1d4ed8}
+
+  .hero{background:linear-gradient(135deg,#0a0e27 0%,#1a1a4e 40%,#2d1b69 70%,#4c1d95 100%);padding:40px 40px 60px;position:relative;overflow:hidden;color:#fff}
+  .hero::before{content:'';position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(16,185,129,.3) 0%,transparent 70%);border-radius:50%}
+  .hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+  .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px;flex-wrap:wrap}
+  .breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none}
+  .breadcrumb a:hover{color:#fff}
+  .breadcrumb .sep{color:rgba(255,255,255,.4)}
+  .breadcrumb .current{color:#fff;font-weight:500}
+  .hero-title-row{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+  .hero-icon{width:60px;height:60px;background:#10b981;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;color:#fff;flex-shrink:0;box-shadow:0 8px 24px rgba(16,185,129,.4)}
+  .hero-title{font-size:42px;font-weight:800;line-height:1.15}
+  .hero-title .blue{color:#34d399}
+  .hero-desc{font-size:15px;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:24px;max-width:560px}
+  .hero-features{display:flex;gap:24px;flex-wrap:wrap}
+  .hero-feature{display:flex;align-items:center;gap:6px;font-size:13px;color:#fff;font-weight:500}
+  .hero-feature .check{width:18px;height:18px;border-radius:50%;background:#10b981;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;flex-shrink:0}
+
+  .main-content{max-width:1200px;margin:0 auto;padding:40px;display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start}
+  .tool-content{min-width:0}
+
+  .workspace{background:#fff;border-radius:16px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,.06);border:1px solid #e5e7eb;margin-bottom:24px}
+
+  .dropzone{border:2px dashed #a7f3d0;border-radius:12px;padding:50px 30px;text-align:center;background:#f0fdf4;margin-bottom:24px;transition:all .2s;cursor:pointer}
+  .dropzone:hover,.dropzone.dragover{border-color:#10b981;background:#d1fae5}
+  .dropzone-icon{width:60px;height:60px;background:linear-gradient(135deg,#10b981,#059669);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;color:#fff;font-size:26px;transition:transform .2s}
+  .dropzone:hover .dropzone-icon{transform:translateY(-4px)}
+  .dropzone-title{font-size:16px;font-weight:700;color:#1a1a2e;margin-bottom:8px}
+  .dropzone-sub{font-size:14px;color:#6b7280;margin-bottom:20px}
+  .dropzone-sub a{color:#10b981;font-weight:600;text-decoration:none}
+  .choose-btn{display:inline-flex;align-items:center;gap:8px;background:#10b981;color:#fff;border:none;padding:12px 28px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;transition:background .2s}
+  .choose-btn:hover{background:#059669}
+  .dropzone-info{font-size:12px;color:#9ca3af;display:flex;align-items:center;justify-content:center;gap:8px;margin-top:16px;flex-wrap:wrap}
+  .dropzone-info .divider{color:#d1d5db}
+  .file-input{display:none}
+
+  .editor{display:none}
+  .editor.visible{display:block}
+
+  /* File info bar */
+  .file-info-bar{display:flex;align-items:center;gap:12px;padding:14px 16px;background:#f0fdf4;border:1px solid #a7f3d0;border-radius:10px;margin-bottom:20px;flex-wrap:wrap}
+  .file-info-icon{width:36px;height:36px;background:#10b981;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px;flex-shrink:0}
+  .file-info-text{flex:1;min-width:0}
+  .file-info-name{font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:2px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .file-info-meta{font-size:11px;color:#6b7280;display:flex;gap:10px;flex-wrap:wrap}
+  .file-info-meta .success{color:#10b981;font-weight:700}
+
+  /* Stats grid */
+  .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px}
+  .stat-card{background:#f0fdf4;border:1px solid #a7f3d0;border-radius:10px;padding:16px 14px;text-align:center;transition:all .2s}
+  .stat-card:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(16,185,129,.15)}
+  .stat-value{font-size:26px;font-weight:800;color:#059669;line-height:1.1;margin-bottom:4px}
+  .stat-label{font-size:11px;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:.5px}
+  .stat-card.empty .stat-value{color:#9ca3af}
+  .stat-card.empty{background:#f9fafb;border-color:#e5e7eb}
+  .stat-card.filled .stat-value{color:#10b981}
+
+  /* Toolbar */
+  .data-toolbar{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:16px;flex-wrap:wrap}
+  .data-toolbar-left{display:flex;gap:8px;flex-wrap:wrap}
+  .format-tab{padding:9px 16px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;font-size:12px;font-weight:600;color:#4b5563;cursor:pointer;font-family:inherit;transition:all .2s}
+  .format-tab:hover{border-color:#10b981;background:#f0fdf4}
+  .format-tab.active{border-color:#10b981;background:#10b981;color:#fff}
+  .data-toolbar-right{display:flex;gap:8px}
+  .action-btn{display:inline-flex;align-items:center;gap:6px;padding:9px 14px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;font-size:12px;font-weight:600;color:#4b5563;cursor:pointer;font-family:inherit;transition:all .2s}
+  .action-btn:hover{border-color:#10b981;color:#10b981;background:#f0fdf4}
+  .action-btn.copied{background:#10b981;color:#fff;border-color:#10b981}
+
+  /* Data preview */
+  .data-preview{background:#0f172a;border-radius:12px;padding:20px;min-height:240px;max-height:520px;overflow:auto;margin-bottom:20px;border:1px solid #334155}
+  .data-preview pre{font-family:'JetBrains Mono','Courier New',monospace;font-size:12px;line-height:1.6;color:#e2e8f0;white-space:pre;margin:0;user-select:text}
+  .data-empty{color:#94a3b8;text-align:center;padding:40px 20px;font-size:13px;font-style:italic}
+
+  /* Fields table */
+  .fields-table-wrap{background:#fff;border:1px solid #e5e7eb;border-radius:12px;overflow:hidden;margin-bottom:20px}
+  .fields-table-header{padding:14px 16px;background:#f0fdf4;border-bottom:1px solid #a7f3d0;font-size:13px;font-weight:700;color:#1a1a2e;display:flex;justify-content:space-between;align-items:center}
+  .fields-table-count{font-size:11px;font-weight:700;color:#059669;background:#fff;padding:3px 10px;border-radius:10px;border:1px solid #a7f3d0}
+  .fields-table{width:100%;border-collapse:collapse;font-size:12px}
+  .fields-table thead{background:#f9fafb}
+  .fields-table th{padding:10px 12px;text-align:left;font-size:10px;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:.4px;border-bottom:1px solid #e5e7eb}
+  .fields-table td{padding:10px 12px;border-bottom:1px solid #f3f4f6;color:#4b5563;vertical-align:top;word-break:break-word}
+  .fields-table tr:last-child td{border-bottom:none}
+  .fields-table tr:hover{background:#f0fdf4}
+  .fields-table .field-name{font-family:'JetBrains Mono',monospace;font-size:11px;color:#1a1a2e;font-weight:600}
+  .fields-table .field-value{font-family:'JetBrains Mono',monospace;font-size:11px;color:#065f46;font-weight:500}
+  .fields-table .field-value.empty{color:#9ca3af;font-style:italic}
+  .type-badge{display:inline-block;font-size:9px;font-weight:700;padding:2px 7px;border-radius:5px;text-transform:uppercase;letter-spacing:.3px;color:#fff}
+  .type-badge.text{background:#8b5cf6}
+  .type-badge.checkbox{background:#10b981}
+  .type-badge.dropdown{background:#3b82f6}
+  .type-badge.radio{background:#f59e0b}
+  .type-badge.signature{background:#ec4899}
+
+  /* Actions */
+  .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 28px;border-radius:10px;font-size:15px;font-weight:700;font-family:inherit;cursor:pointer;border:none;transition:all .2s;text-decoration:none}
+  .btn-primary{background:#10b981;color:#fff;flex:1;box-shadow:0 4px 12px rgba(16,185,129,.2)}
+  .btn-primary:hover:not(:disabled){background:#059669;transform:translateY(-2px);box-shadow:0 6px 20px rgba(16,185,129,.3)}
+  .btn-primary:disabled{opacity:.5;cursor:not-allowed;transform:none}
+  .btn-secondary{background:#fff;color:#10b981;border:1px solid #e5e7eb}
+  .btn-secondary:hover{border-color:#10b981;background:#f0fdf4}
+
+  .status-msg{margin-top:14px;padding:12px 14px;border-radius:8px;font-size:13px;font-weight:600;display:none}
+  .status-msg.visible{display:block}
+  .status-msg.success{background:#d1fae5;color:#065f46;border:1px solid #a7f3d0}
+  .status-msg.error{background:#fee2e2;color:#991b1b;border:1px solid #fecaca}
+  .status-msg.info{background:#f0fdf4;color:#065f46;border:1px solid #a7f3d0}
+
+  .progress{display:none;margin-top:14px}
+  .progress.visible{display:block}
+  .progress-bar{width:100%;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden;margin-bottom:8px}
+  .progress-fill{height:100%;background:linear-gradient(90deg,#34d399,#10b981);border-radius:4px;width:0%;transition:width .3s ease}
+  .progress-text{font-size:13px;color:#6b7280;text-align:center;font-weight:500}
+
+  /* SEO */
+  .seo-content{background:#fff;border-radius:16px;padding:32px;border:1px solid #e5e7eb;margin-bottom:24px}
+  .seo-content h2{font-size:22px;font-weight:800;color:#1a1a2e;margin-bottom:14px;margin-top:28px;display:flex;align-items:center;gap:10px}
+  .seo-content h2:first-child{margin-top:0}
+  .seo-content h3{font-size:16px;font-weight:700;color:#1a1a2e;margin:20px 0 10px}
+  .seo-content p{font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:14px}
+  .seo-content ul{list-style:none;padding-left:0;margin-bottom:16px}
+  .seo-content ul li{position:relative;padding-left:24px;font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:8px}
+  .seo-content ul li::before{content:'';position:absolute;left:6px;top:12px;width:6px;height:6px;background:#10b981;border-radius:50%}
+  .seo-content a{color:#2563eb;text-decoration:none;font-weight:600}
+  .seo-content a:hover{text-decoration:underline}
+  .seo-content strong{color:#1a1a2e;font-weight:700}
+  .seo-content code{background:#f1f5f9;padding:2px 6px;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:13px;color:#0f172a;border:1px solid #e2e8f0}
+
+  .how-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:20px}
+  .how-step{background:#f0fdf4;border-radius:12px;padding:20px;border:1px solid #a7f3d0}
+  .how-step-num{width:36px;height:36px;border-radius:50%;background:#10b981;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;margin-bottom:12px}
+  .how-step-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+  .how-step-desc{font-size:13px;color:#6b7280;line-height:1.6}
+
+  .faq-item{background:#f0fdf4;border:1px solid #a7f3d0;border-radius:12px;margin-bottom:10px;overflow:hidden;transition:border-color .2s}
+  .faq-item:hover{border-color:#10b981}
+  .faq-question{width:100%;background:none;border:none;padding:18px 22px;font-size:15px;font-weight:700;color:#1a1a2e;text-align:left;cursor:pointer;font-family:inherit;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .faq-question .chev{font-size:12px;color:#10b981;transition:transform .2s;flex-shrink:0}
+  .faq-item.open .faq-question .chev{transform:rotate(180deg)}
+  .faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 22px}
+  .faq-item.open .faq-answer{max-height:500px;padding-bottom:18px}
+  .faq-answer p{font-size:14px;color:#6b7280;line-height:1.7;margin:0}
+
+  .sidebar{background:#fff;border-radius:16px;padding:24px;border:1px solid #e5e7eb;position:sticky;top:80px;margin-bottom:24px}
+  .sidebar-header{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:800;color:#1a1a2e;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid #f3f4f6}
+  .sidebar-list{display:flex;flex-direction:column;gap:8px}
+  .sidebar-item{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;cursor:pointer;transition:background .2s;text-decoration:none;color:inherit;border:1px solid #f3f4f6}
+  .sidebar-item:hover{background:#f0fdf4;border-color:#a7f3d0}
+  .sidebar-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;flex-shrink:0}
+  .sidebar-info{flex:1;min-width:0}
+  .sidebar-title{font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:2px}
+  .sidebar-desc{font-size:11px;color:#9ca3af;line-height:1.4}
+
+  .footer{background:#0a0e27;padding:60px 40px 30px;color:#fff;margin-top:40px}
+  .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:40px}
+  .footer-brand{display:flex;align-items:center;gap:8px;font-size:20px;font-weight:800;margin-bottom:12px}
+  .footer-brand span{color:#60a5fa}
+  .footer-tagline{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px}
+  .footer-social{display:flex;gap:12px}
+  .footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:16px;transition:background .2s}
+  .footer-social a:hover{background:rgba(255,255,255,.2)}
+  .footer-heading{font-size:14px;font-weight:700;margin-bottom:20px;color:#fff}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .footer-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;transition:color .2s}
+  .footer-links a:hover{color:#60a5fa}
+  .footer-bottom{max-width:1200px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  .footer-bottom-left{display:flex;gap:20px;font-size:12px;color:rgba(255,255,255,.5)}
+  .footer-bottom-right,.footer-bottom-links a{font-size:12px;color:rgba(255,255,255,.5);text-decoration:none}
+  .footer-bottom-links{display:flex;gap:20px}
+
+  .toast{position:fixed;bottom:24px;right:24px;background:#1a1a2e;color:#fff;padding:14px 20px;border-radius:10px;font-size:13px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:3000;transform:translateY(200%);transition:transform .3s ease;max-width:320px}
+  .toast.visible{transform:translateY(0)}
+  .toast.success{background:#10b981}
+  .toast.error{background:#ef4444}
+
+  @media(max-width:1024px){
+    .main-content{grid-template-columns:1fr;padding:24px 20px}
+    .sidebar{position:static}
+    .how-steps{grid-template-columns:repeat(2,1fr)}
+    .stats-grid{grid-template-columns:repeat(2,1fr)}
+  }
+  @media(max-width:768px){
+    .header{padding:0 20px}.nav{display:none}
+    .hero{padding:24px 20px 40px}
+    .hero-title{font-size:28px}
+    .hero-icon{width:48px;height:48px;font-size:22px}
+    .hero-title-row{flex-direction:column;align-items:flex-start;gap:12px}
+    .main-content{padding:20px 16px}
+    .workspace{padding:20px}
+    .dropzone{padding:32px 16px}
+    .how-steps{grid-template-columns:1fr}
+    .seo-content{padding:20px}
+    .footer-inner{grid-template-columns:1fr 1fr}
+    .toast{left:16px;right:16px;bottom:16px;max-width:none}
+    .data-preview pre{font-size:10px}
+    .fields-table{font-size:11px}
+    .fields-table th,.fields-table td{padding:8px}
+  }
+  @media(max-width:576px){
+    .header{padding:0 16px}.header-right .search-btn,.header-right .theme-btn{display:none}
+    .hero-title{font-size:24px}
+    .actions{flex-direction:column}
+    .btn{width:100%}
+    .btn-primary{flex:none}
+    .footer-inner{grid-template-columns:1fr}
+    .footer-bottom{flex-direction:column;text-align:center}
+    .stats-grid{grid-template-columns:1fr 1fr}
+    .data-toolbar{flex-direction:column;align-items:stretch}
+    .data-toolbar-left,.data-toolbar-right{width:100%}
+  }
+
+  html[data-theme="dark"] body{background:#0f172a;color:#f1f5f9}
+  html[data-theme="dark"] .header,html[data-theme="dark"] .workspace,html[data-theme="dark"] .seo-content,html[data-theme="dark"] .sidebar{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .logo,html[data-theme="dark"] .hero-title,html[data-theme="dark"] .seo-content h2,html[data-theme="dark"] .seo-content h3,html[data-theme="dark"] .faq-question,html[data-theme="dark"] .sidebar-header,html[data-theme="dark"] .sidebar-title,html[data-theme="dark"] .file-info-name,html[data-theme="dark"] .fields-table-header{color:#f1f5f9}
+  html[data-theme="dark"] .nav a{color:#cbd5e1}
+  html[data-theme="dark"] .dropzone{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .how-step,html[data-theme="dark"] .faq-item,html[data-theme="dark"] .file-info-bar,html[data-theme="dark"] .stat-card{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .stat-card{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .stat-card.empty{background:#0f172a}
+  html[data-theme="dark"] .seo-content p,html[data-theme="dark"] .seo-content ul li,html[data-theme="dark"] .faq-answer p{color:#cbd5e1}
+  html[data-theme="dark"] .seo-content code{background:#020617;color:#34d399;border-color:#334155}
+  html[data-theme="dark"] .format-tab,html[data-theme="dark"] .action-btn{background:#1e293b;border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .fields-table-wrap{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .fields-table thead{background:#1e293b}
+  html[data-theme="dark"] .fields-table th{color:#94a3b8;border-color:#334155}
+  html[data-theme="dark"] .fields-table td{border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .fields-table tr:hover{background:#1e293b}
+  html[data-theme="dark"] .fields-table .field-name{color:#f1f5f9}
+  html[data-theme="dark"] .fields-table .field-value{color:#34d399}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type": "SoftwareApplication", "name": "Extract PDF Form Data", "url": "https://bigtoolz.com/tools/pdf-tools/form-pdf/form-data/", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any (Web-based)", "description": "Free online tool to extract form data from fillable PDFs export to CSV, JSON, TSV, or TXT. Works in your browser.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.8", "ratingCount": "412"}},
+    {"@type": "HowTo", "name": "How to Extract Form Data from a PDF", "step": [
+      {"@type": "HowToStep", "name": "Upload PDF", "text": "Drag & drop or click to select your fillable PDF."},
+      {"@type": "HowToStep", "name": "Auto-Detection", "text": "The tool reads all form fields and their values."},
+      {"@type": "HowToStep", "name": "Choose Format", "text": "Pick CSV, JSON, TSV, or TXT for the export."},
+      {"@type": "HowToStep", "name": "Copy or Download", "text": "Copy the data or download as a file."}
+    ]},
+    {"@type": "FAQPage", "mainEntity": [
+      {"@type": "Question", "name": "How do I extract form data from a PDF?", "acceptedAnswer": {"@type": "Answer", "text": "Upload your fillable PDF. The tool auto-detects all form fields and their values. Choose your export format (CSV, JSON, TSV, TXT) and click Copy or Download."}},
+      {"@type": "Question", "name": "What formats can I export to?", "acceptedAnswer": {"@type": "Answer", "text": "CSV (spreadsheet), JSON (structured data), TSV (tab-separated), and TXT (key=value pairs). Each format suits different downstream tools CSV for Excel, JSON for APIs, TXT for human reading."}},
+      {"@type": "Question", "name": "What if my PDF has no fillable fields?", "acceptedAnswer": {"@type": "Answer", "text": "This tool extracts data from existing fillable fields. If your PDF doesn't have fields, you'll need to add them first using our Create PDF Form tool, or extract data manually from the PDF text."}},
+      {"@type": "Question", "name": "Are my PDF values uploaded to a server?", "acceptedAnswer": {"@type": "Answer", "text": "No. All processing happens in your browser using pdf-lib. Your PDF and form data never leave your device."}}
+    ]},
+    {"@type": "BreadcrumbList", "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bigtoolz.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://bigtoolz.com/tools/"},
+      {"@type": "ListItem", "position": 3, "name": "PDF Tools", "item": "https://bigtoolz.com/tools/pdf-tools/"},
+      {"@type": "ListItem", "position": 4, "name": "Form PDF", "item": "https://bigtoolz.com/tools/pdf-tools/form-pdf/"},
+      {"@type": "ListItem", "position": 5, "name": "Form Data", "item": "https://bigtoolz.com/tools/pdf-tools/form-pdf/form-data/"}
+    ]}
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-left">
+    <a href="/" class="logo"><div class="logo-icon">⚒</div>BigToolz</span></a>
+    <nav><ul class="nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/tools/" class="active">All Tools</a></li>
+      <li><a href="/tools/categories">Categories</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul></nav>
+  </div>
+  <div class="header-right">
+    
+    <button class="theme-btn" aria-label="Toggle theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
+    
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <nav class="breadcrumb">
+      <a href="/">Home</a><span class="sep">›</span>
+      <a href="/tools/">Tools</a><span class="sep">›</span>
+      <a href="/tools/pdf-tools/">PDF Tools</a><span class="sep">›</span>
+      <a href="/tools/pdf-tools/form-pdf/">Form PDF</a><span class="sep">›</span>
+      <span class="current">Extract Form Data</span>
+    </nav>
+    <div class="hero-title-row">
+      <div class="hero-icon">📊</div>
+      <h1 class="hero-title">Extract <span class="blue">Form Data</span></h1>
+    </div>
+    <p class="hero-desc">
+      Extract all form field values from any fillable PDF. Export to CSV, JSON, TSV, or TXT. Auto-detects text fields, checkboxes, dropdowns, and radio buttons. No upload, 100% private.
+    </p>
+    <div class="hero-features">
+      <div class="hero-feature"><span class="check">✓</span> Auto-Detect Fields</div>
+      <div class="hero-feature"><span class="check">✓</span> 4 Export Formats</div>
+      <div class="hero-feature"><span class="check">✓</span> Copy & Download</div>
+      <div class="hero-feature"><span class="check">✓</span> No Upload</div>
+    </div>
+  </div>
+</section>
+
+<div class="main-content">
+
+  <div class="tool-content">
+
+    <div class="workspace">
+
+      <!-- Dropzone -->
+      <div class="dropzone" id="dropzone">
+        <div class="dropzone-icon">⬆</div>
+        <div class="dropzone-title">Drag & drop your fillable PDF here</div>
+        <div class="dropzone-sub">or <a href="#" id="browseLink">click to browse files</a></div>
+        <button class="choose-btn" id="chooseBtn" type="button">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/></svg>
+          Choose PDF File
+        </button>
+        <div class="dropzone-info">
+          <span>Fillable PDF</span>
+          <span class="divider">|</span>
+          <span>Read-only access</span>
+        </div>
+        <input type="file" id="fileInput" class="file-input" accept="application/pdf,.pdf">
+      </div>
+
+      <!-- Editor -->
+      <div class="editor" id="editor">
+
+        <!-- File info bar -->
+        <div class="file-info-bar">
+          <div class="file-info-icon">📄</div>
+          <div class="file-info-text">
+            <div class="file-info-name" id="fileName"></div>
+            <div class="file-info-meta">
+              <span id="fileSize"></span>
+              <span id="filePages"></span>
+              <span class="success" id="fileFields"></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stats -->
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-value" id="statTotal">0</div>
+            <div class="stat-label">Total Fields</div>
+          </div>
+          <div class="stat-card filled">
+            <div class="stat-value" id="statFilled">0</div>
+            <div class="stat-label">Filled</div>
+          </div>
+          <div class="stat-card empty">
+            <div class="stat-value" id="statEmpty">0</div>
+            <div class="stat-label">Empty</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="statTypes">0</div>
+            <div class="stat-label">Field Types</div>
+          </div>
+        </div>
+
+        <!-- Toolbar -->
+        <div class="data-toolbar">
+          <div class="data-toolbar-left">
+            <button class="format-tab active" data-format="csv">CSV</button>
+            <button class="format-tab" data-format="json">JSON</button>
+            <button class="format-tab" data-format="tsv">TSV</button>
+            <button class="format-tab" data-format="txt">TXT</button>
+          </div>
+          <div class="data-toolbar-right">
+            <button class="action-btn" id="copyBtn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+              Copy
+            </button>
+            <button class="action-btn" id="downloadBtn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+              Download
+            </button>
+          </div>
+        </div>
+
+        <!-- Data Preview -->
+        <div class="data-preview">
+          <pre id="dataOutput"></pre>
+        </div>
+
+        <!-- Fields Table -->
+        <div class="fields-table-wrap">
+          <div class="fields-table-header">
+            <span>📋 Detected Fields</span>
+            <span class="fields-table-count" id="tableCount">0</span>
+          </div>
+          <div style="overflow-x:auto;">
+            <table class="fields-table">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Field Name</th>
+                  <th>Type</th>
+                  <th>Value</th>
+                  <th>Page</th>
+                </tr>
+              </thead>
+              <tbody id="tableBody">
+                <tr><td colspan="5" style="text-align:center;color:#9ca3af;padding:20px;">Loading...</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button class="btn btn-primary" id="extractAgainBtn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M23 4v6h-6M1 20v-6h6M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></svg>
+            Re-Extract Data
+          </button>
+          <button class="btn btn-secondary" id="cancelBtn">Analyze Another PDF</button>
+        </div>
+
+        <div class="status-msg" id="statusMsg"></div>
+
+        <div class="progress" id="progress">
+          <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+          <div class="progress-text" id="progressText">Extracting...</div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="seo-content">
+
+      <h2>📊 What is PDF Form Data Extraction?</h2>
+      <p>
+        <strong>PDF form data extraction</strong> reads all the values filled into a form PDF text fields (names, emails, dates), checkboxes (yes/no), dropdowns (selected options), radio buttons, and signature placeholders and exports them into a structured format like <strong>CSV, JSON, TSV, or TXT</strong>. This is essential for <strong>processing returned forms at scale</strong>: HR teams collecting applications, tax firms gathering returns, research teams pooling survey data, or anyone needing to move PDF responses into a spreadsheet or database.
+      </p>
+      <p>
+        BigToolz's <strong>Form Data Extractor</strong> uses <strong>pdf-lib</strong> to read the AcroForm fields directly from the PDF structure not via OCR or text parsing. That means <strong>100% accurate</strong> field names and values, regardless of the visual layout. Everything runs <strong>100% in your browser</strong> your file never leaves your device.
+      </p>
+
+      <h2>🚀 How to Extract Form Data</h2>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-step-num">1</div>
+          <div class="how-step-title">Upload PDF</div>
+          <div class="how-step-desc">Drag & drop or click "Choose PDF File" to load your form.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">2</div>
+          <div class="how-step-title">Auto-Detect</div>
+          <div class="how-step-desc">All form fields are detected with their names and values.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">3</div>
+          <div class="how-step-title">Choose Format</div>
+          <div class="how-step-desc">Pick CSV, JSON, TSV, or TXT for the export.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">4</div>
+          <div class="how-step-title">Copy / Download</div>
+          <div class="how-step-desc">Copy to clipboard or download as a file.</div>
+        </div>
+      </div>
+
+      <h2>📁 The 4 Export Formats Explained</h2>
+
+      <h3>📊 CSV (Comma-Separated Values)</h3>
+      <p>The universal spreadsheet format. Opens in <strong>Excel, Google Sheets, Numbers, and LibreOffice</strong>. Best when you want to <strong>view, sort, or filter data</strong> in a spreadsheet. Two columns: field name and value.</p>
+
+      <h3>{ } JSON (JavaScript Object Notation)</h3>
+      <p>The structured data format preferred by <strong>developers and APIs</strong>. Best when you want to <strong>import values programmatically</strong> into an app, send via API, or store in a NoSQL database. Each field becomes a key-value pair.</p>
+
+      <h3>📋 TSV (Tab-Separated Values)</h3>
+      <p>Like CSV but with tabs. Better for data that <strong>contains commas</strong> no need to escape them. Preferred by <strong>Excel power users and data scientists</strong>.</p>
+
+      <h3>📄 TXT (Plain Text)</h3>
+      <p>Simple <code>key = value</code> per line. Best for <strong>human reading</strong>, emailing quick lists, or pasting into chat. Not machine-parseable, but super readable.</p>
+
+      <h2>🎯 Common Use Cases</h2>
+      <ul>
+        <li><strong>HR:</strong> Extract applicant data from returned job forms into an Excel sheet.</li>
+        <li><strong>Tax firms:</strong> Pull client info from filled tax PDFs into accounting software.</li>
+        <li><strong>Research:</strong> Batch-collect survey responses for statistical analysis.</li>
+        <li><strong>Real estate:</strong> Extract tenant applications into a CRM.</li>
+        <li><strong>Education:</strong> Read student enrollment forms into a database.</li>
+        <li><strong>Medical:</strong> Pull patient intake forms into EMR systems.</li>
+        <li><strong>Legal:</strong> Extract client details from contracts into case files.</li>
+        <li><strong>Business:</strong> Feed PDF orders into inventory or invoicing systems.</li>
+      </ul>
+
+      <h2>✨ Key Features</h2>
+      <ul>
+        <li><strong>Auto-detect all fields</strong> text, checkbox, dropdown, radio, signature.</li>
+        <li><strong>4 export formats</strong> CSV, JSON, TSV, TXT.</li>
+        <li><strong>Multi-page support</strong> reads fields from every page.</li>
+        <li><strong>Live table view</strong> see all fields and values at a glance.</li>
+        <li><strong>Field statistics</strong> total, filled, empty, types count.</li>
+        <li><strong>Copy to clipboard</strong> one click, no download needed.</li>
+        <li><strong>Download as file</strong> save CSV/JSON/TXT for later.</li>
+        <li><strong>100% browser-based</strong> your file never leaves your device.</li>
+      </ul>
+
+      <h2>❓ Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-question">How do I extract form data from a PDF?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Upload your fillable PDF. The tool auto-detects all form fields and their values. Choose your export format (CSV, JSON, TSV, TXT) and click Copy or Download. Free, no signup.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What formats can I export to?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>CSV</strong> (spreadsheet), <strong>JSON</strong> (structured data), <strong>TSV</strong> (tab-separated), and <strong>TXT</strong> (key=value pairs). Each format suits different downstream tools CSV for Excel, JSON for APIs, TXT for human reading.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What if my PDF has no fillable fields?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>This tool extracts data from <strong>existing fillable fields</strong>. If your PDF doesn't have fields, you'll need to add them first using our <a href="/tools/pdf-tools/form-pdf/create-form/">Create PDF Form</a> tool, or extract data manually from the PDF text.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Does it work with scanned PDFs?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>No. Scanned PDFs are just images they don't have fillable form fields. To extract data from scans, you'd need <strong>OCR software</strong> (Optical Character Recognition) to convert the image into text first.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I extract data from multiple PDFs at once?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>This tool processes one PDF per session, but you can quickly re-upload another by clicking "Analyze Another PDF". Each extraction takes just seconds. For batch processing hundreds of files, a script using pdf-lib would be more efficient.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Are the values accurate?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Yes 100% accurate. The tool reads the <strong>actual AcroForm field values</strong> from the PDF structure, not via OCR or text parsing. This means it works correctly even when the visual layout is complex or the values are hard to read visually.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Are my PDF values uploaded to a server?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>No. All processing happens in your browser using pdf-lib. Your PDF and form data never leave your device, and nothing is stored anywhere.</p></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-header">🔗 Related Form PDF Tools</div>
+    <div class="sidebar-list">
+      <a href="/tools/pdf-tools/form-pdf/create-form/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#8b5cf6;">📝</div>
+        <div class="sidebar-info"><div class="sidebar-title">Create PDF Form</div><div class="sidebar-desc">Add fillable fields</div></div>
+      </a>
+      <a href="/tools/pdf-tools/form-pdf/form-filler/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#3b82f6;">✍️</div>
+        <div class="sidebar-info"><div class="sidebar-title">Fill PDF Form</div><div class="sidebar-desc">Fill fillable PDFs</div></div>
+      </a>
+      <a href="/tools/pdf-tools/form-pdf/table-extractor/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#f97316;">📋</div>
+        <div class="sidebar-info"><div class="sidebar-title">Table Extractor</div><div class="sidebar-desc">Extract tables</div></div>
+      </a>
+      <a href="/tools/pdf-tools/form-pdf/pdf-to-excel/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#10b981;">X</div>
+        <div class="sidebar-info"><div class="sidebar-title">PDF to Excel</div><div class="sidebar-desc">Convert tables</div></div>
+      </a>
+      <a href="/tools/pdf-tools/form-pdf/pdf-to-csv/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#3b82f6;">📊</div>
+        <div class="sidebar-info"><div class="sidebar-title">PDF to CSV</div><div class="sidebar-desc">Export to CSV</div></div>
+      </a>
+      <a href="/tools/pdf-tools/form-pdf/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#64748b;">📋</div>
+        <div class="sidebar-info"><div class="sidebar-title">All Form PDF →</div><div class="sidebar-desc">15 tools</div></div>
+      </a>
+    </div>
+  </aside>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand"><div class="logo-icon">⚒</div>BigToolz</span></div>
+      <p class="footer-tagline">Your Ultimate Online Tools Hub</p>
+      <div class="footer-social">
+        <a href="https://facebook.com/bigtoolz" aria-label="Facebook">f</a>
+        <a href="https://twitter.com/bigtoolz" aria-label="Twitter">𝕏</a>
+        <a href="https://youtube.com/@bigtoolz" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+    <div>
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/tools/">All Tools</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Categories</h3>
+      <ul class="footer-links">
+        <li><a href="/tools/image-tools/">Image Tools</a></li>
+        <li><a href="/tools/pdf-tools/">PDF Tools</a></li>
+        <li><a href="/tools/text-tools/">Text Tools</a></li>
+        <li><a href="/tools/seo-tools/">SEO Tools</a></li>
+        <li><a href="/tools/categories">All Categories →</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Legal</h3>
+      <ul class="footer-links">
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left"><span>✓ 100% Free</span><span>✓ No Sign Up</span><span>✓ No Installation</span></div>
+    <div class="footer-bottom-right">© 2026 BigToolz. All rights reserved.</div>
+    <div class="footer-bottom-links"><a href="/privacy-policy">Privacy</a><a href="/terms">Terms</a><a href="/disclaimer">Disclaimer</a></div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<!-- pdf-lib (PDF.js not needed no rendering) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+
+<script>
+'use strict';
+
+/* ===== THEME ===== */
+(function(){try{var t=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&d))document.documentElement.setAttribute('data-theme','dark');else if(t==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();
+document.querySelector('.theme-btn')?.addEventListener('click',()=>{const h=document.documentElement;const c=h.getAttribute('data-theme');const d=window.matchMedia('(prefers-color-scheme: dark)').matches;let n=c==='dark'?'light':c==='light'?'dark':(d?'light':'dark');h.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}});
+
+/* ===== HELPERS ===== */
+const $ = (s, p = document) => p.querySelector(s);
+const $$ = (s, p = document) => [...p.querySelectorAll(s)];
+
+function showToast(msg, type = 'info', duration = 3000) {
+  const t = $('#toast');
+  if (!t) return;
+  t.className = 'toast visible' + (type !== 'info' ? ' ' + type : '');
+  t.textContent = msg;
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove('visible'), duration);
+}
+
+function setStatus(msg, type = 'info') {
+  const el = $('#statusMsg');
+  el.textContent = msg;
+  el.className = 'status-msg visible ' + type;
+}
+
+function clearStatus() {
+  const el = $('#statusMsg');
+  el.className = 'status-msg';
+  el.textContent = '';
+}
+
+function formatBytes(b) {
+  if (b === 0) return '0 B';
+  const k = 1024, sizes = ['B', 'KB', 'MB', 'GB'];
+  const i = Math.floor(Math.log(b) / Math.log(k));
+  return (b / Math.pow(k, i)).toFixed(i === 0 ? 0 : 1) + ' ' + sizes[i];
+}
+
+function escapeHtml(str) {
+  const div = document.createElement('div');
+  div.textContent = str;
+  return div.innerHTML;
+}
+
+async function copyToClipboard(text) {
+  try {
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(text);
+      return true;
+    }
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.cssText = 'position:fixed;opacity:0;';
+    document.body.appendChild(ta);
+    ta.select();
+    const ok = document.execCommand('copy');
+    document.body.removeChild(ta);
+    return ok;
+  } catch (e) { return false; }
+}
+
+/* ===== STATE ===== */
+const state = {
+  fileBytes: null,
+  fileName: '',
+  fileSize: 0,
+  pdfLibDoc: null,
+  totalPages: 0,
+  fields: [],          // { name, type, value, page }
+  format: 'csv',
+  output: ''
+};
+
+/* ===== DOM ===== */
+const dropzone = $('#dropzone');
+const fileInput = $('#fileInput');
+const chooseBtn = $('#chooseBtn');
+const browseLink = $('#browseLink');
+const editor = $('#editor');
+const fileNameEl = $('#fileName');
+const fileSizeEl = $('#fileSize');
+const filePagesEl = $('#filePages');
+const fileFieldsEl = $('#fileFields');
+const statTotal = $('#statTotal');
+const statFilled = $('#statFilled');
+const statEmpty = $('#statEmpty');
+const statTypes = $('#statTypes');
+const dataOutput = $('#dataOutput');
+const tableBody = $('#tableBody');
+const tableCount = $('#tableCount');
+const copyBtn = $('#copyBtn');
+const downloadBtn = $('#downloadBtn');
+const extractAgainBtn = $('#extractAgainBtn');
+const cancelBtn = $('#cancelBtn');
+const progress = $('#progress');
+const progressFill = $('#progressFill');
+const progressText = $('#progressText');
+
+/* ===== FILE SELECTION ===== */
+function triggerFileSelect() { fileInput.click(); }
+chooseBtn.addEventListener('click', (e) => { e.stopPropagation(); triggerFileSelect(); });
+browseLink.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); triggerFileSelect(); });
+dropzone.addEventListener('click', triggerFileSelect);
+
+fileInput.addEventListener('change', (e) => {
+  const f = e.target.files[0];
+  if (f) extractPdf(f);
+  fileInput.value = '';
+});
+
+['dragenter', 'dragover'].forEach(evt => {
+  dropzone.addEventListener(evt, (e) => { e.preventDefault(); e.stopPropagation(); dropzone.classList.add('dragover'); });
+});
+['dragleave', 'drop'].forEach(evt => {
+  dropzone.addEventListener(evt, (e) => { e.preventDefault(); e.stopPropagation(); dropzone.classList.remove('dragover'); });
+});
+dropzone.addEventListener('drop', (e) => {
+  const f = e.dataTransfer.files[0];
+  if (f && f.type === 'application/pdf') extractPdf(f);
+  else showToast('Please drop a PDF file', 'error');
+});
+
+/* ===== EXTRACT MAIN ===== */
+async function extractPdf(file) {
+  clearStatus();
+  state.fileName = file.name;
+  state.fileSize = file.size;
+  progress.classList.add('visible');
+  progressFill.style.width = '20%';
+  progressText.textContent = 'Reading PDF...';
+
+  try {
+    const buf = await file.arrayBuffer();
+    state.fileBytes = buf.slice(0);
+    state.pdfLibDoc = await PDFLib.PDFDocument.load(buf.slice(0));
+    state.totalPages = state.pdfLibDoc.getPageCount();
+
+    progressFill.style.width = '50%';
+    progressText.textContent = 'Detecting form fields...';
+
+    await detectFields();
+
+    progressFill.style.width = '80%';
+    progressText.textContent = 'Generating output...';
+
+    renderStats();
+    renderTable();
+    generateOutput();
+    updateFileInfoBar();
+
+    dropzone.style.display = 'none';
+    editor.classList.add('visible');
+
+    progressFill.style.width = '100%';
+
+    if (state.fields.length > 0) {
+      setStatus(`✅ Extracted ${state.fields.length} field(s) from ${state.totalPages} page(s)`, 'success');
+      showToast(`✅ ${state.fields.length} fields extracted`, 'success');
+    } else {
+      setStatus('⚠️ No fillable form fields found. This PDF may be a scan or have no AcroForm fields.', 'error');
+      showToast('No fields detected', 'error');
+    }
+  } catch (err) {
+    console.error(err);
+    setStatus('Failed to process PDF: ' + err.message, 'error');
+    showToast('Failed to process PDF', 'error');
+  } finally {
+    setTimeout(() => {
+      progress.classList.remove('visible');
+      progressFill.style.width = '0%';
+    }, 800);
+  }
+}
+
+/* ===== DETECT FIELDS ===== */
+async function detectFields() {
+  state.fields = [];
+  try {
+    const form = state.pdfLibDoc.getForm();
+    const allFields = form.getFields();
+    const pages = state.pdfLibDoc.getPages();
+
+    for (const field of allFields) {
+      try {
+        const name = field.getName();
+        const constructorName = field.constructor.name;
+        let type = 'text';
+        let value = '';
+
+        if (constructorName === 'PDFTextField') {
+          type = 'text';
+          value = field.getText() || '';
+        } else if (constructorName === 'PDFCheckBox') {
+          type = 'checkbox';
+          value = field.isChecked() ? 'Yes' : 'No';
+        } else if (constructorName === 'PDFDropdown') {
+          type = 'dropdown';
+          const sel = field.getSelected();
+          value = sel && sel.length ? sel.join(', ') : '';
+        } else if (constructorName === 'PDFRadioGroup') {
+          type = 'radio';
+          value = field.getSelected() || '';
+        } else if (constructorName === 'PDFOptionList') {
+          type = 'dropdown';
+          const sel = field.getSelected();
+          value = sel && sel.length ? sel.join(', ') : '';
+        } else if (constructorName === 'PDFSignature') {
+          type = 'signature';
+          value = '(signature field)';
+        } else {
+          type = 'unknown';
+        }
+
+        // Find page number
+        let page = 1;
+        try {
+          const widgets = field.acroField.getWidgets();
+          if (widgets.length > 0) {
+            const widget = widgets[0];
+            const pageRef = widget.P();
+            if (pageRef) {
+              for (let i = 0; i < pages.length; i++) {
+                if (pages[i].ref && pageRef && pages[i].ref.toString() === pageRef.toString()) {
+                  page = i + 1;
+                  break;
+                }
+              }
+            }
+          }
+        } catch (e) { /* default page 1 */ }
+
+        state.fields.push({ name, type, value, page });
+      } catch (fieldErr) {
+        console.warn('Field read error:', fieldErr);
+      }
+    }
+  } catch (err) {
+    console.warn('Form detection failed:', err);
+  }
+}
+
+/* ===== STATS ===== */
+function renderStats() {
+  const total = state.fields.length;
+  const filled = state.fields.filter(f => f.value && String(f.value).trim() !== '' && f.value !== 'No').length;
+  const empty = total - filled;
+  const types = new Set(state.fields.map(f => f.type)).size;
+
+  statTotal.textContent = total;
+  statFilled.textContent = filled;
+  statEmpty.textContent = empty;
+  statTypes.textContent = types;
+}
+
+/* ===== TABLE ===== */
+function renderTable() {
+  tableCount.textContent = state.fields.length;
+  if (!state.fields.length) {
+    tableBody.innerHTML = '<tr><td colspan="5" style="text-align:center;color:#9ca3af;padding:20px;">No fields detected</td></tr>';
+    return;
+  }
+  tableBody.innerHTML = state.fields.map((f, i) => {
+    const emptyClass = (f.value === '' || f.value === 'No') ? ' empty' : '';
+    const displayValue = f.value || '';
+    return `
+      <tr>
+        <td>${i + 1}</td>
+        <td><span class="field-name">${escapeHtml(f.name)}</span></td>
+        <td><span class="type-badge ${f.type}">${f.type}</span></td>
+        <td><span class="field-value${emptyClass}">${escapeHtml(String(displayValue))}</span></td>
+        <td>${f.page}</td>
+      </tr>
+    `;
+  }).join('');
+}
+
+/* ===== GENERATE OUTPUT ===== */
+function generateOutput() {
+  const fmt = state.format;
+  let out = '';
+
+  if (fmt === 'csv') {
+    out = 'Field Name,Type,Value,Page\n';
+    state.fields.forEach(f => {
+      out += `${csvEscape(f.name)},${csvEscape(f.type)},${csvEscape(String(f.value))},${f.page}\n`;
+    });
+  } else if (fmt === 'json') {
+    const obj = {
+      fileName: state.fileName,
+      extractedAt: new Date().toISOString(),
+      totalPages: state.totalPages,
+      fieldsCount: state.fields.length,
+      fields: state.fields.map(f => ({
+        name: f.name,
+        type: f.type,
+        value: f.value,
+        page: f.page
+      }))
+    };
+    out = JSON.stringify(obj, null, 2);
+  } else if (fmt === 'tsv') {
+    out = 'Field Name\tType\tValue\tPage\n';
+    state.fields.forEach(f => {
+      out += `${tsvEscape(f.name)}\t${tsvEscape(f.type)}\t${tsvEscape(String(f.value))}\t${f.page}\n`;
+    });
+  } else if (fmt === 'txt') {
+    out = `PDF Form Data Extract\n`;
+    out += `File: ${state.fileName}\n`;
+    out += `Pages: ${state.totalPages}\n`;
+    out += `Fields: ${state.fields.length}\n`;
+    out += `Generated: ${new Date().toLocaleString()}\n`;
+    out += `${'─'.repeat(50)}\n\n`;
+    state.fields.forEach((f, i) => {
+      out += `[${i + 1}] ${f.name} (${f.type})\n`;
+      out += `    Value: ${f.value || '(empty)'}\n`;
+      out += `    Page:  ${f.page}\n\n`;
+    });
+  }
+
+  state.output = out;
+  dataOutput.textContent = out || 'No data';
+}
+
+function csvEscape(val) {
+  if (val === null || val === undefined) return '';
+  const s = String(val);
+  if (s.includes(',') || s.includes('"') || s.includes('\n')) {
+    return '"' + s.replace(/"/g, '""') + '"';
+  }
+  return s;
+}
+
+function tsvEscape(val) {
+  if (val === null || val === undefined) return '';
+  return String(val).replace(/\t/g, ' ').replace(/\n/g, ' ');
+}
+
+/* ===== FILE INFO BAR ===== */
+function updateFileInfoBar() {
+  fileNameEl.textContent = state.fileName || '';
+  fileSizeEl.textContent = formatBytes(state.fileSize);
+  filePagesEl.textContent = state.totalPages + ' page' + (state.totalPages > 1 ? 's' : '');
+  fileFieldsEl.textContent = state.fields.length + ' field' + (state.fields.length !== 1 ? 's' : '');
+}
+
+/* ===== FORMAT TABS ===== */
+$$('.format-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    $$('.format-tab').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    state.format = tab.dataset.format;
+    generateOutput();
+  });
+});
+
+/* ===== COPY ===== */
+copyBtn.addEventListener('click', async () => {
+  if (!state.output) { showToast('No data to copy', 'error'); return; }
+  const ok = await copyToClipboard(state.output);
+  if (ok) {
+    copyBtn.classList.add('copied');
+    copyBtn.innerHTML = '✓ Copied!';
+    setTimeout(() => {
+      copyBtn.classList.remove('copied');
+      copyBtn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg> Copy';
+    }, 2000);
+    showToast('Copied to clipboard!', 'success');
+  } else {
+    showToast('Copy failed', 'error');
+  }
+});
+
+/* ===== DOWNLOAD ===== */
+downloadBtn.addEventListener('click', () => {
+  if (!state.output) { showToast('No data to download', 'error'); return; }
+
+  const mimeMap = {
+    csv: 'text/csv;charset=utf-8',
+    json: 'application/json;charset=utf-8',
+    tsv: 'text/tab-separated-values;charset=utf-8',
+    txt: 'text/plain;charset=utf-8'
+  };
+
+  const ext = state.format;
+  const baseName = state.fileName.replace(/\.pdf$/i, '') || 'form-data';
+  const filename = `${baseName}-data.${ext}`;
+
+  const blob = new Blob([state.output], { type: mimeMap[state.format] || 'text/plain' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = filename;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+  showToast(`Downloaded ${filename}`, 'success');
+});
+
+/* ===== RE-EXTRACT ===== */
+extractAgainBtn.addEventListener('click', async () => {
+  if (!state.fileBytes) return;
+  const blob = new Blob([state.fileBytes], { type: 'application/pdf' });
+  const file = new File([blob], state.fileName, { type: 'application/pdf' });
+  await extractPdf(file);
+});
+
+/* ===== CANCEL / RESET ===== */
+cancelBtn.addEventListener('click', () => {
+  state.fileBytes = null;
+  state.pdfLibDoc = null;
+  state.fields = [];
+  state.output = '';
+  state.totalPages = 0;
+  editor.classList.remove('visible');
+  dropzone.style.display = '';
+  clearStatus();
+  showToast('Reset ready for another PDF', 'info');
+  triggerFileSelect();
+});
+
+/* ===== FAQ ===== */
+$$('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    $$('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+</script>
+
+</body>
+</html>

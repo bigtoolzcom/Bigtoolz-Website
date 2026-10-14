@@ -1,0 +1,1135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2563eb">
+
+<title>Readability Checker - Analyze Text Readability Score Online | BigToolz</title>
+<meta name="description" content="Free readability checker. Analyze Flesch Reading Ease, Flesch-Kincaid Grade, Gunning Fog, SMOG, Coleman-Liau scores instantly. Improve content for your readers.">
+<meta name="keywords" content="readability checker, flesch reading ease, flesch kincaid, gunning fog, readability score, text readability, content readability">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://bigtoolz.com/tools/text-tools/readability-checker/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Readability Checker - Free Online Tool | BigToolz">
+<meta property="og:description" content="Analyze Flesch, Gunning Fog, SMOG readability scores instantly.">
+<meta property="og:url" content="https://bigtoolz.com/tools/text-tools/readability-checker/">
+<meta property="og:image" content="https://bigtoolz.com/assets/images/og-image.jpg">
+<meta property="og:site_name" content="BigToolz">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Readability Checker - BigToolz">
+<meta name="twitter:description" content="Analyze text readability instantly free, no signup.">
+<meta name="twitter:image" content="https://bigtoolz.com/assets/images/twitter-card.jpg">
+
+<link rel="icon" href="/assets/images/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/images/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#f8f9fc;color:#1a1a2e;overflow-x:hidden;line-height:1.5}
+
+  /* HEADER */
+  .header{background:#fff;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;position:sticky;top:0;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+  .header-left{display:flex;align-items:center;gap:40px}
+  .logo{display:flex;align-items:center;gap:8px;font-size:22px;font-weight:800;color:#1a1a2e;text-decoration:none}
+  .logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#3b82f6,#2563eb);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px}
+  .logo span{color:#2563eb}
+  .nav{display:flex;align-items:center;gap:28px;list-style:none}
+  .nav a{text-decoration:none;color:#4b5563;font-size:14px;font-weight:500;transition:color .2s}
+  .nav a:hover,.nav a.active{color:#2563eb}
+  .header-right{display:flex;align-items:center;gap:16px}
+  .search-btn,.theme-btn{width:36px;height:36px;border-radius:50%;border:none;background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#4b5563}
+  .search-btn:hover,.theme-btn:hover{background:#f3f4f6}
+  .bookmark-btn{display:flex;align-items:center;gap:8px;background:#2563eb;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
+  .bookmark-btn:hover{background:#1d4ed8}
+
+  /* HERO */
+  .hero{background:linear-gradient(135deg,#0a0e27 0%,#1a1a4e 40%,#2d1b69 70%,#4c1d95 100%);padding:40px 40px 60px;position:relative;overflow:hidden;color:#fff}
+  .hero::before{content:'';position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(16,185,129,.3) 0%,transparent 70%);border-radius:50%}
+  .hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+  .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px;flex-wrap:wrap}
+  .breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none}
+  .breadcrumb a:hover{color:#fff}
+  .breadcrumb .sep{color:rgba(255,255,255,.4)}
+  .breadcrumb .current{color:#fff;font-weight:500}
+  .hero-title-row{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+  .hero-icon{width:60px;height:60px;background:#10b981;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;color:#fff;flex-shrink:0;box-shadow:0 8px 24px rgba(16,185,129,.4)}
+  .hero-title{font-size:42px;font-weight:800;line-height:1.15}
+  .hero-title .blue{color:#34d399}
+  .hero-desc{font-size:15px;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:24px;max-width:560px}
+  .hero-features{display:flex;gap:24px;flex-wrap:wrap}
+  .hero-feature{display:flex;align-items:center;gap:6px;font-size:13px;color:#fff;font-weight:500}
+  .hero-feature .check{width:18px;height:18px;border-radius:50%;background:#10b981;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;flex-shrink:0}
+
+  /* MAIN */
+  .main-content{max-width:1200px;margin:0 auto;padding:40px;display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start}
+  .tool-content{min-width:0}
+
+  .workspace{background:#fff;border-radius:16px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,.06);border:1px solid #e5e7eb;margin-bottom:24px}
+
+  .input-label{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;flex-wrap:wrap;gap:8px}
+  .input-label-text{font-size:14px;font-weight:700;color:#1a1a2e;display:flex;align-items:center;gap:8px}
+  .input-actions-top{display:flex;gap:8px;flex-wrap:wrap}
+  .mini-btn{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;font-size:12px;font-weight:600;color:#4b5563;cursor:pointer;font-family:inherit;transition:all .2s}
+  .mini-btn:hover{border-color:#10b981;color:#059669;background:#f0fdf4}
+
+  .text-input{width:100%;min-height:240px;padding:16px;border:2px solid #e5e7eb;border-radius:12px;font-family:'Inter',sans-serif;font-size:15px;line-height:1.7;color:#1a1a2e;background:#fff;outline:none;resize:vertical;transition:border-color .2s}
+  .text-input:focus{border-color:#10b981;box-shadow:0 0 0 3px rgba(16,185,129,.1)}
+  .text-input::placeholder{color:#9ca3af}
+
+  /* Overall score banner */
+  .overall-banner{background:linear-gradient(135deg,#f0fdf4,#d1fae5);border:2px solid #a7f3d0;border-radius:16px;padding:24px;margin-bottom:20px;display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:center}
+  .overall-score-circle{width:120px;height:120px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#fff;border:6px solid #10b981;box-shadow:0 8px 24px rgba(16,185,129,.2);flex-shrink:0;transition:all .3s}
+  .overall-score-num{font-size:36px;font-weight:900;color:#10b981;line-height:1;font-family:'JetBrains Mono',monospace}
+  .overall-score-label{font-size:10px;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:.5px;margin-top:4px}
+  .overall-info h3{font-size:22px;font-weight:800;color:#1a1a2e;margin-bottom:6px}
+  .overall-info p{font-size:14px;color:#4b5563;line-height:1.6;margin-bottom:10px}
+  .overall-badge{display:inline-block;padding:6px 14px;border-radius:20px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.3px}
+  .overall-badge.excellent{background:#10b981;color:#fff}
+  .overall-badge.good{background:#22c55e;color:#fff}
+  .overall-badge.fair{background:#f59e0b;color:#fff}
+  .overall-badge.poor{background:#ef4444;color:#fff}
+
+  /* Stats */
+  .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:24px}
+  .stat-box{background:#f0fdf4;border:1px solid #a7f3d0;border-radius:12px;padding:16px;text-align:center}
+  .stat-value{font-size:22px;font-weight:800;color:#059669;margin-bottom:4px;line-height:1.1;font-family:'JetBrains Mono',monospace}
+  .stat-label{font-size:10px;color:#6b7280;font-weight:700;text-transform:uppercase;letter-spacing:.3px}
+
+  /* Score cards */
+  .scores-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-bottom:24px}
+  .score-card{background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:18px;transition:all .2s}
+  .score-card:hover{border-color:#10b981;box-shadow:0 4px 16px rgba(16,185,129,.1)}
+  .score-card-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+  .score-card-name{font-size:14px;font-weight:800;color:#1a1a2e}
+  .score-card-value{font-size:22px;font-weight:900;font-family:'JetBrains Mono',monospace}
+  .score-card-value.green{color:#10b981}
+  .score-card-value.blue{color:#3b82f6}
+  .score-card-value.orange{color:#f59e0b}
+  .score-card-value.red{color:#ef4444}
+  .score-card-desc{font-size:11px;color:#6b7280;line-height:1.5;margin-bottom:8px}
+  .score-card-interpretation{font-size:12px;font-weight:700;color:#4b5563;padding:6px 10px;background:#f3f4f6;border-radius:6px;display:inline-block}
+  .score-bar-wrap{margin-top:10px}
+  .score-bar{height:6px;background:#e5e7eb;border-radius:3px;overflow:hidden}
+  .score-bar-fill{height:100%;border-radius:3px;transition:width .4s ease}
+
+  /* Per-sentence analysis */
+  .sentence-analysis{margin-top:20px}
+  .sentence-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;flex-wrap:wrap;gap:8px}
+  .sentence-title{font-size:15px;font-weight:800;color:#1a1a2e;display:flex;align-items:center;gap:8px}
+  .sentence-legend{display:flex;gap:12px;flex-wrap:wrap;font-size:11px;font-weight:600}
+  .legend-item{display:flex;align-items:center;gap:4px;color:#4b5563}
+  .legend-dot{width:10px;height:10px;border-radius:50%}
+  .legend-dot.easy{background:#10b981}
+  .legend-dot.medium{background:#f59e0b}
+  .legend-dot.hard{background:#ef4444}
+  .sentence-list{background:#f9fafb;border-radius:10px;padding:16px;max-height:400px;overflow-y:auto;border:1px solid #e5e7eb}
+  .sentence-item{padding:10px 12px;border-radius:8px;margin-bottom:8px;border-left:4px solid #10b981;background:#fff;font-size:13px;line-height:1.6;color:#1a1a2e;transition:transform .15s}
+  .sentence-item:hover{transform:translateX(4px)}
+  .sentence-item.easy{border-left-color:#10b981}
+  .sentence-item.medium{border-left-color:#f59e0b}
+  .sentence-item.hard{border-left-color:#ef4444}
+  .sentence-meta{font-size:10px;color:#9ca3af;font-weight:600;margin-top:4px;text-transform:uppercase;letter-spacing:.3px}
+
+  /* Suggestions */
+  .suggestions{margin-top:24px}
+  .suggestions-title{font-size:15px;font-weight:800;color:#1a1a2e;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+  .suggestion-list{display:flex;flex-direction:column;gap:8px}
+  .suggestion-item{display:flex;gap:10px;padding:12px 14px;background:#f0fdf4;border-left:4px solid #10b981;border-radius:8px;font-size:13px;color:#065f46;line-height:1.6}
+  .suggestion-item.warning{background:#fef3c7;border-left-color:#f59e0b;color:#92400e}
+  .suggestion-item.danger{background:#fee2e2;border-left-color:#ef4444;color:#991b1b}
+  .suggestion-icon{flex-shrink:0;font-size:16px;font-weight:700}
+
+  /* Actions */
+  .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px;padding-top:20px;border-top:1px solid #f3f4f6}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 22px;border-radius:10px;font-size:14px;font-weight:700;font-family:inherit;cursor:pointer;border:none;transition:all .2s;text-decoration:none}
+  .btn-primary{background:#10b981;color:#fff;box-shadow:0 4px 12px rgba(16,185,129,.2);flex:1;min-width:180px}
+  .btn-primary:hover{background:#059669;transform:translateY(-2px)}
+  .btn-primary:disabled{opacity:.5;cursor:not-allowed;transform:none}
+  .btn-secondary{background:#fff;color:#10b981;border:1px solid #e5e7eb}
+  .btn-secondary:hover{border-color:#10b981;background:#f0fdf4}
+
+  /* SEO Content */
+  .seo-content{background:#fff;border-radius:16px;padding:32px;border:1px solid #e5e7eb;margin-bottom:24px}
+  .seo-content h2{font-size:22px;font-weight:800;color:#1a1a2e;margin-bottom:14px;margin-top:28px;display:flex;align-items:center;gap:10px}
+  .seo-content h2:first-child{margin-top:0}
+  .seo-content h3{font-size:16px;font-weight:700;color:#1a1a2e;margin:20px 0 10px}
+  .seo-content p{font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:14px}
+  .seo-content ul{list-style:none;padding-left:0;margin-bottom:16px}
+  .seo-content ul li{position:relative;padding-left:24px;font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:8px}
+  .seo-content ul li::before{content:'';position:absolute;left:6px;top:12px;width:6px;height:6px;background:#10b981;border-radius:50%}
+  .seo-content a{color:#2563eb;text-decoration:none;font-weight:600}
+  .seo-content a:hover{text-decoration:underline}
+  .seo-content strong{color:#1a1a2e;font-weight:700}
+  .seo-content code{background:#f1f5f9;padding:2px 6px;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:13px;color:#0f172a;border:1px solid #e2e8f0}
+
+  .scale-table{width:100%;border-collapse:collapse;margin:20px 0;border:1px solid #e5e7eb;border-radius:8px;overflow:hidden}
+  .scale-table th{background:#f0fdf4;padding:12px 16px;text-align:left;font-size:13px;font-weight:700;color:#1a1a2e;border-bottom:1px solid #e5e7eb}
+  .scale-table td{padding:12px 16px;font-size:13px;color:#4b5563;border-bottom:1px solid #f3f4f6}
+  .scale-table tr:last-child td{border-bottom:none}
+  .scale-table .range{font-family:'JetBrains Mono',monospace;font-weight:700}
+
+  .how-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:20px}
+  .how-step{background:#f0fdf4;border-radius:12px;padding:20px;border:1px solid #a7f3d0}
+  .how-step-num{width:36px;height:36px;border-radius:50%;background:#10b981;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;margin-bottom:12px}
+  .how-step-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+  .how-step-desc{font-size:13px;color:#6b7280;line-height:1.6}
+
+  .faq-item{background:#f0fdf4;border:1px solid #a7f3d0;border-radius:12px;margin-bottom:10px;overflow:hidden;transition:border-color .2s}
+  .faq-item:hover{border-color:#10b981}
+  .faq-question{width:100%;background:none;border:none;padding:18px 22px;font-size:15px;font-weight:700;color:#1a1a2e;text-align:left;cursor:pointer;font-family:inherit;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .faq-question .chev{font-size:12px;color:#10b981;transition:transform .2s;flex-shrink:0}
+  .faq-item.open .faq-question .chev{transform:rotate(180deg)}
+  .faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 22px}
+  .faq-item.open .faq-answer{max-height:500px;padding-bottom:18px}
+  .faq-answer p{font-size:14px;color:#6b7280;line-height:1.7;margin:0}
+
+  .sidebar{background:#fff;border-radius:16px;padding:24px;border:1px solid #e5e7eb;position:sticky;top:80px;margin-bottom:24px}
+  .sidebar-header{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:800;color:#1a1a2e;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid #f3f4f6}
+  .sidebar-list{display:flex;flex-direction:column;gap:8px}
+  .sidebar-item{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;cursor:pointer;transition:background .2s;text-decoration:none;color:inherit;border:1px solid #f3f4f6}
+  .sidebar-item:hover{background:#f0fdf4;border-color:#a7f3d0}
+  .sidebar-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;flex-shrink:0}
+  .sidebar-info{flex:1;min-width:0}
+  .sidebar-title{font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:2px}
+  .sidebar-desc{font-size:11px;color:#9ca3af;line-height:1.4}
+
+  .footer{background:#0a0e27;padding:60px 40px 30px;color:#fff;margin-top:40px}
+  .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:40px}
+  .footer-brand{display:flex;align-items:center;gap:8px;font-size:20px;font-weight:800;margin-bottom:12px}
+  .footer-brand span{color:#60a5fa}
+  .footer-tagline{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px}
+  .footer-social{display:flex;gap:12px}
+  .footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:16px;transition:background .2s}
+  .footer-social a:hover{background:rgba(255,255,255,.2)}
+  .footer-heading{font-size:14px;font-weight:700;margin-bottom:20px;color:#fff}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .footer-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;transition:color .2s}
+  .footer-links a:hover{color:#60a5fa}
+  .footer-bottom{max-width:1200px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  .footer-bottom-left{display:flex;gap:20px;font-size:12px;color:rgba(255,255,255,.5)}
+  .footer-bottom-right,.footer-bottom-links a{font-size:12px;color:rgba(255,255,255,.5);text-decoration:none}
+  .footer-bottom-links{display:flex;gap:20px}
+
+  .toast{position:fixed;bottom:24px;right:24px;background:#1a1a2e;color:#fff;padding:14px 20px;border-radius:10px;font-size:13px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:3000;transform:translateY(200%);transition:transform .3s ease;max-width:320px}
+  .toast.visible{transform:translateY(0)}
+  .toast.success{background:#10b981}
+  .toast.error{background:#ef4444}
+
+  @media(max-width:1024px){
+    .main-content{grid-template-columns:1fr;padding:24px 20px}
+    .sidebar{position:static}
+    .how-steps{grid-template-columns:repeat(2,1fr)}
+    .scores-grid{grid-template-columns:1fr}
+    .stats-grid{grid-template-columns:repeat(2,1fr)}
+  }
+  @media(max-width:768px){
+    .header{padding:0 20px}.nav{display:none}
+    .hero{padding:24px 20px 40px}
+    .hero-title{font-size:28px}
+    .hero-icon{width:48px;height:48px;font-size:22px}
+    .hero-title-row{flex-direction:column;align-items:flex-start;gap:12px}
+    .main-content{padding:20px 16px}
+    .workspace{padding:20px}
+    .how-steps{grid-template-columns:1fr}
+    .seo-content{padding:20px}
+    .footer-inner{grid-template-columns:1fr 1fr}
+    .toast{left:16px;right:16px;bottom:16px;max-width:none}
+    .overall-banner{grid-template-columns:1fr;text-align:center}
+    .overall-score-circle{margin:0 auto}
+    .stats-grid{grid-template-columns:1fr 1fr}
+  }
+  @media(max-width:576px){
+    .header{padding:0 16px}.header-right .search-btn,.header-right .theme-btn{display:none}
+    .hero-title{font-size:24px}
+    .actions{flex-direction:column}
+    .btn{width:100%}
+    .btn-primary{flex:none}
+    .footer-inner{grid-template-columns:1fr}
+    .footer-bottom{flex-direction:column;text-align:center}
+  }
+
+  html[data-theme="dark"] body{background:#0f172a;color:#f1f5f9}
+  html[data-theme="dark"] .header,html[data-theme="dark"] .workspace,html[data-theme="dark"] .seo-content,html[data-theme="dark"] .sidebar,html[data-theme="dark"] .score-card{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .logo,html[data-theme="dark"] .hero-title,html[data-theme="dark"] .seo-content h2,html[data-theme="dark"] .seo-content h3,html[data-theme="dark"] .faq-question,html[data-theme="dark"] .sidebar-header,html[data-theme="dark"] .sidebar-title,html[data-theme="dark"] .input-label-text,html[data-theme="dark"] .overall-info h3,html[data-theme="dark"] .score-card-name,html[data-theme="dark"] .sentence-title,html[data-theme="dark"] .suggestions-title{color:#f1f5f9}
+  html[data-theme="dark"] .nav a{color:#cbd5e1}
+  html[data-theme="dark"] .text-input,html[data-theme="dark"] .how-step,html[data-theme="dark"] .faq-item,html[data-theme="dark"] .stat-box,html[data-theme="dark"] .mini-btn,html[data-theme="dark"] .sentence-list{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .text-input{color:#f1f5f9}
+  html[data-theme="dark"] .sentence-item{background:#0f172a;color:#f1f5f9}
+  html[data-theme="dark"] .seo-content p,html[data-theme="dark"] .seo-content ul li,html[data-theme="dark"] .faq-answer p,html[data-theme="dark"] .stat-label,html[data-theme="dark"] .score-card-desc{color:#cbd5e1}
+  html[data-theme="dark"] .overall-banner{background:linear-gradient(135deg,#064e3b,#065f46);border-color:#10b981}
+  html[data-theme="dark"] .overall-score-circle{background:#0f172a}
+  html[data-theme="dark"] .score-card-interpretation{background:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .suggestion-item{background:#064e3b;color:#a7f3d0}
+  html[data-theme="dark"] .suggestion-item.warning{background:#422006;color:#fbbf24}
+  html[data-theme="dark"] .suggestion-item.danger{background:#450a0a;color:#fca5a5}
+  html[data-theme="dark"] .seo-content code{background:#020617;color:#34d399;border-color:#334155}
+  html[data-theme="dark"] .scale-table{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .scale-table th{background:#0f172a;color:#f1f5f9;border-color:#334155}
+  html[data-theme="dark"] .scale-table td{border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .actions{border-color:#334155}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type": "SoftwareApplication", "name": "Readability Checker", "url": "https://bigtoolz.com/tools/text-tools/readability-checker/", "applicationCategory": "EducationalApplication", "operatingSystem": "Any (Web-based)", "description": "Free online readability checker Flesch Reading Ease, Flesch-Kincaid, Gunning Fog, SMOG, Coleman-Liau, ARI. Works in your browser.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "1245"}},
+    {"@type": "HowTo", "name": "How to Check Text Readability", "step": [
+      {"@type": "HowToStep", "name": "Paste Text", "text": "Paste or type your content into the input box."},
+      {"@type": "HowToStep", "name": "Analyze", "text": "Click Analyze to compute readability scores."},
+      {"@type": "HowToStep", "name": "Review", "text": "Check 6 readability formulas and grade level."},
+      {"@type": "HowToStep", "name": "Improve", "text": "Fix hard sentences based on suggestions."}
+    ]},
+    {"@type": "FAQPage", "mainEntity": [
+      {"@type": "Question", "name": "What is readability?", "acceptedAnswer": {"@type": "Answer", "text": "Readability measures how easily a reader can understand a piece of text. It's based on factors like average sentence length and syllables per word, and is expressed as a grade level or score."}},
+      {"@type": "Question", "name": "What's a good Flesch Reading Ease score?", "acceptedAnswer": {"@type": "Answer", "text": "For general web content, aim for 60-70. Above 80 is very easy (children's books). Below 50 is difficult (academic papers). Blog posts typically score 60-70."}},
+      {"@type": "Question", "name": "What grade level should I write for?", "acceptedAnswer": {"@type": "Answer", "text": "Grade 7-9 works best for most web audiences. Grade 6 for consumer content. Grade 10-12 for technical or professional readers. Aim lower than you think readers prefer clarity."}},
+      {"@type": "Question", "name": "Which readability formula is most accurate?", "acceptedAnswer": {"@type": "Answer", "text": "No single formula is perfect. Flesch Reading Ease is most common for web content. Flesch-Kincaid for grade level. Gunning Fog for business writing. SMOG for healthcare. Coleman-Liau for general text."}},
+      {"@type": "Question", "name": "Is my text uploaded to a server?", "acceptedAnswer": {"@type": "Answer", "text": "No. All analysis happens in your browser. Your text never leaves your device."}}
+    ]},
+    {"@type": "BreadcrumbList", "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bigtoolz.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://bigtoolz.com/tools/"},
+      {"@type": "ListItem", "position": 3, "name": "Text Tools", "item": "https://bigtoolz.com/tools/text-tools/"},
+      {"@type": "ListItem", "position": 4, "name": "Readability Checker", "item": "https://bigtoolz.com/tools/text-tools/readability-checker/"}
+    ]}
+  ]
+}
+</script>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-left">
+    <a href="/" class="logo"><div class="logo-icon">⚒</div>BigToolz</span></a>
+    <nav><ul class="nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/tools/" class="active">All Tools</a></li>
+      <li><a href="/tools/categories">Categories</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul></nav>
+  </div>
+  <div class="header-right">
+    
+    <button class="theme-btn" aria-label="Toggle theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
+    
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <nav class="breadcrumb">
+      <a href="/">Home</a><span class="sep">›</span>
+      <a href="/tools/">Tools</a><span class="sep">›</span>
+      <a href="/tools/text-tools/">Text Tools</a><span class="sep">›</span>
+      <span class="current">Readability Checker</span>
+    </nav>
+    <div class="hero-title-row">
+      <div class="hero-icon">📖</div>
+      <h1 class="hero-title">Readability <span class="blue">Checker</span></h1>
+    </div>
+    <p class="hero-desc">
+      Analyze your text with 6 industry-standard readability formulas. Flesch Reading Ease, Flesch-Kincaid Grade, Gunning Fog, SMOG, Coleman-Liau, ARI plus per-sentence difficulty. Improve content for real readers. No upload, 100% private.
+    </p>
+    <div class="hero-features">
+      <div class="hero-feature"><span class="check">✓</span> 6 Formulas</div>
+      <div class="hero-feature"><span class="check">✓</span> Grade Level</div>
+      <div class="hero-feature"><span class="check">✓</span> Per-Sentence</div>
+      <div class="hero-feature"><span class="check">✓</span> Suggestions</div>
+    </div>
+  </div>
+</section>
+
+<!-- MAIN -->
+<div class="main-content">
+
+  <div class="tool-content">
+
+    <div class="workspace">
+
+      <!-- Input -->
+      <div class="input-label">
+        <div class="input-label-text">📝 Paste Your Text</div>
+        <div class="input-actions-top">
+          <button class="mini-btn" id="pasteBtn">📋 Paste</button>
+          <button class="mini-btn" id="sampleBtn">✨ Sample</button>
+          <button class="mini-btn" id="clearBtn">🗑 Clear</button>
+        </div>
+      </div>
+      <textarea id="textInput" class="text-input" placeholder="Paste your article, blog post, essay, or any text to analyze readability..."></textarea>
+
+      <!-- Actions -->
+      <div class="actions">
+        <button class="btn btn-primary" id="analyzeBtn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 21l-4.35-4.35M11 19a8 8 0 100-16 8 8 0 000 16z"/></svg>
+          Analyze Readability
+        </button>
+        <button class="btn btn-secondary" id="copyReportBtn">📋 Copy Report</button>
+        <button class="btn btn-secondary" id="downloadTxtBtn">⬇ TXT</button>
+      </div>
+
+    </div>
+
+    <!-- Results -->
+    <div class="workspace" id="resultsSection" style="display:none;">
+
+      <!-- Overall banner -->
+      <div class="overall-banner">
+        <div class="overall-score-circle" id="overallCircle">
+          <div class="overall-score-num" id="overallScore">0</div>
+          <div class="overall-score-label">Reading Ease</div>
+        </div>
+        <div class="overall-info">
+          <h3 id="overallTitle">Analysis Complete</h3>
+          <p id="overallDesc">Your content readability results are ready.</p>
+          <span class="overall-badge good" id="overallBadge">GOOD</span>
+        </div>
+      </div>
+
+      <!-- Stats -->
+      <div class="stats-grid">
+        <div class="stat-box">
+          <div class="stat-value" id="statWords">0</div>
+          <div class="stat-label">Words</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-value" id="statSentences">0</div>
+          <div class="stat-label">Sentences</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-value" id="statSyllables">0</div>
+          <div class="stat-label">Syllables</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-value" id="statReadTime">0 min</div>
+          <div class="stat-label">Reading Time</div>
+        </div>
+      </div>
+
+      <!-- Score cards -->
+      <div class="scores-grid" id="scoresGrid"></div>
+
+      <!-- Per-sentence analysis -->
+      <div class="sentence-analysis">
+        <div class="sentence-header">
+          <div class="sentence-title">📝 Sentence Difficulty</div>
+          <div class="sentence-legend">
+            <span class="legend-item"><span class="legend-dot easy"></span>Easy</span>
+            <span class="legend-item"><span class="legend-dot medium"></span>Medium</span>
+            <span class="legend-item"><span class="legend-dot hard"></span>Hard</span>
+          </div>
+        </div>
+        <div class="sentence-list" id="sentenceList"></div>
+      </div>
+
+      <!-- Suggestions -->
+      <div class="suggestions">
+        <div class="suggestions-title">💡 Suggestions to Improve</div>
+        <div class="suggestion-list" id="suggestionList"></div>
+      </div>
+
+    </div>
+
+    <!-- SEO Content -->
+    <div class="seo-content">
+
+      <h2>📖 What is Readability?</h2>
+      <p>
+        <strong>Readability</strong> measures how easily a reader can understand a piece of text. It's determined by factors like average sentence length, syllable count per word, and word complexity. Readability scores help writers ensure their content matches their audience whether that's a 4th-grade student, a college graduate, or a technical professional.
+      </p>
+      <p>
+        Unlike most online tools, BigToolz processes text <strong>100% in your browser</strong>. Your content <strong>never uploaded to any server</strong> complete privacy, instant results, unlimited analyses.
+      </p>
+
+      <h2>🚀 How to Check Readability</h2>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-step-num">1</div>
+          <div class="how-step-title">Paste Text</div>
+          <div class="how-step-desc">Paste your article, blog, or any content.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">2</div>
+          <div class="how-step-title">Analyze</div>
+          <div class="how-step-desc">Click Analyze to compute 6 formulas.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">3</div>
+          <div class="how-step-title">Review</div>
+          <div class="how-step-desc">Check Flesch score, grade level, per-sentence difficulty.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">4</div>
+          <div class="how-step-title">Improve</div>
+          <div class="how-step-desc">Fix hard sentences and rewrite for your audience.</div>
+        </div>
+      </div>
+
+      <h2>📊 The 6 Readability Formulas</h2>
+
+      <h3>1. Flesch Reading Ease</h3>
+      <p>Most widely used readability test. Scores <strong>0-100</strong>. Higher is easier. Based on average sentence length and syllables per word. Formula: <code>206.835 − 1.015 × (words/sentences) − 84.6 × (syllables/words)</code>.</p>
+
+      <h3>2. Flesch-Kincaid Grade Level</h3>
+      <p>Converts Flesch to a US school grade. A score of 8 means an 8th grader can understand it. Formula: <code>0.39 × (words/sentences) + 11.8 × (syllables/words) − 15.59</code>.</p>
+
+      <h3>3. Gunning Fog Index</h3>
+      <p>Estimates years of formal education needed. Focuses on complex words (3+ syllables). A score of 12 means a high school senior can understand it. Formula: <code>0.4 × [(words/sentences) + 100 × (complex words/words)]</code>.</p>
+
+      <h3>4. SMOG Index</h3>
+      <p>Simple Measure of Gobbledygook. Standard for healthcare materials. Requires 30 sentences for accuracy. Scores equal US grade level.</p>
+
+      <h3>5. Coleman-Liau Index</h3>
+      <p>Uses characters instead of syllables (more accurate for digital text). Formula: <code>0.0588 × L − 0.296 × S − 15.8</code> where L = letters per 100 words, S = sentences per 100 words.</p>
+
+      <h3>6. Automated Readability Index (ARI)</h3>
+      <p>Uses character count and word count. Output is a US grade level. Good for quick technical writing checks. Formula: <code>4.71 × (characters/words) + 0.5 × (words/sentences) − 21.43</code>.</p>
+
+      <h2>📏 Flesch Reading Ease Score Interpretation</h2>
+      <table class="scale-table">
+        <thead>
+          <tr><th>Score</th><th>Difficulty</th><th>Grade Level</th><th>Best For</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="range">90-100</td><td>Very Easy</td><td>5th grade</td><td>Children's books</td></tr>
+          <tr><td class="range">80-90</td><td>Easy</td><td>6th grade</td><td>Conversational content</td></tr>
+          <tr><td class="range">70-80</td><td>Fairly Easy</td><td>7th grade</td><td>Consumer blogs</td></tr>
+          <tr><td class="range">60-70</td><td>Standard</td><td>8-9th grade</td><td>General web content</td></tr>
+          <tr><td class="range">50-60</td><td>Fairly Difficult</td><td>10-12th grade</td><td>Business writing</td></tr>
+          <tr><td class="range">30-50</td><td>Difficult</td><td>College</td><td>Academic papers</td></tr>
+          <tr><td class="range">0-30</td><td>Very Difficult</td><td>College graduate</td><td>Legal / technical</td></tr>
+        </tbody>
+      </table>
+
+      <h2>🎯 What's the Ideal Score?</h2>
+      <ul>
+        <li><strong>Web content:</strong> Flesch 60-70 (Grade 7-9) most versatile target.</li>
+        <li><strong>Consumer blogs:</strong> Flesch 70-80 (Grade 6-7).</li>
+        <li><strong>Business/technical:</strong> Flesch 50-60 (Grade 10-12).</li>
+        <li><strong>Academic/legal:</strong> Flesch 30-50 expected for specialized audiences.</li>
+        <li><strong>Healthcare (SMOG):</strong> Target SMOG 6-8 for patient materials.</li>
+      </ul>
+
+      <h2>💡 Tips to Improve Readability</h2>
+      <ul>
+        <li><strong>Shorten sentences</strong> aim for 15-20 words average. Break long sentences in two.</li>
+        <li><strong>Use simpler words</strong> "use" instead of "utilize," "help" instead of "facilitate."</li>
+        <li><strong>One idea per sentence</strong> avoid cramming multiple concepts.</li>
+        <li><strong>Prefer active voice</strong> "The team wrote it" beats "It was written by the team."</li>
+        <li><strong>Break up paragraphs</strong> 2-4 sentences maximum per paragraph on web.</li>
+        <li><strong>Use bullet points</strong> lists are easier to scan than dense text.</li>
+        <li><strong>Read aloud</strong> if it sounds awkward, rewrite it.</li>
+        <li><strong>Target your audience</strong> don't over-simplify technical content or over-complicate consumer content.</li>
+      </ul>
+
+      <h2>❓ Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-question">What is readability?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Readability measures how easily a reader can understand text. It's based on factors like average sentence length and syllables per word. It's expressed as a score or grade level to help writers match their audience.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What's a good Flesch Reading Ease score?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>For general web content, aim for <strong>60-70</strong>. Above 80 is very easy (children's books). Below 50 is difficult (academic papers). Blog posts typically score 60-70. See the full scale table above.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What grade level should I write for?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>Grade 7-9 works best for most web audiences.</strong> Grade 6 for consumer content. Grade 10-12 for technical/professional readers. Aim lower than you think readers always prefer clarity over complexity.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Which readability formula is most accurate?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>No single formula is perfect. <strong>Flesch Reading Ease</strong> is most common for web content. <strong>Flesch-Kincaid</strong> for grade level. <strong>Gunning Fog</strong> for business writing. <strong>SMOG</strong> for healthcare. <strong>Coleman-Liau</strong> for general digital text. Use multiple for a fuller picture.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Do short sentences always mean better readability?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>No. <strong>Variety is key.</strong> All short sentences sound choppy; all long ones overwhelm. Mix lengths mostly 10-20 word sentences, with occasional short ones for emphasis and longer ones for complex ideas.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">How long should my content be?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Reading time matters more than word count. Aim for <strong>5-7 minute reads</strong> for blog posts (about 1,000-1,500 words). For SEO, longer content often ranks better but only if readability stays high. Check our <a href="/tools/text-tools/word-counter/">Word Counter</a> too.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Is my text uploaded to a server?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>No. All analysis happens in your browser using JavaScript. Your text never leaves your device, and nothing is stored anywhere.</p></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-header">🔗 Related Text Tools</div>
+    <div class="sidebar-list">
+      <a href="/tools/text-tools/word-counter/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#3b82f6;">T</div>
+        <div class="sidebar-info"><div class="sidebar-title">Word Counter</div><div class="sidebar-desc">Count words & characters</div></div>
+      </a>
+      <a href="/tools/text-tools/character-counter/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#8b5cf6;">🔤</div>
+        <div class="sidebar-info"><div class="sidebar-title">Character Counter</div><div class="sidebar-desc">Count characters</div></div>
+      </a>
+      <a href="/tools/text-tools/keyword-density/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#8b5cf6;">📊</div>
+        <div class="sidebar-info"><div class="sidebar-title">Keyword Density</div><div class="sidebar-desc">Analyze keywords</div></div>
+      </a>
+      <a href="/tools/text-tools/word-frequency/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#f97316;">📈</div>
+        <div class="sidebar-info"><div class="sidebar-title">Word Frequency</div><div class="sidebar-desc">Count word usage</div></div>
+      </a>
+      <a href="/tools/text-tools/case-converter/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#f97316;">Aa</div>
+        <div class="sidebar-info"><div class="sidebar-title">Case Converter</div><div class="sidebar-desc">Convert text case</div></div>
+      </a>
+      <a href="/tools/text-tools/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#64748b;">📝</div>
+        <div class="sidebar-info"><div class="sidebar-title">All Text Tools →</div><div class="sidebar-desc">Browse 25+ tools</div></div>
+      </a>
+    </div>
+  </aside>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand"><div class="logo-icon">⚒</div>BigToolz</span></div>
+      <p class="footer-tagline">Your Ultimate Online Tools Hub</p>
+      <div class="footer-social">
+        <a href="https://facebook.com/bigtoolz" aria-label="Facebook">f</a>
+        <a href="https://twitter.com/bigtoolz" aria-label="Twitter">𝕏</a>
+        <a href="https://youtube.com/@bigtoolz" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+    <div>
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/tools/">All Tools</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Categories</h3>
+      <ul class="footer-links">
+        <li><a href="/tools/image-tools/">Image Tools</a></li>
+        <li><a href="/tools/pdf-tools/">PDF Tools</a></li>
+        <li><a href="/tools/text-tools/">Text Tools</a></li>
+        <li><a href="/tools/seo-tools/">SEO Tools</a></li>
+        <li><a href="/tools/categories">All Categories →</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Legal</h3>
+      <ul class="footer-links">
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left"><span>✓ 100% Free</span><span>✓ No Sign Up</span><span>✓ No Installation</span></div>
+    <div class="footer-bottom-right">© 2026 BigToolz. All rights reserved.</div>
+    <div class="footer-bottom-links"><a href="/privacy-policy">Privacy</a><a href="/terms">Terms</a><a href="/disclaimer">Disclaimer</a></div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+'use strict';
+
+/* ===== THEME ===== */
+(function(){try{var t=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&d))document.documentElement.setAttribute('data-theme','dark');else if(t==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();
+document.querySelector('.theme-btn')?.addEventListener('click',()=>{const h=document.documentElement;const c=h.getAttribute('data-theme');const d=window.matchMedia('(prefers-color-scheme: dark)').matches;let n=c==='dark'?'light':c==='light'?'dark':(d?'light':'dark');h.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}});
+
+/* ===== HELPERS ===== */
+const $ = (s, p = document) => p.querySelector(s);
+const $$ = (s, p = document) => [...p.querySelectorAll(s)];
+
+function showToast(msg, type = 'info', duration = 3000) {
+  const t = $('#toast');
+  if (!t) return;
+  t.className = 'toast visible' + (type !== 'info' ? ' ' + type : '');
+  t.textContent = msg;
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove('visible'), duration);
+}
+
+async function copyToClipboard(text) {
+  try {
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(text);
+      return true;
+    }
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.cssText = 'position:fixed;opacity:0;';
+    document.body.appendChild(ta);
+    ta.select();
+    const ok = document.execCommand('copy');
+    document.body.removeChild(ta);
+    return ok;
+  } catch (e) { return false; }
+}
+
+/* ===== SYLLABLE COUNTER ===== */
+function countSyllables(word) {
+  word = word.toLowerCase().replace(/[^a-z]/g, '');
+  if (word.length <= 3) return 1;
+  word = word.replace(/(?:[^laeiouy]es|ed|[^laeiouy]e)$/, '');
+  word = word.replace(/^y/, '');
+  const matches = word.match(/[aeiouy]{1,2}/g);
+  return matches ? matches.length : 1;
+}
+
+/* ===== STATE ===== */
+const state = {
+  text: '',
+  stats: {},
+  scores: {},
+  sentences: [],
+  suggestions: []
+};
+
+/* ===== DOM ===== */
+const textInput = $('#textInput');
+const pasteBtn = $('#pasteBtn');
+const sampleBtn = $('#sampleBtn');
+const clearBtn = $('#clearBtn');
+const analyzeBtn = $('#analyzeBtn');
+const copyReportBtn = $('#copyReportBtn');
+const downloadTxtBtn = $('#downloadTxtBtn');
+const resultsSection = $('#resultsSection');
+
+const SAMPLE_TEXT = `Readability is a measure of how easy it is to read and understand a piece of text. Writers use readability scores to make sure their content matches their readers.
+
+If you write for a general audience, aim for a score that a middle school student can understand. Short sentences work well. Simple words work well. Long, complicated sentences with many clauses and complex words tend to be harder to follow.
+
+Readability formulas look at two main things: how long your sentences are and how many syllables your words have. Shorter is usually easier. But that doesn't mean every sentence should be short. Variety helps.
+
+The best readability check is to read your text aloud. If you stumble, your reader will too. If you have to take a breath in the middle of a sentence, it is probably too long.`;
+
+/* ===== ANALYZE ===== */
+function analyze() {
+  const text = textInput.value.trim();
+  if (!text) { showToast('Please paste some text first', 'error'); return; }
+
+  state.text = text;
+
+  // Split into sentences
+  const sentenceTexts = text.split(/(?<=[.!?])\s+/).map(s => s.trim()).filter(s => s.length > 0);
+  const sentenceCount = sentenceTexts.length;
+
+  // Tokenize words
+  const words = text.match(/[A-Za-z]+(?:'[A-Za-z]+)?/g) || [];
+  const wordCount = words.length;
+  const charCount = text.replace(/[^A-Za-z]/g, '').length;
+
+  if (wordCount < 10 || sentenceCount < 1) {
+    showToast('Text too short to analyze (min 10 words)', 'error');
+    return;
+  }
+
+  // Syllables
+  let totalSyllables = 0;
+  let complexWords = 0; // 3+ syllables
+  words.forEach(w => {
+    const s = countSyllables(w);
+    totalSyllables += s;
+    if (s >= 3) complexWords++;
+  });
+
+  // Averages
+  const avgWordsPerSentence = wordCount / sentenceCount;
+  const avgSyllablesPerWord = totalSyllables / wordCount;
+
+  // ===== FORMULAS =====
+  // 1. Flesch Reading Ease
+  const flesch = 206.835 - (1.015 * avgWordsPerSentence) - (84.6 * avgSyllablesPerWord);
+
+  // 2. Flesch-Kincaid Grade Level
+  const fkGrade = (0.39 * avgWordsPerSentence) + (11.8 * avgSyllablesPerWord) - 15.59;
+
+  // 3. Gunning Fog Index
+  const gunningFog = 0.4 * (avgWordsPerSentence + 100 * (complexWords / wordCount));
+
+  // 4. SMOG Index
+  const smog = 1.0430 * Math.sqrt(complexWords * (30 / sentenceCount)) + 3.1291;
+
+  // 5. Coleman-Liau Index
+  const L = (charCount / wordCount) * 100;
+  const S = (sentenceCount / wordCount) * 100;
+  const colemanLiau = (0.0588 * L) - (0.296 * S) - 15.8;
+
+  // 6. Automated Readability Index (ARI)
+  const ari = 4.71 * (charCount / wordCount) + 0.5 * avgWordsPerSentence - 21.43;
+
+  state.stats = {
+    words: wordCount,
+    sentences: sentenceCount,
+    syllables: totalSyllables,
+    complexWords,
+    charCount,
+    avgWordsPerSentence: avgWordsPerSentence.toFixed(1),
+    avgSyllablesPerWord: avgSyllablesPerWord.toFixed(2),
+    readingTimeMin: Math.max(1, Math.ceil(wordCount / 200))
+  };
+
+  state.scores = {
+    flesch: Math.round(flesch * 10) / 10,
+    fkGrade: Math.round(fkGrade * 10) / 10,
+    gunningFog: Math.round(gunningFog * 10) / 10,
+    smog: Math.round(smog * 10) / 10,
+    colemanLiau: Math.round(colemanLiau * 10) / 10,
+    ari: Math.round(ari * 10) / 10
+  };
+
+  // ===== PER-SENTENCE ANALYSIS =====
+  state.sentences = sentenceTexts.map(s => {
+    const sWords = s.match(/[A-Za-z]+(?:'[A-Za-z]+)?/g) || [];
+    const sLen = sWords.length;
+    let sSyl = 0;
+    sWords.forEach(w => { sSyl += countSyllables(w); });
+    const sFlesch = sLen > 0
+      ? 206.835 - (1.015 * sLen) - (84.6 * (sSyl / sLen))
+      : 100;
+
+    let difficulty;
+    if (sFlesch >= 60) difficulty = 'easy';
+    else if (sFlesch >= 40) difficulty = 'medium';
+    else difficulty = 'hard';
+
+    return {
+      text: s,
+      words: sLen,
+      flesch: Math.round(sFlesch),
+      difficulty
+    };
+  });
+
+  // ===== SUGGESTIONS =====
+  state.suggestions = [];
+  if (flesch < 50) {
+    state.suggestions.push({ icon: '⚠️', type: 'danger', text: 'Your content is difficult to read. Shorten sentences and use simpler words.' });
+  } else if (flesch < 60) {
+    state.suggestions.push({ icon: '⚡', type: 'warning', text: 'Content is somewhat difficult. Aim for shorter sentences (15-20 words average).' });
+  } else if (flesch > 90) {
+    state.suggestions.push({ icon: '💡', type: 'warning', text: 'Content is very easy may feel too simple for adults. Consider adding variety.' });
+  } else {
+    state.suggestions.push({ icon: '✓', type: 'success', text: 'Readability is in a great range for general audiences.' });
+  }
+
+  if (avgWordsPerSentence > 25) {
+    state.suggestions.push({ icon: '📏', type: 'warning', text: `Average sentence is ${avgWordsPerSentence.toFixed(1)} words. Try to reduce to 15-20 words.` });
+  }
+  if (complexWords / wordCount > 0.15) {
+    state.suggestions.push({ icon: '📚', type: 'warning', text: `${((complexWords / wordCount) * 100).toFixed(1)}% of words have 3+ syllables. Aim for under 15%.` });
+  }
+  if (wordCount < 300) {
+    state.suggestions.push({ icon: '📄', type: 'success', text: `Text has ${wordCount} words. For SEO content, aim for 1,000-1,500+ words.` });
+  }
+
+  render();
+  resultsSection.style.display = 'block';
+  setTimeout(() => {
+    resultsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, 100);
+  showToast(`✅ Analyzed ${wordCount} words`, 'success');
+}
+
+/* ===== RENDER ===== */
+function render() {
+  const s = state.stats;
+  const sc = state.scores;
+
+  // Stats
+  $('#statWords').textContent = s.words.toLocaleString();
+  $('#statSentences').textContent = s.sentences.toLocaleString();
+  $('#statSyllables').textContent = s.syllables.toLocaleString();
+  $('#statReadTime').textContent = s.readingTimeMin + ' min';
+
+  // Overall banner
+  const overallScore = Math.max(0, Math.min(100, Math.round(sc.flesch)));
+  $('#overallScore').textContent = overallScore;
+  const circle = $('#overallCircle');
+  const badge = $('#overallBadge');
+  const title = $('#overallTitle');
+  const desc = $('#overallDesc');
+
+  let color, badgeText, badgeClass, titleText, descText;
+  if (overallScore >= 80) {
+    color = '#10b981'; badgeText = 'Excellent'; badgeClass = 'excellent';
+    titleText = 'Excellent Readability';
+    descText = 'Your content is easy to read for a wide audience. Great for blogs and general web content.';
+  } else if (overallScore >= 60) {
+    color = '#22c55e'; badgeText = 'Good'; badgeClass = 'good';
+    titleText = 'Good Readability';
+    descText = 'Standard readability suitable for most web audiences (grade 7-9).';
+  } else if (overallScore >= 40) {
+    color = '#f59e0b'; badgeText = 'Fair'; badgeClass = 'fair';
+    titleText = 'Fairly Difficult';
+    descText = 'Content is somewhat hard. Consider shorter sentences and simpler words for wider reach.';
+  } else {
+    color = '#ef4444'; badgeText = 'Difficult'; badgeClass = 'poor';
+    titleText = 'Difficult to Read';
+    descText = 'Content is hard to read. Aim for shorter sentences and simpler vocabulary.';
+  }
+  circle.style.borderColor = color;
+  $('#overallScore').style.color = color;
+  badge.textContent = badgeText;
+  badge.className = 'overall-badge ' + badgeClass;
+  title.textContent = titleText;
+  desc.textContent = descText;
+
+  // Score cards
+  const scoreCards = [
+    {
+      name: 'Flesch Reading Ease',
+      value: sc.flesch,
+      min: 0, max: 100,
+      color: sc.flesch >= 60 ? 'green' : sc.flesch >= 40 ? 'orange' : 'red',
+      desc: 'Higher is easier. 60-70 is standard for web.',
+      interp: sc.flesch >= 80 ? 'Very Easy' : sc.flesch >= 70 ? 'Easy' : sc.flesch >= 60 ? 'Standard' : sc.flesch >= 50 ? 'Fairly Difficult' : sc.flesch >= 30 ? 'Difficult' : 'Very Difficult',
+      barFill: (sc.flesch / 100) * 100,
+      barColor: sc.flesch >= 60 ? '#10b981' : sc.flesch >= 40 ? '#f59e0b' : '#ef4444'
+    },
+    {
+      name: 'Flesch-Kincaid Grade',
+      value: sc.fkGrade,
+      min: 0, max: 20,
+      color: sc.fkGrade <= 9 ? 'green' : sc.fkGrade <= 12 ? 'orange' : 'red',
+      desc: 'US school grade needed to understand.',
+      interp: 'Grade ' + sc.fkGrade,
+      barFill: Math.min(100, (sc.fkGrade / 20) * 100),
+      barColor: sc.fkGrade <= 9 ? '#10b981' : sc.fkGrade <= 12 ? '#f59e0b' : '#ef4444'
+    },
+    {
+      name: 'Gunning Fog Index',
+      value: sc.gunningFog,
+      min: 0, max: 20,
+      color: sc.gunningFog <= 10 ? 'green' : sc.gunningFog <= 14 ? 'orange' : 'red',
+      desc: 'Years of education needed.',
+      interp: sc.gunningFog <= 8 ? 'Easy' : sc.gunningFog <= 12 ? 'Standard' : sc.gunningFog <= 16 ? 'Difficult' : 'Very Difficult',
+      barFill: Math.min(100, (sc.gunningFog / 20) * 100),
+      barColor: sc.gunningFog <= 10 ? '#10b981' : sc.gunningFog <= 14 ? '#f59e0b' : '#ef4444'
+    },
+    {
+      name: 'SMOG Index',
+      value: sc.smog,
+      min: 0, max: 20,
+      color: sc.smog <= 10 ? 'green' : sc.smog <= 14 ? 'orange' : 'red',
+      desc: 'Best for healthcare content.',
+      interp: 'Grade ' + sc.smog,
+      barFill: Math.min(100, (sc.smog / 20) * 100),
+      barColor: sc.smog <= 10 ? '#10b981' : sc.smog <= 14 ? '#f59e0b' : '#ef4444'
+    },
+    {
+      name: 'Coleman-Liau Index',
+      value: sc.colemanLiau,
+      min: 0, max: 20,
+      color: sc.colemanLiau <= 10 ? 'green' : sc.colemanLiau <= 14 ? 'orange' : 'red',
+      desc: 'Based on characters, not syllables.',
+      interp: 'Grade ' + sc.colemanLiau,
+      barFill: Math.min(100, (Math.max(0, sc.colemanLiau) / 20) * 100),
+      barColor: sc.colemanLiau <= 10 ? '#10b981' : sc.colemanLiau <= 14 ? '#f59e0b' : '#ef4444'
+    },
+    {
+      name: 'Automated Readability Index',
+      value: sc.ari,
+      min: 0, max: 20,
+      color: sc.ari <= 10 ? 'green' : sc.ari <= 14 ? 'orange' : 'red',
+      desc: 'Character-based grade estimate.',
+      interp: 'Grade ' + sc.ari,
+      barFill: Math.min(100, (Math.max(0, sc.ari) / 20) * 100),
+      barColor: sc.ari <= 10 ? '#10b981' : sc.ari <= 14 ? '#f59e0b' : '#ef4444'
+    }
+  ];
+
+  const scoresGrid = $('#scoresGrid');
+  scoresGrid.innerHTML = '';
+  scoreCards.forEach(c => {
+    const card = document.createElement('div');
+    card.className = 'score-card';
+    card.innerHTML = `
+      <div class="score-card-header">
+        <div class="score-card-name">${c.name}</div>
+        <div class="score-card-value ${c.color}">${c.value}</div>
+      </div>
+      <div class="score-card-desc">${c.desc}</div>
+      <div class="score-card-interpretation">${c.interp}</div>
+      <div class="score-bar-wrap">
+        <div class="score-bar">
+          <div class="score-bar-fill" style="width:${c.barFill}%;background:${c.barColor};"></div>
+        </div>
+      </div>
+    `;
+    scoresGrid.appendChild(card);
+  });
+
+  // Sentences
+  const sentenceList = $('#sentenceList');
+  sentenceList.innerHTML = '';
+  state.sentences.forEach((snt, i) => {
+    const item = document.createElement('div');
+    item.className = 'sentence-item ' + snt.difficulty;
+    item.innerHTML = `
+      ${escapeHtml(snt.text)}
+      <div class="sentence-meta">Sentence ${i + 1} · ${snt.words} words · Flesch ${snt.flesch}</div>
+    `;
+    sentenceList.appendChild(item);
+  });
+
+  // Suggestions
+  const suggList = $('#suggestionList');
+  suggList.innerHTML = '';
+  state.suggestions.forEach(sg => {
+    const item = document.createElement('div');
+    item.className = 'suggestion-item' + (sg.type === 'warning' ? ' warning' : sg.type === 'danger' ? ' danger' : '');
+    item.innerHTML = `
+      <span class="suggestion-icon">${sg.icon}</span>
+      <span>${escapeHtml(sg.text)}</span>
+    `;
+    suggList.appendChild(item);
+  });
+}
+
+function escapeHtml(str) {
+  const div = document.createElement('div');
+  div.textContent = str;
+  return div.innerHTML;
+}
+
+/* ===== BUTTONS ===== */
+analyzeBtn.addEventListener('click', analyze);
+
+pasteBtn.addEventListener('click', async () => {
+  try {
+    if (navigator.clipboard && navigator.clipboard.readText) {
+      const t = await navigator.clipboard.readText();
+      textInput.value = t;
+      showToast('Pasted from clipboard', 'success');
+    } else {
+      textInput.focus();
+      showToast('Press Ctrl+V to paste', 'info');
+    }
+  } catch (err) {
+    showToast('Clipboard access denied', 'error');
+  }
+});
+
+sampleBtn.addEventListener('click', () => {
+  textInput.value = SAMPLE_TEXT;
+  showToast('Sample loaded click Analyze', 'success');
+});
+
+clearBtn.addEventListener('click', () => {
+  textInput.value = '';
+  resultsSection.style.display = 'none';
+  showToast('Cleared', 'info');
+});
+
+/* ===== COPY REPORT ===== */
+copyReportBtn.addEventListener('click', async () => {
+  if (!state.stats.words) { showToast('Analyze first', 'error'); return; }
+
+  const lines = [];
+  lines.push('BigToolz Readability Report');
+  lines.push('='.repeat(50));
+  lines.push(`Words: ${state.stats.words}`);
+  lines.push(`Sentences: ${state.stats.sentences}`);
+  lines.push(`Syllables: ${state.stats.syllables}`);
+  lines.push(`Avg words/sentence: ${state.stats.avgWordsPerSentence}`);
+  lines.push(`Avg syllables/word: ${state.stats.avgSyllablesPerWord}`);
+  lines.push(`Reading time: ${state.stats.readingTimeMin} min`);
+  lines.push('');
+  lines.push('SCORES');
+  lines.push('-'.repeat(50));
+  lines.push(`Flesch Reading Ease:     ${state.scores.flesch}`);
+  lines.push(`Flesch-Kincaid Grade:    ${state.scores.fkGrade}`);
+  lines.push(`Gunning Fog:             ${state.scores.gunningFog}`);
+  lines.push(`SMOG:                    ${state.scores.smog}`);
+  lines.push(`Coleman-Liau:            ${state.scores.colemanLiau}`);
+  lines.push(`ARI:                     ${state.scores.ari}`);
+
+  const ok = await copyToClipboard(lines.join('\n'));
+  if (ok) showToast('✅ Report copied!', 'success');
+  else showToast('Copy failed', 'error');
+});
+
+/* ===== DOWNLOAD TXT ===== */
+downloadTxtBtn.addEventListener('click', () => {
+  if (!state.stats.words) { showToast('Analyze first', 'error'); return; }
+
+  const lines = [];
+  lines.push('BigToolz Readability Report');
+  lines.push('='.repeat(50));
+  lines.push(`Words: ${state.stats.words}`);
+  lines.push(`Sentences: ${state.stats.sentences}`);
+  lines.push(`Syllables: ${state.stats.syllables}`);
+  lines.push(`Reading time: ${state.stats.readingTimeMin} min`);
+  lines.push('');
+  lines.push('SCORES');
+  lines.push('-'.repeat(50));
+  lines.push(`Flesch Reading Ease: ${state.scores.flesch}`);
+  lines.push(`Flesch-Kincaid Grade: ${state.scores.fkGrade}`);
+  lines.push(`Gunning Fog: ${state.scores.gunningFog}`);
+  lines.push(`SMOG: ${state.scores.smog}`);
+  lines.push(`Coleman-Liau: ${state.scores.colemanLiau}`);
+  lines.push(`ARI: ${state.scores.ari}`);
+
+  const blob = new Blob([lines.join('\n')], { type: 'text/plain;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'readability-report.txt';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+  showToast('✅ Downloaded!', 'success');
+});
+
+/* ===== FAQ ===== */
+$$('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    $$('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+
+/* ===== KEYBOARD SHORTCUT ===== */
+document.addEventListener('keydown', (e) => {
+  if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
+    e.preventDefault();
+    analyze();
+  }
+});
+</script>
+
+</body>
+</html>

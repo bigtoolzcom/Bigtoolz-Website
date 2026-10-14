@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2563eb">
+
+<title>Aspect Ratio Calculator - Calculate Image Aspect Ratios Free | BigToolz</title>
+<meta name="description" content="Calculate aspect ratios online free. Find ratio from dimensions, scale to new sizes, use presets like 16:9, 4:3, 1:1. No upload, works in your browser instantly.">
+<meta name="keywords" content="aspect ratio calculator, image ratio, aspect ratio finder, resize aspect ratio, 16:9 calculator, video aspect ratio">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://bigtoolz.com/tools/image-tools/aspect-ratio/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Aspect Ratio Calculator - Free Online Tool | BigToolz">
+<meta property="og:description" content="Calculate image ratios, scale dimensions, use presets free, no upload.">
+<meta property="og:url" content="https://bigtoolz.com/tools/image-tools/aspect-ratio/">
+<meta property="og:image" content="https://bigtoolz.com/assets/images/og-image.jpg">
+<meta property="og:site_name" content="BigToolz">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Aspect Ratio Calculator - BigToolz">
+<meta name="twitter:description" content="Calculate aspect ratios instantly free, no upload.">
+<meta name="twitter:image" content="https://bigtoolz.com/assets/images/twitter-card.jpg">
+
+<link rel="icon" href="/assets/images/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/images/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#f8f9fc;color:#1a1a2e;overflow-x:hidden;line-height:1.5}
+
+  .header{background:#fff;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;position:sticky;top:0;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+  .header-left{display:flex;align-items:center;gap:40px}
+  .logo{display:flex;align-items:center;gap:8px;font-size:22px;font-weight:800;color:#1a1a2e;text-decoration:none}
+  .logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#3b82f6,#2563eb);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px}
+  .logo span{color:#2563eb}
+  .nav{display:flex;align-items:center;gap:28px;list-style:none}
+  .nav a{text-decoration:none;color:#4b5563;font-size:14px;font-weight:500;transition:color .2s}
+  .nav a:hover,.nav a.active{color:#2563eb}
+  .header-right{display:flex;align-items:center;gap:16px}
+  .search-btn,.theme-btn{width:36px;height:36px;border-radius:50%;border:none;background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#4b5563}
+  .search-btn:hover,.theme-btn:hover{background:#f3f4f6}
+  .bookmark-btn{display:flex;align-items:center;gap:8px;background:#2563eb;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
+  .bookmark-btn:hover{background:#1d4ed8}
+
+  .hero{background:linear-gradient(135deg,#0a0e27 0%,#1a1a4e 40%,#2d1b69 70%,#4c1d95 100%);padding:40px 40px 60px;position:relative;overflow:hidden;color:#fff}
+  .hero::before{content:'';position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(139,92,246,.3) 0%,transparent 70%);border-radius:50%}
+  .hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+  .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px;flex-wrap:wrap}
+  .breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none}
+  .breadcrumb a:hover{color:#fff}
+  .breadcrumb .sep{color:rgba(255,255,255,.4)}
+  .breadcrumb .current{color:#fff;font-weight:500}
+  .hero-title-row{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+  .hero-icon{width:60px;height:60px;background:#8b5cf6;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px;color:#fff;flex-shrink:0;box-shadow:0 8px 24px rgba(139,92,246,.4)}
+  .hero-title{font-size:42px;font-weight:800;line-height:1.15}
+  .hero-title .blue{color:#a78bfa}
+  .hero-desc{font-size:15px;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:24px;max-width:560px}
+  .hero-features{display:flex;gap:24px;flex-wrap:wrap}
+  .hero-feature{display:flex;align-items:center;gap:6px;font-size:13px;color:#fff;font-weight:500}
+  .hero-feature .check{width:18px;height:18px;border-radius:50%;background:#8b5cf6;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;flex-shrink:0}
+
+  .main-content{max-width:1200px;margin:0 auto;padding:40px;display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start}
+  .tool-content{min-width:0}
+
+  .workspace{background:#fff;border-radius:16px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,.06);border:1px solid #e5e7eb;margin-bottom:24px}
+
+  /* Mode tabs */
+  .mode-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:24px;background:#faf5ff;padding:6px;border-radius:12px;border:1px solid #c4b5fd}
+  .mode-btn{padding:14px 10px;background:transparent;border:none;border-radius:10px;font-size:12px;font-weight:700;color:#4b5563;cursor:pointer;font-family:inherit;transition:all .2s;text-align:center;line-height:1.3}
+  .mode-btn:hover{background:#ede9fe}
+  .mode-btn.active{background:#8b5cf6;color:#fff}
+  .mode-icon{display:block;font-size:20px;margin-bottom:4px}
+
+  /* Mode panels */
+  .mode-panel{display:none}
+  .mode-panel.active{display:block}
+
+  .panel-title{font-size:16px;font-weight:800;color:#1a1a2e;margin-bottom:6px}
+  .panel-desc{font-size:13px;color:#6b7280;margin-bottom:20px;line-height:1.6}
+
+  /* Input grid */
+  .input-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px}
+  .input-group label{display:block;font-size:12px;font-weight:700;color:#4b5563;margin-bottom:6px;text-transform:uppercase;letter-spacing:.3px}
+  .input-group input[type="number"],.input-group input[type="text"]{width:100%;padding:14px 16px;border:2px solid #e5e7eb;border-radius:10px;font-size:18px;font-weight:700;font-family:inherit;color:#1a1a2e;background:#fff;outline:none;transition:border-color .2s;text-align:center}
+  .input-group input:focus{border-color:#8b5cf6;box-shadow:0 0 0 3px rgba(139,92,246,.15)}
+  .input-group input::placeholder{color:#d1d5db;font-weight:500;font-size:14px}
+
+  .input-suffix{font-size:11px;color:#9ca3af;text-align:center;margin-top:4px;font-weight:600}
+
+  /* Calculate button */
+  .calc-btn{width:100%;padding:16px;background:#8b5cf6;color:#fff;border:none;border-radius:12px;font-size:15px;font-weight:800;cursor:pointer;font-family:inherit;transition:background .2s;margin-top:4px}
+  .calc-btn:hover{background:#7c3aed}
+
+  /* Result card */
+  .result-card{background:linear-gradient(135deg,#faf5ff,#ede9fe);border:2px solid #c4b5fd;border-radius:16px;padding:24px;margin-top:20px;display:none}
+  .result-card.visible{display:block}
+  .result-header{font-size:12px;font-weight:700;color:#7c3aed;text-transform:uppercase;letter-spacing:.5px;margin-bottom:12px;display:flex;justify-content:space-between;align-items:center}
+  .result-copy{background:#8b5cf6;color:#fff;border:none;padding:6px 12px;border-radius:6px;font-size:11px;font-weight:700;cursor:pointer;font-family:inherit;transition:background .2s;display:flex;align-items:center;gap:4px}
+  .result-copy:hover{background:#7c3aed}
+  .result-copy.copied{background:#10b981}
+  .result-main{font-size:36px;font-weight:900;color:#1a1a2e;letter-spacing:-1px;margin-bottom:8px;word-break:break-all;line-height:1.1}
+  .result-detail{font-size:14px;color:#6b7280;line-height:1.6}
+  .result-detail strong{color:#1a1a2e}
+
+  /* Preview rectangle */
+  .preview-box{background:#fff;border:2px dashed #c4b5fd;border-radius:12px;padding:24px;margin-top:16px;display:flex;align-items:center;justify-content:center;min-height:200px;position:relative;overflow:hidden}
+  .preview-rect{background:linear-gradient(135deg,#8b5cf6,#a78bfa);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px;font-weight:700;box-shadow:0 8px 24px rgba(139,92,246,.3);transition:all .3s ease;text-shadow:0 1px 2px rgba(0,0,0,.2)}
+  .preview-label{position:absolute;bottom:8px;right:12px;font-size:10px;color:#9ca3af;font-weight:600;text-transform:uppercase;letter-spacing:.5px}
+
+  /* Presets */
+  .presets-title{font-size:12px;font-weight:700;color:#4b5563;text-transform:uppercase;letter-spacing:.3px;margin-bottom:10px;margin-top:24px}
+  .presets-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+  .preset-chip{padding:10px 8px;background:#fff;border:2px solid #e5e7eb;border-radius:10px;font-size:12px;font-weight:700;color:#4b5563;cursor:pointer;font-family:inherit;transition:all .2s;text-align:center;line-height:1.3}
+  .preset-chip:hover{border-color:#8b5cf6;background:#faf5ff;color:#7c3aed}
+  .preset-chip.active{border-color:#8b5cf6;background:#8b5cf6;color:#fff}
+  .preset-chip small{display:block;font-size:9px;font-weight:500;opacity:.7;margin-top:2px}
+
+  /* Info list */
+  .info-list{background:#faf5ff;border-radius:12px;padding:18px;border:1px solid #c4b5fd;margin-top:20px}
+  .info-list-title{font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:10px}
+  .info-list-item{display:flex;justify-content:space-between;padding:8px 0;font-size:13px;border-bottom:1px solid #ede9fe}
+  .info-list-item:last-child{border-bottom:none}
+  .info-list-key{color:#6b7280;font-weight:600}
+  .info-list-val{color:#1a1a2e;font-weight:800;font-family:'JetBrains Mono',monospace}
+
+  .seo-content{background:#fff;border-radius:16px;padding:32px;border:1px solid #e5e7eb;margin-bottom:24px}
+  .seo-content h2{font-size:22px;font-weight:800;color:#1a1a2e;margin-bottom:14px;margin-top:28px;display:flex;align-items:center;gap:10px}
+  .seo-content h2:first-child{margin-top:0}
+  .seo-content h3{font-size:16px;font-weight:700;color:#1a1a2e;margin:20px 0 10px}
+  .seo-content p{font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:14px}
+  .seo-content ul{list-style:none;padding-left:0;margin-bottom:16px}
+  .seo-content ul li{position:relative;padding-left:24px;font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:8px}
+  .seo-content ul li::before{content:'';position:absolute;left:6px;top:12px;width:6px;height:6px;background:#8b5cf6;border-radius:50%}
+  .seo-content a{color:#2563eb;text-decoration:none;font-weight:600}
+  .seo-content a:hover{text-decoration:underline}
+  .seo-content strong{color:#1a1a2e;font-weight:700}
+  .seo-content code{background:#f1f5f9;padding:2px 6px;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:13px;color:#0f172a;border:1px solid #e2e8f0}
+
+  .ratio-table{width:100%;border-collapse:collapse;margin:20px 0;border:1px solid #e5e7eb;border-radius:8px;overflow:hidden}
+  .ratio-table th{background:#faf5ff;padding:12px 16px;text-align:left;font-size:13px;font-weight:700;color:#1a1a2e;border-bottom:1px solid #e5e7eb}
+  .ratio-table td{padding:12px 16px;font-size:13px;color:#4b5563;border-bottom:1px solid #f3f4f6}
+  .ratio-table tr:last-child td{border-bottom:none}
+  .ratio-table code{background:#f3f4f6;padding:2px 8px;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:12px;color:#7c3aed;font-weight:700}
+
+  .how-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:20px}
+  .how-step{background:#faf5ff;border-radius:12px;padding:20px;border:1px solid #c4b5fd}
+  .how-step-num{width:36px;height:36px;border-radius:50%;background:#8b5cf6;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;margin-bottom:12px}
+  .how-step-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+  .how-step-desc{font-size:13px;color:#6b7280;line-height:1.6}
+
+  .faq-item{background:#faf5ff;border:1px solid #c4b5fd;border-radius:12px;margin-bottom:10px;overflow:hidden;transition:border-color .2s}
+  .faq-item:hover{border-color:#8b5cf6}
+  .faq-question{width:100%;background:none;border:none;padding:18px 22px;font-size:15px;font-weight:700;color:#1a1a2e;text-align:left;cursor:pointer;font-family:inherit;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .faq-question .chev{font-size:12px;color:#8b5cf6;transition:transform .2s;flex-shrink:0}
+  .faq-item.open .faq-question .chev{transform:rotate(180deg)}
+  .faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 22px}
+  .faq-item.open .faq-answer{max-height:500px;padding-bottom:18px}
+  .faq-answer p{font-size:14px;color:#6b7280;line-height:1.7;margin:0}
+
+  .sidebar{background:#fff;border-radius:16px;padding:24px;border:1px solid #e5e7eb;position:sticky;top:80px;margin-bottom:24px}
+  .sidebar-header{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:800;color:#1a1a2e;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid #f3f4f6}
+  .sidebar-list{display:flex;flex-direction:column;gap:8px}
+  .sidebar-item{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;cursor:pointer;transition:background .2s;text-decoration:none;color:inherit;border:1px solid #f3f4f6}
+  .sidebar-item:hover{background:#faf5ff;border-color:#c4b5fd}
+  .sidebar-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;flex-shrink:0}
+  .sidebar-info{flex:1;min-width:0}
+  .sidebar-title{font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:2px}
+  .sidebar-desc{font-size:11px;color:#9ca3af;line-height:1.4}
+
+  .footer{background:#0a0e27;padding:60px 40px 30px;color:#fff;margin-top:40px}
+  .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:40px}
+  .footer-brand{display:flex;align-items:center;gap:8px;font-size:20px;font-weight:800;margin-bottom:12px}
+  .footer-brand span{color:#60a5fa}
+  .footer-tagline{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px}
+  .footer-social{display:flex;gap:12px}
+  .footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:16px;transition:background .2s}
+  .footer-social a:hover{background:rgba(255,255,255,.2)}
+  .footer-heading{font-size:14px;font-weight:700;margin-bottom:20px;color:#fff}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .footer-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;transition:color .2s}
+  .footer-links a:hover{color:#60a5fa}
+  .footer-bottom{max-width:1200px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  .footer-bottom-left{display:flex;gap:20px;font-size:12px;color:rgba(255,255,255,.5)}
+  .footer-bottom-right,.footer-bottom-links a{font-size:12px;color:rgba(255,255,255,.5);text-decoration:none}
+  .footer-bottom-links{display:flex;gap:20px}
+
+  .toast{position:fixed;bottom:24px;right:24px;background:#1a1a2e;color:#fff;padding:14px 20px;border-radius:10px;font-size:13px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:3000;transform:translateY(200%);transition:transform .3s ease;max-width:320px}
+  .toast.visible{transform:translateY(0)}
+  .toast.success{background:#10b981}
+  .toast.error{background:#ef4444}
+
+  @media(max-width:1024px){
+    .main-content{grid-template-columns:1fr;padding:24px 20px}
+    .sidebar{position:static}
+    .how-steps{grid-template-columns:repeat(2,1fr)}
+  }
+  @media(max-width:768px){
+    .header{padding:0 20px}.nav{display:none}
+    .hero{padding:24px 20px 40px}
+    .hero-title{font-size:28px}
+    .hero-icon{width:48px;height:48px;font-size:20px}
+    .hero-title-row{flex-direction:column;align-items:flex-start;gap:12px}
+    .main-content{padding:20px 16px}
+    .workspace{padding:20px}
+    .how-steps{grid-template-columns:1fr}
+    .seo-content{padding:20px}
+    .footer-inner{grid-template-columns:1fr 1fr}
+    .toast{left:16px;right:16px;bottom:16px;max-width:none}
+    .mode-tabs{grid-template-columns:1fr}
+    .input-grid{grid-template-columns:1fr}
+    .presets-grid{grid-template-columns:repeat(3,1fr)}
+  }
+  @media(max-width:576px){
+    .header{padding:0 16px}.header-right .search-btn,.header-right .theme-btn{display:none}
+    .hero-title{font-size:24px}
+    .footer-inner{grid-template-columns:1fr}
+    .footer-bottom{flex-direction:column;text-align:center}
+    .presets-grid{grid-template-columns:repeat(2,1fr)}
+    .result-main{font-size:28px}
+  }
+
+  html[data-theme="dark"] body{background:#0f172a;color:#f1f5f9}
+  html[data-theme="dark"] .header,html[data-theme="dark"] .workspace,html[data-theme="dark"] .seo-content,html[data-theme="dark"] .sidebar{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .logo,html[data-theme="dark"] .hero-title,html[data-theme="dark"] .seo-content h2,html[data-theme="dark"] .seo-content h3,html[data-theme="dark"] .faq-question,html[data-theme="dark"] .sidebar-header,html[data-theme="dark"] .sidebar-title,html[data-theme="dark"] .panel-title{color:#f1f5f9}
+  html[data-theme="dark"] .nav a{color:#cbd5e1}
+  html[data-theme="dark"] .mode-tabs,html[data-theme="dark"] .how-step,html[data-theme="dark"] .faq-item,html[data-theme="dark"] .preset-chip,html[data-theme="dark"] .info-list,html[data-theme="dark"] .preview-box,html[data-theme="dark"] .input-group input{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .mode-btn:hover{background:#1e293b}
+  html[data-theme="dark"] .mode-btn{color:#cbd5e1}
+  html[data-theme="dark"] .preset-chip{color:#cbd5e1}
+  html[data-theme="dark"] .preset-chip.active{background:#8b5cf6;color:#fff;border-color:#8b5cf6}
+  html[data-theme="dark"] .result-card{background:linear-gradient(135deg,#1e1b4b,#2d1b69);border-color:#4c1d95}
+  html[data-theme="dark"] .result-main{color:#f1f5f9}
+  html[data-theme="dark"] .input-group input{color:#f1f5f9}
+  html[data-theme="dark"] .seo-content p,html[data-theme="dark"] .seo-content ul li,html[data-theme="dark"] .faq-answer p,html[data-theme="dark"] .panel-desc{color:#cbd5e1}
+  html[data-theme="dark"] .seo-content code{background:#020617;color:#a78bfa;border-color:#334155}
+  html[data-theme="dark"] .ratio-table{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .ratio-table th{background:#0f172a;color:#f1f5f9;border-color:#334155}
+  html[data-theme="dark"] .ratio-table td{border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .info-list-val{color:#f1f5f9}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type": "SoftwareApplication", "name": "Aspect Ratio Calculator", "url": "https://bigtoolz.com/tools/image-tools/aspect-ratio/", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any (Web-based)", "description": "Free online aspect ratio calculator find image ratios, scale dimensions, use presets. Works in your browser.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "1890"}},
+    {"@type": "HowTo", "name": "How to Calculate Aspect Ratio", "step": [
+      {"@type": "HowToStep", "name": "Enter Width", "text": "Type the width in pixels."},
+      {"@type": "HowToStep", "name": "Enter Height", "text": "Type the height in pixels."},
+      {"@type": "HowToStep", "name": "Calculate", "text": "Click Calculate to see the ratio."},
+      {"@type": "HowToStep", "name": "Use Result", "text": "Copy the ratio or use it to scale to a new size."}
+    ]},
+    {"@type": "FAQPage", "mainEntity": [
+      {"@type": "Question", "name": "What is an aspect ratio?", "acceptedAnswer": {"@type": "Answer", "text": "Aspect ratio is the proportional relationship between width and height. It's written as W:H, like 16:9 for widescreen video or 1:1 for square images."}},
+      {"@type": "Question", "name": "How do I calculate aspect ratio from pixels?", "acceptedAnswer": {"@type": "Answer", "text": "Divide both width and height by their Greatest Common Divisor (GCD). For example, 1920×1080: GCD is 120, so 1920/120 = 16 and 1080/120 = 9, giving 16:9."}},
+      {"@type": "Question", "name": "What's the most common aspect ratio?", "acceptedAnswer": {"@type": "Answer", "text": "16:9 is the most common for video and modern displays. 4:3 was the old TV standard. 1:1 is popular for Instagram. 9:16 for Stories/Reels. 21:9 for cinematic widescreen."}},
+      {"@type": "Question", "name": "How do I resize an image while keeping aspect ratio?", "acceptedAnswer": {"@type": "Answer", "text": "Enter new width in the Scale tab; the height auto-calculates based on the original ratio. Use our Image Resizer to actually resize the image file."}},
+      {"@type": "Question", "name": "Is my data uploaded to a server?", "acceptedAnswer": {"@type": "Answer", "text": "No. This is a pure calculator no images are uploaded. Everything runs locally in your browser."}}
+    ]},
+    {"@type": "BreadcrumbList", "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bigtoolz.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://bigtoolz.com/tools/"},
+      {"@type": "ListItem", "position": 3, "name": "Image Tools", "item": "https://bigtoolz.com/tools/image-tools/"},
+      {"@type": "ListItem", "position": 4, "name": "Aspect Ratio Calculator", "item": "https://bigtoolz.com/tools/image-tools/aspect-ratio/"}
+    ]}
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-left">
+    <a href="/" class="logo"><div class="logo-icon">⚒</div>BigToolz</span></a>
+    <nav><ul class="nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/tools/" class="active">All Tools</a></li>
+      <li><a href="/tools/categories">Categories</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul></nav>
+  </div>
+  <div class="header-right">
+   
+    <button class="theme-btn" aria-label="Toggle theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
+   
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <nav class="breadcrumb">
+      <a href="/">Home</a><span class="sep">›</span>
+      <a href="/tools/">Tools</a><span class="sep">›</span>
+      <a href="/tools/image-tools/">Image Tools</a><span class="sep">›</span>
+      <span class="current">Aspect Ratio Calculator</span>
+    </nav>
+    <div class="hero-title-row">
+      <div class="hero-icon">📐</div>
+      <h1 class="hero-title">Aspect <span class="blue">Ratio</span></h1>
+    </div>
+    <p class="hero-desc">
+      Calculate aspect ratios instantly. Find ratio from any dimensions, scale to new sizes keeping the ratio, or use presets like 16:9, 4:3, 1:1, 9:16. Free, no signup.
+    </p>
+    <div class="hero-features">
+      <div class="hero-feature"><span class="check">✓</span> 3 Modes</div>
+      <div class="hero-feature"><span class="check">✓</span> Live Preview</div>
+      <div class="hero-feature"><span class="check">✓</span> Presets</div>
+      <div class="hero-feature"><span class="check">✓</span> Copy Result</div>
+    </div>
+  </div>
+</section>
+
+<div class="main-content">
+
+  <div class="tool-content">
+
+    <div class="workspace">
+
+      <!-- Mode Tabs -->
+      <div class="mode-tabs" id="modeTabs">
+        <button class="mode-btn active" data-mode="ratio">
+          <span class="mode-icon">🔍</span>
+          Find Ratio
+        </button>
+        <button class="mode-btn" data-mode="compute">
+          <span class="mode-icon">🎯</span>
+          Compute Dimension
+        </button>
+        <button class="mode-btn" data-mode="scale">
+          <span class="mode-icon">📏</span>
+          Scale to Size
+        </button>
+      </div>
+
+      <!-- Mode 1: Find Ratio -->
+      <div class="mode-panel active" data-panel="ratio">
+        <div class="panel-title">Find Aspect Ratio</div>
+        <div class="panel-desc">Enter any width and height in pixels. We'll calculate the simplified aspect ratio.</div>
+
+        <div class="input-grid">
+          <div class="input-group">
+            <label>Width</label>
+            <input type="number" id="ratioW" placeholder="1920" min="1" max="100000" value="1920">
+            <div class="input-suffix">pixels</div>
+          </div>
+          <div class="input-group">
+            <label>Height</label>
+            <input type="number" id="ratioH" placeholder="1080" min="1" max="100000" value="1080">
+            <div class="input-suffix">pixels</div>
+          </div>
+        </div>
+
+        <button class="calc-btn" id="calcRatioBtn">Calculate Ratio</button>
+
+        <div class="result-card" id="ratioResult">
+          <div class="result-header">
+            <span>Aspect Ratio</span>
+            <button class="result-copy" data-copy="ratio">📋 Copy</button>
+          </div>
+          <div class="result-main" id="ratioMain">16:9</div>
+          <div class="result-detail" id="ratioDetail">
+            <strong>1920 × 1080</strong> pixels simplifies to <strong>16:9</strong> (dividing both by 120)
+          </div>
+          <div class="preview-box">
+            <div class="preview-rect" id="ratioPreview" style="width:240px;height:135px;">16:9</div>
+            <div class="preview-label">Preview</div>
+          </div>
+        </div>
+
+        <div class="presets-title">Common Ratios</div>
+        <div class="presets-grid" id="presetsRatio">
+          <button class="preset-chip" data-preset-ratio="1:1">1:1<small>Square</small></button>
+          <button class="preset-chip" data-preset-ratio="4:3">4:3<small>Classic TV</small></button>
+          <button class="preset-chip active" data-preset-ratio="16:9">16:9<small>HD Wide</small></button>
+          <button class="preset-chip" data-preset-ratio="9:16">9:16<small>Vertical</small></button>
+          <button class="preset-chip" data-preset-ratio="3:2">3:2<small>Photo</small></button>
+          <button class="preset-chip" data-preset-ratio="2:3">2:3<small>Portrait</small></button>
+          <button class="preset-chip" data-preset-ratio="21:9">21:9<small>Cinema</small></button>
+          <button class="preset-chip" data-preset-ratio="5:4">5:4<small>Classic</small></button>
+        </div>
+      </div>
+
+      <!-- Mode 2: Compute Dimension -->
+      <div class="mode-panel" data-panel="compute">
+        <div class="panel-title">Compute Missing Dimension</div>
+        <div class="panel-desc">Know the aspect ratio and one dimension? We'll find the other.</div>
+
+        <div class="input-grid">
+          <div class="input-group">
+            <label>Ratio</label>
+            <input type="text" id="computeRatio" placeholder="16:9" value="16:9">
+            <div class="input-suffix">W:H format</div>
+          </div>
+          <div class="input-group">
+            <label>Known Dimension</label>
+            <input type="text" id="computeKnown" placeholder="1920" value="1920">
+            <div class="input-suffix">pixels</div>
+          </div>
+        </div>
+
+        <div class="input-grid">
+          <div class="input-group">
+            <label>Known Side</label>
+            <select id="computeSide" style="width:100%;padding:14px 16px;border:2px solid #e5e7eb;border-radius:10px;font-size:14px;font-weight:700;font-family:inherit;color:#1a1a2e;background:#fff;outline:none;">
+              <option value="width">Width is known</option>
+              <option value="height">Height is known</option>
+            </select>
+          </div>
+          <div class="input-group">
+            <label>&nbsp;</label>
+            <button class="calc-btn" id="calcComputeBtn" style="margin-top:0;">Compute</button>
+          </div>
+        </div>
+
+        <div class="result-card" id="computeResult">
+          <div class="result-header">
+            <span>Result</span>
+            <button class="result-copy" data-copy="compute">📋 Copy</button>
+          </div>
+          <div class="result-main" id="computeMain">1080</div>
+          <div class="result-detail" id="computeDetail">
+            With a <strong>16:9</strong> ratio and width of <strong>1920px</strong>, the height is <strong>1080px</strong>.
+          </div>
+        </div>
+      </div>
+
+      <!-- Mode 3: Scale to Size -->
+      <div class="mode-panel" data-panel="scale">
+        <div class="panel-title">Scale Image Dimensions</div>
+        <div class="panel-desc">Enter original dimensions and new width. We'll give you the new height (keeping ratio).</div>
+
+        <div class="input-grid">
+          <div class="input-group">
+            <label>Original Width</label>
+            <input type="number" id="scaleOW" value="1920" min="1">
+            <div class="input-suffix">px</div>
+          </div>
+          <div class="input-group">
+            <label>Original Height</label>
+            <input type="number" id="scaleOH" value="1080" min="1">
+            <div class="input-suffix">px</div>
+          </div>
+        </div>
+
+        <div class="input-grid">
+          <div class="input-group">
+            <label>New Width</label>
+            <input type="number" id="scaleNW" value="1280" min="1">
+            <div class="input-suffix">px</div>
+          </div>
+          <div class="input-group">
+            <label>New Height</label>
+            <input type="number" id="scaleNH" value="" placeholder="Auto" min="1" readonly style="background:#f9fafb;color:#6b7280;">
+            <div class="input-suffix">auto-calculated</div>
+          </div>
+        </div>
+
+        <button class="calc-btn" id="calcScaleBtn">Calculate New Height</button>
+
+        <div class="result-card" id="scaleResult">
+          <div class="result-header">
+            <span>Scaled Dimensions</span>
+            <button class="result-copy" data-copy="scale">📋 Copy</button>
+          </div>
+          <div class="result-main" id="scaleMain">1280 × 720</div>
+          <div class="result-detail" id="scaleDetail">
+            Original <strong>1920×1080</strong> scaled to width <strong>1280px</strong> → height <strong>720px</strong>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="seo-content">
+
+      <h2>📐 What is Aspect Ratio?</h2>
+      <p>
+        <strong>Aspect ratio</strong> is the proportional relationship between the width and height of an image, video, or screen. It's written as <code>W:H</code> (width-to-height), like <code>16:9</code> for widescreen video or <code>1:1</code> for square Instagram posts. Understanding aspect ratios is essential for <strong>photographers, videographers, designers, developers,</strong> and anyone working with images or video.
+      </p>
+      <p>
+        This tool is a <strong>pure calculator</strong> no images are uploaded. Everything runs locally in your browser. You can find ratios, compute missing dimensions, or scale to new sizes while keeping the ratio intact.
+      </p>
+
+      <h2>🚀 How to Use the Aspect Ratio Calculator</h2>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-step-num">1</div>
+          <div class="how-step-title">Pick Mode</div>
+          <div class="how-step-desc">Find Ratio, Compute Dimension, or Scale to Size.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">2</div>
+          <div class="how-step-title">Enter Values</div>
+          <div class="how-step-desc">Type width/height or use preset ratios.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">3</div>
+          <div class="how-step-title">Calculate</div>
+          <div class="how-step-desc">Click Calculate to see the result instantly.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">4</div>
+          <div class="how-step-title">Copy Result</div>
+          <div class="how-step-desc">Copy the ratio or dimensions to clipboard.</div>
+        </div>
+      </div>
+
+      <h2>📊 Common Aspect Ratios Reference</h2>
+      <table class="ratio-table">
+        <thead>
+          <tr><th>Ratio</th><th>Common Use</th><th>Examples</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>1:1</code></td><td>Square profile pics, Instagram</td><td>1080×1080, 500×500</td></tr>
+          <tr><td><code>4:3</code></td><td>Old TV, classic monitors, photos</td><td>1024×768, 1600×1200</td></tr>
+          <tr><td><code>3:2</code></td><td>35mm photos, DSLR cameras</td><td>1920×1280, 3000×2000</td></tr>
+          <tr><td><code>16:9</code></td><td>HD video, modern displays, YouTube</td><td>1920×1080, 1280×720</td></tr>
+          <tr><td><code>9:16</code></td><td>Vertical video Stories, Reels, TikTok</td><td>1080×1920</td></tr>
+          <tr><td><code>21:9</code></td><td>Cinematic ultra-wide</td><td>2560×1080</td></tr>
+          <tr><td><code>5:4</code></td><td>Classic monitors, some prints</td><td>1280×1024</td></tr>
+          <tr><td><code>2:3</code></td><td>Portrait photo posters, prints</td><td>1200×1800</td></tr>
+        </tbody>
+      </table>
+
+      <h2>🎯 When to Use Which Mode</h2>
+      <h3>🔍 Find Ratio</h3>
+      <p>Use when you have specific pixel dimensions and want to know the ratio. Example: a 1920×1080 image is 16:9. Critical for matching images to platform requirements.</p>
+
+      <h3>🎯 Compute Dimension</h3>
+      <p>Use when you know the ratio and one side. Example: for a 16:9 video at 1920px wide, you know the height is 1080px. Essential for video/photo planning.</p>
+
+      <h3>📏 Scale to Size</h3>
+      <p>Use when you have original dimensions and want a new size. Example: original 1920×1080 → scale to 1280px wide = 720px tall. Use our <a href="/tools/image-tools/image-resizer/">Image Resizer</a> to actually resize the file.</p>
+
+      <h2>💡 Pro Tips</h2>
+      <ul>
+        <li><strong>Match platform requirements</strong> Instagram 1:1, Stories 9:16, YouTube 16:9.</li>
+        <li><strong>Cropping changes ratio</strong> resize preserves ratio, crop changes it.</li>
+        <li><strong>Multiple devices</strong> design at 16:9 for wide, 9:16 for mobile-first.</li>
+        <li><strong>Print vs screen</strong> 3:2 for print photos, 16:9 for screens.</li>
+        <li><strong>Gaming</strong> 21:9 gives competitive advantage; 16:9 is standard.</li>
+        <li><strong>Round numbers</strong> most cameras use round ratios for best quality.</li>
+      </ul>
+
+      <h2>❓ Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-question">What is an aspect ratio?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Aspect ratio is the proportional relationship between width and height. It's written as <code>W:H</code>, like <strong>16:9</strong> for widescreen or <strong>1:1</strong> for square images. It stays the same regardless of actual pixel size 1920×1080 and 1280×720 are both 16:9.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">How do I calculate aspect ratio from pixels?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Divide both width and height by their <strong>Greatest Common Divisor (GCD)</strong>. For example, 1920×1080: GCD is 120, so 1920/120 = <strong>16</strong> and 1080/120 = <strong>9</strong>, giving <strong>16:9</strong>. Our calculator does this automatically.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What's the most common aspect ratio?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>16:9</strong> is the most common for video and modern displays (YouTube, HD TVs, monitors). <strong>4:3</strong> was the old TV standard. <strong>1:1</strong> is popular for Instagram. <strong>9:16</strong> for Stories/Reels/TikTok. <strong>21:9</strong> for cinematic widescreen.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">How do I resize while keeping aspect ratio?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Use the <strong>Scale to Size</strong> mode: enter original dimensions, type new width, and the new height auto-calculates. For actually resizing the file, use our <a href="/tools/image-tools/image-resizer/">Image Resizer</a> tool (which also has aspect ratio lock).</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What's the difference between resize and crop?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>Resize</strong> scales the image but keeps the same ratio no content lost. <strong>Crop</strong> cuts off edges, changing the ratio. For a social media post, crop to match the ratio; for a portfolio, resize to fit within a frame.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What aspect ratio should I use for social media?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>Instagram:</strong> 1:1 (square) or 4:5 (portrait). <strong>Instagram/Facebook Stories & Reels:</strong> 9:16. <strong>YouTube:</strong> 16:9. <strong>Twitter/X:</strong> 16:9. <strong>TikTok:</strong> 9:16. <strong>LinkedIn:</strong> 1.91:1 or 1:1. <strong>Pinterest:</strong> 2:3.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Is my data uploaded to a server?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>No. This is a <strong>pure calculator</strong> no images are uploaded and no data is sent anywhere. Everything runs locally in your browser.</p></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-header">🔗 Related Image Tools</div>
+    <div class="sidebar-list">
+      <a href="/tools/image-tools/image-resizer/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#8b5cf6;">📏</div>
+        <div class="sidebar-info"><div class="sidebar-title">Image Resizer</div><div class="sidebar-desc">Resize with ratio lock</div></div>
+      </a>
+      <a href="/tools/image-tools/image-crop/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#f97316;">✂️</div>
+        <div class="sidebar-info"><div class="sidebar-title">Image Crop</div><div class="sidebar-desc">Crop with ratio presets</div></div>
+      </a>
+      <a href="/tools/image-tools/image-compressor/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#10b981;">📉</div>
+        <div class="sidebar-info"><div class="sidebar-title">Image Compressor</div><div class="sidebar-desc">Reduce file size</div></div>
+      </a>
+      <a href="/tools/image-tools/image-rotate/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#ec4899;">🔁</div>
+        <div class="sidebar-info"><div class="sidebar-title">Image Rotate</div><div class="sidebar-desc">Rotate any angle</div></div>
+      </a>
+      <a href="/tools/image-tools/image-metadata/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#06b6d4;">ℹ️</div>
+        <div class="sidebar-info"><div class="sidebar-title">Image Metadata</div><div class="sidebar-desc">View EXIF data</div></div>
+      </a>
+      <a href="/tools/image-tools/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#64748b;">🖼</div>
+        <div class="sidebar-info"><div class="sidebar-title">All Image Tools →</div><div class="sidebar-desc">Browse 25+ tools</div></div>
+      </a>
+    </div>
+  </aside>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand"><div class="logo-icon">⚒</div>BigToolz</span></div>
+      <p class="footer-tagline">Your Ultimate Online Tools Hub</p>
+      <div class="footer-social">
+        <a href="https://facebook.com/bigtoolz" aria-label="Facebook">f</a>
+        <a href="https://twitter.com/bigtoolz" aria-label="Twitter">𝕏</a>
+        <a href="https://youtube.com/@bigtoolz" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+    <div>
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/tools/">All Tools</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Categories</h3>
+      <ul class="footer-links">
+        <li><a href="/tools/image-tools/">Image Tools</a></li>
+        <li><a href="/tools/pdf-tools/">PDF Tools</a></li>
+        <li><a href="/tools/text-tools/">Text Tools</a></li>
+        <li><a href="/tools/seo-tools/">SEO Tools</a></li>
+        <li><a href="/tools/categories">All Categories →</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Legal</h3>
+      <ul class="footer-links">
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left"><span>✓ 100% Free</span><span>✓ No Sign Up</span><span>✓ No Installation</span></div>
+    <div class="footer-bottom-right">© 2026 BigToolz. All rights reserved.</div>
+    <div class="footer-bottom-links"><a href="/privacy-policy">Privacy</a><a href="/terms">Terms</a><a href="/disclaimer">Disclaimer</a></div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+'use strict';
+
+/* ===== THEME ===== */
+(function(){try{var t=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&d))document.documentElement.setAttribute('data-theme','dark');else if(t==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();
+document.querySelector('.theme-btn')?.addEventListener('click',()=>{const h=document.documentElement;const c=h.getAttribute('data-theme');const d=window.matchMedia('(prefers-color-scheme: dark)').matches;let n=c==='dark'?'light':c==='light'?'dark':(d?'light':'dark');h.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}});
+
+/* ===== HELPERS ===== */
+const $ = (s, p = document) => p.querySelector(s);
+const $$ = (s, p = document) => [...p.querySelectorAll(s)];
+
+function showToast(msg, type = 'info', duration = 3000) {
+  const t = $('#toast');
+  if (!t) return;
+  t.className = 'toast visible' + (type !== 'info' ? ' ' + type : '');
+  t.textContent = msg;
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove('visible'), duration);
+}
+
+async function copyToClipboard(text) {
+  try {
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(text);
+      return true;
+    }
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.cssText = 'position:fixed;opacity:0;';
+    document.body.appendChild(ta);
+    ta.select();
+    const ok = document.execCommand('copy');
+    document.body.removeChild(ta);
+    return ok;
+  } catch (e) { return false; }
+}
+
+function gcd(a, b) {
+  a = Math.abs(a);
+  b = Math.abs(b);
+  while (b) { [a, b] = [b, a % b]; }
+  return a;
+}
+
+/* ===== MODE TABS ===== */
+$$('.mode-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    $$('.mode-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const mode = btn.dataset.mode;
+    $$('.mode-panel').forEach(p => p.classList.toggle('active', p.dataset.panel === mode));
+  });
+});
+
+/* ===== RATIO MODE ===== */
+const ratioW = $('#ratioW');
+const ratioH = $('#ratioH');
+const calcRatioBtn = $('#calcRatioBtn');
+const ratioResult = $('#ratioResult');
+
+function computeRatio() {
+  const w = parseInt(ratioW.value, 10);
+  const h = parseInt(ratioH.value, 10);
+  if (!w || !h || w <= 0 || h <= 0) {
+    showToast('Enter valid width and height', 'error');
+    return;
+  }
+
+  const g = gcd(w, h);
+  const rw = w / g;
+  const rh = h / g;
+  const ratio = `${rw}:${rh}`;
+  const decimal = (w / h).toFixed(3);
+
+  $('#ratioMain').textContent = ratio;
+  $('#ratioDetail').innerHTML = `<strong>${w} × ${h}</strong> pixels simplifies to <strong>${ratio}</strong> (divided by ${g}) · Decimal: <strong>${decimal}</strong>`;
+  ratioResult.classList.add('visible');
+
+  // Preview rectangle max 260px
+  const maxW = 260;
+  const scale = Math.min(maxW / w, 140 / h);
+  const pw = Math.max(20, Math.round(w * scale));
+  const ph = Math.max(20, Math.round(h * scale));
+  const prev = $('#ratioPreview');
+  prev.style.width = pw + 'px';
+  prev.style.height = ph + 'px';
+  prev.textContent = ratio;
+  if (ph < 30) prev.style.fontSize = '9px';
+  else prev.style.fontSize = '12px';
+
+  // Mark matching preset
+  $$('#presetsRatio .preset-chip').forEach(chip => {
+    chip.classList.toggle('active', chip.dataset.presetRatio === ratio);
+  });
+}
+
+calcRatioBtn.addEventListener('click', computeRatio);
+ratioW.addEventListener('input', () => { if (ratioResult.classList.contains('visible')) computeRatio(); });
+ratioH.addEventListener('input', () => { if (ratioResult.classList.contains('visible')) computeRatio(); });
+
+$$('#presetsRatio .preset-chip').forEach(chip => {
+  chip.addEventListener('click', () => {
+    const [w, h] = chip.dataset.presetRatio.split(':').map(Number);
+    // Scale to a nice size
+    const factor = Math.min(1920 / w, 1080 / h);
+    ratioW.value = w * factor;
+    ratioH.value = h * factor;
+    computeRatio();
+  });
+});
+
+/* ===== COMPUTE MODE ===== */
+const computeRatioEl = $('#computeRatio');
+const computeKnown = $('#computeKnown');
+const computeSide = $('#computeSide');
+const calcComputeBtn = $('#calcComputeBtn');
+const computeResult = $('#computeResult');
+
+function computeDimension() {
+  const ratioStr = computeRatioEl.value.trim();
+  const known = parseFloat(computeKnown.value);
+  const side = computeSide.value;
+
+  const m = ratioStr.match(/^(\d+(?:\.\d+)?)\s*:\s*(\d+(?:\.\d+)?)$/);
+  if (!m) {
+    showToast('Enter ratio in W:H format (e.g. 16:9)', 'error');
+    return;
+  }
+  const rw = parseFloat(m[1]);
+  const rh = parseFloat(m[2]);
+  if (!known || known <= 0) {
+    showToast('Enter a valid known dimension', 'error');
+    return;
+  }
+
+  let w, h;
+  if (side === 'width') {
+    w = known;
+    h = Math.round((known * rh) / rw);
+  } else {
+    h = known;
+    w = Math.round((known * rw) / rh);
+  }
+
+  $('#computeMain').textContent = `${w} × ${h}`;
+  $('#computeDetail').innerHTML = `With a <strong>${rw}:${rh}</strong> ratio and ${side} of <strong>${known}px</strong>, the other dimension is <strong>${side === 'width' ? h : w}px</strong>. Result: <strong>${w} × ${h} px</strong>`;
+  computeResult.classList.add('visible');
+}
+
+calcComputeBtn.addEventListener('click', computeDimension);
+computeRatioEl.addEventListener('input', () => { if (computeResult.classList.contains('visible')) computeDimension(); });
+computeKnown.addEventListener('input', () => { if (computeResult.classList.contains('visible')) computeDimension(); });
+computeSide.addEventListener('change', () => { if (computeResult.classList.contains('visible')) computeDimension(); });
+
+/* ===== SCALE MODE ===== */
+const scaleOW = $('#scaleOW');
+const scaleOH = $('#scaleOH');
+const scaleNW = $('#scaleNW');
+const scaleNH = $('#scaleNH');
+const calcScaleBtn = $('#calcScaleBtn');
+const scaleResult = $('#scaleResult');
+
+function computeScale() {
+  const ow = parseInt(scaleOW.value, 10);
+  const oh = parseInt(scaleOH.value, 10);
+  const nw = parseInt(scaleNW.value, 10);
+
+  if (!ow || !oh || ow <= 0 || oh <= 0) {
+    showToast('Enter valid original dimensions', 'error');
+    return;
+  }
+  if (!nw || nw <= 0) {
+    showToast('Enter a valid new width', 'error');
+    return;
+  }
+
+  const nh = Math.round((nw * oh) / ow);
+  scaleNH.value = nh;
+
+  const g = gcd(ow, oh);
+  const rw = ow / g;
+  const rh = oh / g;
+  const ratio = `${rw}:${rh}`;
+
+  $('#scaleMain').textContent = `${nw} × ${nh}`;
+  $('#scaleDetail').innerHTML = `Original <strong>${ow}×${oh}</strong> (${ratio}) scaled to width <strong>${nw}px</strong> → height <strong>${nh}px</strong>. Scale factor: <strong>${(nw / ow).toFixed(3)}×</strong>`;
+  scaleResult.classList.add('visible');
+}
+
+calcScaleBtn.addEventListener('click', computeScale);
+scaleOW.addEventListener('input', () => { if (scaleResult.classList.contains('visible')) computeScale(); });
+scaleOH.addEventListener('input', () => { if (scaleResult.classList.contains('visible')) computeScale(); });
+scaleNW.addEventListener('input', () => { if (scaleResult.classList.contains('visible')) computeScale(); });
+
+/* ===== COPY BUTTONS ===== */
+$$('.result-copy').forEach(btn => {
+  btn.addEventListener('click', async () => {
+    const type = btn.dataset.copy;
+    let text = '';
+
+    if (type === 'ratio') {
+      text = $('#ratioMain').textContent;
+    } else if (type === 'compute') {
+      text = $('#computeMain').textContent;
+    } else if (type === 'scale') {
+      text = $('#scaleMain').textContent;
+    }
+
+    const ok = await copyToClipboard(text);
+    if (ok) {
+      btn.classList.add('copied');
+      const originalText = btn.innerHTML;
+      btn.innerHTML = '✓ Copied';
+      setTimeout(() => {
+        btn.classList.remove('copied');
+        btn.innerHTML = originalText;
+      }, 2000);
+      showToast('Copied to clipboard!', 'success');
+    } else {
+      showToast('Copy failed', 'error');
+    }
+  });
+});
+
+/* ===== INITIAL CALCULATIONS ===== */
+computeRatio();
+
+/* ===== FAQ ===== */
+$$('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    $$('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+</script>
+
+</body>
+</html>

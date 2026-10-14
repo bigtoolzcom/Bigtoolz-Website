@@ -1,0 +1,1506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2563eb">
+
+<title>Free Invoice Generator - Create PDF Invoices Online | BigToolz</title>
+<meta name="description" content="Create professional PDF invoices online free. Add your business info, client details, line items, tax, discount and logo. Download instantly. No signup required.">
+<meta name="keywords" content="invoice generator, free invoice, pdf invoice, invoice maker, billing invoice, freelance invoice">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://bigtoolz.com/tools/pdf-tools/form-pdf/invoice-generator/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Invoice Generator - Free Online Tool | BigToolz">
+<meta property="og:description" content="Create professional PDF invoices free, no signup, browser-based.">
+<meta property="og:url" content="https://bigtoolz.com/tools/pdf-tools/form-pdf/invoice-generator/">
+<meta property="og:image" content="https://bigtoolz.com/assets/images/og-image.jpg">
+<meta property="og:site_name" content="BigToolz">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Invoice Generator - BigToolz">
+<meta name="twitter:description" content="Create PDF invoices instantly free, no signup.">
+<meta name="twitter:image" content="https://bigtoolz.com/assets/images/twitter-card.jpg">
+
+<link rel="icon" href="/assets/images/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/images/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#f8f9fc;color:#1a1a2e;overflow-x:hidden;line-height:1.5}
+
+  .header{background:#fff;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;position:sticky;top:0;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+  .header-left{display:flex;align-items:center;gap:40px}
+  .logo{display:flex;align-items:center;gap:8px;font-size:22px;font-weight:800;color:#1a1a2e;text-decoration:none}
+  .logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#3b82f6,#2563eb);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px}
+  .logo span{color:#2563eb}
+  .nav{display:flex;align-items:center;gap:28px;list-style:none}
+  .nav a{text-decoration:none;color:#4b5563;font-size:14px;font-weight:500;transition:color .2s}
+  .nav a:hover,.nav a.active{color:#2563eb}
+  .header-right{display:flex;align-items:center;gap:16px}
+  .search-btn,.theme-btn{width:36px;height:36px;border-radius:50%;border:none;background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#4b5563}
+  .search-btn:hover,.theme-btn:hover{background:#f3f4f6}
+  .bookmark-btn{display:flex;align-items:center;gap:8px;background:#2563eb;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
+  .bookmark-btn:hover{background:#1d4ed8}
+
+  .hero{background:linear-gradient(135deg,#0a0e27 0%,#1a1a4e 40%,#2d1b69 70%,#4c1d95 100%);padding:40px 40px 60px;position:relative;overflow:hidden;color:#fff}
+  .hero::before{content:'';position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(59,130,246,.3) 0%,transparent 70%);border-radius:50%}
+  .hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+  .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px;flex-wrap:wrap}
+  .breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none}
+  .breadcrumb a:hover{color:#fff}
+  .breadcrumb .sep{color:rgba(255,255,255,.4)}
+  .breadcrumb .current{color:#fff;font-weight:500}
+  .hero-title-row{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+  .hero-icon{width:60px;height:60px;background:#3b82f6;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;color:#fff;flex-shrink:0;box-shadow:0 8px 24px rgba(59,130,246,.4)}
+  .hero-title{font-size:42px;font-weight:800;line-height:1.15}
+  .hero-title .blue{color:#60a5fa}
+  .hero-desc{font-size:15px;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:24px;max-width:560px}
+  .hero-features{display:flex;gap:24px;flex-wrap:wrap}
+  .hero-feature{display:flex;align-items:center;gap:6px;font-size:13px;color:#fff;font-weight:500}
+  .hero-feature .check{width:18px;height:18px;border-radius:50%;background:#3b82f6;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;flex-shrink:0}
+
+  .main-content{max-width:1200px;margin:0 auto;padding:40px;display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start}
+  .tool-content{min-width:0}
+
+  .workspace{background:#fff;border-radius:16px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,.06);border:1px solid #e5e7eb;margin-bottom:24px}
+
+  .form-section{margin-bottom:28px}
+  .form-section-title{font-size:16px;font-weight:800;color:#1a1a2e;margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid #eff6ff;display:flex;align-items:center;gap:8px}
+  .form-section-title .num{width:26px;height:26px;background:#3b82f6;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0}
+
+  .form-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  .form-grid.cols-3{grid-template-columns:repeat(3,1fr)}
+  .form-grid.cols-4{grid-template-columns:repeat(4,1fr)}
+  .form-group{display:flex;flex-direction:column;gap:6px}
+  .form-group.span-2{grid-column:span 2;}
+  .form-group.span-4{grid-column:span 4;}
+  .form-group label{font-size:12px;font-weight:600;color:#4b5563;text-transform:uppercase;letter-spacing:.3px}
+  .form-group input,.form-group textarea,.form-group select{width:100%;padding:10px 12px;border:1px solid #e5e7eb;border-radius:8px;font-size:13px;font-family:inherit;color:#1a1a2e;background:#fff;outline:none;transition:border-color .2s}
+  .form-group input:focus,.form-group textarea:focus,.form-group select:focus{border-color:#3b82f6;box-shadow:0 0 0 3px rgba(59,130,246,.1)}
+  .form-group textarea{resize:vertical;min-height:80px;line-height:1.6}
+
+  /* Logo upload */
+  .logo-upload{display:flex;align-items:center;gap:14px;padding:14px;background:#eff6ff;border:2px dashed #93c5fd;border-radius:10px;cursor:pointer;transition:all .2s}
+  .logo-upload:hover{border-color:#3b82f6;background:#dbeafe}
+  .logo-upload.has-image{border-style:solid;border-color:#10b981;background:#f0fdf4}
+  .logo-upload input{display:none}
+  .logo-preview{width:56px;height:56px;border-radius:8px;background:#fff;border:1px solid #e5e7eb;display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0}
+  .logo-preview img{max-width:100%;max-height:100%;object-fit:contain}
+  .logo-preview .placeholder{font-size:22px;color:#9ca3af}
+  .logo-upload-text{flex:1}
+  .logo-upload-text strong{font-size:13px;font-weight:700;color:#1a1a2e;display:block;margin-bottom:2px}
+  .logo-upload-text span{font-size:11px;color:#6b7280}
+
+  /* Line items table */
+  .items-table{width:100%;border-collapse:collapse;margin-bottom:14px}
+  .items-table th{background:#eff6ff;color:#1e40af;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.3px;padding:10px 8px;text-align:left;border-radius:8px 8px 0 0}
+  .items-table td{padding:6px 4px;vertical-align:middle}
+  .items-table td input{width:100%;padding:9px 10px;border:1px solid #e5e7eb;border-radius:8px;font-size:13px;font-family:inherit;color:#1a1a2e;background:#fff;outline:none;transition:border-color .2s}
+  .items-table td input:focus{border-color:#3b82f6;box-shadow:0 0 0 3px rgba(59,130,246,.1)}
+  .items-table td.amount-cell{font-weight:700;color:#10b981;font-size:13px;text-align:right;padding-right:8px;font-family:'JetBrains Mono',monospace}
+  .items-table td.actions-cell{width:36px;padding-left:0}
+  .del-btn{width:32px;height:32px;border-radius:8px;border:none;background:#fee2e2;color:#ef4444;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;font-size:14px}
+  .del-btn:hover{background:#fecaca;transform:scale(1.05)}
+
+  .add-row-btn{display:inline-flex;align-items:center;gap:6px;padding:10px 18px;background:#eff6ff;color:#2563eb;border:1px dashed #93c5fd;border-radius:8px;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit;transition:all .2s}
+  .add-row-btn:hover{background:#dbeafe;border-color:#3b82f6}
+
+  /* Totals */
+  .totals-block{background:#eff6ff;border:1px solid #93c5fd;border-radius:12px;padding:20px;margin-top:16px}
+  .totals-row{display:flex;justify-content:space-between;align-items:center;padding:8px 0;font-size:14px;color:#4b5563}
+  .totals-row.grand{padding-top:14px;margin-top:8px;border-top:2px solid #93c5fd;font-size:18px;font-weight:800;color:#1e40af}
+  .totals-row label{font-weight:600}
+  .totals-row input{width:100px;padding:6px 10px;border:1px solid #e5e7eb;border-radius:6px;font-size:13px;font-family:inherit;color:#1a1a2e;background:#fff;outline:none;text-align:right}
+  .totals-row input:focus{border-color:#3b82f6}
+  .totals-row .val{font-weight:700;color:#1a1a2e;font-family:'JetBrains Mono',monospace;min-width:100px;text-align:right}
+  .totals-row.grand .val{color:#1e40af;font-size:20px}
+
+  /* Actions */
+  .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 28px;border-radius:10px;font-size:15px;font-weight:700;font-family:inherit;cursor:pointer;border:none;transition:all .2s;text-decoration:none}
+  .btn-primary{background:#3b82f6;color:#fff;flex:1;box-shadow:0 4px 12px rgba(59,130,246,.2)}
+  .btn-primary:hover:not(:disabled){background:#2563eb;transform:translateY(-2px);box-shadow:0 6px 20px rgba(59,130,246,.3)}
+  .btn-primary:disabled{opacity:.5;cursor:not-allowed;transform:none}
+  .btn-secondary{background:#fff;color:#3b82f6;border:1px solid #e5e7eb}
+  .btn-secondary:hover{border-color:#3b82f6;background:#eff6ff}
+
+  .status-msg{margin-top:14px;padding:12px 14px;border-radius:8px;font-size:13px;font-weight:600;display:none}
+  .status-msg.visible{display:block}
+  .status-msg.success{background:#d1fae5;color:#065f46;border:1px solid #a7f3d0}
+  .status-msg.error{background:#fee2e2;color:#991b1b;border:1px solid #fecaca}
+  .status-msg.info{background:#eff6ff;color:#1e40af;border:1px solid #93c5fd}
+
+  .progress{display:none;margin-top:14px}
+  .progress.visible{display:block}
+  .progress-bar{width:100%;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden;margin-bottom:8px}
+  .progress-fill{height:100%;background:linear-gradient(90deg,#60a5fa,#3b82f6);border-radius:4px;width:0%;transition:width .3s ease}
+  .progress-text{font-size:13px;color:#6b7280;text-align:center;font-weight:500}
+
+  /* SEO */
+  .seo-content{background:#fff;border-radius:16px;padding:32px;border:1px solid #e5e7eb;margin-bottom:24px}
+  .seo-content h2{font-size:22px;font-weight:800;color:#1a1a2e;margin-bottom:14px;margin-top:28px;display:flex;align-items:center;gap:10px}
+  .seo-content h2:first-child{margin-top:0}
+  .seo-content h3{font-size:16px;font-weight:700;color:#1a1a2e;margin:20px 0 10px}
+  .seo-content p{font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:14px}
+  .seo-content ul{list-style:none;padding-left:0;margin-bottom:16px}
+  .seo-content ul li{position:relative;padding-left:24px;font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:8px}
+  .seo-content ul li::before{content:'';position:absolute;left:6px;top:12px;width:6px;height:6px;background:#3b82f6;border-radius:50%}
+  .seo-content a{color:#2563eb;text-decoration:none;font-weight:600}
+  .seo-content a:hover{text-decoration:underline}
+  .seo-content strong{color:#1a1a2e;font-weight:700}
+  .seo-content code{background:#f1f5f9;padding:2px 6px;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:13px;color:#0f172a;border:1px solid #e2e8f0}
+
+  .how-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:20px}
+  .how-step{background:#eff6ff;border-radius:12px;padding:20px;border:1px solid #93c5fd}
+  .how-step-num{width:36px;height:36px;border-radius:50%;background:#3b82f6;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;margin-bottom:12px}
+  .how-step-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+  .how-step-desc{font-size:13px;color:#6b7280;line-height:1.6}
+
+  .faq-item{background:#eff6ff;border:1px solid #93c5fd;border-radius:12px;margin-bottom:10px;overflow:hidden;transition:border-color .2s}
+  .faq-item:hover{border-color:#3b82f6}
+  .faq-question{width:100%;background:none;border:none;padding:18px 22px;font-size:15px;font-weight:700;color:#1a1a2e;text-align:left;cursor:pointer;font-family:inherit;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .faq-question .chev{font-size:12px;color:#3b82f6;transition:transform .2s;flex-shrink:0}
+  .faq-item.open .faq-question .chev{transform:rotate(180deg)}
+  .faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 22px}
+  .faq-item.open .faq-answer{max-height:500px;padding-bottom:18px}
+  .faq-answer p{font-size:14px;color:#6b7280;line-height:1.7;margin:0}
+
+  .sidebar{background:#fff;border-radius:16px;padding:24px;border:1px solid #e5e7eb;position:sticky;top:80px;margin-bottom:24px}
+  .sidebar-header{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:800;color:#1a1a2e;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid #f3f4f6}
+  .sidebar-list{display:flex;flex-direction:column;gap:8px}
+  .sidebar-item{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;cursor:pointer;transition:background .2s;text-decoration:none;color:inherit;border:1px solid #f3f4f6}
+  .sidebar-item:hover{background:#eff6ff;border-color:#93c5fd}
+  .sidebar-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;flex-shrink:0}
+  .sidebar-info{flex:1;min-width:0}
+  .sidebar-title{font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:2px}
+  .sidebar-desc{font-size:11px;color:#9ca3af;line-height:1.4}
+
+  .footer{background:#0a0e27;padding:60px 40px 30px;color:#fff;margin-top:40px}
+  .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:40px}
+  .footer-brand{display:flex;align-items:center;gap:8px;font-size:20px;font-weight:800;margin-bottom:12px}
+  .footer-brand span{color:#60a5fa}
+  .footer-tagline{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px}
+  .footer-social{display:flex;gap:12px}
+  .footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:16px;transition:background .2s}
+  .footer-social a:hover{background:rgba(255,255,255,.2)}
+  .footer-heading{font-size:14px;font-weight:700;margin-bottom:20px;color:#fff}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .footer-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;transition:color .2s}
+  .footer-links a:hover{color:#60a5fa}
+  .footer-bottom{max-width:1200px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  .footer-bottom-left{display:flex;gap:20px;font-size:12px;color:rgba(255,255,255,.5)}
+  .footer-bottom-right,.footer-bottom-links a{font-size:12px;color:rgba(255,255,255,.5);text-decoration:none}
+  .footer-bottom-links{display:flex;gap:20px}
+
+  .toast{position:fixed;bottom:24px;right:24px;background:#1a1a2e;color:#fff;padding:14px 20px;border-radius:10px;font-size:13px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:3000;transform:translateY(200%);transition:transform .3s ease;max-width:320px}
+  .toast.visible{transform:translateY(0)}
+  .toast.success{background:#10b981}
+  .toast.error{background:#ef4444}
+
+  @media(max-width:1024px){
+    .main-content{grid-template-columns:1fr;padding:24px 20px}
+    .sidebar{position:static}
+    .how-steps{grid-template-columns:repeat(2,1fr)}
+    .form-grid.cols-4{grid-template-columns:repeat(2,1fr)}
+  }
+  @media(max-width:768px){
+    .header{padding:0 20px}.nav{display:none}
+    .hero{padding:24px 20px 40px}
+    .hero-title{font-size:28px}
+    .hero-icon{width:48px;height:48px;font-size:22px}
+    .hero-title-row{flex-direction:column;align-items:flex-start;gap:12px}
+    .main-content{padding:20px 16px}
+    .workspace{padding:20px}
+    .how-steps{grid-template-columns:1fr}
+    .seo-content{padding:20px}
+    .footer-inner{grid-template-columns:1fr 1fr}
+    .toast{left:16px;right:16px;bottom:16px;max-width:none}
+    .form-grid{grid-template-columns:1fr}
+    .form-grid.cols-3{grid-template-columns:1fr}
+    .form-grid.cols-4{grid-template-columns:1fr}
+    .form-group.span-2,.form-group.span-4{grid-column:span 1}
+  }
+  @media(max-width:576px){
+    .header{padding:0 16px}.header-right .search-btn,.header-right .theme-btn{display:none}
+    .hero-title{font-size:24px}
+    .actions{flex-direction:column}
+    .btn{width:100%}
+    .btn-primary{flex:none}
+    .footer-inner{grid-template-columns:1fr}
+    .footer-bottom{flex-direction:column;text-align:center}
+    .items-table th{font-size:9px;padding:8px 4px}
+    .items-table td input{padding:7px 6px;font-size:12px}
+  }
+
+  html[data-theme="dark"] body{background:#0f172a;color:#f1f5f9}
+  html[data-theme="dark"] .header,html[data-theme="dark"] .workspace,html[data-theme="dark"] .seo-content,html[data-theme="dark"] .sidebar{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .logo,html[data-theme="dark"] .hero-title,html[data-theme="dark"] .seo-content h2,html[data-theme="dark"] .seo-content h3,html[data-theme="dark"] .faq-question,html[data-theme="dark"] .sidebar-header,html[data-theme="dark"] .sidebar-title,html[data-theme="dark"] .form-section-title,html[data-theme="dark"] .logo-upload-text strong{color:#f1f5f9}
+  html[data-theme="dark"] .nav a{color:#cbd5e1}
+  html[data-theme="dark"] .how-step,html[data-theme="dark"] .faq-item,html[data-theme="dark"] .logo-upload{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .form-group input,html[data-theme="dark"] .form-group textarea,html[data-theme="dark"] .form-group select{background:#0f172a;border-color:#334155;color:#f1f5f9}
+  html[data-theme="dark"] .seo-content p,html[data-theme="dark"] .seo-content ul li,html[data-theme="dark"] .faq-answer p{color:#cbd5e1}
+  html[data-theme="dark"] .seo-content code{background:#020617;color:#60a5fa;border-color:#334155}
+  html[data-theme="dark"] .items-table th{background:#1e3a8a;color:#93c5fd}
+  html[data-theme="dark"] .items-table td input{background:#0f172a;border-color:#334155;color:#f1f5f9}
+  html[data-theme="dark"] .totals-block{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .totals-row input{background:#1e293b;border-color:#334155;color:#f1f5f9}
+  html[data-theme="dark"] .add-row-btn{background:#0f172a;border-color:#334155;color:#60a5fa}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type": "SoftwareApplication", "name": "Invoice Generator", "url": "https://bigtoolz.com/tools/pdf-tools/form-pdf/invoice-generator/", "applicationCategory": "BusinessApplication", "operatingSystem": "Any (Web-based)", "description": "Free online invoice generator create professional PDF invoices with your logo, line items, tax and discount. Works in your browser.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "2876"}},
+    {"@type": "HowTo", "name": "How to Create a PDF Invoice", "step": [
+      {"@type": "HowToStep", "name": "Add Business Info", "text": "Enter your business name, address, email, phone and tax ID."},
+      {"@type": "HowToStep", "name": "Add Client Details", "text": "Fill in the client's name, address, email and phone."},
+      {"@type": "HowToStep", "name": "Add Line Items", "text": "Enter description, quantity and rate for each item totals calculate automatically."},
+      {"@type": "HowToStep", "name": "Download PDF", "text": "Adjust tax, discount, currency, then click Generate Invoice."}
+    ]},
+    {"@type": "FAQPage", "mainEntity": [
+      {"@type": "Question", "name": "Is the invoice generator free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, 100% free with no signup, no watermark, and no limits. Generate as many invoices as you need."}},
+      {"@type": "Question", "name": "Can I add my company logo?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Upload a PNG or JPG logo (transparent background works best). The logo appears in the top-right corner of the invoice."}},
+      {"@type": "Question", "name": "Does it support tax and discount?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Add a percentage-based tax rate and discount rate. The tool calculates subtotal, tax amount, discount amount, and grand total automatically."}},
+      {"@type": "Question", "name": "Which currencies are supported?", "acceptedAnswer": {"@type": "Answer", "text": "INR (Rs.), USD ($), EUR (EUR), GBP (GBP), JPY (Y), and AUD ($). Select from the currency dropdown."}},
+      {"@type": "Question", "name": "Is my invoice data uploaded to a server?", "acceptedAnswer": {"@type": "Answer", "text": "No. Everything happens in your browser. Nothing is uploaded, nothing is stored. Your business data stays on your device."}}
+    ]},
+    {"@type": "BreadcrumbList", "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bigtoolz.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://bigtoolz.com/tools/"},
+      {"@type": "ListItem", "position": 3, "name": "PDF Tools", "item": "https://bigtoolz.com/tools/pdf-tools/"},
+      {"@type": "ListItem", "position": 4, "name": "Form PDF", "item": "https://bigtoolz.com/tools/pdf-tools/form-pdf/"},
+      {"@type": "ListItem", "position": 5, "name": "Invoice Generator", "item": "https://bigtoolz.com/tools/pdf-tools/form-pdf/invoice-generator/"}
+    ]}
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-left">
+    <a href="/" class="logo"><div class="logo-icon">⚒</div>BigToolz</span></a>
+    <nav><ul class="nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/tools/" class="active">All Tools</a></li>
+      <li><a href="/tools/categories">Categories</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul></nav>
+  </div>
+  <div class="header-right">
+    
+    <button class="theme-btn" aria-label="Toggle theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
+    
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <nav class="breadcrumb">
+      <a href="/">Home</a><span class="sep">›</span>
+      <a href="/tools/">Tools</a><span class="sep">›</span>
+      <a href="/tools/pdf-tools/">PDF Tools</a><span class="sep">›</span>
+      <a href="/tools/pdf-tools/form-pdf/">Form PDF</a><span class="sep">›</span>
+      <span class="current">Invoice Generator</span>
+    </nav>
+    <div class="hero-title-row">
+      <div class="hero-icon">🧾</div>
+      <h1 class="hero-title">Invoice <span class="blue">Generator</span></h1>
+    </div>
+    <p class="hero-desc">
+      Create professional PDF invoices in seconds. Add your logo, business info, client details, line items with auto-calculations, tax, discount, and download instantly. No signup, 100% private.
+    </p>
+    <div class="hero-features">
+      <div class="hero-feature"><span class="check">✓</span> Logo Support</div>
+      <div class="hero-feature"><span class="check">✓</span> Auto Calculate</div>
+      <div class="hero-feature"><span class="check">✓</span> Multi-Currency</div>
+      <div class="hero-feature"><span class="check">✓</span> No Signup</div>
+    </div>
+  </div>
+</section>
+
+<div class="main-content">
+
+  <div class="tool-content">
+
+    <div class="workspace">
+
+      <!-- Section 1: Business Info -->
+      <div class="form-section">
+        <div class="form-section-title"><span class="num">1</span> Your Business Info</div>
+
+        <div class="logo-upload" id="logoUpload">
+          <input type="file" id="logoInput" accept="image/*">
+          <div class="logo-preview" id="logoPreview">
+            <span class="placeholder">🏢</span>
+          </div>
+          <div class="logo-upload-text">
+            <strong>Upload Logo (optional)</strong>
+            <span>PNG or JPG, transparent background recommended</span>
+          </div>
+        </div>
+
+        <div class="form-grid" style="margin-top:14px;">
+          <div class="form-group span-2">
+            <label for="businessName">Business Name</label>
+            <input type="text" id="businessName" placeholder="Your Company LLC" value="BigToolz Inc.">
+          </div>
+          <div class="form-group span-2">
+            <label for="businessEmail">Email</label>
+            <input type="email" id="businessEmail" placeholder="billing@yourcompany.com" value="hello@bigtoolz.com">
+          </div>
+          <div class="form-group">
+            <label for="businessPhone">Phone</label>
+            <input type="text" id="businessPhone" placeholder="+91 98765 43210" value="+91 98765 43210">
+          </div>
+          <div class="form-group">
+            <label for="businessTax">Tax ID / GSTIN</label>
+            <input type="text" id="businessTax" placeholder="27AABCU9603R1ZM" value="27AABCU9603R1ZM">
+          </div>
+          <div class="form-group span-2">
+            <label for="businessAddress">Address</label>
+            <textarea id="businessAddress" placeholder="Street, City, State, PIN" style="min-height:70px;">123 Business Street, Suite 400&#10;Mumbai, Maharashtra 400001&#10;India</textarea>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 2: Client Info -->
+      <div class="form-section">
+        <div class="form-section-title"><span class="num">2</span> Bill To (Client)</div>
+        <div class="form-grid">
+          <div class="form-group span-2">
+            <label for="clientName">Client Name</label>
+            <input type="text" id="clientName" placeholder="Client Company / Name" value="Acme Solutions Pvt Ltd">
+          </div>
+          <div class="form-group span-2">
+            <label for="clientEmail">Client Email</label>
+            <input type="email" id="clientEmail" placeholder="client@example.com" value="accounts@acme.com">
+          </div>
+          <div class="form-group">
+            <label for="clientPhone">Phone</label>
+            <input type="text" id="clientPhone" placeholder="+91 ..." value="+91 98989 12345">
+          </div>
+          <div class="form-group">
+            <label for="clientTax">Client GSTIN</label>
+            <input type="text" id="clientTax" placeholder="Client GST" value="27XYZAB1234C1Z5">
+          </div>
+          <div class="form-group span-2">
+            <label for="clientAddress">Client Address</label>
+            <textarea id="clientAddress" placeholder="Street, City, State" style="min-height:70px;">55 Client Avenue&#10;Bangalore, Karnataka 560001&#10;India</textarea>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 3: Invoice Details -->
+      <div class="form-section">
+        <div class="form-section-title"><span class="num">3</span> Invoice Details</div>
+        <div class="form-grid cols-4">
+          <div class="form-group">
+            <label for="invoiceNumber">Invoice #</label>
+            <input type="text" id="invoiceNumber" value="INV-2026-0001">
+          </div>
+          <div class="form-group">
+            <label for="invoiceDate">Issue Date</label>
+            <input type="date" id="invoiceDate">
+          </div>
+          <div class="form-group">
+            <label for="dueDate">Due Date</label>
+            <input type="date" id="dueDate">
+          </div>
+          <div class="form-group">
+            <label for="currency">Currency</label>
+            <select id="currency">
+              <option value="Rs." selected>₹ INR Rs.</option>
+              <option value="$">$ USD</option>
+              <option value="EUR">EUR €</option>
+              <option value="GBP">GBP £</option>
+              <option value="Y">JPY ¥</option>
+              <option value="A$">AUD A$</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 4: Line Items -->
+      <div class="form-section">
+        <div class="form-section-title"><span class="num">4</span> Line Items</div>
+
+        <table class="items-table">
+          <thead>
+            <tr>
+              <th style="width:44%;">Description</th>
+              <th style="width:14%;">Qty</th>
+              <th style="width:20%;">Rate</th>
+              <th style="width:18%;text-align:right;">Amount</th>
+              <th style="width:4%;"></th>
+            </tr>
+          </thead>
+          <tbody id="itemsBody"></tbody>
+        </table>
+
+        <button type="button" class="add-row-btn" id="addRowBtn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
+          Add Line Item
+        </button>
+
+        <!-- Totals -->
+        <div class="totals-block">
+          <div class="totals-row">
+            <label>Subtotal</label>
+            <span class="val" id="subtotalVal">Rs. 0.00</span>
+          </div>
+          <div class="totals-row">
+            <label>Tax %</label>
+            <input type="number" id="taxRate" value="18" min="0" max="100" step="0.01">
+            <span class="val" id="taxVal">Rs. 0.00</span>
+          </div>
+          <div class="totals-row">
+            <label>Discount %</label>
+            <input type="number" id="discountRate" value="0" min="0" max="100" step="0.01">
+            <span class="val" id="discountVal">Rs. 0.00</span>
+          </div>
+          <div class="totals-row grand">
+            <label>Grand Total</label>
+            <span class="val" id="grandTotalVal">Rs. 0.00</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 5: Notes -->
+      <div class="form-section">
+        <div class="form-section-title"><span class="num">5</span> Notes & Terms</div>
+        <div class="form-grid">
+          <div class="form-group span-2">
+            <label for="notes">Notes / Payment Terms</label>
+            <textarea id="notes" placeholder="Thank you for your business!">Thank you for your business!&#10;Payment due within 15 days.&#10;Bank: HDFC | A/C: 1234567890 | IFSC: HDFC0001234</textarea>
+          </div>
+        </div>
+      </div>
+
+      <!-- Actions -->
+      <div class="actions">
+        <button class="btn btn-primary" id="generateBtn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+          Generate Invoice PDF
+        </button>
+        <button class="btn btn-secondary" id="resetBtn">Reset Form</button>
+      </div>
+
+      <div class="status-msg" id="statusMsg"></div>
+
+      <div class="progress" id="progress">
+        <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+        <div class="progress-text" id="progressText">Generating...</div>
+      </div>
+
+    </div>
+
+    <!-- SEO Content -->
+    <div class="seo-content">
+
+      <h2>🧾 What is a PDF Invoice Generator?</h2>
+      <p>
+        A <strong>PDF invoice generator</strong> is a tool that helps you create professional-looking invoices in PDF format without any design software, accounting suite, or subscription. You fill in a form, add your line items, and the tool generates a clean, ready-to-send PDF invoice instantly. Perfect for <strong>freelancers, small businesses, agencies, contractors, and consultants</strong>.
+      </p>
+      <p>
+        BigToolz's <strong>Invoice Generator</strong> runs <strong>100% in your browser</strong> using pdf-lib. Nothing is uploaded, nothing is stored your business and client data stays on your device.
+      </p>
+
+      <h2>🚀 How to Create a PDF Invoice</h2>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-step-num">1</div>
+          <div class="how-step-title">Add Business Info</div>
+          <div class="how-step-desc">Enter your business name, email, phone, tax ID, and address.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">2</div>
+          <div class="how-step-title">Add Client Details</div>
+          <div class="how-step-desc">Fill in the "Bill To" section for your customer.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">3</div>
+          <div class="how-step-title">Add Line Items</div>
+          <div class="how-step-desc">Enter description, quantity, and rate amounts auto-calculate.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">4</div>
+          <div class="how-step-title">Download</div>
+          <div class="how-step-desc">Adjust tax, discount, then click Generate Invoice PDF.</div>
+        </div>
+      </div>
+
+      <h2>📋 What's Included in a Professional Invoice?</h2>
+      <p>A proper invoice should contain these sections all of which this tool supports:</p>
+      <ul>
+        <li><strong>Your business info</strong> name, address, email, phone, tax ID (GSTIN/VAT).</li>
+        <li><strong>Client info</strong> who you're billing, their address and tax details.</li>
+        <li><strong>Invoice number</strong> unique identifier for bookkeeping (e.g., INV-2026-0001).</li>
+        <li><strong>Issue date and due date</strong> when it's issued and when payment is expected.</li>
+        <li><strong>Line items</strong> description, quantity, rate per unit, and computed amount.</li>
+        <li><strong>Subtotal, tax, discount, grand total</strong> clear financial breakdown.</li>
+        <li><strong>Payment terms</strong> bank details, due date, accepted payment methods.</li>
+        <li><strong>Your logo</strong> branding for a polished, professional look.</li>
+      </ul>
+
+      <h2>✨ Key Features</h2>
+      <ul>
+        <li><strong>Auto-calculations</strong> subtotal, tax, discount, and grand total update live.</li>
+        <li><strong>Logo upload</strong> add your brand mark (PNG/JPG).</li>
+        <li><strong>Unlimited line items</strong> add, remove, edit as many rows as you need.</li>
+        <li><strong>Multi-currency</strong> INR, USD, EUR, GBP, JPY, AUD.</li>
+        <li><strong>Tax & discount</strong> percentage-based, applied to subtotal.</li>
+        <li><strong>Professional PDF layout</strong> clean, print-ready A4 design.</li>
+        <li><strong>No signup, no watermark</strong> 100% free forever.</li>
+        <li><strong>100% browser-based</strong> complete privacy.</li>
+      </ul>
+
+      <h2>💡 Tips for Better Invoices</h2>
+      <ul>
+        <li><strong>Use a consistent invoice number format</strong> like INV-YYYY-NNNN for easy tracking.</li>
+        <li><strong>Include payment terms</strong> "Net 15", "Net 30", or specific bank details.</li>
+        <li><strong>Add your tax ID</strong> required for B2B invoices in most countries.</li>
+        <li><strong>Keep line descriptions clear</strong> vague items delay payment.</li>
+        <li><strong>Attach proof</strong> receipts, timesheets, or deliverables with the invoice.</li>
+        <li><strong>Follow up politely</strong> send a reminder 3 days before due date.</li>
+      </ul>
+
+      <h2>❓ Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-question">Is the invoice generator free?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Yes, 100% free with no signup, no watermark, and no limits. Generate as many invoices as you need.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I add my company logo?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Yes. Upload a PNG or JPG logo (transparent background works best). The logo appears in the top-right corner of the invoice PDF.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Does it support tax and discount?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Yes. Add a percentage-based tax rate and discount rate. The tool calculates subtotal, tax amount, discount amount, and grand total automatically.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Which currencies are supported?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>INR (Rs.), USD ($), EUR (EUR), GBP (GBP), JPY (Y), and AUD ($). Select from the currency dropdown.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I save the invoice as PDF and print it?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Yes. The generated PDF is a standard A4 document you can email it, print it, or store it. It works with any PDF reader.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Is my invoice data uploaded to a server?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>No. Everything happens in your browser. Nothing is uploaded, nothing is stored. Your business data stays on your device.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I use this for GST/VAT invoices?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Yes. Add your GSTIN/VAT number in the Tax ID field, set the appropriate tax rate (5%, 12%, 18%, 28% for India), and include your bank details in the notes section.</p></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-header">🔗 Related Form PDF Tools</div>
+    <div class="sidebar-list">
+      <a href="/tools/pdf-tools/form-pdf/resume-generator/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#8b5cf6;">📄</div>
+        <div class="sidebar-info"><div class="sidebar-title">Resume Generator</div><div class="sidebar-desc">Build PDF resumes</div></div>
+      </a>
+      <a href="/tools/pdf-tools/form-pdf/certificate-generator/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#f59e0b;">🏆</div>
+        <div class="sidebar-info"><div class="sidebar-title">Certificate Generator</div><div class="sidebar-desc">Award certificates</div></div>
+      </a>
+      <a href="/tools/pdf-tools/form-pdf/create-form/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#8b5cf6;">📝</div>
+        <div class="sidebar-info"><div class="sidebar-title">Create PDF Form</div><div class="sidebar-desc">Fillable forms</div></div>
+      </a>
+      <a href="/tools/pdf-tools/form-pdf/excel-to-pdf/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#10b981;">📕</div>
+        <div class="sidebar-info"><div class="sidebar-title">Excel to PDF</div><div class="sidebar-desc">Spreadsheet → PDF</div></div>
+      </a>
+      <a href="/tools/pdf-tools/form-pdf/qr-pdf/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#3b82f6;">▦</div>
+        <div class="sidebar-info"><div class="sidebar-title">Add QR to PDF</div><div class="sidebar-desc">QR codes</div></div>
+      </a>
+      <a href="/tools/pdf-tools/form-pdf/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#64748b;">📋</div>
+        <div class="sidebar-info"><div class="sidebar-title">All Form PDF →</div><div class="sidebar-desc">15 tools</div></div>
+      </a>
+    </div>
+  </aside>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand"><div class="logo-icon">⚒</div>BigToolz</span></div>
+      <p class="footer-tagline">Your Ultimate Online Tools Hub</p>
+      <div class="footer-social">
+        <a href="https://facebook.com/bigtoolz" aria-label="Facebook">f</a>
+        <a href="https://twitter.com/bigtoolz" aria-label="Twitter">𝕏</a>
+        <a href="https://youtube.com/@bigtoolz" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+    <div>
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/tools/">All Tools</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Categories</h3>
+      <ul class="footer-links">
+        <li><a href="/tools/image-tools/">Image Tools</a></li>
+        <li><a href="/tools/pdf-tools/">PDF Tools</a></li>
+        <li><a href="/tools/text-tools/">Text Tools</a></li>
+        <li><a href="/tools/seo-tools/">SEO Tools</a></li>
+        <li><a href="/tools/categories">All Categories →</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Legal</h3>
+      <ul class="footer-links">
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left"><span>✓ 100% Free</span><span>✓ No Sign Up</span><span>✓ No Installation</span></div>
+    <div class="footer-bottom-right">© 2026 BigToolz. All rights reserved.</div>
+    <div class="footer-bottom-links"><a href="/privacy-policy">Privacy</a><a href="/terms">Terms</a><a href="/disclaimer">Disclaimer</a></div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+
+<script>
+'use strict';
+
+/* ===== THEME ===== */
+(function(){try{var t=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&d))document.documentElement.setAttribute('data-theme','dark');else if(t==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();
+document.querySelector('.theme-btn')?.addEventListener('click',()=>{const h=document.documentElement;const c=h.getAttribute('data-theme');const d=window.matchMedia('(prefers-color-scheme: dark)').matches;let n=c==='dark'?'light':c==='light'?'dark':(d?'light':'dark');h.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}});
+
+/* ===== HELPERS ===== */
+const $ = (s, p = document) => p.querySelector(s);
+const $$ = (s, p = document) => [...p.querySelectorAll(s)];
+
+/* SAFE NUMBER prevent NaN */
+function safeNumber(value, fallback) {
+  const n = typeof value === 'number' ? value : parseFloat(value);
+  if (typeof n !== 'number' || isNaN(n) || !isFinite(n)) {
+    return typeof fallback === 'number' && !isNaN(fallback) && isFinite(fallback) ? fallback : 0;
+  }
+  return n;
+}
+
+function showToast(msg, type = 'info', duration = 3000) {
+  const t = $('#toast');
+  if (!t) return;
+  t.className = 'toast visible' + (type !== 'info' ? ' ' + type : '');
+  t.textContent = msg;
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove('visible'), duration);
+}
+
+function setStatus(msg, type = 'info') {
+  const el = $('#statusMsg');
+  el.textContent = msg;
+  el.className = 'status-msg visible ' + type;
+}
+function clearStatus() {
+  const el = $('#statusMsg');
+  el.className = 'status-msg';
+  el.textContent = '';
+}
+
+/* ===== WinAnsi sanitizer ===== */
+const WINANSI_MAP = {
+  '\u20B9':'Rs.','\u00A3':'GBP','\u20AC':'EUR','\u00A5':'Y',
+  '\u2013':'-','\u2014':'-','\u2018':"'",'\u2019':"'",
+  '\u201C':'"','\u201D':'"','\u2026':'...','\u00A0':' ',
+  '\u2022':'*','\u00B7':'.','\u2192':'->','\u2190':'<-'
+};
+function sanitize(str) {
+  if (str == null) return '';
+  let s = String(str);
+  let needsWork = false;
+  for (let i = 0; i < s.length; i++) {
+    const c = s.charCodeAt(i);
+    if (c > 0xFF || (c >= 0x80 && c <= 0x9F)) { needsWork = true; break; }
+  }
+  if (!needsWork) return s;
+  s = s.replace(/[\s\S]/g, ch => WINANSI_MAP[ch] !== undefined ? WINANSI_MAP[ch] : ch);
+  try { s = s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').normalize('NFC'); } catch(e){}
+  s = s.replace(/[^\x09\x0A\x0D\x20-\x7E\u00A0-\u00FF]/g,'?');
+  return s;
+}
+
+/* ===== STATE ===== */
+const state = {
+  logoDataUrl: null,
+  logoImg: null,
+  lineItems: []
+};
+
+/* ===== DOM ===== */
+const logoUpload = $('#logoUpload');
+const logoInput = $('#logoInput');
+const logoPreview = $('#logoPreview');
+const businessName = $('#businessName');
+const businessEmail = $('#businessEmail');
+const businessPhone = $('#businessPhone');
+const businessTax = $('#businessTax');
+const businessAddress = $('#businessAddress');
+const clientName = $('#clientName');
+const clientEmail = $('#clientEmail');
+const clientPhone = $('#clientPhone');
+const clientTax = $('#clientTax');
+const clientAddress = $('#clientAddress');
+const invoiceNumber = $('#invoiceNumber');
+const invoiceDate = $('#invoiceDate');
+const dueDate = $('#dueDate');
+const currency = $('#currency');
+const itemsBody = $('#itemsBody');
+const addRowBtn = $('#addRowBtn');
+const taxRate = $('#taxRate');
+const discountRate = $('#discountRate');
+const subtotalVal = $('#subtotalVal');
+const taxVal = $('#taxVal');
+const discountVal = $('#discountVal');
+const grandTotalVal = $('#grandTotalVal');
+const notes = $('#notes');
+const generateBtn = $('#generateBtn');
+const resetBtn = $('#resetBtn');
+const progress = $('#progress');
+const progressFill = $('#progressFill');
+const progressText = $('#progressText');
+
+/* ===== INIT DATES ===== */
+(function initDates() {
+  const today = new Date();
+  const due = new Date();
+  due.setDate(due.getDate() + 15);
+  invoiceDate.value = today.toISOString().slice(0, 10);
+  dueDate.value = due.toISOString().slice(0, 10);
+})();
+
+/* ===== LOGO UPLOAD ===== */
+logoUpload.addEventListener('click', () => logoInput.click());
+
+logoInput.addEventListener('change', (e) => {
+  const f = e.target.files[0];
+  if (!f) return;
+  if (!f.type.startsWith('image/')) { showToast('Please select an image', 'error'); return; }
+
+  const reader = new FileReader();
+  reader.onload = (ev) => {
+    const img = new Image();
+    img.onload = () => {
+      state.logoDataUrl = ev.target.result;
+      state.logoImg = img;
+      logoPreview.innerHTML = '';
+      const imgEl = document.createElement('img');
+      imgEl.src = ev.target.result;
+      imgEl.alt = 'Logo';
+      logoPreview.appendChild(imgEl);
+      logoUpload.classList.add('has-image');
+      showToast('Logo added!', 'success');
+    };
+    img.onerror = () => showToast('Invalid image', 'error');
+    img.src = ev.target.result;
+  };
+  reader.readAsDataURL(f);
+  logoInput.value = '';
+});
+
+/* ===== LINE ITEMS ===== */
+function addLineItem(desc = '', qty = 1, rate = 0) {
+  const id = Date.now() + '-' + Math.random().toString(36).slice(2, 8);
+  const item = { id, description: desc, qty: qty, rate: rate };
+  state.lineItems.push(item);
+  renderLineItems();
+  return item;
+}
+
+function removeLineItem(id) {
+  state.lineItems = state.lineItems.filter(it => it.id !== id);
+  renderLineItems();
+  updateTotals();
+}
+
+function renderLineItems() {
+  itemsBody.innerHTML = '';
+  if (!state.lineItems.length) {
+    const tr = document.createElement('tr');
+    tr.innerHTML = '<td colspan="5" style="padding:20px;text-align:center;color:#9ca3af;font-style:italic;">No items yet. Click "Add Line Item" below.</td>';
+    itemsBody.appendChild(tr);
+    return;
+  }
+
+  state.lineItems.forEach(item => {
+    const tr = document.createElement('tr');
+    tr.dataset.itemId = item.id;
+
+    // Description
+    const tdDesc = document.createElement('td');
+    const descInput = document.createElement('input');
+    descInput.type = 'text';
+    descInput.placeholder = 'Item description';
+    descInput.value = item.description;
+    descInput.addEventListener('input', (e) => {
+      item.description = e.target.value;
+    });
+    tdDesc.appendChild(descInput);
+    tr.appendChild(tdDesc);
+
+    // Qty
+    const tdQty = document.createElement('td');
+    const qtyInput = document.createElement('input');
+    qtyInput.type = 'number';
+    qtyInput.min = '0';
+    qtyInput.step = '0.01';
+    qtyInput.value = item.qty;
+    qtyInput.addEventListener('input', (e) => {
+      item.qty = safeNumber(parseFloat(e.target.value), 0);
+      updateTotals();
+    });
+    tdQty.appendChild(qtyInput);
+    tr.appendChild(tdQty);
+
+    // Rate
+    const tdRate = document.createElement('td');
+    const rateInput = document.createElement('input');
+    rateInput.type = 'number';
+    rateInput.min = '0';
+    rateInput.step = '0.01';
+    rateInput.value = item.rate;
+    rateInput.addEventListener('input', (e) => {
+      item.rate = safeNumber(parseFloat(e.target.value), 0);
+      updateTotals();
+    });
+    tdRate.appendChild(rateInput);
+    tr.appendChild(tdRate);
+
+    // Amount
+    const tdAmount = document.createElement('td');
+    tdAmount.className = 'amount-cell';
+    const amount = safeNumber(item.qty, 0) * safeNumber(item.rate, 0);
+    tdAmount.textContent = currency.value + ' ' + amount.toFixed(2);
+    tr.appendChild(tdAmount);
+
+    // Delete
+    const tdDel = document.createElement('td');
+    tdDel.className = 'actions-cell';
+    const delBtn = document.createElement('button');
+    delBtn.type = 'button';
+    delBtn.className = 'del-btn';
+    delBtn.title = 'Remove item';
+    delBtn.innerHTML = '✕';
+    delBtn.addEventListener('click', () => removeLineItem(item.id));
+    tdDel.appendChild(delBtn);
+    tr.appendChild(tdDel);
+
+    itemsBody.appendChild(tr);
+  });
+}
+
+/* ===== TOTALS ===== */
+function updateTotals() {
+  const subtotal = state.lineItems.reduce((sum, it) => {
+    return sum + safeNumber(it.qty, 0) * safeNumber(it.rate, 0);
+  }, 0);
+
+  const taxPct = safeNumber(parseFloat(taxRate.value), 0);
+  const discPct = safeNumber(parseFloat(discountRate.value), 0);
+
+  const taxAmt = subtotal * (taxPct / 100);
+  const discAmt = subtotal * (discPct / 100);
+  const grand = subtotal + taxAmt - discAmt;
+
+  const cur = currency.value || 'Rs.';
+
+  subtotalVal.textContent = cur + ' ' + subtotal.toFixed(2);
+  taxVal.textContent = cur + ' ' + taxAmt.toFixed(2);
+  discountVal.textContent = cur + ' ' + discAmt.toFixed(2);
+  grandTotalVal.textContent = cur + ' ' + grand.toFixed(2);
+
+  // Update amounts in items table
+  $$('#itemsBody tr[data-item-id]').forEach(tr => {
+    const itemId = tr.dataset.itemId;
+    const item = state.lineItems.find(it => it.id === itemId);
+    if (!item) return;
+    const amtCell = tr.querySelector('.amount-cell');
+    if (amtCell) {
+      const amt = safeNumber(item.qty, 0) * safeNumber(item.rate, 0);
+      amtCell.textContent = cur + ' ' + amt.toFixed(2);
+    }
+  });
+}
+
+taxRate.addEventListener('input', updateTotals);
+discountRate.addEventListener('input', updateTotals);
+currency.addEventListener('change', updateTotals);
+
+addRowBtn.addEventListener('click', () => addLineItem());
+
+/* ===== INIT WITH DEFAULT ITEMS ===== */
+addLineItem('Website Design & Development', 1, 45000);
+addLineItem('Domain & Hosting (1 year)', 1, 3500);
+addLineItem('SEO Setup & Optimization', 1, 8000);
+updateTotals();
+
+/* ===== GENERATE PDF ===== */
+generateBtn.addEventListener('click', generateInvoice);
+
+async function generateInvoice() {
+  clearStatus();
+  setStatus('Generating invoice PDF...', 'info');
+  progress.classList.add('visible');
+  progressFill.style.width = '15%';
+  progressText.textContent = 'Preparing data...';
+
+  try {
+    const { PDFDocument, StandardFonts, rgb } = PDFLib;
+
+    const pdfDoc = await PDFDocument.create();
+    const page = pdfDoc.addPage([595.28, 841.89]); // A4 portrait
+    const font = await pdfDoc.embedFont(StandardFonts.Helvetica);
+    const fontBold = await pdfDoc.embedFont(StandardFonts.HelveticaBold);
+
+    const colors = {
+      black: rgb(0.10, 0.10, 0.12),
+      gray: rgb(0.42, 0.45, 0.50),
+      light: rgb(0.62, 0.65, 0.70),
+      line: rgb(0.87, 0.89, 0.92),
+      accent: rgb(0.15, 0.39, 0.92),
+      accentLight: rgb(0.93, 0.96, 1.0),
+      success: rgb(0.06, 0.72, 0.51),
+      white: rgb(1, 1, 1)
+    };
+
+    const pageW = 595.28;
+    const pageH = 841.89;
+    const margin = 50;
+    let cursor = pageH - margin;
+
+    progressFill.style.width = '30%';
+    progressText.textContent = 'Rendering header...';
+
+    /* ---- Header: "INVOICE" title ---- */
+    const titleSize = 32;
+    pdfPage_drawText(page, 'INVOICE', {
+      x: margin,
+      y: cursor - titleSize,
+      size: titleSize,
+      font: fontBold,
+      color: colors.accent
+    });
+
+    /* ---- Logo (top-right) ---- */
+    if (state.logoImg) {
+      try {
+        let logoImgEmbedded;
+        if (state.logoDataUrl.includes('image/png')) {
+          logoImgEmbedded = await pdfDoc.embedPng(state.logoDataUrl);
+        } else {
+          logoImgEmbedded = await pdfDoc.embedJpg(state.logoDataUrl);
+        }
+
+        const maxLogoW = 120;
+        const maxLogoH = 60;
+        const scale = Math.min(maxLogoW / logoImgEmbedded.width, maxLogoH / logoImgEmbedded.height, 1);
+        const logoW = logoImgEmbedded.width * scale;
+        const logoH = logoImgEmbedded.height * scale;
+
+        page.drawImage(logoImgEmbedded, {
+          x: pageW - margin - logoW,
+          y: cursor - logoH,
+          width: logoW,
+          height: logoH
+        });
+      } catch (e) {
+        console.warn('Logo embed failed:', e);
+      }
+    }
+
+    cursor -= titleSize + 30;
+
+    /* ---- Horizontal divider ---- */
+    page.drawLine({
+      start: { x: margin, y: cursor },
+      end: { x: pageW - margin, y: cursor },
+      thickness: 1,
+      color: colors.line
+    });
+    cursor -= 30;
+
+    /* ---- Two-column: From / Bill To ---- */
+    const colW = (pageW - margin * 2 - 20) / 2;
+    const leftX = margin;
+    const rightX = margin + colW + 20;
+    const sectionY = cursor;
+
+    // Left: FROM
+    pdfPage_drawText(page, 'FROM', {
+      x: leftX,
+      y: sectionY,
+      size: 9,
+      font: fontBold,
+      color: colors.light
+    });
+
+    let leftY = sectionY - 16;
+    const businessNameSafe = sanitize(businessName.value.trim() || 'Your Business');
+    pdfPage_drawText(page, businessNameSafe, {
+      x: leftX,
+      y: leftY,
+      size: 13,
+      font: fontBold,
+      color: colors.black
+    });
+    leftY -= 16;
+
+    const bizEmail = sanitize(businessEmail.value.trim());
+    const bizPhone = sanitize(businessPhone.value.trim());
+    const bizTax = sanitize(businessTax.value.trim());
+    const bizAddr = sanitize(businessAddress.value.trim());
+
+    if (bizEmail) {
+      pdfPage_drawText(page, bizEmail, { x: leftX, y: leftY, size: 10, font, color: colors.gray });
+      leftY -= 13;
+    }
+    if (bizPhone) {
+      pdfPage_drawText(page, bizPhone, { x: leftX, y: leftY, size: 10, font, color: colors.gray });
+      leftY -= 13;
+    }
+    if (bizTax) {
+      pdfPage_drawText(page, 'Tax ID: ' + bizTax, { x: leftX, y: leftY, size: 10, font, color: colors.gray });
+      leftY -= 13;
+    }
+    if (bizAddr) {
+      const addrLines = bizAddr.split('\n');
+      addrLines.forEach(line => {
+        if (line.trim()) {
+          pdfPage_drawText(page, line.trim(), { x: leftX, y: leftY, size: 9, font, color: colors.gray });
+          leftY -= 12;
+        }
+      });
+    }
+
+    // Right: BILL TO
+    pdfPage_drawText(page, 'BILL TO', {
+      x: rightX,
+      y: sectionY,
+      size: 9,
+      font: fontBold,
+      color: colors.light
+    });
+
+    let rightY = sectionY - 16;
+    const clientNameSafe = sanitize(clientName.value.trim() || 'Client Name');
+    pdfPage_drawText(page, clientNameSafe, {
+      x: rightX,
+      y: rightY,
+      size: 13,
+      font: fontBold,
+      color: colors.black
+    });
+    rightY -= 16;
+
+    const clEmail = sanitize(clientEmail.value.trim());
+    const clPhone = sanitize(clientPhone.value.trim());
+    const clTax = sanitize(clientTax.value.trim());
+    const clAddr = sanitize(clientAddress.value.trim());
+
+    if (clEmail) {
+      pdfPage_drawText(page, clEmail, { x: rightX, y: rightY, size: 10, font, color: colors.gray });
+      rightY -= 13;
+    }
+    if (clPhone) {
+      pdfPage_drawText(page, clPhone, { x: rightX, y: rightY, size: 10, font, color: colors.gray });
+      rightY -= 13;
+    }
+    if (clTax) {
+      pdfPage_drawText(page, 'GSTIN: ' + clTax, { x: rightX, y: rightY, size: 10, font, color: colors.gray });
+      rightY -= 13;
+    }
+    if (clAddr) {
+      const addrLines = clAddr.split('\n');
+      addrLines.forEach(line => {
+        if (line.trim()) {
+          pdfPage_drawText(page, line.trim(), { x: rightX, y: rightY, size: 9, font, color: colors.gray });
+          rightY -= 12;
+        }
+      });
+    }
+
+    cursor = Math.min(leftY, rightY) - 30;
+
+    /* ---- Invoice meta (dates + number) ---- */
+    page.drawRectangle({
+      x: margin,
+      y: cursor - 50,
+      width: pageW - margin * 2,
+      height: 50,
+      color: colors.accentLight
+    });
+
+    const metaY = cursor - 20;
+    const invNo = sanitize(invoiceNumber.value.trim() || 'INV-0001');
+    const invDate = sanitize(formatDate(invoiceDate.value));
+    const dueDateFmt = sanitize(formatDate(dueDate.value));
+
+    pdfPage_drawText(page, 'Invoice #', { x: margin + 15, y: metaY + 12, size: 8, font: fontBold, color: colors.light });
+    pdfPage_drawText(page, invNo, { x: margin + 15, y: metaY, size: 12, font: fontBold, color: colors.black });
+
+    const dateX = margin + (pageW - margin * 2) * 0.4;
+    pdfPage_drawText(page, 'Issue Date', { x: dateX, y: metaY + 12, size: 8, font: fontBold, color: colors.light });
+    pdfPage_drawText(page, invDate, { x: dateX, y: metaY, size: 11, font, color: colors.black });
+
+    const dueX = margin + (pageW - margin * 2) * 0.7;
+    pdfPage_drawText(page, 'Due Date', { x: dueX, y: metaY + 12, size: 8, font: fontBold, color: colors.light });
+    pdfPage_drawText(page, dueDateFmt, { x: dueX, y: metaY, size: 11, font, color: colors.black });
+
+    cursor -= 70;
+
+    progressFill.style.width = '55%';
+    progressText.textContent = 'Rendering line items...';
+
+    /* ---- Line items table ---- */
+    const tableW = pageW - margin * 2;
+    const colDescW = tableW * 0.44;
+    const colQtyW = tableW * 0.13;
+    const colRateW = tableW * 0.20;
+    const colAmtW = tableW * 0.23;
+
+    // Header row
+    const headerRowH = 24;
+    page.drawRectangle({
+      x: margin,
+      y: cursor - headerRowH,
+      width: tableW,
+      height: headerRowH,
+      color: colors.accent
+    });
+
+    const headerY = cursor - 16;
+    const cur = currency.value || 'Rs.';
+    pdfPage_drawText(page, 'DESCRIPTION', { x: margin + 10, y: headerY, size: 9, font: fontBold, color: colors.white });
+    pdfPage_drawText(page, 'QTY', { x: margin + colDescW + 10, y: headerY, size: 9, font: fontBold, color: colors.white });
+    pdfPage_drawText(page, 'RATE', { x: margin + colDescW + colQtyW + 10, y: headerY, size: 9, font: fontBold, color: colors.white });
+    pdfPage_drawText(page, 'AMOUNT', { x: margin + colDescW + colQtyW + colRateW + 10, y: headerY, size: 9, font: fontBold, color: colors.white });
+
+    cursor -= headerRowH;
+
+    // Item rows
+    const rowH = 22;
+    let subtotal = 0;
+
+    state.lineItems.forEach((item, idx) => {
+      const desc = sanitize(item.description || '(no description)');
+      const qty = safeNumber(item.qty, 0);
+      const rate = safeNumber(item.rate, 0);
+      const amt = qty * rate;
+      subtotal += amt;
+
+      // Zebra
+      if (idx % 2 === 1) {
+        page.drawRectangle({
+          x: margin,
+          y: cursor - rowH,
+          width: tableW,
+          height: rowH,
+          color: rgb(0.98, 0.98, 0.99)
+        });
+      }
+
+      const textY = cursor - 15;
+
+      // Description (truncate if too long)
+      let descDisplay = desc;
+      const descMaxW = colDescW - 20;
+      if (font.widthOfTextAtSize(descDisplay, 10) > descMaxW) {
+        let len = descDisplay.length;
+        while (len > 0 && font.widthOfTextAtSize(descDisplay.slice(0, len) + '..', 10) > descMaxW) len--;
+        descDisplay = len > 0 ? descDisplay.slice(0, len) + '..' : '';
+      }
+      pdfPage_drawText(page, descDisplay, { x: margin + 10, y: textY, size: 10, font, color: colors.black });
+
+      pdfPage_drawText(page, String(qty), { x: margin + colDescW + 10, y: textY, size: 10, font, color: colors.gray });
+      pdfPage_drawText(page, cur + ' ' + rate.toFixed(2), { x: margin + colDescW + colQtyW + 10, y: textY, size: 10, font, color: colors.gray });
+      pdfPage_drawText(page, cur + ' ' + amt.toFixed(2), { x: margin + colDescW + colQtyW + colRateW + 10, y: textY, size: 10, font: fontBold, color: colors.success });
+
+      // Bottom border
+      page.drawLine({
+        start: { x: margin, y: cursor - rowH },
+        end: { x: margin + tableW, y: cursor - rowH },
+        thickness: 0.3,
+        color: colors.line
+      });
+
+      cursor -= rowH;
+    });
+
+    cursor -= 20;
+
+    /* ---- Totals block ---- */
+    progressFill.style.width = '75%';
+    progressText.textContent = 'Rendering totals...';
+
+    const taxPct = safeNumber(parseFloat(taxRate.value), 0);
+    const discPct = safeNumber(parseFloat(discountRate.value), 0);
+    const taxAmt = subtotal * (taxPct / 100);
+    const discAmt = subtotal * (discPct / 100);
+    const grand = subtotal + taxAmt - discAmt;
+
+    const totalsW = 260;
+    const totalsX = pageW - margin - totalsW;
+
+    // Subtotal
+    pdfPage_drawText(page, 'Subtotal', { x: totalsX, y: cursor - 14, size: 11, font, color: colors.gray });
+    pdfPage_drawText(page, cur + ' ' + subtotal.toFixed(2), {
+      x: pageW - margin - 10 - font.widthOfTextAtSize(cur + ' ' + subtotal.toFixed(2), 11),
+      y: cursor - 14,
+      size: 11,
+      font: fontBold,
+      color: colors.black
+    });
+    cursor -= 20;
+
+    if (taxPct > 0) {
+      const taxLabel = `Tax (${taxPct}%)`;
+      pdfPage_drawText(page, taxLabel, { x: totalsX, y: cursor - 14, size: 11, font, color: colors.gray });
+      pdfPage_drawText(page, cur + ' ' + taxAmt.toFixed(2), {
+        x: pageW - margin - 10 - font.widthOfTextAtSize(cur + ' ' + taxAmt.toFixed(2), 11),
+        y: cursor - 14,
+        size: 11,
+        font: fontBold,
+        color: colors.black
+      });
+      cursor -= 20;
+    }
+
+    if (discPct > 0) {
+      const discLabel = `Discount (${discPct}%)`;
+      pdfPage_drawText(page, discLabel, { x: totalsX, y: cursor - 14, size: 11, font, color: colors.gray });
+      pdfPage_drawText(page, '- ' + cur + ' ' + discAmt.toFixed(2), {
+        x: pageW - margin - 10 - font.widthOfTextAtSize('- ' + cur + ' ' + discAmt.toFixed(2), 11),
+        y: cursor - 14,
+        size: 11,
+        font: fontBold,
+        color: rgb(0.94, 0.27, 0.27)
+      });
+      cursor -= 20;
+    }
+
+    // Grand total highlighted
+    cursor -= 6;
+    page.drawLine({
+      start: { x: totalsX, y: cursor },
+      end: { x: pageW - margin, y: cursor },
+      thickness: 1.5,
+      color: colors.accent
+    });
+    cursor -= 26;
+
+    pdfPage_drawText(page, 'GRAND TOTAL', { x: totalsX, y: cursor, size: 11, font: fontBold, color: colors.accent });
+    const grandText = cur + ' ' + grand.toFixed(2);
+    pdfPage_drawText(page, grandText, {
+      x: pageW - margin - 10 - font.widthOfTextAtSize(grandText, 16),
+      y: cursor - 3,
+      size: 16,
+      font: fontBold,
+      color: colors.accent
+    });
+
+    cursor -= 40;
+
+    /* ---- Notes ---- */
+    const notesText = sanitize(notes.value.trim());
+    if (notesText) {
+      pdfPage_drawText(page, 'NOTES & PAYMENT TERMS', {
+        x: margin,
+        y: cursor,
+        size: 9,
+        font: fontBold,
+        color: colors.light
+      });
+      cursor -= 16;
+
+      const notesLines = notesText.split('\n');
+      notesLines.forEach(line => {
+        if (line.trim() && cursor > margin + 30) {
+          let lineDisplay = line.trim();
+          const maxW = pageW - margin * 2;
+          if (font.widthOfTextAtSize(lineDisplay, 10) > maxW) {
+            let len = lineDisplay.length;
+            while (len > 0 && font.widthOfTextAtSize(lineDisplay.slice(0, len) + '..', 10) > maxW) len--;
+            lineDisplay = len > 0 ? lineDisplay.slice(0, len) + '..' : '';
+          }
+          pdfPage_drawText(page, lineDisplay, { x: margin, y: cursor, size: 10, font, color: colors.gray });
+          cursor -= 14;
+        }
+      });
+    }
+
+    /* ---- Footer ---- */
+    const footerY = margin - 10;
+    page.drawLine({
+      start: { x: margin, y: footerY + 15 },
+      end: { x: pageW - margin, y: footerY + 15 },
+      thickness: 0.5,
+      color: colors.line
+    });
+    const footerText = 'Generated with BigToolz.com Free Invoice Generator';
+    const footerW = font.widthOfTextAtSize(footerText, 8);
+    pdfPage_drawText(page, footerText, {
+      x: (pageW - footerW) / 2,
+      y: footerY,
+      size: 8,
+      font,
+      color: colors.light
+    });
+
+    /* ---- Save & download ---- */
+    progressFill.style.width = '95%';
+    progressText.textContent = 'Finalizing...';
+
+    const pdfBytes = await pdfDoc.save();
+    const blob = new Blob([pdfBytes], { type: 'application/pdf' });
+    const url = URL.createObjectURL(blob);
+
+    const baseName = sanitize((invoiceNumber.value.trim() || 'invoice').replace(/[^a-z0-9\-_]/gi, '-'));
+    const downloadName = baseName + '.pdf';
+
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = downloadName;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    setTimeout(() => URL.revokeObjectURL(url), 2000);
+
+    progressFill.style.width = '100%';
+    const sizeKb = (pdfBytes.length / 1024).toFixed(1);
+    setStatus(`✅ Invoice generated! ${sizeKb} KB ${downloadName}`, 'success');
+    showToast('Invoice downloaded!', 'success');
+  } catch (err) {
+    console.error('Invoice generation error:', err);
+    setStatus('Failed to generate invoice: ' + err.message, 'error');
+    showToast('Failed to generate invoice', 'error');
+  } finally {
+    setTimeout(() => {
+      progress.classList.remove('visible');
+      progressFill.style.width = '0%';
+    }, 1500);
+  }
+}
+
+/* Safe text drawing wrapper */
+function pdfPage_drawText(page, text, opts) {
+  if (text == null) return;
+  const safeText = sanitize(text);
+  if (!safeText) return;
+
+  // Validate numeric opts
+  const size = safeNumber(opts.size, 10);
+  const x = safeNumber(opts.x, 0);
+  const y = safeNumber(opts.y, 0);
+
+  if (isNaN(size) || size <= 0) return;
+
+  try {
+    page.drawText(safeText, {
+      x: x,
+      y: y,
+      size: size,
+      font: opts.font,
+      color: opts.color || undefined
+    });
+  } catch (e) {
+    console.warn('drawText failed:', e, { text: safeText.slice(0, 20), size, x, y });
+  }
+}
+
+function formatDate(iso) {
+  if (!iso) return '';
+  try {
+    const d = new Date(iso);
+    const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    return `${d.getDate()} ${months[d.getMonth()]} ${d.getFullYear()}`;
+  } catch (e) {
+    return iso;
+  }
+}
+
+/* ===== RESET ===== */
+resetBtn.addEventListener('click', () => {
+  if (!confirm('Reset the entire invoice form? All data will be cleared.')) return;
+
+  businessName.value = '';
+  businessEmail.value = '';
+  businessPhone.value = '';
+  businessTax.value = '';
+  businessAddress.value = '';
+  clientName.value = '';
+  clientEmail.value = '';
+  clientPhone.value = '';
+  clientTax.value = '';
+  clientAddress.value = '';
+  invoiceNumber.value = 'INV-' + new Date().getFullYear() + '-0001';
+  notes.value = '';
+
+  state.lineItems = [];
+  state.logoDataUrl = null;
+  state.logoImg = null;
+  logoPreview.innerHTML = '<span class="placeholder">🏢</span>';
+  logoUpload.classList.remove('has-image');
+
+  renderLineItems();
+  addLineItem('', 1, 0);
+  updateTotals();
+
+  clearStatus();
+  showToast('Form reset', 'info');
+});
+
+/* ===== FAQ ===== */
+$$('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    $$('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+</script>
+
+</body>
+</html>

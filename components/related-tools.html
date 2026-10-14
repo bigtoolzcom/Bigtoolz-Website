@@ -1,0 +1,414 @@
+<!-- ===========================================
+     BigToolz - Related Tools Component
+     Version: 1.0.0
+     Purpose: Reusable "Related Tools" widget
+     
+     USAGE:
+     
+     SIDEBAR (tool pages):
+     <aside class="sidebar" data-related-tools 
+            data-tool-id="1" 
+            data-variant="sidebar"></aside>
+     
+     BOTTOM (blog posts, category pages):
+     <section data-related-tools 
+              data-tool-id="1" 
+              data-variant="bottom"></section>
+     
+     REQUIREMENTS:
+     - tools-database.js must be loaded first
+     - Style with .related-tools-* classes below
+     =========================================== -->
+
+<!-- ===========================================
+     STYLES (copy to your CSS or keep inline)
+     =========================================== -->
+<style>
+  /* ========== SIDEBAR VARIANT ========== */
+  .related-tools-sidebar {
+    background: #fff;
+    border-radius: 16px;
+    padding: 24px;
+    border: 1px solid #e5e7eb;
+    position: sticky;
+    top: 80px;
+  }
+
+  .related-tools-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+    font-weight: 800;
+    color: #1a1a2e;
+    margin-bottom: 18px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid #f3f4f6;
+  }
+
+  .related-tools-header svg {
+    color: #2563eb;
+    flex-shrink: 0;
+  }
+
+  .related-tools-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .related-tool-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: inherit;
+    border: 1px solid #f3f4f6;
+    transition: all 0.2s ease;
+  }
+
+  .related-tool-item:hover {
+    background: #f8faff;
+    border-color: #dbeafe;
+    transform: translateX(3px);
+  }
+
+  .related-tool-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: #fff;
+    flex-shrink: 0;
+  }
+
+  .related-tool-info {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .related-tool-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin-bottom: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .related-tool-desc {
+    font-size: 11px;
+    color: #9ca3af;
+    line-height: 1.4;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .related-tool-arrow {
+    color: #d1d5db;
+    font-size: 14px;
+    flex-shrink: 0;
+    transition: all 0.2s ease;
+  }
+
+  .related-tool-item:hover .related-tool-arrow {
+    color: #2563eb;
+    transform: translateX(3px);
+  }
+
+  /* ========== BOTTOM VARIANT ========== */
+  .related-tools-bottom {
+    background: #fff;
+    border-radius: 16px;
+    padding: 32px;
+    border: 1px solid #e5e7eb;
+    margin: 32px 0;
+  }
+
+  .related-tools-bottom .related-tools-header {
+    font-size: 20px;
+    margin-bottom: 24px;
+  }
+
+  .related-tools-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .related-tools-grid .related-tool-item {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    gap: 12px;
+  }
+
+  .related-tools-grid .related-tool-item:hover {
+    transform: translateY(-3px);
+  }
+
+  .related-tools-grid .related-tool-icon {
+    width: 48px;
+    height: 48px;
+    font-size: 22px;
+    margin-bottom: 4px;
+  }
+
+  .related-tools-grid .related-tool-info {
+    width: 100%;
+  }
+
+  .related-tools-grid .related-tool-title {
+    font-size: 14px;
+    white-space: normal;
+    line-height: 1.3;
+    margin-bottom: 4px;
+  }
+
+  .related-tools-grid .related-tool-desc {
+    font-size: 12px;
+    white-space: normal;
+    line-height: 1.5;
+  }
+
+  .related-tools-grid .related-tool-arrow {
+    display: none;
+  }
+
+  /* ========== EMPTY STATE ========== */
+  .related-tools-empty {
+    text-align: center;
+    padding: 20px;
+    color: #9ca3af;
+    font-size: 13px;
+    font-style: italic;
+  }
+
+  /* ========== DARK MODE ========== */
+  [data-theme="dark"] .related-tools-sidebar,
+  [data-theme="dark"] .related-tools-bottom {
+    background: #1e293b;
+    border-color: #334155;
+  }
+
+  [data-theme="dark"] .related-tools-header {
+    color: #f1f5f9;
+    border-color: #334155;
+  }
+
+  [data-theme="dark"] .related-tool-item {
+    background: #0f172a;
+    border-color: #334155;
+  }
+
+  [data-theme="dark"] .related-tool-item:hover {
+    background: #1e293b;
+    border-color: #60a5fa;
+  }
+
+  [data-theme="dark"] .related-tool-title {
+    color: #f1f5f9;
+  }
+
+  [data-theme="dark"] .related-tool-desc {
+    color: #94a3b8;
+  }
+
+  [data-theme="dark"] .related-tool-arrow {
+    color: #475569;
+  }
+
+  [data-theme="dark"] .related-tool-item:hover .related-tool-arrow {
+    color: #60a5fa;
+  }
+
+  /* ========== RESPONSIVE ========== */
+  @media (max-width: 992px) {
+    .related-tools-sidebar {
+      position: static;
+    }
+
+    .related-tools-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 576px) {
+    .related-tools-bottom {
+      padding: 20px;
+    }
+
+    .related-tools-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<!-- ===========================================
+     AUTO-RENDER SCRIPT
+     (Include once, works for all instances)
+     =========================================== -->
+<script>
+(function () {
+  'use strict';
+
+  // Wait for DOM
+  function init() {
+    if (!window.ToolsData) {
+      console.warn('[Related Tools] tools-database.js not loaded');
+      return;
+    }
+
+    const containers = document.querySelectorAll('[data-related-tools]');
+    containers.forEach(renderRelatedTools);
+  }
+
+  function renderRelatedTools(container) {
+    const toolId = parseInt(container.dataset.toolId, 10);
+    const variant = container.dataset.variant || 'sidebar';
+    const limit = parseInt(container.dataset.limit, 10) || (variant === 'bottom' ? 6 : 6);
+
+    if (!toolId) {
+      console.warn('[Related Tools] No data-tool-id set');
+      return;
+    }
+
+    const currentTool = window.ToolsData.getById(toolId);
+    const related = window.ToolsData.getRelated(toolId, limit);
+
+    if (!currentTool) {
+      container.innerHTML = '<div class="related-tools-empty">Tool not found</div>';
+      return;
+    }
+
+    const categoryName = currentTool.categoryName || 'Tools';
+
+    if (!related.length) {
+      container.innerHTML = `
+        <div class="related-tools-${variant}">
+          <div class="related-tools-header">
+            ${getHeaderIcon()}
+            Related ${escapeHtml(categoryName)}
+          </div>
+          <div class="related-tools-empty">No related tools found.</div>
+        </div>
+      `;
+      return;
+    }
+
+    const itemsHtml = related.map(tool => `
+      <a href="${tool.url}" class="related-tool-item">
+        <div class="related-tool-icon" style="background:${tool.color || '#2563eb'};">
+          ${escapeHtml(tool.icon || '🛠')}
+        </div>
+        <div class="related-tool-info">
+          <div class="related-tool-title">${escapeHtml(tool.name)}</div>
+          <div class="related-tool-desc">${escapeHtml(tool.description || '')}</div>
+        </div>
+        <div class="related-tool-arrow">→</div>
+      </a>
+    `).join('');
+
+    const headerHtml = `
+      <div class="related-tools-header">
+        ${getHeaderIcon()}
+        Related ${escapeHtml(categoryName)}
+      </div>
+    `;
+
+    if (variant === 'bottom') {
+      container.innerHTML = `
+        <div class="related-tools-bottom">
+          ${headerHtml}
+          <div class="related-tools-grid">${itemsHtml}</div>
+        </div>
+      `;
+    } else {
+      container.innerHTML = `
+        <div class="related-tools-sidebar">
+          ${headerHtml}
+          <div class="related-tools-list">${itemsHtml}</div>
+        </div>
+      `;
+    }
+  }
+
+  function getHeaderIcon() {
+    return '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 17H7A5 5 0 017 7h2M15 7h2a5 5 0 010 10h-2M8 12h8"/></svg>';
+  }
+
+  function escapeHtml(str) {
+    const d = document.createElement('div');
+    d.textContent = str;
+    return d.innerHTML;
+  }
+
+  // Run when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>
+
+<!-- ===========================================
+     USAGE EXAMPLES
+     =========================================== -->
+
+<!-- EXAMPLE 1: Sidebar variant (tool pages) -->
+<!--
+<aside class="tool-sidebar">
+  <div data-related-tools 
+       data-tool-id="1" 
+       data-variant="sidebar" 
+       data-limit="6"></div>
+</aside>
+-->
+
+<!-- EXAMPLE 2: Bottom variant (blog posts, category pages) -->
+<!--
+<section data-related-tools 
+         data-tool-id="1" 
+         data-variant="bottom" 
+         data-limit="6"></section>
+-->
+
+<!-- EXAMPLE 3: Full-page render (multiple instances) -->
+<!--
+<div data-related-tools data-tool-id="23" data-variant="sidebar"></div>
+<div data-related-tools data-tool-id="23" data-variant="bottom"></div>
+-->
+
+<!-- ===========================================
+     HOW TO INCLUDE IN A TOOL PAGE
+     ===========================================
+     
+     1. In <head> or before </body>:
+        <script src="/data/tools-database.js" defer></script>
+     
+     2. In the page body (where you want the widget):
+        
+        Sidebar:
+        <aside class="sidebar">
+          <div data-related-tools 
+               data-tool-id="1" 
+               data-variant="sidebar"></div>
+        </aside>
+        
+        Bottom:
+        <section data-related-tools 
+                 data-tool-id="1" 
+                 data-variant="bottom"></section>
+     
+     3. Include the styles + script above (once per page).
+     
+     4. Done. The widget auto-populates from tools-database.js.
+     =========================================== -->

@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2563eb">
+
+<title>OTP Generator - Generate Secure One-Time Passwords Online Free | BigToolz</title>
+<meta name="description" content="Free online OTP generator. Create cryptographically secure one-time passwords (4-10 digits) for testing, 2FA, and development. Bulk generate up to 50 OTPs.">
+<meta name="keywords" content="otp generator, one time password, random otp, secure otp, 2fa code generator, otp maker">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://bigtoolz.com/tools/utility-tools/otp-generator/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="OTP Generator - Free Online Tool | BigToolz">
+<meta property="og:description" content="Generate cryptographically secure OTPs instantly free, no signup.">
+<meta property="og:url" content="https://bigtoolz.com/tools/utility-tools/otp-generator/">
+<meta property="og:image" content="https://bigtoolz.com/assets/images/og-image.jpg">
+<meta property="og:site_name" content="BigToolz">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="OTP Generator - BigToolz">
+<meta name="twitter:description" content="Generate secure OTPs instantly free.">
+<meta name="twitter:image" content="https://bigtoolz.com/assets/images/twitter-card.jpg">
+
+<link rel="icon" href="/assets/images/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/images/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#f8f9fc;color:#1a1a2e;overflow-x:hidden;line-height:1.5}
+
+  .header{background:#fff;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;position:sticky;top:0;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+  .header-left{display:flex;align-items:center;gap:40px}
+  .logo{display:flex;align-items:center;gap:8px;font-size:22px;font-weight:800;color:#1a1a2e;text-decoration:none}
+  .logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#3b82f6,#2563eb);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px}
+  .logo span{color:#2563eb}
+  .nav{display:flex;align-items:center;gap:28px;list-style:none}
+  .nav a{text-decoration:none;color:#4b5563;font-size:14px;font-weight:500;transition:color .2s}
+  .nav a:hover,.nav a.active{color:#2563eb}
+  .header-right{display:flex;align-items:center;gap:16px}
+  .search-btn,.theme-btn{width:36px;height:36px;border-radius:50%;border:none;background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#4b5563}
+  .search-btn:hover,.theme-btn:hover{background:#f3f4f6}
+  .bookmark-btn{display:flex;align-items:center;gap:8px;background:#2563eb;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
+  .bookmark-btn:hover{background:#1d4ed8}
+
+  .hero{background:linear-gradient(135deg,#0a0e27 0%,#1a1a4e 40%,#2d1b69 70%,#4c1d95 100%);padding:40px 40px 60px;position:relative;overflow:hidden;color:#fff}
+  .hero::before{content:'';position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(139,92,246,.3) 0%,transparent 70%);border-radius:50%}
+  .hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+  .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px;flex-wrap:wrap}
+  .breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none}
+  .breadcrumb a:hover{color:#fff}
+  .breadcrumb .sep{color:rgba(255,255,255,.4)}
+  .breadcrumb .current{color:#fff;font-weight:500}
+  .hero-title-row{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+  .hero-icon{width:60px;height:60px;background:#8b5cf6;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:28px;color:#fff;flex-shrink:0;box-shadow:0 8px 24px rgba(139,92,246,.4)}
+  .hero-title{font-size:42px;font-weight:800;line-height:1.15}
+  .hero-title .blue{color:#a78bfa}
+  .hero-desc{font-size:15px;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:24px;max-width:560px}
+  .hero-features{display:flex;gap:24px;flex-wrap:wrap}
+  .hero-feature{display:flex;align-items:center;gap:6px;font-size:13px;color:#fff;font-weight:500}
+  .hero-feature .check{width:18px;height:18px;border-radius:50%;background:#8b5cf6;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;flex-shrink:0}
+
+  .main-content{max-width:1200px;margin:0 auto;padding:40px;display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start}
+  .tool-content{min-width:0}
+
+  .workspace{background:#fff;border-radius:16px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,.06);border:1px solid #e5e7eb;margin-bottom:24px}
+
+  /* Big OTP display */
+  .otp-display{background:linear-gradient(135deg,#faf5ff,#ede9fe);border-radius:16px;padding:32px 24px;margin-bottom:24px;text-align:center;border:1px solid #c4b5fd;position:relative;overflow:hidden}
+  .otp-display::before{content:'';position:absolute;top:-40px;right:-40px;width:160px;height:160px;background:rgba(139,92,246,.1);border-radius:50%}
+  .otp-label{font-size:12px;font-weight:700;color:#5b21b6;text-transform:uppercase;letter-spacing:.8px;margin-bottom:12px;position:relative;z-index:2}
+  .otp-code{font-family:'JetBrains Mono','Courier New',monospace;font-size:64px;font-weight:800;color:#4c1d95;letter-spacing:12px;line-height:1.1;position:relative;z-index:2;user-select:all;cursor:pointer;word-break:break-all}
+  .otp-code.small{font-size:44px;letter-spacing:8px}
+  .otp-code.tiny{font-size:32px;letter-spacing:5px}
+  .otp-copy-hint{font-size:12px;color:#7c3aed;margin-top:12px;position:relative;z-index:2;opacity:.8}
+  .otp-actions{display:flex;gap:8px;justify-content:center;margin-top:16px;flex-wrap:wrap;position:relative;z-index:2}
+  .otp-action-btn{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;background:#fff;border:1px solid #c4b5fd;border-radius:8px;font-size:12px;font-weight:700;color:#7c3aed;cursor:pointer;font-family:inherit;transition:all .2s}
+  .otp-action-btn:hover{background:#8b5cf6;color:#fff;border-color:#8b5cf6}
+  .otp-action-btn.copied{background:#10b981;color:#fff;border-color:#10b981}
+
+  /* Options */
+  .options-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-bottom:20px}
+  .option-group label{display:block;font-size:12px;font-weight:700;color:#4b5563;margin-bottom:6px}
+  .option-group select,.option-group input[type="number"]{width:100%;padding:11px 14px;border:2px solid #e5e7eb;border-radius:10px;font-size:14px;font-family:inherit;color:#1a1a2e;background:#fff;outline:none;transition:border-color .2s}
+  .option-group select{cursor:pointer;padding-right:36px;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='3'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center}
+  .option-group select:focus,.option-group input:focus{border-color:#8b5cf6;box-shadow:0 0 0 3px rgba(139,92,246,.1)}
+
+  /* Toggles */
+  .toggles{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:20px}
+  .toggle-row{display:flex;align-items:center;justify-content:space-between;padding:12px 14px;background:#faf5ff;border:1px solid #ede9fe;border-radius:10px;gap:12px}
+  .toggle-info{display:flex;flex-direction:column;gap:2px;min-width:0}
+  .toggle-title{font-size:12px;font-weight:700;color:#1a1a2e}
+  .toggle-desc{font-size:10px;color:#6b7280;line-height:1.4}
+  .toggle-switch{position:relative;width:42px;height:22px;background:#d1d5db;border-radius:11px;cursor:pointer;transition:background .2s;flex-shrink:0}
+  .toggle-switch::after{content:'';position:absolute;top:2px;left:2px;width:18px;height:18px;background:#fff;border-radius:50%;transition:transform .2s;box-shadow:0 1px 3px rgba(0,0,0,.15)}
+  .toggle-switch.on{background:#8b5cf6}
+  .toggle-switch.on::after{transform:translateX(20px)}
+
+  /* Actions */
+  .actions{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:24px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 28px;border-radius:10px;font-size:15px;font-weight:700;font-family:inherit;cursor:pointer;border:none;transition:all .2s;text-decoration:none}
+  .btn-primary{background:#8b5cf6;color:#fff;flex:1;box-shadow:0 4px 12px rgba(139,92,246,.2)}
+  .btn-primary:hover:not(:disabled){background:#7c3aed;transform:translateY(-2px);box-shadow:0 6px 20px rgba(139,92,246,.3)}
+  .btn-primary:disabled{opacity:.5;cursor:not-allowed;transform:none}
+  .btn-secondary{background:#fff;color:#8b5cf6;border:1px solid #e5e7eb}
+  .btn-secondary:hover{border-color:#8b5cf6;background:#faf5ff}
+  .btn.copied{background:#10b981;color:#fff;border-color:#10b981}
+
+  /* Bulk results */
+  .bulk-section{margin-top:20px;display:none}
+  .bulk-section.visible{display:block}
+  .bulk-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;gap:12px;flex-wrap:wrap}
+  .bulk-title{font-size:14px;font-weight:800;color:#1a1a2e;display:flex;align-items:center;gap:8px}
+  .bulk-list{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;max-height:400px;overflow-y:auto;padding-right:6px}
+  .bulk-item{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:#faf5ff;border:1px solid #ede9fe;border-radius:8px;gap:8px}
+  .bulk-code{font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:800;color:#4c1d95;letter-spacing:1px;word-break:break-all}
+  .bulk-copy-btn{background:#fff;border:1px solid #c4b5fd;border-radius:6px;padding:5px 10px;font-size:11px;font-weight:700;color:#7c3aed;cursor:pointer;font-family:inherit;flex-shrink:0;transition:all .2s}
+  .bulk-copy-btn:hover{background:#8b5cf6;color:#fff;border-color:#8b5cf6}
+  .bulk-copy-btn.copied{background:#10b981;color:#fff;border-color:#10b981}
+
+  /* History */
+  .history-section{margin-top:24px}
+  .history-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:12px;display:flex;justify-content:space-between;align-items:center;gap:8px}
+  .history-clear{background:none;border:none;font-size:11px;color:#8b5cf6;cursor:pointer;font-family:inherit;font-weight:600;text-decoration:underline}
+  .history-list{display:flex;flex-direction:column;gap:6px}
+  .history-item{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:#f8fafc;border:1px solid #e5e7eb;border-radius:8px;gap:8px;font-size:13px}
+  .history-code{font-family:'JetBrains Mono',monospace;font-weight:800;color:#4c1d95;letter-spacing:1px;word-break:break-all;flex:1}
+  .history-time{font-size:11px;color:#9ca3af;font-weight:600;flex-shrink:0}
+
+  /* SEO */
+  .seo-content{background:#fff;border-radius:16px;padding:32px;border:1px solid #e5e7eb;margin-bottom:24px}
+  .seo-content h2{font-size:22px;font-weight:800;color:#1a1a2e;margin-bottom:14px;margin-top:28px;display:flex;align-items:center;gap:10px}
+  .seo-content h2:first-child{margin-top:0}
+  .seo-content h3{font-size:16px;font-weight:700;color:#1a1a2e;margin:20px 0 10px}
+  .seo-content p{font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:14px}
+  .seo-content ul{list-style:none;padding-left:0;margin-bottom:16px}
+  .seo-content ul li{position:relative;padding-left:24px;font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:8px}
+  .seo-content ul li::before{content:'';position:absolute;left:6px;top:12px;width:6px;height:6px;background:#8b5cf6;border-radius:50%}
+  .seo-content a{color:#2563eb;text-decoration:none;font-weight:600}
+  .seo-content a:hover{text-decoration:underline}
+  .seo-content strong{color:#1a1a2e;font-weight:700}
+  .seo-content code{background:#f1f5f9;padding:2px 6px;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:13px;color:#0f172a;border:1px solid #e2e8f0}
+
+  .how-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:20px}
+  .how-step{background:#faf5ff;border-radius:12px;padding:20px;border:1px solid #ede9fe}
+  .how-step-num{width:36px;height:36px;border-radius:50%;background:#8b5cf6;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;margin-bottom:12px}
+  .how-step-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+  .how-step-desc{font-size:13px;color:#6b7280;line-height:1.6}
+
+  .faq-item{background:#faf5ff;border:1px solid #ede9fe;border-radius:12px;margin-bottom:10px;overflow:hidden;transition:border-color .2s}
+  .faq-item:hover{border-color:#8b5cf6}
+  .faq-question{width:100%;background:none;border:none;padding:18px 22px;font-size:15px;font-weight:700;color:#1a1a2e;text-align:left;cursor:pointer;font-family:inherit;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .faq-question .chev{font-size:12px;color:#8b5cf6;transition:transform .2s;flex-shrink:0}
+  .faq-item.open .faq-question .chev{transform:rotate(180deg)}
+  .faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 22px}
+  .faq-item.open .faq-answer{max-height:500px;padding-bottom:18px}
+  .faq-answer p{font-size:14px;color:#6b7280;line-height:1.7;margin:0}
+
+  .sidebar{background:#fff;border-radius:16px;padding:24px;border:1px solid #e5e7eb;position:sticky;top:80px;margin-bottom:24px}
+  .sidebar-header{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:800;color:#1a1a2e;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid #f3f4f6}
+  .sidebar-list{display:flex;flex-direction:column;gap:8px}
+  .sidebar-item{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;cursor:pointer;transition:background .2s;text-decoration:none;color:inherit;border:1px solid #f3f4f6}
+  .sidebar-item:hover{background:#faf5ff;border-color:#ede9fe}
+  .sidebar-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;flex-shrink:0}
+  .sidebar-info{flex:1;min-width:0}
+  .sidebar-title{font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:2px}
+  .sidebar-desc{font-size:11px;color:#9ca3af;line-height:1.4}
+
+  .footer{background:#0a0e27;padding:60px 40px 30px;color:#fff;margin-top:40px}
+  .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:40px}
+  .footer-brand{display:flex;align-items:center;gap:8px;font-size:20px;font-weight:800;margin-bottom:12px}
+  .footer-brand span{color:#60a5fa}
+  .footer-tagline{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px}
+  .footer-social{display:flex;gap:12px}
+  .footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:16px;transition:background .2s}
+  .footer-social a:hover{background:rgba(255,255,255,.2)}
+  .footer-heading{font-size:14px;font-weight:700;margin-bottom:20px;color:#fff}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .footer-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;transition:color .2s}
+  .footer-links a:hover{color:#60a5fa}
+  .footer-bottom{max-width:1200px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  .footer-bottom-left{display:flex;gap:20px;font-size:12px;color:rgba(255,255,255,.5)}
+  .footer-bottom-right,.footer-bottom-links a{font-size:12px;color:rgba(255,255,255,.5);text-decoration:none}
+  .footer-bottom-links{display:flex;gap:20px}
+
+  .toast{position:fixed;bottom:24px;right:24px;background:#1a1a2e;color:#fff;padding:14px 20px;border-radius:10px;font-size:13px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:3000;transform:translateY(200%);transition:transform .3s ease;max-width:320px}
+  .toast.visible{transform:translateY(0)}
+  .toast.success{background:#10b981}
+  .toast.error{background:#ef4444}
+
+  @media(max-width:1024px){
+    .main-content{grid-template-columns:1fr;padding:24px 20px}
+    .sidebar{position:static}
+    .how-steps{grid-template-columns:repeat(2,1fr)}
+    .options-grid{grid-template-columns:1fr}
+    .toggles{grid-template-columns:1fr}
+    .bulk-list{grid-template-columns:1fr}
+  }
+  @media(max-width:768px){
+    .header{padding:0 20px}.nav{display:none}
+    .hero{padding:24px 20px 40px}
+    .hero-title{font-size:28px}
+    .hero-icon{width:48px;height:48px;font-size:22px}
+    .hero-title-row{flex-direction:column;align-items:flex-start;gap:12px}
+    .main-content{padding:20px 16px}
+    .workspace{padding:20px}
+    .how-steps{grid-template-columns:1fr}
+    .seo-content{padding:20px}
+    .footer-inner{grid-template-columns:1fr 1fr}
+    .toast{left:16px;right:16px;bottom:16px;max-width:none}
+    .otp-code{font-size:44px;letter-spacing:8px}
+    .otp-code.small{font-size:32px;letter-spacing:5px}
+    .otp-code.tiny{font-size:24px;letter-spacing:3px}
+  }
+  @media(max-width:576px){
+    .header{padding:0 16px}.header-right .search-btn,.header-right .theme-btn{display:none}
+    .hero-title{font-size:24px}
+    .footer-inner{grid-template-columns:1fr}
+    .footer-bottom{flex-direction:column;text-align:center}
+    .actions{flex-direction:column}
+    .btn{width:100%}
+    .btn-primary{flex:none}
+    .otp-code{font-size:36px;letter-spacing:6px}
+  }
+
+  html[data-theme="dark"] body{background:#0f172a;color:#f1f5f9}
+  html[data-theme="dark"] .header,html[data-theme="dark"] .workspace,html[data-theme="dark"] .seo-content,html[data-theme="dark"] .sidebar{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .logo,html[data-theme="dark"] .hero-title,html[data-theme="dark"] .seo-content h2,html[data-theme="dark"] .seo-content h3,html[data-theme="dark"] .faq-question,html[data-theme="dark"] .sidebar-header,html[data-theme="dark"] .sidebar-title,html[data-theme="dark"] .bulk-title,html[data-theme="dark"] .toggle-title{color:#f1f5f9}
+  html[data-theme="dark"] .nav a{color:#cbd5e1}
+  html[data-theme="dark"] .how-step,html[data-theme="dark"] .faq-item,html[data-theme="dark"] .bulk-item,html[data-theme="dark"] .toggle-row,html[data-theme="dark"] .history-item{background:#0f172a;border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .option-group select,html[data-theme="dark"] .option-group input{background:#0f172a;border-color:#334155;color:#f1f5f9}
+  html[data-theme="dark"] .otp-display{background:linear-gradient(135deg,#1e293b,#0f172a);border-color:#334155}
+  html[data-theme="dark"] .otp-label{color:#a78bfa}
+  html[data-theme="dark"] .otp-code{color:#e9d5ff}
+  html[data-theme="dark"] .otp-copy-hint{color:#a78bfa}
+  html[data-theme="dark"] .otp-action-btn,html[data-theme="dark"] .bulk-copy-btn{background:#0f172a;border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .bulk-code,html[data-theme="dark"] .history-code{color:#e9d5ff}
+  html[data-theme="dark"] .seo-content p,html[data-theme="dark"] .seo-content ul li,html[data-theme="dark"] .faq-answer p{color:#cbd5e1}
+  html[data-theme="dark"] .seo-content code{background:#0f172a;color:#94a3b8;border-color:#334155}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type": "SoftwareApplication", "name": "OTP Generator", "url": "https://bigtoolz.com/tools/utility-tools/otp-generator/", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any (Web-based)", "description": "Free cryptographically secure OTP generator. Create 4-10 digit numeric, alphanumeric, or alphabetic one-time passwords. Bulk generate up to 50 codes.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "1876"}},
+    {"@type": "HowTo", "name": "How to Generate a Secure OTP", "step": [
+      {"@type": "HowToStep", "name": "Choose Length", "text": "Select OTP length from 4 to 10 digits."},
+      {"@type": "HowToStep", "name": "Pick Type", "text": "Numeric, Alphanumeric, or Alphabetic."},
+      {"@type": "HowToStep", "name": "Customize", "text": "Exclude similar chars, enable auto-copy."},
+      {"@type": "HowToStep", "name": "Generate", "text": "Click Generate code appears and copies instantly."}
+    ]},
+    {"@type": "FAQPage", "mainEntity": [
+      {"@type": "Question", "name": "How does this OTP generator work?", "acceptedAnswer": {"@type": "Answer", "text": "Our tool uses the Web Crypto API (crypto.getRandomValues) a cryptographically secure random number generator built into your browser. This is the same randomness source used for SSL/TLS certificates and secure password storage."}},
+      {"@type": "Question", "name": "What is the ideal OTP length?", "acceptedAnswer": {"@type": "Answer", "text": "6 digits is the global standard for SMS-based OTPs (used by Google, banks, WhatsApp). For higher security, 8 digits. For lower friction (internal apps), 4 digits. Never use fewer than 4."}},
+      {"@type": "Question", "name": "Are the OTPs cryptographically secure?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We use crypto.getRandomValues() a CSPRNG (Cryptographically Secure Pseudo-Random Number Generator) that draws entropy from your OS. It's not Math.random() it can't be predicted or reverse-engineered."}},
+      {"@type": "Question", "name": "Can I use these OTPs for real 2FA?", "acceptedAnswer": {"@type": "Answer", "text": "No this tool generates standalone codes, not TOTP/HOTP 2FA codes tied to a secret key. For real 2FA, use Google Authenticator, Authy, or a TOTP library that shares a secret with the server. Use our tool for testing, development, and demo purposes."}},
+      {"@type": "Question", "name": "What's the difference between numeric and alphanumeric OTP?", "acceptedAnswer": {"@type": "Answer", "text": "Numeric OTPs (6-8 digits) are easier to type on mobile keypads and are standard for SMS OTPs. Alphanumeric (letters + digits) provides more entropy per character but is harder to type. Use alphanumeric for links, coupons, or when the OTP isn't typed by hand."}}
+    ]},
+    {"@type": "BreadcrumbList", "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bigtoolz.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://bigtoolz.com/tools/"},
+      {"@type": "ListItem", "position": 3, "name": "Utility Tools", "item": "https://bigtoolz.com/tools/utility-tools/"},
+      {"@type": "ListItem", "position": 4, "name": "OTP Generator", "item": "https://bigtoolz.com/tools/utility-tools/otp-generator/"}
+    ]}
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-left">
+    <a href="/" class="logo"><div class="logo-icon">⚒</div>BigToolz</span></a>
+    <nav><ul class="nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/tools/" class="active">All Tools</a></li>
+      <li><a href="/tools/categories">Categories</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul></nav>
+  </div>
+  <div class="header-right">
+    
+    <button class="theme-btn" aria-label="Toggle theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
+   
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <nav class="breadcrumb">
+      <a href="/">Home</a><span class="sep">›</span>
+      <a href="/tools/">Tools</a><span class="sep">›</span>
+      <a href="/tools/utility-tools/">Utility Tools</a><span class="sep">›</span>
+      <span class="current">OTP Generator</span>
+    </nav>
+    <div class="hero-title-row">
+      <div class="hero-icon">🔢</div>
+      <h1 class="hero-title">OTP <span class="blue">Generator</span></h1>
+    </div>
+    <p class="hero-desc">
+      Generate cryptographically secure one-time passwords instantly. 4-10 digits, numeric/alphanumeric options, bulk generation up to 50 codes. Powered by Web Crypto API.
+    </p>
+    <div class="hero-features">
+      <div class="hero-feature"><span class="check">✓</span> Crypto-Secure</div>
+      <div class="hero-feature"><span class="check">✓</span> Bulk Generate</div>
+      <div class="hero-feature"><span class="check">✓</span> Auto-Copy</div>
+      <div class="hero-feature"><span class="check">✓</span> History</div>
+    </div>
+  </div>
+</section>
+
+<div class="main-content">
+
+  <div class="tool-content">
+
+    <div class="workspace">
+
+      <!-- Big OTP Display -->
+      <div class="otp-display">
+        <div class="otp-label" id="otpLabel">Your OTP</div>
+        <div class="otp-code" id="otpCode" onclick="copyOtp()">------</div>
+        <div class="otp-copy-hint">👆 Click the code to copy</div>
+        <div class="otp-actions">
+          <button class="otp-action-btn" onclick="copyOtp()">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+            Copy
+          </button>
+          <button class="otp-action-btn" onclick="regenerate()">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M23 4v6h-6M1 20v-6h6M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></svg>
+            Regenerate
+          </button>
+        </div>
+      </div>
+
+      <!-- Options -->
+      <div class="options-grid">
+        <div class="option-group">
+          <label>OTP Length</label>
+          <select id="otpLength">
+            <option value="4">4 digits</option>
+            <option value="5">5 digits</option>
+            <option value="6" selected>6 digits (recommended)</option>
+            <option value="7">7 digits</option>
+            <option value="8">8 digits</option>
+            <option value="10">10 digits</option>
+          </select>
+        </div>
+
+        <div class="option-group">
+          <label>OTP Type</label>
+          <select id="otpType">
+            <option value="numeric" selected>Numeric (0-9)</option>
+            <option value="alphanumeric">Alphanumeric (A-Z, 0-9)</option>
+            <option value="alpha">Alphabetic (A-Z only)</option>
+          </select>
+        </div>
+
+        <div class="option-group">
+          <label>Bulk Count</label>
+          <select id="bulkCount">
+            <option value="1" selected>1 code</option>
+            <option value="5">5 codes</option>
+            <option value="10">10 codes</option>
+            <option value="25">25 codes</option>
+            <option value="50">50 codes</option>
+          </select>
+        </div>
+
+        <div class="option-group">
+          <label>Case (for alphanumeric/alpha)</label>
+          <select id="otpCase">
+            <option value="upper" selected>UPPERCASE</option>
+            <option value="lower">lowercase</option>
+            <option value="mixed">Mixed</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Toggles -->
+      <div class="toggles">
+        <div class="toggle-row">
+          <div class="toggle-info">
+            <div class="toggle-title">Exclude Similar Characters</div>
+            <div class="toggle-desc">Remove 0/O, 1/I/l, etc. from alphanumeric</div>
+          </div>
+          <div class="toggle-switch on" id="excludeToggle" role="switch" aria-checked="true"></div>
+        </div>
+        <div class="toggle-row">
+          <div class="toggle-info">
+            <div class="toggle-title">Auto-Copy on Generate</div>
+            <div class="toggle-desc">Copy OTP to clipboard automatically</div>
+          </div>
+          <div class="toggle-switch on" id="autoCopyToggle" role="switch" aria-checked="true"></div>
+        </div>
+      </div>
+
+      <!-- Actions -->
+      <div class="actions">
+        <button class="btn btn-primary" id="generateBtn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M23 4v6h-6M1 20v-6h6M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></svg>
+          Generate OTP
+        </button>
+        <button class="btn btn-secondary" id="copyAllBtn" disabled>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+          Copy All
+        </button>
+        <button class="btn btn-secondary" id="downloadBtn" disabled>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+          Download .txt
+        </button>
+      </div>
+
+      <!-- Bulk Results -->
+      <div class="bulk-section" id="bulkSection">
+        <div class="bulk-header">
+          <div class="bulk-title">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2.5"><path d="M9 11l3 3L22 4M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+            Generated OTPs (<span id="bulkCountDisplay">0</span>)
+          </div>
+        </div>
+        <div class="bulk-list" id="bulkList"></div>
+      </div>
+
+      <!-- History -->
+      <div class="history-section" id="historySection" style="display:none;">
+        <div class="history-title">
+          <span>📋 Recent OTPs</span>
+          <button class="history-clear" id="historyClear">Clear All</button>
+        </div>
+        <div class="history-list" id="historyList"></div>
+      </div>
+
+    </div>
+
+    <!-- SEO Content -->
+    <div class="seo-content">
+
+      <h2>🔢 What is an OTP Generator?</h2>
+      <p>
+        An <strong>OTP (One-Time Password) Generator</strong> creates random, single-use codes used for authentication and verification. OTPs are the backbone of modern two-factor authentication (2FA), password resets, transaction verification, and phone number confirmation. Our tool generates these codes using the browser's built-in <strong>Web Crypto API</strong> the same cryptographically secure random source used by banks, browsers, and SSL/TLS.
+      </p>
+      <p>
+        Whether you're a <strong>developer testing a login flow</strong>, a <strong>QA engineer validating OTP entry</strong>, a <strong>security researcher analyzing randomness</strong>, or just need a quick demo code our tool delivers real, unpredictable OTPs instantly.
+      </p>
+
+      <h2>🚀 How to Generate a Secure OTP</h2>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-step-num">1</div>
+          <div class="how-step-title">Choose Length</div>
+          <div class="how-step-desc">4-10 digits. 6 is standard; 8 for higher security.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">2</div>
+          <div class="how-step-title">Pick Type</div>
+          <div class="how-step-desc">Numeric, alphanumeric, or alphabetic.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">3</div>
+          <div class="how-step-title">Customize</div>
+          <div class="how-step-desc">Exclude similar chars, enable auto-copy.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">4</div>
+          <div class="how-step-title">Generate</div>
+          <div class="how-step-desc">Code appears and copies to clipboard instantly.</div>
+        </div>
+      </div>
+
+      <h2>🔐 Why Web Crypto API Matters</h2>
+      <p>
+        Many "random generators" online use <code>Math.random()</code> which is <strong>not</strong> cryptographically secure. It's predictable and can be reverse-engineered. For OTPs and passwords, that's a critical vulnerability.
+      </p>
+      <p>
+        Our generator uses <code>crypto.getRandomValues()</code> a <strong>CSPRNG (Cryptographically Secure Pseudo-Random Number Generator)</strong>. It draws entropy from your operating system's randomness pool (the same source used for SSL certificates, encryption keys, and OS-level security). This means:
+      </p>
+      <ul>
+        <li><strong>Unpredictable</strong> no algorithm can guess the next OTP.</li>
+        <li><strong>Uniform distribution</strong> every digit has equal probability.</li>
+        <li><strong>No seeding</strong> can't be reproduced by an attacker.</li>
+        <li><strong>Industry standard</strong> used by banks, browsers, and secure apps.</li>
+      </ul>
+
+      <h2>📏 Ideal OTP Length</h2>
+      <ul>
+        <li><strong>4 digits</strong> 10,000 combinations. Suitable for low-risk internal apps. Not recommended for anything user-facing.</li>
+        <li><strong>5 digits</strong> 100,000 combinations. Rare in practice.</li>
+        <li><strong>6 digits</strong> 1,000,000 combinations. <strong>The global standard</strong> for SMS OTPs (Google, WhatsApp, banks). Best balance of security and usability.</li>
+        <li><strong>7 digits</strong> 10 million combinations. Used by some banks in specific regions.</li>
+        <li><strong>8 digits</strong> 100 million combinations. Strong security, used by Google Authenticator and enterprise apps.</li>
+        <li><strong>10 digits</strong> billion combinations. Used for high-security transactional OTPs and hardware tokens.</li>
+      </ul>
+
+      <h2>💡 Common OTP Use Cases</h2>
+
+      <h3>🧪 Developer Testing</h3>
+      <p>Testing login flows, signup verification, password resets, and API auth. Our bulk mode gives you dozens of test codes in seconds.</p>
+
+      <h3>🔐 Two-Factor Authentication (TOTP)</h3>
+      <p>Note: Real TOTP codes are time-based (30-second windows) and share a secret between client and server. Our tool generates <strong>standalone</strong> random codes great for demos, not for real 2FA.</p>
+
+      <h3>📱 App Demos</h3>
+      <p>Showing a client how an OTP verification flow works? Generate realistic 6-digit codes instantly.</p>
+
+      <h3>🎓 Education & Training</h3>
+      <p>Teaching OTP security concepts in a classroom or workshop? Our tool provides real CSPRNG examples.</p>
+
+      <h3>🎮 Giveaways & Contests</h3>
+      <p>Generate unique random codes for a raffle, giveaway, or promo event. Bulk mode handles dozens of codes at once.</p>
+
+      <h2>✨ Key Features</h2>
+      <ul>
+        <li><strong>Crypto-secure</strong> Web Crypto API, not Math.random().</li>
+        <li><strong>Adjustable length</strong> 4 to 10 characters.</li>
+        <li><strong>3 types</strong> numeric, alphanumeric, alphabetic.</li>
+        <li><strong>Exclude similar chars</strong> remove 0/O, 1/I/l for readability.</li>
+        <li><strong>Bulk generation</strong> up to 50 codes at once.</li>
+        <li><strong>Auto-copy</strong> OTP copied to clipboard on generation.</li>
+        <li><strong>History</strong> last 20 codes saved locally.</li>
+        <li><strong>100% private</strong> no server, no tracking.</li>
+      </ul>
+
+      <h2>❓ Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-question">How does this OTP generator work?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Our tool uses the <strong>Web Crypto API</strong> (<code>crypto.getRandomValues</code>) a cryptographically secure random number generator built into your browser. This is the same randomness source used for SSL/TLS certificates and secure password storage.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What is the ideal OTP length?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>6 digits</strong> is the global standard for SMS-based OTPs (used by Google, banks, WhatsApp). For higher security, 8 digits. For lower friction (internal apps), 4 digits. Never use fewer than 4.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Are the OTPs cryptographically secure?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>Yes.</strong> We use <code>crypto.getRandomValues()</code> a CSPRNG that draws entropy from your OS. It's not <code>Math.random()</code> it can't be predicted or reverse-engineered.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I use these OTPs for real 2FA?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>No</strong> this tool generates standalone codes, not TOTP/HOTP 2FA codes tied to a secret key. For real 2FA, use Google Authenticator, Authy, or a TOTP library that shares a secret with the server. Use our tool for testing, development, and demo purposes.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What's the difference between numeric and alphanumeric OTP?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>Numeric OTPs</strong> (6-8 digits) are easier to type on mobile keypads and are standard for SMS OTPs. <strong>Alphanumeric</strong> (letters + digits) provides more entropy per character but is harder to type. Use alphanumeric for links, coupons, or when the OTP isn't typed by hand.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What does "Exclude Similar Characters" do?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>It removes characters that look confusingly similar: <strong>0</strong> (zero) vs <strong>O</strong> (letter), <strong>1</strong> (one) vs <strong>I</strong> (letter) vs <strong>l</strong> (lowercase L), <strong>5</strong> vs <strong>S</strong>, <strong>2</strong> vs <strong>Z</strong>, <strong>8</strong> vs <strong>B</strong>. This is important for alphanumeric OTPs typed by users no confusion when entering them.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Are these OTPs uploaded to a server?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>No.</strong> All OTP generation happens locally in your browser using JavaScript. Nothing is sent anywhere. Your history is stored only in your device's localStorage.</p></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-header">🔗 Related Utility Tools</div>
+    <div class="sidebar-list">
+      <a href="/tools/utility-tools/password-generator/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#8b5cf6;">🔒</div>
+        <div class="sidebar-info"><div class="sidebar-title">Password Generator</div><div class="sidebar-desc">Secure passwords</div></div>
+      </a>
+      <a href="/tools/utility-tools/password-strength/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#10b981;">🛡</div>
+        <div class="sidebar-info"><div class="sidebar-title">Password Strength</div><div class="sidebar-desc">Check strength</div></div>
+      </a>
+      <a href="/tools/utility-tools/pin-generator/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#3b82f6;">#️⃣</div>
+        <div class="sidebar-info"><div class="sidebar-title">PIN Generator</div><div class="sidebar-desc">Random PINs</div></div>
+      </a>
+      <a href="/tools/utility-tools/lottery-number/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#ef4444;">🎰</div>
+        <div class="sidebar-info"><div class="sidebar-title">Lottery Numbers</div><div class="sidebar-desc">Lucky numbers</div></div>
+      </a>
+      <a href="/tools/utility-tools/name-picker/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#f59e0b;">🎯</div>
+        <div class="sidebar-info"><div class="sidebar-title">Name Picker</div><div class="sidebar-desc">Random picker</div></div>
+      </a>
+      <a href="/tools/utility-tools/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#64748b;">⚙️</div>
+        <div class="sidebar-info"><div class="sidebar-title">All Utility Tools →</div><div class="sidebar-desc">Browse 50+ tools</div></div>
+      </a>
+    </div>
+  </aside>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand"><div class="logo-icon">⚒</div>BigToolz</span></div>
+      <p class="footer-tagline">Your Ultimate Online Tools Hub</p>
+      <div class="footer-social">
+        <a href="https://facebook.com/bigtoolz" aria-label="Facebook">f</a>
+        <a href="https://twitter.com/bigtoolz" aria-label="Twitter">𝕏</a>
+        <a href="https://youtube.com/@bigtoolz" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+    <div>
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/tools/">All Tools</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Categories</h3>
+      <ul class="footer-links">
+        <li><a href="/tools/image-tools/">Image Tools</a></li>
+        <li><a href="/tools/pdf-tools/">PDF Tools</a></li>
+        <li><a href="/tools/text-tools/">Text Tools</a></li>
+        <li><a href="/tools/utility-tools/">Utility Tools</a></li>
+        <li><a href="/tools/categories">All Categories →</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Legal</h3>
+      <ul class="footer-links">
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left"><span>✓ 100% Free</span><span>✓ No Sign Up</span><span>✓ No Installation</span></div>
+    <div class="footer-bottom-right">© 2026 BigToolz. All rights reserved.</div>
+    <div class="footer-bottom-links"><a href="/privacy-policy">Privacy</a><a href="/terms">Terms</a><a href="/disclaimer">Disclaimer</a></div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+'use strict';
+
+/* ===== THEME ===== */
+(function(){try{var t=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&d))document.documentElement.setAttribute('data-theme','dark');else if(t==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();
+document.querySelector('.theme-btn')?.addEventListener('click',()=>{const h=document.documentElement;const c=h.getAttribute('data-theme');const d=window.matchMedia('(prefers-color-scheme: dark)').matches;let n=c==='dark'?'light':c==='light'?'dark':(d?'light':'dark');h.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}});
+
+/* ===== HELPERS ===== */
+const $ = (s, p = document) => p.querySelector(s);
+const $$ = (s, p = document) => [...p.querySelectorAll(s)];
+
+function showToast(msg, type = 'info', duration = 3000) {
+  const t = $('#toast');
+  if (!t) return;
+  t.className = 'toast visible' + (type !== 'info' ? ' ' + type : '');
+  t.textContent = msg;
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove('visible'), duration);
+}
+
+async function copyToClipboard(text) {
+  try {
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(text);
+      return true;
+    }
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.cssText = 'position:fixed;opacity:0;';
+    document.body.appendChild(ta);
+    ta.select();
+    const ok = document.execCommand('copy');
+    document.body.removeChild(ta);
+    return ok;
+  } catch (e) { return false; }
+}
+
+/* ===== SECURE RANDOM ===== */
+function secureRandomInt(max) {
+  // Reject sampling for unbiased uniform distribution
+  const limit = Math.floor(0xFFFFFFFF / max) * max;
+  const arr = new Uint32Array(1);
+  let x;
+  do {
+    crypto.getRandomValues(arr);
+    x = arr[0];
+  } while (x >= limit);
+  return x % max;
+}
+
+/* ===== OTP CHARSETS ===== */
+const CHARSETS = {
+  numeric: '0123456789',
+  alphanumeric: 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789',
+  alpha: 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
+};
+
+const SIMILAR_CHARS = /[0O1Il5S2Z8B]/g;
+
+function getCharset(type, excludeSimilar, caseMode) {
+  let charset = CHARSETS[type] || CHARSETS.numeric;
+
+  if (type === 'alphanumeric' || type === 'alpha') {
+    if (caseMode === 'upper') {
+      charset = charset.replace(/[a-z]/g, '');
+    } else if (caseMode === 'lower') {
+      charset = charset.replace(/[A-Z]/g, '');
+    }
+    if (excludeSimilar) {
+      charset = charset.replace(SIMILAR_CHARS, '');
+    }
+  }
+
+  if (charset.length === 0) charset = '0123456789'; // fallback
+  return charset;
+}
+
+/* ===== GENERATE OTP ===== */
+function generateOne(length, type, excludeSimilar, caseMode) {
+  const charset = getCharset(type, excludeSimilar, caseMode);
+  let otp = '';
+  for (let i = 0; i < length; i++) {
+    otp += charset[secureRandomInt(charset.length)];
+  }
+  return otp;
+}
+
+/* ===== STATE ===== */
+const state = {
+  current: '',
+  bulk: [],
+  history: [],
+  autoCopy: true,
+  excludeSimilar: true
+};
+
+/* ===== DOM ===== */
+const otpCode = $('#otpCode');
+const otpLabel = $('#otpLabel');
+const otpLength = $('#otpLength');
+const otpType = $('#otpType');
+const otpCase = $('#otpCase');
+const bulkCount = $('#bulkCount');
+const excludeToggle = $('#excludeToggle');
+const autoCopyToggle = $('#autoCopyToggle');
+const generateBtn = $('#generateBtn');
+const copyAllBtn = $('#copyAllBtn');
+const downloadBtn = $('#downloadBtn');
+const bulkSection = $('#bulkSection');
+const bulkList = $('#bulkList');
+const bulkCountDisplay = $('#bulkCountDisplay');
+const historySection = $('#historySection');
+const historyList = $('#historyList');
+const historyClear = $('#historyClear');
+
+/* ===== TOGGLES ===== */
+excludeToggle.addEventListener('click', () => {
+  state.excludeSimilar = !state.excludeSimilar;
+  excludeToggle.classList.toggle('on', state.excludeSimilar);
+  excludeToggle.setAttribute('aria-checked', state.excludeSimilar);
+});
+
+autoCopyToggle.addEventListener('click', () => {
+  state.autoCopy = !state.autoCopy;
+  autoCopyToggle.classList.toggle('on', state.autoCopy);
+  autoCopyToggle.setAttribute('aria-checked', state.autoCopy);
+});
+
+/* ===== UPDATE CODE FONT SIZE ===== */
+function adjustCodeSize(code) {
+  otpCode.classList.remove('small', 'tiny');
+  if (code.length >= 9) otpCode.classList.add('tiny');
+  else if (code.length >= 7) otpCode.classList.add('small');
+}
+
+/* ===== GENERATE MAIN ===== */
+function generateMain() {
+  const length = parseInt(otpLength.value, 10);
+  const type = otpType.value;
+  const caseMode = otpCase.value;
+
+  const otp = generateOne(length, type, state.excludeSimilar, caseMode);
+
+  state.current = otp;
+  otpCode.textContent = otp;
+  otpLabel.textContent = `${type.charAt(0).toUpperCase() + type.slice(1)} OTP · ${length} chars`;
+  adjustCodeSize(otp);
+
+  if (state.autoCopy) {
+    copyToClipboard(otp).then(ok => {
+      if (ok) showToast('OTP copied to clipboard!', 'success', 1500);
+    });
+  }
+
+  addToHistory(otp);
+}
+
+/* ===== GENERATE BULK ===== */
+function generateBulk() {
+  const count = parseInt(bulkCount.value, 10);
+  const length = parseInt(otpLength.value, 10);
+  const type = otpType.value;
+  const caseMode = otpCase.value;
+
+  if (count <= 1) {
+    bulkSection.classList.remove('visible');
+    state.bulk = [];
+    copyAllBtn.disabled = true;
+    downloadBtn.disabled = true;
+    generateMain();
+    return;
+  }
+
+  state.bulk = [];
+  for (let i = 0; i < count; i++) {
+    state.bulk.push(generateOne(length, type, state.excludeSimilar, caseMode));
+  }
+
+  state.current = state.bulk[0];
+  otpCode.textContent = state.bulk[0];
+  otpLabel.textContent = `Bulk: ${count} codes · ${length} chars each`;
+  adjustCodeSize(state.bulk[0]);
+
+  renderBulk();
+  bulkSection.classList.add('visible');
+  copyAllBtn.disabled = false;
+  downloadBtn.disabled = false;
+
+  addToHistory(state.bulk[0]);
+  showToast(`${count} OTPs generated!`, 'success');
+}
+
+/* ===== RENDER BULK ===== */
+function renderBulk() {
+  bulkCountDisplay.textContent = state.bulk.length;
+  bulkList.innerHTML = '';
+  state.bulk.forEach((otp, i) => {
+    const item = document.createElement('div');
+    item.className = 'bulk-item';
+    item.innerHTML = `
+      <span class="bulk-code">${i + 1}. ${otp}</span>
+      <button class="bulk-copy-btn" data-copy="${otp}">Copy</button>
+    `;
+    bulkList.appendChild(item);
+  });
+
+  $$('[data-copy]').forEach(btn => {
+    btn.addEventListener('click', async () => {
+      const text = btn.dataset.copy;
+      const ok = await copyToClipboard(text);
+      if (ok) {
+        btn.classList.add('copied');
+        btn.textContent = '✓';
+        setTimeout(() => {
+          btn.classList.remove('copied');
+          btn.textContent = 'Copy';
+        }, 1500);
+      }
+    });
+  });
+}
+
+/* ===== GLOBAL COPY ===== */
+async function copyOtp() {
+  if (!state.current) return;
+  const ok = await copyToClipboard(state.current);
+  if (ok) {
+    showToast('OTP copied!', 'success', 1500);
+  }
+}
+
+/* ===== REGENERATE ===== */
+function regenerate() {
+  const count = parseInt(bulkCount.value, 10);
+  if (count > 1) generateBulk();
+  else generateMain();
+}
+window.regenerate = regenerate;
+window.copyOtp = copyOtp;
+
+/* ===== GENERATE BTN ===== */
+generateBtn.addEventListener('click', () => {
+  const count = parseInt(bulkCount.value, 10);
+  if (count > 1) generateBulk();
+  else generateMain();
+});
+
+/* ===== COPY ALL ===== */
+copyAllBtn.addEventListener('click', async () => {
+  if (state.bulk.length === 0) return;
+  const text = state.bulk.join('\n');
+  const ok = await copyToClipboard(text);
+  if (ok) {
+    copyAllBtn.classList.add('copied');
+    const orig = copyAllBtn.innerHTML;
+    copyAllBtn.innerHTML = '✓ All Copied!';
+    setTimeout(() => {
+      copyAllBtn.classList.remove('copied');
+      copyAllBtn.innerHTML = orig;
+    }, 2000);
+    showToast(`Copied ${state.bulk.length} OTPs!`, 'success');
+  }
+});
+
+/* ===== DOWNLOAD ===== */
+downloadBtn.addEventListener('click', () => {
+  const codes = state.bulk.length > 0 ? state.bulk : [state.current];
+  if (!codes.length || !codes[0]) return;
+  const text = codes.join('\n');
+  const blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'bigtoolz-otp-codes.txt';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+  showToast('Downloaded!', 'success');
+});
+
+/* ===== HISTORY ===== */
+function addToHistory(code) {
+  if (!code) return;
+  const time = new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+  state.history.unshift({ code, time });
+  if (state.history.length > 20) state.history = state.history.slice(0, 20);
+  saveHistory();
+  renderHistory();
+}
+
+function saveHistory() {
+  try {
+    localStorage.setItem('bigtoolz_otp_history', JSON.stringify(state.history));
+  } catch (e) {}
+}
+
+function loadHistory() {
+  try {
+    state.history = JSON.parse(localStorage.getItem('bigtoolz_otp_history') || '[]');
+  } catch (e) { state.history = []; }
+  renderHistory();
+}
+
+function renderHistory() {
+  if (state.history.length === 0) {
+    historySection.style.display = 'none';
+    return;
+  }
+  historySection.style.display = 'block';
+  historyList.innerHTML = '';
+  state.history.forEach(({ code, time }) => {
+    const item = document.createElement('div');
+    item.className = 'history-item';
+    item.innerHTML = `
+      <span class="history-code">${code}</span>
+      <span class="history-time">${time}</span>
+    `;
+    item.addEventListener('click', async () => {
+      const ok = await copyToClipboard(code);
+      if (ok) showToast(`Copied ${code}`, 'success', 1500);
+    });
+    item.style.cursor = 'pointer';
+    historyList.appendChild(item);
+  });
+}
+
+historyClear.addEventListener('click', () => {
+  state.history = [];
+  saveHistory();
+  renderHistory();
+  showToast('History cleared');
+});
+
+/* ===== KEYBOARD SHORTCUT ===== */
+document.addEventListener('keydown', (e) => {
+  if (e.target.matches('input, textarea, select')) return;
+  if (e.key.toLowerCase() === 'g' && !e.ctrlKey && !e.metaKey) {
+    e.preventDefault();
+    generateBtn.click();
+  }
+  if (e.key.toLowerCase() === 'c' && !e.ctrlKey && !e.metaKey) {
+    e.preventDefault();
+    copyOtp();
+  }
+});
+
+/* ===== FAQ ===== */
+$$('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    $$('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+
+/* ===== INIT ===== */
+loadHistory();
+generateMain();
+</script>
+
+</body>
+</html>

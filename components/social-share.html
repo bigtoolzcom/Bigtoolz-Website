@@ -1,0 +1,784 @@
+<!-- ===========================================
+     BigToolz - Social Share Component
+     Version: 1.0.0
+     Purpose: Reusable social sharing widget
+     
+     USAGE:
+     
+     Inline (blog posts):
+     <div data-social-share data-share-variant="inline"></div>
+     
+     Floating (sticky sidebar):
+     <div data-social-share data-share-variant="floating"></div>
+     
+     Modal (tool pages):
+     <button data-share-trigger>Share</button>
+     <div data-social-share data-share-variant="modal"></div>
+     
+     Custom URL/title:
+     <div data-social-share 
+          data-share-url="https://bigtoolz.com/tools/..."
+          data-share-title="Custom Title"
+          data-share-desc="Custom description"></div>
+     =========================================== -->
+
+<!-- ===========================================
+     STYLES
+     =========================================== -->
+<style>
+  /* ========== INLINE VARIANT ========== */
+  .share-inline {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 20px 0;
+    border-top: 1px solid #e5e7eb;
+    border-bottom: 1px solid #e5e7eb;
+    margin: 32px 0;
+    flex-wrap: wrap;
+  }
+
+  .share-inline .share-label {
+    font-size: 13px;
+    font-weight: 700;
+    color: #1a1a2e;
+  }
+
+  .share-inline .share-buttons {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  /* ========== FLOATING VARIANT ========== */
+  .share-floating {
+    position: fixed;
+    top: 50%;
+    left: 24px;
+    transform: translateY(-50%);
+    z-index: 500;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background: #fff;
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    border: 1px solid #e5e7eb;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  .share-floating.visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(-50%) translateX(0);
+  }
+
+  /* ========== SHARE BUTTONS ========== */
+  .share-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #fff;
+    font-size: 16px;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+    font-family: inherit;
+    text-decoration: none;
+    position: relative;
+  }
+
+  .share-btn svg {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+  }
+
+  .share-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  .share-btn:active {
+    transform: translateY(0);
+  }
+
+  /* Brand colors */
+  .share-btn.facebook { background: #1877f2; }
+  .share-btn.twitter { background: #000000; }
+  .share-btn.linkedin { background: #0077b5; }
+  .share-btn.whatsapp { background: #25d366; }
+  .share-btn.telegram { background: #0088cc; }
+  .share-btn.reddit { background: #ff4500; }
+  .share-btn.pinterest { background: #e60023; }
+  .share-btn.email { background: #6b7280; }
+  .share-btn.copy { background: #2563eb; }
+
+  /* Inline text label button */
+  .share-btn.with-label {
+    width: auto;
+    height: auto;
+    padding: 10px 16px;
+    border-radius: 10px;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    flex-direction: row;
+  }
+
+  .share-btn.with-label span {
+    color: #fff;
+  }
+
+  .share-btn.copy.copied {
+    background: #10b981;
+  }
+
+  /* ========== MODAL VARIANT ========== */
+  .share-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(10, 14, 39, 0.7);
+    backdrop-filter: blur(8px);
+    z-index: 2000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .share-modal.open {
+    display: flex;
+    animation: shareOverlayIn 0.2s ease;
+  }
+
+  @keyframes shareOverlayIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  .share-modal-panel {
+    background: #fff;
+    border-radius: 20px;
+    padding: 28px;
+    width: 100%;
+    max-width: 480px;
+    max-height: 90vh;
+    overflow-y: auto;
+    animation: sharePanelIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    position: relative;
+  }
+
+  @keyframes sharePanelIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9) translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+
+  .share-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .share-modal-title {
+    font-size: 18px;
+    font-weight: 800;
+    color: #1a1a2e;
+  }
+
+  .share-modal-close {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: none;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #6b7280;
+    font-size: 18px;
+    transition: all 0.2s ease;
+  }
+
+  .share-modal-close:hover {
+    background: #f3f4f6;
+    color: #1a1a2e;
+  }
+
+  /* Link box */
+  .share-link-box {
+    display: flex;
+    gap: 8px;
+    background: #f8fafc;
+    padding: 6px;
+    border-radius: 10px;
+    border: 1px solid #e5e7eb;
+    margin-bottom: 20px;
+  }
+
+  .share-link-box input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 10px 12px;
+    font-size: 13px;
+    font-family: 'JetBrains Mono', monospace;
+    color: #4b5563;
+    min-width: 0;
+  }
+
+  .share-link-box .share-btn {
+    width: auto;
+    height: auto;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  /* Modal grid */
+  .share-modal-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+  }
+
+  .share-modal-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 8px;
+    background: #f8fafc;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    cursor: pointer;
+    font-family: inherit;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.2s ease;
+  }
+
+  .share-modal-item:hover {
+    border-color: #2563eb;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.1);
+  }
+
+  .share-modal-item .share-btn {
+    pointer-events: none;
+  }
+
+  .share-modal-item-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: #4b5563;
+    text-align: center;
+  }
+
+  /* Toast */
+  .share-toast {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%) translateY(100px);
+    background: #10b981;
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 700;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    z-index: 3000;
+    transition: transform 0.3s ease;
+    pointer-events: none;
+  }
+
+  .share-toast.visible {
+    transform: translateX(-50%) translateY(0);
+  }
+
+  /* ========== DARK MODE ========== */
+  [data-theme="dark"] .share-floating {
+    background: #1e293b;
+    border-color: #334155;
+  }
+
+  [data-theme="dark"] .share-modal-panel {
+    background: #1e293b;
+  }
+
+  [data-theme="dark"] .share-modal-title {
+    color: #f1f5f9;
+  }
+
+  [data-theme="dark"] .share-link-box {
+    background: #0f172a;
+    border-color: #334155;
+  }
+
+  [data-theme="dark"] .share-link-box input {
+    color: #cbd5e1;
+  }
+
+  [data-theme="dark"] .share-modal-item {
+    background: #0f172a;
+    border-color: #334155;
+  }
+
+  [data-theme="dark"] .share-modal-item-label {
+    color: #cbd5e1;
+  }
+
+  [data-theme="dark"] .share-inline {
+    border-color: #334155;
+  }
+
+  [data-theme="dark"] .share-inline .share-label {
+    color: #f1f5f9;
+  }
+
+  /* ========== RESPONSIVE ========== */
+  @media (max-width: 992px) {
+    .share-floating {
+      display: none;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .share-inline {
+      gap: 8px;
+    }
+
+    .share-modal-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .share-modal-panel {
+      padding: 20px;
+    }
+  }
+</style>
+
+<!-- ===========================================
+     RENDER SCRIPT
+     =========================================== -->
+<script>
+(function () {
+  'use strict';
+
+  /* ===== CONFIG ===== */
+  const CONFIG = {
+    siteUrl: 'https://bigtoolz.com',
+    via: 'bigtoolz',
+    hashtags: ['BigToolz', 'FreeTools'],
+    modalId: 'share-modal-global'
+  };
+
+  /* ===== ICONS ===== */
+  const ICONS = {
+    facebook: '<svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>',
+    twitter: '<svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>',
+    linkedin: '<svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>',
+    whatsapp: '<svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>',
+    telegram: '<svg viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>',
+    reddit: '<svg viewBox="0 0 24 24"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.688-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg>',
+    pinterest: '<svg viewBox="0 0 24 24"><path d="M12 0a12 12 0 0 0-4.373 23.178c-.07-.978-.135-2.478.028-3.545.145-.95.941-6.037.941-6.037s-.24-.48-.24-1.191c0-1.116.646-1.948 1.451-1.948.685 0 1.016.514 1.016 1.129 0 .689-.439 1.718-.665 2.674-.19.797.4 1.447 1.185 1.447 1.422 0 2.516-1.5 2.516-3.665 0-1.915-1.376-3.253-3.342-3.253-2.276 0-3.612 1.706-3.612 3.468 0 .687.265 1.424.595 1.823.065.079.075.148.055.229-.061.252-.196.797-.223.908-.035.145-.115.176-.265.106-1.011-.469-1.64-1.94-1.64-3.125 0-2.545 1.85-4.884 5.331-4.884 2.798 0 4.973 1.995 4.973 4.66 0 2.781-1.754 5.021-4.187 5.021-.817 0-1.585-.424-1.848-.925 0 0-.404 1.543-.503 1.921-.182.702-.675 1.582-1.006 2.118A12 12 0 1 0 12 0z"/></svg>',
+    email: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg>',
+    copy: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>',
+    close: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>',
+    link: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>'
+  };
+
+  /* ===== SHARE URL BUILDERS ===== */
+  const SHARE_URLS = {
+    facebook: (d) => `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(d.url)}`,
+    twitter: (d) => {
+      const p = new URLSearchParams({ url: d.url, text: d.title });
+      if (CONFIG.via) p.set('via', CONFIG.via);
+      if (CONFIG.hashtags.length) p.set('hashtags', CONFIG.hashtags.join(','));
+      return `https://twitter.com/intent/tweet?${p}`;
+    },
+    linkedin: (d) => `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(d.url)}`,
+    whatsapp: (d) => `https://api.whatsapp.com/send?text=${encodeURIComponent(d.title + ' ' + d.url)}`,
+    telegram: (d) => `https://t.me/share/url?url=${encodeURIComponent(d.url)}&text=${encodeURIComponent(d.title)}`,
+    reddit: (d) => `https://www.reddit.com/submit?url=${encodeURIComponent(d.url)}&title=${encodeURIComponent(d.title)}`,
+    pinterest: (d) => `https://pinterest.com/pin/create/button/?url=${encodeURIComponent(d.url)}&description=${encodeURIComponent(d.title)}${d.image ? '&media=' + encodeURIComponent(d.image) : ''}`,
+    email: (d) => `mailto:?subject=${encodeURIComponent(d.title)}&body=${encodeURIComponent((d.desc || '') + '\n\n' + d.url)}`
+  };
+
+  /* ===== HELPERS ===== */
+  function getShareData(container) {
+    const url = container.dataset.shareUrl
+      || document.querySelector('link[rel="canonical"]')?.href
+      || window.location.href;
+
+    const title = container.dataset.shareTitle
+      || document.querySelector('meta[property="og:title"]')?.content
+      || document.title;
+
+    const desc = container.dataset.shareDesc
+      || document.querySelector('meta[property="og:description"]')?.content
+      || document.querySelector('meta[name="description"]')?.content
+      || '';
+
+    const image = container.dataset.shareImage
+      || document.querySelector('meta[property="og:image"]')?.content
+      || '';
+
+    return { url, title, desc, image };
+  }
+
+  async function copyToClipboard(text) {
+    try {
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(text);
+        return true;
+      }
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.cssText = 'position:fixed;opacity:0;';
+      document.body.appendChild(ta);
+      ta.select();
+      const ok = document.execCommand('copy');
+      document.body.removeChild(ta);
+      return ok;
+    } catch (e) {
+      return false;
+    }
+  }
+
+  function showToast(msg) {
+    let toast = document.querySelector('.share-toast');
+    if (!toast) {
+      toast = document.createElement('div');
+      toast.className = 'share-toast';
+      document.body.appendChild(toast);
+    }
+    toast.textContent = msg;
+    toast.classList.add('visible');
+    clearTimeout(toast._timer);
+    toast._timer = setTimeout(() => toast.classList.remove('visible'), 2000);
+  }
+
+  function trackShare(platform, data) {
+    if (window.BigToolzAnalytics?.track) {
+      window.BigToolzAnalytics.track('share', {
+        method: platform,
+        content_type: 'page',
+        item_id: data.url
+      });
+    }
+    window.dispatchEvent(new CustomEvent('shared', {
+      detail: { platform, url: data.url }
+    }));
+  }
+
+  /* ===== BUILD BUTTONS ===== */
+  function buildButtons(data, withLabels = false) {
+    const platforms = ['facebook', 'twitter', 'linkedin', 'whatsapp', 'telegram', 'reddit', 'email'];
+    let html = '';
+
+    platforms.forEach(p => {
+      const label = p.charAt(0).toUpperCase() + p.slice(1);
+      html += `
+        <button class="share-btn ${p} ${withLabels ? 'with-label' : ''}" 
+                data-share="${p}"
+                aria-label="Share on ${label}"
+                title="Share on ${label}">
+          ${ICONS[p]}
+          ${withLabels ? `<span>${label}</span>` : ''}
+        </button>
+      `;
+    });
+
+    // Copy button
+    html += `
+      <button class="share-btn copy ${withLabels ? 'with-label' : ''}" 
+              data-share="copy"
+              aria-label="Copy link"
+              title="Copy link">
+        ${ICONS.link}
+        ${withLabels ? '<span>Copy Link</span>' : ''}
+      </button>
+    `;
+
+    return html;
+  }
+
+  /* ===== RENDER VARIANTS ===== */
+  function renderInline(container, data) {
+    container.innerHTML = `
+      <div class="share-inline">
+        <span class="share-label">Share this:</span>
+        <div class="share-buttons">
+          ${buildButtons(data)}
+        </div>
+      </div>
+    `;
+  }
+
+  function renderFloating(container, data) {
+    container.innerHTML = `
+      <div class="share-floating">
+        ${buildButtons(data)}
+      </div>
+    `;
+
+    const floating = container.querySelector('.share-floating');
+
+    // Show when page scrolled past 400px
+    const onScroll = () => {
+      if (window.scrollY > 400) {
+        floating.classList.add('visible');
+      } else {
+        floating.classList.remove('visible');
+      }
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  }
+
+  function renderModal(container, data) {
+    const platforms = ['facebook', 'twitter', 'linkedin', 'whatsapp', 'telegram', 'reddit', 'pinterest', 'email'];
+
+    const platformLabels = {
+      facebook: 'Facebook',
+      twitter: 'X / Twitter',
+      linkedin: 'LinkedIn',
+      whatsapp: 'WhatsApp',
+      telegram: 'Telegram',
+      reddit: 'Reddit',
+      pinterest: 'Pinterest',
+      email: 'Email'
+    };
+
+    const itemsHtml = platforms.map(p => `
+      <button class="share-modal-item" data-share="${p}">
+        <div class="share-btn ${p}">${ICONS[p]}</div>
+        <span class="share-modal-item-label">${platformLabels[p]}</span>
+      </button>
+    `).join('');
+
+    container.innerHTML = `
+      <div class="share-modal" id="${CONFIG.modalId}">
+        <div class="share-modal-panel">
+          <div class="share-modal-header">
+            <h3 class="share-modal-title">Share this page</h3>
+            <button class="share-modal-close" aria-label="Close">
+              ${ICONS.close}
+            </button>
+          </div>
+
+          <div class="share-link-box">
+            <input type="text" value="${data.url}" readonly id="share-link-input">
+            <button class="share-btn copy" data-share="copy">
+              ${ICONS.link} Copy
+            </button>
+          </div>
+
+          <div class="share-modal-grid">
+            ${itemsHtml}
+          </div>
+        </div>
+      </div>
+    `;
+  }
+
+  /* ===== HANDLE SHARE CLICK ===== */
+  function handleShare(platform, data, buttonEl) {
+    if (platform === 'copy') {
+      copyToClipboard(data.url).then(ok => {
+        if (ok) {
+          showToast('✅ Link copied!');
+          if (buttonEl) {
+            const originalHTML = buttonEl.innerHTML;
+            buttonEl.classList.add('copied');
+            buttonEl.innerHTML = '✓ Copied';
+            setTimeout(() => {
+              buttonEl.classList.remove('copied');
+              buttonEl.innerHTML = originalHTML;
+            }, 2000);
+          }
+          trackShare('copy', data);
+        } else {
+          showToast('Copy failed');
+        }
+      });
+      return;
+    }
+
+    if (SHARE_URLS[platform]) {
+      const url = SHARE_URLS[platform](data);
+      if (platform === 'email') {
+        window.location.href = url;
+      } else {
+        window.open(url, '_blank', 'width=600,height=500,noopener,noreferrer');
+      }
+      trackShare(platform, data);
+    }
+  }
+
+  /* ===== ATTACH EVENTS ===== */
+  function attachHandlers(container, data) {
+    // Handle clicks on share buttons
+    container.addEventListener('click', async (e) => {
+      const btn = e.target.closest('[data-share]');
+      if (!btn) return;
+
+      const platform = btn.dataset.share;
+
+      // Native share on mobile (only for main share button, not specific platforms)
+      if (platform === 'native' || (platform && !SHARE_URLS[platform] && platform !== 'copy')) {
+        if (navigator.share) {
+          try {
+            await navigator.share({
+              title: data.title,
+              text: data.desc,
+              url: data.url
+            });
+            trackShare('native', data);
+          } catch (err) {
+            // User cancelled
+          }
+        }
+        return;
+      }
+
+      handleShare(platform, data, btn);
+    });
+
+    // Modal open/close
+    const modal = container.querySelector('.share-modal');
+    if (modal) {
+      // Close on backdrop / close button
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal || e.target.closest('.share-modal-close')) {
+          modal.classList.remove('open');
+          document.body.style.overflow = '';
+        }
+      });
+
+      // ESC to close
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('open')) {
+          modal.classList.remove('open');
+          document.body.style.overflow = '';
+        }
+      });
+
+      // Trigger buttons
+      document.querySelectorAll('[data-share-trigger]').forEach(trigger => {
+        trigger.addEventListener('click', (e) => {
+          e.preventDefault();
+          openModal();
+        });
+      });
+    }
+  }
+
+  function openModal() {
+    const modal = document.querySelector('.share-modal');
+    if (!modal) return;
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  /* ===== INIT ===== */
+  function init() {
+    const containers = document.querySelectorAll('[data-social-share]');
+    containers.forEach(container => {
+      const variant = container.dataset.shareVariant || 'inline';
+      const data = getShareData(container);
+
+      if (variant === 'floating') {
+        renderFloating(container, data);
+      } else if (variant === 'modal') {
+        renderModal(container, data);
+      } else {
+        renderInline(container, data);
+      }
+
+      attachHandlers(container, data);
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+
+  /* ===== PUBLIC API ===== */
+  window.BigToolzShare = {
+    open: openModal,
+    handle: handleShare,
+    data: getShareData
+  };
+
+})();
+</script>
+
+<!-- ===========================================
+     USAGE EXAMPLES
+     =========================================== -->
+
+<!-- EXAMPLE 1: Inline share (blog posts) -->
+<!--
+<div data-social-share data-share-variant="inline"></div>
+-->
+
+<!-- EXAMPLE 2: Floating share (sticky left) -->
+<!--
+<div data-social-share data-share-variant="floating"></div>
+-->
+
+<!-- EXAMPLE 3: Modal share (tool pages, triggered by button) -->
+<!--
+<button data-share-trigger class="btn-share">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98"/></svg>
+  Share
+</button>
+<div data-social-share data-share-variant="modal"></div>
+-->
+
+<!-- EXAMPLE 4: Custom URL/title -->
+<!--
+<div data-social-share 
+     data-share-variant="inline"
+     data-share-url="https://bigtoolz.com/tools/image-tools/image-compressor/"
+     data-share-title="Image Compressor - Free Online Tool"
+     data-share-desc="Compress images without losing quality"></div>
+-->
+
+<!-- ===========================================
+     HOW TO INCLUDE IN A PAGE
+     ===========================================
+     
+     1. Paste the <style> block (once) — in <head>.
+     2. Paste the <script> block (once) — before </body>.
+     3. Add containers wherever needed:
+        - Blog posts: <div data-social-share data-share-variant="inline"></div>
+        - Tool pages: <div data-social-share data-share-variant="floating"></div>
+        - Or with trigger: <button data-share-trigger>Share</button>
+                          <div data-social-share data-share-variant="modal"></div>
+     
+     4. Done. Auto-detects URL/title from meta tags.
+     =========================================== -->

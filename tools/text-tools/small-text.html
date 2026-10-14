@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2563eb">
+
+<title>Small Text Generator - Create Small Text Online Free | BigToolz</title>
+<meta name="description" content="Free small text generator. Convert normal text to small, superscript, subscript, tiny text for Instagram, Twitter, Discord bios. No signup, works in browser.">
+<meta name="keywords" content="small text generator, tiny text, superscript text, small font, tiny font generator, small letters, mini text">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://bigtoolz.com/tools/text-tools/small-text/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Small Text Generator - Create Tiny Text Free | BigToolz">
+<meta property="og:description" content="Convert text to small/tiny/superscript styles free, no signup.">
+<meta property="og:url" content="https://bigtoolz.com/tools/text-tools/small-text/">
+<meta property="og:image" content="https://bigtoolz.com/assets/images/og-image.jpg">
+<meta property="og:site_name" content="BigToolz">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Small Text Generator - BigToolz">
+<meta name="twitter:description" content="Convert text to small/tiny/superscript styles free, no signup.">
+<meta name="twitter:image" content="https://bigtoolz.com/assets/images/twitter-card.jpg">
+
+<link rel="icon" href="/assets/images/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/images/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#f8f9fc;color:#1a1a2e;overflow-x:hidden;line-height:1.5}
+
+  .header{background:#fff;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;position:sticky;top:0;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+  .header-left{display:flex;align-items:center;gap:40px}
+  .logo{display:flex;align-items:center;gap:8px;font-size:22px;font-weight:800;color:#1a1a2e;text-decoration:none}
+  .logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#3b82f6,#2563eb);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px}
+  .logo span{color:#2563eb}
+  .nav{display:flex;align-items:center;gap:28px;list-style:none}
+  .nav a{text-decoration:none;color:#4b5563;font-size:14px;font-weight:500;transition:color .2s}
+  .nav a:hover,.nav a.active{color:#2563eb}
+  .header-right{display:flex;align-items:center;gap:16px}
+  .search-btn,.theme-btn{width:36px;height:36px;border-radius:50%;border:none;background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#4b5563}
+  .search-btn:hover,.theme-btn:hover{background:#f3f4f6}
+  .bookmark-btn{display:flex;align-items:center;gap:8px;background:#2563eb;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
+  .bookmark-btn:hover{background:#1d4ed8}
+
+  /* HERO */
+  .hero{background:linear-gradient(135deg,#0a0e27 0%,#1a1a4e 40%,#2d1b69 70%,#4c1d95 100%);padding:40px 40px 60px;position:relative;overflow:hidden;color:#fff}
+  .hero::before{content:'';position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(59,130,246,.25) 0%,transparent 70%);border-radius:50%}
+  .hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+  .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px;flex-wrap:wrap}
+  .breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none}
+  .breadcrumb a:hover{color:#fff}
+  .breadcrumb .sep{color:rgba(255,255,255,.4)}
+  .breadcrumb .current{color:#fff;font-weight:500}
+  .hero-title-row{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+  .hero-icon{width:60px;height:60px;background:#3b82f6;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px;color:#fff;flex-shrink:0;box-shadow:0 8px 24px rgba(59,130,246,.4)}
+  .hero-title{font-size:42px;font-weight:800;line-height:1.15}
+  .hero-title .blue{color:#60a5fa}
+  .hero-desc{font-size:15px;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:24px;max-width:560px}
+  .hero-features{display:flex;gap:24px;flex-wrap:wrap}
+  .hero-feature{display:flex;align-items:center;gap:6px;font-size:13px;color:#fff;font-weight:500}
+  .hero-feature .check{width:18px;height:18px;border-radius:50%;background:#3b82f6;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;flex-shrink:0}
+
+  /* MAIN */
+  .main-content{max-width:1200px;margin:0 auto;padding:40px;display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start}
+  .tool-content{min-width:0}
+
+  .workspace{background:#fff;border-radius:16px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,.06);border:1px solid #e5e7eb;margin-bottom:24px}
+
+  .input-label{display:block;font-size:12px;font-weight:700;color:#4b5563;text-transform:uppercase;letter-spacing:.3px;margin-bottom:8px}
+  .text-input{width:100%;padding:14px 16px;border:2px solid #e5e7eb;border-radius:12px;font-size:15px;font-family:inherit;color:#1a1a2e;background:#fafbfc;outline:none;transition:all .2s;margin-bottom:8px}
+  .text-input:focus{border-color:#3b82f6;background:#fff;box-shadow:0 0 0 4px rgba(59,130,246,.1)}
+  .text-input::placeholder{color:#9ca3af}
+  .input-meta{font-size:12px;color:#94a3b8;display:flex;justify-content:space-between;margin-bottom:20px;flex-wrap:wrap;gap:8px}
+  .input-meta strong{color:#3b82f6;font-weight:700}
+
+  /* Actions */
+  .actions{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:10px 16px;border-radius:8px;font-size:13px;font-weight:700;font-family:inherit;cursor:pointer;border:1px solid #e5e7eb;background:#fff;color:#4b5563;transition:all .2s}
+  .btn:hover{border-color:#3b82f6;color:#3b82f6;background:#eff6ff}
+  .btn-primary{background:#3b82f6;color:#fff;border-color:#3b82f6}
+  .btn-primary:hover{background:#2563eb;border-color:#2563eb;color:#fff}
+  .btn-danger{color:#ef4444}
+  .btn-danger:hover{border-color:#ef4444;color:#ef4444;background:#fef2f2}
+  .btn.copied{background:#10b981;color:#fff;border-color:#10b981}
+
+  /* Results */
+  .results-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:12px}
+  .results-title{font-size:16px;font-weight:800;color:#1a1a2e;display:flex;align-items:center;gap:8px}
+  .results-title .badge{font-size:11px;font-weight:700;background:#eff6ff;color:#3b82f6;padding:3px 10px;border-radius:12px}
+
+  .variant-list{display:flex;flex-direction:column;gap:12px}
+  .variant{background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:16px;transition:all .2s;cursor:pointer;position:relative}
+  .variant:hover{border-color:#3b82f6;background:#eff6ff;transform:translateX(4px)}
+  .variant.copied{background:#f0fdf4;border-color:#10b981}
+  .variant-header{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:8px;flex-wrap:wrap}
+  .variant-name{font-size:12px;font-weight:800;color:#64748b;text-transform:uppercase;letter-spacing:.3px;display:flex;align-items:center;gap:6px}
+  .variant-name .dot{width:6px;height:6px;border-radius:50%;background:#3b82f6}
+  .variant-copy-btn{font-size:10px;font-weight:700;color:#3b82f6;background:#fff;border:1px solid #e2e8f0;padding:4px 10px;border-radius:6px;cursor:pointer;font-family:inherit;transition:all .2s}
+  .variant-copy-btn:hover{background:#3b82f6;color:#fff;border-color:#3b82f6}
+  .variant.copied .variant-copy-btn{background:#10b981;color:#fff;border-color:#10b981}
+  .variant-text{font-size:22px;font-weight:600;color:#1a1a2e;line-height:1.4;word-break:break-word;font-family:'Inter',sans-serif}
+  .variant-unicode{font-size:10px;color:#94a3b8;font-family:'JetBrains Mono',monospace;margin-top:6px;word-break:break-all;letter-spacing:0}
+
+  /* Empty state */
+  .empty-state{text-align:center;padding:60px 20px;color:#94a3b8}
+  .empty-icon{font-size:48px;margin-bottom:12px;opacity:.5}
+  .empty-title{font-size:16px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+  .empty-desc{font-size:13px}
+
+  /* SEO */
+  .seo-content{background:#fff;border-radius:16px;padding:32px;border:1px solid #e5e7eb;margin-bottom:24px}
+  .seo-content h2{font-size:22px;font-weight:800;color:#1a1a2e;margin-bottom:14px;margin-top:28px;display:flex;align-items:center;gap:10px}
+  .seo-content h2:first-child{margin-top:0}
+  .seo-content h3{font-size:16px;font-weight:700;color:#1a1a2e;margin:20px 0 10px}
+  .seo-content p{font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:14px}
+  .seo-content ul{list-style:none;padding-left:0;margin-bottom:16px}
+  .seo-content ul li{position:relative;padding-left:24px;font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:8px}
+  .seo-content ul li::before{content:'';position:absolute;left:6px;top:12px;width:6px;height:6px;background:#3b82f6;border-radius:50%}
+  .seo-content a{color:#2563eb;text-decoration:none;font-weight:600}
+  .seo-content a:hover{text-decoration:underline}
+  .seo-content strong{color:#1a1a2e;font-weight:700}
+  .seo-content code{background:#f1f5f9;padding:2px 6px;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:13px;color:#0f172a;border:1px solid #e2e8f0}
+
+  /* Table */
+  .style-table{width:100%;border-collapse:collapse;margin:20px 0;border:1px solid #e5e7eb;border-radius:8px;overflow:hidden}
+  .style-table th{background:#eff6ff;padding:12px 16px;text-align:left;font-size:13px;font-weight:700;color:#1a1a2e;border-bottom:1px solid #e5e7eb}
+  .style-table td{padding:12px 16px;font-size:13px;color:#4b5563;border-bottom:1px solid #f3f4f6}
+  .style-table tr:last-child td{border-bottom:none}
+  .style-table code{font-size:14px}
+
+  .how-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:20px}
+  .how-step{background:#eff6ff;border-radius:12px;padding:20px;border:1px solid #bfdbfe}
+  .how-step-num{width:36px;height:36px;border-radius:50%;background:#3b82f6;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;margin-bottom:12px}
+  .how-step-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+  .how-step-desc{font-size:13px;color:#6b7280;line-height:1.6}
+
+  .faq-item{background:#eff6ff;border:1px solid #bfdbfe;border-radius:12px;margin-bottom:10px;overflow:hidden;transition:border-color .2s}
+  .faq-item:hover{border-color:#3b82f6}
+  .faq-question{width:100%;background:none;border:none;padding:18px 22px;font-size:15px;font-weight:700;color:#1a1a2e;text-align:left;cursor:pointer;font-family:inherit;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .faq-question .chev{font-size:12px;color:#3b82f6;transition:transform .2s;flex-shrink:0}
+  .faq-item.open .faq-question .chev{transform:rotate(180deg)}
+  .faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 22px}
+  .faq-item.open .faq-answer{max-height:500px;padding-bottom:18px}
+  .faq-answer p{font-size:14px;color:#6b7280;line-height:1.7;margin:0}
+
+  .sidebar{background:#fff;border-radius:16px;padding:24px;border:1px solid #e5e7eb;position:sticky;top:80px;margin-bottom:24px}
+  .sidebar-header{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:800;color:#1a1a2e;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid #f3f4f6}
+  .sidebar-list{display:flex;flex-direction:column;gap:8px}
+  .sidebar-item{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;cursor:pointer;transition:background .2s;text-decoration:none;color:inherit;border:1px solid #f3f4f6}
+  .sidebar-item:hover{background:#eff6ff;border-color:#bfdbfe}
+  .sidebar-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;flex-shrink:0;font-weight:800}
+  .sidebar-info{flex:1;min-width:0}
+  .sidebar-title{font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:2px}
+  .sidebar-desc{font-size:11px;color:#9ca3af;line-height:1.4}
+
+  .footer{background:#0a0e27;padding:60px 40px 30px;color:#fff;margin-top:40px}
+  .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:40px}
+  .footer-brand{display:flex;align-items:center;gap:8px;font-size:20px;font-weight:800;margin-bottom:12px}
+  .footer-brand span{color:#60a5fa}
+  .footer-tagline{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px}
+  .footer-social{display:flex;gap:12px}
+  .footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:16px;transition:background .2s}
+  .footer-social a:hover{background:rgba(255,255,255,.2)}
+  .footer-heading{font-size:14px;font-weight:700;margin-bottom:20px;color:#fff}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .footer-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;transition:color .2s}
+  .footer-links a:hover{color:#60a5fa}
+  .footer-bottom{max-width:1200px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  .footer-bottom-left{display:flex;gap:20px;font-size:12px;color:rgba(255,255,255,.5)}
+  .footer-bottom-right,.footer-bottom-links a{font-size:12px;color:rgba(255,255,255,.5);text-decoration:none}
+  .footer-bottom-links{display:flex;gap:20px}
+
+  .toast{position:fixed;bottom:24px;right:24px;background:#1a1a2e;color:#fff;padding:14px 20px;border-radius:10px;font-size:13px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:3000;transform:translateY(200%);transition:transform .3s ease;max-width:320px}
+  .toast.visible{transform:translateY(0)}
+  .toast.success{background:#10b981}
+  .toast.error{background:#ef4444}
+
+  @media(max-width:1024px){
+    .main-content{grid-template-columns:1fr;padding:24px 20px}
+    .sidebar{position:static}
+    .how-steps{grid-template-columns:repeat(2,1fr)}
+  }
+  @media(max-width:768px){
+    .header{padding:0 20px}.nav{display:none}
+    .hero{padding:24px 20px 40px}
+    .hero-title{font-size:28px}
+    .hero-icon{width:48px;height:48px;font-size:20px}
+    .hero-title-row{flex-direction:column;align-items:flex-start;gap:12px}
+    .main-content{padding:20px 16px}
+    .workspace{padding:20px}
+    .how-steps{grid-template-columns:1fr}
+    .seo-content{padding:20px}
+    .footer-inner{grid-template-columns:1fr 1fr}
+    .toast{left:16px;right:16px;bottom:16px;max-width:none}
+    .variant-text{font-size:18px}
+  }
+  @media(max-width:576px){
+    .header{padding:0 16px}.header-right .search-btn,.header-right .theme-btn{display:none}
+    .hero-title{font-size:24px}
+    .actions .btn{flex:1;justify-content:center;min-width:100px}
+    .footer-inner{grid-template-columns:1fr}
+    .footer-bottom{flex-direction:column;text-align:center}
+    .variant-text{font-size:16px}
+    .variant{padding:14px}
+  }
+
+  html[data-theme="dark"] body{background:#0f172a;color:#f1f5f9}
+  html[data-theme="dark"] .header,html[data-theme="dark"] .workspace,html[data-theme="dark"] .seo-content,html[data-theme="dark"] .sidebar{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .logo,html[data-theme="dark"] .hero-title,html[data-theme="dark"] .seo-content h2,html[data-theme="dark"] .seo-content h3,html[data-theme="dark"] .faq-question,html[data-theme="dark"] .sidebar-header,html[data-theme="dark"] .sidebar-title,html[data-theme="dark"] .results-title,html[data-theme="dark"] .empty-title{color:#f1f5f9}
+  html[data-theme="dark"] .nav a{color:#cbd5e1}
+  html[data-theme="dark"] .text-input{background:#0f172a;border-color:#334155;color:#f1f5f9}
+  html[data-theme="dark"] .text-input:focus{background:#0f172a}
+  html[data-theme="dark"] .btn{background:#0f172a;border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .btn:hover{border-color:#3b82f6;color:#60a5fa}
+  html[data-theme="dark"] .variant{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .variant:hover{background:#1e293b;border-color:#3b82f6}
+  html[data-theme="dark"] .variant-text{color:#f1f5f9}
+  html[data-theme="dark"] .variant-copy-btn{background:#1e293b;color:#60a5fa;border-color:#334155}
+  html[data-theme="dark"] .how-step,html[data-theme="dark"] .faq-item{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .seo-content p,html[data-theme="dark"] .seo-content ul li,html[data-theme="dark"] .faq-answer p{color:#cbd5e1}
+  html[data-theme="dark"] .seo-content code{background:#020617;color:#60a5fa;border-color:#334155}
+  html[data-theme="dark"] .style-table{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .style-table th{background:#0f172a;color:#f1f5f9;border-color:#334155}
+  html[data-theme="dark"] .style-table td{border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .style-table code{background:#0f172a;color:#60a5fa;border-color:#334155}
+  html[data-theme="dark"] .results-title .badge{background:#1e40af;color:#93c5fd}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type": "SoftwareApplication", "name": "Small Text Generator", "url": "https://bigtoolz.com/tools/text-tools/small-text/", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any (Web-based)", "description": "Free online small text generator convert normal text to small, superscript, subscript, tiny text for social media bios. Works in your browser.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.8", "ratingCount": "1654"}},
+    {"@type": "HowTo", "name": "How to Generate Small Text", "step": [
+      {"@type": "HowToStep", "name": "Enter Text", "text": "Type or paste your text into the input box."},
+      {"@type": "HowToStep", "name": "See Variants", "text": "All small text styles appear instantly below."},
+      {"@type": "HowToStep", "name": "Click to Copy", "text": "Click any variant to copy it to clipboard."},
+      {"@type": "HowToStep", "name": "Paste Anywhere", "text": "Paste into Instagram, Twitter, Discord, TikTok bios."}
+    ]},
+    {"@type": "FAQPage", "mainEntity": [
+      {"@type": "Question", "name": "How do I create small text for Instagram bio?", "acceptedAnswer": {"@type": "Answer", "text": "Type your bio text, then copy any small-text variant. These are Unicode characters so they paste directly into Instagram, Twitter, TikTok, and Discord bios."}},
+      {"@type": "Question", "name": "What is superscript and subscript text?", "acceptedAnswer": {"@type": "Answer", "text": "Superscript letters appear above the baseline (like ¹²³). Subscript letters appear below the baseline (like ₁₂₃). Both are used for math, chemistry, and stylistic effect."}},
+      {"@type": "Question", "name": "Will small text work everywhere?", "acceptedAnswer": {"@type": "Answer", "text": "Small/superscript text works on most modern platforms: Instagram, Twitter/X, TikTok, Discord, Facebook, WhatsApp, and most websites. A few platforms with limited fonts may not render every character test before using."}},
+      {"@type": "Question", "name": "Does small text affect SEO?", "acceptedAnswer": {"@type": "Answer", "text": "Superscript/small text is Unicode, not real formatting. Search engines usually normalize these characters, so they don't help or hurt SEO. Use them for display, not for keyword optimization."}},
+      {"@type": "Question", "name": "Is my text uploaded to a server?", "acceptedAnswer": {"@type": "Answer", "text": "No. All conversion happens in your browser using JavaScript. Your text never leaves your device."}}
+    ]},
+    {"@type": "BreadcrumbList", "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bigtoolz.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://bigtoolz.com/tools/"},
+      {"@type": "ListItem", "position": 3, "name": "Text Tools", "item": "https://bigtoolz.com/tools/text-tools/"},
+      {"@type": "ListItem", "position": 4, "name": "Small Text", "item": "https://bigtoolz.com/tools/text-tools/small-text/"}
+    ]}
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-left">
+    <a href="/" class="logo"><div class="logo-icon">⚒</div>BigToolz</span></a>
+    <nav><ul class="nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/tools/" class="active">All Tools</a></li>
+      <li><a href="/tools/categories">Categories</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul></nav>
+  </div>
+  <div class="header-right">
+   
+    <button class="theme-btn" aria-label="Toggle theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
+    
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <nav class="breadcrumb">
+      <a href="/">Home</a><span class="sep">›</span>
+      <a href="/tools/">Tools</a><span class="sep">›</span>
+      <a href="/tools/text-tools/">Text Tools</a><span class="sep">›</span>
+      <span class="current">Small Text</span>
+    </nav>
+    <div class="hero-title-row">
+      <div class="hero-icon">ᵃ</div>
+      <h1 class="hero-title">Small Text <span class="blue">Generator</span></h1>
+    </div>
+    <p class="hero-desc">
+      Convert normal text into small, superscript, subscript, and tiny Unicode styles. Perfect for Instagram bios, Twitter posts, TikTok captions, and Discord profiles.
+    </p>
+    <div class="hero-features">
+      <div class="hero-feature"><span class="check">✓</span> 8 Styles</div>
+      <div class="hero-feature"><span class="check">✓</span> Click to Copy</div>
+      <div class="hero-feature"><span class="check">✓</span> Real-Time</div>
+      <div class="hero-feature"><span class="check">✓</span> 100% Private</div>
+    </div>
+  </div>
+</section>
+
+<div class="main-content">
+
+  <div class="tool-content">
+
+    <div class="workspace">
+
+      <label class="input-label" for="textInput">Enter Your Text</label>
+      <input type="text" id="textInput" class="text-input" placeholder="Type or paste your text here..." value="Hello World" autocomplete="off">
+
+      <div class="input-meta">
+        <span>Characters: <strong id="charCount">11</strong></span>
+        <span>Words: <strong id="wordCount">2</strong></span>
+      </div>
+
+      <div class="actions">
+        <button class="btn btn-primary" id="pasteBtn">📋 Paste</button>
+        <button class="btn" id="copyAllBtn">📋 Copy All Variants</button>
+        <button class="btn" id="downloadBtn">⬇ Download</button>
+        <button class="btn btn-danger" id="clearBtn">🗑 Clear</button>
+      </div>
+
+      <div class="results-header">
+        <div class="results-title">
+          ✨ Generated Styles
+          <span class="badge" id="variantBadge">0 styles</span>
+        </div>
+      </div>
+
+      <div class="variant-list" id="variantList">
+        <div class="empty-state">
+          <div class="empty-icon">ᵃ</div>
+          <div class="empty-title">Type something above</div>
+          <div class="empty-desc">All small text variants will appear here instantly.</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- SEO Content -->
+    <div class="seo-content">
+
+      <h2>ᵃ What is a Small Text Generator?</h2>
+      <p>
+        A <strong>Small Text Generator</strong> converts normal letters into <strong>Unicode small characters, superscripts, subscripts, and tiny letterforms</strong>. These aren't styled fonts they're actual characters in the Unicode standard, so they paste directly into any text field, bio, caption, or post that accepts text.
+      </p>
+      <p>
+        Unlike most online tools, BigToolz processes text <strong>100% in your browser</strong> using JavaScript. Your text <strong>never uploaded to any server</strong> complete privacy, instant results, unlimited use.
+      </p>
+
+      <h2>🚀 How to Use Small Text Generator</h2>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-step-num">1</div>
+          <div class="how-step-title">Type Text</div>
+          <div class="how-step-desc">Enter or paste your text in the input box.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">2</div>
+          <div class="how-step-title">See Variants</div>
+          <div class="how-step-desc">All small-text styles appear instantly below.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">3</div>
+          <div class="how-step-title">Click to Copy</div>
+          <div class="how-step-desc">Click any variant to copy it to clipboard.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">4</div>
+          <div class="how-step-title">Paste Anywhere</div>
+          <div class="how-step-desc">Use in Instagram, Twitter, TikTok, Discord.</div>
+        </div>
+      </div>
+
+      <h2>🎨 Available Small Text Styles</h2>
+      <table class="style-table">
+        <thead>
+          <tr><th>Style</th><th>Example</th><th>Use Case</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Superscript</strong></td><td><code>ᴴᵉˡˡᵒ ᵂᵒʳˡᵈ</code></td><td>Math, footnotes, stylistic bios</td></tr>
+          <tr><td><strong>Superscript Caps</strong></td><td><code>ᴴᴱᴸᴸᴼ ᵂᴼᴿᴸᴰ</code></td><td>Emphasis, headers</td></tr>
+          <tr><td><strong>Subscript</strong></td><td><code>ₕₑₗₗₒ Wₒᵣₗd</code></td><td>Chemical formulas, math</td></tr>
+          <tr><td><strong>Small Caps</strong></td><td><code>ʜᴇʟʟᴏ ᴡᴏʀʟᴅ</code></td><td>Elegant bios, headings</td></tr>
+          <tr><td><strong>Tiny Letters</strong></td><td><code>ʰᵉˡˡᵒ ʷᵒʳˡᵈ</code></td><td>Modern bios, captions</td></tr>
+          <tr><td><strong>Cyrillic Small</strong></td><td><code>неιιо шогιд</code></td><td>Unique social media styling</td></tr>
+          <tr><td><strong>Combining (stacked)</strong></td><td><code>H̶e̶l̶l̶o̶ W̶o̶r̶l̶d̶</code></td><td>Strikethrough effect</td></tr>
+          <tr><td><strong>Underline</strong></td><td><code>H̲e̲l̲l̲o̲ W̲o̲r̲l̲d̲</code></td><td>Underlined text style</td></tr>
+        </tbody>
+      </table>
+
+      <h2>💡 Where to Use Small Text</h2>
+      <ul>
+        <li><strong>Instagram bio</strong> small text looks elegant and professional.</li>
+        <li><strong>Twitter/X posts</strong> stand out with superscript or small caps.</li>
+        <li><strong>TikTok caption</strong> trendy aesthetic small text.</li>
+        <li><strong>Discord status</strong> small caps for a clean look.</li>
+        <li><strong>WhatsApp status</strong> decorative text.</li>
+        <li><strong>Facebook posts</strong> subtle styling.</li>
+        <li><strong>YouTube channel name</strong> stylized branding.</li>
+        <li><strong>Comments</strong> create visual interest.</li>
+        <li><strong>Design mockups</strong> quick text effect without fonts.</li>
+      </ul>
+
+      <h2>⚙️ How Superscript and Subscript Work</h2>
+      <p>
+        <strong>Superscript</strong> text appears slightly above the normal baseline like the "2" in "x²". In Unicode, letters like <code>ᵃ ᵇ ᶜ ᵈ</code> exist as separate characters from the normal <code>a b c d</code>.
+      </p>
+      <p>
+        <strong>Subscript</strong> text appears below the baseline like the "2" in "H₂O". Unicode provides characters like <code>ₐ ₑ ₕ ᵢ</code> for this purpose.
+      </p>
+      <p>
+        Since these are real Unicode characters, they work in <strong>any text field</strong> no font installation needed. They do reduce readability slightly, so use them for short text and effect not paragraphs.
+      </p>
+
+      <h2>✨ Key Features</h2>
+      <ul>
+        <li><strong>8 unique styles</strong> superscript, subscript, small caps, stacked, underlined, and more.</li>
+        <li><strong>Real-time conversion</strong> updates as you type.</li>
+        <li><strong>Click to copy</strong> one-click copy any variant.</li>
+        <li><strong>Copy all variants</strong> get everything at once.</li>
+        <li><strong>Download as .txt</strong> save all variants.</li>
+        <li><strong>Unicode-based</strong> works everywhere.</li>
+        <li><strong>100% browser-based</strong> complete privacy, no signup.</li>
+        <li><strong>Mobile-friendly</strong> works perfectly on phones.</li>
+      </ul>
+
+      <h2>❓ Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-question">How do I create small text for Instagram bio?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Type your text above, then click any small-text variant to copy it. These are real Unicode characters, so they paste directly into Instagram, Twitter, TikTok, and Discord bios no font needed.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What is superscript and subscript text?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>Superscript</strong> letters sit slightly above the baseline (like ¹²³ or ᵃᵇᶜ). <strong>Subscript</strong> letters sit below the baseline (like ₁₂₃ or ₐₑₕ). Both are used for math, chemistry, and stylistic effect in bios.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Will small text work everywhere?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Small/superscript text works on <strong>most modern platforms</strong>: Instagram, Twitter/X, TikTok, Discord, Facebook, WhatsApp, and most websites. A few platforms with limited fonts may not render every character test before using in critical places.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Does small text affect SEO?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Superscript/small text is <strong>Unicode, not real formatting</strong>. Search engines usually normalize these characters, so they neither help nor hurt SEO. Use them for display and social media, not for keyword optimization.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Why do some characters not convert?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Not every letter exists in superscript or subscript form in Unicode. Common letters (a-z) mostly work; rare characters or symbols may fall back to normal text. For full coverage, use the <strong>Small Caps</strong> style it supports all Latin letters.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I convert the text back to normal?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Yes just delete and retype, or use the Clear button. Small text is not "converted" it's a different representation using Unicode characters. There's no auto-reverse because the small characters are different code points.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Is my text uploaded to a server?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>No. All conversion happens in your browser using JavaScript. Your text never leaves your device, and nothing is stored anywhere.</p></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-header">🔗 Related Text Tools</div>
+    <div class="sidebar-list">
+      <a href="/tools/text-tools/fancy-text/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#ec4899;">✨</div>
+        <div class="sidebar-info"><div class="sidebar-title">Fancy Text</div><div class="sidebar-desc">Stylish fonts</div></div>
+      </a>
+      <a href="/tools/text-tools/bold-text/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#1e293b;">B</div>
+        <div class="sidebar-info"><div class="sidebar-title">Bold Text</div><div class="sidebar-desc">Bold letters</div></div>
+      </a>
+      <a href="/tools/text-tools/italic-text/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#64748b;">I</div>
+        <div class="sidebar-info"><div class="sidebar-title">Italic Text</div><div class="sidebar-desc">Italic letters</div></div>
+      </a>
+      <a href="/tools/text-tools/cursive-text/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#8b5cf6;">𝒜</div>
+        <div class="sidebar-info"><div class="sidebar-title">Cursive Text</div><div class="sidebar-desc">Cursive script</div></div>
+      </a>
+      <a href="/tools/text-tools/upside-down/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#06b6d4;">🙃</div>
+        <div class="sidebar-info"><div class="sidebar-title">Upside Down</div><div class="sidebar-desc">Flipped text</div></div>
+      </a>
+      <a href="/tools/text-tools/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#64748b;">T</div>
+        <div class="sidebar-info"><div class="sidebar-title">All Text Tools →</div><div class="sidebar-desc">Browse 25+ tools</div></div>
+      </a>
+    </div>
+  </aside>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand"><div class="logo-icon">⚒</div>BigToolz</span></div>
+      <p class="footer-tagline">Your Ultimate Online Tools Hub</p>
+      <div class="footer-social">
+        <a href="https://facebook.com/bigtoolz" aria-label="Facebook">f</a>
+        <a href="https://twitter.com/bigtoolz" aria-label="Twitter">𝕏</a>
+        <a href="https://youtube.com/@bigtoolz" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+    <div>
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/tools/">All Tools</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Categories</h3>
+      <ul class="footer-links">
+        <li><a href="/tools/image-tools/">Image Tools</a></li>
+        <li><a href="/tools/pdf-tools/">PDF Tools</a></li>
+        <li><a href="/tools/text-tools/">Text Tools</a></li>
+        <li><a href="/tools/seo-tools/">SEO Tools</a></li>
+        <li><a href="/tools/categories">All Categories →</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Legal</h3>
+      <ul class="footer-links">
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left"><span>✓ 100% Free</span><span>✓ No Sign Up</span><span>✓ No Installation</span></div>
+    <div class="footer-bottom-right">© 2026 BigToolz. All rights reserved.</div>
+    <div class="footer-bottom-links"><a href="/privacy-policy">Privacy</a><a href="/terms">Terms</a><a href="/disclaimer">Disclaimer</a></div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+'use strict';
+
+/* ===== THEME ===== */
+(function(){try{var t=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&d))document.documentElement.setAttribute('data-theme','dark');else if(t==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();
+document.querySelector('.theme-btn')?.addEventListener('click',()=>{const h=document.documentElement;const c=h.getAttribute('data-theme');const d=window.matchMedia('(prefers-color-scheme: dark)').matches;let n=c==='dark'?'light':c==='light'?'dark':(d?'light':'dark');h.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}});
+
+/* ===== HELPERS ===== */
+const $ = (s, p = document) => p.querySelector(s);
+const $$ = (s, p = document) => [...p.querySelectorAll(s)];
+
+function showToast(msg, type = 'info', duration = 3000) {
+  const t = $('#toast');
+  if (!t) return;
+  t.className = 'toast visible' + (type !== 'info' ? ' ' + type : '');
+  t.textContent = msg;
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove('visible'), duration);
+}
+
+async function copyToClipboard(text) {
+  try {
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(text);
+      return true;
+    }
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.cssText = 'position:fixed;opacity:0;';
+    document.body.appendChild(ta);
+    ta.select();
+    const ok = document.execCommand('copy');
+    document.body.removeChild(ta);
+    return ok;
+  } catch (e) { return false; }
+}
+
+/* ===== UNICODE MAPS ===== */
+
+// Superscript (lowercase + some uppercase where available)
+const SUPER = {
+  'a':'ᵃ','b':'ᵇ','c':'ᶜ','d':'ᵈ','e':'ᵉ','f':'ᶠ','g':'ᵍ','h':'ʰ','i':'ⁱ','j':'ʲ','k':'ᵏ','l':'ˡ','m':'ᵐ',
+  'n':'ⁿ','o':'ᵒ','p':'ᵖ','q':'ᑫ','r':'ʳ','s':'ˢ','t':'ᵗ','u':'ᵘ','v':'ᵛ','w':'ʷ','x':'ˣ','y':'ʸ','z':'ᶻ',
+  'A':'ᴬ','B':'ᴮ','C':'ᶜ','D':'ᴰ','E':'ᴱ','F':'ᶠ','G':'ᴳ','H':'ᴴ','I':'ᴵ','J':'ᴶ','K':'ᴷ','L':'ᴸ','M':'ᴹ',
+  'N':'ᴺ','O':'ᴼ','P':'ᴾ','Q':'ᵠ','R':'ᴿ','S':'ˢ','T':'ᵀ','U':'ᵁ','V':'ⱽ','W':'ᵂ','X':'ˣ','Y':'ʸ','Z':'ᶻ',
+  '0':'⁰','1':'¹','2':'²','3':'³','4':'⁴','5':'⁵','6':'⁶','7':'⁷','8':'⁸','9':'⁹',
+  '+':'⁺','-':'⁻','=':'⁼','(':'⁽',')':'⁾',' ':' '
+};
+
+// Superscript caps force uppercase mapping
+const SUPER_CAPS = {
+  'a':'ᴬ','b':'ᴮ','c':'ᶜ','d':'ᴰ','e':'ᴱ','f':'ᶠ','g':'ᴳ','h':'ᴴ','i':'ᴵ','j':'ᴶ','k':'ᴷ','l':'ᴸ','m':'ᴹ',
+  'n':'ᴺ','o':'ᴼ','p':'ᴾ','q':'ᵠ','r':'ᴿ','s':'ˢ','t':'ᵀ','u':'ᵁ','v':'ⱽ','w':'ᵂ','x':'ˣ','y':'ʸ','z':'ᶻ',
+  'A':'ᴬ','B':'ᴮ','C':'ᶜ','D':'ᴰ','E':'ᴱ','F':'ᶠ','G':'ᴳ','H':'ᴴ','I':'ᴵ','J':'ᴶ','K':'ᴷ','L':'ᴸ','M':'ᴹ',
+  'N':'ᴺ','O':'ᴼ','P':'ᴾ','Q':'ᵠ','R':'ᴿ','S':'ˢ','T':'ᵀ','U':'ᵁ','V':'ⱽ','W':'ᵂ','X':'ˣ','Y':'ʸ','Z':'ᶻ',
+  '0':'⁰','1':'¹','2':'²','3':'³','4':'⁴','5':'⁵','6':'⁶','7':'⁷','8':'⁸','9':'⁹',
+  '+':'⁺','-':'⁻','=':'⁼','(':'⁽',')':'⁾',' ':' '
+};
+
+// Subscript
+const SUB = {
+  'a':'ₐ','e':'ₑ','h':'ₕ','i':'ᵢ','j':'ⱼ','k':'ₖ','l':'ₗ','m':'ₘ','n':'ₙ','o':'ₒ','p':'ₚ','r':'ᵣ',
+  's':'ₛ','t':'ₜ','u':'ᵤ','v':'ᵥ','x':'ₓ',
+  '0':'₀','1':'₁','2':'₂','3':'₃','4':'₄','5':'₅','6':'₆','7':'₇','8':'₈','9':'₉',
+  '+':'₊','-':'₋','=':'₌','(':'₍',')':'₎',' ':' '
+};
+
+// Small caps
+const SMALL_CAPS = {
+  'a':'ᴀ','b':'ʙ','c':'ᴄ','d':'ᴅ','e':'ᴇ','f':'ꜰ','g':'ɢ','h':'ʜ','i':'ɪ','j':'ᴊ','k':'ᴋ','l':'ʟ','m':'ᴍ',
+  'n':'ɴ','o':'ᴏ','p':'ᴘ','q':'ǫ','r':'ʀ','s':'s','t':'ᴛ','u':'ᴜ','v':'ᴠ','w':'ᴡ','x':'x','y':'ʏ','z':'ᴢ',
+  'A':'ᴀ','B':'ʙ','C':'ᴄ','D':'ᴅ','E':'ᴇ','F':'ꜰ','G':'ɢ','H':'ʜ','I':'ɪ','J':'ᴊ','K':'ᴋ','L':'ʟ','M':'ᴍ',
+  'N':'ɴ','O':'ᴏ','P':'ᴘ','Q':'ǫ','R':'ʀ','S':'s','T':'ᴛ','U':'ᴜ','V':'ᴠ','W':'ᴡ','X':'x','Y':'ʏ','Z':'ᴢ',
+  ' ':' '
+};
+
+// Cyrillic lookalike (small style)
+const CYRILLIC = {
+  'a':'а','b':'ь','c':'с','d':'ԁ','e':'е','f':'f','g':'ɡ','h':'һ','i':'і','j':'ј','k':'к','l':'ӏ','m':'м',
+  'n':'п','o':'о','p':'р','q':'ԛ','r':'г','s':'ѕ','t':'т','u':'ц','v':'ѵ','w':'ш','x':'х','y':'у','z':'ᴢ',
+  'A':'А','B':'В','C':'С','D':'Д','E':'Е','F':'Ғ','G':'Ԍ','H':'Н','I':'І','J':'Ј','K':'К','L':'Ђ','M':'М',
+  'N':'П','O':'О','P':'Р','Q':'Ҩ','R':'Я','S':'Ѕ','T':'Т','U':'Ц','V':'Ѵ','W':'Ш','X':'Х','Y':'Ү','Z':'Ƶ',
+  ' ':' '
+};
+
+// Combined strikethrough (using combining characters)
+function toStrikethrough(text) {
+  let out = '';
+  for (const ch of text) {
+    out += ch + '\u0336';
+  }
+  return out;
+}
+
+// Underline
+function toUnderline(text) {
+  let out = '';
+  for (const ch of text) {
+    out += ch + '\u0332';
+  }
+  return out;
+}
+
+/* ===== CONVERSION HELPERS ===== */
+function mapText(text, map, fallback = true) {
+  let out = '';
+  for (const ch of text) {
+    if (map[ch] !== undefined) out += map[ch];
+    else if (fallback) out += ch;
+  }
+  return out;
+}
+
+/* ===== VARIANTS DEFINITION ===== */
+const VARIANTS = [
+  { id: 'super', name: 'Superscript', fn: (t) => mapText(t, SUPER) },
+  { id: 'supercaps', name: 'Superscript Caps', fn: (t) => mapText(t, SUPER_CAPS) },
+  { id: 'sub', name: 'Subscript', fn: (t) => mapText(t, SUB) },
+  { id: 'smallcaps', name: 'Small Caps', fn: (t) => mapText(t, SMALL_CAPS) },
+  { id: 'tiny', name: 'Tiny Letters', fn: (t) => mapText(t, SUPER) },
+  { id: 'cyrillic', name: 'Cyrillic Small', fn: (t) => mapText(t, CYRILLIC) },
+  { id: 'strikethrough', name: 'Strikethrough', fn: (t) => toStrikethrough(t) },
+  { id: 'underline', name: 'Underline', fn: (t) => toUnderline(t) }
+];
+
+/* ===== DOM ===== */
+const textInput = $('#textInput');
+const variantList = $('#variantList');
+const variantBadge = $('#variantBadge');
+const charCount = $('#charCount');
+const wordCount = $('#wordCount');
+
+const pasteBtn = $('#pasteBtn');
+const copyAllBtn = $('#copyAllBtn');
+const downloadBtn = $('#downloadBtn');
+const clearBtn = $('#clearBtn');
+
+/* ===== STATE ===== */
+const state = {
+  variants: []
+};
+
+/* ===== RENDER ===== */
+function render() {
+  const text = textInput.value;
+
+  // Update stats
+  charCount.textContent = text.length;
+  wordCount.textContent = text.trim() ? text.trim().split(/\s+/).filter(w => w.length > 0).length : 0;
+
+  if (!text) {
+    variantList.innerHTML = `
+      <div class="empty-state">
+        <div class="empty-icon">ᵃ</div>
+        <div class="empty-title">Type something above</div>
+        <div class="empty-desc">All small text variants will appear here instantly.</div>
+      </div>
+    `;
+    variantBadge.textContent = '0 styles';
+    state.variants = [];
+    return;
+  }
+
+  // Generate variants
+  state.variants = VARIANTS.map(v => ({
+    id: v.id,
+    name: v.name,
+    text: v.fn(text)
+  }));
+
+  variantBadge.textContent = state.variants.length + ' styles';
+
+  // Render list
+  variantList.innerHTML = '';
+  state.variants.forEach(v => {
+    const item = document.createElement('div');
+    item.className = 'variant';
+    item.dataset.id = v.id;
+    item.innerHTML = `
+      <div class="variant-header">
+        <div class="variant-name"><span class="dot"></span>${v.name}</div>
+        <button class="variant-copy-btn" type="button">📋 Copy</button>
+      </div>
+      <div class="variant-text">${escapeHtml(v.text)}</div>
+      <div class="variant-unicode">${escapeHtml(Array.from(v.text).map(c => 'U+' + c.codePointAt(0).toString(16).toUpperCase().padStart(4, '0')).join(' '))}</div>
+    `;
+
+    // Click on whole card to copy
+    item.addEventListener('click', async (e) => {
+      // If clicked on copy button, still copy
+      const ok = await copyToClipboard(v.text);
+      if (ok) {
+        item.classList.add('copied');
+        const btn = item.querySelector('.variant-copy-btn');
+        const orig = btn.textContent;
+        btn.textContent = '✓ Copied!';
+        setTimeout(() => {
+          item.classList.remove('copied');
+          btn.textContent = orig;
+        }, 1500);
+        showToast(`Copied: ${v.name}`, 'success', 1200);
+      }
+    });
+
+    variantList.appendChild(item);
+  });
+}
+
+function escapeHtml(s) {
+  const div = document.createElement('div');
+  div.textContent = s;
+  return div.innerHTML;
+}
+
+/* ===== INPUT ===== */
+textInput.addEventListener('input', render);
+
+/* ===== BUTTONS ===== */
+pasteBtn.addEventListener('click', async () => {
+  try {
+    if (navigator.clipboard && navigator.clipboard.readText) {
+      const t = await navigator.clipboard.readText();
+      textInput.value = t;
+      render();
+      showToast('Pasted from clipboard', 'success');
+    } else {
+      textInput.focus();
+      showToast('Press Ctrl+V to paste', 'info');
+    }
+  } catch (err) {
+    textInput.focus();
+    showToast('Clipboard access denied', 'error');
+  }
+});
+
+copyAllBtn.addEventListener('click', async () => {
+  if (!state.variants.length) { showToast('Type something first', 'error'); return; }
+  const all = state.variants.map(v => `${v.name}:\n${v.text}`).join('\n\n');
+  const ok = await copyToClipboard(all);
+  if (ok) {
+    copyAllBtn.classList.add('copied');
+    const orig = copyAllBtn.innerHTML;
+    copyAllBtn.innerHTML = '✓ Copied All!';
+    setTimeout(() => {
+      copyAllBtn.classList.remove('copied');
+      copyAllBtn.innerHTML = orig;
+    }, 1800);
+    showToast('All variants copied!', 'success');
+  } else {
+    showToast('Copy failed', 'error');
+  }
+});
+
+downloadBtn.addEventListener('click', () => {
+  if (!state.variants.length) { showToast('Nothing to download', 'error'); return; }
+  const lines = [
+    '════════════════════════════════════════',
+    '  BigToolz Small Text Generator',
+    '════════════════════════════════════════',
+    '',
+    `Original Text: ${textInput.value}`,
+    '',
+    '────── Variants ──────',
+    ''
+  ];
+  state.variants.forEach(v => {
+    lines.push(`${v.name}:`);
+    lines.push(v.text);
+    lines.push('');
+  });
+
+  const blob = new Blob([lines.join('\n')], { type: 'text/plain;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'small-text-variants.txt';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+  showToast('Downloaded all variants', 'success');
+});
+
+clearBtn.addEventListener('click', () => {
+  if (!textInput.value) return;
+  textInput.value = '';
+  render();
+  textInput.focus();
+  showToast('Cleared', 'info');
+});
+
+/* ===== INIT ===== */
+render();
+
+/* ===== FAQ ===== */
+$$('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    $$('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+</script>
+
+</body>
+</html>

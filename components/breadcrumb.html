@@ -1,0 +1,481 @@
+<!-- ===========================================
+     BigToolz - Breadcrumb Component
+     Version: 2.0.0
+     Last Updated: 2026-01-15
+     Usage: Include at top of page content (after header)
+     Variants:
+       - variant="light" (default) — white bg
+       - variant="dark"  — dark hero bg
+     =========================================== -->
+
+<!-- ===========================================
+     VARIANT 1: LIGHT (default)
+     Use on tool pages, category pages, blog posts
+     =========================================== -->
+<nav
+  class="breadcrumb breadcrumb-light"
+  id="bigtoolzBreadcrumb"
+  aria-label="Breadcrumb navigation"
+  data-auto="true">
+  <ol class="breadcrumb-list" itemscope itemtype="https://schema.org/BreadcrumbList">
+
+    <!-- Home -->
+    <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+      <a href="/" itemprop="item" class="breadcrumb-link">
+        <svg class="breadcrumb-icon" width="14" height="14" viewBox="0 0 24 24"
+             fill="none" stroke="currentColor" stroke-width="2.2"
+             aria-hidden="true">
+          <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
+          <path d="M9 22V12h6v10"/>
+        </svg>
+        <span itemprop="name">Home</span>
+      </a>
+      <meta itemprop="position" content="1">
+      <span class="breadcrumb-sep" aria-hidden="true">›</span>
+    </li>
+
+    <!-- Static demo: Tools -->
+    <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+      <a href="/tools/" itemprop="item" class="breadcrumb-link">
+        <span itemprop="name">Tools</span>
+      </a>
+      <meta itemprop="position" content="2">
+      <span class="breadcrumb-sep" aria-hidden="true">›</span>
+    </li>
+
+    <!-- Static demo: Image Tools -->
+    <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+      <a href="/tools/image-tools/" itemprop="item" class="breadcrumb-link">
+        <span itemprop="name">Image Tools</span>
+      </a>
+      <meta itemprop="position" content="3">
+      <span class="breadcrumb-sep" aria-hidden="true">›</span>
+    </li>
+
+    <!-- Current page -->
+    <li class="breadcrumb-item breadcrumb-current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+      <span itemprop="name" aria-current="page">Image Compressor</span>
+      <meta itemprop="position" content="4">
+    </li>
+
+  </ol>
+</nav>
+
+<!-- ===========================================
+     VARIANT 2: DARK (for hero sections)
+     Use inside dark hero gradient areas
+     =========================================== -->
+<!--
+<nav class="breadcrumb breadcrumb-dark" aria-label="Breadcrumb navigation">
+  <ol class="breadcrumb-list">
+    <li class="breadcrumb-item">
+      <a href="/" class="breadcrumb-link">
+        <svg class="breadcrumb-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><path d="M9 22V12h6v10"/></svg>
+        <span>Home</span>
+      </a>
+      <span class="breadcrumb-sep" aria-hidden="true">›</span>
+    </li>
+    <li class="breadcrumb-item">
+      <a href="/tools/" class="breadcrumb-link"><span>Tools</span></a>
+      <span class="breadcrumb-sep" aria-hidden="true">›</span>
+    </li>
+    <li class="breadcrumb-item breadcrumb-current">
+      <span aria-current="page">Image Compressor</span>
+    </li>
+  </ol>
+</nav>
+-->
+
+<!-- ===========================================
+     BREADCRUMB STYLES
+     In a full project, these live in /assets/css/style.css
+     =========================================== -->
+<style>
+  /* ===== BREADCRUMB BASE ===== */
+  .breadcrumb {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 13px;
+    margin-bottom: 20px;
+    line-height: 1.4;
+  }
+
+  /* ===== LIGHT VARIANT ===== */
+  .breadcrumb-light {
+    padding: 12px 0;
+  }
+
+  .breadcrumb-light .breadcrumb-link {
+    color: #6b7280;
+    text-decoration: none;
+    transition: color .2s;
+  }
+
+  .breadcrumb-light .breadcrumb-link:hover {
+    color: #2563eb;
+  }
+
+  .breadcrumb-light .breadcrumb-sep {
+    color: #d1d5db;
+    font-weight: 600;
+    user-select: none;
+  }
+
+  .breadcrumb-light .breadcrumb-current span {
+    color: #1a1a2e;
+    font-weight: 600;
+  }
+
+  .breadcrumb-light .breadcrumb-icon {
+    flex-shrink: 0;
+  }
+
+  /* ===== DARK VARIANT ===== */
+  .breadcrumb-dark {
+    padding: 0;
+  }
+
+  .breadcrumb-dark .breadcrumb-link {
+    color: rgba(255,255,255,.65);
+    text-decoration: none;
+    transition: color .2s;
+  }
+
+  .breadcrumb-dark .breadcrumb-link:hover {
+    color: #fff;
+  }
+
+  .breadcrumb-dark .breadcrumb-sep {
+    color: rgba(255,255,255,.35);
+    font-weight: 600;
+    user-select: none;
+  }
+
+  .breadcrumb-dark .breadcrumb-current span {
+    color: #fff;
+    font-weight: 500;
+  }
+
+  /* ===== LIST + ITEMS ===== */
+  .breadcrumb-list {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .breadcrumb-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 0;
+  }
+
+  .breadcrumb-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 200px;
+    transition: color .2s;
+  }
+
+  .breadcrumb-current {
+    display: inline-flex;
+    align-items: center;
+    min-width: 0;
+  }
+
+  .breadcrumb-current span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 240px;
+    display: inline-block;
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 576px) {
+    .breadcrumb {
+      font-size: 12px;
+    }
+
+    .breadcrumb-list {
+      gap: 6px;
+    }
+
+    .breadcrumb-item {
+      gap: 6px;
+    }
+
+    .breadcrumb-link {
+      max-width: 120px;
+    }
+
+    .breadcrumb-current span {
+      max-width: 140px;
+    }
+
+    /* On very small screens, hide the "Tools" middle step for cleaner view */
+    .breadcrumb-list .breadcrumb-item:nth-child(2):not(.breadcrumb-current) + .breadcrumb-item:not(.breadcrumb-current) .breadcrumb-link {
+      max-width: 100px;
+    }
+  }
+
+  /* ===== ACCESSIBILITY ===== */
+  .breadcrumb a:focus-visible {
+    outline: 2px solid #2563eb;
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  .breadcrumb-dark a:focus-visible {
+    outline-color: #60a5fa;
+  }
+
+  /* ===== DARK MODE ===== */
+  html[data-theme="dark"] .breadcrumb-light .breadcrumb-link {
+    color: #94a3b8;
+  }
+
+  html[data-theme="dark"] .breadcrumb-light .breadcrumb-link:hover {
+    color: #60a5fa;
+  }
+
+  html[data-theme="dark"] .breadcrumb-light .breadcrumb-sep {
+    color: #475569;
+  }
+
+  html[data-theme="dark"] .breadcrumb-light .breadcrumb-current span {
+    color: #f1f5f9;
+  }
+</style>
+
+<!-- ===========================================
+     BREADCRUMB JAVASCRIPT
+     Auto-generates breadcrumb from current URL
+     =========================================== -->
+<script>
+(function () {
+  'use strict';
+
+  /* ===========================================
+     SEGMENT LABEL MAP
+     URL segments → human-readable labels
+     =========================================== */
+  const SEGMENT_LABELS = {
+    'tools': 'Tools',
+    'blog': 'Blog',
+    'posts': 'Posts',
+    'categories': 'Categories',
+    'page': 'Page',
+    'image-tools': 'Image Tools',
+    'text-tools': 'Text Tools',
+    'developer-tools': 'Developer Tools',
+    'calculator-tools': 'Calculator Tools',
+    'seo-tools': 'SEO Tools',
+    'social-tools': 'Social Tools',
+    'utility-tools': 'Utility Tools',
+    'pdf-tools': 'PDF Tools',
+    'convert-pdf': 'Convert PDF',
+    'organize-pdf': 'Organize PDF',
+    'security-pdf': 'Security PDF',
+    'visual-pdf': 'Visual PDF',
+    'form-pdf': 'Form PDF',
+    'advanced-pdf': 'Advanced PDF',
+    'tool-guides': 'Tool Guides',
+    'seo-tips': 'SEO Tips',
+    'how-to': 'How-To'
+  };
+
+  /* ===========================================
+     AUTO-GENERATE
+     =========================================== */
+  function init() {
+    const bc = document.getElementById('bigtoolzBreadcrumb');
+    if (!bc) return;
+
+    // Only auto-generate if data-auto="true"
+    if (bc.dataset.auto !== 'true') return;
+
+    const path = window.location.pathname;
+    if (!path || path === '/' || path === '/index.html') {
+      // Homepage — hide breadcrumb
+      bc.style.display = 'none';
+      return;
+    }
+
+    // Break path into segments
+    const segments = path.split('/').filter(Boolean);
+    if (segments.length === 0) {
+      bc.style.display = 'none';
+      return;
+    }
+
+    // Build breadcrumb trail
+    const trail = [];
+    let accumulated = '';
+
+    segments.forEach((segment, idx) => {
+      accumulated += '/' + segment + '/';
+
+      // Skip file extensions in labels
+      let label = segment;
+      let isFile = false;
+
+      if (label.endsWith('.html')) {
+        label = label.replace('.html', '');
+        isFile = true;
+      }
+
+      // Handle page numbers like /blog/page/2/
+      if (idx > 0 && segments[idx - 1] === 'page') {
+        label = 'Page ' + label;
+      }
+
+      // Convert slug to title case if not in map
+      if (!SEGMENT_LABELS[label]) {
+        label = label
+          .split('-')
+          .map(w => w.charAt(0).toUpperCase() + w.slice(1))
+          .join(' ');
+      } else {
+        label = SEGMENT_LABELS[label];
+      }
+
+      // Skip "posts" segment entirely (blog date-slug hierarchy)
+      if (segment === 'posts') return;
+
+      trail.push({
+        label,
+        url: accumulated,
+        isLast: false
+      });
+    });
+
+    // Mark last item
+    if (trail.length > 0) {
+      trail[trail.length - 1].isLast = true;
+    }
+
+    // Build DOM
+    renderBreadcrumb(bc, trail);
+  }
+
+  /* ===========================================
+     RENDER
+     =========================================== */
+  function renderBreadcrumb(container, trail) {
+    // Build list items
+    const items = [];
+
+    // Home icon link
+    items.push(`
+      <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a href="/" itemprop="item" class="breadcrumb-link">
+          <svg class="breadcrumb-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+            <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
+            <path d="M9 22V12h6v10"/>
+          </svg>
+          <span itemprop="name">Home</span>
+        </a>
+        <meta itemprop="position" content="1">
+        <span class="breadcrumb-sep" aria-hidden="true">›</span>
+      </li>
+    `);
+
+    // Trail items
+    trail.forEach((item, idx) => {
+      const position = idx + 2;
+
+      if (item.isLast) {
+        items.push(`
+          <li class="breadcrumb-item breadcrumb-current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <span itemprop="name" aria-current="page">${escapeHtml(item.label)}</span>
+            <meta itemprop="position" content="${position}">
+          </li>
+        `);
+      } else {
+        items.push(`
+          <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <a href="${escapeHtml(item.url)}" itemprop="item" class="breadcrumb-link">
+              <span itemprop="name">${escapeHtml(item.label)}</span>
+            </a>
+            <meta itemprop="position" content="${position}">
+            <span class="breadcrumb-sep" aria-hidden="true">›</span>
+          </li>
+        `);
+      }
+    });
+
+    // Replace inner HTML
+    const list = container.querySelector('.breadcrumb-list');
+    if (list) {
+      list.innerHTML = items.join('');
+    }
+
+    // If only Home + current, hide if very short trail
+    if (trail.length <= 0) {
+      container.style.display = 'none';
+    }
+  }
+
+  /* ===========================================
+     UTILS
+     =========================================== */
+  function escapeHtml(str) {
+    const div = document.createElement('div');
+    div.textContent = String(str);
+    return div.innerHTML;
+  }
+
+  /* ===========================================
+     INIT
+     =========================================== */
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+
+  /* ===========================================
+     PUBLIC API
+     =========================================== */
+  window.BigToolzBreadcrumb = {
+    /**
+     * Manually render breadcrumb with custom trail
+     * @param {Array} trail — [{ label, url }]
+     * @param {string} containerId — default 'bigtoolzBreadcrumb'
+     */
+    render(trail, containerId = 'bigtoolzBreadcrumb') {
+      const container = document.getElementById(containerId);
+      if (!container || !Array.isArray(trail)) return;
+      const normalized = trail.map((item, idx) => ({
+        label: item.label || '',
+        url: item.url || '',
+        isLast: idx === trail.length - 1
+      }));
+      renderBreadcrumb(container, normalized);
+    },
+
+    /**
+     * Toggle light/dark variant
+     */
+    setVariant(variant, containerId = 'bigtoolzBreadcrumb') {
+      const container = document.getElementById(containerId);
+      if (!container) return;
+      container.classList.remove('breadcrumb-light', 'breadcrumb-dark');
+      container.classList.add('breadcrumb-' + (variant === 'dark' ? 'dark' : 'light'));
+    }
+  };
+
+})();
+</script>
+
+<!-- ===========================================
+     END — breadcrumb.html
+     =========================================== -->

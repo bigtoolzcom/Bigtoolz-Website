@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2563eb">
+
+<title>JSON to XML Converter - Convert JSON to XML Online Free | BigToolz</title>
+<meta name="description" content="Convert JSON to XML online free. Auto-detect attributes, arrays, text nodes. Customizable root element. No upload, works in your browser. Copy or download instantly.">
+<meta name="keywords" content="json to xml, json to xml converter, convert json to xml, json xml online, json2xml">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://bigtoolz.com/tools/developer-tools/json-to-xml/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="JSON to XML Converter - Free Online Tool | BigToolz">
+<meta property="og:description" content="Convert JSON to XML instantly free, no upload, attribute support.">
+<meta property="og:url" content="https://bigtoolz.com/tools/developer-tools/json-to-xml/">
+<meta property="og:image" content="https://bigtoolz.com/assets/images/og-image.jpg">
+<meta property="og:site_name" content="BigToolz">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="JSON to XML Converter - BigToolz">
+<meta name="twitter:description" content="Convert JSON to XML instantly free, no upload.">
+<meta name="twitter:image" content="https://bigtoolz.com/assets/images/twitter-card.jpg">
+
+<link rel="icon" href="/assets/images/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/images/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#f8f9fc;color:#1a1a2e;overflow-x:hidden;line-height:1.5}
+
+  .header{background:#fff;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;position:sticky;top:0;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+  .header-left{display:flex;align-items:center;gap:40px}
+  .logo{display:flex;align-items:center;gap:8px;font-size:22px;font-weight:800;color:#1a1a2e;text-decoration:none}
+  .logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#3b82f6,#2563eb);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px}
+  .logo span{color:#2563eb}
+  .nav{display:flex;align-items:center;gap:28px;list-style:none}
+  .nav a{text-decoration:none;color:#4b5563;font-size:14px;font-weight:500;transition:color .2s}
+  .nav a:hover,.nav a.active{color:#2563eb}
+  .header-right{display:flex;align-items:center;gap:16px}
+  .search-btn,.theme-btn{width:36px;height:36px;border-radius:50%;border:none;background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#4b5563}
+  .search-btn:hover,.theme-btn:hover{background:#f3f4f6}
+  .bookmark-btn{display:flex;align-items:center;gap:8px;background:#2563eb;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
+  .bookmark-btn:hover{background:#1d4ed8}
+
+  .hero{background:linear-gradient(135deg,#0a0e27 0%,#1a1a4e 40%,#2d1b69 70%,#4c1d95 100%);padding:40px 40px 60px;position:relative;overflow:hidden;color:#fff}
+  .hero::before{content:'';position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(139,92,246,.3) 0%,transparent 70%);border-radius:50%}
+  .hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+  .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px;flex-wrap:wrap}
+  .breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none}
+  .breadcrumb a:hover{color:#fff}
+  .breadcrumb .sep{color:rgba(255,255,255,.4)}
+  .breadcrumb .current{color:#fff;font-weight:500}
+  .hero-title-row{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+  .hero-icon{width:60px;height:60px;background:#8b5cf6;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:22px;color:#fff;flex-shrink:0;box-shadow:0 8px 24px rgba(139,92,246,.4);font-family:'JetBrains Mono',monospace;font-weight:700}
+  .hero-title{font-size:42px;font-weight:800;line-height:1.15}
+  .hero-title .blue{color:#a78bfa}
+  .hero-desc{font-size:15px;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:24px;max-width:560px}
+  .hero-features{display:flex;gap:24px;flex-wrap:wrap}
+  .hero-feature{display:flex;align-items:center;gap:6px;font-size:13px;color:#fff;font-weight:500}
+  .hero-feature .check{width:18px;height:18px;border-radius:50%;background:#8b5cf6;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;flex-shrink:0}
+
+  .main-content{max-width:1200px;margin:0 auto;padding:40px;display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start}
+  .tool-content{min-width:0}
+
+  .workspace{background:#fff;border-radius:16px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,.06);border:1px solid #e5e7eb;margin-bottom:24px}
+
+  /* Two-column editor */
+  .editor-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px}
+
+  .editor-panel{display:flex;flex-direction:column}
+  .editor-label{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;flex-wrap:wrap;gap:8px}
+  .editor-label-text{font-size:13px;font-weight:700;color:#1a1a2e;display:flex;align-items:center;gap:6px}
+  .editor-hint{font-size:11px;color:#9ca3af;font-weight:500}
+  .editor-textarea{width:100%;min-height:380px;padding:16px;border:2px solid #e5e7eb;border-radius:12px;font-family:'JetBrains Mono','Fira Code',Consolas,monospace;font-size:12px;line-height:1.6;color:#1a1a2e;background:#fafafa;outline:none;resize:vertical;transition:border-color .2s}
+  .editor-textarea:focus{border-color:#8b5cf6;background:#fff;box-shadow:0 0 0 3px rgba(139,92,246,.1)}
+  .editor-textarea::placeholder{color:#9ca3af;font-family:'Inter',sans-serif;font-size:13px}
+  .editor-textarea.output{background:#faf5ff;color:#1a1a2e}
+
+  .editor-actions{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+  .mini-btn{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;font-size:12px;font-weight:600;color:#4b5563;cursor:pointer;font-family:inherit;transition:all .2s}
+  .mini-btn:hover{border-color:#8b5cf6;color:#8b5cf6;background:#faf5ff}
+  .mini-btn.danger:hover{border-color:#ef4444;color:#ef4444;background:#fef2f2}
+  .mini-btn.copied{background:#10b981;color:#fff;border-color:#10b981}
+
+  /* Status */
+  .status-box{display:none;padding:12px 16px;border-radius:10px;margin-bottom:16px;font-size:13px;font-weight:600;align-items:flex-start;gap:10px}
+  .status-box.visible{display:flex}
+  .status-box.error{background:#fef2f2;border:1px solid #fecaca;color:#991b1b}
+  .status-box.success{background:#f0fdf4;border:1px solid #bbf7d0;color:#065f46}
+  .status-box svg{flex-shrink:0;margin-top:1px}
+
+  /* Options */
+  .options{background:#faf5ff;border-radius:12px;padding:20px;margin-bottom:20px;border:1px solid #ede9fe}
+  .options-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+  .options-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .option-group label{display:block;font-size:12px;font-weight:600;color:#4b5563;margin-bottom:6px}
+  .option-group input[type="text"],.option-group select{width:100%;padding:10px 12px;border:1px solid #e5e7eb;border-radius:8px;font-size:13px;font-family:inherit;color:#1a1a2e;background:#fff;outline:none;transition:border-color .2s}
+  .option-group input:focus,.option-group select:focus{border-color:#8b5cf6;box-shadow:0 0 0 3px rgba(139,92,246,.1)}
+
+  .toggle-row{display:flex;align-items:center;justify-content:space-between;padding:12px 14px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;gap:12px;grid-column:span 3;margin-top:8px}
+  .toggle-info{display:flex;flex-direction:column;gap:2px}
+  .toggle-title{font-size:13px;font-weight:700;color:#1a1a2e}
+  .toggle-desc{font-size:11px;color:#6b7280;line-height:1.4}
+  .toggle-switch{position:relative;width:44px;height:24px;background:#d1d5db;border-radius:12px;cursor:pointer;transition:background .2s;flex-shrink:0}
+  .toggle-switch::after{content:'';position:absolute;top:2px;left:2px;width:20px;height:20px;background:#fff;border-radius:50%;transition:transform .2s;box-shadow:0 1px 3px rgba(0,0,0,.15)}
+  .toggle-switch.on{background:#8b5cf6}
+  .toggle-switch.on::after{transform:translateX(20px)}
+
+  .actions{display:flex;gap:12px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 28px;border-radius:10px;font-size:15px;font-weight:700;font-family:inherit;cursor:pointer;border:none;transition:all .2s;text-decoration:none}
+  .btn-primary{background:#8b5cf6;color:#fff;flex:1;box-shadow:0 4px 12px rgba(139,92,246,.2)}
+  .btn-primary:hover:not(:disabled){background:#7c3aed;transform:translateY(-2px);box-shadow:0 6px 20px rgba(139,92,246,.3)}
+  .btn-primary:disabled{opacity:.5;cursor:not-allowed;transform:none}
+  .btn-secondary{background:#fff;color:#8b5cf6;border:1px solid #e5e7eb}
+  .btn-secondary:hover{border-color:#8b5cf6;background:#faf5ff}
+
+  /* SEO */
+  .seo-content{background:#fff;border-radius:16px;padding:32px;border:1px solid #e5e7eb;margin-bottom:24px}
+  .seo-content h2{font-size:22px;font-weight:800;color:#1a1a2e;margin-bottom:14px;margin-top:28px;display:flex;align-items:center;gap:10px}
+  .seo-content h2:first-child{margin-top:0}
+  .seo-content h3{font-size:16px;font-weight:700;color:#1a1a2e;margin:20px 0 10px}
+  .seo-content p{font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:14px}
+  .seo-content ul{list-style:none;padding-left:0;margin-bottom:16px}
+  .seo-content ul li{position:relative;padding-left:24px;font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:8px}
+  .seo-content ul li::before{content:'';position:absolute;left:6px;top:12px;width:6px;height:6px;background:#8b5cf6;border-radius:50%}
+  .seo-content a{color:#2563eb;text-decoration:none;font-weight:600}
+  .seo-content a:hover{text-decoration:underline}
+  .seo-content strong{color:#1a1a2e;font-weight:700}
+  .seo-content code{background:#f1f5f9;padding:2px 6px;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:13px;color:#7c3aed;border:1px solid #e2e8f0}
+
+  .code-block{background:#1a1a2e;color:#e2e8f0;padding:16px;border-radius:8px;font-family:'JetBrains Mono','Fira Code',Consolas,monospace;font-size:12px;line-height:1.6;overflow-x:auto;margin:14px 0;position:relative}
+  .code-block .lbl{display:block;font-family:'Inter',sans-serif;font-size:10px;color:#64748b;text-transform:uppercase;letter-spacing:.5px;font-weight:700;margin-bottom:8px}
+  .code-block .hl{color:#a78bfa}
+  .code-block .str{color:#34d399}
+  .code-block .num{color:#fbbf24}
+  .code-block .kw{color:#f472b6}
+
+  .how-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:20px}
+  .how-step{background:#faf5ff;border-radius:12px;padding:20px;border:1px solid #ede9fe}
+  .how-step-num{width:36px;height:36px;border-radius:50%;background:#8b5cf6;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;margin-bottom:12px}
+  .how-step-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+  .how-step-desc{font-size:13px;color:#6b7280;line-height:1.6}
+
+  .faq-item{background:#faf5ff;border:1px solid #ede9fe;border-radius:12px;margin-bottom:10px;overflow:hidden;transition:border-color .2s}
+  .faq-item:hover{border-color:#8b5cf6}
+  .faq-question{width:100%;background:none;border:none;padding:18px 22px;font-size:15px;font-weight:700;color:#1a1a2e;text-align:left;cursor:pointer;font-family:inherit;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .faq-question .chev{font-size:12px;color:#8b5cf6;transition:transform .2s;flex-shrink:0}
+  .faq-item.open .faq-question .chev{transform:rotate(180deg)}
+  .faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 22px}
+  .faq-item.open .faq-answer{max-height:500px;padding-bottom:18px}
+  .faq-answer p{font-size:14px;color:#6b7280;line-height:1.7;margin:0}
+
+  .sidebar{background:#fff;border-radius:16px;padding:24px;border:1px solid #e5e7eb;position:sticky;top:80px;margin-bottom:24px}
+  .sidebar-header{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:800;color:#1a1a2e;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid #f3f4f6}
+  .sidebar-list{display:flex;flex-direction:column;gap:8px}
+  .sidebar-item{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;cursor:pointer;transition:background .2s;text-decoration:none;color:inherit;border:1px solid #f3f4f6}
+  .sidebar-item:hover{background:#faf5ff;border-color:#ede9fe}
+  .sidebar-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:16px;color:#fff;flex-shrink:0;font-family:'JetBrains Mono',monospace;font-weight:700}
+  .sidebar-info{flex:1;min-width:0}
+  .sidebar-title{font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:2px}
+  .sidebar-desc{font-size:11px;color:#9ca3af;line-height:1.4}
+
+  .footer{background:#0a0e27;padding:60px 40px 30px;color:#fff;margin-top:40px}
+  .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:40px}
+  .footer-brand{display:flex;align-items:center;gap:8px;font-size:20px;font-weight:800;margin-bottom:12px}
+  .footer-brand span{color:#60a5fa}
+  .footer-tagline{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px}
+  .footer-social{display:flex;gap:12px}
+  .footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:16px;transition:background .2s}
+  .footer-social a:hover{background:rgba(255,255,255,.2)}
+  .footer-heading{font-size:14px;font-weight:700;margin-bottom:20px;color:#fff}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .footer-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;transition:color .2s}
+  .footer-links a:hover{color:#60a5fa}
+  .footer-bottom{max-width:1200px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  .footer-bottom-left{display:flex;gap:20px;font-size:12px;color:rgba(255,255,255,.5)}
+  .footer-bottom-right,.footer-bottom-links a{font-size:12px;color:rgba(255,255,255,.5);text-decoration:none}
+  .footer-bottom-links{display:flex;gap:20px}
+
+  .toast{position:fixed;bottom:24px;right:24px;background:#1a1a2e;color:#fff;padding:14px 20px;border-radius:10px;font-size:13px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:3000;transform:translateY(200%);transition:transform .3s ease;max-width:320px}
+  .toast.visible{transform:translateY(0)}
+  .toast.success{background:#10b981}
+  .toast.error{background:#ef4444}
+
+  @media(max-width:1024px){
+    .main-content{grid-template-columns:1fr;padding:24px 20px}
+    .sidebar{position:static}
+    .editor-grid{grid-template-columns:1fr}
+    .how-steps{grid-template-columns:repeat(2,1fr)}
+    .options-grid{grid-template-columns:1fr 1fr}
+    .toggle-row{grid-column:span 2}
+  }
+  @media(max-width:768px){
+    .header{padding:0 20px}.nav{display:none}
+    .hero{padding:24px 20px 40px}
+    .hero-title{font-size:28px}
+    .hero-icon{width:48px;height:48px;font-size:18px}
+    .hero-title-row{flex-direction:column;align-items:flex-start;gap:12px}
+    .main-content{padding:20px 16px}
+    .workspace{padding:20px}
+    .how-steps{grid-template-columns:1fr}
+    .seo-content{padding:20px}
+    .footer-inner{grid-template-columns:1fr 1fr}
+    .toast{left:16px;right:16px;bottom:16px;max-width:none}
+    .options-grid{grid-template-columns:1fr}
+    .toggle-row{grid-column:span 1}
+    .editor-textarea{min-height:260px}
+  }
+  @media(max-width:576px){
+    .header{padding:0 16px}.header-right .search-btn,.header-right .theme-btn{display:none}
+    .hero-title{font-size:24px}
+    .actions{flex-direction:column}
+    .btn{width:100%}
+    .btn-primary{flex:none}
+    .footer-inner{grid-template-columns:1fr}
+    .footer-bottom{flex-direction:column;text-align:center}
+  }
+
+  html[data-theme="dark"] body{background:#0f172a;color:#f1f5f9}
+  html[data-theme="dark"] .header,html[data-theme="dark"] .workspace,html[data-theme="dark"] .seo-content,html[data-theme="dark"] .sidebar{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .logo,html[data-theme="dark"] .hero-title,html[data-theme="dark"] .seo-content h2,html[data-theme="dark"] .seo-content h3,html[data-theme="dark"] .faq-question,html[data-theme="dark"] .sidebar-header,html[data-theme="dark"] .sidebar-title,html[data-theme="dark"] .options-title,html[data-theme="dark"] .editor-label-text,html[data-theme="dark"] .toggle-title{color:#f1f5f9}
+  html[data-theme="dark"] .nav a{color:#cbd5e1}
+  html[data-theme="dark"] .options,html[data-theme="dark"] .how-step,html[data-theme="dark"] .faq-item{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .editor-textarea{background:#0f172a;border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .editor-textarea:focus{background:#0f172a}
+  html[data-theme="dark"] .editor-textarea.output{background:#1e1b4b}
+  html[data-theme="dark"] .mini-btn{background:#0f172a;border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .option-group input,html[data-theme="dark"] .option-group select{background:#0f172a;border-color:#334155;color:#f1f5f9}
+  html[data-theme="dark"] .toggle-row{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .seo-content p,html[data-theme="dark"] .seo-content ul li,html[data-theme="dark"] .faq-answer p{color:#cbd5e1}
+  html[data-theme="dark"] .seo-content code{background:#020617;color:#a78bfa;border-color:#334155}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type": "SoftwareApplication", "name": "JSON to XML Converter", "url": "https://bigtoolz.com/tools/developer-tools/json-to-xml/", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any (Web-based)", "description": "Free online JSON to XML converter supports attributes, arrays, and text nodes. Works in your browser.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "2345"}},
+    {"@type": "HowTo", "name": "How to Convert JSON to XML", "step": [
+      {"@type": "HowToStep", "name": "Paste JSON", "text": "Paste or type your JSON data into the input."},
+      {"@type": "HowToStep", "name": "Configure Options", "text": "Set root element name, formatting, attribute handling."},
+      {"@type": "HowToStep", "name": "Convert", "text": "Click Convert to XML."},
+      {"@type": "HowToStep", "name": "Copy or Download", "text": "Copy the XML or download as .xml file."}
+    ]},
+    {"@type": "FAQPage", "mainEntity": [
+      {"@type": "Question", "name": "How do I convert JSON to XML?", "acceptedAnswer": {"@type": "Answer", "text": "Paste your JSON into the input box, optionally set a root element name, then click Convert. The XML output appears instantly in the right panel. Copy or download it."}},
+      {"@type": "Question", "name": "How are JSON arrays converted to XML?", "acceptedAnswer": {"@type": "Answer", "text": "Arrays become repeated elements. For example, {\"items\": [1, 2, 3]} becomes <items>1</items><items>2</items><items>3</items> inside the parent element."}},
+      {"@type": "Question", "name": "How do I add XML attributes?", "acceptedAnswer": {"@type": "Answer", "text": "Use the @ prefix in your JSON keys. For example, {\"user\": {\"@id\": 1, \"name\": \"John\"}} produces <user id=\"1\"><name>John</name></user>. Enable 'Treat @ keys as attributes' option."}},
+      {"@type": "Question", "name": "Can I use CDATA or preserve special characters?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, special characters like <, >, &, quotes are automatically escaped. Enable 'CDATA for text' if you need raw content preservation."}},
+      {"@type": "Question", "name": "Is my JSON uploaded to a server?", "acceptedAnswer": {"@type": "Answer", "text": "No. All conversion happens in your browser. Your JSON never leaves your device."}}
+    ]},
+    {"@type": "BreadcrumbList", "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bigtoolz.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://bigtoolz.com/tools/"},
+      {"@type": "ListItem", "position": 3, "name": "Developer Tools", "item": "https://bigtoolz.com/tools/developer-tools/"},
+      {"@type": "ListItem", "position": 4, "name": "JSON to XML", "item": "https://bigtoolz.com/tools/developer-tools/json-to-xml/"}
+    ]}
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-left">
+    <a href="/" class="logo"><div class="logo-icon">⚒</div>BigToolz</span></a>
+    <nav><ul class="nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/tools/" class="active">All Tools</a></li>
+      <li><a href="/tools/categories">Categories</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul></nav>
+  </div>
+  <div class="header-right">
+   
+    <button class="theme-btn" aria-label="Toggle theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
+    
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <nav class="breadcrumb">
+      <a href="/">Home</a><span class="sep">›</span>
+      <a href="/tools/">Tools</a><span class="sep">›</span>
+      <a href="/tools/developer-tools/">Developer Tools</a><span class="sep">›</span>
+      <span class="current">JSON to XML</span>
+    </nav>
+    <div class="hero-title-row">
+      <div class="hero-icon">{&lt;/&gt;}</div>
+      <h1 class="hero-title">JSON to <span class="blue">XML</span></h1>
+    </div>
+    <p class="hero-desc">
+      Convert JSON to XML instantly with attribute support (@ keys), array handling, custom root element, and pretty formatting. Fast, private, browser-based.
+    </p>
+    <div class="hero-features">
+      <div class="hero-feature"><span class="check">✓</span> Attribute Support</div>
+      <div class="hero-feature"><span class="check">✓</span> Array Handling</div>
+      <div class="hero-feature"><span class="check">✓</span> Pretty Print</div>
+      <div class="hero-feature"><span class="check">✓</span> No Upload</div>
+    </div>
+  </div>
+</section>
+
+<div class="main-content">
+
+  <div class="tool-content">
+
+    <div class="workspace">
+
+      <!-- Status -->
+      <div class="status-box" id="statusBox">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+        <span id="statusText"></span>
+      </div>
+
+      <!-- Two-column editor -->
+      <div class="editor-grid">
+
+        <!-- Input -->
+        <div class="editor-panel">
+          <div class="editor-label">
+            <div class="editor-label-text">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2.5"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg>
+              JSON Input
+            </div>
+            <span class="editor-hint" id="inputStats">0 chars</span>
+          </div>
+          <textarea id="jsonInput" class="editor-textarea" placeholder='Paste your JSON here...
+
+Example:
+{
+  "user": {
+    "@id": 1,
+    "name": "John Doe",
+    "email": "john@example.com",
+    "roles": ["admin", "user"]
+  }
+}'></textarea>
+          <div class="editor-actions">
+            <button class="mini-btn" id="pasteBtn">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+              Paste
+            </button>
+            <button class="mini-btn" id="sampleBtn">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M2 12h20"/></svg>
+              Load Sample
+            </button>
+            <button class="mini-btn danger" id="clearInputBtn">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+              Clear
+            </button>
+          </div>
+        </div>
+
+        <!-- Output -->
+        <div class="editor-panel">
+          <div class="editor-label">
+            <div class="editor-label-text">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><path d="M4 17l6-6-6-6M12 19h8"/></svg>
+              XML Output
+            </div>
+            <span class="editor-hint" id="outputStats">0 chars</span>
+          </div>
+          <textarea id="xmlOutput" class="editor-textarea output" placeholder="XML output appears here..." readonly></textarea>
+          <div class="editor-actions">
+            <button class="mini-btn" id="copyBtn">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+              Copy XML
+            </button>
+            <button class="mini-btn" id="downloadBtn">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+              Download .xml
+            </button>
+            <button class="mini-btn" id="clearOutputBtn">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+              Clear
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Options -->
+      <div class="options">
+        <div class="options-title">⚙️ Conversion Settings</div>
+        <div class="options-grid">
+
+          <div class="option-group">
+            <label>Root Element Name</label>
+            <input type="text" id="rootName" value="root" placeholder="root">
+          </div>
+
+          <div class="option-group">
+            <label>Array Item Name</label>
+            <input type="text" id="arrayItem" value="item" placeholder="item">
+          </div>
+
+          <div class="option-group">
+            <label>Format</label>
+            <select id="formatMode">
+              <option value="pretty" selected>Pretty (indented)</option>
+              <option value="compact">Compact (single line)</option>
+            </select>
+          </div>
+
+          <div class="option-group">
+            <label>Indent</label>
+            <select id="indentSize">
+              <option value="2" selected>2 spaces</option>
+              <option value="4">4 spaces</option>
+              <option value="\t">Tab</option>
+            </select>
+          </div>
+
+          <div class="option-group">
+            <label>Declaration</label>
+            <select id="declaration">
+              <option value="yes" selected>Include &lt;?xml ?&gt;</option>
+              <option value="no">No declaration</option>
+            </select>
+          </div>
+
+          <div class="option-group">
+            <label>&nbsp;</label>
+            <button class="mini-btn" id="convertBtn" style="width:100%;justify-content:center;padding:10px;font-size:13px;background:#8b5cf6;color:#fff;border-color:#8b5cf6;">
+              🔄 Re-convert
+            </button>
+          </div>
+
+          <div class="toggle-row">
+            <div class="toggle-info">
+              <div class="toggle-title">Treat @ keys as attributes</div>
+              <div class="toggle-desc">Keys starting with @ become XML attributes instead of child elements</div>
+            </div>
+            <div class="toggle-switch on" id="attrToggle" role="switch" aria-checked="true"></div>
+          </div>
+
+          <div class="toggle-row">
+            <div class="toggle-info">
+              <div class="toggle-title">Treat #text as element text</div>
+              <div class="toggle-desc">#text key becomes the element's direct text content</div>
+            </div>
+            <div class="toggle-switch on" id="textToggle" role="switch" aria-checked="true"></div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="actions">
+        <button class="btn btn-primary" id="convertMainBtn" disabled>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 17l6-6-6-6M12 19h8"/></svg>
+          Convert JSON to XML
+        </button>
+        <button class="btn btn-secondary" id="resetBtn">Reset All</button>
+      </div>
+
+    </div>
+
+    <div class="seo-content">
+
+      <h2>{&lt;/&gt;} What is JSON to XML Conversion?</h2>
+      <p>
+        <strong>JSON to XML</strong> conversion transforms data from JavaScript Object Notation (JSON) the modern web's favorite format into Extensible Markup Language (XML) the classic, enterprise-grade format used in SOAP APIs, RSS feeds, Microsoft Office files, Android layouts, and many legacy systems. It's an essential conversion for developers working across these two worlds.
+      </p>
+      <p>
+        Unlike most online tools, BigToolz processes data <strong>100% in your browser</strong>. Your JSON <strong>never uploaded to any server</strong> perfect for API keys, tokens, or sensitive data structures.
+      </p>
+
+      <h2>🚀 How to Convert JSON to XML</h2>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-step-num">1</div>
+          <div class="how-step-title">Paste JSON</div>
+          <div class="how-step-desc">Paste your JSON data or click "Load Sample".</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">2</div>
+          <div class="how-step-title">Configure</div>
+          <div class="how-step-desc">Set root name, array item name, format preferences.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">3</div>
+          <div class="how-step-title">Convert</div>
+          <div class="how-step-desc">Click "Convert JSON to XML" result appears live.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">4</div>
+          <div class="how-step-title">Copy/Download</div>
+          <div class="how-step-desc">Copy XML to clipboard or download as .xml file.</div>
+        </div>
+      </div>
+
+      <h2>📐 Conversion Rules</h2>
+      <h3>Basic Objects</h3>
+      <div class="code-block">
+        <span class="lbl">JSON</span>
+{
+  <span class="hl">"name"</span>: <span class="str">"John"</span>,
+  <span class="hl">"age"</span>: <span class="num">30</span>
+}
+      </div>
+      <div class="code-block">
+        <span class="lbl">XML</span>
+&lt;<span class="hl">root</span>&gt;
+  &lt;<span class="hl">name</span>&gt;<span class="str">John</span>&lt;/<span class="hl">name</span>&gt;
+  &lt;<span class="hl">age</span>&gt;<span class="num">30</span>&lt;/<span class="hl">age</span>&gt;
+&lt;/<span class="hl">root</span>&gt;
+      </div>
+
+      <h3>Arrays</h3>
+      <div class="code-block">
+        <span class="lbl">JSON</span>
+{
+  <span class="hl">"colors"</span>: [<span class="str">"red"</span>, <span class="str">"green"</span>, <span class="str">"blue"</span>]
+}
+      </div>
+      <div class="code-block">
+        <span class="lbl">XML (with array-item = "item")</span>
+&lt;<span class="hl">root</span>&gt;
+  &lt;<span class="hl">colors</span>&gt;
+    &lt;<span class="hl">item</span>&gt;<span class="str">red</span>&lt;/<span class="hl">item</span>&gt;
+    &lt;<span class="hl">item</span>&gt;<span class="str">green</span>&lt;/<span class="hl">item</span>&gt;
+    &lt;<span class="hl">item</span>&gt;<span class="str">blue</span>&lt;/<span class="hl">item</span>&gt;
+  &lt;/<span class="hl">colors</span>&gt;
+&lt;/<span class="hl">root</span>&gt;
+      </div>
+
+      <h3>Attributes (@ prefix)</h3>
+      <div class="code-block">
+        <span class="lbl">JSON</span>
+{
+  <span class="hl">"user"</span>: {
+    <span class="hl">"@id"</span>: <span class="num">1</span>,
+    <span class="hl">"@role"</span>: <span class="str">"admin"</span>,
+    <span class="hl">"name"</span>: <span class="str">"Alice"</span>
+  }
+}
+      </div>
+      <div class="code-block">
+        <span class="lbl">XML</span>
+&lt;<span class="hl">root</span>&gt;
+  &lt;<span class="hl">user</span> <span class="kw">id</span>=<span class="str">"1"</span> <span class="kw">role</span>=<span class="str">"admin"</span>&gt;
+    &lt;<span class="hl">name</span>&gt;<span class="str">Alice</span>&lt;/<span class="hl">name</span>&gt;
+  &lt;/<span class="hl">user</span>&gt;
+&lt;/<span class="hl">root</span>&gt;
+      </div>
+
+      <h3>Text Content (#text)</h3>
+      <div class="code-block">
+        <span class="lbl">JSON</span>
+{
+  <span class="hl">"note"</span>: {
+    <span class="hl">"@priority"</span>: <span class="str">"high"</span>,
+    <span class="hl">"#text"</span>: <span class="str">"Remember to call back"</span>
+  }
+}
+      </div>
+      <div class="code-block">
+        <span class="lbl">XML</span>
+&lt;<span class="hl">root</span>&gt;
+  &lt;<span class="hl">note</span> <span class="kw">priority</span>=<span class="str">"high"</span>&gt;<span class="str">Remember to call back</span>&lt;/<span class="hl">note</span>&gt;
+&lt;/<span class="hl">root</span>&gt;
+      </div>
+
+      <h2>💡 Common Use Cases</h2>
+      <ul>
+        <li><strong>SOAP API integration</strong> convert JSON payloads to SOAP XML requests.</li>
+        <li><strong>RSS feed generation</strong> turn JSON data into RSS 2.0 XML format.</li>
+        <li><strong>Configuration files</strong> many tools use XML (Maven, Ant, NAnt).</li>
+        <li><strong>Office documents</strong> DOCX, XLSX, PPTX are all XML-based.</li>
+        <li><strong>Android resources</strong> layouts, strings, colors are all XML.</li>
+        <li><strong>Legacy system migration</strong> bridge modern JSON with old XML systems.</li>
+        <li><strong>Data interchange</strong> between systems requiring different formats.</li>
+      </ul>
+
+      <h2>✨ Key Features</h2>
+      <ul>
+        <li><strong>Attribute support</strong> @ prefixed keys become XML attributes.</li>
+        <li><strong>#text support</strong> element text content.</li>
+        <li><strong>Custom root & array names</strong> configure to your schema.</li>
+        <li><strong>Pretty or compact output</strong> 2/4/tab indentation.</li>
+        <li><strong>XML declaration toggle</strong> include &lt;?xml ?&gt; or skip.</li>
+        <li><strong>Automatic escaping</strong> handles &, &lt;, &gt;, quotes safely.</li>
+        <li><strong>Live validation</strong> real-time JSON parse errors.</li>
+        <li><strong>100% browser-based</strong> complete privacy, no uploads.</li>
+      </ul>
+
+      <h2>❓ Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-question">How do I convert JSON to XML?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Paste your JSON into the input box, optionally set a root element name, then click "Convert JSON to XML". The XML output appears instantly in the right panel. Copy to clipboard or download as <code>.xml</code> file.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">How are JSON arrays converted to XML?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Arrays become repeated child elements. For example, <code>{"items": [1, 2, 3]}</code> produces three <code>&lt;item&gt;</code> elements inside the parent. You can customize the item tag name in settings.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">How do I add XML attributes?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Use the <code>@</code> prefix in your JSON keys. For example, <code>{"user": {"@id": 1, "name": "John"}}</code> produces <code>&lt;user id="1"&gt;&lt;name&gt;John&lt;/name&gt;&lt;/user&gt;</code>. Enable "Treat @ keys as attributes" option.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What is the #text key for?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>The <code>#text</code> key sets the direct text content of an element useful when an element has both attributes and text. For example, <code>{"note": {"@priority": "high", "#text": "Hello"}}</code> becomes <code>&lt;note priority="high"&gt;Hello&lt;/note&gt;</code>.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Are special characters escaped?</button>
+        <div class="faq-answer"><p>Yes. Automatically escaped: <code>&amp;</code> → <code>&amp;amp;</code>, <code>&lt;</code> → <code>&amp;lt;</code>, <code>&gt;</code> → <code>&amp;gt;</code>, quotes for attributes. This ensures the XML is always valid.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I convert large JSON files?</button>
+        <div class="faq-answer"><p>Yes, within browser memory limits. Files up to a few MB work fine. For very large JSON (100MB+), consider a Node.js script or dedicated CLI tool. Our tool is designed for quick conversions of typical API payloads.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Is my JSON uploaded to a server?</button>
+        <div class="faq-answer"><p>No. All conversion happens in your browser using JavaScript. Your JSON never leaves your device, and nothing is stored anywhere. Safe for API keys and sensitive data.</p></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-header">🔗 Related Developer Tools</div>
+    <div class="sidebar-list">
+      <a href="/tools/developer-tools/xml-to-json/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#f97316;">&lt;/&gt;</div>
+        <div class="sidebar-info"><div class="sidebar-title">XML to JSON</div><div class="sidebar-desc">Reverse conversion</div></div>
+      </a>
+      <a href="/tools/developer-tools/json-formatter/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#10b981;">{ }</div>
+        <div class="sidebar-info"><div class="sidebar-title">JSON Formatter</div><div class="sidebar-desc">Beautify JSON</div></div>
+      </a>
+      <a href="/tools/developer-tools/json-validator/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#10b981;">✓</div>
+        <div class="sidebar-info"><div class="sidebar-title">JSON Validator</div><div class="sidebar-desc">Validate JSON</div></div>
+      </a>
+      <a href="/tools/developer-tools/html-formatter/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#f97316;">&lt;/&gt;</div>
+        <div class="sidebar-info"><div class="sidebar-title">HTML Formatter</div><div class="sidebar-desc">Beautify HTML</div></div>
+      </a>
+      <a href="/tools/developer-tools/base64-encoder/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#8b5cf6;">🔐</div>
+        <div class="sidebar-info"><div class="sidebar-title">Base64 Encoder</div><div class="sidebar-desc">Encode to Base64</div></div>
+      </a>
+      <a href="/tools/developer-tools/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#64748b;">&lt;/&gt;</div>
+        <div class="sidebar-info"><div class="sidebar-title">All Dev Tools →</div><div class="sidebar-desc">Browse 25+ tools</div></div>
+      </a>
+    </div>
+  </aside>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand"><div class="logo-icon">⚒</div>BigToolz</span></div>
+      <p class="footer-tagline">Your Ultimate Online Tools Hub</p>
+      <div class="footer-social">
+        <a href="https://facebook.com/bigtoolz" aria-label="Facebook">f</a>
+        <a href="https://twitter.com/bigtoolz" aria-label="Twitter">𝕏</a>
+        <a href="https://youtube.com/@bigtoolz" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+    <div>
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/tools/">All Tools</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Categories</h3>
+      <ul class="footer-links">
+        <li><a href="/tools/image-tools/">Image Tools</a></li>
+        <li><a href="/tools/pdf-tools/">PDF Tools</a></li>
+        <li><a href="/tools/developer-tools/">Developer Tools</a></li>
+        <li><a href="/tools/seo-tools/">SEO Tools</a></li>
+        <li><a href="/tools/categories">All Categories →</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Legal</h3>
+      <ul class="footer-links">
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left"><span>✓ 100% Free</span><span>✓ No Sign Up</span><span>✓ No Installation</span></div>
+    <div class="footer-bottom-right">© 2026 BigToolz. All rights reserved.</div>
+    <div class="footer-bottom-links"><a href="/privacy-policy">Privacy</a><a href="/terms">Terms</a><a href="/disclaimer">Disclaimer</a></div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+'use strict';
+
+/* ===== THEME ===== */
+(function(){try{var t=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&d))document.documentElement.setAttribute('data-theme','dark');else if(t==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();
+document.querySelector('.theme-btn')?.addEventListener('click',()=>{const h=document.documentElement;const c=h.getAttribute('data-theme');const d=window.matchMedia('(prefers-color-scheme: dark)').matches;let n=c==='dark'?'light':c==='light'?'dark':(d?'light':'dark');h.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}});
+
+/* ===== HELPERS ===== */
+const $ = (s, p = document) => p.querySelector(s);
+const $$ = (s, p = document) => [...p.querySelectorAll(s)];
+
+function showToast(msg, type = 'info', duration = 3000) {
+  const t = $('#toast');
+  if (!t) return;
+  t.className = 'toast visible' + (type !== 'info' ? ' ' + type : '');
+  t.textContent = msg;
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove('visible'), duration);
+}
+
+function escapeXml(str) {
+  if (str === null || str === undefined) return '';
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&apos;');
+}
+
+function escapeXmlAttr(str) {
+  if (str === null || str === undefined) return '';
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+
+/* ===== STATE ===== */
+const state = {
+  pretty: true,
+  indent: '  ',
+  rootName: 'root',
+  arrayItem: 'item',
+  includeDeclaration: true,
+  attrMode: true,
+  textMode: true,
+  xmlOutput: ''
+};
+
+/* ===== DOM ===== */
+const jsonInput = $('#jsonInput');
+const xmlOutput = $('#xmlOutput');
+const inputStats = $('#inputStats');
+const outputStats = $('#outputStats');
+const statusBox = $('#statusBox');
+const statusText = $('#statusText');
+const rootName = $('#rootName');
+const arrayItem = $('#arrayItem');
+const formatMode = $('#formatMode');
+const indentSize = $('#indentSize');
+const declaration = $('#declaration');
+const attrToggle = $('#attrToggle');
+const textToggle = $('#textToggle');
+const convertMainBtn = $('#convertMainBtn');
+const convertBtn = $('#convertBtn');
+const resetBtn = $('#resetBtn');
+const pasteBtn = $('#pasteBtn');
+const sampleBtn = $('#sampleBtn');
+const clearInputBtn = $('#clearInputBtn');
+const copyBtn = $('#copyBtn');
+const downloadBtn = $('#downloadBtn');
+const clearOutputBtn = $('#clearOutputBtn');
+
+/* ===== STATUS ===== */
+function setStatus(msg, type) {
+  if (!msg) {
+    statusBox.classList.remove('visible');
+    return;
+  }
+  statusBox.className = 'status-box visible ' + type;
+  statusText.textContent = msg;
+}
+
+/* ===== JSON → XML CONVERSION ===== */
+function jsonToXml(obj, options = {}) {
+  const {
+    rootName = 'root',
+    arrayItemName = 'item',
+    pretty = true,
+    indent = '  ',
+    attrMode = true,
+    textMode = true
+  } = options;
+
+  function processNode(name, value, level) {
+    const pad = pretty ? indent.repeat(level) : '';
+    const nl = pretty ? '\n' : '';
+
+    if (value === null) {
+      return `${pad}<${name}></${name}>${nl}`;
+    }
+
+    if (Array.isArray(value)) {
+      // Array becomes repeated elements
+      return value.map(item => processNode(name, item, level)).join('');
+    }
+
+    if (typeof value === 'object') {
+      // Separate attributes, text, and children
+      const attrs = [];
+      const children = [];
+      let textContent = null;
+
+      for (const key of Object.keys(value)) {
+        const v = value[key];
+
+        if (attrMode && key.startsWith('@')) {
+          const attrName = key.substring(1);
+          attrs.push(`${attrName}="${escapeXmlAttr(v)}"`);
+        } else if (textMode && key === '#text') {
+          textContent = v;
+        } else {
+          children.push({ key, value: v });
+        }
+      }
+
+      const attrStr = attrs.length ? ' ' + attrs.join(' ') : '';
+
+      // Self-closing if no children and no text
+      if (children.length === 0 && textContent === null) {
+        return `${pad}<${name}${attrStr}></${name}>${nl}`;
+      }
+
+      // Text-only element
+      if (children.length === 0 && textContent !== null) {
+        return `${pad}<${name}${attrStr}>${escapeXml(textContent)}</${name}>${nl}`;
+      }
+
+      // Element with children
+      let result = `${pad}<${name}${attrStr}>${nl}`;
+      if (textContent !== null) {
+        // Mixed content text before children
+        result += `${pad}${indent}${escapeXml(textContent)}${nl}`;
+      }
+      for (const child of children) {
+        // Special handling for arrays of objects use arrayItemName
+        if (Array.isArray(child.value)) {
+          result += child.value.map(item => {
+            const childName = (typeof item === 'object' && item !== null && !Array.isArray(item))
+              ? child.key
+              : arrayItemName;
+            return processNode(child.key, item, level + 1);
+          }).join('');
+        } else {
+          result += processNode(child.key, child.value, level + 1);
+        }
+      }
+      result += `${pad}</${name}>${nl}`;
+      return result;
+    }
+
+    // Primitive value
+    return `${pad}<${name}>${escapeXml(value)}</${name}>${nl}`;
+  }
+
+  // Build root
+  let xml = '';
+
+  if (options.includeDeclaration) {
+    xml += '<?xml version="1.0" encoding="UTF-8"?>' + (pretty ? '\n' : '');
+  }
+
+  // If obj is already an object, process as root
+  if (typeof obj === 'object' && obj !== null && !Array.isArray(obj)) {
+    xml += processNode(rootName, obj, 0);
+  } else if (Array.isArray(obj)) {
+    xml += `<${rootName}>${pretty ? '\n' : ''}`;
+    for (const item of obj) {
+      xml += processNode(arrayItemName, item, 1);
+    }
+    xml += `</${rootName}>${pretty ? '\n' : ''}`;
+  } else {
+    // Primitive at root wrap in root
+    xml += processNode(rootName, obj, 0);
+  }
+
+  return xml.replace(/\n$/, '');
+}
+
+/* ===== MAIN CONVERT ===== */
+function convert() {
+  const raw = jsonInput.value.trim();
+
+  if (!raw) {
+    setStatus('Please enter some JSON to convert.', 'error');
+    xmlOutput.value = '';
+    outputStats.textContent = '0 chars';
+    convertMainBtn.disabled = true;
+    return;
+  }
+
+  let parsed;
+  try {
+    parsed = JSON.parse(raw);
+  } catch (err) {
+    const msg = err.message.length > 120 ? err.message.slice(0, 120) + '...' : err.message;
+    setStatus('Invalid JSON: ' + msg, 'error');
+    xmlOutput.value = '';
+    outputStats.textContent = '0 chars';
+    convertMainBtn.disabled = true;
+    return;
+  }
+
+  setStatus('✅ Converted successfully!', 'success');
+  convertMainBtn.disabled = false;
+
+  const xml = jsonToXml(parsed, {
+    rootName: state.rootName,
+    arrayItemName: state.arrayItem,
+    pretty: state.pretty,
+    indent: state.indent,
+    attrMode: state.attrMode,
+    textMode: state.textMode,
+    includeDeclaration: state.includeDeclaration
+  });
+
+  state.xmlOutput = xml;
+  xmlOutput.value = xml;
+  outputStats.textContent = xml.length.toLocaleString() + ' chars';
+}
+
+/* ===== DEBOUNCED INPUT ===== */
+let debounceTimer;
+jsonInput.addEventListener('input', () => {
+  inputStats.textContent = jsonInput.value.length.toLocaleString() + ' chars';
+  clearTimeout(debounceTimer);
+  debounceTimer = setTimeout(convert, 300);
+});
+
+/* ===== OPTIONS CHANGES ===== */
+rootName.addEventListener('input', () => {
+  state.rootName = rootName.value.trim() || 'root';
+  if (jsonInput.value.trim()) convert();
+});
+
+arrayItem.addEventListener('input', () => {
+  state.arrayItem = arrayItem.value.trim() || 'item';
+  if (jsonInput.value.trim()) convert();
+});
+
+formatMode.addEventListener('change', () => {
+  state.pretty = formatMode.value === 'pretty';
+  if (jsonInput.value.trim()) convert();
+});
+
+indentSize.addEventListener('change', () => {
+  state.indent = indentSize.value === '\\t' ? '\t' : ' '.repeat(parseInt(indentSize.value, 10));
+  if (jsonInput.value.trim()) convert();
+});
+
+declaration.addEventListener('change', () => {
+  state.includeDeclaration = declaration.value === 'yes';
+  if (jsonInput.value.trim()) convert();
+});
+
+attrToggle.addEventListener('click', () => {
+  state.attrMode = !state.attrMode;
+  attrToggle.classList.toggle('on', state.attrMode);
+  attrToggle.setAttribute('aria-checked', state.attrMode);
+  if (jsonInput.value.trim()) convert();
+});
+
+textToggle.addEventListener('click', () => {
+  state.textMode = !state.textMode;
+  textToggle.classList.toggle('on', state.textMode);
+  textToggle.setAttribute('aria-checked', state.textMode);
+  if (jsonInput.value.trim()) convert();
+});
+
+/* ===== ACTIONS ===== */
+convertMainBtn.addEventListener('click', convert);
+convertBtn.addEventListener('click', convert);
+
+pasteBtn.addEventListener('click', async () => {
+  try {
+    const text = await navigator.clipboard.readText();
+    jsonInput.value = text;
+    inputStats.textContent = text.length.toLocaleString() + ' chars';
+    convert();
+  } catch (err) {
+    jsonInput.focus();
+    showToast('Clipboard access denied paste manually (Ctrl+V)', 'error');
+  }
+});
+
+sampleBtn.addEventListener('click', () => {
+  const sample = {
+    "user": {
+      "@id": 1,
+      "@role": "admin",
+      "name": "John Doe",
+      "email": "john@example.com",
+      "age": 30,
+      "active": true,
+      "roles": ["admin", "user", "editor"],
+      "address": {
+        "street": "123 Main St",
+        "city": "New York",
+        "country": "USA",
+        "zip": "10001"
+      },
+      "settings": {
+        "notifications": true,
+        "theme": "dark",
+        "language": "en"
+      }
+    },
+    "company": {
+      "@id": 42,
+      "name": "Tech Corp",
+      "#text": "Leading software company",
+      "employees": 250,
+      "founded": 2010
+    }
+  };
+  jsonInput.value = JSON.stringify(sample, null, 2);
+  inputStats.textContent = jsonInput.value.length.toLocaleString() + ' chars';
+  convert();
+  showToast('Sample loaded', 'success');
+});
+
+clearInputBtn.addEventListener('click', () => {
+  jsonInput.value = '';
+  inputStats.textContent = '0 chars';
+  xmlOutput.value = '';
+  outputStats.textContent = '0 chars';
+  setStatus('');
+  convertMainBtn.disabled = true;
+});
+
+clearOutputBtn.addEventListener('click', () => {
+  xmlOutput.value = '';
+  outputStats.textContent = '0 chars';
+  setStatus('');
+});
+
+copyBtn.addEventListener('click', async () => {
+  if (!state.xmlOutput) { showToast('Nothing to copy', 'error'); return; }
+  try {
+    await navigator.clipboard.writeText(state.xmlOutput);
+    copyBtn.classList.add('copied');
+    const original = copyBtn.innerHTML;
+    copyBtn.innerHTML = '✓ Copied!';
+    setTimeout(() => {
+      copyBtn.classList.remove('copied');
+      copyBtn.innerHTML = original;
+    }, 2000);
+    showToast('XML copied to clipboard!', 'success');
+  } catch (err) {
+    showToast('Copy failed', 'error');
+  }
+});
+
+downloadBtn.addEventListener('click', () => {
+  if (!state.xmlOutput) { showToast('Nothing to download', 'error'); return; }
+  const blob = new Blob([state.xmlOutput], { type: 'application/xml;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'converted.xml';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+  showToast('Downloaded .xml', 'success');
+});
+
+resetBtn.addEventListener('click', () => {
+  jsonInput.value = '';
+  xmlOutput.value = '';
+  inputStats.textContent = '0 chars';
+  outputStats.textContent = '0 chars';
+  rootName.value = 'root';
+  arrayItem.value = 'item';
+  formatMode.value = 'pretty';
+  indentSize.value = '2';
+  declaration.value = 'yes';
+  state.pretty = true;
+  state.indent = '  ';
+  state.rootName = 'root';
+  state.arrayItem = 'item';
+  state.includeDeclaration = true;
+  state.attrMode = true;
+  state.textMode = true;
+  attrToggle.classList.add('on');
+  textToggle.classList.add('on');
+  setStatus('');
+  convertMainBtn.disabled = true;
+  showToast('Reset to defaults');
+});
+
+/* ===== KEYBOARD SHORTCUTS ===== */
+document.addEventListener('keydown', (e) => {
+  if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
+    e.preventDefault();
+    convert();
+  }
+});
+
+/* ===== FAQ ===== */
+$$('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    $$('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2563eb">
+
+<title>PDF Bookmark Viewer - View PDF Bookmarks & Outline Online Free | BigToolz</title>
+<meta name="description" content="View PDF bookmarks and outline online free. See table of contents, click to jump pages, export bookmarks as JSON or text. No upload, works in your browser.">
+<meta name="keywords" content="pdf bookmark viewer, pdf outline viewer, pdf table of contents, pdf toc extractor, view pdf bookmarks, pdf bookmarks online">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://bigtoolz.com/tools/pdf-tools/organize-pdf/bookmark-viewer/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="PDF Bookmark Viewer - Free Online Tool | BigToolz">
+<meta property="og:description" content="View PDF bookmarks & outline click to navigate, export as JSON.">
+<meta property="og:url" content="https://bigtoolz.com/tools/pdf-tools/organize-pdf/bookmark-viewer/">
+<meta property="og:image" content="https://bigtoolz.com/assets/images/og-image.jpg">
+<meta property="og:site_name" content="BigToolz">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="PDF Bookmark Viewer - BigToolz">
+<meta name="twitter:description" content="View PDF bookmarks instantly free, no upload.">
+<meta name="twitter:image" content="https://bigtoolz.com/assets/images/twitter-card.jpg">
+
+<link rel="icon" href="/assets/images/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/images/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#f8f9fc;color:#1a1a2e;overflow-x:hidden;line-height:1.5}
+
+  .header{background:#fff;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;position:sticky;top:0;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+  .header-left{display:flex;align-items:center;gap:40px}
+  .logo{display:flex;align-items:center;gap:8px;font-size:22px;font-weight:800;color:#1a1a2e;text-decoration:none}
+  .logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#3b82f6,#2563eb);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px}
+  .logo span{color:#2563eb}
+  .nav{display:flex;align-items:center;gap:28px;list-style:none}
+  .nav a{text-decoration:none;color:#4b5563;font-size:14px;font-weight:500;transition:color .2s}
+  .nav a:hover,.nav a.active{color:#2563eb}
+  .header-right{display:flex;align-items:center;gap:16px}
+  .search-btn,.theme-btn{width:36px;height:36px;border-radius:50%;border:none;background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#4b5563}
+  .search-btn:hover,.theme-btn:hover{background:#f3f4f6}
+  .bookmark-btn{display:flex;align-items:center;gap:8px;background:#2563eb;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
+  .bookmark-btn:hover{background:#1d4ed8}
+
+  .hero{background:linear-gradient(135deg,#0a0e27 0%,#1a1a4e 40%,#2d1b69 70%,#4c1d95 100%);padding:40px 40px 60px;position:relative;overflow:hidden;color:#fff}
+  .hero::before{content:'';position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(245,158,11,.25) 0%,transparent 70%);border-radius:50%}
+  .hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+  .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px;flex-wrap:wrap}
+  .breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none}
+  .breadcrumb a:hover{color:#fff}
+  .breadcrumb .sep{color:rgba(255,255,255,.4)}
+  .breadcrumb .current{color:#fff;font-weight:500}
+  .hero-title-row{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+  .hero-icon{width:60px;height:60px;background:#f59e0b;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px;color:#fff;flex-shrink:0;box-shadow:0 8px 24px rgba(245,158,11,.4)}
+  .hero-title{font-size:42px;font-weight:800;line-height:1.15}
+  .hero-title .blue{color:#fbbf24}
+  .hero-desc{font-size:15px;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:24px;max-width:560px}
+  .hero-features{display:flex;gap:24px;flex-wrap:wrap}
+  .hero-feature{display:flex;align-items:center;gap:6px;font-size:13px;color:#fff;font-weight:500}
+  .hero-feature .check{width:18px;height:18px;border-radius:50%;background:#f59e0b;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;flex-shrink:0}
+
+  .main-content{max-width:1200px;margin:0 auto;padding:40px;display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start}
+  .tool-content{min-width:0}
+
+  .workspace{background:#fff;border-radius:16px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,.06);border:1px solid #e5e7eb;margin-bottom:24px}
+
+  .dropzone{border:2px dashed #fcd34d;border-radius:12px;padding:50px 30px;text-align:center;background:#fffbeb;margin-bottom:24px;transition:all .2s;cursor:pointer}
+  .dropzone:hover,.dropzone.dragover{border-color:#f59e0b;background:#fef3c7}
+  .dropzone-icon{width:60px;height:60px;background:linear-gradient(135deg,#f59e0b,#d97706);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;color:#fff;font-size:26px;transition:transform .2s}
+  .dropzone:hover .dropzone-icon{transform:translateY(-4px)}
+  .dropzone-title{font-size:16px;font-weight:700;color:#1a1a2e;margin-bottom:8px}
+  .dropzone-sub{font-size:14px;color:#6b7280;margin-bottom:20px}
+  .dropzone-sub a{color:#f59e0b;font-weight:600;text-decoration:none}
+  .choose-btn{display:inline-flex;align-items:center;gap:8px;background:#f59e0b;color:#fff;border:none;padding:12px 28px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;transition:background .2s}
+  .choose-btn:hover{background:#d97706}
+  .dropzone-info{font-size:12px;color:#9ca3af;display:flex;align-items:center;justify-content:center;gap:8px;margin-top:16px;flex-wrap:wrap}
+  .dropzone-info .divider{color:#d1d5db}
+  .file-input{display:none}
+
+  .pdf-info{display:none;background:#fffbeb;border-radius:12px;padding:16px 20px;margin-bottom:20px;border:1px solid #fcd34d;align-items:center;gap:16px;flex-wrap:wrap}
+  .pdf-info.visible{display:flex}
+  .pdf-info-icon{width:44px;height:44px;background:#f59e0b;border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:18px;flex-shrink:0}
+  .pdf-info-details{flex:1;min-width:0}
+  .pdf-info-name{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .pdf-info-meta{font-size:12px;color:#6b7280}
+
+  /* ===== VIEWER LAYOUT ===== */
+  .viewer{display:none;grid-template-columns:340px 1fr;gap:20px;margin-bottom:20px}
+  .viewer.visible{display:grid}
+
+  /* Sidebar (bookmarks) */
+  .bm-panel{background:#fffbeb;border:1px solid #fcd34d;border-radius:12px;padding:16px;max-height:600px;overflow-y:auto}
+  .bm-panel-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;gap:8px;flex-wrap:wrap}
+  .bm-panel-title{font-size:13px;font-weight:800;color:#1a1a2e;text-transform:uppercase;letter-spacing:.5px}
+  .bm-count{font-size:11px;font-weight:700;color:#d97706;background:#fff;padding:3px 9px;border-radius:10px;border:1px solid #fcd34d}
+  .bm-search{width:100%;padding:9px 12px;border:1px solid #e5e7eb;border-radius:8px;font-size:12px;font-family:inherit;color:#1a1a2e;outline:none;margin-bottom:10px;background:#fff}
+  .bm-search:focus{border-color:#f59e0b;box-shadow:0 0 0 3px rgba(245,158,11,.1)}
+  .bm-panel-actions{display:flex;gap:6px;margin-bottom:10px;flex-wrap:wrap}
+  .bm-mini-btn{padding:6px 12px;background:#fff;border:1px solid #e5e7eb;border-radius:6px;font-size:11px;font-weight:600;color:#4b5563;cursor:pointer;font-family:inherit;transition:all .2s}
+  .bm-mini-btn:hover{border-color:#f59e0b;color:#d97706;background:#fffbeb}
+
+  .bm-tree{display:flex;flex-direction:column;gap:2px}
+  .bm-list{list-style:none;padding-left:0;margin:0}
+  .bm-list .bm-list{padding-left:16px;border-left:1px dashed #fcd34d;margin-left:8px;margin-top:2px;display:none}
+  .bm-item.has-children > .bm-list.open{display:block}
+  .bm-row{display:flex;align-items:center;gap:6px;padding:6px 8px;border-radius:6px;cursor:pointer;transition:all .15s;font-size:13px;color:#4b5563;line-height:1.3}
+  .bm-row:hover{background:#fff;color:#d97706}
+  .bm-row.active{background:#f59e0b;color:#fff}
+  .bm-row.active .bm-page-badge{background:rgba(255,255,255,.25);color:#fff}
+  .bm-toggle{width:16px;height:16px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:9px;color:#9ca3af;transition:transform .2s}
+  .bm-item.has-children > .bm-row .bm-toggle{color:#d97706}
+  .bm-item.open > .bm-row .bm-toggle{transform:rotate(90deg)}
+  .bm-item:not(.has-children) .bm-toggle{visibility:hidden}
+  .bm-title{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .bm-page-badge{font-size:10px;font-weight:700;padding:2px 7px;border-radius:8px;background:#fef3c7;color:#92400e;font-family:'JetBrains Mono',monospace;flex-shrink:0}
+
+  .bm-empty{text-align:center;padding:30px 10px;color:#9ca3af;font-size:13px;line-height:1.6}
+  .bm-empty-icon{font-size:36px;margin-bottom:10px;opacity:.5}
+  .bm-empty strong{color:#1a1a2e;display:block;margin-bottom:6px;font-size:14px}
+
+  /* Preview panel */
+  .preview-panel{background:#334155;border-radius:12px;padding:20px;display:flex;flex-direction:column;gap:10px;align-items:center;min-height:400px;justify-content:flex-start;position:relative;overflow:auto}
+  .preview-header{display:flex;justify-content:space-between;align-items:center;width:100%;margin-bottom:6px;color:#e2e8f0}
+  .preview-title{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px}
+  .preview-page-info{font-size:11px;font-weight:600;background:rgba(255,255,255,.1);padding:3px 10px;border-radius:10px;color:#fbbf24;font-family:'JetBrains Mono',monospace}
+  .preview-canvas-wrap{position:relative;background:#fff;box-shadow:0 10px 40px rgba(0,0,0,.3);border-radius:2px;max-width:100%}
+  .preview-canvas-wrap canvas{display:block;max-width:100%;height:auto}
+  .preview-placeholder{color:#94a3b8;font-size:13px;text-align:center;padding:60px 20px;line-height:1.6}
+  .preview-placeholder-icon{font-size:48px;margin-bottom:10px;opacity:.6}
+
+  /* Action bar */
+  .action-bar{display:none;gap:8px;flex-wrap:wrap;margin-top:20px;padding:16px;background:#fffbeb;border:1px solid #fcd34d;border-radius:12px}
+  .action-bar.visible{display:flex}
+  .action-btn{display:inline-flex;align-items:center;gap:6px;padding:10px 16px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;font-size:12px;font-weight:700;color:#4b5563;cursor:pointer;font-family:inherit;transition:all .2s}
+  .action-btn:hover{border-color:#f59e0b;color:#d97706;background:#fef3c7}
+  .action-btn.primary{background:#f59e0b;color:#fff;border-color:#f59e0b}
+  .action-btn.primary:hover{background:#d97706;color:#fff}
+  .action-btn.copied{background:#10b981;border-color:#10b981;color:#fff}
+
+  .actions{display:flex;gap:12px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 24px;border-radius:10px;font-size:14px;font-weight:700;font-family:inherit;cursor:pointer;border:none;transition:all .2s;text-decoration:none}
+  .btn-secondary{background:#fff;color:#f59e0b;border:1px solid #e5e7eb}
+  .btn-secondary:hover{border-color:#f59e0b;background:#fffbeb}
+
+  /* Loading bar */
+  .loading-bar{display:none;margin-top:16px;height:4px;background:#e5e7eb;border-radius:2px;overflow:hidden;position:relative}
+  .loading-bar.visible{display:block}
+  .loading-bar::after{content:'';position:absolute;left:-40%;top:0;height:100%;width:40%;background:linear-gradient(90deg,transparent,#f59e0b,transparent);animation:loadingSlide 1.2s linear infinite}
+  @keyframes loadingSlide{from{left:-40%}to{left:100%}}
+
+  /* ===== SEO ===== */
+  .seo-content{background:#fff;border-radius:16px;padding:32px;border:1px solid #e5e7eb;margin-bottom:24px}
+  .seo-content h2{font-size:22px;font-weight:800;color:#1a1a2e;margin-bottom:14px;margin-top:28px;display:flex;align-items:center;gap:10px}
+  .seo-content h2:first-child{margin-top:0}
+  .seo-content h3{font-size:16px;font-weight:700;color:#1a1a2e;margin:20px 0 10px}
+  .seo-content p{font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:14px}
+  .seo-content ul{list-style:none;padding-left:0;margin-bottom:16px}
+  .seo-content ul li{position:relative;padding-left:24px;font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:8px}
+  .seo-content ul li::before{content:'';position:absolute;left:6px;top:12px;width:6px;height:6px;background:#f59e0b;border-radius:50%}
+  .seo-content a{color:#2563eb;text-decoration:none;font-weight:600}
+  .seo-content a:hover{text-decoration:underline}
+  .seo-content strong{color:#1a1a2e;font-weight:700}
+  .seo-content code{background:#f1f5f9;padding:2px 6px;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:13px;color:#0f172a;border:1px solid #e2e8f0}
+
+  .how-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:20px}
+  .how-step{background:#fffbeb;border-radius:12px;padding:20px;border:1px solid #fcd34d}
+  .how-step-num{width:36px;height:36px;border-radius:50%;background:#f59e0b;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;margin-bottom:12px}
+  .how-step-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+  .how-step-desc{font-size:13px;color:#6b7280;line-height:1.6}
+
+  .faq-item{background:#fffbeb;border:1px solid #fcd34d;border-radius:12px;margin-bottom:10px;overflow:hidden;transition:border-color .2s}
+  .faq-item:hover{border-color:#f59e0b}
+  .faq-question{width:100%;background:none;border:none;padding:18px 22px;font-size:15px;font-weight:700;color:#1a1a2e;text-align:left;cursor:pointer;font-family:inherit;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .faq-question .chev{font-size:12px;color:#f59e0b;transition:transform .2s;flex-shrink:0}
+  .faq-item.open .faq-question .chev{transform:rotate(180deg)}
+  .faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 22px}
+  .faq-item.open .faq-answer{max-height:500px;padding-bottom:18px}
+  .faq-answer p{font-size:14px;color:#6b7280;line-height:1.7;margin:0}
+
+  .sidebar{background:#fff;border-radius:16px;padding:24px;border:1px solid #e5e7eb;position:sticky;top:80px;margin-bottom:24px}
+  .sidebar-header{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:800;color:#1a1a2e;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid #f3f4f6}
+  .sidebar-list{display:flex;flex-direction:column;gap:8px}
+  .sidebar-item{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;cursor:pointer;transition:background .2s;text-decoration:none;color:inherit;border:1px solid #f3f4f6}
+  .sidebar-item:hover{background:#fffbeb;border-color:#fcd34d}
+  .sidebar-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;flex-shrink:0}
+  .sidebar-info{flex:1;min-width:0}
+  .sidebar-title{font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:2px}
+  .sidebar-desc{font-size:11px;color:#9ca3af;line-height:1.4}
+
+  .footer{background:#0a0e27;padding:60px 40px 30px;color:#fff;margin-top:40px}
+  .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:40px}
+  .footer-brand{display:flex;align-items:center;gap:8px;font-size:20px;font-weight:800;margin-bottom:12px}
+  .footer-brand span{color:#60a5fa}
+  .footer-tagline{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px}
+  .footer-social{display:flex;gap:12px}
+  .footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:16px;transition:background .2s}
+  .footer-social a:hover{background:rgba(255,255,255,.2)}
+  .footer-heading{font-size:14px;font-weight:700;margin-bottom:20px;color:#fff}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .footer-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;transition:color .2s}
+  .footer-links a:hover{color:#60a5fa}
+  .footer-bottom{max-width:1200px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  .footer-bottom-left{display:flex;gap:20px;font-size:12px;color:rgba(255,255,255,.5)}
+  .footer-bottom-right,.footer-bottom-links a{font-size:12px;color:rgba(255,255,255,.5);text-decoration:none}
+  .footer-bottom-links{display:flex;gap:20px}
+
+  .toast{position:fixed;bottom:24px;right:24px;background:#1a1a2e;color:#fff;padding:14px 20px;border-radius:10px;font-size:13px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:3000;transform:translateY(200%);transition:transform .3s ease;max-width:320px}
+  .toast.visible{transform:translateY(0)}
+  .toast.success{background:#10b981}
+  .toast.error{background:#ef4444}
+  .toast.info{background:#3b82f6}
+
+  @media(max-width:1024px){
+    .main-content{grid-template-columns:1fr;padding:24px 20px}
+    .sidebar{position:static}
+    .how-steps{grid-template-columns:repeat(2,1fr)}
+    .viewer{grid-template-columns:1fr}
+    .bm-panel{max-height:340px}
+  }
+  @media(max-width:768px){
+    .header{padding:0 20px}.nav{display:none}
+    .hero{padding:24px 20px 40px}
+    .hero-title{font-size:28px}
+    .hero-icon{width:48px;height:48px;font-size:20px}
+    .hero-title-row{flex-direction:column;align-items:flex-start;gap:12px}
+    .main-content{padding:20px 16px}
+    .workspace{padding:20px}
+    .dropzone{padding:32px 16px}
+    .how-steps{grid-template-columns:1fr}
+    .seo-content{padding:20px}
+    .footer-inner{grid-template-columns:1fr 1fr}
+    .bm-panel{padding:12px}
+    .bm-row{font-size:12px;padding:5px 6px}
+    .toast{left:16px;right:16px;bottom:16px;max-width:none}
+  }
+  @media(max-width:576px){
+    .header{padding:0 16px}.header-right .search-btn,.header-right .theme-btn{display:none}
+    .hero-title{font-size:24px}
+    .actions{flex-direction:column}
+    .btn{width:100%}
+    .btn-secondary{flex:none}
+    .footer-inner{grid-template-columns:1fr}
+    .footer-bottom{flex-direction:column;text-align:center}
+    .bm-panel-actions{flex-direction:column}
+    .bm-mini-btn{width:100%}
+  }
+
+  html[data-theme="dark"] body{background:#0f172a;color:#f1f5f9}
+  html[data-theme="dark"] .header,html[data-theme="dark"] .workspace,html[data-theme="dark"] .seo-content,html[data-theme="dark"] .sidebar{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .logo,html[data-theme="dark"] .hero-title,html[data-theme="dark"] .seo-content h2,html[data-theme="dark"] .seo-content h3,html[data-theme="dark"] .faq-question,html[data-theme="dark"] .sidebar-header,html[data-theme="dark"] .sidebar-title,html[data-theme="dark"] .options-title,html[data-theme="dark"] .pdf-info-name,html[data-theme="dark"] .bm-panel-title,html[data-theme="dark"] .bm-empty strong{color:#f1f5f9}
+  html[data-theme="dark"] .nav a{color:#cbd5e1}
+  html[data-theme="dark"] .dropzone{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .how-step,html[data-theme="dark"] .faq-item,html[data-theme="dark"] .pdf-info,html[data-theme="dark"] .bm-panel,html[data-theme="dark"] .action-bar{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .bm-search,html[data-theme="dark"] .bm-mini-btn,html[data-theme="dark"] .action-btn{background:#1e293b;border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .bm-row{color:#cbd5e1}
+  html[data-theme="dark"] .bm-row:hover{background:#1e293b;color:#fbbf24}
+  html[data-theme="dark"] .bm-row.active{background:#f59e0b;color:#fff}
+  html[data-theme="dark"] .bm-count{background:#1e293b;border-color:#334155;color:#fbbf24}
+  html[data-theme="dark"] .bm-page-badge{background:#1e293b;color:#fbbf24}
+  html[data-theme="dark"] .bm-list .bm-list{border-left-color:#334155}
+  html[data-theme="dark"] .seo-content p,html[data-theme="dark"] .seo-content ul li,html[data-theme="dark"] .faq-answer p,html[data-theme="dark"] .pdf-info-meta{color:#cbd5e1}
+  html[data-theme="dark"] .seo-content code{background:#020617;color:#94a3b8;border-color:#334155}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type": "SoftwareApplication", "name": "PDF Bookmark Viewer", "url": "https://bigtoolz.com/tools/pdf-tools/organize-pdf/bookmark-viewer/", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any (Web-based)", "description": "Free online PDF bookmark viewer view outline/TOC, click to navigate pages, export bookmarks as JSON or text.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "432"}},
+    {"@type": "HowTo", "name": "How to View PDF Bookmarks", "step": [
+      {"@type": "HowToStep", "name": "Upload PDF", "text": "Drag & drop or click to select a PDF file."},
+      {"@type": "HowToStep", "name": "View Bookmarks", "text": "The outline tree displays in the sidebar."},
+      {"@type": "HowToStep", "name": "Navigate", "text": "Click any bookmark to jump to that page with live preview."},
+      {"@type": "HowToStep", "name": "Export", "text": "Download bookmarks as JSON, text, or copy to clipboard."}
+    ]},
+    {"@type": "FAQPage", "mainEntity": [
+      {"@type": "Question", "name": "How do I view PDF bookmarks online?", "acceptedAnswer": {"@type": "Answer", "text": "Upload your PDF and its bookmark outline appears instantly in the left sidebar. Click any bookmark to jump to that page with a live preview on the right."}},
+      {"@type": "Question", "name": "What if my PDF has no bookmarks?", "acceptedAnswer": {"@type": "Answer", "text": "Many PDFs don't include bookmarks. If yours doesn't, you'll see a message saying no bookmarks found. You can use our other PDF tools to add structure or navigation."}},
+      {"@type": "Question", "name": "Can I export PDF bookmarks?", "acceptedAnswer": {"@type": "Answer", "text": "Yes! You can copy all bookmarks to clipboard, download them as JSON, or download as plain text. Great for indexing, migrating, or archiving PDF structures."}},
+      {"@type": "Question", "name": "What's the difference between bookmarks and outline?", "acceptedAnswer": {"@type": "Answer", "text": "In PDF terminology, they're the same thing. 'Outline' is the technical name; 'bookmarks' is the user-facing name. Both refer to the navigational table of contents."}},
+      {"@type": "Question", "name": "Are my PDFs uploaded to a server?", "acceptedAnswer": {"@type": "Answer", "text": "No. All processing happens in your browser using pdf.js. Your PDF never leaves your device."}}
+    ]},
+    {"@type": "BreadcrumbList", "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bigtoolz.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://bigtoolz.com/tools/"},
+      {"@type": "ListItem", "position": 3, "name": "PDF Tools", "item": "https://bigtoolz.com/tools/pdf-tools/"},
+      {"@type": "ListItem", "position": 4, "name": "Organize PDF", "item": "https://bigtoolz.com/tools/pdf-tools/organize-pdf/"},
+      {"@type": "ListItem", "position": 5, "name": "Bookmark Viewer", "item": "https://bigtoolz.com/tools/pdf-tools/organize-pdf/bookmark-viewer/"}
+    ]}
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-left">
+    <a href="/" class="logo"><div class="logo-icon">⚒</div>BigToolz</span></a>
+    <nav><ul class="nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/tools/" class="active">All Tools</a></li>
+      <li><a href="/tools/categories">Categories</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul></nav>
+  </div>
+  <div class="header-right">
+    
+    <button class="theme-btn" aria-label="Toggle theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
+   
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <nav class="breadcrumb">
+      <a href="/">Home</a><span class="sep">›</span>
+      <a href="/tools/">Tools</a><span class="sep">›</span>
+      <a href="/tools/pdf-tools/">PDF Tools</a><span class="sep">›</span>
+      <a href="/tools/pdf-tools/organize-pdf/">Organize PDF</a><span class="sep">›</span>
+      <span class="current">Bookmark Viewer</span>
+    </nav>
+    <div class="hero-title-row">
+      <div class="hero-icon">🔖</div>
+      <h1 class="hero-title">PDF <span class="blue">Bookmark Viewer</span></h1>
+    </div>
+    <p class="hero-desc">
+      View a PDF's bookmark outline and table of contents instantly. Click any bookmark to jump to that page with live preview, then export as JSON or text. No upload, 100% private.
+    </p>
+    <div class="hero-features">
+      <div class="hero-feature"><span class="check">✓</span> Tree View</div>
+      <div class="hero-feature"><span class="check">✓</span> Click to Navigate</div>
+      <div class="hero-feature"><span class="check">✓</span> Export JSON/Text</div>
+      <div class="hero-feature"><span class="check">✓</span> No Upload</div>
+    </div>
+  </div>
+</section>
+
+<div class="main-content">
+
+  <div class="tool-content">
+
+    <div class="workspace">
+
+      <div class="dropzone" id="dropzone">
+        <div class="dropzone-icon">⬆</div>
+        <div class="dropzone-title">Drag & drop your PDF here</div>
+        <div class="dropzone-sub">or <a href="#" id="browseLink">click to browse files</a></div>
+        <button class="choose-btn" id="chooseBtn" type="button">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/></svg>
+          Choose PDF File
+        </button>
+        <div class="dropzone-info">
+          <span>PDF files only</span>
+          <span class="divider">|</span>
+          <span>Single file at a time</span>
+        </div>
+        <input type="file" id="fileInput" class="file-input" accept=".pdf,application/pdf">
+      </div>
+
+      <div class="loading-bar" id="loadingBar"></div>
+
+      <!-- PDF Info Bar -->
+      <div class="pdf-info" id="pdfInfo">
+        <div class="pdf-info-icon">📕</div>
+        <div class="pdf-info-details">
+          <div class="pdf-info-name" id="pdfName">document.pdf</div>
+          <div class="pdf-info-meta" id="pdfMeta">0 pages · 0 KB</div>
+        </div>
+      </div>
+
+      <!-- Viewer -->
+      <div class="viewer" id="viewer">
+
+        <!-- Bookmarks panel -->
+        <aside class="bm-panel">
+          <div class="bm-panel-header">
+            <div class="bm-panel-title">🔖 Outline</div>
+            <span class="bm-count" id="bmCount">0</span>
+          </div>
+          <input type="text" class="bm-search" id="bmSearch" placeholder="Search bookmarks...">
+          <div class="bm-panel-actions">
+            <button class="bm-mini-btn" id="expandAllBtn">Expand All</button>
+            <button class="bm-mini-btn" id="collapseAllBtn">Collapse All</button>
+          </div>
+          <div class="bm-tree" id="bmTree"></div>
+        </aside>
+
+        <!-- Preview panel -->
+        <div class="preview-panel">
+          <div class="preview-header">
+            <span class="preview-title">📄 Preview</span>
+            <span class="preview-page-info" id="previewPageInfo"></span>
+          </div>
+          <div class="preview-canvas-wrap" id="previewCanvasWrap" style="display:none;">
+            <canvas id="previewCanvas"></canvas>
+          </div>
+          <div class="preview-placeholder" id="previewPlaceholder">
+            <div class="preview-placeholder-icon">🔖</div>
+            Click any bookmark to jump to that page
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Action bar -->
+      <div class="action-bar" id="actionBar">
+        <button class="action-btn primary" id="copyAllBtn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+          Copy All Bookmarks
+        </button>
+        <button class="action-btn" id="downloadJsonBtn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+          Download JSON
+        </button>
+        <button class="action-btn" id="downloadTxtBtn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+          Download Text
+        </button>
+      </div>
+
+      <div class="actions" style="margin-top:20px;">
+        <button class="btn btn-secondary" id="clearBtn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+          Open Another PDF
+        </button>
+      </div>
+
+    </div>
+
+    <div class="seo-content">
+
+      <h2>🔖 What is a PDF Bookmark Viewer?</h2>
+      <p>
+        A <strong>PDF bookmark viewer</strong> (also called PDF outline viewer) shows the navigational table of contents embedded inside a PDF file. Bookmarks let readers jump to specific sections instantly like chapter links in an ebook. Many PDFs (books, manuals, reports, research papers) include these bookmarks, but most PDF readers hide them or make them hard to inspect.
+      </p>
+      <p>
+        Our tool displays the <strong>full hierarchical outline tree</strong> in an easy-to-read sidebar. Click any bookmark to jump to its page with <strong>live preview</strong>. You can also <strong>export the entire bookmark structure</strong> as JSON or plain text great for indexing, migrating, or analyzing documents.
+      </p>
+      <p>
+        Like all BigToolz tools, everything runs <strong>100% in your browser</strong> using <strong>pdf.js</strong>. Your PDF <strong>never uploaded to any server</strong> complete privacy, instant results.
+      </p>
+
+      <h2>🚀 How to View PDF Bookmarks</h2>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-step-num">1</div>
+          <div class="how-step-title">Upload PDF</div>
+          <div class="how-step-desc">Drag & drop or click "Choose PDF File" to select a PDF.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">2</div>
+          <div class="how-step-title">View Outline</div>
+          <div class="how-step-desc">Bookmarks appear instantly in the sidebar tree.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">3</div>
+          <div class="how-step-title">Navigate</div>
+          <div class="how-step-desc">Click any bookmark to jump to that page.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">4</div>
+          <div class="how-step-title">Export</div>
+          <div class="how-step-desc">Copy, or download as JSON / text.</div>
+        </div>
+      </div>
+
+      <h2>🎯 What Are PDF Bookmarks?</h2>
+      <p>
+        PDF bookmarks (formally called "<strong>outline</strong>" in the PDF spec) are a hierarchical list of navigational links stored in the PDF. Each bookmark has:
+      </p>
+      <ul>
+        <li><strong>Title</strong> the visible label (e.g. "Chapter 1: Introduction").</li>
+        <li><strong>Destination</strong> a specific page (and optionally position).</li>
+        <li><strong>Hierarchy</strong> bookmarks can nest, creating sub-sections.</li>
+        <li><strong>Color & style</strong> optional bold/italic formatting.</li>
+      </ul>
+      <p>
+        When present, bookmarks appear in PDF readers (Adobe, Firefox, Chrome, etc.) as a sidebar panel. But not all readers show them and even when they do, extracting the structure for analysis or migration isn't easy. That's where this tool helps.
+      </p>
+
+      <h2>💡 Common Use Cases</h2>
+      <ul>
+        <li><strong>Verify a PDF has bookmarks</strong> before publishing.</li>
+        <li><strong>Audit structure</strong> of ebooks, manuals, and reports.</li>
+        <li><strong>Export outline for indexing</strong> feed into search systems.</li>
+        <li><strong>Migrate bookmarks</strong> between PDFs and formats.</li>
+        <li><strong>Navigate long documents</strong> visually without scrolling.</li>
+        <li><strong>Analyze chapter structure</strong> of textbooks.</li>
+        <li><strong>Debug broken bookmarks</strong> see which point to wrong pages.</li>
+        <li><strong>Academic research</strong> verify TOC accuracy of papers.</li>
+      </ul>
+
+      <h2>✨ Key Features</h2>
+      <ul>
+        <li><strong>100% browser-based</strong> no uploads, complete privacy.</li>
+        <li><strong>Hierarchical tree view</strong> nested bookmarks with expand/collapse.</li>
+        <li><strong>Click to navigate</strong> bookmark → live page preview.</li>
+        <li><strong>Search filter</strong> quickly find specific bookmarks.</li>
+        <li><strong>Copy all bookmarks</strong> clipboard-ready text.</li>
+        <li><strong>Export as JSON</strong> structured data for developers.</li>
+        <li><strong>Export as text</strong> simple indented list.</li>
+        <li><strong>Page badges</strong> see target page for each bookmark.</li>
+        <li><strong>Expand All / Collapse All</strong> bulk tree control.</li>
+        <li><strong>Live page preview</strong> full page rendered in canvas.</li>
+        <li><strong>Handles PDFs without bookmarks</strong> clean empty state.</li>
+      </ul>
+
+      <h2>❓ Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-question">How do I view PDF bookmarks online?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Upload your PDF and its bookmark outline appears instantly in the left sidebar. Click any bookmark to jump to that page with a live preview on the right. Free, no signup.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What if my PDF has no bookmarks?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Many PDFs don't include bookmarks especially simple scans or auto-generated files. If yours doesn't, you'll see a clear empty-state message. You can still navigate pages using our <a href="/tools/pdf-tools/organize-pdf/pdf-reader/">PDF Reader</a>.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I export PDF bookmarks?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Yes! Three export options: <strong>Copy All</strong> to clipboard (indented text), <strong>Download JSON</strong> (structured hierarchy with page numbers), or <strong>Download Text</strong> (simple indented list). Perfect for indexing, migrating, or archiving PDF outlines.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What's the difference between bookmarks and outline?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>In PDF terminology, they're <strong>the same thing</strong>. "Outline" is the technical term used in the PDF specification. "Bookmarks" is the user-facing term used by Adobe Reader and other applications. Both refer to the navigational table of contents.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I edit the bookmarks?</button>
+        <div class="faq-answer"><p>Not with this tool it's view-only for safety and privacy. To edit PDF bookmarks, you need a dedicated PDF editor like Adobe Acrobat Pro. Our tool lets you <strong>export the outline</strong> so you can plan edits elsewhere.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Why do some bookmarks point to the wrong page?</button>
+        <div class="faq-answer"><p>Bookmarks can become stale if the PDF's pages were reordered, deleted, or inserted after the bookmarks were created. Our tool shows you the <strong>current target page</strong> for each bookmark helping you spot broken links. Combine with our <a href="/tools/pdf-tools/organize-pdf/sort-pdf/">Sort PDF</a> or <a href="/tools/pdf-tools/organize-pdf/delete-pages/">Delete Pages</a> tools to fix structure.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Are my PDFs uploaded to a server?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>No. All processing happens in your browser using pdf.js. Your PDF never leaves your device, and nothing is stored anywhere.</p></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-header">🔗 Related PDF Tools</div>
+    <div class="sidebar-list">
+      <a href="/tools/pdf-tools/organize-pdf/pdf-reader/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#10b981;">📖</div>
+        <div class="sidebar-info"><div class="sidebar-title">PDF Reader</div><div class="sidebar-desc">Read PDFs online</div></div>
+      </a>
+      <a href="/tools/pdf-tools/organize-pdf/page-counter/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#3b82f6;">🔢</div>
+        <div class="sidebar-info"><div class="sidebar-title">Page Counter</div><div class="sidebar-desc">Count pages</div></div>
+      </a>
+      <a href="/tools/pdf-tools/organize-pdf/thumbnail-generator/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#ec4899;">🖼</div>
+        <div class="sidebar-info"><div class="sidebar-title">Thumbnail Generator</div><div class="sidebar-desc">Page thumbnails</div></div>
+      </a>
+      <a href="/tools/pdf-tools/security-pdf/metadata-viewer/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#06b6d4;">ℹ️</div>
+        <div class="sidebar-info"><div class="sidebar-title">Metadata Viewer</div><div class="sidebar-desc">PDF metadata</div></div>
+      </a>
+      <a href="/tools/pdf-tools/form-pdf/bookmark-generator/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#f59e0b;">🔖</div>
+        <div class="sidebar-info"><div class="sidebar-title">Bookmark Generator</div><div class="sidebar-desc">Add bookmarks</div></div>
+      </a>
+      <a href="/tools/pdf-tools/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#64748b;">📕</div>
+        <div class="sidebar-info"><div class="sidebar-title">All PDF Tools →</div><div class="sidebar-desc">Browse 100+ tools</div></div>
+      </a>
+    </div>
+  </aside>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand"><div class="logo-icon">⚒</div>BigToolz</span></div>
+      <p class="footer-tagline">Your Ultimate Online Tools Hub</p>
+      <div class="footer-social">
+        <a href="https://facebook.com/bigtoolz" aria-label="Facebook">f</a>
+        <a href="https://twitter.com/bigtoolz" aria-label="Twitter">𝕏</a>
+        <a href="https://youtube.com/@bigtoolz" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+    <div>
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/tools/">All Tools</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Categories</h3>
+      <ul class="footer-links">
+        <li><a href="/tools/image-tools/">Image Tools</a></li>
+        <li><a href="/tools/pdf-tools/">PDF Tools</a></li>
+        <li><a href="/tools/text-tools/">Text Tools</a></li>
+        <li><a href="/tools/seo-tools/">SEO Tools</a></li>
+        <li><a href="/tools/categories">All Categories →</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Legal</h3>
+      <ul class="footer-links">
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left"><span>✓ 100% Free</span><span>✓ No Sign Up</span><span>✓ No Installation</span></div>
+    <div class="footer-bottom-right">© 2026 BigToolz. All rights reserved.</div>
+    <div class="footer-bottom-links"><a href="/privacy-policy">Privacy</a><a href="/terms">Terms</a><a href="/disclaimer">Disclaimer</a></div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<!-- pdf.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+
+<script>
+'use strict';
+
+/* ===== THEME ===== */
+(function(){try{var t=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&d))document.documentElement.setAttribute('data-theme','dark');else if(t==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();
+document.querySelector('.theme-btn')?.addEventListener('click',()=>{const h=document.documentElement;const c=h.getAttribute('data-theme');const d=window.matchMedia('(prefers-color-scheme: dark)').matches;let n=c==='dark'?'light':c==='light'?'dark':(d?'light':'dark');h.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}});
+
+/* ===== HELPERS ===== */
+const $ = (s, p = document) => p.querySelector(s);
+const $$ = (s, p = document) => [...p.querySelectorAll(s)];
+
+function formatBytes(b) {
+  if (b === 0) return '0 B';
+  const k = 1024, sizes = ['B', 'KB', 'MB', 'GB'];
+  const i = Math.floor(Math.log(b) / Math.log(k));
+  return (b / Math.pow(k, i)).toFixed(i === 0 ? 0 : 1) + ' ' + sizes[i];
+}
+
+function showToast(msg, type = 'info', duration = 3000) {
+  const t = $('#toast');
+  if (!t) return;
+  t.className = 'toast visible' + (type !== 'info' ? ' ' + type : '');
+  t.textContent = msg;
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove('visible'), duration);
+}
+
+async function copyToClipboard(text) {
+  try {
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(text);
+      return true;
+    }
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.cssText = 'position:fixed;opacity:0;';
+    document.body.appendChild(ta);
+    ta.select();
+    const ok = document.execCommand('copy');
+    document.body.removeChild(ta);
+    return ok;
+  } catch (e) { return false; }
+}
+
+function escapeHtml(str) {
+  const d = document.createElement('div');
+  d.textContent = str;
+  return d.innerHTML;
+}
+
+/* ===== PDF.js Setup ===== */
+if (window.pdfjsLib) {
+  pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+}
+
+/* ===== STATE ===== */
+const state = {
+  pdfFile: null,
+  pdfDoc: null,
+  pdfName: '',
+  pdfPages: 0,
+  pdfSize: 0,
+  pdfArrayBuffer: null,
+  outline: null,        // raw outline from PDF
+  flatBookmarks: [],    // [{ title, page, level, path }]
+  activeBookmarkIndex: -1,
+  isProcessing: false,
+  renderTask: null
+};
+
+/* ===== DOM ===== */
+const dropzone = $('#dropzone');
+const fileInput = $('#fileInput');
+const chooseBtn = $('#chooseBtn');
+const browseLink = $('#browseLink');
+const clearBtn = $('#clearBtn');
+const loadingBar = $('#loadingBar');
+const pdfInfo = $('#pdfInfo');
+const pdfName = $('#pdfName');
+const pdfMeta = $('#pdfMeta');
+const viewer = $('#viewer');
+const bmTree = $('#bmTree');
+const bmCount = $('#bmCount');
+const bmSearch = $('#bmSearch');
+const expandAllBtn = $('#expandAllBtn');
+const collapseAllBtn = $('#collapseAllBtn');
+const previewCanvasWrap = $('#previewCanvasWrap');
+const previewCanvas = $('#previewCanvas');
+const previewPlaceholder = $('#previewPlaceholder');
+const previewPageInfo = $('#previewPageInfo');
+const actionBar = $('#actionBar');
+const copyAllBtn = $('#copyAllBtn');
+const downloadJsonBtn = $('#downloadJsonBtn');
+const downloadTxtBtn = $('#downloadTxtBtn');
+
+/* ===== FILE SELECTION ===== */
+function triggerFileSelect() { fileInput.click(); }
+chooseBtn.addEventListener('click', (e) => { e.stopPropagation(); triggerFileSelect(); });
+browseLink.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); triggerFileSelect(); });
+dropzone.addEventListener('click', triggerFileSelect);
+
+fileInput.addEventListener('change', (e) => {
+  const f = e.target.files[0];
+  if (f && (f.type === 'application/pdf' || f.name.toLowerCase().endsWith('.pdf'))) loadPDF(f);
+  fileInput.value = '';
+});
+
+['dragenter', 'dragover'].forEach(evt => {
+  dropzone.addEventListener(evt, (e) => { e.preventDefault(); e.stopPropagation(); dropzone.classList.add('dragover'); });
+});
+['dragleave', 'drop'].forEach(evt => {
+  dropzone.addEventListener(evt, (e) => { e.preventDefault(); e.stopPropagation(); dropzone.classList.remove('dragover'); });
+});
+dropzone.addEventListener('drop', (e) => {
+  const f = e.dataTransfer.files[0];
+  if (f && (f.type === 'application/pdf' || f.name.toLowerCase().endsWith('.pdf'))) loadPDF(f);
+  else showToast('Please drop a PDF file', 'error');
+});
+
+/* ===== LOAD PDF ===== */
+async function loadPDF(file) {
+  if (!window.pdfjsLib) {
+    showToast('PDF library not loaded. Check your internet.', 'error');
+    return;
+  }
+  if (state.pdfDoc) {
+    try { await state.pdfDoc.destroy(); } catch (e) {}
+    state.pdfDoc = null;
+  }
+
+  state.pdfFile = file;
+  state.pdfName = file.name;
+  state.pdfSize = file.size;
+  state.flatBookmarks = [];
+  state.activeBookmarkIndex = -1;
+  state.outline = null;
+
+  dropzone.style.display = 'none';
+  loadingBar.classList.add('visible');
+  viewer.classList.remove('visible');
+  actionBar.classList.remove('visible');
+  previewCanvasWrap.style.display = 'none';
+  previewPlaceholder.style.display = 'block';
+  previewPageInfo.textContent = '';
+
+  try {
+    const arrayBuffer = await file.arrayBuffer();
+    state.pdfArrayBuffer = arrayBuffer.slice(0);
+    const task = pdfjsLib.getDocument({ data: arrayBuffer });
+    const pdf = await task.promise;
+    state.pdfDoc = pdf;
+    state.pdfPages = pdf.numPages;
+
+    pdfName.textContent = file.name;
+    pdfMeta.textContent = `${pdf.numPages} page${pdf.numPages > 1 ? 's' : ''} · ${formatBytes(file.size)}`;
+    pdfInfo.classList.add('visible');
+
+    // Get outline
+    let outline = null;
+    try {
+      outline = await pdf.getOutline();
+    } catch (e) {
+      outline = null;
+    }
+
+    state.outline = outline;
+
+    if (!outline || outline.length === 0) {
+      renderEmptyState();
+      bmCount.textContent = '0';
+      loadingBar.classList.remove('visible');
+      viewer.classList.add('visible');
+      showToast('ℹ️ This PDF has no bookmarks', 'info', 4000);
+      return;
+    }
+
+    // Flatten outline (resolve page numbers)
+    state.flatBookmarks = [];
+    await flattenOutline(outline, 0, '');
+
+    bmCount.textContent = state.flatBookmarks.length;
+    renderTree();
+    actionBar.classList.add('visible');
+
+    loadingBar.classList.remove('visible');
+    viewer.classList.add('visible');
+    showToast(`✅ Found ${state.flatBookmarks.length} bookmark${state.flatBookmarks.length > 1 ? 's' : ''}`, 'success');
+
+  } catch (err) {
+    console.error('PDF load failed:', err);
+    loadingBar.classList.remove('visible');
+    dropzone.style.display = '';
+    showToast('Failed to load PDF may be corrupted or password-protected', 'error', 5000);
+    state.pdfDoc = null;
+  }
+}
+
+/* ===== RESOLVE BOOKMARK PAGE NUMBER ===== */
+async function resolveBookmarkPage(dest) {
+  if (!state.pdfDoc) return null;
+  if (!dest) return null;
+
+  try {
+    let explicitDest = dest;
+
+    // If dest is a string, look it up in the PDF's destination cache
+    if (typeof dest === 'string') {
+      try {
+        explicitDest = await state.pdfDoc.getDestination(dest);
+      } catch (e) {
+        return null;
+      }
+    }
+
+    if (!Array.isArray(explicitDest) || explicitDest.length === 0) return null;
+
+    // First element is a page reference
+    const pageRef = explicitDest[0];
+    let pageIndex = -1;
+
+    if (typeof pageRef === 'number') {
+      pageIndex = pageRef;
+    } else if (pageRef && typeof pageRef === 'object') {
+      try {
+        pageIndex = await state.pdfDoc.getPageIndex(pageRef);
+      } catch (e) {
+        return null;
+      }
+    }
+
+    if (pageIndex < 0) return null;
+    return pageIndex + 1; // 1-based
+  } catch (err) {
+    return null;
+  }
+}
+
+/* ===== FLATTEN OUTLINE TREE ===== */
+async function flattenOutline(items, level, parentPath) {
+  for (const item of items) {
+    const page = await resolveBookmarkPage(item.dest);
+    const path = parentPath ? parentPath + ' > ' + item.title : item.title;
+
+    state.flatBookmarks.push({
+      title: item.title || '(untitled)',
+      page: page || null,
+      level: level,
+      path: path,
+      bold: item.bold || false,
+      italic: item.italic || false,
+      url: item.url || null
+    });
+
+    if (item.items && item.items.length) {
+      await flattenOutline(item.items, level + 1, path);
+    }
+  }
+}
+
+/* ===== RENDER TREE ===== */
+function renderTree(filter = '') {
+  bmTree.innerHTML = '';
+
+  if (!state.outline || state.outline.length === 0) {
+    renderEmptyState();
+    return;
+  }
+
+  // Rebuild the hierarchical tree but resolve pages via flatBookmarks map
+  // We'll build a DOM tree by walking the original outline structure
+  const bmIndexMap = new Map(); // path -> flatBookmark index
+  state.flatBookmarks.forEach((b, i) => bmIndexMap.set(b.path, i));
+
+  // Build parent → flatBookmarks slice via path
+  const tree = buildTreeFromOutline(state.outline, 0, '');
+
+  bmTree.appendChild(tree);
+}
+
+function buildTreeFromOutline(items, level, parentPath) {
+  const ul = document.createElement('ul');
+  ul.className = 'bm-list';
+
+  for (const item of items) {
+    const path = parentPath ? parentPath + ' > ' + (item.title || '(untitled)') : (item.title || '(untitled)');
+    const idx = state.flatBookmarks.findIndex(b => b.path === path);
+
+    const li = document.createElement('li');
+    li.className = 'bm-item' + (item.items && item.items.length ? ' has-children' : '');
+    li.dataset.path = path;
+    li.dataset.index = idx;
+
+    const row = document.createElement('div');
+    row.className = 'bm-row';
+    row.dataset.index = idx;
+
+    // Toggle arrow
+    const toggle = document.createElement('span');
+    toggle.className = 'bm-toggle';
+    toggle.textContent = '▶';
+    row.appendChild(toggle);
+
+    // Title
+    const title = document.createElement('span');
+    title.className = 'bm-title';
+    title.textContent = item.title || '(untitled)';
+    if (item.bold) title.style.fontWeight = '700';
+    if (item.italic) title.style.fontStyle = 'italic';
+    row.appendChild(title);
+
+    // Page badge
+    if (idx >= 0) {
+      const bm = state.flatBookmarks[idx];
+      const badge = document.createElement('span');
+      badge.className = 'bm-page-badge';
+      badge.textContent = bm.page ? 'p. ' + bm.page : '';
+      row.appendChild(badge);
+    }
+
+    // Click to navigate
+    row.addEventListener('click', (e) => {
+      if (e.target === toggle) {
+        // Toggle children
+        li.classList.toggle('open');
+        const childList = li.querySelector('.bm-list');
+        if (childList) childList.classList.toggle('open');
+        return;
+      }
+      if (idx >= 0) {
+        const bm = state.flatBookmarks[idx];
+        if (bm.page) {
+          state.activeBookmarkIndex = idx;
+          markActiveRow();
+          renderPreviewPage(bm.page, bm.title);
+        } else {
+          showToast('This bookmark has no page destination', 'info');
+        }
+      }
+    });
+
+    li.appendChild(row);
+
+    // Children
+    if (item.items && item.items.length) {
+      const childTree = buildTreeFromOutline(item.items, level + 1, path);
+      li.appendChild(childTree);
+    }
+
+    ul.appendChild(li);
+  }
+
+  return ul;
+}
+
+function markActiveRow() {
+  $$('.bm-row').forEach(r => r.classList.remove('active'));
+  const active = document.querySelector(`.bm-row[data-index="${state.activeBookmarkIndex}"]`);
+  if (active) active.classList.add('active');
+}
+
+function renderEmptyState() {
+  bmTree.innerHTML = `
+    <div class="bm-empty">
+      <div class="bm-empty-icon">🔖</div>
+      <strong>No bookmarks found</strong>
+      This PDF doesn't contain an outline or table of contents.
+    </div>
+  `;
+}
+
+/* ===== SEARCH FILTER ===== */
+bmSearch.addEventListener('input', debounce(() => {
+  const q = bmSearch.value.trim().toLowerCase();
+  const items = $$('.bm-item', bmTree);
+
+  if (!q) {
+    items.forEach(it => it.style.display = '');
+    return;
+  }
+
+  // Hide items that don't match; show parents of matches
+  items.forEach(it => it.style.display = 'none');
+
+  state.flatBookmarks.forEach((bm, i) => {
+    if (bm.title.toLowerCase().includes(q)) {
+      // Show this item and all ancestor items
+      const el = document.querySelector(`.bm-item[data-index="${i}"]`);
+      let cur = el;
+      while (cur) {
+        cur.style.display = '';
+        cur = cur.parentElement ? cur.parentElement.closest('.bm-item') : null;
+      }
+    }
+  });
+}, 200));
+
+function debounce(fn, delay) {
+  let timer;
+  return function (...args) {
+    clearTimeout(timer);
+    timer = setTimeout(() => fn.apply(this, args), delay);
+  };
+}
+
+/* ===== EXPAND / COLLAPSE ===== */
+expandAllBtn.addEventListener('click', () => {
+  $$('.bm-item.has-children', bmTree).forEach(it => {
+    it.classList.add('open');
+    const cl = it.querySelector(':scope > .bm-list');
+    if (cl) cl.classList.add('open');
+  });
+});
+
+collapseAllBtn.addEventListener('click', () => {
+  $$('.bm-item.has-children', bmTree).forEach(it => {
+    it.classList.remove('open');
+    const cl = it.querySelector(':scope > .bm-list');
+    if (cl) cl.classList.remove('open');
+  });
+});
+
+/* ===== PREVIEW PAGE ===== */
+async function renderPreviewPage(pageNum, title) {
+  if (!state.pdfDoc) return;
+
+  previewPlaceholder.style.display = 'none';
+  previewCanvasWrap.style.display = 'block';
+  previewPageInfo.textContent = `Page ${pageNum}`;
+
+  // Cancel previous render
+  if (state.renderTask) {
+    try { state.renderTask.cancel(); } catch (e) {}
+    state.renderTask = null;
+  }
+
+  try {
+    const page = await state.pdfDoc.getPage(pageNum);
+    const wrapWidth = previewCanvasWrap.parentElement.clientWidth - 40;
+    const baseViewport = page.getViewport({ scale: 1 });
+    const maxWidth = Math.min(wrapWidth, 700);
+    const scale = maxWidth / baseViewport.width;
+    const viewport = page.getViewport({ scale });
+
+    const dpr = window.devicePixelRatio || 1;
+    const canvas = previewCanvas;
+    const ctx = canvas.getContext('2d');
+
+    canvas.width = Math.floor(viewport.width * dpr);
+    canvas.height = Math.floor(viewport.height * dpr);
+    canvas.style.width = Math.floor(viewport.width) + 'px';
+    canvas.style.height = Math.floor(viewport.height) + 'px';
+
+    const transform = dpr !== 1 ? [dpr, 0, 0, dpr, 0, 0] : undefined;
+
+    state.renderTask = page.render({
+      canvasContext: ctx,
+      viewport,
+      transform
+    });
+
+    await state.renderTask.promise;
+    state.renderTask = null;
+
+  } catch (err) {
+    if (err && err.name === 'RenderingCancelledException') return;
+    console.error('Preview render failed:', err);
+  }
+}
+
+/* ===== EXPORT ===== */
+function bookmarksToText() {
+  const lines = ['PDF Bookmarks ' + state.pdfName, '='.repeat(60), ''];
+  state.flatBookmarks.forEach(bm => {
+    const indent = '  '.repeat(bm.level);
+    const page = bm.page ? ` [p. ${bm.page}]` : '';
+    lines.push(`${indent}${bm.title}${page}`);
+  });
+  return lines.join('\n');
+}
+
+function bookmarksToJson() {
+  // Build nested JSON structure
+  const root = { name: state.pdfName, bookmarks: [] };
+  const stack = [{ level: -1, node: root }];
+
+  state.flatBookmarks.forEach(bm => {
+    const node = {
+      title: bm.title,
+      page: bm.page,
+      bold: bm.bold || false,
+      italic: bm.italic || false,
+      children: []
+    };
+
+    // Find parent by level
+    while (stack.length > 1 && stack[stack.length - 1].level >= bm.level) {
+      stack.pop();
+    }
+    const parent = stack[stack.length - 1].node;
+    if (!parent.children) parent.children = [];
+    parent.children.push(node);
+
+    stack.push({ level: bm.level, node });
+  });
+
+  // Clean empty children arrays
+  const clean = (node) => {
+    if (node.children && node.children.length === 0) delete node.children;
+    if (node.children) node.children.forEach(clean);
+  };
+  root.bookmarks.forEach(clean);
+
+  return JSON.stringify(root, null, 2);
+}
+
+copyAllBtn.addEventListener('click', async () => {
+  if (!state.flatBookmarks.length) return;
+  const text = bookmarksToText();
+  const ok = await copyToClipboard(text);
+  if (ok) {
+    copyAllBtn.classList.add('copied');
+    const orig = copyAllBtn.innerHTML;
+    copyAllBtn.innerHTML = '✓ Copied!';
+    setTimeout(() => {
+      copyAllBtn.classList.remove('copied');
+      copyAllBtn.innerHTML = orig;
+    }, 2000);
+    showToast('Bookmarks copied to clipboard', 'success');
+  } else {
+    showToast('Copy failed', 'error');
+  }
+});
+
+downloadJsonBtn.addEventListener('click', () => {
+  if (!state.flatBookmarks.length) return;
+  const json = bookmarksToJson();
+  const blob = new Blob([json], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const baseName = state.pdfName.replace(/\.[^.]+$/, '');
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `${baseName}-bookmarks.json`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+  showToast('JSON downloaded', 'success');
+});
+
+downloadTxtBtn.addEventListener('click', () => {
+  if (!state.flatBookmarks.length) return;
+  const text = bookmarksToText();
+  const blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const baseName = state.pdfName.replace(/\.[^.]+$/, '');
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `${baseName}-bookmarks.txt`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+  showToast('Text downloaded', 'success');
+});
+
+/* ===== CLEAR / RESET ===== */
+clearBtn.addEventListener('click', () => {
+  resetAll();
+  triggerFileSelect();
+});
+
+function resetAll() {
+  if (state.pdfDoc) {
+    try { state.pdfDoc.destroy(); } catch (e) {}
+  }
+  state.pdfDoc = null;
+  state.pdfFile = null;
+  state.pdfArrayBuffer = null;
+  state.outline = null;
+  state.flatBookmarks = [];
+  state.activeBookmarkIndex = -1;
+  state.pdfPages = 0;
+
+  pdfInfo.classList.remove('visible');
+  viewer.classList.remove('visible');
+  actionBar.classList.remove('visible');
+  loadingBar.classList.remove('visible');
+  bmTree.innerHTML = '';
+  bmSearch.value = '';
+  previewCanvasWrap.style.display = 'none';
+  previewPlaceholder.style.display = 'block';
+  previewPageInfo.textContent = '';
+  dropzone.style.display = '';
+
+  showToast('Cleared');
+}
+
+/* ===== FAQ ===== */
+$$('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    $$('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+</script>
+
+</body>
+</html>

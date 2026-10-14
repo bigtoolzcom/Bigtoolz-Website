@@ -1,0 +1,357 @@
+# ===========================================
+# BigToolz - Auto Backup Workflow
+# ===========================================
+# Creates daily, weekly, and monthly backups
+# of the entire site (code + data + config).
+#
+# Backup types:
+#   - daily   → Artifacts (30-day retention)
+#   - weekly  → GitHub Releases (permanent)
+#   - monthly → GitHub Releases (permanent, tagged)
+#
+# Setup:
+#   1. Enable Actions in repo Settings
+#   2. (Optional) Add SLACK_WEBHOOK or DISCORD_WEBHOOK secret
+#   3. (Optional) Add EMAIL_TOKEN for email notifications
+# ===========================================
+
+name: Backup
+
+# ===== TRIGGERS =====
+on:
+  # Daily backup at 2 AM UTC
+  schedule:
+    - cron: '0 2 * * *'
+
+  # Weekly backup (Sunday 3 AM UTC)
+    - cron: '0 3 * * 0'
+
+  # Monthly backup (1st of month, 4 AM UTC)
+    - cron: '0 4 1 * *'
+
+  # Manual trigger
+  workflow_dispatch:
+    inputs:
+      backup_type:
+        description: 'Backup type'
+        required: true
+        default: 'daily'
+        type: choice
+        options:
+          - daily
+          - weekly
+          - monthly
+      create_release:
+        description: 'Create a GitHub Release?'
+        required: false
+        default: false
+        type: boolean
+
+# ===== PERMISSIONS =====
+permissions:
+  contents: write
+  actions: read
+
+# ===== CONCURRENCY =====
+concurrency:
+  group: backup
+  cancel-in-progress: false
+
+# ===== ENV =====
+env:
+  BACKUP_RETENTION_DAYS: 30
+  NODE_VERSION: '20'
+
+# ===== JOBS =====
+jobs:
+
+  # ===========================================
+  # JOB 1: DETERMINE BACKUP TYPE
+  # ===========================================
+  prepare:
+    name: 🔍 Prepare Backup
+    runs-on: ubuntu-latest
+    outputs:
+      backup_type: ${{ steps.detect.outputs.backup_type }}
+      timestamp: ${{ steps.detect.outputs.timestamp }}
+      date_tag: ${{ steps.detect.outputs.date_tag }}
+
+    steps:
+      - name: 📅 Determine backup type
+        id: detect
+        run: |
+          TIMESTAMP=$(date -u +"%Y-%m-%d_%H-%M-%S")
+          DATE_TAG=$(date -u +"%Y-%m-%d")
+
+          # Manual trigger takes priority
+          if [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
+            BACKUP_TYPE="${{ github.event.inputs.backup_type }}"
+          else
+            # Scheduled: figure out from cron
+            DOW=$(date -u +"%u")  # 1-7 (Mon-Sun)
+            DOM=$(date -u +"%d")  # 01-31
+
+            if [ "$DOM" == "01" ]; then
+              BACKUP_TYPE="monthly"
+            elif [ "$DOW" == "7" ]; then
+              BACKUP_TYPE="weekly"
+            else
+              BACKUP_TYPE="daily"
+            fi
+          fi
+
+          echo "backup_type=$BACKUP_TYPE" >> $GITHUB_OUTPUT
+          echo "timestamp=$TIMESTAMP" >> $GITHUB_OUTPUT
+          echo "date_tag=$DATE_TAG" >> $GITHUB_OUTPUT
+          echo "📦 Backup type: $BACKUP_TYPE"
+          echo "🕐 Timestamp: $TIMESTAMP"
+
+  # ===========================================
+  # JOB 2: CREATE BACKUP ARCHIVE
+  # ===========================================
+  backup:
+    name: 💾 Create Backup
+    needs: prepare
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout repository (full history)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # full history for archive
+
+      - name: 📊 Repo statistics
+        id: stats
+        run: |
+          TOTAL_FILES=$(find . -type f -not -path './.git/*' | wc -l)
+          TOTAL_SIZE=$(du -sh --exclude=.git . | cut -f1)
+          TOOL_COUNT=$(find tools -name "*.html" -type f 2>/dev/null | wc -l)
+          BLOG_COUNT=$(find blog -name "*.html" -type f 2>/dev/null | wc -l)
+
+          echo "total_files=$TOTAL_FILES" >> $GITHUB_OUTPUT
+          echo "total_size=$TOTAL_SIZE" >> $GITHUB_OUTPUT
+          echo "tool_count=$TOOL_COUNT" >> $GITHUB_OUTPUT
+          echo "blog_count=$BLOG_COUNT" >> $GITHUB_OUTPUT
+
+          echo "📄 Total files: $TOTAL_FILES"
+          echo "💾 Total size: $TOTAL_SIZE"
+          echo "🛠 Tool pages: $TOOL_COUNT"
+          echo "📝 Blog pages: $BLOG_COUNT"
+
+      - name: 📁 Create backup directory
+        run: |
+          mkdir -p /tmp/backup
+          mkdir -p /tmp/backup/site
+          mkdir -p /tmp/backup/data
+          mkdir -p /tmp/backup/config
+
+      - name: 📦 Copy site files
+        run: |
+          echo "Copying site files..."
+          rsync -av \
+            --exclude='.git' \
+            --exclude='node_modules' \
+            --exclude='.github' \
+            --exclude='*.log' \
+            ./ /tmp/backup/site/
+
+      - name: 🗄️ Backup data files
+        run: |
+          echo "Backing up data files..."
+          if [ -d "data" ]; then
+            cp -r data/* /tmp/backup/data/ 2>/dev/null || true
+          fi
+          if [ -f "sitemap.xml" ]; then
+            cp sitemap.xml /tmp/backup/config/
+          fi
+          if [ -f "robots.txt" ]; then
+            cp robots.txt /tmp/backup/config/
+          fi
+          if [ -f "ads.txt" ]; then
+            cp ads.txt /tmp/backup/config/
+          fi
+          if [ -f "manifest.json" ]; then
+            cp manifest.json /tmp/backup/config/
+          fi
+
+      - name: 📝 Create backup metadata
+        run: |
+          cat > /tmp/backup/BACKUP-INFO.txt << EOF
+          ===========================================
+          BigToolz Backup Information
+          ===========================================
+
+          Backup Type:  ${{ needs.prepare.outputs.backup_type }}
+          Timestamp:    ${{ needs.prepare.outputs.timestamp }}
+          Date:         ${{ needs.prepare.outputs.date_tag }}
+          Commit SHA:   ${{ github.sha }}
+          Commit Msg:   ${{ github.event.head_commit.message }}
+          Branch:       ${{ github.ref_name }}
+          Triggered By: ${{ github.actor }}
+
+          -------------------------------------------
+          Repository Statistics
+          -------------------------------------------
+          Total Files:     ${{ steps.stats.outputs.total_files }}
+          Total Size:      ${{ steps.stats.outputs.total_size }}
+          Tool Pages:      ${{ steps.stats.outputs.tool_count }}
+          Blog Pages:      ${{ steps.stats.outputs.blog_count }}
+
+          -------------------------------------------
+          Contents
+          -------------------------------------------
+          /site/    → Full website (HTML, CSS, JS, assets)
+          /data/    → Data files (tools-database.js, etc.)
+          /config/  → Config files (sitemap.xml, robots.txt, ads.txt)
+
+          -------------------------------------------
+          How to Restore
+          -------------------------------------------
+          1. Extract the archive
+          2. Copy /site/* to your web root
+          3. Verify sitemap.xml and robots.txt
+          4. Test the homepage loads correctly
+          5. Verify tools count = 300
+
+          ===========================================
+          Generated by BigToolz Auto-Backup
+          ===========================================
+          EOF
+          cat /tmp/backup/BACKUP-INFO.txt
+
+      - name: 🗜️ Create archive
+        id: archive
+        run: |
+          cd /tmp
+          ARCHIVE_NAME="bigtoolz-backup-${{ needs.prepare.outputs.backup_type }}-${{ needs.prepare.outputs.date_tag }}.tar.gz"
+          tar -czf "$ARCHIVE_NAME" backup/
+          SIZE=$(du -h "$ARCHIVE_NAME" | cut -f1)
+          echo "archive_name=$ARCHIVE_NAME" >> $GITHUB_OUTPUT
+          echo "archive_path=/tmp/$ARCHIVE_NAME" >> $GITHUB_OUTPUT
+          echo "archive_size=$SIZE" >> $GITHUB_OUTPUT
+          echo "📦 Created: $ARCHIVE_NAME ($SIZE)"
+
+      - name: ⬆️ Upload daily backup (Artifact)
+        if: needs.prepare.outputs.backup_type == 'daily'
+        uses: actions/upload-artifact@v4
+        with:
+          name: backup-${{ needs.prepare.outputs.backup_type }}-${{ needs.prepare.outputs.timestamp }}
+          path: ${{ steps.archive.outputs.archive_path }}
+          retention-days: ${{ env.BACKUP_RETENTION_DAYS }}
+          compression-level: 6
+
+      - name: ⬆️ Upload weekly backup (Artifact + Release)
+        if: needs.prepare.outputs.backup_type == 'weekly'
+        uses: actions/upload-artifact@v4
+        with:
+          name: backup-weekly-${{ needs.prepare.outputs.date_tag }}
+          path: ${{ steps.archive.outputs.archive_path }}
+          retention-days: 90
+          compression-level: 6
+
+      - name: ⬆️ Upload monthly backup (Artifact + Release)
+        if: needs.prepare.outputs.backup_type == 'monthly'
+        uses: actions/upload-artifact@v4
+        with:
+          name: backup-monthly-${{ needs.prepare.outputs.date_tag }}
+          path: ${{ steps.archive.outputs.archive_path }}
+          retention-days: 365
+          compression-level: 6
+
+      # Save archive for later jobs
+      - name: 📤 Upload intermediate archive
+        uses: actions/upload-artifact@v4
+        with:
+          name: backup-archive-temp
+          path: ${{ steps.archive.outputs.archive_path }}
+          retention-days: 1
+
+      # Save summary for notifications
+      - name: 📊 Output summary
+        run: |
+          echo "### 💾 Backup Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| Field | Value |" >> $GITHUB_STEP_SUMMARY
+          echo "|-------|-------|" >> $GITHUB_STEP_SUMMARY
+          echo "| Type | \`${{ needs.prepare.outputs.backup_type }}\` |" >> $GITHUB_STEP_SUMMARY
+          echo "| Timestamp | \`${{ needs.prepare.outputs.timestamp }}\` |" >> $GITHUB_STEP_SUMMARY
+          echo "| Commit | \`${{ github.sha }}\` |" >> $GITHUB_STEP_SUMMARY
+          echo "| Archive | \`${{ steps.archive.outputs.archive_name }}\` |" >> $GITHUB_STEP_SUMMARY
+          echo "| Size | \`${{ steps.archive.outputs.archive_size }}\` |" >> $GITHUB_STEP_SUMMARY
+          echo "| Total Files | ${{ steps.stats.outputs.total_files }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Tool Pages | ${{ steps.stats.outputs.tool_count }} |" >> $GITHUB_STEP_SUMMARY
+
+  # ===========================================
+  # JOB 3: CREATE GITHUB RELEASE
+  # ===========================================
+  release:
+    name: 🏷️ Create Release
+    needs: [prepare, backup]
+    runs-on: ubuntu-latest
+    if: |
+      needs.prepare.outputs.backup_type == 'weekly' ||
+      needs.prepare.outputs.backup_type == 'monthly' ||
+      (github.event_name == 'workflow_dispatch' && github.event.inputs.create_release == 'true')
+
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+
+      - name: 📥 Download backup archive
+        uses: actions/download-artifact@v4
+        with:
+          name: backup-archive-temp
+          path: ./archive
+
+      - name: 🏷️ Create release tag
+        id: tag
+        run: |
+          TYPE="${{ needs.prepare.outputs.backup_type }}"
+          DATE="${{ needs.prepare.outputs.date_tag }}"
+
+          if [ "$TYPE" == "monthly" ]; then
+            TAG="backup-${DATE}-monthly"
+            TITLE="Monthly Backup — ${DATE}"
+            NOTES="Monthly full-site backup for ${DATE}"
+          else
+            TAG="backup-${DATE}-weekly"
+            TITLE="Weekly Backup — ${DATE}"
+            NOTES="Weekly full-site backup for ${DATE}"
+          fi
+
+          echo "tag=$TAG" >> $GITHUB_OUTPUT
+          echo "title=$TITLE" >> $GITHUB_OUTPUT
+          echo "notes=$NOTES" >> $GITHUB_OUTPUT
+
+      - name: 🚀 Create GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ steps.tag.outputs.tag }}
+          name: ${{ steps.tag.outputs.title }}
+          body: |
+            ## 🗄️ BigToolz Backup — ${{ needs.prepare.outputs.backup_type }}
+
+            **Date:** ${{ needs.prepare.outputs.date_tag }}
+            **Commit:** `${{ github.sha }}`
+            **Type:** ${{ needs.prepare.outputs.backup_type }}
+            **Triggered by:** @${{ github.actor }}
+
+            ---
+
+            ### 📦 Contents
+            - Full website source (HTML, CSS, JS)
+            - All 300 tool pages
+            - Data files (`tools-database.js`, etc.)
+            - Config files (sitemap, robots.txt, ads.txt, manifest)
+
+            ### 🔄 Restore
+            ```bash
+            # Download and extract
+            tar -xzf bigtoolz-backup-*.tar.gz
+            cd backup/
+
+            # Review info
+            cat BACKUP-INFO.txt
+
+            # Copy to your web root
+            cp -r site/* /var/www/html/

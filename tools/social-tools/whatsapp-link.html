@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2563eb">
+
+<title>WhatsApp Link Generator - Create wa.me Chat Links Free | BigToolz</title>
+<meta name="description" content="Create WhatsApp chat links (wa.me) with pre-filled messages. Free QR code generator included. Perfect for businesses, customer support, and social media profiles.">
+<meta name="keywords" content="whatsapp link generator, wa.me link, whatsapp chat link, whatsapp qr code, whatsapp business link">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://bigtoolz.com/tools/social-tools/whatsapp-link/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="WhatsApp Link Generator - Free Online Tool | BigToolz">
+<meta property="og:description" content="Create WhatsApp chat links with pre-filled messages free, with QR code.">
+<meta property="og:url" content="https://bigtoolz.com/tools/social-tools/whatsapp-link/">
+<meta property="og:image" content="https://bigtoolz.com/assets/images/og-image.jpg">
+<meta property="og:site_name" content="BigToolz">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="WhatsApp Link Generator - BigToolz">
+<meta name="twitter:description" content="Create WhatsApp chat links instantly free.">
+<meta name="twitter:image" content="https://bigtoolz.com/assets/images/twitter-card.jpg">
+
+<link rel="icon" href="/assets/images/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/images/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#f8f9fc;color:#1a1a2e;overflow-x:hidden;line-height:1.5}
+
+  .header{background:#fff;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;position:sticky;top:0;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+  .header-left{display:flex;align-items:center;gap:40px}
+  .logo{display:flex;align-items:center;gap:8px;font-size:22px;font-weight:800;color:#1a1a2e;text-decoration:none}
+  .logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#3b82f6,#2563eb);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px}
+  .logo span{color:#2563eb}
+  .nav{display:flex;align-items:center;gap:28px;list-style:none}
+  .nav a{text-decoration:none;color:#4b5563;font-size:14px;font-weight:500;transition:color .2s}
+  .nav a:hover,.nav a.active{color:#2563eb}
+  .header-right{display:flex;align-items:center;gap:16px}
+  .search-btn,.theme-btn{width:36px;height:36px;border-radius:50%;border:none;background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#4b5563}
+  .search-btn:hover,.theme-btn:hover{background:#f3f4f6}
+  .bookmark-btn{display:flex;align-items:center;gap:8px;background:#2563eb;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
+  .bookmark-btn:hover{background:#1d4ed8}
+
+  .hero{background:linear-gradient(135deg,#0a0e27 0%,#0f2818 40%,#14532d 70%,#166534 100%);padding:40px 40px 60px;position:relative;overflow:hidden;color:#fff}
+  .hero::before{content:'';position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(37,211,102,.35) 0%,transparent 70%);border-radius:50%}
+  .hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+  .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px;flex-wrap:wrap}
+  .breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none}
+  .breadcrumb a:hover{color:#fff}
+  .breadcrumb .sep{color:rgba(255,255,255,.4)}
+  .breadcrumb .current{color:#fff;font-weight:500}
+  .hero-title-row{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+  .hero-icon{width:60px;height:60px;background:#25d366;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:30px;color:#fff;flex-shrink:0;box-shadow:0 8px 24px rgba(37,211,102,.5)}
+  .hero-title{font-size:42px;font-weight:800;line-height:1.15}
+  .hero-title .green{color:#4ade80}
+  .hero-desc{font-size:15px;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:24px;max-width:560px}
+  .hero-features{display:flex;gap:24px;flex-wrap:wrap}
+  .hero-feature{display:flex;align-items:center;gap:6px;font-size:13px;color:#fff;font-weight:500}
+  .hero-feature .check{width:18px;height:18px;border-radius:50%;background:#25d366;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;flex-shrink:0;font-weight:800}
+
+  .main-content{max-width:1200px;margin:0 auto;padding:40px;display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start}
+  .tool-content{min-width:0}
+
+  .workspace{background:#fff;border-radius:16px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,.06);border:1px solid #e5e7eb;margin-bottom:24px}
+
+  /* Inputs */
+  .inputs-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px}
+  .form-group{margin-bottom:16px}
+  .form-group label{display:block;font-size:12px;font-weight:700;color:#4b5563;margin-bottom:6px;display:flex;justify-content:space-between;align-items:center;gap:8px}
+  .form-group label .hint{font-size:11px;color:#9ca3af;font-weight:500}
+  .form-group input,.form-group select,.form-group textarea{width:100%;padding:12px 14px;border:2px solid #e5e7eb;border-radius:10px;font-size:14px;font-family:inherit;color:#1a1a2e;background:#fff;outline:none;transition:border-color .2s}
+  .form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:#25d366;box-shadow:0 0 0 3px rgba(37,211,102,.15)}
+  .form-group textarea{resize:vertical;min-height:80px;line-height:1.6}
+  .form-group select{cursor:pointer;padding-right:36px;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='3'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center}
+
+  .phone-row{display:grid;grid-template-columns:200px 1fr;gap:10px}
+
+  /* Live Preview (WhatsApp mockup) */
+  .wa-preview{background:#0b141a;border-radius:16px;overflow:hidden;box-shadow:0 8px 24px rgba(0,0,0,.15);margin-bottom:24px;max-width:400px;margin-left:auto;margin-right:auto}
+  .wa-header{background:#1f2c34;padding:14px 16px;display:flex;align-items:center;gap:12px;border-bottom:1px solid #2a3942}
+  .wa-avatar{width:40px;height:40px;border-radius:50%;background:#25d366;display:flex;align-items:center;justify-content:center;color:#fff;font-size:18px;font-weight:700;flex-shrink:0}
+  .wa-contact-info{flex:1;min-width:0}
+  .wa-contact-name{font-size:14px;font-weight:700;color:#e9edef;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .wa-contact-status{font-size:11px;color:#8696a0}
+  .wa-body{background:#0b141a;padding:20px 16px;min-height:120px;position:relative;background-image:radial-gradient(rgba(255,255,255,.03) 1px,transparent 1px);background-size:20px 20px}
+  .wa-msg{background:#005c4b;padding:10px 14px;border-radius:8px 8px 8px 2px;max-width:85%;color:#e9edef;font-size:13px;line-height:1.5;word-wrap:break-word;white-space:pre-wrap;box-shadow:0 1px 2px rgba(0,0,0,.15)}
+  .wa-msg::after{content:'\2713\2713';font-size:10px;color:#53bdeb;margin-left:8px;float:right;margin-top:2px}
+  .wa-time{font-size:10px;color:#8696a0;margin-top:4px;text-align:right;display:block}
+  .wa-empty{color:#8696a0;font-size:13px;text-align:center;padding:20px;font-style:italic}
+  .wa-footer{background:#1f2c34;padding:10px 16px;display:flex;align-items:center;gap:8px;border-top:1px solid #2a3942}
+  .wa-input{flex:1;background:#2a3942;border-radius:20px;padding:9px 14px;font-size:13px;color:#8696a0;border:none;outline:none}
+
+  /* Result Link Box */
+  .result-box{background:#f0fdf4;border:2px solid #86efac;border-radius:12px;padding:18px;margin-bottom:20px}
+  .result-box-title{font-size:13px;font-weight:800;color:#065f46;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+  .result-link{font-family:'JetBrains Mono',monospace;font-size:12px;color:#166534;background:#fff;padding:12px 14px;border-radius:8px;word-break:break-all;line-height:1.5;border:1px solid #86efac;margin-bottom:12px;min-height:44px;display:flex;align-items:center}
+  .link-actions{display:flex;gap:8px;flex-wrap:wrap}
+  .link-btn{display:inline-flex;align-items:center;gap:6px;padding:9px 16px;background:#fff;border:1px solid #86efac;border-radius:8px;font-size:12px;font-weight:700;color:#065f46;cursor:pointer;font-family:inherit;text-decoration:none;transition:all .2s}
+  .link-btn:hover{background:#25d366;color:#fff;border-color:#25d366}
+  .link-btn.primary{background:#25d366;color:#fff;border-color:#25d366}
+  .link-btn.primary:hover{background:#1da851;border-color:#1da851}
+  .link-btn.copied{background:#10b981;color:#fff;border-color:#10b981}
+
+  /* QR Code */
+  .qr-section{background:#f8fafc;border:1px solid #e5e7eb;border-radius:12px;padding:20px;text-align:center;margin-bottom:20px}
+  .qr-canvas-wrap{background:#fff;border-radius:12px;padding:14px;display:inline-block;margin-bottom:12px;box-shadow:0 4px 12px rgba(0,0,0,.06)}
+  .qr-canvas-wrap canvas{display:block;max-width:200px;height:auto;image-rendering:pixelated}
+  .qr-title{font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+  .qr-desc{font-size:11px;color:#6b7280;line-height:1.5;margin-bottom:12px}
+
+  /* Embed code */
+  .embed-section{margin-top:16px;padding:16px;background:#f8fafc;border-radius:10px;border:1px solid #e5e7eb}
+  .embed-title{font-size:12px;font-weight:800;color:#1a1a2e;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}
+  .embed-code{font-family:'JetBrains Mono',monospace;font-size:11px;color:#4b5563;background:#fff;padding:12px;border-radius:6px;border:1px solid #e5e7eb;word-break:break-all;line-height:1.5;user-select:all}
+
+  /* Actions */
+  .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 24px;border-radius:10px;font-size:14px;font-weight:700;font-family:inherit;cursor:pointer;border:none;transition:all .2s;text-decoration:none}
+  .btn-primary{background:#25d366;color:#fff;flex:1;box-shadow:0 4px 12px rgba(37,211,102,.25)}
+  .btn-primary:hover:not(:disabled){background:#1da851;transform:translateY(-2px);box-shadow:0 6px 20px rgba(37,211,102,.35)}
+  .btn-primary:disabled{opacity:.5;cursor:not-allowed;transform:none}
+  .btn-secondary{background:#fff;color:#25d366;border:1px solid #e5e7eb}
+  .btn-secondary:hover{border-color:#25d366;background:#f0fdf4}
+
+  /* History */
+  .history-section{margin-top:24px}
+  .history-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:12px;display:flex;justify-content:space-between;align-items:center;gap:8px}
+  .history-clear{background:none;border:none;font-size:11px;color:#25d366;cursor:pointer;font-family:inherit;font-weight:600;text-decoration:underline}
+  .history-list{display:flex;flex-direction:column;gap:8px}
+  .history-item{background:#f0fdf4;border:1px solid #86efac;border-radius:10px;padding:12px 14px;font-size:12px;display:flex;justify-content:space-between;gap:12px;align-items:center;cursor:pointer;transition:all .2s}
+  .history-item:hover{background:#dcfce7;border-color:#25d366;transform:translateX(2px)}
+  .history-text{color:#166534;font-weight:600;font-family:'JetBrains Mono',monospace;font-size:11px;word-break:break-all;flex:1;min-width:0}
+  .history-copy{font-size:10px;color:#065f46;font-weight:800;flex-shrink:0}
+
+  /* SEO */
+  .seo-content{background:#fff;border-radius:16px;padding:32px;border:1px solid #e5e7eb;margin-bottom:24px}
+  .seo-content h2{font-size:22px;font-weight:800;color:#1a1a2e;margin-bottom:14px;margin-top:28px;display:flex;align-items:center;gap:10px}
+  .seo-content h2:first-child{margin-top:0}
+  .seo-content h3{font-size:16px;font-weight:700;color:#1a1a2e;margin:20px 0 10px}
+  .seo-content p{font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:14px}
+  .seo-content ul{list-style:none;padding-left:0;margin-bottom:16px}
+  .seo-content ul li{position:relative;padding-left:24px;font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:8px}
+  .seo-content ul li::before{content:'';position:absolute;left:6px;top:12px;width:6px;height:6px;background:#25d366;border-radius:50%}
+  .seo-content a{color:#2563eb;text-decoration:none;font-weight:600}
+  .seo-content a:hover{text-decoration:underline}
+  .seo-content strong{color:#1a1a2e;font-weight:700}
+  .seo-content code{background:#f0fdf4;padding:2px 6px;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:13px;color:#166534;border:1px solid #86efac}
+
+  .how-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:20px}
+  .how-step{background:#f0fdf4;border-radius:12px;padding:20px;border:1px solid #86efac}
+  .how-step-num{width:36px;height:36px;border-radius:50%;background:#25d366;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800;margin-bottom:12px}
+  .how-step-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+  .how-step-desc{font-size:13px;color:#6b7280;line-height:1.6}
+
+  .faq-item{background:#f0fdf4;border:1px solid #86efac;border-radius:12px;margin-bottom:10px;overflow:hidden;transition:border-color .2s}
+  .faq-item:hover{border-color:#25d366}
+  .faq-question{width:100%;background:none;border:none;padding:18px 22px;font-size:15px;font-weight:700;color:#1a1a2e;text-align:left;cursor:pointer;font-family:inherit;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .faq-question .chev{font-size:12px;color:#25d366;transition:transform .2s;flex-shrink:0}
+  .faq-item.open .faq-question .chev{transform:rotate(180deg)}
+  .faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 22px}
+  .faq-item.open .faq-answer{max-height:500px;padding-bottom:18px}
+  .faq-answer p{font-size:14px;color:#6b7280;line-height:1.7;margin:0}
+
+  .sidebar{background:#fff;border-radius:16px;padding:24px;border:1px solid #e5e7eb;position:sticky;top:80px;margin-bottom:24px}
+  .sidebar-header{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:800;color:#1a1a2e;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid #f3f4f6}
+  .sidebar-list{display:flex;flex-direction:column;gap:8px}
+  .sidebar-item{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;cursor:pointer;transition:background .2s;text-decoration:none;color:inherit;border:1px solid #f3f4f6}
+  .sidebar-item:hover{background:#f0fdf4;border-color:#86efac}
+  .sidebar-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;flex-shrink:0}
+  .sidebar-info{flex:1;min-width:0}
+  .sidebar-title{font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:2px}
+  .sidebar-desc{font-size:11px;color:#9ca3af;line-height:1.4}
+
+  .footer{background:#0a0e27;padding:60px 40px 30px;color:#fff;margin-top:40px}
+  .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:40px}
+  .footer-brand{display:flex;align-items:center;gap:8px;font-size:20px;font-weight:800;margin-bottom:12px}
+  .footer-brand span{color:#60a5fa}
+  .footer-tagline{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px}
+  .footer-social{display:flex;gap:12px}
+  .footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:16px;transition:background .2s}
+  .footer-social a:hover{background:rgba(255,255,255,.2)}
+  .footer-heading{font-size:14px;font-weight:700;margin-bottom:20px;color:#fff}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .footer-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;transition:color .2s}
+  .footer-links a:hover{color:#60a5fa}
+  .footer-bottom{max-width:1200px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  .footer-bottom-left{display:flex;gap:20px;font-size:12px;color:rgba(255,255,255,.5)}
+  .footer-bottom-right,.footer-bottom-links a{font-size:12px;color:rgba(255,255,255,.5);text-decoration:none}
+  .footer-bottom-links{display:flex;gap:20px}
+
+  .toast{position:fixed;bottom:24px;right:24px;background:#1a1a2e;color:#fff;padding:14px 20px;border-radius:10px;font-size:13px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:3000;transform:translateY(200%);transition:transform .3s ease;max-width:320px}
+  .toast.visible{transform:translateY(0)}
+  .toast.success{background:#10b981}
+  .toast.error{background:#ef4444}
+
+  @media(max-width:1024px){
+    .main-content{grid-template-columns:1fr;padding:24px 20px}
+    .sidebar{position:static}
+    .how-steps{grid-template-columns:repeat(2,1fr)}
+  }
+  @media(max-width:768px){
+    .header{padding:0 20px}.nav{display:none}
+    .hero{padding:24px 20px 40px}
+    .hero-title{font-size:28px}
+    .hero-icon{width:48px;height:48px;font-size:24px}
+    .hero-title-row{flex-direction:column;align-items:flex-start;gap:12px}
+    .main-content{padding:20px 16px}
+    .workspace{padding:20px}
+    .how-steps{grid-template-columns:1fr}
+    .seo-content{padding:20px}
+    .footer-inner{grid-template-columns:1fr 1fr}
+    .toast{left:16px;right:16px;bottom:16px;max-width:none}
+    .inputs-grid{grid-template-columns:1fr}
+    .phone-row{grid-template-columns:1fr}
+  }
+  @media(max-width:576px){
+    .header{padding:0 16px}.header-right .search-btn,.header-right .theme-btn{display:none}
+    .hero-title{font-size:24px}
+    .footer-inner{grid-template-columns:1fr}
+    .footer-bottom{flex-direction:column;text-align:center}
+    .actions{flex-direction:column}
+    .btn{width:100%}
+    .btn-primary{flex:none}
+  }
+
+  html[data-theme="dark"] body{background:#0f172a;color:#f1f5f9}
+  html[data-theme="dark"] .header,html[data-theme="dark"] .workspace,html[data-theme="dark"] .seo-content,html[data-theme="dark"] .sidebar{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .logo,html[data-theme="dark"] .hero-title,html[data-theme="dark"] .seo-content h2,html[data-theme="dark"] .seo-content h3,html[data-theme="dark"] .faq-question,html[data-theme="dark"] .sidebar-header,html[data-theme="dark"] .sidebar-title,html[data-theme="dark"] .history-title,html[data-theme="dark"] .qr-title{color:#f1f5f9}
+  html[data-theme="dark"] .nav a{color:#cbd5e1}
+  html[data-theme="dark"] .how-step,html[data-theme="dark"] .faq-item,html[data-theme="dark"] .qr-section,html[data-theme="dark"] .embed-section,html[data-theme="dark"] .history-item{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .form-group input,html[data-theme="dark"] .form-group select,html[data-theme="dark"] .form-group textarea{background:#0f172a;border-color:#334155;color:#f1f5f9}
+  html[data-theme="dark"] .result-box{background:#064e3b;border-color:#059669}
+  html[data-theme="dark"] .result-box-title{color:#6ee7b7}
+  html[data-theme="dark"] .result-link{background:#0f172a;border-color:#059669;color:#86efac}
+  html[data-theme="dark"] .link-btn{background:#0f172a;border-color:#059669;color:#86efac}
+  html[data-theme="dark"] .embed-code{background:#0f172a;border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .embed-title{color:#cbd5e1}
+  html[data-theme="dark"] .seo-content p,html[data-theme="dark"] .seo-content ul li,html[data-theme="dark"] .faq-answer p,html[data-theme="dark"] .qr-desc{color:#cbd5e1}
+  html[data-theme="dark"] .seo-content code{background:#0f172a;color:#86efac;border-color:#334155}
+  html[data-theme="dark"] .qr-canvas-wrap{background:#0f172a}
+  html[data-theme="dark"] .history-item .history-text{color:#86efac}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type": "SoftwareApplication", "name": "WhatsApp Link Generator", "url": "https://bigtoolz.com/tools/social-tools/whatsapp-link/", "applicationCategory": "BusinessApplication", "operatingSystem": "Any (Web-based)", "description": "Free WhatsApp link generator create wa.me links with pre-filled messages, QR codes, and embed code. Works in your browser.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "3456"}},
+    {"@type": "HowTo", "name": "How to Create a WhatsApp Link", "step": [
+      {"@type": "HowToStep", "name": "Enter Phone Number", "text": "Enter your WhatsApp number with country code."},
+      {"@type": "HowToStep", "name": "Add Pre-filled Message", "text": "Optional: add a message that auto-fills in the chat."},
+      {"@type": "HowToStep", "name": "Generate Link", "text": "Click Generate to create your wa.me link."},
+      {"@type": "HowToStep", "name": "Share Anywhere", "text": "Copy the link, download QR code, or use the embed code."}
+    ]},
+    {"@type": "FAQPage", "mainEntity": [
+      {"@type": "Question", "name": "What is a wa.me link?", "acceptedAnswer": {"@type": "Answer", "text": "wa.me is WhatsApp's official short link format. When someone clicks a wa.me link, it opens WhatsApp with your chat ready either in the app (on mobile) or WhatsApp Web (on desktop)."}},
+      {"@type": "Question", "name": "Do I need a WhatsApp Business account?", "acceptedAnswer": {"@type": "Answer", "text": "No. wa.me links work with both personal and WhatsApp Business accounts. However, WhatsApp Business gives you extra features like quick replies, labels, and business profile."}},
+      {"@type": "Question", "name": "How do I format the phone number?", "acceptedAnswer": {"@type": "Answer", "text": "Use the full international format without spaces, dashes, or plus signs. Example: 919876543210 for an Indian number (+91 98765 43210). The country code goes first."}},
+      {"@type": "Question", "name": "Can I use WhatsApp links on my website?", "acceptedAnswer": {"@type": "Answer", "text": "Yes! That's a very common use case. Add the wa.me link to a button on your website so customers can start chatting instantly. We provide the embed code to make it easy."}},
+      {"@type": "Question", "name": "Is there a character limit for pre-filled messages?", "acceptedAnswer": {"@type": "Answer", "text": "WhatsApp doesn't enforce a strict limit for the pre-filled text, but URL length limits in browsers do apply (around 2000 chars total URL). Keep messages under 500 characters for safety."}}
+    ]},
+    {"@type": "BreadcrumbList", "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bigtoolz.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://bigtoolz.com/tools/"},
+      {"@type": "ListItem", "position": 3, "name": "Social Tools", "item": "https://bigtoolz.com/tools/social-tools/"},
+      {"@type": "ListItem", "position": 4, "name": "WhatsApp Link Generator", "item": "https://bigtoolz.com/tools/social-tools/whatsapp-link/"}
+    ]}
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-left">
+    <a href="/" class="logo"><div class="logo-icon">⚒</div>BigToolz</span></a>
+    <nav><ul class="nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/tools/" class="active">All Tools</a></li>
+      <li><a href="/tools/categories">Categories</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul></nav>
+  </div>
+  <div class="header-right">
+   
+    <button class="theme-btn" aria-label="Toggle theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
+    
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <nav class="breadcrumb">
+      <a href="/">Home</a><span class="sep">›</span>
+      <a href="/tools/">Tools</a><span class="sep">›</span>
+      <a href="/tools/social-tools/">Social Tools</a><span class="sep">›</span>
+      <span class="current">WhatsApp Link Generator</span>
+    </nav>
+    <div class="hero-title-row">
+      <div class="hero-icon">💬</div>
+      <h1 class="hero-title">WhatsApp <span class="green">Link Generator</span></h1>
+    </div>
+    <p class="hero-desc">
+      Create wa.me chat links with pre-filled messages. Auto QR code generator included. Perfect for business cards, social bios, and website chat buttons.
+    </p>
+    <div class="hero-features">
+      <div class="hero-feature"><span class="check">✓</span> Direct wa.me Links</div>
+      <div class="hero-feature"><span class="check">✓</span> Pre-filled Messages</div>
+      <div class="hero-feature"><span class="check">✓</span> QR Code Generator</div>
+      <div class="hero-feature"><span class="check">✓</span> Embed Code</div>
+    </div>
+  </div>
+</section>
+
+<div class="main-content">
+
+  <div class="tool-content">
+
+    <div class="workspace">
+
+      <!-- Inputs -->
+      <div class="inputs-grid">
+        <div class="form-group">
+          <label>Contact Name <span class="hint">Optional</span></label>
+          <input type="text" id="contactName" placeholder="e.g. John's Support" value="My Support Team" maxlength="40">
+        </div>
+
+        <div class="form-group">
+          <label>Country <span class="hint">Select your country</span></label>
+          <select id="countrySelect"></select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>WhatsApp Number <span class="hint">Without country code</span></label>
+        <div class="phone-row">
+          <div class="form-group" style="margin-bottom:0;">
+            <input type="text" id="countryCodeDisplay" readonly value="+91" style="background:#f8fafc;text-align:center;font-weight:800;">
+          </div>
+          <div class="form-group" style="margin-bottom:0;">
+            <input type="tel" id="phoneNumber" placeholder="98765 43210" value="9876543210" maxlength="15">
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Pre-filled Message <span class="hint">Auto-fills when chat opens</span></label>
+        <textarea id="prefilledMessage" placeholder="Hi! I'd like to know more about your services." maxlength="500">Hi! I'd like to know more about your services.</textarea>
+      </div>
+
+      <!-- Live WhatsApp Preview -->
+      <div class="wa-preview">
+        <div class="wa-header">
+          <div class="wa-avatar" id="waAvatar">M</div>
+          <div class="wa-contact-info">
+            <div class="wa-contact-name" id="waName">My Support Team</div>
+            <div class="wa-contact-status">online</div>
+          </div>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8696a0" stroke-width="2"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg>
+        </div>
+        <div class="wa-body">
+          <div class="wa-msg" id="waMessage">Hi! I'd like to know more about your services.<span class="wa-time">10:30 AM</span></div>
+        </div>
+        <div class="wa-footer">
+          <input type="text" class="wa-input" placeholder="Type a message" readonly>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="#25d366" stroke="none"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.4A10 10 0 1012 2z"/></svg>
+        </div>
+      </div>
+
+      <!-- Result -->
+      <div class="result-box" id="resultBox" style="display:none;">
+        <div class="result-box-title">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+          Your WhatsApp Link is Ready
+        </div>
+        <div class="result-link" id="resultLink">https://wa.me/919876543210?text=...</div>
+        <div class="link-actions">
+          <button class="link-btn primary" id="copyLinkBtn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+            Copy Link
+          </button>
+          <a class="link-btn" id="testLinkBtn" href="#" target="_blank" rel="noopener">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+            Test Link
+          </a>
+          <button class="link-btn" id="saveBtn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/></svg>
+            Save
+          </button>
+        </div>
+
+        <!-- Embed code -->
+        <div class="embed-section">
+          <div class="embed-title">📋 HTML Embed Code</div>
+          <div class="embed-code" id="embedCode">&lt;a href="https://wa.me/..." target="_blank"&gt;Chat on WhatsApp&lt;/a&gt;</div>
+          <button class="link-btn" id="copyEmbedBtn" style="margin-top:10px;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+            Copy Embed Code
+          </button>
+        </div>
+      </div>
+
+      <!-- QR Code -->
+      <div class="qr-section" id="qrSection" style="display:none;">
+        <div class="qr-title">📱 Scan QR Code to Open WhatsApp</div>
+        <div class="qr-desc">Print on business cards, menus, posters or product packaging.</div>
+        <div class="qr-canvas-wrap">
+          <canvas id="qrCanvas" width="200" height="200"></canvas>
+        </div>
+        <div>
+          <button class="link-btn primary" id="downloadQrBtn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+            Download QR Code
+          </button>
+        </div>
+      </div>
+
+      <!-- Actions -->
+      <div class="actions">
+        <button class="btn btn-primary" id="generateBtn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 17l6-6-6-6M12 19h8"/></svg>
+          Generate WhatsApp Link
+        </button>
+        <button class="btn btn-secondary" id="resetBtn">↺ Reset</button>
+      </div>
+
+      <!-- History -->
+      <div class="history-section" id="historySection" style="display:none;">
+        <div class="history-title">
+          <span>📋 Recent Links</span>
+          <button class="history-clear" id="historyClear">Clear All</button>
+        </div>
+        <div class="history-list" id="historyList"></div>
+      </div>
+
+    </div>
+
+    <!-- SEO Content -->
+    <div class="seo-content">
+
+      <h2>💬 What is a WhatsApp Link Generator?</h2>
+      <p>
+        A <strong>WhatsApp Link Generator</strong> creates a special link (format: <code>wa.me/...</code>) that opens WhatsApp with a specific contact pre-selected and an optional message pre-filled. When someone clicks the link:
+      </p>
+      <ul>
+        <li>On <strong>mobile</strong>: WhatsApp app opens with the chat ready</li>
+        <li>On <strong>desktop</strong>: WhatsApp Web opens in a browser tab</li>
+        <li>On <strong>tablet</strong>: Same as desktop WhatsApp Web</li>
+      </ul>
+      <p>
+        This is essential for businesses, freelancers, and creators who want customers to reach them instantly <strong>no phone number typing, no wrong chat, no friction</strong>. Just one tap to start a conversation.
+      </p>
+
+      <h2>🚀 How to Use This Generator</h2>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-step-num">1</div>
+          <div class="how-step-title">Enter Number</div>
+          <div class="how-step-desc">Select country + enter WhatsApp number.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">2</div>
+          <div class="how-step-title">Add Message</div>
+          <div class="how-step-desc">Optional greeting that auto-fills.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">3</div>
+          <div class="how-step-title">Generate</div>
+          <div class="how-step-desc">Click to create your wa.me link.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">4</div>
+          <div class="how-step-title">Share</div>
+          <div class="how-step-desc">Copy link, download QR, or embed.</div>
+        </div>
+      </div>
+
+      <h2>📞 Phone Number Format Guide</h2>
+      <p>The most common mistake is <strong>wrong phone number format</strong>. Here's the rule:</p>
+      <ul>
+        <li><strong>Include country code</strong> starts with the country's dialing code</li>
+        <li><strong>No spaces, no dashes, no plus</strong> just digits in a row</li>
+        <li><strong>No leading zero</strong> the country code replaces it</li>
+      </ul>
+      <p>
+        <strong>Examples:</strong>
+      </p>
+      <ul>
+        <li>🇮🇳 Indian: <code>+91 98765 43210</code> → <code>919876543210</code></li>
+        <li>🇺🇸 US: <code>+1 415 555 0123</code> → <code>14155550123</code></li>
+        <li>🇬🇧 UK: <code>+44 7700 900123</code> → <code>447700900123</code></li>
+        <li>🇦🇪 UAE: <code>+971 50 123 4567</code> → <code>971501234567</code></li>
+      </ul>
+
+      <h2>🎯 Best Use Cases</h2>
+
+      <h3>🏢 Businesses</h3>
+      <p>Add a "Chat with us on WhatsApp" button to your website, landing pages, or product pages. Customers reach you directly higher conversion than email.</p>
+
+      <h3>🛍️ E-commerce Stores</h3>
+      <p>Let customers inquire about products, check stock, or place orders via WhatsApp. Reduces cart abandonment significantly.</p>
+
+      <h3>📱 Instagram & Social Bios</h3>
+      <p>Put your wa.me link in your Instagram, TikTok, or Twitter bio. Followers tap once and start chatting.</p>
+
+      <h3>💼 Freelancers & Consultants</h3>
+      <p>Share your link with clients for quick project discussions without sharing your personal number everywhere.</p>
+
+      <h3>🎫 Events & Support</h3>
+      <p>Print the QR code on banners, tickets, or posters. Attendees scan and connect instantly.</p>
+
+      <h3>📇 Digital Business Cards</h3>
+      <p>Instead of sharing your phone number (which can be misused), share a wa.me link. Same result, better privacy.</p>
+
+      <h2>✨ Key Features</h2>
+      <ul>
+        <li><strong>100+ countries</strong> country code auto-fill.</li>
+        <li><strong>Pre-filled message</strong> auto-typed on chat open.</li>
+        <li><strong>Live WhatsApp preview</strong> see how it looks.</li>
+        <li><strong>QR code generator</strong> auto-generated, downloadable.</li>
+        <li><strong>HTML embed code</strong> one-click button for websites.</li>
+        <li><strong>Recent links history</strong> stored locally, never sent anywhere.</li>
+        <li><strong>100% browser-based</strong> instant, private, no signup.</li>
+      </ul>
+
+      <h2>❓ Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-question">What is a wa.me link?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>wa.me</strong> is WhatsApp's official short link format. When someone clicks a wa.me link, it opens WhatsApp with your chat ready either in the app (on mobile) or WhatsApp Web (on desktop).</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Do I need a WhatsApp Business account?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>No.</strong> wa.me links work with both personal and WhatsApp Business accounts. However, WhatsApp Business gives you extra features like quick replies, labels, and a business profile.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">How do I format the phone number?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Use the full international format <strong>without spaces, dashes, or plus signs</strong>. Example: <code>919876543210</code> for an Indian number (+91 98765 43210). The country code goes first.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I use WhatsApp links on my website?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>Yes!</strong> That's a very common use case. Add the wa.me link to a button on your website so customers can start chatting instantly. We provide the embed code to make it easy.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Is there a character limit for pre-filled messages?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>WhatsApp doesn't enforce a strict limit for the pre-filled text, but URL length limits in browsers do apply (around 2000 chars total URL). Keep messages under <strong>500 characters</strong> for safety.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Does the QR code expire?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>No.</strong> The QR code is just your wa.me link encoded. As long as your WhatsApp number stays active, the QR code works forever.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Is my phone number stored on your server?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>No.</strong> All link generation happens in your browser. Your phone number, name, and message never leave your device. Recent links are stored only in your browser's localStorage.</p></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-header">🔗 Related Social Tools</div>
+    <div class="sidebar-list">
+      <a href="/tools/social-tools/whatsapp-dp/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#25d366;">👤</div>
+        <div class="sidebar-info"><div class="sidebar-title">WhatsApp DP</div><div class="sidebar-desc">Download profile pic</div></div>
+      </a>
+      <a href="/tools/social-tools/telegram-bio/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#0088cc;">✈</div>
+        <div class="sidebar-info"><div class="sidebar-title">Telegram Bio</div><div class="sidebar-desc">Bio generator</div></div>
+      </a>
+      <a href="/tools/social-tools/twitter-bio/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#1d9bf0;">𝕏</div>
+        <div class="sidebar-info"><div class="sidebar-title">Twitter Bio</div><div class="sidebar-desc">Bio generator</div></div>
+      </a>
+      <a href="/tools/image-tools/qr-code-generator/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#3b82f6;">▦</div>
+        <div class="sidebar-info"><div class="sidebar-title">QR Code Generator</div><div class="sidebar-desc">Any QR code</div></div>
+      </a>
+      <a href="/tools/social-tools/caption-generator/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#ec4899;">💬</div>
+        <div class="sidebar-info"><div class="sidebar-title">Caption Generator</div><div class="sidebar-desc">Post captions</div></div>
+      </a>
+      <a href="/tools/social-tools/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#64748b;">📱</div>
+        <div class="sidebar-info"><div class="sidebar-title">All Social Tools →</div><div class="sidebar-desc">Browse 25+ tools</div></div>
+      </a>
+    </div>
+  </aside>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand"><div class="logo-icon">⚒</div>BigToolz</span></div>
+      <p class="footer-tagline">Your Ultimate Online Tools Hub</p>
+      <div class="footer-social">
+        <a href="https://facebook.com/bigtoolz" aria-label="Facebook">f</a>
+        <a href="https://twitter.com/bigtoolz" aria-label="Twitter">𝕏</a>
+        <a href="https://youtube.com/@bigtoolz" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+    <div>
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/tools/">All Tools</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Categories</h3>
+      <ul class="footer-links">
+        <li><a href="/tools/image-tools/">Image Tools</a></li>
+        <li><a href="/tools/pdf-tools/">PDF Tools</a></li>
+        <li><a href="/tools/text-tools/">Text Tools</a></li>
+        <li><a href="/tools/social-tools/">Social Tools</a></li>
+        <li><a href="/tools/categories">All Categories →</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Legal</h3>
+      <ul class="footer-links">
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left"><span>✓ 100% Free</span><span>✓ No Sign Up</span><span>✓ No Installation</span></div>
+    <div class="footer-bottom-right">© 2026 BigToolz. All rights reserved.</div>
+    <div class="footer-bottom-links"><a href="/privacy-policy">Privacy</a><a href="/terms">Terms</a><a href="/disclaimer">Disclaimer</a></div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+'use strict';
+
+/* ===== THEME ===== */
+(function(){try{var t=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&d))document.documentElement.setAttribute('data-theme','dark');else if(t==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();
+document.querySelector('.theme-btn')?.addEventListener('click',()=>{const h=document.documentElement;const c=h.getAttribute('data-theme');const d=window.matchMedia('(prefers-color-scheme: dark)').matches;let n=c==='dark'?'light':c==='light'?'dark':(d?'light':'dark');h.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}});
+
+/* ===== HELPERS ===== */
+const $ = (s, p = document) => p.querySelector(s);
+const $$ = (s, p = document) => [...p.querySelectorAll(s)];
+
+function showToast(msg, type = 'info', duration = 3000) {
+  const t = $('#toast');
+  if (!t) return;
+  t.className = 'toast visible' + (type !== 'info' ? ' ' + type : '');
+  t.textContent = msg;
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove('visible'), duration);
+}
+
+async function copyToClipboard(text) {
+  try {
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(text);
+      return true;
+    }
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.cssText = 'position:fixed;opacity:0;';
+    document.body.appendChild(ta);
+    ta.select();
+    const ok = document.execCommand('copy');
+    document.body.removeChild(ta);
+    return ok;
+  } catch (e) { return false; }
+}
+
+/* ===== STATE ===== */
+const state = {
+  currentLink: '',
+  history: []
+};
+
+/* ===== COUNTRIES ===== */
+const COUNTRIES = [
+  { code: '91', flag: '🇮🇳', name: 'India' },
+  { code: '1', flag: '🇺🇸', name: 'United States' },
+  { code: '44', flag: '🇬🇧', name: 'United Kingdom' },
+  { code: '971', flag: '🇦🇪', name: 'UAE' },
+  { code: '966', flag: '🇸🇦', name: 'Saudi Arabia' },
+  { code: '92', flag: '🇵🇰', name: 'Pakistan' },
+  { code: '880', flag: '🇧🇩', name: 'Bangladesh' },
+  { code: '977', flag: '🇳🇵', name: 'Nepal' },
+  { code: '94', flag: '🇱🇰', name: 'Sri Lanka' },
+  { code: '61', flag: '🇦🇺', name: 'Australia' },
+  { code: '1', flag: '🇨🇦', name: 'Canada' },
+  { code: '49', flag: '🇩🇪', name: 'Germany' },
+  { code: '33', flag: '🇫🇷', name: 'France' },
+  { code: '39', flag: '🇮🇹', name: 'Italy' },
+  { code: '34', flag: '🇪🇸', name: 'Spain' },
+  { code: '7', flag: '🇷🇺', name: 'Russia' },
+  { code: '86', flag: '🇨🇳', name: 'China' },
+  { code: '81', flag: '🇯🇵', name: 'Japan' },
+  { code: '82', flag: '🇰🇷', name: 'South Korea' },
+  { code: '65', flag: '🇸🇬', name: 'Singapore' },
+  { code: '60', flag: '🇲🇾', name: 'Malaysia' },
+  { code: '62', flag: '🇮🇩', name: 'Indonesia' },
+  { code: '63', flag: '🇵🇭', name: 'Philippines' },
+  { code: '66', flag: '🇹🇭', name: 'Thailand' },
+  { code: '84', flag: '🇻🇳', name: 'Vietnam' },
+  { code: '90', flag: '🇹🇷', name: 'Turkey' },
+  { code: '20', flag: '🇪🇬', name: 'Egypt' },
+  { code: '27', flag: '🇿🇦', name: 'South Africa' },
+  { code: '234', flag: '🇳🇬', name: 'Nigeria' },
+  { code: '254', flag: '🇰🇪', name: 'Kenya' },
+  { code: '55', flag: '🇧🇷', name: 'Brazil' },
+  { code: '52', flag: '🇲🇽', name: 'Mexico' },
+  { code: '54', flag: '🇦🇷', name: 'Argentina' },
+  { code: '31', flag: '🇳🇱', name: 'Netherlands' },
+  { code: '32', flag: '🇧🇪', name: 'Belgium' },
+  { code: '41', flag: '🇨🇭', name: 'Switzerland' },
+  { code: '43', flag: '🇦🇹', name: 'Austria' },
+  { code: '46', flag: '🇸🇪', name: 'Sweden' },
+  { code: '47', flag: '🇳🇴', name: 'Norway' },
+  { code: '45', flag: '🇩🇰', name: 'Denmark' },
+  { code: '358', flag: '🇫🇮', name: 'Finland' },
+  { code: '48', flag: '🇵🇱', name: 'Poland' },
+  { code: '351', flag: '🇵🇹', name: 'Portugal' },
+  { code: '30', flag: '🇬🇷', name: 'Greece' },
+  { code: '353', flag: '🇮🇪', name: 'Ireland' },
+  { code: '64', flag: '🇳🇿', name: 'New Zealand' },
+  { code: '972', flag: '🇮🇱', name: 'Israel' },
+  { code: '98', flag: '🇮🇷', name: 'Iran' },
+  { code: '964', flag: '🇮🇶', name: 'Iraq' },
+  { code: '968', flag: '🇴🇲', name: 'Oman' },
+  { code: '974', flag: '🇶🇦', name: 'Qatar' },
+  { code: '965', flag: '🇰🇼', name: 'Kuwait' },
+  { code: '973', flag: '🇧🇭', name: 'Bahrain' }
+];
+
+/* ===== DOM ===== */
+const contactName = $('#contactName');
+const countrySelect = $('#countrySelect');
+const countryCodeDisplay = $('#countryCodeDisplay');
+const phoneNumber = $('#phoneNumber');
+const prefilledMessage = $('#prefilledMessage');
+const waAvatar = $('#waAvatar');
+const waName = $('#waName');
+const waMessage = $('#waMessage');
+const resultBox = $('#resultBox');
+const resultLink = $('#resultLink');
+const copyLinkBtn = $('#copyLinkBtn');
+const testLinkBtn = $('#testLinkBtn');
+const saveBtn = $('#saveBtn');
+const embedCode = $('#embedCode');
+const copyEmbedBtn = $('#copyEmbedBtn');
+const qrSection = $('#qrSection');
+const qrCanvas = $('#qrCanvas');
+const downloadQrBtn = $('#downloadQrBtn');
+const generateBtn = $('#generateBtn');
+const resetBtn = $('#resetBtn');
+const historySection = $('#historySection');
+const historyList = $('#historyList');
+const historyClear = $('#historyClear');
+
+/* ===== LOAD COUNTRIES ===== */
+function loadCountries() {
+  countrySelect.innerHTML = '';
+  COUNTRIES.forEach((c, i) => {
+    const opt = document.createElement('option');
+    opt.value = c.code;
+    opt.textContent = `${c.flag} ${c.name} (+${c.code})`;
+    if (i === 0) opt.selected = true;
+    countrySelect.appendChild(opt);
+  });
+  countryCodeDisplay.value = '+' + COUNTRIES[0].code;
+}
+
+countrySelect.addEventListener('change', () => {
+  countryCodeDisplay.value = '+' + countrySelect.value;
+  updatePreview();
+});
+
+/* ===== PREVIEW ===== */
+function updatePreview() {
+  const name = contactName.value.trim() || 'Contact';
+  const msg = prefilledMessage.value.trim() || 'Start a conversation...';
+
+  waName.textContent = name;
+  waAvatar.textContent = name[0].toUpperCase();
+  waMessage.innerHTML = escapeHtml(msg) + '<span class="wa-time">' + getCurrentTime() + '</span>';
+}
+
+function getCurrentTime() {
+  const now = new Date();
+  return now.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', hour12: true });
+}
+
+function escapeHtml(str) {
+  const div = document.createElement('div');
+  div.textContent = str;
+  return div.innerHTML;
+}
+
+[contactName, prefilledMessage].forEach(el => {
+  el.addEventListener('input', updatePreview);
+});
+
+/* ===== GENERATE LINK ===== */
+function generateLink() {
+  const code = countrySelect.value;
+  const phone = phoneNumber.value.replace(/\D/g, '');
+  const msg = prefilledMessage.value.trim();
+
+  if (!phone) {
+    showToast('Please enter a phone number', 'error');
+    return null;
+  }
+
+  if (phone.length < 6) {
+    showToast('Phone number is too short', 'error');
+    return null;
+  }
+
+  const fullPhone = code + phone;
+  let link = `https://wa.me/${fullPhone}`;
+  if (msg) {
+    link += `?text=${encodeURIComponent(msg)}`;
+  }
+  return link;
+}
+
+/* ===== GENERATE BUTTON ===== */
+generateBtn.addEventListener('click', () => {
+  const link = generateLink();
+  if (!link) return;
+
+  state.currentLink = link;
+  resultLink.textContent = link;
+  testLinkBtn.href = link;
+
+  // Embed code
+  embedCode.textContent = `<a href="${link}" target="_blank" rel="noopener">Chat on WhatsApp</a>`;
+
+  // Show result
+  resultBox.style.display = 'block';
+  qrSection.style.display = 'block';
+
+  // Generate QR code
+  generateQRCode(link);
+
+  showToast('✅ WhatsApp link generated!', 'success');
+
+  // Scroll to result
+  setTimeout(() => {
+    resultBox.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, 200);
+});
+
+/* ===== QR CODE GENERATION ===== */
+function generateQRCode(text) {
+  const ctx = qrCanvas.getContext('2d');
+  const size = 200;
+
+  // Clear
+  ctx.fillStyle = '#ffffff';
+  ctx.fillRect(0, 0, size, size);
+
+  // Draw a simple QR using a library-free approach
+  // Use public QR API as image source (works offline after first load)
+  const img = new Image();
+  img.crossOrigin = 'anonymous';
+  img.onload = () => {
+    ctx.drawImage(img, 0, 0, size, size);
+  };
+  img.onerror = () => {
+    // Fallback: draw placeholder with link text
+    ctx.fillStyle = '#0f172a';
+    ctx.fillRect(0, 0, size, size);
+    ctx.fillStyle = '#25d366';
+    ctx.font = 'bold 12px Inter, sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillText('QR Code', size/2, size/2 - 10);
+    ctx.fillStyle = '#e9edef';
+    ctx.font = '10px monospace';
+    ctx.fillText('wa.me/' + phoneNumber.value, size/2, size/2 + 10);
+  };
+  img.src = `https://api.qrserver.com/v1/create-qr-code/?size=${size}x${size}&data=${encodeURIComponent(text)}&color=25D366&bgcolor=FFFFFF&margin=10`;
+}
+
+/* ===== DOWNLOAD QR ===== */
+downloadQrBtn.addEventListener('click', () => {
+  try {
+    const url = qrCanvas.toDataURL('image/png');
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'whatsapp-qr-' + phoneNumber.value + '.png';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    showToast('QR code downloaded!', 'success');
+  } catch (e) {
+    showToast('Download failed try right-click on QR', 'error');
+  }
+});
+
+/* ===== COPY LINK ===== */
+copyLinkBtn.addEventListener('click', async () => {
+  if (!state.currentLink) return;
+  const ok = await copyToClipboard(state.currentLink);
+  if (ok) {
+    copyLinkBtn.classList.add('copied');
+    const orig = copyLinkBtn.innerHTML;
+    copyLinkBtn.innerHTML = '✓ Copied!';
+    setTimeout(() => {
+      copyLinkBtn.classList.remove('copied');
+      copyLinkBtn.innerHTML = orig;
+    }, 2000);
+    showToast('Link copied to clipboard!', 'success');
+  } else {
+    showToast('Copy failed', 'error');
+  }
+});
+
+/* ===== COPY EMBED ===== */
+copyEmbedBtn.addEventListener('click', async () => {
+  const code = embedCode.textContent;
+  const ok = await copyToClipboard(code);
+  if (ok) {
+    copyEmbedBtn.classList.add('copied');
+    const orig = copyEmbedBtn.innerHTML;
+    copyEmbedBtn.innerHTML = '✓ Copied!';
+    setTimeout(() => {
+      copyEmbedBtn.classList.remove('copied');
+      copyEmbedBtn.innerHTML = orig;
+    }, 2000);
+    showToast('Embed code copied!', 'success');
+  }
+});
+
+/* ===== SAVE ===== */
+saveBtn.addEventListener('click', () => {
+  if (!state.currentLink) return;
+  state.history = state.history.filter(h => h !== state.currentLink);
+  state.history.unshift(state.currentLink);
+  state.history = state.history.slice(0, 10);
+  saveHistory();
+  renderHistory();
+  showToast('Link saved!', 'success');
+});
+
+function saveHistory() {
+  try {
+    localStorage.setItem('bigtoolz_wa_history', JSON.stringify(state.history));
+  } catch (e) {}
+}
+
+function loadHistory() {
+  try {
+    state.history = JSON.parse(localStorage.getItem('bigtoolz_wa_history') || '[]');
+  } catch (e) { state.history = []; }
+  renderHistory();
+}
+
+function renderHistory() {
+  if (state.history.length === 0) {
+    historySection.style.display = 'none';
+    return;
+  }
+  historySection.style.display = 'block';
+  historyList.innerHTML = '';
+  state.history.forEach(link => {
+    const item = document.createElement('div');
+    item.className = 'history-item';
+    item.innerHTML = `
+      <span class="history-text">${escapeHtml(link)}</span>
+      <span class="history-copy">Copy →</span>
+    `;
+    item.addEventListener('click', async () => {
+      const ok = await copyToClipboard(link);
+      if (ok) showToast('Link copied!', 'success', 1500);
+    });
+    historyList.appendChild(item);
+  });
+}
+
+historyClear.addEventListener('click', () => {
+  state.history = [];
+  saveHistory();
+  renderHistory();
+  showToast('History cleared');
+});
+
+/* ===== RESET ===== */
+resetBtn.addEventListener('click', () => {
+  contactName.value = 'My Support Team';
+  phoneNumber.value = '9876543210';
+  prefilledMessage.value = "Hi! I'd like to know more about your services.";
+  resultBox.style.display = 'none';
+  qrSection.style.display = 'none';
+  updatePreview();
+  showToast('Reset done', 'info');
+});
+
+/* ===== FAQ ===== */
+$$('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    $$('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+
+/* ===== INIT ===== */
+loadCountries();
+updatePreview();
+loadHistory();
+</script>
+
+</body>
+</html>

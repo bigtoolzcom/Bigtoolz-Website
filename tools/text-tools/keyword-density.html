@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2563eb">
+
+<title>Keyword Density Checker - Analyze SEO Keyword Density Online | BigToolz</title>
+<meta name="description" content="Free keyword density checker. Analyze keyword frequency, 1-gram/2-gram/3-gram phrases, readability and SEO density instantly. No signup, works in browser.">
+<meta name="keywords" content="keyword density checker, seo keyword density, keyword frequency, keyword analysis, text analysis, seo tool">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://bigtoolz.com/tools/text-tools/keyword-density/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Keyword Density Checker - Free Online Tool | BigToolz">
+<meta property="og:description" content="Analyze keyword density, frequency and phrases instantly free, no signup.">
+<meta property="og:url" content="https://bigtoolz.com/tools/text-tools/keyword-density/">
+<meta property="og:image" content="https://bigtoolz.com/assets/images/og-image.jpg">
+<meta property="og:site_name" content="BigToolz">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Keyword Density Checker - BigToolz">
+<meta name="twitter:description" content="Analyze SEO keyword density instantly free, no signup.">
+<meta name="twitter:image" content="https://bigtoolz.com/assets/images/twitter-card.jpg">
+
+<link rel="icon" href="/assets/images/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/images/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#f8f9fc;color:#1a1a2e;overflow-x:hidden;line-height:1.5}
+
+  /* HEADER */
+  .header{background:#fff;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;position:sticky;top:0;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+  .header-left{display:flex;align-items:center;gap:40px}
+  .logo{display:flex;align-items:center;gap:8px;font-size:22px;font-weight:800;color:#1a1a2e;text-decoration:none}
+  .logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#3b82f6,#2563eb);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px}
+  .logo span{color:#2563eb}
+  .nav{display:flex;align-items:center;gap:28px;list-style:none}
+  .nav a{text-decoration:none;color:#4b5563;font-size:14px;font-weight:500;transition:color .2s}
+  .nav a:hover,.nav a.active{color:#2563eb}
+  .header-right{display:flex;align-items:center;gap:16px}
+  .search-btn,.theme-btn{width:36px;height:36px;border-radius:50%;border:none;background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#4b5563}
+  .search-btn:hover,.theme-btn:hover{background:#f3f4f6}
+  .bookmark-btn{display:flex;align-items:center;gap:8px;background:#2563eb;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
+  .bookmark-btn:hover{background:#1d4ed8}
+
+  /* HERO */
+  .hero{background:linear-gradient(135deg,#0a0e27 0%,#1a1a4e 40%,#2d1b69 70%,#4c1d95 100%);padding:40px 40px 60px;position:relative;overflow:hidden;color:#fff}
+  .hero::before{content:'';position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(139,92,246,.3) 0%,transparent 70%);border-radius:50%}
+  .hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+  .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px;flex-wrap:wrap}
+  .breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none}
+  .breadcrumb a:hover{color:#fff}
+  .breadcrumb .sep{color:rgba(255,255,255,.4)}
+  .breadcrumb .current{color:#fff;font-weight:500}
+  .hero-title-row{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+  .hero-icon{width:60px;height:60px;background:#8b5cf6;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;color:#fff;flex-shrink:0;box-shadow:0 8px 24px rgba(139,92,246,.4)}
+  .hero-title{font-size:42px;font-weight:800;line-height:1.15}
+  .hero-title .blue{color:#a78bfa}
+  .hero-desc{font-size:15px;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:24px;max-width:560px}
+  .hero-features{display:flex;gap:24px;flex-wrap:wrap}
+  .hero-feature{display:flex;align-items:center;gap:6px;font-size:13px;color:#fff;font-weight:500}
+  .hero-feature .check{width:18px;height:18px;border-radius:50%;background:#8b5cf6;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;flex-shrink:0}
+
+  /* MAIN */
+  .main-content{max-width:1200px;margin:0 auto;padding:40px;display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start}
+  .tool-content{min-width:0}
+
+  .workspace{background:#fff;border-radius:16px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,.06);border:1px solid #e5e7eb;margin-bottom:24px}
+
+  .input-label{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;flex-wrap:wrap;gap:8px}
+  .input-label-text{font-size:14px;font-weight:700;color:#1a1a2e;display:flex;align-items:center;gap:8px}
+  .input-actions-top{display:flex;gap:8px;flex-wrap:wrap}
+  .mini-btn{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;font-size:12px;font-weight:600;color:#4b5563;cursor:pointer;font-family:inherit;transition:all .2s}
+  .mini-btn:hover{border-color:#8b5cf6;color:#8b5cf6;background:#faf5ff}
+
+  .text-input{width:100%;min-height:220px;padding:16px;border:2px solid #e5e7eb;border-radius:12px;font-family:'Inter',sans-serif;font-size:14px;line-height:1.7;color:#1a1a2e;background:#fff;outline:none;resize:vertical;transition:border-color .2s}
+  .text-input:focus{border-color:#8b5cf6;box-shadow:0 0 0 3px rgba(139,92,246,.1)}
+  .text-input::placeholder{color:#9ca3af}
+
+  /* Options */
+  .options{background:#faf5ff;border-radius:12px;padding:20px;margin-top:16px;border:1px solid #c4b5fd}
+  .options-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+  .options-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .option-group label{display:block;font-size:12px;font-weight:700;color:#4b5563;margin-bottom:6px;text-transform:uppercase;letter-spacing:.3px}
+  .option-group select,.option-group input{width:100%;padding:10px 12px;border:2px solid #e5e7eb;border-radius:8px;font-size:13px;font-weight:600;font-family:inherit;color:#1a1a2e;background:#fff;outline:none;transition:border-color .2s}
+  .option-group select:focus,.option-group input:focus{border-color:#8b5cf6;box-shadow:0 0 0 3px rgba(139,92,246,.1)}
+
+  .toggle-row{display:flex;align-items:center;justify-content:space-between;padding:12px 14px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;margin-top:16px;gap:12px}
+  .toggle-info{display:flex;flex-direction:column;gap:2px}
+  .toggle-title{font-size:13px;font-weight:700;color:#1a1a2e}
+  .toggle-desc{font-size:11px;color:#6b7280;line-height:1.4}
+  .toggle-switch{position:relative;width:44px;height:24px;background:#d1d5db;border-radius:12px;cursor:pointer;transition:background .2s;flex-shrink:0}
+  .toggle-switch::after{content:'';position:absolute;top:2px;left:2px;width:20px;height:20px;background:#fff;border-radius:50%;transition:transform .2s;box-shadow:0 1px 3px rgba(0,0,0,.15)}
+  .toggle-switch.on{background:#8b5cf6}
+  .toggle-switch.on::after{transform:translateX(20px)}
+
+  /* Actions */
+  .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px;padding-top:20px;border-top:1px solid #f3f4f6}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 22px;border-radius:10px;font-size:14px;font-weight:700;font-family:inherit;cursor:pointer;border:none;transition:all .2s;text-decoration:none}
+  .btn-primary{background:#8b5cf6;color:#fff;box-shadow:0 4px 12px rgba(139,92,246,.2);flex:1;min-width:180px}
+  .btn-primary:hover{background:#7c3aed;transform:translateY(-2px)}
+  .btn-primary:disabled{opacity:.5;cursor:not-allowed;transform:none}
+  .btn-secondary{background:#fff;color:#8b5cf6;border:1px solid #e5e7eb}
+  .btn-secondary:hover{border-color:#8b5cf6;background:#faf5ff}
+
+  /* Stats row */
+  .stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:24px;margin-bottom:24px}
+  .stat-box{background:#faf5ff;border:1px solid #c4b5fd;border-radius:12px;padding:16px;text-align:center}
+  .stat-value{font-size:26px;font-weight:800;color:#7c3aed;margin-bottom:4px;line-height:1.1}
+  .stat-label{font-size:11px;color:#6b7280;font-weight:600;text-transform:uppercase;letter-spacing:.3px}
+
+  /* Tabs */
+  .result-tabs{display:flex;gap:6px;background:#faf5ff;padding:6px;border-radius:10px;margin-bottom:16px;border:1px solid #c4b5fd;flex-wrap:wrap}
+  .result-tab{flex:1;padding:10px 12px;background:transparent;border:none;border-radius:8px;font-size:12px;font-weight:700;color:#4b5563;cursor:pointer;font-family:inherit;transition:all .2s;min-width:120px}
+  .result-tab:hover{background:#ede9fe}
+  .result-tab.active{background:#8b5cf6;color:#fff}
+
+  /* Result panels */
+  .result-panel{display:none}
+  .result-panel.active{display:block}
+
+  /* Table */
+  .keyword-table{width:100%;border-collapse:collapse;border:1px solid #e5e7eb;border-radius:10px;overflow:hidden;margin-bottom:16px}
+  .keyword-table thead{background:#faf5ff}
+  .keyword-table th{padding:12px 14px;text-align:left;font-size:11px;font-weight:800;color:#4b5563;text-transform:uppercase;letter-spacing:.3px;border-bottom:1px solid #c4b5fd}
+  .keyword-table td{padding:12px 14px;font-size:13px;color:#1a1a2e;border-bottom:1px solid #f3f4f6;font-weight:500}
+  .keyword-table tbody tr:last-child td{border-bottom:none}
+  .keyword-table tbody tr:hover{background:#faf5ff}
+  .keyword-cell{font-weight:700;color:#1a1a2e}
+  .count-cell{font-family:'JetBrains Mono',monospace;font-weight:700;color:#7c3aed}
+  .density-cell{font-family:'JetBrains Mono',monospace;font-weight:700;color:#3b82f6}
+  .bar-cell{width:120px}
+  .density-bar{height:8px;background:#e9d5ff;border-radius:4px;overflow:hidden}
+  .density-fill{height:100%;background:linear-gradient(90deg,#a78bfa,#8b5cf6);border-radius:4px}
+
+  .empty-state{text-align:center;padding:40px 20px;color:#9ca3af;font-size:14px}
+  .empty-state-icon{font-size:36px;margin-bottom:8px;opacity:.5}
+
+  .note-box{background:#faf5ff;border-left:4px solid #8b5cf6;border-radius:8px;padding:14px 18px;margin-bottom:20px;font-size:13px;color:#6b21a8;line-height:1.6}
+  .note-box strong{color:#581c87}
+
+  /* SEO Content */
+  .seo-content{background:#fff;border-radius:16px;padding:32px;border:1px solid #e5e7eb;margin-bottom:24px}
+  .seo-content h2{font-size:22px;font-weight:800;color:#1a1a2e;margin-bottom:14px;margin-top:28px;display:flex;align-items:center;gap:10px}
+  .seo-content h2:first-child{margin-top:0}
+  .seo-content h3{font-size:16px;font-weight:700;color:#1a1a2e;margin:20px 0 10px}
+  .seo-content p{font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:14px}
+  .seo-content ul{list-style:none;padding-left:0;margin-bottom:16px}
+  .seo-content ul li{position:relative;padding-left:24px;font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:8px}
+  .seo-content ul li::before{content:'';position:absolute;left:6px;top:12px;width:6px;height:6px;background:#8b5cf6;border-radius:50%}
+  .seo-content a{color:#2563eb;text-decoration:none;font-weight:600}
+  .seo-content a:hover{text-decoration:underline}
+  .seo-content strong{color:#1a1a2e;font-weight:700}
+
+  .how-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:20px}
+  .how-step{background:#faf5ff;border-radius:12px;padding:20px;border:1px solid #c4b5fd}
+  .how-step-num{width:36px;height:36px;border-radius:50%;background:#8b5cf6;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;margin-bottom:12px}
+  .how-step-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+  .how-step-desc{font-size:13px;color:#6b7280;line-height:1.6}
+
+  .faq-item{background:#faf5ff;border:1px solid #c4b5fd;border-radius:12px;margin-bottom:10px;overflow:hidden;transition:border-color .2s}
+  .faq-item:hover{border-color:#8b5cf6}
+  .faq-question{width:100%;background:none;border:none;padding:18px 22px;font-size:15px;font-weight:700;color:#1a1a2e;text-align:left;cursor:pointer;font-family:inherit;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .faq-question .chev{font-size:12px;color:#8b5cf6;transition:transform .2s;flex-shrink:0}
+  .faq-item.open .faq-question .chev{transform:rotate(180deg)}
+  .faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 22px}
+  .faq-item.open .faq-answer{max-height:500px;padding-bottom:18px}
+  .faq-answer p{font-size:14px;color:#6b7280;line-height:1.7;margin:0}
+
+  .sidebar{background:#fff;border-radius:16px;padding:24px;border:1px solid #e5e7eb;position:sticky;top:80px;margin-bottom:24px}
+  .sidebar-header{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:800;color:#1a1a2e;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid #f3f4f6}
+  .sidebar-list{display:flex;flex-direction:column;gap:8px}
+  .sidebar-item{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;cursor:pointer;transition:background .2s;text-decoration:none;color:inherit;border:1px solid #f3f4f6}
+  .sidebar-item:hover{background:#faf5ff;border-color:#c4b5fd}
+  .sidebar-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;flex-shrink:0}
+  .sidebar-info{flex:1;min-width:0}
+  .sidebar-title{font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:2px}
+  .sidebar-desc{font-size:11px;color:#9ca3af;line-height:1.4}
+
+  .footer{background:#0a0e27;padding:60px 40px 30px;color:#fff;margin-top:40px}
+  .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:40px}
+  .footer-brand{display:flex;align-items:center;gap:8px;font-size:20px;font-weight:800;margin-bottom:12px}
+  .footer-brand span{color:#60a5fa}
+  .footer-tagline{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px}
+  .footer-social{display:flex;gap:12px}
+  .footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:16px;transition:background .2s}
+  .footer-social a:hover{background:rgba(255,255,255,.2)}
+  .footer-heading{font-size:14px;font-weight:700;margin-bottom:20px;color:#fff}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .footer-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;transition:color .2s}
+  .footer-links a:hover{color:#60a5fa}
+  .footer-bottom{max-width:1200px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  .footer-bottom-left{display:flex;gap:20px;font-size:12px;color:rgba(255,255,255,.5)}
+  .footer-bottom-right,.footer-bottom-links a{font-size:12px;color:rgba(255,255,255,.5);text-decoration:none}
+  .footer-bottom-links{display:flex;gap:20px}
+
+  .toast{position:fixed;bottom:24px;right:24px;background:#1a1a2e;color:#fff;padding:14px 20px;border-radius:10px;font-size:13px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:3000;transform:translateY(200%);transition:transform .3s ease;max-width:320px}
+  .toast.visible{transform:translateY(0)}
+  .toast.success{background:#10b981}
+  .toast.error{background:#ef4444}
+
+  @media(max-width:1024px){
+    .main-content{grid-template-columns:1fr;padding:24px 20px}
+    .sidebar{position:static}
+    .how-steps{grid-template-columns:repeat(2,1fr)}
+    .options-grid{grid-template-columns:1fr 1fr}
+    .stats-row{grid-template-columns:repeat(2,1fr)}
+  }
+  @media(max-width:768px){
+    .header{padding:0 20px}.nav{display:none}
+    .hero{padding:24px 20px 40px}
+    .hero-title{font-size:28px}
+    .hero-icon{width:48px;height:48px;font-size:22px}
+    .hero-title-row{flex-direction:column;align-items:flex-start;gap:12px}
+    .main-content{padding:20px 16px}
+    .workspace{padding:20px}
+    .how-steps{grid-template-columns:1fr}
+    .seo-content{padding:20px}
+    .footer-inner{grid-template-columns:1fr 1fr}
+    .toast{left:16px;right:16px;bottom:16px;max-width:none}
+    .options-grid{grid-template-columns:1fr}
+    .result-tabs{grid-template-columns:1fr 1fr}
+    .keyword-table th,.keyword-table td{padding:10px 8px;font-size:12px}
+    .bar-cell{display:none}
+  }
+  @media(max-width:576px){
+    .header{padding:0 16px}.header-right .search-btn,.header-right .theme-btn{display:none}
+    .hero-title{font-size:24px}
+    .actions{flex-direction:column}
+    .btn{width:100%}
+    .btn-primary{flex:none}
+    .footer-inner{grid-template-columns:1fr}
+    .footer-bottom{flex-direction:column;text-align:center}
+    .stats-row{grid-template-columns:1fr 1fr}
+  }
+
+  html[data-theme="dark"] body{background:#0f172a;color:#f1f5f9}
+  html[data-theme="dark"] .header,html[data-theme="dark"] .workspace,html[data-theme="dark"] .seo-content,html[data-theme="dark"] .sidebar{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .logo,html[data-theme="dark"] .hero-title,html[data-theme="dark"] .seo-content h2,html[data-theme="dark"] .seo-content h3,html[data-theme="dark"] .faq-question,html[data-theme="dark"] .sidebar-header,html[data-theme="dark"] .sidebar-title,html[data-theme="dark"] .options-title,html[data-theme="dark"] .input-label-text,html[data-theme="dark"] .stat-value,html[data-theme="dark"] .keyword-cell{color:#f1f5f9}
+  html[data-theme="dark"] .nav a{color:#cbd5e1}
+  html[data-theme="dark"] .text-input,html[data-theme="dark"] .options,html[data-theme="dark"] .toggle-row,html[data-theme="dark"] .how-step,html[data-theme="dark"] .faq-item,html[data-theme="dark"] .stat-box,html[data-theme="dark"] .result-tabs,html[data-theme="dark"] .mini-btn,html[data-theme="dark"] .keyword-table,html[data-theme="dark"] .keyword-table thead{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .text-input{color:#f1f5f9}
+  html[data-theme="dark"] .option-group select,html[data-theme="dark"] .option-group input{background:#0f172a;border-color:#334155;color:#f1f5f9}
+  html[data-theme="dark"] .result-tab{color:#cbd5e1}
+  html[data-theme="dark"] .result-tab:hover{background:#1e293b}
+  html[data-theme="dark"] .result-tab.active{background:#8b5cf6;color:#fff}
+  html[data-theme="dark"] .seo-content p,html[data-theme="dark"] .seo-content ul li,html[data-theme="dark"] .faq-answer p,html[data-theme="dark"] .stat-label{color:#cbd5e1}
+  html[data-theme="dark"] .keyword-table th{color:#cbd5e1}
+  html[data-theme="dark"] .keyword-table td{color:#f1f5f9;border-color:#334155}
+  html[data-theme="dark"] .keyword-table tbody tr:hover{background:#1e293b}
+  html[data-theme="dark"] .note-box{background:#2d1b69;border-color:#8b5cf6;color:#e9d5ff}
+  html[data-theme="dark"] .toggle-title{color:#f1f5f9}
+  html[data-theme="dark"] .actions{border-color:#334155}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type": "SoftwareApplication", "name": "Keyword Density Checker", "url": "https://bigtoolz.com/tools/text-tools/keyword-density/", "applicationCategory": "SEOApplication", "operatingSystem": "Any (Web-based)", "description": "Free online keyword density checker analyze 1-gram, 2-gram, and 3-gram phrases with density percentage. Works in your browser.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.8", "ratingCount": "1089"}},
+    {"@type": "HowTo", "name": "How to Check Keyword Density", "step": [
+      {"@type": "HowToStep", "name": "Paste Text", "text": "Paste or type your content into the input box."},
+      {"@type": "HowToStep", "name": "Set Options", "text": "Choose minimum word length and toggle stop-word filtering."},
+      {"@type": "HowToStep", "name": "Analyze", "text": "Click Analyze to see keyword density."},
+      {"@type": "HowToStep", "name": "Review", "text": "Check 1-gram, 2-gram, and 3-gram tables for keyword frequency."}
+    ]},
+    {"@type": "FAQPage", "mainEntity": [
+      {"@type": "Question", "name": "What is keyword density?", "acceptedAnswer": {"@type": "Answer", "text": "Keyword density is the percentage of times a keyword appears in a text relative to the total word count. It's calculated as (keyword count / total words) × 100."}},
+      {"@type": "Question", "name": "What's the ideal keyword density for SEO?", "acceptedAnswer": {"@type": "Answer", "text": "For modern SEO, aim for 1-2% density for your primary keyword. Higher than 3% may look like keyword stuffing and hurt rankings. Natural language and semantic relevance matter more than exact density."}},
+      {"@type": "Question", "name": "What are 2-gram and 3-gram phrases?", "acceptedAnswer": {"@type": "Answer", "text": "1-gram is a single word. 2-gram (bigram) is two consecutive words. 3-gram (trigram) is three consecutive words. Analyzing n-grams reveals valuable long-tail keyword phrases hidden in your content."}},
+      {"@type": "Question", "name": "Should I remove stop words?", "acceptedAnswer": {"@type": "Answer", "text": "Stop words (the, and, is) usually inflate word count without adding SEO value. Removing them gives a clearer picture of your meaningful keyword density. Toggle the option to see both views."}},
+      {"@type": "Question", "name": "Is my text uploaded to a server?", "acceptedAnswer": {"@type": "Answer", "text": "No. All analysis happens in your browser. Your text never leaves your device."}}
+    ]},
+    {"@type": "BreadcrumbList", "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bigtoolz.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://bigtoolz.com/tools/"},
+      {"@type": "ListItem", "position": 3, "name": "Text Tools", "item": "https://bigtoolz.com/tools/text-tools/"},
+      {"@type": "ListItem", "position": 4, "name": "Keyword Density Checker", "item": "https://bigtoolz.com/tools/text-tools/keyword-density/"}
+    ]}
+  ]
+}
+</script>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-left">
+    <a href="/" class="logo"><div class="logo-icon">⚒</div>BigToolz</span></a>
+    <nav><ul class="nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/tools/" class="active">All Tools</a></li>
+      <li><a href="/tools/categories">Categories</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul></nav>
+  </div>
+  <div class="header-right">
+   
+    <button class="theme-btn" aria-label="Toggle theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
+    
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <nav class="breadcrumb">
+      <a href="/">Home</a><span class="sep">›</span>
+      <a href="/tools/">Tools</a><span class="sep">›</span>
+      <a href="/tools/text-tools/">Text Tools</a><span class="sep">›</span>
+      <span class="current">Keyword Density Checker</span>
+    </nav>
+    <div class="hero-title-row">
+      <div class="hero-icon">📊</div>
+      <h1 class="hero-title">Keyword <span class="blue">Density</span></h1>
+    </div>
+    <p class="hero-desc">
+      Analyze keyword density, frequency, and phrase patterns in any text. Detect keyword stuffing before it hurts SEO. See 1-gram, 2-gram, and 3-gram phrases instantly. No upload, 100% private.
+    </p>
+    <div class="hero-features">
+      <div class="hero-feature"><span class="check">✓</span> Real-Time Analysis</div>
+      <div class="hero-feature"><span class="check">✓</span> 1/2/3-gram Phrases</div>
+      <div class="hero-feature"><span class="check">✓</span> Density %</div>
+      <div class="hero-feature"><span class="check">✓</span> Stop-Word Filter</div>
+    </div>
+  </div>
+</section>
+
+<!-- MAIN -->
+<div class="main-content">
+
+  <div class="tool-content">
+
+    <div class="workspace">
+
+      <!-- Input -->
+      <div class="input-label">
+        <div class="input-label-text">📝 Paste Your Content</div>
+        <div class="input-actions-top">
+          <button class="mini-btn" id="pasteBtn">📋 Paste</button>
+          <button class="mini-btn" id="sampleBtn">✨ Sample Text</button>
+          <button class="mini-btn" id="clearBtn">🗑 Clear</button>
+        </div>
+      </div>
+      <textarea id="textInput" class="text-input" placeholder="Paste your article, blog post, essay or any text here to analyze keyword density..."></textarea>
+
+      <!-- Options -->
+      <div class="options">
+        <div class="options-title">⚙️ Analysis Options</div>
+        <div class="options-grid">
+          <div class="option-group">
+            <label>Min Word Length</label>
+            <select id="minLength">
+              <option value="1">1 character (all)</option>
+              <option value="2">2 characters</option>
+              <option value="3" selected>3 characters</option>
+              <option value="4">4 characters</option>
+              <option value="5">5 characters</option>
+            </select>
+          </div>
+          <div class="option-group">
+            <label>Results to Show</label>
+            <select id="topN">
+              <option value="10">Top 10</option>
+              <option value="20" selected>Top 20</option>
+              <option value="30">Top 30</option>
+              <option value="50">Top 50</option>
+            </select>
+          </div>
+          <div class="option-group">
+            <label>Case Sensitivity</label>
+            <select id="caseMode">
+              <option value="insensitive" selected>Case Insensitive</option>
+              <option value="sensitive">Case Sensitive</option>
+            </select>
+          </div>
+        </div>
+        <div class="toggle-row">
+          <div class="toggle-info">
+            <div class="toggle-title">Ignore Stop Words</div>
+            <div class="toggle-desc">Filter out common words (the, and, is, of)</div>
+          </div>
+          <div class="toggle-switch on" id="stopWordToggle" role="switch" aria-checked="true"></div>
+        </div>
+      </div>
+
+      <!-- Actions -->
+      <div class="actions">
+        <button class="btn btn-primary" id="analyzeBtn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 21l-4.35-4.35M11 19a8 8 0 100-16 8 8 0 000 16z"/></svg>
+          Analyze Text
+        </button>
+        <button class="btn btn-secondary" id="copyReportBtn">📋 Copy Report</button>
+        <button class="btn btn-secondary" id="downloadCsvBtn">⬇ CSV</button>
+      </div>
+
+    </div>
+
+    <!-- Results -->
+    <div class="workspace" id="resultsSection" style="display:none;">
+
+      <div class="stats-row">
+        <div class="stat-box">
+          <div class="stat-value" id="statWords">0</div>
+          <div class="stat-label">Total Words</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-value" id="statUnique">0</div>
+          <div class="stat-label">Unique Words</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-value" id="statChars">0</div>
+          <div class="stat-label">Characters</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-value" id="statSentences">0</div>
+          <div class="stat-label">Sentences</div>
+        </div>
+      </div>
+
+      <div class="note-box">
+        <strong>💡 SEO Tip:</strong> Ideal keyword density is 1-2% for your primary keyword. Above 3% looks like keyword stuffing and can hurt rankings. Focus on natural language and topic relevance.
+      </div>
+
+      <!-- Tabs -->
+      <div class="result-tabs">
+        <button class="result-tab active" data-tab="words">1-Gram (Words)</button>
+        <button class="result-tab" data-tab="bigrams">2-Gram (Phrases)</button>
+        <button class="result-tab" data-tab="trigrams">3-Gram (Phrases)</button>
+      </div>
+
+      <!-- Panels -->
+      <div class="result-panel active" data-panel="words">
+        <table class="keyword-table">
+          <thead>
+            <tr>
+              <th style="width:40px;">#</th>
+              <th>Keyword</th>
+              <th style="width:70px;">Count</th>
+              <th style="width:90px;">Density</th>
+              <th class="bar-cell">Distribution</th>
+            </tr>
+          </thead>
+          <tbody id="wordsTable"></tbody>
+        </table>
+      </div>
+
+      <div class="result-panel" data-panel="bigrams">
+        <table class="keyword-table">
+          <thead>
+            <tr>
+              <th style="width:40px;">#</th>
+              <th>Phrase</th>
+              <th style="width:70px;">Count</th>
+              <th style="width:90px;">Density</th>
+              <th class="bar-cell">Distribution</th>
+            </tr>
+          </thead>
+          <tbody id="bigramsTable"></tbody>
+        </table>
+      </div>
+
+      <div class="result-panel" data-panel="trigrams">
+        <table class="keyword-table">
+          <thead>
+            <tr>
+              <th style="width:40px;">#</th>
+              <th>Phrase</th>
+              <th style="width:70px;">Count</th>
+              <th style="width:90px;">Density</th>
+              <th class="bar-cell">Distribution</th>
+            </tr>
+          </thead>
+          <tbody id="trigramsTable"></tbody>
+        </table>
+      </div>
+
+    </div>
+
+    <!-- SEO Content -->
+    <div class="seo-content">
+
+      <h2>📊 What is Keyword Density?</h2>
+      <p>
+        <strong>Keyword density</strong> is the percentage of times a specific keyword or phrase appears in a piece of text relative to the total number of words. It's calculated as: <code>(keyword count ÷ total words) × 100</code>. For example, if your primary keyword appears 8 times in a 1,000-word article, its density is 0.8%.
+      </p>
+      <p>
+        Unlike most online tools, BigToolz processes text <strong>100% in your browser</strong>. Your content <strong>never uploaded to any server</strong> complete privacy, instant results, unlimited analyses.
+      </p>
+
+      <h2>🚀 How to Check Keyword Density</h2>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-step-num">1</div>
+          <div class="how-step-title">Paste Text</div>
+          <div class="how-step-desc">Paste your article, blog post, or any content.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">2</div>
+          <div class="how-step-title">Set Options</div>
+          <div class="how-step-desc">Choose min word length, top N, and stop-word filter.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">3</div>
+          <div class="how-step-title">Analyze</div>
+          <div class="how-step-desc">Click Analyze to see 1-gram, 2-gram, 3-gram tables.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">4</div>
+          <div class="how-step-title">Review & Fix</div>
+          <div class="how-step-desc">Adjust content to hit 1-2% density for main keywords.</div>
+        </div>
+      </div>
+
+      <h2>📐 Understanding N-Grams</h2>
+      <h3>1-Gram (Single Words)</h3>
+      <p>The most basic analysis. Reveals which individual words dominate your content. Use to spot over-repeated words or see if your primary keyword appears enough times.</p>
+
+      <h3>2-Gram (Two-Word Phrases / Bigrams)</h3>
+      <p>Two consecutive words. Reveals natural phrase patterns like "keyword density," "content marketing," or "search engine." Great for discovering long-tail keywords already present in your text.</p>
+
+      <h3>3-Gram (Three-Word Phrases / Trigrams)</h3>
+      <p>Three consecutive words. Best for identifying your <strong>actual semantic themes</strong>. If your 3-grams match your target topic, your content is well-focused. If not, you may be drifting off-topic.</p>
+
+      <h2>🎯 Ideal Keyword Density</h2>
+      <ul>
+        <li><strong>0.5-1.5%:</strong> Safe, natural, Google-friendly. Recommended for most content.</li>
+        <li><strong>1.5-2.5%:</strong> Slightly aggressive but still safe with strong semantic variety.</li>
+        <li><strong>2.5-3.5%:</strong> Risky starts looking like keyword stuffing.</li>
+        <li><strong>3.5%+:</strong> Dangerous likely to be penalized or not rank well.</li>
+      </ul>
+      <p>Remember: Google doesn't use simple density algorithms anymore. Semantic relevance, natural language, and topical authority matter far more than any specific density number.</p>
+
+      <h2>💡 Best Practices</h2>
+      <ul>
+        <li><strong>Focus on topics, not just keywords</strong> cover everything related to your subject.</li>
+        <li><strong>Use synonyms and related terms</strong> Google uses LSI keywords to understand context.</li>
+        <li><strong>Prioritize readability</strong> if content sounds robotic, users bounce and rankings suffer.</li>
+        <li><strong>Check density after writing</strong> don't force keywords into every sentence.</li>
+        <li><strong>Use the primary keyword in H1, first paragraph, and meta description</strong> natural placement beats repetition.</li>
+        <li><strong>Analyze competitor content</strong> see what density top-ranking pages use.</li>
+        <li><strong>Target long-tail phrases</strong> 2-grams and 3-grams often capture user intent better than single keywords.</li>
+      </ul>
+
+      <h2>✨ Key Features</h2>
+      <ul>
+        <li><strong>Real-time analysis</strong> instant results for any length of text.</li>
+        <li><strong>1-gram, 2-gram, 3-gram</strong> all three phrase levels.</li>
+        <li><strong>Density percentage</strong> clear, sortable, with visual bars.</li>
+        <li><strong>Stop-word filter</strong> remove noise from common words.</li>
+        <li><strong>Min word length</strong> filter out short words.</li>
+        <li><strong>Case sensitivity option</strong> control matching strictness.</li>
+        <li><strong>Copy report + CSV download</strong> save for later analysis.</li>
+        <li><strong>100% browser-based</strong> complete privacy.</li>
+      </ul>
+
+      <h2>❓ Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-question">What is keyword density?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Keyword density is the percentage of times a keyword appears in text relative to the total word count. It's calculated as: <code>(keyword count ÷ total words) × 100</code>. For example, 8 uses in 1,000 words = 0.8% density.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What's the ideal keyword density for SEO?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>For modern SEO, aim for <strong>1-2% density</strong> for your primary keyword. Higher than 3% may look like keyword stuffing and can hurt rankings. Natural language and semantic relevance matter more than any specific number.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What are 2-gram and 3-gram phrases?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>1-gram</strong> = a single word. <strong>2-gram</strong> (bigram) = two consecutive words. <strong>3-gram</strong> (trigram) = three consecutive words. Analyzing n-grams reveals valuable long-tail phrases hidden in your content.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Should I remove stop words?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Stop words (the, and, is, of) usually inflate word counts without adding SEO value. Filtering them out gives a clearer picture of your <strong>meaningful keyword density</strong>. Toggle the option to see both views.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">How do I fix keyword stuffing?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>If a keyword exceeds 3%, <strong>rewrite some occurrences</strong> using synonyms, related phrases, or pronouns. Replace exact matches with semantic variations. Read the content aloud if it sounds unnatural, revise.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Does keyword density still matter in 2026?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Not as a strict ranking factor, but it's a useful <strong>writing quality check</strong>. Google uses semantic search it understands topics, synonyms, and context. Extreme overuse still triggers penalties, and extreme underuse means you're not clearly targeting the topic.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Is my text uploaded to a server?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>No. All analysis happens in your browser using JavaScript. Your text never leaves your device, and nothing is stored anywhere.</p></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-header">🔗 Related Text Tools</div>
+    <div class="sidebar-list">
+      <a href="/tools/text-tools/word-counter/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#3b82f6;">T</div>
+        <div class="sidebar-info"><div class="sidebar-title">Word Counter</div><div class="sidebar-desc">Count words & characters</div></div>
+      </a>
+      <a href="/tools/text-tools/character-counter/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#8b5cf6;">🔤</div>
+        <div class="sidebar-info"><div class="sidebar-title">Character Counter</div><div class="sidebar-desc">Count characters</div></div>
+      </a>
+      <a href="/tools/text-tools/readability-checker/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#10b981;">📖</div>
+        <div class="sidebar-info"><div class="sidebar-title">Readability Checker</div><div class="sidebar-desc">Check reading level</div></div>
+      </a>
+      <a href="/tools/text-tools/word-frequency/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#f97316;">📈</div>
+        <div class="sidebar-info"><div class="sidebar-title">Word Frequency</div><div class="sidebar-desc">Count word usage</div></div>
+      </a>
+      <a href="/tools/seo-tools/meta-description/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#8b5cf6;">🔍</div>
+        <div class="sidebar-info"><div class="sidebar-title">Meta Description</div><div class="sidebar-desc">Generate SEO meta</div></div>
+      </a>
+      <a href="/tools/text-tools/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#64748b;">📝</div>
+        <div class="sidebar-info"><div class="sidebar-title">All Text Tools →</div><div class="sidebar-desc">Browse 25+ tools</div></div>
+      </a>
+    </div>
+  </aside>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand"><div class="logo-icon">⚒</div>BigToolz</span></div>
+      <p class="footer-tagline">Your Ultimate Online Tools Hub</p>
+      <div class="footer-social">
+        <a href="https://facebook.com/bigtoolz" aria-label="Facebook">f</a>
+        <a href="https://twitter.com/bigtoolz" aria-label="Twitter">𝕏</a>
+        <a href="https://youtube.com/@bigtoolz" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+    <div>
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/tools/">All Tools</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Categories</h3>
+      <ul class="footer-links">
+        <li><a href="/tools/image-tools/">Image Tools</a></li>
+        <li><a href="/tools/pdf-tools/">PDF Tools</a></li>
+        <li><a href="/tools/text-tools/">Text Tools</a></li>
+        <li><a href="/tools/seo-tools/">SEO Tools</a></li>
+        <li><a href="/tools/categories">All Categories →</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Legal</h3>
+      <ul class="footer-links">
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left"><span>✓ 100% Free</span><span>✓ No Sign Up</span><span>✓ No Installation</span></div>
+    <div class="footer-bottom-right">© 2026 BigToolz. All rights reserved.</div>
+    <div class="footer-bottom-links"><a href="/privacy-policy">Privacy</a><a href="/terms">Terms</a><a href="/disclaimer">Disclaimer</a></div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+'use strict';
+
+/* ===== THEME ===== */
+(function(){try{var t=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&d))document.documentElement.setAttribute('data-theme','dark');else if(t==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();
+document.querySelector('.theme-btn')?.addEventListener('click',()=>{const h=document.documentElement;const c=h.getAttribute('data-theme');const d=window.matchMedia('(prefers-color-scheme: dark)').matches;let n=c==='dark'?'light':c==='light'?'dark':(d?'light':'dark');h.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}});
+
+/* ===== HELPERS ===== */
+const $ = (s, p = document) => p.querySelector(s);
+const $$ = (s, p = document) => [...p.querySelectorAll(s)];
+
+function showToast(msg, type = 'info', duration = 3000) {
+  const t = $('#toast');
+  if (!t) return;
+  t.className = 'toast visible' + (type !== 'info' ? ' ' + type : '');
+  t.textContent = msg;
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove('visible'), duration);
+}
+
+async function copyToClipboard(text) {
+  try {
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(text);
+      return true;
+    }
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.cssText = 'position:fixed;opacity:0;';
+    document.body.appendChild(ta);
+    ta.select();
+    const ok = document.execCommand('copy');
+    document.body.removeChild(ta);
+    return ok;
+  } catch (e) { return false; }
+}
+
+/* ===== STOP WORDS ===== */
+const STOP_WORDS = new Set([
+  'a','an','and','are','as','at','be','but','by','for','from','has','have','he','her','here',
+  'him','his','how','i','if','in','into','is','it','its','me','my','no','not','of','on','or',
+  'our','out','she','so','that','the','their','them','then','there','these','they','this','to',
+  'too','up','us','was','we','were','what','when','where','which','while','who','will','with',
+  'you','your','all','also','any','been','before','being','between','both','did','do','does',
+  'doing','during','each','few','had','having','just','more','most','only','other','over','own',
+  'same','some','such','than','through','under','until','very','after','again','against','because'
+]);
+
+/* ===== STATE ===== */
+const state = {
+  text: '',
+  words: [],
+  unigrams: [],
+  bigrams: [],
+  trigrams: [],
+  stats: {},
+  stopWords: true
+};
+
+/* ===== DOM ===== */
+const textInput = $('#textInput');
+const minLength = $('#minLength');
+const topN = $('#topN');
+const caseMode = $('#caseMode');
+const stopWordToggle = $('#stopWordToggle');
+const analyzeBtn = $('#analyzeBtn');
+const pasteBtn = $('#pasteBtn');
+const sampleBtn = $('#sampleBtn');
+const clearBtn = $('#clearBtn');
+const resultsSection = $('#resultsSection');
+const copyReportBtn = $('#copyReportBtn');
+const downloadCsvBtn = $('#downloadCsvBtn');
+
+const SAMPLE_TEXT = `Keyword density is an important concept in search engine optimization. It refers to the percentage of times a keyword appears on a web page compared to the total number of words. SEO experts often recommend keeping keyword density between one and two percent. However, modern SEO focuses more on topical relevance and semantic meaning than exact keyword matching. Search engines like Google use advanced algorithms to understand context, synonyms, and user intent. Instead of stuffing keywords, writers should focus on creating high-quality, helpful content that naturally includes relevant terms. Analyzing keyword density helps identify whether content is over-optimized or under-optimized. Tools that check keyword density, bigrams, and trigrams can reveal hidden patterns and long-tail phrases. The best SEO strategy combines keyword analysis with genuine value for the reader.`;
+
+/* ===== TOGGLE ===== */
+stopWordToggle.addEventListener('click', () => {
+  state.stopWords = !state.stopWords;
+  stopWordToggle.classList.toggle('on', state.stopWords);
+  stopWordToggle.setAttribute('aria-checked', state.stopWords);
+});
+
+/* ===== PASTE ===== */
+pasteBtn.addEventListener('click', async () => {
+  try {
+    if (navigator.clipboard && navigator.clipboard.readText) {
+      const t = await navigator.clipboard.readText();
+      textInput.value = t;
+      showToast('Pasted from clipboard', 'success');
+    } else {
+      textInput.focus();
+      showToast('Press Ctrl+V to paste', 'info');
+    }
+  } catch (err) {
+    showToast('Clipboard access denied paste manually', 'error');
+    textInput.focus();
+  }
+});
+
+/* ===== SAMPLE ===== */
+sampleBtn.addEventListener('click', () => {
+  textInput.value = SAMPLE_TEXT;
+  showToast('Sample text loaded', 'success');
+});
+
+/* ===== CLEAR ===== */
+clearBtn.addEventListener('click', () => {
+  textInput.value = '';
+  resultsSection.style.display = 'none';
+  showToast('Cleared', 'info');
+});
+
+/* ===== TEXT TOKENS ===== */
+function tokenize(text, caseSensitive) {
+  // Clean & split
+  let cleaned = text
+    .replace(/[^\p{L}\p{N}\s'-]+/gu, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+
+  if (!caseSensitive) cleaned = cleaned.toLowerCase();
+
+  const tokens = cleaned.split(/\s+/).filter(t => t.length > 0);
+  return tokens;
+}
+
+/* ===== COUNT N-GRAMS ===== */
+function countNgrams(tokens, n, minLen, stopWords) {
+  const map = new Map();
+  for (let i = 0; i <= tokens.length - n; i++) {
+    const gram = tokens.slice(i, i + n);
+    // Filter on first token's length (only for unigrams)
+    if (n === 1 && gram[0].length < minLen) continue;
+    // Filter stop words (only on last token for phrases)
+    if (stopWords && n === 1 && STOP_WORDS.has(gram[0])) continue;
+
+    const key = gram.join(' ');
+    map.set(key, (map.get(key) || 0) + 1);
+  }
+  return map;
+}
+
+/* ===== ANALYZE ===== */
+function analyze() {
+  const text = textInput.value.trim();
+  if (!text) { showToast('Please paste some text first', 'error'); return; }
+
+  state.text = text;
+  const caseSensitive = caseMode.value === 'sensitive';
+  const minLen = parseInt(minLength.value, 10);
+  const top = parseInt(topN.value, 10);
+  const stopWords = state.stopWords;
+
+  const tokens = tokenize(text, caseSensitive);
+  const totalWords = tokens.length;
+
+  if (totalWords < 3) { showToast('Text too short to analyze', 'error'); return; }
+
+  // Unique words
+  const uniqueSet = new Set(tokens);
+  const uniqueCount = uniqueSet.size;
+
+  // Characters
+  const charCount = text.length;
+
+  // Sentences
+  const sentences = text.split(/[.!?]+/).filter(s => s.trim().length > 0).length;
+
+  // Count n-grams
+  const ug = countNgrams(tokens, 1, minLen, stopWords);
+  const bg = countNgrams(tokens, 2, minLen, false);
+  const tg = countNgrams(tokens, 3, minLen, false);
+
+  // Convert to sorted arrays
+  const sortByCount = (map) => [...map.entries()]
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, top);
+
+  const unigramsArr = sortByCount(ug);
+  const bigramsArr = sortByCount(bg);
+  const trigramsArr = sortByCount(tg);
+
+  // Save state
+  state.unigrams = unigramsArr;
+  state.bigrams = bigramsArr;
+  state.trigrams = trigramsArr;
+  state.stats = { totalWords, uniqueCount, charCount, sentences };
+
+  // Update stats
+  $('#statWords').textContent = totalWords.toLocaleString();
+  $('#statUnique').textContent = uniqueCount.toLocaleString();
+  $('#statChars').textContent = charCount.toLocaleString();
+  $('#statSentences').textContent = sentences.toLocaleString();
+
+  // Render tables
+  renderTable('wordsTable', unigramsArr, totalWords);
+  renderTable('bigramsTable', bigramsArr, totalWords);
+  renderTable('trigramsTable', trigramsArr, totalWords);
+
+  resultsSection.style.display = 'block';
+
+  // Scroll to results
+  setTimeout(() => {
+    resultsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, 100);
+
+  showToast(`✅ Analyzed ${totalWords.toLocaleString()} words`, 'success');
+}
+
+/* ===== RENDER TABLE ===== */
+function renderTable(tableId, arr, totalWords) {
+  const tbody = $('#' + tableId);
+  tbody.innerHTML = '';
+
+  if (!arr.length) {
+    tbody.innerHTML = `
+      <tr><td colspan="5" class="empty-state">
+        <div class="empty-state-icon">📭</div>
+        No data to display
+      </td></tr>
+    `;
+    return;
+  }
+
+  const maxCount = arr[0][1];
+
+  arr.forEach(([word, count], i) => {
+    const density = totalWords > 0 ? (count / totalWords) * 100 : 0;
+    const barWidth = (count / maxCount) * 100;
+
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td style="font-weight:700;color:#9ca3af;">${i + 1}</td>
+      <td class="keyword-cell">${escapeHtml(word)}</td>
+      <td class="count-cell">${count}</td>
+      <td class="density-cell">${density.toFixed(2)}%</td>
+      <td class="bar-cell">
+        <div class="density-bar">
+          <div class="density-fill" style="width:${barWidth}%"></div>
+        </div>
+      </td>
+    `;
+    tbody.appendChild(tr);
+  });
+}
+
+function escapeHtml(str) {
+  const div = document.createElement('div');
+  div.textContent = str;
+  return div.innerHTML;
+}
+
+/* ===== ANALYZE BUTTON ===== */
+analyzeBtn.addEventListener('click', analyze);
+
+/* ===== TABS ===== */
+$$('.result-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    $$('.result-tab').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    const target = tab.dataset.tab;
+    $$('.result-panel').forEach(p => {
+      p.classList.toggle('active', p.dataset.panel === target);
+    });
+  });
+});
+
+/* ===== COPY REPORT ===== */
+copyReportBtn.addEventListener('click', async () => {
+  if (!state.unigrams.length) { showToast('Analyze first', 'error'); return; }
+
+  const lines = [];
+  lines.push('BigToolz Keyword Density Report');
+  lines.push('='.repeat(50));
+  lines.push(`Total Words: ${state.stats.totalWords}`);
+  lines.push(`Unique Words: ${state.stats.uniqueCount}`);
+  lines.push(`Characters: ${state.stats.charCount}`);
+  lines.push(`Sentences: ${state.stats.sentences}`);
+  lines.push('');
+  lines.push('TOP 1-GRAM WORDS');
+  lines.push('-'.repeat(50));
+  state.unigrams.forEach(([w, c], i) => {
+    const d = ((c / state.stats.totalWords) * 100).toFixed(2);
+    lines.push(`${i + 1}. ${w} ${c} times (${d}%)`);
+  });
+  lines.push('');
+  lines.push('TOP 2-GRAM PHRASES');
+  lines.push('-'.repeat(50));
+  state.bigrams.forEach(([w, c], i) => {
+    const d = ((c / state.stats.totalWords) * 100).toFixed(2);
+    lines.push(`${i + 1}. ${w} ${c} times (${d}%)`);
+  });
+  lines.push('');
+  lines.push('TOP 3-GRAM PHRASES');
+  lines.push('-'.repeat(50));
+  state.trigrams.forEach(([w, c], i) => {
+    const d = ((c / state.stats.totalWords) * 100).toFixed(2);
+    lines.push(`${i + 1}. ${w} ${c} times (${d}%)`);
+  });
+
+  const ok = await copyToClipboard(lines.join('\n'));
+  if (ok) showToast('✅ Report copied!', 'success');
+  else showToast('Copy failed', 'error');
+});
+
+/* ===== DOWNLOAD CSV ===== */
+downloadCsvBtn.addEventListener('click', () => {
+  if (!state.unigrams.length) { showToast('Analyze first', 'error'); return; }
+
+  const escapeCsv = (v) => {
+    const s = String(v);
+    if (s.includes(',') || s.includes('"') || s.includes('\n')) {
+      return '"' + s.replace(/"/g, '""') + '"';
+    }
+    return s;
+  };
+
+  let csv = 'Type,Rank,Keyword,Count,Density %\n';
+
+  state.unigrams.forEach(([w, c], i) => {
+    const d = ((c / state.stats.totalWords) * 100).toFixed(2);
+    csv += `1-gram,${i + 1},${escapeCsv(w)},${c},${d}\n`;
+  });
+  state.bigrams.forEach(([w, c], i) => {
+    const d = ((c / state.stats.totalWords) * 100).toFixed(2);
+    csv += `2-gram,${i + 1},${escapeCsv(w)},${c},${d}\n`;
+  });
+  state.trigrams.forEach(([w, c], i) => {
+    const d = ((c / state.stats.totalWords) * 100).toFixed(2);
+    csv += `3-gram,${i + 1},${escapeCsv(w)},${c},${d}\n`;
+  });
+
+  const blob = new Blob([csv], { type: 'text/csv;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'keyword-density-report.csv';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+  showToast('✅ CSV downloaded!', 'success');
+});
+
+/* ===== FAQ ===== */
+$$('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    $$('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+
+/* ===== KEYBOARD SHORTCUT ===== */
+document.addEventListener('keydown', (e) => {
+  if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
+    e.preventDefault();
+    analyze();
+  }
+});
+
+/* ===== AUTO-ANALYZE ON OPTION CHANGE ===== */
+[minLength, topN, caseMode].forEach(el => {
+  el.addEventListener('change', () => {
+    if (state.unigrams.length > 0) analyze();
+  });
+});
+stopWordToggle.addEventListener('click', () => {
+  if (state.unigrams.length > 0) {
+    setTimeout(analyze, 100);
+  }
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#2563eb">
+<title>All News - BigToolz Admin</title>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+    background:#f8f9fc;color:#1a1a2e;line-height:1.5;
+    min-height:100vh;-webkit-font-smoothing:antialiased;
+    padding-bottom:env(safe-area-inset-bottom,0);
+  }
+
+  /* HEADER */
+  .admin-header{
+    background:#fff;height:68px;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:0 32px;padding-top:env(safe-area-inset-top,0);
+    box-shadow:0 1px 3px rgba(0,0,0,.06);
+    position:sticky;top:0;z-index:100;
+    border-bottom:1px solid #e5e7eb;
+  }
+  .admin-header-left{display:flex;align-items:center;gap:24px;min-width:0}
+  .admin-logo{
+    display:flex;align-items:center;gap:10px;
+    font-size:20px;font-weight:800;color:#1a1a2e;
+    text-decoration:none;letter-spacing:-.5px;flex-shrink:0;
+  }
+  .admin-logo-icon{
+    width:36px;height:36px;
+    background:linear-gradient(135deg,#3b82f6,#2563eb);
+    border-radius:10px;display:flex;align-items:center;justify-content:center;
+    color:#fff;font-size:18px;
+    box-shadow:0 4px 12px rgba(37,99,235,.3);
+  }
+  .admin-logo span{color:#2563eb}
+  .back-link{
+    display:inline-flex;align-items:center;gap:6px;
+    font-size:13px;font-weight:600;color:#6b7280;
+    text-decoration:none;padding:8px 14px;border-radius:8px;
+    transition:all .2s;min-height:40px;
+  }
+  .back-link:hover{background:#f3f4f6;color:#2563eb}
+
+  .admin-header-right{display:flex;align-items:center;gap:12px}
+  .new-btn{
+    display:flex;align-items:center;gap:8px;
+    background:#2563eb;color:#fff;border:none;
+    padding:11px 20px;border-radius:10px;
+    font-size:13px;font-weight:700;cursor:pointer;
+    transition:background .2s;text-decoration:none;min-height:44px;
+  }
+  .new-btn:hover{background:#1d4ed8}
+  .new-btn:active{background:#1e40af}
+
+  /* MAIN */
+  .admin-main{
+    max-width:1400px;margin:0 auto;padding:32px;
+  }
+
+  .page-header{
+    display:flex;justify-content:space-between;align-items:flex-end;
+    margin-bottom:24px;flex-wrap:wrap;gap:16px;
+  }
+  .page-title{
+    font-size:28px;font-weight:800;color:#0a0e27;
+    letter-spacing:-.5px;margin-bottom:4px;
+  }
+  .page-sub{
+    font-size:14px;color:#6b7280;font-weight:500;
+  }
+  .page-count{
+    display:inline-block;
+    background:#eff6ff;color:#2563eb;
+    font-size:12px;font-weight:700;
+    padding:4px 10px;border-radius:10px;
+    margin-left:8px;
+  }
+
+  /* TOOLBAR */
+  .toolbar{
+    background:#fff;border:1px solid #e5e7eb;border-radius:14px;
+    padding:16px;margin-bottom:20px;
+    display:flex;gap:12px;flex-wrap:wrap;align-items:center;
+  }
+  .search-wrap{
+    flex:1;min-width:220px;
+    position:relative;display:flex;align-items:center;
+  }
+  .search-wrap svg{
+    position:absolute;left:14px;color:#9ca3af;
+    pointer-events:none;
+  }
+  .search-input{
+    width:100%;padding:11px 14px 11px 40px;
+    border:1px solid #e5e7eb;border-radius:10px;
+    font-size:13px;font-family:inherit;color:#1a1a2e;
+    background:#f8fafc;outline:none;
+    transition:all .2s;min-height:42px;
+  }
+  .search-input:focus{
+    border-color:#2563eb;background:#fff;
+    box-shadow:0 0 0 3px rgba(37,99,235,.1);
+  }
+
+  .filter-select{
+    padding:11px 36px 11px 14px;
+    border:1px solid #e5e7eb;border-radius:10px;
+    font-size:13px;font-weight:600;font-family:inherit;
+    color:#374151;background:#fff;outline:none;
+    cursor:pointer;min-height:42px;
+    appearance:none;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='3'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat:no-repeat;
+    background-position:right 12px center;
+  }
+  .filter-select:focus{border-color:#2563eb}
+
+  /* BULK BAR */
+  .bulk-bar{
+    background:#eff6ff;border:1px solid #93c5fd;
+    border-radius:10px;padding:12px 16px;
+    margin-bottom:16px;display:none;
+    align-items:center;justify-content:space-between;
+    gap:12px;flex-wrap:wrap;
+  }
+  .bulk-bar.visible{display:flex}
+  .bulk-info{
+    font-size:13px;font-weight:600;color:#1e40af;
+  }
+  .bulk-actions{display:flex;gap:8px;flex-wrap:wrap}
+  .bulk-btn{
+    padding:9px 14px;border-radius:8px;
+    font-size:12px;font-weight:700;cursor:pointer;
+    border:none;font-family:inherit;transition:all .2s;
+    display:inline-flex;align-items:center;gap:6px;
+    min-height:38px;
+  }
+  .bulk-btn.delete{background:#ef4444;color:#fff}
+  .bulk-btn.delete:hover{background:#dc2626}
+  .bulk-btn.cancel{background:#fff;color:#374151;border:1px solid #e5e7eb}
+  .bulk-btn.cancel:hover{background:#f3f4f6}
+
+  /* TABLE */
+  .table-wrap{
+    background:#fff;border:1px solid #e5e7eb;border-radius:14px;
+    overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.04);
+  }
+  .table-header{
+    display:grid;
+    grid-template-columns:44px 80px 1fr 160px 130px 100px 100px 180px;
+    gap:12px;padding:14px 20px;
+    background:#f8fafc;border-bottom:1px solid #e5e7eb;
+    font-size:11px;font-weight:700;color:#6b7280;
+    text-transform:uppercase;letter-spacing:.5px;
+    align-items:center;
+  }
+  .table-row{
+    display:grid;
+    grid-template-columns:44px 80px 1fr 160px 130px 100px 100px 180px;
+    gap:12px;padding:16px 20px;
+    border-bottom:1px solid #f3f4f6;
+    align-items:center;transition:background .2s;
+    font-size:13px;
+  }
+  .table-row:hover{background:#f8faff}
+  .table-row:last-child{border-bottom:none}
+
+  .col-check{
+    display:flex;align-items:center;justify-content:center;
+  }
+  .col-check input[type="checkbox"]{
+    width:18px;height:18px;
+    accent-color:#2563eb;cursor:pointer;
+  }
+
+  .col-thumb{
+    width:60px;height:60px;border-radius:10px;
+    overflow:hidden;background:#f3f4f6;
+    display:flex;align-items:center;justify-content:center;
+    flex-shrink:0;
+  }
+  .col-thumb img{
+    width:100%;height:100%;object-fit:cover;
+  }
+  .col-thumb-placeholder{
+    font-size:24px;color:#9ca3af;
+  }
+
+  .col-title{min-width:0}
+  .row-title{
+    font-size:14px;font-weight:700;color:#0a0e27;
+    margin-bottom:4px;line-height:1.35;
+    display:-webkit-box;-webkit-line-clamp-webkit-box-orient:vertical;overflow:hidden;
+  }
+  .row-slug{
+    font-size:11px;color:#9ca3af;
+    white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+    font-family:monospace;
+  }
+
+  .row-category{
+    font-size:12px;font-weight:600;color:#374151;
+    display:flex;align-items:center;gap:6px;
+  }
+
+  .row-status{
+    display:inline-flex;align-items:center;gap:5px;
+    font-size:11px;font-weight:700;
+    padding:5px 10px;border-radius:10px;
+    text-transform:uppercase;letter-spacing:.3px;
+  }
+  .row-status.published{background:#d1fae5;color:#065f46}
+  .row-status.draft{background:#fef3c7;color:#92400e}
+  .row-status::before{
+    content:'';width:6px;height:6px;border-radius:50%;
+    background:currentColor;
+  }
+
+  .row-date{
+    font-size:12px;color:#6b7280;font-weight:500;
+  }
+
+  .row-views{
+    font-size:12px;color:#6b7280;font-weight:600;
+    display:flex;align-items:center;gap:4px;
+  }
+
+  .row-actions{
+    display:flex;gap:6px;justify-content:flex-end;
+  }
+  .row-action{
+    width:38px;height:38px;
+    display:flex;align-items:center;justify-content:center;
+    border-radius:9px;border:1px solid #e5e7eb;
+    background:#fff;color:#6b7280;cursor:pointer;
+    transition:all .2s;text-decoration:none;
+  }
+  .row-action:hover{border-color:#2563eb;color:#2563eb;background:#eff6ff}
+  .row-action.delete:hover{border-color:#ef4444;color:#ef4444;background:#fef2f2}
+  .row-action.view:hover{border-color:#10b981;color:#10b981;background:#f0fdf4}
+
+  /* EMPTY */
+  .empty-state{
+    text-align:center;padding:80px 20px;
+  }
+  .empty-icon{font-size:64px;opacity:.4;margin-bottom:16px}
+  .empty-title{
+    font-size:18px;font-weight:700;color:#0a0e27;
+    margin-bottom:8px;
+  }
+  .empty-desc{
+    font-size:14px;color:#6b7280;margin-bottom:20px;
+  }
+  .empty-btn{
+    display:inline-flex;align-items:center;gap:8px;
+    background:#2563eb;color:#fff;border:none;
+    padding:12px 22px;border-radius:10px;
+    font-size:14px;font-weight:700;text-decoration:none;
+    cursor:pointer;transition:background .2s;
+  }
+  .empty-btn:hover{background:#1d4ed8}
+
+  /* LOADING */
+  .loading-state{
+    text-align:center;padding:80px 20px;
+  }
+  .spinner{
+    width:44px;height:44px;
+    border:4px solid #e5e7eb;
+    border-top-color:#2563eb;
+    border-radius:50%;
+    animation:spin .8s linear infinite;
+    margin:0 auto 16px;
+  }
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .loading-text{
+    font-size:14px;color:#6b7280;font-weight:500;
+  }
+
+  /* PAGINATION */
+  .pagination{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:20px 20px 0;gap:16px;flex-wrap:wrap;
+  }
+  .pagination-info{
+    font-size:13px;color:#6b7280;font-weight:500;
+  }
+  .pagination-btns{
+    display:flex;gap:6px;align-items:center;
+  }
+  .page-btn{
+    min-width:38px;height:38px;padding:0 12px;
+    border-radius:9px;border:1px solid #e5e7eb;
+    background:#fff;color:#4b5563;
+    font-size:13px;font-weight:600;cursor:pointer;
+    font-family:inherit;transition:all .2s;
+    display:inline-flex;align-items:center;justify-content:center;
+  }
+  .page-btn:hover:not(:disabled):not(.active){
+    border-color:#2563eb;color:#2563eb;background:#eff6ff;
+  }
+  .page-btn.active{
+    background:#2563eb;border-color:#2563eb;color:#fff;
+    cursor:default;
+  }
+  .page-btn:disabled{opacity:.4;cursor:not-allowed}
+
+  /* MOBILE */
+  @media(max-width:1024px){
+    .admin-main{padding:24px 20px}
+    .table-header{display:none}
+    .table-row{
+      grid-template-columns:1fr;gap:12px;
+      padding:18px;position:relative;
+    }
+    .col-check{
+      position:absolute;top:16px;right:16px;
+      justify-content:flex-end;
+    }
+    .col-thumb{width:100%;height:180px}
+    .col-thumb-placeholder{font-size:44px}
+    .row-actions{
+      justify-content:flex-start;
+      padding-top:12px;border-top:1px solid #f3f4f6;
+    }
+  }
+
+  @media(max-width:768px){
+    .admin-header{padding:0 16px;height:64px}
+    .admin-logo{font-size:16px;gap:8px}
+    .admin-logo-icon{width:32px;height:32px;font-size:16px}
+    .back-link span{display:none}
+    .new-btn{padding:9px 14px;font-size:12px}
+    .new-btn .btn-text{display:none}
+
+    .admin-main{padding:20px 16px}
+    .page-title{font-size:22px}
+    .page-sub{font-size:13px}
+
+    .toolbar{padding:12px;gap:8px}
+    .search-wrap{min-width:100%;order:1}
+    .filter-select{flex:1;min-width:calc(50% - 4px);font-size:12px;padding:10px 32px 10px 12px}
+  }
+
+  @media(max-width:480px){
+    .page-title{font-size:20px}
+    .filter-select{min-width:100%}
+  }
+
+  /* DARK MODE */
+  html[data-theme="dark"] body{background:#0f172a;color:#f1f5f9}
+  html[data-theme="dark"] .admin-header{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .admin-logo{color:#f1f5f9}
+  html[data-theme="dark"] .back-link{color:#94a3b8}
+  html[data-theme="dark"] .back-link:hover{background:#0f172a;color:#60a5fa}
+  html[data-theme="dark"] .page-title{color:#f1f5f9}
+  html[data-theme="dark"] .page-sub{color:#94a3b8}
+  html[data-theme="dark"] .page-count{background:#1e3a8a;color:#93c5fd}
+  html[data-theme="dark"] .toolbar{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .search-input{background:#0f172a;border-color:#334155;color:#f1f5f9}
+  html[data-theme="dark"] .search-input:focus{background:#0f172a}
+  html[data-theme="dark"] .filter-select{background-color:#1e293b;border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .bulk-bar{background:#1e3a8a;border-color:#3b82f6}
+  html[data-theme="dark"] .bulk-info{color:#93c5fd}
+  html[data-theme="dark"] .bulk-btn.cancel{background:#1e293b;color:#cbd5e1;border-color:#334155}
+  html[data-theme="dark"] .table-wrap{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .table-header{background:#0f172a;border-color:#334155;color:#94a3b8}
+  html[data-theme="dark"] .table-row{border-color:#334155}
+  html[data-theme="dark"] .table-row:hover{background:#0f172a}
+  html[data-theme="dark"] .col-thumb{background:#0f172a}
+  html[data-theme="dark"] .row-title{color:#f1f5f9}
+  html[data-theme="dark"] .row-slug{color:#64748b}
+  html[data-theme="dark"] .row-category{color:#cbd5e1}
+  html[data-theme="dark"] .row-status.published{background:#064e3b;color:#6ee7b7}
+  html[data-theme="dark"] .row-status.draft{background:#78350f;color:#fcd34d}
+  html[data-theme="dark"] .row-date,
+  html[data-theme="dark"] .row-views{color:#94a3b8}
+  html[data-theme="dark"] .row-action{background:#0f172a;border-color:#334155;color:#94a3b8}
+  html[data-theme="dark"] .row-action:hover{border-color:#2563eb;color:#60a5fa;background:#1e3a8a}
+  html[data-theme="dark"] .row-action.delete:hover{border-color:#ef4444;color:#fca5a5;background:#7f1d1d}
+  html[data-theme="dark"] .row-action.view:hover{border-color:#10b981;color:#6ee7b7;background:#064e3b}
+  html[data-theme="dark"] .empty-title{color:#f1f5f9}
+  html[data-theme="dark"] .empty-desc{color:#94a3b8}
+  html[data-theme="dark"] .page-btn{background:#1e293b;border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .page-btn:hover:not(:disabled):not(.active){background:#334155;color:#60a5fa;border-color:#60a5fa}
+  html[data-theme="dark"] .page-btn.active{background:#2563eb;color:#fff;border-color:#2563eb}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="admin-header">
+  <div class="admin-header-left">
+    <a href="/admin/" class="admin-logo">
+      <div class="admin-logo-icon">⚒</div>
+      BigToolz</span> Admin
+    </a>
+    <a href="/admin/" class="back-link">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      <span>Back to Dashboard</span>
+    </a>
+  </div>
+  <div class="admin-header-right">
+    <a href="/admin/news-editor" class="new-btn">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
+      <span class="btn-text">New News</span>
+    </a>
+  </div>
+</header>
+
+<!-- MAIN -->
+<main class="admin-main">
+
+  <div class="page-header">
+    <div>
+      <h1 class="page-title">
+        📰 All News
+        <span class="page-count" id="totalCount">—</span>
+      </h1>
+      <p class="page-sub">Manage all your news articles edit, delete, or publish.</p>
+    </div>
+  </div>
+
+  <!-- Toolbar -->
+  <div class="toolbar">
+    <div class="search-wrap">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+      <input type="text" class="search-input" id="searchInput" placeholder="Search news by title or slug...">
+    </div>
+    <select class="filter-select" id="statusFilter">
+      <option value="all">All Status</option>
+      <option value="published">Published</option>
+      <option value="draft">Draft</option>
+    </select>
+    <select class="filter-select" id="categoryFilter">
+      <option value="all">All Categories</option>
+    </select>
+    <select class="filter-select" id="sortSelect">
+      <option value="newest">Newest First</option>
+      <option value="oldest">Oldest First</option>
+      <option value="views">Most Viewed</option>
+      <option value="title">A-Z</option>
+    </select>
+  </div>
+
+  <!-- Bulk Bar -->
+  <div class="bulk-bar" id="bulkBar">
+    <div class="bulk-info">
+      <span id="selectedCount">0</span> item(s) selected
+    </div>
+    <div class="bulk-actions">
+      <button class="bulk-btn delete" id="bulkDeleteBtn">
+        🗑 Delete Selected
+      </button>
+      <button class="bulk-btn cancel" id="cancelSelectionBtn">
+        Cancel
+      </button>
+    </div>
+  </div>
+
+  <!-- Table -->
+  <div class="table-wrap">
+
+    <div class="table-header">
+      <div class="col-check">
+        <input type="checkbox" id="selectAll">
+      </div>
+      <div>Image</div>
+      <div>Title</div>
+      <div>Category</div>
+      <div>Status</div>
+      <div>Date</div>
+      <div>Views</div>
+      <div style="text-align:right;">Actions</div>
+    </div>
+
+    <div id="tableBody">
+      <div class="loading-state">
+        <div class="spinner"></div>
+        <div class="loading-text">Loading news articles...</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Pagination -->
+  <div class="pagination" id="pagination" style="display:none;">
+    <div class="pagination-info" id="paginationInfo">Showing 1-10 of 0</div>
+    <div class="pagination-btns" id="paginationBtns"></div>
+  </div>
+
+</main>
+
+<script>
+'use strict';
+
+/* ===== SUPABASE ===== */
+const SUPABASE_URL = 'https://btmeygsirnyuzsubscde.supabase.co';
+const SUPABASE_KEY = 'sb_publishable_rncmFbKPlBLxkeIEXaFxfQ_rIbjebnJ';
+const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+/* ===== CONFIG ===== */
+const PER_PAGE = 10;
+
+/* ===== THEME ===== */
+(function(){try{var t=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&d))document.documentElement.setAttribute('data-theme','dark');else if(t==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();
+
+/* ===== STATE ===== */
+const state = {
+  allNews: [],
+  filtered: [],
+  currentPage: 1,
+  totalPages: 1,
+  selected: new Set(),
+  query: '',
+  status: 'all',
+  category: 'all',
+  sort: 'newest'
+};
+
+/* ===== DOM ===== */
+const tableBody = document.getElementById('tableBody');
+const pagination = document.getElementById('pagination');
+const paginationInfo = document.getElementById('paginationInfo');
+const paginationBtns = document.getElementById('paginationBtns');
+const searchInput = document.getElementById('searchInput');
+const statusFilter = document.getElementById('statusFilter');
+const categoryFilter = document.getElementById('categoryFilter');
+const sortSelect = document.getElementById('sortSelect');
+const selectAll = document.getElementById('selectAll');
+const bulkBar = document.getElementById('bulkBar');
+const selectedCount = document.getElementById('selectedCount');
+const totalCount = document.getElementById('totalCount');
+
+/* ===== HELPERS ===== */
+function escapeHtml(str) {
+  const div = document.createElement('div');
+  div.textContent = str || '';
+  return div.innerHTML;
+}
+
+function formatDate(dateStr) {
+  if (!dateStr) return '—';
+  try {
+    return new Date(dateStr).toLocaleDateString('en-US', {
+      year:'numeric', month:'short', day:'numeric'
+    });
+  } catch(e) { return '—'; }
+}
+
+function formatViews(n) {
+  n = Number(n) || 0;
+  if (n >= 1000000) return (n/1000000).toFixed(1) + 'M';
+  if (n >= 1000) return (n/1000).toFixed(1) + 'K';
+  return n.toString();
+}
+
+/* ===== AUTH CHECK ===== */
+(async function init() {
+  const result = await sb.auth.getSession();
+  if (!result.data.session) {
+    window.location.href = /admin/login';
+    return;
+  }
+  loadNews();
+})();
+
+/* ===== LOAD NEWS ===== */
+async function loadNews() {
+  try {
+    const { data, error } = await sb
+      .from('news')
+      .select('id, title, slug, excerpt, featured_image, category, status, views, created_at, published_at')
+      .order('created_at', { ascending: false });
+
+    if (error) {
+      // Table might not exist
+      console.warn('News table error:', error.message);
+      state.allNews = [];
+    } else {
+      state.allNews = data || [];
+    }
+
+    // Populate category filter
+    populateCategories();
+
+    applyFilters();
+
+  } catch (err) {
+    console.error('Load error:', err);
+    state.allNews = [];
+    applyFilters();
+  }
+}
+
+/* ===== CATEGORY FILTER ===== */
+function populateCategories() {
+  const categories = new Set();
+  state.allNews.forEach(n => {
+    if (n.category) categories.add(n.category);
+  });
+
+  categoryFilter.innerHTML = '<option value="all">All Categories</option>';
+  Array.from(categories).sort().forEach(cat => {
+    const opt = document.createElement('option');
+    opt.value = cat;
+    opt.textContent = cat;
+    categoryFilter.appendChild(opt);
+  });
+}
+
+/* ===== FILTER + SORT ===== */
+function applyFilters() {
+  const q = state.query.toLowerCase().trim();
+
+  let filtered = state.allNews.filter(n => {
+    // Status
+    if (state.status !== 'all' && n.status !== state.status) return false;
+
+    // Category
+    if (state.category !== 'all' && n.category !== state.category) return false;
+
+    // Search
+    if (q) {
+      const title = (n.title || '').toLowerCase();
+      const slug = (n.slug || '').toLowerCase();
+      const excerpt = (n.excerpt || '').toLowerCase();
+      if (!title.includes(q) && !slug.includes(q) && !excerpt.includes(q)) return false;
+    }
+
+    return true;
+  });
+
+  // Sort
+  switch (state.sort) {
+    case 'newest':
+      filtered.sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
+      break;
+    case 'oldest':
+      filtered.sort((a, b) => new Date(a.created_at) - new Date(b.created_at));
+      break;
+    case 'views':
+      filtered.sort((a, b) => (b.views || 0) - (a.views || 0));
+      break;
+    case 'title':
+      filtered.sort((a, b) => (a.title || '').localeCompare(b.title || ''));
+      break;
+  }
+
+  state.filtered = filtered;
+
+  // Reset to page 1 if current page too high
+  state.totalPages = Math.max(1, Math.ceil(filtered.length / PER_PAGE));
+  if (state.currentPage > state.totalPages) state.currentPage = state.totalPages;
+
+  render();
+}
+
+/* ===== RENDER ===== */
+function render() {
+  totalCount.textContent = state.allNews.length + ' total';
+
+  // Clear selection that's no longer visible
+  state.selected.forEach(id => {
+    if (!state.filtered.find(n => n.id === id)) {
+      state.selected.delete(id);
+    }
+  });
+
+  if (state.allNews.length === 0) {
+    tableBody.innerHTML = `
+      <div class="empty-state">
+        <div class="empty-icon">📰</div>
+        <div class="empty-title">No news articles yet</div>
+        <div class="empty-desc">Start by creating your first news article.</div>
+        <a href="/admin/news-editor" class="empty-btn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
+          Create News
+        </a>
+      </div>
+    `;
+    pagination.style.display = 'none';
+    updateBulkBar();
+    return;
+  }
+
+  if (state.filtered.length === 0) {
+    tableBody.innerHTML = `
+      <div class="empty-state">
+        <div class="empty-icon">🔍</div>
+        <div class="empty-title">No results found</div>
+        <div class="empty-desc">Try a different search term or filter.</div>
+      </div>
+    `;
+    pagination.style.display = 'none';
+    updateBulkBar();
+    return;
+  }
+
+  // Paginate
+  const start = (state.currentPage - 1) * PER_PAGE;
+  const end = start + PER_PAGE;
+  const pageItems = state.filtered.slice(start, end);
+
+  // Render rows
+  tableBody.innerHTML = pageItems.map(item => {
+    const img = item.featured_image || '';
+    const isSelected = state.selected.has(item.id);
+
+    const thumb = img
+      ? `<img src="${escapeHtml(img)}" alt="" loading="lazy" onerror="this.parentElement.innerHTML='<div class=\\'col-thumb-placeholder\\'>📰</div>'">`
+      : `<div class="col-thumb-placeholder">📰</div>`;
+
+    const statusClass = item.status === 'published' ? 'published' : 'draft';
+    const statusText = item.status === 'published' ? 'Published' : 'Draft';
+
+    return `
+      <div class="table-row" data-id="${item.id}">
+        <div class="col-check">
+          <input type="checkbox" class="row-check" data-id="${item.id}" ${isSelected ? 'checked' : ''}>
+        </div>
+        <div class="col-thumb">${thumb}</div>
+        <div class="col-title">
+          <div class="row-title">${escapeHtml(item.title || 'Untitled')}</div>
+          <div class="row-slug">/${escapeHtml(item.slug || '')}</div>
+        </div>
+        <div class="row-category">
+          🏷 ${escapeHtml(item.category || 'General')}
+        </div>
+        <div>
+          <span class="row-status ${statusClass}">${statusText}</span>
+        </div>
+        <div class="row-date">${formatDate(item.published_at || item.created_at)}</div>
+        <div class="row-views">👁 ${formatViews(item.views)}</div>
+        <div class="row-actions">
+          <a href="/news/article?slug=${encodeURIComponent(item.slug)}" target="_blank" class="row-action view" title="View">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          </a>
+          <a href="/admin/news-editor?id=${item.id}" class="row-action" title="Edit">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+          </a>
+          <button class="row-action delete" data-delete="${item.id}" title="Delete">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M8 6V4a2 2 0 012-2h4a2 2 0 012 2v2M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/></svg>
+          </button>
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  // Attach row checkbox handlers
+  tableBody.querySelectorAll('.row-check').forEach(cb => {
+    cb.addEventListener('change', function() {
+      const id = this.dataset.id;
+      if (this.checked) state.selected.add(id);
+      else state.selected.delete(id);
+      updateBulkBar();
+      updateSelectAll();
+    });
+  });
+
+  // Attach delete buttons
+  tableBody.querySelectorAll('[data-delete]').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const id = this.dataset.delete;
+      const item = state.allNews.find(n => n.id === id);
+      if (item) deleteNews(id, item.title);
+    });
+  });
+
+  // Render pagination
+  renderPagination();
+
+  // Update bulk bar
+  updateBulkBar();
+  updateSelectAll();
+}
+
+/* ===== PAGINATION ===== */
+function renderPagination() {
+  if (state.totalPages <= 1) {
+    pagination.style.display = 'none';
+    return;
+  }
+
+  pagination.style.display = 'flex';
+
+  const start = (state.currentPage - 1) * PER_PAGE + 1;
+  const end = Math.min(state.currentPage * PER_PAGE, state.filtered.length);
+  paginationInfo.textContent = `Showing ${start}-${end} of ${state.filtered.length}`;
+
+  const pages = [];
+  const delta = 1;
+  for (let i = Math.max(2, state.currentPage - delta); i <= Math.min(state.totalPages - 1, state.currentPage + delta); i++) {
+    pages.push(i);
+  }
+
+  const allPages = [];
+  if (state.currentPage - delta > 2) {
+    allPages.push(1, '...');
+  } else {
+    allPages.push(1);
+  }
+  allPages.push(...pages);
+  if (state.currentPage + delta < state.totalPages - 1) {
+    allPages.push('...', state.totalPages);
+  } else if (state.totalPages > 1) {
+    allPages.push(state.totalPages);
+  }
+
+  paginationBtns.innerHTML = '';
+
+  // Prev
+  const prevBtn = document.createElement('button');
+  prevBtn.className = 'page-btn';
+  prevBtn.innerHTML = '‹';
+  prevBtn.disabled = state.currentPage === 1;
+  prevBtn.addEventListener('click', () => {
+    if (state.currentPage > 1) {
+      state.currentPage--;
+      render();
+      scrollTop();
+    }
+  });
+  paginationBtns.appendChild(prevBtn);
+
+  // Pages
+  allPages.forEach(p => {
+    if (p === '...') {
+      const dots = document.createElement('span');
+      dots.className = 'page-btn';
+      dots.style.border = 'none';
+      dots.style.cursor = 'default';
+      dots.textContent = '…';
+      paginationBtns.appendChild(dots);
+    } else {
+      const btn = document.createElement('button');
+      btn.className = 'page-btn' + (p === state.currentPage ? ' active' : '');
+      btn.textContent = p;
+      btn.disabled = p === state.currentPage;
+      if (p !== state.currentPage) {
+        btn.addEventListener('click', () => {
+          state.currentPage = p;
+          render();
+          scrollTop();
+        });
+      }
+      paginationBtns.appendChild(btn);
+    }
+  });
+
+  // Next
+  const nextBtn = document.createElement('button');
+  nextBtn.className = 'page-btn';
+  nextBtn.innerHTML = '›';
+  nextBtn.disabled = state.currentPage === state.totalPages;
+  nextBtn.addEventListener('click', () => {
+    if (state.currentPage < state.totalPages) {
+      state.currentPage++;
+      render();
+      scrollTop();
+    }
+  });
+  paginationBtns.appendChild(nextBtn);
+}
+
+function scrollTop() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+/* ===== BULK SELECT ===== */
+function updateBulkBar() {
+  const count = state.selected.size;
+  if (count > 0) {
+    bulkBar.classList.add('visible');
+    selectedCount.textContent = count;
+  } else {
+    bulkBar.classList.remove('visible');
+  }
+}
+
+function updateSelectAll() {
+  const visible = state.filtered.slice(
+    (state.currentPage - 1) * PER_PAGE,
+    state.currentPage * PER_PAGE
+  );
+  if (visible.length === 0) {
+    selectAll.checked = false;
+    selectAll.indeterminate = false;
+    return;
+  }
+  const allSelected = visible.every(n => state.selected.has(n.id));
+  const someSelected = visible.some(n => state.selected.has(n.id));
+  selectAll.checked = allSelected;
+  selectAll.indeterminate = someSelected && !allSelected;
+}
+
+selectAll.addEventListener('change', function() {
+  const start = (state.currentPage - 1) * PER_PAGE;
+  const end = start + PER_PAGE;
+  const pageItems = state.filtered.slice(start, end);
+
+  if (this.checked) {
+    pageItems.forEach(n => state.selected.add(n.id));
+  } else {
+    pageItems.forEach(n => state.selected.delete(n.id));
+  }
+  render();
+});
+
+document.getElementById('cancelSelectionBtn').addEventListener('click', () => {
+  state.selected.clear();
+  render();
+});
+
+/* ===== BULK DELETE ===== */
+document.getElementById('bulkDeleteBtn').addEventListener('click', async function() {
+  const count = state.selected.size;
+  if (count === 0) return;
+  if (!confirm(`Delete ${count} article${count > 1 ? 's' : ''}? This cannot be undone.`)) return;
+
+  const ids = Array.from(state.selected);
+  this.disabled = true;
+  this.textContent = 'Deleting...';
+
+  try {
+    const { error } = await sb.from('news').delete().in('id', ids);
+    if (error) throw error;
+
+    state.selected.clear();
+    await loadNews();
+    showToast(`✅ Deleted ${ids.length} article(s)`, 'success');
+
+  } catch (err) {
+    console.error('Bulk delete error:', err);
+    alert('Failed to delete: ' + err.message);
+  } finally {
+    this.disabled = false;
+    this.innerHTML = '🗑 Delete Selected';
+  }
+});
+
+/* ===== SINGLE DELETE ===== */
+async function deleteNews(id, title) {
+  if (!confirm(`Delete "${title}"?\n\nThis cannot be undone.`)) return;
+
+  try {
+    const { error } = await sb.from('news').delete().eq('id', id);
+    if (error) throw error;
+
+    state.selected.delete(id);
+    await loadNews();
+    showToast('✅ Article deleted', 'success');
+
+  } catch (err) {
+    console.error('Delete error:', err);
+    alert('Failed to delete: ' + err.message);
+  }
+}
+
+/* ===== FILTER HANDLERS ===== */
+let searchTimer;
+searchInput.addEventListener('input', function(e) {
+  clearTimeout(searchTimer);
+  searchTimer = setTimeout(() => {
+    state.query = e.target.value;
+    state.currentPage = 1;
+    applyFilters();
+  }, 250);
+});
+
+statusFilter.addEventListener('change', function(e) {
+  state.status = e.target.value;
+  state.currentPage = 1;
+  applyFilters();
+});
+
+categoryFilter.addEventListener('change', function(e) {
+  state.category = e.target.value;
+  state.currentPage = 1;
+  applyFilters();
+});
+
+sortSelect.addEventListener('change', function(e) {
+  state.sort = e.target.value;
+  state.currentPage = 1;
+  applyFilters();
+});
+
+/* ===== TOAST ===== */
+function showToast(msg, type, duration) {
+  type = type || 'info';
+  duration = duration || 2500;
+
+  let t = document.getElementById('_adminToast');
+  if (!t) {
+    t = document.createElement('div');
+    t.id = '_adminToast';
+    t.style.cssText = 'position:fixed;bottom:24px;right:24px;background:#1a1a2e;color:#fff;padding:14px 22px;border-radius:12px;font-size:13px;font-weight:600;box-shadow:0 12px 32px rgba(0,0,0,.25);z-index:3000;transform:translateY(200%);transition:transform .3s cubic-bezier(.4,0,.2,1);max-width:340px;';
+    document.body.appendChild(t);
+  }
+
+  t.textContent = msg;
+  if (type === 'success') t.style.background = '#10b981';
+  else if (type === 'error') t.style.background = '#ef4444';
+  else t.style.background = '#1a1a2e';
+
+  t.style.transform = 'translateY(0)';
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => {
+    t.style.transform = 'translateY(200%)';
+  }, duration);
+}
+</script>
+
+</body>
+</html>

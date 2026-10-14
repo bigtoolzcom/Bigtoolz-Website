@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2563eb">
+
+<title>Image Crop - Crop Images Online Free | BigToolz</title>
+<meta name="description" content="Crop images online free with interactive handles. Square, 16:9, 4:3, Story presets. Rotate, resize, download instantly. No upload, works in your browser.">
+<meta name="keywords" content="image crop, crop image online, image cropper, crop photo, trim image, picture crop free">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://bigtoolz.com/tools/image-tools/image-crop/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Image Crop - Free Online Tool | BigToolz">
+<meta property="og:description" content="Crop images online instantly free, no upload, interactive crop handles.">
+<meta property="og:url" content="https://bigtoolz.com/tools/image-tools/image-crop/">
+<meta property="og:image" content="https://bigtoolz.com/assets/images/og-image.jpg">
+<meta property="og:site_name" content="BigToolz">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Image Crop - BigToolz">
+<meta name="twitter:description" content="Crop images instantly free, no upload.">
+<meta name="twitter:image" content="https://bigtoolz.com/assets/images/twitter-card.jpg">
+
+<link rel="icon" href="/assets/images/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/images/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#f8f9fc;color:#1a1a2e;overflow-x:hidden;line-height:1.5}
+
+  .header{background:#fff;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;position:sticky;top:0;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+  .header-left{display:flex;align-items:center;gap:40px}
+  .logo{display:flex;align-items:center;gap:8px;font-size:22px;font-weight:800;color:#1a1a2e;text-decoration:none}
+  .logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#3b82f6,#2563eb);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px}
+  .logo span{color:#2563eb}
+  .nav{display:flex;align-items:center;gap:28px;list-style:none}
+  .nav a{text-decoration:none;color:#4b5563;font-size:14px;font-weight:500;transition:color .2s}
+  .nav a:hover,.nav a.active{color:#2563eb}
+  .header-right{display:flex;align-items:center;gap:16px}
+  .search-btn,.theme-btn{width:36px;height:36px;border-radius:50%;border:none;background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#4b5563}
+  .search-btn:hover,.theme-btn:hover{background:#f3f4f6}
+  .bookmark-btn{display:flex;align-items:center;gap:8px;background:#2563eb;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
+  .bookmark-btn:hover{background:#1d4ed8}
+
+  .hero{background:linear-gradient(135deg,#0a0e27 0%,#1a1a4e 40%,#2d1b69 70%,#4c1d95 100%);padding:40px 40px 60px;position:relative;overflow:hidden;color:#fff}
+  .hero::before{content:'';position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(249,115,22,.25) 0%,transparent 70%);border-radius:50%}
+  .hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+  .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px;flex-wrap:wrap}
+  .breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none}
+  .breadcrumb a:hover{color:#fff}
+  .breadcrumb .sep{color:rgba(255,255,255,.4)}
+  .breadcrumb .current{color:#fff;font-weight:500}
+  .hero-title-row{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+  .hero-icon{width:60px;height:60px;background:#f97316;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px;color:#fff;flex-shrink:0;box-shadow:0 8px 24px rgba(249,115,22,.4)}
+  .hero-title{font-size:42px;font-weight:800;line-height:1.15}
+  .hero-title .blue{color:#fb923c}
+  .hero-desc{font-size:15px;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:24px;max-width:560px}
+  .hero-features{display:flex;gap:24px;flex-wrap:wrap}
+  .hero-feature{display:flex;align-items:center;gap:6px;font-size:13px;color:#fff;font-weight:500}
+  .hero-feature .check{width:18px;height:18px;border-radius:50%;background:#f97316;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;flex-shrink:0}
+
+  .main-content{max-width:1200px;margin:0 auto;padding:40px;display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start}
+  .tool-content{min-width:0}
+
+  .workspace{background:#fff;border-radius:16px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,.06);border:1px solid #e5e7eb;margin-bottom:24px}
+
+  .dropzone{border:2px dashed #fed7aa;border-radius:12px;padding:50px 30px;text-align:center;background:#fff7ed;margin-bottom:24px;transition:all .2s;cursor:pointer}
+  .dropzone:hover,.dropzone.dragover{border-color:#f97316;background:#ffedd5}
+  .dropzone-icon{width:60px;height:60px;background:linear-gradient(135deg,#f97316,#ea580c);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;color:#fff;font-size:26px;transition:transform .2s}
+  .dropzone:hover .dropzone-icon{transform:translateY(-4px)}
+  .dropzone-title{font-size:16px;font-weight:700;color:#1a1a2e;margin-bottom:8px}
+  .dropzone-sub{font-size:14px;color:#6b7280;margin-bottom:20px}
+  .dropzone-sub a{color:#f97316;font-weight:600;text-decoration:none}
+  .choose-btn{display:inline-flex;align-items:center;gap:8px;background:#f97316;color:#fff;border:none;padding:12px 28px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;transition:background .2s}
+  .choose-btn:hover{background:#ea580c}
+  .dropzone-info{font-size:12px;color:#9ca3af;display:flex;align-items:center;justify-content:center;gap:8px;margin-top:16px;flex-wrap:wrap}
+  .dropzone-info .divider{color:#d1d5db}
+  .file-input{display:none}
+
+  /* Crop editor */
+  .crop-editor{display:none;margin-bottom:24px}
+  .crop-editor.visible{display:block}
+
+  .editor-toolbar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px;padding:12px;background:#fff7ed;border-radius:10px;border:1px solid #fed7aa;align-items:center}
+  .toolbar-label{font-size:12px;font-weight:700;color:#9a3412;text-transform:uppercase;letter-spacing:.5px;margin-right:4px}
+  .ratio-btn{padding:8px 14px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;font-size:12px;font-weight:600;color:#4b5563;cursor:pointer;font-family:inherit;transition:all .2s}
+  .ratio-btn:hover{border-color:#f97316;background:#fff7ed;color:#ea580c}
+  .ratio-btn.active{background:#f97316;color:#fff;border-color:#f97316}
+  .rotate-btn{padding:8px 14px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;font-size:12px;font-weight:600;color:#4b5563;cursor:pointer;font-family:inherit;transition:all .2s}
+  .rotate-btn:hover{border-color:#f97316;background:#fff7ed;color:#ea580c}
+
+  /* Canvas wrapper */
+  .canvas-wrapper{position:relative;background:#1a1a2e;border-radius:12px;padding:20px;display:flex;align-items:center;justify-content:center;min-height:340px;overflow:hidden}
+  .canvas-stage{position:relative;display:inline-block;max-width:100%}
+  .canvas-stage img{display:block;max-width:100%;max-height:500px;user-select:none;-webkit-user-drag:none;border-radius:4px}
+
+  /* Crop overlay */
+  .crop-overlay{position:absolute;inset:0;pointer-events:none}
+  .crop-mask{position:absolute;inset:0;background:rgba(0,0,0,.5);pointer-events:none}
+  .crop-box{position:absolute;border:2px solid #f97316;box-shadow:0 0 0 9999px rgba(0,0,0,.5);pointer-events:auto;cursor:move;background:transparent}
+  .crop-box::before,.crop-box::after{content:'';position:absolute;background:rgba(255,255,255,.4);pointer-events:none}
+  .crop-box::before{left:33.33%;right:33.33%;top:0;bottom:0;border-left:1px dashed rgba(255,255,255,.4);border-right:1px dashed rgba(255,255,255,.4);background:transparent}
+  .crop-box::after{top:33.33%;bottom:33.33%;left:0;right:0;border-top:1px dashed rgba(255,255,255,.4);border-bottom:1px dashed rgba(255,255,255,.4);background:transparent}
+
+  .crop-handle{position:absolute;width:14px;height:14px;background:#f97316;border:2px solid #fff;border-radius:50%;pointer-events:auto;z-index:10;box-shadow:0 2px 6px rgba(0,0,0,.3)}
+  .crop-handle.nw{top:-7px;left:-7px;cursor:nw-resize}
+  .crop-handle.ne{top:-7px;right:-7px;cursor:ne-resize}
+  .crop-handle.sw{bottom:-7px;left:-7px;cursor:sw-resize}
+  .crop-handle.se{bottom:-7px;right:-7px;cursor:se-resize}
+  .crop-handle.n{top:-7px;left:50%;transform:translateX(-50%);cursor:n-resize}
+  .crop-handle.s{bottom:-7px;left:50%;transform:translateX(-50%);cursor:s-resize}
+  .crop-handle.e{right:-7px;top:50%;transform:translateY(-50%);cursor:e-resize}
+  .crop-handle.w{left:-7px;top:50%;transform:translateY(-50%);cursor:w-resize}
+
+  .crop-info{position:absolute;top:-32px;left:0;background:#f97316;color:#fff;padding:4px 10px;border-radius:6px;font-size:11px;font-weight:700;white-space:nowrap;pointer-events:none}
+
+  /* Options */
+  .options{background:#fff7ed;border-radius:12px;padding:20px;margin-bottom:20px;border:1px solid #fed7aa}
+  .options-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+  .options-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .option-group label{display:block;font-size:12px;font-weight:600;color:#4b5563;margin-bottom:6px}
+  .option-group select{width:100%;padding:10px 12px;border:1px solid #e5e7eb;border-radius:8px;font-size:13px;font-family:inherit;color:#1a1a2e;background:#fff;outline:none;transition:border-color .2s}
+  .option-group select:focus{border-color:#f97316;box-shadow:0 0 0 3px rgba(249,115,22,.1)}
+
+  .quality-group{margin-top:16px}
+  .quality-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+  .quality-header label{font-size:12px;font-weight:600;color:#4b5563}
+  .quality-value{font-size:13px;font-weight:700;color:#f97316}
+  .range-slider{width:100%;-webkit-appearance:none;appearance:none;height:6px;background:#fed7aa;border-radius:3px;outline:none}
+  .range-slider::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:20px;height:20px;background:#f97316;border-radius:50%;cursor:pointer;box-shadow:0 2px 6px rgba(249,115,22,.4);transition:transform .15s}
+  .range-slider::-webkit-slider-thumb:hover{transform:scale(1.15)}
+  .range-slider::-moz-range-thumb{width:20px;height:20px;background:#f97316;border:none;border-radius:50%;cursor:pointer}
+
+  .actions{display:flex;gap:12px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 28px;border-radius:10px;font-size:15px;font-weight:700;font-family:inherit;cursor:pointer;border:none;transition:all .2s;text-decoration:none}
+  .btn-primary{background:#f97316;color:#fff;flex:1;box-shadow:0 4px 12px rgba(249,115,22,.2)}
+  .btn-primary:hover:not(:disabled){background:#ea580c;transform:translateY(-2px);box-shadow:0 6px 20px rgba(249,115,22,.3)}
+  .btn-primary:disabled{opacity:.5;cursor:not-allowed;transform:none}
+  .btn-secondary{background:#fff;color:#f97316;border:1px solid #e5e7eb}
+  .btn-secondary:hover{border-color:#f97316;background:#fff7ed}
+  .btn-success{background:#10b981;color:#fff}
+  .btn-success:hover{background:#059669}
+
+  .result-area{display:none;margin-top:20px;padding:20px;background:#fff7ed;border-radius:12px;border:1px solid #fed7aa}
+  .result-area.visible{display:block}
+  .result-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:12px}
+  .result-title{font-size:16px;font-weight:700;color:#1a1a2e;display:flex;align-items:center;gap:8px}
+  .result-title .success-icon{width:24px;height:24px;background:#10b981;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px}
+  .result-preview{display:flex;justify-content:center;margin-bottom:16px}
+  .result-preview img{max-width:100%;max-height:400px;border-radius:8px;box-shadow:0 4px 16px rgba(0,0,0,.1)}
+  .result-meta{font-size:13px;color:#6b7280;text-align:center;display:flex;justify-content:center;gap:20px;flex-wrap:wrap}
+
+  .seo-content{background:#fff;border-radius:16px;padding:32px;border:1px solid #e5e7eb;margin-bottom:24px}
+  .seo-content h2{font-size:22px;font-weight:800;color:#1a1a2e;margin-bottom:14px;margin-top:28px;display:flex;align-items:center;gap:10px}
+  .seo-content h2:first-child{margin-top:0}
+  .seo-content h3{font-size:16px;font-weight:700;color:#1a1a2e;margin:20px 0 10px}
+  .seo-content p{font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:14px}
+  .seo-content ul{list-style:none;padding-left:0;margin-bottom:16px}
+  .seo-content ul li{position:relative;padding-left:24px;font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:8px}
+  .seo-content ul li::before{content:'';position:absolute;left:6px;top:12px;width:6px;height:6px;background:#f97316;border-radius:50%}
+  .seo-content a{color:#2563eb;text-decoration:none;font-weight:600}
+  .seo-content a:hover{text-decoration:underline}
+  .seo-content strong{color:#1a1a2e;font-weight:700}
+
+  .ratio-table{width:100%;border-collapse:collapse;margin:20px 0;border:1px solid #e5e7eb;border-radius:8px;overflow:hidden}
+  .ratio-table th{background:#fff7ed;padding:12px 16px;text-align:left;font-size:13px;font-weight:700;color:#1a1a2e;border-bottom:1px solid #e5e7eb}
+  .ratio-table td{padding:12px 16px;font-size:13px;color:#4b5563;border-bottom:1px solid #f3f4f6}
+  .ratio-table tr:last-child td{border-bottom:none}
+
+  .how-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:20px}
+  .how-step{background:#fff7ed;border-radius:12px;padding:20px;border:1px solid #fed7aa}
+  .how-step-num{width:36px;height:36px;border-radius:50%;background:#f97316;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;margin-bottom:12px}
+  .how-step-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+  .how-step-desc{font-size:13px;color:#6b7280;line-height:1.6}
+
+  .faq-item{background:#fff7ed;border:1px solid #fed7aa;border-radius:12px;margin-bottom:10px;overflow:hidden;transition:border-color .2s}
+  .faq-item:hover{border-color:#f97316}
+  .faq-question{width:100%;background:none;border:none;padding:18px 22px;font-size:15px;font-weight:700;color:#1a1a2e;text-align:left;cursor:pointer;font-family:inherit;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .faq-question .chev{font-size:12px;color:#f97316;transition:transform .2s;flex-shrink:0}
+  .faq-item.open .faq-question .chev{transform:rotate(180deg)}
+  .faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 22px}
+  .faq-item.open .faq-answer{max-height:500px;padding-bottom:18px}
+  .faq-answer p{font-size:14px;color:#6b7280;line-height:1.7;margin:0}
+
+  .sidebar{background:#fff;border-radius:16px;padding:24px;border:1px solid #e5e7eb;position:sticky;top:80px;margin-bottom:24px}
+  .sidebar-header{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:800;color:#1a1a2e;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid #f3f4f6}
+  .sidebar-list{display:flex;flex-direction:column;gap:8px}
+  .sidebar-item{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;cursor:pointer;transition:background .2s;text-decoration:none;color:inherit;border:1px solid #f3f4f6}
+  .sidebar-item:hover{background:#fff7ed;border-color:#fed7aa}
+  .sidebar-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;flex-shrink:0}
+  .sidebar-info{flex:1;min-width:0}
+  .sidebar-title{font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:2px}
+  .sidebar-desc{font-size:11px;color:#9ca3af;line-height:1.4}
+
+  .footer{background:#0a0e27;padding:60px 40px 30px;color:#fff;margin-top:40px}
+  .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:40px}
+  .footer-brand{display:flex;align-items:center;gap:8px;font-size:20px;font-weight:800;margin-bottom:12px}
+  .footer-brand span{color:#60a5fa}
+  .footer-tagline{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px}
+  .footer-social{display:flex;gap:12px}
+  .footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:16px;transition:background .2s}
+  .footer-social a:hover{background:rgba(255,255,255,.2)}
+  .footer-heading{font-size:14px;font-weight:700;margin-bottom:20px;color:#fff}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .footer-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;transition:color .2s}
+  .footer-links a:hover{color:#60a5fa}
+  .footer-bottom{max-width:1200px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  .footer-bottom-left{display:flex;gap:20px;font-size:12px;color:rgba(255,255,255,.5)}
+  .footer-bottom-right,.footer-bottom-links a{font-size:12px;color:rgba(255,255,255,.5);text-decoration:none}
+  .footer-bottom-links{display:flex;gap:20px}
+
+  .toast{position:fixed;bottom:24px;right:24px;background:#1a1a2e;color:#fff;padding:14px 20px;border-radius:10px;font-size:13px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:3000;transform:translateY(200%);transition:transform .3s ease;max-width:320px}
+  .toast.visible{transform:translateY(0)}
+  .toast.success{background:#10b981}
+  .toast.error{background:#ef4444}
+
+  @media(max-width:1024px){
+    .main-content{grid-template-columns:1fr;padding:24px 20px}
+    .sidebar{position:static}
+    .how-steps{grid-template-columns:repeat(2,1fr)}
+    .options-grid{grid-template-columns:1fr 1fr}
+  }
+  @media(max-width:768px){
+    .header{padding:0 20px}.nav{display:none}
+    .hero{padding:24px 20px 40px}
+    .hero-title{font-size:28px}
+    .hero-icon{width:48px;height:48px;font-size:20px}
+    .hero-title-row{flex-direction:column;align-items:flex-start;gap:12px}
+    .main-content{padding:20px 16px}
+    .workspace{padding:20px}
+    .dropzone{padding:32px 16px}
+    .how-steps{grid-template-columns:1fr}
+    .options-grid{grid-template-columns:1fr}
+    .seo-content{padding:20px}
+    .footer-inner{grid-template-columns:1fr 1fr}
+    .toast{left:16px;right:16px;bottom:16px;max-width:none}
+    .canvas-stage img{max-height:340px}
+  }
+  @media(max-width:576px){
+    .header{padding:0 16px}.header-right .search-btn,.header-right .theme-btn{display:none}
+    .hero-title{font-size:24px}
+    .actions{flex-direction:column}
+    .btn{width:100%}
+    .btn-primary{flex:none}
+    .footer-inner{grid-template-columns:1fr}
+    .footer-bottom{flex-direction:column;text-align:center}
+    .ratio-table th,.ratio-table td{padding:8px 10px;font-size:12px}
+    .ratio-btn{padding:6px 10px;font-size:11px}
+  }
+
+  html[data-theme="dark"] body{background:#0f172a;color:#f1f5f9}
+  html[data-theme="dark"] .header,html[data-theme="dark"] .workspace,html[data-theme="dark"] .seo-content,html[data-theme="dark"] .sidebar{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .logo,html[data-theme="dark"] .hero-title,html[data-theme="dark"] .seo-content h2,html[data-theme="dark"] .seo-content h3,html[data-theme="dark"] .faq-question,html[data-theme="dark"] .result-title,html[data-theme="dark"] .sidebar-header,html[data-theme="dark"] .sidebar-title,html[data-theme="dark"] .options-title{color:#f1f5f9}
+  html[data-theme="dark"] .nav a{color:#cbd5e1}
+  html[data-theme="dark"] .dropzone{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .options,html[data-theme="dark"] .how-step,html[data-theme="dark"] .faq-item,html[data-theme="dark"] .editor-toolbar,html[data-theme="dark"] .result-area{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .option-group select{background:#1e293b;border-color:#334155;color:#f1f5f9}
+  html[data-theme="dark"] .seo-content p,html[data-theme="dark"] .seo-content ul li,html[data-theme="dark"] .faq-answer p{color:#cbd5e1}
+  html[data-theme="dark"] .ratio-table{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .ratio-table th{background:#0f172a;color:#f1f5f9;border-color:#334155}
+  html[data-theme="dark"] .ratio-table td{border-color:#334155;color:#cbd5e1}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type": "SoftwareApplication", "name": "Image Crop", "url": "https://bigtoolz.com/tools/image-tools/image-crop/", "applicationCategory": "MultimediaApplication", "operatingSystem": "Any (Web-based)", "description": "Free online image crop tool with interactive handles, aspect ratio presets, and rotation. Works in your browser.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.8", "ratingCount": "2456"}},
+    {"@type": "HowTo", "name": "How to Crop Images Online", "step": [
+      {"@type": "HowToStep", "name": "Upload Image", "text": "Drag and drop or select an image file."},
+      {"@type": "HowToStep", "name": "Adjust Crop", "text": "Drag handles to resize the crop area, pick an aspect ratio, or rotate the image."},
+      {"@type": "HowToStep", "name": "Crop", "text": "Click Crop Image to process."},
+      {"@type": "HowToStep", "name": "Download", "text": "Download the cropped image."}
+    ]},
+    {"@type": "FAQPage", "mainEntity": [
+      {"@type": "Question", "name": "How do I crop an image online for free?", "acceptedAnswer": {"@type": "Answer", "text": "Upload your image, drag the crop handles to select the area you want, then click Crop Image. The cropped image downloads instantly free, no signup."}},
+      {"@type": "Question", "name": "Can I crop to a specific aspect ratio?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Use the preset buttons to lock the crop to square (1:1), widescreen (16:9), portrait (4:3), story (9:16), or Instagram post ratios."}},
+      {"@type": "Question", "name": "Does cropping reduce image quality?", "acceptedAnswer": {"@type": "Answer", "text": "No. Cropping removes pixels outside the selection but preserves the quality of the pixels inside. The cropped result is exactly as sharp as the original within that area."}},
+      {"@type": "Question", "name": "Can I rotate the image before cropping?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Use the rotation buttons (90° left, 90° right, 180°) in the toolbar to rotate the image before adjusting the crop area."}},
+      {"@type": "Question", "name": "Are my images uploaded to a server?", "acceptedAnswer": {"@type": "Answer", "text": "No. All cropping happens in your browser using the Canvas API. Your images never leave your device."}}
+    ]},
+    {"@type": "BreadcrumbList", "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bigtoolz.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://bigtoolz.com/tools/"},
+      {"@type": "ListItem", "position": 3, "name": "Image Tools", "item": "https://bigtoolz.com/tools/image-tools/"},
+      {"@type": "ListItem", "position": 4, "name": "Image Crop", "item": "https://bigtoolz.com/tools/image-tools/image-crop/"}
+    ]}
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-left">
+    <a href="/" class="logo"><div class="logo-icon">⚒</div>BigToolz</span></a>
+    <nav><ul class="nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/tools/" class="active">All Tools</a></li>
+      <li><a href="/tools/categories">Categories</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul></nav>
+  </div>
+  <div class="header-right">
+   
+    <button class="theme-btn" aria-label="Toggle theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
+   
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <nav class="breadcrumb">
+      <a href="/">Home</a><span class="sep">›</span>
+      <a href="/tools/">Tools</a><span class="sep">›</span>
+      <a href="/tools/image-tools/">Image Tools</a><span class="sep">›</span>
+      <span class="current">Image Crop</span>
+    </nav>
+    <div class="hero-title-row">
+      <div class="hero-icon">✂️</div>
+      <h1 class="hero-title">Image <span class="blue">Crop</span></h1>
+    </div>
+    <p class="hero-desc">
+      Crop images precisely with interactive drag handles. Aspect ratio presets, rotation, and quality control all in your browser. No upload, no signup, 100% private.
+    </p>
+    <div class="hero-features">
+      <div class="hero-feature"><span class="check">✓</span> Drag Handles</div>
+      <div class="hero-feature"><span class="check">✓</span> Ratio Presets</div>
+      <div class="hero-feature"><span class="check">✓</span> Rotate First</div>
+      <div class="hero-feature"><span class="check">✓</span> Live Preview</div>
+    </div>
+  </div>
+</section>
+
+<div class="main-content">
+
+  <div class="tool-content">
+
+    <div class="workspace">
+
+      <div class="dropzone" id="dropzone">
+        <div class="dropzone-icon">⬆</div>
+        <div class="dropzone-title">Drag & drop your image here</div>
+        <div class="dropzone-sub">or <a href="#" id="browseLink">click to browse</a></div>
+        <button class="choose-btn" id="chooseBtn" type="button">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+          Choose Image
+        </button>
+        <div class="dropzone-info">
+          <span>JPG, PNG, WebP, GIF</span>
+          <span class="divider">|</span>
+          <span>Single image at a time</span>
+        </div>
+        <input type="file" id="fileInput" class="file-input" accept="image/*">
+      </div>
+
+      <!-- Crop Editor -->
+      <div class="crop-editor" id="cropEditor">
+
+        <div class="editor-toolbar">
+          <span class="toolbar-label">Ratio:</span>
+          <button class="ratio-btn active" data-ratio="free">Free</button>
+          <button class="ratio-btn" data-ratio="1:1">1:1</button>
+          <button class="ratio-btn" data-ratio="16:9">16:9</button>
+          <button class="ratio-btn" data-ratio="4:3">4:3</button>
+          <button class="ratio-btn" data-ratio="9:16">9:16</button>
+          <button class="ratio-btn" data-ratio="3:2">3:2</button>
+          <button class="ratio-btn" data-ratio="2:3">2:3</button>
+
+          <span class="toolbar-label" style="margin-left:auto;">Rotate:</span>
+          <button class="rotate-btn" data-rotate="-90">↶ Left</button>
+          <button class="rotate-btn" data-rotate="90">↷ Right</button>
+          <button class="rotate-btn" data-rotate="180">↺ 180°</button>
+        </div>
+
+        <div class="canvas-wrapper">
+          <div class="canvas-stage" id="canvasStage">
+            <img id="sourceImage" alt="Source">
+            <div class="crop-overlay">
+              <div class="crop-box" id="cropBox">
+                <div class="crop-info" id="cropInfo">0 × 0</div>
+                <div class="crop-handle nw" data-handle="nw"></div>
+                <div class="crop-handle ne" data-handle="ne"></div>
+                <div class="crop-handle sw" data-handle="sw"></div>
+                <div class="crop-handle se" data-handle="se"></div>
+                <div class="crop-handle n" data-handle="n"></div>
+                <div class="crop-handle s" data-handle="s"></div>
+                <div class="crop-handle e" data-handle="e"></div>
+                <div class="crop-handle w" data-handle="w"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="options">
+          <div class="options-title">⚙️ Output Settings</div>
+          <div class="options-grid">
+            <div class="option-group">
+              <label>Output Format</label>
+              <select id="outFormat">
+                <option value="image/jpeg">JPEG</option>
+                <option value="image/png">PNG</option>
+                <option value="image/webp" selected>WebP</option>
+              </select>
+            </div>
+            <div class="option-group">
+              <label>Crop Dimensions</label>
+              <input type="text" id="cropDims" readonly style="width:100%;padding:10px 12px;border:1px solid #e5e7eb;border-radius:8px;font-size:13px;font-family:inherit;background:#f9fafb;color:#6b7280;outline:none;">
+            </div>
+            <div class="option-group">
+              <label>Actions</label>
+              <button class="btn btn-secondary" id="resetCrop" style="padding:10px 16px;font-size:13px;width:100%;">↺ Reset Crop</button>
+            </div>
+          </div>
+
+          <div class="quality-group">
+            <div class="quality-header">
+              <label>Quality (for JPEG/WebP)</label>
+              <span class="quality-value" id="qualityValue">92%</span>
+            </div>
+            <input type="range" id="qualitySlider" class="range-slider" min="50" max="100" value="92" step="1">
+          </div>
+        </div>
+
+        <div class="actions">
+          <button class="btn btn-primary" id="cropBtn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 2v14a2 2 0 002 2h14M18 22V8a2 2 0 00-2-2H2"/></svg>
+            Crop Image
+          </button>
+          <button class="btn btn-secondary" id="newImageBtn">Choose New Image</button>
+        </div>
+
+        <div class="result-area" id="resultArea">
+          <div class="result-header">
+            <div class="result-title"><span class="success-icon">✓</span> Cropped Successfully</div>
+            <button class="btn btn-success" id="downloadBtn" style="padding:10px 20px;font-size:13px;">⬇ Download</button>
+          </div>
+          <div class="result-preview"><img id="resultPreview" alt="Cropped result"></div>
+          <div class="result-meta" id="resultMeta"></div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- SEO Content -->
+    <div class="seo-content">
+
+      <h2>✂️ What is Image Crop?</h2>
+      <p>
+        <strong>Image Crop</strong> is a free online tool that lets you trim, trim away, or cut portions of an image to keep only the part you want. Whether you need a square profile picture, a 16:9 video thumbnail, or you want to remove distracting elements from a photo, cropping is one of the most common image editing tasks and our tool makes it fast and easy.
+      </p>
+      <p>
+        Unlike most online croppers, BigToolz processes images <strong>100% in your browser</strong>. Your images <strong>never uploaded to any server</strong> the entire crop happens on your device using HTML5 Canvas. Complete privacy, instant results, no signup.
+      </p>
+
+      <h2>🚀 How to Crop Images</h2>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-step-num">1</div>
+          <div class="how-step-title">Upload Image</div>
+          <div class="how-step-desc">Drag & drop or click "Choose Image" to select a file.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">2</div>
+          <div class="how-step-title">Adjust Crop</div>
+          <div class="how-step-desc">Drag handles to resize the crop area. Pick a ratio or rotate.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">3</div>
+          <div class="how-step-title">Crop</div>
+          <div class="how-step-desc">Click "Crop Image" to apply the crop.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">4</div>
+          <div class="how-step-title">Download</div>
+          <div class="how-step-desc">Download the cropped image instantly.</div>
+        </div>
+      </div>
+
+      <h2>📐 Common Aspect Ratios Explained</h2>
+      <table class="ratio-table">
+        <thead>
+          <tr><th>Ratio</th><th>Use Case</th><th>Example Size</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>1:1</strong></td><td>Profile pictures, Instagram posts</td><td>1080 × 1080</td></tr>
+          <tr><td><strong>16:9</strong></td><td>YouTube thumbnails, widescreen video</td><td>1920 × 1080</td></tr>
+          <tr><td><strong>4:3</strong></td><td>Classic photos, presentations</td><td>1600 × 1200</td></tr>
+          <tr><td><strong>9:16</strong></td><td>Instagram Stories, TikTok, Reels</td><td>1080 × 1920</td></tr>
+          <tr><td><strong>3:2</strong></td><td>DSLR photos, prints (6×4)</td><td>1800 × 1200</td></tr>
+          <tr><td><strong>2:3</strong></td><td>Portraits, Pinterest Pins</td><td>1000 × 1500</td></tr>
+        </tbody>
+      </table>
+
+      <h2>✨ Key Features</h2>
+      <ul>
+        <li><strong>Interactive drag handles</strong> resize and move the crop area freely.</li>
+        <li><strong>Aspect ratio presets</strong> square, 16:9, 4:3, 9:16, 3:2, 2:3.</li>
+        <li><strong>Rotate before cropping</strong> 90° left, right, or 180° flip.</li>
+        <li><strong>Live crop dimensions</strong> see exact pixel size as you drag.</li>
+        <li><strong>Multiple output formats</strong> JPEG, PNG, WebP.</li>
+        <li><strong>Quality control</strong> balance file size vs quality.</li>
+        <li><strong>100% browser-based</strong> no uploads, complete privacy.</li>
+        <li><strong>Works on mobile</strong> touch-friendly crop handles.</li>
+      </ul>
+
+      <h2>🎯 When to Crop vs Resize</h2>
+      <h3>Crop when:</h3>
+      <p>You want to <strong>remove parts</strong> of an image trimming background, focusing on a subject, or matching a specific aspect ratio. Cropping reduces the visible area and dimensions.</p>
+      <h3>Resize when:</h3>
+      <p>You want to change the <strong>overall dimensions</strong> without removing content. Resizing scales the entire image up or down. Check our <a href="/tools/image-tools/image-resizer/">Image Resizer</a>.</p>
+      <h3>Best practice:</h3>
+      <p>For social media, <strong>crop first, then resize</strong>. Crop to the right aspect ratio, then scale to the exact pixel dimension the platform requires.</p>
+
+      <h2>❓ Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-question">How do I crop an image online for free?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Upload your image, drag the crop handles to select the area, then click "Crop Image". The cropped result downloads instantly free, no signup, no watermark.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I crop to a specific aspect ratio?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Yes. Use the ratio preset buttons (1:1, 16:9, 4:3, 9:16, 3:2, 2:3) to lock the crop area to that aspect ratio. Dragging any handle will keep the ratio intact.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Does cropping reduce image quality?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>No. Cropping removes pixels outside the selection but preserves the quality of the pixels inside. The cropped result is exactly as sharp as the original within that area no blur or re-sampling for pixel-perfect crops.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I rotate the image before cropping?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Yes. Use the rotation buttons (90° left, 90° right, 180°) in the toolbar to rotate the image before adjusting the crop area.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Are my images uploaded to a server?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>No. All cropping happens in your browser using the Canvas API. Your images never leave your device, and nothing is stored anywhere.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I crop multiple images at once?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Our crop tool processes one image at a time for precise control. For batch resizing without cropping, use our <a href="/tools/image-tools/image-resizer/">Image Resizer</a> which supports multiple files.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What's the difference between crop and trim?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>In image editing, they're often used interchangeably. "Crop" typically means selecting a rectangular region to keep. "Trim" often refers to removing edges like borders or transparent areas. Our tool does both just set the crop area to the region you want to keep.</p></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-header">🔗 Related Image Tools</div>
+    <div class="sidebar-list">
+      <a href="/tools/image-tools/image-resizer/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#8b5cf6;">📐</div>
+        <div class="sidebar-info"><div class="sidebar-title">Image Resizer</div><div class="sidebar-desc">Scale to any size</div></div>
+      </a>
+      <a href="/tools/image-tools/image-rotate/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#ec4899;">🔁</div>
+        <div class="sidebar-info"><div class="sidebar-title">Image Rotate</div><div class="sidebar-desc">Rotate any angle</div></div>
+      </a>
+      <a href="/tools/image-tools/image-flip/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#06b6d4;">🔃</div>
+        <div class="sidebar-info"><div class="sidebar-title">Image Flip</div><div class="sidebar-desc">Mirror horizontal/vertical</div></div>
+      </a>
+      <a href="/tools/image-tools/image-compressor/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#10b981;">📉</div>
+        <div class="sidebar-info"><div class="sidebar-title">Image Compressor</div><div class="sidebar-desc">Reduce file size</div></div>
+      </a>
+      <a href="/tools/image-tools/image-watermark/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#f59e0b;">💧</div>
+        <div class="sidebar-info"><div class="sidebar-title">Image Watermark</div><div class="sidebar-desc">Add watermarks</div></div>
+      </a>
+      <a href="/tools/image-tools/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#64748b;">🖼</div>
+        <div class="sidebar-info"><div class="sidebar-title">All Image Tools →</div><div class="sidebar-desc">Browse 25+ tools</div></div>
+      </a>
+    </div>
+  </aside>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand"><div class="logo-icon">⚒</div>BigToolz</span></div>
+      <p class="footer-tagline">Your Ultimate Online Tools Hub</p>
+      <div class="footer-social">
+        <a href="https://facebook.com/bigtoolz" aria-label="Facebook">f</a>
+        <a href="https://twitter.com/bigtoolz" aria-label="Twitter">𝕏</a>
+        <a href="https://youtube.com/@bigtoolz" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+    <div>
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/tools/">All Tools</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Categories</h3>
+      <ul class="footer-links">
+        <li><a href="/tools/image-tools/">Image Tools</a></li>
+        <li><a href="/tools/pdf-tools/">PDF Tools</a></li>
+        <li><a href="/tools/text-tools/">Text Tools</a></li>
+        <li><a href="/tools/seo-tools/">SEO Tools</a></li>
+        <li><a href="/tools/categories">All Categories →</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Legal</h3>
+      <ul class="footer-links">
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left"><span>✓ 100% Free</span><span>✓ No Sign Up</span><span>✓ No Installation</span></div>
+    <div class="footer-bottom-right">© 2026 BigToolz. All rights reserved.</div>
+    <div class="footer-bottom-links"><a href="/privacy-policy">Privacy</a><a href="/terms">Terms</a><a href="/disclaimer">Disclaimer</a></div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+'use strict';
+
+/* ===== THEME ===== */
+(function(){try{var t=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&d))document.documentElement.setAttribute('data-theme','dark');else if(t==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();
+document.querySelector('.theme-btn')?.addEventListener('click',()=>{const h=document.documentElement;const c=h.getAttribute('data-theme');const d=window.matchMedia('(prefers-color-scheme: dark)').matches;let n=c==='dark'?'light':c==='light'?'dark':(d?'light':'dark');h.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}});
+
+/* ===== HELPERS ===== */
+const $ = (s, p = document) => p.querySelector(s);
+const $$ = (s, p = document) => [...p.querySelectorAll(s)];
+
+function formatBytes(b) {
+  if (b === 0) return '0 B';
+  const k = 1024, sizes = ['B', 'KB', 'MB', 'GB'];
+  const i = Math.floor(Math.log(b) / Math.log(k));
+  return (b / Math.pow(k, i)).toFixed(i === 0 ? 0 : 1) + ' ' + sizes[i];
+}
+
+function showToast(msg, type = 'info', duration = 3000) {
+  const t = $('#toast');
+  if (!t) return;
+  t.className = 'toast visible' + (type !== 'info' ? ' ' + type : '');
+  t.textContent = msg;
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove('visible'), duration);
+}
+
+/* ===== STATE ===== */
+const state = {
+  image: null,
+  imageEl: null,
+  rotation: 0,
+  naturalWidth: 0,
+  naturalHeight: 0,
+  crop: { x: 0, y: 0, w: 0, h: 0 },
+  displayScale: 1,
+  ratio: 'free',
+  sourceFile: null,
+  resultBlob: null
+};
+
+/* ===== DOM ===== */
+const dropzone = $('#dropzone');
+const fileInput = $('#fileInput');
+const chooseBtn = $('#chooseBtn');
+const browseLink = $('#browseLink');
+const cropEditor = $('#cropEditor');
+const sourceImage = $('#sourceImage');
+const cropBox = $('#cropBox');
+const cropInfo = $('#cropInfo');
+const cropDims = $('#cropDims');
+const resetCrop = $('#resetCrop');
+const cropBtn = $('#cropBtn');
+const newImageBtn = $('#newImageBtn');
+const qualitySlider = $('#qualitySlider');
+const qualityValue = $('#qualityValue');
+const outFormat = $('#outFormat');
+const resultArea = $('#resultArea');
+const resultPreview = $('#resultPreview');
+const resultMeta = $('#resultMeta');
+const downloadBtn = $('#downloadBtn');
+
+/* ===== FILE SELECTION ===== */
+function triggerFileSelect() { fileInput.click(); }
+chooseBtn.addEventListener('click', (e) => { e.stopPropagation(); triggerFileSelect(); });
+browseLink.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); triggerFileSelect(); });
+dropzone.addEventListener('click', triggerFileSelect);
+
+fileInput.addEventListener('change', (e) => {
+  const f = e.target.files[0];
+  if (f) loadImage(f);
+  fileInput.value = '';
+});
+
+['dragenter', 'dragover'].forEach(evt => {
+  dropzone.addEventListener(evt, (e) => { e.preventDefault(); e.stopPropagation(); dropzone.classList.add('dragover'); });
+});
+['dragleave', 'drop'].forEach(evt => {
+  dropzone.addEventListener(evt, (e) => { e.preventDefault(); e.stopPropagation(); dropzone.classList.remove('dragover'); });
+});
+dropzone.addEventListener('drop', (e) => {
+  const f = e.dataTransfer.files[0];
+  if (f && f.type.startsWith('image/')) loadImage(f);
+  else showToast('Please drop an image file', 'error');
+});
+
+/* ===== LOAD IMAGE ===== */
+function loadImage(file) {
+  state.sourceFile = file;
+  state.rotation = 0;
+
+  const reader = new FileReader();
+  reader.onload = (e) => {
+    const img = new Image();
+    img.onload = () => {
+      state.imageEl = img;
+      state.naturalWidth = img.naturalWidth;
+      state.naturalHeight = img.naturalHeight;
+
+      sourceImage.src = e.target.result;
+      sourceImage.onload = () => {
+        dropzone.style.display = 'none';
+        cropEditor.classList.add('visible');
+        initCrop();
+      };
+    };
+    img.src = e.target.result;
+  };
+  reader.readAsDataURL(file);
+}
+
+/* ===== INIT CROP ===== */
+function initCrop() {
+  const rect = sourceImage.getBoundingClientRect();
+  const displayW = rect.width;
+  const displayH = rect.height;
+
+  state.displayScale = state.naturalWidth / displayW;
+
+  // Default crop = full image
+  state.crop = { x: 0, y: 0, w: displayW, h: displayH };
+  updateCropBox();
+  updateCropDims();
+}
+
+/* ===== UPDATE CROP BOX ===== */
+function updateCropBox() {
+  const { x, y, w, h } = state.crop;
+  cropBox.style.left = x + 'px';
+  cropBox.style.top = y + 'px';
+  cropBox.style.width = w + 'px';
+  cropBox.style.height = h + 'px';
+
+  const realW = Math.round(w * state.displayScale);
+  const realH = Math.round(h * state.displayScale);
+  cropInfo.textContent = realW + ' × ' + realH + ' px';
+}
+
+function updateCropDims() {
+  const realW = Math.round(state.crop.w * state.displayScale);
+  const realH = Math.round(state.crop.h * state.displayScale);
+  cropDims.value = `${realW} × ${realH} pixels`;
+}
+
+/* ===== DRAG HANDLES ===== */
+let isDragging = false;
+let dragHandle = null;
+let dragStart = { x: 0, y: 0 };
+let cropStart = { x: 0, y: 0, w: 0, h: 0 };
+
+$$('.crop-handle').forEach(h => {
+  h.addEventListener('mousedown', startDrag);
+  h.addEventListener('touchstart', startDrag, { passive: false });
+});
+
+cropBox.addEventListener('mousedown', (e) => {
+  if (e.target.classList.contains('crop-handle')) return;
+  dragHandle = 'move';
+  startDrag(e);
+});
+cropBox.addEventListener('touchstart', (e) => {
+  if (e.target.classList.contains('crop-handle')) return;
+  dragHandle = 'move';
+  startDrag(e);
+}, { passive: false });
+
+function startDrag(e) {
+  e.preventDefault();
+  e.stopPropagation();
+  isDragging = true;
+
+  if (e.target.classList.contains('crop-handle')) {
+    dragHandle = e.target.dataset.handle;
+  }
+
+  const point = e.touches ? e.touches[0] : e;
+  dragStart = { x: point.clientX, y: point.clientY };
+  cropStart = { ...state.crop };
+
+  document.addEventListener('mousemove', onDrag);
+  document.addEventListener('mouseup', stopDrag);
+  document.addEventListener('touchmove', onDrag, { passive: false });
+  document.addEventListener('touchend', stopDrag);
+}
+
+function onDrag(e) {
+  if (!isDragging) return;
+  e.preventDefault();
+
+  const point = e.touches ? e.touches[0] : e;
+  const dx = point.clientX - dragStart.x;
+  const dy = point.clientY - dragStart.y;
+
+  const stageRect = sourceImage.getBoundingClientRect();
+  const maxW = stageRect.width;
+  const maxH = stageRect.height;
+
+  let { x, y, w, h } = cropStart;
+  const minSize = 30;
+
+  if (dragHandle === 'move') {
+    x = Math.max(0, Math.min(maxW - w, x + dx));
+    y = Math.max(0, Math.min(maxH - h, y + dy));
+  } else {
+    // Handle resize
+    if (dragHandle.includes('e')) {
+      const newW = Math.max(minSize, Math.min(maxW - x, w + dx));
+      w = newW;
+    }
+    if (dragHandle.includes('s')) {
+      const newH = Math.max(minSize, Math.min(maxH - y, h + dy));
+      h = newH;
+    }
+    if (dragHandle.includes('w')) {
+      const newW = Math.max(minSize, w - dx);
+      if (x + (w - newW) >= 0) {
+        w = newW;
+        x = cropStart.x + dx;
+      }
+    }
+    if (dragHandle.includes('n')) {
+      const newH = Math.max(minSize, h - dy);
+      if (y + (h - newH) >= 0) {
+        h = newH;
+        y = cropStart.y + dy;
+      }
+    }
+  }
+
+  // Apply aspect ratio lock
+  if (state.ratio !== 'free') {
+    const [rw, rh] = state.ratio.split(':').map(Number);
+    const targetRatio = rw / rh;
+
+    if (dragHandle === 'move') {
+      // no ratio change on move
+    } else {
+      // Adjust based on which dimension changed more
+      if (dragHandle.includes('e') || dragHandle.includes('w')) {
+        h = w / targetRatio;
+        if (y + h > maxH) { h = maxH - y; w = h * targetRatio; }
+      } else {
+        w = h * targetRatio;
+        if (x + w > maxW) { w = maxW - x; h = w / targetRatio; }
+      }
+    }
+  }
+
+  state.crop = { x, y, w, h };
+  updateCropBox();
+  updateCropDims();
+}
+
+function stopDrag() {
+  isDragging = false;
+  dragHandle = null;
+  document.removeEventListener('mousemove', onDrag);
+  document.removeEventListener('mouseup', stopDrag);
+  document.removeEventListener('touchmove', onDrag);
+  document.removeEventListener('touchend', stopDrag);
+}
+
+/* ===== RATIO BUTTONS ===== */
+$$('.ratio-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    $$('.ratio-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    state.ratio = btn.dataset.ratio;
+
+    if (state.ratio !== 'free') {
+      const [rw, rh] = state.ratio.split(':').map(Number);
+      const targetRatio = rw / rh;
+      const stageRect = sourceImage.getBoundingClientRect();
+
+      let w = stageRect.width;
+      let h = w / targetRatio;
+      if (h > stageRect.height) {
+        h = stageRect.height;
+        w = h * targetRatio;
+      }
+
+      state.crop = { x: (stageRect.width - w) / 2, y: (stageRect.height - h) / 2, w, h };
+      updateCropBox();
+      updateCropDims();
+    }
+  });
+});
+
+/* ===== ROTATE ===== */
+$$('.rotate-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    state.rotation = (state.rotation + parseInt(btn.dataset.rotate, 10)) % 360;
+    applyRotation();
+  });
+});
+
+function applyRotation() {
+  const { naturalWidth, naturalHeight } = state;
+  const r = ((state.rotation % 360) + 360) % 360;
+
+  const isRotated = r === 90 || r === 270;
+  const newW = isRotated ? naturalHeight : naturalWidth;
+  const newH = isRotated ? naturalWidth : naturalHeight;
+
+  // Create rotated canvas as new source
+  const canvas = document.createElement('canvas');
+  canvas.width = newW;
+  canvas.height = newH;
+  const ctx = canvas.getContext('2d');
+
+  ctx.save();
+  ctx.translate(newW / 2, newH / 2);
+  ctx.rotate(r * Math.PI / 180);
+  ctx.drawImage(state.imageEl, -naturalWidth / 2, -naturalHeight / 2);
+  ctx.restore();
+
+  canvas.toBlob((blob) => {
+    const url = URL.createObjectURL(blob);
+    sourceImage.onload = () => {
+      state.naturalWidth = newW;
+      state.naturalHeight = newH;
+
+      // Update state.imageEl to rotated version
+      const newImg = new Image();
+      newImg.onload = () => {
+        state.imageEl = newImg;
+        state.rotation = 0;
+        initCrop();
+      };
+      newImg.src = url;
+    };
+    sourceImage.src = url;
+  }, 'image/png');
+}
+
+/* ===== RESET CROP ===== */
+resetCrop.addEventListener('click', () => {
+  initCrop();
+  showToast('Crop reset', 'success');
+});
+
+/* ===== QUALITY ===== */
+qualitySlider.addEventListener('input', (e) => {
+  qualityValue.textContent = e.target.value + '%';
+});
+
+/* ===== CROP & DOWNLOAD ===== */
+cropBtn.addEventListener('click', () => {
+  if (!state.imageEl) return;
+
+  const scale = state.displayScale;
+  const sourceX = Math.round(state.crop.x * scale);
+  const sourceY = Math.round(state.crop.y * scale);
+  const sourceW = Math.round(state.crop.w * scale);
+  const sourceH = Math.round(state.crop.h * scale);
+
+  const canvas = document.createElement('canvas');
+  canvas.width = sourceW;
+  canvas.height = sourceH;
+  const ctx = canvas.getContext('2d');
+
+  const format = outFormat.value;
+  if (format === 'image/jpeg') {
+    ctx.fillStyle = '#ffffff';
+    ctx.fillRect(0, 0, sourceW, sourceH);
+  }
+
+  ctx.imageSmoothingEnabled = true;
+  ctx.imageSmoothingQuality = 'high';
+
+  ctx.drawImage(state.imageEl, sourceX, sourceY, sourceW, sourceH, 0, 0, sourceW, sourceH);
+
+  const quality = parseInt(qualitySlider.value, 10) / 100;
+
+  canvas.toBlob((blob) => {
+    if (!blob) { showToast('Crop failed', 'error'); return; }
+
+    if (state.resultBlob) URL.revokeObjectURL(resultPreview.src);
+    state.resultBlob = blob;
+
+    resultPreview.src = URL.createObjectURL(blob);
+    const ext = format === 'image/jpeg' ? 'jpg' : format === 'image/webp' ? 'webp' : 'png';
+    const baseName = state.sourceFile ? state.sourceFile.name.replace(/\.[^.]+$/, '') : 'cropped';
+    const outName = `${baseName}-cropped.${ext}`;
+    downloadBtn.dataset.filename = outName;
+
+    resultMeta.innerHTML = `
+      <span>${sourceW} × ${sourceH} px</span>
+      <span>${formatBytes(blob.size)}</span>
+      <span>${ext.toUpperCase()}</span>
+    `;
+    resultArea.classList.add('visible');
+    showToast('✅ Image cropped!', 'success');
+
+    // Auto-scroll to result
+    setTimeout(() => resultArea.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 200);
+  }, format, quality);
+});
+
+downloadBtn.addEventListener('click', () => {
+  if (!state.resultBlob) return;
+  const url = URL.createObjectURL(state.resultBlob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = downloadBtn.dataset.filename || 'cropped.png';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+});
+
+/* ===== NEW IMAGE ===== */
+newImageBtn.addEventListener('click', () => {
+  if (state.resultBlob) URL.revokeObjectURL(resultPreview.src);
+  state.resultBlob = null;
+  resultArea.classList.remove('visible');
+  cropEditor.classList.remove('visible');
+  dropzone.style.display = '';
+  state.rotation = 0;
+  triggerFileSelect();
+});
+
+/* ===== FAQ ===== */
+$$('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    $$('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+
+/* ===== RESIZE HANDLER (window) ===== */
+let resizeTimer;
+window.addEventListener('resize', () => {
+  if (!state.imageEl || !cropEditor.classList.contains('visible')) return;
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(() => {
+    // Recalculate display scale but keep crop proportional
+    const oldScale = state.displayScale;
+    const rect = sourceImage.getBoundingClientRect();
+    const newScale = state.naturalWidth / rect.width;
+
+    if (Math.abs(oldScale - newScale) > 0.01) {
+      // Scale crop coordinates
+      const factor = oldScale / newScale;
+      state.crop = {
+        x: state.crop.x * factor,
+        y: state.crop.y * factor,
+        w: state.crop.w * factor,
+        h: state.crop.h * factor
+      };
+      state.displayScale = newScale;
+      updateCropBox();
+      updateCropDims();
+    }
+  }, 200);
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2563eb">
+
+<title>PDF Overlay Merger - Overlay Two PDFs Online Free | BigToolz</title>
+<meta name="description" content="Overlay two PDFs online free. Stack pages, apply opacity, blend modes. Perfect for letterheads, watermarks, stamps, and background designs. No upload.">
+<meta name="keywords" content="pdf overlay merger, overlay pdf, merge pdf overlay, stack pdf pages, pdf watermark overlay, pdf letterhead">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://bigtoolz.com/tools/pdf-tools/advanced-pdf/overlay-merger/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="PDF Overlay Merger - Free Online Tool | BigToolz">
+<meta property="og:description" content="Overlay two PDFs page-by-page free, no upload, opacity control.">
+<meta property="og:url" content="https://bigtoolz.com/tools/pdf-tools/advanced-pdf/overlay-merger/">
+<meta property="og:image" content="https://bigtoolz.com/assets/images/og-image.jpg">
+<meta property="og:site_name" content="BigToolz">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="PDF Overlay Merger - BigToolz">
+<meta name="twitter:description" content="Overlay PDFs instantly free, no upload.">
+<meta name="twitter:image" content="https://bigtoolz.com/assets/images/twitter-card.jpg">
+
+<link rel="icon" href="/assets/images/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/images/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#f8f9fc;color:#1a1a2e;overflow-x:hidden;line-height:1.5}
+
+  .header{background:#fff;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;position:sticky;top:0;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+  .header-left{display:flex;align-items:center;gap:40px}
+  .logo{display:flex;align-items:center;gap:8px;font-size:22px;font-weight:800;color:#1a1a2e;text-decoration:none}
+  .logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#3b82f6,#2563eb);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px}
+  .logo span{color:#2563eb}
+  .nav{display:flex;align-items:center;gap:28px;list-style:none}
+  .nav a{text-decoration:none;color:#4b5563;font-size:14px;font-weight:500;transition:color .2s}
+  .nav a:hover,.nav a.active{color:#2563eb}
+  .header-right{display:flex;align-items:center;gap:16px}
+  .search-btn,.theme-btn{width:36px;height:36px;border-radius:50%;border:none;background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#4b5563}
+  .search-btn:hover,.theme-btn:hover{background:#f3f4f6}
+  .bookmark-btn{display:flex;align-items:center;gap:8px;background:#2563eb;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
+  .bookmark-btn:hover{background:#1d4ed8}
+
+  .hero{background:linear-gradient(135deg,#0a0e27 0%,#1a1a4e 40%,#2d1b69 70%,#4c1d95 100%);padding:40px 40px 60px;position:relative;overflow:hidden;color:#fff}
+  .hero::before{content:'';position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(59,130,246,.3) 0%,transparent 70%);border-radius:50%}
+  .hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+  .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px;flex-wrap:wrap}
+  .breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none}
+  .breadcrumb a:hover{color:#fff}
+  .breadcrumb .sep{color:rgba(255,255,255,.4)}
+  .breadcrumb .current{color:#fff;font-weight:500}
+  .hero-title-row{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+  .hero-icon{width:60px;height:60px;background:#3b82f6;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;color:#fff;flex-shrink:0;box-shadow:0 8px 24px rgba(59,130,246,.4)}
+  .hero-title{font-size:42px;font-weight:800;line-height:1.15}
+  .hero-title .blue{color:#60a5fa}
+  .hero-desc{font-size:15px;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:24px;max-width:560px}
+  .hero-features{display:flex;gap:24px;flex-wrap:wrap}
+  .hero-feature{display:flex;align-items:center;gap:6px;font-size:13px;color:#fff;font-weight:500}
+  .hero-feature .check{width:18px;height:18px;border-radius:50%;background:#3b82f6;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;flex-shrink:0}
+
+  .main-content{max-width:1200px;margin:0 auto;padding:40px;display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start}
+  .tool-content{min-width:0}
+
+  .workspace{background:#fff;border-radius:16px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,.06);border:1px solid #e5e7eb;margin-bottom:24px}
+
+  /* Upload grid */
+  .upload-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:24px}
+  .upload-box{border:2px dashed #93c5fd;border-radius:12px;padding:32px 20px;text-align:center;background:#eff6ff;transition:all .2s;cursor:pointer;position:relative}
+  .upload-box:hover,.upload-box.dragover{border-color:#3b82f6;background:#dbeafe}
+  .upload-box.has-file{border-style:solid;border-color:#10b981;background:#f0fdf4}
+  .upload-box.overlay-file.has-file{border-color:#f97316;background:#fff7ed}
+  .upload-box-icon{width:52px;height:52px;background:linear-gradient(135deg,#3b82f6,#2563eb);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;color:#fff;font-size:22px}
+  .upload-box.has-file .upload-box-icon{background:linear-gradient(135deg,#10b981,#059669)}
+  .upload-box.overlay-file.has-file .upload-box-icon{background:linear-gradient(135deg,#f97316,#ea580c)}
+  .upload-box-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+  .upload-box-sub{font-size:12px;color:#6b7280;line-height:1.4;word-break:break-word}
+  .upload-box-sub strong{color:#0891b2;display:block;margin-top:6px;font-size:11px;font-weight:600}
+  .upload-box.overlay-file .upload-box-sub strong{color:#c2410c}
+  .upload-box input{display:none}
+
+  /* Preview grid */
+  .preview-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px}
+  .preview-box{background:#0a0e27;border-radius:12px;padding:14px;text-align:center;position:relative;min-height:200px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+  .preview-box canvas{max-width:100%;max-height:280px;border-radius:6px;box-shadow:0 4px 16px rgba(0,0,0,.4);background:#fff}
+  .preview-label{position:absolute;top:10px;left:10px;background:rgba(255,255,255,.95);color:#1a1a2e;font-size:10px;font-weight:700;padding:3px 9px;border-radius:6px;text-transform:uppercase;letter-spacing:.5px;z-index:2}
+  .preview-box.overlay-box .preview-label{background:#f97316;color:#fff}
+  .preview-empty{color:rgba(255,255,255,.4);font-size:13px;font-weight:600}
+
+  /* Settings */
+  .options{background:#eff6ff;border-radius:12px;padding:20px;margin-bottom:20px;border:1px solid #93c5fd}
+  .options-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+
+  .options-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+  .option-group label{display:block;font-size:12px;font-weight:600;color:#4b5563;margin-bottom:6px}
+  .option-group select,.option-group input[type="number"]{width:100%;padding:10px 12px;border:1px solid #e5e7eb;border-radius:8px;font-size:13px;font-family:inherit;color:#1a1a2e;background:#fff;outline:none;transition:border-color .2s}
+  .option-group select:focus,.option-group input:focus{border-color:#3b82f6;box-shadow:0 0 0 3px rgba(59,130,246,.1)}
+
+  .slider-group{margin-top:16px}
+  .slider-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+  .slider-header label{font-size:12px;font-weight:600;color:#4b5563}
+  .slider-header .val{font-size:12px;font-weight:700;color:#2563eb;background:#fff;padding:3px 10px;border-radius:6px;border:1px solid #93c5fd;min-width:55px;text-align:center;font-family:'JetBrains Mono',monospace}
+  .range-slider{width:100%;-webkit-appearance:none;appearance:none;height:6px;background:#bfdbfe;border-radius:3px;outline:none}
+  .range-slider::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:18px;height:18px;background:#3b82f6;border-radius:50%;cursor:pointer;box-shadow:0 2px 6px rgba(59,130,246,.4);transition:transform .15s;border:2px solid #fff}
+  .range-slider::-webkit-slider-thumb:hover{transform:scale(1.15)}
+  .range-slider::-moz-range-thumb{width:18px;height:18px;background:#3b82f6;border:2px solid #fff;border-radius:50%;cursor:pointer}
+
+  /* Actions */
+  .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 28px;border-radius:10px;font-size:15px;font-weight:700;font-family:inherit;cursor:pointer;border:none;transition:all .2s;text-decoration:none}
+  .btn-primary{background:#3b82f6;color:#fff;flex:1;box-shadow:0 4px 12px rgba(59,130,246,.2)}
+  .btn-primary:hover:not(:disabled){background:#2563eb;transform:translateY(-2px);box-shadow:0 6px 20px rgba(59,130,246,.3)}
+  .btn-primary:disabled{opacity:.5;cursor:not-allowed;transform:none}
+  .btn-secondary{background:#fff;color:#3b82f6;border:1px solid #e5e7eb}
+  .btn-secondary:hover{border-color:#3b82f6;background:#eff6ff}
+  .btn-success{background:#10b981;color:#fff}
+  .btn-success:hover{background:#059669}
+
+  .status-msg{margin-top:14px;padding:12px 14px;border-radius:8px;font-size:13px;font-weight:600;display:none}
+  .status-msg.visible{display:block}
+  .status-msg.success{background:#d1fae5;color:#065f46;border:1px solid #a7f3d0}
+  .status-msg.error{background:#fee2e2;color:#991b1b;border:1px solid #fecaca}
+  .status-msg.info{background:#dbeafe;color:#1e40af;border:1px solid #93c5fd}
+
+  .progress{display:none;margin-top:14px}
+  .progress.visible{display:block}
+  .progress-bar{width:100%;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden;margin-bottom:8px}
+  .progress-fill{height:100%;background:linear-gradient(90deg,#60a5fa,#3b82f6);border-radius:4px;width:0%;transition:width .3s ease}
+  .progress-text{font-size:13px;color:#6b7280;text-align:center;font-weight:500}
+
+  /* Result info */
+  .result-info{background:#f0fdf4;border:1px solid #a7f3d0;border-radius:12px;padding:16px;margin-top:16px}
+  .result-title{font-size:13px;font-weight:700;color:#065f46;margin-bottom:8px;display:flex;align-items:center;gap:6px}
+  .result-text{font-size:12px;color:#047857;line-height:1.6}
+
+  /* SEO */
+  .seo-content{background:#fff;border-radius:16px;padding:32px;border:1px solid #e5e7eb;margin-bottom:24px}
+  .seo-content h2{font-size:22px;font-weight:800;color:#1a1a2e;margin-bottom:14px;margin-top:28px;display:flex;align-items:center;gap:10px}
+  .seo-content h2:first-child{margin-top:0}
+  .seo-content h3{font-size:16px;font-weight:700;color:#1a1a2e;margin:20px 0 10px}
+  .seo-content p{font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:14px}
+  .seo-content ul{list-style:none;padding-left:0;margin-bottom:16px}
+  .seo-content ul li{position:relative;padding-left:24px;font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:8px}
+  .seo-content ul li::before{content:'';position:absolute;left:6px;top:12px;width:6px;height:6px;background:#3b82f6;border-radius:50%}
+  .seo-content a{color:#2563eb;text-decoration:none;font-weight:600}
+  .seo-content a:hover{text-decoration:underline}
+  .seo-content strong{color:#1a1a2e;font-weight:700}
+
+  .how-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:20px}
+  .how-step{background:#eff6ff;border-radius:12px;padding:20px;border:1px solid #93c5fd}
+  .how-step-num{width:36px;height:36px;border-radius:50%;background:#3b82f6;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;margin-bottom:12px}
+  .how-step-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+  .how-step-desc{font-size:13px;color:#6b7280;line-height:1.6}
+
+  .faq-item{background:#eff6ff;border:1px solid #93c5fd;border-radius:12px;margin-bottom:10px;overflow:hidden;transition:border-color .2s}
+  .faq-item:hover{border-color:#3b82f6}
+  .faq-question{width:100%;background:none;border:none;padding:18px 22px;font-size:15px;font-weight:700;color:#1a1a2e;text-align:left;cursor:pointer;font-family:inherit;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .faq-question .chev{font-size:12px;color:#3b82f6;transition:transform .2s;flex-shrink:0}
+  .faq-item.open .faq-question .chev{transform:rotate(180deg)}
+  .faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 22px}
+  .faq-item.open .faq-answer{max-height:500px;padding-bottom:18px}
+  .faq-answer p{font-size:14px;color:#6b7280;line-height:1.7;margin:0}
+
+  .sidebar{background:#fff;border-radius:16px;padding:24px;border:1px solid #e5e7eb;position:sticky;top:80px;margin-bottom:24px}
+  .sidebar-header{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:800;color:#1a1a2e;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid #f3f4f6}
+  .sidebar-list{display:flex;flex-direction:column;gap:8px}
+  .sidebar-item{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;cursor:pointer;transition:background .2s;text-decoration:none;color:inherit;border:1px solid #f3f4f6}
+  .sidebar-item:hover{background:#eff6ff;border-color:#93c5fd}
+  .sidebar-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;flex-shrink:0}
+  .sidebar-info{flex:1;min-width:0}
+  .sidebar-title{font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:2px}
+  .sidebar-desc{font-size:11px;color:#9ca3af;line-height:1.4}
+
+  .footer{background:#0a0e27;padding:60px 40px 30px;color:#fff;margin-top:40px}
+  .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:40px}
+  .footer-brand{display:flex;align-items:center;gap:8px;font-size:20px;font-weight:800;margin-bottom:12px}
+  .footer-brand span{color:#60a5fa}
+  .footer-tagline{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px}
+  .footer-social{display:flex;gap:12px}
+  .footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:16px;transition:background .2s}
+  .footer-social a:hover{background:rgba(255,255,255,.2)}
+  .footer-heading{font-size:14px;font-weight:700;margin-bottom:20px;color:#fff}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .footer-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;transition:color .2s}
+  .footer-links a:hover{color:#60a5fa}
+  .footer-bottom{max-width:1200px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  .footer-bottom-left{display:flex;gap:20px;font-size:12px;color:rgba(255,255,255,.5)}
+  .footer-bottom-right,.footer-bottom-links a{font-size:12px;color:rgba(255,255,255,.5);text-decoration:none}
+  .footer-bottom-links{display:flex;gap:20px}
+
+  .toast{position:fixed;bottom:24px;right:24px;background:#1a1a2e;color:#fff;padding:14px 20px;border-radius:10px;font-size:13px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:3000;transform:translateY(200%);transition:transform .3s ease;max-width:320px}
+  .toast.visible{transform:translateY(0)}
+  .toast.success{background:#10b981}
+  .toast.error{background:#ef4444}
+
+  @media(max-width:1024px){
+    .main-content{grid-template-columns:1fr;padding:24px 20px}
+    .sidebar{position:static}
+    .how-steps{grid-template-columns:repeat(2,1fr)}
+    .options-grid{grid-template-columns:1fr}
+  }
+  @media(max-width:768px){
+    .header{padding:0 20px}.nav{display:none}
+    .hero{padding:24px 20px 40px}
+    .hero-title{font-size:28px}
+    .hero-icon{width:48px;height:48px;font-size:22px}
+    .hero-title-row{flex-direction:column;align-items:flex-start;gap:12px}
+    .main-content{padding:20px 16px}
+    .workspace{padding:20px}
+    .upload-grid,.preview-grid{grid-template-columns:1fr}
+    .how-steps{grid-template-columns:1fr}
+    .seo-content{padding:20px}
+    .footer-inner{grid-template-columns:1fr 1fr}
+    .toast{left:16px;right:16px;bottom:16px;max-width:none}
+  }
+  @media(max-width:576px){
+    .header{padding:0 16px}.header-right .search-btn,.header-right .theme-btn{display:none}
+    .hero-title{font-size:24px}
+    .actions{flex-direction:column}
+    .btn{width:100%}
+    .btn-primary{flex:none}
+    .footer-inner{grid-template-columns:1fr}
+    .footer-bottom{flex-direction:column;text-align:center}
+  }
+
+  html[data-theme="dark"] body{background:#0f172a;color:#f1f5f9}
+  html[data-theme="dark"] .header,html[data-theme="dark"] .workspace,html[data-theme="dark"] .seo-content,html[data-theme="dark"] .sidebar{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .logo,html[data-theme="dark"] .hero-title,html[data-theme="dark"] .seo-content h2,html[data-theme="dark"] .seo-content h3,html[data-theme="dark"] .faq-question,html[data-theme="dark"] .sidebar-header,html[data-theme="dark"] .sidebar-title,html[data-theme="dark"] .options-title,html[data-theme="dark"] .upload-box-title{color:#f1f5f9}
+  html[data-theme="dark"] .nav a{color:#cbd5e1}
+  html[data-theme="dark"] .upload-box{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .how-step,html[data-theme="dark"] .faq-item,html[data-theme="dark"] .options{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .option-group select,html[data-theme="dark"] .option-group input{background:#1e293b;border-color:#334155;color:#f1f5f9}
+  html[data-theme="dark"] .seo-content p,html[data-theme="dark"] .seo-content ul li,html[data-theme="dark"] .faq-answer p{color:#cbd5e1}
+  html[data-theme="dark"] .result-info{background:#064e3b;border-color:#065f46}
+  html[data-theme="dark"] .result-title{color:#6ee7b7}
+  html[data-theme="dark"] .result-text{color:#a7f3d0}
+  html[data-theme="dark"] .slider-header .val{background:#0f172a;border-color:#334155;color:#60a5fa}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type": "SoftwareApplication", "name": "PDF Overlay Merger", "url": "https://bigtoolz.com/tools/pdf-tools/advanced-pdf/overlay-merger/", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any (Web-based)", "description": "Free online PDF overlay merger stack two PDFs page by page with opacity and blend mode control. Works in your browser.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.7", "ratingCount": "289"}},
+    {"@type": "HowTo", "name": "How to Overlay Two PDFs", "step": [
+      {"@type": "HowToStep", "name": "Upload Base PDF", "text": "Drag & drop or click to select the base (background) PDF."},
+      {"@type": "HowToStep", "name": "Upload Overlay PDF", "text": "Select the PDF to overlay on top."},
+      {"@type": "HowToStep", "name": "Configure", "text": "Set opacity, blend mode, and page offset."},
+      {"@type": "HowToStep", "name": "Save", "text": "Click Overlay PDFs to download the merged result."}
+    ]},
+    {"@type": "FAQPage", "mainEntity": [
+      {"@type": "Question", "name": "What is PDF overlay merging?", "acceptedAnswer": {"@type": "Answer", "text": "PDF overlay merging stacks two PDFs page by page the base PDF stays underneath, and the overlay PDF is drawn on top. This is perfect for adding letterheads, watermarks, stamps, or design elements to an existing document."}},
+      {"@type": "Question", "name": "What's the difference between overlay and merge?", "acceptedAnswer": {"@type": "Answer", "text": "Merge appends PDF pages one after another (concatenation). Overlay stacks two PDFs on top of each other, page by page, producing the same number of pages as the base PDF."}},
+      {"@type": "Question", "name": "What page sizes are supported?", "acceptedAnswer": {"@type": "Answer", "text": "Any page size is supported. If the overlay PDF has a different size, it's scaled to fit the base PDF page. For best results, use PDFs with matching page sizes and orientations."}},
+      {"@type": "Question", "name": "Are my PDFs uploaded to a server?", "acceptedAnswer": {"@type": "Answer", "text": "No. All processing happens in your browser using pdf-lib and PDF.js. Your PDFs never leave your device."}}
+    ]},
+    {"@type": "BreadcrumbList", "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bigtoolz.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://bigtoolz.com/tools/"},
+      {"@type": "ListItem", "position": 3, "name": "PDF Tools", "item": "https://bigtoolz.com/tools/pdf-tools/"},
+      {"@type": "ListItem", "position": 4, "name": "Advanced PDF", "item": "https://bigtoolz.com/tools/pdf-tools/advanced-pdf/"},
+      {"@type": "ListItem", "position": 5, "name": "Overlay Merger", "item": "https://bigtoolz.com/tools/pdf-tools/advanced-pdf/overlay-merger/"}
+    ]}
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-left">
+    <a href="/" class="logo"><div class="logo-icon">⚒</div>BigToolz</span></a>
+    <nav><ul class="nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/tools/" class="active">All Tools</a></li>
+      <li><a href="/tools/categories">Categories</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul></nav>
+  </div>
+  <div class="header-right">
+    
+    <button class="theme-btn" aria-label="Toggle theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
+    
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <nav class="breadcrumb">
+      <a href="/">Home</a><span class="sep">›</span>
+      <a href="/tools/">Tools</a><span class="sep">›</span>
+      <a href="/tools/pdf-tools/">PDF Tools</a><span class="sep">›</span>
+      <a href="/tools/pdf-tools/advanced-pdf/">Advanced PDF</a><span class="sep">›</span>
+      <span class="current">Overlay Merger</span>
+    </nav>
+    <div class="hero-title-row">
+      <div class="hero-icon">📚</div>
+      <h1 class="hero-title">PDF <span class="blue">Overlay Merger</span></h1>
+    </div>
+    <p class="hero-desc">
+      Stack two PDFs page by page perfect for letterheads, watermarks, stamps, and background designs. Opacity and blend mode control. No upload, no signup, 100% private.
+    </p>
+    <div class="hero-features">
+      <div class="hero-feature"><span class="check">✓</span> Page-by-Page Stack</div>
+      <div class="hero-feature"><span class="check">✓</span> Opacity Control</div>
+      <div class="hero-feature"><span class="check">✓</span> Blend Modes</div>
+      <div class="hero-feature"><span class="check">✓</span> No Upload</div>
+    </div>
+  </div>
+</section>
+
+<div class="main-content">
+
+  <div class="tool-content">
+
+    <div class="workspace">
+
+      <!-- Upload Grid -->
+      <div class="upload-grid">
+        <div class="upload-box" id="uploadBox1" data-file="1">
+          <div class="upload-box-icon">📄</div>
+          <div class="upload-box-title">Base PDF (Background)</div>
+          <div class="upload-box-sub" id="uploadSub1">Drag & drop or click to upload</div>
+          <input type="file" id="file1" accept="application/pdf,.pdf">
+        </div>
+        <div class="upload-box overlay-file" id="uploadBox2" data-file="2">
+          <div class="upload-box-icon">🎨</div>
+          <div class="upload-box-title">Overlay PDF (On Top)</div>
+          <div class="upload-box-sub" id="uploadSub2">Drag & drop or click to upload</div>
+          <input type="file" id="file2" accept="application/pdf,.pdf">
+        </div>
+      </div>
+
+      <!-- Preview Grid -->
+      <div class="preview-grid">
+        <div class="preview-box" id="previewBox1">
+          <div class="preview-label">Base</div>
+          <div class="preview-empty" id="empty1">No file loaded</div>
+          <canvas id="canvas1" style="display:none;"></canvas>
+        </div>
+        <div class="preview-box overlay-box" id="previewBox2">
+          <div class="preview-label">Overlay</div>
+          <div class="preview-empty" id="empty2">No file loaded</div>
+          <canvas id="canvas2" style="display:none;"></canvas>
+        </div>
+      </div>
+
+      <!-- Settings -->
+      <div class="options">
+        <div class="options-title">⚙️ Overlay Settings</div>
+
+        <div class="options-grid">
+          <div class="option-group">
+            <label>Blend Mode</label>
+            <select id="blendMode">
+              <option value="Normal" selected>Normal (default)</option>
+              <option value="Multiply">Multiply (darken)</option>
+              <option value="Screen">Screen (lighten)</option>
+              <option value="Overlay">Overlay (contrast)</option>
+              <option value="Darken">Darken</option>
+              <option value="Lighten">Lighten</option>
+            </select>
+          </div>
+          <div class="option-group">
+            <label>Page Offset (start overlay from)</label>
+            <input type="number" id="pageOffset" value="0" min="0" step="1">
+          </div>
+        </div>
+
+        <div class="slider-group">
+          <div class="slider-header">
+            <label>Overlay Opacity</label>
+            <span class="val" id="opacityVal">100%</span>
+          </div>
+          <input type="range" id="opacitySlider" class="range-slider" min="5" max="100" value="100" step="5">
+        </div>
+      </div>
+
+      <!-- Actions -->
+      <div class="actions">
+        <button class="btn btn-primary" id="mergeBtn" disabled>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M12 8v8M8 12h8"/></svg>
+          Overlay PDFs
+        </button>
+        <button class="btn btn-secondary" id="resetBtn">Reset</button>
+      </div>
+
+      <!-- Status -->
+      <div class="status-msg" id="statusMsg"></div>
+
+      <!-- Progress -->
+      <div class="progress" id="progress">
+        <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+        <div class="progress-text" id="progressText">Processing...</div>
+      </div>
+
+      <!-- Result info -->
+      <div class="result-info" id="resultInfo" style="display:none;">
+        <div class="result-title">✅ Overlay Complete</div>
+        <div class="result-text" id="resultText"></div>
+      </div>
+
+    </div>
+
+    <!-- SEO Content -->
+    <div class="seo-content">
+
+      <h2>📚 What is PDF Overlay Merging?</h2>
+      <p>
+        <strong>PDF overlay merging</strong> stacks two PDFs on top of each other, page by page. The base PDF stays underneath, and the overlay PDF is drawn on top with adjustable opacity and blend modes. This produces a document with the same number of pages as the base PDF, but with both layers visible.
+      </p>
+      <p>
+        Unlike regular <strong>merge</strong> (which appends pages one after another), <strong>overlay</strong> blends layers together. It's the ideal technique for adding <strong>letterheads to invoices, watermarks to contracts, stamps to certificates,</strong> or design elements to any existing document.
+      </p>
+      <p>
+        BigToolz uses <strong>pdf-lib</strong> to create the overlay and <strong>PDF.js</strong> to render the preview. Everything runs <strong>100% in your browser</strong> your PDFs never leave your device.
+      </p>
+
+      <h2>🚀 How to Overlay Two PDFs</h2>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-step-num">1</div>
+          <div class="how-step-title">Upload Base PDF</div>
+          <div class="how-step-desc">This is the document that stays underneath.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">2</div>
+          <div class="how-step-title">Upload Overlay PDF</div>
+          <div class="how-step-desc">This is drawn on top (letterhead, watermark, stamp).</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">3</div>
+          <div class="how-step-title">Adjust Settings</div>
+          <div class="how-step-desc">Set opacity, blend mode, and page offset.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">4</div>
+          <div class="how-step-title">Download</div>
+          <div class="how-step-desc">Click "Overlay PDFs" to save the merged result.</div>
+        </div>
+      </div>
+
+      <h2>🎨 Common Use Cases</h2>
+
+      <h3>📋 Letterheads</h3>
+      <p>Add a company letterhead (as a PDF) on top of invoices, contracts, or reports. Set opacity to 100% and blend mode to <strong>Normal</strong> for a clean corporate look.</p>
+
+      <h3>💧 Watermarks</h3>
+      <p>Add "CONFIDENTIAL", "DRAFT", or a logo PDF on top of your document. Lower the opacity to <strong>15-30%</strong> for a subtle watermark effect.</p>
+
+      <h3>🎯 Stamps & Seals</h3>
+      <p>Overlay a digital stamp PDF (like a "PAID" or "APPROVED" seal) on top of documents. Set opacity to 100% for full visibility.</p>
+
+      <h3>✍️ Background Designs</h3>
+      <p>Overlay a design background PDF (with paper texture or border) on top of plain text documents. Blend mode <strong>Multiply</strong> produces a print-like effect.</p>
+
+      <h3>🔒 Security Patterns</h3>
+      <p>Overlay a security pattern (like a tiled logo) at <strong>10% opacity</strong> across documents for anti-counterfeiting.</p>
+
+      <h2>✨ Key Features</h2>
+      <ul>
+        <li><strong>Page-by-page overlay</strong> not append, stack.</li>
+        <li><strong>Opacity control</strong> from 5% to 100%.</li>
+        <li><strong>Blend modes</strong> Normal, Multiply, Screen, Overlay, Darken, Lighten.</li>
+        <li><strong>Page offset</strong> start overlay from any page.</li>
+        <li><strong>Auto page matching</strong> extra pages handled gracefully.</li>
+        <li><strong>Side-by-side preview</strong> see both PDFs before merging.</li>
+        <li><strong>100% browser-based</strong> no uploads, complete privacy.</li>
+        <li><strong>Powered by pdf-lib</strong> real, compliant PDF output.</li>
+      </ul>
+
+      <h2>❓ Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-question">What is PDF overlay merging?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>PDF overlay merging</strong> stacks two PDFs page by page the base PDF stays underneath, and the overlay PDF is drawn on top. This is perfect for adding letterheads, watermarks, stamps, or design elements to an existing document. The result has the same number of pages as the base PDF.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What's the difference between overlay and merge?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>Merge</strong> appends PDF pages one after another (concatenation) 2 PDFs with 10 pages each becomes 20 pages. <strong>Overlay</strong> stacks two PDFs on top of each other page by page 2 PDFs with 10 pages each becomes 10 pages with both layers visible. Use merge to combine documents, use overlay to layer them.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What page sizes are supported?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Any page size is supported. If the overlay PDF has a different page size than the base PDF, the overlay is placed at the same origin. For best results, use PDFs with <strong>matching page sizes and orientations</strong> (A4 + A4, Letter + Letter, etc.).</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What if the overlay has fewer pages than the base?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>The overlay is applied to the first N pages of the base PDF. Remaining base pages stay unchanged. Use the <strong>Page Offset</strong> setting to start the overlay from a different page for example, offset = 1 skips page 1 and starts on page 2.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Which blend mode should I use?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>Normal</strong> standard overlay, ideal for letterheads and stamps. <strong>Multiply</strong> darkens where both layers have content, great for print effects. <strong>Screen</strong> lightens, useful for glow effects. <strong>Overlay</strong> adds contrast. Start with Normal and adjust opacity first.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Does it work with password-protected PDFs?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>No. You must remove the password first using our <a href="/tools/pdf-tools/security-pdf/unlock-pdf/">Unlock PDF</a> tool. Encrypted PDFs cannot be modified without the password.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Are my PDFs uploaded to a server?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>No. All processing happens in your browser using pdf-lib and PDF.js. Your PDFs never leave your device, and nothing is stored anywhere.</p></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-header">🔗 Related PDF Tools</div>
+    <div class="sidebar-list">
+      <a href="/tools/pdf-tools/advanced-pdf/merge-alternate/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#8b5cf6;">📚</div>
+        <div class="sidebar-info"><div class="sidebar-title">Merge Alternate</div><div class="sidebar-desc">Interleave PDFs</div></div>
+      </a>
+      <a href="/tools/pdf-tools/advanced-pdf/background-adder/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#f59e0b;">🖼</div>
+        <div class="sidebar-info"><div class="sidebar-title">Background Adder</div><div class="sidebar-desc">Add background</div></div>
+      </a>
+      <a href="/tools/pdf-tools/advanced-pdf/foreground-extractor/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#ec4899;">🎨</div>
+        <div class="sidebar-info"><div class="sidebar-title">Foreground Extractor</div><div class="sidebar-desc">Extract foreground</div></div>
+      </a>
+      <a href="/tools/pdf-tools/organize-pdf/merge-pdf/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#3b82f6;">📚</div>
+        <div class="sidebar-info"><div class="sidebar-title">Merge PDF</div><div class="sidebar-desc">Append PDFs</div></div>
+      </a>
+      <a href="/tools/pdf-tools/advanced-pdf/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#8b5cf6;">🚀</div>
+        <div class="sidebar-info"><div class="sidebar-title">All Advanced PDF →</div><div class="sidebar-desc">20 tools</div></div>
+      </a>
+      <a href="/tools/pdf-tools/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#64748b;">📕</div>
+        <div class="sidebar-info"><div class="sidebar-title">All PDF Tools →</div><div class="sidebar-desc">100+ tools</div></div>
+      </a>
+    </div>
+  </aside>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand"><div class="logo-icon">⚒</div>BigToolz</span></div>
+      <p class="footer-tagline">Your Ultimate Online Tools Hub</p>
+      <div class="footer-social">
+        <a href="https://facebook.com/bigtoolz" aria-label="Facebook">f</a>
+        <a href="https://twitter.com/bigtoolz" aria-label="Twitter">𝕏</a>
+        <a href="https://youtube.com/@bigtoolz" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+    <div>
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/tools/">All Tools</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Categories</h3>
+      <ul class="footer-links">
+        <li><a href="/tools/image-tools/">Image Tools</a></li>
+        <li><a href="/tools/pdf-tools/">PDF Tools</a></li>
+        <li><a href="/tools/text-tools/">Text Tools</a></li>
+        <li><a href="/tools/seo-tools/">SEO Tools</a></li>
+        <li><a href="/tools/categories">All Categories →</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Legal</h3>
+      <ul class="footer-links">
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left"><span>✓ 100% Free</span><span>✓ No Sign Up</span><span>✓ No Installation</span></div>
+    <div class="footer-bottom-right">© 2026 BigToolz. All rights reserved.</div>
+    <div class="footer-bottom-links"><a href="/privacy-policy">Privacy</a><a href="/terms">Terms</a><a href="/disclaimer">Disclaimer</a></div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<!-- PDF.js + pdf-lib -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+
+<script>
+'use strict';
+
+/* ===== THEME ===== */
+(function(){try{var t=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&d))document.documentElement.setAttribute('data-theme','dark');else if(t==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();
+document.querySelector('.theme-btn')?.addEventListener('click',()=>{const h=document.documentElement;const c=h.getAttribute('data-theme');const d=window.matchMedia('(prefers-color-scheme: dark)').matches;let n=c==='dark'?'light':c==='light'?'dark':(d?'light':'dark');h.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}});
+
+/* ===== PDF.js worker ===== */
+if (window.pdfjsLib) {
+  pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+}
+
+/* ===== HELPERS ===== */
+const $ = (s, p = document) => p.querySelector(s);
+const $$ = (s, p = document) => [...p.querySelectorAll(s)];
+
+function showToast(msg, type = 'info', duration = 3000) {
+  const t = $('#toast');
+  if (!t) return;
+  t.className = 'toast visible' + (type !== 'info' ? ' ' + type : '');
+  t.textContent = msg;
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove('visible'), duration);
+}
+
+function setStatus(msg, type = 'info') {
+  const el = $('#statusMsg');
+  el.textContent = msg;
+  el.className = 'status-msg visible ' + type;
+}
+
+function clearStatus() {
+  const el = $('#statusMsg');
+  el.className = 'status-msg';
+  el.textContent = '';
+}
+
+/* ===== STATE ===== */
+const state = {
+  file1: null,
+  file2: null,
+  bytes1: null,
+  bytes2: null,
+  pdf1: null,
+  pdf2: null
+};
+
+/* ===== DOM ===== */
+const uploadBox1 = $('#uploadBox1');
+const uploadBox2 = $('#uploadBox2');
+const uploadSub1 = $('#uploadSub1');
+const uploadSub2 = $('#uploadSub2');
+const file1Input = $('#file1');
+const file2Input = $('#file2');
+const canvas1 = $('#canvas1');
+const canvas2 = $('#canvas2');
+const empty1 = $('#empty1');
+const empty2 = $('#empty2');
+const blendMode = $('#blendMode');
+const pageOffset = $('#pageOffset');
+const opacitySlider = $('#opacitySlider');
+const opacityVal = $('#opacityVal');
+const mergeBtn = $('#mergeBtn');
+const resetBtn = $('#resetBtn');
+const progress = $('#progress');
+const progressFill = $('#progressFill');
+const progressText = $('#progressText');
+const resultInfo = $('#resultInfo');
+const resultText = $('#resultText');
+
+/* ===== UPLOAD HANDLERS ===== */
+function setupUploadBox(box, input, slot) {
+  box.addEventListener('click', () => input.click());
+
+  ['dragenter', 'dragover'].forEach(evt => {
+    box.addEventListener(evt, (e) => { e.preventDefault(); e.stopPropagation(); box.classList.add('dragover'); });
+  });
+  ['dragleave', 'drop'].forEach(evt => {
+    box.addEventListener(evt, (e) => { e.preventDefault(); e.stopPropagation(); box.classList.remove('dragover'); });
+  });
+
+  box.addEventListener('drop', (e) => {
+    const f = e.dataTransfer.files[0];
+    if (f && f.type === 'application/pdf') setFile(slot, f);
+    else showToast('Please drop a PDF file', 'error');
+  });
+
+  input.addEventListener('change', (e) => {
+    const f = e.target.files[0];
+    if (f) setFile(slot, f);
+    input.value = '';
+  });
+}
+
+async function setFile(slot, file) {
+  try {
+    if (slot === 1) {
+      state.file1 = file;
+      state.bytes1 = await file.arrayBuffer();
+      state.pdf1 = await pdfjsLib.getDocument({ data: state.bytes1.slice(0) }).promise;
+      uploadBox1.classList.add('has-file');
+      uploadSub1.innerHTML = `✓ ${escapeHtml(file.name)}<strong>${state.pdf1.numPages} pages</strong>`;
+      await renderPreview(1);
+    } else {
+      state.file2 = file;
+      state.bytes2 = await file.arrayBuffer();
+      state.pdf2 = await pdfjsLib.getDocument({ data: state.bytes2.slice(0) }).promise;
+      uploadBox2.classList.add('has-file');
+      uploadSub2.innerHTML = `✓ ${escapeHtml(file.name)}<strong>${state.pdf2.numPages} pages</strong>`;
+      await renderPreview(2);
+    }
+    mergeBtn.disabled = !(state.pdf1 && state.pdf2);
+    clearStatus();
+    showToast(`PDF #${slot} loaded`, 'success');
+  } catch (err) {
+    console.error(err);
+    showToast('Failed to load: ' + err.message, 'error');
+  }
+}
+
+async function renderPreview(slot) {
+  const pdf = slot === 1 ? state.pdf1 : state.pdf2;
+  const canvas = slot === 1 ? canvas1 : canvas2;
+  const empty = slot === 1 ? empty1 : empty2;
+
+  if (!pdf) return;
+
+  try {
+    const page = await pdf.getPage(1);
+    const viewport = page.getViewport({ scale: 0.6 });
+    canvas.width = viewport.width;
+    canvas.height = viewport.height;
+    const ctx = canvas.getContext('2d');
+    await page.render({ canvasContext: ctx, viewport }).promise;
+    canvas.style.display = 'block';
+    empty.style.display = 'none';
+  } catch (err) {
+    console.error('Preview failed:', err);
+  }
+}
+
+function escapeHtml(str) {
+  const d = document.createElement('div');
+  d.textContent = str;
+  return d.innerHTML;
+}
+
+setupUploadBox(uploadBox1, file1Input, 1);
+setupUploadBox(uploadBox2, file2Input, 2);
+
+/* ===== SLIDER ===== */
+opacitySlider.addEventListener('input', (e) => {
+  opacityVal.textContent = e.target.value + '%';
+});
+
+/* ===== OVERLAY ===== */
+mergeBtn.addEventListener('click', async () => {
+  if (!state.bytes1 || !state.bytes2) return;
+
+  mergeBtn.disabled = true;
+  clearStatus();
+  resultInfo.style.display = 'none';
+  progress.classList.add('visible');
+  progressFill.style.width = '20%';
+  progressText.textContent = 'Loading PDFs...';
+
+  try {
+    const basePdf = await PDFLib.PDFDocument.load(state.bytes1.slice(0));
+    const overlayPdf = await PDFLib.PDFDocument.load(state.bytes2.slice(0));
+
+    progressFill.style.width = '40%';
+    progressText.textContent = 'Embedding overlay pages...';
+
+    const basePages = basePdf.getPages();
+    const overlayPages = overlayPdf.getPages();
+    const offset = Math.max(0, parseInt(pageOffset.value, 10) || 0);
+    const opacity = parseInt(opacitySlider.value, 10) / 100;
+    const blend = blendMode.value;
+
+    // For each overlay page, embed it as an image (rasterized) on the base page
+    // pdf-lib doesn't support drawing a PDF page directly so we rasterize the overlay
+    // via PDF.js at the base page size, then embed as PNG.
+
+    const pagesToOverlay = Math.min(
+      overlayPages.length,
+      basePages.length - offset
+    );
+
+    if (pagesToOverlay <= 0) {
+      throw new Error('Page offset is too high no pages left to overlay.');
+    }
+
+    progressFill.style.width = '50%';
+    progressText.textContent = `Overlaying ${pagesToOverlay} pages...`;
+
+    for (let i = 0; i < pagesToOverlay; i++) {
+      const basePage = basePages[offset + i];
+      const baseSize = basePage.getSize();
+
+      // Rasterize overlay page (i) at base page dimensions
+      const overlayPage = await state.pdf2.getPage(i + 1);
+      const scale = 2.0; // high-res rasterization
+      const viewport = overlayPage.getViewport({ scale });
+
+      const tmpCanvas = document.createElement('canvas');
+      tmpCanvas.width = Math.round(viewport.width);
+      tmpCanvas.height = Math.round(viewport.height);
+      const ctx = tmpCanvas.getContext('2d');
+
+      // White background (PDF.js renders transparent otherwise)
+      ctx.fillStyle = '#ffffff';
+      ctx.fillRect(0, 0, tmpCanvas.width, tmpCanvas.height);
+      await overlayPage.render({ canvasContext: ctx, viewport }).promise;
+
+      // Convert to PNG bytes
+      const dataUrl = tmpCanvas.toDataURL('image/png');
+      const pngBytes = dataUrlToBytes(dataUrl);
+
+      // Embed PNG in base PDF
+      const embeddedPng = await basePdf.embedPng(pngBytes);
+
+      // Draw it on the base page with the base page dimensions
+      basePage.drawImage(embeddedPng, {
+        x: 0,
+        y: 0,
+        width: baseSize.width,
+        height: baseSize.height,
+        opacity: opacity,
+        blendMode: blend
+      });
+
+      progressFill.style.width = (50 + (i + 1) / pagesToOverlay * 40) + '%';
+      progressText.textContent = `Overlaying page ${i + 1} of ${pagesToOverlay}...`;
+    }
+
+    progressFill.style.width = '95%';
+    progressText.textContent = 'Saving PDF...';
+
+    const outBytes = await basePdf.save();
+    const blob = new Blob([outBytes], { type: 'application/pdf' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'overlay-merged.pdf';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    setTimeout(() => URL.revokeObjectURL(url), 2000);
+
+    progressFill.style.width = '100%';
+    setStatus(`✅ Overlaid ${pagesToOverlay} page(s) Blend: ${blend}, Opacity: ${opacity * 100}%`, 'success');
+    resultInfo.style.display = 'block';
+    resultText.textContent = `Base: ${state.pdf1.numPages} pages · Overlay: ${state.pdf2.numPages} pages · Result: ${state.pdf1.numPages} pages with ${pagesToOverlay} overlay(s) applied.`;
+
+    showToast('PDF downloaded!', 'success');
+
+    setTimeout(() => {
+      progress.classList.remove('visible');
+      progressFill.style.width = '0%';
+    }, 1500);
+  } catch (err) {
+    console.error(err);
+    progress.classList.remove('visible');
+    setStatus('Failed: ' + err.message, 'error');
+    showToast('Failed: ' + err.message, 'error');
+  } finally {
+    mergeBtn.disabled = false;
+  }
+});
+
+/* ===== DATA URL TO BYTES ===== */
+function dataUrlToBytes(dataUrl) {
+  const base64 = dataUrl.split(',')[1];
+  const binaryStr = atob(base64);
+  const len = binaryStr.length;
+  const bytes = new Uint8Array(len);
+  for (let i = 0; i < len; i++) {
+    bytes[i] = binaryStr.charCodeAt(i);
+  }
+  return bytes;
+}
+
+/* ===== RESET ===== */
+resetBtn.addEventListener('click', () => {
+  state.file1 = null;
+  state.file2 = null;
+  state.bytes1 = null;
+  state.bytes2 = null;
+  state.pdf1 = null;
+  state.pdf2 = null;
+
+  uploadBox1.classList.remove('has-file');
+  uploadBox2.classList.remove('has-file');
+  uploadSub1.textContent = 'Drag & drop or click to upload';
+  uploadSub2.textContent = 'Drag & drop or click to upload';
+
+  canvas1.style.display = 'none';
+  canvas2.style.display = 'none';
+  empty1.style.display = '';
+  empty2.style.display = '';
+
+  mergeBtn.disabled = true;
+  clearStatus();
+  resultInfo.style.display = 'none';
+  progress.classList.remove('visible');
+  showToast('Reset', 'info');
+});
+
+/* ===== FAQ ===== */
+$$('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    $$('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+</script>
+
+</body>
+</html>

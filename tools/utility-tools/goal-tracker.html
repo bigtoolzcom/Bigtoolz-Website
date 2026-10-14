@@ -1,0 +1,1382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2563eb">
+
+<title>Goal Tracker - Track Your Goals Online Free | BigToolz</title>
+<meta name="description" content="Free online goal tracker. Set personal, career, health, and finance goals. Track progress, deadlines, and milestones. Data saved locally 100% private.">
+<meta name="keywords" content="goal tracker, goal setting, progress tracker, milestone tracker, personal goals, target tracker">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://bigtoolz.com/tools/utility-tools/goal-tracker/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Goal Tracker - Free Online Tool | BigToolz">
+<meta property="og:description" content="Track your goals with deadlines, priorities, and progress. 100% private.">
+<meta property="og:url" content="https://bigtoolz.com/tools/utility-tools/goal-tracker/">
+<meta property="og:image" content="https://bigtoolz.com/assets/images/og-image.jpg">
+<meta property="og:site_name" content="BigToolz">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Goal Tracker - BigToolz">
+<meta name="twitter:description" content="Track your goals free, private, browser-based.">
+<meta name="twitter:image" content="https://bigtoolz.com/assets/images/twitter-card.jpg">
+
+<link rel="icon" href="/assets/images/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/images/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#f8f9fc;color:#1a1a2e;overflow-x:hidden;line-height:1.5}
+
+  .header{background:#fff;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;position:sticky;top:0;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+  .header-left{display:flex;align-items:center;gap:40px}
+  .logo{display:flex;align-items:center;gap:8px;font-size:22px;font-weight:800;color:#1a1a2e;text-decoration:none}
+  .logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#3b82f6,#2563eb);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px}
+  .logo span{color:#2563eb}
+  .nav{display:flex;align-items:center;gap:28px;list-style:none}
+  .nav a{text-decoration:none;color:#4b5563;font-size:14px;font-weight:500;transition:color .2s}
+  .nav a:hover,.nav a.active{color:#2563eb}
+  .header-right{display:flex;align-items:center;gap:16px}
+  .search-btn,.theme-btn{width:36px;height:36px;border-radius:50%;border:none;background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#4b5563}
+  .search-btn:hover,.theme-btn:hover{background:#f3f4f6}
+  .bookmark-btn{display:flex;align-items:center;gap:8px;background:#2563eb;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
+  .bookmark-btn:hover{background:#1d4ed8}
+
+  .hero{background:linear-gradient(135deg,#0a0e27 0%,#1a1a4e 40%,#2d1b69 70%,#4c1d95 100%);padding:40px 40px 60px;position:relative;overflow:hidden;color:#fff}
+  .hero::before{content:'';position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(139,92,246,.3) 0%,transparent 70%);border-radius:50%}
+  .hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+  .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px;flex-wrap:wrap}
+  .breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none}
+  .breadcrumb a:hover{color:#fff}
+  .breadcrumb .sep{color:rgba(255,255,255,.4)}
+  .breadcrumb .current{color:#fff;font-weight:500}
+  .hero-title-row{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+  .hero-icon{width:60px;height:60px;background:#8b5cf6;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px;color:#fff;flex-shrink:0;box-shadow:0 8px 24px rgba(139,92,246,.4)}
+  .hero-title{font-size:42px;font-weight:800;line-height:1.15}
+  .hero-title .blue{color:#a78bfa}
+  .hero-desc{font-size:15px;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:24px;max-width:560px}
+  .hero-features{display:flex;gap:24px;flex-wrap:wrap}
+  .hero-feature{display:flex;align-items:center;gap:6px;font-size:13px;color:#fff;font-weight:500}
+  .hero-feature .check{width:18px;height:18px;border-radius:50%;background:#8b5cf6;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;flex-shrink:0}
+
+  .main-content{max-width:1200px;margin:0 auto;padding:40px;display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start}
+  .tool-content{min-width:0}
+
+  .workspace{background:#fff;border-radius:16px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,.06);border:1px solid #e5e7eb;margin-bottom:24px}
+
+  /* Stats */
+  .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:24px}
+  .stat-card{background:#faf5ff;border-radius:12px;padding:18px 14px;text-align:center;border:1px solid #e9d5ff}
+  .stat-card-label{font-size:10px;font-weight:700;color:#7c3aed;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+  .stat-card-value{font-size:24px;font-weight:800;color:#5b21b6;line-height:1}
+  .stat-card-value .unit{font-size:12px;font-weight:600;color:#7c3aed;margin-left:2px}
+
+  /* Form */
+  .form-section{background:#faf5ff;border-radius:12px;padding:20px;margin-bottom:24px;border:1px solid #e9d5ff}
+  .form-title{font-size:15px;font-weight:800;color:#1a1a2e;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+  .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+  .form-grid.full{grid-template-columns:1fr}
+  .form-grid.three{grid-template-columns:1fr 1fr 1fr}
+  .form-group label{display:block;font-size:12px;font-weight:700;color:#4b5563;margin-bottom:6px}
+  .form-group input,.form-group select,.form-group textarea{width:100%;padding:11px 14px;border:1.5px solid #e5e7eb;border-radius:9px;font-size:14px;font-family:inherit;color:#1a1a2e;background:#fff;outline:none;transition:border-color .2s}
+  .form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:#8b5cf6;box-shadow:0 0 0 3px rgba(139,92,246,.1)}
+  .form-group textarea{resize:vertical;min-height:70px;line-height:1.5}
+
+  .form-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 24px;border-radius:10px;font-size:14px;font-weight:700;font-family:inherit;cursor:pointer;border:none;transition:all .2s;text-decoration:none}
+  .btn-primary{background:#8b5cf6;color:#fff;box-shadow:0 4px 12px rgba(139,92,246,.2)}
+  .btn-primary:hover:not(:disabled){background:#7c3aed;transform:translateY(-2px);box-shadow:0 6px 20px rgba(139,92,246,.3)}
+  .btn-secondary{background:#fff;color:#8b5cf6;border:1px solid #e5e7eb}
+  .btn-secondary:hover{border-color:#8b5cf6;background:#faf5ff}
+
+  /* Filters */
+  .toolbar{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:20px;align-items:center}
+  .filter-tabs{display:flex;gap:6px;background:#faf5ff;padding:5px;border-radius:10px;border:1px solid #e9d5ff;flex-wrap:wrap}
+  .filter-tab{padding:8px 14px;background:transparent;border:none;border-radius:7px;font-size:12px;font-weight:700;color:#6b7280;cursor:pointer;font-family:inherit;transition:all .2s;white-space:nowrap}
+  .filter-tab:hover{background:#f3e8ff;color:#7c3aed}
+  .filter-tab.active{background:#8b5cf6;color:#fff}
+  .sort-select{padding:9px 14px;border:1.5px solid #e5e7eb;border-radius:9px;font-size:12px;font-weight:700;font-family:inherit;color:#4b5563;background:#fff;outline:none;cursor:pointer}
+
+  /* Goals list */
+  .goals-list{display:flex;flex-direction:column;gap:14px}
+  .goal-card{background:#fff;border:1.5px solid #e5e7eb;border-radius:14px;padding:18px;transition:all .2s;position:relative}
+  .goal-card:hover{border-color:#8b5cf6;box-shadow:0 4px 16px rgba(139,92,246,.08)}
+  .goal-card.completed{background:#f0fdf4;border-color:#86efac;opacity:.85}
+  .goal-card.overdue{background:#fef2f2;border-color:#fecaca}
+  .goal-card.paused{background:#f8fafc;opacity:.7}
+
+  .goal-header{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:12px;flex-wrap:wrap}
+  .goal-title-wrap{flex:1;min-width:0}
+  .goal-title{font-size:16px;font-weight:800;color:#1a1a2e;margin-bottom:6px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+  .goal-card.completed .goal-title{text-decoration:line-through;color:#065f46}
+  .goal-category{font-size:10px;font-weight:700;padding:3px 8px;border-radius:10px;text-transform:uppercase;letter-spacing:.3px;background:#f3e8ff;color:#7c3aed;white-space:nowrap}
+  .goal-priority{font-size:10px;font-weight:700;padding:3px 8px;border-radius:10px;text-transform:uppercase;letter-spacing:.3px;white-space:nowrap}
+  .goal-priority.high{background:#fef2f2;color:#dc2626}
+  .goal-priority.medium{background:#fffbeb;color:#d97706}
+  .goal-priority.low{background:#ecfdf5;color:#059669}
+  .goal-desc{font-size:13px;color:#6b7280;line-height:1.5;margin-bottom:12px}
+
+  /* Progress */
+  .goal-progress-wrap{margin-bottom:12px}
+  .goal-progress-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;font-size:12px;font-weight:700;color:#6b7280}
+  .goal-progress-value{color:#7c3aed;font-weight:800}
+  .goal-progress-bar{height:10px;background:#f3f4f6;border-radius:5px;overflow:hidden;position:relative;margin-bottom:6px}
+  .goal-progress-fill{height:100%;background:linear-gradient(90deg,#a78bfa,#8b5cf6);border-radius:5px;transition:width .3s ease;position:relative}
+  .goal-card.completed .goal-progress-fill{background:linear-gradient(90deg,#34d399,#10b981)}
+  .goal-progress-bar.progress-overdue .goal-progress-fill{background:linear-gradient(90deg,#f87171,#ef4444)}
+  .goal-progress-fill::after{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:repeating-linear-gradient(45deg,transparent,transparent 8px,rgba(255,255,255,.15) 8px,rgba(255,255,255,.15) 16px)}
+
+  /* Progress controls */
+  .progress-controls{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px;align-items:center}
+  .progress-input{flex:1;min-width:60px;padding:8px 10px;border:1.5px solid #e5e7eb;border-radius:8px;font-size:13px;font-weight:700;font-family:inherit;color:#1a1a2e;background:#fff;outline:none;transition:border-color .2s}
+  .progress-input:focus{border-color:#8b5cf6}
+  .step-btn{padding:8px 12px;background:#f3f4f6;border:1px solid #e5e7eb;border-radius:8px;font-size:12px;font-weight:700;color:#4b5563;cursor:pointer;font-family:inherit;transition:all .2s;white-space:nowrap}
+  .step-btn:hover{background:#faf5ff;border-color:#8b5cf6;color:#7c3aed}
+
+  /* Milestones */
+  .milestones-list{display:flex;flex-direction:column;gap:6px;margin-bottom:12px;padding:12px;background:#faf5ff;border-radius:8px}
+  .milestone-item{display:flex;gap:8px;align-items:center;font-size:13px;color:#4b5563}
+  .milestone-checkbox{width:18px;height:18px;border:2px solid #c4b5fd;border-radius:5px;flex-shrink:0;cursor:pointer;display:flex;align-items:center;justify-content:center;background:#fff;transition:all .2s}
+  .milestone-checkbox.checked{background:#8b5cf6;border-color:#8b5cf6;color:#fff}
+  .milestone-checkbox.checked::after{content:'✓';font-size:11px;font-weight:900;color:#fff}
+  .milestone-text{flex:1;font-weight:600}
+  .milestone-item.done .milestone-text{text-decoration:line-through;color:#9ca3af}
+
+  /* Footer */
+  .goal-footer{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;padding-top:12px;border-top:1px solid #f3f4f6}
+  .goal-meta{display:flex;gap:12px;flex-wrap:wrap;font-size:11px;color:#9ca3af;font-weight:600}
+  .goal-meta-item{display:flex;align-items:center;gap:4px}
+  .goal-meta-item .deadline-warn{color:#dc2626;font-weight:800}
+  .goal-actions{display:flex;gap:6px;flex-wrap:wrap}
+  .icon-btn{width:32px;height:32px;border-radius:8px;border:1px solid #e5e7eb;background:#fff;cursor:pointer;color:#6b7280;font-family:inherit;font-size:13px;display:flex;align-items:center;justify-content:center;transition:all .2s;flex-shrink:0}
+  .icon-btn:hover{border-color:#8b5cf6;color:#7c3aed;background:#faf5ff}
+  .icon-btn.danger:hover{border-color:#ef4444;color:#dc2626;background:#fef2f2}
+  .icon-btn.success{color:#10b981}
+  .icon-btn.success:hover{border-color:#10b981;background:#f0fdf4}
+
+  /* Empty state */
+  .empty-state{text-align:center;padding:48px 20px;color:#9ca3af;font-size:14px;background:#faf5ff;border-radius:12px;border:1px dashed #e9d5ff}
+  .empty-state .icon{font-size:48px;margin-bottom:12px;display:block;opacity:.6}
+
+  /* Data section */
+  .data-section{background:#f8fafc;border-radius:12px;padding:18px;margin-top:24px;border:1px solid #e5e7eb}
+  .data-section-title{font-size:12px;font-weight:700;color:#4b5563;margin-bottom:12px;text-transform:uppercase;letter-spacing:.5px}
+  .data-btns{display:flex;gap:8px;flex-wrap:wrap}
+  .mini-btn{display:inline-flex;align-items:center;gap:6px;padding:9px 14px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;font-size:12px;font-weight:600;color:#4b5563;cursor:pointer;font-family:inherit;transition:all .2s}
+  .mini-btn:hover{border-color:#8b5cf6;color:#7c3aed;background:#faf5ff}
+  .mini-btn.danger:hover{border-color:#ef4444;color:#dc2626;background:#fef2f2}
+
+  /* SEO */
+  .seo-content{background:#fff;border-radius:16px;padding:32px;border:1px solid #e5e7eb;margin-bottom:24px}
+  .seo-content h2{font-size:22px;font-weight:800;color:#1a1a2e;margin-bottom:14px;margin-top:28px;display:flex;align-items:center;gap:10px}
+  .seo-content h2:first-child{margin-top:0}
+  .seo-content h3{font-size:16px;font-weight:700;color:#1a1a2e;margin:20px 0 10px}
+  .seo-content p{font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:14px}
+  .seo-content ul{list-style:none;padding-left:0;margin-bottom:16px}
+  .seo-content ul li{position:relative;padding-left:24px;font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:8px}
+  .seo-content ul li::before{content:'';position:absolute;left:6px;top:12px;width:6px;height:6px;background:#8b5cf6;border-radius:50%}
+  .seo-content a{color:#2563eb;text-decoration:none;font-weight:600}
+  .seo-content a:hover{text-decoration:underline}
+  .seo-content strong{color:#1a1a2e;font-weight:700}
+
+  .how-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:20px}
+  .how-step{background:#faf5ff;border-radius:12px;padding:20px;border:1px solid #e9d5ff}
+  .how-step-num{width:36px;height:36px;border-radius:50%;background:#8b5cf6;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;margin-bottom:12px}
+  .how-step-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+  .how-step-desc{font-size:13px;color:#6b7280;line-height:1.6}
+
+  .faq-item{background:#faf5ff;border:1px solid #e9d5ff;border-radius:12px;margin-bottom:10px;overflow:hidden;transition:border-color .2s}
+  .faq-item:hover{border-color:#8b5cf6}
+  .faq-question{width:100%;background:none;border:none;padding:18px 22px;font-size:15px;font-weight:700;color:#1a1a2e;text-align:left;cursor:pointer;font-family:inherit;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .faq-question .chev{font-size:12px;color:#8b5cf6;transition:transform .2s;flex-shrink:0}
+  .faq-item.open .faq-question .chev{transform:rotate(180deg)}
+  .faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 22px}
+  .faq-item.open .faq-answer{max-height:500px;padding-bottom:18px}
+  .faq-answer p{font-size:14px;color:#6b7280;line-height:1.7;margin:0}
+
+  .sidebar{background:#fff;border-radius:16px;padding:24px;border:1px solid #e5e7eb;position:sticky;top:80px;margin-bottom:24px}
+  .sidebar-header{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:800;color:#1a1a2e;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid #f3f4f6}
+  .sidebar-list{display:flex;flex-direction:column;gap:8px}
+  .sidebar-item{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;cursor:pointer;transition:background .2s;text-decoration:none;color:inherit;border:1px solid #f3f4f6}
+  .sidebar-item:hover{background:#faf5ff;border-color:#e9d5ff}
+  .sidebar-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;flex-shrink:0}
+  .sidebar-info{flex:1;min-width:0}
+  .sidebar-title{font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:2px}
+  .sidebar-desc{font-size:11px;color:#9ca3af;line-height:1.4}
+
+  .footer{background:#0a0e27;padding:60px 40px 30px;color:#fff;margin-top:40px}
+  .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:40px}
+  .footer-brand{display:flex;align-items:center;gap:8px;font-size:20px;font-weight:800;margin-bottom:12px}
+  .footer-brand span{color:#60a5fa}
+  .footer-tagline{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px}
+  .footer-social{display:flex;gap:12px}
+  .footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:16px;transition:background .2s}
+  .footer-social a:hover{background:rgba(255,255,255,.2)}
+  .footer-heading{font-size:14px;font-weight:700;margin-bottom:20px;color:#fff}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .footer-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;transition:color .2s}
+  .footer-links a:hover{color:#60a5fa}
+  .footer-bottom{max-width:1200px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  .footer-bottom-left{display:flex;gap:20px;font-size:12px;color:rgba(255,255,255,.5)}
+  .footer-bottom-right,.footer-bottom-links a{font-size:12px;color:rgba(255,255,255,.5);text-decoration:none}
+  .footer-bottom-links{display:flex;gap:20px}
+
+  .toast{position:fixed;bottom:24px;right:24px;background:#1a1a2e;color:#fff;padding:14px 20px;border-radius:10px;font-size:13px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:3000;transform:translateY(200%);transition:transform .3s ease;max-width:320px}
+  .toast.visible{transform:translateY(0)}
+  .toast.success{background:#10b981}
+  .toast.error{background:#ef4444}
+
+  @media(max-width:1024px){
+    .main-content{grid-template-columns:1fr;padding:24px 20px}
+    .sidebar{position:static}
+    .how-steps{grid-template-columns:repeat(2,1fr)}
+    .stats-grid{grid-template-columns:repeat(2,1fr)}
+    .form-grid.three{grid-template-columns:1fr 1fr}
+  }
+  @media(max-width:768px){
+    .header{padding:0 20px}.nav{display:none}
+    .hero{padding:24px 20px 40px}
+    .hero-title{font-size:28px}
+    .hero-icon{width:48px;height:48px;font-size:20px}
+    .hero-title-row{flex-direction:column;align-items:flex-start;gap:12px}
+    .main-content{padding:20px 16px}
+    .workspace{padding:20px}
+    .how-steps{grid-template-columns:1fr}
+    .seo-content{padding:20px}
+    .footer-inner{grid-template-columns:1fr 1fr}
+    .toast{left:16px;right:16px;bottom:16px;max-width:none}
+    .form-grid,.form-grid.three{grid-template-columns:1fr}
+    .toolbar{flex-direction:column;align-items:stretch}
+  }
+  @media(max-width:576px){
+    .header{padding:0 16px}.header-right .search-btn,.header-right .theme-btn{display:none}
+    .hero-title{font-size:24px}
+    .footer-inner{grid-template-columns:1fr}
+    .footer-bottom{flex-direction:column;text-align:center}
+    .stats-grid{grid-template-columns:1fr 1fr}
+    .stat-card-value{font-size:20px}
+    .goal-header{flex-direction:column;align-items:flex-start}
+    .goal-footer{flex-direction:column;align-items:flex-start;gap:12px}
+    .progress-controls{flex-direction:column}
+    .progress-input,.step-btn{width:100%}
+  }
+
+  html[data-theme="dark"] body{background:#0f172a;color:#f1f5f9}
+  html[data-theme="dark"] .header,html[data-theme="dark"] .workspace,html[data-theme="dark"] .seo-content,html[data-theme="dark"] .sidebar{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .logo,html[data-theme="dark"] .hero-title,html[data-theme="dark"] .seo-content h2,html[data-theme="dark"] .seo-content h3,html[data-theme="dark"] .faq-question,html[data-theme="dark"] .sidebar-header,html[data-theme="dark"] .sidebar-title,html[data-theme="dark"] .form-title,html[data-theme="dark"] .goal-title{color:#f1f5f9}
+  html[data-theme="dark"] .nav a{color:#cbd5e1}
+  html[data-theme="dark"] .how-step,html[data-theme="dark"] .faq-item,html[data-theme="dark"] .form-section,html[data-theme="dark"] .filter-tabs,html[data-theme="dark"] .milestones-list,html[data-theme="dark"] .goal-card{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .form-group input,html[data-theme="dark"] .form-group select,html[data-theme="dark"] .form-group textarea,html[data-theme="dark"] .progress-input{background:#1e293b;border-color:#334155;color:#f1f5f9}
+  html[data-theme="dark"] .stat-card{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .stat-card-label{color:#94a3b8}
+  html[data-theme="dark"] .stat-card-value{color:#f1f5f9}
+  html[data-theme="dark"] .stat-card-value .unit{color:#94a3b8}
+  html[data-theme="dark"] .goal-card.completed{background:#0f1f16;border-color:#065f46}
+  html[data-theme="dark"] .goal-card.overdue{background:#1f0f0f;border-color:#7f1d1d}
+  html[data-theme="dark"] .goal-card.paused{background:#0f172a;opacity:.6}
+  html[data-theme="dark"] .goal-desc{color:#94a3b8}
+  html[data-theme="dark"] .goal-footer{border-color:#334155}
+  html[data-theme="dark"] .goal-progress-bar{background:#334155}
+  html[data-theme="dark"] .step-btn{background:#1e293b;border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .data-section{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .seo-content p,html[data-theme="dark"] .seo-content ul li,html[data-theme="dark"] .faq-answer p{color:#cbd5e1}
+  html[data-theme="dark"] .mini-btn{background:#0f172a;border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .icon-btn{background:#0f172a;border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .filter-tab{color:#cbd5e1}
+  html[data-theme="dark"] .filter-tab.active{background:#8b5cf6;color:#fff}
+  html[data-theme="dark"] .sort-select{background:#0f172a;border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .milestone-checkbox{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .milestone-checkbox.checked{background:#8b5cf6;border-color:#8b5cf6}
+  html[data-theme="dark"] .empty-state{background:#0f172a;border-color:#334155}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type": "SoftwareApplication", "name": "Goal Tracker", "url": "https://bigtoolz.com/tools/utility-tools/goal-tracker/", "applicationCategory": "ProductivityApplication", "operatingSystem": "Any (Web-based)", "description": "Free online goal tracker. Set personal, career, health, and finance goals. Track progress, deadlines, and milestones. Data saved locally 100% private.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "967"}},
+    {"@type": "HowTo", "name": "How to Track Your Goals", "step": [
+      {"@type": "HowToStep", "name": "Create a Goal", "text": "Give your goal a title, category, priority, and target value or milestone list."},
+      {"@type": "HowToStep", "name": "Set a Deadline", "text": "Optionally set a target date to stay accountable."},
+      {"@type": "HowToStep", "name": "Update Progress", "text": "Log progress regularly either by sliding, adding numbers, or checking off milestones."},
+      {"@type": "HowToStep", "name": "Complete", "text": "Mark the goal as complete when you hit 100%."}
+    ]},
+    {"@type": "FAQPage", "mainEntity": [
+      {"@type": "Question", "name": "Is my goal data private?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, 100%. Your goals are stored only in your browser's localStorage. Nothing is sent to any server. You can export or delete your data anytime."}},
+      {"@type": "Question", "name": "What goal types are supported?", "acceptedAnswer": {"@type": "Answer", "text": "Four types: Numeric (e.g., 100 pages, 10km), Percentage (e.g., 75% complete), Milestone (checklist of steps), and Simple (just done/not done). Choose the type when creating a goal."}},
+      {"@type": "Question", "name": "How do I set a deadline?", "acceptedAnswer": {"@type": "Answer", "text": "When creating or editing a goal, set a target date. The tracker shows days remaining (or overdue) and highlights the goal if you're close to missing it."}},
+      {"@type": "Question", "name": "What is the SMART goal framework?", "acceptedAnswer": {"@type": "Answer", "text": "SMART = Specific, Measurable, Achievable, Relevant, Time-bound. Every goal in this tracker can be made SMART: give it a clear title (Specific), a numeric target (Measurable), realistic scope (Achievable), a category (Relevant), and a deadline (Time-bound)."}}
+    ]},
+    {"@type": "BreadcrumbList", "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bigtoolz.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://bigtoolz.com/tools/"},
+      {"@type": "ListItem", "position": 3, "name": "Utility Tools", "item": "https://bigtoolz.com/tools/utility-tools/"},
+      {"@type": "ListItem", "position": 4, "name": "Goal Tracker", "item": "https://bigtoolz.com/tools/utility-tools/goal-tracker/"}
+    ]}
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-left">
+    <a href="/" class="logo"><div class="logo-icon">⚒</div>BigToolz</span></a>
+    <nav><ul class="nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/tools/" class="active">All Tools</a></li>
+      <li><a href="/tools/categories">Categories</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul></nav>
+  </div>
+  <div class="header-right">
+    
+    <button class="theme-btn" aria-label="Toggle theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
+    
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <nav class="breadcrumb">
+      <a href="/">Home</a><span class="sep">›</span>
+      <a href="/tools/">Tools</a><span class="sep">›</span>
+      <a href="/tools/utility-tools/">Utility Tools</a><span class="sep">›</span>
+      <span class="current">Goal Tracker</span>
+    </nav>
+    <div class="hero-title-row">
+      <div class="hero-icon">🎯</div>
+      <h1 class="hero-title">Goal <span class="blue">Tracker</span></h1>
+    </div>
+    <p class="hero-desc">
+      Set personal, career, health, and finance goals. Track progress, milestones, and deadlines all in one place. Your data stays 100% private in your browser.
+    </p>
+    <div class="hero-features">
+      <div class="hero-feature"><span class="check">✓</span> 4 Goal Types</div>
+      <div class="hero-feature"><span class="check">✓</span> Deadlines & Priority</div>
+      <div class="hero-feature"><span class="check">✓</span> Stats & Charts</div>
+      <div class="hero-feature"><span class="check">✓</span> 100% Private</div>
+    </div>
+  </div>
+</section>
+
+<div class="main-content">
+
+  <div class="tool-content">
+
+    <!-- Stats -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-card-label">Total Goals</div>
+        <div class="stat-card-value" id="statTotal">0</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card-label">Active</div>
+        <div class="stat-card-value" id="statActive">0</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card-label">Completed</div>
+        <div class="stat-card-value" id="statCompleted">0</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card-label">Completion</div>
+        <div class="stat-card-value" id="statRate">0<span class="unit">%</span></div>
+      </div>
+    </div>
+
+    <!-- Create Goal Form -->
+    <div class="workspace">
+      <div class="form-section">
+        <div class="form-title">➕ Create a New Goal</div>
+
+        <div class="form-grid full">
+          <div class="form-group">
+            <label>Goal Title *</label>
+            <input type="text" id="goalTitle" placeholder="e.g. Read 24 books this year" maxlength="100">
+          </div>
+        </div>
+
+        <div class="form-grid">
+          <div class="form-group">
+            <label>Category</label>
+            <select id="goalCategory">
+              <option value="personal">👤 Personal</option>
+              <option value="career">💼 Career</option>
+              <option value="health">💪 Health & Fitness</option>
+              <option value="finance">💰 Finance</option>
+              <option value="learning">📚 Learning</option>
+              <option value="other">🎯 Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Priority</label>
+            <select id="goalPriority">
+              <option value="low">🟢 Low</option>
+              <option value="medium" selected>🟡 Medium</option>
+              <option value="high">🔴 High</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-grid three">
+          <div class="form-group">
+            <label>Goal Type</label>
+            <select id="goalType">
+              <option value="numeric" selected>Numeric (with units)</option>
+              <option value="percentage">Percentage (%)</option>
+              <option value="milestone">Milestone (checklist)</option>
+              <option value="simple">Simple (done/not done)</option>
+            </select>
+          </div>
+          <div class="form-group" id="targetValueGroup">
+            <label>Target Value</label>
+            <input type="number" id="goalTarget" placeholder="e.g. 24" value="100" min="1">
+          </div>
+          <div class="form-group" id="targetUnitGroup">
+            <label>Unit</label>
+            <input type="text" id="goalUnit" placeholder="e.g. books, km, ₹" value="" maxlength="10">
+          </div>
+        </div>
+
+        <div class="form-grid" id="milestonesGroup" style="display:none;">
+          <div class="form-group">
+            <label>Milestones (one per line)</label>
+            <textarea id="goalMilestones" placeholder="Draft outline&#10;Write chapter 1&#10;Edit and review&#10;Publish"></textarea>
+          </div>
+        </div>
+
+        <div class="form-grid">
+          <div class="form-group">
+            <label>Deadline (optional)</label>
+            <input type="date" id="goalDeadline">
+          </div>
+          <div class="form-group">
+            <label>Description (optional)</label>
+            <input type="text" id="goalDesc" placeholder="Why does this matter?" maxlength="200">
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button class="btn btn-primary" id="addGoalBtn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
+            Create Goal
+          </button>
+          <button class="btn btn-secondary" id="cancelEditBtn" style="display:none;">Cancel Edit</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Goals list -->
+    <div class="workspace">
+      <div class="toolbar">
+        <div class="filter-tabs">
+          <button class="filter-tab active" data-filter="all">All</button>
+          <button class="filter-tab" data-filter="active">Active</button>
+          <button class="filter-tab" data-filter="completed">Completed</button>
+          <button class="filter-tab" data-filter="overdue">Overdue</button>
+        </div>
+        <select class="sort-select" id="sortSelect">
+          <option value="recent" selected>Sort: Recent</option>
+          <option value="priority">Sort: Priority</option>
+          <option value="deadline">Sort: Deadline</option>
+          <option value="progress">Sort: Progress</option>
+          <option value="title">Sort: Title</option>
+        </select>
+      </div>
+
+      <div class="goals-list" id="goalsList"></div>
+
+      <div class="data-section">
+        <div class="data-section-title">💾 Data Management</div>
+        <div class="data-btns">
+          <button class="mini-btn" id="exportJsonBtn">⬇ Export JSON</button>
+          <button class="mini-btn" id="importBtn">⬆ Import JSON</button>
+          <button class="mini-btn danger" id="deleteAllBtn">🗑 Delete All</button>
+          <input type="file" id="importFile" accept=".json" style="display:none;">
+        </div>
+      </div>
+    </div>
+
+    <!-- SEO Content -->
+    <div class="seo-content">
+
+      <h2>🎯 What is a Goal Tracker?</h2>
+      <p>
+        A <strong>goal tracker</strong> is a simple tool that helps you define what you want to achieve, break it into measurable steps, and track your progress over time. Whether you're working toward <strong>career milestones, fitness targets, financial savings, or personal growth</strong> writing your goals down and tracking them dramatically increases your chances of success.
+      </p>
+      <p>
+        Research on goal-setting (Locke & Latham, 2002) shows that <strong>specific, measurable goals outperform vague intentions</strong> by a huge margin. Just the act of writing a goal down makes you <strong>42% more likely</strong> to achieve it. Tracking progress adds another layer of accountability.
+      </p>
+
+      <h2>🚀 How to Use the Goal Tracker</h2>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-step-num">1</div>
+          <div class="how-step-title">Create a Goal</div>
+          <div class="how-step-desc">Give it a clear title, category, and priority.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">2</div>
+          <div class="how-step-title">Choose Type</div>
+          <div class="how-step-desc">Numeric, Percentage, Milestone, or Simple.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">3</div>
+          <div class="how-step-title">Set Deadline</div>
+          <div class="how-step-desc">Add a target date to stay accountable.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">4</div>
+          <div class="how-step-title">Track Progress</div>
+          <div class="how-step-desc">Update as you go hit 100% to complete.</div>
+        </div>
+      </div>
+
+      <h2>📋 The 4 Goal Types Explained</h2>
+
+      <h3>1. Numeric Goals</h3>
+      <p>Track goals with a countable target. Example: <em>Read 24 books</em>, <em>Run 500 km</em>, <em>Save ₹1,00,000</em>. Update by adding numbers as you progress.</p>
+
+      <h3>2. Percentage Goals</h3>
+      <p>For goals that are inherently progress-based. Example: <em>Finish 100% of course</em>, <em>Save 75% of target</em>. Move a slider from 0 to 100.</p>
+
+      <h3>3. Milestone Goals</h3>
+      <p>Break a big goal into a checklist of steps. Example: <em>Write a book</em> → Draft outline → Write ch. 1 → Edit → Publish. Check each milestone as you complete it.</p>
+
+      <h3>4. Simple Goals</h3>
+      <p>Binary done/not-done goals. Example: <em>Apply for passport</em>, <em>Register for marathon</em>. Mark complete when finished.</p>
+
+      <h2>💡 The SMART Goal Framework</h2>
+      <p>Every goal in this tracker can be made <strong>SMART</strong>:</p>
+      <ul>
+        <li><strong>S Specific:</strong> "Read 24 books" beats "Read more".</li>
+        <li><strong>M Measurable:</strong> Use numeric goals with a target value.</li>
+        <li><strong>A Achievable:</strong> Be realistic 24 books/year = 2/month.</li>
+        <li><strong>R Relevant:</strong> Use categories to align with your bigger picture.</li>
+        <li><strong>T Time-bound:</strong> Always set a deadline (or a year-end date).</li>
+      </ul>
+
+      <h2>⚡ Tips for Goal Success</h2>
+      <ul>
+        <li><strong>Start with 3-5 goals.</strong> Too many active goals dilute focus. Quality over quantity.</li>
+        <li><strong>Break big goals into milestones.</strong> "Learn Spanish" is overwhelming "Complete Duolingo Unit 1" is doable.</li>
+        <li><strong>Review weekly.</strong> Set a recurring 10-minute reminder to update progress.</li>
+        <li><strong>Set realistic deadlines.</strong> Ambitious but possible you want urgency without stress.</li>
+        <li><strong>Track leading indicators.</strong> Weight loss is a lagging indicator; tracking daily workouts is leading.</li>
+        <li><strong>Celebrate small wins.</strong> Marking a milestone done is a dopamine hit that fuels more progress.</li>
+        <li><strong>Adjust as you learn.</strong> Goals aren't contracts update targets if reality changes.</li>
+      </ul>
+
+      <h2>❓ Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-question">Is my goal data private?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>Yes, 100%.</strong> Your goals are stored only in your browser's localStorage. Nothing is sent to any server. You can export or delete your data anytime. Even we can't see your goals.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What goal types are supported?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Four types: <strong>Numeric</strong> (e.g., 100 pages, 10km), <strong>Percentage</strong> (e.g., 75% complete), <strong>Milestone</strong> (checklist of steps), and <strong>Simple</strong> (just done/not done). Choose the type when creating a goal.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">How do I set a deadline?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>When creating or editing a goal, set a target date. The tracker shows <strong>days remaining</strong> (or overdue) and highlights the goal in red if you're close to missing it.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What is the SMART goal framework?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>SMART</strong> = Specific, Measurable, Achievable, Relevant, Time-bound. Every goal in this tracker can be made SMART: give it a clear title (Specific), a numeric target (Measurable), realistic scope (Achievable), a category (Relevant), and a deadline (Time-bound).</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What happens if I clear my browser data?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>If you clear your browser's storage, your goals will be lost. To prevent this, <strong>export a JSON backup regularly</strong> and keep it safe. You can re-import it anytime.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I edit a goal after creating it?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Yes. Click the <strong>edit icon (✏️)</strong> on any goal to modify its title, category, priority, deadline, or other details. Your progress is preserved when you edit.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Does it work offline?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Yes after your first visit, the tool loads from your browser's cache and works completely offline. Your data is always stored locally, so no internet is needed.</p></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-header">🔗 Related Utility Tools</div>
+    <div class="sidebar-list">
+      <a href="/tools/utility-tools/habit-tracker/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#10b981;">✅</div>
+        <div class="sidebar-info"><div class="sidebar-title">Habit Tracker</div><div class="sidebar-desc">Build daily habits</div></div>
+      </a>
+      <a href="/tools/utility-tools/mood-tracker/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#fbbf24;">😊</div>
+        <div class="sidebar-info"><div class="sidebar-title">Mood Tracker</div><div class="sidebar-desc">Track daily mood</div></div>
+      </a>
+      <a href="/tools/utility-tools/todo-list/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#3b82f6;">📋</div>
+        <div class="sidebar-info"><div class="sidebar-title">To-Do List</div><div class="sidebar-desc">Task management</div></div>
+      </a>
+      <a href="/tools/utility-tools/gratitude-journal/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#ec4899;">🙏</div>
+        <div class="sidebar-info"><div class="sidebar-title">Gratitude Journal</div><div class="sidebar-desc">Daily gratitude</div></div>
+      </a>
+      <a href="/tools/utility-tools/daily-quote/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#f59e0b;">💭</div>
+        <div class="sidebar-info"><div class="sidebar-title">Daily Quote</div><div class="sidebar-desc">Daily motivation</div></div>
+      </a>
+      <a href="/tools/utility-tools/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#64748b;">⚙️</div>
+        <div class="sidebar-info"><div class="sidebar-title">All Utility Tools →</div><div class="sidebar-desc">Browse 50+ tools</div></div>
+      </a>
+    </div>
+  </aside>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand"><div class="logo-icon">⚒</div>BigToolz</span></div>
+      <p class="footer-tagline">Your Ultimate Online Tools Hub</p>
+      <div class="footer-social">
+        <a href="https://facebook.com/bigtoolz" aria-label="Facebook">f</a>
+        <a href="https://twitter.com/bigtoolz" aria-label="Twitter">𝕏</a>
+        <a href="https://youtube.com/@bigtoolz" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+    <div>
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/tools/">All Tools</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Categories</h3>
+      <ul class="footer-links">
+        <li><a href="/tools/image-tools/">Image Tools</a></li>
+        <li><a href="/tools/pdf-tools/">PDF Tools</a></li>
+        <li><a href="/tools/text-tools/">Text Tools</a></li>
+        <li><a href="/tools/utility-tools/">Utility Tools</a></li>
+        <li><a href="/tools/categories">All Categories →</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Legal</h3>
+      <ul class="footer-links">
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left"><span>✓ 100% Free</span><span>✓ No Sign Up</span><span>✓ No Installation</span></div>
+    <div class="footer-bottom-right">© 2026 BigToolz. All rights reserved.</div>
+    <div class="footer-bottom-links"><a href="/privacy-policy">Privacy</a><a href="/terms">Terms</a><a href="/disclaimer">Disclaimer</a></div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+'use strict';
+
+/* ===== THEME ===== */
+(function(){try{var t=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&d))document.documentElement.setAttribute('data-theme','dark');else if(t==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();
+document.querySelector('.theme-btn')?.addEventListener('click',()=>{const h=document.documentElement;const c=h.getAttribute('data-theme');const d=window.matchMedia('(prefers-color-scheme: dark)').matches;let n=c==='dark'?'light':c==='light'?'dark':(d?'light':'dark');h.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}});
+
+/* ===== HELPERS ===== */
+const $ = (s, p = document) => p.querySelector(s);
+const $$ = (s, p = document) => [...p.querySelectorAll(s)];
+
+function showToast(msg, type = 'info', duration = 3000) {
+  const t = $('#toast');
+  if (!t) return;
+  t.className = 'toast visible' + (type !== 'info' ? ' ' + type : '');
+  t.textContent = msg;
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove('visible'), duration);
+}
+
+function formatDate(d) {
+  return d.toISOString().split('T')[0];
+}
+
+function daysBetween(a, b) {
+  const one = 24 * 60 * 60 * 1000;
+  return Math.round((b - a) / one);
+}
+
+/* ===== CATEGORY / PRIORITY ===== */
+const CATEGORIES = {
+  personal: { label: 'Personal', emoji: '👤', color: '#8b5cf6' },
+  career: { label: 'Career', emoji: '💼', color: '#3b82f6' },
+  health: { label: 'Health', emoji: '💪', color: '#10b981' },
+  finance: { label: 'Finance', emoji: '💰', color: '#f59e0b' },
+  learning: { label: 'Learning', emoji: '📚', color: '#ec4899' },
+  other: { label: 'Other', emoji: '🎯', color: '#64748b' }
+};
+
+const PRIORITIES = {
+  low: { label: 'Low', color: '#059669' },
+  medium: { label: 'Medium', color: '#d97706' },
+  high: { label: 'High', color: '#dc2626' }
+};
+
+/* ===== STATE ===== */
+const STORAGE_KEY = 'bigtoolz_goal_tracker';
+
+const state = {
+  goals: [],
+  filter: 'all',
+  sort: 'recent',
+  editingId: null
+};
+
+/* ===== STORAGE ===== */
+function loadGoals() {
+  try {
+    const data = localStorage.getItem(STORAGE_KEY);
+    if (data) state.goals = JSON.parse(data);
+    if (!Array.isArray(state.goals)) state.goals = [];
+  } catch (e) {
+    state.goals = [];
+  }
+}
+
+function saveGoals() {
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(state.goals));
+  } catch (e) {
+    showToast('Failed to save', 'error');
+  }
+}
+
+/* ===== DOM ===== */
+const goalTitle = $('#goalTitle');
+const goalCategory = $('#goalCategory');
+const goalPriority = $('#goalPriority');
+const goalType = $('#goalType');
+const goalTarget = $('#goalTarget');
+const goalUnit = $('#goalUnit');
+const goalMilestones = $('#goalMilestones');
+const goalDeadline = $('#goalDeadline');
+const goalDesc = $('#goalDesc');
+const targetValueGroup = $('#targetValueGroup');
+const targetUnitGroup = $('#targetUnitGroup');
+const milestonesGroup = $('#milestonesGroup');
+const addGoalBtn = $('#addGoalBtn');
+const cancelEditBtn = $('#cancelEditBtn');
+const goalsList = $('#goalsList');
+const sortSelect = $('#sortSelect');
+const statTotal = $('#statTotal');
+const statActive = $('#statActive');
+const statCompleted = $('#statCompleted');
+const statRate = $('#statRate');
+
+/* ===== GOAL TYPE CHANGE ===== */
+goalType.addEventListener('change', () => {
+  const type = goalType.value;
+  targetValueGroup.style.display = (type === 'milestone' || type === 'simple') ? 'none' : 'block';
+  targetUnitGroup.style.display = (type === 'numeric') ? 'block' : 'none';
+  milestonesGroup.style.display = (type === 'milestone') ? 'grid' : 'none';
+});
+
+/* ===== ADD / UPDATE GOAL ===== */
+addGoalBtn.addEventListener('click', () => {
+  const title = goalTitle.value.trim();
+  if (!title) {
+    showToast('Please enter a goal title', 'error');
+    goalTitle.focus();
+    return;
+  }
+
+  const type = goalType.value;
+  const now = Date.now();
+
+  let milestones = [];
+  if (type === 'milestone') {
+    milestones = (goalMilestones.value || '')
+      .split('\n')
+      .map(s => s.trim())
+      .filter(Boolean)
+      .map((text, i) => ({ id: i, text, done: false }));
+    if (milestones.length === 0) {
+      showToast('Add at least one milestone', 'error');
+      return;
+    }
+  }
+
+  const goalData = {
+    title,
+    category: goalCategory.value,
+    priority: goalPriority.value,
+    type,
+    target: type === 'numeric' || type === 'percentage' ? (parseFloat(goalTarget.value) || 100) : 1,
+    unit: type === 'numeric' ? (goalUnit.value.trim() || '') : (type === 'percentage' ? '%' : ''),
+    milestones,
+    deadline: goalDeadline.value || '',
+    description: goalDesc.value.trim(),
+    progress: type === 'percentage' ? 0 : (type === 'simple' ? 0 : 0),
+    completed: false,
+    updatedAt: now
+  };
+
+  if (state.editingId !== null) {
+    // Update existing
+    const idx = state.goals.findIndex(g => g.id === state.editingId);
+    if (idx !== -1) {
+      const oldGoal = state.goals[idx];
+      state.goals[idx] = {
+        ...oldGoal,
+        ...goalData,
+        // Preserve progress if type hasn't changed
+        progress: oldGoal.type === type ? oldGoal.progress : 0,
+        milestones: type === 'milestone' ? milestones : [],
+        id: state.editingId,
+        createdAt: oldGoal.createdAt
+      };
+    }
+    state.editingId = null;
+    cancelEditBtn.style.display = 'none';
+    addGoalBtn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg> Create Goal';
+    showToast('✅ Goal updated!', 'success');
+  } else {
+    // Add new
+    state.goals.unshift({
+      id: 'g_' + Date.now() + '_' + Math.random().toString(36).slice(2, 7),
+      ...goalData,
+      createdAt: now
+    });
+    showToast('✅ Goal created!', 'success');
+  }
+
+  saveGoals();
+  resetForm();
+  render();
+});
+
+function resetForm() {
+  goalTitle.value = '';
+  goalCategory.value = 'personal';
+  goalPriority.value = 'medium';
+  goalType.value = 'numeric';
+  goalTarget.value = '100';
+  goalUnit.value = '';
+  goalMilestones.value = '';
+  goalDeadline.value = '';
+  goalDesc.value = '';
+  targetValueGroup.style.display = 'block';
+  targetUnitGroup.style.display = 'block';
+  milestonesGroup.style.display = 'none';
+}
+
+/* ===== CANCEL EDIT ===== */
+cancelEditBtn.addEventListener('click', () => {
+  state.editingId = null;
+  resetForm();
+  cancelEditBtn.style.display = 'none';
+  addGoalBtn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg> Create Goal';
+  showToast('Edit cancelled');
+});
+
+/* ===== FILTER & SORT ===== */
+$$('.filter-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    $$('.filter-tab').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    state.filter = tab.dataset.filter;
+    render();
+  });
+});
+
+sortSelect.addEventListener('change', () => {
+  state.sort = sortSelect.value;
+  render();
+});
+
+/* ===== HELPERS ===== */
+function isOverdue(goal) {
+  if (goal.completed || !goal.deadline) return false;
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  const dl = new Date(goal.deadline);
+  return dl < today;
+}
+
+function getProgressPct(goal) {
+  if (goal.type === 'simple') return goal.completed ? 100 : 0;
+  if (goal.type === 'milestone') {
+    if (!goal.milestones || goal.milestones.length === 0) return 0;
+    const done = goal.milestones.filter(m => m.done).length;
+    return Math.round((done / goal.milestones.length) * 100);
+  }
+  if (goal.type === 'percentage') return Math.max(0, Math.min(100, goal.progress || 0));
+  // numeric
+  const target = goal.target || 1;
+  return Math.max(0, Math.min(100, Math.round(((goal.progress || 0) / target) * 100)));
+}
+
+function escapeHtml(str) {
+  const div = document.createElement('div');
+  div.textContent = str;
+  return div.innerHTML;
+}
+
+/* ===== RENDER ===== */
+function render() {
+  renderStats();
+  renderGoals();
+}
+
+function renderStats() {
+  const total = state.goals.length;
+  const completed = state.goals.filter(g => g.completed).length;
+  const active = total - completed;
+  const rate = total > 0 ? Math.round((completed / total) * 100) : 0;
+
+  statTotal.textContent = total;
+  statActive.textContent = active;
+  statCompleted.textContent = completed;
+  statRate.innerHTML = rate + '<span class="unit">%</span>';
+}
+
+function renderGoals() {
+  // Filter
+  let filtered = state.goals;
+  if (state.filter === 'active') filtered = filtered.filter(g => !g.completed);
+  else if (state.filter === 'completed') filtered = filtered.filter(g => g.completed);
+  else if (state.filter === 'overdue') filtered = filtered.filter(g => isOverdue(g));
+
+  // Sort
+  const priorityOrder = { high: 0, medium: 1, low: 2 };
+  filtered = [...filtered].sort((a, b) => {
+    switch (state.sort) {
+      case 'priority': return priorityOrder[a.priority] - priorityOrder[b.priority];
+      case 'deadline':
+        if (!a.deadline) return 1;
+        if (!b.deadline) return -1;
+        return a.deadline.localeCompare(b.deadline);
+      case 'progress': return getProgressPct(b) - getProgressPct(a);
+      case 'title': return a.title.localeCompare(b.title);
+      case 'recent':
+      default: return b.updatedAt - a.updatedAt;
+    }
+  });
+
+  if (filtered.length === 0) {
+    goalsList.innerHTML = `
+      <div class="empty-state">
+        <span class="icon">🎯</span>
+        ${state.filter === 'all' ? 'No goals yet. Create your first goal above!' : 'No goals match this filter.'}
+      </div>
+    `;
+    return;
+  }
+
+  goalsList.innerHTML = '';
+  filtered.forEach(goal => {
+    goalsList.appendChild(renderGoalCard(goal));
+  });
+}
+
+function renderGoalCard(goal) {
+  const cat = CATEGORIES[goal.category] || CATEGORIES.other;
+  const pri = PRIORITIES[goal.priority] || PRIORITIES.medium;
+  const pct = getProgressPct(goal);
+  const overdue = isOverdue(goal);
+
+  const card = document.createElement('div');
+  card.className = 'goal-card';
+  if (goal.completed) card.classList.add('completed');
+  if (overdue) card.classList.add('overdue');
+  card.dataset.goalId = goal.id;
+
+  // Deadline
+  let deadlineHtml = '';
+  if (goal.deadline) {
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    const dl = new Date(goal.deadline);
+    const days = daysBetween(today, dl);
+    let daysText, daysClass = '';
+    if (goal.completed) {
+      daysText = '✓ Completed';
+    } else if (days < 0) {
+      daysText = `${Math.abs(days)} days overdue`;
+      daysClass = 'deadline-warn';
+    } else if (days === 0) {
+      daysText = 'Due today';
+      daysClass = 'deadline-warn';
+    } else if (days === 1) {
+      daysText = '1 day left';
+    } else {
+      daysText = `${days} days left`;
+    }
+    deadlineHtml = `
+      <span class="goal-meta-item">
+        📅 ${dl.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
+        <span class="${daysClass}"> · ${daysText}</span>
+      </span>
+    `;
+  }
+
+  // Progress text
+  let progressText = '';
+  if (goal.type === 'numeric') {
+    progressText = `${goal.progress || 0} / ${goal.target}${goal.unit ? ' ' + goal.unit : ''}`;
+  } else if (goal.type === 'percentage') {
+    progressText = `${goal.progress || 0}%`;
+  } else if (goal.type === 'milestone') {
+    const done = goal.milestones.filter(m => m.done).length;
+    progressText = `${done} / ${goal.milestones.length} milestones`;
+  } else {
+    progressText = goal.completed ? 'Done' : 'Not done';
+  }
+
+  // Milestones HTML
+  let milestonesHtml = '';
+  if (goal.type === 'milestone' && goal.milestones.length > 0) {
+    milestonesHtml = `
+      <div class="milestones-list">
+        ${goal.milestones.map(m => `
+          <div class="milestone-item ${m.done ? 'done' : ''}" data-milestone-id="${m.id}">
+            <div class="milestone-checkbox ${m.done ? 'checked' : ''}" data-toggle-milestone="${m.id}"></div>
+            <span class="milestone-text">${escapeHtml(m.text)}</span>
+          </div>
+        `).join('')}
+      </div>
+    `;
+  }
+
+  // Progress controls (only show if not completed)
+  let controlsHtml = '';
+  if (!goal.completed) {
+    if (goal.type === 'numeric') {
+      controlsHtml = `
+        <div class="progress-controls">
+          <button class="step-btn" data-step="-1">−1</button>
+          <button class="step-btn" data-step="-5">−5</button>
+          <input type="number" class="progress-input" data-progress-input value="${goal.progress || 0}" min="0" max="${goal.target}">
+          <button class="step-btn" data-step="1">+1</button>
+          <button class="step-btn" data-step="5">+5</button>
+        </div>
+      `;
+    } else if (goal.type === 'percentage') {
+      controlsHtml = `
+        <div class="progress-controls">
+          <input type="range" class="progress-input" data-progress-range value="${goal.progress || 0}" min="0" max="100" step="5" style="flex:1;">
+          <span style="font-weight:800;color:#7c3aed;font-size:14px;min-width:50px;text-align:right;">${goal.progress || 0}%</span>
+        </div>
+      `;
+    } else if (goal.type === 'simple') {
+      controlsHtml = `
+        <div class="progress-controls">
+          <button class="step-btn" data-toggle-complete style="flex:1;padding:10px;">
+            ✅ Mark as Complete
+          </button>
+        </div>
+      `;
+    }
+  }
+
+  card.innerHTML = `
+    <div class="goal-header">
+      <div class="goal-title-wrap">
+        <div class="goal-title">
+          ${escapeHtml(goal.title)}
+          <span class="goal-category" style="background:${cat.color}22;color:${cat.color};">${cat.emoji} ${cat.label}</span>
+          <span class="goal-priority ${goal.priority}">${pri.label}</span>
+        </div>
+        ${goal.description ? `<div class="goal-desc">${escapeHtml(goal.description)}</div>` : ''}
+      </div>
+    </div>
+
+    ${milestonesHtml}
+
+    <div class="goal-progress-wrap">
+      <div class="goal-progress-header">
+        <span>Progress</span>
+        <span class="goal-progress-value">${progressText} · ${pct}%</span>
+      </div>
+      <div class="goal-progress-bar ${overdue ? 'progress-overdue' : ''}">
+        <div class="goal-progress-fill" style="width:${pct}%;"></div>
+      </div>
+    </div>
+
+    ${controlsHtml}
+
+    <div class="goal-footer">
+      <div class="goal-meta">
+        ${deadlineHtml}
+        ${goal.completed ? '<span class="goal-meta-item">✅ Completed</span>' : ''}
+      </div>
+      <div class="goal-actions">
+        ${!goal.completed && goal.type === 'milestone' ? '' : ''}
+        ${!goal.completed ? `<button class="icon-btn success" data-action="complete" title="Complete">✓</button>` : `<button class="icon-btn" data-action="reopen" title="Reopen">↺</button>`}
+        <button class="icon-btn" data-action="edit" title="Edit">✏️</button>
+        <button class="icon-btn danger" data-action="delete" title="Delete">🗑</button>
+      </div>
+    </div>
+  `;
+
+  // Bind events
+  card.querySelectorAll('[data-action]').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const action = btn.dataset.action;
+      if (action === 'edit') editGoal(goal.id);
+      else if (action === 'delete') deleteGoal(goal.id);
+      else if (action === 'complete') completeGoal(goal.id);
+      else if (action === 'reopen') reopenGoal(goal.id);
+    });
+  });
+
+  // Milestone toggles
+  card.querySelectorAll('[data-toggle-milestone]').forEach(cb => {
+    cb.addEventListener('click', () => {
+      const mid = parseInt(cb.dataset.toggleMilestone, 10);
+      toggleMilestone(goal.id, mid);
+    });
+  });
+
+  // Progress input
+  const progressInput = card.querySelector('[data-progress-input]');
+  if (progressInput) {
+    progressInput.addEventListener('change', () => {
+      updateProgress(goal.id, parseFloat(progressInput.value) || 0);
+    });
+  }
+
+  // Progress range
+  const progressRange = card.querySelector('[data-progress-range]');
+  if (progressRange) {
+    progressRange.addEventListener('input', () => {
+      updateProgress(goal.id, parseFloat(progressRange.value) || 0, false);
+    });
+    progressRange.addEventListener('change', () => {
+      updateProgress(goal.id, parseFloat(progressRange.value) || 0, true);
+    });
+  }
+
+  // Step buttons
+  card.querySelectorAll('[data-step]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const step = parseFloat(btn.dataset.step);
+      const current = goal.progress || 0;
+      const next = Math.max(0, Math.min(goal.target, current + step));
+      updateProgress(goal.id, next);
+    });
+  });
+
+  // Simple complete toggle
+  const toggleCompleteBtn = card.querySelector('[data-toggle-complete]');
+  if (toggleCompleteBtn) {
+    toggleCompleteBtn.addEventListener('click', () => completeGoal(goal.id));
+  }
+
+  return card;
+}
+
+/* ===== ACTIONS ===== */
+function updateProgress(goalId, value, rerender = true) {
+  const goal = state.goals.find(g => g.id === goalId);
+  if (!goal) return;
+
+  if (goal.type === 'numeric') {
+    goal.progress = Math.max(0, Math.min(goal.target, value));
+    if (goal.progress >= goal.target) {
+      goal.completed = true;
+    }
+  } else if (goal.type === 'percentage') {
+    goal.progress = Math.max(0, Math.min(100, value));
+    if (goal.progress >= 100) {
+      goal.completed = true;
+    }
+  }
+  goal.updatedAt = Date.now();
+  saveGoals();
+
+  if (rerender) {
+    render();
+  }
+}
+
+function toggleMilestone(goalId, milestoneId) {
+  const goal = state.goals.find(g => g.id === goalId);
+  if (!goal || goal.type !== 'milestone') return;
+
+  const m = goal.milestones.find(x => x.id === milestoneId);
+  if (!m) return;
+  m.done = !m.done;
+
+  // Auto complete if all milestones done
+  const allDone = goal.milestones.every(x => x.done);
+  goal.completed = allDone;
+  goal.updatedAt = Date.now();
+  saveGoals();
+  render();
+}
+
+function completeGoal(goalId) {
+  const goal = state.goals.find(g => g.id === goalId);
+  if (!goal) return;
+
+  goal.completed = true;
+  if (goal.type === 'numeric') goal.progress = goal.target;
+  else if (goal.type === 'percentage') goal.progress = 100;
+  else if (goal.type === 'milestone') goal.milestones.forEach(m => m.done = true);
+  goal.updatedAt = Date.now();
+  saveGoals();
+  render();
+  showToast('🎉 Goal completed!', 'success');
+}
+
+function reopenGoal(goalId) {
+  const goal = state.goals.find(g => g.id === goalId);
+  if (!goal) return;
+
+  goal.completed = false;
+  goal.updatedAt = Date.now();
+  saveGoals();
+  render();
+  showToast('Goal reopened');
+}
+
+function deleteGoal(goalId) {
+  const goal = state.goals.find(g => g.id === goalId);
+  if (!goal) return;
+  if (!confirm(`Delete "${goal.title}"? This cannot be undone.`)) return;
+  state.goals = state.goals.filter(g => g.id !== goalId);
+  saveGoals();
+  render();
+  showToast('Goal deleted');
+}
+
+function editGoal(goalId) {
+  const goal = state.goals.find(g => g.id === goalId);
+  if (!goal) return;
+
+  state.editingId = goalId;
+  goalTitle.value = goal.title;
+  goalCategory.value = goal.category;
+  goalPriority.value = goal.priority;
+  goalType.value = goal.type;
+  goalTarget.value = goal.target;
+  goalUnit.value = goal.unit || '';
+  goalDeadline.value = goal.deadline || '';
+  goalDesc.value = goal.description || '';
+
+  if (goal.type === 'milestone' && goal.milestones) {
+    goalMilestones.value = goal.milestones.map(m => m.text).join('\n');
+  } else {
+    goalMilestones.value = '';
+  }
+
+  // Trigger type change to show correct fields
+  goalType.dispatchEvent(new Event('change'));
+
+  addGoalBtn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Update Goal';
+  cancelEditBtn.style.display = 'inline-flex';
+
+  // Scroll to form
+  goalTitle.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  goalTitle.focus();
+}
+
+/* ===== EXPORT / IMPORT ===== */
+$('#exportJsonBtn').addEventListener('click', () => {
+  const blob = new Blob([JSON.stringify(state.goals, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `goal-tracker-backup-${formatDate(new Date())}.json`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+  showToast('✅ Exported!', 'success');
+});
+
+$('#importBtn').addEventListener('click', () => $('#importFile').click());
+
+$('#importFile').addEventListener('change', (e) => {
+  const file = e.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = (ev) => {
+    try {
+      const data = JSON.parse(ev.target.result);
+      if (Array.isArray(data)) {
+        if (confirm('Merge imported goals with existing ones?')) {
+          const existingIds = new Set(state.goals.map(g => g.id));
+          const newGoals = data.filter(g => g.id && !existingIds.has(g.id));
+          state.goals = [...state.goals, ...newGoals];
+          saveGoals();
+          render();
+          showToast(`✅ Imported ${newGoals.length} goals!`, 'success');
+        }
+      } else {
+        showToast('Invalid file format', 'error');
+      }
+    } catch (err) {
+      showToast('Failed to parse JSON', 'error');
+    }
+  };
+  reader.readAsText(file);
+  e.target.value = '';
+});
+
+$('#deleteAllBtn').addEventListener('click', () => {
+  if (state.goals.length === 0) {
+    showToast('No goals to delete');
+    return;
+  }
+  if (confirm('⚠️ Delete ALL goals? This cannot be undone.')) {
+    if (confirm('Are you absolutely sure? Export a backup first if needed.')) {
+      state.goals = [];
+      saveGoals();
+      render();
+      showToast('All goals deleted');
+    }
+  }
+});
+
+/* ===== FAQ ===== */
+$$('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    $$('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+
+/* ===== INIT ===== */
+loadGoals();
+render();
+</script>
+
+</body>
+</html>

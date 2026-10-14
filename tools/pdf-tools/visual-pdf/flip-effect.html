@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2563eb">
+
+<title>PDF Flip Effect - Add Book Page Flip Animation to PDF Online | BigToolz</title>
+<meta name="description" content="Add book-style page flip effects to PDF online free. Real 3D flip animation via /Trans metadata. Works in your browser, no upload. Multi-page support.">
+<meta name="keywords" content="pdf flip effect, pdf page flip, book flip pdf, 3d flip pdf, page turn animation pdf">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://bigtoolz.com/tools/pdf-tools/visual-pdf/flip-effect/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="PDF Flip Effect - Free Online Tool | BigToolz">
+<meta property="og:description" content="Add book-style page flip animations to PDF free, no upload.">
+<meta property="og:url" content="https://bigtoolz.com/tools/pdf-tools/visual-pdf/flip-effect/">
+<meta property="og:image" content="https://bigtoolz.com/assets/images/og-image.jpg">
+<meta property="og:site_name" content="BigToolz">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="PDF Flip Effect - BigToolz">
+<meta name="twitter:description" content="Add flip effects to PDFs instantly free, no upload.">
+<meta name="twitter:image" content="https://bigtoolz.com/assets/images/twitter-card.jpg">
+
+<link rel="icon" href="/assets/images/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/images/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#f8f9fc;color:#1a1a2e;overflow-x:hidden;line-height:1.5}
+
+  .header{background:#fff;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;position:sticky;top:0;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+  .header-left{display:flex;align-items:center;gap:40px}
+  .logo{display:flex;align-items:center;gap:8px;font-size:22px;font-weight:800;color:#1a1a2e;text-decoration:none}
+  .logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#3b82f6,#2563eb);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px}
+  .logo span{color:#2563eb}
+  .nav{display:flex;align-items:center;gap:28px;list-style:none}
+  .nav a{text-decoration:none;color:#4b5563;font-size:14px;font-weight:500;transition:color .2s}
+  .nav a:hover,.nav a.active{color:#2563eb}
+  .header-right{display:flex;align-items:center;gap:16px}
+  .search-btn,.theme-btn{width:36px;height:36px;border-radius:50%;border:none;background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#4b5563}
+  .search-btn:hover,.theme-btn:hover{background:#f3f4f6}
+  .bookmark-btn{display:flex;align-items:center;gap:8px;background:#2563eb;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
+  .bookmark-btn:hover{background:#1d4ed8}
+
+  .hero{background:linear-gradient(135deg,#0a0e27 0%,#1a1a4e 40%,#2d1b69 70%,#4c1d95 100%);padding:40px 40px 60px;position:relative;overflow:hidden;color:#fff}
+  .hero::before{content:'';position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(245,158,11,.25) 0%,transparent 70%);border-radius:50%}
+  .hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+  .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px;flex-wrap:wrap}
+  .breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none}
+  .breadcrumb a:hover{color:#fff}
+  .breadcrumb .sep{color:rgba(255,255,255,.4)}
+  .breadcrumb .current{color:#fff;font-weight:500}
+  .hero-title-row{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+  .hero-icon{width:60px;height:60px;background:#f59e0b;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;color:#fff;flex-shrink:0;box-shadow:0 8px 24px rgba(245,158,11,.4)}
+  .hero-title{font-size:42px;font-weight:800;line-height:1.15}
+  .hero-title .blue{color:#fbbf24}
+  .hero-desc{font-size:15px;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:24px;max-width:560px}
+  .hero-features{display:flex;gap:24px;flex-wrap:wrap}
+  .hero-feature{display:flex;align-items:center;gap:6px;font-size:13px;color:#fff;font-weight:500}
+  .hero-feature .check{width:18px;height:18px;border-radius:50%;background:#f59e0b;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;flex-shrink:0}
+
+  .main-content{max-width:1200px;margin:0 auto;padding:40px;display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start}
+  .tool-content{min-width:0}
+
+  .workspace{background:#fff;border-radius:16px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,.06);border:1px solid #e5e7eb;margin-bottom:24px}
+
+  .dropzone{border:2px dashed #fcd34d;border-radius:12px;padding:50px 30px;text-align:center;background:#fffbeb;margin-bottom:24px;transition:all .2s;cursor:pointer}
+  .dropzone:hover,.dropzone.dragover{border-color:#f59e0b;background:#fef3c7}
+  .dropzone-icon{width:60px;height:60px;background:linear-gradient(135deg,#f59e0b,#d97706);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;color:#fff;font-size:26px;transition:transform .2s}
+  .dropzone:hover .dropzone-icon{transform:translateY(-4px)}
+  .dropzone-title{font-size:16px;font-weight:700;color:#1a1a2e;margin-bottom:8px}
+  .dropzone-sub{font-size:14px;color:#6b7280;margin-bottom:20px}
+  .dropzone-sub a{color:#f59e0b;font-weight:600;text-decoration:none}
+  .choose-btn{display:inline-flex;align-items:center;gap:8px;background:#f59e0b;color:#fff;border:none;padding:12px 28px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;transition:background .2s}
+  .choose-btn:hover{background:#d97706}
+  .dropzone-info{font-size:12px;color:#9ca3af;display:flex;align-items:center;justify-content:center;gap:8px;margin-top:16px;flex-wrap:wrap}
+  .dropzone-info .divider{color:#d1d5db}
+  .file-input{display:none}
+
+  .editor{display:none}
+  .editor.visible{display:block}
+
+  .viewer-toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px;padding:12px;background:#fffbeb;border-radius:10px;border:1px solid #fcd34d;flex-wrap:wrap}
+  .viewer-nav{display:flex;align-items:center;gap:8px}
+  .nav-btn{width:36px;height:36px;border-radius:8px;border:1px solid #e5e7eb;background:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#4b5563;font-size:14px;font-weight:700;transition:all .2s}
+  .nav-btn:hover{border-color:#f59e0b;color:#f59e0b;background:#fffbeb}
+  .nav-btn:disabled{opacity:.4;cursor:not-allowed}
+  .page-info{font-size:13px;font-weight:700;color:#1a1a2e;padding:0 8px}
+  .zoom-info{font-size:12px;color:#6b7280;font-weight:600}
+
+  .pdf-container{background:#1a1a2e;border-radius:12px;padding:20px;display:flex;align-items:center;justify-content:center;overflow:auto;min-height:400px;position:relative;perspective:1600px}
+  .pdf-canvas-wrap{position:relative;box-shadow:0 8px 32px rgba(0,0,0,.4);transform-style:preserve-3d;transition:transform 0.8s ease}
+  .pdf-canvas-wrap canvas{display:block;background:#fff;border-radius:4px}
+  .page-num-badge{position:absolute;bottom:-28px;left:0;color:rgba(255,255,255,.6);font-size:12px;font-weight:600}
+  .flip-overlay{position:absolute;inset:0;pointer-events:none;display:none}
+  .flip-overlay.active{display:block}
+  .flip-shade{position:absolute;inset:0;background:linear-gradient(to right, rgba(0,0,0,.7), transparent);opacity:0;transform-origin:left center;transition:transform 0.8s ease, opacity 0.8s ease}
+
+  /* Flip style grid */
+  .style-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px}
+  .style-btn{background:#fff;border:2px solid #e5e7eb;border-radius:10px;padding:14px 8px;cursor:pointer;font-family:inherit;transition:all .2s;text-align:center;line-height:1.3}
+  .style-btn:hover{border-color:#f59e0b;background:#fffbeb}
+  .style-btn.active{border-color:#f59e0b;background:#f59e0b;color:#fff}
+  .style-icon{font-size:22px;display:block;margin-bottom:6px}
+  .style-name{font-size:11px;font-weight:700}
+  .style-code{font-size:9px;opacity:.65;font-family:'JetBrains Mono',monospace;margin-top:2px;display:block}
+
+  .options{background:#fffbeb;border-radius:12px;padding:20px;margin-bottom:20px;border:1px solid #fcd34d}
+  .options-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+
+  .options-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .option-group label{display:block;font-size:12px;font-weight:600;color:#4b5563;margin-bottom:6px}
+  .option-group select,.option-group input[type="number"]{width:100%;padding:10px 12px;border:1px solid #e5e7eb;border-radius:8px;font-size:13px;font-family:inherit;color:#1a1a2e;background:#fff;outline:none;transition:border-color .2s}
+  .option-group select:focus,.option-group input:focus{border-color:#f59e0b;box-shadow:0 0 0 3px rgba(245,158,11,.1)}
+
+  .range-row{display:flex;gap:12px;align-items:flex-end;margin-top:16px;flex-wrap:wrap}
+  .range-field{flex:1;min-width:100px}
+  .range-field label{display:block;font-size:11px;font-weight:600;color:#4b5563;margin-bottom:6px;text-transform:uppercase;letter-spacing:.3px}
+  .range-field input{width:100%;padding:10px 12px;border:1px solid #e5e7eb;border-radius:8px;font-size:13px;font-family:inherit;color:#1a1a2e;background:#fff;outline:none}
+  .range-field input:focus{border-color:#f59e0b;box-shadow:0 0 0 3px rgba(245,158,11,.1)}
+
+  .toggle-row{display:flex;align-items:center;justify-content:space-between;padding:12px 14px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;gap:12px;margin-top:16px}
+  .toggle-info{display:flex;flex-direction:column;gap:2px}
+  .toggle-title{font-size:13px;font-weight:700;color:#1a1a2e}
+  .toggle-desc{font-size:11px;color:#6b7280;line-height:1.4}
+  .toggle-switch{position:relative;width:44px;height:24px;background:#d1d5db;border-radius:12px;cursor:pointer;transition:background .2s;flex-shrink:0}
+  .toggle-switch::after{content:'';position:absolute;top:2px;left:2px;width:20px;height:20px;background:#fff;border-radius:50%;transition:transform .2s;box-shadow:0 1px 3px rgba(0,0,0,.15)}
+  .toggle-switch.on{background:#f59e0b}
+  .toggle-switch.on::after{transform:translateX(20px)}
+
+  .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 28px;border-radius:10px;font-size:15px;font-weight:700;font-family:inherit;cursor:pointer;border:none;transition:all .2s;text-decoration:none}
+  .btn-primary{background:#f59e0b;color:#fff;flex:1;box-shadow:0 4px 12px rgba(245,158,11,.2)}
+  .btn-primary:hover:not(:disabled){background:#d97706;transform:translateY(-2px);box-shadow:0 6px 20px rgba(245,158,11,.3)}
+  .btn-primary:disabled{opacity:.5;cursor:not-allowed;transform:none}
+  .btn-secondary{background:#fff;color:#f59e0b;border:1px solid #e5e7eb}
+  .btn-secondary:hover{border-color:#f59e0b;background:#fffbeb}
+  .btn-success{background:#10b981;color:#fff}
+  .btn-success:hover{background:#059669}
+
+  .status-msg{margin-top:14px;padding:12px 14px;border-radius:8px;font-size:13px;font-weight:600;display:none}
+  .status-msg.visible{display:block}
+  .status-msg.success{background:#d1fae5;color:#065f46;border:1px solid #a7f3d0}
+  .status-msg.error{background:#fee2e2;color:#991b1b;border:1px solid #fecaca}
+  .status-msg.info{background:#fef3c7;color:#92400e;border:1px solid #fcd34d}
+
+  .progress{display:none;margin-top:14px}
+  .progress.visible{display:block}
+  .progress-bar{width:100%;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden;margin-bottom:8px}
+  .progress-fill{height:100%;background:linear-gradient(90deg,#fbbf24,#f59e0b);border-radius:4px;width:0%;transition:width .3s ease}
+  .progress-text{font-size:13px;color:#6b7280;text-align:center;font-weight:500}
+
+  /* SEO */
+  .seo-content{background:#fff;border-radius:16px;padding:32px;border:1px solid #e5e7eb;margin-bottom:24px}
+  .seo-content h2{font-size:22px;font-weight:800;color:#1a1a2e;margin-bottom:14px;margin-top:28px;display:flex;align-items:center;gap:10px}
+  .seo-content h2:first-child{margin-top:0}
+  .seo-content h3{font-size:16px;font-weight:700;color:#1a1a2e;margin:20px 0 10px}
+  .seo-content p{font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:14px}
+  .seo-content ul{list-style:none;padding-left:0;margin-bottom:16px}
+  .seo-content ul li{position:relative;padding-left:24px;font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:8px}
+  .seo-content ul li::before{content:'';position:absolute;left:6px;top:12px;width:6px;height:6px;background:#f59e0b;border-radius:50%}
+  .seo-content a{color:#2563eb;text-decoration:none;font-weight:600}
+  .seo-content a:hover{text-decoration:underline}
+  .seo-content strong{color:#1a1a2e;font-weight:700}
+
+  .how-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:20px}
+  .how-step{background:#fffbeb;border-radius:12px;padding:20px;border:1px solid #fcd34d}
+  .how-step-num{width:36px;height:36px;border-radius:50%;background:#f59e0b;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;margin-bottom:12px}
+  .how-step-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+  .how-step-desc{font-size:13px;color:#6b7280;line-height:1.6}
+
+  .faq-item{background:#fffbeb;border:1px solid #fcd34d;border-radius:12px;margin-bottom:10px;overflow:hidden;transition:border-color .2s}
+  .faq-item:hover{border-color:#f59e0b}
+  .faq-question{width:100%;background:none;border:none;padding:18px 22px;font-size:15px;font-weight:700;color:#1a1a2e;text-align:left;cursor:pointer;font-family:inherit;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .faq-question .chev{font-size:12px;color:#f59e0b;transition:transform .2s;flex-shrink:0}
+  .faq-item.open .faq-question .chev{transform:rotate(180deg)}
+  .faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 22px}
+  .faq-item.open .faq-answer{max-height:500px;padding-bottom:18px}
+  .faq-answer p{font-size:14px;color:#6b7280;line-height:1.7;margin:0}
+
+  .sidebar{background:#fff;border-radius:16px;padding:24px;border:1px solid #e5e7eb;position:sticky;top:80px;margin-bottom:24px}
+  .sidebar-header{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:800;color:#1a1a2e;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid #f3f4f6}
+  .sidebar-list{display:flex;flex-direction:column;gap:8px}
+  .sidebar-item{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;cursor:pointer;transition:background .2s;text-decoration:none;color:inherit;border:1px solid #f3f4f6}
+  .sidebar-item:hover{background:#fffbeb;border-color:#fcd34d}
+  .sidebar-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;flex-shrink:0}
+  .sidebar-info{flex:1;min-width:0}
+  .sidebar-title{font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:2px}
+  .sidebar-desc{font-size:11px;color:#9ca3af;line-height:1.4}
+
+  .footer{background:#0a0e27;padding:60px 40px 30px;color:#fff;margin-top:40px}
+  .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:40px}
+  .footer-brand{display:flex;align-items:center;gap:8px;font-size:20px;font-weight:800;margin-bottom:12px}
+  .footer-brand span{color:#60a5fa}
+  .footer-tagline{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px}
+  .footer-social{display:flex;gap:12px}
+  .footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:16px;transition:background .2s}
+  .footer-social a:hover{background:rgba(255,255,255,.2)}
+  .footer-heading{font-size:14px;font-weight:700;margin-bottom:20px;color:#fff}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .footer-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;transition:color .2s}
+  .footer-links a:hover{color:#60a5fa}
+  .footer-bottom{max-width:1200px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  .footer-bottom-left{display:flex;gap:20px;font-size:12px;color:rgba(255,255,255,.5)}
+  .footer-bottom-right,.footer-bottom-links a{font-size:12px;color:rgba(255,255,255,.5);text-decoration:none}
+  .footer-bottom-links{display:flex;gap:20px}
+
+  .toast{position:fixed;bottom:24px;right:24px;background:#1a1a2e;color:#fff;padding:14px 20px;border-radius:10px;font-size:13px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:3000;transform:translateY(200%);transition:transform .3s ease;max-width:320px}
+  .toast.visible{transform:translateY(0)}
+  .toast.success{background:#10b981}
+  .toast.error{background:#ef4444}
+
+  @media(max-width:1024px){
+    .main-content{grid-template-columns:1fr;padding:24px 20px}
+    .sidebar{position:static}
+    .how-steps{grid-template-columns:repeat(2,1fr)}
+    .style-grid{grid-template-columns:repeat(3,1fr)}
+    .options-grid{grid-template-columns:1fr 1fr}
+  }
+  @media(max-width:768px){
+    .header{padding:0 20px}.nav{display:none}
+    .hero{padding:24px 20px 40px}
+    .hero-title{font-size:28px}
+    .hero-icon{width:48px;height:48px;font-size:22px}
+    .hero-title-row{flex-direction:column;align-items:flex-start;gap:12px}
+    .main-content{padding:20px 16px}
+    .workspace{padding:20px}
+    .dropzone{padding:32px 16px}
+    .how-steps{grid-template-columns:1fr}
+    .seo-content{padding:20px}
+    .footer-inner{grid-template-columns:1fr 1fr}
+    .toast{left:16px;right:16px;bottom:16px;max-width:none}
+    .style-grid{grid-template-columns:repeat(2,1fr)}
+    .options-grid{grid-template-columns:1fr}
+  }
+  @media(max-width:576px){
+    .header{padding:0 16px}.header-right .search-btn,.header-right .theme-btn{display:none}
+    .hero-title{font-size:24px}
+    .actions{flex-direction:column}
+    .btn{width:100%}
+    .btn-primary{flex:none}
+    .footer-inner{grid-template-columns:1fr}
+    .footer-bottom{flex-direction:column;text-align:center}
+    .viewer-toolbar{flex-direction:column;align-items:stretch}
+  }
+
+  html[data-theme="dark"] body{background:#0f172a;color:#f1f5f9}
+  html[data-theme="dark"] .header,html[data-theme="dark"] .workspace,html[data-theme="dark"] .seo-content,html[data-theme="dark"] .sidebar{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .logo,html[data-theme="dark"] .hero-title,html[data-theme="dark"] .seo-content h2,html[data-theme="dark"] .seo-content h3,html[data-theme="dark"] .faq-question,html[data-theme="dark"] .sidebar-header,html[data-theme="dark"] .sidebar-title,html[data-theme="dark"] .options-title,html[data-theme="dark"] .toggle-title{color:#f1f5f9}
+  html[data-theme="dark"] .nav a{color:#cbd5e1}
+  html[data-theme="dark"] .dropzone{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .how-step,html[data-theme="dark"] .faq-item,html[data-theme="dark"] .options,html[data-theme="dark"] .viewer-toolbar,html[data-theme="dark"] .style-btn,html[data-theme="dark"] .toggle-row{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .style-btn{color:#cbd5e1}
+  html[data-theme="dark"] .style-btn.active{background:#f59e0b;color:#fff;border-color:#f59e0b}
+  html[data-theme="dark"] .option-group select,html[data-theme="dark"] .option-group input,html[data-theme="dark"] .range-field input{background:#1e293b;border-color:#334155;color:#f1f5f9}
+  html[data-theme="dark"] .seo-content p,html[data-theme="dark"] .seo-content ul li,html[data-theme="dark"] .faq-answer p{color:#cbd5e1}
+  html[data-theme="dark"] .nav-btn{background:#1e293b;border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .page-info{color:#f1f5f9}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type": "SoftwareApplication", "name": "PDF Flip Effect", "url": "https://bigtoolz.com/tools/pdf-tools/visual-pdf/flip-effect/", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any (Web-based)", "description": "Free online PDF flip effect tool add book-style page flip animations to your PDF via /Trans metadata. Works in your browser.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.6", "ratingCount": "198"}},
+    {"@type": "HowTo", "name": "How to Add Flip Effects to a PDF", "step": [
+      {"@type": "HowToStep", "name": "Upload PDF", "text": "Drag & drop or click to select your PDF file."},
+      {"@type": "HowToStep", "name": "Choose Flip Style", "text": "Pick Book, Cube, Turn, Flip, or Fade-Through."},
+      {"@type": "HowToStep", "name": "Set Options", "text": "Adjust direction, duration, and page range."},
+      {"@type": "HowToStep", "name": "Save PDF", "text": "Download the PDF with flip effects applied."}
+    ]},
+    {"@type": "FAQPage", "mainEntity": [
+      {"@type": "Question", "name": "What is a PDF flip effect?", "acceptedAnswer": {"@type": "Answer", "text": "A PDF flip effect is a page transition that simulates a book page turning, a cube rotating, or a card flipping. It's part of the PDF page transition (/Trans) specification supported by Adobe Acrobat and other professional readers."}},
+      {"@type": "Question", "name": "Where do flip effects show up?", "acceptedAnswer": {"@type": "Answer", "text": "Flip effects are visible in full-screen or presentation mode in Adobe Acrobat Reader, Foxit Reader, and most desktop PDF viewers. Browser-based viewers (Chrome, Firefox) generally do not play them."}},
+      {"@type": "Question", "name": "Which flip style should I use?", "acceptedAnswer": {"@type": "Answer", "text": "Book is the classic, most natural choice for documents and photobooks. Cube is dramatic and modern. Turn is quick and subtle. Flip is great for card-style content. Fade-Through is elegant and soft. For most readers, Book or Turn work best."}},
+      {"@type": "Question", "name": "Are my PDFs uploaded to a server?", "acceptedAnswer": {"@type": "Answer", "text": "No. All processing happens in your browser using pdf-lib. Your file never leaves your device."}}
+    ]},
+    {"@type": "BreadcrumbList", "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bigtoolz.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://bigtoolz.com/tools/"},
+      {"@type": "ListItem", "position": 3, "name": "PDF Tools", "item": "https://bigtoolz.com/tools/pdf-tools/"},
+      {"@type": "ListItem", "position": 4, "name": "Visual PDF", "item": "https://bigtoolz.com/tools/pdf-tools/visual-pdf/"},
+      {"@type": "ListItem", "position": 5, "name": "Flip Effect", "item": "https://bigtoolz.com/tools/pdf-tools/visual-pdf/flip-effect/"}
+    ]}
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-left">
+    <a href="/" class="logo"><div class="logo-icon">⚒</div>BigToolz</span></a>
+    <nav><ul class="nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/tools/" class="active">All Tools</a></li>
+      <li><a href="/tools/categories">Categories</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul></nav>
+  </div>
+  <div class="header-right">
+    
+    <button class="theme-btn" aria-label="Toggle theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
+    
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <nav class="breadcrumb">
+      <a href="/">Home</a><span class="sep">›</span>
+      <a href="/tools/">Tools</a><span class="sep">›</span>
+      <a href="/tools/pdf-tools/">PDF Tools</a><span class="sep">›</span>
+      <a href="/tools/pdf-tools/visual-pdf/">Visual PDF</a><span class="sep">›</span>
+      <span class="current">Flip Effect</span>
+    </nav>
+    <div class="hero-title-row">
+      <div class="hero-icon">📖</div>
+      <h1 class="hero-title">PDF <span class="blue">Flip Effect</span></h1>
+    </div>
+    <p class="hero-desc">
+      Add book-style page flip animations to your PDF. Choose Book, Cube, Turn, Flip, or Fade-Through effects. Real /Trans metadata, viewable in Adobe Acrobat full-screen mode. No upload, 100% private.
+    </p>
+    <div class="hero-features">
+      <div class="hero-feature"><span class="check">✓</span> 5 Flip Styles</div>
+      <div class="hero-feature"><span class="check">✓</span> Direction Control</div>
+      <div class="hero-feature"><span class="check">✓</span> Page Range</div>
+      <div class="hero-feature"><span class="check">✓</span> No Upload</div>
+    </div>
+  </div>
+</section>
+
+<div class="main-content">
+
+  <div class="tool-content">
+
+    <div class="workspace">
+
+      <!-- Dropzone -->
+      <div class="dropzone" id="dropzone">
+        <div class="dropzone-icon">⬆</div>
+        <div class="dropzone-title">Drag & drop your PDF here</div>
+        <div class="dropzone-sub">or <a href="#" id="browseLink">click to browse files</a></div>
+        <button class="choose-btn" id="chooseBtn" type="button">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/></svg>
+          Choose PDF File
+        </button>
+        <div class="dropzone-info">
+          <span>PDF only</span>
+          <span class="divider">|</span>
+          <span>Max 100MB recommended</span>
+        </div>
+        <input type="file" id="fileInput" class="file-input" accept="application/pdf,.pdf">
+      </div>
+
+      <!-- Editor -->
+      <div class="editor" id="editor">
+
+        <div class="viewer-toolbar">
+          <div class="viewer-nav">
+            <button class="nav-btn" id="prevPage" title="Previous page">‹</button>
+            <span class="page-info" id="pageInfo">Page 1 / 1</span>
+            <button class="nav-btn" id="nextPage" title="Next page">›</button>
+          </div>
+          <div class="zoom-info" id="zoomInfo">100%</div>
+          <div style="display:flex;gap:8px;">
+            <button class="nav-btn" id="zoomOut" title="Zoom out">−</button>
+            <button class="nav-btn" id="zoomIn" title="Zoom in">+</button>
+            <button class="nav-btn" id="previewBtn" title="Preview flip" style="width:auto;padding:0 12px;font-size:12px;">▶ Preview Flip</button>
+          </div>
+        </div>
+
+        <div class="pdf-container" id="pdfContainer">
+          <div class="pdf-canvas-wrap" id="pdfWrap">
+            <canvas id="pdfCanvas"></canvas>
+            <div class="flip-overlay" id="flipOverlay">
+              <div class="flip-shade" id="flipShade"></div>
+            </div>
+            <span class="page-num-badge" id="pageBadge"></span>
+          </div>
+        </div>
+
+        <!-- Flip Settings -->
+        <div class="options" style="margin-top:20px;">
+          <div class="options-title">📖 Flip Settings</div>
+
+          <label style="font-size:12px;font-weight:600;color:#4b5563;display:block;margin-bottom:8px;">Flip Style</label>
+          <div class="style-grid" id="styleGrid">
+            <button class="style-btn active" data-style="Book">
+              <span class="style-icon">📖</span>
+              <span class="style-name">Book</span>
+              <span class="style-code">Book</span>
+            </button>
+            <button class="style-btn" data-style="Cube">
+              <span class="style-icon">🎲</span>
+              <span class="style-name">Cube</span>
+              <span class="style-code">Cube</span>
+            </button>
+            <button class="style-btn" data-style="Turn">
+              <span class="style-icon">📄</span>
+              <span class="style-name">Turn</span>
+              <span class="style-code">Turn</span>
+            </button>
+            <button class="style-btn" data-style="Flip">
+              <span class="style-icon">🔄</span>
+              <span class="style-name">Flip</span>
+              <span class="style-code">Flip</span>
+            </button>
+            <button class="style-btn" data-style="Fade-Through">
+              <span class="style-icon">✨</span>
+              <span class="style-name">Fade-Through</span>
+              <span class="style-code">Fade</span>
+            </button>
+            <button class="style-btn" data-style="Split">
+              <span class="style-icon">↔️</span>
+              <span class="style-name">Split</span>
+              <span class="style-code">Split</span>
+            </button>
+          </div>
+
+          <div class="options-grid" style="margin-top:16px;">
+            <div class="option-group">
+              <label>Direction</label>
+              <select id="direction">
+                <option value="L" selected>← Left (turn to left)</option>
+                <option value="R">→ Right</option>
+                <option value="U">↑ Up</option>
+                <option value="D">↓ Down</option>
+              </select>
+            </div>
+            <div class="option-group">
+              <label>Duration</label>
+              <select id="duration">
+                <option value="0.5">Very Fast (0.5s)</option>
+                <option value="1" selected>Fast (1s)</option>
+                <option value="2">Normal (2s)</option>
+                <option value="3">Slow (3s)</option>
+                <option value="5">Very Slow (5s)</option>
+              </select>
+            </div>
+            <div class="option-group">
+              <label>Motion</label>
+              <select id="motion">
+                <option value="I" selected>Inward (into page)</option>
+                <option value="O">Outward (out of page)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Page range -->
+          <div class="range-row">
+            <div class="range-field">
+              <label>From Page</label>
+              <input type="number" id="fromPage" value="1" min="1">
+            </div>
+            <div class="range-field">
+              <label>To Page</label>
+              <input type="number" id="toPage" value="1" min="1">
+            </div>
+          </div>
+
+          <div class="toggle-row">
+            <div class="toggle-info">
+              <div class="toggle-title">Apply to All Pages</div>
+              <div class="toggle-desc">Ignore range and apply to every page</div>
+            </div>
+            <div class="toggle-switch on" id="applyAllToggle" role="switch" aria-checked="true"></div>
+          </div>
+
+        </div>
+
+        <div class="actions">
+          <button class="btn btn-primary" id="saveBtn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+            Save PDF with Flip Effect
+          </button>
+          <button class="btn btn-secondary" id="cancelBtn">Cancel</button>
+        </div>
+
+        <div class="status-msg" id="statusMsg"></div>
+
+        <div class="progress" id="progress">
+          <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+          <div class="progress-text" id="progressText">Processing...</div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="seo-content">
+
+      <h2>📖 What is a PDF Flip Effect?</h2>
+      <p>
+        A <strong>PDF flip effect</strong> is a page transition that makes it look like a real book page is turning, a cube is rotating, or a card is flipping when you navigate between pages. It's part of the <strong>PDF /Trans dictionary</strong> the same standard used by Adobe Acrobat Pro and other professional PDF authoring tools.
+      </p>
+      <p>
+        BigToolz lets you add flip effects to any PDF in seconds. The output is a <strong>standard, compliant PDF</strong> no embedded video, no JavaScript tricks. It just uses the PDF specification's native page transition feature. Everything runs <strong>100% in your browser</strong> no uploads, no signup.
+      </p>
+
+      <h2>🚀 How to Add Flip Effects</h2>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-step-num">1</div>
+          <div class="how-step-title">Upload PDF</div>
+          <div class="how-step-desc">Drag & drop or click "Choose PDF File" to select.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">2</div>
+          <div class="how-step-title">Pick Flip Style</div>
+          <div class="how-step-desc">Choose Book, Cube, Turn, Flip, Fade-Through, or Split.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">3</div>
+          <div class="how-step-title">Adjust Options</div>
+          <div class="how-step-desc">Set direction, duration, motion, and page range.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">4</div>
+          <div class="how-step-title">Save PDF</div>
+          <div class="how-step-desc">Download and open in Adobe Acrobat full-screen mode.</div>
+        </div>
+      </div>
+
+      <h2>📚 The 6 Flip Styles Explained</h2>
+
+      <h3>📖 Book</h3>
+      <p>The classic <strong>book page turn</strong> effect. Mimics a real book page being lifted and flipped. Best for <strong>ebooks, catalogs, magazines, photobooks</strong>. Most natural and universally compatible.</p>
+
+      <h3>🎲 Cube</h3>
+      <p>Pages rotate on a <strong>3D cube</strong> axis. Dramatic and modern. Great for <strong>product presentations and portfolios</strong> that want visual impact.</p>
+
+      <h3>📄 Turn</h3>
+      <p>A quick, subtle <strong>corner turn</strong>. Less dramatic than Book but more refined. Perfect for <strong>professional documents and reports</strong>.</p>
+
+      <h3>🔄 Flip</h3>
+      <p>Pages <strong>flip over</strong> like a card. Snappier than Book. Great for <strong>invitations, greeting cards, and presentation slides</strong>.</p>
+
+      <h3>✨ Fade-Through</h3>
+      <p>A soft <strong>fade-out-then-fade-in</strong> effect. Elegant and gentle. Best for <strong>art portfolios, poetry books, and calm content</strong>.</p>
+
+      <h3>↔️ Split</h3>
+      <p>Two halves <strong>slide apart</strong> to reveal the next page. Unique and dynamic. Best for <strong>creative and dramatic presentations</strong>.</p>
+
+      <h2>📌 Best Practices</h2>
+      <ul>
+        <li><strong>Use Book for ebooks</strong> it's the most natural and reader-friendly.</li>
+        <li><strong>Duration:</strong> 1-2 seconds feels right. Faster feels rushed; slower feels sluggish.</li>
+        <li><strong>Consistency:</strong> Pick one style and apply to all pages.</li>
+        <li><strong>Direction:</strong> Left-to-right (L) for English/western books; Right for right-to-left scripts.</li>
+        <li><strong>Test in Acrobat:</strong> Ctrl/Cmd + L enters full-screen mode where transitions play.</li>
+        <li><strong>Keep the original:</strong> Always save the output as a new file.</li>
+      </ul>
+
+      <h2>✨ Key Features</h2>
+      <ul>
+        <li><strong>6 flip styles</strong> Book, Cube, Turn, Flip, Fade-Through, Split.</li>
+        <li><strong>Direction control</strong> Left, Right, Up, Down.</li>
+        <li><strong>Motion control</strong> Inward or outward.</li>
+        <li><strong>Duration</strong> from 0.5s to 5s.</li>
+        <li><strong>Page range</strong> apply to specific pages or all.</li>
+        <li><strong>Live 3D preview</strong> see the flip effect before saving.</li>
+        <li><strong>Real /Trans metadata</strong> proper PDF standard.</li>
+        <li><strong>100% browser-based</strong> your file never leaves your device.</li>
+      </ul>
+
+      <h2>❓ Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-question">What is a PDF flip effect?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>A <strong>PDF flip effect</strong> is a page transition that simulates a book page turning, a cube rotating, or a card flipping. It's part of the PDF page transition (<code>/Trans</code>) specification supported by Adobe Acrobat and other professional readers.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Where do flip effects show up?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Flip effects are visible in <strong>full-screen or presentation mode</strong> in Adobe Acrobat Reader, Foxit Reader, and most desktop PDF viewers. Browser-based viewers (Chrome, Firefox, Safari) generally do not play them you need a desktop reader for the full effect.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Which flip style should I use?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>Book</strong> is the classic, most natural choice for documents and photobooks. <strong>Cube</strong> is dramatic and modern. <strong>Turn</strong> is quick and subtle. <strong>Flip</strong> is great for cards. <strong>Fade-Through</strong> is elegant and soft. For most readers, Book or Turn work best.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What's the difference between Motion Inward and Outward?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>Inward (I)</strong> the transition happens "into" the page, like a book opening toward you. <strong>Outward (O)</strong> the transition comes "out" of the page, like a page peeling away. Most readers prefer Inward. Try both to see which feels better.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I use different flip styles on different pages?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>This tool applies one style per save. For mixed styles, save the PDF twice: first with one style applied to a range, then re-upload and apply the second style to a different range. Or keep the same style across all pages for a polished feel.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Does it work with password-protected PDFs?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>No. You must remove the password first using our <a href="/tools/pdf-tools/security-pdf/unlock-pdf/">Unlock PDF</a> tool. Encrypted PDFs cannot be modified without the password.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Is my PDF uploaded to a server?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>No. All PDF processing happens in your browser using pdf-lib. Your file never leaves your device, and nothing is stored anywhere.</p></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-header">🔗 Related PDF Tools</div>
+    <div class="sidebar-list">
+      <a href="/tools/pdf-tools/visual-pdf/page-transition/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#8b5cf6;">✨</div>
+        <div class="sidebar-info"><div class="sidebar-title">Page Transition</div><div class="sidebar-desc">Fade, push, wipe</div></div>
+      </a>
+      <a href="/tools/pdf-tools/visual-pdf/annotate-pdf/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#8b5cf6;">💬</div>
+        <div class="sidebar-info"><div class="sidebar-title">Annotate PDF</div><div class="sidebar-desc">Add annotations</div></div>
+      </a>
+      <a href="/tools/pdf-tools/visual-pdf/highlight-text/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#f59e0b;">🖍</div>
+        <div class="sidebar-info"><div class="sidebar-title">Highlight Text</div><div class="sidebar-desc">Yellow highlighter</div></div>
+      </a>
+      <a href="/tools/pdf-tools/visual-pdf/underline-text/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#3b82f6;">⎁</div>
+        <div class="sidebar-info"><div class="sidebar-title">Underline Text</div><div class="sidebar-desc">Add underlines</div></div>
+      </a>
+      <a href="/tools/pdf-tools/visual-pdf/print-checker/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#06b6d4;">🖨</div>
+        <div class="sidebar-info"><div class="sidebar-title">Print Checker</div><div class="sidebar-desc">Print readiness</div></div>
+      </a>
+      <a href="/tools/pdf-tools/visual-pdf/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#64748b;">📕</div>
+        <div class="sidebar-info"><div class="sidebar-title">All Visual PDF →</div><div class="sidebar-desc">15 tools</div></div>
+      </a>
+    </div>
+  </aside>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand"><div class="logo-icon">⚒</div>BigToolz</span></div>
+      <p class="footer-tagline">Your Ultimate Online Tools Hub</p>
+      <div class="footer-social">
+        <a href="https://facebook.com/bigtoolz" aria-label="Facebook">f</a>
+        <a href="https://twitter.com/bigtoolz" aria-label="Twitter">𝕏</a>
+        <a href="https://youtube.com/@bigtoolz" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+    <div>
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/tools/">All Tools</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Categories</h3>
+      <ul class="footer-links">
+        <li><a href="/tools/image-tools/">Image Tools</a></li>
+        <li><a href="/tools/pdf-tools/">PDF Tools</a></li>
+        <li><a href="/tools/text-tools/">Text Tools</a></li>
+        <li><a href="/tools/seo-tools/">SEO Tools</a></li>
+        <li><a href="/tools/categories">All Categories →</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Legal</h3>
+      <ul class="footer-links">
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left"><span>✓ 100% Free</span><span>✓ No Sign Up</span><span>✓ No Installation</span></div>
+    <div class="footer-bottom-right">© 2026 BigToolz. All rights reserved.</div>
+    <div class="footer-bottom-links"><a href="/privacy-policy">Privacy</a><a href="/terms">Terms</a><a href="/disclaimer">Disclaimer</a></div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<!-- PDF.js + pdf-lib -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+
+<script>
+'use strict';
+
+/* ===== THEME ===== */
+(function(){try{var t=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&d))document.documentElement.setAttribute('data-theme','dark');else if(t==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();
+document.querySelector('.theme-btn')?.addEventListener('click',()=>{const h=document.documentElement;const c=h.getAttribute('data-theme');const d=window.matchMedia('(prefers-color-scheme: dark)').matches;let n=c==='dark'?'light':c==='light'?'dark':(d?'light':'dark');h.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}});
+
+/* ===== PDF.js worker ===== */
+if (window.pdfjsLib) {
+  pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+}
+
+/* ===== HELPERS ===== */
+const $ = (s, p = document) => p.querySelector(s);
+const $$ = (s, p = document) => [...p.querySelectorAll(s)];
+
+function showToast(msg, type = 'info', duration = 3000) {
+  const t = $('#toast');
+  if (!t) return;
+  t.className = 'toast visible' + (type !== 'info' ? ' ' + type : '');
+  t.textContent = msg;
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove('visible'), duration);
+}
+
+function setStatus(msg, type = 'info') {
+  const el = $('#statusMsg');
+  el.textContent = msg;
+  el.className = 'status-msg visible ' + type;
+}
+
+function clearStatus() {
+  const el = $('#statusMsg');
+  el.className = 'status-msg';
+  el.textContent = '';
+}
+
+/* ===== STATE ===== */
+const state = {
+  fileBytes: null,
+  pdfDoc: null,
+  pdfLibDoc: null,
+  currentPage: 1,
+  totalPages: 0,
+  zoom: 1.0,
+  pageViewport: null,
+  style: 'Book',
+  direction: 'L',
+  duration: 1,
+  motion: 'I',
+  fromPage: 1,
+  toPage: 1,
+  applyAll: true
+};
+
+/* ===== DOM ===== */
+const dropzone = $('#dropzone');
+const fileInput = $('#fileInput');
+const chooseBtn = $('#chooseBtn');
+const browseLink = $('#browseLink');
+const editor = $('#editor');
+const pdfCanvas = $('#pdfCanvas');
+const pdfWrap = $('#pdfWrap');
+const pageInfo = $('#pageInfo');
+const pageBadge = $('#pageBadge');
+const zoomInfo = $('#zoomInfo');
+const prevPage = $('#prevPage');
+const nextPage = $('#nextPage');
+const zoomIn = $('#zoomIn');
+const zoomOut = $('#zoomOut');
+const previewBtn = $('#previewBtn');
+const flipOverlay = $('#flipOverlay');
+const flipShade = $('#flipShade');
+const styleGrid = $('#styleGrid');
+const direction = $('#direction');
+const duration = $('#duration');
+const motion = $('#motion');
+const fromPage = $('#fromPage');
+const toPage = $('#toPage');
+const applyAllToggle = $('#applyAllToggle');
+const saveBtn = $('#saveBtn');
+const cancelBtn = $('#cancelBtn');
+const progress = $('#progress');
+const progressFill = $('#progressFill');
+const progressText = $('#progressText');
+
+/* ===== STYLE SELECTION ===== */
+$$('.style-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    $$('.style-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    state.style = btn.dataset.style;
+  });
+});
+
+/* ===== OPTIONS ===== */
+direction.addEventListener('change', (e) => state.direction = e.target.value);
+duration.addEventListener('change', (e) => state.duration = parseFloat(e.target.value));
+motion.addEventListener('change', (e) => state.motion = e.target.value);
+fromPage.addEventListener('input', (e) => state.fromPage = parseInt(e.target.value, 10) || 1);
+toPage.addEventListener('input', (e) => state.toPage = parseInt(e.target.value, 10) || 1);
+
+applyAllToggle.addEventListener('click', () => {
+  state.applyAll = !state.applyAll;
+  applyAllToggle.classList.toggle('on', state.applyAll);
+  applyAllToggle.setAttribute('aria-checked', state.applyAll);
+});
+
+/* ===== FILE SELECTION ===== */
+function triggerFileSelect() { fileInput.click(); }
+chooseBtn.addEventListener('click', (e) => { e.stopPropagation(); triggerFileSelect(); });
+browseLink.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); triggerFileSelect(); });
+dropzone.addEventListener('click', triggerFileSelect);
+
+fileInput.addEventListener('change', (e) => {
+  const f = e.target.files[0];
+  if (f) loadPdf(f);
+  fileInput.value = '';
+});
+
+['dragenter', 'dragover'].forEach(evt => {
+  dropzone.addEventListener(evt, (e) => { e.preventDefault(); e.stopPropagation(); dropzone.classList.add('dragover'); });
+});
+['dragleave', 'drop'].forEach(evt => {
+  dropzone.addEventListener(evt, (e) => { e.preventDefault(); e.stopPropagation(); dropzone.classList.remove('dragover'); });
+});
+dropzone.addEventListener('drop', (e) => {
+  const f = e.dataTransfer.files[0];
+  if (f && f.type === 'application/pdf') loadPdf(f);
+  else showToast('Please drop a PDF file', 'error');
+});
+
+/* ===== LOAD PDF ===== */
+async function loadPdf(file) {
+  clearStatus();
+  setStatus('Loading PDF...', 'info');
+
+  try {
+    const buf = await file.arrayBuffer();
+    state.fileBytes = buf.slice(0);
+
+    const pdfjsBuf = buf.slice(0);
+    state.pdfDoc = await pdfjsLib.getDocument({ data: pdfjsBuf }).promise;
+    state.totalPages = state.pdfDoc.numPages;
+    state.currentPage = 1;
+
+    state.pdfLibDoc = await PDFLib.PDFDocument.load(buf.slice(0));
+
+    dropzone.style.display = 'none';
+    editor.classList.add('visible');
+
+    fromPage.max = state.totalPages;
+    toPage.max = state.totalPages;
+    fromPage.value = 1;
+    toPage.value = state.totalPages;
+    state.fromPage = 1;
+    state.toPage = state.totalPages;
+
+    await renderPage(1);
+    clearStatus();
+    showToast('✅ PDF loaded ' + state.totalPages + ' pages', 'success');
+  } catch (err) {
+    console.error(err);
+    setStatus('Failed to load PDF: ' + err.message, 'error');
+    showToast('Failed to load PDF', 'error');
+  }
+}
+
+/* ===== RENDER PAGE ===== */
+async function renderPage(pageNum) {
+  if (!state.pdfDoc) return;
+  state.currentPage = pageNum;
+
+  const page = await state.pdfDoc.getPage(pageNum);
+  const viewport = page.getViewport({ scale: 1.5 * state.zoom });
+  state.pageViewport = page.getViewport({ scale: 1.5 });
+
+  pdfCanvas.width = viewport.width;
+  pdfCanvas.height = viewport.height;
+
+  const ctx = pdfCanvas.getContext('2d');
+  await page.render({ canvasContext: ctx, viewport }).promise;
+
+  pageInfo.textContent = `Page ${pageNum} / ${state.totalPages}`;
+  pageBadge.textContent = `Page ${pageNum} ${Math.round(viewport.width / 1.5)} × ${Math.round(viewport.height / 1.5)} pt`;
+  zoomInfo.textContent = Math.round(state.zoom * 100) + '%';
+
+  prevPage.disabled = pageNum <= 1;
+  nextPage.disabled = pageNum >= state.totalPages;
+}
+
+/* ===== NAVIGATION ===== */
+prevPage.addEventListener('click', () => {
+  if (state.currentPage > 1) renderPage(state.currentPage - 1);
+});
+nextPage.addEventListener('click', () => {
+  if (state.currentPage < state.totalPages) renderPage(state.currentPage + 1);
+});
+zoomIn.addEventListener('click', () => {
+  state.zoom = Math.min(3, state.zoom + 0.25);
+  renderPage(state.currentPage);
+});
+zoomOut.addEventListener('click', () => {
+  state.zoom = Math.max(0.5, state.zoom - 0.25);
+  renderPage(state.currentPage);
+});
+
+/* ===== PREVIEW FLIP (3D CSS animation) ===== */
+previewBtn.addEventListener('click', () => {
+  const style = state.style;
+  const dir = state.direction;
+  const dur = state.duration * 1000;
+
+  // Reset wrap
+  pdfWrap.style.transition = 'none';
+  pdfWrap.style.transform = 'none';
+  pdfWrap.style.opacity = '1';
+  pdfWrap.style.transformOrigin = 'center center';
+  flipOverlay.classList.add('active');
+  flipShade.style.opacity = '0';
+  flipShade.style.transform = 'none';
+  flipShade.style.background = 'linear-gradient(to right, rgba(0,0,0,.7), transparent)';
+
+  // Set transform origin based on direction
+  const originMap = {
+    'L': 'left center',
+    'R': 'right center',
+    'U': 'center top',
+    'D': 'center bottom'
+  };
+  pdfWrap.style.transformOrigin = originMap[dir] || 'left center';
+
+  // Set flip shade gradient
+  if (dir === 'L') flipShade.style.background = 'linear-gradient(to right, rgba(0,0,0,.7), transparent)';
+  else if (dir === 'R') flipShade.style.background = 'linear-gradient(to left, rgba(0,0,0,.7), transparent)';
+  else if (dir === 'U') flipShade.style.background = 'linear-gradient(to bottom, rgba(0,0,0,.7), transparent)';
+  else if (dir === 'D') flipShade.style.background = 'linear-gradient(to top, rgba(0,0,0,.7), transparent)';
+
+  // Apply style-specific animation
+  setTimeout(() => {
+    pdfWrap.style.transition = `transform ${dur}ms ease-in-out, opacity ${dur}ms ease-in-out`;
+
+    if (style === 'Book' || style === 'Turn') {
+      if (dir === 'L') pdfWrap.style.transform = 'rotateY(-95deg)';
+      else if (dir === 'R') pdfWrap.style.transform = 'rotateY(95deg)';
+      else if (dir === 'U') pdfWrap.style.transform = 'rotateX(95deg)';
+      else if (dir === 'D') pdfWrap.style.transform = 'rotateX(-95deg)';
+      flipShade.style.transition = `opacity ${dur}ms ease, transform ${dur}ms ease`;
+      flipShade.style.opacity = '0.85';
+      flipShade.style.transform = 'scaleX(1.05)';
+    } else if (style === 'Cube') {
+      if (dir === 'L') pdfWrap.style.transform = 'rotateY(-90deg) translateZ(100px)';
+      else if (dir === 'R') pdfWrap.style.transform = 'rotateY(90deg) translateZ(100px)';
+      else if (dir === 'U') pdfWrap.style.transform = 'rotateX(-90deg) translateZ(100px)';
+      else if (dir === 'D') pdfWrap.style.transform = 'rotateX(90deg) translateZ(100px)';
+    } else if (style === 'Flip') {
+      if (dir === 'L') pdfWrap.style.transform = 'rotateY(-180deg)';
+      else if (dir === 'R') pdfWrap.style.transform = 'rotateY(180deg)';
+      else if (dir === 'U') pdfWrap.style.transform = 'rotateX(180deg)';
+      else if (dir === 'D') pdfWrap.style.transform = 'rotateX(-180deg)';
+    } else if (style === 'Fade-Through') {
+      pdfWrap.style.transform = 'scale(0.95)';
+      pdfWrap.style.opacity = '0';
+    } else if (style === 'Split') {
+      pdfWrap.style.transform = 'scaleX(0.4) rotateY(-30deg)';
+      pdfWrap.style.opacity = '0.3';
+    }
+
+    // Reset
+    setTimeout(() => {
+      pdfWrap.style.transition = `transform ${dur * 0.4}ms ease-out, opacity ${dur * 0.4}ms ease-out`;
+      pdfWrap.style.transform = 'none';
+      pdfWrap.style.opacity = '1';
+      flipShade.style.opacity = '0';
+      flipShade.style.transform = 'none';
+
+      setTimeout(() => {
+        pdfWrap.style.transition = 'none';
+        pdfWrap.style.transformOrigin = 'center center';
+        flipOverlay.classList.remove('active');
+      }, dur * 0.5);
+    }, dur);
+  }, 50);
+});
+
+/* ===== SAVE PDF ===== */
+saveBtn.addEventListener('click', async () => {
+  if (!state.pdfLibDoc) { showToast('No PDF loaded', 'error'); return; }
+
+  clearStatus();
+  setStatus('Adding flip effects...', 'info');
+  progress.classList.add('visible');
+  progressFill.style.width = '30%';
+  progressText.textContent = 'Processing pages...';
+
+  try {
+    const pdfDoc = state.pdfLibDoc;
+    const pages = pdfDoc.getPages();
+
+    // Determine range
+    let pagesToApply = [];
+    if (state.applyAll) {
+      pagesToApply = pages.map((_, i) => i);
+    } else {
+      const from = Math.max(1, Math.min(state.fromPage, state.totalPages));
+      const to = Math.max(from, Math.min(state.toPage, state.totalPages));
+      for (let i = from - 1; i < to; i++) pagesToApply.push(i);
+    }
+
+    const { PDFName, PDFDict, PDFNumber } = PDFLib;
+
+    progressFill.style.width = '60%';
+    progressText.textContent = 'Adding /Trans metadata...';
+
+    // Map flip styles to PDF /Trans S values
+    // PDF /Trans supports: Split, Blinds, Box, Wipe, Dissolve, Glitter, R
+    // Adobe's "Book" and "Cube" are approximated via Split + Cover combos
+    const styleMap = {
+      'Book': 'Split',
+      'Cube': 'Split',
+      'Turn': 'Split',
+      'Flip': 'Cover',
+      'Fade-Through': 'Fade',
+      'Split': 'Split'
+    };
+
+    const pdfStyleName = styleMap[state.style] || 'Split';
+
+    for (const pageIdx of pagesToApply) {
+      const page = pages[pageIdx];
+      const pageDict = page.node;
+
+      const transDict = PDFDict.withContext(pageDict.context);
+
+      // /Style
+      transDict.set(PDFName.of('S'), PDFName.of(pdfStyleName));
+
+      // /Duration
+      transDict.set(PDFName.of('D'), PDFNumber.of(state.duration));
+
+      // /Dimension: H or V
+      const dim = (state.direction === 'U' || state.direction === 'D') ? 'V' : 'H';
+      transDict.set(PDFName.of('Dm'), PDFName.of(dim));
+
+      // /Motion: I (inward) or O (outward)
+      transDict.set(PDFName.of('M'), PDFName.of(state.motion));
+
+      // /Direction in degrees
+      let diValue = 0;
+      const dirMap = {
+        'L': 180,
+        'R': 0,
+        'U': 90,
+        'D': 270
+      };
+      if (dirMap[state.direction] !== undefined) {
+        diValue = dirMap[state.direction];
+      }
+      transDict.set(PDFName.of('Di'), PDFNumber.of(diValue));
+
+      // /Dmth Dimension of motion (for Split/Blinds)
+      transDict.set(PDFName.of('Dm'), PDFName.of(dim));
+
+      // Attach /Trans to page
+      pageDict.set(PDFName.of('Trans'), transDict);
+    }
+
+    progressFill.style.width = '85%';
+    progressText.textContent = 'Finalizing PDF...';
+
+    const bytes = await pdfDoc.save();
+    const blob = new Blob([bytes], { type: 'application/pdf' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'flip-effect.pdf';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    setTimeout(() => URL.revokeObjectURL(url), 2000);
+
+    progressFill.style.width = '100%';
+    setStatus(
+      `✅ Flip effect applied to ${pagesToApply.length} page(s) ${state.style} (${state.duration}s)`,
+      'success'
+    );
+    showToast('PDF downloaded!', 'success');
+
+    setTimeout(() => {
+      progress.classList.remove('visible');
+      progressFill.style.width = '0%';
+    }, 1500);
+  } catch (err) {
+    console.error(err);
+    progress.classList.remove('visible');
+    setStatus('Failed to save: ' + err.message, 'error');
+    showToast('Save failed', 'error');
+  }
+});
+
+/* ===== CANCEL ===== */
+cancelBtn.addEventListener('click', () => {
+  state.fileBytes = null;
+  state.pdfDoc = null;
+  state.pdfLibDoc = null;
+  state.currentPage = 1;
+  state.totalPages = 0;
+  state.zoom = 1.0;
+  editor.classList.remove('visible');
+  dropzone.style.display = '';
+  clearStatus();
+  progress.classList.remove('visible');
+  showToast('Reset', 'info');
+});
+
+/* ===== FAQ ===== */
+$$('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    $$('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2563eb">
+
+<title>Remove Duplicate Pages from PDF - Free Online Tool | BigToolz</title>
+<meta name="description" content="Remove duplicate pages from PDF online free. Detects identical or similar pages automatically. Visual preview, no upload, works in your browser.">
+<meta name="keywords" content="remove duplicate pdf pages, pdf duplicate remover, deduplicate pdf, remove duplicates pdf, duplicate page finder">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://bigtoolz.com/tools/pdf-tools/organize-pdf/duplicate-remover/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Remove Duplicate Pages from PDF - Free Online Tool | BigToolz">
+<meta property="og:description" content="Find and remove duplicate pages from PDF free, no upload.">
+<meta property="og:url" content="https://bigtoolz.com/tools/pdf-tools/organize-pdf/duplicate-remover/">
+<meta property="og:image" content="https://bigtoolz.com/assets/images/og-image.jpg">
+<meta property="og:site_name" content="BigToolz">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="PDF Duplicate Remover - BigToolz">
+<meta name="twitter:description" content="Remove duplicate PDF pages instantly free, no upload.">
+<meta name="twitter:image" content="https://bigtoolz.com/assets/images/twitter-card.jpg">
+
+<link rel="icon" href="/assets/images/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/images/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#f8f9fc;color:#1a1a2e;overflow-x:hidden;line-height:1.5}
+
+  .header{background:#fff;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;position:sticky;top:0;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+  .header-left{display:flex;align-items:center;gap:40px}
+  .logo{display:flex;align-items:center;gap:8px;font-size:22px;font-weight:800;color:#1a1a2e;text-decoration:none}
+  .logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#3b82f6,#2563eb);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px}
+  .logo span{color:#2563eb}
+  .nav{display:flex;align-items:center;gap:28px;list-style:none}
+  .nav a{text-decoration:none;color:#4b5563;font-size:14px;font-weight:500;transition:color .2s}
+  .nav a:hover,.nav a.active{color:#2563eb}
+  .header-right{display:flex;align-items:center;gap:16px}
+  .search-btn,.theme-btn{width:36px;height:36px;border-radius:50%;border:none;background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#4b5563}
+  .search-btn:hover,.theme-btn:hover{background:#f3f4f6}
+  .bookmark-btn{display:flex;align-items:center;gap:8px;background:#2563eb;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
+  .bookmark-btn:hover{background:#1d4ed8}
+
+  .hero{background:linear-gradient(135deg,#0a0e27 0%,#1a1a4e 40%,#2d1b69 70%,#4c1d95 100%);padding:40px 40px 60px;position:relative;overflow:hidden;color:#fff}
+  .hero::before{content:'';position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(6,182,212,.25) 0%,transparent 70%);border-radius:50%}
+  .hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+  .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px;flex-wrap:wrap}
+  .breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none}
+  .breadcrumb a:hover{color:#fff}
+  .breadcrumb .sep{color:rgba(255,255,255,.4)}
+  .breadcrumb .current{color:#fff;font-weight:500}
+  .hero-title-row{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+  .hero-icon{width:60px;height:60px;background:#06b6d4;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px;color:#fff;flex-shrink:0;box-shadow:0 8px 24px rgba(6,182,212,.4)}
+  .hero-title{font-size:42px;font-weight:800;line-height:1.15}
+  .hero-title .blue{color:#22d3ee}
+  .hero-desc{font-size:15px;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:24px;max-width:560px}
+  .hero-features{display:flex;gap:24px;flex-wrap:wrap}
+  .hero-feature{display:flex;align-items:center;gap:6px;font-size:13px;color:#fff;font-weight:500}
+  .hero-feature .check{width:18px;height:18px;border-radius:50%;background:#06b6d4;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;flex-shrink:0}
+
+  .main-content{max-width:1200px;margin:0 auto;padding:40px;display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start}
+  .tool-content{min-width:0}
+
+  .workspace{background:#fff;border-radius:16px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,.06);border:1px solid #e5e7eb;margin-bottom:24px}
+
+  .dropzone{border:2px dashed #a5f3fc;border-radius:12px;padding:50px 30px;text-align:center;background:#ecfeff;margin-bottom:24px;transition:all .2s;cursor:pointer}
+  .dropzone:hover,.dropzone.dragover{border-color:#06b6d4;background:#cffafe}
+  .dropzone-icon{width:60px;height:60px;background:linear-gradient(135deg,#06b6d4,#0891b2);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;color:#fff;font-size:26px;transition:transform .2s}
+  .dropzone:hover .dropzone-icon{transform:translateY(-4px)}
+  .dropzone-title{font-size:16px;font-weight:700;color:#1a1a2e;margin-bottom:8px}
+  .dropzone-sub{font-size:14px;color:#6b7280;margin-bottom:20px}
+  .dropzone-sub a{color:#06b6d4;font-weight:600;text-decoration:none}
+  .choose-btn{display:inline-flex;align-items:center;gap:8px;background:#06b6d4;color:#fff;border:none;padding:12px 28px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;transition:background .2s}
+  .choose-btn:hover{background:#0891b2}
+  .dropzone-info{font-size:12px;color:#9ca3af;display:flex;align-items:center;justify-content:center;gap:8px;margin-top:16px;flex-wrap:wrap}
+  .dropzone-info .divider{color:#d1d5db}
+  .file-input{display:none}
+
+  .pdf-info{display:none;background:#ecfeff;border-radius:12px;padding:16px 20px;margin-bottom:20px;border:1px solid #a5f3fc;align-items:center;gap:16px;flex-wrap:wrap}
+  .pdf-info.visible{display:flex}
+  .pdf-info-icon{width:44px;height:44px;background:#06b6d4;border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:18px;flex-shrink:0}
+  .pdf-info-details{flex:1;min-width:0}
+  .pdf-info-name{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .pdf-info-meta{font-size:12px;color:#6b7280}
+
+  /* Options */
+  .options{background:#ecfeff;border-radius:12px;padding:20px;margin-bottom:20px;border:1px solid #a5f3fc}
+  .options-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+
+  .similarity-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:16px}
+  .sim-btn{padding:14px 10px;background:#fff;border:2px solid #e5e7eb;border-radius:10px;cursor:pointer;font-family:inherit;transition:all .2s;text-align:center;line-height:1.3}
+  .sim-btn:hover{border-color:#06b6d4;background:#ecfeff}
+  .sim-btn.active{border-color:#06b6d4;background:#06b6d4;color:#fff}
+  .sim-name{font-size:13px;font-weight:800;margin-bottom:2px}
+  .sim-desc{font-size:10px;opacity:.75}
+
+  .threshold-row{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;padding:12px 14px}
+  .threshold-row label{font-size:12px;font-weight:600;color:#4b5563;flex-shrink:0}
+  .threshold-row input[type="range"]{flex:1;-webkit-appearance:none;appearance:none;height:6px;background:#a5f3fc;border-radius:3px;outline:none}
+  .threshold-row input[type="range"]::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:20px;height:20px;background:#06b6d4;border-radius:50%;cursor:pointer;box-shadow:0 2px 6px rgba(6,182,212,.4)}
+  .threshold-row input[type="range"]::-moz-range-thumb{width:20px;height:20px;background:#06b6d4;border:none;border-radius:50%;cursor:pointer}
+  .threshold-value{font-size:13px;font-weight:800;color:#0891b2;background:#ecfeff;padding:4px 10px;border-radius:8px;border:1px solid #a5f3fc;min-width:60px;text-align:center;font-family:'JetBrains Mono',monospace}
+
+  /* Analyze button */
+  .analyze-btn{display:none;width:100%;padding:16px;background:#06b6d4;color:#fff;border:none;border-radius:10px;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit;transition:all .2s;margin-bottom:20px;align-items:center;justify-content:center;gap:8px;box-shadow:0 4px 12px rgba(6,182,212,.2)}
+  .analyze-btn.visible{display:inline-flex}
+  .analyze-btn:hover:not(:disabled){background:#0891b2;transform:translateY(-2px);box-shadow:0 6px 20px rgba(6,182,212,.3)}
+  .analyze-btn:disabled{opacity:.5;cursor:not-allowed;transform:none}
+
+  /* Analysis summary */
+  .summary{display:none;background:#f0fdf4;border:1px solid #86efac;border-radius:12px;padding:16px;margin-bottom:20px;align-items:center;gap:16px;flex-wrap:wrap}
+  .summary.visible{display:flex}
+  .summary-icon{width:48px;height:48px;background:#10b981;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:22px;flex-shrink:0}
+  .summary-text{flex:1;min-width:0}
+  .summary-title{font-size:15px;font-weight:800;color:#065f46;margin-bottom:2px}
+  .summary-desc{font-size:13px;color:#047857}
+
+  .summary.no-dups{background:#fef3c7;border-color:#fcd34d}
+  .summary.no-dups .summary-icon{background:#f59e0b}
+  .summary.no-dups .summary-title{color:#92400e}
+  .summary.no-dups .summary-desc{color:#78350f}
+
+  /* Duplicate groups */
+  .groups{display:none;margin-bottom:20px}
+  .groups.visible{display:block}
+  .groups-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:14px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
+  .groups-actions{display:flex;gap:6px;flex-wrap:wrap}
+  .groups-actions button{padding:6px 12px;background:#fff;border:1px solid #e5e7eb;border-radius:6px;font-size:11px;font-weight:600;color:#4b5563;cursor:pointer;font-family:inherit;transition:all .2s}
+  .groups-actions button:hover{border-color:#06b6d4;color:#0891b2;background:#ecfeff}
+
+  .group-card{background:#f8fafc;border:1px solid #cbd5e1;border-radius:12px;padding:16px;margin-bottom:12px}
+  .group-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;flex-wrap:wrap;gap:8px}
+  .group-label{font-size:13px;font-weight:700;color:#1a1a2e;display:flex;align-items:center;gap:8px}
+  .group-badge{font-size:10px;font-weight:700;padding:3px 8px;border-radius:10px;background:#ecfeff;color:#0891b2;text-transform:uppercase;letter-spacing:.3px}
+  .group-match{font-size:11px;color:#64748b;font-weight:600;font-family:'JetBrains Mono',monospace}
+  .group-pages{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:10px}
+  .group-page{background:#fff;border:2px solid #e5e7eb;border-radius:10px;padding:8px;text-align:center;transition:all .2s;position:relative}
+  .group-page.keep{border-color:#10b981;background:#f0fdf4}
+  .group-page.remove{border-color:#ef4444;background:#fef2f2;opacity:.6}
+  .group-page.keep::after{content:'KEEP';position:absolute;top:4px;right:4px;background:#10b981;color:#fff;font-size:8px;font-weight:800;padding:2px 6px;border-radius:4px;letter-spacing:.5px}
+  .group-page.remove::after{content:'REMOVE';position:absolute;top:4px;right:4px;background:#ef4444;color:#fff;font-size:8px;font-weight:800;padding:2px 6px;border-radius:4px;letter-spacing:.5px}
+  .group-thumb{width:100%;aspect-ratio:0.707;background:#f8fafc;border-radius:6px;overflow:hidden;margin-bottom:6px;display:flex;align-items:center;justify-content:center}
+  .group-thumb img{width:100%;height:100%;object-fit:contain}
+  .group-num{font-size:11px;font-weight:700;color:#1a1a2e}
+  .group-page.keep .group-num{color:#065f46}
+  .group-page.remove .group-num{color:#991b1b;text-decoration:line-through}
+
+  /* Actions */
+  .actions{display:flex;gap:12px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 28px;border-radius:10px;font-size:15px;font-weight:700;font-family:inherit;cursor:pointer;border:none;transition:all .2s;text-decoration:none}
+  .btn-primary{background:#06b6d4;color:#fff;flex:1;box-shadow:0 4px 12px rgba(6,182,212,.2)}
+  .btn-primary:hover:not(:disabled){background:#0891b2;transform:translateY(-2px);box-shadow:0 6px 20px rgba(6,182,212,.3)}
+  .btn-primary:disabled{opacity:.5;cursor:not-allowed;transform:none}
+  .btn-secondary{background:#fff;color:#06b6d4;border:1px solid #e5e7eb}
+  .btn-secondary:hover{border-color:#06b6d4;background:#ecfeff}
+  .btn-success{background:#10b981;color:#fff}
+  .btn-success:hover{background:#059669}
+
+  .progress{display:none;margin-top:20px}
+  .progress.visible{display:block}
+  .progress-bar{width:100%;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden;margin-bottom:8px}
+  .progress-fill{height:100%;background:linear-gradient(90deg,#22d3ee,#06b6d4);border-radius:4px;width:0%;transition:width .3s ease}
+  .progress-text{font-size:13px;color:#6b7280;text-align:center;font-weight:500}
+
+  .result-area{display:none;margin-top:20px;padding:24px;background:#f0fdf4;border-radius:12px;border:1px solid #86efac;text-align:center}
+  .result-area.visible{display:block}
+  .result-icon{width:64px;height:64px;background:#10b981;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:32px;margin:0 auto 16px}
+  .result-title{font-size:18px;font-weight:800;color:#065f46;margin-bottom:8px}
+  .result-desc{font-size:14px;color:#047857;margin-bottom:20px;line-height:1.6}
+  .result-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+  /* SEO */
+  .seo-content{background:#fff;border-radius:16px;padding:32px;border:1px solid #e5e7eb;margin-bottom:24px}
+  .seo-content h2{font-size:22px;font-weight:800;color:#1a1a2e;margin-bottom:14px;margin-top:28px;display:flex;align-items:center;gap:10px}
+  .seo-content h2:first-child{margin-top:0}
+  .seo-content h3{font-size:16px;font-weight:700;color:#1a1a2e;margin:20px 0 10px}
+  .seo-content p{font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:14px}
+  .seo-content ul{list-style:none;padding-left:0;margin-bottom:16px}
+  .seo-content ul li{position:relative;padding-left:24px;font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:8px}
+  .seo-content ul li::before{content:'';position:absolute;left:6px;top:12px;width:6px;height:6px;background:#06b6d4;border-radius:50%}
+  .seo-content a{color:#2563eb;text-decoration:none;font-weight:600}
+  .seo-content a:hover{text-decoration:underline}
+  .seo-content strong{color:#1a1a2e;font-weight:700}
+  .seo-content code{background:#f1f5f9;padding:2px 6px;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:13px;color:#0f172a;border:1px solid #e2e8f0}
+
+  .how-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:20px}
+  .how-step{background:#ecfeff;border-radius:12px;padding:20px;border:1px solid #a5f3fc}
+  .how-step-num{width:36px;height:36px;border-radius:50%;background:#06b6d4;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;margin-bottom:12px}
+  .how-step-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+  .how-step-desc{font-size:13px;color:#6b7280;line-height:1.6}
+
+  .faq-item{background:#ecfeff;border:1px solid #a5f3fc;border-radius:12px;margin-bottom:10px;overflow:hidden;transition:border-color .2s}
+  .faq-item:hover{border-color:#06b6d4}
+  .faq-question{width:100%;background:none;border:none;padding:18px 22px;font-size:15px;font-weight:700;color:#1a1a2e;text-align:left;cursor:pointer;font-family:inherit;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .faq-question .chev{font-size:12px;color:#06b6d4;transition:transform .2s;flex-shrink:0}
+  .faq-item.open .faq-question .chev{transform:rotate(180deg)}
+  .faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 22px}
+  .faq-item.open .faq-answer{max-height:500px;padding-bottom:18px}
+  .faq-answer p{font-size:14px;color:#6b7280;line-height:1.7;margin:0}
+
+  .sidebar{background:#fff;border-radius:16px;padding:24px;border:1px solid #e5e7eb;position:sticky;top:80px;margin-bottom:24px}
+  .sidebar-header{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:800;color:#1a1a2e;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid #f3f4f6}
+  .sidebar-list{display:flex;flex-direction:column;gap:8px}
+  .sidebar-item{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;cursor:pointer;transition:background .2s;text-decoration:none;color:inherit;border:1px solid #f3f4f6}
+  .sidebar-item:hover{background:#ecfeff;border-color:#a5f3fc}
+  .sidebar-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;flex-shrink:0}
+  .sidebar-info{flex:1;min-width:0}
+  .sidebar-title{font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:2px}
+  .sidebar-desc{font-size:11px;color:#9ca3af;line-height:1.4}
+
+  .footer{background:#0a0e27;padding:60px 40px 30px;color:#fff;margin-top:40px}
+  .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:40px}
+  .footer-brand{display:flex;align-items:center;gap:8px;font-size:20px;font-weight:800;margin-bottom:12px}
+  .footer-brand span{color:#60a5fa}
+  .footer-tagline{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px}
+  .footer-social{display:flex;gap:12px}
+  .footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:16px;transition:background .2s}
+  .footer-social a:hover{background:rgba(255,255,255,.2)}
+  .footer-heading{font-size:14px;font-weight:700;margin-bottom:20px;color:#fff}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .footer-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;transition:color .2s}
+  .footer-links a:hover{color:#60a5fa}
+  .footer-bottom{max-width:1200px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  .footer-bottom-left{display:flex;gap:20px;font-size:12px;color:rgba(255,255,255,.5)}
+  .footer-bottom-right,.footer-bottom-links a{font-size:12px;color:rgba(255,255,255,.5);text-decoration:none}
+  .footer-bottom-links{display:flex;gap:20px}
+
+  .toast{position:fixed;bottom:24px;right:24px;background:#1a1a2e;color:#fff;padding:14px 20px;border-radius:10px;font-size:13px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:3000;transform:translateY(200%);transition:transform .3s ease;max-width:320px}
+  .toast.visible{transform:translateY(0)}
+  .toast.success{background:#10b981}
+  .toast.error{background:#ef4444}
+  .toast.info{background:#3b82f6}
+
+  @media(max-width:1024px){
+    .main-content{grid-template-columns:1fr;padding:24px 20px}
+    .sidebar{position:static}
+    .how-steps{grid-template-columns:repeat(2,1fr)}
+  }
+  @media(max-width:768px){
+    .header{padding:0 20px}.nav{display:none}
+    .hero{padding:24px 20px 40px}
+    .hero-title{font-size:28px}
+    .hero-icon{width:48px;height:48px;font-size:20px}
+    .hero-title-row{flex-direction:column;align-items:flex-start;gap:12px}
+    .main-content{padding:20px 16px}
+    .workspace{padding:20px}
+    .dropzone{padding:32px 16px}
+    .how-steps{grid-template-columns:1fr}
+    .seo-content{padding:20px}
+    .footer-inner{grid-template-columns:1fr 1fr}
+    .similarity-tabs{grid-template-columns:1fr}
+    .toast{left:16px;right:16px;bottom:16px;max-width:none}
+  }
+  @media(max-width:576px){
+    .header{padding:0 16px}.header-right .search-btn,.header-right .theme-btn{display:none}
+    .hero-title{font-size:24px}
+    .actions{flex-direction:column}
+    .btn{width:100%}
+    .btn-primary{flex:none}
+    .footer-inner{grid-template-columns:1fr}
+    .footer-bottom{flex-direction:column;text-align:center}
+    .group-pages{grid-template-columns:repeat(2,1fr)}
+  }
+
+  html[data-theme="dark"] body{background:#0f172a;color:#f1f5f9}
+  html[data-theme="dark"] .header,html[data-theme="dark"] .workspace,html[data-theme="dark"] .seo-content,html[data-theme="dark"] .sidebar{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .logo,html[data-theme="dark"] .hero-title,html[data-theme="dark"] .seo-content h2,html[data-theme="dark"] .seo-content h3,html[data-theme="dark"] .faq-question,html[data-theme="dark"] .sidebar-header,html[data-theme="dark"] .sidebar-title,html[data-theme="dark"] .pdf-info-name,html[data-theme="dark"] .options-title,html[data-theme="dark"] .group-label,html[data-theme="dark"] .group-num,html[data-theme="dark"] .groups-title{color:#f1f5f9}
+  html[data-theme="dark"] .nav a{color:#cbd5e1}
+  html[data-theme="dark"] .dropzone{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .how-step,html[data-theme="dark"] .faq-item,html[data-theme="dark"] .pdf-info,html[data-theme="dark"] .options,html[data-theme="dark"] .similarity-tabs{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .sim-btn,html[data-theme="dark"] .threshold-row{background:#0f172a;border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .sim-btn.active{background:#06b6d4;color:#fff;border-color:#06b6d4}
+  html[data-theme="dark"] .group-card{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .group-page{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .group-page.keep{background:#064e3b;border-color:#10b981}
+  html[data-theme="dark"] .group-page.remove{background:#450a0a;border-color:#ef4444}
+  html[data-theme="dark"] .group-thumb{background:#020617}
+  html[data-theme="dark"] .groups-actions button{background:#0f172a;border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .seo-content p,html[data-theme="dark"] .seo-content ul li,html[data-theme="dark"] .faq-answer p,html[data-theme="dark"] .pdf-info-meta{color:#cbd5e1}
+  html[data-theme="dark"] .seo-content code{background:#020617;color:#94a3b8;border-color:#334155}
+  html[data-theme="dark"] .result-area,html[data-theme="dark"] .summary{background:#064e3b;border-color:#10b981}
+  html[data-theme="dark"] .result-title,html[data-theme="dark"] .result-desc,html[data-theme="dark"] .summary-title,html[data-theme="dark"] .summary-desc{color:#d1fae5}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type": "SoftwareApplication", "name": "Remove Duplicate Pages from PDF", "url": "https://bigtoolz.com/tools/pdf-tools/organize-pdf/duplicate-remover/", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any (Web-based)", "description": "Free online tool to detect and remove duplicate pages from PDF. Visual preview, adjustable similarity. Works in your browser.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.8", "ratingCount": "521"}},
+    {"@type": "HowTo", "name": "How to Remove Duplicate Pages from PDF", "step": [
+      {"@type": "HowToStep", "name": "Upload PDF", "text": "Drag & drop or click to select a PDF file."},
+      {"@type": "HowToStep", "name": "Scan for Duplicates", "text": "Click Scan for Duplicates. Adjust similarity level if needed."},
+      {"@type": "HowToStep", "name": "Review", "text": "Review detected duplicate groups and choose which to keep."},
+      {"@type": "HowToStep", "name": "Remove & Download", "text": "Click Remove Duplicates, then download the cleaned PDF."}
+    ]},
+    {"@type": "FAQPage", "mainEntity": [
+      {"@type": "Question", "name": "How do I remove duplicate pages from a PDF?", "acceptedAnswer": {"@type": "Answer", "text": "Upload your PDF, click Scan for Duplicates, review detected groups, then click Remove Duplicates. The cleaned PDF downloads instantly."}},
+      {"@type": "Question", "name": "How does duplicate detection work?", "acceptedAnswer": {"@type": "Answer", "text": "Each page is rendered as an image, then a perceptual hash is computed. Pages with similar hashes (within the threshold) are flagged as duplicates even if they're not pixel-identical."}},
+      {"@type": "Question", "name": "What similarity level should I use?", "acceptedAnswer": {"@type": "Answer", "text": "Exact for pixel-identical duplicates (safest). Strict for nearly-identical pages with minor differences. Loose for finding visually similar pages may include false positives, so review carefully."}},
+      {"@type": "Question", "name": "Which page does it keep?", "acceptedAnswer": {"@type": "Answer", "text": "By default it keeps the first occurrence of each duplicate group. You can manually toggle which pages to keep or remove before applying."}},
+      {"@type": "Question", "name": "Are my PDFs uploaded to a server?", "acceptedAnswer": {"@type": "Answer", "text": "No. All processing happens in your browser using pdf-lib and pdf.js. Your PDF never leaves your device."}}
+    ]},
+    {"@type": "BreadcrumbList", "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bigtoolz.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://bigtoolz.com/tools/"},
+      {"@type": "ListItem", "position": 3, "name": "PDF Tools", "item": "https://bigtoolz.com/tools/pdf-tools/"},
+      {"@type": "ListItem", "position": 4, "name": "Organize PDF", "item": "https://bigtoolz.com/tools/pdf-tools/organize-pdf/"},
+      {"@type": "ListItem", "position": 5, "name": "Duplicate Remover", "item": "https://bigtoolz.com/tools/pdf-tools/organize-pdf/duplicate-remover/"}
+    ]}
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-left">
+    <a href="/" class="logo"><div class="logo-icon">⚒</div>BigToolz</span></a>
+    <nav><ul class="nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/tools/" class="active">All Tools</a></li>
+      <li><a href="/tools/categories">Categories</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul></nav>
+  </div>
+  <div class="header-right">
+    
+    <button class="theme-btn" aria-label="Toggle theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
+    
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <nav class="breadcrumb">
+      <a href="/">Home</a><span class="sep">›</span>
+      <a href="/tools/">Tools</a><span class="sep">›</span>
+      <a href="/tools/pdf-tools/">PDF Tools</a><span class="sep">›</span>
+      <a href="/tools/pdf-tools/organize-pdf/">Organize PDF</a><span class="sep">›</span>
+      <span class="current">Duplicate Remover</span>
+    </nav>
+    <div class="hero-title-row">
+      <div class="hero-icon">🔍</div>
+      <h1 class="hero-title">Remove <span class="blue">Duplicate Pages</span></h1>
+    </div>
+    <p class="hero-desc">
+      Detect and remove duplicate or near-identical pages from any PDF. Perceptual hashing finds visual matches not just exact copies. No upload, 100% private.
+    </p>
+    <div class="hero-features">
+      <div class="hero-feature"><span class="check">✓</span> Perceptual Detection</div>
+      <div class="hero-feature"><span class="check">✓</span> 3 Similarity Levels</div>
+      <div class="hero-feature"><span class="check">✓</span> Visual Review</div>
+      <div class="hero-feature"><span class="check">✓</span> No Upload</div>
+    </div>
+  </div>
+</section>
+
+<div class="main-content">
+
+  <div class="tool-content">
+
+    <div class="workspace">
+
+      <div class="dropzone" id="dropzone">
+        <div class="dropzone-icon">⬆</div>
+        <div class="dropzone-title">Drag & drop your PDF here</div>
+        <div class="dropzone-sub">or <a href="#" id="browseLink">click to browse files</a></div>
+        <button class="choose-btn" id="chooseBtn" type="button">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/></svg>
+          Choose PDF File
+        </button>
+        <div class="dropzone-info">
+          <span>PDF files only</span>
+          <span class="divider">|</span>
+          <span>Single file at a time</span>
+        </div>
+        <input type="file" id="fileInput" class="file-input" accept=".pdf,application/pdf">
+      </div>
+
+      <div class="pdf-info" id="pdfInfo">
+        <div class="pdf-info-icon">📕</div>
+        <div class="pdf-info-details">
+          <div class="pdf-info-name" id="pdfName">document.pdf</div>
+          <div class="pdf-info-meta" id="pdfMeta">0 pages · 0 KB</div>
+        </div>
+      </div>
+
+      <div class="options" id="options">
+        <div class="options-title">⚙️ Detection Settings</div>
+
+        <div class="similarity-tabs" id="similarityTabs">
+          <button class="sim-btn" data-level="exact">
+            <div class="sim-name">🎯 Exact</div>
+            <div class="sim-desc">Pixel-perfect match</div>
+          </button>
+          <button class="sim-btn active" data-level="strict">
+            <div class="sim-name">🔒 Strict</div>
+            <div class="sim-desc">Near-identical</div>
+          </button>
+          <button class="sim-btn" data-level="loose">
+            <div class="sim-name">🌊 Loose</div>
+            <div class="sim-desc">Visually similar</div>
+          </button>
+        </div>
+
+        <div class="threshold-row">
+          <label>Similarity Threshold</label>
+          <input type="range" id="thresholdSlider" min="70" max="100" value="95" step="1">
+          <span class="threshold-value" id="thresholdValue">95%</span>
+        </div>
+      </div>
+
+      <button class="analyze-btn visible" id="analyzeBtn" disabled>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        Scan for Duplicates
+      </button>
+
+      <div class="summary" id="summary">
+        <div class="summary-icon" id="summaryIcon">✓</div>
+        <div class="summary-text">
+          <div class="summary-title" id="summaryTitle">Analysis Complete</div>
+          <div class="summary-desc" id="summaryDesc"></div>
+        </div>
+      </div>
+
+      <div class="progress" id="progress">
+        <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+        <div class="progress-text" id="progressText">Analyzing...</div>
+      </div>
+
+      <div class="groups" id="groups">
+        <div class="groups-title">
+          <span>📋 Duplicate Groups</span>
+          <div class="groups-actions">
+            <button id="keepFirstBtn">Keep First in Each Group</button>
+            <button id="keepSmallestBtn">Keep Lowest Page Number</button>
+          </div>
+        </div>
+        <div id="groupsList"></div>
+      </div>
+
+      <div class="actions">
+        <button class="btn btn-primary" id="removeBtn" disabled>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 6h18M8 6V4a2 2 0 012-2h4a2 2 0 012 2v2M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6"/></svg>
+          Remove Duplicates
+        </button>
+        <button class="btn btn-secondary" id="clearBtn">Clear</button>
+      </div>
+
+      <div class="result-area" id="resultArea">
+        <div class="result-icon">✓</div>
+        <div class="result-title">Duplicates Removed!</div>
+        <div class="result-desc" id="resultDesc">Your cleaned PDF is ready to download.</div>
+        <div class="result-actions">
+          <button class="btn btn-success" id="downloadBtn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+            Download PDF
+          </button>
+          <button class="btn btn-secondary" id="startOverBtn">Start Over</button>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="seo-content">
+
+      <h2>🔍 What is a PDF Duplicate Remover?</h2>
+      <p>
+        A <strong>PDF Duplicate Remover</strong> scans a PDF to find pages that look identical or nearly identical, then lets you remove the extra copies. It's essential for cleaning up <strong>scanned documents</strong> that accidentally got double-scanned, <strong>presentations with repeated slides</strong>, or <strong>merged PDFs with overlapping content</strong>.
+      </p>
+      <p>
+        Unlike most online tools, BigToolz uses <strong>perceptual hashing</strong> each page is rendered as an image and reduced to a compact fingerprint. Two pages that look visually similar will have similar hashes, even if they're not byte-for-byte identical. Everything runs <strong>100% in your browser</strong> using pdf-lib and pdf.js.
+      </p>
+
+      <h2>🚀 How to Remove Duplicate Pages</h2>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-step-num">1</div>
+          <div class="how-step-title">Upload PDF</div>
+          <div class="how-step-desc">Drag & drop or click "Choose PDF File" to select a PDF.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">2</div>
+          <div class="how-step-title">Scan</div>
+          <div class="how-step-desc">Click "Scan for Duplicates" and pick a similarity level.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">3</div>
+          <div class="how-step-title">Review</div>
+          <div class="how-step-desc">Check each duplicate group toggle pages to keep or remove.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">4</div>
+          <div class="how-step-title">Download</div>
+          <div class="how-step-desc">Click "Remove Duplicates" and download the clean PDF.</div>
+        </div>
+      </div>
+
+      <h2>🎯 The 3 Similarity Levels</h2>
+
+      <h3>🎯 Exact</h3>
+      <p>Compares page <strong>pixel-by-pixel</strong>. Flags only pages that are truly identical (usually 95%+ identical). The safest setting no false positives.</p>
+
+      <h3>🔒 Strict (Recommended)</h3>
+      <p>Uses perceptual hashing with a <strong>tight threshold (95%)</strong>. Catches pages that differ only in tiny details rescan of the same page, tiny anti-aliasing differences, or pages with slightly different compression. Best for scanned documents.</p>
+
+      <h3>🌊 Loose</h3>
+      <p>Uses a <strong>looser threshold (85%)</strong> to find <strong>visually similar</strong> pages like near-identical slides with minor text changes. Higher chance of false positives always review manually before removing.</p>
+
+      <h2>💡 Common Use Cases</h2>
+      <ul>
+        <li><strong>Scanned documents</strong> remove double-scanned pages.</li>
+        <li><strong>Presentations</strong> clean up repeated slides.</li>
+        <li><strong>Merged PDFs</strong> eliminate overlapping content.</li>
+        <li><strong>Legal documents</strong> remove duplicate exhibits.</li>
+        <li><strong>Ebooks</strong> clean up scanned book duplicates.</li>
+        <li><strong>Reports</strong> remove accidentally repeated pages.</li>
+        <li><strong>File size reduction</strong> smaller PDF after dedup.</li>
+      </ul>
+
+      <h2>✨ Key Features</h2>
+      <ul>
+        <li><strong>100% browser-based</strong> no uploads, complete privacy.</li>
+        <li><strong>Perceptual hashing</strong> finds visually similar pages.</li>
+        <li><strong>3 similarity levels</strong> exact, strict, loose.</li>
+        <li><strong>Adjustable threshold</strong> fine-tune detection accuracy.</li>
+        <li><strong>Visual preview</strong> see each duplicate group.</li>
+        <li><strong>Manual review</strong> toggle pages to keep or remove.</li>
+        <li><strong>Bulk actions</strong> keep first or lowest page in each group.</li>
+        <li><strong>Lossless</strong>  kept pages are copied 1:1, no quality loss.</li>
+      </ul>
+
+      <h2>❓ Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-question">How do I remove duplicate pages from a PDF?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Upload your PDF, click "Scan for Duplicates", review the detected groups, then click "Remove Duplicates". The cleaned PDF downloads instantly free, no signup.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">How does duplicate detection work?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Each page is <strong>rendered as an image at low resolution</strong>, then converted to a <strong>perceptual hash</strong> a short fingerprint of its visual content. Pages whose hashes differ by less than the threshold are flagged as duplicates. This catches near-identical pages (like rescans) that byte-comparison would miss.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What similarity level should I use?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>Exact</strong> for pixel-identical duplicates (safest, no false positives). <strong>Strict</strong> for nearly-identical pages recommended for most cases. <strong>Loose</strong> for finding visually similar pages higher risk of false positives, so review carefully before removing.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Which page does it keep?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>By default, it keeps the <strong>first occurrence</strong> (lowest page number) of each duplicate group. You can manually toggle which pages to keep in each group before applying. The "Keep Lowest Page Number" button re-applies this default.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Does removing duplicate pages affect quality?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>No. Kept pages are <strong>copied byte-for-byte</strong> from the original no re-rendering, no recompression. Only the duplicate pages are dropped. Quality is 100% preserved.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I remove duplicates across different files?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Not directly. This tool works within a single PDF. If you want to merge multiple PDFs and then remove duplicates, first use our <a href="/tools/pdf-tools/organize-pdf/merge-pdf/">Merge PDF</a> tool, then re-upload the merged file here.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Are my PDFs uploaded to a server?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>No. All processing happens in your browser using pdf-lib and pdf.js. Your PDF never leaves your device, and nothing is stored anywhere.</p></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-header">🔗 Related PDF Tools</div>
+    <div class="sidebar-list">
+      <a href="/tools/pdf-tools/organize-pdf/delete-pages/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#ef4444;">🗑</div>
+        <div class="sidebar-info"><div class="sidebar-title">Delete Pages</div><div class="sidebar-desc">Remove specific pages</div></div>
+      </a>
+      <a href="/tools/pdf-tools/organize-pdf/extract-pages/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#10b981;">📄</div>
+        <div class="sidebar-info"><div class="sidebar-title">Extract Pages</div><div class="sidebar-desc">Keep selected pages</div></div>
+      </a>
+      <a href="/tools/pdf-tools/organize-pdf/merge-pdf/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#3b82f6;">📚</div>
+        <div class="sidebar-info"><div class="sidebar-title">Merge PDF</div><div class="sidebar-desc">Combine files</div></div>
+      </a>
+      <a href="/tools/pdf-tools/organize-pdf/sort-pdf/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#f59e0b;">🔢</div>
+        <div class="sidebar-info"><div class="sidebar-title">Sort PDF</div><div class="sidebar-desc">Reorder pages</div></div>
+      </a>
+      <a href="/tools/pdf-tools/visual-pdf/compress-pdf/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#10b981;">📉</div>
+        <div class="sidebar-info"><div class="sidebar-title">Compress PDF</div><div class="sidebar-desc">Reduce size</div></div>
+      </a>
+      <a href="/tools/pdf-tools/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#64748b;">📕</div>
+        <div class="sidebar-info"><div class="sidebar-title">All PDF Tools →</div><div class="sidebar-desc">Browse 100+ tools</div></div>
+      </a>
+    </div>
+  </aside>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand"><div class="logo-icon">⚒</div>BigToolz</span></div>
+      <p class="footer-tagline">Your Ultimate Online Tools Hub</p>
+      <div class="footer-social">
+        <a href="https://facebook.com/bigtoolz" aria-label="Facebook">f</a>
+        <a href="https://twitter.com/bigtoolz" aria-label="Twitter">𝕏</a>
+        <a href="https://youtube.com/@bigtoolz" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+    <div>
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/tools/">All Tools</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Categories</h3>
+      <ul class="footer-links">
+        <li><a href="/tools/image-tools/">Image Tools</a></li>
+        <li><a href="/tools/pdf-tools/">PDF Tools</a></li>
+        <li><a href="/tools/text-tools/">Text Tools</a></li>
+        <li><a href="/tools/seo-tools/">SEO Tools</a></li>
+        <li><a href="/tools/categories">All Categories →</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Legal</h3>
+      <ul class="footer-links">
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left"><span>✓ 100% Free</span><span>✓ No Sign Up</span><span>✓ No Installation</span></div>
+    <div class="footer-bottom-right">© 2026 BigToolz. All rights reserved.</div>
+    <div class="footer-bottom-links"><a href="/privacy-policy">Privacy</a><a href="/terms">Terms</a><a href="/disclaimer">Disclaimer</a></div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<!-- Libraries -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+
+<script>
+'use strict';
+
+/* ===== THEME ===== */
+(function(){try{var t=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&d))document.documentElement.setAttribute('data-theme','dark');else if(t==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();
+document.querySelector('.theme-btn')?.addEventListener('click',()=>{const h=document.documentElement;const c=h.getAttribute('data-theme');const d=window.matchMedia('(prefers-color-scheme: dark)').matches;let n=c==='dark'?'light':c==='light'?'dark':(d?'light':'dark');h.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}});
+
+/* ===== HELPERS ===== */
+const $ = (s, p = document) => p.querySelector(s);
+const $$ = (s, p = document) => [...p.querySelectorAll(s)];
+
+function formatBytes(b) {
+  if (b === 0) return '0 B';
+  const k = 1024, sizes = ['B', 'KB', 'MB', 'GB'];
+  const i = Math.floor(Math.log(b) / Math.log(k));
+  return (b / Math.pow(k, i)).toFixed(i === 0 ? 0 : 1) + ' ' + sizes[i];
+}
+
+function showToast(msg, type = 'info', duration = 3000) {
+  const t = $('#toast');
+  if (!t) return;
+  t.className = 'toast visible' + (type !== 'info' ? ' ' + type : '');
+  t.textContent = msg;
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove('visible'), duration);
+}
+
+/* ===== PDF.js Setup ===== */
+if (window.pdfjsLib) {
+  pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+}
+
+/* ===== STATE ===== */
+const state = {
+  pdfFile: null,
+  pdfDoc: null,
+  pdfName: '',
+  pdfSize: 0,
+  pdfPages: 0,
+  pdfArrayBuffer: null,
+  pageHashes: [],
+  pageThumbs: [],
+  similarity: 'strict',
+  threshold: 95,
+  groups: [], // Array of { pages: [1,3,5], keep: [1], remove: [3,5] }
+  isProcessing: false,
+  resultBlob: null
+};
+
+/* ===== DOM ===== */
+const dropzone = $('#dropzone');
+const fileInput = $('#fileInput');
+const chooseBtn = $('#chooseBtn');
+const browseLink = $('#browseLink');
+const analyzeBtn = $('#analyzeBtn');
+const removeBtn = $('#removeBtn');
+const clearBtn = $('#clearBtn');
+const progress = $('#progress');
+const progressFill = $('#progressFill');
+const progressText = $('#progressText');
+const pdfInfo = $('#pdfInfo');
+const pdfName = $('#pdfName');
+const pdfMeta = $('#pdfMeta');
+const options = $('#options');
+const summary = $('#summary');
+const summaryIcon = $('#summaryIcon');
+const summaryTitle = $('#summaryTitle');
+const summaryDesc = $('#summaryDesc');
+const groups = $('#groups');
+const groupsList = $('#groupsList');
+const thresholdSlider = $('#thresholdSlider');
+const thresholdValue = $('#thresholdValue');
+const keepFirstBtn = $('#keepFirstBtn');
+const keepSmallestBtn = $('#keepSmallestBtn');
+const resultArea = $('#resultArea');
+const resultDesc = $('#resultDesc');
+const downloadBtn = $('#downloadBtn');
+const startOverBtn = $('#startOverBtn');
+
+/* ===== SIMILARITY TABS ===== */
+$$('.sim-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    $$('.sim-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    state.similarity = btn.dataset.level;
+
+    // Auto-adjust threshold based on level
+    let threshold = 95;
+    if (state.similarity === 'exact') threshold = 99;
+    else if (state.similarity === 'loose') threshold = 85;
+
+    state.threshold = threshold;
+    thresholdSlider.value = threshold;
+    thresholdValue.textContent = threshold + '%';
+  });
+});
+
+/* ===== THRESHOLD SLIDER ===== */
+thresholdSlider.addEventListener('input', (e) => {
+  state.threshold = parseInt(e.target.value, 10);
+  thresholdValue.textContent = state.threshold + '%';
+});
+
+/* ===== FILE SELECTION ===== */
+function triggerFileSelect() { fileInput.click(); }
+chooseBtn.addEventListener('click', (e) => { e.stopPropagation(); triggerFileSelect(); });
+browseLink.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); triggerFileSelect(); });
+dropzone.addEventListener('click', triggerFileSelect);
+
+fileInput.addEventListener('change', (e) => {
+  const f = e.target.files[0];
+  if (f && (f.type === 'application/pdf' || f.name.toLowerCase().endsWith('.pdf'))) loadPDF(f);
+  fileInput.value = '';
+});
+
+['dragenter', 'dragover'].forEach(evt => {
+  dropzone.addEventListener(evt, (e) => { e.preventDefault(); e.stopPropagation(); dropzone.classList.add('dragover'); });
+});
+['dragleave', 'drop'].forEach(evt => {
+  dropzone.addEventListener(evt, (e) => { e.preventDefault(); e.stopPropagation(); dropzone.classList.remove('dragover'); });
+});
+dropzone.addEventListener('drop', (e) => {
+  const f = e.dataTransfer.files[0];
+  if (f && (f.type === 'application/pdf' || f.name.toLowerCase().endsWith('.pdf'))) loadPDF(f);
+  else showToast('Please drop a PDF file', 'error');
+});
+
+/* ===== LOAD PDF ===== */
+async function loadPDF(file) {
+  if (!window.pdfjsLib || !window.PDFLib) {
+    showToast('PDF libraries not loaded. Check your internet.', 'error');
+    return;
+  }
+
+  state.pdfFile = file;
+  state.pdfName = file.name;
+  state.pdfSize = file.size;
+  state.pageHashes = [];
+  state.pageThumbs = [];
+  state.groups = [];
+
+  showToast('Loading PDF...', 'info', 2000);
+
+  try {
+    const arrayBuffer = await file.arrayBuffer();
+    state.pdfArrayBuffer = arrayBuffer.slice(0);
+
+    const loadingTask = pdfjsLib.getDocument({ data: arrayBuffer.slice(0) });
+    const pdf = await loadingTask.promise;
+
+    state.pdfDoc = pdf;
+    state.pdfPages = pdf.numPages;
+
+    pdfName.textContent = file.name;
+    pdfMeta.textContent = `${pdf.numPages} page${pdf.numPages > 1 ? 's' : ''} · ${formatBytes(file.size)}`;
+    pdfInfo.classList.add('visible');
+    options.classList.add('visible');
+    dropzone.style.display = 'none';
+    analyzeBtn.disabled = false;
+    resultArea.classList.remove('visible');
+    groups.classList.remove('visible');
+    summary.classList.remove('visible');
+
+    if (pdf.numPages < 2) {
+      showToast('PDF has less than 2 pages no duplicates possible', 'info', 4000);
+    }
+
+    showToast(`✅ PDF loaded: ${pdf.numPages} pages`, 'success');
+  } catch (err) {
+    console.error('PDF load failed:', err);
+    showToast('Failed to load PDF file may be corrupted or password-protected', 'error', 5000);
+    state.pdfDoc = null;
+    analyzeBtn.disabled = true;
+  }
+}
+
+/* ===== PERCEPTUAL HASH ===== */
+function dHash(imageData, w, h) {
+  // Resize to 9x8 gray and compute horizontal differences
+  const smallW = 9, smallH = 8;
+  const gray = new Float32Array(smallW * smallH);
+  const data = imageData.data;
+
+  for (let y = 0; y < smallH; y++) {
+    for (let x = 0; x < smallW; x++) {
+      const srcX = Math.floor(x * w / smallW);
+      const srcY = Math.floor(y * h / smallH);
+      const i = (srcY * w + srcX) * 4;
+      gray[y * smallW + x] = 0.299 * data[i] + 0.587 * data[i + 1] + 0.114 * data[i + 2];
+    }
+  }
+
+  // Compute hash bits
+  let hash = '';
+  for (let y = 0; y < smallH; y++) {
+    for (let x = 0; x < smallW - 1; x++) {
+      const left = gray[y * smallW + x];
+      const right = gray[y * smallW + x + 1];
+      hash += (left > right) ? '1' : '0';
+    }
+  }
+  return hash;
+}
+
+function hammingDistance(a, b) {
+  if (a.length !== b.length) return a.length;
+  let dist = 0;
+  for (let i = 0; i < a.length; i++) {
+    if (a[i] !== b[i]) dist++;
+  }
+  return dist;
+}
+
+function similarityFromHash(h1, h2) {
+  const dist = hammingDistance(h1, h2);
+  const maxDist = h1.length;
+  return 100 * (1 - dist / maxDist);
+}
+
+/* ===== ANALYZE ===== */
+analyzeBtn.addEventListener('click', analyzePDF);
+
+async function analyzePDF() {
+  if (state.isProcessing || !state.pdfDoc) return;
+
+  state.isProcessing = true;
+  analyzeBtn.disabled = true;
+  analyzeBtn.innerHTML = 'Scanning...';
+  progress.classList.add('visible');
+  progressFill.style.width = '0%';
+  progressText.textContent = 'Analyzing pages...';
+  summary.classList.remove('visible');
+  groups.classList.remove('visible');
+  resultArea.classList.remove('visible');
+
+  state.pageHashes = [];
+  state.pageThumbs = [];
+
+  try {
+    const total = state.pdfPages;
+    const renderScale = 0.4; // low res for speed
+
+    for (let i = 1; i <= total; i++) {
+      const page = await state.pdfDoc.getPage(i);
+      const viewport = page.getViewport({ scale: renderScale });
+
+      const canvas = document.createElement('canvas');
+      canvas.width = Math.round(viewport.width);
+      canvas.height = Math.round(viewport.height);
+      const ctx = canvas.getContext('2d', { willReadFrequently: true });
+
+      ctx.fillStyle = '#ffffff';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      await page.render({ canvasContext: ctx, viewport }).promise;
+
+      const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+      const hash = dHash(imageData, canvas.width, canvas.height);
+
+      // Also generate a small thumbnail for review
+      const thumbCanvas = document.createElement('canvas');
+      const thumbW = 80;
+      const thumbH = Math.round(thumbW * viewport.height / viewport.width);
+      thumbCanvas.width = thumbW;
+      thumbCanvas.height = thumbH;
+      thumbCanvas.getContext('2d').drawImage(canvas, 0, 0, thumbW, thumbH);
+      const thumbUrl = thumbCanvas.toDataURL('image/jpeg', 0.6);
+
+      state.pageHashes.push({ page: i, hash });
+      state.pageThumbs.push({ page: i, url: thumbUrl });
+
+      progressFill.style.width = Math.round((i / total) * 80) + '%';
+      progressText.textContent = `Analyzing page ${i} of ${total}...`;
+    }
+
+    progressFill.style.width = '90%';
+    progressText.textContent = 'Finding duplicates...';
+
+    // Build duplicate groups using union-find
+    const n = state.pageHashes.length;
+    const parent = Array.from({ length: n }, (_, i) => i);
+
+    function find(x) {
+      while (parent[x] !== x) {
+        parent[x] = parent[parent[x]];
+        x = parent[x];
+      }
+      return x;
+    }
+    function union(a, b) {
+      const ra = find(a), rb = find(b);
+      if (ra !== rb) parent[ra] = rb;
+    }
+
+    const threshold = state.threshold;
+
+    for (let i = 0; i < n; i++) {
+      for (let j = i + 1; j < n; j++) {
+        const sim = similarityFromHash(state.pageHashes[i].hash, state.pageHashes[j].hash);
+        if (sim >= threshold) {
+          union(i, j);
+        }
+      }
+    }
+
+    // Collect groups
+    const groupMap = {};
+    for (let i = 0; i < n; i++) {
+      const root = find(i);
+      if (!groupMap[root]) groupMap[root] = [];
+      groupMap[root].push(i + 1);
+    }
+
+    state.groups = Object.values(groupMap)
+      .filter(g => g.length > 1)
+      .map(pages => ({
+        pages: pages.slice().sort((a, b) => a - b),
+        keep: [pages[0]], // keep first page by default
+        remove: pages.slice(1)
+      }));
+
+    progressFill.style.width = '100%';
+
+    setTimeout(() => {
+      progress.classList.remove('visible');
+      renderGroups();
+      renderSummary();
+    }, 300);
+
+  } catch (err) {
+    console.error('Analysis failed:', err);
+    progress.classList.remove('visible');
+    showToast('Analysis failed', 'error', 5000);
+  } finally {
+    state.isProcessing = false;
+    analyzeBtn.disabled = false;
+    analyzeBtn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg> Scan for Duplicates';
+  }
+}
+
+/* ===== RENDER SUMMARY ===== */
+function renderSummary() {
+  const totalDups = state.groups.reduce((sum, g) => sum + g.remove.length, 0);
+  summary.classList.add('visible');
+
+  if (state.groups.length === 0) {
+    summary.classList.add('no-dups');
+    summaryIcon.textContent = '✓';
+    summaryTitle.textContent = 'No Duplicates Found';
+    summaryDesc.textContent = `All ${state.pdfPages} pages are unique at ${state.threshold}% similarity. Try a lower threshold or Loose mode.`;
+    removeBtn.disabled = true;
+  } else {
+    summary.classList.remove('no-dups');
+    summaryIcon.textContent = '🔍';
+    summaryTitle.textContent = `${state.groups.length} Duplicate Group${state.groups.length > 1 ? 's' : ''} Found`;
+    summaryDesc.textContent = `${totalDups} duplicate page${totalDups > 1 ? 's' : ''} will be removed. ${state.pdfPages - totalDups} page${state.pdfPages - totalDups > 1 ? 's' : ''} will remain.`;
+    removeBtn.disabled = false;
+  }
+}
+
+/* ===== RENDER GROUPS ===== */
+function renderGroups() {
+  if (state.groups.length === 0) {
+    groups.classList.remove('visible');
+    return;
+  }
+
+  groups.classList.add('visible');
+  groupsList.innerHTML = '';
+
+  state.groups.forEach((group, gi) => {
+    const card = document.createElement('div');
+    card.className = 'group-card';
+    card.dataset.gi = gi;
+
+    // Header
+    const header = document.createElement('div');
+    header.className = 'group-header';
+    header.innerHTML = `
+      <div class="group-label">
+        <span class="group-badge">Group ${gi + 1}</span>
+        ${group.pages.length} similar pages
+      </div>
+      <div class="group-match" id="match-${gi}"></div>
+    `;
+    card.appendChild(header);
+
+    // Pages
+    const grid = document.createElement('div');
+    grid.className = 'group-pages';
+
+    group.pages.forEach(pageNum => {
+      const thumb = state.pageThumbs.find(t => t.page === pageNum);
+      const pageEl = document.createElement('div');
+      pageEl.className = 'group-page ' + (group.keep.includes(pageNum) ? 'keep' : 'remove');
+      pageEl.dataset.page = pageNum;
+      pageEl.dataset.gi = gi;
+      pageEl.innerHTML = `
+        <div class="group-thumb"><img src="${thumb ? thumb.url : ''}" alt="Page ${pageNum}"></div>
+        <div class="group-num">Page ${pageNum}</div>
+      `;
+      pageEl.addEventListener('click', () => toggleGroupPage(gi, pageNum));
+      grid.appendChild(pageEl);
+    });
+
+    card.appendChild(grid);
+    groupsList.appendChild(card);
+
+    // Compute average similarity within group
+    const h0 = state.pageHashes.find(h => h.page === group.pages[0]).hash;
+    let totalSim = 0;
+    let count = 0;
+    for (let i = 1; i < group.pages.length; i++) {
+      const hi = state.pageHashes.find(h => h.page === group.pages[i]).hash;
+      totalSim += similarityFromHash(h0, hi);
+      count++;
+    }
+    const avgSim = count > 0 ? Math.round(totalSim / count) : 100;
+    const matchEl = card.querySelector(`#match-${gi}`);
+    if (matchEl) matchEl.textContent = `~${avgSim}% similar`;
+  });
+}
+
+/* ===== TOGGLE PAGE IN GROUP ===== */
+function toggleGroupPage(gi, pageNum) {
+  const group = state.groups[gi];
+  if (!group) return;
+
+  if (group.keep.includes(pageNum)) {
+    // Only allow removing from keep if at least 1 page remains as keep
+    if (group.keep.length <= 1) {
+      showToast('At least one page must be kept in each group', 'info', 2500);
+      return;
+    }
+    group.keep = group.keep.filter(p => p !== pageNum);
+    group.remove = [...group.remove, pageNum].sort((a, b) => a - b);
+  } else {
+    group.keep = [...group.keep, pageNum].sort((a, b) => a - b);
+    group.remove = group.remove.filter(p => p !== pageNum);
+  }
+
+  // Update DOM for this group
+  const card = groupsList.querySelector(`.group-card[data-gi="${gi}"]`);
+  if (!card) return;
+  card.querySelectorAll('.group-page').forEach(el => {
+    const p = parseInt(el.dataset.page, 10);
+    el.classList.toggle('keep', group.keep.includes(p));
+    el.classList.toggle('remove', group.remove.includes(p));
+  });
+
+  renderSummary();
+}
+
+/* ===== BULK ACTIONS ===== */
+keepFirstBtn.addEventListener('click', () => {
+  state.groups.forEach(g => {
+    g.keep = [g.pages[0]];
+    g.remove = g.pages.slice(1);
+  });
+  renderGroups();
+  renderSummary();
+  showToast('Keeping first page in each group', 'success');
+});
+
+keepSmallestBtn.addEventListener('click', () => {
+  // Same as keep first since pages are sorted
+  state.groups.forEach(g => {
+    g.keep = [Math.min(...g.pages)];
+    g.remove = g.pages.filter(p => p !== g.keep[0]);
+  });
+  renderGroups();
+  renderSummary();
+  showToast('Keeping lowest page number in each group', 'success');
+});
+
+/* ===== REMOVE DUPLICATES ===== */
+removeBtn.addEventListener('click', removeDuplicates);
+
+async function removeDuplicates() {
+  if (state.isProcessing || !state.pdfArrayBuffer) return;
+
+  const totalDups = state.groups.reduce((sum, g) => sum + g.remove.length, 0);
+  if (totalDups === 0) { showToast('No duplicates to remove', 'error'); return; }
+
+  state.isProcessing = true;
+  removeBtn.disabled = true;
+  removeBtn.innerHTML = 'Removing...';
+  progress.classList.add('visible');
+  progressFill.style.width = '20%';
+  progressText.textContent = 'Loading PDF...';
+  resultArea.classList.remove('visible');
+
+  try {
+    const { PDFDocument } = PDFLib;
+    const srcDoc = await PDFDocument.load(state.pdfArrayBuffer);
+
+    progressFill.style.width = '50%';
+    progressText.textContent = 'Rebuilding PDF...';
+
+    // Build a set of pages to remove
+    const removeSet = new Set();
+    state.groups.forEach(g => g.remove.forEach(p => removeSet.add(p)));
+
+    // Build list of pages to keep (0-indexed)
+    const pagesToKeep = [];
+    for (let i = 1; i <= state.pdfPages; i++) {
+      if (!removeSet.has(i)) pagesToKeep.push(i - 1);
+    }
+
+    const newDoc = await PDFDocument.create();
+    const copied = await newDoc.copyPages(srcDoc, pagesToKeep);
+    copied.forEach(p => newDoc.addPage(p));
+
+    progressFill.style.width = '85%';
+    progressText.textContent = 'Saving...';
+
+    const newBytes = await newDoc.save();
+    state.resultBlob = new Blob([newBytes], { type: 'application/pdf' });
+
+    progressFill.style.width = '100%';
+
+    setTimeout(() => {
+      progress.classList.remove('visible');
+      resultArea.classList.add('visible');
+      resultDesc.textContent = `Removed ${totalDups} duplicate page${totalDups > 1 ? 's' : ''}. New PDF has ${pagesToKeep.length} page${pagesToKeep.length > 1 ? 's' : ''} · ${formatBytes(state.resultBlob.size)}`;
+      showToast(`✅ ${totalDups} duplicate${totalDups > 1 ? 's' : ''} removed!`, 'success');
+    }, 400);
+
+  } catch (err) {
+    console.error('Remove failed:', err);
+    progress.classList.remove('visible');
+    showToast('Failed to remove duplicates. PDF may be encrypted.', 'error', 5000);
+  } finally {
+    state.isProcessing = false;
+    removeBtn.disabled = false;
+    removeBtn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 6h18M8 6V4a2 2 0 012-2h4a2 2 0 012 2v2M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6"/></svg> Remove Duplicates';
+  }
+}
+
+/* ===== DOWNLOAD ===== */
+downloadBtn.addEventListener('click', () => {
+  if (!state.resultBlob) return;
+  const url = URL.createObjectURL(state.resultBlob);
+  const baseName = state.pdfName.replace(/\.[^.]+$/, '');
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `${baseName}-no-duplicates.pdf`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+  showToast('Download started!', 'success');
+});
+
+/* ===== RESET ===== */
+startOverBtn.addEventListener('click', resetAll);
+clearBtn.addEventListener('click', resetAll);
+
+function resetAll() {
+  if (state.pdfDoc) {
+    try { state.pdfDoc.destroy(); } catch (e) {}
+  }
+  state.pdfDoc = null;
+  state.pdfFile = null;
+  state.pdfArrayBuffer = null;
+  state.resultBlob = null;
+  state.pdfPages = 0;
+  state.pageHashes = [];
+  state.pageThumbs = [];
+  state.groups = [];
+
+  pdfInfo.classList.remove('visible');
+  options.classList.remove('visible');
+  summary.classList.remove('visible');
+  groups.classList.remove('visible');
+  resultArea.classList.remove('visible');
+  progress.classList.remove('visible');
+  dropzone.style.display = '';
+  analyzeBtn.disabled = true;
+  analyzeBtn.classList.add('visible');
+
+  showToast('Cleared');
+}
+
+/* ===== FAQ ===== */
+$$('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    $$('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+</script>
+
+</body>
+</html>

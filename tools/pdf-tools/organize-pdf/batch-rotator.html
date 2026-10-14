@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2563eb">
+
+<title>Batch Rotate PDF - Rotate Multiple PDFs Online Free | BigToolz</title>
+<meta name="description" content="Batch rotate multiple PDF files online free. Rotate 5, 10, or 100 PDFs at once 90°, 180°, 270°. No upload, works in your browser. Fast, private, unlimited.">
+<meta name="keywords" content="batch rotate pdf, rotate multiple pdfs, bulk pdf rotation, rotate pdf files together, mass pdf rotate">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://bigtoolz.com/tools/pdf-tools/organize-pdf/batch-rotator/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Batch Rotate PDF - Free Online Tool | BigToolz">
+<meta property="og:description" content="Rotate multiple PDFs at once free, no upload, instant.">
+<meta property="og:url" content="https://bigtoolz.com/tools/pdf-tools/organize-pdf/batch-rotator/">
+<meta property="og:image" content="https://bigtoolz.com/assets/images/og-image.jpg">
+<meta property="og:site_name" content="BigToolz">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Batch Rotate PDF - BigToolz">
+<meta name="twitter:description" content="Rotate multiple PDFs instantly free, no upload.">
+<meta name="twitter:image" content="https://bigtoolz.com/assets/images/twitter-card.jpg">
+
+<link rel="icon" href="/assets/images/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/images/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#f8f9fc;color:#1a1a2e;overflow-x:hidden;line-height:1.5}
+
+  .header{background:#fff;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;position:sticky;top:0;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+  .header-left{display:flex;align-items:center;gap:40px}
+  .logo{display:flex;align-items:center;gap:8px;font-size:22px;font-weight:800;color:#1a1a2e;text-decoration:none}
+  .logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#3b82f6,#2563eb);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px}
+  .logo span{color:#2563eb}
+  .nav{display:flex;align-items:center;gap:28px;list-style:none}
+  .nav a{text-decoration:none;color:#4b5563;font-size:14px;font-weight:500;transition:color .2s}
+  .nav a:hover,.nav a.active{color:#2563eb}
+  .header-right{display:flex;align-items:center;gap:16px}
+  .search-btn,.theme-btn{width:36px;height:36px;border-radius:50%;border:none;background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#4b5563}
+  .search-btn:hover,.theme-btn:hover{background:#f3f4f6}
+  .bookmark-btn{display:flex;align-items:center;gap:8px;background:#2563eb;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
+  .bookmark-btn:hover{background:#1d4ed8}
+
+  .hero{background:linear-gradient(135deg,#0a0e27 0%,#1a1a4e 40%,#2d1b69 70%,#4c1d95 100%);padding:40px 40px 60px;position:relative;overflow:hidden;color:#fff}
+  .hero::before{content:'';position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(236,72,153,.25) 0%,transparent 70%);border-radius:50%}
+  .hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+  .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px;flex-wrap:wrap}
+  .breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none}
+  .breadcrumb a:hover{color:#fff}
+  .breadcrumb .sep{color:rgba(255,255,255,.4)}
+  .breadcrumb .current{color:#fff;font-weight:500}
+  .hero-title-row{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+  .hero-icon{width:60px;height:60px;background:#ec4899;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px;color:#fff;flex-shrink:0;box-shadow:0 8px 24px rgba(236,72,153,.4)}
+  .hero-title{font-size:42px;font-weight:800;line-height:1.15}
+  .hero-title .blue{color:#f472b6}
+  .hero-desc{font-size:15px;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:24px;max-width:560px}
+  .hero-features{display:flex;gap:24px;flex-wrap:wrap}
+  .hero-feature{display:flex;align-items:center;gap:6px;font-size:13px;color:#fff;font-weight:500}
+  .hero-feature .check{width:18px;height:18px;border-radius:50%;background:#ec4899;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;flex-shrink:0}
+
+  .main-content{max-width:1200px;margin:0 auto;padding:40px;display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start}
+  .tool-content{min-width:0}
+
+  .workspace{background:#fff;border-radius:16px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,.06);border:1px solid #e5e7eb;margin-bottom:24px}
+
+  .dropzone{border:2px dashed #fbcfe8;border-radius:12px;padding:50px 30px;text-align:center;background:#fdf2f8;margin-bottom:24px;transition:all .2s;cursor:pointer}
+  .dropzone:hover,.dropzone.dragover{border-color:#ec4899;background:#fce7f3}
+  .dropzone-icon{width:60px;height:60px;background:linear-gradient(135deg,#ec4899,#db2777);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;color:#fff;font-size:26px;transition:transform .2s}
+  .dropzone:hover .dropzone-icon{transform:translateY(-4px)}
+  .dropzone-title{font-size:16px;font-weight:700;color:#1a1a2e;margin-bottom:8px}
+  .dropzone-sub{font-size:14px;color:#6b7280;margin-bottom:20px}
+  .dropzone-sub a{color:#ec4899;font-weight:600;text-decoration:none}
+  .choose-btn{display:inline-flex;align-items:center;gap:8px;background:#ec4899;color:#fff;border:none;padding:12px 28px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;transition:background .2s}
+  .choose-btn:hover{background:#db2777}
+  .dropzone-info{font-size:12px;color:#9ca3af;display:flex;align-items:center;justify-content:center;gap:8px;margin-top:16px;flex-wrap:wrap}
+  .dropzone-info .divider{color:#d1d5db}
+  .file-input{display:none}
+
+  /* Batch header */
+  .batch-header{display:none;background:#fdf2f8;border-radius:12px;padding:16px 20px;margin-bottom:20px;border:1px solid #fbcfe8;align-items:center;gap:16px;flex-wrap:wrap}
+  .batch-header.visible{display:flex}
+  .batch-icon{width:44px;height:44px;background:#ec4899;border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:20px;flex-shrink:0}
+  .batch-details{flex:1;min-width:0}
+  .batch-title{font-size:14px;font-weight:800;color:#1a1a2e;margin-bottom:2px}
+  .batch-meta{font-size:12px;color:#6b7280}
+
+  /* Rotation mode toolbar */
+  .rotation-toolbar{display:none;background:#f8fafc;border-radius:12px;padding:16px;margin-bottom:20px;border:1px solid #cbd5e1}
+  .rotation-toolbar.visible{display:block}
+  .rotation-title{font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:12px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
+  .rotation-mode-badge{font-size:11px;font-weight:600;color:#db2777;background:#fdf2f8;padding:4px 10px;border-radius:10px}
+  .rotation-buttons{display:flex;gap:8px;flex-wrap:wrap}
+  .rotate-btn{padding:12px 20px;background:#fff;border:2px solid #e5e7eb;border-radius:10px;font-size:13px;font-weight:700;color:#4b5563;cursor:pointer;font-family:inherit;transition:all .2s;display:inline-flex;align-items:center;gap:8px}
+  .rotate-btn:hover{border-color:#ec4899;color:#db2777;background:#fdf2f8}
+  .rotate-btn.active{border-color:#ec4899;background:#ec4899;color:#fff}
+  .rotate-btn svg{width:16px;height:16px}
+
+  /* Files grid */
+  .files-grid{display:none;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin-bottom:20px}
+  .files-grid.visible{display:grid}
+  .file-card{background:#fff;border:2px solid #e5e7eb;border-radius:12px;padding:14px;transition:all .2s;position:relative}
+  .file-card:hover{border-color:#ec4899;box-shadow:0 4px 12px rgba(236,72,153,.1)}
+  .file-card.processing{border-color:#3b82f6;background:#eff6ff}
+  .file-card.success{border-color:#10b981;background:#f0fdf4}
+  .file-card.error{border-color:#ef4444;background:#fef2f2}
+  .file-top{display:flex;align-items:flex-start;gap:10px;margin-bottom:10px}
+  .file-icon{width:40px;height:40px;background:#ec4899;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px;flex-shrink:0;position:relative}
+  .file-icon.status-success{background:#10b981}
+  .file-icon.status-error{background:#ef4444}
+  .file-icon.status-processing{background:#3b82f6}
+  .file-info{flex:1;min-width:0}
+  .file-name{font-size:12px;font-weight:700;color:#1a1a2e;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .file-meta{font-size:10px;color:#6b7280}
+  .file-remove{position:absolute;top:8px;right:8px;width:24px;height:24px;border-radius:50%;background:#f3f4f6;border:none;cursor:pointer;color:#9ca3af;font-size:12px;display:flex;align-items:center;justify-content:center;font-family:inherit;transition:all .2s;opacity:0}
+  .file-card:hover .file-remove{opacity:1}
+  .file-remove:hover{background:#ef4444;color:#fff}
+
+  /* Per-file rotation */
+  .file-rotation{display:flex;gap:4px;justify-content:center;margin-top:10px}
+  .mini-rotate-btn{width:32px;height:32px;border-radius:6px;border:1px solid #e5e7eb;background:#fff;cursor:pointer;color:#6b7280;font-size:12px;display:flex;align-items:center;justify-content:center;font-family:inherit;transition:all .2s;font-weight:800}
+  .mini-rotate-btn:hover{border-color:#ec4899;color:#db2777;background:#fdf2f8}
+  .mini-rotate-btn.active{background:#ec4899;border-color:#ec4899;color:#fff}
+  .mini-rotate-btn svg{width:12px;height:12px}
+
+  .file-status-text{font-size:10px;font-weight:700;color:#9ca3af;text-align:center;margin-top:6px;text-transform:uppercase;letter-spacing:.5px}
+  .file-card.success .file-status-text{color:#10b981}
+  .file-card.error .file-status-text{color:#ef4444}
+  .file-card.processing .file-status-text{color:#3b82f6}
+
+  /* Summary */
+  .summary-box{display:none;background:#f0fdf4;border-radius:12px;padding:16px 20px;margin-bottom:20px;border:1px solid #86efac;align-items:center;gap:16px;flex-wrap:wrap}
+  .summary-box.visible{display:flex}
+  .summary-icon{width:48px;height:48px;background:#10b981;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:22px;flex-shrink:0}
+  .summary-details{flex:1;min-width:0}
+  .summary-title{font-size:16px;font-weight:800;color:#065f46;margin-bottom:2px}
+  .summary-desc{font-size:13px;color:#047857}
+
+  .actions{display:flex;gap:12px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 28px;border-radius:10px;font-size:15px;font-weight:700;font-family:inherit;cursor:pointer;border:none;transition:all .2s;text-decoration:none}
+  .btn-primary{background:#ec4899;color:#fff;flex:1;box-shadow:0 4px 12px rgba(236,72,153,.2)}
+  .btn-primary:hover:not(:disabled){background:#db2777;transform:translateY(-2px);box-shadow:0 6px 20px rgba(236,72,153,.3)}
+  .btn-primary:disabled{opacity:.5;cursor:not-allowed;transform:none}
+  .btn-secondary{background:#fff;color:#ec4899;border:1px solid #e5e7eb}
+  .btn-secondary:hover{border-color:#ec4899;background:#fdf2f8}
+  .btn-success{background:#10b981;color:#fff}
+  .btn-success:hover{background:#059669}
+
+  .progress{display:none;margin-top:20px}
+  .progress.visible{display:block}
+  .progress-bar{width:100%;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden;margin-bottom:8px}
+  .progress-fill{height:100%;background:linear-gradient(90deg,#f472b6,#ec4899);border-radius:4px;width:0%;transition:width .3s ease}
+  .progress-text{font-size:13px;color:#6b7280;text-align:center;font-weight:500}
+
+  .seo-content{background:#fff;border-radius:16px;padding:32px;border:1px solid #e5e7eb;margin-bottom:24px}
+  .seo-content h2{font-size:22px;font-weight:800;color:#1a1a2e;margin-bottom:14px;margin-top:28px;display:flex;align-items:center;gap:10px}
+  .seo-content h2:first-child{margin-top:0}
+  .seo-content h3{font-size:16px;font-weight:700;color:#1a1a2e;margin:20px 0 10px}
+  .seo-content p{font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:14px}
+  .seo-content ul{list-style:none;padding-left:0;margin-bottom:16px}
+  .seo-content ul li{position:relative;padding-left:24px;font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:8px}
+  .seo-content ul li::before{content:'';position:absolute;left:6px;top:12px;width:6px;height:6px;background:#ec4899;border-radius:50%}
+  .seo-content a{color:#2563eb;text-decoration:none;font-weight:600}
+  .seo-content a:hover{text-decoration:underline}
+  .seo-content strong{color:#1a1a2e;font-weight:700}
+  .seo-content code{background:#f1f5f9;padding:2px 6px;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:13px;color:#0f172a;border:1px solid #e2e8f0}
+
+  .how-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:20px}
+  .how-step{background:#fdf2f8;border-radius:12px;padding:20px;border:1px solid #fbcfe8}
+  .how-step-num{width:36px;height:36px;border-radius:50%;background:#ec4899;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;margin-bottom:12px}
+  .how-step-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+  .how-step-desc{font-size:13px;color:#6b7280;line-height:1.6}
+
+  .faq-item{background:#fdf2f8;border:1px solid #fbcfe8;border-radius:12px;margin-bottom:10px;overflow:hidden;transition:border-color .2s}
+  .faq-item:hover{border-color:#ec4899}
+  .faq-question{width:100%;background:none;border:none;padding:18px 22px;font-size:15px;font-weight:700;color:#1a1a2e;text-align:left;cursor:pointer;font-family:inherit;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .faq-question .chev{font-size:12px;color:#ec4899;transition:transform .2s;flex-shrink:0}
+  .faq-item.open .faq-question .chev{transform:rotate(180deg)}
+  .faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 22px}
+  .faq-item.open .faq-answer{max-height:500px;padding-bottom:18px}
+  .faq-answer p{font-size:14px;color:#6b7280;line-height:1.7;margin:0}
+
+  .sidebar{background:#fff;border-radius:16px;padding:24px;border:1px solid #e5e7eb;position:sticky;top:80px;margin-bottom:24px}
+  .sidebar-header{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:800;color:#1a1a2e;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid #f3f4f6}
+  .sidebar-list{display:flex;flex-direction:column;gap:8px}
+  .sidebar-item{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;cursor:pointer;transition:background .2s;text-decoration:none;color:inherit;border:1px solid #f3f4f6}
+  .sidebar-item:hover{background:#fdf2f8;border-color:#fbcfe8}
+  .sidebar-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;flex-shrink:0}
+  .sidebar-info{flex:1;min-width:0}
+  .sidebar-title{font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:2px}
+  .sidebar-desc{font-size:11px;color:#9ca3af;line-height:1.4}
+
+  .footer{background:#0a0e27;padding:60px 40px 30px;color:#fff;margin-top:40px}
+  .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:40px}
+  .footer-brand{display:flex;align-items:center;gap:8px;font-size:20px;font-weight:800;margin-bottom:12px}
+  .footer-brand span{color:#60a5fa}
+  .footer-tagline{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px}
+  .footer-social{display:flex;gap:12px}
+  .footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:16px;transition:background .2s}
+  .footer-social a:hover{background:rgba(255,255,255,.2)}
+  .footer-heading{font-size:14px;font-weight:700;margin-bottom:20px;color:#fff}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .footer-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;transition:color .2s}
+  .footer-links a:hover{color:#60a5fa}
+  .footer-bottom{max-width:1200px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  .footer-bottom-left{display:flex;gap:20px;font-size:12px;color:rgba(255,255,255,.5)}
+  .footer-bottom-right,.footer-bottom-links a{font-size:12px;color:rgba(255,255,255,.5);text-decoration:none}
+  .footer-bottom-links{display:flex;gap:20px}
+
+  .toast{position:fixed;bottom:24px;right:24px;background:#1a1a2e;color:#fff;padding:14px 20px;border-radius:10px;font-size:13px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:3000;transform:translateY(200%);transition:transform .3s ease;max-width:320px}
+  .toast.visible{transform:translateY(0)}
+  .toast.success{background:#10b981}
+  .toast.error{background:#ef4444}
+  .toast.info{background:#3b82f6}
+
+  @media(max-width:1024px){
+    .main-content{grid-template-columns:1fr;padding:24px 20px}
+    .sidebar{position:static}
+    .how-steps{grid-template-columns:repeat(2,1fr)}
+  }
+  @media(max-width:768px){
+    .header{padding:0 20px}.nav{display:none}
+    .hero{padding:24px 20px 40px}
+    .hero-title{font-size:28px}
+    .hero-icon{width:48px;height:48px;font-size:20px}
+    .hero-title-row{flex-direction:column;align-items:flex-start;gap:12px}
+    .main-content{padding:20px 16px}
+    .workspace{padding:20px}
+    .dropzone{padding:32px 16px}
+    .how-steps{grid-template-columns:1fr}
+    .seo-content{padding:20px}
+    .footer-inner{grid-template-columns:1fr 1fr}
+    .files-grid{grid-template-columns:repeat(auto-fill,minmax(160px,1fr))}
+    .toast{left:16px;right:16px;bottom:16px;max-width:none}
+  }
+  @media(max-width:576px){
+    .header{padding:0 16px}.header-right .search-btn,.header-right .theme-btn{display:none}
+    .hero-title{font-size:24px}
+    .actions{flex-direction:column}
+    .btn{width:100%}
+    .btn-primary{flex:none}
+    .footer-inner{grid-template-columns:1fr}
+    .footer-bottom{flex-direction:column;text-align:center}
+    .rotation-buttons{flex-direction:column}
+    .rotate-btn{width:100%;justify-content:center}
+  }
+
+  html[data-theme="dark"] body{background:#0f172a;color:#f1f5f9}
+  html[data-theme="dark"] .header,html[data-theme="dark"] .workspace,html[data-theme="dark"] .seo-content,html[data-theme="dark"] .sidebar{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .logo,html[data-theme="dark"] .hero-title,html[data-theme="dark"] .seo-content h2,html[data-theme="dark"] .seo-content h3,html[data-theme="dark"] .faq-question,html[data-theme="dark"] .sidebar-header,html[data-theme="dark"] .sidebar-title,html[data-theme="dark"] .batch-title,html[data-theme="dark"] .rotation-title,html[data-theme="dark"] .file-name{color:#f1f5f9}
+  html[data-theme="dark"] .nav a{color:#cbd5e1}
+  html[data-theme="dark"] .dropzone{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .how-step,html[data-theme="dark"] .faq-item,html[data-theme="dark"] .batch-header,html[data-theme="dark"] .rotation-toolbar{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .rotate-btn{background:#0f172a;border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .rotate-btn.active{background:#ec4899;color:#fff;border-color:#ec4899}
+  html[data-theme="dark"] .file-card{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .mini-rotate-btn{background:#1e293b;border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .mini-rotate-btn.active{background:#ec4899;border-color:#ec4899;color:#fff}
+  html[data-theme="dark"] .file-remove{background:#1e293b;color:#94a3b8}
+  html[data-theme="dark"] .file-remove:hover{background:#ef4444;color:#fff}
+  html[data-theme="dark"] .seo-content p,html[data-theme="dark"] .seo-content ul li,html[data-theme="dark"] .faq-answer p,html[data-theme="dark"] .batch-meta{color:#cbd5e1}
+  html[data-theme="dark"] .seo-content code{background:#020617;color:#94a3b8;border-color:#334155}
+  html[data-theme="dark"] .summary-box{background:#064e3b;border-color:#10b981}
+  html[data-theme="dark"] .summary-title,html[data-theme="dark"] .summary-desc{color:#d1fae5}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type": "SoftwareApplication", "name": "Batch Rotate PDF", "url": "https://bigtoolz.com/tools/pdf-tools/organize-pdf/batch-rotator/", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any (Web-based)", "description": "Free online tool to batch rotate multiple PDFs at once 90°, 180°, 270°. Works in your browser, no upload.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.8", "ratingCount": "389"}},
+    {"@type": "HowTo", "name": "How to Batch Rotate PDFs", "step": [
+      {"@type": "HowToStep", "name": "Upload PDFs", "text": "Drag & drop or click to select multiple PDF files."},
+      {"@type": "HowToStep", "name": "Set Rotation", "text": "Choose a rotation angle for all, or per file."},
+      {"@type": "HowToStep", "name": "Rotate", "text": "Click Batch Rotate."},
+      {"@type": "HowToStep", "name": "Download", "text": "Download each rotated PDF or all at once."}
+    ]},
+    {"@type": "FAQPage", "mainEntity": [
+      {"@type": "Question", "name": "How many PDFs can I rotate at once?", "acceptedAnswer": {"@type": "Answer", "text": "No hard limit, but for best performance we recommend up to 20 PDFs per batch. Larger batches may take longer depending on file sizes and browser memory."}},
+      {"@type": "Question", "name": "Can I rotate each PDF by a different angle?", "acceptedAnswer": {"@type": "Answer", "text": "Yes! Click the mini rotation buttons on each file card to set a custom angle for that specific PDF. Or use the top toolbar to apply the same angle to all files."}},
+      {"@type": "Question", "name": "Does batch rotation reduce quality?", "acceptedAnswer": {"@type": "Answer", "text": "No. Rotation is metadata-only the actual page content is not re-rendered. Quality is preserved perfectly for every PDF."}},
+      {"@type": "Question", "name": "How do I download all rotated PDFs?", "acceptedAnswer": {"@type": "Answer", "text": "Click 'Download All' after processing. Each PDF downloads separately with '-rotated' appended to the filename. Your browser will ask permission to download multiple files."}},
+      {"@type": "Question", "name": "Are my PDFs uploaded to a server?", "acceptedAnswer": {"@type": "Answer", "text": "No. All processing happens in your browser using pdf-lib. Your PDFs never leave your device."}}
+    ]},
+    {"@type": "BreadcrumbList", "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bigtoolz.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://bigtoolz.com/tools/"},
+      {"@type": "ListItem", "position": 3, "name": "PDF Tools", "item": "https://bigtoolz.com/tools/pdf-tools/"},
+      {"@type": "ListItem", "position": 4, "name": "Organize PDF", "item": "https://bigtoolz.com/tools/pdf-tools/organize-pdf/"},
+      {"@type": "ListItem", "position": 5, "name": "Batch Rotator", "item": "https://bigtoolz.com/tools/pdf-tools/organize-pdf/batch-rotator/"}
+    ]}
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-left">
+    <a href="/" class="logo"><div class="logo-icon">⚒</div>BigToolz</span></a>
+    <nav><ul class="nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/tools/" class="active">All Tools</a></li>
+      <li><a href="/tools/categories">Categories</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul></nav>
+  </div>
+  <div class="header-right">
+    
+    <button class="theme-btn" aria-label="Toggle theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
+    
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <nav class="breadcrumb">
+      <a href="/">Home</a><span class="sep">›</span>
+      <a href="/tools/">Tools</a><span class="sep">›</span>
+      <a href="/tools/pdf-tools/">PDF Tools</a><span class="sep">›</span>
+      <a href="/tools/pdf-tools/organize-pdf/">Organize PDF</a><span class="sep">›</span>
+      <span class="current">Batch Rotator</span>
+    </nav>
+    <div class="hero-title-row">
+      <div class="hero-icon">🔄</div>
+      <h1 class="hero-title">Batch <span class="blue">Rotate PDF</span></h1>
+    </div>
+    <p class="hero-desc">
+      Rotate multiple PDFs at once apply one angle to all, or a custom angle per file. Download individually or all together. No upload, 100% private.
+    </p>
+    <div class="hero-features">
+      <div class="hero-feature"><span class="check">✓</span> Multi-File Batch</div>
+      <div class="hero-feature"><span class="check">✓</span> Per-File Angles</div>
+      <div class="hero-feature"><span class="check">✓</span> Bulk Download</div>
+      <div class="hero-feature"><span class="check">✓</span> No Upload</div>
+    </div>
+  </div>
+</section>
+
+<div class="main-content">
+
+  <div class="tool-content">
+
+    <div class="workspace">
+
+      <div class="dropzone" id="dropzone">
+        <div class="dropzone-icon">⬆</div>
+        <div class="dropzone-title">Drag & drop your PDFs here</div>
+        <div class="dropzone-sub">or <a href="#" id="browseLink">click to browse files</a></div>
+        <button class="choose-btn" id="chooseBtn" type="button">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/></svg>
+          Choose PDF Files
+        </button>
+        <div class="dropzone-info">
+          <span>PDF files only</span>
+          <span class="divider">|</span>
+          <span>Multiple files supported</span>
+        </div>
+        <input type="file" id="fileInput" class="file-input" accept=".pdf,application/pdf" multiple>
+      </div>
+
+      <!-- Batch Header -->
+      <div class="batch-header" id="batchHeader">
+        <div class="batch-icon">📚</div>
+        <div class="batch-details">
+          <div class="batch-title" id="batchTitle">0 files loaded</div>
+          <div class="batch-meta" id="batchMeta">0 KB total</div>
+        </div>
+      </div>
+
+      <!-- Rotation Toolbar -->
+      <div class="rotation-toolbar" id="rotationToolbar">
+        <div class="rotation-title">
+          <span>🔄 Apply rotation to all files</span>
+          <span class="rotation-mode-badge" id="modeBadge">Same angle for all</span>
+        </div>
+        <div class="rotation-buttons">
+          <button class="rotate-btn" data-rotate="-90">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 14L4 9l5-5"/><path d="M4 9h10.5a5.5 5.5 0 110 11H10"/></svg>
+            90° Left
+          </button>
+          <button class="rotate-btn" data-rotate="90">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 14l5-5-5-5"/><path d="M20 9H9.5a5.5 5.5 0 100 11H14"/></svg>
+            90° Right
+          </button>
+          <button class="rotate-btn" data-rotate="180">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 12a9 9 0 11-3-6.7"/><path d="M21 3v6h-6"/></svg>
+            180°
+          </button>
+          <button class="rotate-btn" data-rotate="0">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+            Reset All
+          </button>
+        </div>
+      </div>
+
+      <!-- Files Grid -->
+      <div class="files-grid" id="filesGrid"></div>
+
+      <!-- Summary -->
+      <div class="summary-box" id="summaryBox">
+        <div class="summary-icon">✓</div>
+        <div class="summary-details">
+          <div class="summary-title" id="summaryTitle">Batch complete!</div>
+          <div class="summary-desc" id="summaryDesc"></div>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button class="btn btn-primary" id="applyBtn" disabled>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 12a9 9 0 11-3-6.7"/><path d="M21 3v6h-6"/></svg>
+          Batch Rotate All
+        </button>
+        <button class="btn btn-success" id="downloadAllBtn" style="display:none;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+          Download All
+        </button>
+        <button class="btn btn-secondary" id="clearBtn">Clear</button>
+      </div>
+
+      <div class="progress" id="progress">
+        <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+        <div class="progress-text" id="progressText">Processing...</div>
+      </div>
+
+    </div>
+
+    <div class="seo-content">
+
+      <h2>🔄 What is Batch Rotate PDF?</h2>
+      <p>
+        <strong>Batch Rotate PDF</strong> rotates <strong>multiple PDF files at once</strong> saving you the hassle of opening each one individually. Whether you have 5 scanned documents or 100 sideways files, this tool lets you apply one rotation to all files or set a <strong>custom angle per file</strong>, then download everything together.
+      </p>
+      <p>
+        Unlike most online tools, BigToolz processes everything <strong>100% in your browser</strong> using <strong>pdf-lib</strong>. Your PDFs <strong>never uploaded to any server</strong> complete privacy, instant results. Rotation is <strong>lossless</strong> content and quality preserved perfectly.
+      </p>
+
+      <h2>🚀 How to Batch Rotate PDFs</h2>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-step-num">1</div>
+          <div class="how-step-title">Upload PDFs</div>
+          <div class="how-step-desc">Drag & drop multiple PDFs or click "Choose PDF Files".</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">2</div>
+          <div class="how-step-title">Choose Rotation</div>
+          <div class="how-step-desc">Apply same angle to all, or set per-file angles.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">3</div>
+          <div class="how-step-title">Batch Rotate</div>
+          <div class="how-step-desc">Click "Batch Rotate All" to process every file.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">4</div>
+          <div class="how-step-title">Download</div>
+          <div class="how-step-desc">Download each PDF individually or all at once.</div>
+        </div>
+      </div>
+
+      <h2>🎯 Two Rotation Modes</h2>
+
+      <h3>Same Angle for All Files</h3>
+      <p>Click any of the top buttons (90° Left, 90° Right, 180°) to apply that rotation to <strong>every PDF in the batch</strong>. Best when all files need the same correction for example, a batch of scans that were all saved in the wrong orientation.</p>
+
+      <h3>Per-File Custom Angles</h3>
+      <p>Every file card has its own mini rotation buttons (↶ ↷ ↺). Set different angles for different files for example, some need 90° right, others need 180°. This gives you <strong>precise control</strong> when files came from mixed sources.</p>
+
+      <h2>💡 Common Use Cases</h2>
+      <ul>
+        <li><strong>Bulk scan cleanup</strong> fix orientation across a folder of scanned PDFs.</li>
+        <li><strong>Archive preparation</strong> standardize orientation before uploading to cloud storage.</li>
+        <li><strong>Client deliverables</strong> ensure all PDFs are correctly oriented before sending.</li>
+        <li><strong>Mixed sources</strong> different scanners produced different orientations fix them all at once.</li>
+        <li><strong>Batch printing</strong> ensure all PDFs print the correct way up.</li>
+        <li><strong>Legacy document migration</strong> correct orientation of old scanned archives.</li>
+      </ul>
+
+      <h2>✨ Key Features</h2>
+      <ul>
+        <li><strong>100% browser-based</strong> no uploads, complete privacy.</li>
+        <li><strong>Multi-file batch</strong> upload as many PDFs as you need.</li>
+        <li><strong>Same angle for all</strong> one click applies to entire batch.</li>
+        <li><strong>Per-file angles</strong> custom rotation for individual PDFs.</li>
+        <li><strong>Visual file cards</strong> see each PDF's status.</li>
+        <li><strong>Auto-reset</strong> remove files mid-batch.</li>
+        <li><strong>Download individually</strong> each file separately with "-rotated" name.</li>
+        <li><strong>Download all</strong> one click to grab all rotated PDFs.</li>
+        <li><strong>Progress tracking</strong> see processing status.</li>
+        <li><strong>Lossless</strong> original quality preserved.</li>
+      </ul>
+
+      <h2>❓ Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-question">How many PDFs can I rotate at once?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>No hard limit, but for best performance we recommend up to <strong>20 PDFs per batch</strong>. Larger batches may take longer depending on file sizes and browser memory. You can always run multiple batches.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I rotate each PDF by a different angle?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Yes! Click the <strong>mini rotation buttons</strong> on each file card to set a custom angle for that specific PDF. Or use the top toolbar to apply the same angle to all files at once. You can mix both set a default for all, then tweak individual files.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Does batch rotation reduce quality?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>No.</strong> Rotation is <strong>metadata-only</strong> the actual page content isn't re-rendered. The rotation is stored as a simple angle value that all PDF viewers respect. Quality is preserved 100%.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">How do I download all rotated PDFs?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Click <strong>"Download All"</strong> after processing. Each PDF downloads separately with <code>-rotated</code> appended to the filename. Your browser will likely ask permission to download multiple files the first time allow it.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I remove a file from the batch?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Yes. Hover over any file card and click the <strong>✕ remove button</strong> in the top-right corner. The file is removed from the batch and won't be processed.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Does this work with password-protected PDFs?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Not directly password-protected PDFs will fail. First remove the password using our <a href="/tools/pdf-tools/security-pdf/unlock-pdf/">Unlock PDF</a> tool, then include the unlocked PDFs in the batch.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Are my PDFs uploaded to a server?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>No. All processing happens in your browser using pdf-lib. Your PDFs never leave your device, and nothing is stored anywhere.</p></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-header">🔗 Related PDF Tools</div>
+    <div class="sidebar-list">
+      <a href="/tools/pdf-tools/organize-pdf/rotate-pdf/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#ec4899;">🔁</div>
+        <div class="sidebar-info"><div class="sidebar-title">Rotate PDF</div><div class="sidebar-desc">Single file rotation</div></div>
+      </a>
+      <a href="/tools/pdf-tools/organize-pdf/reverse-pdf/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#06b6d4;">🔃</div>
+        <div class="sidebar-info"><div class="sidebar-title">Reverse PDF</div><div class="sidebar-desc">Reverse page order</div></div>
+      </a>
+      <a href="/tools/pdf-tools/organize-pdf/sort-pdf/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#f59e0b;">🔢</div>
+        <div class="sidebar-info"><div class="sidebar-title">Sort PDF</div><div class="sidebar-desc">Reorder pages</div></div>
+      </a>
+      <a href="/tools/pdf-tools/organize-pdf/delete-pages/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#ef4444;">🗑</div>
+        <div class="sidebar-info"><div class="sidebar-title">Delete Pages</div><div class="sidebar-desc">Remove pages</div></div>
+      </a>
+      <a href="/tools/pdf-tools/organize-pdf/merge-pdf/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#3b82f6;">📚</div>
+        <div class="sidebar-info"><div class="sidebar-title">Merge PDF</div><div class="sidebar-desc">Combine files</div></div>
+      </a>
+      <a href="/tools/pdf-tools/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#64748b;">📕</div>
+        <div class="sidebar-info"><div class="sidebar-title">All PDF Tools →</div><div class="sidebar-desc">Browse 100+ tools</div></div>
+      </a>
+    </div>
+  </aside>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand"><div class="logo-icon">⚒</div>BigToolz</span></div>
+      <p class="footer-tagline">Your Ultimate Online Tools Hub</p>
+      <div class="footer-social">
+        <a href="https://facebook.com/bigtoolz" aria-label="Facebook">f</a>
+        <a href="https://twitter.com/bigtoolz" aria-label="Twitter">𝕏</a>
+        <a href="https://youtube.com/@bigtoolz" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+    <div>
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/tools/">All Tools</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Categories</h3>
+      <ul class="footer-links">
+        <li><a href="/tools/image-tools/">Image Tools</a></li>
+        <li><a href="/tools/pdf-tools/">PDF Tools</a></li>
+        <li><a href="/tools/text-tools/">Text Tools</a></li>
+        <li><a href="/tools/seo-tools/">SEO Tools</a></li>
+        <li><a href="/tools/categories">All Categories →</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Legal</h3>
+      <ul class="footer-links">
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left"><span>✓ 100% Free</span><span>✓ No Sign Up</span><span>✓ No Installation</span></div>
+    <div class="footer-bottom-right">© 2026 BigToolz. All rights reserved.</div>
+    <div class="footer-bottom-links"><a href="/privacy-policy">Privacy</a><a href="/terms">Terms</a><a href="/disclaimer">Disclaimer</a></div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<!-- pdf-lib library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+
+<script>
+'use strict';
+
+/* ===== THEME ===== */
+(function(){try{var t=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&d))document.documentElement.setAttribute('data-theme','dark');else if(t==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();
+document.querySelector('.theme-btn')?.addEventListener('click',()=>{const h=document.documentElement;const c=h.getAttribute('data-theme');const d=window.matchMedia('(prefers-color-scheme: dark)').matches;let n=c==='dark'?'light':c==='light'?'dark':(d?'light':'dark');h.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}});
+
+/* ===== HELPERS ===== */
+const $ = (s, p = document) => p.querySelector(s);
+const $$ = (s, p = document) => [...p.querySelectorAll(s)];
+
+function formatBytes(b) {
+  if (b === 0) return '0 B';
+  const k = 1024, sizes = ['B', 'KB', 'MB', 'GB'];
+  const i = Math.floor(Math.log(b) / Math.log(k));
+  return (b / Math.pow(k, i)).toFixed(i === 0 ? 0 : 1) + ' ' + sizes[i];
+}
+
+function showToast(msg, type = 'info', duration = 3000) {
+  const t = $('#toast');
+  if (!t) return;
+  t.className = 'toast visible' + (type !== 'info' ? ' ' + type : '');
+  t.textContent = msg;
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove('visible'), duration);
+}
+
+function escapeHtml(str) {
+  const div = document.createElement('div');
+  div.textContent = str;
+  return div.innerHTML;
+}
+
+/* ===== STATE ===== */
+const state = {
+  files: [], // { id, file, name, size, rotation, status, resultBlob, resultUrl }
+  globalRotation: 0,
+  isProcessing: false
+};
+
+let fileIdCounter = 0;
+
+/* ===== DOM ===== */
+const dropzone = $('#dropzone');
+const fileInput = $('#fileInput');
+const chooseBtn = $('#chooseBtn');
+const browseLink = $('#browseLink');
+const applyBtn = $('#applyBtn');
+const downloadAllBtn = $('#downloadAllBtn');
+const clearBtn = $('#clearBtn');
+const progress = $('#progress');
+const progressFill = $('#progressFill');
+const progressText = $('#progressText');
+const batchHeader = $('#batchHeader');
+const batchTitle = $('#batchTitle');
+const batchMeta = $('#batchMeta');
+const rotationToolbar = $('#rotationToolbar');
+const modeBadge = $('#modeBadge');
+const filesGrid = $('#filesGrid');
+const summaryBox = $('#summaryBox');
+const summaryTitle = $('#summaryTitle');
+const summaryDesc = $('#summaryDesc');
+
+/* ===== GLOBAL ROTATION BUTTONS ===== */
+$$('.rotate-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const angle = parseInt(btn.dataset.rotate, 10);
+
+    $$('.rotate-btn').forEach(b => b.classList.remove('active'));
+
+    if (angle === 0) {
+      // Reset all to 0
+      state.globalRotation = 0;
+      state.files.forEach(f => { f.rotation = 0; });
+      renderFiles();
+      showToast('All rotations reset', 'info');
+    } else {
+      state.globalRotation = angle;
+      btn.classList.add('active');
+      // Apply to all files
+      state.files.forEach(f => { f.rotation = angle; });
+      renderFiles();
+      showToast(`Set ${angle}° for all files`, 'success');
+    }
+
+    updateApplyBtn();
+  });
+});
+
+/* ===== FILE SELECTION ===== */
+function triggerFileSelect() { fileInput.click(); }
+chooseBtn.addEventListener('click', (e) => { e.stopPropagation(); triggerFileSelect(); });
+browseLink.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); triggerFileSelect(); });
+dropzone.addEventListener('click', triggerFileSelect);
+
+fileInput.addEventListener('change', (e) => {
+  handleFiles([...e.target.files]);
+  fileInput.value = '';
+});
+
+['dragenter', 'dragover'].forEach(evt => {
+  dropzone.addEventListener(evt, (e) => { e.preventDefault(); e.stopPropagation(); dropzone.classList.add('dragover'); });
+});
+['dragleave', 'drop'].forEach(evt => {
+  dropzone.addEventListener(evt, (e) => { e.preventDefault(); e.stopPropagation(); dropzone.classList.remove('dragover'); });
+});
+dropzone.addEventListener('drop', (e) => {
+  const files = [...e.dataTransfer.files].filter(f =>
+    f.type === 'application/pdf' || f.name.toLowerCase().endsWith('.pdf')
+  );
+  if (files.length) handleFiles(files);
+  else showToast('Please drop PDF files only', 'error');
+});
+
+/* ===== HANDLE FILES ===== */
+function handleFiles(files) {
+  const pdfFiles = files.filter(f =>
+    f.type === 'application/pdf' || f.name.toLowerCase().endsWith('.pdf')
+  );
+
+  if (!pdfFiles.length) {
+    showToast('Please select PDF files only', 'error');
+    return;
+  }
+
+  pdfFiles.forEach(file => {
+    state.files.push({
+      id: ++fileIdCounter,
+      file,
+      name: file.name,
+      size: file.size,
+      rotation: state.globalRotation,
+      status: 'pending',
+      resultBlob: null,
+      resultUrl: null
+    });
+  });
+
+  updateBatchUI();
+  renderFiles();
+  updateApplyBtn();
+
+  showToast(`${pdfFiles.length} PDF${pdfFiles.length > 1 ? 's' : ''} added`, 'success');
+}
+
+function updateBatchUI() {
+  if (state.files.length > 0) {
+    batchHeader.classList.add('visible');
+    rotationToolbar.classList.add('visible');
+    filesGrid.classList.add('visible');
+    dropzone.style.display = 'none';
+  } else {
+    batchHeader.classList.remove('visible');
+    rotationToolbar.classList.remove('visible');
+    filesGrid.classList.remove('visible');
+    dropzone.style.display = '';
+  }
+
+  const total = state.files.length;
+  const totalSize = state.files.reduce((sum, f) => sum + f.size, 0);
+  batchTitle.textContent = `${total} PDF${total > 1 ? 's' : ''} loaded`;
+  batchMeta.textContent = `${formatBytes(totalSize)} total · Ready to rotate`;
+}
+
+/* ===== RENDER FILES GRID ===== */
+function renderFiles() {
+  filesGrid.innerHTML = '';
+
+  state.files.forEach(f => {
+    const card = document.createElement('div');
+    card.className = 'file-card';
+    if (f.status === 'success') card.classList.add('success');
+    if (f.status === 'error') card.classList.add('error');
+    if (f.status === 'processing') card.classList.add('processing');
+
+    const statusText = f.status === 'success' ? 'Done Ready'
+      : f.status === 'error' ? 'Failed'
+      : f.status === 'processing' ? 'Processing...'
+      : 'Ready';
+
+    const iconClass = f.status === 'success' ? 'status-success'
+      : f.status === 'error' ? 'status-error'
+      : f.status === 'processing' ? 'status-processing'
+      : '';
+
+    // Mini rotation buttons (active states)
+    const rot = f.rotation;
+    const leftActive = rot === -90 ? 'active' : '';
+    const rightActive = rot === 90 ? 'active' : '';
+    const invActive = rot === 180 ? 'active' : '';
+
+    card.innerHTML = `
+      <button class="file-remove" data-remove="${f.id}" title="Remove file" ${f.status === 'processing' ? 'disabled' : ''}>✕</button>
+      <div class="file-top">
+        <div class="file-icon ${iconClass}">📕</div>
+        <div class="file-info">
+          <div class="file-name" title="${escapeHtml(f.name)}">${escapeHtml(f.name)}</div>
+          <div class="file-meta">${formatBytes(f.size)}</div>
+        </div>
+      </div>
+      <div class="file-rotation">
+        <button class="mini-rotate-btn ${leftActive}" data-file-rotate="${f.id}" data-angle="-90" title="90° Left">↶</button>
+        <button class="mini-rotate-btn ${rightActive}" data-file-rotate="${f.id}" data-angle="90" title="90° Right">↷</button>
+        <button class="mini-rotate-btn ${invActive}" data-file-rotate="${f.id}" data-angle="180" title="180°">↺</button>
+      </div>
+      <div class="file-status-text">${statusText}</div>
+    `;
+
+    filesGrid.appendChild(card);
+  });
+
+  // Attach remove handlers
+  $$('[data-remove]').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const id = parseInt(btn.dataset.remove, 10);
+      removeFile(id);
+    });
+  });
+
+  // Attach per-file rotation handlers
+  $$('[data-file-rotate]').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const id = parseInt(btn.dataset.fileRotate, 10);
+      const angle = parseInt(btn.dataset.angle, 10);
+      setFileRotation(id, angle);
+    });
+  });
+}
+
+/* ===== REMOVE FILE ===== */
+function removeFile(id) {
+  const idx = state.files.findIndex(f => f.id === id);
+  if (idx === -1) return;
+
+  const f = state.files[idx];
+  if (f.status === 'processing') return;
+
+  if (f.resultUrl) URL.revokeObjectURL(f.resultUrl);
+
+  state.files.splice(idx, 1);
+  updateBatchUI();
+  renderFiles();
+  updateApplyBtn();
+
+  if (state.files.length === 0) {
+    summaryBox.classList.remove('visible');
+    downloadAllBtn.style.display = 'none';
+  }
+}
+
+/* ===== SET FILE ROTATION ===== */
+function setFileRotation(id, angle) {
+  const f = state.files.find(file => file.id === id);
+  if (!f || f.status === 'processing') return;
+
+  // Toggle: if same angle clicked, reset to 0
+  f.rotation = f.rotation === angle ? 0 : angle;
+
+  // Update status new rotation resets success
+  if (f.status === 'success') {
+    f.status = 'pending';
+    if (f.resultUrl) {
+      URL.revokeObjectURL(f.resultUrl);
+      f.resultUrl = null;
+      f.resultBlob = null;
+    }
+  }
+
+  renderFiles();
+  updateApplyBtn();
+}
+
+/* ===== UPDATE APPLY BUTTON ===== */
+function updateApplyBtn() {
+  const hasFiles = state.files.length > 0;
+  const anyRotation = state.files.some(f => f.rotation !== 0 && f.status !== 'success');
+  applyBtn.disabled = !hasFiles || !anyRotation;
+
+  // Update mode badge
+  if (state.files.length > 0) {
+    const uniqueRotations = new Set(state.files.map(f => f.rotation));
+    if (uniqueRotations.size === 1) {
+      const r = state.files[0].rotation;
+      modeBadge.textContent = r === 0 ? 'No rotation set' : `${r}° for all files`;
+    } else {
+      modeBadge.textContent = 'Custom angles per file';
+    }
+  }
+}
+
+/* ===== APPLY BATCH ROTATION ===== */
+applyBtn.addEventListener('click', applyBatchRotation);
+
+async function applyBatchRotation() {
+  if (state.isProcessing || !state.files.length) return;
+
+  const { PDFDocument, degrees } = PDFLib;
+
+  state.isProcessing = true;
+  applyBtn.disabled = true;
+  applyBtn.innerHTML = 'Rotating...';
+  progress.classList.add('visible');
+  progressFill.style.width = '0%';
+  summaryBox.classList.remove('visible');
+  downloadAllBtn.style.display = 'none';
+
+  const total = state.files.length;
+  let completed = 0;
+  let successCount = 0;
+  let failCount = 0;
+
+  for (const f of state.files) {
+    // Skip files that are already successful with matching rotation
+    if (f.status === 'success') {
+      completed++;
+      successCount++;
+      progressFill.style.width = Math.round((completed / total) * 100) + '%';
+      progressText.textContent = `Skipping ${completed} of ${total} (already done)`;
+      continue;
+    }
+
+    // Skip files with 0 rotation
+    if (f.rotation === 0) {
+      completed++;
+      progressFill.style.width = Math.round((completed / total) * 100) + '%';
+      progressText.textContent = `Skipping ${completed} of ${total} (no rotation)`;
+      continue;
+    }
+
+    f.status = 'processing';
+    renderFiles();
+
+    progressText.textContent = `Rotating ${completed + 1} of ${total}: ${f.name}`;
+
+    try {
+      const arrayBuffer = await f.file.arrayBuffer();
+      const pdfDoc = await PDFDocument.load(arrayBuffer);
+      const pages = pdfDoc.getPages();
+
+      pages.forEach(page => {
+        const current = page.getRotation().angle || 0;
+        let next = (current + f.rotation) % 360;
+        if (next < 0) next += 360;
+        page.setRotation(degrees(next));
+      });
+
+      const newBytes = await pdfDoc.save();
+      f.resultBlob = new Blob([newBytes], { type: 'application/pdf' });
+
+      if (f.resultUrl) URL.revokeObjectURL(f.resultUrl);
+      f.resultUrl = URL.createObjectURL(f.resultBlob);
+
+      f.status = 'success';
+      successCount++;
+    } catch (err) {
+      console.error('Rotate failed for', f.name, err);
+      f.status = 'error';
+      failCount++;
+    }
+
+    completed++;
+    progressFill.style.width = Math.round((completed / total) * 100) + '%';
+    renderFiles();
+  }
+
+  progressFill.style.width = '100%';
+  progressText.textContent = 'Done!';
+
+  setTimeout(() => {
+    progress.classList.remove('visible');
+    summaryBox.classList.add('visible');
+    summaryTitle.textContent = `Batch complete! ${successCount} of ${total} rotated`;
+    summaryDesc.textContent = failCount > 0
+      ? `${failCount} file${failCount > 1 ? 's' : ''} failed (may be encrypted or corrupted)`
+      : 'All files processed successfully. Click "Download All" to save them.';
+    showToast(`✅ ${successCount} PDF${successCount > 1 ? 's' : ''} rotated!`, 'success');
+
+    if (successCount > 0) {
+      downloadAllBtn.style.display = 'inline-flex';
+    }
+  }, 400);
+
+  state.isProcessing = false;
+  applyBtn.disabled = false;
+  applyBtn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 12a9 9 0 11-3-6.7"/><path d="M21 3v6h-6"/></svg> Batch Rotate All';
+}
+
+/* ===== DOWNLOAD ALL ===== */
+downloadAllBtn.addEventListener('click', async () => {
+  const successful = state.files.filter(f => f.status === 'success' && f.resultUrl);
+  if (!successful.length) return;
+
+  showToast(`Downloading ${successful.length} file${successful.length > 1 ? 's' : ''}...`, 'info');
+
+  // Stagger downloads to prevent browser blocking
+  successful.forEach((f, i) => {
+    setTimeout(() => {
+      const baseName = f.name.replace(/\.[^.]+$/, '');
+      const a = document.createElement('a');
+      a.href = f.resultUrl;
+      a.download = `${baseName}-rotated.pdf`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    }, i * 400);
+  });
+});
+
+/* ===== CLEAR ALL ===== */
+clearBtn.addEventListener('click', () => {
+  if (state.isProcessing) return;
+
+  // Clean up URLs
+  state.files.forEach(f => {
+    if (f.resultUrl) URL.revokeObjectURL(f.resultUrl);
+  });
+
+  state.files = [];
+  state.globalRotation = 0;
+
+  $$('.rotate-btn').forEach(b => b.classList.remove('active'));
+
+  updateBatchUI();
+  renderFiles();
+  updateApplyBtn();
+  summaryBox.classList.remove('visible');
+  downloadAllBtn.style.display = 'none';
+  progress.classList.remove('visible');
+
+  showToast('Cleared all files');
+});
+
+/* ===== FAQ ===== */
+$$('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    $$('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+</script>
+
+</body>
+</html>

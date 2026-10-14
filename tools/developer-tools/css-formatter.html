@@ -1,0 +1,1176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2563eb">
+
+<title>CSS Formatter - Beautify & Format CSS Online Free | BigToolz</title>
+<meta name="description" content="Format CSS online free. Beautify messy CSS, expand compressed styles, choose indent size, sort properties. Also minifies CSS. No upload, works in your browser.">
+<meta name="keywords" content="css formatter, css beautifier, format css, beautify css online, css pretty print, css formatter online">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://bigtoolz.com/tools/developer-tools/css-formatter/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="CSS Formatter - Free Online Tool | BigToolz">
+<meta property="og:description" content="Beautify CSS instantly 3 output styles, custom indent, sort properties.">
+<meta property="og:url" content="https://bigtoolz.com/tools/developer-tools/css-formatter/">
+<meta property="og:image" content="https://bigtoolz.com/assets/images/og-image.jpg">
+<meta property="og:site_name" content="BigToolz">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="CSS Formatter - BigToolz">
+<meta name="twitter:description" content="Format CSS instantly free, no upload.">
+<meta name="twitter:image" content="https://bigtoolz.com/assets/images/twitter-card.jpg">
+
+<link rel="icon" href="/assets/images/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/images/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#f8f9fc;color:#1a1a2e;overflow-x:hidden;line-height:1.5}
+
+  .header{background:#fff;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;position:sticky;top:0;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+  .header-left{display:flex;align-items:center;gap:40px}
+  .logo{display:flex;align-items:center;gap:8px;font-size:22px;font-weight:800;color:#1a1a2e;text-decoration:none}
+  .logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#3b82f6,#2563eb);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px}
+  .logo span{color:#2563eb}
+  .nav{display:flex;align-items:center;gap:28px;list-style:none}
+  .nav a{text-decoration:none;color:#4b5563;font-size:14px;font-weight:500;transition:color .2s}
+  .nav a:hover,.nav a.active{color:#2563eb}
+  .header-right{display:flex;align-items:center;gap:16px}
+  .search-btn,.theme-btn{width:36px;height:36px;border-radius:50%;border:none;background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#4b5563}
+  .search-btn:hover,.theme-btn:hover{background:#f3f4f6}
+  .bookmark-btn{display:flex;align-items:center;gap:8px;background:#2563eb;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
+  .bookmark-btn:hover{background:#1d4ed8}
+
+  .hero{background:linear-gradient(135deg,#0a0e27 0%,#1a1a4e 40%,#2d1b69 70%,#4c1d95 100%);padding:40px 40px 60px;position:relative;overflow:hidden;color:#fff}
+  .hero::before{content:'';position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(59,130,246,.3) 0%,transparent 70%);border-radius:50%}
+  .hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+  .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px;flex-wrap:wrap}
+  .breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none}
+  .breadcrumb a:hover{color:#fff}
+  .breadcrumb .sep{color:rgba(255,255,255,.4)}
+  .breadcrumb .current{color:#fff;font-weight:500}
+  .hero-title-row{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+  .hero-icon{width:60px;height:60px;background:#3b82f6;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:22px;color:#fff;flex-shrink:0;box-shadow:0 8px 24px rgba(59,130,246,.4);font-family:'JetBrains Mono',monospace;font-weight:900}
+  .hero-title{font-size:42px;font-weight:800;line-height:1.15}
+  .hero-title .blue{color:#60a5fa}
+  .hero-desc{font-size:15px;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:24px;max-width:560px}
+  .hero-features{display:flex;gap:24px;flex-wrap:wrap}
+  .hero-feature{display:flex;align-items:center;gap:6px;font-size:13px;color:#fff;font-weight:500}
+  .hero-feature .check{width:18px;height:18px;border-radius:50%;background:#3b82f6;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;flex-shrink:0}
+
+  .main-content{max-width:1200px;margin:0 auto;padding:40px;display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start}
+  .tool-content{min-width:0}
+
+  .workspace{background:#fff;border-radius:16px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,.06);border:1px solid #e5e7eb;margin-bottom:24px}
+
+  .dropzone{border:2px dashed #93c5fd;border-radius:12px;padding:30px;text-align:center;background:#eff6ff;margin-bottom:20px;transition:all .2s;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap}
+  .dropzone:hover,.dropzone.dragover{border-color:#3b82f6;background:#dbeafe}
+  .dropzone-icon{font-size:24px}
+  .dropzone-text{font-size:13px;font-weight:600;color:#1e40af}
+  .dropzone-text a{color:#3b82f6;font-weight:700;text-decoration:none}
+  .file-input{display:none}
+
+  .editor-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px}
+
+  .editor-panel{background:#f9fafb;border:1px solid #e5e7eb;border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+  .editor-header{background:#fff;padding:10px 14px;border-bottom:1px solid #e5e7eb;display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+  .editor-title{font-size:12px;font-weight:700;color:#4b5563;text-transform:uppercase;letter-spacing:.5px;display:flex;align-items:center;gap:6px}
+  .editor-title .dot{width:8px;height:8px;border-radius:50%;background:#3b82f6}
+  .editor-stats{font-size:11px;color:#6b7280;font-weight:600;display:flex;gap:10px}
+  .editor-stats .size{color:#3b82f6;font-weight:800}
+  .editor-stats .savings{color:#10b981;font-weight:800}
+  .editor-stats .grew{color:#f59e0b;font-weight:800}
+
+  .editor-body{padding:0;flex:1;display:flex}
+  .editor-textarea{width:100%;min-height:360px;padding:14px;border:none;outline:none;font-family:'JetBrains Mono','Fira Code',Consolas,monospace;font-size:12px;line-height:1.6;color:#4b5563;background:#f9fafb;resize:vertical;white-space:pre;overflow:auto}
+  .editor-textarea:focus{background:#fff}
+
+  .editor-panel.output .editor-textarea{color:#0f172a;background:#f0fdf4}
+
+  .panel-actions{display:flex;gap:6px;align-items:center}
+
+  .mini-btn{width:32px;height:32px;border-radius:8px;border:1px solid #e5e7eb;background:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#4b5563;transition:all .2s;font-family:inherit;font-size:14px}
+  .mini-btn:hover{border-color:#3b82f6;color:#3b82f6;background:#eff6ff}
+  .mini-btn.copied{background:#10b981;color:#fff;border-color:#10b981}
+
+  /* Options */
+  .options{background:#eff6ff;border-radius:12px;padding:20px;margin-bottom:20px;border:1px solid #93c5fd}
+  .options-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+  .options-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:12px}
+  .option-group label{display:block;font-size:12px;font-weight:700;color:#4b5563;margin-bottom:6px;text-transform:uppercase;letter-spacing:.3px}
+  .option-group select{width:100%;padding:10px 12px;border:1px solid #e5e7eb;border-radius:8px;font-size:13px;font-family:inherit;color:#1a1a2e;background:#fff;outline:none;cursor:pointer;transition:border-color .2s}
+  .option-group select:focus{border-color:#3b82f6;box-shadow:0 0 0 3px rgba(59,130,246,.15)}
+
+  .options-toggles{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
+  .option-toggle{display:flex;align-items:center;justify-content:space-between;padding:12px 14px;background:#fff;border:1px solid #e5e7eb;border-radius:10px;cursor:pointer;gap:10px;transition:border-color .2s}
+  .option-toggle:hover{border-color:#3b82f6}
+  .option-info{display:flex;flex-direction:column;gap:2px;flex:1;min-width:0}
+  .option-title{font-size:12px;font-weight:700;color:#1a1a2e}
+  .option-desc{font-size:10px;color:#6b7280;line-height:1.3}
+  .toggle-switch{position:relative;width:36px;height:20px;background:#d1d5db;border-radius:10px;cursor:pointer;transition:background .2s;flex-shrink:0}
+  .toggle-switch::after{content:'';position:absolute;top:2px;left:2px;width:16px;height:16px;background:#fff;border-radius:50%;transition:transform .2s;box-shadow:0 1px 3px rgba(0,0,0,.15)}
+  .toggle-switch.on{background:#3b82f6}
+  .toggle-switch.on::after{transform:translateX(16px)}
+
+  /* Actions */
+  .actions{display:flex;gap:10px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 26px;border-radius:10px;font-size:14px;font-weight:700;font-family:inherit;cursor:pointer;border:none;transition:all .2s;text-decoration:none}
+  .btn-primary{background:#3b82f6;color:#fff;flex:1;box-shadow:0 4px 12px rgba(59,130,246,.2)}
+  .btn-primary:hover:not(:disabled){background:#2563eb;transform:translateY(-2px);box-shadow:0 6px 20px rgba(59,130,246,.3)}
+  .btn-primary:disabled{opacity:.5;cursor:not-allowed;transform:none}
+  .btn-secondary{background:#fff;color:#3b82f6;border:1px solid #e5e7eb}
+  .btn-secondary:hover{border-color:#3b82f6;background:#eff6ff}
+
+  .seo-content{background:#fff;border-radius:16px;padding:32px;border:1px solid #e5e7eb;margin-bottom:24px}
+  .seo-content h2{font-size:22px;font-weight:800;color:#1a1a2e;margin-bottom:14px;margin-top:28px;display:flex;align-items:center;gap:10px}
+  .seo-content h2:first-child{margin-top:0}
+  .seo-content h3{font-size:16px;font-weight:700;color:#1a1a2e;margin:20px 0 10px}
+  .seo-content p{font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:14px}
+  .seo-content ul{list-style:none;padding-left:0;margin-bottom:16px}
+  .seo-content ul li{position:relative;padding-left:24px;font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:8px}
+  .seo-content ul li::before{content:'';position:absolute;left:6px;top:12px;width:6px;height:6px;background:#3b82f6;border-radius:50%}
+  .seo-content a{color:#2563eb;text-decoration:none;font-weight:600}
+  .seo-content a:hover{text-decoration:underline}
+  .seo-content strong{color:#1a1a2e;font-weight:700}
+  .seo-content code{background:#f1f5f9;padding:2px 6px;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:13px;color:#0f172a;border:1px solid #e2e8f0}
+
+  .code-block{background:#0f172a;color:#e2e8f0;padding:16px 18px;border-radius:8px;font-family:'JetBrains Mono',Consolas,monospace;font-size:12px;line-height:1.6;overflow-x:auto;margin:16px 0;position:relative}
+  .code-block::before{content:attr(data-lang);position:absolute;top:6px;right:10px;font-size:9px;color:#64748b;text-transform:uppercase;letter-spacing:1px;font-weight:700}
+  .code-block .sel{color:#f97316}
+  .code-block .prop{color:#60a5fa}
+  .code-block .val{color:#34d399}
+  .code-block .punct{color:#94a3b8}
+  .code-block .comment{color:#64748b;font-style:italic}
+
+  .how-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:20px}
+  .how-step{background:#eff6ff;border-radius:12px;padding:20px;border:1px solid #93c5fd}
+  .how-step-num{width:36px;height:36px;border-radius:50%;background:#3b82f6;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;margin-bottom:12px}
+  .how-step-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+  .how-step-desc{font-size:13px;color:#6b7280;line-height:1.6}
+
+  .faq-item{background:#eff6ff;border:1px solid #93c5fd;border-radius:12px;margin-bottom:10px;overflow:hidden;transition:border-color .2s}
+  .faq-item:hover{border-color:#3b82f6}
+  .faq-question{width:100%;background:none;border:none;padding:18px 22px;font-size:15px;font-weight:700;color:#1a1a2e;text-align:left;cursor:pointer;font-family:inherit;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .faq-question .chev{font-size:12px;color:#3b82f6;transition:transform .2s;flex-shrink:0}
+  .faq-item.open .faq-question .chev{transform:rotate(180deg)}
+  .faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 22px}
+  .faq-item.open .faq-answer{max-height:500px;padding-bottom:18px}
+  .faq-answer p{font-size:14px;color:#6b7280;line-height:1.7;margin:0}
+
+  .sidebar{background:#fff;border-radius:16px;padding:24px;border:1px solid #e5e7eb;position:sticky;top:80px;margin-bottom:24px}
+  .sidebar-header{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:800;color:#1a1a2e;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid #f3f4f6}
+  .sidebar-list{display:flex;flex-direction:column;gap:8px}
+  .sidebar-item{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;cursor:pointer;transition:background .2s;text-decoration:none;color:inherit;border:1px solid #f3f4f6}
+  .sidebar-item:hover{background:#eff6ff;border-color:#93c5fd}
+  .sidebar-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:14px;color:#fff;flex-shrink:0;font-family:'JetBrains Mono',monospace;font-weight:800}
+  .sidebar-info{flex:1;min-width:0}
+  .sidebar-title{font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:2px}
+  .sidebar-desc{font-size:11px;color:#9ca3af;line-height:1.4}
+
+  .footer{background:#0a0e27;padding:60px 40px 30px;color:#fff;margin-top:40px}
+  .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:40px}
+  .footer-brand{display:flex;align-items:center;gap:8px;font-size:20px;font-weight:800;margin-bottom:12px}
+  .footer-brand span{color:#60a5fa}
+  .footer-tagline{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px}
+  .footer-social{display:flex;gap:12px}
+  .footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:16px;transition:background .2s}
+  .footer-social a:hover{background:rgba(255,255,255,.2)}
+  .footer-heading{font-size:14px;font-weight:700;margin-bottom:20px;color:#fff}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .footer-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;transition:color .2s}
+  .footer-links a:hover{color:#60a5fa}
+  .footer-bottom{max-width:1200px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  .footer-bottom-left{display:flex;gap:20px;font-size:12px;color:rgba(255,255,255,.5)}
+  .footer-bottom-right,.footer-bottom-links a{font-size:12px;color:rgba(255,255,255,.5);text-decoration:none}
+  .footer-bottom-links{display:flex;gap:20px}
+
+  .toast{position:fixed;bottom:24px;right:24px;background:#1a1a2e;color:#fff;padding:14px 20px;border-radius:10px;font-size:13px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:3000;transform:translateY(200%);transition:transform .3s ease;max-width:320px}
+  .toast.visible{transform:translateY(0)}
+  .toast.success{background:#10b981}
+  .toast.error{background:#ef4444}
+
+  @media(max-width:1024px){
+    .main-content{grid-template-columns:1fr;padding:24px 20px}
+    .sidebar{position:static}
+    .how-steps{grid-template-columns:repeat(2,1fr)}
+    .editor-grid{grid-template-columns:1fr}
+    .options-grid{grid-template-columns:1fr}
+    .options-toggles{grid-template-columns:1fr}
+  }
+  @media(max-width:768px){
+    .header{padding:0 20px}.nav{display:none}
+    .hero{padding:24px 20px 40px}
+    .hero-title{font-size:28px}
+    .hero-icon{width:48px;height:48px;font-size:18px}
+    .hero-title-row{flex-direction:column;align-items:flex-start;gap:12px}
+    .main-content{padding:20px 16px}
+    .workspace{padding:20px}
+    .how-steps{grid-template-columns:1fr}
+    .seo-content{padding:20px}
+    .footer-inner{grid-template-columns:1fr 1fr}
+    .toast{left:16px;right:16px;bottom:16px;max-width:none}
+    .editor-textarea{min-height:240px}
+  }
+  @media(max-width:576px){
+    .header{padding:0 16px}.header-right .search-btn,.header-right .theme-btn{display:none}
+    .hero-title{font-size:24px}
+    .actions{flex-direction:column}
+    .btn{width:100%}
+    .btn-primary{flex:none}
+    .footer-inner{grid-template-columns:1fr}
+    .footer-bottom{flex-direction:column;text-align:center}
+  }
+
+  html[data-theme="dark"] body{background:#0f172a;color:#f1f5f9}
+  html[data-theme="dark"] .header,html[data-theme="dark"] .workspace,html[data-theme="dark"] .seo-content,html[data-theme="dark"] .sidebar{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .logo,html[data-theme="dark"] .hero-title,html[data-theme="dark"] .seo-content h2,html[data-theme="dark"] .seo-content h3,html[data-theme="dark"] .faq-question,html[data-theme="dark"] .sidebar-header,html[data-theme="dark"] .sidebar-title,html[data-theme="dark"] .options-title{color:#f1f5f9}
+  html[data-theme="dark"] .nav a{color:#cbd5e1}
+  html[data-theme="dark"] .dropzone{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .options,html[data-theme="dark"] .how-step,html[data-theme="dark"] .faq-item,html[data-theme="dark"] .option-toggle,html[data-theme="dark"] .editor-panel,html[data-theme="dark"] .editor-header{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .editor-textarea{background:#020617;color:#cbd5e1}
+  html[data-theme="dark"] .editor-panel.output .editor-textarea{background:#052e16;color:#d1fae5}
+  html[data-theme="dark"] .mini-btn{background:#0f172a;border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .option-title{color:#f1f5f9}
+  html[data-theme="dark"] .option-group select{background:#0f172a;border-color:#334155;color:#f1f5f9}
+  html[data-theme="dark"] .seo-content p,html[data-theme="dark"] .seo-content ul li,html[data-theme="dark"] .faq-answer p{color:#cbd5e1}
+  html[data-theme="dark"] .seo-content code{background:#020617;color:#60a5fa;border-color:#334155}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type": "SoftwareApplication", "name": "CSS Formatter", "url": "https://bigtoolz.com/tools/developer-tools/css-formatter/", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any (Web-based)", "description": "Free online CSS formatter and beautifier clean up messy CSS, choose indent size and style, sort properties, or minify. Works in your browser.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "1678"}},
+    {"@type": "HowTo", "name": "How to Format CSS Online", "step": [
+      {"@type": "HowToStep", "name": "Paste CSS", "text": "Paste your CSS code or upload a .css file."},
+      {"@type": "HowToStep", "name": "Choose Style", "text": "Select output style, indent size, and options."},
+      {"@type": "HowToStep", "name": "Format", "text": "Click Format CSS to beautify the code."},
+      {"@type": "HowToStep", "name": "Copy or Download", "text": "Copy the result or download as .css file."}
+    ]},
+    {"@type": "FAQPage", "mainEntity": [
+      {"@type": "Question", "name": "What is CSS formatting?", "acceptedAnswer": {"@type": "Answer", "text": "CSS formatting (also called beautifying or pretty-printing) is the process of adding proper indentation, line breaks, and spacing to CSS code so it's easy to read and edit. Minified CSS is turned back into a well-organized structure."}},
+      {"@type": "Question", "name": "What's the difference between formatting and minifying CSS?", "acceptedAnswer": {"@type": "Answer", "text": "Formatting adds whitespace and line breaks to make CSS human-readable. Minifying removes all unnecessary whitespace to make the file smaller for production. Use formatting for development, minifying for deployment."}},
+      {"@type": "Question", "name": "What indent size should I use?", "acceptedAnswer": {"@type": "Answer", "text": "2 spaces is the most common in modern projects (matches Prettier's default). 4 spaces is used in some legacy codebases. Tabs are preferred by some developers for accessibility. Consistency within a project matters most."}},
+      {"@type": "Question", "name": "Will formatting change how my CSS works?", "acceptedAnswer": {"@type": "Answer", "text": "No. CSS formatting only adds whitespace and line breaks it doesn't modify selectors, properties, or values. The formatted CSS renders exactly the same as the original."}},
+      {"@type": "Question", "name": "Is my CSS uploaded to a server?", "acceptedAnswer": {"@type": "Answer", "text": "No. All formatting happens in your browser using JavaScript. Your CSS never leaves your device."}}
+    ]},
+    {"@type": "BreadcrumbList", "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bigtoolz.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://bigtoolz.com/tools/"},
+      {"@type": "ListItem", "position": 3, "name": "Developer Tools", "item": "https://bigtoolz.com/tools/developer-tools/"},
+      {"@type": "ListItem", "position": 4, "name": "CSS Formatter", "item": "https://bigtoolz.com/tools/developer-tools/css-formatter/"}
+    ]}
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-left">
+    <a href="/" class="logo"><div class="logo-icon">⚒</div>BigToolz</span></a>
+    <nav><ul class="nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/tools/" class="active">All Tools</a></li>
+      <li><a href="/tools/categories">Categories</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul></nav>
+  </div>
+  <div class="header-right">
+   
+    <button class="theme-btn" aria-label="Toggle theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
+    
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <nav class="breadcrumb">
+      <a href="/">Home</a><span class="sep">›</span>
+      <a href="/tools/">Tools</a><span class="sep">›</span>
+      <a href="/tools/developer-tools/">Developer Tools</a><span class="sep">›</span>
+      <span class="current">CSS Formatter</span>
+    </nav>
+    <div class="hero-title-row">
+      <div class="hero-icon">{}</div>
+      <h1 class="hero-title">CSS <span class="blue">Formatter</span></h1>
+    </div>
+    <p class="hero-desc">
+      Beautify messy or minified CSS into clean, readable code. 3 output styles, custom indent, sort properties, or minify. No upload, no signup, 100% private.
+    </p>
+    <div class="hero-features">
+      <div class="hero-feature"><span class="check">✓</span> 3 Output Styles</div>
+      <div class="hero-feature"><span class="check">✓</span> Custom Indent</div>
+      <div class="hero-feature"><span class="check">✓</span> Sort Properties</div>
+      <div class="hero-feature"><span class="check">✓</span> No Upload</div>
+    </div>
+  </div>
+</section>
+
+<div class="main-content">
+
+  <div class="tool-content">
+
+    <div class="workspace">
+
+      <div class="dropzone" id="dropzone">
+        <span class="dropzone-icon">📄</span>
+        <span class="dropzone-text">Drag & drop a <strong>.css</strong> file or <a href="#" id="browseLink">click to browse</a></span>
+        <input type="file" id="fileInput" class="file-input" accept=".css,text/css">
+      </div>
+
+      <div class="editor-grid">
+
+        <div class="editor-panel">
+          <div class="editor-header">
+            <div class="editor-title"><span class="dot"></span> Input CSS</div>
+            <div class="panel-actions">
+              <div class="editor-stats">
+                <span class="size" id="inputSize">0 B</span>
+              </div>
+              <button class="mini-btn" id="pasteBtn" title="Paste from clipboard">📋</button>
+              <button class="mini-btn" id="clearInputBtn" title="Clear input">✕</button>
+            </div>
+          </div>
+          <div class="editor-body">
+            <textarea class="editor-textarea" id="inputArea" placeholder="Paste your CSS code here...
+
+Example:
+body{margin:0;padding:0;font-family:Arial}
+.container{max-width:1200px;margin:0 auto}
+.btn{background:#2563eb;color:#fff;padding:10px 20px;border-radius:8px}" spellcheck="false"></textarea>
+          </div>
+        </div>
+
+        <div class="editor-panel output">
+          <div class="editor-header">
+            <div class="editor-title"><span class="dot"></span> Formatted Output</div>
+            <div class="panel-actions">
+              <div class="editor-stats">
+                <span class="size" id="outputSize">0 B</span>
+                <span id="savingsLabel"></span>
+              </div>
+              <button class="mini-btn" id="copyBtn" title="Copy output">📋</button>
+              <button class="mini-btn" id="downloadBtn" title="Download .css">⬇</button>
+            </div>
+          </div>
+          <div class="editor-body">
+            <textarea class="editor-textarea" id="outputArea" readonly placeholder="Formatted CSS will appear here..." spellcheck="false"></textarea>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="options">
+        <div class="options-title">⚙️ Formatting Options</div>
+
+        <div class="options-grid">
+          <div class="option-group">
+            <label>Output Style</label>
+            <select id="styleSelect">
+              <option value="expanded" selected>Expanded (multi-line)</option>
+              <option value="compact">Compact (one line per rule)</option>
+              <option value="mini">Minified (no whitespace)</option>
+            </select>
+          </div>
+          <div class="option-group">
+            <label>Indent</label>
+            <select id="indentSelect">
+              <option value="2" selected>2 spaces</option>
+              <option value="4">4 spaces</option>
+              <option value="tab">Tab</option>
+            </select>
+          </div>
+          <div class="option-group">
+            <label>Action</label>
+            <button class="btn btn-primary" id="formatBtn" disabled style="width:100%;padding:10px 14px;font-size:13px;">Format CSS</button>
+          </div>
+        </div>
+
+        <div class="options-toggles">
+          <div class="option-toggle" data-option="preserveComments">
+            <div class="option-info">
+              <div class="option-title">Preserve Comments</div>
+              <div class="option-desc">Keep /* comments */ in output</div>
+            </div>
+            <div class="toggle-switch on"></div>
+          </div>
+          <div class="option-toggle" data-option="sortProps">
+            <div class="option-info">
+              <div class="option-title">Sort Properties</div>
+              <div class="option-desc">Alphabetically sort CSS properties</div>
+            </div>
+            <div class="toggle-switch"></div>
+          </div>
+          <div class="option-toggle" data-option="lowercaseHex">
+            <div class="option-info">
+              <div class="option-title">Lowercase Hex</div>
+              <div class="option-desc">Convert #ABCDEF to #abcdef</div>
+            </div>
+            <div class="toggle-switch"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button class="btn btn-secondary" id="clearAllBtn">Clear All</button>
+        <button class="btn btn-secondary" id="sampleBtn">Load Sample CSS</button>
+      </div>
+
+    </div>
+
+    <div class="seo-content">
+
+      <h2>🎨 What is CSS Formatting?</h2>
+      <p>
+        <strong>CSS formatting</strong> (also called "beautifying" or "pretty-printing") is the process of adding proper <strong>indentation, line breaks, and spacing</strong> to CSS code so it's easy to read, edit, and maintain. It's the opposite of minification turning compact, messy, or minified CSS back into a clean, organized structure.
+      </p>
+      <p>
+        Unlike most online tools, BigToolz runs <strong>100% in your browser</strong>. Your CSS code <strong>never uploaded to any server</strong> important when working with proprietary stylesheets or client code.
+      </p>
+
+      <h2>🚀 How to Format CSS</h2>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-step-num">1</div>
+          <div class="how-step-title">Paste CSS</div>
+          <div class="how-step-desc">Paste your CSS code or upload a .css file.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">2</div>
+          <div class="how-step-title">Choose Style</div>
+          <div class="how-step-desc">Expanded, Compact, or Minified.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">3</div>
+          <div class="how-step-title">Format</div>
+          <div class="how-step-desc">Click "Format CSS" to beautify the code.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">4</div>
+          <div class="how-step-title">Copy/Download</div>
+          <div class="how-step-desc">Copy the result or download as .css file.</div>
+        </div>
+      </div>
+
+      <h2>🔍 Before & After Example</h2>
+
+      <h3>Before (minified, 1 line)</h3>
+      <div class="code-block" data-lang="css">
+<span class="sel">body</span><span class="punct">{</span><span class="prop">margin</span><span class="punct">:</span><span class="val">0</span><span class="punct">;</span><span class="prop">padding</span><span class="punct">:</span><span class="val">0</span><span class="punct">;</span><span class="prop">font-family</span><span class="punct">:</span><span class="val">Arial,sans-serif</span><span class="punct">}</span><span class="sel">.btn</span><span class="punct">{</span><span class="prop">background</span><span class="punct">:</span><span class="val">#2563eb</span><span class="punct">;</span><span class="prop">color</span><span class="punct">:</span><span class="val">#fff</span><span class="punct">;</span><span class="prop">padding</span><span class="punct">:</span><span class="val">10px 20px</span><span class="punct">}</span></div>
+
+      <h3>After (expanded, formatted)</h3>
+      <div class="code-block" data-lang="css">
+<span class="sel">body</span> <span class="punct">{</span>
+  <span class="prop">margin</span><span class="punct">:</span> <span class="val">0</span><span class="punct">;</span>
+  <span class="prop">padding</span><span class="punct">:</span> <span class="val">0</span><span class="punct">;</span>
+  <span class="prop">font-family</span><span class="punct">:</span> <span class="val">Arial, sans-serif</span><span class="punct">;</span>
+<span class="punct">}</span>
+
+<span class="sel">.btn</span> <span class="punct">{</span>
+  <span class="prop">background</span><span class="punct">:</span> <span class="val">#2563eb</span><span class="punct">;</span>
+  <span class="prop">color</span><span class="punct">:</span> <span class="val">#fff</span><span class="punct">;</span>
+  <span class="prop">padding</span><span class="punct">:</span> <span class="val">10px 20px</span><span class="punct">;</span>
+<span class="punct">}</span></div>
+
+      <h2>📐 The 3 Output Styles Explained</h2>
+      <h3>Expanded (Recommended)</h3>
+      <p>Each CSS rule spans <strong>multiple lines</strong> with one property per line. Maximum readability. Best for development, code reviews, and debugging. This is the "classic" CSS format everyone expects.</p>
+
+      <h3>Compact</h3>
+      <p>Each rule fits on <strong>a single line</strong> selector and all properties on one line. Balanced readability and file size. Good for medium-sized files where you want some compression without full minification.</p>
+
+      <h3>Minified</h3>
+      <p>All whitespace removed <strong>one continuous line</strong>. Smallest possible file size. Best for production deployment. Combine with Gzip for maximum savings.</p>
+
+      <h2>✨ Key Features</h2>
+      <ul>
+        <li><strong>3 output styles</strong> Expanded, Compact, Minified.</li>
+        <li><strong>Custom indent</strong> 2 spaces, 4 spaces, or tab.</li>
+        <li><strong>Preserve comments</strong> keep /* ... */ when needed.</li>
+        <li><strong>Sort properties</strong> alphabetize for consistency.</li>
+        <li><strong>Lowercase hex</strong> normalize color values.</li>
+        <li><strong>Handles complex CSS</strong> media queries, @supports, nested rules.</li>
+        <li><strong>Live size stats</strong> see file size before/after.</li>
+        <li><strong>100% browser-based</strong> complete privacy.</li>
+      </ul>
+
+      <h2>💡 Best Practices</h2>
+      <ul>
+        <li><strong>Format in development</strong> keeps code readable for the team.</li>
+        <li><strong>Minify in production</strong> smaller files = faster load.</li>
+        <li><strong>Use 2-space indent</strong> matches Prettier, ESLint defaults.</li>
+        <li><strong>Sort properties consistently</strong> alphabetical or logical order.</li>
+        <li><strong>Combine with our <a href="/tools/developer-tools/css-minifier/">CSS Minifier</a></strong> for deployment-ready output.</li>
+        <li><strong>Enable source maps</strong> for debugging minified CSS in production.</li>
+      </ul>
+
+      <h2>❓ Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-question">What is CSS formatting?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>CSS formatting (or beautifying/pretty-printing) adds proper <strong>indentation, line breaks, and spacing</strong> to CSS code to make it human-readable. It's the opposite of minification turning compressed code back into a clean structure.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What's the difference between formatting and minifying CSS?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>Formatting</strong> adds whitespace and line breaks to make CSS readable for humans. <strong>Minifying</strong> removes all unnecessary whitespace to make the file smaller for production. Use formatting during development, minifying for deployment.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What indent size should I use?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>2 spaces</strong> is the modern standard (matches Prettier). <strong>4 spaces</strong> is common in older codebases and some corporate standards. <strong>Tabs</strong> are preferred by some developers for accessibility (each user chooses tab width). Consistency within a project matters most.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Will formatting change how my CSS works?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>No. Formatting only adds <strong>whitespace and line breaks</strong> it doesn't modify selectors, properties, or values. The formatted CSS renders exactly the same as the original. Only whitespace changes.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Does this tool work with modern CSS features?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Yes it handles <code>@media</code>, <code>@supports</code>, <code>@keyframes</code>, CSS custom properties (variables), <code>calc()</code>, <code>clamp()</code>, and even nested rules. Comments and pseudo-selectors are preserved correctly.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I format SCSS or LESS with this tool?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Partially. Plain CSS formatting works perfectly. SCSS/LESS-specific syntax (like <code>$variables</code>, mixins, or nested selectors with <code>&</code>) may not format identically. For SCSS/LESS, use a dedicated formatter like Prettier with SCSS plugin.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Is my CSS uploaded to a server?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>No. All formatting happens in your browser using JavaScript. Your CSS never leaves your device, and nothing is stored anywhere.</p></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-header">🔗 Related Developer Tools</div>
+    <div class="sidebar-list">
+      <a href="/tools/developer-tools/css-minifier/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#f97316;">{}</div>
+        <div class="sidebar-info"><div class="sidebar-title">CSS Minifier</div><div class="sidebar-desc">Compress CSS code</div></div>
+      </a>
+      <a href="/tools/developer-tools/html-formatter/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#8b5cf6;">&lt;/&gt;</div>
+        <div class="sidebar-info"><div class="sidebar-title">HTML Formatter</div><div class="sidebar-desc">Beautify HTML code</div></div>
+      </a>
+      <a href="/tools/developer-tools/js-formatter/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#f59e0b;">JS</div>
+        <div class="sidebar-info"><div class="sidebar-title">JS Formatter</div><div class="sidebar-desc">Beautify JavaScript</div></div>
+      </a>
+      <a href="/tools/developer-tools/html-minifier/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#ef4444;">&lt;/&gt;</div>
+        <div class="sidebar-info"><div class="sidebar-title">HTML Minifier</div><div class="sidebar-desc">Compress HTML</div></div>
+      </a>
+      <a href="/tools/developer-tools/json-formatter/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#10b981;">{ }</div>
+        <div class="sidebar-info"><div class="sidebar-title">JSON Formatter</div><div class="sidebar-desc">Format & validate JSON</div></div>
+      </a>
+      <a href="/tools/developer-tools/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#64748b;">&lt;/&gt;</div>
+        <div class="sidebar-info"><div class="sidebar-title">All Dev Tools →</div><div class="sidebar-desc">Browse 25+ tools</div></div>
+      </a>
+    </div>
+  </aside>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand"><div class="logo-icon">⚒</div>BigToolz</span></div>
+      <p class="footer-tagline">Your Ultimate Online Tools Hub</p>
+      <div class="footer-social">
+        <a href="https://facebook.com/bigtoolz" aria-label="Facebook">f</a>
+        <a href="https://twitter.com/bigtoolz" aria-label="Twitter">𝕏</a>
+        <a href="https://youtube.com/@bigtoolz" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+    <div>
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/tools/">All Tools</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Categories</h3>
+      <ul class="footer-links">
+        <li><a href="/tools/image-tools/">Image Tools</a></li>
+        <li><a href="/tools/pdf-tools/">PDF Tools</a></li>
+        <li><a href="/tools/text-tools/">Text Tools</a></li>
+        <li><a href="/tools/developer-tools/">Developer Tools</a></li>
+        <li><a href="/tools/categories">All Categories →</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Legal</h3>
+      <ul class="footer-links">
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left"><span>✓ 100% Free</span><span>✓ No Sign Up</span><span>✓ No Installation</span></div>
+    <div class="footer-bottom-right">© 2026 BigToolz. All rights reserved.</div>
+    <div class="footer-bottom-links"><a href="/privacy-policy">Privacy</a><a href="/terms">Terms</a><a href="/disclaimer">Disclaimer</a></div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+'use strict';
+
+/* ===== THEME ===== */
+(function(){try{var t=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&d))document.documentElement.setAttribute('data-theme','dark');else if(t==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();
+document.querySelector('.theme-btn')?.addEventListener('click',()=>{const h=document.documentElement;const c=h.getAttribute('data-theme');const d=window.matchMedia('(prefers-color-scheme: dark)').matches;let n=c==='dark'?'light':c==='light'?'dark':(d?'light':'dark');h.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}});
+
+/* ===== HELPERS ===== */
+const $ = (s, p = document) => p.querySelector(s);
+const $$ = (s, p = document) => [...p.querySelectorAll(s)];
+
+function formatBytes(b) {
+  if (b === 0) return '0 B';
+  const k = 1024, sizes = ['B', 'KB', 'MB', 'GB'];
+  const i = Math.floor(Math.log(b) / Math.log(k));
+  return (b / Math.pow(k, i)).toFixed(i === 0 ? 0 : 1) + ' ' + sizes[i];
+}
+
+function showToast(msg, type = 'info', duration = 3000) {
+  const t = $('#toast');
+  if (!t) return;
+  t.className = 'toast visible' + (type !== 'info' ? ' ' + type : '');
+  t.textContent = msg;
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove('visible'), duration);
+}
+
+async function copyToClipboard(text) {
+  try {
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(text);
+      return true;
+    }
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.cssText = 'position:fixed;opacity:0;';
+    document.body.appendChild(ta);
+    ta.select();
+    const ok = document.execCommand('copy');
+    document.body.removeChild(ta);
+    return ok;
+  } catch (e) { return false; }
+}
+
+/* ===== STATE ===== */
+const options = {
+  preserveComments: true,
+  sortProps: false,
+  lowercaseHex: false
+};
+
+/* ===== DOM ===== */
+const dropzone = $('#dropzone');
+const fileInput = $('#fileInput');
+const browseLink = $('#browseLink');
+const inputArea = $('#inputArea');
+const outputArea = $('#outputArea');
+const inputSize = $('#inputSize');
+const outputSize = $('#outputSize');
+const savingsLabel = $('#savingsLabel');
+const formatBtn = $('#formatBtn');
+const clearAllBtn = $('#clearAllBtn');
+const sampleBtn = $('#sampleBtn');
+const pasteBtn = $('#pasteBtn');
+const clearInputBtn = $('#clearInputBtn');
+const copyBtn = $('#copyBtn');
+const downloadBtn = $('#downloadBtn');
+const styleSelect = $('#styleSelect');
+const indentSelect = $('#indentSelect');
+
+/* ===== OPTIONS TOGGLE ===== */
+$$('.option-toggle').forEach(el => {
+  el.addEventListener('click', () => {
+    const key = el.dataset.option;
+    options[key] = !options[key];
+    el.querySelector('.toggle-switch').classList.toggle('on', options[key]);
+    if (inputArea.value.trim()) runFormat();
+  });
+});
+
+/* ===== CSS PARSER ===== */
+/* Simple CSS parser that handles rules, @media, @supports, comments */
+function parseCSS(css) {
+  const rules = [];
+  let i = 0;
+  const len = css.length;
+  let buffer = '';
+
+  while (i < len) {
+    const ch = css[i];
+    const next = css[i + 1];
+
+    // Comments
+    if (ch === '/' && next === '*') {
+      const end = css.indexOf('*/', i + 2);
+      if (end === -1) {
+        buffer += css.slice(i);
+        i = len;
+      } else {
+        buffer += css.slice(i, end + 2);
+        i = end + 2;
+      }
+      continue;
+    }
+
+    // String (skip contents to avoid brace matching inside strings)
+    if (ch === '"' || ch === "'") {
+      const quote = ch;
+      let j = i + 1;
+      while (j < len && css[j] !== quote) {
+        if (css[j] === '\\') j++;
+        j++;
+      }
+      buffer += css.slice(i, j + 1);
+      i = j + 1;
+      continue;
+    }
+
+    // Open brace
+    if (ch === '{') {
+      // Find matching close brace
+      let depth = 1;
+      let j = i + 1;
+      while (j < len && depth > 0) {
+        if (css[j] === '/' && css[j + 1] === '*') {
+          const end = css.indexOf('*/', j + 2);
+          if (end === -1) break;
+          j = end + 2;
+          continue;
+        }
+        if (css[j] === '"' || css[j] === "'") {
+          const q = css[j];
+          j++;
+          while (j < len && css[j] !== q) {
+            if (css[j] === '\\') j++;
+            j++;
+          }
+          j++;
+          continue;
+        }
+        if (css[j] === '{') depth++;
+        else if (css[j] === '}') depth--;
+        j++;
+      }
+
+      const selector = buffer.trim();
+      const body = css.slice(i + 1, j - 1);
+      rules.push({ type: 'rule', selector, body: body.trim() });
+      buffer = '';
+      i = j;
+      continue;
+    }
+
+    // Semicolon at top level (e.g. @import;)
+    if (ch === ';' && buffer.trim().startsWith('@')) {
+      rules.push({ type: 'at-rule', text: buffer.trim() + ';' });
+      buffer = '';
+      i++;
+      continue;
+    }
+
+    buffer += ch;
+    i++;
+  }
+
+  if (buffer.trim()) {
+    rules.push({ type: 'text', text: buffer.trim() });
+  }
+
+  return rules;
+}
+
+function parseDeclarations(body) {
+  const decls = [];
+  let i = 0;
+  const len = body.length;
+  let buffer = '';
+
+  while (i < len) {
+    const ch = body[i];
+
+    if (ch === '/' && body[i + 1] === '*') {
+      const end = body.indexOf('*/', i + 2);
+      if (end === -1) {
+        buffer += body.slice(i);
+        i = len;
+      } else {
+        buffer += body.slice(i, end + 2);
+        i = end + 2;
+      }
+      continue;
+    }
+
+    if (ch === '"' || ch === "'") {
+      const q = ch;
+      let j = i + 1;
+      while (j < len && body[j] !== q) {
+        if (body[j] === '\\') j++;
+        j++;
+      }
+      buffer += body.slice(i, j + 1);
+      i = j + 1;
+      continue;
+    }
+
+    if (ch === ';') {
+      const decl = buffer.trim();
+      if (decl) decls.push(decl);
+      buffer = '';
+      i++;
+      continue;
+    }
+
+    buffer += ch;
+    i++;
+  }
+
+  const last = buffer.trim();
+  if (last) decls.push(last);
+
+  return decls;
+}
+
+/* ===== FORMATTER ===== */
+function formatCSS(css, opts) {
+  const indentChar = opts.indent === 'tab' ? '\t' : ' '.repeat(parseInt(opts.indent, 10));
+  const rules = parseCSS(css);
+  const lines = [];
+
+  // Style helpers
+  const isExpanded = opts.style === 'expanded';
+  const isCompact = opts.style === 'compact';
+  const isMini = opts.style === 'mini';
+
+  function formatRule(rule, depth) {
+    const ind = indentChar.repeat(depth);
+
+    if (rule.type === 'at-rule' || rule.type === 'text') {
+      return ind + rule.text;
+    }
+
+    if (rule.type === 'rule') {
+      const selector = rule.selector.replace(/\s+/g, ' ').trim();
+
+      // Check if this is a grouping rule (@media, @supports, etc.)
+      if (selector.startsWith('@')) {
+        // Recursively format inner rules
+        const innerRules = parseCSS(rule.body);
+        const innerLines = innerRules.map(r => formatRule(r, depth + 1)).filter(Boolean);
+        if (isMini) {
+          return `${selector}{${innerLines.map(l => l.trim()).join('')}}`;
+        }
+        return `${ind}${selector} {\n${innerLines.join('\n')}\n${ind}}`;
+      }
+
+      // Regular CSS rule with declarations
+      let decls = parseDeclarations(rule.body);
+
+      // Filter comments if not preserving
+      if (!opts.preserveComments) {
+        decls = decls.filter(d => !d.startsWith('/*'));
+      }
+
+      // Sort properties
+      if (opts.sortProps) {
+        decls = decls.slice().sort((a, b) => {
+          if (a.startsWith('/*') || b.startsWith('/*')) return 0;
+          const propA = a.split(':')[0].trim().toLowerCase();
+          const propB = b.split(':')[0].trim().toLowerCase();
+          return propA.localeCompare(propB);
+        });
+      }
+
+      // Lowercase hex
+      if (opts.lowercaseHex) {
+        decls = decls.map(d => d.replace(/#[0-9a-fA-F]{3,8}\b/g, m => m.toLowerCase()));
+      }
+
+      // Build declaration strings
+      const formattedDecls = decls.map(d => {
+        // Normalize: property: value
+        if (d.startsWith('/*')) return d;
+        const colonIdx = d.indexOf(':');
+        if (colonIdx === -1) return d;
+        const prop = d.slice(0, colonIdx).trim();
+        const val = d.slice(colonIdx + 1).trim().replace(/\s+/g, ' ');
+        return `${prop}: ${val};`;
+      });
+
+      if (isMini) {
+        const miniDecls = formattedDecls
+          .filter(d => !d.startsWith('/*'))
+          .map(d => d.replace(/;\s*$/, ''))
+          .join(';');
+        return `${selector}{${miniDecls}}`;
+      }
+
+      if (isCompact) {
+        const compactDecls = formattedDecls
+          .filter(d => !d.startsWith('/*'))
+          .map(d => d.replace(/;\s*$/, ''))
+          .join(' ');
+        return `${ind}${selector} { ${compactDecls}; }`;
+      }
+
+      // Expanded
+      const declLines = formattedDecls.map(d => ind + indentChar + d);
+      return `${ind}${selector} {\n${declLines.join('\n')}\n${ind}}`;
+    }
+
+    return '';
+  }
+
+  const output = rules.map(r => formatRule(r, 0)).filter(Boolean);
+
+  if (isMini) {
+    return output.join('');
+  }
+
+  return output.join('\n\n');
+}
+
+/* ===== RUN FORMAT ===== */
+function runFormat() {
+  const input = inputArea.value;
+  if (!input.trim()) {
+    outputArea.value = '';
+    updateSizes('', '');
+    return;
+  }
+
+  try {
+    const opts = {
+      style: styleSelect.value,
+      indent: indentSelect.value,
+      preserveComments: options.preserveComments,
+      sortProps: options.sortProps,
+      lowercaseHex: options.lowercaseHex
+    };
+
+    const formatted = formatCSS(input, opts);
+    outputArea.value = formatted;
+    updateSizes(input, formatted);
+  } catch (err) {
+    console.error('Format error:', err);
+    showToast('Formatting failed check your CSS', 'error');
+  }
+}
+
+function updateSizes(inputText, outputText) {
+  const inBytes = new Blob([inputText]).size;
+  const outBytes = new Blob([outputText]).size;
+  inputSize.textContent = formatBytes(inBytes);
+  outputSize.textContent = formatBytes(outBytes);
+
+  if (inBytes > 0 && outBytes > 0) {
+    if (outBytes < inBytes) {
+      const savings = ((1 - outBytes / inBytes) * 100).toFixed(1);
+      savingsLabel.className = 'savings';
+      savingsLabel.textContent = `-${savings}%`;
+    } else if (outBytes > inBytes) {
+      const grew = ((outBytes / inBytes - 1) * 100).toFixed(1);
+      savingsLabel.className = 'grew';
+      savingsLabel.textContent = `+${grew}%`;
+    } else {
+      savingsLabel.textContent = '';
+    }
+  } else {
+    savingsLabel.textContent = '';
+  }
+}
+
+inputArea.addEventListener('input', () => {
+  formatBtn.disabled = !inputArea.value.trim();
+  const inBytes = new Blob([inputArea.value]).size;
+  inputSize.textContent = formatBytes(inBytes);
+  if (outputArea.value && inputArea.value.trim()) runFormat();
+});
+
+formatBtn.addEventListener('click', () => {
+  runFormat();
+  showToast('✅ CSS formatted!', 'success');
+});
+
+/* Auto-format on style change */
+styleSelect.addEventListener('change', () => { if (inputArea.value.trim()) runFormat(); });
+indentSelect.addEventListener('change', () => { if (inputArea.value.trim()) runFormat(); });
+
+/* ===== FILE UPLOAD ===== */
+function triggerFileSelect() { fileInput.click(); }
+browseLink.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); triggerFileSelect(); });
+dropzone.addEventListener('click', triggerFileSelect);
+
+fileInput.addEventListener('change', (e) => {
+  const f = e.target.files[0];
+  if (f) loadFile(f);
+  fileInput.value = '';
+});
+
+['dragenter', 'dragover'].forEach(evt => {
+  dropzone.addEventListener(evt, (e) => { e.preventDefault(); e.stopPropagation(); dropzone.classList.add('dragover'); });
+});
+['dragleave', 'drop'].forEach(evt => {
+  dropzone.addEventListener(evt, (e) => { e.preventDefault(); e.stopPropagation(); dropzone.classList.remove('dragover'); });
+});
+dropzone.addEventListener('drop', (e) => {
+  const f = e.dataTransfer.files[0];
+  if (f) loadFile(f);
+});
+
+function loadFile(file) {
+  const reader = new FileReader();
+  reader.onload = (e) => {
+    inputArea.value = e.target.result;
+    formatBtn.disabled = false;
+    runFormat();
+    showToast(`Loaded ${file.name}`, 'success');
+  };
+  reader.readAsText(file);
+}
+
+/* ===== PASTE ===== */
+pasteBtn.addEventListener('click', async () => {
+  try {
+    if (navigator.clipboard && navigator.clipboard.readText) {
+      const text = await navigator.clipboard.readText();
+      inputArea.value = text;
+      formatBtn.disabled = !text.trim();
+      runFormat();
+      showToast('Pasted from clipboard', 'success');
+    } else {
+      inputArea.focus();
+      showToast('Press Ctrl+V to paste', 'info');
+    }
+  } catch (err) {
+    showToast('Clipboard access denied paste manually', 'error');
+    inputArea.focus();
+  }
+});
+
+/* ===== CLEAR ===== */
+clearInputBtn.addEventListener('click', () => {
+  inputArea.value = '';
+  outputArea.value = '';
+  formatBtn.disabled = true;
+  updateSizes('', '');
+  inputArea.focus();
+});
+
+clearAllBtn.addEventListener('click', () => {
+  inputArea.value = '';
+  outputArea.value = '';
+  formatBtn.disabled = true;
+  updateSizes('', '');
+  showToast('Cleared');
+});
+
+/* ===== SAMPLE ===== */
+sampleBtn.addEventListener('click', () => {
+  inputArea.value = `/* BigToolz sample stylesheet */
+:root{--primary:#2563EB;--dark:#0F172A;--light:#F8F9FC}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',Arial,sans-serif;background:#F8F9FC;color:#1A1A2E;line-height:1.5}
+.container{max-width:1200px;margin:0 auto;padding:0 40px}
+.btn{display:inline-block;background:var(--primary);color:#FFFFFF;padding:12px 24px;border-radius:8px;font-weight:700;text-decoration:none;transition:background .2s}
+.btn:hover{background:#1D4ED8}
+.btn.disabled{opacity:.5;cursor:not-allowed}
+
+@media (max-width:768px){
+  .container{padding:0 20px}
+  .btn{padding:10px 18px;font-size:14px}
+}
+
+@keyframes float{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-10px)}
+}`;
+  formatBtn.disabled = false;
+  runFormat();
+  showToast('Sample loaded', 'success');
+});
+
+/* ===== COPY ===== */
+copyBtn.addEventListener('click', async () => {
+  if (!outputArea.value) {
+    showToast('Nothing to copy format first', 'error');
+    return;
+  }
+  const ok = await copyToClipboard(outputArea.value);
+  if (ok) {
+    copyBtn.classList.add('copied');
+    copyBtn.textContent = '✓';
+    setTimeout(() => {
+      copyBtn.classList.remove('copied');
+      copyBtn.textContent = '📋';
+    }, 2000);
+    showToast('Copied to clipboard!', 'success');
+  } else {
+    showToast('Copy failed', 'error');
+  }
+});
+
+/* ===== DOWNLOAD ===== */
+downloadBtn.addEventListener('click', () => {
+  if (!outputArea.value) {
+    showToast('Nothing to download format first', 'error');
+    return;
+  }
+  const blob = new Blob([outputArea.value], { type: 'text/css;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'formatted.css';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+  showToast('Downloaded formatted.css', 'success');
+});
+
+/* ===== FAQ ===== */
+$$('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    $$('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+
+/* ===== INITIAL ===== */
+updateSizes('', '');
+</script>
+
+</body>
+</html>

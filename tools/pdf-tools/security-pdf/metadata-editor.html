@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2563eb">
+
+<title>PDF Metadata Editor - Edit PDF Properties Online Free | BigToolz</title>
+<meta name="description" content="Edit PDF metadata online free. Change title, author, subject, keywords, creator, producer. Remove metadata instantly. No upload, works in your browser.">
+<meta name="keywords" content="pdf metadata editor, edit pdf metadata, pdf properties editor, change pdf title, pdf author editor, remove pdf metadata">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://bigtoolz.com/tools/pdf-tools/security-pdf/metadata-editor/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="PDF Metadata Editor - Free Online Tool | BigToolz">
+<meta property="og:description" content="Edit title, author, keywords and more free, no upload.">
+<meta property="og:url" content="https://bigtoolz.com/tools/pdf-tools/security-pdf/metadata-editor/">
+<meta property="og:image" content="https://bigtoolz.com/assets/images/og-image.jpg">
+<meta property="og:site_name" content="BigToolz">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="PDF Metadata Editor - BigToolz">
+<meta name="twitter:description" content="Edit PDF metadata instantly free, no upload.">
+<meta name="twitter:image" content="https://bigtoolz.com/assets/images/twitter-card.jpg">
+
+<link rel="icon" href="/assets/images/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/images/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#f8f9fc;color:#1a1a2e;overflow-x:hidden;line-height:1.5}
+
+  .header{background:#fff;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;position:sticky;top:0;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+  .header-left{display:flex;align-items:center;gap:40px}
+  .logo{display:flex;align-items:center;gap:8px;font-size:22px;font-weight:800;color:#1a1a2e;text-decoration:none}
+  .logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#3b82f6,#2563eb);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px}
+  .logo span{color:#2563eb}
+  .nav{display:flex;align-items:center;gap:28px;list-style:none}
+  .nav a{text-decoration:none;color:#4b5563;font-size:14px;font-weight:500;transition:color .2s}
+  .nav a:hover,.nav a.active{color:#2563eb}
+  .header-right{display:flex;align-items:center;gap:16px}
+  .search-btn,.theme-btn{width:36px;height:36px;border-radius:50%;border:none;background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#4b5563}
+  .search-btn:hover,.theme-btn:hover{background:#f3f4f6}
+  .bookmark-btn{display:flex;align-items:center;gap:8px;background:#2563eb;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
+  .bookmark-btn:hover{background:#1d4ed8}
+
+  .hero{background:linear-gradient(135deg,#0a0e27 0%,#1a1a4e 40%,#2d1b69 70%,#4c1d95 100%);padding:40px 40px 60px;position:relative;overflow:hidden;color:#fff}
+  .hero::before{content:'';position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(6,182,212,.25) 0%,transparent 70%);border-radius:50%}
+  .hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+  .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px;flex-wrap:wrap}
+  .breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none}
+  .breadcrumb a:hover{color:#fff}
+  .breadcrumb .sep{color:rgba(255,255,255,.4)}
+  .breadcrumb .current{color:#fff;font-weight:500}
+  .hero-title-row{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+  .hero-icon{width:60px;height:60px;background:#06b6d4;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px;color:#fff;flex-shrink:0;box-shadow:0 8px 24px rgba(6,182,212,.4)}
+  .hero-title{font-size:42px;font-weight:800;line-height:1.15}
+  .hero-title .blue{color:#22d3ee}
+  .hero-desc{font-size:15px;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:24px;max-width:560px}
+  .hero-features{display:flex;gap:24px;flex-wrap:wrap}
+  .hero-feature{display:flex;align-items:center;gap:6px;font-size:13px;color:#fff;font-weight:500}
+  .hero-feature .check{width:18px;height:18px;border-radius:50%;background:#06b6d4;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;flex-shrink:0}
+
+  .main-content{max-width:1200px;margin:0 auto;padding:40px;display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start}
+  .tool-content{min-width:0}
+
+  .workspace{background:#fff;border-radius:16px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,.06);border:1px solid #e5e7eb;margin-bottom:24px}
+
+  .dropzone{border:2px dashed #a5f3fc;border-radius:12px;padding:50px 30px;text-align:center;background:#ecfeff;margin-bottom:24px;transition:all .2s;cursor:pointer}
+  .dropzone:hover,.dropzone.dragover{border-color:#06b6d4;background:#cffafe}
+  .dropzone-icon{width:60px;height:60px;background:linear-gradient(135deg,#06b6d4,#0891b2);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;color:#fff;font-size:26px;transition:transform .2s}
+  .dropzone:hover .dropzone-icon{transform:translateY(-4px)}
+  .dropzone-title{font-size:16px;font-weight:700;color:#1a1a2e;margin-bottom:8px}
+  .dropzone-sub{font-size:14px;color:#6b7280;margin-bottom:20px}
+  .dropzone-sub a{color:#06b6d4;font-weight:600;text-decoration:none}
+  .choose-btn{display:inline-flex;align-items:center;gap:8px;background:#06b6d4;color:#fff;border:none;padding:12px 28px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;transition:background .2s}
+  .choose-btn:hover{background:#0891b2}
+  .dropzone-info{font-size:12px;color:#9ca3af;display:flex;align-items:center;justify-content:center;gap:8px;margin-top:16px;flex-wrap:wrap}
+  .dropzone-info .divider{color:#d1d5db}
+  .file-input{display:none}
+
+  .pdf-info{display:none;background:#ecfeff;border-radius:12px;padding:16px 20px;margin-bottom:20px;border:1px solid #a5f3fc;align-items:center;gap:16px;flex-wrap:wrap}
+  .pdf-info.visible{display:flex}
+  .pdf-info-icon{width:44px;height:44px;background:#06b6d4;border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:18px;flex-shrink:0}
+  .pdf-info-details{flex:1;min-width:0}
+  .pdf-info-name{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .pdf-info-meta{font-size:12px;color:#6b7280}
+
+  /* Metadata Editor */
+  .metadata-editor{display:none}
+  .metadata-editor.visible{display:block}
+
+  .editor-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;flex-wrap:wrap;gap:12px}
+  .editor-title{font-size:16px;font-weight:800;color:#1a1a2e;display:flex;align-items:center;gap:8px}
+  .editor-actions{display:flex;gap:8px;flex-wrap:wrap}
+  .editor-action-btn{padding:8px 14px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;font-size:12px;font-weight:600;color:#4b5563;cursor:pointer;font-family:inherit;transition:all .2s;display:inline-flex;align-items:center;gap:6px}
+  .editor-action-btn:hover{border-color:#06b6d4;color:#0891b2;background:#ecfeff}
+  .editor-action-btn.danger{border-color:#fca5a5;color:#dc2626;background:#fef2f2}
+  .editor-action-btn.danger:hover{background:#ef4444;color:#fff;border-color:#ef4444}
+
+  .fields-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px}
+  .field-group{display:flex;flex-direction:column;gap:6px}
+  .field-group.full{grid-column:span 2}
+  .field-group label{font-size:12px;font-weight:700;color:#4b5563;text-transform:uppercase;letter-spacing:.3px;display:flex;align-items:center;justify-content:space-between;gap:8px}
+  .field-group label .badge{font-size:10px;font-weight:600;color:#0891b2;background:#ecfeff;padding:2px 8px;border-radius:8px;text-transform:none;letter-spacing:0}
+  .field-group input,.field-group textarea{width:100%;padding:10px 14px;border:1px solid #e5e7eb;border-radius:8px;font-size:13px;font-family:inherit;color:#1a1a2e;background:#fff;outline:none;transition:border-color .2s}
+  .field-group input:focus,.field-group textarea:focus{border-color:#06b6d4;box-shadow:0 0 0 3px rgba(6,182,212,.1)}
+  .field-group textarea{min-height:70px;resize:vertical;line-height:1.5}
+  .field-help{font-size:11px;color:#9ca3af;line-height:1.4}
+
+  /* Read-only info */
+  .readonly-info{background:#f8fafc;border-radius:12px;padding:16px;margin-bottom:20px;border:1px solid #e5e7eb}
+  .readonly-title{font-size:12px;font-weight:700;color:#4b5563;margin-bottom:10px;text-transform:uppercase;letter-spacing:.3px}
+  .readonly-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .readonly-item{display:flex;flex-direction:column;gap:2px}
+  .readonly-label{font-size:11px;color:#9ca3af;font-weight:500}
+  .readonly-value{font-size:12px;color:#1a1a2e;font-weight:600;font-family:'JetBrains Mono','Courier New',monospace;word-break:break-all}
+
+  .actions{display:flex;gap:12px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 28px;border-radius:10px;font-size:15px;font-weight:700;font-family:inherit;cursor:pointer;border:none;transition:all .2s;text-decoration:none}
+  .btn-primary{background:#06b6d4;color:#fff;flex:1;box-shadow:0 4px 12px rgba(6,182,212,.2)}
+  .btn-primary:hover:not(:disabled){background:#0891b2;transform:translateY(-2px);box-shadow:0 6px 20px rgba(6,182,212,.3)}
+  .btn-primary:disabled{opacity:.5;cursor:not-allowed;transform:none}
+  .btn-secondary{background:#fff;color:#06b6d4;border:1px solid #e5e7eb}
+  .btn-secondary:hover{border-color:#06b6d4;background:#ecfeff}
+  .btn-success{background:#10b981;color:#fff}
+  .btn-success:hover{background:#059669}
+
+  .progress{display:none;margin-top:20px}
+  .progress.visible{display:block}
+  .progress-bar{width:100%;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden;margin-bottom:8px}
+  .progress-fill{height:100%;background:linear-gradient(90deg,#22d3ee,#06b6d4);border-radius:4px;width:0%;transition:width .3s ease}
+  .progress-text{font-size:13px;color:#6b7280;text-align:center;font-weight:500}
+
+  .result-area{display:none;margin-top:20px;padding:24px;background:#f0fdf4;border-radius:12px;border:1px solid #86efac;text-align:center}
+  .result-area.visible{display:block}
+  .result-icon{width:64px;height:64px;background:#10b981;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:32px;margin:0 auto 16px}
+  .result-title{font-size:18px;font-weight:800;color:#065f46;margin-bottom:8px}
+  .result-desc{font-size:14px;color:#047857;margin-bottom:20px;line-height:1.6}
+  .result-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+  /* Diff preview */
+  .diff-box{background:#fef3c7;border-left:4px solid #f59e0b;border-radius:8px;padding:12px 16px;margin-bottom:16px;font-size:12px;color:#92400e;line-height:1.6}
+  .diff-box strong{color:#78350f}
+  .diff-box ul{margin:6px 0 0 0;padding-left:18px}
+  .diff-box li{margin-bottom:2px}
+  .diff-box code{background:#fde68a;padding:1px 4px;border-radius:3px;font-size:11px;font-family:'JetBrains Mono',monospace}
+
+  .seo-content{background:#fff;border-radius:16px;padding:32px;border:1px solid #e5e7eb;margin-bottom:24px}
+  .seo-content h2{font-size:22px;font-weight:800;color:#1a1a2e;margin-bottom:14px;margin-top:28px;display:flex;align-items:center;gap:10px}
+  .seo-content h2:first-child{margin-top:0}
+  .seo-content h3{font-size:16px;font-weight:700;color:#1a1a2e;margin:20px 0 10px}
+  .seo-content p{font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:14px}
+  .seo-content ul{list-style:none;padding-left:0;margin-bottom:16px}
+  .seo-content ul li{position:relative;padding-left:24px;font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:8px}
+  .seo-content ul li::before{content:'';position:absolute;left:6px;top:12px;width:6px;height:6px;background:#06b6d4;border-radius:50%}
+  .seo-content a{color:#2563eb;text-decoration:none;font-weight:600}
+  .seo-content a:hover{text-decoration:underline}
+  .seo-content strong{color:#1a1a2e;font-weight:700}
+  .seo-content code{background:#f1f5f9;padding:2px 6px;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:13px;color:#0f172a;border:1px solid #e2e8f0}
+
+  .how-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:20px}
+  .how-step{background:#ecfeff;border-radius:12px;padding:20px;border:1px solid #a5f3fc}
+  .how-step-num{width:36px;height:36px;border-radius:50%;background:#06b6d4;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;margin-bottom:12px}
+  .how-step-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+  .how-step-desc{font-size:13px;color:#6b7280;line-height:1.6}
+
+  .faq-item{background:#ecfeff;border:1px solid #a5f3fc;border-radius:12px;margin-bottom:10px;overflow:hidden;transition:border-color .2s}
+  .faq-item:hover{border-color:#06b6d4}
+  .faq-question{width:100%;background:none;border:none;padding:18px 22px;font-size:15px;font-weight:700;color:#1a1a2e;text-align:left;cursor:pointer;font-family:inherit;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .faq-question .chev{font-size:12px;color:#06b6d4;transition:transform .2s;flex-shrink:0}
+  .faq-item.open .faq-question .chev{transform:rotate(180deg)}
+  .faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 22px}
+  .faq-item.open .faq-answer{max-height:500px;padding-bottom:18px}
+  .faq-answer p{font-size:14px;color:#6b7280;line-height:1.7;margin:0}
+
+  .sidebar{background:#fff;border-radius:16px;padding:24px;border:1px solid #e5e7eb;position:sticky;top:80px;margin-bottom:24px}
+  .sidebar-header{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:800;color:#1a1a2e;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid #f3f4f6}
+  .sidebar-list{display:flex;flex-direction:column;gap:8px}
+  .sidebar-item{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;cursor:pointer;transition:background .2s;text-decoration:none;color:inherit;border:1px solid #f3f4f6}
+  .sidebar-item:hover{background:#ecfeff;border-color:#a5f3fc}
+  .sidebar-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;flex-shrink:0}
+  .sidebar-info{flex:1;min-width:0}
+  .sidebar-title{font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:2px}
+  .sidebar-desc{font-size:11px;color:#9ca3af;line-height:1.4}
+
+  .footer{background:#0a0e27;padding:60px 40px 30px;color:#fff;margin-top:40px}
+  .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:40px}
+  .footer-brand{display:flex;align-items:center;gap:8px;font-size:20px;font-weight:800;margin-bottom:12px}
+  .footer-brand span{color:#60a5fa}
+  .footer-tagline{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px}
+  .footer-social{display:flex;gap:12px}
+  .footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:16px;transition:background .2s}
+  .footer-social a:hover{background:rgba(255,255,255,.2)}
+  .footer-heading{font-size:14px;font-weight:700;margin-bottom:20px;color:#fff}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .footer-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;transition:color .2s}
+  .footer-links a:hover{color:#60a5fa}
+  .footer-bottom{max-width:1200px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  .footer-bottom-left{display:flex;gap:20px;font-size:12px;color:rgba(255,255,255,.5)}
+  .footer-bottom-right,.footer-bottom-links a{font-size:12px;color:rgba(255,255,255,.5);text-decoration:none}
+  .footer-bottom-links{display:flex;gap:20px}
+
+  .toast{position:fixed;bottom:24px;right:24px;background:#1a1a2e;color:#fff;padding:14px 20px;border-radius:10px;font-size:13px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:3000;transform:translateY(200%);transition:transform .3s ease;max-width:320px}
+  .toast.visible{transform:translateY(0)}
+  .toast.success{background:#10b981}
+  .toast.error{background:#ef4444}
+  .toast.info{background:#06b6d4}
+
+  @media(max-width:1024px){
+    .main-content{grid-template-columns:1fr;padding:24px 20px}
+    .sidebar{position:static}
+    .how-steps{grid-template-columns:repeat(2,1fr)}
+    .fields-grid{grid-template-columns:1fr}
+    .field-group.full{grid-column:span 1}
+    .readonly-grid{grid-template-columns:1fr}
+  }
+  @media(max-width:768px){
+    .header{padding:0 20px}.nav{display:none}
+    .hero{padding:24px 20px 40px}
+    .hero-title{font-size:28px}
+    .hero-icon{width:48px;height:48px;font-size:20px}
+    .hero-title-row{flex-direction:column;align-items:flex-start;gap:12px}
+    .main-content{padding:20px 16px}
+    .workspace{padding:20px}
+    .dropzone{padding:32px 16px}
+    .how-steps{grid-template-columns:1fr}
+    .seo-content{padding:20px}
+    .footer-inner{grid-template-columns:1fr 1fr}
+    .editor-header{flex-direction:column;align-items:flex-start}
+    .editor-actions{width:100%}
+    .editor-action-btn{flex:1;justify-content:center}
+    .toast{left:16px;right:16px;bottom:16px;max-width:none}
+  }
+  @media(max-width:576px){
+    .header{padding:0 16px}.header-right .search-btn,.header-right .theme-btn{display:none}
+    .hero-title{font-size:24px}
+    .actions{flex-direction:column}
+    .btn{width:100%}
+    .btn-primary{flex:none}
+    .footer-inner{grid-template-columns:1fr}
+    .footer-bottom{flex-direction:column;text-align:center}
+  }
+
+  html[data-theme="dark"] body{background:#0f172a;color:#f1f5f9}
+  html[data-theme="dark"] .header,html[data-theme="dark"] .workspace,html[data-theme="dark"] .seo-content,html[data-theme="dark"] .sidebar{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .logo,html[data-theme="dark"] .hero-title,html[data-theme="dark"] .seo-content h2,html[data-theme="dark"] .seo-content h3,html[data-theme="dark"] .faq-question,html[data-theme="dark"] .sidebar-header,html[data-theme="dark"] .sidebar-title,html[data-theme="dark"] .pdf-info-name,html[data-theme="dark"] .editor-title,html[data-theme="dark"] .readonly-value{color:#f1f5f9}
+  html[data-theme="dark"] .nav a{color:#cbd5e1}
+  html[data-theme="dark"] .dropzone{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .how-step,html[data-theme="dark"] .faq-item,html[data-theme="dark"] .pdf-info,html[data-theme="dark"] .readonly-info{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .field-group input,html[data-theme="dark"] .field-group textarea{background:#0f172a;border-color:#334155;color:#f1f5f9}
+  html[data-theme="dark"] .editor-action-btn{background:#0f172a;border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .seo-content p,html[data-theme="dark"] .seo-content ul li,html[data-theme="dark"] .faq-answer p,html[data-theme="dark"] .pdf-info-meta,html[data-theme="dark"] .field-help{color:#cbd5e1}
+  html[data-theme="dark"] .seo-content code{background:#020617;color:#94a3b8;border-color:#334155}
+  html[data-theme="dark"] .diff-box{background:#451a03;border-color:#f59e0b;color:#fef3c7}
+  html[data-theme="dark"] .result-area{background:#064e3b;border-color:#10b981}
+  html[data-theme="dark"] .result-title,html[data-theme="dark"] .result-desc{color:#d1fae5}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type": "SoftwareApplication", "name": "PDF Metadata Editor", "url": "https://bigtoolz.com/tools/pdf-tools/security-pdf/metadata-editor/", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any (Web-based)", "description": "Free online PDF metadata editor change title, author, subject, keywords, creator and producer. Works in your browser.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.8", "ratingCount": "567"}},
+    {"@type": "HowTo", "name": "How to Edit PDF Metadata", "step": [
+      {"@type": "HowToStep", "name": "Upload PDF", "text": "Drag & drop or click to select a PDF file."},
+      {"@type": "HowToStep", "name": "Edit Fields", "text": "Modify title, author, subject, keywords, creator, producer."},
+      {"@type": "HowToStep", "name": "Save", "text": "Click Save Metadata to apply changes."},
+      {"@type": "HowToStep", "name": "Download", "text": "Download the updated PDF."}
+    ]},
+    {"@type": "FAQPage", "mainEntity": [
+      {"@type": "Question", "name": "What is PDF metadata?", "acceptedAnswer": {"@type": "Answer", "text": "PDF metadata is information embedded in the file title, author, subject, keywords, creator, producer, and timestamps. It helps with document organization, search, and identification."}},
+      {"@type": "Question", "name": "Why should I edit PDF metadata?", "acceptedAnswer": {"@type": "Answer", "text": "Common reasons: correct a wrong title shown in browsers, add your author name, remove private info before sharing, improve SEO for searchable documents, or fix metadata mangled by PDF editors."}},
+      {"@type": "Question", "name": "Can I remove metadata completely?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Click 'Clear All Fields' to blank out all editable metadata, then save. This is useful before sharing confidential documents. Note: some technical metadata like XMP streams may remain in the file structure."}},
+      {"@type": "Question", "name": "Does editing metadata affect the PDF content?", "acceptedAnswer": {"@type": "Answer", "text": "No. Only the metadata is changed text, images, and layout are all preserved exactly as they were."}},
+      {"@type": "Question", "name": "Are my PDFs uploaded to a server?", "acceptedAnswer": {"@type": "Answer", "text": "No. All processing happens in your browser using pdf-lib. Your PDF never leaves your device."}}
+    ]},
+    {"@type": "BreadcrumbList", "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bigtoolz.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://bigtoolz.com/tools/"},
+      {"@type": "ListItem", "position": 3, "name": "PDF Tools", "item": "https://bigtoolz.com/tools/pdf-tools/"},
+      {"@type": "ListItem", "position": 4, "name": "Security PDF", "item": "https://bigtoolz.com/tools/pdf-tools/security-pdf/"},
+      {"@type": "ListItem", "position": 5, "name": "Metadata Editor", "item": "https://bigtoolz.com/tools/pdf-tools/security-pdf/metadata-editor/"}
+    ]}
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-left">
+    <a href="/" class="logo"><div class="logo-icon">⚒</div>BigToolz</span></a>
+    <nav><ul class="nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/tools/" class="active">All Tools</a></li>
+      <li><a href="/tools/categories">Categories</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul></nav>
+  </div>
+  <div class="header-right">
+   
+    <button class="theme-btn" aria-label="Toggle theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
+   
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <nav class="breadcrumb">
+      <a href="/">Home</a><span class="sep">›</span>
+      <a href="/tools/">Tools</a><span class="sep">›</span>
+      <a href="/tools/pdf-tools/">PDF Tools</a><span class="sep">›</span>
+      <a href="/tools/pdf-tools/security-pdf/">Security PDF</a><span class="sep">›</span>
+      <span class="current">Metadata Editor</span>
+    </nav>
+    <div class="hero-title-row">
+      <div class="hero-icon">ℹ️</div>
+      <h1 class="hero-title">PDF Metadata <span class="blue">Editor</span></h1>
+    </div>
+    <p class="hero-desc">
+      View and edit PDF properties title, author, subject, keywords, creator, producer. Fix wrong titles, add your name, remove private info before sharing. No upload, 100% private.
+    </p>
+    <div class="hero-features">
+      <div class="hero-feature"><span class="check">✓</span> 6 Editable Fields</div>
+      <div class="hero-feature"><span class="check">✓</span> View Current Data</div>
+      <div class="hero-feature"><span class="check">✓</span> Clear All Option</div>
+      <div class="hero-feature"><span class="check">✓</span> No Upload</div>
+    </div>
+  </div>
+</section>
+
+<div class="main-content">
+
+  <div class="tool-content">
+
+    <div class="workspace">
+
+      <div class="dropzone" id="dropzone">
+        <div class="dropzone-icon">⬆</div>
+        <div class="dropzone-title">Drag & drop your PDF here</div>
+        <div class="dropzone-sub">or <a href="#" id="browseLink">click to browse files</a></div>
+        <button class="choose-btn" id="chooseBtn" type="button">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/></svg>
+          Choose PDF File
+        </button>
+        <div class="dropzone-info">
+          <span>PDF files only</span>
+          <span class="divider">|</span>
+          <span>Single file at a time</span>
+        </div>
+        <input type="file" id="fileInput" class="file-input" accept=".pdf,application/pdf">
+      </div>
+
+      <!-- PDF Info Bar -->
+      <div class="pdf-info" id="pdfInfo">
+        <div class="pdf-info-icon">📕</div>
+        <div class="pdf-info-details">
+          <div class="pdf-info-name" id="pdfName">document.pdf</div>
+          <div class="pdf-info-meta" id="pdfMeta">0 pages · 0 KB</div>
+        </div>
+      </div>
+
+      <!-- Metadata Editor -->
+      <div class="metadata-editor" id="metadataEditor">
+
+        <!-- Diff preview (shown after edits) -->
+        <div class="diff-box" id="diffBox" style="display:none;">
+          <strong>📝 Changes pending</strong>
+          <ul id="diffList"></ul>
+        </div>
+
+        <div class="editor-header">
+          <div class="editor-title">✏️ Edit Metadata</div>
+          <div class="editor-actions">
+            <button class="editor-action-btn" id="reloadBtn">↻ Reload Original</button>
+            <button class="editor-action-btn danger" id="clearAllBtn">✕ Clear All Fields</button>
+          </div>
+        </div>
+
+        <div class="fields-grid">
+          <div class="field-group">
+            <label>Title <span class="badge" id="titleState">empty</span></label>
+            <input type="text" id="fieldTitle" placeholder="Document title">
+            <div class="field-help">Appears as the document name in most PDF readers</div>
+          </div>
+          <div class="field-group">
+            <label>Author <span class="badge" id="authorState">empty</span></label>
+            <input type="text" id="fieldAuthor" placeholder="Author name">
+            <div class="field-help">Usually the person or organization that created it</div>
+          </div>
+          <div class="field-group full">
+            <label>Subject <span class="badge" id="subjectState">empty</span></label>
+            <input type="text" id="fieldSubject" placeholder="Brief description or topic">
+            <div class="field-help">Short summary that appears in file properties</div>
+          </div>
+          <div class="field-group full">
+            <label>Keywords <span class="badge" id="keywordsState">empty</span></label>
+            <input type="text" id="fieldKeywords" placeholder="comma, separated, keywords">
+            <div class="field-help">Comma-separated list helps with search indexing</div>
+          </div>
+          <div class="field-group">
+            <label>Creator <span class="badge" id="creatorState">empty</span></label>
+            <input type="text" id="fieldCreator" placeholder="e.g. Microsoft Word">
+            <div class="field-help">The application used to create the original document</div>
+          </div>
+          <div class="field-group">
+            <label>Producer <span class="badge" id="producerState">empty</span></label>
+            <input type="text" id="fieldProducer" placeholder="e.g. Adobe Acrobat">
+            <div class="field-help">The application that produced the PDF</div>
+          </div>
+        </div>
+
+        <!-- Read-only info -->
+        <div class="readonly-info">
+          <div class="readonly-title">📅 Read-only Timestamps</div>
+          <div class="readonly-grid">
+            <div class="readonly-item">
+              <div class="readonly-label">Created</div>
+              <div class="readonly-value" id="createdDate"></div>
+            </div>
+            <div class="readonly-item">
+              <div class="readonly-label">Modified</div>
+              <div class="readonly-value" id="modifiedDate"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button class="btn btn-primary" id="saveBtn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v11a2 2 0 01-2 2z"/><path d="M17 21v-8H7v8M7 3v5h8"/></svg>
+            Save Metadata
+          </button>
+          <button class="btn btn-secondary" id="clearBtn">Clear</button>
+        </div>
+
+        <div class="progress" id="progress">
+          <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+          <div class="progress-text" id="progressText">Saving...</div>
+        </div>
+
+        <div class="result-area" id="resultArea">
+          <div class="result-icon">✓</div>
+          <div class="result-title">Metadata Saved!</div>
+          <div class="result-desc" id="resultDesc">Your PDF with updated metadata is ready.</div>
+          <div class="result-actions">
+            <button class="btn btn-success" id="downloadBtn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+              Download PDF
+            </button>
+            <button class="btn btn-secondary" id="startOverBtn">Start Over</button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="seo-content">
+
+      <h2>ℹ️ What is PDF Metadata?</h2>
+      <p>
+        <strong>PDF metadata</strong> is information <em>about</em> a document, embedded inside the PDF file itself. It includes things like the <strong>title</strong> (what shows up in browser tabs and file managers), the <strong>author</strong>, a <strong>subject</strong> summary, <strong>keywords</strong>, and which app <strong>created</strong> or <strong>produced</strong> the file. It also includes <strong>timestamp</strong> information (created/modified dates).
+      </p>
+      <p>
+        Unlike most online tools, BigToolz processes everything <strong>100% in your browser</strong> using <strong>pdf-lib</strong>. Your PDF <strong>never uploaded to any server</strong> complete privacy, instant results. Editing metadata <strong>doesn't touch the page content</strong> only the properties are changed.
+      </p>
+
+      <h2>🚀 How to Edit PDF Metadata</h2>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-step-num">1</div>
+          <div class="how-step-title">Upload PDF</div>
+          <div class="how-step-desc">Drag & drop or click "Choose PDF File" to select a PDF.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">2</div>
+          <div class="how-step-title">Edit Fields</div>
+          <div class="how-step-desc">Current metadata auto-loads modify any field.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">3</div>
+          <div class="how-step-title">Save</div>
+          <div class="how-step-desc">Click "Save Metadata" to apply changes.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">4</div>
+          <div class="how-step-title">Download</div>
+          <div class="how-step-desc">Download the new PDF with updated metadata.</div>
+        </div>
+      </div>
+
+      <h2>📝 Metadata Fields Explained</h2>
+
+      <h3>Title</h3>
+      <p>The document's display name. Browsers, file managers, and PDF readers show this in tabs and window titles. If empty, they typically fall back to the filename. <strong>Most common field to fix.</strong></p>
+
+      <h3>Author</h3>
+      <p>Typically the person or organization that authored the content. Not tied to the PDF's technical creator it's a user-defined attribution.</p>
+
+      <h3>Subject</h3>
+      <p>A one-line summary or description of the document. Often used by document management systems for classification.</p>
+
+      <h3>Keywords</h3>
+      <p>A comma-separated list of terms. Search tools and some PDF readers use these for indexing. Keep them relevant and short.</p>
+
+      <h3>Creator</h3>
+      <p>The application that created the <strong>original content</strong> before PDF conversion (e.g., "Microsoft Word", "Google Docs").</p>
+
+      <h3>Producer</h3>
+      <p>The application that <strong>produced the PDF</strong> itself (e.g., "Adobe Acrobat", "Skia/PDF"). Often indicates which tool made the final PDF.</p>
+
+      <h2>💡 Common Use Cases</h2>
+      <ul>
+        <li><strong>Fix wrong titles</strong> PDFs often show a template name or garbage text in browser tabs.</li>
+        <li><strong>Remove private info</strong> clear author/creator fields before publicly sharing documents.</li>
+        <li><strong>Add your name</strong> attribute authorship when sending documents to clients.</li>
+        <li><strong>Improve findability</strong> add keywords so your PDF appears in Windows/macOS search.</li>
+        <li><strong>Fix broken metadata</strong> after editing in a tool that mangles PDF properties.</li>
+        <li><strong>Prepare for publishing</strong> set a clean title, author, and subject before release.</li>
+      </ul>
+
+      <h2>✨ Key Features</h2>
+      <ul>
+        <li><strong>6 editable fields</strong> Title, Author, Subject, Keywords, Creator, Producer.</li>
+        <li><strong>Auto-loads</strong> existing metadata when you upload.</li>
+        <li><strong>Live change tracking</strong> see exactly what will change.</li>
+        <li><strong>Clear All Fields</strong> blank out metadata in one click.</li>
+        <li><strong>Reload Original</strong> undo all edits and reset to uploaded values.</li>
+        <li><strong>Timestamps shown</strong> created and modified dates.</li>
+        <li><strong>100% browser-based</strong> no uploads, complete privacy.</li>
+        <li><strong>Content untouched</strong> only properties are changed.</li>
+      </ul>
+
+      <h2>❓ Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-question">What is PDF metadata?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>PDF metadata is information embedded in the file title, author, subject, keywords, creator, producer, and timestamps. It helps with document organization, search, and identification.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Why should I edit PDF metadata?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Common reasons: correct a wrong title shown in browsers, add your author name, remove private info before sharing, improve SEO for searchable documents, or fix metadata mangled by other PDF editors.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I remove metadata completely?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Yes. Click <strong>"Clear All Fields"</strong> to blank out all editable metadata, then save. This is useful before sharing confidential documents. Note: some technical metadata (like XMP streams or embedded object properties) may still remain in the file's internal structure.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Does editing metadata affect the PDF content?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>No. <strong>Only the metadata is changed</strong> text, images, page layout, and everything visual stays exactly as it was. The metadata is stored separately from page content.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What's the difference between "Creator" and "Producer"?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>Creator</strong> is the application that authored the original content (e.g., "Microsoft Word"). <strong>Producer</strong> is the application that made the final PDF (e.g., "Adobe Acrobat"). Word sets both; when you save as PDF from Word, Creator = Word and Producer = whatever PDF engine Word uses.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Do I need to worry about "Created" and "Modified" dates?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Those are read-only in this tool pdf-lib respects them when saving. If you need to change timestamps, use a specialized metadata tool. For most users, only the display name (title) matters.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Are my PDFs uploaded to a server?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>No. All processing happens in your browser using pdf-lib. Your PDF never leaves your device, and nothing is stored anywhere.</p></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-header">🔗 Related PDF Tools</div>
+    <div class="sidebar-list">
+      <a href="/tools/pdf-tools/security-pdf/metadata-viewer/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#10b981;">👁</div>
+        <div class="sidebar-info"><div class="sidebar-title">Metadata Viewer</div><div class="sidebar-desc">View only</div></div>
+      </a>
+      <a href="/tools/pdf-tools/security-pdf/metadata-remover/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#ef4444;">🗑</div>
+        <div class="sidebar-info"><div class="sidebar-title">Remove Metadata</div><div class="sidebar-desc">Strip all metadata</div></div>
+      </a>
+      <a href="/tools/pdf-tools/security-pdf/protect-pdf/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#8b5cf6;">🔒</div>
+        <div class="sidebar-info"><div class="sidebar-title">Protect PDF</div><div class="sidebar-desc">Password protect</div></div>
+      </a>
+      <a href="/tools/pdf-tools/security-pdf/redaction/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#1e293b;">⬛</div>
+        <div class="sidebar-info"><div class="sidebar-title">PDF Redaction</div><div class="sidebar-desc">Hide sensitive info</div></div>
+      </a>
+      <a href="/tools/pdf-tools/security-pdf/unlock-pdf/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#3b82f6;">🔓</div>
+        <div class="sidebar-info"><div class="sidebar-title">Unlock PDF</div><div class="sidebar-desc">Remove password</div></div>
+      </a>
+      <a href="/tools/pdf-tools/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#64748b;">📕</div>
+        <div class="sidebar-info"><div class="sidebar-title">All PDF Tools →</div><div class="sidebar-desc">Browse 100+ tools</div></div>
+      </a>
+    </div>
+  </aside>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand"><div class="logo-icon">⚒</div>BigToolz</span></div>
+      <p class="footer-tagline">Your Ultimate Online Tools Hub</p>
+      <div class="footer-social">
+        <a href="https://facebook.com/bigtoolz" aria-label="Facebook">f</a>
+        <a href="https://twitter.com/bigtoolz" aria-label="Twitter">𝕏</a>
+        <a href="https://youtube.com/@bigtoolz" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+    <div>
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/tools/">All Tools</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Categories</h3>
+      <ul class="footer-links">
+        <li><a href="/tools/image-tools/">Image Tools</a></li>
+        <li><a href="/tools/pdf-tools/">PDF Tools</a></li>
+        <li><a href="/tools/text-tools/">Text Tools</a></li>
+        <li><a href="/tools/seo-tools/">SEO Tools</a></li>
+        <li><a href="/tools/categories">All Categories →</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Legal</h3>
+      <ul class="footer-links">
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left"><span>✓ 100% Free</span><span>✓ No Sign Up</span><span>✓ No Installation</span></div>
+    <div class="footer-bottom-right">© 2026 BigToolz. All rights reserved.</div>
+    <div class="footer-bottom-links"><a href="/privacy-policy">Privacy</a><a href="/terms">Terms</a><a href="/disclaimer">Disclaimer</a></div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<!-- Libraries -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+
+<script>
+'use strict';
+
+/* ===== THEME ===== */
+(function(){try{var t=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&d))document.documentElement.setAttribute('data-theme','dark');else if(t==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();
+document.querySelector('.theme-btn')?.addEventListener('click',()=>{const h=document.documentElement;const c=h.getAttribute('data-theme');const d=window.matchMedia('(prefers-color-scheme: dark)').matches;let n=c==='dark'?'light':c==='light'?'dark':(d?'light':'dark');h.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}});
+
+/* ===== HELPERS ===== */
+const $ = (s, p = document) => p.querySelector(s);
+const $$ = (s, p = document) => [...p.querySelectorAll(s)];
+
+function formatBytes(b) {
+  if (b === 0) return '0 B';
+  const k = 1024, sizes = ['B', 'KB', 'MB', 'GB'];
+  const i = Math.floor(Math.log(b) / Math.log(k));
+  return (b / Math.pow(k, i)).toFixed(i === 0 ? 0 : 1) + ' ' + sizes[i];
+}
+
+function showToast(msg, type = 'info', duration = 3000) {
+  const t = $('#toast');
+  if (!t) return;
+  t.className = 'toast visible' + (type !== 'info' ? ' ' + type : '');
+  t.textContent = msg;
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove('visible'), duration);
+}
+
+function formatDate(date) {
+  if (!date || isNaN(date.getTime())) return '';
+  try {
+    return date.toLocaleString(undefined, {
+      year: 'numeric', month: 'short', day: 'numeric',
+      hour: '2-digit', minute: '2-digit'
+    });
+  } catch (e) {
+    return date.toISOString();
+  }
+}
+
+/* ===== PDF.js Setup ===== */
+if (window.pdfjsLib) {
+  pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+}
+
+/* ===== STATE ===== */
+const state = {
+  pdfFile: null,
+  pdfDoc: null,          // pdf.js doc (for page count)
+  libDoc: null,          // pdf-lib doc (for editing)
+  pdfName: '',
+  pdfPages: 0,
+  pdfSize: 0,
+  original: {},
+  current: {},
+  isProcessing: false,
+  resultBlob: null
+};
+
+/* ===== DOM ===== */
+const dropzone = $('#dropzone');
+const fileInput = $('#fileInput');
+const chooseBtn = $('#chooseBtn');
+const browseLink = $('#browseLink');
+const clearBtn = $('#clearBtn');
+const saveBtn = $('#saveBtn');
+const reloadBtn = $('#reloadBtn');
+const clearAllBtn = $('#clearAllBtn');
+const progress = $('#progress');
+const progressFill = $('#progressFill');
+const progressText = $('#progressText');
+const pdfInfo = $('#pdfInfo');
+const pdfName = $('#pdfName');
+const pdfMeta = $('#pdfMeta');
+const metadataEditor = $('#metadataEditor');
+const fieldTitle = $('#fieldTitle');
+const fieldAuthor = $('#fieldAuthor');
+const fieldSubject = $('#fieldSubject');
+const fieldKeywords = $('#fieldKeywords');
+const fieldCreator = $('#fieldCreator');
+const fieldProducer = $('#fieldProducer');
+const createdDate = $('#createdDate');
+const modifiedDate = $('#modifiedDate');
+const diffBox = $('#diffBox');
+const diffList = $('#diffList');
+const resultArea = $('#resultArea');
+const resultDesc = $('#resultDesc');
+const downloadBtn = $('#downloadBtn');
+const startOverBtn = $('#startOverBtn');
+
+/* ===== FIELD BADGES ===== */
+const stateBadges = {
+  title: $('#titleState'),
+  author: $('#authorState'),
+  subject: $('#subjectState'),
+  keywords: $('#keywordsState'),
+  creator: $('#creatorState'),
+  producer: $('#producerState')
+};
+
+/* ===== FILE SELECTION ===== */
+function triggerFileSelect() { fileInput.click(); }
+chooseBtn.addEventListener('click', (e) => { e.stopPropagation(); triggerFileSelect(); });
+browseLink.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); triggerFileSelect(); });
+dropzone.addEventListener('click', triggerFileSelect);
+
+fileInput.addEventListener('change', (e) => {
+  const f = e.target.files[0];
+  if (f && (f.type === 'application/pdf' || f.name.toLowerCase().endsWith('.pdf'))) loadPDF(f);
+  fileInput.value = '';
+});
+
+['dragenter', 'dragover'].forEach(evt => {
+  dropzone.addEventListener(evt, (e) => { e.preventDefault(); e.stopPropagation(); dropzone.classList.add('dragover'); });
+});
+['dragleave', 'drop'].forEach(evt => {
+  dropzone.addEventListener(evt, (e) => { e.preventDefault(); e.stopPropagation(); dropzone.classList.remove('dragover'); });
+});
+dropzone.addEventListener('drop', (e) => {
+  const f = e.dataTransfer.files[0];
+  if (f && (f.type === 'application/pdf' || f.name.toLowerCase().endsWith('.pdf'))) loadPDF(f);
+  else showToast('Please drop a PDF file', 'error');
+});
+
+/* ===== LOAD PDF ===== */
+async function loadPDF(file) {
+  if (!window.pdfjsLib || !window.PDFLib) {
+    showToast('PDF libraries not loaded. Check your internet.', 'error');
+    return;
+  }
+
+  state.pdfFile = file;
+  state.pdfName = file.name;
+  state.pdfSize = file.size;
+  state.resultBlob = null;
+
+  showToast('Loading PDF...', 'info', 2000);
+
+  try {
+    const arrayBuffer = await file.arrayBuffer();
+    const bufferCopy = arrayBuffer.slice(0);
+
+    // Load with pdf-lib for metadata editing
+    const libDoc = await PDFLib.PDFDocument.load(bufferCopy, { ignoreEncryption: true });
+    state.libDoc = libDoc;
+
+    // Load with pdf.js for page count + rendering info
+    const loadingTask = pdfjsLib.getDocument({ data: arrayBuffer.slice(0) });
+    const pdf = await loadingTask.promise;
+    state.pdfDoc = pdf;
+    state.pdfPages = pdf.numPages;
+
+    // Get metadata from pdf-lib
+    const meta = {
+      title: libDoc.getTitle() || '',
+      author: libDoc.getAuthor() || '',
+      subject: libDoc.getSubject() || '',
+      keywords: libDoc.getKeywords() || '',
+      creator: libDoc.getCreator() || '',
+      producer: libDoc.getProducer() || ''
+    };
+
+    state.original = { ...meta };
+    state.current = { ...meta };
+
+    // Get dates
+    const creationDate = libDoc.getCreationDate();
+    const modDate = libDoc.getModificationDate();
+
+    // Populate fields
+    fieldTitle.value = meta.title;
+    fieldAuthor.value = meta.author;
+    fieldSubject.value = meta.subject;
+    fieldKeywords.value = meta.keywords;
+    fieldCreator.value = meta.creator;
+    fieldProducer.value = meta.producer;
+
+    createdDate.textContent = formatDate(creationDate);
+    modifiedDate.textContent = formatDate(modDate);
+
+    // Update info bar
+    pdfName.textContent = file.name;
+    pdfMeta.textContent = `${pdf.numPages} page${pdf.numPages > 1 ? 's' : ''} · ${formatBytes(file.size)}`;
+
+    // Show UI
+    pdfInfo.classList.add('visible');
+    metadataEditor.classList.add('visible');
+    dropzone.style.display = 'none';
+    resultArea.classList.remove('visible');
+    diffBox.style.display = 'none';
+
+    updateAllBadges();
+    updateDiff();
+
+    showToast(`✅ PDF loaded: ${pdf.numPages} pages`, 'success');
+  } catch (err) {
+    console.error('PDF load failed:', err);
+    showToast('Failed to load PDF file may be corrupted or encrypted', 'error', 5000);
+    state.libDoc = null;
+    state.pdfDoc = null;
+  }
+}
+
+/* ===== BADGE UPDATES ===== */
+function updateBadge(key, value) {
+  const badge = stateBadges[key];
+  if (!badge) return;
+
+  if (!value || !value.trim()) {
+    badge.textContent = 'empty';
+    badge.style.color = '#9ca3af';
+    badge.style.background = '#f1f5f9';
+  } else {
+    badge.textContent = value.length + ' chars';
+    badge.style.color = '#0891b2';
+    badge.style.background = '#ecfeff';
+  }
+}
+
+function updateAllBadges() {
+  updateBadge('title', fieldTitle.value);
+  updateBadge('author', fieldAuthor.value);
+  updateBadge('subject', fieldSubject.value);
+  updateBadge('keywords', fieldKeywords.value);
+  updateBadge('creator', fieldCreator.value);
+  updateBadge('producer', fieldProducer.value);
+}
+
+/* ===== DIFF TRACKING ===== */
+function updateDiff() {
+  const changed = [];
+  const fields = [
+    { key: 'title', label: 'Title', el: fieldTitle },
+    { key: 'author', label: 'Author', el: fieldAuthor },
+    { key: 'subject', label: 'Subject', el: fieldSubject },
+    { key: 'keywords', label: 'Keywords', el: fieldKeywords },
+    { key: 'creator', label: 'Creator', el: fieldCreator },
+    { key: 'producer', label: 'Producer', el: fieldProducer }
+  ];
+
+  fields.forEach(({ key, label, el }) => {
+    const orig = (state.original[key] || '').trim();
+    const curr = (el.value || '').trim();
+    if (orig !== curr) {
+      changed.push({ label, from: orig || '(empty)', to: curr || '(empty)' });
+    }
+  });
+
+  if (changed.length === 0) {
+    diffBox.style.display = 'none';
+    return;
+  }
+
+  diffBox.style.display = 'block';
+  diffList.innerHTML = changed.map(c =>
+    `<li><strong>${c.label}:</strong> <code>${escapeHtml(c.from)}</code> → <code>${escapeHtml(c.to)}</code></li>`
+  ).join('');
+}
+
+function escapeHtml(str) {
+  const div = document.createElement('div');
+  div.textContent = str;
+  return div.innerHTML;
+}
+
+/* ===== INPUT LISTENERS ===== */
+[fieldTitle, fieldAuthor, fieldSubject, fieldKeywords, fieldCreator, fieldProducer].forEach(el => {
+  el.addEventListener('input', () => {
+    updateAllBadges();
+    updateDiff();
+  });
+});
+
+/* ===== RELOAD ORIGINAL ===== */
+reloadBtn.addEventListener('click', () => {
+  fieldTitle.value = state.original.title || '';
+  fieldAuthor.value = state.original.author || '';
+  fieldSubject.value = state.original.subject || '';
+  fieldKeywords.value = state.original.keywords || '';
+  fieldCreator.value = state.original.creator || '';
+  fieldProducer.value = state.original.producer || '';
+  updateAllBadges();
+  updateDiff();
+  showToast('Reverted to original values', 'info');
+});
+
+/* ===== CLEAR ALL FIELDS ===== */
+clearAllBtn.addEventListener('click', () => {
+  if (!confirm('Clear all editable metadata fields? This will be applied when you save.')) return;
+  fieldTitle.value = '';
+  fieldAuthor.value = '';
+  fieldSubject.value = '';
+  fieldKeywords.value = '';
+  fieldCreator.value = '';
+  fieldProducer.value = '';
+  updateAllBadges();
+  updateDiff();
+  showToast('All fields cleared click Save to apply', 'info');
+});
+
+/* ===== SAVE ===== */
+saveBtn.addEventListener('click', saveMetadata);
+
+async function saveMetadata() {
+  if (state.isProcessing || !state.libDoc) return;
+
+  state.isProcessing = true;
+  saveBtn.disabled = true;
+  saveBtn.innerHTML = 'Saving...';
+  progress.classList.add('visible');
+  progressFill.style.width = '30%';
+  progressText.textContent = 'Updating metadata...';
+  resultArea.classList.remove('visible');
+
+  try {
+    const doc = state.libDoc;
+
+    // Set metadata (empty string clears)
+    doc.setTitle(fieldTitle.value || '');
+    doc.setAuthor(fieldAuthor.value || '');
+    doc.setSubject(fieldSubject.value || '');
+    doc.setKeywords(
+      fieldKeywords.value
+        ? fieldKeywords.value.split(',').map(k => k.trim()).filter(Boolean)
+        : []
+    );
+    doc.setCreator(fieldCreator.value || '');
+    doc.setProducer(fieldProducer.value || '');
+
+    progressFill.style.width = '70%';
+    progressText.textContent = 'Saving PDF...';
+
+    const newBytes = await doc.save();
+    state.resultBlob = new Blob([newBytes], { type: 'application/pdf' });
+
+    // Update original to reflect saved state
+    state.original = {
+      title: fieldTitle.value || '',
+      author: fieldAuthor.value || '',
+      subject: fieldSubject.value || '',
+      keywords: fieldKeywords.value || '',
+      creator: fieldCreator.value || '',
+      producer: fieldProducer.value || ''
+    };
+
+    progressFill.style.width = '100%';
+    progressText.textContent = 'Done!';
+
+    setTimeout(() => {
+      progress.classList.remove('visible');
+      resultArea.classList.add('visible');
+      resultDesc.textContent = `Metadata updated · ${formatBytes(state.resultBlob.size)}`;
+      diffBox.style.display = 'none';
+      showToast('✅ Metadata saved successfully!', 'success');
+    }, 400);
+
+  } catch (err) {
+    console.error('Save failed:', err);
+    progress.classList.remove('visible');
+    showToast('Failed to save metadata. PDF may be encrypted.', 'error', 5000);
+  } finally {
+    state.isProcessing = false;
+    saveBtn.disabled = false;
+    saveBtn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v11a2 2 0 01-2 2z"/><path d="M17 21v-8H7v8M7 3v5h8"/></svg> Save Metadata';
+  }
+}
+
+/* ===== DOWNLOAD ===== */
+downloadBtn.addEventListener('click', () => {
+  if (!state.resultBlob) return;
+  const url = URL.createObjectURL(state.resultBlob);
+  const baseName = state.pdfName.replace(/\.[^.]+$/, '');
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `${baseName}-metadata-edited.pdf`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+  showToast('Download started!', 'success');
+});
+
+/* ===== START OVER / CLEAR ===== */
+startOverBtn.addEventListener('click', resetAll);
+clearBtn.addEventListener('click', resetAll);
+
+function resetAll() {
+  if (state.pdfDoc) {
+    try { state.pdfDoc.destroy(); } catch (e) {}
+  }
+  state.pdfDoc = null;
+  state.libDoc = null;
+  state.pdfFile = null;
+  state.resultBlob = null;
+  state.original = {};
+  state.current = {};
+  state.pdfPages = 0;
+
+  [fieldTitle, fieldAuthor, fieldSubject, fieldKeywords, fieldCreator, fieldProducer].forEach(el => el.value = '');
+  createdDate.textContent = '';
+  modifiedDate.textContent = '';
+
+  pdfInfo.classList.remove('visible');
+  metadataEditor.classList.remove('visible');
+  resultArea.classList.remove('visible');
+  progress.classList.remove('visible');
+  diffBox.style.display = 'none';
+  dropzone.style.display = '';
+
+  updateAllBadges();
+  showToast('Cleared');
+}
+
+/* ===== FAQ ===== */
+$$('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    $$('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2563eb">
+
+<title>JSON Validator - Validate JSON Online Free | BigToolz</title>
+<meta name="description" content="Validate JSON online free. Real-time error detection with line numbers, auto-format, minify, and statistics. No upload, works in your browser. Fast, private, free.">
+<meta name="keywords" content="json validator, validate json online, json checker, json lint, json parser, json formatter">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://bigtoolz.com/tools/developer-tools/json-validator/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="JSON Validator - Free Online Tool | BigToolz">
+<meta property="og:description" content="Validate, format, and minify JSON with real-time error detection.">
+<meta property="og:url" content="https://bigtoolz.com/tools/developer-tools/json-validator/">
+<meta property="og:image" content="https://bigtoolz.com/assets/images/og-image.jpg">
+<meta property="og:site_name" content="BigToolz">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="JSON Validator - BigToolz">
+<meta name="twitter:description" content="Validate JSON instantly free, no upload.">
+<meta name="twitter:image" content="https://bigtoolz.com/assets/images/twitter-card.jpg">
+
+<link rel="icon" href="/assets/images/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/images/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#f8f9fc;color:#1a1a2e;overflow-x:hidden;line-height:1.5}
+
+  .header{background:#fff;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;position:sticky;top:0;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+  .header-left{display:flex;align-items:center;gap:40px}
+  .logo{display:flex;align-items:center;gap:8px;font-size:22px;font-weight:800;color:#1a1a2e;text-decoration:none}
+  .logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#3b82f6,#2563eb);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px}
+  .logo span{color:#2563eb}
+  .nav{display:flex;align-items:center;gap:28px;list-style:none}
+  .nav a{text-decoration:none;color:#4b5563;font-size:14px;font-weight:500;transition:color .2s}
+  .nav a:hover,.nav a.active{color:#2563eb}
+  .header-right{display:flex;align-items:center;gap:16px}
+  .search-btn,.theme-btn{width:36px;height:36px;border-radius:50%;border:none;background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#4b5563}
+  .search-btn:hover,.theme-btn:hover{background:#f3f4f6}
+  .bookmark-btn{display:flex;align-items:center;gap:8px;background:#2563eb;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
+  .bookmark-btn:hover{background:#1d4ed8}
+
+  .hero{background:linear-gradient(135deg,#0a0e27 0%,#1a1a4e 40%,#2d1b69 70%,#4c1d95 100%);padding:40px 40px 60px;position:relative;overflow:hidden;color:#fff}
+  .hero::before{content:'';position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(16,185,129,.3) 0%,transparent 70%);border-radius:50%}
+  .hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+  .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px;flex-wrap:wrap}
+  .breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none}
+  .breadcrumb a:hover{color:#fff}
+  .breadcrumb .sep{color:rgba(255,255,255,.4)}
+  .breadcrumb .current{color:#fff;font-weight:500}
+  .hero-title-row{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+  .hero-icon{width:60px;height:60px;background:#10b981;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;color:#fff;flex-shrink:0;box-shadow:0 8px 24px rgba(16,185,129,.4);font-family:'JetBrains Mono',monospace;font-weight:700}
+  .hero-title{font-size:42px;font-weight:800;line-height:1.15}
+  .hero-title .blue{color:#34d399}
+  .hero-desc{font-size:15px;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:24px;max-width:560px}
+  .hero-features{display:flex;gap:24px;flex-wrap:wrap}
+  .hero-feature{display:flex;align-items:center;gap:6px;font-size:13px;color:#fff;font-weight:500}
+  .hero-feature .check{width:18px;height:18px;border-radius:50%;background:#10b981;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;flex-shrink:0}
+
+  .main-content{max-width:1200px;margin:0 auto;padding:40px;display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start}
+  .tool-content{min-width:0}
+
+  .workspace{background:#fff;border-radius:16px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,.06);border:1px solid #e5e7eb;margin-bottom:24px}
+
+  .toolbar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px;padding:10px;background:#ecfdf5;border-radius:10px;border:1px solid #a7f3d0;align-items:center}
+  .toolbar-btn{display:inline-flex;align-items:center;gap:6px;padding:9px 14px;background:#fff;border:1px solid #d1d5db;border-radius:8px;font-size:12px;font-weight:600;color:#4b5563;cursor:pointer;font-family:inherit;transition:all .2s}
+  .toolbar-btn:hover{border-color:#10b981;color:#059669;background:#ecfdf5}
+  .toolbar-btn.primary{background:#10b981;color:#fff;border-color:#10b981}
+  .toolbar-btn.primary:hover{background:#059669;border-color:#059669;color:#fff}
+  .toolbar-divider{width:1px;height:24px;background:#a7f3d0;margin:0 4px}
+
+  /* Editor + status */
+  .editor-wrap{position:relative;margin-bottom:16px}
+  .editor-label{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;flex-wrap:wrap;gap:8px}
+  .editor-label-text{font-size:13px;font-weight:700;color:#1a1a2e;text-transform:uppercase;letter-spacing:.3px;display:flex;align-items:center;gap:6px}
+  .line-count{font-size:11px;color:#9ca3af;font-weight:600;font-family:'JetBrains Mono',monospace}
+
+  .json-input{width:100%;min-height:400px;padding:16px;border:2px solid #e5e7eb;border-radius:12px;font-family:'JetBrains Mono','Fira Code',Consolas,monospace;font-size:13px;line-height:1.7;color:#1a1a2e;background:#f8fafc;outline:none;resize:vertical;transition:border-color .2s}
+  .json-input:focus{border-color:#10b981;background:#fff;box-shadow:0 0 0 3px rgba(16,185,129,.1)}
+  .json-input.error{border-color:#ef4444;background:#fef2f2}
+  .json-input.valid{border-color:#10b981;background:#f0fdf4}
+
+  /* Status bar */
+  .status-bar{display:none;padding:16px 20px;border-radius:10px;margin-bottom:16px;font-size:14px;line-height:1.6;align-items:flex-start;gap:12px}
+  .status-bar.visible{display:flex}
+  .status-bar.success{background:#f0fdf4;border:1px solid #a7f3d0;color:#065f46}
+  .status-bar.error{background:#fef2f2;border:1px solid #fecaca;color:#991b1b}
+  .status-icon{font-size:18px;flex-shrink:0;line-height:1.4}
+  .status-content{flex:1;min-width:0}
+  .status-title{font-weight:800;margin-bottom:4px}
+  .status-detail{font-size:13px;opacity:.9;font-family:'JetBrains Mono',monospace;word-break:break-word;line-height:1.6}
+  .status-position{display:inline-block;background:rgba(0,0,0,.08);padding:2px 8px;border-radius:4px;font-size:11px;font-weight:700;margin-left:6px;font-family:'JetBrains Mono',monospace}
+
+  /* Stats */
+  .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:16px;display:none}
+  .stats-grid.visible{display:grid}
+  .stat-box{background:#ecfdf5;border:1px solid #a7f3d0;border-radius:10px;padding:14px;text-align:center}
+  .stat-value{font-size:20px;font-weight:800;color:#059669;margin-bottom:2px;font-family:'JetBrains Mono',monospace}
+  .stat-label{font-size:10px;font-weight:700;color:#065f46;text-transform:uppercase;letter-spacing:.5px}
+
+  /* Output section */
+  .output-section{display:none;margin-top:20px}
+  .output-section.visible{display:block}
+  .output-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;flex-wrap:wrap;gap:8px}
+  .output-title{font-size:13px;font-weight:700;color:#1a1a2e;text-transform:uppercase;letter-spacing:.3px}
+  .output-actions{display:flex;gap:6px}
+  .output-btn{display:inline-flex;align-items:center;gap:5px;padding:7px 12px;background:#fff;border:1px solid #e5e7eb;border-radius:6px;font-size:11px;font-weight:600;color:#4b5563;cursor:pointer;font-family:inherit;transition:all .2s}
+  .output-btn:hover{border-color:#10b981;color:#059669;background:#ecfdf5}
+  .output-btn.copied{background:#10b981;color:#fff;border-color:#10b981}
+  .output-box{background:#0f172a;color:#e2e8f0;padding:16px;border-radius:10px;font-family:'JetBrains Mono','Fira Code',Consolas,monospace;font-size:13px;line-height:1.7;max-height:400px;overflow:auto;white-space:pre-wrap;word-break:break-word;margin:0}
+
+  .seo-content{background:#fff;border-radius:16px;padding:32px;border:1px solid #e5e7eb;margin-bottom:24px}
+  .seo-content h2{font-size:22px;font-weight:800;color:#1a1a2e;margin-bottom:14px;margin-top:28px;display:flex;align-items:center;gap:10px}
+  .seo-content h2:first-child{margin-top:0}
+  .seo-content h3{font-size:16px;font-weight:700;color:#1a1a2e;margin:20px 0 10px}
+  .seo-content p{font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:14px}
+  .seo-content ul{list-style:none;padding-left:0;margin-bottom:16px}
+  .seo-content ul li{position:relative;padding-left:24px;font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:8px}
+  .seo-content ul li::before{content:'';position:absolute;left:6px;top:12px;width:6px;height:6px;background:#10b981;border-radius:50%}
+  .seo-content a{color:#2563eb;text-decoration:none;font-weight:600}
+  .seo-content a:hover{text-decoration:underline}
+  .seo-content strong{color:#1a1a2e;font-weight:700}
+  .seo-content code{background:#f1f5f9;padding:2px 6px;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:13px;color:#0f172a;border:1px solid #e2e8f0}
+
+  .code-block{background:#0f172a;color:#e2e8f0;padding:16px;border-radius:8px;font-family:'JetBrains Mono','Fira Code',Consolas,monospace;font-size:13px;line-height:1.6;overflow-x:auto;margin:14px 0}
+  .code-block .key{color:#7dd3fc}
+  .code-block .str{color:#86efac}
+  .code-block .num{color:#fbbf24}
+  .code-block .bool{color:#c084fc}
+
+  .how-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:20px}
+  .how-step{background:#ecfdf5;border-radius:12px;padding:20px;border:1px solid #a7f3d0}
+  .how-step-num{width:36px;height:36px;border-radius:50%;background:#10b981;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;margin-bottom:12px}
+  .how-step-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+  .how-step-desc{font-size:13px;color:#6b7280;line-height:1.6}
+
+  .faq-item{background:#ecfdf5;border:1px solid #a7f3d0;border-radius:12px;margin-bottom:10px;overflow:hidden;transition:border-color .2s}
+  .faq-item:hover{border-color:#10b981}
+  .faq-question{width:100%;background:none;border:none;padding:18px 22px;font-size:15px;font-weight:700;color:#1a1a2e;text-align:left;cursor:pointer;font-family:inherit;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .faq-question .chev{font-size:12px;color:#10b981;transition:transform .2s;flex-shrink:0}
+  .faq-item.open .faq-question .chev{transform:rotate(180deg)}
+  .faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 22px}
+  .faq-item.open .faq-answer{max-height:500px;padding-bottom:18px}
+  .faq-answer p{font-size:14px;color:#6b7280;line-height:1.7;margin:0}
+
+  .sidebar{background:#fff;border-radius:16px;padding:24px;border:1px solid #e5e7eb;position:sticky;top:80px;margin-bottom:24px}
+  .sidebar-header{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:800;color:#1a1a2e;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid #f3f4f6}
+  .sidebar-list{display:flex;flex-direction:column;gap:8px}
+  .sidebar-item{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;cursor:pointer;transition:background .2s;text-decoration:none;color:inherit;border:1px solid #f3f4f6}
+  .sidebar-item:hover{background:#ecfdf5;border-color:#a7f3d0}
+  .sidebar-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;flex-shrink:0}
+  .sidebar-info{flex:1;min-width:0}
+  .sidebar-title{font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:2px}
+  .sidebar-desc{font-size:11px;color:#9ca3af;line-height:1.4}
+
+  .footer{background:#0a0e27;padding:60px 40px 30px;color:#fff;margin-top:40px}
+  .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:40px}
+  .footer-brand{display:flex;align-items:center;gap:8px;font-size:20px;font-weight:800;margin-bottom:12px}
+  .footer-brand span{color:#60a5fa}
+  .footer-tagline{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px}
+  .footer-social{display:flex;gap:12px}
+  .footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:16px;transition:background .2s}
+  .footer-social a:hover{background:rgba(255,255,255,.2)}
+  .footer-heading{font-size:14px;font-weight:700;margin-bottom:20px;color:#fff}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .footer-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;transition:color .2s}
+  .footer-links a:hover{color:#60a5fa}
+  .footer-bottom{max-width:1200px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  .footer-bottom-left{display:flex;gap:20px;font-size:12px;color:rgba(255,255,255,.5)}
+  .footer-bottom-right,.footer-bottom-links a{font-size:12px;color:rgba(255,255,255,.5);text-decoration:none}
+  .footer-bottom-links{display:flex;gap:20px}
+
+  .toast{position:fixed;bottom:24px;right:24px;background:#1a1a2e;color:#fff;padding:14px 20px;border-radius:10px;font-size:13px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:3000;transform:translateY(200%);transition:transform .3s ease;max-width:320px}
+  .toast.visible{transform:translateY(0)}
+  .toast.success{background:#10b981}
+  .toast.error{background:#ef4444}
+
+  @media(max-width:1024px){
+    .main-content{grid-template-columns:1fr;padding:24px 20px}
+    .sidebar{position:static}
+    .how-steps{grid-template-columns:repeat(2,1fr)}
+    .stats-grid{grid-template-columns:repeat(2,1fr)}
+  }
+  @media(max-width:768px){
+    .header{padding:0 20px}.nav{display:none}
+    .hero{padding:24px 20px 40px}
+    .hero-title{font-size:28px}
+    .hero-icon{width:48px;height:48px;font-size:22px}
+    .hero-title-row{flex-direction:column;align-items:flex-start;gap:12px}
+    .main-content{padding:20px 16px}
+    .workspace{padding:20px}
+    .how-steps{grid-template-columns:1fr}
+    .seo-content{padding:20px}
+    .footer-inner{grid-template-columns:1fr 1fr}
+    .toast{left:16px;right:16px;bottom:16px;max-width:none}
+    .json-input{min-height:280px;font-size:12px}
+  }
+  @media(max-width:576px){
+    .header{padding:0 16px}.header-right .search-btn,.header-right .theme-btn{display:none}
+    .hero-title{font-size:24px}
+    .footer-inner{grid-template-columns:1fr}
+    .footer-bottom{flex-direction:column;text-align:center}
+    .toolbar{padding:8px}
+    .toolbar-btn{padding:7px 10px;font-size:11px}
+  }
+
+  html[data-theme="dark"] body{background:#0f172a;color:#f1f5f9}
+  html[data-theme="dark"] .header,html[data-theme="dark"] .workspace,html[data-theme="dark"] .seo-content,html[data-theme="dark"] .sidebar{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .logo,html[data-theme="dark"] .hero-title,html[data-theme="dark"] .seo-content h2,html[data-theme="dark"] .seo-content h3,html[data-theme="dark"] .faq-question,html[data-theme="dark"] .sidebar-header,html[data-theme="dark"] .sidebar-title{color:#f1f5f9}
+  html[data-theme="dark"] .nav a{color:#cbd5e1}
+  html[data-theme="dark"] .toolbar,html[data-theme="dark"] .how-step,html[data-theme="dark"] .faq-item,html[data-theme="dark"] .stats-grid .stat-box{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .toolbar-btn,html[data-theme="dark"] .output-btn{background:#1e293b;border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .toolbar-btn:hover,html[data-theme="dark"] .output-btn:hover{background:#334155}
+  html[data-theme="dark"] .json-input{background:#0f172a;border-color:#334155;color:#e2e8f0}
+  html[data-theme="dark"] .json-input:focus{background:#0f172a}
+  html[data-theme="dark"] .seo-content p,html[data-theme="dark"] .seo-content ul li,html[data-theme="dark"] .faq-answer p{color:#cbd5e1}
+  html[data-theme="dark"] .seo-content code{background:#020617;color:#34d399;border-color:#334155}
+  html[data-theme="dark"] .status-bar.success{background:#052e2b;border-color:#059669;color:#86efac}
+  html[data-theme="dark"] .status-bar.error{background:#450a0a;border-color:#dc2626;color:#fecaca}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type": "SoftwareApplication", "name": "JSON Validator", "url": "https://bigtoolz.com/tools/developer-tools/json-validator/", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any (Web-based)", "description": "Free online JSON validator real-time validation with line numbers, auto-format, minify and statistics. Works in your browser.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "2156"}},
+    {"@type": "HowTo", "name": "How to Validate JSON Online", "step": [
+      {"@type": "HowToStep", "name": "Paste JSON", "text": "Paste or type your JSON into the input."},
+      {"@type": "HowToStep", "name": "Auto-Validate", "text": "Validation happens in real time as you type."},
+      {"@type": "HowToStep", "name": "Review Errors", "text": "See line numbers and error messages instantly."},
+      {"@type": "HowToStep", "name": "Format or Minify", "text": "Click Format or Minify to clean up your JSON."}
+    ]},
+    {"@type": "FAQPage", "mainEntity": [
+      {"@type": "Question", "name": "What is JSON validation?", "acceptedAnswer": {"@type": "Answer", "text": "JSON validation checks that your text follows the JSON specification: proper quotes, commas, brackets, and data types. Invalid JSON breaks parsers and APIs."}},
+      {"@type": "Question", "name": "What are the most common JSON errors?", "acceptedAnswer": {"@type": "Answer", "text": "Missing commas between items, trailing commas, single quotes instead of double, unquoted keys, missing closing brackets, and control characters. Our validator pinpoints the exact location of each."}},
+      {"@type": "Question", "name": "Is my JSON uploaded to a server?", "acceptedAnswer": {"@type": "Answer", "text": "No. All validation happens in your browser. Your JSON never leaves your device safe for sensitive API tokens and config files."}},
+      {"@type": "Question", "name": "What's the difference between validation and formatting?", "acceptedAnswer": {"@type": "Answer", "text": "Validation checks if JSON is syntactically correct. Formatting (pretty-printing) adds indentation for readability. Minifying removes whitespace to make the file smaller."}},
+      {"@type": "Question", "name": "Can I validate large JSON files?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, up to a few MB in the browser (limited by your device's memory). For very large files (10MB+), consider command-line tools like jq or Python's json.tool."}}
+    ]},
+    {"@type": "BreadcrumbList", "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bigtoolz.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://bigtoolz.com/tools/"},
+      {"@type": "ListItem", "position": 3, "name": "Developer Tools", "item": "https://bigtoolz.com/tools/developer-tools/"},
+      {"@type": "ListItem", "position": 4, "name": "JSON Validator", "item": "https://bigtoolz.com/tools/developer-tools/json-validator/"}
+    ]}
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-left">
+    <a href="/" class="logo"><div class="logo-icon">⚒</div>BigToolz</span></a>
+    <nav><ul class="nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/tools/" class="active">All Tools</a></li>
+      <li><a href="/tools/categories">Categories</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul></nav>
+  </div>
+  <div class="header-right">
+   
+    <button class="theme-btn" aria-label="Toggle theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
+    
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <nav class="breadcrumb">
+      <a href="/">Home</a><span class="sep">›</span>
+      <a href="/tools/">Tools</a><span class="sep">›</span>
+      <a href="/tools/developer-tools/">Developer Tools</a><span class="sep">›</span>
+      <span class="current">JSON Validator</span>
+    </nav>
+    <div class="hero-title-row">
+      <div class="hero-icon">{ }</div>
+      <h1 class="hero-title">JSON <span class="blue">Validator</span></h1>
+    </div>
+    <p class="hero-desc">
+      Validate JSON in real time with precise error locations. Format, minify, view statistics. Perfect for debugging APIs, config files, and data pipelines. No upload, 100% private.
+    </p>
+    <div class="hero-features">
+      <div class="hero-feature"><span class="check">✓</span> Real-time Validation</div>
+      <div class="hero-feature"><span class="check">✓</span> Line + Column Errors</div>
+      <div class="hero-feature"><span class="check">✓</span> Format / Minify</div>
+      <div class="hero-feature"><span class="check">✓</span> Statistics</div>
+    </div>
+  </div>
+</section>
+
+<div class="main-content">
+
+  <div class="tool-content">
+
+    <div class="workspace">
+
+      <!-- Toolbar -->
+      <div class="toolbar">
+        <button class="toolbar-btn primary" id="validateBtn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+          Validate
+        </button>
+        <button class="toolbar-btn" id="formatBtn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+          Format
+        </button>
+        <button class="toolbar-btn" id="minifyBtn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h10M4 18h16"/></svg>
+          Minify
+        </button>
+        <div class="toolbar-divider"></div>
+        <button class="toolbar-btn" id="sampleBtn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/></svg>
+          Sample
+        </button>
+        <button class="toolbar-btn" id="clearBtn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+          Clear
+        </button>
+      </div>
+
+      <!-- Input -->
+      <div class="editor-wrap">
+        <div class="editor-label">
+          <div class="editor-label-text">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg>
+            JSON Input
+          </div>
+          <span class="line-count" id="lineCount">0 lines</span>
+        </div>
+        <textarea id="jsonInput" class="json-input" placeholder='Paste your JSON here...
+
+Example:
+{
+  "name": "BigToolz",
+  "version": "1.0.0",
+  "tools": 300,
+  "active": true
+}' spellcheck="false" autocomplete="off" autocorrect="off" autocapitalize="off"></textarea>
+      </div>
+
+      <!-- Status -->
+      <div class="status-bar" id="statusBar">
+        <span class="status-icon" id="statusIcon">✓</span>
+        <div class="status-content">
+          <div class="status-title" id="statusTitle">Valid JSON</div>
+          <div class="status-detail" id="statusDetail"></div>
+        </div>
+      </div>
+
+      <!-- Statistics -->
+      <div class="stats-grid" id="statsGrid">
+        <div class="stat-box"><div class="stat-value" id="statSize">0</div><div class="stat-label">Size (bytes)</div></div>
+        <div class="stat-box"><div class="stat-value" id="statKeys">0</div><div class="stat-label">Keys</div></div>
+        <div class="stat-box"><div class="stat-value" id="statDepth">0</div><div class="stat-label">Max Depth</div></div>
+        <div class="stat-box"><div class="stat-value" id="statNodes">0</div><div class="stat-label">Total Nodes</div></div>
+      </div>
+
+      <!-- Output -->
+      <div class="output-section" id="outputSection">
+        <div class="output-header">
+          <div class="output-title" id="outputTitle">Formatted Output</div>
+          <div class="output-actions">
+            <button class="output-btn" id="copyOutputBtn">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+              Copy
+            </button>
+            <button class="output-btn" id="downloadOutputBtn">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+              Download
+            </button>
+          </div>
+        </div>
+        <pre class="output-box" id="outputBox"></pre>
+      </div>
+
+    </div>
+
+    <div class="seo-content">
+
+      <h2>{ } What is JSON Validation?</h2>
+      <p>
+        <strong>JSON validation</strong> checks whether your text follows the JSON specification the strict rules for quoting, commas, brackets, and data types. JSON is unforgiving: a single missing comma, an extra trailing comma, or a single-quote instead of a double-quote will break parsers, APIs, and config loaders. Validating first saves hours of debugging.
+      </p>
+      <p>
+        Unlike most online tools, BigToolz processes JSON <strong>100% in your browser</strong>. Your JSON <strong>never uploaded to any server</strong> critical when your data contains <strong>API keys, tokens, credentials, or user data</strong>.
+      </p>
+
+      <h2>🚀 How to Validate JSON</h2>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-step-num">1</div>
+          <div class="how-step-title">Paste JSON</div>
+          <div class="how-step-desc">Paste or type JSON into the input area.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">2</div>
+          <div class="how-step-title">Auto-Validate</div>
+          <div class="how-step-desc">Validation runs in real time as you type.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">3</div>
+          <div class="how-step-title">See Errors</div>
+          <div class="how-step-desc">Precise line + column numbers for any problem.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">4</div>
+          <div class="how-step-title">Format / Minify</div>
+          <div class="how-step-desc">Clean up or compress with one click.</div>
+        </div>
+      </div>
+
+      <h2>📊 JSON Rules Quick Reference</h2>
+      <h3>✅ Valid</h3>
+      <div class="code-block">{
+  <span class="key">"name"</span>: <span class="str">"BigToolz"</span>,
+  <span class="key">"version"</span>: <span class="str">"1.0.0"</span>,
+  <span class="key">"tools"</span>: <span class="num">300</span>,
+  <span class="key">"active"</span>: <span class="bool">true</span>,
+  <span class="key">"tags"</span>: [<span class="str">"tools"</span>, <span class="str">"free"</span>],
+  <span class="key">"meta"</span>: <span class="bool">null</span>
+}</div>
+
+      <h3>❌ Invalid (Common Mistakes)</h3>
+      <ul>
+        <li><strong>Trailing comma:</strong> <code>{"a": 1,}</code></li>
+        <li><strong>Single quotes:</strong> <code>{'a': 1}</code></li>
+        <li><strong>Unquoted keys:</strong> <code>{a: 1}</code></li>
+        <li><strong>Missing comma:</strong> <code>{"a": 1 "b": 2}</code></li>
+        <li><strong>Comments:</strong> <code>{"a": 1 /* note */}</code></li>
+        <li><strong>NaN / Infinity:</strong> <code>{"x": NaN}</code></li>
+        <li><strong>Unclosed brackets:</strong> <code>{"a": [1, 2</code></li>
+        <li><strong>Invalid escape:</strong> <code>{"path": "C:\folder"}</code></li>
+      </ul>
+
+      <h2>💡 What This Tool Does</h2>
+      <ul>
+        <li><strong>Real-time validation</strong> validate as you type, no button-click needed.</li>
+        <li><strong>Precise error location</strong> line number, column, and a clear message.</li>
+        <li><strong>Format (pretty-print)</strong> 2-space indentation for readability.</li>
+        <li><strong>Minify</strong> remove all whitespace to shrink file size.</li>
+        <li><strong>Statistics</strong> size, key count, max depth, total nodes.</li>
+        <li><strong>Copy / Download</strong> grab the formatted output instantly.</li>
+        <li><strong>100% browser-based</strong> no server, no logs, no tracking.</li>
+        <li><strong>Keyboard shortcuts</strong> Ctrl+Enter to validate, Ctrl+S to download.</li>
+      </ul>
+
+      <h2>🎯 When to Validate JSON</h2>
+      <ul>
+        <li><strong>Before sending to an API</strong> malformed JSON is the #1 cause of 400 Bad Request errors.</li>
+        <li><strong>Debugging API responses</strong> when the server returns garbage instead of valid JSON.</li>
+        <li><strong>Config file editing</strong> package.json, tsconfig.json, .eslintrc.json, and similar files must be strictly valid.</li>
+        <li><strong>Log file inspection</strong> JSON logs are common in production and easy to corrupt.</li>
+        <li><strong>Data pipeline QA</strong> validate JSON before ingesting into databases or analytics.</li>
+        <li><strong>Learning</strong> see exactly where your mistake is when you're new to JSON.</li>
+      </ul>
+
+      <h2>❓ Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-question">What is JSON validation?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>JSON validation checks that your text follows the JSON specification: proper double quotes around keys and strings, correct comma placement, valid data types (no NaN or functions), no trailing commas, and closed brackets. Invalid JSON breaks every parser that tries to read it.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What are the most common JSON errors?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>1.</strong> Trailing commas (not allowed). <strong>2.</strong> Single quotes instead of double. <strong>3.</strong> Unquoted keys. <strong>4.</strong> Missing commas between items. <strong>5.</strong> Unclosed brackets or braces. <strong>6.</strong> Comments (JSON doesn't support them). <strong>7.</strong> Control characters (like raw newlines inside strings). Our tool pinpoints the exact location of each.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Is my JSON uploaded to a server?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>No. All validation happens in your browser using the built-in <code>JSON.parse()</code> engine. Your JSON never leaves your device, and nothing is stored anywhere. Safe for API keys, tokens, config files, and sensitive data.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What's the difference between validation, formatting, and minifying?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>Validation</strong> checks if JSON is syntactically correct. <strong>Formatting</strong> adds indentation and line breaks for readability. <strong>Minifying</strong> removes all whitespace to shrink the file. Formatting and minifying both require valid JSON first.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I validate large JSON files?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Yes, up to a few MB in the browser (limited by your device's memory). For very large files (10MB+), use command-line tools like <code>jq</code>, <code>python -m json.tool</code>, or Node.js <code>JSON.parse()</code> with a buffer.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Does JSON support comments?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>No. Standard JSON does <strong>not</strong> support comments (<code>//</code> or <code>/* */</code>). If you need comments, look at JSON5, JSONC (JSON with Comments, used by TypeScript configs), or YAML. Our validator follows the strict JSON spec.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I validate JSON5 or JSONC?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>No this tool validates <strong>strict JSON</strong> only. For JSON5 or JSONC (with comments), you'd need a different parser. However, if you remove comments and trailing commas, strict validation works.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What keyboard shortcuts are available?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>Ctrl+Enter</strong> Validate. <strong>Ctrl+Shift+F</strong> Format. <strong>Ctrl+Shift+M</strong> Minify. <strong>Ctrl+S</strong> Download output. These work on both Windows and Mac (use Cmd on Mac).</p></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-header">🔗 Related Developer Tools</div>
+    <div class="sidebar-list">
+      <a href="/tools/developer-tools/json-formatter/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#10b981;">{ }</div>
+        <div class="sidebar-info"><div class="sidebar-title">JSON Formatter</div><div class="sidebar-desc">Beautify & format</div></div>
+      </a>
+      <a href="/tools/developer-tools/json-to-xml/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#8b5cf6;">🔄</div>
+        <div class="sidebar-info"><div class="sidebar-title">JSON to XML</div><div class="sidebar-desc">Convert formats</div></div>
+      </a>
+      <a href="/tools/developer-tools/xml-to-json/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#f97316;">🔄</div>
+        <div class="sidebar-info"><div class="sidebar-title">XML to JSON</div><div class="sidebar-desc">Convert formats</div></div>
+      </a>
+      <a href="/tools/developer-tools/base64-encoder/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#8b5cf6;">🔐</div>
+        <div class="sidebar-info"><div class="sidebar-title">Base64 Encoder</div><div class="sidebar-desc">Encode text</div></div>
+      </a>
+      <a href="/tools/developer-tools/meta-tag/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#3b82f6;">🏷</div>
+        <div class="sidebar-info"><div class="sidebar-title">Meta Tag Generator</div><div class="sidebar-desc">Generate meta tags</div></div>
+      </a>
+      <a href="/tools/developer-tools/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#64748b;">&lt;/&gt;</div>
+        <div class="sidebar-info"><div class="sidebar-title">All Developer Tools →</div><div class="sidebar-desc">Browse 25+ tools</div></div>
+      </a>
+    </div>
+  </aside>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand"><div class="logo-icon">⚒</div>BigToolz</span></div>
+      <p class="footer-tagline">Your Ultimate Online Tools Hub</p>
+      <div class="footer-social">
+        <a href="https://facebook.com/bigtoolz" aria-label="Facebook">f</a>
+        <a href="https://twitter.com/bigtoolz" aria-label="Twitter">𝕏</a>
+        <a href="https://youtube.com/@bigtoolz" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+    <div>
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/tools/">All Tools</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Categories</h3>
+      <ul class="footer-links">
+        <li><a href="/tools/developer-tools/">Developer Tools</a></li>
+        <li><a href="/tools/image-tools/">Image Tools</a></li>
+        <li><a href="/tools/text-tools/">Text Tools</a></li>
+        <li><a href="/tools/seo-tools/">SEO Tools</a></li>
+        <li><a href="/tools/categories">All Categories →</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Legal</h3>
+      <ul class="footer-links">
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left"><span>✓ 100% Free</span><span>✓ No Sign Up</span><span>✓ No Installation</span></div>
+    <div class="footer-bottom-right">© 2026 BigToolz. All rights reserved.</div>
+    <div class="footer-bottom-links"><a href="/privacy-policy">Privacy</a><a href="/terms">Terms</a><a href="/disclaimer">Disclaimer</a></div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+'use strict';
+
+/* ===== THEME ===== */
+(function(){try{var t=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&d))document.documentElement.setAttribute('data-theme','dark');else if(t==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();
+document.querySelector('.theme-btn')?.addEventListener('click',()=>{const h=document.documentElement;const c=h.getAttribute('data-theme');const d=window.matchMedia('(prefers-color-scheme: dark)').matches;let n=c==='dark'?'light':c==='light'?'dark':(d?'light':'dark');h.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}});
+
+/* ===== HELPERS ===== */
+const $ = (s, p = document) => p.querySelector(s);
+const $$ = (s, p = document) => [...p.querySelectorAll(s)];
+
+function showToast(msg, type = 'info', duration = 2500) {
+  const t = $('#toast');
+  if (!t) return;
+  t.className = 'toast visible' + (type !== 'info' ? ' ' + type : '');
+  t.textContent = msg;
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove('visible'), duration);
+}
+
+async function copyToClipboard(text) {
+  try {
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(text);
+      return true;
+    }
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.cssText = 'position:fixed;opacity:0;';
+    document.body.appendChild(ta);
+    ta.select();
+    const ok = document.execCommand('copy');
+    document.body.removeChild(ta);
+    return ok;
+  } catch (e) { return false; }
+}
+
+/* ===== DOM ===== */
+const jsonInput = $('#jsonInput');
+const validateBtn = $('#validateBtn');
+const formatBtn = $('#formatBtn');
+const minifyBtn = $('#minifyBtn');
+const sampleBtn = $('#sampleBtn');
+const clearBtn = $('#clearBtn');
+const statusBar = $('#statusBar');
+const statusIcon = $('#statusIcon');
+const statusTitle = $('#statusTitle');
+const statusDetail = $('#statusDetail');
+const statsGrid = $('#statsGrid');
+const statSize = $('#statSize');
+const statKeys = $('#statKeys');
+const statDepth = $('#statDepth');
+const statNodes = $('#statNodes');
+const outputSection = $('#outputSection');
+const outputTitle = $('#outputTitle');
+const outputBox = $('#outputBox');
+const copyOutputBtn = $('#copyOutputBtn');
+const downloadOutputBtn = $('#downloadOutputBtn');
+const lineCount = $('#lineCount');
+
+/* ===== STATE ===== */
+const state = {
+  currentOutput: '',
+  currentOutputType: ''
+};
+
+/* ===== VALIDATE ===== */
+function validateJSON(showOutput = false) {
+  const text = jsonInput.value.trim();
+
+  // Empty
+  if (!text) {
+    jsonInput.classList.remove('valid', 'error');
+    statusBar.classList.remove('visible');
+    statsGrid.classList.remove('visible');
+    outputSection.classList.remove('visible');
+    lineCount.textContent = '0 lines';
+    return;
+  }
+
+  lineCount.textContent = text.split('\n').length + ' lines';
+
+  try {
+    const parsed = JSON.parse(text);
+    const size = new Blob([text]).size;
+    const stats = analyzeJSON(parsed);
+
+    // Success
+    jsonInput.classList.remove('error');
+    jsonInput.classList.add('valid');
+
+    statusBar.className = 'status-bar visible success';
+    statusIcon.textContent = '✓';
+    statusTitle.textContent = 'Valid JSON';
+    statusDetail.innerHTML = `Your JSON is syntactically correct. ${stats.nodes.toLocaleString()} nodes, ${stats.keys.toLocaleString()} keys, max depth ${stats.depth}.`;
+
+    // Statistics
+    statSize.textContent = size < 1024 ? size + ' B' : (size / 1024).toFixed(1) + ' KB';
+    statKeys.textContent = stats.keys.toLocaleString();
+    statDepth.textContent = stats.depth;
+    statNodes.textContent = stats.nodes.toLocaleString();
+    statsGrid.classList.add('visible');
+
+    // Auto-format output
+    if (showOutput) {
+      const formatted = JSON.stringify(parsed, null, 2);
+      state.currentOutput = formatted;
+      state.currentOutputType = 'Formatted';
+      outputTitle.textContent = 'Formatted Output (2 spaces)';
+      outputBox.textContent = formatted;
+      outputSection.classList.add('visible');
+    } else {
+      outputSection.classList.remove('visible');
+    }
+
+    return true;
+  } catch (err) {
+    // Error
+    jsonInput.classList.remove('valid');
+    jsonInput.classList.add('error');
+    statsGrid.classList.remove('visible');
+    outputSection.classList.remove('visible');
+
+    // Parse error position
+    const { line, column, message } = parseErrorPosition(err, text);
+
+    statusBar.className = 'status-bar visible error';
+    statusIcon.textContent = '✕';
+    statusTitle.textContent = 'Invalid JSON';
+    statusDetail.innerHTML = `${escapeHtml(message)} <span class="status-position">Line ${line}, Column ${column}</span>`;
+
+    // Highlight error line
+    highlightErrorLine(line);
+
+    return false;
+  }
+}
+
+function parseErrorPosition(err, text) {
+  const msg = err.message || 'Invalid JSON';
+  // V8 error format: "Unexpected token x in JSON at position 123" or "... at line 5 column 3"
+  let position = null;
+
+  // Newer format with line/column
+  const lineMatch = msg.match(/line (\d+) column (\d+)/i);
+  if (lineMatch) {
+    return {
+      line: parseInt(lineMatch[1], 10),
+      column: parseInt(lineMatch[2], 10),
+      message: msg.replace(/\s*\(line.*$/, '').trim()
+    };
+  }
+
+  // Position offset format
+  const posMatch = msg.match(/position (\d+)/i);
+  if (posMatch) {
+    position = parseInt(posMatch[1], 10);
+  }
+
+  if (position !== null) {
+    const before = text.slice(0, position);
+    const lines = before.split('\n');
+    return {
+      line: lines.length,
+      column: lines[lines.length - 1].length + 1,
+      message: msg.replace(/\s*at position \d+.*/i, '').trim() + ` (at position ${position})`
+    };
+  }
+
+  return { line: 1, column: 1, message: msg };
+}
+
+function highlightErrorLine(lineNum) {
+  const text = jsonInput.value;
+  const lines = text.split('\n');
+  if (lineNum < 1 || lineNum > lines.length) return;
+
+  // Calculate character positions
+  let startPos = 0;
+  for (let i = 0; i < lineNum - 1; i++) {
+    startPos += lines[i].length + 1;
+  }
+  const endPos = startPos + lines[lineNum - 1].length;
+
+  // Focus and select the line
+  try {
+    jsonInput.focus();
+    jsonInput.setSelectionRange(startPos, endPos);
+
+    // Scroll into view
+    const lineHeight = 22;
+    const targetScroll = (lineNum - 1) * lineHeight - 100;
+    jsonInput.scrollTop = Math.max(0, targetScroll);
+  } catch (e) {}
+}
+
+function analyzeJSON(obj) {
+  const stats = { keys: 0, depth: 0, nodes: 0 };
+
+  function walk(node, depth) {
+    stats.nodes++;
+    stats.depth = Math.max(stats.depth, depth);
+
+    if (node === null || typeof node !== 'object') return;
+
+    if (Array.isArray(node)) {
+      node.forEach(item => walk(item, depth + 1));
+    } else {
+      for (const key in node) {
+        if (node.hasOwnProperty(key)) {
+          stats.keys++;
+          walk(node[key], depth + 1);
+        }
+      }
+    }
+  }
+
+  walk(obj, 1);
+  return stats;
+}
+
+function escapeHtml(str) {
+  const div = document.createElement('div');
+  div.textContent = str;
+  return div.innerHTML;
+}
+
+/* ===== FORMAT ===== */
+function formatJSON() {
+  const text = jsonInput.value.trim();
+  if (!text) { showToast('Nothing to format', 'error'); return; }
+
+  try {
+    const parsed = JSON.parse(text);
+    const formatted = JSON.stringify(parsed, null, 2);
+
+    state.currentOutput = formatted;
+    state.currentOutputType = 'Formatted';
+    outputTitle.textContent = 'Formatted Output (2 spaces)';
+    outputBox.textContent = formatted;
+    outputSection.classList.add('visible');
+
+    // Also update the input to formatted
+    jsonInput.value = formatted;
+    validateJSON();
+
+    showToast('✅ Formatted!', 'success');
+  } catch (err) {
+    showToast('Cannot format invalid JSON', 'error');
+    validateJSON();
+  }
+}
+
+/* ===== MINIFY ===== */
+function minifyJSON() {
+  const text = jsonInput.value.trim();
+  if (!text) { showToast('Nothing to minify', 'error'); return; }
+
+  try {
+    const parsed = JSON.parse(text);
+    const minified = JSON.stringify(parsed);
+
+    const beforeSize = new Blob([text]).size;
+    const afterSize = new Blob([minified]).size;
+    const savings = beforeSize > 0 ? Math.round((1 - afterSize / beforeSize) * 100) : 0;
+
+    state.currentOutput = minified;
+    state.currentOutputType = 'Minified';
+    outputTitle.textContent = `Minified Output (${savings}% smaller)`;
+    outputBox.textContent = minified;
+    outputSection.classList.add('visible');
+
+    jsonInput.value = minified;
+    validateJSON();
+
+    showToast(`✅ Minified ${savings}% smaller!`, 'success');
+  } catch (err) {
+    showToast('Cannot minify invalid JSON', 'error');
+    validateJSON();
+  }
+}
+
+/* ===== EVENT LISTENERS ===== */
+let debounceTimer;
+jsonInput.addEventListener('input', () => {
+  clearTimeout(debounceTimer);
+  debounceTimer = setTimeout(() => validateJSON(), 300);
+});
+
+validateBtn.addEventListener('click', () => {
+  const valid = validateJSON(true);
+  if (valid) showToast('✅ Valid JSON!', 'success');
+  else showToast('❌ Invalid JSON see error below', 'error');
+});
+
+formatBtn.addEventListener('click', formatJSON);
+minifyBtn.addEventListener('click', minifyJSON);
+
+/* ===== SAMPLE ===== */
+sampleBtn.addEventListener('click', () => {
+  jsonInput.value = JSON.stringify({
+    name: "BigToolz",
+    version: "1.0.0",
+    description: "300+ free online tools",
+    author: {
+      name: "BigToolz Team",
+      email: "hello@bigtoolz.com"
+    },
+    tools: ["image", "pdf", "text", "seo", "developer"],
+    features: {
+      free: true,
+      noSignup: true,
+      browserBased: true,
+      offline: null
+    },
+    stats: {
+      tools: 300,
+      categories: 8,
+      users: "1M+"
+    },
+    urls: {
+      website: "https://bigtoolz.com",
+      github: "https://github.com/bigtoolz"
+    }
+  }, null, 2);
+  validateJSON();
+  showToast('Sample JSON loaded', 'info');
+});
+
+/* ===== CLEAR ===== */
+clearBtn.addEventListener('click', () => {
+  if (jsonInput.value && !confirm('Clear all JSON?')) return;
+  jsonInput.value = '';
+  jsonInput.classList.remove('valid', 'error');
+  statusBar.classList.remove('visible');
+  statsGrid.classList.remove('visible');
+  outputSection.classList.remove('visible');
+  lineCount.textContent = '0 lines';
+  state.currentOutput = '';
+});
+
+/* ===== COPY OUTPUT ===== */
+copyOutputBtn.addEventListener('click', async () => {
+  if (!state.currentOutput) return;
+  const ok = await copyToClipboard(state.currentOutput);
+  if (ok) {
+    copyOutputBtn.classList.add('copied');
+    const original = copyOutputBtn.innerHTML;
+    copyOutputBtn.innerHTML = '✓ Copied';
+    setTimeout(() => {
+      copyOutputBtn.classList.remove('copied');
+      copyOutputBtn.innerHTML = original;
+    }, 2000);
+    showToast('Copied to clipboard!', 'success');
+  } else {
+    showToast('Copy failed', 'error');
+  }
+});
+
+/* ===== DOWNLOAD OUTPUT ===== */
+downloadOutputBtn.addEventListener('click', () => {
+  if (!state.currentOutput) return;
+  const blob = new Blob([state.currentOutput], { type: 'application/json;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `json-${state.currentOutputType.toLowerCase()}.json`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+  showToast('Downloaded!', 'success');
+});
+
+/* ===== KEYBOARD SHORTCUTS ===== */
+document.addEventListener('keydown', (e) => {
+  const isMac = navigator.platform.toUpperCase().includes('MAC');
+  const cmd = isMac ? e.metaKey : e.ctrlKey;
+
+  if (cmd && e.key === 'Enter') {
+    e.preventDefault();
+    validateBtn.click();
+  }
+  if (cmd && e.shiftKey && e.key.toLowerCase() === 'f') {
+    e.preventDefault();
+    formatJSON();
+  }
+  if (cmd && e.shiftKey && e.key.toLowerCase() === 'm') {
+    e.preventDefault();
+    minifyJSON();
+  }
+  if (cmd && e.key.toLowerCase() === 's' && state.currentOutput) {
+    e.preventDefault();
+    downloadOutputBtn.click();
+  }
+});
+
+/* ===== FAQ ===== */
+$$('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    $$('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+</script>
+
+</body>
+</html>

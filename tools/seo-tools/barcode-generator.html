@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2563eb">
+
+<title>Barcode Generator - Create Barcodes Online Free | BigToolz</title>
+<meta name="description" content="Free online barcode generator. Create Code128, Code39, EAN-13, UPC-A, ITF-14 barcodes instantly. Download as PNG or SVG. No signup, works in your browser.">
+<meta name="keywords" content="barcode generator, free barcode maker, code128 generator, ean13 generator, upc barcode, barcode creator online">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://bigtoolz.com/tools/seo-tools/barcode-generator/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Barcode Generator - Free Online Tool | BigToolz">
+<meta property="og:description" content="Create professional barcodes instantly Code128, EAN-13, UPC-A and more. Free, no signup.">
+<meta property="og:url" content="https://bigtoolz.com/tools/seo-tools/barcode-generator/">
+<meta property="og:image" content="https://bigtoolz.com/assets/images/og-image.jpg">
+<meta property="og:site_name" content="BigToolz">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Barcode Generator - BigToolz">
+<meta name="twitter:description" content="Create barcodes instantly free, no signup.">
+<meta name="twitter:image" content="https://bigtoolz.com/assets/images/twitter-card.jpg">
+
+<link rel="icon" href="/assets/images/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/images/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#f8f9fc;color:#1a1a2e;overflow-x:hidden;line-height:1.5}
+
+  .header{background:#fff;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;position:sticky;top:0;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+  .header-left{display:flex;align-items:center;gap:40px}
+  .logo{display:flex;align-items:center;gap:8px;font-size:22px;font-weight:800;color:#1a1a2e;text-decoration:none}
+  .logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#3b82f6,#2563eb);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px}
+  .logo span{color:#2563eb}
+  .nav{display:flex;align-items:center;gap:28px;list-style:none}
+  .nav a{text-decoration:none;color:#4b5563;font-size:14px;font-weight:500;transition:color .2s}
+  .nav a:hover,.nav a.active{color:#2563eb}
+  .header-right{display:flex;align-items:center;gap:16px}
+  .search-btn,.theme-btn{width:36px;height:36px;border-radius:50%;border:none;background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#4b5563}
+  .search-btn:hover,.theme-btn:hover{background:#f3f4f6}
+  .bookmark-btn{display:flex;align-items:center;gap:8px;background:#2563eb;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
+  .bookmark-btn:hover{background:#1d4ed8}
+
+  .hero{background:linear-gradient(135deg,#0a0e27 0%,#1a1a4e 40%,#2d1b69 70%,#4c1d95 100%);padding:40px 40px 60px;position:relative;overflow:hidden;color:#fff}
+  .hero::before{content:'';position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(30,41,59,.7) 0%,transparent 70%);border-radius:50%}
+  .hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+  .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px;flex-wrap:wrap}
+  .breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none}
+  .breadcrumb a:hover{color:#fff}
+  .breadcrumb .sep{color:rgba(255,255,255,.4)}
+  .breadcrumb .current{color:#fff;font-weight:500}
+  .hero-title-row{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+  .hero-icon{width:60px;height:60px;background:#0f172a;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px;color:#fff;flex-shrink:0;box-shadow:0 8px 24px rgba(15,23,42,.7);border:2px solid rgba(255,255,255,.1)}
+  .hero-title{font-size:42px;font-weight:800;line-height:1.15}
+  .hero-title .blue{color:#94a3b8}
+  .hero-desc{font-size:15px;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:24px;max-width:560px}
+  .hero-features{display:flex;gap:24px;flex-wrap:wrap}
+  .hero-feature{display:flex;align-items:center;gap:6px;font-size:13px;color:#fff;font-weight:500}
+  .hero-feature .check{width:18px;height:18px;border-radius:50%;background:#0f172a;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;flex-shrink:0;border:1px solid rgba(255,255,255,.15)}
+
+  .main-content{max-width:1200px;margin:0 auto;padding:40px;display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start}
+  .tool-content{min-width:0}
+
+  .workspace{background:#fff;border-radius:16px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,.06);border:1px solid #e5e7eb;margin-bottom:24px}
+
+  .inputs-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-bottom:24px}
+  .input-group label{display:flex;justify-content:space-between;align-items:center;font-size:13px;font-weight:700;color:#4b5563;margin-bottom:8px;gap:8px}
+  .input-group label .hint{font-size:11px;color:#9ca3af;font-weight:500}
+  .input-wrap{position:relative;display:flex;align-items:center}
+  .input-wrap input,.input-wrap select{width:100%;padding:14px 16px;border:2px solid #e5e7eb;border-radius:10px;font-size:15px;font-weight:600;font-family:inherit;color:#1a1a2e;background:#fff;outline:none;transition:border-color .2s}
+  .input-wrap input:focus,.input-wrap select:focus{border-color:#0f172a;box-shadow:0 0 0 3px rgba(15,23,42,.1)}
+  .input-wrap select{font-size:14px;cursor:pointer;padding-right:40px;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='3'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center}
+  .input-wrap.full{grid-column:span 2}
+  .input-wrap input.mono{font-family:'JetBrains Mono','Courier New',monospace;letter-spacing:1px}
+
+  /* Preview */
+  .preview-section{background:#f8fafc;border-radius:12px;padding:24px;margin-bottom:24px;border:1px solid #e5e7eb;text-align:center;min-height:180px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;position:relative;overflow:auto}
+  .preview-section svg{max-width:100%;height:auto}
+  .preview-error{color:#dc2626;font-size:13px;font-weight:600;padding:16px;background:#fef2f2;border:1px solid #fecaca;border-radius:8px;display:none;max-width:100%}
+  .preview-error.visible{display:block}
+  .preview-empty{color:#9ca3af;font-size:13px;font-weight:500;font-style:italic}
+
+  /* Settings */
+  .settings-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:16px}
+  .setting-group label{display:block;font-size:12px;font-weight:700;color:#4b5563;margin-bottom:6px}
+  .setting-group input,.setting-group select{width:100%;padding:10px 12px;border:1px solid #e5e7eb;border-radius:8px;font-size:13px;font-family:inherit;font-weight:600;color:#1a1a2e;background:#fff;outline:none}
+  .setting-group input[type="color"]{height:42px;padding:2px;cursor:pointer}
+  .setting-group input:focus,.setting-group select:focus{border-color:#0f172a}
+
+  /* Toggle */
+  .toggle-row{display:flex;align-items:center;justify-content:space-between;padding:12px 14px;background:#f8fafc;border:1px solid #e5e7eb;border-radius:10px;gap:12px;margin-bottom:8px}
+  .toggle-info{display:flex;flex-direction:column;gap:2px}
+  .toggle-title{font-size:13px;font-weight:700;color:#1a1a2e}
+  .toggle-desc{font-size:11px;color:#6b7280;line-height:1.4}
+  .toggle-switch{position:relative;width:44px;height:24px;background:#d1d5db;border-radius:12px;cursor:pointer;transition:background .2s;flex-shrink:0}
+  .toggle-switch::after{content:'';position:absolute;top:2px;left:2px;width:20px;height:20px;background:#fff;border-radius:50%;transition:transform .2s;box-shadow:0 1px 3px rgba(0,0,0,.15)}
+  .toggle-switch.on{background:#0f172a}
+  .toggle-switch.on::after{transform:translateX(20px)}
+
+  /* Actions */
+  .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 28px;border-radius:10px;font-size:15px;font-weight:700;font-family:inherit;cursor:pointer;border:none;transition:all .2s;text-decoration:none}
+  .btn-primary{background:#0f172a;color:#fff;box-shadow:0 4px 12px rgba(15,23,42,.2)}
+  .btn-primary:hover:not(:disabled){background:#020617;transform:translateY(-2px);box-shadow:0 6px 20px rgba(15,23,42,.3)}
+  .btn-secondary{background:#fff;color:#0f172a;border:1px solid #e5e7eb}
+  .btn-secondary:hover{border-color:#0f172a;background:#f8fafc}
+
+  /* SEO content */
+  .seo-content{background:#fff;border-radius:16px;padding:32px;border:1px solid #e5e7eb;margin-bottom:24px}
+  .seo-content h2{font-size:22px;font-weight:800;color:#1a1a2e;margin-bottom:14px;margin-top:28px;display:flex;align-items:center;gap:10px}
+  .seo-content h2:first-child{margin-top:0}
+  .seo-content h3{font-size:16px;font-weight:700;color:#1a1a2e;margin:20px 0 10px}
+  .seo-content p{font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:14px}
+  .seo-content ul{list-style:none;padding-left:0;margin-bottom:16px}
+  .seo-content ul li{position:relative;padding-left:24px;font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:8px}
+  .seo-content ul li::before{content:'';position:absolute;left:6px;top:12px;width:6px;height:6px;background:#0f172a;border-radius:50%}
+  .seo-content a{color:#2563eb;text-decoration:none;font-weight:600}
+  .seo-content a:hover{text-decoration:underline}
+  .seo-content strong{color:#1a1a2e;font-weight:700}
+  .seo-content code{background:#f1f5f9;padding:2px 6px;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:13px;color:#0f172a;border:1px solid #e2e8f0}
+
+  .format-table{width:100%;border-collapse:collapse;margin:20px 0;border:1px solid #e5e7eb;border-radius:8px;overflow:hidden}
+  .format-table th{background:#f8fafc;padding:12px 16px;text-align:left;font-size:13px;font-weight:700;color:#1a1a2e;border-bottom:1px solid #e5e7eb}
+  .format-table td{padding:12px 16px;font-size:13px;color:#4b5563;border-bottom:1px solid #f3f4f6}
+  .format-table tr:last-child td{border-bottom:none}
+
+  .how-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:20px}
+  .how-step{background:#f8fafc;border-radius:12px;padding:20px;border:1px solid #e5e7eb}
+  .how-step-num{width:36px;height:36px;border-radius:50%;background:#0f172a;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;margin-bottom:12px}
+  .how-step-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+  .how-step-desc{font-size:13px;color:#6b7280;line-height:1.6}
+
+  .faq-item{background:#f8fafc;border:1px solid #e5e7eb;border-radius:12px;margin-bottom:10px;overflow:hidden;transition:border-color .2s}
+  .faq-item:hover{border-color:#0f172a}
+  .faq-question{width:100%;background:none;border:none;padding:18px 22px;font-size:15px;font-weight:700;color:#1a1a2e;text-align:left;cursor:pointer;font-family:inherit;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .faq-question .chev{font-size:12px;color:#0f172a;transition:transform .2s;flex-shrink:0}
+  .faq-item.open .faq-question .chev{transform:rotate(180deg)}
+  .faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 22px}
+  .faq-item.open .faq-answer{max-height:500px;padding-bottom:18px}
+  .faq-answer p{font-size:14px;color:#6b7280;line-height:1.7;margin:0}
+
+  .sidebar{background:#fff;border-radius:16px;padding:24px;border:1px solid #e5e7eb;position:sticky;top:80px;margin-bottom:24px}
+  .sidebar-header{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:800;color:#1a1a2e;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid #f3f4f6}
+  .sidebar-list{display:flex;flex-direction:column;gap:8px}
+  .sidebar-item{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;cursor:pointer;transition:background .2s;text-decoration:none;color:inherit;border:1px solid #f3f4f6}
+  .sidebar-item:hover{background:#f8fafc;border-color:#cbd5e1}
+  .sidebar-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;flex-shrink:0}
+  .sidebar-info{flex:1;min-width:0}
+  .sidebar-title{font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:2px}
+  .sidebar-desc{font-size:11px;color:#9ca3af;line-height:1.4}
+
+  .footer{background:#0a0e27;padding:60px 40px 30px;color:#fff;margin-top:40px}
+  .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:40px}
+  .footer-brand{display:flex;align-items:center;gap:8px;font-size:20px;font-weight:800;margin-bottom:12px}
+  .footer-brand span{color:#60a5fa}
+  .footer-tagline{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px}
+  .footer-social{display:flex;gap:12px}
+  .footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:16px;transition:background .2s}
+  .footer-social a:hover{background:rgba(255,255,255,.2)}
+  .footer-heading{font-size:14px;font-weight:700;margin-bottom:20px;color:#fff}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .footer-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;transition:color .2s}
+  .footer-links a:hover{color:#60a5fa}
+  .footer-bottom{max-width:1200px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  .footer-bottom-left{display:flex;gap:20px;font-size:12px;color:rgba(255,255,255,.5)}
+  .footer-bottom-right,.footer-bottom-links a{font-size:12px;color:rgba(255,255,255,.5);text-decoration:none}
+  .footer-bottom-links{display:flex;gap:20px}
+
+  .toast{position:fixed;bottom:24px;right:24px;background:#1a1a2e;color:#fff;padding:14px 20px;border-radius:10px;font-size:13px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:3000;transform:translateY(200%);transition:transform .3s ease;max-width:320px}
+  .toast.visible{transform:translateY(0)}
+  .toast.success{background:#10b981}
+  .toast.error{background:#ef4444}
+
+  @media(max-width:1024px){
+    .main-content{grid-template-columns:1fr;padding:24px 20px}
+    .sidebar{position:static}
+    .how-steps{grid-template-columns:repeat(2,1fr)}
+    .settings-grid{grid-template-columns:repeat(2,1fr)}
+  }
+  @media(max-width:768px){
+    .header{padding:0 20px}.nav{display:none}
+    .hero{padding:24px 20px 40px}
+    .hero-title{font-size:28px}
+    .hero-icon{width:48px;height:48px;font-size:20px}
+    .hero-title-row{flex-direction:column;align-items:flex-start;gap:12px}
+    .main-content{padding:20px 16px}
+    .workspace{padding:20px}
+    .how-steps{grid-template-columns:1fr}
+    .seo-content{padding:20px}
+    .footer-inner{grid-template-columns:1fr 1fr}
+    .toast{left:16px;right:16px;bottom:16px;max-width:none}
+    .inputs-grid{grid-template-columns:1fr}
+    .input-wrap.full{grid-column:span 1}
+  }
+  @media(max-width:576px){
+    .header{padding:0 16px}.header-right .search-btn,.header-right .theme-btn{display:none}
+    .hero-title{font-size:24px}
+    .actions{flex-direction:column}
+    .btn{width:100%}
+    .footer-inner{grid-template-columns:1fr}
+    .footer-bottom{flex-direction:column;text-align:center}
+    .settings-grid{grid-template-columns:1fr}
+  }
+
+  html[data-theme="dark"] body{background:#0f172a;color:#f1f5f9}
+  html[data-theme="dark"] .header,html[data-theme="dark"] .workspace,html[data-theme="dark"] .seo-content,html[data-theme="dark"] .sidebar{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .logo,html[data-theme="dark"] .hero-title,html[data-theme="dark"] .seo-content h2,html[data-theme="dark"] .seo-content h3,html[data-theme="dark"] .faq-question,html[data-theme="dark"] .sidebar-header,html[data-theme="dark"] .sidebar-title{color:#f1f5f9}
+  html[data-theme="dark"] .nav a{color:#cbd5e1}
+  html[data-theme="dark"] .how-step,html[data-theme="dark"] .faq-item,html[data-theme="dark"] .preview-section,html[data-theme="dark"] .toggle-row{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .input-wrap input,html[data-theme="dark"] .input-wrap select,html[data-theme="dark"] .setting-group input,html[data-theme="dark"] .setting-group select{background:#0f172a;border-color:#334155;color:#f1f5f9}
+  html[data-theme="dark"] .toggle-title{color:#f1f5f9}
+  html[data-theme="dark"] .seo-content p,html[data-theme="dark"] .seo-content ul li,html[data-theme="dark"] .faq-answer p{color:#cbd5e1}
+  html[data-theme="dark"] .seo-content code{background:#0f172a;color:#94a3b8;border-color:#334155}
+  html[data-theme="dark"] .format-table{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .format-table th{background:#0f172a;color:#f1f5f9;border-color:#334155}
+  html[data-theme="dark"] .format-table td{border-color:#334155;color:#cbd5e1}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type": "SoftwareApplication", "name": "Barcode Generator", "url": "https://bigtoolz.com/tools/seo-tools/barcode-generator/", "applicationCategory": "BusinessApplication", "operatingSystem": "Any (Web-based)", "description": "Free online barcode generator. Create Code128, Code39, EAN-13, UPC-A, ITF-14 barcodes instantly. Download PNG or SVG.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "1567"}},
+    {"@type": "HowTo", "name": "How to Generate a Barcode", "step": [
+      {"@type": "HowToStep", "name": "Choose Format", "text": "Pick CODE128, CODE39, EAN-13, UPC-A, or another barcode format."},
+      {"@type": "HowToStep", "name": "Enter Data", "text": "Type the text or number to encode."},
+      {"@type": "HowToStep", "name": "Customize", "text": "Adjust height, width, colors, and text visibility."},
+      {"@type": "HowToStep", "name": "Download", "text": "Download as PNG or SVG, or copy the data URL."}
+    ]},
+    {"@type": "FAQPage", "mainEntity": [
+      {"@type": "Question", "name": "What is a barcode?", "acceptedAnswer": {"@type": "Answer", "text": "A barcode is a machine-readable pattern of parallel lines of varying widths that encodes data. Barcodes are used in retail, logistics, inventory, ticketing, and many other industries for fast, accurate scanning."}},
+      {"@type": "Question", "name": "What's the difference between Code128 and Code39?", "acceptedAnswer": {"@type": "Answer", "text": "Code128 is more compact and supports all 128 ASCII characters (letters, numbers, symbols). Code39 is simpler and supports only uppercase letters, numbers, and a few symbols. Code128 is preferred for most modern applications."}},
+      {"@type": "Question", "name": "What is EAN-13?", "acceptedAnswer": {"@type": "Answer", "text": "EAN-13 is the standard 13-digit barcode used for retail products worldwide (except North America). It encodes a country code, manufacturer code, product code, and a check digit."}},
+      {"@type": "Question", "name": "Can I use barcodes commercially?", "acceptedAnswer": {"@type": "Answer", "text": "Yes barcodes generated by this tool are yours to use commercially. However, for retail products (EAN-13/UPC-A), you need a GS1 company prefix to ensure your barcodes are unique and scannable in stores."}},
+      {"@type": "Question", "name": "What format should I download?", "acceptedAnswer": {"@type": "Answer", "text": "Use PNG for printing on labels or embedding in documents. Use SVG for scalable vector printing or design work SVG stays crisp at any size."}}
+    ]},
+    {"@type": "BreadcrumbList", "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bigtoolz.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://bigtoolz.com/tools/"},
+      {"@type": "ListItem", "position": 3, "name": "SEO Tools", "item": "https://bigtoolz.com/tools/seo-tools/"},
+      {"@type": "ListItem", "position": 4, "name": "Barcode Generator", "item": "https://bigtoolz.com/tools/seo-tools/barcode-generator/"}
+    ]}
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-left">
+    <a href="/" class="logo"><div class="logo-icon">⚒</div>BigToolz</span></a>
+    <nav><ul class="nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/tools/" class="active">All Tools</a></li>
+      <li><a href="/tools/categories">Categories</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul></nav>
+  </div>
+  <div class="header-right">
+  
+    <button class="theme-btn" aria-label="Toggle theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
+    
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <nav class="breadcrumb">
+      <a href="/">Home</a><span class="sep">›</span>
+      <a href="/tools/">Tools</a><span class="sep">›</span>
+      <a href="/tools/seo-tools/">SEO Tools</a><span class="sep">›</span>
+      <span class="current">Barcode Generator</span>
+    </nav>
+    <div class="hero-title-row">
+      <div class="hero-icon">▥</div>
+      <h1 class="hero-title">Barcode <span class="blue">Generator</span></h1>
+    </div>
+    <p class="hero-desc">
+      Create professional barcodes in seconds. Supports Code128, Code39, EAN-13, EAN-8, UPC-A, ITF-14 and more. Download as PNG or SVG. No signup, 100% free.
+    </p>
+    <div class="hero-features">
+      <div class="hero-feature"><span class="check">✓</span> 8 Formats</div>
+      <div class="hero-feature"><span class="check">✓</span> PNG + SVG</div>
+      <div class="hero-feature"><span class="check">✓</span> Custom Colors</div>
+      <div class="hero-feature"><span class="check">✓</span> Instant Preview</div>
+    </div>
+  </div>
+</section>
+
+<div class="main-content">
+
+  <div class="tool-content">
+
+    <div class="workspace">
+
+      <!-- Inputs -->
+      <div class="inputs-grid">
+        <div class="input-group">
+          <label>Barcode Format <span class="hint">Type of barcode</span></label>
+          <div class="input-wrap">
+            <select id="format">
+              <option value="CODE128" selected>CODE128 (Recommended)</option>
+              <option value="CODE128A">CODE128 A (Uppercase + Control)</option>
+              <option value="CODE128B">CODE128 B (Standard ASCII)</option>
+              <option value="CODE128C">CODE128 C (Numeric, compact)</option>
+              <option value="CODE39">CODE39 (Alphanumeric)</option>
+              <option value="EAN13">EAN-13 (13 digit retail)</option>
+              <option value="EAN8">EAN-8 (8 digit)</option>
+              <option value="UPC">UPC-A (12 digit US retail)</option>
+              <option value="ITF14">ITF-14 (Shipping carton)</option>
+              <option value="MSI">MSI (Numeric)</option>
+              <option value="pharmacode">Pharmacode (Pharma)</option>
+              <option value="codabar">Codabar</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label>Barcode Data <span class="hint" id="dataHint">Letters, numbers, symbols</span></label>
+          <div class="input-wrap">
+            <input type="text" id="data" class="mono" placeholder="e.g., BIGTOOLZ-2026" value="BIGTOOLZ2026">
+          </div>
+        </div>
+      </div>
+
+      <!-- Preview -->
+      <div class="preview-section">
+        <svg id="barcode" style="display:none;"></svg>
+        <div class="preview-empty" id="previewEmpty" style="display:none;">Enter data to generate barcode</div>
+        <div class="preview-error" id="previewError"></div>
+      </div>
+
+      <!-- Settings -->
+      <div class="settings-grid">
+        <div class="setting-group">
+          <label>Height (px)</label>
+          <input type="number" id="height" value="80" min="20" max="300" step="5">
+        </div>
+        <div class="setting-group">
+          <label>Bar Width</label>
+          <input type="number" id="width" value="2" min="1" max="6" step="0.5">
+        </div>
+        <div class="setting-group">
+          <label>Font Size</label>
+          <input type="number" id="fontSize" value="16" min="8" max="40" step="2">
+        </div>
+        <div class="setting-group">
+          <label>Bar Color</label>
+          <input type="color" id="lineColor" value="#000000">
+        </div>
+        <div class="setting-group">
+          <label>Background</label>
+          <input type="color" id="bgColor" value="#ffffff">
+        </div>
+        <div class="setting-group">
+          <label>Text Position</label>
+          <select id="textPosition">
+            <option value="bottom" selected>Bottom</option>
+            <option value="top">Top</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Toggles -->
+      <div class="toggle-row">
+        <div class="toggle-info">
+          <div class="toggle-title">Show Text Below Barcode</div>
+          <div class="toggle-desc">Display the encoded data as human-readable text</div>
+        </div>
+        <div class="toggle-switch on" id="displayToggle" role="switch" aria-checked="true"></div>
+      </div>
+
+      <div class="toggle-row">
+        <div class="toggle-info">
+          <div class="toggle-title">Transparent Background</div>
+          <div class="toggle-desc">Remove white background (PNG only)</div>
+        </div>
+        <div class="toggle-switch" id="transparentToggle" role="switch" aria-checked="false"></div>
+      </div>
+
+      <!-- Actions -->
+      <div class="actions">
+        <button class="btn btn-primary" id="downloadPngBtn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+          Download PNG
+        </button>
+        <button class="btn btn-secondary" id="downloadSvgBtn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+          Download SVG
+        </button>
+        <button class="btn btn-secondary" id="copyBtn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+          Copy Image
+        </button>
+      </div>
+
+    </div>
+
+    <!-- SEO Content -->
+    <div class="seo-content">
+
+      <h2>▥ What is a Barcode Generator?</h2>
+      <p>
+        A <strong>Barcode Generator</strong> is a tool that converts text or numbers into a machine-readable barcode the familiar pattern of black and white lines scanned at checkout counters, warehouses, and shipping docks. Barcodes are the backbone of modern retail, logistics, and inventory systems, enabling fast, error-free data capture.
+      </p>
+      <p>
+        Our free barcode generator supports <strong>12 different barcode formats</strong> from the versatile CODE128 for general use, to EAN-13 and UPC-A for retail products, to ITF-14 for shipping cartons. Everything runs <strong>100% in your browser</strong> no data sent to any server, complete privacy.
+      </p>
+
+      <h2>🚀 How to Use This Generator</h2>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-step-num">1</div>
+          <div class="how-step-title">Choose Format</div>
+          <div class="how-step-desc">Pick CODE128 for general use, EAN-13 for retail, ITF-14 for shipping.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">2</div>
+          <div class="how-step-title">Enter Data</div>
+          <div class="how-step-desc">Type the text or number to encode.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">3</div>
+          <div class="how-step-title">Customize</div>
+          <div class="how-step-desc">Adjust height, width, colors, and text visibility.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">4</div>
+          <div class="how-step-title">Download</div>
+          <div class="how-step-desc">Save as PNG (print) or SVG (design).</div>
+        </div>
+      </div>
+
+      <h2>📊 Barcode Formats Explained</h2>
+      <table class="format-table">
+        <thead>
+          <tr><th>Format</th><th>Characters</th><th>Best For</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>CODE128</strong></td><td>All ASCII (128 chars)</td><td>General purpose, retail, shipping</td></tr>
+          <tr><td><strong>CODE39</strong></td><td>A-Z, 0-9, -.$/+%</td><td>Inventory, badges, automotive</td></tr>
+          <tr><td><strong>EAN-13</strong></td><td>13 digits</td><td>Retail products (worldwide)</td></tr>
+          <tr><td><strong>EAN-8</strong></td><td>8 digits</td><td>Small retail packages</td></tr>
+          <tr><td><strong>UPC-A</strong></td><td>12 digits</td><td>Retail products (US/Canada)</td></tr>
+          <tr><td><strong>ITF-14</strong></td><td>14 digits</td><td>Shipping cartons, corrugated boxes</td></tr>
+          <tr><td><strong>MSI</strong></td><td>Digits</td><td>Inventory, shelf labels</td></tr>
+          <tr><td><strong>Pharmacode</strong></td><td>3-131070</td><td>Pharmaceutical packaging</td></tr>
+          <tr><td><strong>Codabar</strong></td><td>Digits + symbols</td><td>Blood banks, libraries</td></tr>
+        </tbody>
+      </table>
+
+      <h2>🎯 Choosing the Right Barcode Format</h2>
+
+      <h3>For General Purpose: CODE128</h3>
+      <p>If you're unsure which format to use, <strong>CODE128</strong> is almost always the right answer. It supports all 128 ASCII characters (letters, numbers, and symbols), is compact, and is the most widely supported by modern barcode scanners.</p>
+
+      <h3>For Retail Products: EAN-13 or UPC-A</h3>
+      <p>Selling products in stores? You'll need either <strong>EAN-13</strong> (used worldwide) or <strong>UPC-A</strong> (used in US/Canada). Both require a <strong>GS1 company prefix</strong> a unique identifier issued by GS1. Without it, your barcode won't scan correctly in retail systems.</p>
+
+      <h3>For Shipping Cartons: ITF-14</h3>
+      <p><strong>ITF-14</strong> is the standard for outer shipping boxes and corrugated cartons. It encodes 14 digits and prints large enough to scan reliably on rough cardboard surfaces.</p>
+
+      <h3>For Internal Inventory: CODE39</h3>
+      <p><strong>CODE39</strong> is simple, self-checking, and easy to print on cheap labels. Perfect for internal use like asset tags, warehouse bins, and employee badges.</p>
+
+      <h3>For Pharma: Pharmacode</h3>
+      <p>Pharmaceutical companies use <strong>Pharmacode</strong> for medicine packaging. It's a numeric-only barcode used during production line verification.</p>
+
+      <h2>✨ Key Features</h2>
+      <ul>
+        <li><strong>12 formats</strong> CODE128, CODE39, EAN-13, EAN-8, UPC-A, ITF-14, MSI, Pharmacode, Codabar.</li>
+        <li><strong>Live preview</strong> see the barcode update as you type.</li>
+        <li><strong>Customizable</strong> height, width, colors, font size.</li>
+        <li><strong>PNG + SVG download</strong> print or design work.</li>
+        <li><strong>Transparent background</strong> for overlay use.</li>
+        <li><strong>Text position</strong> top or bottom.</li>
+        <li><strong>Copy to clipboard</strong> one-click paste anywhere.</li>
+        <li><strong>100% browser-based</strong> complete privacy.</li>
+      </ul>
+
+      <h2>❓ Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-question">What is a barcode?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>A <strong>barcode</strong> is a machine-readable pattern of parallel lines of varying widths that encodes data. Barcodes are used in retail, logistics, inventory, ticketing, and many other industries for fast, accurate scanning.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What's the difference between Code128 and Code39?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>Code128</strong> is more compact and supports all 128 ASCII characters (letters, numbers, symbols). <strong>Code39</strong> is simpler and supports only uppercase letters, numbers, and a few symbols (-.$/+%). Code128 is preferred for most modern applications, especially when data is long.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What is EAN-13?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>EAN-13</strong> is the standard 13-digit barcode used for retail products worldwide (except North America). It encodes a <strong>country code, manufacturer code, product code, and check digit</strong>. To make a valid EAN-13 barcode for retail, you need a GS1 company prefix.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I use barcodes commercially?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>Yes</strong> barcodes generated by this tool are yours to use commercially. However, for retail products (EAN-13/UPC-A), you need a <strong>GS1 company prefix</strong> to ensure your barcodes are unique and scannable in stores.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What format should I download?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Use <strong>PNG</strong> for printing on labels or embedding in documents. Use <strong>SVG</strong> for scalable vector printing or design work SVG stays crisp at any size and is ideal for professional printers.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What's the minimum size for a scannable barcode?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Retail barcodes (EAN-13, UPC-A) have minimum magnification requirements set by GS1 typically 80% of nominal size. For general use, keep bar width at 2px minimum, height at 40-80px, and print at 300 DPI or higher for reliable scanning.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Are barcodes sent to a server?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>No. All barcodes are generated in your browser using JavaScript (JsBarcode library). Your data never leaves your device, and nothing is stored anywhere.</p></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-header">🔗 Related SEO Tools</div>
+    <div class="sidebar-list">
+      <a href="/tools/image-tools/qr-code-generator/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#3b82f6;">▦</div>
+        <div class="sidebar-info"><div class="sidebar-title">QR Code Generator</div><div class="sidebar-desc">Create QR codes</div></div>
+      </a>
+      <a href="/tools/seo-tools/qr-code-logo/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#3b82f6;">▦</div>
+        <div class="sidebar-info"><div class="sidebar-title">QR Code with Logo</div><div class="sidebar-desc">Branded QR codes</div></div>
+      </a>
+      <a href="/tools/seo-tools/utm-builder/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#10b981;">🔗</div>
+        <div class="sidebar-info"><div class="sidebar-title">UTM Builder</div><div class="sidebar-desc">Tracking URLs</div></div>
+      </a>
+      <a href="/tools/seo-tools/email-signature/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#8b5cf6;">✉️</div>
+        <div class="sidebar-info"><div class="sidebar-title">Email Signature</div><div class="sidebar-desc">Signature generator</div></div>
+      </a>
+      <a href="/tools/seo-tools/color-palette/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#ec4899;">🎨</div>
+        <div class="sidebar-info"><div class="sidebar-title">Color Palette</div><div class="sidebar-desc">Color schemes</div></div>
+      </a>
+      <a href="/tools/seo-tools/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#8b5cf6;">📈</div>
+        <div class="sidebar-info"><div class="sidebar-title">All SEO Tools →</div><div class="sidebar-desc">Browse 25+ tools</div></div>
+      </a>
+    </div>
+  </aside>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand"><div class="logo-icon">⚒</div>BigToolz</span></div>
+      <p class="footer-tagline">Your Ultimate Online Tools Hub</p>
+      <div class="footer-social">
+        <a href="https://facebook.com/bigtoolz" aria-label="Facebook">f</a>
+        <a href="https://twitter.com/bigtoolz" aria-label="Twitter">𝕏</a>
+        <a href="https://youtube.com/@bigtoolz" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+    <div>
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/tools/">All Tools</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Categories</h3>
+      <ul class="footer-links">
+        <li><a href="/tools/image-tools/">Image Tools</a></li>
+        <li><a href="/tools/pdf-tools/">PDF Tools</a></li>
+        <li><a href="/tools/text-tools/">Text Tools</a></li>
+        <li><a href="/tools/seo-tools/">SEO Tools</a></li>
+        <li><a href="/tools/categories">All Categories →</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Legal</h3>
+      <ul class="footer-links">
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left"><span>✓ 100% Free</span><span>✓ No Sign Up</span><span>✓ No Installation</span></div>
+    <div class="footer-bottom-right">© 2026 BigToolz. All rights reserved.</div>
+    <div class="footer-bottom-links"><a href="/privacy-policy">Privacy</a><a href="/terms">Terms</a><a href="/disclaimer">Disclaimer</a></div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<!-- JsBarcode library (open-source, MIT) -->
+<script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.6/dist/JsBarcode.all.min.js"></script>
+
+<script>
+'use strict';
+
+/* ===== THEME ===== */
+(function(){try{var t=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&d))document.documentElement.setAttribute('data-theme','dark');else if(t==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();
+document.querySelector('.theme-btn')?.addEventListener('click',()=>{const h=document.documentElement;const c=h.getAttribute('data-theme');const d=window.matchMedia('(prefers-color-scheme: dark)').matches;let n=c==='dark'?'light':c==='light'?'dark':(d?'light':'dark');h.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}});
+
+/* ===== HELPERS ===== */
+const $ = (s, p = document) => p.querySelector(s);
+const $$ = (s, p = document) => [...p.querySelectorAll(s)];
+
+function showToast(msg, type = 'info', duration = 3000) {
+  const t = $('#toast');
+  if (!t) return;
+  t.className = 'toast visible' + (type !== 'info' ? ' ' + type : '');
+  t.textContent = msg;
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove('visible'), duration);
+}
+
+/* ===== STATE ===== */
+const state = {
+  format: 'CODE128',
+  data: 'BIGTOOLZ2026',
+  height: 80,
+  width: 2,
+  fontSize: 16,
+  lineColor: '#000000',
+  bgColor: '#ffffff',
+  displayValue: true,
+  textPosition: 'bottom',
+  transparent: false
+};
+
+/* ===== DOM ===== */
+const barcodeSvg = $('#barcode');
+const previewEmpty = $('#previewEmpty');
+const previewError = $('#previewError');
+const formatSelect = $('#format');
+const dataInput = $('#data');
+const dataHint = $('#dataHint');
+const heightInput = $('#height');
+const widthInput = $('#width');
+const fontSizeInput = $('#fontSize');
+const lineColorInput = $('#lineColor');
+const bgColorInput = $('#bgColor');
+const textPositionSelect = $('#textPosition');
+const displayToggle = $('#displayToggle');
+const transparentToggle = $('#transparentToggle');
+
+/* ===== FORMAT HINTS ===== */
+const FORMAT_HINTS = {
+  CODE128: 'Letters, numbers, symbols',
+  CODE128A: 'Uppercase + numbers',
+  CODE128B: 'Standard ASCII',
+  CODE128C: 'Even number of digits',
+  CODE39: 'A-Z, 0-9, -.$/+%',
+  EAN13: 'Exactly 12-13 digits',
+  EAN8: 'Exactly 7-8 digits',
+  UPC: 'Exactly 11-12 digits',
+  ITF14: 'Exactly 13-14 digits',
+  MSI: 'Digits only',
+  pharmacode: 'Number 3-131070',
+  codabar: 'Digits + ABCD'
+};
+
+/* ===== FORMAT CHANGE ===== */
+formatSelect.addEventListener('change', () => {
+  state.format = formatSelect.value;
+  dataHint.textContent = FORMAT_HINTS[state.format] || '';
+
+  // Pre-fill sample data based on format
+  const samples = {
+    CODE128: 'BIGTOOLZ2026',
+    CODE128A: 'BIGTOOLZ',
+    CODE128B: 'BigToolz-2026',
+    CODE128C: '12345678',
+    CODE39: 'BIGTOOLZ',
+    EAN13: '5901234123457',
+    EAN8: '96385074',
+    UPC: '036000291452',
+    ITF14: '15400141288763',
+    MSI: '1234567890',
+    pharmacode: '1234',
+    codabar: 'A123456A'
+  };
+
+  if (samples[state.format]) {
+    dataInput.value = samples[state.format];
+    state.data = samples[state.format];
+  }
+
+  renderBarcode();
+});
+
+/* ===== DATA INPUT ===== */
+dataInput.addEventListener('input', () => {
+  state.data = dataInput.value;
+  renderBarcode();
+});
+
+/* ===== SETTINGS ===== */
+heightInput.addEventListener('input', () => {
+  state.height = parseInt(heightInput.value, 10) || 80;
+  renderBarcode();
+});
+
+widthInput.addEventListener('input', () => {
+  state.width = parseFloat(widthInput.value) || 2;
+  renderBarcode();
+});
+
+fontSizeInput.addEventListener('input', () => {
+  state.fontSize = parseInt(fontSizeInput.value, 10) || 16;
+  renderBarcode();
+});
+
+lineColorInput.addEventListener('input', () => {
+  state.lineColor = lineColorInput.value;
+  renderBarcode();
+});
+
+bgColorInput.addEventListener('input', () => {
+  state.bgColor = bgColorInput.value;
+  renderBarcode();
+});
+
+textPositionSelect.addEventListener('change', () => {
+  state.textPosition = textPositionSelect.value;
+  renderBarcode();
+});
+
+/* ===== TOGGLES ===== */
+displayToggle.addEventListener('click', () => {
+  state.displayValue = !state.displayValue;
+  displayToggle.classList.toggle('on', state.displayValue);
+  displayToggle.setAttribute('aria-checked', state.displayValue);
+  renderBarcode();
+});
+
+transparentToggle.addEventListener('click', () => {
+  state.transparent = !state.transparent;
+  transparentToggle.classList.toggle('on', state.transparent);
+  transparentToggle.setAttribute('aria-checked', state.transparent);
+  renderBarcode();
+});
+
+/* ===== RENDER BARCODE ===== */
+function renderBarcode() {
+  previewError.classList.remove('visible');
+  previewError.textContent = '';
+  previewEmpty.style.display = 'none';
+
+  const data = state.data.trim();
+
+  if (!data) {
+    barcodeSvg.style.display = 'none';
+    previewEmpty.style.display = 'block';
+    return;
+  }
+
+  // Validate first for cleaner error messages
+  const validation = validateInput(state.format, data);
+  if (!validation.valid) {
+    barcodeSvg.style.display = 'none';
+    previewError.textContent = validation.error;
+    previewError.classList.add('visible');
+    return;
+  }
+
+  try {
+    barcodeSvg.style.display = 'block';
+    JsBarcode(barcodeSvg, data, {
+      format: state.format,
+      height: state.height,
+      width: state.width,
+      fontSize: state.fontSize,
+      lineColor: state.lineColor,
+      background: state.transparent ? 'transparent' : state.bgColor,
+      displayValue: state.displayValue,
+      textPosition: state.textPosition,
+      margin: 10
+    });
+  } catch (err) {
+    barcodeSvg.style.display = 'none';
+    previewError.textContent = 'Cannot generate barcode: ' + (err.message || 'Invalid input for this format');
+    previewError.classList.add('visible');
+  }
+}
+
+/* ===== VALIDATION ===== */
+function validateInput(format, data) {
+  switch (format) {
+    case 'EAN13':
+      if (!/^\d{12,13}$/.test(data)) {
+        return { valid: false, error: 'EAN-13 requires exactly 12 or 13 digits.' };
+      }
+      break;
+    case 'EAN8':
+      if (!/^\d{7,8}$/.test(data)) {
+        return { valid: false, error: 'EAN-8 requires exactly 7 or 8 digits.' };
+      }
+      break;
+    case 'UPC':
+      if (!/^\d{11,12}$/.test(data)) {
+        return { valid: false, error: 'UPC-A requires exactly 11 or 12 digits.' };
+      }
+      break;
+    case 'ITF14':
+      if (!/^\d{13,14}$/.test(data)) {
+        return { valid: false, error: 'ITF-14 requires exactly 13 or 14 digits.' };
+      }
+      break;
+    case 'MSI':
+      if (!/^\d+$/.test(data)) {
+        return { valid: false, error: 'MSI supports digits only.' };
+      }
+      break;
+    case 'pharmacode': {
+      const num = parseInt(data, 10);
+      if (isNaN(num) || num < 3 || num > 131070) {
+        return { valid: false, error: 'Pharmacode requires a number between 3 and 131070.' };
+      }
+      break;
+    }
+    case 'CODE39':
+      if (!/^[A-Z0-9\-\.\ \$\/\+\%]+$/.test(data)) {
+        return { valid: false, error: 'CODE39 supports A-Z, 0-9, and - . $ / + %' };
+      }
+      break;
+    case 'CODE128C':
+      if (!/^\d+$/.test(data) || data.length % 2 !== 0) {
+        return { valid: false, error: 'CODE128C requires an even number of digits.' };
+      }
+      break;
+    case 'CODE128A':
+      if (!/^[A-Z0-9\s!-/:-@\[-`{-~]+$/.test(data)) {
+        return { valid: false, error: 'CODE128A supports uppercase letters, numbers, and symbols.' };
+      }
+      break;
+  }
+  return { valid: true };
+}
+
+/* ===== DOWNLOAD PNG ===== */
+$('#downloadPngBtn').addEventListener('click', () => {
+  if (!state.data.trim() || !barcodeSvg.style.display || barcodeSvg.style.display === 'none') {
+    showToast('Please enter valid data first', 'error');
+    return;
+  }
+
+  const svgData = new XMLSerializer().serializeToString(barcodeSvg);
+  const canvas = document.createElement('canvas');
+  const ctx = canvas.getContext('2d');
+  const img = new Image();
+
+  const svgBlob = new Blob([svgData], { type: 'image/svg+xml;charset=utf-8' });
+  const url = URL.createObjectURL(svgBlob);
+
+  img.onload = () => {
+    // Get actual SVG size
+    const svgRect = barcodeSvg.getBoundingClientRect();
+    const scale = 2; // 2x for high resolution
+    canvas.width = (svgRect.width || 400) * scale;
+    canvas.height = (svgRect.height || 100) * scale;
+
+    if (!state.transparent) {
+      ctx.fillStyle = state.bgColor;
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+    }
+    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+
+    URL.revokeObjectURL(url);
+
+    canvas.toBlob((blob) => {
+      const dlUrl = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = dlUrl;
+      a.download = `barcode-${state.format}-${Date.now()}.png`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      setTimeout(() => URL.revokeObjectURL(dlUrl), 1000);
+      showToast('PNG downloaded!', 'success');
+    }, 'image/png');
+  };
+
+  img.onerror = () => {
+    URL.revokeObjectURL(url);
+    showToast('Download failed', 'error');
+  };
+
+  img.src = url;
+});
+
+/* ===== DOWNLOAD SVG ===== */
+$('#downloadSvgBtn').addEventListener('click', () => {
+  if (!state.data.trim() || !barcodeSvg.style.display || barcodeSvg.style.display === 'none') {
+    showToast('Please enter valid data first', 'error');
+    return;
+  }
+
+  const svgData = new XMLSerializer().serializeToString(barcodeSvg);
+  const blob = new Blob([svgData], { type: 'image/svg+xml;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `barcode-${state.format}-${Date.now()}.svg`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+  showToast('SVG downloaded!', 'success');
+});
+
+/* ===== COPY IMAGE ===== */
+$('#copyBtn').addEventListener('click', async () => {
+  if (!state.data.trim() || !barcodeSvg.style.display || barcodeSvg.style.display === 'none') {
+    showToast('Please enter valid data first', 'error');
+    return;
+  }
+
+  try {
+    const svgData = new XMLSerializer().serializeToString(barcodeSvg);
+    const canvas = document.createElement('canvas');
+    const ctx = canvas.getContext('2d');
+    const img = new Image();
+
+    const svgBlob = new Blob([svgData], { type: 'image/svg+xml;charset=utf-8' });
+    const url = URL.createObjectURL(svgBlob);
+
+    await new Promise((resolve, reject) => {
+      img.onload = () => {
+        const svgRect = barcodeSvg.getBoundingClientRect();
+        canvas.width = (svgRect.width || 400) * 2;
+        canvas.height = (svgRect.height || 100) * 2;
+
+        if (!state.transparent) {
+          ctx.fillStyle = state.bgColor;
+          ctx.fillRect(0, 0, canvas.width, canvas.height);
+        }
+        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+        URL.revokeObjectURL(url);
+        resolve();
+      };
+      img.onerror = () => { URL.revokeObjectURL(url); reject(new Error('Load failed')); };
+      img.src = url;
+    });
+
+    const blob = await new Promise(res => canvas.toBlob(res, 'image/png'));
+
+    if (navigator.clipboard && navigator.clipboard.write) {
+      await navigator.clipboard.write([new ClipboardItem({ 'image/png': blob })]);
+      showToast('Barcode copied to clipboard!', 'success');
+    } else {
+      showToast('Clipboard not supported use Download', 'error');
+    }
+  } catch (err) {
+    console.error(err);
+    showToast('Copy failed use Download instead', 'error');
+  }
+});
+
+/* ===== FAQ ===== */
+$$('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    $$('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+
+/* ===== INIT ===== */
+dataHint.textContent = FORMAT_HINTS[state.format];
+renderBarcode();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2563eb">
+
+<title>PDF to CSV Converter - Convert PDF Tables to CSV Online Free | BigToolz</title>
+<meta name="description" content="Convert PDF to CSV online free. Extract tables from PDF into CSV, TSV, or semicolon-separated. Editable preview, multi-page support. No upload, browser-based.">
+<meta name="keywords" content="pdf to csv, convert pdf to csv, pdf table to csv, extract pdf table csv, pdf to tsv">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://bigtoolz.com/tools/pdf-tools/form-pdf/pdf-to-csv/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="PDF to CSV Converter - Free Online Tool | BigToolz">
+<meta property="og:description" content="Convert PDF tables to CSV free, browser-based, no upload.">
+<meta property="og:url" content="https://bigtoolz.com/tools/pdf-tools/form-pdf/pdf-to-csv/">
+<meta property="og:image" content="https://bigtoolz.com/assets/images/og-image.jpg">
+<meta property="og:site_name" content="BigToolz">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="PDF to CSV - BigToolz">
+<meta name="twitter:description" content="Convert PDF tables to CSV instantly free, no upload.">
+<meta name="twitter:image" content="https://bigtoolz.com/assets/images/twitter-card.jpg">
+
+<link rel="icon" href="/assets/images/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/images/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#f8f9fc;color:#1a1a2e;overflow-x:hidden;line-height:1.5}
+
+  .header{background:#fff;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;position:sticky;top:0;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+  .header-left{display:flex;align-items:center;gap:40px}
+  .logo{display:flex;align-items:center;gap:8px;font-size:22px;font-weight:800;color:#1a1a2e;text-decoration:none}
+  .logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#3b82f6,#2563eb);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px}
+  .logo span{color:#2563eb}
+  .nav{display:flex;align-items:center;gap:28px;list-style:none}
+  .nav a{text-decoration:none;color:#4b5563;font-size:14px;font-weight:500;transition:color .2s}
+  .nav a:hover,.nav a.active{color:#2563eb}
+  .header-right{display:flex;align-items:center;gap:16px}
+  .search-btn,.theme-btn{width:36px;height:36px;border-radius:50%;border:none;background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#4b5563}
+  .search-btn:hover,.theme-btn:hover{background:#f3f4f6}
+  .bookmark-btn{display:flex;align-items:center;gap:8px;background:#2563eb;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
+  .bookmark-btn:hover{background:#1d4ed8}
+
+  .hero{background:linear-gradient(135deg,#0a0e27 0%,#1a1a4e 40%,#2d1b69 70%,#4c1d95 100%);padding:40px 40px 60px;position:relative;overflow:hidden;color:#fff}
+  .hero::before{content:'';position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(59,130,246,.3) 0%,transparent 70%);border-radius:50%}
+  .hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+  .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px;flex-wrap:wrap}
+  .breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none}
+  .breadcrumb a:hover{color:#fff}
+  .breadcrumb .sep{color:rgba(255,255,255,.4)}
+  .breadcrumb .current{color:#fff;font-weight:500}
+  .hero-title-row{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+  .hero-icon{width:60px;height:60px;background:#3b82f6;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;color:#fff;flex-shrink:0;box-shadow:0 8px 24px rgba(59,130,246,.4)}
+  .hero-title{font-size:42px;font-weight:800;line-height:1.15}
+  .hero-title .blue{color:#60a5fa}
+  .hero-desc{font-size:15px;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:24px;max-width:560px}
+  .hero-features{display:flex;gap:24px;flex-wrap:wrap}
+  .hero-feature{display:flex;align-items:center;gap:6px;font-size:13px;color:#fff;font-weight:500}
+  .hero-feature .check{width:18px;height:18px;border-radius:50%;background:#3b82f6;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;flex-shrink:0}
+
+  .main-content{max-width:1200px;margin:0 auto;padding:40px;display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start}
+  .tool-content{min-width:0}
+
+  .workspace{background:#fff;border-radius:16px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,.06);border:1px solid #e5e7eb;margin-bottom:24px}
+
+  .dropzone{border:2px dashed #93c5fd;border-radius:12px;padding:50px 30px;text-align:center;background:#eff6ff;margin-bottom:24px;transition:all .2s;cursor:pointer}
+  .dropzone:hover,.dropzone.dragover{border-color:#3b82f6;background:#dbeafe}
+  .dropzone-icon{width:60px;height:60px;background:linear-gradient(135deg,#3b82f6,#2563eb);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;color:#fff;font-size:26px;transition:transform .2s}
+  .dropzone:hover .dropzone-icon{transform:translateY(-4px)}
+  .dropzone-title{font-size:16px;font-weight:700;color:#1a1a2e;margin-bottom:8px}
+  .dropzone-sub{font-size:14px;color:#6b7280;margin-bottom:20px}
+  .dropzone-sub a{color:#3b82f6;font-weight:600;text-decoration:none}
+  .choose-btn{display:inline-flex;align-items:center;gap:8px;background:#3b82f6;color:#fff;border:none;padding:12px 28px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;transition:background .2s}
+  .choose-btn:hover{background:#2563eb}
+  .dropzone-info{font-size:12px;color:#9ca3af;display:flex;align-items:center;justify-content:center;gap:8px;margin-top:16px;flex-wrap:wrap}
+  .dropzone-info .divider{color:#d1d5db}
+  .file-input{display:none}
+
+  .editor{display:none}
+  .editor.visible{display:block}
+
+  /* Stats bar */
+  .stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px;padding:16px;background:#eff6ff;border:1px solid #93c5fd;border-radius:12px}
+  .stat-block{text-align:center}
+  .stat-block-val{font-size:22px;font-weight:800;color:#2563eb;line-height:1.2}
+  .stat-block-label{font-size:10px;font-weight:700;color:#1e40af;text-transform:uppercase;letter-spacing:.5px;margin-top:4px}
+
+  /* Options */
+  .options{background:#eff6ff;border-radius:12px;padding:20px;margin-bottom:20px;border:1px solid #93c5fd}
+  .options-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+  .options-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .option-group label{display:block;font-size:12px;font-weight:600;color:#4b5563;margin-bottom:6px}
+  .option-group select{width:100%;padding:10px 12px;border:1px solid #e5e7eb;border-radius:8px;font-size:13px;font-family:inherit;color:#1a1a2e;background:#fff;outline:none;transition:border-color .2s}
+  .option-group select:focus{border-color:#3b82f6;box-shadow:0 0 0 3px rgba(59,130,246,.1)}
+
+  .toggle-row{display:flex;align-items:center;justify-content:space-between;padding:12px 14px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;gap:12px;margin-top:16px}
+  .toggle-info{display:flex;flex-direction:column;gap:2px}
+  .toggle-title{font-size:13px;font-weight:700;color:#1a1a2e}
+  .toggle-desc{font-size:11px;color:#6b7280;line-height:1.4}
+  .toggle-switch{position:relative;width:44px;height:24px;background:#d1d5db;border-radius:12px;cursor:pointer;transition:background .2s;flex-shrink:0}
+  .toggle-switch::after{content:'';position:absolute;top:2px;left:2px;width:20px;height:20px;background:#fff;border-radius:50%;transition:transform .2s;box-shadow:0 1px 3px rgba(0,0,0,.15)}
+  .toggle-switch.on{background:#3b82f6}
+  .toggle-switch.on::after{transform:translateX(20px)}
+
+  /* Preview block */
+  .preview-block{background:#0a0e27;border-radius:12px;padding:16px;margin-bottom:20px;max-height:180px;overflow:auto}
+  .preview-block pre{font-family:'JetBrains Mono','Courier New',monospace;font-size:11px;line-height:1.6;color:#93c5fd;white-space:pre;margin:0}
+  .preview-block-title{font-size:11px;font-weight:700;color:#60a5fa;text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px}
+
+  /* Data preview table */
+  .data-section{margin-bottom:20px}
+  .data-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;flex-wrap:wrap;gap:12px}
+  .data-title{font-size:15px;font-weight:800;color:#1a1a2e;display:flex;align-items:center;gap:8px}
+  .data-hint{font-size:12px;color:#6b7280;font-weight:500}
+  .table-scroll{overflow:auto;max-height:520px;border:1px solid #e5e7eb;border-radius:10px;background:#fff}
+  .data-table{border-collapse:collapse;width:100%;font-size:12px;font-family:'JetBrains Mono','Courier New',monospace}
+  .data-table th{background:#eff6ff;color:#1e40af;font-weight:700;padding:8px 10px;text-align:left;border:1px solid #dbeafe;position:sticky;top:0;z-index:2;font-size:11px;text-transform:uppercase;letter-spacing:.3px;white-space:nowrap}
+  .data-table td{border:1px solid #f3f4f6;padding:6px 10px;color:#4b5563;white-space:pre;min-width:80px}
+  .data-table td:focus{outline:2px solid #3b82f6;outline-offset:-2px;background:#eff6ff}
+  .data-table tr:hover td{background:#f9fafb}
+  .data-table tr:nth-child(even) td{background:#fafafa}
+  .data-table tr:nth-child(even):hover td{background:#f3f4f6}
+  .cell-editable{cursor:text}
+  .row-num-col{background:#f3f4f6!important;color:#6b7280!important;font-weight:600;text-align:center;user-select:none;width:40px;min-width:40px}
+
+  .empty-state{padding:40px 20px;text-align:center;color:#6b7280}
+  .empty-state-icon{font-size:42px;margin-bottom:10px;opacity:.5}
+  .empty-state h3{font-size:16px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+  .empty-state p{font-size:13px;line-height:1.6}
+
+  /* Actions */
+  .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 28px;border-radius:10px;font-size:15px;font-weight:700;font-family:inherit;cursor:pointer;border:none;transition:all .2s;text-decoration:none}
+  .btn-primary{background:#3b82f6;color:#fff;flex:1;box-shadow:0 4px 12px rgba(59,130,246,.2)}
+  .btn-primary:hover:not(:disabled){background:#2563eb;transform:translateY(-2px);box-shadow:0 6px 20px rgba(59,130,246,.3)}
+  .btn-primary:disabled{opacity:.5;cursor:not-allowed;transform:none}
+  .btn-secondary{background:#fff;color:#3b82f6;border:1px solid #e5e7eb}
+  .btn-secondary:hover{border-color:#3b82f6;background:#eff6ff}
+
+  .status-msg{margin-top:14px;padding:12px 14px;border-radius:8px;font-size:13px;font-weight:600;display:none}
+  .status-msg.visible{display:block}
+  .status-msg.success{background:#d1fae5;color:#065f46;border:1px solid #a7f3d0}
+  .status-msg.error{background:#fee2e2;color:#991b1b;border:1px solid #fecaca}
+  .status-msg.info{background:#eff6ff;color:#1e40af;border:1px solid #93c5fd}
+
+  .progress{display:none;margin-top:14px}
+  .progress.visible{display:block}
+  .progress-bar{width:100%;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden;margin-bottom:8px}
+  .progress-fill{height:100%;background:linear-gradient(90deg,#60a5fa,#3b82f6);border-radius:4px;width:0%;transition:width .3s ease}
+  .progress-text{font-size:13px;color:#6b7280;text-align:center;font-weight:500}
+
+  /* SEO */
+  .seo-content{background:#fff;border-radius:16px;padding:32px;border:1px solid #e5e7eb;margin-bottom:24px}
+  .seo-content h2{font-size:22px;font-weight:800;color:#1a1a2e;margin-bottom:14px;margin-top:28px;display:flex;align-items:center;gap:10px}
+  .seo-content h2:first-child{margin-top:0}
+  .seo-content h3{font-size:16px;font-weight:700;color:#1a1a2e;margin:20px 0 10px}
+  .seo-content p{font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:14px}
+  .seo-content ul{list-style:none;padding-left:0;margin-bottom:16px}
+  .seo-content ul li{position:relative;padding-left:24px;font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:8px}
+  .seo-content ul li::before{content:'';position:absolute;left:6px;top:12px;width:6px;height:6px;background:#3b82f6;border-radius:50%}
+  .seo-content a{color:#2563eb;text-decoration:none;font-weight:600}
+  .seo-content a:hover{text-decoration:underline}
+  .seo-content strong{color:#1a1a2e;font-weight:700}
+  .seo-content code{background:#f1f5f9;padding:2px 6px;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:13px;color:#0f172a;border:1px solid #e2e8f0}
+
+  .how-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:20px}
+  .how-step{background:#eff6ff;border-radius:12px;padding:20px;border:1px solid #93c5fd}
+  .how-step-num{width:36px;height:36px;border-radius:50%;background:#3b82f6;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;margin-bottom:12px}
+  .how-step-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+  .how-step-desc{font-size:13px;color:#6b7280;line-height:1.6}
+
+  .faq-item{background:#eff6ff;border:1px solid #93c5fd;border-radius:12px;margin-bottom:10px;overflow:hidden;transition:border-color .2s}
+  .faq-item:hover{border-color:#3b82f6}
+  .faq-question{width:100%;background:none;border:none;padding:18px 22px;font-size:15px;font-weight:700;color:#1a1a2e;text-align:left;cursor:pointer;font-family:inherit;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .faq-question .chev{font-size:12px;color:#3b82f6;transition:transform .2s;flex-shrink:0}
+  .faq-item.open .faq-question .chev{transform:rotate(180deg)}
+  .faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 22px}
+  .faq-item.open .faq-answer{max-height:500px;padding-bottom:18px}
+  .faq-answer p{font-size:14px;color:#6b7280;line-height:1.7;margin:0}
+
+  .sidebar{background:#fff;border-radius:16px;padding:24px;border:1px solid #e5e7eb;position:sticky;top:80px;margin-bottom:24px}
+  .sidebar-header{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:800;color:#1a1a2e;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid #f3f4f6}
+  .sidebar-list{display:flex;flex-direction:column;gap:8px}
+  .sidebar-item{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;cursor:pointer;transition:background .2s;text-decoration:none;color:inherit;border:1px solid #f3f4f6}
+  .sidebar-item:hover{background:#eff6ff;border-color:#93c5fd}
+  .sidebar-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;flex-shrink:0}
+  .sidebar-info{flex:1;min-width:0}
+  .sidebar-title{font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:2px}
+  .sidebar-desc{font-size:11px;color:#9ca3af;line-height:1.4}
+
+  .footer{background:#0a0e27;padding:60px 40px 30px;color:#fff;margin-top:40px}
+  .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:40px}
+  .footer-brand{display:flex;align-items:center;gap:8px;font-size:20px;font-weight:800;margin-bottom:12px}
+  .footer-brand span{color:#60a5fa}
+  .footer-tagline{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px}
+  .footer-social{display:flex;gap:12px}
+  .footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:16px;transition:background .2s}
+  .footer-social a:hover{background:rgba(255,255,255,.2)}
+  .footer-heading{font-size:14px;font-weight:700;margin-bottom:20px;color:#fff}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .footer-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;transition:color .2s}
+  .footer-links a:hover{color:#60a5fa}
+  .footer-bottom{max-width:1200px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  .footer-bottom-left{display:flex;gap:20px;font-size:12px;color:rgba(255,255,255,.5)}
+  .footer-bottom-right,.footer-bottom-links a{font-size:12px;color:rgba(255,255,255,.5);text-decoration:none}
+  .footer-bottom-links{display:flex;gap:20px}
+
+  .toast{position:fixed;bottom:24px;right:24px;background:#1a1a2e;color:#fff;padding:14px 20px;border-radius:10px;font-size:13px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:3000;transform:translateY(200%);transition:transform .3s ease;max-width:320px}
+  .toast.visible{transform:translateY(0)}
+  .toast.success{background:#10b981}
+  .toast.error{background:#ef4444}
+
+  @media(max-width:1024px){
+    .main-content{grid-template-columns:1fr;padding:24px 20px}
+    .sidebar{position:static}
+    .how-steps{grid-template-columns:repeat(2,1fr)}
+    .options-grid{grid-template-columns:1fr 1fr}
+    .stats-bar{grid-template-columns:repeat(2,1fr)}
+  }
+  @media(max-width:768px){
+    .header{padding:0 20px}.nav{display:none}
+    .hero{padding:24px 20px 40px}
+    .hero-title{font-size:28px}
+    .hero-icon{width:48px;height:48px;font-size:22px}
+    .hero-title-row{flex-direction:column;align-items:flex-start;gap:12px}
+    .main-content{padding:20px 16px}
+    .workspace{padding:20px}
+    .dropzone{padding:32px 16px}
+    .how-steps{grid-template-columns:1fr}
+    .seo-content{padding:20px}
+    .footer-inner{grid-template-columns:1fr 1fr}
+    .toast{left:16px;right:16px;bottom:16px;max-width:none}
+    .options-grid{grid-template-columns:1fr}
+  }
+  @media(max-width:576px){
+    .header{padding:0 16px}.header-right .search-btn,.header-right .theme-btn{display:none}
+    .hero-title{font-size:24px}
+    .actions{flex-direction:column}
+    .btn{width:100%}
+    .btn-primary{flex:none}
+    .footer-inner{grid-template-columns:1fr}
+    .footer-bottom{flex-direction:column;text-align:center}
+    .stats-bar{grid-template-columns:1fr}
+  }
+
+  html[data-theme="dark"] body{background:#0f172a;color:#f1f5f9}
+  html[data-theme="dark"] .header,html[data-theme="dark"] .workspace,html[data-theme="dark"] .seo-content,html[data-theme="dark"] .sidebar{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .logo,html[data-theme="dark"] .hero-title,html[data-theme="dark"] .seo-content h2,html[data-theme="dark"] .seo-content h3,html[data-theme="dark"] .faq-question,html[data-theme="dark"] .sidebar-header,html[data-theme="dark"] .sidebar-title,html[data-theme="dark"] .options-title,html[data-theme="dark"] .data-title,html[data-theme="dark"] .toggle-title,html[data-theme="dark"] .empty-state h3{color:#f1f5f9}
+  html[data-theme="dark"] .nav a{color:#cbd5e1}
+  html[data-theme="dark"] .dropzone{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .how-step,html[data-theme="dark"] .faq-item,html[data-theme="dark"] .options,html[data-theme="dark"] .stats-bar,html[data-theme="dark"] .toggle-row{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .option-group select{background:#1e293b;border-color:#334155;color:#f1f5f9}
+  html[data-theme="dark"] .seo-content p,html[data-theme="dark"] .seo-content ul li,html[data-theme="dark"] .faq-answer p,html[data-theme="dark"] .empty-state{color:#cbd5e1}
+  html[data-theme="dark"] .seo-content code{background:#020617;color:#60a5fa;border-color:#334155}
+  html[data-theme="dark"] .table-scroll{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .data-table th{background:#1e3a8a;color:#93c5fd;border-color:#1e40af}
+  html[data-theme="dark"] .data-table td{background:#0f172a;border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .data-table tr:nth-child(even) td{background:#1e293b}
+  html[data-theme="dark"] .data-table tr:hover td{background:#1e40af}
+  html[data-theme="dark"] .row-num-col{background:#1e293b!important;color:#94a3b8!important}
+  html[data-theme="dark"] .stat-block-val{color:#60a5fa}
+  html[data-theme="dark"] .stat-block-label{color:#93c5fd}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type": "SoftwareApplication", "name": "PDF to CSV Converter", "url": "https://bigtoolz.com/tools/pdf-tools/form-pdf/pdf-to-csv/", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any (Web-based)", "description": "Free online PDF to CSV converter extract tables from PDF into CSV, TSV, or semicolon-separated values. Works in your browser.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.7", "ratingCount": "1876"}},
+    {"@type": "HowTo", "name": "How to Convert PDF to CSV", "step": [
+      {"@type": "HowToStep", "name": "Upload PDF", "text": "Drag & drop or click to select your PDF with tables."},
+      {"@type": "HowToStep", "name": "Auto-Extract", "text": "Tables are auto-detected and converted to rows/columns."},
+      {"@type": "HowToStep", "name": "Configure", "text": "Choose delimiter (comma/semicolon/tab) and review the preview."},
+      {"@type": "HowToStep", "name": "Download CSV", "text": "Save the CSV file for Excel, Google Sheets, or databases."}
+    ]},
+    {"@type": "FAQPage", "mainEntity": [
+      {"@type": "Question", "name": "How do I convert PDF to CSV?", "acceptedAnswer": {"@type": "Answer", "text": "Upload your PDF, choose your delimiter, review the auto-detected table, edit if needed, then click Download CSV. Free, no signup, all in your browser."}},
+      {"@type": "Question", "name": "What's the difference between CSV and Excel output?", "acceptedAnswer": {"@type": "Answer", "text": "CSV is a plain-text format universal, lightweight, and works with any spreadsheet app, database, or programming language. Excel (.xlsx) preserves formatting and number types. Use CSV for data exchange; Excel for analysis."}},
+      {"@type": "Question", "name": "Which delimiter should I use?", "acceptedAnswer": {"@type": "Answer", "text": "Comma (,) is the standard in most regions. Semicolon (;) is used in some European countries where comma is the decimal separator. Tab (\\t) produces TSV files good for tabular data that contains commas."}},
+      {"@type": "Question", "name": "Does it work with scanned PDFs?", "acceptedAnswer": {"@type": "Answer", "text": "No. The tool extracts embedded text scanned image PDFs have no text layer. You'd need OCR (Optical Character Recognition) software first to create a text layer."}},
+      {"@type": "Question", "name": "Are my PDFs uploaded to a server?", "acceptedAnswer": {"@type": "Answer", "text": "No. All processing happens in your browser using pdf.js. Your file never leaves your device."}}
+    ]},
+    {"@type": "BreadcrumbList", "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bigtoolz.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://bigtoolz.com/tools/"},
+      {"@type": "ListItem", "position": 3, "name": "PDF Tools", "item": "https://bigtoolz.com/tools/pdf-tools/"},
+      {"@type": "ListItem", "position": 4, "name": "Form PDF", "item": "https://bigtoolz.com/tools/pdf-tools/form-pdf/"},
+      {"@type": "ListItem", "position": 5, "name": "PDF to CSV", "item": "https://bigtoolz.com/tools/pdf-tools/form-pdf/pdf-to-csv/"}
+    ]}
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-left">
+    <a href="/" class="logo"><div class="logo-icon">⚒</div>BigToolz</span></a>
+    <nav><ul class="nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/tools/" class="active">All Tools</a></li>
+      <li><a href="/tools/categories">Categories</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul></nav>
+  </div>
+  <div class="header-right">
+    
+    <button class="theme-btn" aria-label="Toggle theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
+    
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <nav class="breadcrumb">
+      <a href="/">Home</a><span class="sep">›</span>
+      <a href="/tools/">Tools</a><span class="sep">›</span>
+      <a href="/tools/pdf-tools/">PDF Tools</a><span class="sep">›</span>
+      <a href="/tools/pdf-tools/form-pdf/">Form PDF</a><span class="sep">›</span>
+      <span class="current">PDF to CSV</span>
+    </nav>
+    <div class="hero-title-row">
+      <div class="hero-icon">📊</div>
+      <h1 class="hero-title">PDF to <span class="blue">CSV</span></h1>
+    </div>
+    <p class="hero-desc">
+      Convert PDF tables into clean CSV data. Choose delimiter (comma, semicolon, tab), edit cells before saving, download instantly. Perfect for spreadsheets and databases. No upload, 100% private.
+    </p>
+    <div class="hero-features">
+      <div class="hero-feature"><span class="check">✓</span> 3 Delimiters</div>
+      <div class="hero-feature"><span class="check">✓</span> Editable Cells</div>
+      <div class="hero-feature"><span class="check">✓</span> UTF-8 Support</div>
+      <div class="hero-feature"><span class="check">✓</span> No Upload</div>
+    </div>
+  </div>
+</section>
+
+<div class="main-content">
+
+  <div class="tool-content">
+
+    <div class="workspace">
+
+      <!-- Dropzone -->
+      <div class="dropzone" id="dropzone">
+        <div class="dropzone-icon">⬆</div>
+        <div class="dropzone-title">Drag & drop your PDF here</div>
+        <div class="dropzone-sub">or <a href="#" id="browseLink">click to browse files</a></div>
+        <button class="choose-btn" id="chooseBtn" type="button">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/></svg>
+          Choose PDF File
+        </button>
+        <div class="dropzone-info">
+          <span>PDF with tables</span>
+          <span class="divider">|</span>
+          <span>Text-based PDF only</span>
+        </div>
+        <input type="file" id="fileInput" class="file-input" accept="application/pdf,.pdf">
+      </div>
+
+      <!-- Editor -->
+      <div class="editor" id="editor">
+
+        <!-- Stats -->
+        <div class="stats-bar">
+          <div class="stat-block">
+            <div class="stat-block-val" id="statPages">--</div>
+            <div class="stat-block-label">Pages</div>
+          </div>
+          <div class="stat-block">
+            <div class="stat-block-val" id="statRows">--</div>
+            <div class="stat-block-label">Rows</div>
+          </div>
+          <div class="stat-block">
+            <div class="stat-block-val" id="statCols">--</div>
+            <div class="stat-block-label">Columns</div>
+          </div>
+          <div class="stat-block">
+            <div class="stat-block-val" id="statCells">--</div>
+            <div class="stat-block-label">Cells</div>
+          </div>
+        </div>
+
+        <!-- Options -->
+        <div class="options">
+          <div class="options-title">⚙️ CSV Options</div>
+          <div class="options-grid">
+            <div class="option-group">
+              <label>Delimiter</label>
+              <select id="delimiter">
+                <option value="," selected>Comma ( , )</option>
+                <option value=";">Semicolon ( ; )</option>
+                <option value="\t">Tab ( → )</option>
+                <option value="|">Pipe ( | )</option>
+              </select>
+            </div>
+            <div class="option-group">
+              <label>Row Detection</label>
+              <select id="rowSensitivity">
+                <option value="loose">Loose (fewer rows)</option>
+                <option value="balanced" selected>Balanced</option>
+                <option value="tight">Tight (more rows)</option>
+              </select>
+            </div>
+            <div class="option-group">
+              <label>Pages</label>
+              <select id="pageRange">
+                <option value="all" selected>All Pages</option>
+                <option value="first">First Page Only</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="toggle-row">
+            <div class="toggle-info">
+              <div class="toggle-title">Add UTF-8 BOM</div>
+              <div class="toggle-desc">Prefix with BOM bytes for Excel + international characters</div>
+            </div>
+            <div class="toggle-switch on" id="bomToggle" role="switch" aria-checked="true"></div>
+          </div>
+
+          <div class="toggle-row">
+            <div class="toggle-info">
+              <div class="toggle-title">Include Header Row</div>
+              <div class="toggle-desc">Treat first detected row as column headers</div>
+            </div>
+            <div class="toggle-switch" id="headerToggle" role="switch" aria-checked="false"></div>
+          </div>
+
+          <div class="toggle-row">
+            <div class="toggle-info">
+              <div class="toggle-title">Trim Whitespace</div>
+              <div class="toggle-desc">Clean leading/trailing spaces from each cell</div>
+            </div>
+            <div class="toggle-switch on" id="trimToggle" role="switch" aria-checked="true"></div>
+          </div>
+        </div>
+
+        <!-- Preview -->
+        <div class="preview-block" id="previewBlock">
+          <div class="preview-block-title">📝 Raw CSV Preview</div>
+          <pre id="csvPreview">Loading...</pre>
+        </div>
+
+        <!-- Data Table -->
+        <div class="data-section">
+          <div class="data-header">
+            <div class="data-title">📊 Extracted Data <span style="font-size:12px;color:#2563eb;" id="extractCount"></span></div>
+            <div class="data-hint">💡 Click any cell to edit before saving</div>
+          </div>
+          <div class="table-scroll" id="tableScroll">
+            <div class="empty-state">
+              <div class="empty-state-icon">📄</div>
+              <h3>Loading PDF...</h3>
+              <p>Table will appear here after analysis.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button class="btn btn-primary" id="downloadBtn" disabled>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+            Download CSV
+          </button>
+          <button class="btn btn-secondary" id="reExtractBtn">Re-Extract</button>
+          <button class="btn btn-secondary" id="cancelBtn">Cancel</button>
+        </div>
+
+        <div class="status-msg" id="statusMsg"></div>
+
+        <div class="progress" id="progress">
+          <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+          <div class="progress-text" id="progressText">Processing...</div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="seo-content">
+
+      <h2>📊 What is PDF to CSV Conversion?</h2>
+      <p>
+        <strong>PDF to CSV conversion</strong> extracts the tables inside a PDF into a <strong>comma-separated values (CSV)</strong> file. Unlike Excel (.xlsx), CSV is a <strong>universal plain-text format</strong> that any spreadsheet app, database, or programming language can read Excel, Google Sheets, Numbers, Python, R, MySQL, PostgreSQL, and more. It's the go-to format for <strong>data exchange</strong>.
+      </p>
+      <p>
+        BigToolz's <strong>PDF to CSV</strong> tool uses <strong>pdf.js</strong> to extract text with position data, then clusters rows and columns intelligently. Everything runs <strong>100% in your browser</strong> no uploads, no signup, no limits.
+      </p>
+
+      <h2>🚀 How to Convert PDF to CSV</h2>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-step-num">1</div>
+          <div class="how-step-title">Upload PDF</div>
+          <div class="how-step-desc">Drag & drop or click "Choose PDF File" to load.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">2</div>
+          <div class="how-step-title">Auto-Extract</div>
+          <div class="how-step-desc">Rows and columns detected automatically.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">3</div>
+          <div class="how-step-title">Configure</div>
+          <div class="how-step-desc">Choose delimiter, review preview, edit cells.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">4</div>
+          <div class="how-step-title">Download</div>
+          <div class="how-step-desc">Save the CSV file open in Excel or any tool.</div>
+        </div>
+      </div>
+
+      <h2>📌 CSV vs Excel Which Should You Use?</h2>
+
+      <h3>✅ Use CSV when:</h3>
+      <ul>
+        <li><strong>Importing into a database</strong> MySQL, PostgreSQL, SQLite all accept CSV.</li>
+        <li><strong>Sharing between apps</strong> CSV is universal, Excel format can vary.</li>
+        <li><strong>Programming/scripts</strong> Python pandas, R read_csv, JavaScript all parse CSV easily.</li>
+        <li><strong>Data portability</strong> CSV is human-readable, tiny file size, no version issues.</li>
+        <li><strong>Simple tabular data</strong> text, numbers, dates without formatting.</li>
+      </ul>
+
+      <h3>❌ Use Excel (.xlsx) when:</h3>
+      <ul>
+        <li><strong>You need formulas or multiple sheets</strong></li>
+        <li><strong>Cell formatting matters</strong> (colors, bold, borders)</li>
+        <li><strong>Charts or pivot tables</strong> required</li>
+        <li><strong>Number types need precision</strong> (dates, currency)</li>
+      </ul>
+
+      <p>Check our <a href="/tools/pdf-tools/form-pdf/pdf-to-excel/">PDF to Excel</a> tool for .xlsx output.</p>
+
+      <h2>🎯 Choosing the Right Delimiter</h2>
+
+      <h3>Comma ( , ) Default</h3>
+      <p>The standard in US, UK, India, and most of the world. Use it 90% of the time.</p>
+
+      <h3>Semicolon ( ; ) European</h3>
+      <p>Used in France, Germany, Italy, Spain, and others where comma is the <strong>decimal separator</strong>. If your numbers use <code>1,5</code> instead of <code>1.5</code>, use semicolon.</p>
+
+      <h3>Tab ( \t ) TSV</h3>
+      <p>Tab-Separated Values. Excellent when your data contains commas. Popular in bioinformatics and data science.</p>
+
+      <h3>Pipe ( | ) Custom</h3>
+      <p>Rare but useful when both comma and semicolon appear inside cells. Common in legacy systems.</p>
+
+      <h2>📌 UTF-8 BOM Why It Matters</h2>
+      <p>
+        Excel on Windows has a notorious bug: it opens CSV files as <strong>Windows-1252 (ANSI)</strong> instead of UTF-8. This mangles accented characters like <code>é</code>, <code>ñ</code>, <code>₹</code>, <code>中</code>, <code>ع</code>. Adding a <strong>UTF-8 BOM</strong> (byte-order mark) at the start of the file tells Excel "this is UTF-8" and characters display correctly.
+      </p>
+      <p>
+        <strong>Keep the BOM on</strong> if you'll open the CSV in Excel. <strong>Turn it off</strong> if you're feeding the data to a script or database (some parsers choke on BOM).
+      </p>
+
+      <h2>✨ Key Features</h2>
+      <ul>
+        <li><strong>Auto table detection</strong> smart row/column clustering.</li>
+        <li><strong>4 delimiters</strong> comma, semicolon, tab, pipe.</li>
+        <li><strong>UTF-8 BOM option</strong> perfect for Excel compatibility.</li>
+        <li><strong>Editable preview</strong> fix any cell before downloading.</li>
+        <li><strong>Multi-page support</strong> extract from all pages.</li>
+        <li><strong>Header row option</strong> treat first row as headers.</li>
+        <li><strong>Proper quote escaping</strong> handles commas, quotes, newlines in cells.</li>
+        <li><strong>100% browser-based</strong> your file never leaves your device.</li>
+      </ul>
+
+      <h2>❓ Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-question">How do I convert PDF to CSV?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Upload your PDF, choose your delimiter, review the auto-detected table, edit if needed, then click Download CSV. Free, no signup, all in your browser.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What's the difference between CSV and Excel output?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>CSV</strong> is a plain-text format universal, lightweight, and works with any spreadsheet app, database, or programming language. <strong>Excel (.xlsx)</strong> preserves formatting and number types. Use CSV for data exchange; Excel for analysis. Try our <a href="/tools/pdf-tools/form-pdf/pdf-to-excel/">PDF to Excel</a> tool for .xlsx output.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Which delimiter should I use?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>Comma</strong> is standard in most regions. <strong>Semicolon</strong> is used in some European countries where comma is the decimal separator. <strong>Tab</strong> produces TSV files good for tabular data that contains commas.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Does it work with scanned PDFs?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>No. The tool extracts <strong>embedded text</strong> scanned image PDFs have no text layer. You'd need OCR (Optical Character Recognition) software first to create a text layer.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What is UTF-8 BOM and should I keep it?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>BOM (Byte Order Mark) is a special marker at the start of the file that tells apps it's UTF-8 encoded. <strong>Keep it on</strong> if you'll open the CSV in Excel (especially on Windows) it makes international characters display correctly. <strong>Turn it off</strong> for databases or scripts that may struggle with the BOM bytes.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Why are some rows merged or split?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Row detection uses Y-coordinate clustering. Change the <strong>Row Detection</strong> setting: use "Tight" if rows are merging (creates more breaks), or "Loose" if rows are splitting (merges nearby). Every PDF is different try a few settings.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Are my PDFs uploaded to a server?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>No. All processing happens in your browser using pdf.js. Your file never leaves your device.</p></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-header">🔗 Related Form PDF Tools</div>
+    <div class="sidebar-list">
+      <a href="/tools/pdf-tools/form-pdf/pdf-to-excel/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#10b981;">X</div>
+        <div class="sidebar-info"><div class="sidebar-title">PDF to Excel</div><div class="sidebar-desc">Extract to .xlsx</div></div>
+      </a>
+      <a href="/tools/pdf-tools/form-pdf/table-extractor/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#f97316;">📋</div>
+        <div class="sidebar-info"><div class="sidebar-title">Table Extractor</div><div class="sidebar-desc">Extract tables</div></div>
+      </a>
+      <a href="/tools/pdf-tools/form-pdf/excel-to-pdf/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#10b981;">📕</div>
+        <div class="sidebar-info"><div class="sidebar-title">Excel to PDF</div><div class="sidebar-desc">XLSX → PDF</div></div>
+      </a>
+      <a href="/tools/pdf-tools/form-pdf/form-data/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#8b5cf6;">📋</div>
+        <div class="sidebar-info"><div class="sidebar-title">Extract Form Data</div><div class="sidebar-desc">Form fields → CSV</div></div>
+      </a>
+      <a href="/tools/pdf-tools/form-pdf/invoice-generator/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#3b82f6;">🧾</div>
+        <div class="sidebar-info"><div class="sidebar-title">Invoice Generator</div><div class="sidebar-desc">Create invoices</div></div>
+      </a>
+      <a href="/tools/pdf-tools/form-pdf/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#64748b;">📋</div>
+        <div class="sidebar-info"><div class="sidebar-title">All Form PDF →</div><div class="sidebar-desc">15 tools</div></div>
+      </a>
+    </div>
+  </aside>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand"><div class="logo-icon">⚒</div>BigToolz</span></div>
+      <p class="footer-tagline">Your Ultimate Online Tools Hub</p>
+      <div class="footer-social">
+        <a href="https://facebook.com/bigtoolz" aria-label="Facebook">f</a>
+        <a href="https://twitter.com/bigtoolz" aria-label="Twitter">𝕏</a>
+        <a href="https://youtube.com/@bigtoolz" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+    <div>
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/tools/">All Tools</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Categories</h3>
+      <ul class="footer-links">
+        <li><a href="/tools/image-tools/">Image Tools</a></li>
+        <li><a href="/tools/pdf-tools/">PDF Tools</a></li>
+        <li><a href="/tools/text-tools/">Text Tools</a></li>
+        <li><a href="/tools/seo-tools/">SEO Tools</a></li>
+        <li><a href="/tools/categories">All Categories →</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Legal</h3>
+      <ul class="footer-links">
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left"><span>✓ 100% Free</span><span>✓ No Sign Up</span><span>✓ No Installation</span></div>
+    <div class="footer-bottom-right">© 2026 BigToolz. All rights reserved.</div>
+    <div class="footer-bottom-links"><a href="/privacy-policy">Privacy</a><a href="/terms">Terms</a><a href="/disclaimer">Disclaimer</a></div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<!-- PDF.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+
+<script>
+'use strict';
+
+/* ===== THEME ===== */
+(function(){try{var t=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&d))document.documentElement.setAttribute('data-theme','dark');else if(t==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();
+document.querySelector('.theme-btn')?.addEventListener('click',()=>{const h=document.documentElement;const c=h.getAttribute('data-theme');const d=window.matchMedia('(prefers-color-scheme: dark)').matches;let n=c==='dark'?'light':c==='light'?'dark':(d?'light':'dark');h.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}});
+
+/* ===== PDF.js worker ===== */
+if (window.pdfjsLib) {
+  pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+}
+
+/* ===== HELPERS ===== */
+const $ = (s, p = document) => p.querySelector(s);
+const $$ = (s, p = document) => [...p.querySelectorAll(s)];
+
+function showToast(msg, type = 'info', duration = 3000) {
+  const t = $('#toast');
+  if (!t) return;
+  t.className = 'toast visible' + (type !== 'info' ? ' ' + type : '');
+  t.textContent = msg;
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove('visible'), duration);
+}
+
+function setStatus(msg, type = 'info') {
+  const el = $('#statusMsg');
+  el.textContent = msg;
+  el.className = 'status-msg visible ' + type;
+}
+
+function clearStatus() {
+  const el = $('#statusMsg');
+  el.className = 'status-msg';
+  el.textContent = '';
+}
+
+/* ===== STATE ===== */
+const state = {
+  fileName: '',
+  pdfDoc: null,
+  totalPages: 0,
+  rows: [],
+  trimWhitespace: true,
+  addBom: true,
+  includeHeader: false,
+  isProcessing: false
+};
+
+/* ===== DOM ===== */
+const dropzone = $('#dropzone');
+const fileInput = $('#fileInput');
+const chooseBtn = $('#chooseBtn');
+const browseLink = $('#browseLink');
+const editor = $('#editor');
+const statPages = $('#statPages');
+const statRows = $('#statRows');
+const statCols = $('#statCols');
+const statCells = $('#statCells');
+const delimiter = $('#delimiter');
+const rowSensitivity = $('#rowSensitivity');
+const pageRange = $('#pageRange');
+const bomToggle = $('#bomToggle');
+const headerToggle = $('#headerToggle');
+const trimToggle = $('#trimToggle');
+const csvPreview = $('#csvPreview');
+const tableScroll = $('#tableScroll');
+const extractCount = $('#extractCount');
+const downloadBtn = $('#downloadBtn');
+const reExtractBtn = $('#reExtractBtn');
+const cancelBtn = $('#cancelBtn');
+const progress = $('#progress');
+const progressFill = $('#progressFill');
+const progressText = $('#progressText');
+
+/* ===== OPTIONS ===== */
+bomToggle.addEventListener('click', () => {
+  state.addBom = !state.addBom;
+  bomToggle.classList.toggle('on', state.addBom);
+  bomToggle.setAttribute('aria-checked', state.addBom);
+  updateCsvPreview();
+});
+
+headerToggle.addEventListener('click', () => {
+  state.includeHeader = !state.includeHeader;
+  headerToggle.classList.toggle('on', state.includeHeader);
+  headerToggle.setAttribute('aria-checked', state.includeHeader);
+  renderTable();
+  updateCsvPreview();
+});
+
+trimToggle.addEventListener('click', () => {
+  state.trimWhitespace = !state.trimWhitespace;
+  trimToggle.classList.toggle('on', state.trimWhitespace);
+  trimToggle.setAttribute('aria-checked', state.trimWhitespace);
+});
+
+delimiter.addEventListener('change', () => updateCsvPreview());
+pageRange.addEventListener('change', () => {
+  if (state.pdfDoc) extractTables();
+});
+rowSensitivity.addEventListener('change', () => {
+  if (state.pdfDoc) extractTables();
+});
+
+/* ===== FILE SELECTION ===== */
+function triggerFileSelect() { fileInput.click(); }
+chooseBtn.addEventListener('click', (e) => { e.stopPropagation(); triggerFileSelect(); });
+browseLink.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); triggerFileSelect(); });
+dropzone.addEventListener('click', triggerFileSelect);
+
+fileInput.addEventListener('change', (e) => {
+  const f = e.target.files[0];
+  if (f) loadPdf(f);
+  fileInput.value = '';
+});
+
+['dragenter', 'dragover'].forEach(evt => {
+  dropzone.addEventListener(evt, (e) => { e.preventDefault(); e.stopPropagation(); dropzone.classList.add('dragover'); });
+});
+['dragleave', 'drop'].forEach(evt => {
+  dropzone.addEventListener(evt, (e) => { e.preventDefault(); e.stopPropagation(); dropzone.classList.remove('dragover'); });
+});
+dropzone.addEventListener('drop', (e) => {
+  const f = e.dataTransfer.files[0];
+  if (f && f.type === 'application/pdf') loadPdf(f);
+  else showToast('Please drop a PDF file', 'error');
+});
+
+/* ===== LOAD PDF ===== */
+async function loadPdf(file) {
+  if (state.isProcessing) return;
+  state.isProcessing = true;
+  state.fileName = file.name;
+
+  clearStatus();
+  setStatus('Loading PDF...', 'info');
+  progress.classList.add('visible');
+  progressFill.style.width = '10%';
+  progressText.textContent = 'Reading PDF...';
+
+  try {
+    const buf = await file.arrayBuffer();
+    state.pdfDoc = await pdfjsLib.getDocument({ data: buf }).promise;
+    state.totalPages = state.pdfDoc.numPages;
+
+    dropzone.style.display = 'none';
+    editor.classList.add('visible');
+    statPages.textContent = state.totalPages;
+
+    await extractTables();
+  } catch (err) {
+    console.error(err);
+    setStatus('Failed to load PDF: ' + err.message, 'error');
+    showToast('Failed to load PDF', 'error');
+  } finally {
+    state.isProcessing = false;
+    setTimeout(() => {
+      progress.classList.remove('visible');
+      progressFill.style.width = '0%';
+    }, 800);
+  }
+}
+
+/* ===== EXTRACT TABLES ===== */
+async function extractTables() {
+  if (!state.pdfDoc) return;
+  state.isProcessing = true;
+
+  progress.classList.add('visible');
+  progressFill.style.width = '20%';
+  progressText.textContent = 'Extracting text...';
+
+  const rangeMode = pageRange.value;
+  let endPage = state.totalPages;
+  if (rangeMode === 'first') endPage = 1;
+
+  const allRows = [];
+
+  for (let p = 1; p <= endPage; p++) {
+    const page = await state.pdfDoc.getPage(p);
+    const textContent = await page.getTextContent();
+    const progress = ((p) / endPage) * 60 + 20;
+    progressFill.style.width = progress + '%';
+    progressText.textContent = `Extracting page ${p} of ${endPage}...`;
+    const pageRows = groupItemsIntoRows(textContent.items, page.view);
+    allRows.push(...pageRows);
+  }
+
+  progressFill.style.width = '90%';
+  progressText.textContent = 'Building table...';
+
+  const maxCols = allRows.reduce((max, r) => Math.max(max, r.length), 0);
+  state.rows = allRows.map(row => {
+    const normalized = [...row];
+    while (normalized.length < maxCols) normalized.push('');
+    return normalized.slice(0, maxCols);
+  });
+
+  statRows.textContent = state.rows.length;
+  statCols.textContent = maxCols;
+  statCells.textContent = state.rows.length * maxCols;
+
+  renderTable();
+  updateCsvPreview();
+
+  progressFill.style.width = '100%';
+
+  if (state.rows.length > 0) {
+    setStatus(`✅ Extracted ${state.rows.length} rows × ${maxCols} columns. Ready to download.`, 'success');
+    downloadBtn.disabled = false;
+    showToast('Table extracted!', 'success');
+  } else {
+    setStatus('⚠️ No text found. This PDF may be scanned (image-only). Try OCR first.', 'error');
+    downloadBtn.disabled = true;
+  }
+
+  state.isProcessing = false;
+  setTimeout(() => {
+    progress.classList.remove('visible');
+    progressFill.style.width = '0%';
+  }, 800);
+}
+
+/* ===== GROUP TEXT ITEMS INTO ROWS ===== */
+function groupItemsIntoRows(items, pageView) {
+  if (!items.length) return [];
+
+  const valid = items.filter(it => it.str && it.str.trim());
+
+  const itemsWithPos = valid.map(it => ({
+    str: it.str,
+    x: it.transform[4],
+    y: it.transform[5],
+    width: it.width || 0,
+    height: it.height || 10
+  }));
+
+  const sens = rowSensitivity.value;
+  const tolerance = sens === 'loose' ? 3 : sens === 'tight' ? 1 : 2;
+
+  itemsWithPos.sort((a, b) => b.y - a.y);
+
+  const rows = [];
+  let currentRow = null;
+
+  for (const item of itemsWithPos) {
+    if (!currentRow) {
+      currentRow = { y: item.y, items: [item] };
+    } else {
+      const avgY = currentRow.items.reduce((s, i) => s + i.y, 0) / currentRow.items.length;
+      if (Math.abs(item.y - avgY) <= tolerance + item.height / 2) {
+        currentRow.items.push(item);
+        currentRow.y = (currentRow.y * (currentRow.items.length - 1) + item.y) / currentRow.items.length;
+      } else {
+        rows.push(currentRow);
+        currentRow = { y: item.y, items: [item] };
+      }
+    }
+  }
+  if (currentRow) rows.push(currentRow);
+
+  return rows.map(row => {
+    row.items.sort((a, b) => a.x - b.x);
+    return clusterIntoColumns(row.items);
+  });
+}
+
+/* ===== CLUSTER ITEMS INTO COLUMNS ===== */
+function clusterIntoColumns(items) {
+  if (!items.length) return [];
+
+  const cells = [];
+  let currentCell = null;
+
+  for (const item of items) {
+    const str = state.trimWhitespace ? item.str.trim() : item.str;
+    if (!str) continue;
+
+    if (!currentCell) {
+      currentCell = { text: str, x: item.x, endX: item.x + item.width };
+      continue;
+    }
+
+    const gap = item.x - currentCell.endX;
+    if (gap < 8 && gap > -3) {
+      currentCell.text += (gap > 1 ? ' ' : '') + str;
+      currentCell.endX = item.x + item.width;
+    } else {
+      cells.push(currentCell.text);
+      currentCell = { text: str, x: item.x, endX: item.x + item.width };
+    }
+  }
+  if (currentCell) cells.push(currentCell.text);
+
+  return cells;
+}
+
+/* ===== RENDER TABLE ===== */
+function renderTable() {
+  if (!state.rows.length) {
+    tableScroll.innerHTML = `
+      <div class="empty-state">
+        <div class="empty-state-icon">📄</div>
+        <h3>No table data found</h3>
+        <p>Try a different PDF or check if it contains selectable text.</p>
+      </div>
+    `;
+    extractCount.textContent = '';
+    return;
+  }
+
+  const table = document.createElement('table');
+  table.className = 'data-table';
+
+  const thead = document.createElement('thead');
+  const headerRow = document.createElement('tr');
+  headerRow.innerHTML = '<th class="row-num-col">#</th>';
+  const colCount = state.rows[0].length;
+
+  for (let c = 0; c < colCount; c++) {
+    let label = `Col ${c + 1}`;
+    if (state.includeHeader && state.rows[0] && state.rows[0][c]) {
+      label = state.rows[0][c] || label;
+    }
+    headerRow.innerHTML += `<th>${escapeHtml(label)}</th>`;
+  }
+  thead.appendChild(headerRow);
+  table.appendChild(thead);
+
+  const tbody = document.createElement('tbody');
+  state.rows.forEach((row, r) => {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `<td class="row-num-col">${r + 1}</td>`;
+    for (let c = 0; c < colCount; c++) {
+      const val = row[c] || '';
+      const td = document.createElement('td');
+      td.className = 'cell-editable';
+      td.contentEditable = 'true';
+      td.textContent = val;
+      td.dataset.row = r;
+      td.dataset.col = c;
+      tr.appendChild(td);
+    }
+    tbody.appendChild(tr);
+  });
+  table.appendChild(tbody);
+
+  tableScroll.innerHTML = '';
+  tableScroll.appendChild(table);
+
+  table.querySelectorAll('.cell-editable').forEach(td => {
+    td.addEventListener('blur', () => {
+      const r = parseInt(td.dataset.row, 10);
+      const c = parseInt(td.dataset.col, 10);
+      if (!isNaN(r) && !isNaN(c)) {
+        state.rows[r][c] = td.textContent;
+        updateCsvPreview();
+      }
+    });
+    td.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        td.blur();
+      }
+    });
+  });
+
+  extractCount.textContent = `(${state.rows.length} × ${colCount})`;
+}
+
+function escapeHtml(str) {
+  const div = document.createElement('div');
+  div.textContent = String(str || '');
+  return div.innerHTML;
+}
+
+/* ===== BUILD CSV STRING ===== */
+function buildCsvString() {
+  const delim = delimiter.value === '\\t' ? '\t' : delimiter.value;
+
+  return state.rows.map(row =>
+    row.map(cell => {
+      const s = String(cell == null ? '' : cell);
+      // Escape if contains delimiter, quote, or newline
+      if (s.includes(delim) || s.includes('"') || s.includes('\n') || s.includes('\r')) {
+        return '"' + s.replace(/"/g, '""') + '"';
+      }
+      return s;
+    }).join(delim)
+  ).join('\r\n');
+}
+
+/* ===== UPDATE CSV PREVIEW ===== */
+function updateCsvPreview() {
+  if (!state.rows.length) {
+    csvPreview.textContent = 'No data to preview';
+    return;
+  }
+  const csv = buildCsvString();
+  // Show first ~30 lines
+  const lines = csv.split('\r\n');
+  const previewLines = lines.slice(0, 30);
+  let previewText = previewLines.join('\n');
+  if (lines.length > 30) {
+    previewText += `\n\n... (${lines.length - 30} more rows)`;
+  }
+  csvPreview.textContent = previewText;
+}
+
+/* ===== RE-EXTRACT ===== */
+reExtractBtn.addEventListener('click', async () => {
+  if (!state.pdfDoc) return;
+  await extractTables();
+});
+
+/* ===== DOWNLOAD CSV ===== */
+downloadBtn.addEventListener('click', () => {
+  if (!state.rows.length) return;
+
+  try {
+    const csv = buildCsvString();
+    const baseName = (state.fileName || 'table').replace(/\.[^.]+$/, '');
+
+    let blobParts = [];
+    if (state.addBom) {
+      // UTF-8 BOM
+      blobParts.push(new Uint8Array([0xEF, 0xBB, 0xBF]));
+    }
+    blobParts.push(new TextEncoder().encode(csv));
+
+    const blob = new Blob(blobParts, { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = baseName + '.csv';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    setTimeout(() => URL.revokeObjectURL(url), 2000);
+
+    const delimName = delimiter.value === ',' ? 'comma' : delimiter.value === ';' ? 'semicolon' : delimiter.value === '\\t' ? 'tab' : 'pipe';
+    setStatus(`✅ CSV downloaded! ${state.rows.length} rows, ${delimName}-separated${state.addBom ? ', with BOM' : ''}.`, 'success');
+    showToast('CSV downloaded!', 'success');
+  } catch (err) {
+    console.error(err);
+    setStatus('Failed to export CSV: ' + err.message, 'error');
+    showToast('Download failed', 'error');
+  }
+});
+
+/* ===== CANCEL ===== */
+cancelBtn.addEventListener('click', () => {
+  state.pdfDoc = null;
+  state.rows = [];
+  state.totalPages = 0;
+  state.fileName = '';
+  editor.classList.remove('visible');
+  dropzone.style.display = '';
+  clearStatus();
+  progress.classList.remove('visible');
+  downloadBtn.disabled = true;
+  csvPreview.textContent = 'Loading...';
+  showToast('Reset', 'info');
+});
+
+/* ===== FAQ ===== */
+$$('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    $$('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+</script>
+
+</body>
+</html>

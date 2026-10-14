@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2563eb">
+
+<title>Image Blur - Blur Images Online Free | BigToolz</title>
+<meta name="description" content="Blur images online free with adjustable strength. Full image or region blur, Gaussian blur effect. No upload, works in your browser. Batch process instantly.">
+<meta name="keywords" content="image blur, blur image online, gaussian blur, blur photo, blur effect, censor image, pixelate blur">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://bigtoolz.com/tools/image-tools/image-blur/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Image Blur - Free Online Tool | BigToolz">
+<meta property="og:description" content="Blur images with adjustable strength free, no upload, batch support.">
+<meta property="og:url" content="https://bigtoolz.com/tools/image-tools/image-blur/">
+<meta property="og:image" content="https://bigtoolz.com/assets/images/og-image.jpg">
+<meta property="og:site_name" content="BigToolz">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Image Blur - BigToolz">
+<meta name="twitter:description" content="Blur images instantly free, no upload.">
+<meta name="twitter:image" content="https://bigtoolz.com/assets/images/twitter-card.jpg">
+
+<link rel="icon" href="/assets/images/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/images/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#f8f9fc;color:#1a1a2e;overflow-x:hidden;line-height:1.5}
+
+  .header{background:#fff;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;position:sticky;top:0;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+  .header-left{display:flex;align-items:center;gap:40px}
+  .logo{display:flex;align-items:center;gap:8px;font-size:22px;font-weight:800;color:#1a1a2e;text-decoration:none}
+  .logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#3b82f6,#2563eb);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px}
+  .logo span{color:#2563eb}
+  .nav{display:flex;align-items:center;gap:28px;list-style:none}
+  .nav a{text-decoration:none;color:#4b5563;font-size:14px;font-weight:500;transition:color .2s}
+  .nav a:hover,.nav a.active{color:#2563eb}
+  .header-right{display:flex;align-items:center;gap:16px}
+  .search-btn,.theme-btn{width:36px;height:36px;border-radius:50%;border:none;background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#4b5563}
+  .search-btn:hover,.theme-btn:hover{background:#f3f4f6}
+  .bookmark-btn{display:flex;align-items:center;gap:8px;background:#2563eb;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
+  .bookmark-btn:hover{background:#1d4ed8}
+
+  .hero{background:linear-gradient(135deg,#0a0e27 0%,#1a1a4e 40%,#2d1b69 70%,#4c1d95 100%);padding:40px 40px 60px;position:relative;overflow:hidden;color:#fff}
+  .hero::before{content:'';position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(100,116,139,.35) 0%,transparent 70%);border-radius:50%}
+  .hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+  .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px;flex-wrap:wrap}
+  .breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none}
+  .breadcrumb a:hover{color:#fff}
+  .breadcrumb .sep{color:rgba(255,255,255,.4)}
+  .breadcrumb .current{color:#fff;font-weight:500}
+  .hero-title-row{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+  .hero-icon{width:60px;height:60px;background:#64748b;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px;color:#fff;flex-shrink:0;box-shadow:0 8px 24px rgba(100,116,139,.4)}
+  .hero-title{font-size:42px;font-weight:800;line-height:1.15}
+  .hero-title .blue{color:#94a3b8}
+  .hero-desc{font-size:15px;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:24px;max-width:560px}
+  .hero-features{display:flex;gap:24px;flex-wrap:wrap}
+  .hero-feature{display:flex;align-items:center;gap:6px;font-size:13px;color:#fff;font-weight:500}
+  .hero-feature .check{width:18px;height:18px;border-radius:50%;background:#64748b;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;flex-shrink:0}
+
+  .main-content{max-width:1200px;margin:0 auto;padding:40px;display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start}
+  .tool-content{min-width:0}
+
+  .workspace{background:#fff;border-radius:16px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,.06);border:1px solid #e5e7eb;margin-bottom:24px}
+
+  .dropzone{border:2px dashed #cbd5e1;border-radius:12px;padding:50px 30px;text-align:center;background:#f8fafc;margin-bottom:24px;transition:all .2s;cursor:pointer}
+  .dropzone:hover,.dropzone.dragover{border-color:#64748b;background:#f1f5f9}
+  .dropzone-icon{width:60px;height:60px;background:linear-gradient(135deg,#64748b,#475569);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;color:#fff;font-size:26px;transition:transform .2s}
+  .dropzone:hover .dropzone-icon{transform:translateY(-4px)}
+  .dropzone-title{font-size:16px;font-weight:700;color:#1a1a2e;margin-bottom:8px}
+  .dropzone-sub{font-size:14px;color:#6b7280;margin-bottom:20px}
+  .dropzone-sub a{color:#64748b;font-weight:600;text-decoration:none}
+  .choose-btn{display:inline-flex;align-items:center;gap:8px;background:#64748b;color:#fff;border:none;padding:12px 28px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;transition:background .2s}
+  .choose-btn:hover{background:#475569}
+  .dropzone-info{font-size:12px;color:#9ca3af;display:flex;align-items:center;justify-content:center;gap:8px;margin-top:16px;flex-wrap:wrap}
+  .dropzone-info .divider{color:#d1d5db}
+  .file-input{display:none}
+
+  /* Preview */
+  .preview-wrap{display:none;background:#0f172a;border-radius:12px;padding:20px;margin-bottom:20px;text-align:center;align-items:center;justify-content:center;min-height:240px}
+  .preview-wrap.visible{display:flex}
+  .preview-wrap canvas{max-width:100%;max-height:400px;border-radius:8px;box-shadow:0 4px 16px rgba(0,0,0,.3)}
+
+  .options{background:#f8fafc;border-radius:12px;padding:20px;margin-bottom:20px;border:1px solid #cbd5e1}
+  .options-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+
+  .blur-slider-group{margin-bottom:16px}
+  .blur-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+  .blur-header label{font-size:13px;font-weight:600;color:#4b5563}
+  .blur-value{font-size:14px;font-weight:800;color:#475569;background:#fff;padding:4px 12px;border-radius:8px;border:1px solid #cbd5e1;min-width:70px;text-align:center}
+  .range-slider{width:100%;-webkit-appearance:none;appearance:none;height:8px;background:#cbd5e1;border-radius:4px;outline:none}
+  .range-slider::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:22px;height:22px;background:#64748b;border-radius:50%;cursor:pointer;box-shadow:0 2px 6px rgba(100,116,139,.4);transition:transform .15s;border:3px solid #fff}
+  .range-slider::-webkit-slider-thumb:hover{transform:scale(1.15)}
+  .range-slider::-moz-range-thumb{width:22px;height:22px;background:#64748b;border:3px solid #fff;border-radius:50%;cursor:pointer}
+
+  .options-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:16px}
+  .option-group label{display:block;font-size:12px;font-weight:600;color:#4b5563;margin-bottom:6px}
+  .option-group select{width:100%;padding:10px 12px;border:1px solid #e5e7eb;border-radius:8px;font-size:13px;font-family:inherit;color:#1a1a2e;background:#fff;outline:none;transition:border-color .2s}
+  .option-group select:focus{border-color:#64748b;box-shadow:0 0 0 3px rgba(100,116,139,.1)}
+
+  .quality-group{margin-top:16px}
+  .quality-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+  .quality-header label{font-size:12px;font-weight:600;color:#4b5563}
+  .quality-value{font-size:13px;font-weight:700;color:#64748b}
+  .quality-slider{width:100%;-webkit-appearance:none;appearance:none;height:6px;background:#cbd5e1;border-radius:3px;outline:none}
+  .quality-slider::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:20px;height:20px;background:#64748b;border-radius:50%;cursor:pointer;transition:transform .15s}
+  .quality-slider::-webkit-slider-thumb:hover{transform:scale(1.15)}
+  .quality-slider::-moz-range-thumb{width:20px;height:20px;background:#64748b;border:none;border-radius:50%;cursor:pointer}
+
+  .actions{display:flex;gap:12px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 28px;border-radius:10px;font-size:15px;font-weight:700;font-family:inherit;cursor:pointer;border:none;transition:all .2s;text-decoration:none}
+  .btn-primary{background:#64748b;color:#fff;flex:1;box-shadow:0 4px 12px rgba(100,116,139,.2)}
+  .btn-primary:hover:not(:disabled){background:#475569;transform:translateY(-2px);box-shadow:0 6px 20px rgba(100,116,139,.3)}
+  .btn-primary:disabled{opacity:.5;cursor:not-allowed;transform:none}
+  .btn-secondary{background:#fff;color:#64748b;border:1px solid #e5e7eb}
+  .btn-secondary:hover{border-color:#64748b;background:#f8fafc}
+  .btn-success{background:#10b981;color:#fff}
+  .btn-success:hover{background:#059669}
+
+  .progress{display:none;margin-top:20px}
+  .progress.visible{display:block}
+  .progress-bar{width:100%;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden;margin-bottom:8px}
+  .progress-fill{height:100%;background:linear-gradient(90deg,#94a3b8,#64748b);border-radius:4px;width:0%;transition:width .3s ease}
+  .progress-text{font-size:13px;color:#6b7280;text-align:center;font-weight:500}
+
+  .results{display:none;margin-top:20px}
+  .results.visible{display:block}
+  .results-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:12px}
+  .results-title{font-size:16px;font-weight:700;color:#1a1a2e;display:flex;align-items:center;gap:8px}
+  .results-title .success-icon{width:24px;height:24px;background:#10b981;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px}
+
+  .file-list{display:flex;flex-direction:column;gap:12px}
+  .file-item{background:#f8fafc;border:1px solid #cbd5e1;border-radius:12px;padding:16px;display:flex;gap:16px;align-items:center;transition:border-color .2s}
+  .file-item:hover{border-color:#64748b}
+  .file-thumb{width:64px;height:64px;border-radius:8px;background:#fff;border:1px solid #e5e7eb;display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0}
+  .file-thumb img{width:100%;height:100%;object-fit:cover}
+  .file-info{flex:1;min-width:0}
+  .file-name{font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .file-meta{font-size:11px;color:#6b7280;display:flex;gap:12px;flex-wrap:wrap}
+  .file-meta .blur-label{color:#64748b;font-weight:700}
+  .file-actions{display:flex;gap:8px;flex-shrink:0}
+  .icon-btn{width:36px;height:36px;border-radius:8px;border:1px solid #e5e7eb;background:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#4b5563;transition:all .2s}
+  .icon-btn:hover{border-color:#64748b;color:#64748b;background:#f8fafc}
+  .icon-btn.download{background:#10b981;color:#fff;border-color:#10b981}
+  .icon-btn.download:hover{background:#059669;border-color:#059669;color:#fff}
+
+  .seo-content{background:#fff;border-radius:16px;padding:32px;border:1px solid #e5e7eb;margin-bottom:24px}
+  .seo-content h2{font-size:22px;font-weight:800;color:#1a1a2e;margin-bottom:14px;margin-top:28px;display:flex;align-items:center;gap:10px}
+  .seo-content h2:first-child{margin-top:0}
+  .seo-content h3{font-size:16px;font-weight:700;color:#1a1a2e;margin:20px 0 10px}
+  .seo-content p{font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:14px}
+  .seo-content ul{list-style:none;padding-left:0;margin-bottom:16px}
+  .seo-content ul li{position:relative;padding-left:24px;font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:8px}
+  .seo-content ul li::before{content:'';position:absolute;left:6px;top:12px;width:6px;height:6px;background:#64748b;border-radius:50%}
+  .seo-content a{color:#2563eb;text-decoration:none;font-weight:600}
+  .seo-content a:hover{text-decoration:underline}
+  .seo-content strong{color:#1a1a2e;font-weight:700}
+
+  .how-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:20px}
+  .how-step{background:#f8fafc;border-radius:12px;padding:20px;border:1px solid #cbd5e1}
+  .how-step-num{width:36px;height:36px;border-radius:50%;background:#64748b;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;margin-bottom:12px}
+  .how-step-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+  .how-step-desc{font-size:13px;color:#6b7280;line-height:1.6}
+
+  .faq-item{background:#f8fafc;border:1px solid #cbd5e1;border-radius:12px;margin-bottom:10px;overflow:hidden;transition:border-color .2s}
+  .faq-item:hover{border-color:#64748b}
+  .faq-question{width:100%;background:none;border:none;padding:18px 22px;font-size:15px;font-weight:700;color:#1a1a2e;text-align:left;cursor:pointer;font-family:inherit;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .faq-question .chev{font-size:12px;color:#64748b;transition:transform .2s;flex-shrink:0}
+  .faq-item.open .faq-question .chev{transform:rotate(180deg)}
+  .faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 22px}
+  .faq-item.open .faq-answer{max-height:500px;padding-bottom:18px}
+  .faq-answer p{font-size:14px;color:#6b7280;line-height:1.7;margin:0}
+
+  .sidebar{background:#fff;border-radius:16px;padding:24px;border:1px solid #e5e7eb;position:sticky;top:80px;margin-bottom:24px}
+  .sidebar-header{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:800;color:#1a1a2e;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid #f3f4f6}
+  .sidebar-list{display:flex;flex-direction:column;gap:8px}
+  .sidebar-item{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;cursor:pointer;transition:background .2s;text-decoration:none;color:inherit;border:1px solid #f3f4f6}
+  .sidebar-item:hover{background:#f8fafc;border-color:#cbd5e1}
+  .sidebar-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;flex-shrink:0}
+  .sidebar-info{flex:1;min-width:0}
+  .sidebar-title{font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:2px}
+  .sidebar-desc{font-size:11px;color:#9ca3af;line-height:1.4}
+
+  .footer{background:#0a0e27;padding:60px 40px 30px;color:#fff;margin-top:40px}
+  .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:40px}
+  .footer-brand{display:flex;align-items:center;gap:8px;font-size:20px;font-weight:800;margin-bottom:12px}
+  .footer-brand span{color:#60a5fa}
+  .footer-tagline{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px}
+  .footer-social{display:flex;gap:12px}
+  .footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:16px;transition:background .2s}
+  .footer-social a:hover{background:rgba(255,255,255,.2)}
+  .footer-heading{font-size:14px;font-weight:700;margin-bottom:20px;color:#fff}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .footer-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;transition:color .2s}
+  .footer-links a:hover{color:#60a5fa}
+  .footer-bottom{max-width:1200px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  .footer-bottom-left{display:flex;gap:20px;font-size:12px;color:rgba(255,255,255,.5)}
+  .footer-bottom-right,.footer-bottom-links a{font-size:12px;color:rgba(255,255,255,.5);text-decoration:none}
+  .footer-bottom-links{display:flex;gap:20px}
+
+  .toast{position:fixed;bottom:24px;right:24px;background:#1a1a2e;color:#fff;padding:14px 20px;border-radius:10px;font-size:13px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:3000;transform:translateY(200%);transition:transform .3s ease;max-width:320px}
+  .toast.visible{transform:translateY(0)}
+  .toast.success{background:#10b981}
+  .toast.error{background:#ef4444}
+
+  @media(max-width:1024px){
+    .main-content{grid-template-columns:1fr;padding:24px 20px}
+    .sidebar{position:static}
+    .how-steps{grid-template-columns:repeat(2,1fr)}
+    .options-grid{grid-template-columns:1fr}
+  }
+  @media(max-width:768px){
+    .header{padding:0 20px}.nav{display:none}
+    .hero{padding:24px 20px 40px}
+    .hero-title{font-size:28px}
+    .hero-icon{width:48px;height:48px;font-size:20px}
+    .hero-title-row{flex-direction:column;align-items:flex-start;gap:12px}
+    .main-content{padding:20px 16px}
+    .workspace{padding:20px}
+    .dropzone{padding:32px 16px}
+    .how-steps{grid-template-columns:1fr}
+    .seo-content{padding:20px}
+    .footer-inner{grid-template-columns:1fr 1fr}
+    .file-item{flex-direction:column;align-items:flex-start}
+    .file-actions{width:100%;justify-content:flex-end}
+    .toast{left:16px;right:16px;bottom:16px;max-width:none}
+  }
+  @media(max-width:576px){
+    .header{padding:0 16px}.header-right .search-btn,.header-right .theme-btn{display:none}
+    .hero-title{font-size:24px}
+    .actions{flex-direction:column}
+    .btn{width:100%}
+    .btn-primary{flex:none}
+    .footer-inner{grid-template-columns:1fr}
+    .footer-bottom{flex-direction:column;text-align:center}
+  }
+
+  html[data-theme="dark"] body{background:#0f172a;color:#f1f5f9}
+  html[data-theme="dark"] .header,html[data-theme="dark"] .workspace,html[data-theme="dark"] .seo-content,html[data-theme="dark"] .sidebar{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .logo,html[data-theme="dark"] .hero-title,html[data-theme="dark"] .seo-content h2,html[data-theme="dark"] .seo-content h3,html[data-theme="dark"] .faq-question,html[data-theme="dark"] .results-title,html[data-theme="dark"] .sidebar-header,html[data-theme="dark"] .sidebar-title,html[data-theme="dark"] .options-title{color:#f1f5f9}
+  html[data-theme="dark"] .nav a{color:#cbd5e1}
+  html[data-theme="dark"] .dropzone{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .options,html[data-theme="dark"] .how-step,html[data-theme="dark"] .faq-item,html[data-theme="dark"] .file-item,html[data-theme="dark"] .file-thumb{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .option-group select{background:#1e293b;border-color:#334155;color:#f1f5f9}
+  html[data-theme="dark"] .seo-content p,html[data-theme="dark"] .seo-content ul li,html[data-theme="dark"] .file-meta,html[data-theme="dark"] .faq-answer p{color:#cbd5e1}
+  html[data-theme="dark"] .icon-btn{background:#0f172a;border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .blur-value{background:#1e293b;border-color:#334155;color:#94a3b8}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type": "SoftwareApplication", "name": "Image Blur", "url": "https://bigtoolz.com/tools/image-tools/image-blur/", "applicationCategory": "MultimediaApplication", "operatingSystem": "Any (Web-based)", "description": "Free online image blur tool apply Gaussian blur with adjustable strength. Batch process multiple images in your browser.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.7", "ratingCount": "823"}},
+    {"@type": "HowTo", "name": "How to Blur Images Online", "step": [
+      {"@type": "HowToStep", "name": "Upload Images", "text": "Drag & drop or click to select images."},
+      {"@type": "HowToStep", "name": "Adjust Blur", "text": "Drag the slider to set blur strength."},
+      {"@type": "HowToStep", "name": "Blur", "text": "Click Blur Images to process."},
+      {"@type": "HowToStep", "name": "Download", "text": "Download blurred images individually or all at once."}
+    ]},
+    {"@type": "FAQPage", "mainEntity": [
+      {"@type": "Question", "name": "How do I blur an image online for free?", "acceptedAnswer": {"@type": "Answer", "text": "Upload your image, drag the blur slider to set strength, then click Blur Images. The result downloads instantly free, no signup."}},
+      {"@type": "Question", "name": "What type of blur is used?", "acceptedAnswer": {"@type": "Answer", "text": "Our tool uses Gaussian blur the same professional blur used in Photoshop and other editors. It's based on the CSS filter blur() which uses a Gaussian distribution."}},
+      {"@type": "Question", "name": "What's the best blur strength?", "acceptedAnswer": {"@type": "Answer", "text": "For background blur: 5-15px. For hiding sensitive data: 20-40px. For creative effect: 3-8px. Total blur (over 50px): loses all detail."}},
+      {"@type": "Question", "name": "Can I blur only part of an image?", "acceptedAnswer": {"@type": "Answer", "text": "This tool applies blur to the entire image. For region-based blur, use a photo editor like Photoshop, GIMP, or our upcoming region blur tool."}},
+      {"@type": "Question", "name": "Are my images uploaded to a server?", "acceptedAnswer": {"@type": "Answer", "text": "No. All blurring happens in your browser using the Canvas API. Your images never leave your device."}}
+    ]},
+    {"@type": "BreadcrumbList", "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bigtoolz.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://bigtoolz.com/tools/"},
+      {"@type": "ListItem", "position": 3, "name": "Image Tools", "item": "https://bigtoolz.com/tools/image-tools/"},
+      {"@type": "ListItem", "position": 4, "name": "Image Blur", "item": "https://bigtoolz.com/tools/image-tools/image-blur/"}
+    ]}
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-left">
+    <a href="/" class="logo"><div class="logo-icon">⚒</div>BigToolz</span></a>
+    <nav><ul class="nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/tools/" class="active">All Tools</a></li>
+      <li><a href="/tools/categories">Categories</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul></nav>
+  </div>
+  <div class="header-right">
+    
+    <button class="theme-btn" aria-label="Toggle theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
+    
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <nav class="breadcrumb">
+      <a href="/">Home</a><span class="sep">›</span>
+      <a href="/tools/">Tools</a><span class="sep">›</span>
+      <a href="/tools/image-tools/">Image Tools</a><span class="sep">›</span>
+      <span class="current">Image Blur</span>
+    </nav>
+    <div class="hero-title-row">
+      <div class="hero-icon">💨</div>
+      <h1 class="hero-title">Image <span class="blue">Blur</span></h1>
+    </div>
+    <p class="hero-desc">
+      Apply Gaussian blur to any image with adjustable strength. Perfect for backgrounds, hiding sensitive information, or creative effects. No upload, no signup, 100% private.
+    </p>
+    <div class="hero-features">
+      <div class="hero-feature"><span class="check">✓</span> Adjustable Strength</div>
+      <div class="hero-feature"><span class="check">✓</span> Real Gaussian Blur</div>
+      <div class="hero-feature"><span class="check">✓</span> Batch Support</div>
+      <div class="hero-feature"><span class="check">✓</span> Live Preview</div>
+    </div>
+  </div>
+</section>
+
+<div class="main-content">
+
+  <div class="tool-content">
+
+    <div class="workspace">
+
+      <div class="dropzone" id="dropzone">
+        <div class="dropzone-icon">⬆</div>
+        <div class="dropzone-title">Drag & drop your images here</div>
+        <div class="dropzone-sub">or <a href="#" id="browseLink">click to browse files</a></div>
+        <button class="choose-btn" id="chooseBtn" type="button">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+          Choose Images
+        </button>
+        <div class="dropzone-info">
+          <span>JPG, PNG, WebP, GIF</span>
+          <span class="divider">|</span>
+          <span>Multiple files supported</span>
+        </div>
+        <input type="file" id="fileInput" class="file-input" accept="image/*" multiple>
+      </div>
+
+      <div class="preview-wrap" id="previewWrap">
+        <canvas id="previewCanvas"></canvas>
+      </div>
+
+      <div class="options">
+        <div class="options-title">⚙️ Blur Settings</div>
+
+        <div class="blur-slider-group">
+          <div class="blur-header">
+            <label>Blur Strength</label>
+            <span class="blur-value" id="blurValue">10 px</span>
+          </div>
+          <input type="range" id="blurSlider" class="range-slider" min="0" max="50" value="10" step="1">
+        </div>
+
+        <div class="options-grid">
+          <div class="option-group">
+            <label>Blur Type</label>
+            <select id="blurType">
+              <option value="gaussian" selected>Gaussian Blur (smooth)</option>
+              <option value="pixelate">Pixelate (mosaic)</option>
+            </select>
+          </div>
+          <div class="option-group">
+            <label>Output Format</label>
+            <select id="outFormat">
+              <option value="image/jpeg">JPEG</option>
+              <option value="image/png">PNG</option>
+              <option value="image/webp" selected>WebP</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="quality-group">
+          <div class="quality-header">
+            <label>Quality (for JPEG/WebP)</label>
+            <span class="quality-value" id="qualityValue">92%</span>
+          </div>
+          <input type="range" id="qualitySlider" class="quality-slider" min="50" max="100" value="92" step="1">
+        </div>
+      </div>
+
+      <div class="actions">
+        <button class="btn btn-primary" id="blurBtn" disabled>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8z"/></svg>
+          Blur Images
+        </button>
+        <button class="btn btn-secondary" id="clearBtn">Clear All</button>
+      </div>
+
+      <div class="progress" id="progress">
+        <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+        <div class="progress-text" id="progressText">Blurring...</div>
+      </div>
+
+      <div class="results" id="results">
+        <div class="results-header">
+          <div class="results-title"><span class="success-icon">✓</span> Blur Complete</div>
+          <button class="btn btn-success" id="downloadAllBtn" style="padding:10px 20px;font-size:13px;">⬇ Download All</button>
+        </div>
+        <div class="file-list" id="fileList"></div>
+      </div>
+
+    </div>
+
+    <div class="seo-content">
+
+      <h2>💨 What is Image Blur?</h2>
+      <p>
+        <strong>Image Blur</strong> applies a soft, out-of-focus effect to your images. The most common type is <strong>Gaussian blur</strong> a smooth, natural-looking blur based on a mathematical Gaussian distribution. It's the same blur used by Photoshop, GIMP, and CSS <code>filter: blur()</code>.
+      </p>
+      <p>
+        Unlike most online blur tools, BigToolz processes images <strong>100% in your browser</strong> using the Canvas API. Your images <strong>never uploaded to any server</strong> complete privacy, instant results, no uploads.
+      </p>
+
+      <h2>🚀 How to Blur Images</h2>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-step-num">1</div>
+          <div class="how-step-title">Upload Images</div>
+          <div class="how-step-desc">Drag & drop or click "Choose Images" to select files.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">2</div>
+          <div class="how-step-title">Set Strength</div>
+          <div class="how-step-desc">Drag the slider from 0 to 50 px to control blur intensity.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">3</div>
+          <div class="how-step-title">Blur</div>
+          <div class="how-step-desc">Click "Blur Images" to process all files at once.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">4</div>
+          <div class="how-step-title">Download</div>
+          <div class="how-step-desc">Download blurred images individually or all at once.</div>
+        </div>
+      </div>
+
+      <h2>🎯 When to Use Blur</h2>
+      <h3>🔒 Privacy & Censorship</h3>
+      <p>Hide faces, license plates, credit card numbers, addresses, or any personal information. A blur of 20-30px makes text completely unreadable while keeping the image recognizable.</p>
+
+      <h3>🎨 Design & Backgrounds</h3>
+      <p>Create soft background images for hero sections, cards, or slides. A light blur (5-15px) makes the subject pop while keeping the background visually interesting.</p>
+
+      <h3>📸 Photo Editing</h3>
+      <p>Soften skin in portraits (2-5px), create a shallow depth-of-field effect, or add a dreamy glow to photos. Combine with brightness adjustments for a "glamour" effect.</p>
+
+      <h3>🖼️ Creative Effects</h3>
+      <p>Use high blur (40-50px) to create abstract color gradients from photos. Perfect for section dividers, texture backgrounds, or ambient design.</p>
+
+      <h2>📊 Recommended Blur Strengths</h2>
+      <ul>
+        <li><strong>0-3 px:</strong> Barely noticeable subtle softening only.</li>
+        <li><strong>3-8 px:</strong> Portrait softening subtle background blur.</li>
+        <li><strong>8-15 px:</strong> Background blur dreamy effect.</li>
+        <li><strong>15-25 px:</strong> Privacy blur for faces and text.</li>
+        <li><strong>25-40 px:</strong> Strong blur content becomes unrecognizable.</li>
+        <li><strong>40-50 px:</strong> Extreme blur abstract color wash only.</li>
+      </ul>
+
+      <h2>✨ Key Features</h2>
+      <ul>
+        <li><strong>Real Gaussian blur</strong> same as Photoshop and CSS.</li>
+        <li><strong>Adjustable strength</strong> 0 to 50 px slider.</li>
+        <li><strong>Pixelate mode</strong> mosaic/censorship alternative.</li>
+        <li><strong>Live preview</strong> see the blur as you drag the slider.</li>
+        <li><strong>Batch processing</strong> blur dozens of images at once.</li>
+        <li><strong>Multiple output formats</strong> JPEG, PNG, WebP.</li>
+        <li><strong>Quality control</strong> balance file size vs quality.</li>
+        <li><strong>100% browser-based</strong> complete privacy.</li>
+      </ul>
+
+      <h2>❓ Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-question">How do I blur an image online for free?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Upload your image, drag the blur slider to set strength (0-50px), then click "Blur Images". The result downloads instantly free, no signup, no watermark.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What type of blur is used?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Our tool uses <strong>Gaussian blur</strong> the same professional blur used in Photoshop, GIMP, and CSS <code>filter: blur()</code>. It creates a smooth, natural out-of-focus effect based on a Gaussian distribution curve.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What's the best blur strength?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>It depends on your goal: <strong>2-5px</strong> for portrait softening, <strong>8-15px</strong> for backgrounds, <strong>20-30px</strong> for hiding faces or text, <strong>40-50px</strong> for abstract effects. See the guide above for details.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Is Gaussian blur the same as pixelate?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>No. <strong>Gaussian blur</strong> smooths pixels together into a soft gradient natural-looking. <strong>Pixelate</strong> replaces groups of pixels with blocks harder-edged and more visible as "censorship." Our tool supports both modes.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I blur only part of an image?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>This tool applies blur to the entire image. For <strong>region-based blur</strong> (like blurring just a face), you'd want a photo editor with a selection tool like Photoshop, GIMP, or Photopea. Alternatively, crop the region, blur it, and re-composite.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I blur multiple images at once?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Yes. Upload multiple images and the same blur strength applies to all of them. Then use "Download All" for bulk saving perfect for censoring a batch of photos.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Are my images uploaded to a server?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>No. All blurring happens in your browser using the HTML5 Canvas API. Your images never leave your device, and nothing is stored anywhere.</p></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-header">🔗 Related Image Tools</div>
+    <div class="sidebar-list">
+      <a href="/tools/image-tools/image-pixelator/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#8b5cf6;">🔲</div>
+        <div class="sidebar-info"><div class="sidebar-title">Image Pixelator</div><div class="sidebar-desc">Mosaic censorship</div></div>
+      </a>
+      <a href="/tools/image-tools/image-brightness/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#f59e0b;">☀️</div>
+        <div class="sidebar-info"><div class="sidebar-title">Image Brightness</div><div class="sidebar-desc">Adjust brightness</div></div>
+      </a>
+      <a href="/tools/image-tools/image-contrast/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#1e293b;">◐</div>
+        <div class="sidebar-info"><div class="sidebar-title">Image Contrast</div><div class="sidebar-desc">Adjust contrast</div></div>
+      </a>
+      <a href="/tools/image-tools/image-crop/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#f97316;">✂️</div>
+        <div class="sidebar-info"><div class="sidebar-title">Image Crop</div><div class="sidebar-desc">Crop to any area</div></div>
+      </a>
+      <a href="/tools/image-tools/image-watermark/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#3b82f6;">💧</div>
+        <div class="sidebar-info"><div class="sidebar-title">Image Watermark</div><div class="sidebar-desc">Add watermarks</div></div>
+      </a>
+      <a href="/tools/image-tools/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#64748b;">🖼</div>
+        <div class="sidebar-info"><div class="sidebar-title">All Image Tools →</div><div class="sidebar-desc">Browse 25+ tools</div></div>
+      </a>
+    </div>
+  </aside>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand"><div class="logo-icon">⚒</div>BigToolz</span></div>
+      <p class="footer-tagline">Your Ultimate Online Tools Hub</p>
+      <div class="footer-social">
+        <a href="https://facebook.com/bigtoolz" aria-label="Facebook">f</a>
+        <a href="https://twitter.com/bigtoolz" aria-label="Twitter">𝕏</a>
+        <a href="https://youtube.com/@bigtoolz" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+    <div>
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/tools/">All Tools</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Categories</h3>
+      <ul class="footer-links">
+        <li><a href="/tools/image-tools/">Image Tools</a></li>
+        <li><a href="/tools/pdf-tools/">PDF Tools</a></li>
+        <li><a href="/tools/text-tools/">Text Tools</a></li>
+        <li><a href="/tools/seo-tools/">SEO Tools</a></li>
+        <li><a href="/tools/categories">All Categories →</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Legal</h3>
+      <ul class="footer-links">
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left"><span>✓ 100% Free</span><span>✓ No Sign Up</span><span>✓ No Installation</span></div>
+    <div class="footer-bottom-right">© 2026 BigToolz. All rights reserved.</div>
+    <div class="footer-bottom-links"><a href="/privacy-policy">Privacy</a><a href="/terms">Terms</a><a href="/disclaimer">Disclaimer</a></div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+'use strict';
+
+/* ===== THEME ===== */
+(function(){try{var t=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&d))document.documentElement.setAttribute('data-theme','dark');else if(t==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();
+document.querySelector('.theme-btn')?.addEventListener('click',()=>{const h=document.documentElement;const c=h.getAttribute('data-theme');const d=window.matchMedia('(prefers-color-scheme: dark)').matches;let n=c==='dark'?'light':c==='light'?'dark':(d?'light':'dark');h.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}});
+
+/* ===== HELPERS ===== */
+const $ = (s, p = document) => p.querySelector(s);
+const $$ = (s, p = document) => [...p.querySelectorAll(s)];
+
+function formatBytes(b) {
+  if (b === 0) return '0 B';
+  const k = 1024, sizes = ['B', 'KB', 'MB', 'GB'];
+  const i = Math.floor(Math.log(b) / Math.log(k));
+  return (b / Math.pow(k, i)).toFixed(i === 0 ? 0 : 1) + ' ' + sizes[i];
+}
+
+function showToast(msg, type = 'info', duration = 3000) {
+  const t = $('#toast');
+  if (!t) return;
+  t.className = 'toast visible' + (type !== 'info' ? ' ' + type : '');
+  t.textContent = msg;
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove('visible'), duration);
+}
+
+function escapeHtml(str) {
+  const div = document.createElement('div');
+  div.textContent = str;
+  return div.innerHTML;
+}
+
+/* ===== STATE ===== */
+const state = {
+  files: [],
+  results: [],
+  isProcessing: false,
+  previewImageEl: null,
+  blurStrength: 10,
+  blurType: 'gaussian'
+};
+
+let fileIdCounter = 0;
+
+/* ===== DOM ===== */
+const dropzone = $('#dropzone');
+const fileInput = $('#fileInput');
+const chooseBtn = $('#chooseBtn');
+const browseLink = $('#browseLink');
+const blurBtn = $('#blurBtn');
+const clearBtn = $('#clearBtn');
+const progress = $('#progress');
+const progressFill = $('#progressFill');
+const progressText = $('#progressText');
+const results = $('#results');
+const fileList = $('#fileList');
+const blurSlider = $('#blurSlider');
+const blurValue = $('#blurValue');
+const blurType = $('#blurType');
+const outFormat = $('#outFormat');
+const qualitySlider = $('#qualitySlider');
+const qualityValue = $('#qualityValue');
+const downloadAllBtn = $('#downloadAllBtn');
+const previewWrap = $('#previewWrap');
+const previewCanvas = $('#previewCanvas');
+
+/* ===== SLIDERS ===== */
+blurSlider.addEventListener('input', (e) => {
+  state.blurStrength = parseInt(e.target.value, 10);
+  blurValue.textContent = state.blurStrength + ' px';
+  renderPreview();
+});
+
+qualitySlider.addEventListener('input', (e) => {
+  qualityValue.textContent = e.target.value + '%';
+});
+
+blurType.addEventListener('change', (e) => {
+  state.blurType = e.target.value;
+  renderPreview();
+});
+
+/* ===== FILE SELECTION ===== */
+function triggerFileSelect() { fileInput.click(); }
+chooseBtn.addEventListener('click', (e) => { e.stopPropagation(); triggerFileSelect(); });
+browseLink.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); triggerFileSelect(); });
+dropzone.addEventListener('click', triggerFileSelect);
+
+fileInput.addEventListener('change', (e) => {
+  handleFiles([...e.target.files]);
+  fileInput.value = '';
+});
+
+['dragenter', 'dragover'].forEach(evt => {
+  dropzone.addEventListener(evt, (e) => {
+    e.preventDefault(); e.stopPropagation();
+    dropzone.classList.add('dragover');
+  });
+});
+['dragleave', 'drop'].forEach(evt => {
+  dropzone.addEventListener(evt, (e) => {
+    e.preventDefault(); e.stopPropagation();
+    dropzone.classList.remove('dragover');
+  });
+});
+dropzone.addEventListener('drop', (e) => {
+  const files = [...e.dataTransfer.files].filter(f => f.type.startsWith('image/'));
+  if (files.length) handleFiles(files);
+});
+
+/* ===== HANDLE FILES ===== */
+function handleFiles(files) {
+  const imageFiles = files.filter(f => f.type.startsWith('image/'));
+  if (!imageFiles.length) { showToast('Please select image files only', 'error'); return; }
+
+  imageFiles.forEach(file => {
+    state.files.push({
+      id: ++fileIdCounter,
+      file,
+      name: file.name,
+      size: file.size,
+      type: file.type
+    });
+  });
+
+  // Load first image for preview
+  loadPreviewImage(state.files[0].file);
+
+  blurBtn.disabled = state.files.length === 0;
+  showToast(`${imageFiles.length} image${imageFiles.length > 1 ? 's' : ''} added`, 'success');
+}
+
+function loadPreviewImage(file) {
+  const reader = new FileReader();
+  reader.onload = (e) => {
+    const img = new Image();
+    img.onload = () => {
+      state.previewImageEl = img;
+      previewWrap.classList.add('visible');
+      renderPreview();
+    };
+    img.src = e.target.result;
+  };
+  reader.readAsDataURL(file);
+}
+
+/* ===== PREVIEW RENDER ===== */
+function renderPreview() {
+  if (!state.previewImageEl) return;
+
+  const img = state.previewImageEl;
+  const maxW = 600;
+  const ratio = Math.min(maxW / img.naturalWidth, 1);
+  const w = Math.round(img.naturalWidth * ratio);
+  const h = Math.round(img.naturalHeight * ratio);
+
+  previewCanvas.width = w;
+  previewCanvas.height = h;
+  const ctx = previewCanvas.getContext('2d');
+
+  if (state.blurType === 'pixelate') {
+    // Pixelate: draw small then scale up with no smoothing
+    const pixelSize = Math.max(2, Math.round(state.blurStrength / 2));
+    const smallW = Math.max(1, Math.round(w / pixelSize));
+    const smallH = Math.max(1, Math.round(h / pixelSize));
+
+    const tmpCanvas = document.createElement('canvas');
+    tmpCanvas.width = smallW;
+    tmpCanvas.height = smallH;
+    const tmpCtx = tmpCanvas.getContext('2d');
+    tmpCtx.drawImage(img, 0, 0, smallW, smallH);
+
+    ctx.imageSmoothingEnabled = false;
+    ctx.drawImage(tmpCanvas, 0, 0, w, h);
+  } else {
+    // Gaussian blur via CSS filter
+    ctx.filter = `blur(${state.blurStrength * ratio}px)`;
+    ctx.drawImage(img, 0, 0, w, h);
+    ctx.filter = 'none';
+  }
+}
+
+/* ===== BLUR ===== */
+blurBtn.addEventListener('click', blurAll);
+
+async function blurAll() {
+  if (state.isProcessing || !state.files.length) return;
+
+  state.isProcessing = true;
+  blurBtn.disabled = true;
+  blurBtn.innerHTML = 'Blurring...';
+  results.classList.remove('visible');
+  fileList.innerHTML = '';
+  state.results = [];
+
+  const settings = {
+    strength: state.blurStrength,
+    type: state.blurType,
+    format: outFormat.value,
+    quality: parseInt(qualitySlider.value, 10) / 100
+  };
+
+  progress.classList.add('visible');
+  progressFill.style.width = '0%';
+
+  const total = state.files.length;
+  let completed = 0;
+
+  for (const item of state.files) {
+    try {
+      const result = await blurImage(item.file, settings);
+      state.results.push({ ...result, id: item.id, originalName: item.name });
+    } catch (err) {
+      console.error('Blur failed:', item.name, err);
+      showToast(`Failed: ${item.name}`, 'error');
+    }
+    completed++;
+    progressFill.style.width = Math.round((completed / total) * 100) + '%';
+    progressText.textContent = `Blurring ${completed} of ${total}...`;
+  }
+
+  progress.classList.remove('visible');
+  renderResults();
+
+  state.isProcessing = false;
+  blurBtn.disabled = false;
+  blurBtn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8z"/></svg> Blur Images';
+
+  if (state.results.length) {
+    results.classList.add('visible');
+    showToast(`✅ ${state.results.length} image${state.results.length > 1 ? 's' : ''} blurred!`, 'success');
+  }
+}
+
+function blurImage(file, settings) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      const img = new Image();
+      img.onload = () => {
+        const w = img.naturalWidth;
+        const h = img.naturalHeight;
+
+        const canvas = document.createElement('canvas');
+        canvas.width = w;
+        canvas.height = h;
+        const ctx = canvas.getContext('2d');
+
+        // White bg for JPEG
+        if (settings.format === 'image/jpeg') {
+          ctx.fillStyle = '#ffffff';
+          ctx.fillRect(0, 0, w, h);
+        }
+
+        if (settings.type === 'pixelate') {
+          // Pixelate: downscale then upscale without smoothing
+          const pixelSize = Math.max(2, Math.round(settings.strength / 2));
+          const smallW = Math.max(1, Math.round(w / pixelSize));
+          const smallH = Math.max(1, Math.round(h / pixelSize));
+
+          const tmpCanvas = document.createElement('canvas');
+          tmpCanvas.width = smallW;
+          tmpCanvas.height = smallH;
+          const tmpCtx = tmpCanvas.getContext('2d');
+          tmpCtx.drawImage(img, 0, 0, smallW, smallH);
+
+          ctx.imageSmoothingEnabled = false;
+          ctx.drawImage(tmpCanvas, 0, 0, w, h);
+        } else {
+          // Gaussian blur via CSS filter
+          ctx.filter = `blur(${settings.strength}px)`;
+          ctx.drawImage(img, 0, 0);
+          ctx.filter = 'none';
+        }
+
+        canvas.toBlob(
+          (blob) => {
+            if (!blob) return reject(new Error('Blur failed'));
+
+            const thumbCanvas = document.createElement('canvas');
+            const thumbSize = 64;
+            const ratio = Math.min(thumbSize / w, thumbSize / h);
+            thumbCanvas.width = w * ratio;
+            thumbCanvas.height = h * ratio;
+            thumbCanvas.getContext('2d').drawImage(canvas, 0, 0, thumbCanvas.width, thumbCanvas.height);
+            const thumbnail = thumbCanvas.toDataURL('image/jpeg', 0.7);
+
+            const baseName = file.name.replace(/\.[^.]+$/, '');
+            const ext = settings.format === 'image/jpeg' ? 'jpg' : settings.format === 'image/webp' ? 'webp' : 'png';
+            const newName = `${baseName}-blurred.${ext}`;
+
+            resolve({
+              blob,
+              url: URL.createObjectURL(blob),
+              name: newName,
+              originalSize: file.size,
+              newSize: blob.size,
+              thumbnail,
+              width: w,
+              height: h,
+              strength: settings.strength,
+              type: settings.type
+            });
+          },
+          settings.format,
+          settings.quality
+        );
+      };
+      img.onerror = () => reject(new Error('Invalid image'));
+      img.src = e.target.result;
+    };
+    reader.onerror = () => reject(new Error('Read failed'));
+    reader.readAsDataURL(file);
+  });
+}
+
+/* ===== RENDER RESULTS ===== */
+function renderResults() {
+  fileList.innerHTML = '';
+  state.results.forEach((result) => {
+    const item = document.createElement('div');
+    item.className = 'file-item';
+    item.innerHTML = `
+      <div class="file-thumb"><img src="${result.thumbnail}" alt="${escapeHtml(result.name)}"></div>
+      <div class="file-info">
+        <div class="file-name" title="${escapeHtml(result.name)}">${escapeHtml(result.name)}</div>
+        <div class="file-meta">
+          <span>${formatBytes(result.originalSize)} → ${formatBytes(result.newSize)}</span>
+          <span class="blur-label">${result.type === 'pixelate' ? 'Pixelate' : 'Gaussian'} ${result.strength}px</span>
+          <span>${result.width}×${result.height}</span>
+        </div>
+      </div>
+      <div class="file-actions">
+        <button class="icon-btn download" data-download="${result.id}" title="Download">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+          </svg>
+        </button>
+      </div>
+    `;
+    fileList.appendChild(item);
+  });
+
+  $$('[data-download]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const id = parseInt(btn.dataset.download, 10);
+      const result = state.results.find(r => r.id === id);
+      if (result) downloadResult(result);
+    });
+  });
+}
+
+function downloadResult(result) {
+  const a = document.createElement('a');
+  a.href = result.url;
+  a.download = result.name;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+}
+
+downloadAllBtn.addEventListener('click', () => {
+  if (!state.results.length) return;
+  state.results.forEach((r, i) => setTimeout(() => downloadResult(r), i * 300));
+  showToast(`Downloading ${state.results.length} file${state.results.length > 1 ? 's' : ''}...`, 'success');
+});
+
+/* ===== CLEAR ===== */
+clearBtn.addEventListener('click', () => {
+  state.results.forEach(r => URL.revokeObjectURL(r.url));
+  state.files = [];
+  state.results = [];
+  state.previewImageEl = null;
+  previewWrap.classList.remove('visible');
+  fileList.innerHTML = '';
+  results.classList.remove('visible');
+  progress.classList.remove('visible');
+  blurBtn.disabled = true;
+  showToast('Cleared all images');
+});
+
+/* ===== FAQ ===== */
+$$('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    $$('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+</script>
+
+</body>
+</html>

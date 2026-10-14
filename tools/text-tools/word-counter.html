@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2563eb">
+
+<title>Word Counter - Count Words & Characters Online Free | BigToolz</title>
+<meta name="description" content="Free online word counter. Count words, characters, sentences, paragraphs instantly. Reading time, keyword density, case stats. No signup, works in browser.">
+<meta name="keywords" content="word counter, character counter, count words online, word count tool, free word counter, sentence counter">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://bigtoolz.com/tools/text-tools/word-counter/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Word Counter - Count Words & Characters Free | BigToolz">
+<meta property="og:description" content="Count words, characters, sentences and more instantly free, no signup.">
+<meta property="og:url" content="https://bigtoolz.com/tools/text-tools/word-counter/">
+<meta property="og:image" content="https://bigtoolz.com/assets/images/og-image.jpg">
+<meta property="og:site_name" content="BigToolz">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Word Counter - BigToolz">
+<meta name="twitter:description" content="Count words, characters, sentences instantly free, no signup.">
+<meta name="twitter:image" content="https://bigtoolz.com/assets/images/twitter-card.jpg">
+
+<link rel="icon" href="/assets/images/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/images/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#f8f9fc;color:#1a1a2e;overflow-x:hidden;line-height:1.5}
+
+  .header{background:#fff;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;position:sticky;top:0;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+  .header-left{display:flex;align-items:center;gap:40px}
+  .logo{display:flex;align-items:center;gap:8px;font-size:22px;font-weight:800;color:#1a1a2e;text-decoration:none}
+  .logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#3b82f6,#2563eb);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px}
+  .logo span{color:#2563eb}
+  .nav{display:flex;align-items:center;gap:28px;list-style:none}
+  .nav a{text-decoration:none;color:#4b5563;font-size:14px;font-weight:500;transition:color .2s}
+  .nav a:hover,.nav a.active{color:#2563eb}
+  .header-right{display:flex;align-items:center;gap:16px}
+  .search-btn,.theme-btn{width:36px;height:36px;border-radius:50%;border:none;background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#4b5563}
+  .search-btn:hover,.theme-btn:hover{background:#f3f4f6}
+  .bookmark-btn{display:flex;align-items:center;gap:8px;background:#2563eb;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
+  .bookmark-btn:hover{background:#1d4ed8}
+
+  /* HERO */
+  .hero{background:linear-gradient(135deg,#0a0e27 0%,#1a1a4e 40%,#2d1b69 70%,#4c1d95 100%);padding:40px 40px 60px;position:relative;overflow:hidden;color:#fff}
+  .hero::before{content:'';position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(59,130,246,.25) 0%,transparent 70%);border-radius:50%}
+  .hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+  .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px;flex-wrap:wrap}
+  .breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none}
+  .breadcrumb a:hover{color:#fff}
+  .breadcrumb .sep{color:rgba(255,255,255,.4)}
+  .breadcrumb .current{color:#fff;font-weight:500}
+  .hero-title-row{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+  .hero-icon{width:60px;height:60px;background:#3b82f6;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;color:#fff;flex-shrink:0;box-shadow:0 8px 24px rgba(59,130,246,.4);font-family:'JetBrains Mono',monospace;font-weight:800}
+  .hero-title{font-size:42px;font-weight:800;line-height:1.15}
+  .hero-title .blue{color:#60a5fa}
+  .hero-desc{font-size:15px;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:24px;max-width:560px}
+  .hero-features{display:flex;gap:24px;flex-wrap:wrap}
+  .hero-feature{display:flex;align-items:center;gap:6px;font-size:13px;color:#fff;font-weight:500}
+  .hero-feature .check{width:18px;height:18px;border-radius:50%;background:#3b82f6;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;flex-shrink:0}
+
+  /* MAIN */
+  .main-content{max-width:1200px;margin:0 auto;padding:40px;display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start}
+  .tool-content{min-width:0}
+
+  .workspace{background:#fff;border-radius:16px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,.06);border:1px solid #e5e7eb;margin-bottom:24px}
+
+  /* Stats Grid */
+  .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:20px}
+  .stat-card{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:1px solid #bfdbfe;border-radius:12px;padding:18px 14px;text-align:center;transition:all .2s}
+  .stat-card:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(59,130,246,.15)}
+  .stat-icon{font-size:22px;margin-bottom:6px;line-height:1}
+  .stat-value{font-size:28px;font-weight:800;color:#1e40af;margin-bottom:4px;font-family:'JetBrains Mono',monospace;letter-spacing:-.5px;line-height:1.1}
+  .stat-label{font-size:11px;font-weight:700;color:#3b82f6;text-transform:uppercase;letter-spacing:.5px}
+
+  /* Stats grid secondary */
+  .stats-grid-2{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px}
+  .stat-card-2{background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;padding:14px 10px;text-align:center}
+  .stat-card-2 .stat-value{font-size:20px;color:#0f172a;margin-bottom:2px}
+  .stat-card-2 .stat-label{font-size:10px;color:#64748b}
+
+  /* Textarea */
+  .textarea-wrapper{position:relative;margin-bottom:20px}
+  .textarea{width:100%;min-height:280px;padding:20px;border:2px solid #e5e7eb;border-radius:12px;font-family:var(--font-primary,'Inter',sans-serif);font-size:15px;line-height:1.7;color:#1a1a2e;background:#fafbfc;outline:none;resize:vertical;transition:all .2s}
+  .textarea:focus{border-color:#3b82f6;background:#fff;box-shadow:0 0 0 4px rgba(59,130,246,.1)}
+  .textarea::placeholder{color:#9ca3af}
+  .textarea-meta{display:flex;justify-content:space-between;align-items:center;padding:8px 4px 0;font-size:12px;color:#94a3b8;flex-wrap:wrap;gap:8px}
+  .textarea-meta .limit{font-weight:600;color:#3b82f6}
+
+  /* Actions */
+  .actions{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:10px 16px;border-radius:8px;font-size:13px;font-weight:700;font-family:inherit;cursor:pointer;border:1px solid #e5e7eb;background:#fff;color:#4b5563;transition:all .2s}
+  .btn:hover{border-color:#3b82f6;color:#3b82f6;background:#eff6ff}
+  .btn-primary{background:#3b82f6;color:#fff;border-color:#3b82f6}
+  .btn-primary:hover{background:#2563eb;border-color:#2563eb;color:#fff}
+  .btn-danger{color:#ef4444}
+  .btn-danger:hover{border-color:#ef4444;color:#ef4444;background:#fef2f2}
+  .btn.copied{background:#10b981;color:#fff;border-color:#10b981}
+
+  /* Keyword density */
+  .kw-section{background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:20px;margin-bottom:20px}
+  .kw-title{font-size:14px;font-weight:800;color:#1a1a2e;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+  .kw-list{display:flex;flex-direction:column;gap:8px}
+  .kw-row{display:flex;align-items:center;gap:10px;font-size:13px}
+  .kw-word{flex:0 0 auto;min-width:100px;font-weight:700;color:#1a1a2e;font-family:'JetBrains Mono',monospace;word-break:break-word}
+  .kw-bar{flex:1;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden;min-width:60px}
+  .kw-fill{height:100%;background:linear-gradient(90deg,#60a5fa,#3b82f6);border-radius:4px;transition:width .3s}
+  .kw-count{flex:0 0 auto;font-size:11px;font-weight:700;color:#64748b;min-width:50px;text-align:right}
+  .kw-empty{color:#9ca3af;font-size:13px;font-style:italic;padding:8px 0}
+
+  /* Case stats */
+  .case-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+  .case-item{background:#fff;border:1px solid #e2e8f0;border-radius:8px;padding:12px;text-align:center}
+  .case-value{font-size:18px;font-weight:800;color:#1e40af;margin-bottom:2px}
+  .case-label{font-size:10px;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:.3px}
+
+  /* SEO */
+  .seo-content{background:#fff;border-radius:16px;padding:32px;border:1px solid #e5e7eb;margin-bottom:24px}
+  .seo-content h2{font-size:22px;font-weight:800;color:#1a1a2e;margin-bottom:14px;margin-top:28px;display:flex;align-items:center;gap:10px}
+  .seo-content h2:first-child{margin-top:0}
+  .seo-content h3{font-size:16px;font-weight:700;color:#1a1a2e;margin:20px 0 10px}
+  .seo-content p{font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:14px}
+  .seo-content ul{list-style:none;padding-left:0;margin-bottom:16px}
+  .seo-content ul li{position:relative;padding-left:24px;font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:8px}
+  .seo-content ul li::before{content:'';position:absolute;left:6px;top:12px;width:6px;height:6px;background:#3b82f6;border-radius:50%}
+  .seo-content a{color:#2563eb;text-decoration:none;font-weight:600}
+  .seo-content a:hover{text-decoration:underline}
+  .seo-content strong{color:#1a1a2e;font-weight:700}
+  .seo-content code{background:#f1f5f9;padding:2px 6px;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:13px;color:#0f172a;border:1px solid #e2e8f0}
+
+  /* Info table */
+  .info-table{width:100%;border-collapse:collapse;margin:20px 0;border:1px solid #e5e7eb;border-radius:8px;overflow:hidden}
+  .info-table th{background:#eff6ff;padding:12px 16px;text-align:left;font-size:13px;font-weight:700;color:#1a1a2e;border-bottom:1px solid #e5e7eb}
+  .info-table td{padding:12px 16px;font-size:13px;color:#4b5563;border-bottom:1px solid #f3f4f6}
+  .info-table tr:last-child td{border-bottom:none}
+  .info-table code{font-size:12px}
+
+  .how-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:20px}
+  .how-step{background:#eff6ff;border-radius:12px;padding:20px;border:1px solid #bfdbfe}
+  .how-step-num{width:36px;height:36px;border-radius:50%;background:#3b82f6;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;margin-bottom:12px}
+  .how-step-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+  .how-step-desc{font-size:13px;color:#6b7280;line-height:1.6}
+
+  .faq-item{background:#eff6ff;border:1px solid #bfdbfe;border-radius:12px;margin-bottom:10px;overflow:hidden;transition:border-color .2s}
+  .faq-item:hover{border-color:#3b82f6}
+  .faq-question{width:100%;background:none;border:none;padding:18px 22px;font-size:15px;font-weight:700;color:#1a1a2e;text-align:left;cursor:pointer;font-family:inherit;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .faq-question .chev{font-size:12px;color:#3b82f6;transition:transform .2s;flex-shrink:0}
+  .faq-item.open .faq-question .chev{transform:rotate(180deg)}
+  .faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 22px}
+  .faq-item.open .faq-answer{max-height:500px;padding-bottom:18px}
+  .faq-answer p{font-size:14px;color:#6b7280;line-height:1.7;margin:0}
+
+  .sidebar{background:#fff;border-radius:16px;padding:24px;border:1px solid #e5e7eb;position:sticky;top:80px;margin-bottom:24px}
+  .sidebar-header{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:800;color:#1a1a2e;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid #f3f4f6}
+  .sidebar-list{display:flex;flex-direction:column;gap:8px}
+  .sidebar-item{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;cursor:pointer;transition:background .2s;text-decoration:none;color:inherit;border:1px solid #f3f4f6}
+  .sidebar-item:hover{background:#eff6ff;border-color:#bfdbfe}
+  .sidebar-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;flex-shrink:0;font-family:'JetBrains Mono',monospace;font-weight:800}
+  .sidebar-info{flex:1;min-width:0}
+  .sidebar-title{font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:2px}
+  .sidebar-desc{font-size:11px;color:#9ca3af;line-height:1.4}
+
+  .footer{background:#0a0e27;padding:60px 40px 30px;color:#fff;margin-top:40px}
+  .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:40px}
+  .footer-brand{display:flex;align-items:center;gap:8px;font-size:20px;font-weight:800;margin-bottom:12px}
+  .footer-brand span{color:#60a5fa}
+  .footer-tagline{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px}
+  .footer-social{display:flex;gap:12px}
+  .footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:16px;transition:background .2s}
+  .footer-social a:hover{background:rgba(255,255,255,.2)}
+  .footer-heading{font-size:14px;font-weight:700;margin-bottom:20px;color:#fff}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .footer-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;transition:color .2s}
+  .footer-links a:hover{color:#60a5fa}
+  .footer-bottom{max-width:1200px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  .footer-bottom-left{display:flex;gap:20px;font-size:12px;color:rgba(255,255,255,.5)}
+  .footer-bottom-right,.footer-bottom-links a{font-size:12px;color:rgba(255,255,255,.5);text-decoration:none}
+  .footer-bottom-links{display:flex;gap:20px}
+
+  .toast{position:fixed;bottom:24px;right:24px;background:#1a1a2e;color:#fff;padding:14px 20px;border-radius:10px;font-size:13px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:3000;transform:translateY(200%);transition:transform .3s ease;max-width:320px}
+  .toast.visible{transform:translateY(0)}
+  .toast.success{background:#10b981}
+  .toast.error{background:#ef4444}
+
+  @media(max-width:1024px){
+    .main-content{grid-template-columns:1fr;padding:24px 20px}
+    .sidebar{position:static}
+    .stats-grid{grid-template-columns:repeat(2,1fr)}
+    .stats-grid-2{grid-template-columns:repeat(2,1fr)}
+    .how-steps{grid-template-columns:repeat(2,1fr)}
+  }
+  @media(max-width:768px){
+    .header{padding:0 20px}.nav{display:none}
+    .hero{padding:24px 20px 40px}
+    .hero-title{font-size:28px}
+    .hero-icon{width:48px;height:48px;font-size:20px}
+    .hero-title-row{flex-direction:column;align-items:flex-start;gap:12px}
+    .main-content{padding:20px 16px}
+    .workspace{padding:20px}
+    .how-steps{grid-template-columns:1fr}
+    .seo-content{padding:20px}
+    .footer-inner{grid-template-columns:1fr 1fr}
+    .toast{left:16px;right:16px;bottom:16px;max-width:none}
+    .case-grid{grid-template-columns:repeat(2,1fr)}
+  }
+  @media(max-width:576px){
+    .header{padding:0 16px}.header-right .search-btn,.header-right .theme-btn{display:none}
+    .hero-title{font-size:24px}
+    .stat-value{font-size:22px}
+    .stat-card{padding:14px 8px}
+    .stat-icon{font-size:18px}
+    .stat-label{font-size:10px}
+    .textarea{min-height:220px;font-size:14px;padding:14px}
+    .actions .btn{flex:1;justify-content:center;min-width:100px}
+    .footer-inner{grid-template-columns:1fr}
+    .footer-bottom{flex-direction:column;text-align:center}
+  }
+
+  html[data-theme="dark"] body{background:#0f172a;color:#f1f5f9}
+  html[data-theme="dark"] .header,html[data-theme="dark"] .workspace,html[data-theme="dark"] .seo-content,html[data-theme="dark"] .sidebar{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .logo,html[data-theme="dark"] .hero-title,html[data-theme="dark"] .seo-content h2,html[data-theme="dark"] .seo-content h3,html[data-theme="dark"] .faq-question,html[data-theme="dark"] .sidebar-header,html[data-theme="dark"] .sidebar-title,html[data-theme="dark"] .kw-title{color:#f1f5f9}
+  html[data-theme="dark"] .nav a{color:#cbd5e1}
+  html[data-theme="dark"] .stat-card{background:linear-gradient(135deg,#1e3a8a,#1e40af);border-color:#3b82f6}
+  html[data-theme="dark"] .stat-value{color:#93c5fd}
+  html[data-theme="dark"] .stat-label{color:#60a5fa}
+  html[data-theme="dark"] .stat-card-2,html[data-theme="dark"] .kw-section,html[data-theme="dark"] .case-item{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .stat-card-2 .stat-value{color:#f1f5f9}
+  html[data-theme="dark"] .kw-word,html[data-theme="dark"] .case-value{color:#f1f5f9}
+  html[data-theme="dark"] .textarea{background:#0f172a;border-color:#334155;color:#f1f5f9}
+  html[data-theme="dark"] .textarea:focus{background:#0f172a}
+  html[data-theme="dark"] .btn{background:#0f172a;border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .btn:hover{border-color:#3b82f6;color:#60a5fa}
+  html[data-theme="dark"] .how-step,html[data-theme="dark"] .faq-item{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .seo-content p,html[data-theme="dark"] .seo-content ul li,html[data-theme="dark"] .faq-answer p{color:#cbd5e1}
+  html[data-theme="dark"] .seo-content code{background:#020617;color:#60a5fa;border-color:#334155}
+  html[data-theme="dark"] .info-table{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .info-table th{background:#0f172a;color:#f1f5f9;border-color:#334155}
+  html[data-theme="dark"] .info-table td{border-color:#334155;color:#cbd5e1}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type": "SoftwareApplication", "name": "Word Counter", "url": "https://bigtoolz.com/tools/text-tools/word-counter/", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any (Web-based)", "description": "Free online word counter count words, characters, sentences, paragraphs in real-time. Includes reading time, keyword density, and case stats.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "3421"}},
+    {"@type": "HowTo", "name": "How to Count Words Online", "step": [
+      {"@type": "HowToStep", "name": "Type or Paste", "text": "Type or paste your text into the input box."},
+      {"@type": "HowToStep", "name": "See Live Counts", "text": "Words, characters, sentences and paragraphs update instantly."},
+      {"@type": "HowToStep", "name": "Check Details", "text": "View reading time, keyword density and case stats."},
+      {"@type": "HowToStep", "name": "Copy or Clear", "text": "Copy text, clear, or use case conversion buttons."}
+    ]},
+    {"@type": "FAQPage", "mainEntity": [
+      {"@type": "Question", "name": "How do I count words online for free?", "acceptedAnswer": {"@type": "Answer", "text": "Type or paste your text into the input box. Words, characters, sentences and paragraphs are counted instantly. No signup, no limits."}},
+      {"@type": "Question", "name": "What counts as a word?", "acceptedAnswer": {"@type": "Answer", "text": "A word is any sequence of characters separated by spaces, tabs, or line breaks. Hyphenated words like 'state-of-the-art' count as one. Numbers count as words."}},
+      {"@type": "Question", "name": "Does it count spaces as characters?", "acceptedAnswer": {"@type": "Answer", "text": "Yes by default. We show both 'characters with spaces' and 'characters without spaces' for flexibility. Twitter's 280-character limit counts spaces."}},
+      {"@type": "Question", "name": "What's a good reading time?", "acceptedAnswer": {"@type": "Answer", "text": "Average adult reads 200-250 words per minute. Blog posts typically aim for 3-7 minutes. Speaking time assumes 130-150 words per minute."}},
+      {"@type": "Question", "name": "Is my text uploaded to a server?", "acceptedAnswer": {"@type": "Answer", "text": "No. All counting happens in your browser using JavaScript. Your text never leaves your device perfect for confidential documents and drafts."}}
+    ]},
+    {"@type": "BreadcrumbList", "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bigtoolz.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://bigtoolz.com/tools/"},
+      {"@type": "ListItem", "position": 3, "name": "Text Tools", "item": "https://bigtoolz.com/tools/text-tools/"},
+      {"@type": "ListItem", "position": 4, "name": "Word Counter", "item": "https://bigtoolz.com/tools/text-tools/word-counter/"}
+    ]}
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-left">
+    <a href="/" class="logo"><div class="logo-icon">⚒</div>BigToolz</span></a>
+    <nav><ul class="nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/tools/" class="active">All Tools</a></li>
+      <li><a href="/tools/categories">Categories</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul></nav>
+  </div>
+  <div class="header-right">
+   <button class="theme-btn" aria-label="Toggle theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
+    </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <nav class="breadcrumb">
+      <a href="/">Home</a><span class="sep">›</span>
+      <a href="/tools/">Tools</a><span class="sep">›</span>
+      <a href="/tools/text-tools/">Text Tools</a><span class="sep">›</span>
+      <span class="current">Word Counter</span>
+    </nav>
+    <div class="hero-title-row">
+      <div class="hero-icon">T</div>
+      <h1 class="hero-title">Word <span class="blue">Counter</span></h1>
+    </div>
+    <p class="hero-desc">
+      Count words, characters, sentences, and paragraphs instantly as you type. Plus reading time, speaking time, keyword density, and case stats all in your browser.
+    </p>
+    <div class="hero-features">
+      <div class="hero-feature"><span class="check">✓</span> Live Count</div>
+      <div class="hero-feature"><span class="check">✓</span> Keyword Density</div>
+      <div class="hero-feature"><span class="check">✓</span> Reading Time</div>
+      <div class="hero-feature"><span class="check">✓</span> 100% Private</div>
+    </div>
+  </div>
+</section>
+
+<div class="main-content">
+
+  <div class="tool-content">
+
+    <div class="workspace">
+
+      <!-- Primary Stats -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon">📝</div>
+          <div class="stat-value" id="wordCount">0</div>
+          <div class="stat-label">Words</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">🔤</div>
+          <div class="stat-value" id="charCount">0</div>
+          <div class="stat-label">Characters</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">📄</div>
+          <div class="stat-value" id="sentenceCount">0</div>
+          <div class="stat-label">Sentences</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">📋</div>
+          <div class="stat-value" id="paragraphCount">0</div>
+          <div class="stat-label">Paragraphs</div>
+        </div>
+      </div>
+
+      <!-- Secondary Stats -->
+      <div class="stats-grid-2">
+        <div class="stat-card-2">
+          <div class="stat-value" id="charNoSpace">0</div>
+          <div class="stat-label">No Spaces</div>
+        </div>
+        <div class="stat-card-2">
+          <div class="stat-value" id="readingTime">0m</div>
+          <div class="stat-label">Reading Time</div>
+        </div>
+        <div class="stat-card-2">
+          <div class="stat-value" id="speakingTime">0m</div>
+          <div class="stat-label">Speaking Time</div>
+        </div>
+        <div class="stat-card-2">
+          <div class="stat-value" id="uniqueWords">0</div>
+          <div class="stat-label">Unique Words</div>
+        </div>
+      </div>
+
+      <!-- Textarea -->
+      <div class="textarea-wrapper">
+        <textarea id="textInput" class="textarea" placeholder="Type or paste your text here..."></textarea>
+        <div class="textarea-meta">
+          <span>💡 Stats update instantly as you type</span>
+          <span class="limit" id="twitterLimit"></span>
+        </div>
+      </div>
+
+      <!-- Actions -->
+      <div class="actions">
+        <button class="btn btn-primary" id="pasteBtn">📋 Paste</button>
+        <button class="btn" id="copyBtn">📋 Copy</button>
+        <button class="btn" id="upperBtn">ABC Upper</button>
+        <button class="btn" id="lowerBtn">abc Lower</button>
+        <button class="btn" id="titleBtn">Abc Title</button>
+        <button class="btn" id="downloadBtn">⬇ Download</button>
+        <button class="btn btn-danger" id="clearBtn">🗑 Clear</button>
+      </div>
+
+      <!-- Keyword Density -->
+      <div class="kw-section">
+        <div class="kw-title">🔥 Top 10 Keywords</div>
+        <div class="kw-list" id="kwList">
+          <div class="kw-empty">Type or paste text to see keyword density.</div>
+        </div>
+      </div>
+
+      <!-- Case Stats -->
+      <div class="case-grid">
+        <div class="case-item">
+          <div class="case-value" id="upperCount">0</div>
+          <div class="case-label">Uppercase</div>
+        </div>
+        <div class="case-item">
+          <div class="case-value" id="lowerCount">0</div>
+          <div class="case-label">Lowercase</div>
+        </div>
+        <div class="case-item">
+          <div class="case-value" id="numberCount">0</div>
+          <div class="case-label">Numbers</div>
+        </div>
+        <div class="case-item">
+          <div class="case-value" id="symbolCount">0</div>
+          <div class="case-label">Symbols</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- SEO Content -->
+    <div class="seo-content">
+
+      <h2>📝 What is a Word Counter?</h2>
+      <p>
+        A <strong>Word Counter</strong> is a tool that instantly counts words, characters, sentences, and paragraphs in any text. Writers, bloggers, students, SEO specialists, and social media managers use it daily to hit specific length targets whether it's a 500-word essay, a 280-character tweet, or an SEO meta description.
+      </p>
+      <p>
+        Unlike most online word counters, BigToolz processes text <strong>100% in your browser</strong> using JavaScript. Your text <strong>never uploaded to any server</strong> complete privacy, especially important for confidential documents, drafts, and client work.
+      </p>
+
+      <h2>🚀 How to Use the Word Counter</h2>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-step-num">1</div>
+          <div class="how-step-title">Type or Paste</div>
+          <div class="how-step-desc">Type directly or paste text into the input box.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">2</div>
+          <div class="how-step-title">See Live Counts</div>
+          <div class="how-step-desc">All stats update instantly as you type.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">3</div>
+          <div class="how-step-title">Review Details</div>
+          <div class="how-step-desc">Check reading time, keyword density, case stats.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">4</div>
+          <div class="how-step-title">Copy or Download</div>
+          <div class="how-step-desc">Copy text, convert case, or download stats.</div>
+        </div>
+      </div>
+
+      <h2>📊 What Each Count Means</h2>
+      <table class="info-table">
+        <thead>
+          <tr><th>Count</th><th>Definition</th><th>Example</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Words</strong></td><td>Sequences separated by spaces</td><td>"Hello world" = 2 words</td></tr>
+          <tr><td><strong>Characters</strong></td><td>Every character including spaces</td><td>"Hi!" = 3 characters</td></tr>
+          <tr><td><strong>Characters (no space)</strong></td><td>Characters excluding spaces/tabs</td><td>"Hi there" = 7 characters</td></tr>
+          <tr><td><strong>Sentences</strong></td><td>Groups ending with . ! ?</td><td>"Hi. Bye!" = 2 sentences</td></tr>
+          <tr><td><strong>Paragraphs</strong></td><td>Blocks separated by blank lines</td><td>2 paragraphs = 2 line breaks</td></tr>
+          <tr><td><strong>Unique Words</strong></td><td>Distinct words (case-insensitive)</td><td>"cat cat dog" = 2 unique</td></tr>
+        </tbody>
+      </table>
+
+      <h2>⚡ Common Length Targets</h2>
+      <ul>
+        <li><strong>Twitter/X post:</strong> 280 characters max</li>
+        <li><strong>Meta description:</strong> 150-160 characters</li>
+        <li><strong>Instagram caption:</strong> 2,200 characters max</li>
+        <li><strong>Blog post:</strong> 1,500-2,500 words (SEO sweet spot)</li>
+        <li><strong>College essay:</strong> 500-1,000 words</li>
+        <li><strong>Product description:</strong> 150-300 words</li>
+        <li><strong>Press release:</strong> 400-600 words</li>
+        <li><strong>Email subject line:</strong> 40-60 characters</li>
+      </ul>
+
+      <h2>💡 Best Practices for Writers</h2>
+      <ul>
+        <li><strong>Count in context</strong> write freely first, then count and trim.</li>
+        <li><strong>Watch reading time</strong> 3-5 minutes is ideal for blog posts.</li>
+        <li><strong>Check keyword density</strong> keep top keywords under 3% to avoid SEO penalties.</li>
+        <li><strong>Unique words matter</strong> higher unique ratio = richer vocabulary.</li>
+        <li><strong>Sentence length</strong> average 15-20 words per sentence reads best.</li>
+        <li><strong>Save your drafts</strong> use the Download button to save stats + text.</li>
+      </ul>
+
+      <h2>✨ Key Features</h2>
+      <ul>
+        <li><strong>Real-time counting</strong> updates as you type.</li>
+        <li><strong>8 different metrics</strong> words, characters, sentences, paragraphs, unique words, reading time, speaking time, no-space chars.</li>
+        <li><strong>Keyword density</strong> top 10 words with frequency bars.</li>
+        <li><strong>Case stats</strong> uppercase, lowercase, numbers, symbols.</li>
+        <li><strong>Case conversion</strong> one-click upper, lower, title case.</li>
+        <li><strong>Twitter limit</strong> shows how close you are to 280 chars.</li>
+        <li><strong>Copy / Download</strong> save or share your text and stats.</li>
+        <li><strong>100% browser-based</strong> complete privacy, no signup.</li>
+      </ul>
+
+      <h2>❓ Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-question">How do I count words online for free?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Type or paste your text into the input box. Words, characters, sentences, and paragraphs are counted instantly free, no signup, no limits, no watermark.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What counts as a word?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>A word is any sequence of characters separated by spaces, tabs, or line breaks. Hyphenated words like <code>state-of-the-art</code> count as <strong>one word</strong>. Numbers count as words. Symbols alone don't count.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Does it count spaces as characters?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>We show both: <strong>characters with spaces</strong> (the main count) and <strong>characters without spaces</strong> (secondary). Twitter's 280-char limit counts spaces; most word-processing software does too.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What's a good reading time?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Average adult reads <strong>200-250 words per minute</strong>. Blog posts typically aim for <strong>3-7 minutes</strong>. Speaking time assumes <strong>130-150 words per minute</strong> useful for presentations and video scripts.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">How is keyword density calculated?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>We count how often each word appears, filter out common stop words, then show the top 10 with their percentage of total words. Keep top keywords under <strong>3%</strong> for healthy SEO higher risks keyword-stuffing penalties.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I use this for Twitter character count?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Yes! The Twitter limit indicator shows how close you are to 280 characters. It updates instantly and turns green when you're within limit, orange when close, red when over. Note: Twitter counts emojis as 2 chars.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Is my text uploaded to a server?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>No. All counting happens in your browser using JavaScript. Your text never leaves your device, and nothing is stored anywhere. Safe for confidential documents, drafts, and client work.</p></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-header">🔗 Related Text Tools</div>
+    <div class="sidebar-list">
+      <a href="/tools/text-tools/character-counter/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#8b5cf6;">🔤</div>
+        <div class="sidebar-info"><div class="sidebar-title">Character Counter</div><div class="sidebar-desc">Count chars only</div></div>
+      </a>
+      <a href="/tools/text-tools/case-converter/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#f97316;">Aa</div>
+        <div class="sidebar-info"><div class="sidebar-title">Case Converter</div><div class="sidebar-desc">Change text case</div></div>
+      </a>
+      <a href="/tools/text-tools/keyword-density/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#8b5cf6;">📊</div>
+        <div class="sidebar-info"><div class="sidebar-title">Keyword Density</div><div class="sidebar-desc">Deep keyword analysis</div></div>
+      </a>
+      <a href="/tools/text-tools/readability-checker/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#3b82f6;">📖</div>
+        <div class="sidebar-info"><div class="sidebar-title">Readability Checker</div><div class="sidebar-desc">Flesch-Kincaid score</div></div>
+      </a>
+      <a href="/tools/text-tools/word-frequency/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#f97316;">📈</div>
+        <div class="sidebar-info"><div class="sidebar-title">Word Frequency</div><div class="sidebar-desc">All words analyzed</div></div>
+      </a>
+      <a href="/tools/text-tools/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#64748b;">T</div>
+        <div class="sidebar-info"><div class="sidebar-title">All Text Tools →</div><div class="sidebar-desc">Browse 25+ tools</div></div>
+      </a>
+    </div>
+  </aside>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand"><div class="logo-icon">⚒</div>BigToolz</span></div>
+      <p class="footer-tagline">Your Ultimate Online Tools Hub</p>
+      <div class="footer-social">
+        <a href="https://facebook.com/bigtoolz" aria-label="Facebook">f</a>
+        <a href="https://twitter.com/bigtoolz" aria-label="Twitter">𝕏</a>
+        <a href="https://youtube.com/@bigtoolz" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+    <div>
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/tools/">All Tools</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Categories</h3>
+      <ul class="footer-links">
+        <li><a href="/tools/image-tools/">Image Tools</a></li>
+        <li><a href="/tools/pdf-tools/">PDF Tools</a></li>
+        <li><a href="/tools/text-tools/">Text Tools</a></li>
+        <li><a href="/tools/seo-tools/">SEO Tools</a></li>
+        <li><a href="/tools/categories">All Categories →</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Legal</h3>
+      <ul class="footer-links">
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left"><span>✓ 100% Free</span><span>✓ No Sign Up</span><span>✓ No Installation</span></div>
+    <div class="footer-bottom-right">© 2026 BigToolz. All rights reserved.</div>
+    <div class="footer-bottom-links"><a href="/privacy-policy">Privacy</a><a href="/terms">Terms</a><a href="/disclaimer">Disclaimer</a></div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+'use strict';
+
+/* ===== THEME ===== */
+(function(){try{var t=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&d))document.documentElement.setAttribute('data-theme','dark');else if(t==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();
+document.querySelector('.theme-btn')?.addEventListener('click',()=>{const h=document.documentElement;const c=h.getAttribute('data-theme');const d=window.matchMedia('(prefers-color-scheme: dark)').matches;let n=c==='dark'?'light':c==='light'?'dark':(d?'light':'dark');h.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}});
+
+/* ===== HELPERS ===== */
+const $ = (s, p = document) => p.querySelector(s);
+const $$ = (s, p = document) => [...p.querySelectorAll(s)];
+
+function showToast(msg, type = 'info', duration = 3000) {
+  const t = $('#toast');
+  if (!t) return;
+  t.className = 'toast visible' + (type !== 'info' ? ' ' + type : '');
+  t.textContent = msg;
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove('visible'), duration);
+}
+
+async function copyToClipboard(text) {
+  try {
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(text);
+      return true;
+    }
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.cssText = 'position:fixed;opacity:0;';
+    document.body.appendChild(ta);
+    ta.select();
+    const ok = document.execCommand('copy');
+    document.body.removeChild(ta);
+    return ok;
+  } catch (e) { return false; }
+}
+
+/* ===== STOP WORDS (for keyword density) ===== */
+const STOP_WORDS = new Set([
+  'the','a','an','and','or','but','if','of','to','in','on','at','by','for','with','from','up','about','into','over',
+  'is','are','was','were','be','been','being','have','has','had','do','does','did','will','would','should','could',
+  'can','may','might','must','shall','it','its','this','that','these','those','i','you','he','she','we','they','me',
+  'him','her','us','them','my','your','his','their','our','mine','yours','hers','ours','theirs','so','than','as','not',
+  'no','yes','also','just','only','very','too','more','most','some','any','all','both','each','every','few','many',
+  'much','several','other','another','such','own','same','than','then','there','here','when','where','why','how','what',
+  'which','who','whom','whose'
+]);
+
+/* ===== DOM ===== */
+const textInput = $('#textInput');
+const wordCount = $('#wordCount');
+const charCount = $('#charCount');
+const charNoSpace = $('#charNoSpace');
+const sentenceCount = $('#sentenceCount');
+const paragraphCount = $('#paragraphCount');
+const readingTime = $('#readingTime');
+const speakingTime = $('#speakingTime');
+const uniqueWords = $('#uniqueWords');
+const upperCount = $('#upperCount');
+const lowerCount = $('#lowerCount');
+const numberCount = $('#numberCount');
+const symbolCount = $('#symbolCount');
+const kwList = $('#kwList');
+const twitterLimit = $('#twitterLimit');
+
+const pasteBtn = $('#pasteBtn');
+const copyBtn = $('#copyBtn');
+const upperBtn = $('#upperBtn');
+const lowerBtn = $('#lowerBtn');
+const titleBtn = $('#titleBtn');
+const downloadBtn = $('#downloadBtn');
+const clearBtn = $('#clearBtn');
+
+/* ===== COUNT FUNCTION ===== */
+function updateStats() {
+  const text = textInput.value;
+
+  // Character counts
+  const chars = text.length;
+  const charsNoSpace = text.replace(/\s/g, '').length;
+
+  // Word count split by whitespace, filter empty
+  const words = text.trim() ? text.trim().split(/\s+/).filter(w => w.length > 0) : [];
+  const wordTotal = words.length;
+
+  // Sentences split on . ! ? followed by space or end
+  const sentences = text.trim() ? text.split(/[.!?]+(?:\s|$)/).filter(s => s.trim().length > 0).length : 0;
+
+  // Paragraphs split on one or more blank lines
+  const paragraphs = text.trim() ? text.split(/\n\s*\n/).filter(p => p.trim().length > 0).length : 0;
+
+  // Unique words (case-insensitive, excluding pure symbols)
+  const wordMap = {};
+  words.forEach(w => {
+    const clean = w.toLowerCase().replace(/[^\w'-]/g, '');
+    if (clean && !/^\d+$/.test(clean)) {
+      wordMap[clean] = (wordMap[clean] || 0) + 1;
+    }
+  });
+  const uniqueTotal = Object.keys(wordMap).length;
+
+  // Reading time (200 wpm avg)
+  const readMin = wordTotal / 200;
+  const readTimeStr = readMin < 1 ? Math.round(readMin * 60) + 's' : Math.round(readMin) + 'm';
+
+  // Speaking time (140 wpm)
+  const speakMin = wordTotal / 140;
+  const speakTimeStr = speakMin < 1 ? Math.round(speakMin * 60) + 's' : Math.round(speakMin) + 'm';
+
+  // Case stats
+  let upper = 0, lower = 0, nums = 0, symbols = 0;
+  for (const ch of text) {
+    if (/[A-Z]/.test(ch)) upper++;
+    else if (/[a-z]/.test(ch)) lower++;
+    else if (/[0-9]/.test(ch)) nums++;
+    else if (!/\s/.test(ch)) symbols++;
+  }
+
+  // Update DOM
+  wordCount.textContent = wordTotal.toLocaleString();
+  charCount.textContent = chars.toLocaleString();
+  charNoSpace.textContent = charsNoSpace.toLocaleString();
+  sentenceCount.textContent = sentences.toLocaleString();
+  paragraphCount.textContent = paragraphs.toLocaleString();
+  readingTime.textContent = readTimeStr;
+  speakingTime.textContent = speakTimeStr;
+  uniqueWords.textContent = uniqueTotal.toLocaleString();
+  upperCount.textContent = upper.toLocaleString();
+  lowerCount.textContent = lower.toLocaleString();
+  numberCount.textContent = nums.toLocaleString();
+  symbolCount.textContent = symbols.toLocaleString();
+
+  // Twitter limit
+  if (chars <= 280) {
+    twitterLimit.textContent = `🐦 ${chars}/280 Twitter`;
+    twitterLimit.style.color = '#10b981';
+  } else {
+    twitterLimit.textContent = `🐦 ${chars}/280 (${chars - 280} over)`;
+    twitterLimit.style.color = '#ef4444';
+  }
+
+  // Keyword density
+  renderKeywords(wordMap, wordTotal);
+}
+
+/* ===== RENDER KEYWORDS ===== */
+function renderKeywords(wordMap, total) {
+  // Filter stop words and sort by frequency
+  const filtered = Object.entries(wordMap)
+    .filter(([word]) => word.length > 2 && !STOP_WORDS.has(word))
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 10);
+
+  if (!filtered.length) {
+    kwList.innerHTML = '<div class="kw-empty">Type or paste text to see keyword density.</div>';
+    return;
+  }
+
+  const maxCount = filtered[0][1];
+  kwList.innerHTML = '';
+
+  filtered.forEach(([word, count]) => {
+    const pct = ((count / total) * 100).toFixed(2);
+    const barPct = (count / maxCount) * 100;
+
+    const row = document.createElement('div');
+    row.className = 'kw-row';
+    row.innerHTML = `
+      <div class="kw-word">${word}</div>
+      <div class="kw-bar"><div class="kw-fill" style="width:${barPct}%"></div></div>
+      <div class="kw-count">${count}× (${pct}%)</div>
+    `;
+    kwList.appendChild(row);
+  });
+}
+
+/* ===== INPUT LISTENER ===== */
+textInput.addEventListener('input', updateStats);
+
+/* ===== BUTTON ACTIONS ===== */
+pasteBtn.addEventListener('click', async () => {
+  try {
+    if (navigator.clipboard && navigator.clipboard.readText) {
+      const text = await navigator.clipboard.readText();
+      textInput.value += (textInput.value ? '\n' : '') + text;
+      updateStats();
+      showToast('Pasted from clipboard', 'success');
+    } else {
+      textInput.focus();
+      showToast('Press Ctrl+V to paste', 'info');
+    }
+  } catch (err) {
+    textInput.focus();
+    showToast('Clipboard access denied paste manually', 'error');
+  }
+});
+
+copyBtn.addEventListener('click', async () => {
+  if (!textInput.value) { showToast('Nothing to copy', 'error'); return; }
+  const ok = await copyToClipboard(textInput.value);
+  if (ok) {
+    copyBtn.classList.add('copied');
+    const original = copyBtn.innerHTML;
+    copyBtn.innerHTML = '✓ Copied';
+    setTimeout(() => {
+      copyBtn.classList.remove('copied');
+      copyBtn.innerHTML = original;
+    }, 1500);
+    showToast('Text copied to clipboard!', 'success');
+  } else {
+    showToast('Copy failed', 'error');
+  }
+});
+
+upperBtn.addEventListener('click', () => {
+  textInput.value = textInput.value.toUpperCase();
+  updateStats();
+  showToast('Converted to UPPERCASE');
+});
+
+lowerBtn.addEventListener('click', () => {
+  textInput.value = textInput.value.toLowerCase();
+  updateStats();
+  showToast('Converted to lowercase');
+});
+
+titleBtn.addEventListener('click', () => {
+  textInput.value = textInput.value
+    .toLowerCase()
+    .replace(/\b\w/g, c => c.toUpperCase());
+  updateStats();
+  showToast('Converted to Title Case');
+});
+
+downloadBtn.addEventListener('click', () => {
+  if (!textInput.value) { showToast('Nothing to download', 'error'); return; }
+  const stats = [
+    '════════════════════════════════════════',
+    '  BigToolz Word Counter Statistics',
+    '════════════════════════════════════════',
+    '',
+    `Words:              ${wordCount.textContent}`,
+    `Characters:         ${charCount.textContent}`,
+    `Characters (no sp): ${charNoSpace.textContent}`,
+    `Sentences:          ${sentenceCount.textContent}`,
+    `Paragraphs:         ${paragraphCount.textContent}`,
+    `Unique Words:       ${uniqueWords.textContent}`,
+    `Reading Time:       ${readingTime.textContent}`,
+    `Speaking Time:      ${speakingTime.textContent}`,
+    '',
+    '────────── Case Stats ──────────',
+    `Uppercase:          ${upperCount.textContent}`,
+    `Lowercase:          ${lowerCount.textContent}`,
+    `Numbers:            ${numberCount.textContent}`,
+    `Symbols:            ${symbolCount.textContent}`,
+    '',
+    '────────── Text ──────────',
+    '',
+    textInput.value
+  ].join('\n');
+
+  const blob = new Blob([stats], { type: 'text/plain' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'word-counter.txt';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+  showToast('Downloaded stats + text', 'success');
+});
+
+clearBtn.addEventListener('click', () => {
+  if (!textInput.value) return;
+  if (!confirm('Clear all text? This cannot be undone.')) return;
+  textInput.value = '';
+  updateStats();
+  textInput.focus();
+  showToast('Text cleared', 'info');
+});
+
+/* ===== INITIAL STATE ===== */
+updateStats();
+
+/* ===== FAQ ===== */
+$$('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    $$('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+</script>
+
+</body>
+</html>

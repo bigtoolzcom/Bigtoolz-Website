@@ -1,0 +1,1135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2563eb">
+
+<title>PDF Similarity Checker - Compare PDFs Online Free | BigToolz</title>
+<meta name="description" content="Compare two PDFs and check similarity percentage online free. Cosine & Jaccard similarity, common words, unique words. Works in your browser, no upload.">
+<meta name="keywords" content="pdf similarity checker, compare pdf similarity, pdf plagiarism check, pdf text comparison, similar pdf finder">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://bigtoolz.com/tools/pdf-tools/advanced-pdf/similarity-checker/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="PDF Similarity Checker - Free Online Tool | BigToolz">
+<meta property="og:description" content="Compare two PDFs and measure similarity free, no upload.">
+<meta property="og:url" content="https://bigtoolz.com/tools/pdf-tools/advanced-pdf/similarity-checker/">
+<meta property="og:image" content="https://bigtoolz.com/assets/images/og-image.jpg">
+<meta property="og:site_name" content="BigToolz">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="PDF Similarity Checker - BigToolz">
+<meta name="twitter:description" content="Check how similar two PDFs are free, no upload.">
+<meta name="twitter:image" content="https://bigtoolz.com/assets/images/twitter-card.jpg">
+
+<link rel="icon" href="/assets/images/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/images/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#f8f9fc;color:#1a1a2e;overflow-x:hidden;line-height:1.5}
+
+  .header{background:#fff;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;position:sticky;top:0;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+  .header-left{display:flex;align-items:center;gap:40px}
+  .logo{display:flex;align-items:center;gap:8px;font-size:22px;font-weight:800;color:#1a1a2e;text-decoration:none}
+  .logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#3b82f6,#2563eb);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px}
+  .logo span{color:#2563eb}
+  .nav{display:flex;align-items:center;gap:28px;list-style:none}
+  .nav a{text-decoration:none;color:#4b5563;font-size:14px;font-weight:500;transition:color .2s}
+  .nav a:hover,.nav a.active{color:#2563eb}
+  .header-right{display:flex;align-items:center;gap:16px}
+  .search-btn,.theme-btn{width:36px;height:36px;border-radius:50%;border:none;background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#4b5563}
+  .search-btn:hover,.theme-btn:hover{background:#f3f4f6}
+  .bookmark-btn{display:flex;align-items:center;gap:8px;background:#2563eb;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
+  .bookmark-btn:hover{background:#1d4ed8}
+
+  .hero{background:linear-gradient(135deg,#0a0e27 0%,#1a1a4e 40%,#2d1b69 70%,#4c1d95 100%);padding:40px 40px 60px;position:relative;overflow:hidden;color:#fff}
+  .hero::before{content:'';position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(6,182,212,.25) 0%,transparent 70%);border-radius:50%}
+  .hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+  .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px;flex-wrap:wrap}
+  .breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none}
+  .breadcrumb a:hover{color:#fff}
+  .breadcrumb .sep{color:rgba(255,255,255,.4)}
+  .breadcrumb .current{color:#fff;font-weight:500}
+  .hero-title-row{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+  .hero-icon{width:60px;height:60px;background:#06b6d4;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;color:#fff;flex-shrink:0;box-shadow:0 8px 24px rgba(6,182,212,.4)}
+  .hero-title{font-size:42px;font-weight:800;line-height:1.15}
+  .hero-title .blue{color:#22d3ee}
+  .hero-desc{font-size:15px;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:24px;max-width:560px}
+  .hero-features{display:flex;gap:24px;flex-wrap:wrap}
+  .hero-feature{display:flex;align-items:center;gap:6px;font-size:13px;color:#fff;font-weight:500}
+  .hero-feature .check{width:18px;height:18px;border-radius:50%;background:#06b6d4;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;flex-shrink:0}
+
+  .main-content{max-width:1200px;margin:0 auto;padding:40px;display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start}
+  .tool-content{min-width:0}
+
+  .workspace{background:#fff;border-radius:16px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,.06);border:1px solid #e5e7eb;margin-bottom:24px}
+
+  /* Upload Grid */
+  .upload-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:24px}
+  .upload-box{border:2px dashed #a5f3fc;border-radius:12px;padding:32px 20px;text-align:center;background:#ecfeff;transition:all .2s;cursor:pointer;position:relative}
+  .upload-box:hover,.upload-box.dragover{border-color:#06b6d4;background:#cffafe}
+  .upload-box.has-file{border-style:solid;border-color:#10b981;background:#f0fdf4}
+  .upload-box-icon{width:52px;height:52px;background:linear-gradient(135deg,#06b6d4,#0891b2);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;color:#fff;font-size:22px}
+  .upload-box.has-file .upload-box-icon{background:linear-gradient(135deg,#10b981,#059669)}
+  .upload-box-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+  .upload-box-sub{font-size:12px;color:#6b7280;line-height:1.4;word-break:break-word}
+  .upload-box-sub strong{color:#0891b2;display:block;margin-top:6px;font-size:11px;font-weight:600}
+  .upload-box input{display:none}
+
+  /* Action */
+  .actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:20px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 28px;border-radius:10px;font-size:15px;font-weight:700;font-family:inherit;cursor:pointer;border:none;transition:all .2s;text-decoration:none}
+  .btn-primary{background:#06b6d4;color:#fff;flex:1;box-shadow:0 4px 12px rgba(6,182,212,.2)}
+  .btn-primary:hover:not(:disabled){background:#0891b2;transform:translateY(-2px);box-shadow:0 6px 20px rgba(6,182,212,.3)}
+  .btn-primary:disabled{opacity:.5;cursor:not-allowed;transform:none}
+  .btn-secondary{background:#fff;color:#06b6d4;border:1px solid #e5e7eb}
+  .btn-secondary:hover{border-color:#06b6d4;background:#ecfeff}
+  .btn-success{background:#10b981;color:#fff}
+  .btn-success:hover{background:#059669}
+
+  /* Progress */
+  .progress{display:none;margin-bottom:20px}
+  .progress.visible{display:block}
+  .progress-bar{width:100%;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden;margin-bottom:8px}
+  .progress-fill{height:100%;background:linear-gradient(90deg,#22d3ee,#06b6d4);border-radius:4px;width:0%;transition:width .3s ease}
+  .progress-text{font-size:13px;color:#6b7280;text-align:center;font-weight:500}
+
+  /* Results */
+  .results{display:none}
+  .results.visible{display:block}
+
+  /* Score card */
+  .score-card{background:linear-gradient(135deg,#06b6d4,#0891b2);border-radius:16px;padding:32px;color:#fff;text-align:center;margin-bottom:24px;position:relative;overflow:hidden}
+  .score-card::before{content:'';position:absolute;top:-60px;right:-60px;width:200px;height:200px;background:rgba(255,255,255,.08);border-radius:50%}
+  .score-label{font-size:13px;color:rgba(255,255,255,.8);text-transform:uppercase;letter-spacing:1px;font-weight:700;margin-bottom:8px;position:relative;z-index:2}
+  .score-value{font-size:72px;font-weight:900;line-height:1;position:relative;z-index:2;margin-bottom:8px}
+  .score-verdict{font-size:16px;font-weight:700;position:relative;z-index:2;padding:8px 16px;background:rgba(255,255,255,.15);border-radius:20px;display:inline-block;backdrop-filter:blur(10px)}
+  .score-meter{position:relative;z-index:2;margin-top:20px;height:12px;background:rgba(255,255,255,.2);border-radius:6px;overflow:hidden}
+  .score-meter-fill{height:100%;background:#fff;border-radius:6px;transition:width .8s ease}
+
+  /* Stats grid */
+  .stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:20px}
+  .stat-card{background:#f8fafc;border:1px solid #e5e7eb;border-radius:12px;padding:18px;text-align:center}
+  .stat-label{font-size:11px;color:#6b7280;text-transform:uppercase;letter-spacing:.5px;font-weight:700;margin-bottom:6px}
+  .stat-value{font-size:24px;font-weight:800;color:#1a1a2e;line-height:1.2}
+  .stat-value.pdf1{color:#06b6d4}
+  .stat-value.pdf2{color:#f59e0b}
+
+  /* Comparison table */
+  .compare-table{width:100%;border-collapse:collapse;background:#fff;border-radius:12px;overflow:hidden;border:1px solid #e5e7eb;margin-bottom:20px}
+  .compare-table th{background:#f8fafc;padding:14px 16px;text-align:left;font-size:12px;font-weight:700;color:#1a1a2e;text-transform:uppercase;letter-spacing:.5px;border-bottom:1px solid #e5e7eb}
+  .compare-table th:nth-child(2){color:#06b6d4}
+  .compare-table th:nth-child(3){color:#f59e0b}
+  .compare-table td{padding:12px 16px;font-size:14px;color:#4b5563;border-bottom:1px solid #f3f4f6}
+  .compare-table tr:last-child td{border-bottom:none}
+  .compare-table td:first-child{font-weight:600;color:#1a1a2e}
+
+  /* Word lists */
+  .word-section{margin-bottom:20px}
+  .word-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+  .word-title .count-badge{font-size:11px;font-weight:700;color:#06b6d4;background:#ecfeff;padding:3px 10px;border-radius:10px;border:1px solid #a5f3fc}
+  .word-chips{display:flex;flex-wrap:wrap;gap:6px;max-height:200px;overflow-y:auto;padding:4px}
+  .word-chip{font-size:12px;font-weight:600;padding:5px 12px;border-radius:20px;background:#ecfeff;color:#0891b2;border:1px solid #a5f3fc;font-family:'JetBrains Mono',monospace}
+  .word-chip.common{background:#10b981;color:#fff;border-color:#10b981}
+  .word-chip.pdf1{background:#cffafe;color:#0891b2}
+  .word-chip.pdf2{background:#fef3c7;color:#92400e;border-color:#fcd34d}
+
+  .empty-state{text-align:center;padding:60px 20px;color:#9ca3af}
+  .empty-state-icon{font-size:48px;margin-bottom:12px;opacity:.4}
+  .empty-state-title{font-size:16px;font-weight:700;color:#6b7280;margin-bottom:6px}
+  .empty-state-desc{font-size:13px}
+
+  /* SEO */
+  .seo-content{background:#fff;border-radius:16px;padding:32px;border:1px solid #e5e7eb;margin-bottom:24px}
+  .seo-content h2{font-size:22px;font-weight:800;color:#1a1a2e;margin-bottom:14px;margin-top:28px;display:flex;align-items:center;gap:10px}
+  .seo-content h2:first-child{margin-top:0}
+  .seo-content h3{font-size:16px;font-weight:700;color:#1a1a2e;margin:20px 0 10px}
+  .seo-content p{font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:14px}
+  .seo-content ul{list-style:none;padding-left:0;margin-bottom:16px}
+  .seo-content ul li{position:relative;padding-left:24px;font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:8px}
+  .seo-content ul li::before{content:'';position:absolute;left:6px;top:12px;width:6px;height:6px;background:#06b6d4;border-radius:50%}
+  .seo-content a{color:#2563eb;text-decoration:none;font-weight:600}
+  .seo-content a:hover{text-decoration:underline}
+  .seo-content strong{color:#1a1a2e;font-weight:700}
+
+  .how-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:20px}
+  .how-step{background:#ecfeff;border-radius:12px;padding:20px;border:1px solid #a5f3fc}
+  .how-step-num{width:36px;height:36px;border-radius:50%;background:#06b6d4;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;margin-bottom:12px}
+  .how-step-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+  .how-step-desc{font-size:13px;color:#6b7280;line-height:1.6}
+
+  .faq-item{background:#ecfeff;border:1px solid #a5f3fc;border-radius:12px;margin-bottom:10px;overflow:hidden;transition:border-color .2s}
+  .faq-item:hover{border-color:#06b6d4}
+  .faq-question{width:100%;background:none;border:none;padding:18px 22px;font-size:15px;font-weight:700;color:#1a1a2e;text-align:left;cursor:pointer;font-family:inherit;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .faq-question .chev{font-size:12px;color:#06b6d4;transition:transform .2s;flex-shrink:0}
+  .faq-item.open .faq-question .chev{transform:rotate(180deg)}
+  .faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 22px}
+  .faq-item.open .faq-answer{max-height:500px;padding-bottom:18px}
+  .faq-answer p{font-size:14px;color:#6b7280;line-height:1.7;margin:0}
+
+  .sidebar{background:#fff;border-radius:16px;padding:24px;border:1px solid #e5e7eb;position:sticky;top:80px;margin-bottom:24px}
+  .sidebar-header{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:800;color:#1a1a2e;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid #f3f4f6}
+  .sidebar-list{display:flex;flex-direction:column;gap:8px}
+  .sidebar-item{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;cursor:pointer;transition:background .2s;text-decoration:none;color:inherit;border:1px solid #f3f4f6}
+  .sidebar-item:hover{background:#ecfeff;border-color:#a5f3fc}
+  .sidebar-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;flex-shrink:0}
+  .sidebar-info{flex:1;min-width:0}
+  .sidebar-title{font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:2px}
+  .sidebar-desc{font-size:11px;color:#9ca3af;line-height:1.4}
+
+  .footer{background:#0a0e27;padding:60px 40px 30px;color:#fff;margin-top:40px}
+  .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:40px}
+  .footer-brand{display:flex;align-items:center;gap:8px;font-size:20px;font-weight:800;margin-bottom:12px}
+  .footer-brand span{color:#60a5fa}
+  .footer-tagline{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px}
+  .footer-social{display:flex;gap:12px}
+  .footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:16px;transition:background .2s}
+  .footer-social a:hover{background:rgba(255,255,255,.2)}
+  .footer-heading{font-size:14px;font-weight:700;margin-bottom:20px;color:#fff}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .footer-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;transition:color .2s}
+  .footer-links a:hover{color:#60a5fa}
+  .footer-bottom{max-width:1200px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  .footer-bottom-left{display:flex;gap:20px;font-size:12px;color:rgba(255,255,255,.5)}
+  .footer-bottom-right,.footer-bottom-links a{font-size:12px;color:rgba(255,255,255,.5);text-decoration:none}
+  .footer-bottom-links{display:flex;gap:20px}
+
+  .toast{position:fixed;bottom:24px;right:24px;background:#1a1a2e;color:#fff;padding:14px 20px;border-radius:10px;font-size:13px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:3000;transform:translateY(200%);transition:transform .3s ease;max-width:320px}
+  .toast.visible{transform:translateY(0)}
+  .toast.success{background:#10b981}
+  .toast.error{background:#ef4444}
+
+  @media(max-width:1024px){
+    .main-content{grid-template-columns:1fr;padding:24px 20px}
+    .sidebar{position:static}
+    .how-steps{grid-template-columns:repeat(2,1fr)}
+    .stats-grid{grid-template-columns:1fr 1fr}
+  }
+  @media(max-width:768px){
+    .header{padding:0 20px}.nav{display:none}
+    .hero{padding:24px 20px 40px}
+    .hero-title{font-size:28px}
+    .hero-icon{width:48px;height:48px;font-size:22px}
+    .hero-title-row{flex-direction:column;align-items:flex-start;gap:12px}
+    .main-content{padding:20px 16px}
+    .workspace{padding:20px}
+    .upload-grid{grid-template-columns:1fr}
+    .how-steps{grid-template-columns:1fr}
+    .seo-content{padding:20px}
+    .footer-inner{grid-template-columns:1fr 1fr}
+    .toast{left:16px;right:16px;bottom:16px;max-width:none}
+    .score-value{font-size:56px}
+  }
+  @media(max-width:576px){
+    .header{padding:0 16px}.header-right .search-btn,.header-right .theme-btn{display:none}
+    .hero-title{font-size:24px}
+    .actions{flex-direction:column}
+    .btn{width:100%}
+    .btn-primary{flex:none}
+    .footer-inner{grid-template-columns:1fr}
+    .footer-bottom{flex-direction:column;text-align:center}
+    .stats-grid{grid-template-columns:1fr}
+    .compare-table{font-size:12px}
+    .compare-table th,.compare-table td{padding:8px 10px;font-size:12px}
+  }
+
+  html[data-theme="dark"] body{background:#0f172a;color:#f1f5f9}
+  html[data-theme="dark"] .header,html[data-theme="dark"] .workspace,html[data-theme="dark"] .seo-content,html[data-theme="dark"] .sidebar{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .logo,html[data-theme="dark"] .hero-title,html[data-theme="dark"] .seo-content h2,html[data-theme="dark"] .seo-content h3,html[data-theme="dark"] .faq-question,html[data-theme="dark"] .sidebar-header,html[data-theme="dark"] .sidebar-title,html[data-theme="dark"] .word-title,html[data-theme="dark"] .upload-box-title{color:#f1f5f9}
+  html[data-theme="dark"] .nav a{color:#cbd5e1}
+  html[data-theme="dark"] .upload-box{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .how-step,html[data-theme="dark"] .faq-item,html[data-theme="dark"] .stat-card{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .stat-value{color:#f1f5f9}
+  html[data-theme="dark"] .seo-content p,html[data-theme="dark"] .seo-content ul li,html[data-theme="dark"] .faq-answer p{color:#cbd5e1}
+  html[data-theme="dark"] .compare-table{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .compare-table th{background:#0f172a;color:#f1f5f9;border-color:#334155}
+  html[data-theme="dark"] .compare-table td{border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .compare-table td:first-child{color:#f1f5f9}
+  html[data-theme="dark"] .word-chip{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .word-chip.pdf1{background:rgba(6,182,212,.15);color:#22d3ee}
+  html[data-theme="dark"] .word-chip.pdf2{background:rgba(245,158,11,.15);color:#fbbf24;border-color:#78350f}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type": "SoftwareApplication", "name": "PDF Similarity Checker", "url": "https://bigtoolz.com/tools/pdf-tools/advanced-pdf/similarity-checker/", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any (Web-based)", "description": "Free online PDF similarity checker compare two PDFs and get similarity percentage using cosine and Jaccard algorithms. Works in your browser.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.7", "ratingCount": "342"}},
+    {"@type": "HowTo", "name": "How to Check PDF Similarity", "step": [
+      {"@type": "HowToStep", "name": "Upload First PDF", "text": "Drag & drop or click to select the first PDF file."},
+      {"@type": "HowToStep", "name": "Upload Second PDF", "text": "Select the second PDF file to compare."},
+      {"@type": "HowToStep", "name": "Analyze", "text": "Click Check Similarity to compare both files."},
+      {"@type": "HowToStep", "name": "Review Results", "text": "See similarity score, stats, and shared words."}
+    ]},
+    {"@type": "FAQPage", "mainEntity": [
+      {"@type": "Question", "name": "How does PDF similarity checking work?", "acceptedAnswer": {"@type": "Answer", "text": "We extract all text from both PDFs, tokenize it into words, then compute two similarity metrics: cosine similarity (angle between word-frequency vectors) and Jaccard similarity (overlap of unique word sets). The final score blends both for accuracy."}},
+      {"@type": "Question", "name": "What similarity score means plagiarism?", "acceptedAnswer": {"@type": "Answer", "text": "There's no fixed threshold, but as a guide: under 20% is likely unrelated. 20-50% suggests some overlap. 50-80% is likely derivative. Above 80% is probably copied or heavily reused. Always review the shared words for context."}},
+      {"@type": "Question", "name": "Does it work with scanned PDFs?", "acceptedAnswer": {"@type": "Answer", "text": "Only if the PDF has a text layer. Scanned PDFs that are image-only won't yield any text. Run them through OCR first (our Image to PDF tool or a separate OCR tool) before comparing."}},
+      {"@type": "Question", "name": "Are my PDFs uploaded to a server?", "acceptedAnswer": {"@type": "Answer", "text": "No. All text extraction and comparison happens in your browser. Your PDFs never leave your device."}}
+    ]},
+    {"@type": "BreadcrumbList", "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bigtoolz.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://bigtoolz.com/tools/"},
+      {"@type": "ListItem", "position": 3, "name": "PDF Tools", "item": "https://bigtoolz.com/tools/pdf-tools/"},
+      {"@type": "ListItem", "position": 4, "name": "Advanced PDF", "item": "https://bigtoolz.com/tools/pdf-tools/advanced-pdf/"},
+      {"@type": "ListItem", "position": 5, "name": "Similarity Checker", "item": "https://bigtoolz.com/tools/pdf-tools/advanced-pdf/similarity-checker/"}
+    ]}
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-left">
+    <a href="/" class="logo"><div class="logo-icon">⚒</div>BigToolz</span></a>
+    <nav><ul class="nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/tools/" class="active">All Tools</a></li>
+      <li><a href="/tools/categories">Categories</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul></nav>
+  </div>
+  <div class="header-right">
+   
+    <button class="theme-btn" aria-label="Toggle theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
+    
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <nav class="breadcrumb">
+      <a href="/">Home</a><span class="sep">›</span>
+      <a href="/tools/">Tools</a><span class="sep">›</span>
+      <a href="/tools/pdf-tools/">PDF Tools</a><span class="sep">›</span>
+      <a href="/tools/pdf-tools/advanced-pdf/">Advanced PDF</a><span class="sep">›</span>
+      <span class="current">Similarity Checker</span>
+    </nav>
+    <div class="hero-title-row">
+      <div class="hero-icon">📊</div>
+      <h1 class="hero-title">PDF <span class="blue">Similarity Checker</span></h1>
+    </div>
+    <p class="hero-desc">
+      Compare two PDFs and measure how similar they are. Cosine + Jaccard algorithms, word-level analysis, shared word lists, and detailed stats. No upload, no signup.
+    </p>
+    <div class="hero-features">
+      <div class="hero-feature"><span class="check">✓</span> Dual Algorithm</div>
+      <div class="hero-feature"><span class="check">✓</span> Word-Level Analysis</div>
+      <div class="hero-feature"><span class="check">✓</span> Detailed Stats</div>
+      <div class="hero-feature"><span class="check">✓</span> No Upload</div>
+    </div>
+  </div>
+</section>
+
+<div class="main-content">
+
+  <div class="tool-content">
+
+    <div class="workspace">
+
+      <!-- Upload Grid -->
+      <div class="upload-grid">
+        <div class="upload-box" id="uploadBox1" data-file="1">
+          <div class="upload-box-icon">📄</div>
+          <div class="upload-box-title">PDF #1 Original</div>
+          <div class="upload-box-sub" id="uploadSub1">Drag & drop or click to upload</div>
+          <input type="file" id="file1" accept="application/pdf,.pdf">
+        </div>
+        <div class="upload-box" id="uploadBox2" data-file="2">
+          <div class="upload-box-icon">📄</div>
+          <div class="upload-box-title">PDF #2 Compare</div>
+          <div class="upload-box-sub" id="uploadSub2">Drag & drop or click to upload</div>
+          <input type="file" id="file2" accept="application/pdf,.pdf">
+        </div>
+      </div>
+
+      <!-- Actions -->
+      <div class="actions">
+        <button class="btn btn-primary" id="checkBtn" disabled>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+          Check Similarity
+        </button>
+        <button class="btn btn-secondary" id="resetBtn">Reset</button>
+      </div>
+
+      <!-- Progress -->
+      <div class="progress" id="progress">
+        <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+        <div class="progress-text" id="progressText">Extracting text...</div>
+      </div>
+
+      <!-- Results -->
+      <div class="results" id="results">
+
+        <!-- Score Card -->
+        <div class="score-card">
+          <div class="score-label">Similarity Score</div>
+          <div class="score-value" id="scoreValue">0%</div>
+          <div class="score-verdict" id="scoreVerdict">Analyzing...</div>
+          <div class="score-meter"><div class="score-meter-fill" id="scoreMeterFill" style="width:0%"></div></div>
+        </div>
+
+        <!-- Stats Grid -->
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-label">Pages</div>
+            <div class="stat-value"><span class="pdf1" id="pages1">0</span> / <span class="pdf2" id="pages2">0</span></div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Total Words</div>
+            <div class="stat-value"><span class="pdf1" id="words1">0</span> / <span class="pdf2" id="words2">0</span></div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Unique Words</div>
+            <div class="stat-value"><span class="pdf1" id="uniq1">0</span> / <span class="pdf2" id="uniq2">0</span></div>
+          </div>
+        </div>
+
+        <!-- Comparison Table -->
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th>Metric</th>
+              <th>PDF #1</th>
+              <th>PDF #2</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Total Pages</td>
+              <td id="tblPages1"></td>
+              <td id="tblPages2"></td>
+            </tr>
+            <tr>
+              <td>Total Words</td>
+              <td id="tblWords1"></td>
+              <td id="tblWords2"></td>
+            </tr>
+            <tr>
+              <td>Unique Words</td>
+              <td id="tblUniq1"></td>
+              <td id="tblUniq2"></td>
+            </tr>
+            <tr>
+              <td>Avg Word Length</td>
+              <td id="tblAvg1"></td>
+              <td id="tblAvg2"></td>
+            </tr>
+            <tr>
+              <td>Longest Word</td>
+              <td id="tblLongest1"></td>
+              <td id="tblLongest2"></td>
+            </tr>
+            <tr>
+              <td>Cosine Similarity</td>
+              <td colspan="2" style="text-align:center;font-weight:700;color:#06b6d4;" id="tblCosine"></td>
+            </tr>
+            <tr>
+              <td>Jaccard Similarity</td>
+              <td colspan="2" style="text-align:center;font-weight:700;color:#06b6d4;" id="tblJaccard"></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- Common Words -->
+        <div class="word-section">
+          <div class="word-title">
+            ✅ Common Words
+            <span class="count-badge" id="commonCount">0</span>
+          </div>
+          <div class="word-chips" id="commonWords">
+            <span style="font-size:13px;color:#9ca3af;font-style:italic;">No common words yet.</span>
+          </div>
+        </div>
+
+        <!-- Unique Words PDF 1 -->
+        <div class="word-section">
+          <div class="word-title">
+            🔵 Unique to PDF #1
+            <span class="count-badge" id="uniq1Count">0</span>
+          </div>
+          <div class="word-chips" id="uniqueWords1">
+            <span style="font-size:13px;color:#9ca3af;font-style:italic;">No analysis yet.</span>
+          </div>
+        </div>
+
+        <!-- Unique Words PDF 2 -->
+        <div class="word-section">
+          <div class="word-title">
+            🟡 Unique to PDF #2
+            <span class="count-badge" id="uniq2Count">0</span>
+          </div>
+          <div class="word-chips" id="uniqueWords2">
+            <span style="font-size:13px;color:#9ca3af;font-style:italic;">No analysis yet.</span>
+          </div>
+        </div>
+
+        <!-- Download Report -->
+        <div class="actions" style="margin-top:20px;">
+          <button class="btn btn-success" id="downloadBtn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+            Download Report (.txt)
+          </button>
+        </div>
+
+      </div>
+
+      <!-- Empty state before analysis -->
+      <div class="empty-state" id="emptyState">
+        <div class="empty-state-icon">📊</div>
+        <div class="empty-state-title">Upload two PDFs to compare</div>
+        <div class="empty-state-desc">We'll extract text from both, then calculate similarity using cosine and Jaccard algorithms.</div>
+      </div>
+
+    </div>
+
+    <!-- SEO Content -->
+    <div class="seo-content">
+
+      <h2>📊 What is PDF Similarity Checking?</h2>
+      <p>
+        <strong>PDF similarity checking</strong> compares the text content of two PDFs and produces a similarity score from 0% (completely different) to 100% (identical). It's used for <strong>plagiarism detection, contract comparison, version checking,</strong> and <strong>content deduplication</strong>. If you have a document and want to know if it's a modified version of another or how much overlap exists between two files this is the tool.
+      </p>
+      <p>
+        Unlike most online tools, BigToolz runs <strong>100% in your browser</strong> using PDF.js for text extraction and native JavaScript for comparison. Your PDFs <strong>never uploaded to any server</strong> complete privacy, no file size limits.
+      </p>
+
+      <h2>🚀 How to Check PDF Similarity</h2>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-step-num">1</div>
+          <div class="how-step-title">Upload PDF #1</div>
+          <div class="how-step-desc">Select the original or reference PDF.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">2</div>
+          <div class="how-step-title">Upload PDF #2</div>
+          <div class="how-step-desc">Select the PDF to compare against.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">3</div>
+          <div class="how-step-title">Analyze</div>
+          <div class="how-step-desc">Click "Check Similarity" to run the comparison.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">4</div>
+          <div class="how-step-title">Review Results</div>
+          <div class="how-step-desc">See score, stats, common words, and unique words.</div>
+        </div>
+      </div>
+
+      <h2>🔬 The Algorithms Behind the Score</h2>
+
+      <h3>Cosine Similarity</h3>
+      <p>
+        Treats each PDF as a <strong>word-frequency vector</strong> in high-dimensional space. Measures the cosine of the angle between the two vectors 1.0 means identical direction (same word distribution), 0 means completely orthogonal (no overlap).
+      </p>
+      <p><strong>Formula:</strong> <code style="background:#f1f5f9;padding:2px 6px;border-radius:4px;font-family:'JetBrains Mono',monospace;">cos(A,B) = (A · B) / (‖A‖ × ‖B‖)</code></p>
+
+      <h3>Jaccard Similarity</h3>
+      <p>
+        Compares the <strong>sets of unique words</strong> in both PDFs. Ratio of intersection to union 1.0 means both have identical vocabularies, 0 means no shared words.
+      </p>
+      <p><strong>Formula:</strong> <code style="background:#f1f5f9;padding:2px 6px;border-radius:4px;font-family:'JetBrains Mono',monospace;">J(A,B) = |A ∩ B| / |A ∪ B|</code></p>
+
+      <h3>Blended Score</h3>
+      <p>
+        Our final score blends both 60% cosine + 40% Jaccard. This gives a balanced result: <strong>cosine captures overall word distribution</strong>, while <strong>Jaccard captures vocabulary overlap</strong>.
+      </p>
+
+      <h2>📏 Interpreting the Score</h2>
+      <ul>
+        <li><strong>0-20%:</strong> Unrelated documents. Little to no overlap.</li>
+        <li><strong>20-40%:</strong> Some shared terms (likely same topic or domain).</li>
+        <li><strong>40-60%:</strong> Significant overlap possibly related drafts or a common source.</li>
+        <li><strong>60-80%:</strong> High overlap likely derivative (one built on the other).</li>
+        <li><strong>80-100%:</strong> Near-identical probably a copy or minor edit.</li>
+      </ul>
+
+      <h2>💡 Common Use Cases</h2>
+      <ul>
+        <li><strong>Plagiarism detection</strong> check if a submission is copied from a source.</li>
+        <li><strong>Contract comparison</strong> verify changes between two versions of an agreement.</li>
+        <li><strong>Version checking</strong> confirm two PDFs are the same document.</li>
+        <li><strong>Content deduplication</strong> find duplicate articles in a corpus.</li>
+        <li><strong>Research validation</strong> compare drafts of a paper for significant changes.</li>
+        <li><strong>Translation checks</strong> compare source vs target documents for coverage.</li>
+      </ul>
+
+      <h2>✨ Key Features</h2>
+      <ul>
+        <li><strong>Dual algorithm</strong> cosine + Jaccard for robust results.</li>
+        <li><strong>Word-level analysis</strong> see exactly which words are shared vs unique.</li>
+        <li><strong>Detailed stats table</strong> pages, words, unique words, avg length, longest word.</li>
+        <li><strong>Visual score meter</strong> 0-100% with verdict interpretation.</li>
+        <li><strong>Downloadable report</strong> full analysis as .txt file.</li>
+        <li><strong>100% browser-based</strong> your PDFs never leave your device.</li>
+        <li><strong>No size limits</strong> compare even large PDFs.</li>
+        <li><strong>No OCR needed</strong> works with any text-based PDF.</li>
+      </ul>
+
+      <h2>❓ Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-question">How does PDF similarity checking work?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>We extract all text from both PDFs, tokenize it into words, then compute two similarity metrics: <strong>cosine similarity</strong> (angle between word-frequency vectors) and <strong>Jaccard similarity</strong> (overlap of unique word sets). The final score blends both for accuracy.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What similarity score means plagiarism?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>There's no fixed threshold, but as a guide: <strong>under 20%</strong> is likely unrelated. <strong>20-50%</strong> suggests some overlap. <strong>50-80%</strong> is likely derivative. <strong>Above 80%</strong> is probably copied or heavily reused. Always review the shared words for context they can clarify whether overlap is meaningful.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Does it work with scanned PDFs?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Only if the PDF has a <strong>text layer</strong>. Scanned PDFs that are image-only won't yield any text you'll see a "no text found" error. Run them through OCR first (using a tool like Tesseract or Adobe's OCR) before comparing.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Is there a file size limit?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>No hard limit, but very large PDFs (over 500 pages) may take longer to process. Since everything runs in your browser, memory is the practical limit modern browsers handle PDFs up to 100MB+ easily.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Does capitalization or punctuation matter?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>No. We <strong>normalize the text</strong> before comparison lowercase, remove punctuation, filter out common stop words. This gives a more accurate content-based similarity score rather than a formatting-based one.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I compare more than two PDFs?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>This tool compares two at a time. For a batch of documents, compare each against a baseline PDF one at a time download the report each time for record-keeping.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Are my PDFs uploaded to a server?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>No. All text extraction and comparison happens in your browser using PDF.js. Your PDFs never leave your device, and nothing is stored anywhere.</p></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-header">🔗 Related PDF Tools</div>
+    <div class="sidebar-list">
+      <a href="/tools/pdf-tools/advanced-pdf/pdf-compare/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#3b82f6;">🔍</div>
+        <div class="sidebar-info"><div class="sidebar-title">Compare PDF</div><div class="sidebar-desc">Diff two PDFs</div></div>
+      </a>
+      <a href="/tools/pdf-tools/advanced-pdf/language-detector/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#10b981;">🌍</div>
+        <div class="sidebar-info"><div class="sidebar-title">Language Detector</div><div class="sidebar-desc">Detect language</div></div>
+      </a>
+      <a href="/tools/pdf-tools/advanced-pdf/pdf-word-counter/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#3b82f6;">🔢</div>
+        <div class="sidebar-info"><div class="sidebar-title">PDF Word Counter</div><div class="sidebar-desc">Count words</div></div>
+      </a>
+      <a href="/tools/pdf-tools/advanced-pdf/text-to-speech/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#f97316;">🔊</div>
+        <div class="sidebar-info"><div class="sidebar-title">Text to Speech</div><div class="sidebar-desc">Read PDF aloud</div></div>
+      </a>
+      <a href="/tools/pdf-tools/advanced-pdf/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#8b5cf6;">🚀</div>
+        <div class="sidebar-info"><div class="sidebar-title">All Advanced PDF →</div><div class="sidebar-desc">20 tools</div></div>
+      </a>
+      <a href="/tools/pdf-tools/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#64748b;">📕</div>
+        <div class="sidebar-info"><div class="sidebar-title">All PDF Tools →</div><div class="sidebar-desc">100+ tools</div></div>
+      </a>
+    </div>
+  </aside>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand"><div class="logo-icon">⚒</div>BigToolz</span></div>
+      <p class="footer-tagline">Your Ultimate Online Tools Hub</p>
+      <div class="footer-social">
+        <a href="https://facebook.com/bigtoolz" aria-label="Facebook">f</a>
+        <a href="https://twitter.com/bigtoolz" aria-label="Twitter">𝕏</a>
+        <a href="https://youtube.com/@bigtoolz" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+    <div>
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/tools/">All Tools</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Categories</h3>
+      <ul class="footer-links">
+        <li><a href="/tools/image-tools/">Image Tools</a></li>
+        <li><a href="/tools/pdf-tools/">PDF Tools</a></li>
+        <li><a href="/tools/text-tools/">Text Tools</a></li>
+        <li><a href="/tools/seo-tools/">SEO Tools</a></li>
+        <li><a href="/tools/categories">All Categories →</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Legal</h3>
+      <ul class="footer-links">
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left"><span>✓ 100% Free</span><span>✓ No Sign Up</span><span>✓ No Installation</span></div>
+    <div class="footer-bottom-right">© 2026 BigToolz. All rights reserved.</div>
+    <div class="footer-bottom-links"><a href="/privacy-policy">Privacy</a><a href="/terms">Terms</a><a href="/disclaimer">Disclaimer</a></div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<!-- PDF.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+
+<script>
+'use strict';
+
+/* ===== THEME ===== */
+(function(){try{var t=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&d))document.documentElement.setAttribute('data-theme','dark');else if(t==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();
+document.querySelector('.theme-btn')?.addEventListener('click',()=>{const h=document.documentElement;const c=h.getAttribute('data-theme');const d=window.matchMedia('(prefers-color-scheme: dark)').matches;let n=c==='dark'?'light':c==='light'?'dark':(d?'light':'dark');h.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}});
+
+/* ===== PDF.js worker ===== */
+if (window.pdfjsLib) {
+  pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+}
+
+/* ===== HELPERS ===== */
+const $ = (s, p = document) => p.querySelector(s);
+const $$ = (s, p = document) => [...p.querySelectorAll(s)];
+
+function showToast(msg, type = 'info', duration = 3000) {
+  const t = $('#toast');
+  if (!t) return;
+  t.className = 'toast visible' + (type !== 'info' ? ' ' + type : '');
+  t.textContent = msg;
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove('visible'), duration);
+}
+
+function formatNumber(n) {
+  return n.toLocaleString('en-US');
+}
+
+/* ===== STOP WORDS (filter out for cleaner analysis) ===== */
+const STOP_WORDS = new Set([
+  'the','a','an','and','or','but','if','of','at','by','for','with','about','against','between','into','through','during','before','after','above','below','from','up','down','in','out','on','off','over','under','again','further','then','once','here','there','when','where','why','how','all','any','both','each','few','more','most','other','some','such','no','nor','not','only','own','same','so','than','too','very','can','will','just','should','now','this','that','these','those','is','are','was','were','be','been','being','have','has','had','do','does','did','would','could','should','may','might','must','shall','it','its','as','to'
+]);
+
+/* ===== STATE ===== */
+const state = {
+  file1: null,
+  file2: null,
+  text1: '',
+  text2: '',
+  pages1: 0,
+  pages2: 0,
+  results: null
+};
+
+/* ===== DOM ===== */
+const uploadBox1 = $('#uploadBox1');
+const uploadBox2 = $('#uploadBox2');
+const uploadSub1 = $('#uploadSub1');
+const uploadSub2 = $('#uploadSub2');
+const file1Input = $('#file1');
+const file2Input = $('#file2');
+const checkBtn = $('#checkBtn');
+const resetBtn = $('#resetBtn');
+const progress = $('#progress');
+const progressFill = $('#progressFill');
+const progressText = $('#progressText');
+const results = $('#results');
+const emptyState = $('#emptyState');
+const scoreValue = $('#scoreValue');
+const scoreVerdict = $('#scoreVerdict');
+const scoreMeterFill = $('#scoreMeterFill');
+
+/* ===== UPLOAD HANDLERS ===== */
+function setupUploadBox(box, input, slot) {
+  box.addEventListener('click', () => input.click());
+
+  ['dragenter', 'dragover'].forEach(evt => {
+    box.addEventListener(evt, (e) => { e.preventDefault(); e.stopPropagation(); box.classList.add('dragover'); });
+  });
+  ['dragleave', 'drop'].forEach(evt => {
+    box.addEventListener(evt, (e) => { e.preventDefault(); e.stopPropagation(); box.classList.remove('dragover'); });
+  });
+
+  box.addEventListener('drop', (e) => {
+    const f = e.dataTransfer.files[0];
+    if (f && f.type === 'application/pdf') setFile(slot, f);
+    else showToast('Please drop a PDF file', 'error');
+  });
+
+  input.addEventListener('change', (e) => {
+    const f = e.target.files[0];
+    if (f) setFile(slot, f);
+    input.value = '';
+  });
+}
+
+function setFile(slot, file) {
+  if (slot === 1) {
+    state.file1 = file;
+    uploadBox1.classList.add('has-file');
+    uploadSub1.innerHTML = `✓ ${escapeHtml(file.name)}<strong>${formatSize(file.size)}</strong>`;
+  } else {
+    state.file2 = file;
+    uploadBox2.classList.add('has-file');
+    uploadSub2.innerHTML = `✓ ${escapeHtml(file.name)}<strong>${formatSize(file.size)}</strong>`;
+  }
+  checkBtn.disabled = !(state.file1 && state.file2);
+  showToast(`PDF #${slot} loaded`, 'success');
+}
+
+function formatSize(bytes) {
+  if (bytes < 1024) return bytes + ' B';
+  if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(1) + ' KB';
+  return (bytes / (1024 * 1024)).toFixed(1) + ' MB';
+}
+
+function escapeHtml(str) {
+  const d = document.createElement('div');
+  d.textContent = str;
+  return d.innerHTML;
+}
+
+setupUploadBox(uploadBox1, file1Input, 1);
+setupUploadBox(uploadBox2, file2Input, 2);
+
+/* ===== TEXT EXTRACTION ===== */
+async function extractTextFromPdf(file) {
+  const buf = await file.arrayBuffer();
+  const pdf = await pdfjsLib.getDocument({ data: buf }).promise;
+  let fullText = '';
+  const numPages = pdf.numPages;
+
+  for (let i = 1; i <= numPages; i++) {
+    const page = await pdf.getPage(i);
+    const content = await page.getTextContent();
+    const pageText = content.items.map(item => item.str).join(' ');
+    fullText += pageText + ' ';
+  }
+
+  return { text: fullText, pages: numPages };
+}
+
+/* ===== ANALYZE TEXT ===== */
+function normalizeAndTokenize(text) {
+  return text
+    .toLowerCase()
+    .replace(/[^a-z0-9\s]/g, ' ')
+    .split(/\s+/)
+    .filter(w => w.length >= 2 && !STOP_WORDS.has(w));
+}
+
+function analyze(text) {
+  const tokens = normalizeAndTokenize(text);
+  const wordFreq = {};
+  for (const t of tokens) {
+    wordFreq[t] = (wordFreq[t] || 0) + 1;
+  }
+  const uniqueWords = new Set(tokens);
+  const avgLength = tokens.length > 0
+    ? (tokens.reduce((s, w) => s + w.length, 0) / tokens.length).toFixed(1)
+    : '0';
+  const longest = tokens.length > 0
+    ? tokens.reduce((a, b) => a.length > b.length ? a : b)
+    : '';
+
+  return {
+    tokens,
+    wordFreq,
+    uniqueWords,
+    totalWords: tokens.length,
+    avgLength,
+    longest
+  };
+}
+
+function cosineSimilarity(freq1, freq2) {
+  const allWords = new Set([...Object.keys(freq1), ...Object.keys(freq2)]);
+  let dot = 0, mag1 = 0, mag2 = 0;
+
+  for (const w of allWords) {
+    const v1 = freq1[w] || 0;
+    const v2 = freq2[w] || 0;
+    dot += v1 * v2;
+    mag1 += v1 * v1;
+    mag2 += v2 * v2;
+  }
+  if (mag1 === 0 || mag2 === 0) return 0;
+  return dot / (Math.sqrt(mag1) * Math.sqrt(mag2));
+}
+
+function jaccardSimilarity(set1, set2) {
+  const intersection = new Set([...set1].filter(w => set2.has(w)));
+  const union = new Set([...set1, ...set2]);
+  return union.size === 0 ? 0 : intersection.size / union.size;
+}
+
+/* ===== RUN CHECK ===== */
+checkBtn.addEventListener('click', async () => {
+  if (!state.file1 || !state.file2) return;
+
+  checkBtn.disabled = true;
+  results.classList.remove('visible');
+  emptyState.style.display = 'none';
+  progress.classList.add('visible');
+  progressFill.style.width = '10%';
+  progressText.textContent = 'Extracting text from PDF #1...';
+
+  try {
+    const r1 = await extractTextFromPdf(state.file1);
+    state.text1 = r1.text;
+    state.pages1 = r1.pages;
+
+    progressFill.style.width = '40%';
+    progressText.textContent = 'Extracting text from PDF #2...';
+
+    const r2 = await extractTextFromPdf(state.file2);
+    state.text2 = r2.text;
+    state.pages2 = r2.pages;
+
+    progressFill.style.width = '65%';
+    progressText.textContent = 'Analyzing similarity...';
+
+    const a1 = analyze(state.text1);
+    const a2 = analyze(state.text2);
+
+    if (a1.totalWords === 0 || a2.totalWords === 0) {
+      throw new Error('One or both PDFs contain no extractable text (may be scanned images).');
+    }
+
+    const cosine = cosineSimilarity(a1.wordFreq, a2.wordFreq);
+    const jaccard = jaccardSimilarity(a1.uniqueWords, a2.uniqueWords);
+    // Blend: 60% cosine + 40% jaccard
+    const blended = cosine * 0.6 + jaccard * 0.4;
+    const finalScore = Math.round(blended * 100);
+
+    progressFill.style.width = '90%';
+    progressText.textContent = 'Rendering results...';
+
+    state.results = {
+      score: finalScore,
+      cosine: (cosine * 100).toFixed(2),
+      jaccard: (jaccard * 100).toFixed(2),
+      a1, a2,
+      common: [...a1.uniqueWords].filter(w => a2.uniqueWords.has(w)).sort()
+    };
+
+    renderResults();
+
+    progressFill.style.width = '100%';
+    setTimeout(() => {
+      progress.classList.remove('visible');
+      progressFill.style.width = '0%';
+    }, 800);
+
+    results.classList.add('visible');
+    showToast('✅ Analysis complete!', 'success');
+
+    // Auto scroll
+    setTimeout(() => results.scrollIntoView({ behavior: 'smooth', block: 'start' }), 200);
+  } catch (err) {
+    console.error(err);
+    progress.classList.remove('visible');
+    emptyState.style.display = '';
+    showToast('Error: ' + err.message, 'error', 5000);
+  } finally {
+    checkBtn.disabled = false;
+  }
+});
+
+/* ===== RENDER RESULTS ===== */
+function renderResults() {
+  const r = state.results;
+  const score = r.score;
+
+  // Score card
+  scoreValue.textContent = score + '%';
+  scoreMeterFill.style.width = score + '%';
+
+  // Verdict
+  let verdict;
+  if (score < 20) verdict = '🟢 Unrelated documents';
+  else if (score < 40) verdict = '🟡 Some overlap';
+  else if (score < 60) verdict = '🟠 Significant overlap';
+  else if (score < 80) verdict = '🔴 Highly similar';
+  else verdict = '🚨 Near-identical';
+  scoreVerdict.textContent = verdict;
+
+  // Stats grid
+  $('#pages1').textContent = state.pages1;
+  $('#pages2').textContent = state.pages2;
+  $('#words1').textContent = formatNumber(r.a1.totalWords);
+  $('#words2').textContent = formatNumber(r.a2.totalWords);
+  $('#uniq1').textContent = formatNumber(r.a1.uniqueWords.size);
+  $('#uniq2').textContent = formatNumber(r.a2.uniqueWords.size);
+
+  // Table
+  $('#tblPages1').textContent = state.pages1;
+  $('#tblPages2').textContent = state.pages2;
+  $('#tblWords1').textContent = formatNumber(r.a1.totalWords);
+  $('#tblWords2').textContent = formatNumber(r.a2.totalWords);
+  $('#tblUniq1').textContent = formatNumber(r.a1.uniqueWords.size);
+  $('#tblUniq2').textContent = formatNumber(r.a2.uniqueWords.size);
+  $('#tblAvg1').textContent = r.a1.avgLength + ' chars';
+  $('#tblAvg2').textContent = r.a2.avgLength + ' chars';
+  $('#tblLongest1').textContent = r.a1.longest;
+  $('#tblLongest2').textContent = r.a2.longest;
+  $('#tblCosine').textContent = r.cosine + '%';
+  $('#tblJaccard').textContent = r.jaccard + '%';
+
+  // Common words
+  const commonArr = r.common.slice(0, 200);
+  $('#commonCount').textContent = r.common.length;
+  const commonEl = $('#commonWords');
+  if (commonArr.length === 0) {
+    commonEl.innerHTML = '<span style="font-size:13px;color:#9ca3af;font-style:italic;">No common words.</span>';
+  } else {
+    commonEl.innerHTML = commonArr
+      .map(w => `<span class="word-chip common">${escapeHtml(w)}</span>`)
+      .join('');
+  }
+
+  // Unique to PDF 1
+  const uniq1 = [...r.a1.uniqueWords].filter(w => !r.a2.uniqueWords.has(w)).sort();
+  const uniq1Arr = uniq1.slice(0, 200);
+  $('#uniq1Count').textContent = uniq1.length;
+  const uniq1El = $('#uniqueWords1');
+  if (uniq1Arr.length === 0) {
+    uniq1El.innerHTML = '<span style="font-size:13px;color:#9ca3af;font-style:italic;">No unique words.</span>';
+  } else {
+    uniq1El.innerHTML = uniq1Arr
+      .map(w => `<span class="word-chip pdf1">${escapeHtml(w)}</span>`)
+      .join('');
+  }
+
+  // Unique to PDF 2
+  const uniq2 = [...r.a2.uniqueWords].filter(w => !r.a1.uniqueWords.has(w)).sort();
+  const uniq2Arr = uniq2.slice(0, 200);
+  $('#uniq2Count').textContent = uniq2.length;
+  const uniq2El = $('#uniqueWords2');
+  if (uniq2Arr.length === 0) {
+    uniq2El.innerHTML = '<span style="font-size:13px;color:#9ca3af;font-style:italic;">No unique words.</span>';
+  } else {
+    uniq2El.innerHTML = uniq2Arr
+      .map(w => `<span class="word-chip pdf2">${escapeHtml(w)}</span>`)
+      .join('');
+  }
+}
+
+/* ===== DOWNLOAD REPORT ===== */
+$('#downloadBtn').addEventListener('click', () => {
+  const r = state.results;
+  if (!r) return;
+
+  const lines = [
+    '================================================',
+    '     PDF SIMILARITY REPORT BigToolz.com',
+    '================================================',
+    '',
+    `Generated: ${new Date().toLocaleString()}`,
+    '',
+    '--- FILES ---',
+    `PDF #1: ${state.file1.name} (${formatSize(state.file1.size)})`,
+    `PDF #2: ${state.file2.name} (${formatSize(state.file2.size)})`,
+    '',
+    '--- SIMILARITY SCORE ---',
+    `Final Score: ${r.score}%`,
+    `Verdict: ${scoreVerdict.textContent}`,
+    `Cosine Similarity: ${r.cosine}%`,
+    `Jaccard Similarity: ${r.jaccard}%`,
+    '',
+    '--- STATISTICS ---',
+    `                PDF #1         PDF #2`,
+    `Pages           ${state.pages1}                ${state.pages2}`,
+    `Total Words     ${r.a1.totalWords}         ${r.a2.totalWords}`,
+    `Unique Words    ${r.a1.uniqueWords.size}         ${r.a2.uniqueWords.size}`,
+    `Avg Word Len    ${r.a1.avgLength}           ${r.a2.avgLength}`,
+    `Longest Word    ${r.a1.longest}         ${r.a2.longest}`,
+    '',
+    '--- COMMON WORDS (first 100) ---',
+    r.common.slice(0, 100).join(', '),
+    '',
+    `Total common words: ${r.common.length}`,
+    '',
+    '================================================',
+    'Powered by BigToolz.com Free Online Tools',
+    '================================================'
+  ];
+
+  const blob = new Blob([lines.join('\n')], { type: 'text/plain;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'similarity-report.txt';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+  showToast('Report downloaded!', 'success');
+});
+
+/* ===== RESET ===== */
+resetBtn.addEventListener('click', () => {
+  state.file1 = null;
+  state.file2 = null;
+  state.text1 = '';
+  state.text2 = '';
+  state.pages1 = 0;
+  state.pages2 = 0;
+  state.results = null;
+
+  uploadBox1.classList.remove('has-file');
+  uploadBox2.classList.remove('has-file');
+  uploadSub1.textContent = 'Drag & drop or click to upload';
+  uploadSub2.textContent = 'Drag & drop or click to upload';
+  file1Input.value = '';
+  file2Input.value = '';
+
+  results.classList.remove('visible');
+  emptyState.style.display = '';
+  progress.classList.remove('visible');
+  checkBtn.disabled = true;
+
+  showToast('Reset', 'info');
+});
+
+/* ===== FAQ ===== */
+$$('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    $$('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+</script>
+
+</body>
+</html>

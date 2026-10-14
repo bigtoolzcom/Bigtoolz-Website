@@ -1,0 +1,1251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2563eb">
+
+<title>Image Watermark - Add Watermark to Images Online Free | BigToolz</title>
+<meta name="description" content="Add watermark to images online free. Text or image watermarks, 9 positions, opacity, rotation, tiling. No upload, works in your browser. Batch process instantly.">
+<meta name="keywords" content="image watermark, add watermark online, watermark photos, text watermark, logo watermark, watermark image free">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://bigtoolz.com/tools/image-tools/image-watermark/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Image Watermark - Free Online Tool | BigToolz">
+<meta property="og:description" content="Add text or logo watermarks 9 positions, opacity, rotation, tiling.">
+<meta property="og:url" content="https://bigtoolz.com/tools/image-tools/image-watermark/">
+<meta property="og:image" content="https://bigtoolz.com/assets/images/og-image.jpg">
+<meta property="og:site_name" content="BigToolz">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Image Watermark - BigToolz">
+<meta name="twitter:description" content="Add watermarks to photos instantly free, no upload.">
+<meta name="twitter:image" content="https://bigtoolz.com/assets/images/twitter-card.jpg">
+
+<link rel="icon" href="/assets/images/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/images/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#f8f9fc;color:#1a1a2e;overflow-x:hidden;line-height:1.5}
+
+  .header{background:#fff;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;position:sticky;top:0;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+  .header-left{display:flex;align-items:center;gap:40px}
+  .logo{display:flex;align-items:center;gap:8px;font-size:22px;font-weight:800;color:#1a1a2e;text-decoration:none}
+  .logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#3b82f6,#2563eb);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px}
+  .logo span{color:#2563eb}
+  .nav{display:flex;align-items:center;gap:28px;list-style:none}
+  .nav a{text-decoration:none;color:#4b5563;font-size:14px;font-weight:500;transition:color .2s}
+  .nav a:hover,.nav a.active{color:#2563eb}
+  .header-right{display:flex;align-items:center;gap:16px}
+  .search-btn,.theme-btn{width:36px;height:36px;border-radius:50%;border:none;background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#4b5563}
+  .search-btn:hover,.theme-btn:hover{background:#f3f4f6}
+  .bookmark-btn{display:flex;align-items:center;gap:8px;background:#2563eb;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
+  .bookmark-btn:hover{background:#1d4ed8}
+
+  .hero{background:linear-gradient(135deg,#0a0e27 0%,#1a1a4e 40%,#2d1b69 70%,#4c1d95 100%);padding:40px 40px 60px;position:relative;overflow:hidden;color:#fff}
+  .hero::before{content:'';position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(59,130,246,.3) 0%,transparent 70%);border-radius:50%}
+  .hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+  .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px;flex-wrap:wrap}
+  .breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none}
+  .breadcrumb a:hover{color:#fff}
+  .breadcrumb .sep{color:rgba(255,255,255,.4)}
+  .breadcrumb .current{color:#fff;font-weight:500}
+  .hero-title-row{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+  .hero-icon{width:60px;height:60px;background:#3b82f6;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px;color:#fff;flex-shrink:0;box-shadow:0 8px 24px rgba(59,130,246,.4)}
+  .hero-title{font-size:42px;font-weight:800;line-height:1.15}
+  .hero-title .blue{color:#60a5fa}
+  .hero-desc{font-size:15px;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:24px;max-width:560px}
+  .hero-features{display:flex;gap:24px;flex-wrap:wrap}
+  .hero-feature{display:flex;align-items:center;gap:6px;font-size:13px;color:#fff;font-weight:500}
+  .hero-feature .check{width:18px;height:18px;border-radius:50%;background:#3b82f6;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;flex-shrink:0}
+
+  .main-content{max-width:1200px;margin:0 auto;padding:40px;display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start}
+  .tool-content{min-width:0}
+
+  .workspace{background:#fff;border-radius:16px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,.06);border:1px solid #e5e7eb;margin-bottom:24px}
+
+  .dropzone{border:2px dashed #93c5fd;border-radius:12px;padding:50px 30px;text-align:center;background:#eff6ff;margin-bottom:24px;transition:all .2s;cursor:pointer}
+  .dropzone:hover,.dropzone.dragover{border-color:#3b82f6;background:#dbeafe}
+  .dropzone-icon{width:60px;height:60px;background:linear-gradient(135deg,#3b82f6,#2563eb);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;color:#fff;font-size:26px;transition:transform .2s}
+  .dropzone:hover .dropzone-icon{transform:translateY(-4px)}
+  .dropzone-title{font-size:16px;font-weight:700;color:#1a1a2e;margin-bottom:8px}
+  .dropzone-sub{font-size:14px;color:#6b7280;margin-bottom:20px}
+  .dropzone-sub a{color:#3b82f6;font-weight:600;text-decoration:none}
+  .choose-btn{display:inline-flex;align-items:center;gap:8px;background:#3b82f6;color:#fff;border:none;padding:12px 28px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;transition:background .2s}
+  .choose-btn:hover{background:#2563eb}
+  .dropzone-info{font-size:12px;color:#9ca3af;display:flex;align-items:center;justify-content:center;gap:8px;margin-top:16px;flex-wrap:wrap}
+  .dropzone-info .divider{color:#d1d5db}
+  .file-input{display:none}
+
+  .preview-wrap{display:none;background:#0f172a;border-radius:12px;padding:20px;margin-bottom:20px;text-align:center;align-items:center;justify-content:center;min-height:240px}
+  .preview-wrap.visible{display:flex}
+  .preview-wrap canvas{max-width:100%;max-height:400px;border-radius:8px;box-shadow:0 4px 16px rgba(0,0,0,.3)}
+
+  .options{background:#eff6ff;border-radius:12px;padding:20px;margin-bottom:20px;border:1px solid #93c5fd}
+  .options-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+
+  .mode-tabs{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:16px}
+  .mode-btn{padding:12px 10px;background:#fff;border:2px solid #e5e7eb;border-radius:10px;font-size:12px;font-weight:600;color:#4b5563;cursor:pointer;font-family:inherit;transition:all .2s;text-align:center;line-height:1.3}
+  .mode-btn:hover{border-color:#3b82f6;background:#eff6ff}
+  .mode-btn.active{border-color:#3b82f6;background:#3b82f6;color:#fff}
+  .mode-btn-title{font-size:13px;font-weight:700;margin-bottom:2px}
+
+  .mode-panel{display:none}
+  .mode-panel.active{display:block}
+
+  .slider-group{margin-bottom:16px}
+  .slider-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+  .slider-header label{font-size:13px;font-weight:600;color:#4b5563}
+  .slider-header .val{font-size:13px;font-weight:800;color:#2563eb;background:#fff;padding:4px 10px;border-radius:8px;border:1px solid #93c5fd;min-width:60px;text-align:center}
+  .range-slider{width:100%;-webkit-appearance:none;appearance:none;height:8px;background:#bfdbfe;border-radius:4px;outline:none}
+  .range-slider::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:22px;height:22px;background:#3b82f6;border-radius:50%;cursor:pointer;box-shadow:0 2px 6px rgba(59,130,246,.4);transition:transform .15s;border:3px solid #fff}
+  .range-slider::-webkit-slider-thumb:hover{transform:scale(1.15)}
+  .range-slider::-moz-range-thumb{width:22px;height:22px;background:#3b82f6;border:3px solid #fff;border-radius:50%;cursor:pointer}
+
+  .options-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+  .option-group label{display:block;font-size:12px;font-weight:600;color:#4b5563;margin-bottom:6px}
+  .option-group input[type="text"],.option-group select{width:100%;padding:10px 12px;border:1px solid #e5e7eb;border-radius:8px;font-size:13px;font-family:inherit;color:#1a1a2e;background:#fff;outline:none;transition:border-color .2s}
+  .option-group input:focus,.option-group select:focus{border-color:#3b82f6;box-shadow:0 0 0 3px rgba(59,130,246,.1)}
+  .option-group input[type="color"]{width:100%;height:42px;border:1px solid #e5e7eb;border-radius:8px;cursor:pointer;padding:2px;background:#fff}
+
+  .option-group.span-2{grid-column:span 2;}
+
+  /* Position grid */
+  .position-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;width:150px;margin:0 auto}
+  .position-btn{aspect-ratio:1;background:#fff;border:2px solid #e5e7eb;border-radius:8px;cursor:pointer;font-family:inherit;transition:all .2s;display:flex;align-items:center;justify-content:center}
+  .position-btn::after{content:'';width:8px;height:8px;background:#cbd5e1;border-radius:50%;transition:background .2s}
+  .position-btn:hover{border-color:#3b82f6}
+  .position-btn.active{border-color:#3b82f6;background:#3b82f6}
+  .position-btn.active::after{background:#fff}
+
+  /* Image upload mini */
+  .upload-mini{padding:16px;background:#fff;border:2px dashed #93c5fd;border-radius:8px;text-align:center;cursor:pointer;transition:all .2s;font-size:12px;color:#6b7280}
+  .upload-mini:hover{border-color:#3b82f6;background:#eff6ff}
+  .upload-mini.has-image{border-style:solid;border-color:#10b981;background:#f0fdf4;color:#059669;font-weight:600}
+  .upload-mini input{display:none}
+
+  .quality-group{margin-top:16px}
+  .quality-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+  .quality-header label{font-size:12px;font-weight:600;color:#4b5563}
+  .quality-value{font-size:13px;font-weight:700;color:#2563eb}
+  .quality-slider{width:100%;-webkit-appearance:none;appearance:none;height:6px;background:#bfdbfe;border-radius:3px;outline:none}
+  .quality-slider::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:20px;height:20px;background:#3b82f6;border-radius:50%;cursor:pointer;transition:transform .15s}
+  .quality-slider::-webkit-slider-thumb:hover{transform:scale(1.15)}
+  .quality-slider::-moz-range-thumb{width:20px;height:20px;background:#3b82f6;border:none;border-radius:50%;cursor:pointer}
+
+  .actions{display:flex;gap:12px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 28px;border-radius:10px;font-size:15px;font-weight:700;font-family:inherit;cursor:pointer;border:none;transition:all .2s;text-decoration:none}
+  .btn-primary{background:#3b82f6;color:#fff;flex:1;box-shadow:0 4px 12px rgba(59,130,246,.2)}
+  .btn-primary:hover:not(:disabled){background:#2563eb;transform:translateY(-2px);box-shadow:0 6px 20px rgba(59,130,246,.3)}
+  .btn-primary:disabled{opacity:.5;cursor:not-allowed;transform:none}
+  .btn-secondary{background:#fff;color:#3b82f6;border:1px solid #e5e7eb}
+  .btn-secondary:hover{border-color:#3b82f6;background:#eff6ff}
+  .btn-success{background:#10b981;color:#fff}
+  .btn-success:hover{background:#059669}
+
+  .progress{display:none;margin-top:20px}
+  .progress.visible{display:block}
+  .progress-bar{width:100%;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden;margin-bottom:8px}
+  .progress-fill{height:100%;background:linear-gradient(90deg,#60a5fa,#3b82f6);border-radius:4px;width:0%;transition:width .3s ease}
+  .progress-text{font-size:13px;color:#6b7280;text-align:center;font-weight:500}
+
+  .results{display:none;margin-top:20px}
+  .results.visible{display:block}
+  .results-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:12px}
+  .results-title{font-size:16px;font-weight:700;color:#1a1a2e;display:flex;align-items:center;gap:8px}
+  .results-title .success-icon{width:24px;height:24px;background:#10b981;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px}
+
+  .file-list{display:flex;flex-direction:column;gap:12px}
+  .file-item{background:#eff6ff;border:1px solid #93c5fd;border-radius:12px;padding:16px;display:flex;gap:16px;align-items:center;transition:border-color .2s}
+  .file-item:hover{border-color:#3b82f6}
+  .file-thumb{width:64px;height:64px;border-radius:8px;background:#fff;border:1px solid #e5e7eb;display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0}
+  .file-thumb img{width:100%;height:100%;object-fit:cover}
+  .file-info{flex:1;min-width:0}
+  .file-name{font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .file-meta{font-size:11px;color:#6b7280;display:flex;gap:12px;flex-wrap:wrap}
+  .file-actions{display:flex;gap:8px;flex-shrink:0}
+  .icon-btn{width:36px;height:36px;border-radius:8px;border:1px solid #e5e7eb;background:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#4b5563;transition:all .2s}
+  .icon-btn:hover{border-color:#3b82f6;color:#3b82f6;background:#eff6ff}
+  .icon-btn.download{background:#10b981;color:#fff;border-color:#10b981}
+  .icon-btn.download:hover{background:#059669;border-color:#059669;color:#fff}
+
+  .seo-content{background:#fff;border-radius:16px;padding:32px;border:1px solid #e5e7eb;margin-bottom:24px}
+  .seo-content h2{font-size:22px;font-weight:800;color:#1a1a2e;margin-bottom:14px;margin-top:28px;display:flex;align-items:center;gap:10px}
+  .seo-content h2:first-child{margin-top:0}
+  .seo-content h3{font-size:16px;font-weight:700;color:#1a1a2e;margin:20px 0 10px}
+  .seo-content p{font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:14px}
+  .seo-content ul{list-style:none;padding-left:0;margin-bottom:16px}
+  .seo-content ul li{position:relative;padding-left:24px;font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:8px}
+  .seo-content ul li::before{content:'';position:absolute;left:6px;top:12px;width:6px;height:6px;background:#3b82f6;border-radius:50%}
+  .seo-content a{color:#2563eb;text-decoration:none;font-weight:600}
+  .seo-content a:hover{text-decoration:underline}
+  .seo-content strong{color:#1a1a2e;font-weight:700}
+
+  .how-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:20px}
+  .how-step{background:#eff6ff;border-radius:12px;padding:20px;border:1px solid #93c5fd}
+  .how-step-num{width:36px;height:36px;border-radius:50%;background:#3b82f6;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;margin-bottom:12px}
+  .how-step-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+  .how-step-desc{font-size:13px;color:#6b7280;line-height:1.6}
+
+  .faq-item{background:#eff6ff;border:1px solid #93c5fd;border-radius:12px;margin-bottom:10px;overflow:hidden;transition:border-color .2s}
+  .faq-item:hover{border-color:#3b82f6}
+  .faq-question{width:100%;background:none;border:none;padding:18px 22px;font-size:15px;font-weight:700;color:#1a1a2e;text-align:left;cursor:pointer;font-family:inherit;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .faq-question .chev{font-size:12px;color:#3b82f6;transition:transform .2s;flex-shrink:0}
+  .faq-item.open .faq-question .chev{transform:rotate(180deg)}
+  .faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 22px}
+  .faq-item.open .faq-answer{max-height:500px;padding-bottom:18px}
+  .faq-answer p{font-size:14px;color:#6b7280;line-height:1.7;margin:0}
+
+  .sidebar{background:#fff;border-radius:16px;padding:24px;border:1px solid #e5e7eb;position:sticky;top:80px;margin-bottom:24px}
+  .sidebar-header{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:800;color:#1a1a2e;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid #f3f4f6}
+  .sidebar-list{display:flex;flex-direction:column;gap:8px}
+  .sidebar-item{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;cursor:pointer;transition:background .2s;text-decoration:none;color:inherit;border:1px solid #f3f4f6}
+  .sidebar-item:hover{background:#eff6ff;border-color:#93c5fd}
+  .sidebar-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;flex-shrink:0}
+  .sidebar-info{flex:1;min-width:0}
+  .sidebar-title{font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:2px}
+  .sidebar-desc{font-size:11px;color:#9ca3af;line-height:1.4}
+
+  .footer{background:#0a0e27;padding:60px 40px 30px;color:#fff;margin-top:40px}
+  .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:40px}
+  .footer-brand{display:flex;align-items:center;gap:8px;font-size:20px;font-weight:800;margin-bottom:12px}
+  .footer-brand span{color:#60a5fa}
+  .footer-tagline{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px}
+  .footer-social{display:flex;gap:12px}
+  .footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:16px;transition:background .2s}
+  .footer-social a:hover{background:rgba(255,255,255,.2)}
+  .footer-heading{font-size:14px;font-weight:700;margin-bottom:20px;color:#fff}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .footer-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;transition:color .2s}
+  .footer-links a:hover{color:#60a5fa}
+  .footer-bottom{max-width:1200px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  .footer-bottom-left{display:flex;gap:20px;font-size:12px;color:rgba(255,255,255,.5)}
+  .footer-bottom-right,.footer-bottom-links a{font-size:12px;color:rgba(255,255,255,.5);text-decoration:none}
+  .footer-bottom-links{display:flex;gap:20px}
+
+  .toast{position:fixed;bottom:24px;right:24px;background:#1a1a2e;color:#fff;padding:14px 20px;border-radius:10px;font-size:13px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:3000;transform:translateY(200%);transition:transform .3s ease;max-width:320px}
+  .toast.visible{transform:translateY(0)}
+  .toast.success{background:#10b981}
+  .toast.error{background:#ef4444}
+
+  @media(max-width:1024px){
+    .main-content{grid-template-columns:1fr;padding:24px 20px}
+    .sidebar{position:static}
+    .how-steps{grid-template-columns:repeat(2,1fr)}
+    .options-grid{grid-template-columns:1fr}
+    .option-group.span-2{grid-column:span 1}
+  }
+  @media(max-width:768px){
+    .header{padding:0 20px}.nav{display:none}
+    .hero{padding:24px 20px 40px}
+    .hero-title{font-size:28px}
+    .hero-icon{width:48px;height:48px;font-size:20px}
+    .hero-title-row{flex-direction:column;align-items:flex-start;gap:12px}
+    .main-content{padding:20px 16px}
+    .workspace{padding:20px}
+    .dropzone{padding:32px 16px}
+    .how-steps{grid-template-columns:1fr}
+    .seo-content{padding:20px}
+    .footer-inner{grid-template-columns:1fr 1fr}
+    .file-item{flex-direction:column;align-items:flex-start}
+    .file-actions{width:100%;justify-content:flex-end}
+    .toast{left:16px;right:16px;bottom:16px;max-width:none}
+    .mode-tabs{grid-template-columns:1fr}
+  }
+  @media(max-width:576px){
+    .header{padding:0 16px}.header-right .search-btn,.header-right .theme-btn{display:none}
+    .hero-title{font-size:24px}
+    .actions{flex-direction:column}
+    .btn{width:100%}
+    .btn-primary{flex:none}
+    .footer-inner{grid-template-columns:1fr}
+    .footer-bottom{flex-direction:column;text-align:center}
+  }
+
+  html[data-theme="dark"] body{background:#0f172a;color:#f1f5f9}
+  html[data-theme="dark"] .header,html[data-theme="dark"] .workspace,html[data-theme="dark"] .seo-content,html[data-theme="dark"] .sidebar{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .logo,html[data-theme="dark"] .hero-title,html[data-theme="dark"] .seo-content h2,html[data-theme="dark"] .seo-content h3,html[data-theme="dark"] .faq-question,html[data-theme="dark"] .results-title,html[data-theme="dark"] .sidebar-header,html[data-theme="dark"] .sidebar-title,html[data-theme="dark"] .options-title{color:#f1f5f9}
+  html[data-theme="dark"] .nav a{color:#cbd5e1}
+  html[data-theme="dark"] .dropzone{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .options,html[data-theme="dark"] .how-step,html[data-theme="dark"] .faq-item,html[data-theme="dark"] .file-item,html[data-theme="dark"] .file-thumb,html[data-theme="dark"] .mode-btn,html[data-theme="dark"] .position-btn,html[data-theme="dark"] .upload-mini{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .mode-btn,html[data-theme="dark"] .position-btn{color:#cbd5e1}
+  html[data-theme="dark"] .mode-btn.active{background:#3b82f6;color:#fff;border-color:#3b82f6}
+  html[data-theme="dark"] .position-btn.active{background:#3b82f6;border-color:#3b82f6}
+  html[data-theme="dark"] .option-group input,.option-group select{background:#0f172a;border-color:#334155;color:#f1f5f9}
+  html[data-theme="dark"] .seo-content p,html[data-theme="dark"] .seo-content ul li,html[data-theme="dark"] .file-meta,html[data-theme="dark"] .faq-answer p{color:#cbd5e1}
+  html[data-theme="dark"] .icon-btn{background:#0f172a;border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .slider-header .val{background:#0f172a;border-color:#334155;color:#60a5fa}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type": "SoftwareApplication", "name": "Image Watermark Tool", "url": "https://bigtoolz.com/tools/image-tools/image-watermark/", "applicationCategory": "MultimediaApplication", "operatingSystem": "Any (Web-based)", "description": "Free online image watermark tool add text or logo watermarks with 9 positions, opacity, rotation, and tiling. Works in your browser.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.8", "ratingCount": "1567"}},
+    {"@type": "HowTo", "name": "How to Watermark Images Online", "step": [
+      {"@type": "HowToStep", "name": "Upload Images", "text": "Drag & drop or click to select images."},
+      {"@type": "HowToStep", "name": "Add Watermark", "text": "Enter text or upload a logo, then position, style and adjust opacity."},
+      {"@type": "HowToStep", "name": "Apply", "text": "Click Apply Watermark to process."},
+      {"@type": "HowToStep", "name": "Download", "text": "Download watermarked images individually or all at once."}
+    ]},
+    {"@type": "FAQPage", "mainEntity": [
+      {"@type": "Question", "name": "How do I add a watermark to an image?", "acceptedAnswer": {"@type": "Answer", "text": "Upload your image, type your watermark text (or upload a logo image), choose a position, adjust opacity and rotation, then click Apply. The watermarked image downloads instantly."}},
+      {"@type": "Question", "name": "What's the best opacity for a watermark?", "acceptedAnswer": {"@type": "Answer", "text": "For subtle protection: 20-30% opacity. For visible branding: 40-60%. For maximum protection: 70%+. Lower opacity preserves the original photo but is easier to remove; higher is more secure but more noticeable."}},
+      {"@type": "Question", "name": "Should I watermark the whole image or just a corner?", "acceptedAnswer": {"@type": "Answer", "text": "Corner watermarks (bottom-right) are clean and don't obstruct the subject. Full tiling across the image is more secure against theft but distracts from the photo. Choose based on your goal."}},
+      {"@type": "Question", "name": "Can I use my logo as a watermark?", "acceptedAnswer": {"@type": "Answer", "text": "Yes! Switch to the Image mode and upload a PNG with transparent background for the best results. Adjust size and opacity to make it subtle or prominent."}},
+      {"@type": "Question", "name": "Are my images uploaded to a server?", "acceptedAnswer": {"@type": "Answer", "text": "No. All watermarking happens in your browser using the Canvas API. Your images never leave your device."}}
+    ]},
+    {"@type": "BreadcrumbList", "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bigtoolz.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://bigtoolz.com/tools/"},
+      {"@type": "ListItem", "position": 3, "name": "Image Tools", "item": "https://bigtoolz.com/tools/image-tools/"},
+      {"@type": "ListItem", "position": 4, "name": "Image Watermark", "item": "https://bigtoolz.com/tools/image-tools/image-watermark/"}
+    ]}
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-left">
+    <a href="/" class="logo"><div class="logo-icon">⚒</div>BigToolz</span></a>
+    <nav><ul class="nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/tools/" class="active">All Tools</a></li>
+      <li><a href="/tools/categories">Categories</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul></nav>
+  </div>
+  <div class="header-right">
+   
+    <button class="theme-btn" aria-label="Toggle theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
+    
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <nav class="breadcrumb">
+      <a href="/">Home</a><span class="sep">›</span>
+      <a href="/tools/">Tools</a><span class="sep">›</span>
+      <a href="/tools/image-tools/">Image Tools</a><span class="sep">›</span>
+      <span class="current">Image Watermark</span>
+    </nav>
+    <div class="hero-title-row">
+      <div class="hero-icon">💧</div>
+      <h1 class="hero-title">Image <span class="blue">Watermark</span></h1>
+    </div>
+    <p class="hero-desc">
+      Add text or logo watermarks to your photos 9 positions, opacity control, rotation, tiling. Protect your images from theft or brand them for social media. No upload, 100% private.
+    </p>
+    <div class="hero-features">
+      <div class="hero-feature"><span class="check">✓</span> Text or Logo</div>
+      <div class="hero-feature"><span class="check">✓</span> 9 Positions</div>
+      <div class="hero-feature"><span class="check">✓</span> Batch Support</div>
+      <div class="hero-feature"><span class="check">✓</span> Live Preview</div>
+    </div>
+  </div>
+</section>
+
+<div class="main-content">
+
+  <div class="tool-content">
+
+    <div class="workspace">
+
+      <div class="dropzone" id="dropzone">
+        <div class="dropzone-icon">⬆</div>
+        <div class="dropzone-title">Drag & drop your images here</div>
+        <div class="dropzone-sub">or <a href="#" id="browseLink">click to browse files</a></div>
+        <button class="choose-btn" id="chooseBtn" type="button">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+          Choose Images
+        </button>
+        <div class="dropzone-info">
+          <span>JPG, PNG, WebP, GIF</span>
+          <span class="divider">|</span>
+          <span>Multiple files supported</span>
+        </div>
+        <input type="file" id="fileInput" class="file-input" accept="image/*" multiple>
+      </div>
+
+      <div class="preview-wrap" id="previewWrap">
+        <canvas id="previewCanvas"></canvas>
+      </div>
+
+      <div class="options">
+        <div class="options-title">⚙️ Watermark Settings</div>
+
+        <div class="mode-tabs" id="modeTabs">
+          <button class="mode-btn active" data-mode="text">
+            <div class="mode-btn-title">📝 Text Watermark</div>
+          </button>
+          <button class="mode-btn" data-mode="image">
+            <div class="mode-btn-title">🖼 Logo Watermark</div>
+          </button>
+        </div>
+
+        <!-- Text mode -->
+        <div class="mode-panel active" data-panel="text">
+          <div class="options-grid">
+            <div class="option-group span-2">
+              <label>Watermark Text</label>
+              <input type="text" id="watermarkText" placeholder="© Your Name 2026" value="© BigToolz 2026">
+            </div>
+            <div class="option-group">
+              <label>Font Size</label>
+              <select id="fontSize">
+                <option value="3">Very Small (3%)</option>
+                <option value="4">Small (4%)</option>
+                <option value="5" selected>Medium (5%)</option>
+                <option value="7">Large (7%)</option>
+                <option value="10">Very Large (10%)</option>
+              </select>
+            </div>
+            <div class="option-group">
+              <label>Font Family</label>
+              <select id="fontFamily">
+                <option value="Inter, sans-serif" selected>Sans-Serif (Modern)</option>
+                <option value="Georgia, serif">Serif (Classic)</option>
+                <option value="'Courier New', monospace">Monospace (Tech)</option>
+                <option value="Arial, sans-serif">Arial</option>
+                <option value="'Times New Roman', serif">Times New Roman</option>
+              </select>
+            </div>
+            <div class="option-group">
+              <label>Text Color</label>
+              <input type="color" id="textColor" value="#ffffff">
+            </div>
+            <div class="option-group">
+              <label>Font Weight</label>
+              <select id="fontWeight">
+                <option value="normal">Normal</option>
+                <option value="bold" selected>Bold</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Image mode -->
+        <div class="mode-panel" data-panel="image">
+          <div class="upload-mini" id="uploadMini">
+            <input type="file" id="logoInput" accept="image/*">
+            <div id="uploadMiniText">📷 Click to upload logo image</div>
+          </div>
+          <div class="options-grid" style="margin-top:16px;">
+            <div class="option-group">
+              <label>Logo Size</label>
+              <select id="logoSize">
+                <option value="10">Small (10%)</option>
+                <option value="15" selected>Medium (15%)</option>
+                <option value="25">Large (25%)</option>
+                <option value="40">Very Large (40%)</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Common settings -->
+        <div class="options-grid" style="margin-top:16px;">
+          <div class="option-group span-2">
+            <label>Position</label>
+            <div class="position-grid" id="positionGrid">
+              <button class="position-btn" data-pos="top-left"></button>
+              <button class="position-btn" data-pos="top-center"></button>
+              <button class="position-btn" data-pos="top-right"></button>
+              <button class="position-btn" data-pos="middle-left"></button>
+              <button class="position-btn" data-pos="center"></button>
+              <button class="position-btn" data-pos="middle-right"></button>
+              <button class="position-btn active" data-pos="bottom-left"></button>
+              <button class="position-btn" data-pos="bottom-center"></button>
+              <button class="position-btn" data-pos="bottom-right"></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="slider-group" style="margin-top:16px;">
+          <div class="slider-header">
+            <label>Opacity</label>
+            <span class="val" id="opacityVal">60%</span>
+          </div>
+          <input type="range" id="opacitySlider" class="range-slider" min="5" max="100" value="60" step="5">
+        </div>
+
+        <div class="slider-group">
+          <div class="slider-header">
+            <label>Rotation</label>
+            <span class="val" id="rotationVal">0°</span>
+          </div>
+          <input type="range" id="rotationSlider" class="range-slider" min="-90" max="90" value="0" step="5">
+        </div>
+
+        <div class="slider-group">
+          <div class="slider-header">
+            <label>Margin from Edge</label>
+            <span class="val" id="marginVal">3%</span>
+          </div>
+          <input type="range" id="marginSlider" class="range-slider" min="0" max="15" value="3" step="0.5">
+        </div>
+
+        <div class="options-grid">
+          <div class="option-group">
+            <label>Output Format</label>
+            <select id="outFormat">
+              <option value="image/jpeg">JPEG</option>
+              <option value="image/png">PNG</option>
+              <option value="image/webp" selected>WebP</option>
+            </select>
+          </div>
+          <div class="option-group">
+            <label>Reset</label>
+            <button class="btn btn-secondary" id="resetBtn" style="width:100%;padding:10px 14px;font-size:13px;">↺ Reset to Default</button>
+          </div>
+        </div>
+
+        <div class="quality-group">
+          <div class="quality-header">
+            <label>Quality (for JPEG/WebP)</label>
+            <span class="quality-value" id="qualityValue">92%</span>
+          </div>
+          <input type="range" id="qualitySlider" class="quality-slider" min="50" max="100" value="92" step="1">
+        </div>
+      </div>
+
+      <div class="actions">
+        <button class="btn btn-primary" id="applyBtn" disabled>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+          Apply Watermark
+        </button>
+        <button class="btn btn-secondary" id="clearBtn">Clear All</button>
+      </div>
+
+      <div class="progress" id="progress">
+        <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+        <div class="progress-text" id="progressText">Applying...</div>
+      </div>
+
+      <div class="results" id="results">
+        <div class="results-header">
+          <div class="results-title"><span class="success-icon">✓</span> Watermark Applied</div>
+          <button class="btn btn-success" id="downloadAllBtn" style="padding:10px 20px;font-size:13px;">⬇ Download All</button>
+        </div>
+        <div class="file-list" id="fileList"></div>
+      </div>
+
+    </div>
+
+    <div class="seo-content">
+
+      <h2>💧 What is Image Watermarking?</h2>
+      <p>
+        <strong>Image watermarking</strong> means adding a visible mark text or logo to a photo to claim ownership, brand it, or protect it from unauthorized use. Watermarks are commonly used by <strong>photographers, designers, bloggers, real estate agents,</strong> and <strong>businesses</strong> sharing images online. A subtle watermark deters theft without ruining the photo; a bold one makes your brand unmissable.
+      </p>
+      <p>
+        Unlike most online tools, BigToolz processes images <strong>100% in your browser</strong> using the HTML5 Canvas API. Your photos <strong>never uploaded to any server</strong> complete privacy, instant results.
+      </p>
+
+      <h2>🚀 How to Add a Watermark</h2>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-step-num">1</div>
+          <div class="how-step-title">Upload Images</div>
+          <div class="how-step-desc">Drag & drop or click "Choose Images" to select files.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">2</div>
+          <div class="how-step-title">Add Watermark</div>
+          <div class="how-step-desc">Type text or upload a logo. Adjust position, opacity, rotation.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">3</div>
+          <div class="how-step-title">Apply</div>
+          <div class="how-step-desc">Click "Apply Watermark" to process all files.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">4</div>
+          <div class="how-step-title">Download</div>
+          <div class="how-step-desc">Download watermarked images individually or all at once.</div>
+        </div>
+      </div>
+
+      <h2>📐 Best Practices for Watermarks</h2>
+
+      <h3>Opacity</h3>
+      <p><strong>20-30%:</strong> Subtle perfect for portfolio photos where the image matters most. <strong>40-60%:</strong> Balanced clearly visible but not distracting. <strong>70-100%:</strong> Bold great for stock photos, real estate, previews.</p>
+
+      <h3>Position</h3>
+      <p><strong>Bottom-right corner:</strong> The most common and least distracting placement. <strong>Center:</strong> Maximum security prevents cropping to remove. <strong>Tiled:</strong> Best for high-theft risk (stock previews, event photos).</p>
+
+      <h3>Text Watermark vs Logo Watermark</h3>
+      <p><strong>Text</strong> is fast, simple, and easy to read. Use for copyright notices (<code>© Name Year</code>), URLs, or short brand names. <strong>Logo</strong> is more professional and instantly recognizable use PNG with transparent background for best results.</p>
+
+      <h3>Font Choice</h3>
+      <p><strong>Sans-serif</strong> (Inter, Arial) modern, clean, great for most uses. <strong>Serif</strong> (Georgia, Times) classic, elegant, good for photographers. <strong>Monospace</strong> technical, distinctive, good for developer portfolios.</p>
+
+      <h2>✨ Key Features</h2>
+      <ul>
+        <li><strong>Text or image</strong> watermarks both supported.</li>
+        <li><strong>9 preset positions</strong> corners, edges, and center.</li>
+        <li><strong>Opacity control</strong> from 5% to 100%.</li>
+        <li><strong>Rotation</strong> from -90° to +90° for diagonal watermarks.</li>
+        <li><strong>Margin adjustment</strong> control distance from edges.</li>
+        <li><strong>Font family and size</strong> 5 fonts, 5 sizes.</li>
+        <li><strong>Batch processing</strong> watermark dozens of images at once.</li>
+        <li><strong>100% browser-based</strong> complete privacy.</li>
+      </ul>
+
+      <h2>❓ Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-question">How do I add a watermark to an image?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Upload your image, type your watermark text (or upload a logo), choose a position, adjust opacity and rotation, then click "Apply Watermark". The watermarked image downloads instantly free, no signup.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What's the best opacity for a watermark?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>For <strong>subtle protection:</strong> 20-30%. For <strong>visible branding:</strong> 40-60%. For <strong>maximum protection:</strong> 70%+. Lower opacity preserves the photo but is easier to remove; higher is more secure but more noticeable.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Should I watermark the whole image or just a corner?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>Corner watermarks</strong> (bottom-right) are clean and don't obstruct the subject best for portfolios. <strong>Center watermarks</strong> can't be cropped out easily. <strong>Tiled watermarks</strong> are the most secure against theft but most distracting.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I use my logo as a watermark?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Yes! Switch to <strong>Logo Watermark</strong> mode and upload a PNG with a transparent background for best results. The logo is automatically scaled to fit the image, and you can adjust opacity and position just like text watermarks.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I add a diagonal watermark?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Yes! Use the <strong>Rotation</strong> slider (from -90° to +90°). Popular choices: <strong>45°</strong> for a classic diagonal, <strong>0°</strong> for horizontal, <strong>90°</strong> for vertical along the side of the image.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I watermark multiple photos at once?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Yes. Upload multiple images and the same watermark settings apply to all of them. Then use "Download All" for bulk saving perfect for water marking a whole gallery or batch of photos.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Are my images uploaded to a server?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>No. All watermarking happens in your browser using the Canvas API. Your images never leave your device, and nothing is stored anywhere.</p></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-header">🔗 Related Image Tools</div>
+    <div class="sidebar-list">
+      <a href="/tools/image-tools/image-resizer/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#8b5cf6;">📐</div>
+        <div class="sidebar-info"><div class="sidebar-title">Image Resizer</div><div class="sidebar-desc">Change dimensions</div></div>
+      </a>
+      <a href="/tools/image-tools/image-compressor/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#10b981;">📉</div>
+        <div class="sidebar-info"><div class="sidebar-title">Image Compressor</div><div class="sidebar-desc">Reduce file size</div></div>
+      </a>
+      <a href="/tools/image-tools/image-crop/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#f97316;">✂️</div>
+        <div class="sidebar-info"><div class="sidebar-title">Image Crop</div><div class="sidebar-desc">Crop to any area</div></div>
+      </a>
+      <a href="/tools/image-tools/image-rotate/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#ec4899;">🔁</div>
+        <div class="sidebar-info"><div class="sidebar-title">Image Rotate</div><div class="sidebar-desc">Rotate any angle</div></div>
+      </a>
+      <a href="/tools/image-tools/image-color-picker/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#f59e0b;">🎨</div>
+        <div class="sidebar-info"><div class="sidebar-title">Color Picker</div><div class="sidebar-desc">Pick any color</div></div>
+      </a>
+      <a href="/tools/image-tools/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#64748b;">🖼</div>
+        <div class="sidebar-info"><div class="sidebar-title">All Image Tools →</div><div class="sidebar-desc">Browse 25+ tools</div></div>
+      </a>
+    </div>
+  </aside>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand"><div class="logo-icon">⚒</div>BigToolz</span></div>
+      <p class="footer-tagline">Your Ultimate Online Tools Hub</p>
+      <div class="footer-social">
+        <a href="https://facebook.com/bigtoolz" aria-label="Facebook">f</a>
+        <a href="https://twitter.com/bigtoolz" aria-label="Twitter">𝕏</a>
+        <a href="https://youtube.com/@bigtoolz" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+    <div>
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/tools/">All Tools</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Categories</h3>
+      <ul class="footer-links">
+        <li><a href="/tools/image-tools/">Image Tools</a></li>
+        <li><a href="/tools/pdf-tools/">PDF Tools</a></li>
+        <li><a href="/tools/text-tools/">Text Tools</a></li>
+        <li><a href="/tools/seo-tools/">SEO Tools</a></li>
+        <li><a href="/tools/categories">All Categories →</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Legal</h3>
+      <ul class="footer-links">
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left"><span>✓ 100% Free</span><span>✓ No Sign Up</span><span>✓ No Installation</span></div>
+    <div class="footer-bottom-right">© 2026 BigToolz. All rights reserved.</div>
+    <div class="footer-bottom-links"><a href="/privacy-policy">Privacy</a><a href="/terms">Terms</a><a href="/disclaimer">Disclaimer</a></div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+'use strict';
+
+/* ===== THEME ===== */
+(function(){try{var t=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&d))document.documentElement.setAttribute('data-theme','dark');else if(t==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();
+document.querySelector('.theme-btn')?.addEventListener('click',()=>{const h=document.documentElement;const c=h.getAttribute('data-theme');const d=window.matchMedia('(prefers-color-scheme: dark)').matches;let n=c==='dark'?'light':c==='light'?'dark':(d?'light':'dark');h.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}});
+
+/* ===== HELPERS ===== */
+const $ = (s, p = document) => p.querySelector(s);
+const $$ = (s, p = document) => [...p.querySelectorAll(s)];
+
+function formatBytes(b) {
+  if (b === 0) return '0 B';
+  const k = 1024, sizes = ['B', 'KB', 'MB', 'GB'];
+  const i = Math.floor(Math.log(b) / Math.log(k));
+  return (b / Math.pow(k, i)).toFixed(i === 0 ? 0 : 1) + ' ' + sizes[i];
+}
+
+function showToast(msg, type = 'info', duration = 3000) {
+  const t = $('#toast');
+  if (!t) return;
+  t.className = 'toast visible' + (type !== 'info' ? ' ' + type : '');
+  t.textContent = msg;
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove('visible'), duration);
+}
+
+function escapeHtml(str) {
+  const div = document.createElement('div');
+  div.textContent = str;
+  return div.innerHTML;
+}
+
+/* ===== STATE ===== */
+const state = {
+  files: [],
+  results: [],
+  isProcessing: false,
+  previewImageEl: null,
+  mode: 'text',
+  position: 'bottom-left',
+  opacity: 60,
+  rotation: 0,
+  margin: 3,
+  logoImg: null
+};
+
+let fileIdCounter = 0;
+
+/* ===== DOM ===== */
+const dropzone = $('#dropzone');
+const fileInput = $('#fileInput');
+const chooseBtn = $('#chooseBtn');
+const browseLink = $('#browseLink');
+const applyBtn = $('#applyBtn');
+const clearBtn = $('#clearBtn');
+const progress = $('#progress');
+const progressFill = $('#progressFill');
+const progressText = $('#progressText');
+const results = $('#results');
+const fileList = $('#fileList');
+const previewWrap = $('#previewWrap');
+const previewCanvas = $('#previewCanvas');
+const watermarkText = $('#watermarkText');
+const fontSize = $('#fontSize');
+const fontFamily = $('#fontFamily');
+const textColor = $('#textColor');
+const fontWeight = $('#fontWeight');
+const logoSize = $('#logoSize');
+const logoInput = $('#logoInput');
+const uploadMini = $('#uploadMini');
+const uploadMiniText = $('#uploadMiniText');
+const opacitySlider = $('#opacitySlider');
+const opacityVal = $('#opacityVal');
+const rotationSlider = $('#rotationSlider');
+const rotationVal = $('#rotationVal');
+const marginSlider = $('#marginSlider');
+const marginVal = $('#marginVal');
+const outFormat = $('#outFormat');
+const qualitySlider = $('#qualitySlider');
+const qualityValue = $('#qualityValue');
+const downloadAllBtn = $('#downloadAllBtn');
+const resetBtn = $('#resetBtn');
+
+/* ===== MODE TABS ===== */
+$$('.mode-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    $$('.mode-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    state.mode = btn.dataset.mode;
+    $$('.mode-panel').forEach(p => p.classList.toggle('active', p.dataset.panel === state.mode));
+    renderPreview();
+  });
+});
+
+/* ===== POSITION BUTTONS ===== */
+$$('.position-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    $$('.position-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    state.position = btn.dataset.pos;
+    renderPreview();
+  });
+});
+
+/* ===== SLIDERS ===== */
+opacitySlider.addEventListener('input', (e) => {
+  state.opacity = parseInt(e.target.value, 10);
+  opacityVal.textContent = state.opacity + '%';
+  renderPreview();
+});
+
+rotationSlider.addEventListener('input', (e) => {
+  state.rotation = parseInt(e.target.value, 10);
+  rotationVal.textContent = state.rotation + '°';
+  renderPreview();
+});
+
+marginSlider.addEventListener('input', (e) => {
+  state.margin = parseFloat(e.target.value);
+  marginVal.textContent = state.margin + '%';
+  renderPreview();
+});
+
+qualitySlider.addEventListener('input', (e) => {
+  qualityValue.textContent = e.target.value + '%';
+});
+
+/* ===== TEXT INPUTS ===== */
+[watermarkText, fontSize, fontFamily, textColor, fontWeight, logoSize].forEach(el => {
+  el.addEventListener('input', renderPreview);
+  el.addEventListener('change', renderPreview);
+});
+
+/* ===== LOGO UPLOAD ===== */
+uploadMini.addEventListener('click', () => logoInput.click());
+
+logoInput.addEventListener('change', (e) => {
+  const f = e.target.files[0];
+  if (!f) return;
+  const reader = new FileReader();
+  reader.onload = (ev) => {
+    const img = new Image();
+    img.onload = () => {
+      state.logoImg = img;
+      uploadMini.classList.add('has-image');
+      uploadMiniText.textContent = '✓ ' + f.name;
+      renderPreview();
+    };
+    img.src = ev.target.result;
+  };
+  reader.readAsDataURL(f);
+});
+
+/* ===== RESET ===== */
+resetBtn.addEventListener('click', () => {
+  state.mode = 'text';
+  state.position = 'bottom-left';
+  state.opacity = 60;
+  state.rotation = 0;
+  state.margin = 3;
+
+  watermarkText.value = '© BigToolz 2026';
+  fontSize.value = '5';
+  fontFamily.value = 'Inter, sans-serif';
+  textColor.value = '#ffffff';
+  fontWeight.value = 'bold';
+  logoSize.value = '15';
+
+  opacitySlider.value = 60;
+  rotationSlider.value = 0;
+  marginSlider.value = 3;
+  opacityVal.textContent = '60%';
+  rotationVal.textContent = '0°';
+  marginVal.textContent = '3%';
+
+  $$('.mode-btn').forEach(b => b.classList.toggle('active', b.dataset.mode === 'text'));
+  $$('.mode-panel').forEach(p => p.classList.toggle('active', p.dataset.panel === 'text'));
+  $$('.position-btn').forEach(b => b.classList.toggle('active', b.dataset.pos === 'bottom-left'));
+
+  renderPreview();
+  showToast('Reset to default', 'info');
+});
+
+/* ===== FILE SELECTION ===== */
+function triggerFileSelect() { fileInput.click(); }
+chooseBtn.addEventListener('click', (e) => { e.stopPropagation(); triggerFileSelect(); });
+browseLink.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); triggerFileSelect(); });
+dropzone.addEventListener('click', triggerFileSelect);
+
+fileInput.addEventListener('change', (e) => {
+  handleFiles([...e.target.files]);
+  fileInput.value = '';
+});
+
+['dragenter', 'dragover'].forEach(evt => {
+  dropzone.addEventListener(evt, (e) => { e.preventDefault(); e.stopPropagation(); dropzone.classList.add('dragover'); });
+});
+['dragleave', 'drop'].forEach(evt => {
+  dropzone.addEventListener(evt, (e) => { e.preventDefault(); e.stopPropagation(); dropzone.classList.remove('dragover'); });
+});
+dropzone.addEventListener('drop', (e) => {
+  const files = [...e.dataTransfer.files].filter(f => f.type.startsWith('image/'));
+  if (files.length) handleFiles(files);
+});
+
+function handleFiles(files) {
+  const imageFiles = files.filter(f => f.type.startsWith('image/'));
+  if (!imageFiles.length) { showToast('Please select image files only', 'error'); return; }
+
+  imageFiles.forEach(file => {
+    state.files.push({
+      id: ++fileIdCounter,
+      file,
+      name: file.name,
+      size: file.size,
+      type: file.type
+    });
+  });
+
+  loadPreviewImage(state.files[0].file);
+  applyBtn.disabled = state.files.length === 0;
+  showToast(`${imageFiles.length} image${imageFiles.length > 1 ? 's' : ''} added`, 'success');
+}
+
+function loadPreviewImage(file) {
+  const reader = new FileReader();
+  reader.onload = (e) => {
+    const img = new Image();
+    img.onload = () => {
+      state.previewImageEl = img;
+      previewWrap.classList.add('visible');
+      renderPreview();
+    };
+    img.src = e.target.result;
+  };
+  reader.readAsDataURL(file);
+}
+
+/* ===== WATERMARK RENDERING ===== */
+function drawWatermark(ctx, w, h) {
+  const margin = Math.round(w * state.margin / 100);
+  ctx.save();
+  ctx.globalAlpha = state.opacity / 100;
+
+  if (state.mode === 'text') {
+    const text = watermarkText.value.trim();
+    if (!text) { ctx.restore(); return; }
+
+    const sizePct = parseInt(fontSize.value, 10);
+    const fontSizePx = Math.max(12, Math.round(w * sizePct / 100));
+    const family = fontFamily.value;
+    const weight = fontWeight.value;
+    const color = textColor.value;
+
+    ctx.font = `${weight} ${fontSizePx}px ${family}`;
+    ctx.fillStyle = color;
+    ctx.textBaseline = 'middle';
+
+    const metrics = ctx.measureText(text);
+    const textW = metrics.width;
+    const textH = fontSizePx;
+
+    // Add subtle shadow for visibility on both light/dark backgrounds
+    ctx.shadowColor = 'rgba(0,0,0,0.3)';
+    ctx.shadowBlur = Math.round(fontSizePx * 0.15);
+    ctx.shadowOffsetX = 1;
+    ctx.shadowOffsetY = 1;
+
+    // Rotation transform around anchor point
+    const pos = calculatePosition(w, h, margin, textW, textH);
+
+    ctx.translate(pos.x, pos.y);
+    ctx.rotate(state.rotation * Math.PI / 180);
+    ctx.textAlign = 'center';
+    ctx.fillText(text, 0, 0);
+
+  } else if (state.mode === 'image') {
+    if (!state.logoImg) { ctx.restore(); return; }
+
+    const sizePct = parseInt(logoSize.value, 10);
+    const targetW = Math.round(w * sizePct / 100);
+    const aspect = state.logoImg.naturalHeight / state.logoImg.naturalWidth;
+    const targetH = Math.round(targetW * aspect);
+
+    const pos = calculatePosition(w, h, margin, targetW, targetH);
+
+    ctx.translate(pos.x, pos.y);
+    ctx.rotate(state.rotation * Math.PI / 180);
+    ctx.drawImage(state.logoImg, -targetW / 2, -targetH / 2, targetW, targetH);
+  }
+
+  ctx.restore();
+}
+
+function calculatePosition(w, h, margin, elemW, elemH) {
+  // Returns center point (x, y) for the element
+  const pos = state.position;
+  let x, y;
+
+  if (pos.includes('left')) x = margin + elemW / 2;
+  else if (pos.includes('right')) x = w - margin - elemW / 2;
+  else x = w / 2;
+
+  if (pos.includes('top')) y = margin + elemH / 2;
+  else if (pos.includes('bottom')) y = h - margin - elemH / 2;
+  else y = h / 2;
+
+  return { x, y };
+}
+
+/* ===== PREVIEW ===== */
+function renderPreview() {
+  if (!state.previewImageEl) return;
+
+  const img = state.previewImageEl;
+  const maxW = 600;
+  const ratio = Math.min(maxW / img.naturalWidth, 1);
+  const w = Math.round(img.naturalWidth * ratio);
+  const h = Math.round(img.naturalHeight * ratio);
+
+  previewCanvas.width = w;
+  previewCanvas.height = h;
+  const ctx = previewCanvas.getContext('2d');
+  ctx.drawImage(img, 0, 0, w, h);
+
+  drawWatermark(ctx, w, h);
+}
+
+/* ===== APPLY ===== */
+applyBtn.addEventListener('click', applyAll);
+
+async function applyAll() {
+  if (state.isProcessing || !state.files.length) return;
+
+  state.isProcessing = true;
+  applyBtn.disabled = true;
+  applyBtn.innerHTML = 'Applying...';
+  results.classList.remove('visible');
+  fileList.innerHTML = '';
+  state.results = [];
+
+  const settings = {
+    mode: state.mode,
+    position: state.position,
+    opacity: state.opacity,
+    rotation: state.rotation,
+    margin: state.margin,
+    format: outFormat.value,
+    quality: parseInt(qualitySlider.value, 10) / 100
+  };
+
+  progress.classList.add('visible');
+  progressFill.style.width = '0%';
+
+  const total = state.files.length;
+  let completed = 0;
+
+  for (const item of state.files) {
+    try {
+      const result = await processImage(item.file, settings);
+      state.results.push({ ...result, id: item.id, originalName: item.name });
+    } catch (err) {
+      console.error('Watermark failed:', item.name, err);
+      showToast(`Failed: ${item.name}`, 'error');
+    }
+    completed++;
+    progressFill.style.width = Math.round((completed / total) * 100) + '%';
+    progressText.textContent = `Applying ${completed} of ${total}...`;
+  }
+
+  progress.classList.remove('visible');
+  renderResults();
+
+  state.isProcessing = false;
+  applyBtn.disabled = false;
+  applyBtn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Apply Watermark';
+
+  if (state.results.length) {
+    results.classList.add('visible');
+    showToast(`✅ ${state.results.length} image${state.results.length > 1 ? 's' : ''} watermarked!`, 'success');
+  }
+}
+
+function processImage(file, settings) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      const img = new Image();
+      img.onload = () => {
+        const w = img.naturalWidth;
+        const h = img.naturalHeight;
+
+        const canvas = document.createElement('canvas');
+        canvas.width = w;
+        canvas.height = h;
+        const ctx = canvas.getContext('2d');
+
+        if (settings.format === 'image/jpeg') {
+          ctx.fillStyle = '#ffffff';
+          ctx.fillRect(0, 0, w, h);
+        }
+        ctx.drawImage(img, 0, 0);
+
+        drawWatermark(ctx, w, h);
+
+        canvas.toBlob(
+          (blob) => {
+            if (!blob) return reject(new Error('Failed'));
+
+            const thumbCanvas = document.createElement('canvas');
+            const thumbSize = 64;
+            const ratio = Math.min(thumbSize / w, thumbSize / h);
+            thumbCanvas.width = w * ratio;
+            thumbCanvas.height = h * ratio;
+            thumbCanvas.getContext('2d').drawImage(canvas, 0, 0, thumbCanvas.width, thumbCanvas.height);
+            const thumbnail = thumbCanvas.toDataURL('image/jpeg', 0.7);
+
+            const baseName = file.name.replace(/\.[^.]+$/, '');
+            const ext = settings.format === 'image/jpeg' ? 'jpg' : settings.format === 'image/webp' ? 'webp' : 'png';
+            const newName = `${baseName}-watermarked.${ext}`;
+
+            resolve({
+              blob,
+              url: URL.createObjectURL(blob),
+              name: newName,
+              originalSize: file.size,
+              newSize: blob.size,
+              thumbnail,
+              width: w,
+              height: h
+            });
+          },
+          settings.format,
+          settings.quality
+        );
+      };
+      img.onerror = () => reject(new Error('Invalid image'));
+      img.src = e.target.result;
+    };
+    reader.onerror = () => reject(new Error('Read failed'));
+    reader.readAsDataURL(file);
+  });
+}
+
+/* ===== RENDER RESULTS ===== */
+function renderResults() {
+  fileList.innerHTML = '';
+  state.results.forEach((result) => {
+    const item = document.createElement('div');
+    item.className = 'file-item';
+    item.innerHTML = `
+      <div class="file-thumb"><img src="${result.thumbnail}" alt="${escapeHtml(result.name)}"></div>
+      <div class="file-info">
+        <div class="file-name" title="${escapeHtml(result.name)}">${escapeHtml(result.name)}</div>
+        <div class="file-meta">
+          <span>${formatBytes(result.originalSize)} → ${formatBytes(result.newSize)}</span>
+          <span>${result.width}×${result.height}</span>
+        </div>
+      </div>
+      <div class="file-actions">
+        <button class="icon-btn download" data-download="${result.id}" title="Download">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+          </svg>
+        </button>
+      </div>
+    `;
+    fileList.appendChild(item);
+  });
+
+  $$('[data-download]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const id = parseInt(btn.dataset.download, 10);
+      const result = state.results.find(r => r.id === id);
+      if (result) downloadResult(result);
+    });
+  });
+}
+
+function downloadResult(result) {
+  const a = document.createElement('a');
+  a.href = result.url;
+  a.download = result.name;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+}
+
+downloadAllBtn.addEventListener('click', () => {
+  if (!state.results.length) return;
+  state.results.forEach((r, i) => setTimeout(() => downloadResult(r), i * 300));
+  showToast(`Downloading ${state.results.length} file${state.results.length > 1 ? 's' : ''}...`, 'success');
+});
+
+/* ===== CLEAR ===== */
+clearBtn.addEventListener('click', () => {
+  state.results.forEach(r => URL.revokeObjectURL(r.url));
+  state.files = [];
+  state.results = [];
+  state.previewImageEl = null;
+  previewWrap.classList.remove('visible');
+  fileList.innerHTML = '';
+  results.classList.remove('visible');
+  progress.classList.remove('visible');
+  applyBtn.disabled = true;
+  showToast('Cleared all images');
+});
+
+/* ===== FAQ ===== */
+$$('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    $$('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2563eb">
+
+<title>Dice Roll - Roll Virtual Dice Online Free | D4, D6, D8, D20 | BigToolz</title>
+<meta name="description" content="Free online dice roller. Roll virtual dice D4, D6, D8, D10, D12, D20, D100. Roll 1-10 dice at once with animation, stats, and history. No signup.">
+<meta name="keywords" content="dice roll, roll dice online, virtual dice, d6 dice, d20 dice, dungeons dragons dice, random dice">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://bigtoolz.com/tools/utility-tools/dice-roll/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Dice Roll - Free Online Dice Roller | BigToolz">
+<meta property="og:description" content="Roll virtual dice online D6, D20, D100. Free, animated, crypto-fair.">
+<meta property="og:url" content="https://bigtoolz.com/tools/utility-tools/dice-roll/">
+<meta property="og:image" content="https://bigtoolz.com/assets/images/og-image.jpg">
+<meta property="og:site_name" content="BigToolz">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Dice Roll - BigToolz">
+<meta name="twitter:description" content="Roll virtual dice online free, animated, crypto-fair.">
+<meta name="twitter:image" content="https://bigtoolz.com/assets/images/twitter-card.jpg">
+
+<link rel="icon" href="/assets/images/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/images/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#f8f9fc;color:#1a1a2e;overflow-x:hidden;line-height:1.5}
+
+  .header{background:#fff;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;position:sticky;top:0;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+  .header-left{display:flex;align-items:center;gap:40px}
+  .logo{display:flex;align-items:center;gap:8px;font-size:22px;font-weight:800;color:#1a1a2e;text-decoration:none}
+  .logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#3b82f6,#2563eb);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px}
+  .logo span{color:#2563eb}
+  .nav{display:flex;align-items:center;gap:28px;list-style:none}
+  .nav a{text-decoration:none;color:#4b5563;font-size:14px;font-weight:500;transition:color .2s}
+  .nav a:hover,.nav a.active{color:#2563eb}
+  .header-right{display:flex;align-items:center;gap:16px}
+  .search-btn,.theme-btn{width:36px;height:36px;border-radius:50%;border:none;background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#4b5563}
+  .search-btn:hover,.theme-btn:hover{background:#f3f4f6}
+  .bookmark-btn{display:flex;align-items:center;gap:8px;background:#2563eb;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
+  .bookmark-btn:hover{background:#1d4ed8}
+
+  .hero{background:linear-gradient(135deg,#0a0e27 0%,#1a1a4e 40%,#2d1b69 70%,#4c1d95 100%);padding:40px 40px 60px;position:relative;overflow:hidden;color:#fff}
+  .hero::before{content:'';position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(239,68,68,.3) 0%,transparent 70%);border-radius:50%}
+  .hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+  .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px;flex-wrap:wrap}
+  .breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none}
+  .breadcrumb a:hover{color:#fff}
+  .breadcrumb .sep{color:rgba(255,255,255,.4)}
+  .breadcrumb .current{color:#fff;font-weight:500}
+  .hero-title-row{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+  .hero-icon{width:60px;height:60px;background:#ef4444;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;color:#fff;flex-shrink:0;box-shadow:0 8px 24px rgba(239,68,68,.4)}
+  .hero-title{font-size:42px;font-weight:800;line-height:1.15}
+  .hero-title .blue{color:#f87171}
+  .hero-desc{font-size:15px;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:24px;max-width:560px}
+  .hero-features{display:flex;gap:24px;flex-wrap:wrap}
+  .hero-feature{display:flex;align-items:center;gap:6px;font-size:13px;color:#fff;font-weight:500}
+  .hero-feature .check{width:18px;height:18px;border-radius:50%;background:#ef4444;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;flex-shrink:0}
+
+  .main-content{max-width:1200px;margin:0 auto;padding:40px;display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start}
+  .tool-content{min-width:0}
+
+  .workspace{background:#fff;border-radius:16px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,.06);border:1px solid #e5e7eb;margin-bottom:24px}
+
+  /* Dice stage */
+  .dice-stage{background:linear-gradient(135deg,#1e293b,#7f1d1d);border-radius:16px;padding:32px 24px 28px;position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;min-height:480px;margin-bottom:24px}
+  .dice-stage::before{content:'';position:absolute;top:-40%;right:-20%;width:500px;height:500px;background:radial-gradient(circle,rgba(248,113,113,.25) 0%,transparent 70%);border-radius:50%;pointer-events:none}
+
+  .stage-label{font-size:11px;font-weight:700;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:1px;margin-bottom:16px;position:relative;z-index:2}
+
+  .dice-container{display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:center;margin-bottom:24px;position:relative;z-index:2;min-height:140px;max-width:100%}
+
+  .die{width:100px;height:100px;background:#fff;border-radius:16px;position:relative;box-shadow:0 8px 20px rgba(0,0,0,.3),inset 0 -3px 0 rgba(0,0,0,.08);transition:transform .3s cubic-bezier(.34,1.56,.64,1);display:flex;align-items:center;justify-content:center}
+  .die.rolling{animation:dieShake .1s linear infinite}
+  .die.revealed{animation:revealPop .5s ease}
+  @keyframes dieShake{0%,100%{transform:rotate(0) translateY(0)}25%{transform:rotate(-8deg) translateY(-4px)}75%{transform:rotate(8deg) translateY(-4px)}}
+  @keyframes revealPop{0%{transform:scale(1)}50%{transform:scale(1.15)}100%{transform:scale(1)}}
+
+  .die-dots{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(3,1fr);width:80%;height:80%;gap:4px;padding:6px}
+  .die-dot{width:100%;height:100%;border-radius:50%;background:#1a1a2e;opacity:0;transition:opacity .15s}
+  .die-dot.visible{opacity:1}
+
+  .die-number{font-size:36px;font-weight:800;color:#1a1a2e}
+
+  .die-label{position:absolute;bottom:-24px;left:50%;transform:translateX(-50%);font-size:10px;font-weight:700;color:rgba(255,255,255,.7);white-space:nowrap}
+  .die-wrapper{position:relative;padding-bottom:24px}
+
+  /* Result banner */
+  .result-banner{background:rgba(255,255,255,.1);border:2px solid rgba(248,113,113,.4);border-radius:16px;padding:20px 40px;margin-bottom:24px;position:relative;z-index:2;backdrop-filter:blur(10px);transition:all .3s;text-align:center;min-width:260px}
+  .result-banner.revealed{background:linear-gradient(135deg,#ef4444,#b91c1c);border-color:#f87171;animation:revealPop .6s ease}
+  @keyframes revealPop{0%{transform:scale(1)}50%{transform:scale(1.08)}100%{transform:scale(1)}}
+
+  .result-label{font-size:11px;font-weight:700;color:rgba(255,255,255,.75);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
+  .result-value{font-size:40px;font-weight:800;color:#fff;line-height:1.1;letter-spacing:-1px}
+  .result-sub{font-size:12px;color:rgba(255,255,255,.75);margin-top:4px;font-weight:600}
+
+  .roll-btn{background:#f87171;color:#7f1d1d;border:none;padding:18px 48px;border-radius:14px;font-size:18px;font-weight:800;cursor:pointer;font-family:inherit;transition:all .2s;position:relative;z-index:2;display:inline-flex;align-items:center;gap:10px;box-shadow:0 10px 28px rgba(0,0,0,.3)}
+  .roll-btn:hover:not(:disabled){transform:translateY(-3px);box-shadow:0 14px 36px rgba(248,113,113,.5)}
+  .roll-btn:disabled{opacity:.6;cursor:not-allowed;transform:none}
+
+  /* Confetti */
+  .confetti{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:3}
+  .confetti-piece{position:absolute;width:8px;height:14px;opacity:0;animation:confettiFall 3s linear forwards}
+  @keyframes confettiFall{
+    0%{opacity:1;transform:translateY(-20px) rotate(0deg)}
+    100%{opacity:0;transform:translateY(500px) rotate(720deg)}
+  }
+
+  /* Settings */
+  .settings-section{background:#fef2f2;border-radius:12px;padding:20px;border:1px solid #fecaca;margin-bottom:24px}
+  .settings-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+
+  .settings-row{display:flex;align-items:center;justify-content:space-between;padding:12px 14px;background:#fff;border:1px solid #fecaca;border-radius:10px;gap:12px;margin-bottom:10px;flex-wrap:wrap}
+  .settings-row:last-child{margin-bottom:0}
+  .settings-info{display:flex;flex-direction:column;gap:2px;flex:1;min-width:180px}
+  .settings-row-title{font-size:13px;font-weight:700;color:#1a1a2e}
+  .settings-row-desc{font-size:11px;color:#6b7280;line-height:1.4}
+
+  .dice-selector{display:flex;gap:6px;flex-wrap:wrap}
+  .dice-chip{padding:8px 14px;background:#fff;border:2px solid #e5e7eb;border-radius:8px;font-size:12px;font-weight:800;color:#4b5563;cursor:pointer;font-family:inherit;transition:all .2s;min-width:48px;text-align:center}
+  .dice-chip:hover{border-color:#ef4444;background:#fef2f2;color:#b91c1c}
+  .dice-chip.active{background:#ef4444;color:#fff;border-color:#ef4444}
+
+  .counter{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid #fecaca;border-radius:10px;padding:6px 10px}
+  .counter-btn{width:32px;height:32px;background:#fef2f2;border:1px solid #fecaca;border-radius:8px;cursor:pointer;color:#b91c1c;font-size:18px;font-weight:800;font-family:inherit;display:flex;align-items:center;justify-content:center;transition:all .2s}
+  .counter-btn:hover:not(:disabled){background:#ef4444;color:#fff;border-color:#ef4444}
+  .counter-btn:disabled{opacity:.4;cursor:not-allowed}
+  .counter-value{font-size:18px;font-weight:800;color:#1a1a2e;min-width:40px;text-align:center}
+
+  .presets-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px;margin-bottom:16px}
+  .preset-btn{padding:12px 10px;background:#fff;border:2px solid #e5e7eb;border-radius:10px;cursor:pointer;font-family:inherit;transition:all .2s;text-align:center}
+  .preset-btn:hover{border-color:#ef4444;background:#fef2f2;transform:translateY(-2px)}
+  .preset-title{font-size:13px;font-weight:800;color:#1a1a2e;margin-bottom:2px}
+  .preset-desc{font-size:10px;color:#6b7280;font-weight:600}
+
+  /* Stats */
+  .stats-section{background:#fef2f2;border-radius:12px;padding:20px;border:1px solid #fecaca;margin-bottom:24px}
+  .stats-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:16px;display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
+  .stats-reset{background:none;border:none;font-size:11px;color:#dc2626;cursor:pointer;font-family:inherit;font-weight:600;text-decoration:underline}
+
+  .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+  .stat-box{background:#fff;border-radius:10px;padding:14px 12px;text-align:center;border:1px solid #fecaca}
+  .stat-label{font-size:10px;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:.4px;margin-bottom:6px}
+  .stat-value{font-size:20px;font-weight:800;color:#1a1a2e;line-height:1.1}
+  .stat-value.rolls{color:#ef4444}
+  .stat-value.best{color:#10b981}
+  .stat-value.avg{color:#3b82f6}
+
+  /* History */
+  .history-section{margin-top:24px;background:#f8fafc;border-radius:12px;padding:16px;border:1px solid #e5e7eb}
+  .history-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:12px}
+  .history-list{display:flex;flex-wrap:wrap;gap:8px}
+  .history-item{display:flex;align-items:center;gap:8px;background:#fff;border:1px solid #e5e7eb;border-radius:10px;padding:8px 12px;font-size:12px;transition:all .2s}
+  .history-item:hover{border-color:#ef4444;transform:translateY(-2px)}
+  .history-num{font-size:10px;font-weight:700;color:#ef4444;background:#fef2f2;padding:2px 7px;border-radius:6px}
+  .history-dice{font-size:11px;color:#6b7280;font-weight:600}
+  .history-total{font-size:13px;font-weight:800;color:#1a1a2e}
+
+  /* SEO */
+  .seo-content{background:#fff;border-radius:16px;padding:32px;border:1px solid #e5e7eb;margin-bottom:24px}
+  .seo-content h2{font-size:22px;font-weight:800;color:#1a1a2e;margin-bottom:14px;margin-top:28px;display:flex;align-items:center;gap:10px}
+  .seo-content h2:first-child{margin-top:0}
+  .seo-content h3{font-size:16px;font-weight:700;color:#1a1a2e;margin:20px 0 10px}
+  .seo-content p{font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:14px}
+  .seo-content ul{list-style:none;padding-left:0;margin-bottom:16px}
+  .seo-content ul li{position:relative;padding-left:24px;font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:8px}
+  .seo-content ul li::before{content:'';position:absolute;left:6px;top:12px;width:6px;height:6px;background:#ef4444;border-radius:50%}
+  .seo-content a{color:#2563eb;text-decoration:none;font-weight:600}
+  .seo-content a:hover{text-decoration:underline}
+  .seo-content strong{color:#1a1a2e;font-weight:700}
+  .seo-content code{background:#f1f5f9;padding:2px 6px;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:13px;color:#0f172a;border:1px solid #e2e8f0}
+
+  .how-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:20px}
+  .how-step{background:#fef2f2;border-radius:12px;padding:20px;border:1px solid #fecaca}
+  .how-step-num{width:36px;height:36px;border-radius:50%;background:#ef4444;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;margin-bottom:12px}
+  .how-step-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+  .how-step-desc{font-size:13px;color:#6b7280;line-height:1.6}
+
+  .faq-item{background:#fef2f2;border:1px solid #fecaca;border-radius:12px;margin-bottom:10px;overflow:hidden;transition:border-color .2s}
+  .faq-item:hover{border-color:#ef4444}
+  .faq-question{width:100%;background:none;border:none;padding:18px 22px;font-size:15px;font-weight:700;color:#1a1a2e;text-align:left;cursor:pointer;font-family:inherit;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .faq-question .chev{font-size:12px;color:#ef4444;transition:transform .2s;flex-shrink:0}
+  .faq-item.open .faq-question .chev{transform:rotate(180deg)}
+  .faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 22px}
+  .faq-item.open .faq-answer{max-height:500px;padding-bottom:18px}
+  .faq-answer p{font-size:14px;color:#6b7280;line-height:1.7;margin:0}
+
+  .sidebar{background:#fff;border-radius:16px;padding:24px;border:1px solid #e5e7eb;position:sticky;top:80px;margin-bottom:24px}
+  .sidebar-header{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:800;color:#1a1a2e;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid #f3f4f6}
+  .sidebar-list{display:flex;flex-direction:column;gap:8px}
+  .sidebar-item{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;cursor:pointer;transition:background .2s;text-decoration:none;color:inherit;border:1px solid #f3f4f6}
+  .sidebar-item:hover{background:#fef2f2;border-color:#fecaca}
+  .sidebar-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;flex-shrink:0}
+  .sidebar-info{flex:1;min-width:0}
+  .sidebar-title{font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:2px}
+  .sidebar-desc{font-size:11px;color:#9ca3af;line-height:1.4}
+
+  .footer{background:#0a0e27;padding:60px 40px 30px;color:#fff;margin-top:40px}
+  .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:40px}
+  .footer-brand{display:flex;align-items:center;gap:8px;font-size:20px;font-weight:800;margin-bottom:12px}
+  .footer-brand span{color:#60a5fa}
+  .footer-tagline{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px}
+  .footer-social{display:flex;gap:12px}
+  .footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:16px;transition:background .2s}
+  .footer-social a:hover{background:rgba(255,255,255,.2)}
+  .footer-heading{font-size:14px;font-weight:700;margin-bottom:20px;color:#fff}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .footer-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;transition:color .2s}
+  .footer-links a:hover{color:#60a5fa}
+  .footer-bottom{max-width:1200px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  .footer-bottom-left{display:flex;gap:20px;font-size:12px;color:rgba(255,255,255,.5)}
+  .footer-bottom-right,.footer-bottom-links a{font-size:12px;color:rgba(255,255,255,.5);text-decoration:none}
+  .footer-bottom-links{display:flex;gap:20px}
+
+  .toast{position:fixed;bottom:24px;right:24px;background:#1a1a2e;color:#fff;padding:14px 20px;border-radius:10px;font-size:13px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:3000;transform:translateY(200%);transition:transform .3s ease;max-width:320px}
+  .toast.visible{transform:translateY(0)}
+  .toast.success{background:#10b981}
+  .toast.error{background:#ef4444}
+
+  @media(max-width:1024px){
+    .main-content{grid-template-columns:1fr;padding:24px 20px}
+    .sidebar{position:static}
+    .how-steps{grid-template-columns:repeat(2,1fr)}
+  }
+  @media(max-width:768px){
+    .header{padding:0 20px}.nav{display:none}
+    .hero{padding:24px 20px 40px}
+    .hero-title{font-size:28px}
+    .hero-icon{width:48px;height:48px;font-size:22px}
+    .hero-title-row{flex-direction:column;align-items:flex-start;gap:12px}
+    .main-content{padding:20px 16px}
+    .workspace{padding:20px}
+    .how-steps{grid-template-columns:1fr}
+    .seo-content{padding:20px}
+    .footer-inner{grid-template-columns:1fr 1fr}
+    .toast{left:16px;right:16px;bottom:16px;max-width:none}
+    .dice-stage{padding:24px 16px 20px;min-height:400px}
+    .die{width:80px;height:80px;border-radius:12px}
+    .result-value{font-size:32px}
+    .roll-btn{padding:16px 32px;font-size:16px}
+    .stats-grid{grid-template-columns:repeat(2,1fr)}
+  }
+  @media(max-width:576px){
+    .header{padding:0 16px}.header-right .search-btn,.header-right .theme-btn{display:none}
+    .hero-title{font-size:24px}
+    .footer-inner{grid-template-columns:1fr}
+    .footer-bottom{flex-direction:column;text-align:center}
+    .die{width:70px;height:70px}
+    .die-dots{gap:3px;padding:5px}
+    .result-value{font-size:26px}
+  }
+
+  html[data-theme="dark"] body{background:#0f172a;color:#f1f5f9}
+  html[data-theme="dark"] .header,html[data-theme="dark"] .workspace,html[data-theme="dark"] .seo-content,html[data-theme="dark"] .sidebar{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .logo,html[data-theme="dark"] .hero-title,html[data-theme="dark"] .seo-content h2,html[data-theme="dark"] .seo-content h3,html[data-theme="dark"] .faq-question,html[data-theme="dark"] .sidebar-header,html[data-theme="dark"] .sidebar-title,html[data-theme="dark"] .settings-title,html[data-theme="dark"] .stats-title,html[data-theme="dark"] .history-title{color:#f1f5f9}
+  html[data-theme="dark"] .nav a{color:#cbd5e1}
+  html[data-theme="dark"] .how-step,html[data-theme="dark"] .faq-item,html[data-theme="dark"] .settings-section,html[data-theme="dark"] .stats-section{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .settings-row,html[data-theme="dark"] .stat-box,html[data-theme="dark"] .counter,html[data-theme="dark"] .history-item,html[data-theme="dark"] .preset-btn{background:#1e293b;border-color:#334155;color:#f1f5f9}
+  html[data-theme="dark"] .stat-value,html[data-theme="dark"] .settings-row-title,html[data-theme="dark"] .preset-title,html[data-theme="dark"] .history-total{color:#f1f5f9}
+  html[data-theme="dark"] .seo-content p,html[data-theme="dark"] .seo-content ul li,html[data-theme="dark"] .faq-answer p{color:#cbd5e1}
+  html[data-theme="dark"] .seo-content code{background:#0f172a;color:#94a3b8;border-color:#334155}
+  html[data-theme="dark"] .history-section{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .die{background:#f1f5f9}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type": "SoftwareApplication", "name": "Dice Roll", "url": "https://bigtoolz.com/tools/utility-tools/dice-roll/", "applicationCategory": "UtilityApplication", "operatingSystem": "Any (Web-based)", "description": "Free online dice roller. Roll D4, D6, D8, D10, D12, D20, D100 1 to 10 dice at once with animation and stats.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "1876"}},
+    {"@type": "HowTo", "name": "How to Roll Virtual Dice", "step": [
+      {"@type": "HowToStep", "name": "Choose Dice Type", "text": "Select D4, D6, D8, D10, D12, D20 or D100."},
+      {"@type": "HowToStep", "name": "Set Count", "text": "Pick how many dice to roll (1-10)."},
+      {"@type": "HowToStep", "name": "Roll", "text": "Click Roll Dice."},
+      {"@type": "HowToStep", "name": "Result", "text": "See individual values and sum total."}
+    ]},
+    {"@type": "FAQPage", "mainEntity": [cryptographically secure randomness so each roll is truly unpredictable and fair."}},
+      {"@type": "Question", "name": "What dice types can I roll?", "acceptedAnswer": {"@type": "Answer", "text": "D4 (tetrahedron), D6 (standard cube), D8, D10, D12, D20 (d20 for D&D) and D100 (percentile)."}},
+      {"@type": "Question", "name": "Can I roll multiple dice at once?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Choose 1 to 10 dice of the same type and roll them together. The result shows each die value and the sum."}},
+      {"@type": "Question", "name": "Are these good for Dungeons & Dragons or tabletop RPGs?", "acceptedAnswer": {"@type": "Answer", "text": "Absolutely. D20 for attack rolls, D6 for damage dice, D100 for percentile checks all supported. Cryptographically fair randomness ensures unbiased rolls."}},
+      {"@type": "Question", "name": "Does the dice roller work offline?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. After the page loads, all rolls are generated locally no network needed."}}
+    ]},
+    {"@type": "BreadcrumbList", "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bigtoolz.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://bigtoolz.com/tools/"},
+      {"@type": "ListItem", "position": 3, "name": "Utility Tools", "item": "https://bigtoolz.com/tools/utility-tools/"},
+      {"@type": "ListItem", "position": 4, "name": "Dice Roll", "item": "https://bigtoolz.com/tools/utility-tools/dice-roll/"}
+    ]}
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-left">
+    <a href="/" class="logo"><div class="logo-icon">⚒</div>BigToolz</span></a>
+    <nav><ul class="nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/tools/" class="active">All Tools</a></li>
+      <li><a href="/tools/categories">Categories</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul></nav>
+  </div>
+  <div class="header-right">
+  
+    <button class="theme-btn" aria-label="Toggle theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
+   
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <nav class="breadcrumb">
+      <a href="/">Home</a><span class="sep">›</span>
+      <a href="/tools/">Tools</a><span class="sep">›</span>
+      <a href="/tools/utility-tools/">Utility Tools</a><span class="sep">›</span>
+      <span class="current">Dice Roll</span>
+    </nav>
+    <div class="hero-title-row">
+      <div class="hero-icon">🎲</div>
+      <h1 class="hero-title">Dice <span class="blue">Roll</span></h1>
+    </div>
+    <p class="hero-desc">
+      Roll virtual dice instantly D4, D6, D8, D10, D12, D20, D100. Roll 1-10 dice at once with animated rolls, stats tracking, and full history. No signup, works offline.
+    </p>
+    <div class="hero-features">
+      <div class="hero-feature"><span class="check">✓</span> Crypto-Fair</div>
+      <div class="hero-feature"><span class="check">✓</span> D&D Support</div>
+      <div class="hero-feature"><span class="check">✓</span> 1-10 Dice</div>
+      <div class="hero-feature"><span class="check">✓</span> Stats & History</div>
+    </div>
+  </div>
+</section>
+
+<div class="main-content">
+
+  <div class="tool-content">
+
+    <div class="workspace">
+
+      <!-- Dice stage -->
+      <div class="dice-stage">
+        <div class="stage-label" id="stageLabel">Ready to roll</div>
+
+        <div class="dice-container" id="diceContainer"></div>
+
+        <div class="result-banner" id="resultBanner">
+          <div class="result-label">Result</div>
+          <div class="result-value" id="resultValue"></div>
+          <div class="result-sub" id="resultSub">Choose your dice and roll</div>
+        </div>
+
+        <button class="roll-btn" id="rollBtn">
+          🎲 Roll Dice
+        </button>
+
+        <div class="confetti" id="confetti"></div>
+      </div>
+
+      <!-- Settings -->
+      <div class="settings-section">
+        <div class="settings-title">⚙️ Dice Settings</div>
+
+        <!-- Dice type -->
+        <div class="settings-row">
+          <div class="settings-info">
+            <div class="settings-row-title">Dice Type</div>
+            <div class="settings-row-desc">Choose the number of sides per die</div>
+          </div>
+          <div class="dice-selector" id="diceSelector">
+            <button class="dice-chip" data-sides="4">D4</button>
+            <button class="dice-chip active" data-sides="6">D6</button>
+            <button class="dice-chip" data-sides="8">D8</button>
+            <button class="dice-chip" data-sides="10">D10</button>
+            <button class="dice-chip" data-sides="12">D12</button>
+            <button class="dice-chip" data-sides="20">D20</button>
+            <button class="dice-chip" data-sides="100">D100</button>
+          </div>
+        </div>
+
+        <!-- Dice count -->
+        <div class="settings-row">
+          <div class="settings-info">
+            <div class="settings-row-title">Number of Dice</div>
+            <div class="settings-row-desc">Roll 1 to 10 dice at once</div>
+          </div>
+          <div class="counter">
+            <button class="counter-btn" id="countMinus" aria-label="Decrease">−</button>
+            <span class="counter-value" id="countValue">1</span>
+            <button class="counter-btn" id="countPlus" aria-label="Increase">+</button>
+          </div>
+        </div>
+
+        <!-- Presets -->
+        <div style="margin-top:16px;">
+          <div class="settings-row-title" style="margin-bottom:10px;">Quick Presets</div>
+          <div class="presets-grid">
+            <button class="preset-btn" data-preset="d6-1">
+              <div class="preset-title">Single D6</div>
+              <div class="preset-desc">1× D6</div>
+            </button>
+            <button class="preset-btn" data-preset="d6-2">
+              <div class="preset-title">Pair D6</div>
+              <div class="preset-desc">2× D6</div>
+            </button>
+            <button class="preset-btn" data-preset="d6-5">
+              <div class="preset-title">Yahtzee</div>
+              <div class="preset-desc">5× D6</div>
+            </button>
+            <button class="preset-btn" data-preset="d20-1">
+              <div class="preset-title">D20 Save</div>
+              <div class="preset-desc">1× D20</div>
+            </button>
+            <button class="preset-btn" data-preset="d20-5">
+              <div class="preset-title">Advantage</div>
+              <div class="preset-desc">5× D20</div>
+            </button>
+            <button class="preset-btn" data-preset="d100-1">
+              <div class="preset-title">Percentile</div>
+              <div class="preset-desc">1× D100</div>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stats -->
+      <div class="stats-section">
+        <div class="stats-title">
+          📊 Statistics
+          <button class="stats-reset" id="statsReset">Reset Stats</button>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-box">
+            <div class="stat-label">Total Rolls</div>
+            <div class="stat-value rolls" id="totalRolls">0</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-label">Total Dice</div>
+            <div class="stat-value" id="totalDice">0</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-label">Best Roll</div>
+            <div class="stat-value best" id="bestRoll"></div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-label">Average</div>
+            <div class="stat-value avg" id="averageRoll"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- History -->
+      <div class="history-section" id="historySection" style="display:none;">
+        <div class="history-title">📜 Recent Rolls (last 20)</div>
+        <div class="history-list" id="historyList"></div>
+      </div>
+
+    </div>
+
+    <!-- SEO Content -->
+    <div class="seo-content">
+
+      <h2>🎲 What is a Dice Roller?</h2>
+      <p>
+        A <strong>virtual dice roller</strong> is a digital replacement for physical dice and the modern way to play tabletop games, decide things randomly, or teach probability. Whether you're playing <strong>Dungeons & Dragons, board games like Yahtzee or Monopoly, teaching statistics,</strong> or just need a random 1-6 result, our dice roller gives you fair, crypto-secure, animated rolls instantly.
+      </p>
+      <p>
+        Unlike most online dice rollers, ours runs <strong>100% in your browser</strong> and uses the browser's <strong>cryptographically secure random number generator</strong> (<code>crypto.getRandomValues()</code>) the same source used by banks and security software. No bias, no predictable patterns, works offline.
+      </p>
+
+      <h2>🚀 How to Roll Dice</h2>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-step-num">1</div>
+          <div class="how-step-title">Choose Dice Type</div>
+          <div class="how-step-desc">D4, D6, D8, D10, D12, D20 or D100.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">2</div>
+          <div class="how-step-title">Set Count</div>
+          <div class="how-step-desc">Pick 1 to 10 dice to roll together.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">3</div>
+          <div class="how-step-title">Roll</div>
+          <div class="how-step-desc">Click Roll Dice the animation plays ~1s.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">4</div>
+          <div class="how-step-title">See Result</div>
+          <div class="how-step-desc">Individual dice + total sum shown.</div>
+        </div>
+      </div>
+
+      <h2>🎯 Dice Types Explained</h2>
+
+      <h3>D4 Tetrahedron (1-4)</h3>
+      <p>Four-sided die. Rare in games, common in some RPG damage rolls.</p>
+
+      <h3>D6 Standard Cube (1-6)</h3>
+      <p>The classic die. Used in board games, Yahtzee, Monopoly, craps, most casual games.</p>
+
+      <h3>D8 Octahedron (1-8)</h3>
+      <p>Eight-sided die. Popular in RPGs for weapon damage (especially longswords and battleaxes).</p>
+
+      <h3>D10 Pentagonal Trapezohedron (1-10)</h3>
+      <p>Ten-sided die. Also used as a percentile die (00-90) alongside a D10 for D100 rolls.</p>
+
+      <h3>D12 Dodecahedron (1-12)</h3>
+      <p>Twelve-sided die. Used for Barbarian hit points and some weapon damage in D&D.</p>
+
+      <h3>D20 Icosahedron (1-20)</h3>
+      <p>The most iconic RPG die. Used in Dungeons & Dragons for attack rolls, ability checks, and saving throws. Rolling a 20 = critical hit. Rolling a 1 = critical miss.</p>
+
+      <h3>D100 Percentile (1-100)</h3>
+      <p>Hundred-sided die or two D10s. Used for percentile rolls, random tables, and probability checks.</p>
+
+      <h2>💡 Common Use Cases</h2>
+      <ul>
+        <li><strong>Tabletop RPGs</strong> D&D, Pathfinder, Call of Cthulhu, Cyberpunk.</li>
+        <li><strong>Board games</strong> Yahtzee, Monopoly, Backgammon, Catan.</li>
+        <li><strong>Classroom</strong> teaching probability, statistics, randomness.</li>
+        <li><strong>Decision making</strong> assign outcomes by rolling (1-3 = A, 4-6 = B).</li>
+        <li><strong>Betting games</strong> craps, dice poker, zilch.</li>
+        <li><strong>Streamers</strong> random challenges or community choices.</li>
+        <li><strong>Lucky rolls</strong> pick a number when you can't decide.</li>
+      </ul>
+
+      <h2>✨ Key Features</h2>
+      <ul>
+        <li><strong>Crypto-fair</strong> uses crypto.getRandomValues().</li>
+        <li><strong>7 dice types</strong> D4 to D100.</li>
+        <li><strong>Roll 1-10 dice</strong> at once, same type.</li>
+        <li><strong>Animated 3D-style roll</strong> with realistic dot patterns.</li>
+        <li><strong>Total sum</strong> + individual dice values.</li>
+        <li><strong>Statistics</strong> total rolls, best roll, average.</li>
+        <li><strong>Roll history</strong> last 20 rolls saved.</li>
+        <li><strong>Quick presets</strong> Yahtzee, D&D, percentile.</li>
+        <li><strong>Auto-save</strong> persists on reload.</li>
+        <li><strong>Works offline</strong> no network needed.</li>
+      </ul>
+
+      <h2>❓ Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-question">Is the dice roll really random?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Yes. We use <code>crypto.getRandomValues()</code> cryptographically secure randomness so each roll is truly unpredictable and fair. Unlike <code>Math.random()</code>, this source has no patterns, making it suitable for real games and probability demonstrations.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What dice types can I roll?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Seven types: <strong>D4</strong> (tetrahedron), <strong>D6</strong> (standard cube), <strong>D8</strong>, <strong>D10</strong>, <strong>D12</strong>, <strong>D20</strong> (for D&D), and <strong>D100</strong> (percentile). Each die rolls fairly within its range.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I roll multiple dice at once?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Yes. Choose <strong>1 to 10 dice</strong> of the same type and roll them together. The result shows each die's value and the sum total. Great for Yahtzee (5×D6), damage rolls (2×D8), advantage rolls (2×D20), and more.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Are these good for Dungeons & Dragons or tabletop RPGs?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Absolutely. <strong>D20 for attack rolls, D6 for damage, D8 for longswords, D12 for Barbarian HP, D100 for percentile checks</strong> all supported. Cryptographic randomness ensures your rolls are never biased, just like physical dice in a fair game.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Does the dice roller work offline?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Yes. After the page loads, all rolls are generated locally no network needed. Add it to your PWA home screen for quick offline access during game nights.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I roll dice with modifiers (e.g., 2d6+3)?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Our tool shows you the <strong>individual dice values</strong> and the <strong>total sum</strong>, so you can easily add modifiers yourself. For example, rolling 2×D6 gives you both results and the sum just add your +3 modifier to the total.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Is my roll history stored on a server?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>No. Everything runs in your browser. Your stats and roll history are stored on your own device via localStorage never sent to any server.</p></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-header">🔗 Related Utility Tools</div>
+    <div class="sidebar-list">
+      <a href="/tools/utility-tools/coin-flip/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#f59e0b;">🪙</div>
+        <div class="sidebar-info"><div class="sidebar-title">Coin Flip</div><div class="sidebar-desc">Heads or tails</div></div>
+      </a>
+      <a href="/tools/utility-tools/decision-maker/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#f59e0b;">🎯</div>
+        <div class="sidebar-info"><div class="sidebar-title">Decision Maker</div><div class="sidebar-desc">Random decisions</div></div>
+      </a>
+      <a href="/tools/utility-tools/name-picker/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#8b5cf6;">🎯</div>
+        <div class="sidebar-info"><div class="sidebar-title">Name Picker</div><div class="sidebar-desc">Pick a winner</div></div>
+      </a>
+      <a href="/tools/utility-tools/wheel-names/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#ec4899;">🎡</div>
+        <div class="sidebar-info"><div class="sidebar-title">Wheel of Names</div><div class="sidebar-desc">Spin the wheel</div></div>
+      </a>
+      <a href="/tools/utility-tools/team-generator/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#3b82f6;">👥</div>
+        <div class="sidebar-info"><div class="sidebar-title">Team Generator</div><div class="sidebar-desc">Random teams</div></div>
+      </a>
+      <a href="/tools/utility-tools/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#64748b;">⚙️</div>
+        <div class="sidebar-info"><div class="sidebar-title">All Utility Tools →</div><div class="sidebar-desc">Browse 50+ tools</div></div>
+      </a>
+    </div>
+  </aside>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand"><div class="logo-icon">⚒</div>BigToolz</span></div>
+      <p class="footer-tagline">Your Ultimate Online Tools Hub</p>
+      <div class="footer-social">
+        <a href="https://facebook.com/bigtoolz" aria-label="Facebook">f</a>
+        <a href="https://twitter.com/bigtoolz" aria-label="Twitter">𝕏</a>
+        <a href="https://youtube.com/@bigtoolz" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+    <div>
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/tools/">All Tools</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Categories</h3>
+      <ul class="footer-links">
+        <li><a href="/tools/image-tools/">Image Tools</a></li>
+        <li><a href="/tools/pdf-tools/">PDF Tools</a></li>
+        <li><a href="/tools/utility-tools/">Utility Tools</a></li>
+        <li><a href="/tools/calculator-tools/">Calculator Tools</a></li>
+        <li><a href="/tools/categories">All Categories →</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Legal</h3>
+      <ul class="footer-links">
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left"><span>✓ 100% Free</span><span>✓ No Sign Up</span><span>✓ No Installation</span></div>
+    <div class="footer-bottom-right">© 2026 BigToolz. All rights reserved.</div>
+    <div class="footer-bottom-links"><a href="/privacy-policy">Privacy</a><a href="/terms">Terms</a><a href="/disclaimer">Disclaimer</a></div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+'use strict';
+
+/* ===== THEME ===== */
+(function(){try{var t=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&d))document.documentElement.setAttribute('data-theme','dark');else if(t==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();
+document.querySelector('.theme-btn')?.addEventListener('click',()=>{const h=document.documentElement;const c=h.getAttribute('data-theme');const d=window.matchMedia('(prefers-color-scheme: dark)').matches;let n=c==='dark'?'light':c==='light'?'dark':(d?'light':'dark');h.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}});
+
+/* ===== HELPERS ===== */
+const $ = (s, p = document) => p.querySelector(s);
+const $$ = (s, p = document) => [...p.querySelectorAll(s)];
+
+function showToast(msg, type = 'info', duration = 2000) {
+  const t = $('#toast');
+  if (!t) return;
+  t.className = 'toast visible' + (type !== 'info' ? ' ' + type : '');
+  t.textContent = msg;
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove('visible'), duration);
+}
+
+/* ===== CRYPTO RANDOM ===== */
+function secureRandomInt(max) {
+  if (max <= 0) return 0;
+  const range = 4294967296;
+  const limit = range - (range % max);
+  const arr = new Uint32Array(1);
+  let val;
+  do {
+    crypto.getRandomValues(arr);
+    val = arr[0];
+  } while (val >= limit);
+  return val % max;
+}
+
+/* ===== DICE DOT PATTERNS ===== */
+const DOT_PATTERNS = {
+  1: [4],
+  2: [0, 8],
+  3: [0, 4, 8],
+  4: [0, 2, 6, 8],
+  5: [0, 2, 4, 6, 8],
+  6: [0, 2, 3, 5, 6, 8]
+};
+
+/* ===== STATE ===== */
+const state = {
+  sides: 6,
+  count: 1,
+  isRolling: false,
+  stats: {
+    totalRolls: 0,
+    totalDice: 0,
+    bestRoll: 0,
+    sumTotal: 0,
+    history: [] // last 20 rolls
+  }
+};
+
+/* ===== DOM ===== */
+const diceContainer = $('#diceContainer');
+const rollBtn = $('#rollBtn');
+const resultBanner = $('#resultBanner');
+const resultValue = $('#resultValue');
+const resultSub = $('#resultSub');
+const stageLabel = $('#stageLabel');
+const diceSelector = $('#diceSelector');
+const countMinus = $('#countMinus');
+const countPlus = $('#countPlus');
+const countValue = $('#countValue');
+const totalRolls = $('#totalRolls');
+const totalDice = $('#totalDice');
+const bestRoll = $('#bestRoll');
+const averageRoll = $('#averageRoll');
+const historySection = $('#historySection');
+const historyList = $('#historyList');
+const statsReset = $('#statsReset');
+const confetti = $('#confetti');
+
+/* ===== STORAGE ===== */
+function saveToStorage() {
+  try {
+    localStorage.setItem('bigtoolz_dice_stats', JSON.stringify({
+      stats: state.stats,
+      sides: state.sides,
+      count: state.count
+    }));
+  } catch(e){}
+}
+
+function loadFromStorage() {
+  try {
+    const data = localStorage.getItem('bigtoolz_dice_stats');
+    if (data) {
+      const parsed = JSON.parse(data);
+      if (parsed.stats) state.stats = { ...state.stats, ...parsed.stats };
+      if (parsed.sides) state.sides = parsed.sides;
+      if (parsed.count) state.count = parsed.count;
+    }
+  } catch(e){}
+}
+
+/* ===== RENDER DICE ===== */
+function renderDice(values) {
+  diceContainer.innerHTML = '';
+
+  values.forEach((val, i) => {
+    const wrapper = document.createElement('div');
+    wrapper.className = 'die-wrapper';
+
+    const die = document.createElement('div');
+    die.className = 'die';
+    die.dataset.index = i;
+
+    if (state.sides === 6) {
+      // Show dot pattern for D6
+      const dots = DOT_PATTERNS[val] || [];
+      const dotsHtml = Array.from({ length: 9 }, (_, idx) =>
+        `<div class="die-dot ${dots.includes(idx) ? 'visible' : ''}"></div>`
+      ).join('');
+      die.innerHTML = `<div class="die-dots">${dotsHtml}</div>`;
+    } else {
+      // Show number for other dice types
+      die.innerHTML = `<div class="die-number">${val}</div>`;
+    }
+
+    const label = document.createElement('div');
+    label.className = 'die-label';
+    label.textContent = `D${state.sides}`;
+
+    wrapper.appendChild(die);
+    wrapper.appendChild(label);
+    diceContainer.appendChild(wrapper);
+  });
+}
+
+/* ===== RENDER EMPTY DICE ===== */
+function renderEmptyDice() {
+  const placeholder = [];
+  for (let i = 0; i < state.count; i++) {
+    placeholder.push('?');
+  }
+
+  diceContainer.innerHTML = '';
+  placeholder.forEach((_, i) => {
+    const wrapper = document.createElement('div');
+    wrapper.className = 'die-wrapper';
+
+    const die = document.createElement('div');
+    die.className = 'die';
+    die.dataset.index = i;
+
+    if (state.sides === 6) {
+      // Empty die with '?'
+      die.innerHTML = `<div class="die-number" style="opacity:.3;">?</div>`;
+    } else {
+      die.innerHTML = `<div class="die-number" style="opacity:.3;">?</div>`;
+    }
+
+    const label = document.createElement('div');
+    label.className = 'die-label';
+    label.textContent = `D${state.sides}`;
+
+    wrapper.appendChild(die);
+    wrapper.appendChild(label);
+    diceContainer.appendChild(wrapper);
+  });
+}
+
+/* ===== ROLL DICE ===== */
+function rollDice() {
+  if (state.isRolling) return;
+  state.isRolling = true;
+  rollBtn.disabled = true;
+  resultBanner.classList.remove('revealed');
+  stageLabel.textContent = '🎲 Rolling...';
+
+  // Pick results FIRST (crypto-fair)
+  const values = [];
+  for (let i = 0; i < state.count; i++) {
+    values.push(secureRandomInt(state.sides) + 1);
+  }
+  const total = values.reduce((sum, v) => sum + v, 0);
+
+  // Get all die elements
+  const dice = $$('.die');
+  dice.forEach(d => d.classList.add('rolling'));
+
+  // Animate flicker values
+  const flickerInterval = setInterval(() => {
+    dice.forEach(die => {
+      const randVal = secureRandomInt(state.sides) + 1;
+      if (state.sides === 6) {
+        const dots = DOT_PATTERNS[randVal] || [];
+        const dotsHtml = Array.from({ length: 9 }, (_, idx) =>
+          `<div class="die-dot ${dots.includes(idx) ? 'visible' : ''}"></div>`
+        ).join('');
+        die.innerHTML = `<div class="die-dots">${dotsHtml}</div>`;
+      } else {
+        die.innerHTML = `<div class="die-number">${randVal}</div>`;
+      }
+    });
+  }, 80);
+
+  // Stop after animation
+  setTimeout(() => {
+    clearInterval(flickerInterval);
+    dice.forEach(d => {
+      d.classList.remove('rolling');
+      d.classList.add('revealed');
+    });
+
+    // Show final values
+    renderDice(values);
+    resultValue.textContent = total;
+    resultSub.textContent = values.length === 1
+      ? `D${state.sides} rolled ${values[0]}`
+      : `${values.length}× D${state.sides} · [${values.join(' + ')}]`;
+    resultBanner.classList.add('revealed');
+    stageLabel.textContent = '🎉 Result!';
+
+    // Update stats
+    state.stats.totalRolls++;
+    state.stats.totalDice += state.count;
+    state.stats.sumTotal += total;
+    if (total > state.stats.bestRoll) state.stats.bestRoll = total;
+
+    // Add to history
+    state.stats.history.unshift({
+      values: [...values],
+      total,
+      sides: state.sides,
+      count: state.count,
+      time: new Date()
+    });
+    if (state.stats.history.length > 20) state.stats.history = state.stats.history.slice(0, 20);
+
+    renderStats();
+    renderHistory();
+    saveToStorage();
+    launchConfetti();
+
+    state.isRolling = false;
+    rollBtn.disabled = false;
+  }, 1000);
+}
+
+/* ===== RENDER STATS ===== */
+function renderStats() {
+  const s = state.stats;
+  totalRolls.textContent = s.totalRolls;
+  totalDice.textContent = s.totalDice;
+  bestRoll.textContent = s.bestRoll || '';
+  averageRoll.textContent = s.totalRolls > 0
+    ? (s.sumTotal / s.totalRolls).toFixed(1)
+    : '';
+}
+
+/* ===== RENDER HISTORY ===== */
+function renderHistory() {
+  if (state.stats.history.length === 0) {
+    historySection.style.display = 'none';
+    return;
+  }
+  historySection.style.display = 'block';
+  historyList.innerHTML = '';
+
+  state.stats.history.forEach((h, i) => {
+    const item = document.createElement('div');
+    item.className = 'history-item';
+    item.innerHTML = `
+      <span class="history-num">#${state.stats.history.length - i}</span>
+      <span class="history-dice">${h.count}× D${h.sides} · [${h.values.join(',')}]</span>
+      <span class="history-total">Σ ${h.total}</span>
+    `;
+    historyList.appendChild(item);
+  });
+}
+
+/* ===== CONFETTI ===== */
+function launchConfetti() {
+  confetti.innerHTML = '';
+  const colors = ['#f472b6', '#a78bfa', '#60a5fa', '#34d399', '#fbbf24', '#f87171'];
+  for (let i = 0; i < 30; i++) {
+    const piece = document.createElement('div');
+    piece.className = 'confetti-piece';
+    piece.style.left = Math.random() * 100 + '%';
+    piece.style.top = '-20px';
+    piece.style.background = colors[Math.floor(Math.random() * colors.length)];
+    piece.style.animationDelay = (Math.random() * 0.4) + 's';
+    piece.style.animationDuration = (2 + Math.random() * 1.2) + 's';
+    piece.style.transform = `rotate(${Math.random() * 360}deg)`;
+    if (Math.random() > 0.5) piece.style.borderRadius = '50%';
+    confetti.appendChild(piece);
+  }
+  setTimeout(() => { confetti.innerHTML = ''; }, 3500);
+}
+
+/* ===== DICE SELECTOR ===== */
+$$('.dice-chip').forEach(chip => {
+  chip.addEventListener('click', () => {
+    $$('.dice-chip').forEach(c => c.classList.remove('active'));
+    chip.classList.add('active');
+    state.sides = parseInt(chip.dataset.sides, 10);
+    renderEmptyDice();
+    resultBanner.classList.remove('revealed');
+    resultValue.textContent = '';
+    resultSub.textContent = `Ready to roll ${state.count}× D${state.sides}`;
+    stageLabel.textContent = 'Ready to roll';
+    saveToStorage();
+  });
+});
+
+/* ===== COUNT CONTROLS ===== */
+countMinus.addEventListener('click', () => {
+  if (state.count > 1) {
+    state.count--;
+    countValue.textContent = state.count;
+    renderEmptyDice();
+    resultBanner.classList.remove('revealed');
+    resultSub.textContent = `Ready to roll ${state.count}× D${state.sides}`;
+    saveToStorage();
+  }
+});
+
+countPlus.addEventListener('click', () => {
+  if (state.count < 10) {
+    state.count++;
+    countValue.textContent = state.count;
+    renderEmptyDice();
+    resultBanner.classList.remove('revealed');
+    resultSub.textContent = `Ready to roll ${state.count}× D${state.sides}`;
+    saveToStorage();
+  }
+});
+
+/* ===== PRESETS ===== */
+$$('.preset-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const preset = btn.dataset.preset;
+    let sides, count;
+
+    if (preset === 'd6-1') { sides = 6; count = 1; }
+    else if (preset === 'd6-2') { sides = 6; count = 2; }
+    else if (preset === 'd6-5') { sides = 6; count = 5; }
+    else if (preset === 'd20-1') { sides = 20; count = 1; }
+    else if (preset === 'd20-5') { sides = 20; count = 5; }
+    else if (preset === 'd100-1') { sides = 100; count = 1; }
+
+    state.sides = sides;
+    state.count = count;
+
+    $$('.dice-chip').forEach(c => {
+      c.classList.toggle('active', parseInt(c.dataset.sides, 10) === sides);
+    });
+    countValue.textContent = count;
+
+    renderEmptyDice();
+    resultBanner.classList.remove('revealed');
+    resultValue.textContent = '';
+    resultSub.textContent = `Ready to roll ${count}× D${sides}`;
+    stageLabel.textContent = 'Ready to roll';
+    saveToStorage();
+    showToast(`${count}× D${sides} preset loaded`, 'success', 1500);
+  });
+});
+
+/* ===== ROLL BUTTON ===== */
+rollBtn.addEventListener('click', rollDice);
+
+/* ===== STATS RESET ===== */
+statsReset.addEventListener('click', () => {
+  if (state.stats.totalRolls === 0) return;
+  if (!confirm(`Reset all statistics? This will clear ${state.stats.totalRolls} rolls.`)) return;
+  state.stats = {
+    totalRolls: 0,
+    totalDice: 0,
+    bestRoll: 0,
+    sumTotal: 0,
+    history: []
+  };
+  renderStats();
+  renderHistory();
+  saveToStorage();
+  resultBanner.classList.remove('revealed');
+  resultValue.textContent = '';
+  resultSub.textContent = `Ready to roll ${state.count}× D${state.sides}`;
+  stageLabel.textContent = 'Ready to roll';
+  showToast('Stats reset', 'success', 1500);
+});
+
+/* ===== FAQ ===== */
+$$('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    $$('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+
+/* ===== INIT ===== */
+loadFromStorage();
+
+// Set chip based on saved sides
+$$('.dice-chip').forEach(c => {
+  c.classList.toggle('active', parseInt(c.dataset.sides, 10) === state.sides);
+});
+
+countValue.textContent = state.count;
+renderEmptyDice();
+renderStats();
+renderHistory();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2563eb">
+
+<title>UTM Builder - Free Campaign URL Generator | BigToolz</title>
+<meta name="description" content="Free UTM builder. Generate trackable campaign URLs with source, medium, campaign, term and content parameters. Copy or save. No signup, 100% free.">
+<meta name="keywords" content="utm builder, utm generator, campaign url builder, google analytics utm, tracking url generator">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://bigtoolz.com/tools/seo-tools/utm-builder/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="UTM Builder - Free Campaign URL Generator | BigToolz">
+<meta property="og:description" content="Build trackable UTM campaign URLs instantly free, no signup.">
+<meta property="og:url" content="https://bigtoolz.com/tools/seo-tools/utm-builder/">
+<meta property="og:image" content="https://bigtoolz.com/assets/images/og-image.jpg">
+<meta property="og:site_name" content="BigToolz">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="UTM Builder - BigToolz">
+<meta name="twitter:description" content="Build UTM campaign URLs instantly free.">
+<meta name="twitter:image" content="https://bigtoolz.com/assets/images/twitter-card.jpg">
+
+<link rel="icon" href="/assets/images/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/images/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#f8f9fc;color:#1a1a2e;overflow-x:hidden;line-height:1.5}
+
+  .header{background:#fff;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;position:sticky;top:0;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+  .header-left{display:flex;align-items:center;gap:40px}
+  .logo{display:flex;align-items:center;gap:8px;font-size:22px;font-weight:800;color:#1a1a2e;text-decoration:none}
+  .logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#3b82f6,#2563eb);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px}
+  .logo span{color:#2563eb}
+  .nav{display:flex;align-items:center;gap:28px;list-style:none}
+  .nav a{text-decoration:none;color:#4b5563;font-size:14px;font-weight:500;transition:color .2s}
+  .nav a:hover,.nav a.active{color:#2563eb}
+  .header-right{display:flex;align-items:center;gap:16px}
+  .search-btn,.theme-btn{width:36px;height:36px;border-radius:50%;border:none;background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#4b5563}
+  .search-btn:hover,.theme-btn:hover{background:#f3f4f6}
+  .bookmark-btn{display:flex;align-items:center;gap:8px;background:#2563eb;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
+  .bookmark-btn:hover{background:#1d4ed8}
+
+  .hero{background:linear-gradient(135deg,#0a0e27 0%,#1a1a4e 40%,#2d1b69 70%,#4c1d95 100%);padding:40px 40px 60px;position:relative;overflow:hidden;color:#fff}
+  .hero::before{content:'';position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(16,185,129,.3) 0%,transparent 70%);border-radius:50%}
+  .hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+  .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px;flex-wrap:wrap}
+  .breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none}
+  .breadcrumb a:hover{color:#fff}
+  .breadcrumb .sep{color:rgba(255,255,255,.4)}
+  .breadcrumb .current{color:#fff;font-weight:500}
+  .hero-title-row{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+  .hero-icon{width:60px;height:60px;background:#10b981;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px;color:#fff;flex-shrink:0;box-shadow:0 8px 24px rgba(16,185,129,.4)}
+  .hero-title{font-size:42px;font-weight:800;line-height:1.15}
+  .hero-title .blue{color:#34d399}
+  .hero-desc{font-size:15px;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:24px;max-width:560px}
+  .hero-features{display:flex;gap:24px;flex-wrap:wrap}
+  .hero-feature{display:flex;align-items:center;gap:6px;font-size:13px;color:#fff;font-weight:500}
+  .hero-feature .check{width:18px;height:18px;border-radius:50%;background:#10b981;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;flex-shrink:0}
+
+  .main-content{max-width:1200px;margin:0 auto;padding:40px;display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start}
+  .tool-content{min-width:0}
+
+  .workspace{background:#fff;border-radius:16px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,.06);border:1px solid #e5e7eb;margin-bottom:24px}
+
+  /* Presets */
+  .presets-section{margin-bottom:20px}
+  .presets-title{font-size:13px;font-weight:700;color:#065f46;margin-bottom:10px;display:flex;align-items:center;gap:6px}
+  .presets-grid{display:grid;grid-template-columns:repeat(auto-fit, minmax(130px,1fr));gap:8px}
+  .preset-btn{padding:10px 12px;background:#fff;border:2px solid #e5e7eb;border-radius:10px;font-size:12px;font-weight:700;color:#4b5563;cursor:pointer;font-family:inherit;transition:all .2s;text-align:left;display:flex;align-items:center;gap:8px}
+  .preset-btn:hover{border-color:#10b981;background:#ecfdf5;color:#059669}
+  .preset-btn .preset-icon{font-size:14px}
+
+  /* Inputs */
+  .inputs-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-bottom:20px}
+  .input-group label{display:flex;justify-content:space-between;align-items:center;font-size:13px;font-weight:700;color:#4b5563;margin-bottom:8px;gap:8px}
+  .input-group label .hint{font-size:11px;color:#9ca3af;font-weight:500;font-weight:500}
+  .input-group label .req{font-size:10px;color:#dc2626;font-weight:700;background:#fee2e2;padding:2px 6px;border-radius:6px}
+  .input-wrap{position:relative;display:flex;align-items:center}
+  .input-wrap input,.input-wrap textarea,.input-wrap select{width:100%;padding:12px 16px;border:2px solid #e5e7eb;border-radius:10px;font-size:14px;font-weight:500;font-family:inherit;color:#1a1a2e;background:#fff;outline:none;transition:border-color .2s}
+  .input-wrap input:focus,.input-wrap textarea:focus,.input-wrap select:focus{border-color:#10b981;box-shadow:0 0 0 3px rgba(16,185,129,.1)}
+  .input-wrap textarea{resize:vertical;min-height:60px;line-height:1.5}
+  .input-wrap.full{grid-column:span 2;}
+
+  /* Output */
+  .output-section{background:#ecfdf5;border-radius:12px;padding:20px;border:1px solid #a7f3d0;margin-bottom:16px}
+  .output-section-title{font-size:12px;font-weight:800;color:#065f46;text-transform:uppercase;letter-spacing:.5px;margin-bottom:12px;display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
+  .output-url-wrap{background:#fff;border-radius:10px;padding:16px;border:1px solid #a7f3d0}
+  .output-url{font-family:'JetBrains Mono','Courier New',monospace;font-size:13px;color:#1a1a2e;line-height:1.7;word-break:break-all;min-height:40px}
+  .output-url .base{color:#3b82f6;font-weight:600}
+  .output-url .param-key{color:#059669;font-weight:700}
+  .output-url .param-val{color:#dc2626;font-weight:600}
+  .output-url .separator{color:#9ca3af;font-weight:600}
+
+  .output-actions{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+  .output-btn{display:inline-flex;align-items:center;gap:6px;padding:10px 16px;background:#10b981;color:#fff;border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit;transition:all .2s}
+  .output-btn:hover{background:#059669}
+  .output-btn.copied{background:#1e293b}
+  .output-btn.secondary{background:#fff;color:#065f46;border:1px solid #a7f3d0}
+  .output-btn.secondary:hover{background:#d1fae5}
+
+  /* Params breakdown */
+  .params-breakdown{background:#f8fafc;border-radius:12px;padding:16px;border:1px solid #e5e7eb;margin-bottom:16px}
+  .params-title{font-size:12px;font-weight:800;color:#065f46;text-transform:uppercase;letter-spacing:.5px;margin-bottom:12px}
+  .param-row{display:grid;grid-template-columns:120px 1fr;gap:12px;padding:10px 0;border-bottom:1px solid #f3f4f6;font-size:13px;align-items:center}
+  .param-row:last-child{border-bottom:none;padding-bottom:0}
+  .param-label{font-weight:700;color:#4b5563}
+  .param-value{color:#1a1a2e;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600;word-break:break-word}
+  .param-value.empty{color:#d1d5db;font-style:italic}
+
+  /* Char count */
+  .char-info{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;border-radius:8px;background:#f0fdf4;color:#059669;border:1px solid #a7f3d0;font-size:12px;font-weight:700;margin-bottom:16px}
+  .char-info.warn{background:#fef3c7;color:#92400e;border-color:#fcd34d}
+  .char-info.over{background:#fee2e2;color:#991b1b;border-color:#fecaca}
+
+  /* Actions */
+  .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 28px;border-radius:10px;font-size:15px;font-weight:700;font-family:inherit;cursor:pointer;border:none;transition:all .2s;text-decoration:none}
+  .btn-primary{background:#10b981;color:#fff;flex:1;box-shadow:0 4px 12px rgba(16,185,129,.2)}
+  .btn-primary:hover:not(:disabled){background:#059669;transform:translateY(-2px);box-shadow:0 6px 20px rgba(16,185,129,.3)}
+  .btn-primary:disabled{opacity:.5;cursor:not-allowed;transform:none}
+  .btn-secondary{background:#fff;color:#10b981;border:1px solid #e5e7eb}
+  .btn-secondary:hover{border-color:#10b981;background:#ecfdf5}
+
+  /* Saved campaigns */
+  .saved-section{margin-top:24px;padding:20px;background:#ecfdf5;border-radius:12px;border:1px solid #a7f3d0;display:none}
+  .saved-section.visible{display:block}
+  .saved-title{font-size:14px;font-weight:800;color:#065f46;margin-bottom:12px;display:flex;justify-content:space-between;align-items:center;gap:8px}
+  .saved-clear{background:none;border:none;font-size:11px;color:#10b981;cursor:pointer;font-family:inherit;font-weight:600;text-decoration:underline}
+  .saved-list{display:flex;flex-direction:column;gap:8px}
+  .saved-item{background:#fff;border:1px solid #a7f3d0;border-radius:10px;padding:12px 14px;display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap}
+  .saved-info{flex:1;min-width:0}
+  .saved-name{font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:2px}
+  .saved-url{font-size:11px;color:#6b7280;font-family:'JetBrains Mono',monospace;word-break:break-all;line-height:1.4}
+  .saved-actions{display:flex;gap:6px;flex-shrink:0}
+  .saved-icon-btn{width:32px;height:32px;border-radius:8px;border:1px solid #e5e7eb;background:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#4b5563;transition:all .2s;font-size:13px;font-family:inherit}
+  .saved-icon-btn:hover{border-color:#10b981;color:#10b981;background:#ecfdf5}
+
+  /* SEO */
+  .seo-content{background:#fff;border-radius:16px;padding:32px;border:1px solid #e5e7eb;margin-bottom:24px}
+  .seo-content h2{font-size:22px;font-weight:800;color:#1a1a2e;margin-bottom:14px;margin-top:28px;display:flex;align-items:center;gap:10px}
+  .seo-content h2:first-child{margin-top:0}
+  .seo-content h3{font-size:16px;font-weight:700;color:#1a1a2e;margin:20px 0 10px}
+  .seo-content p{font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:14px}
+  .seo-content ul{list-style:none;padding-left:0;margin-bottom:16px}
+  .seo-content ul li{position:relative;padding-left:24px;font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:8px}
+  .seo-content ul li::before{content:'';position:absolute;left:6px;top:12px;width:6px;height:6px;background:#10b981;border-radius:50%}
+  .seo-content a{color:#2563eb;text-decoration:none;font-weight:600}
+  .seo-content a:hover{text-decoration:underline}
+  .seo-content strong{color:#1a1a2e;font-weight:700}
+  .seo-content code{background:#f1f5f9;padding:2px 6px;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:13px;color:#0f172a;border:1px solid #e2e8f0}
+
+  .param-table{width:100%;border-collapse:collapse;margin:20px 0;border:1px solid #e5e7eb;border-radius:8px;overflow:hidden}
+  .param-table th{background:#ecfdf5;padding:12px 16px;text-align:left;font-size:13px;font-weight:700;color:#1a1a2e;border-bottom:1px solid #e5e7eb}
+  .param-table td{padding:12px 16px;font-size:13px;color:#4b5563;border-bottom:1px solid #f3f4f6}
+  .param-table tr:last-child td{border-bottom:none}
+  .param-table code{font-size:12px;background:#f1f5f9;padding:2px 6px;border-radius:4px;font-family:'JetBrains Mono',monospace}
+
+  .how-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:20px}
+  .how-step{background:#ecfdf5;border-radius:12px;padding:20px;border:1px solid #a7f3d0}
+  .how-step-num{width:36px;height:36px;border-radius:50%;background:#10b981;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;margin-bottom:12px}
+  .how-step-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+  .how-step-desc{font-size:13px;color:#6b7280;line-height:1.6}
+
+  .faq-item{background:#ecfdf5;border:1px solid #a7f3d0;border-radius:12px;margin-bottom:10px;overflow:hidden;transition:border-color .2s}
+  .faq-item:hover{border-color:#10b981}
+  .faq-question{width:100%;background:none;border:none;padding:18px 22px;font-size:15px;font-weight:700;color:#1a1a2e;text-align:left;cursor:pointer;font-family:inherit;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .faq-question .chev{font-size:12px;color:#10b981;transition:transform .2s;flex-shrink:0}
+  .faq-item.open .faq-question .chev{transform:rotate(180deg)}
+  .faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 22px}
+  .faq-item.open .faq-answer{max-height:500px;padding-bottom:18px}
+  .faq-answer p{font-size:14px;color:#6b7280;line-height:1.7;margin:0}
+
+  .sidebar{background:#fff;border-radius:16px;padding:24px;border:1px solid #e5e7eb;position:sticky;top:80px;margin-bottom:24px}
+  .sidebar-header{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:800;color:#1a1a2e;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid #f3f4f6}
+  .sidebar-list{display:flex;flex-direction:column;gap:8px}
+  .sidebar-item{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;cursor:pointer;transition:background .2s;text-decoration:none;color:inherit;border:1px solid #f3f4f6}
+  .sidebar-item:hover{background:#ecfdf5;border-color:#a7f3d0}
+  .sidebar-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;flex-shrink:0}
+  .sidebar-info{flex:1;min-width:0}
+  .sidebar-title{font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:2px}
+  .sidebar-desc{font-size:11px;color:#9ca3af;line-height:1.4}
+
+  .footer{background:#0a0e27;padding:60px 40px 30px;color:#fff;margin-top:40px}
+  .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:40px}
+  .footer-brand{display:flex;align-items:center;gap:8px;font-size:20px;font-weight:800;margin-bottom:12px}
+  .footer-brand span{color:#60a5fa}
+  .footer-tagline{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px}
+  .footer-social{display:flex;gap:12px}
+  .footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:16px;transition:background .2s}
+  .footer-social a:hover{background:rgba(255,255,255,.2)}
+  .footer-heading{font-size:14px;font-weight:700;margin-bottom:20px;color:#fff}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .footer-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;transition:color .2s}
+  .footer-links a:hover{color:#60a5fa}
+  .footer-bottom{max-width:1200px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  .footer-bottom-left{display:flex;gap:20px;font-size:12px;color:rgba(255,255,255,.5)}
+  .footer-bottom-right,.footer-bottom-links a{font-size:12px;color:rgba(255,255,255,.5);text-decoration:none}
+  .footer-bottom-links{display:flex;gap:20px}
+
+  .toast{position:fixed;bottom:24px;right:24px;background:#1a1a2e;color:#fff;padding:14px 20px;border-radius:10px;font-size:13px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:3000;transform:translateY(200%);transition:transform .3s ease;max-width:320px}
+  .toast.visible{transform:translateY(0)}
+  .toast.success{background:#10b981}
+  .toast.error{background:#ef4444}
+
+  @media(max-width:1024px){
+    .main-content{grid-template-columns:1fr;padding:24px 20px}
+    .sidebar{position:static}
+    .how-steps{grid-template-columns:repeat(2,1fr)}
+  }
+  @media(max-width:768px){
+    .header{padding:0 20px}.nav{display:none}
+    .hero{padding:24px 20px 40px}
+    .hero-title{font-size:28px}
+    .hero-icon{width:48px;height:48px;font-size:20px}
+    .hero-title-row{flex-direction:column;align-items:flex-start;gap:12px}
+    .main-content{padding:20px 16px}
+    .workspace{padding:20px}
+    .how-steps{grid-template-columns:1fr}
+    .seo-content{padding:20px}
+    .footer-inner{grid-template-columns:1fr 1fr}
+    .toast{left:16px;right:16px;bottom:16px;max-width:none}
+    .inputs-grid{grid-template-columns:1fr}
+    .param-row{grid-template-columns:1fr;gap:4px}
+  }
+  @media(max-width:576px){
+    .header{padding:0 16px}.header-right .search-btn,.header-right .theme-btn{display:none}
+    .hero-title{font-size:24px}
+    .actions{flex-direction:column}
+    .btn{width:100%}
+    .btn-primary{flex:none}
+    .footer-inner{grid-template-columns:1fr}
+    .footer-bottom{flex-direction:column;text-align:center}
+    .presets-grid{grid-template-columns:1fr 1fr}
+  }
+
+  html[data-theme="dark"] body{background:#0f172a;color:#f1f5f9}
+  html[data-theme="dark"] .header,html[data-theme="dark"] .workspace,html[data-theme="dark"] .seo-content,html[data-theme="dark"] .sidebar{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .logo,html[data-theme="dark"] .hero-title,html[data-theme="dark"] .seo-content h2,html[data-theme="dark"] .seo-content h3,html[data-theme="dark"] .faq-question,html[data-theme="dark"] .sidebar-header,html[data-theme="dark"] .sidebar-title{color:#f1f5f9}
+  html[data-theme="dark"] .nav a{color:#cbd5e1}
+  html[data-theme="dark"] .how-step,html[data-theme="dark"] .faq-item,html[data-theme="dark"] .preset-btn,html[data-theme="dark"] .output-section,html[data-theme="dark"] .params-breakdown,html[data-theme="dark"] .saved-section,html[data-theme="dark"] .saved-item{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .input-wrap input,html[data-theme="dark"] .input-wrap textarea,html[data-theme="dark"] .input-wrap select{background:#0f172a;border-color:#334155;color:#f1f5f9}
+  html[data-theme="dark"] .output-url-wrap{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .output-url{color:#e2e8f0}
+  html[data-theme="dark"] .param-value{color:#e2e8f0}
+  html[data-theme="dark"] .seo-content p,html[data-theme="dark"] .seo-content ul li,html[data-theme="dark"] .faq-answer p{color:#cbd5e1}
+  html[data-theme="dark"] .seo-content code{background:#0f172a;color:#94a3b8;border-color:#334155}
+  html[data-theme="dark"] .param-table{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .param-table th{background:#0f172a;color:#f1f5f9;border-color:#334155}
+  html[data-theme="dark"] .param-table td{border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .saved-icon-btn{background:#0f172a;border-color:#334155;color:#cbd5e1}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type": "SoftwareApplication", "name": "UTM Builder", "url": "https://bigtoolz.com/tools/seo-tools/utm-builder/", "applicationCategory": "BusinessApplication", "operatingSystem": "Any (Web-based)", "description": "Free online UTM builder. Generate trackable campaign URLs with source, medium, campaign, term and content parameters.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "1456"}},
+    {"@type": "HowTo", "name": "How to Build UTM Campaign URLs", "step": [
+      {"@type": "HowToStep", "name": "Enter URL", "text": "Type the destination URL (where you want traffic to go)."},
+      {"@type": "HowToStep", "name": "Add UTM Parameters", "text": "Fill source, medium, campaign plus optional term and content."},
+      {"@type": "HowToStep", "name": "Preview & Copy", "text": "See the final URL live and copy to clipboard."},
+      {"@type": "HowToStep", "name": "Save & Track", "text": "Save the URL for future use. Track in Google Analytics."}
+    ]},
+    {"@type": "FAQPage", "mainEntity": [
+      {"@type": "Question", "name": "What are UTM parameters?", "acceptedAnswer": {"@type": "Answer", "text": "UTM parameters are tags added to the end of a URL that tell Google Analytics where traffic came from. The 5 standard parameters are: utm_source, utm_medium, utm_campaign, utm_term, and utm_content."}},
+      {"@type": "Question", "name": "Are UTM parameters case sensitive?", "acceptedAnswer": {"@type": "Answer", "text": "Yes! Google Analytics treats 'Facebook', 'facebook', and 'FACEBOOK' as three different sources. Always use lowercase. Our builder auto-lowercases and replaces spaces with underscores."}},
+      {"@type": "Question", "name": "Do UTM parameters affect SEO?", "acceptedAnswer": {"@type": "Answer", "text": "UTM parameters don't affect ranking directly, but they create duplicate URLs. Fix this with rel=canonical tags. Also, block UTM URLs in robots.txt or use parameter handling in Search Console to avoid duplicate content penalties."}},
+      {"@type": "Question", "name": "Should I use UTM tags for internal links?", "acceptedAnswer": {"@type": "Answer", "text": "NO never use UTM tags on internal links. Google Analytics counts them as new sessions, distorting your data. Internal links should use plain URLs. UTM is for external campaigns only."}},
+      {"@type": "Question", "name": "What's the difference between utm_source and utm_medium?", "acceptedAnswer": {"@type": "Answer", "text": "utm_source is the specific platform (facebook, google, newsletter). utm_medium is the marketing channel (cpc, email, social, referral). Example: source=facebook, medium=social, campaign=summer_sale."}}
+    ]},
+    {"@type": "BreadcrumbList", "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bigtoolz.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://bigtoolz.com/tools/"},
+      {"@type": "ListItem", "position": 3, "name": "SEO Tools", "item": "https://bigtoolz.com/tools/seo-tools/"},
+      {"@type": "ListItem", "position": 4, "name": "UTM Builder", "item": "https://bigtoolz.com/tools/seo-tools/utm-builder/"}
+    ]}
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-left">
+    <a href="/" class="logo"><div class="logo-icon">⚒</div>BigToolz</span></a>
+    <nav><ul class="nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/tools/" class="active">All Tools</a></li>
+      <li><a href="/tools/categories">Categories</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul></nav>
+  </div>
+  <div class="header-right">
+    
+    <button class="theme-btn" aria-label="Toggle theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
+    
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <nav class="breadcrumb">
+      <a href="/">Home</a><span class="sep">›</span>
+      <a href="/tools/">Tools</a><span class="sep">›</span>
+      <a href="/tools/seo-tools/">SEO Tools</a><span class="sep">›</span>
+      <span class="current">UTM Builder</span>
+    </nav>
+    <div class="hero-title-row">
+      <div class="hero-icon">🔗</div>
+      <h1 class="hero-title">UTM <span class="blue">Builder</span></h1>
+    </div>
+    <p class="hero-desc">
+      Build trackable campaign URLs for Google Analytics. Add source, medium, campaign, term and content parameters with live preview and copy-ready output.
+    </p>
+    <div class="hero-features">
+      <div class="hero-feature"><span class="check">✓</span> Live Preview</div>
+      <div class="hero-feature"><span class="check">✓</span> 10+ Presets</div>
+      <div class="hero-feature"><span class="check">✓</span> Auto-Normalize</div>
+      <div class="hero-feature"><span class="check">✓</span> Save Campaigns</div>
+    </div>
+  </div>
+</section>
+
+<div class="main-content">
+
+  <div class="tool-content">
+
+    <div class="workspace">
+
+      <!-- Presets -->
+      <div class="presets-section">
+        <div class="presets-title">⚡ Quick Presets Click to Auto-Fill</div>
+        <div class="presets-grid" id="presetsGrid">
+          <button class="preset-btn" data-preset="facebook-post">
+            <span class="preset-icon">📘</span>
+            Facebook Post
+          </button>
+          <button class="preset-btn" data-preset="facebook-ad">
+            <span class="preset-icon">📘</span>
+            Facebook Ad
+          </button>
+          <button class="preset-btn" data-preset="google-ads">
+            <span class="preset-icon">🎯</span>
+            Google Ads
+          </button>
+          <button class="preset-btn" data-preset="email-newsletter">
+            <span class="preset-icon">✉️</span>
+            Email Newsletter
+          </button>
+          <button class="preset-btn" data-preset="twitter-post">
+            <span class="preset-icon">𝕏</span>
+            Twitter Post
+          </button>
+          <button class="preset-btn" data-preset="linkedin-post">
+            <span class="preset-icon">in</span>
+            LinkedIn Post
+          </button>
+          <button class="preset-btn" data-preset="instagram-bio">
+            <span class="preset-icon">📸</span>
+            Instagram Bio
+          </button>
+          <button class="preset-btn" data-preset="youtube-desc">
+            <span class="preset-icon">▶</span>
+            YouTube Desc
+          </button>
+          <button class="preset-btn" data-preset="blog-post">
+            <span class="preset-icon">📝</span>
+            Blog Post
+          </button>
+          <button class="preset-btn" data-preset="whatsapp">
+            <span class="preset-icon">💬</span>
+            WhatsApp
+          </button>
+        </div>
+      </div>
+
+      <!-- Inputs -->
+      <div class="inputs-grid">
+        <div class="input-group" style="grid-column:span 2;">
+          <label>Destination URL <span class="req">REQUIRED</span></label>
+          <div class="input-wrap">
+            <input type="url" id="baseUrl" placeholder="https://yourwebsite.com/landing-page" value="https://bigtoolz.com/tools/image-tools/image-compressor/">
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label>Campaign Source <span class="req">REQUIRED</span></label>
+          <div class="input-wrap">
+            <input type="text" id="utmSource" placeholder="e.g., facebook, google, newsletter" value="facebook">
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label>Campaign Medium <span class="req">REQUIRED</span></label>
+          <div class="input-wrap">
+            <input type="text" id="utmMedium" placeholder="e.g., cpc, email, social" value="social">
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label>Campaign Name <span class="req">REQUIRED</span></label>
+          <div class="input-wrap">
+            <input type="text" id="utmCampaign" placeholder="e.g., summer_sale, launch_2026" value="ai_tools_launch">
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label>Campaign Term <span class="hint">Optional for paid ads</span></label>
+          <div class="input-wrap">
+            <input type="text" id="utmTerm" placeholder="e.g., ai+tools, image+compress" value="">
+          </div>
+        </div>
+
+        <div class="input-group" style="grid-column:span 2;">
+          <label>Campaign Content <span class="hint">Optional for A/B testing</span></label>
+          <div class="input-wrap">
+            <input type="text" id="utmContent" placeholder="e.g., banner_top, text_link, cta_button" value="">
+          </div>
+        </div>
+      </div>
+
+      <!-- Output -->
+      <div class="output-section">
+        <div class="output-section-title">
+          <span>✅ Generated UTM URL</span>
+        </div>
+        <div class="output-url-wrap">
+          <div class="output-url" id="outputUrl">
+            <span class="base">Enter your URL and campaign details above</span>
+          </div>
+        </div>
+
+        <div class="output-actions">
+          <button class="output-btn" id="copyBtn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+            Copy URL
+          </button>
+          <button class="output-btn secondary" id="openBtn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+            Test URL
+          </button>
+          <button class="output-btn secondary" id="saveBtn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/></svg>
+            Save
+          </button>
+        </div>
+      </div>
+
+      <!-- Char counter -->
+      <div class="char-info" id="charInfo">
+        <span>URL length: <strong id="charCount">0</strong> characters</span>
+        <span id="charStatus">✓ Good</span>
+      </div>
+
+      <!-- Params breakdown -->
+      <div class="params-breakdown">
+        <div class="params-title">📋 Parameters Breakdown</div>
+        <div id="paramsList">
+          <div class="param-row">
+            <div class="param-label">Base URL</div>
+            <div class="param-value" id="pBase"></div>
+          </div>
+          <div class="param-row">
+            <div class="param-label">utm_source</div>
+            <div class="param-value empty" id="pSource">Not set</div>
+          </div>
+          <div class="param-row">
+            <div class="param-label">utm_medium</div>
+            <div class="param-value empty" id="pMedium">Not set</div>
+          </div>
+          <div class="param-row">
+            <div class="param-label">utm_campaign</div>
+            <div class="param-value empty" id="pCampaign">Not set</div>
+          </div>
+          <div class="param-row">
+            <div class="param-label">utm_term</div>
+            <div class="param-value empty" id="pTerm">Not set</div>
+          </div>
+          <div class="param-row">
+            <div class="param-label">utm_content</div>
+            <div class="param-value empty" id="pContent">Not set</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Reset -->
+      <div class="actions">
+        <button class="btn btn-secondary" id="resetBtn">↺ Reset All Fields</button>
+      </div>
+
+      <!-- Saved campaigns -->
+      <div class="saved-section" id="savedSection">
+        <div class="saved-title">
+          <span>💾 Saved Campaigns (<span id="savedCount">0</span>)</span>
+          <button class="saved-clear" id="savedClear">Clear All</button>
+        </div>
+        <div class="saved-list" id="savedList"></div>
+      </div>
+
+    </div>
+
+    <!-- SEO Content -->
+    <div class="seo-content">
+
+      <h2>🔗 What is a UTM Builder?</h2>
+      <p>
+        A <strong>UTM Builder</strong> is a tool that helps you create trackable URLs by adding UTM parameters. UTM stands for <strong>Urchin Tracking Module</strong> the original technology behind Google Analytics. These parameters tell Google Analytics exactly where your traffic came from, which campaign drove it, and which specific link was clicked.
+      </p>
+      <p>
+        Without UTM parameters, Google Analytics lumps all your traffic into vague buckets like "referral" or "direct". With UTMs, you know precisely: <em>"42 people came from the Facebook ad in the summer_sale campaign using the banner_top creative."</em> That's the level of detail that lets you optimize campaigns and stop wasting budget.
+      </p>
+
+      <h2>📐 The 5 UTM Parameters</h2>
+      <table class="param-table">
+        <thead>
+          <tr><th>Parameter</th><th>What It Means</th><th>Example</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>utm_source</strong></td><td>Where the traffic came from</td><td><code>facebook</code>, <code>google</code>, <code>newsletter</code></td></tr>
+          <tr><td><strong>utm_medium</strong></td><td>The marketing channel</td><td><code>cpc</code>, <code>email</code>, <code>social</code>, <code>referral</code></td></tr>
+          <tr><td><strong>utm_campaign</strong></td><td>The specific campaign name</td><td><code>summer_sale</code>, <code>product_launch</code></td></tr>
+          <tr><td><strong>utm_term</strong></td><td>Paid keyword (for search ads)</td><td><code>running+shoes</code>, <code>ai+tools</code></td></tr>
+          <tr><td><strong>utm_content</strong></td><td>A/B test variant identifier</td><td><code>banner_top</code>, <code>cta_blue</code></td></tr>
+        </tbody>
+      </table>
+
+      <h2>🚀 How to Use This Builder</h2>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-step-num">1</div>
+          <div class="how-step-title">Enter URL</div>
+          <div class="how-step-desc">Paste the destination URL you want to track.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">2</div>
+          <div class="how-step-title">Or Pick Preset</div>
+          <div class="how-step-desc">Click a preset (Facebook Ad, Email, etc.) for auto-fill.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">3</div>
+          <div class="how-step-title">Fill Parameters</div>
+          <div class="how-step-desc">Source, medium, campaign required. Term and content optional.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">4</div>
+          <div class="how-step-title">Copy & Use</div>
+          <div class="how-step-desc">Copy the URL. Paste into your ad, email, or post.</div>
+        </div>
+      </div>
+
+      <h2>⚠️ UTM Best Practices</h2>
+      <ul>
+        <li><strong>Always lowercase.</strong> Google Analytics treats <code>Facebook</code>, <code>facebook</code>, and <code>FACEBOOK</code> as three different sources. Our builder auto-lowercases everything.</li>
+        <li><strong>Use underscores, not spaces.</strong> Spaces break URLs. Our builder converts spaces to underscores automatically.</li>
+        <li><strong>Be consistent.</strong> Pick a naming convention and stick to it. "email_newsletter" vs "newsletter_email" pick one.</li>
+        <li><strong>NEVER use UTMs on internal links.</strong> Google Analytics counts them as new sessions, distorting your data. Internal links = plain URLs.</li>
+        <li><strong>Use <code>utm_content</code> for A/B testing.</strong> Test two banner colors? Use <code>banner_red</code> and <code>banner_blue</code> to see which converts better.</li>
+        <li><strong>Add canonical tags.</strong> UTM URLs create duplicates. Use <code>rel="canonical"</code> pointing to the clean URL.</li>
+        <li><strong>Track in Google Analytics.</strong> Go to Acquisition → Campaigns to see UTM performance data.</li>
+        <li><strong>Keep it short.</strong> Every character matters, especially in Twitter (280) and email subjects.</li>
+        <li><strong>Save your UTMs.</strong> Reuse successful campaign URLs instead of creating new ones each time.</li>
+      </ul>
+
+      <h2>🎯 Common UTM Naming Conventions</h2>
+
+      <h3>utm_source (platforms)</h3>
+      <p><code>facebook</code>, <code>instagram</code>, <code>twitter</code>, <code>linkedin</code>, <code>youtube</code>, <code>google</code>, <code>bing</code>, <code>newsletter</code>, <code>partner_name</code></p>
+
+      <h3>utm_medium (channels)</h3>
+      <p><code>cpc</code> (paid search), <code>display</code> (banner ads), <code>social</code> (organic social), <code>email</code>, <code>affiliate</code>, <code>referral</code>, <code>organic</code></p>
+
+      <h3>utm_campaign (format)</h3>
+      <p><code>summer_sale_2026</code>, <code>product_launch_v2</code>, <code>black_friday</code>, <code>newsletter_weekly</code>. Use lowercase with underscores or hyphens.</p>
+
+      <h2>❓ Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-question">What are UTM parameters?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>UTM parameters are tags added to the end of a URL that tell Google Analytics where traffic came from. The 5 standard parameters are: <code>utm_source</code>, <code>utm_medium</code>, <code>utm_campaign</code>, <code>utm_term</code>, and <code>utm_content</code>. They help you attribute conversions to specific campaigns and channels.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Are UTM parameters case sensitive?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>Yes!</strong> Google Analytics treats <code>Facebook</code>, <code>facebook</code>, and <code>FACEBOOK</code> as three different sources. This fragments your data. Always use lowercase. Our builder auto-lowercases and replaces spaces with underscores.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Do UTM parameters affect SEO?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>UTMs don't affect rankings directly, but they create <strong>duplicate URLs</strong>. Fix with <code>rel="canonical"</code> tags pointing to the clean URL. Also, use parameter handling in Google Search Console to avoid duplicate content issues. Never use UTMs on internal links.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Should I use UTM tags for internal links?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>NO never use UTM tags on internal links.</strong> Google Analytics counts them as new sessions, which distorts your data every internal click becomes a new "session" instead of continuing the existing one. Internal links should use plain URLs.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What's the difference between utm_source and utm_medium?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>utm_source</strong> is the specific platform (facebook, google, newsletter). <strong>utm_medium</strong> is the marketing channel (cpc, email, social, referral). Example: <code>source=facebook</code>, <code>medium=social</code>, <code>campaign=summer_sale</code>. Together they tell the full story.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Do I need all 5 UTM parameters?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>No.</strong> Only 3 are required: <code>utm_source</code>, <code>utm_medium</code>, <code>utm_campaign</code>. <code>utm_term</code> is useful for paid search ads. <code>utm_content</code> is for A/B testing. Adding unnecessary parameters makes URLs longer without much benefit.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Are these UTM URLs safe?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Yes UTM parameters are just URL query strings. They don't affect security, tracking, or SEO. All our URLs are built client-side in your browser, so no data leaves your device. Just make sure the URL is HTTPS for best practice.</p></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-header">🔗 Related SEO Tools</div>
+    <div class="sidebar-list">
+      <a href="/tools/seo-tools/schema-markup/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#8b5cf6;">🏗</div>
+        <div class="sidebar-info"><div class="sidebar-title">Schema Markup Generator</div><div class="sidebar-desc">Structured data</div></div>
+      </a>
+      <a href="/tools/seo-tools/meta-description/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#3b82f6;">📝</div>
+        <div class="sidebar-info"><div class="sidebar-title">Meta Description Generator</div><div class="sidebar-desc">SEO descriptions</div></div>
+      </a>
+      <a href="/tools/seo-tools/serp-preview/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#3b82f6;">🔍</div>
+        <div class="sidebar-info"><div class="sidebar-title">SERP Preview</div><div class="sidebar-desc">Google preview</div></div>
+      </a>
+      <a href="/tools/seo-tools/open-graph/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#3b82f6;">📘</div>
+        <div class="sidebar-info"><div class="sidebar-title">Open Graph Generator</div><div class="sidebar-desc">Social meta tags</div></div>
+      </a>
+      <a href="/tools/seo-tools/twitter-card/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#06b6d4;">🐦</div>
+        <div class="sidebar-info"><div class="sidebar-title">Twitter Card Generator</div><div class="sidebar-info">Twitter meta tags</div></div>
+      </a>
+      <a href="/tools/seo-tools/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#8b5cf6;">📈</div>
+        <div class="sidebar-info"><div class="sidebar-title">All SEO Tools →</div><div class="sidebar-desc">Browse 25+ tools</div></div>
+      </a>
+    </div>
+  </aside>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand"><div class="logo-icon">⚒</div>BigToolz</span></div>
+      <p class="footer-tagline">Your Ultimate Online Tools Hub</p>
+      <div class="footer-social">
+        <a href="https://facebook.com/bigtoolz" aria-label="Facebook">f</a>
+        <a href="https://twitter.com/bigtoolz" aria-label="Twitter">𝕏</a>
+        <a href="https://youtube.com/@bigtoolz" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+    <div>
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/tools/">All Tools</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Categories</h3>
+      <ul class="footer-links">
+        <li><a href="/tools/image-tools/">Image Tools</a></li>
+        <li><a href="/tools/pdf-tools/">PDF Tools</a></li>
+        <li><a href="/tools/text-tools/">Text Tools</a></li>
+        <li><a href="/tools/seo-tools/">SEO Tools</a></li>
+        <li><a href="/tools/categories">All Categories →</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Legal</h3>
+      <ul class="footer-links">
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left"><span>✓ 100% Free</span><span>✓ No Sign Up</span><span>✓ No Installation</span></div>
+    <div class="footer-bottom-right">© 2026 BigToolz. All rights reserved.</div>
+    <div class="footer-bottom-links"><a href="/privacy-policy">Privacy</a><a href="/terms">Terms</a><a href="/disclaimer">Disclaimer</a></div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+'use strict';
+
+/* ===== THEME ===== */
+(function(){try{var t=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&d))document.documentElement.setAttribute('data-theme','dark');else if(t==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();
+document.querySelector('.theme-btn')?.addEventListener('click',()=>{const h=document.documentElement;const c=h.getAttribute('data-theme');const d=window.matchMedia('(prefers-color-scheme: dark)').matches;let n=c==='dark'?'light':c==='light'?'dark':(d?'light':'dark');h.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}});
+
+/* ===== HELPERS ===== */
+const $ = (s, p = document) => p.querySelector(s);
+const $$ = (s, p = document) => [...p.querySelectorAll(s)];
+
+function showToast(msg, type = 'info', duration = 3000) {
+  const t = $('#toast');
+  if (!t) return;
+  t.className = 'toast visible' + (type !== 'info' ? ' ' + type : '');
+  t.textContent = msg;
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove('visible'), duration);
+}
+
+async function copyToClipboard(text) {
+  try {
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(text);
+      return true;
+    }
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.cssText = 'position:fixed;opacity:0;';
+    document.body.appendChild(ta);
+    ta.select();
+    const ok = document.execCommand('copy');
+    document.body.removeChild(ta);
+    return ok;
+  } catch (e) { return false; }
+}
+
+function escapeHtml(str) {
+  const div = document.createElement('div');
+  div.textContent = str;
+  return div.innerHTML;
+}
+
+/* ===== STATE ===== */
+const state = {
+  savedCampaigns: []
+};
+
+/* ===== DOM ===== */
+const baseUrl = $('#baseUrl');
+const utmSource = $('#utmSource');
+const utmMedium = $('#utmMedium');
+const utmCampaign = $('#utmCampaign');
+const utmTerm = $('#utmTerm');
+const utmContent = $('#utmContent');
+const outputUrl = $('#outputUrl');
+const copyBtn = $('#copyBtn');
+const openBtn = $('#openBtn');
+const saveBtn = $('#saveBtn');
+const resetBtn = $('#resetBtn');
+const charInfo = $('#charInfo');
+const charCount = $('#charCount');
+const charStatus = $('#charStatus');
+const pBase = $('#pBase');
+const pSource = $('#pSource');
+const pMedium = $('#pMedium');
+const pCampaign = $('#pCampaign');
+const pTerm = $('#pTerm');
+const pContent = $('#pContent');
+const savedSection = $('#savedSection');
+const savedList = $('#savedList');
+const savedCount = $('#savedCount');
+const savedClear = $('#savedClear');
+
+/* ===== PRESETS ===== */
+const PRESETS = {
+  'facebook-post': { source: 'facebook', medium: 'social', campaign: 'post_' + new Date().toISOString().slice(0, 10).replace(/-/g, '') },
+  'facebook-ad': { source: 'facebook', medium: 'cpc', campaign: 'fb_ad', term: '', content: 'banner_top' },
+  'google-ads': { source: 'google', medium: 'cpc', campaign: 'search_ad', term: 'keyword_here', content: 'text_ad' },
+  'email-newsletter': { source: 'newsletter', medium: 'email', campaign: 'weekly_newsletter', term: '', content: 'header_link' },
+  'twitter-post': { source: 'twitter', medium: 'social', campaign: 'tweet_' + new Date().toISOString().slice(0, 10).replace(/-/g, '') },
+  'linkedin-post': { source: 'linkedin', medium: 'social', campaign: 'linkedin_post' },
+  'instagram-bio': { source: 'instagram', medium: 'social', campaign: 'bio_link', content: 'profile' },
+  'youtube-desc': { source: 'youtube', medium: 'video', campaign: 'video_description', content: 'description_link' },
+  'blog-post': { source: 'blog', medium: 'referral', campaign: 'blog_post' },
+  'whatsapp': { source: 'whatsapp', medium: 'messaging', campaign: 'whatsapp_share' }
+};
+
+$$('.preset-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const preset = PRESETS[btn.dataset.preset];
+    if (!preset) return;
+    utmSource.value = preset.source || '';
+    utmMedium.value = preset.medium || '';
+    utmCampaign.value = preset.campaign || '';
+    utmTerm.value = preset.term || '';
+    utmContent.value = preset.content || '';
+    updateOutput();
+    showToast(`✓ Applied "${btn.textContent.trim()}" preset`, 'success');
+  });
+});
+
+/* ===== NORMALIZE FUNCTION ===== */
+function normalize(str) {
+  return (str || '')
+    .trim()
+    .toLowerCase()
+    .replace(/\s+/g, '_')
+    .replace(/[^a-z0-9_\-]/g, '');
+}
+
+/* ===== BUILD URL ===== */
+function buildUrl() {
+  const base = (baseUrl.value || '').trim();
+  if (!base) return null;
+
+  // Remove existing UTM params
+  const cleanBase = base.split('?')[0].split('#')[0];
+  const params = [];
+
+  const source = normalize(utmSource.value);
+  const medium = normalize(utmMedium.value);
+  const campaign = normalize(utmCampaign.value);
+  const term = normalize(utmTerm.value);
+  const content = normalize(utmContent.value);
+
+  if (source) params.push(`utm_source=${encodeURIComponent(source)}`);
+  if (medium) params.push(`utm_medium=${encodeURIComponent(medium)}`);
+  if (campaign) params.push(`utm_campaign=${encodeURIComponent(campaign)}`);
+  if (term) params.push(`utm_term=${encodeURIComponent(term)}`);
+  if (content) params.push(`utm_content=${encodeURIComponent(content)}`);
+
+  if (params.length === 0) return null;
+
+  return cleanBase + '?' + params.join('&');
+}
+
+/* ===== UPDATE OUTPUT ===== */
+function updateOutput() {
+  const url = buildUrl();
+
+  if (!url) {
+    outputUrl.innerHTML = '<span class="base">Enter your URL and campaign details above</span>';
+  } else {
+    // Colorize URL
+    const [basePart, queryPart] = url.split('?');
+    let html = `<span class="base">${escapeHtml(basePart)}</span>`;
+    if (queryPart) {
+      const paramHtml = queryPart.split('&').map(p => {
+        const [k, v] = p.split('=');
+        return `<span class="param-key">${escapeHtml(k)}</span><span class="separator">=</span><span class="param-val">${escapeHtml(v || '')}</span>`;
+      }).join('<span class="separator">&amp;</span>');
+      html += `<span class="separator">?</span>` + paramHtml;
+    }
+    outputUrl.innerHTML = html;
+  }
+
+  // Update params breakdown
+  pBase.textContent = baseUrl.value.trim() || '—';
+  pSource.textContent = normalize(utmSource.value) || 'Not set';
+  pMedium.textContent = normalize(utmMedium.value) || 'Not set';
+  pCampaign.textContent = normalize(utmCampaign.value) || 'Not set';
+  pTerm.textContent = normalize(utmTerm.value) || 'Not set';
+  pContent.textContent = normalize(utmContent.value) || 'Not set';
+
+  pSource.classList.toggle('empty', !utmSource.value.trim());
+  pMedium.classList.toggle('empty', !utmMedium.value.trim());
+  pCampaign.classList.toggle('empty', !utmCampaign.value.trim());
+  pTerm.classList.toggle('empty', !utmTerm.value.trim());
+  pContent.classList.toggle('empty', !utmContent.value.trim());
+
+  // Update char counter
+  const len = url ? url.length : 0;
+  charCount.textContent = len;
+
+  charInfo.classList.remove('warn', 'over');
+  if (len > 2000) {
+    charInfo.classList.add('over');
+    charStatus.textContent = '✕ Too long';
+  } else if (len > 500) {
+    charInfo.classList.add('warn');
+    charStatus.textContent = '⚠ Long URL';
+  } else if (len > 0) {
+    charStatus.textContent = '✓ Good';
+  } else {
+    charStatus.textContent = '—';
+  }
+}
+
+/* ===== INPUT EVENTS ===== */
+[baseUrl, utmSource, utmMedium, utmCampaign, utmTerm, utmContent].forEach(el => {
+  el.addEventListener('input', updateOutput);
+  el.addEventListener('change', updateOutput);
+});
+
+/* ===== COPY ===== */
+copyBtn.addEventListener('click', async () => {
+  const url = buildUrl();
+  if (!url) {
+    showToast('Fill in URL and campaign details first', 'error');
+    return;
+  }
+  const ok = await copyToClipboard(url);
+  if (ok) {
+    copyBtn.classList.add('copied');
+    const origHTML = copyBtn.innerHTML;
+    copyBtn.innerHTML = '✓ Copied!';
+    setTimeout(() => {
+      copyBtn.classList.remove('copied');
+      copyBtn.innerHTML = origHTML;
+    }, 2000);
+    showToast('URL copied to clipboard!', 'success');
+  } else {
+    showToast('Copy failed', 'error');
+  }
+});
+
+/* ===== TEST URL ===== */
+openBtn.addEventListener('click', () => {
+  const url = buildUrl();
+  if (!url) {
+    showToast('Fill in URL first', 'error');
+    return;
+  }
+  window.open(url, '_blank', 'noopener');
+});
+
+/* ===== SAVE CAMPAIGN ===== */
+saveBtn.addEventListener('click', () => {
+  const url = buildUrl();
+  if (!url) {
+    showToast('Generate URL first', 'error');
+    return;
+  }
+  const name = prompt('Campaign name (for your reference):', utmCampaign.value || 'My Campaign');
+  if (!name) return;
+
+  state.savedCampaigns.unshift({
+    name: name.trim(),
+    url,
+    source: utmSource.value,
+    medium: utmMedium.value,
+    campaign: utmCampaign.value,
+    date: new Date().toISOString()
+  });
+
+  if (state.savedCampaigns.length > 20) state.savedCampaigns = state.savedCampaigns.slice(0, 20);
+
+  persistCampaigns();
+  renderSaved();
+  showToast('💾 Campaign saved!', 'success');
+});
+
+/* ===== PERSISTENCE ===== */
+function persistCampaigns() {
+  try {
+    localStorage.setItem('bigtoolz_utm_saved', JSON.stringify(state.savedCampaigns));
+  } catch (e) {}
+}
+
+function loadCampaigns() {
+  try {
+    state.savedCampaigns = JSON.parse(localStorage.getItem('bigtoolz_utm_saved') || '[]');
+  } catch (e) {
+    state.savedCampaigns = [];
+  }
+}
+
+function renderSaved() {
+  if (state.savedCampaigns.length === 0) {
+    savedSection.classList.remove('visible');
+    return;
+  }
+  savedSection.classList.add('visible');
+  savedCount.textContent = state.savedCampaigns.length;
+  savedList.innerHTML = '';
+
+  state.savedCampaigns.forEach((item, index) => {
+    const div = document.createElement('div');
+    div.className = 'saved-item';
+    div.innerHTML = `
+      <div class="saved-info">
+        <div class="saved-name">${escapeHtml(item.name)}</div>
+        <div class="saved-url">${escapeHtml(item.url.length > 90 ? item.url.slice(0, 90) + '...' : item.url)}</div>
+      </div>
+      <div class="saved-actions">
+        <button class="saved-icon-btn" data-load="${index}" title="Load">↺</button>
+        <button class="saved-icon-btn" data-copy="${index}" title="Copy">📋</button>
+        <button class="saved-icon-btn" data-remove="${index}" title="Remove">✕</button>
+      </div>
+    `;
+    savedList.appendChild(div);
+  });
+
+  // Bind actions
+  $$('[data-load]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const idx = parseInt(btn.dataset.load, 10);
+      const item = state.savedCampaigns[idx];
+      if (!item) return;
+      const parts = item.url.split('?')[0];
+      baseUrl.value = parts;
+      utmSource.value = item.source || '';
+      utmMedium.value = item.medium || '';
+      utmCampaign.value = item.campaign || '';
+      // Parse term/content from URL
+      try {
+        const u = new URL(item.url);
+        utmTerm.value = u.searchParams.get('utm_term') || '';
+        utmContent.value = u.searchParams.get('utm_content') || '';
+      } catch (e) {}
+      updateOutput();
+      showToast('↺ Loaded campaign', 'success');
+    });
+  });
+
+  $$('[data-copy]').forEach(btn => {
+    btn.addEventListener('click', async () => {
+      const idx = parseInt(btn.dataset.copy, 10);
+      const item = state.savedCampaigns[idx];
+      if (!item) return;
+      const ok = await copyToClipboard(item.url);
+      if (ok) showToast('Copied saved URL!', 'success');
+    });
+  });
+
+  $$('[data-remove]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const idx = parseInt(btn.dataset.remove, 10);
+      state.savedCampaigns.splice(idx, 1);
+      persistCampaigns();
+      renderSaved();
+      showToast('Removed', 'info');
+    });
+  });
+}
+
+savedClear.addEventListener('click', () => {
+  if (!confirm('Clear all saved campaigns?')) return;
+  state.savedCampaigns = [];
+  persistCampaigns();
+  renderSaved();
+  showToast('Cleared saved campaigns');
+});
+
+/* ===== RESET ===== */
+resetBtn.addEventListener('click', () => {
+  baseUrl.value = 'https://bigtoolz.com/';
+  utmSource.value = '';
+  utmMedium.value = '';
+  utmCampaign.value = '';
+  utmTerm.value = '';
+  utmContent.value = '';
+  updateOutput();
+  showToast('Reset', 'info');
+});
+
+/* ===== FAQ ===== */
+$$('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    $$('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+
+/* ===== INIT ===== */
+loadCampaigns();
+renderSaved();
+updateOutput();
+</script>
+
+</body>
+</html>

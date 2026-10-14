@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2563eb">
+
+<title>All Tools - 300+ Free Online Tools | BigToolz</title>
+<meta name="description" content="Browse all 300+ free online tools on BigToolz. Image, PDF, text, SEO, developer, calculator, social and utility tools no signup, no installation.">
+<meta name="keywords" content="all tools, 300 tools, free online tools, image tools, pdf tools, text tools, seo tools, developer tools, calculator tools">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://bigtoolz.com/tools/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="All Tools - 300+ Free Online Tools | BigToolz">
+<meta property="og:description" content="Browse all 300+ free online tools image, PDF, text, SEO, developer, calculator and more.">
+<meta property="og:url" content="https://bigtoolz.com/tools/">
+<meta property="og:image" content="https://bigtoolz.com/assets/images/og-image.jpg">
+<meta property="og:site_name" content="BigToolz">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="All Tools - BigToolz">
+<meta name="twitter:description" content="Browse all 300+ free online tools.">
+<meta name="twitter:image" content="https://bigtoolz.com/assets/images/twitter-card.jpg">
+
+<link rel="icon" href="/assets/images/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/images/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#f8f9fc;color:#1a1a2e;overflow-x:hidden;line-height:1.5}
+
+  /* HEADER */
+  .header{background:#fff;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;position:sticky;top:0;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+  .header-left{display:flex;align-items:center;gap:40px}
+  .logo{display:flex;align-items:center;gap:8px;font-size:22px;font-weight:800;color:#1a1a2e;text-decoration:none}
+  .logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#3b82f6,#2563eb);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px}
+  .logo span{color:#2563eb}
+  .nav{display:flex;align-items:center;gap:28px;list-style:none}
+  .nav a{text-decoration:none;color:#4b5563;font-size:14px;font-weight:500;transition:color .2s;position:relative}
+  .nav a:hover,.nav a.active{color:#2563eb}
+  .nav a.active::after{content:'';position:absolute;bottom:-22px;left:0;right:0;height:2px;background:#2563eb}
+  .header-right{display:flex;align-items:center;gap:16px}
+  .search-btn,.theme-btn{width:36px;height:36px;border-radius:50%;border:none;background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#4b5563}
+  .search-btn:hover,.theme-btn:hover{background:#f3f4f6}
+  .bookmark-btn{display:flex;align-items:center;gap:8px;background:#2563eb;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
+  .bookmark-btn:hover{background:#1d4ed8}
+
+  /* HERO */
+  .hero{background:linear-gradient(135deg,#0a0e27 0%,#1a1a4e 40%,#2d1b69 70%,#4c1d95 100%);padding:40px 40px 50px;position:relative;overflow:hidden;color:#fff}
+  .hero::before{content:'';position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(139,92,246,.3) 0%,transparent 70%);border-radius:50%}
+  .hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+  .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px;flex-wrap:wrap}
+  .breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none}
+  .breadcrumb a:hover{color:#fff}
+  .breadcrumb .sep{color:rgba(255,255,255,.4)}
+  .breadcrumb .current{color:#fff;font-weight:500}
+  .hero-title{font-size:42px;font-weight:800;line-height:1.15;margin-bottom:12px}
+  .hero-title .blue{color:#60a5fa}
+  .hero-desc{font-size:15px;color:rgba(255,255,255,.75);line-height:1.7;max-width:640px}
+
+  /* MAIN */
+  .main-content{max-width:1200px;margin:0 auto;padding:40px}
+
+  /* Toolbar */
+  .toolbar{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:24px;flex-wrap:wrap}
+  .toolbar-left h2{font-size:24px;font-weight:800;color:#1a1a2e;margin-bottom:4px}
+  .toolbar-left p{font-size:14px;color:#6b7280}
+  .toolbar-left .count-num{color:#2563eb;font-weight:700}
+  .toolbar-right{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+  .search-box{position:relative;background:#fff;border:1px solid #e5e7eb;border-radius:8px;display:flex;align-items:center;padding:0 12px;min-width:280px;transition:border-color .2s}
+  .search-box:focus-within{border-color:#2563eb;box-shadow:0 0 0 3px rgba(37,99,235,.1)}
+  .search-box svg{color:#9ca3af;flex-shrink:0}
+  .search-box input{flex:1;border:none;outline:none;padding:10px 8px;font-size:14px;font-family:inherit;background:transparent;color:#1a1a2e}
+  .search-box input::placeholder{color:#9ca3af}
+  .sort-dropdown{background:#fff;border:1px solid #e5e7eb;border-radius:8px;padding:10px 14px;font-size:13px;font-family:inherit;font-weight:600;color:#1a1a2e;cursor:pointer;outline:none;transition:border-color .2s}
+  .sort-dropdown:hover{border-color:#2563eb}
+
+  /* Layout with sidebar */
+  .layout{display:grid;grid-template-columns:240px 1fr;gap:24px;align-items:start}
+
+  /* Category sidebar */
+  .cat-sidebar{background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:16px;position:sticky;top:84px}
+  .cat-sidebar-title{font-size:12px;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:.5px;padding:0 8px 12px;border-bottom:1px solid #f3f4f6;margin-bottom:10px}
+  .cat-item{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:10px 12px;border-radius:8px;text-decoration:none;color:#4b5563;font-size:13px;font-weight:500;cursor:pointer;transition:background .2s;border:none;background:transparent;width:100%;font-family:inherit;text-align:left}
+  .cat-item:hover{background:#f8faff;color:#2563eb}
+  .cat-item.active{background:#2563eb;color:#fff}
+  .cat-item.active .cat-count{background:rgba(255,255,255,.2);color:#fff}
+  .cat-item-left{display:flex;align-items:center;gap:10px}
+  .cat-icon{font-size:16px;line-height:1}
+  .cat-count{font-size:11px;font-weight:700;color:#9ca3af;background:#f3f4f6;padding:2px 8px;border-radius:10px;transition:all .2s}
+
+  /* Tools grid */
+  .tools-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .tool-card{background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:18px;text-decoration:none;color:inherit;transition:all .2s;display:flex;flex-direction:column;gap:10px;position:relative;min-height:130px}
+  .tool-card:hover{border-color:#2563eb;box-shadow:0 4px 16px rgba(37,99,235,.1);transform:translateY(-2px)}
+  .tool-card.hidden{display:none}
+  .tool-top{display:flex;align-items:center;gap:12px}
+  .tool-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;flex-shrink:0}
+  .tool-name{font-size:14px;font-weight:700;color:#1a1a2e;line-height:1.3;flex:1}
+  .tool-desc{font-size:12px;color:#6b7280;line-height:1.5;flex:1}
+  .tool-meta{display:flex;justify-content:space-between;align-items:center;padding-top:8px;border-top:1px solid #f3f4f6;font-size:11px}
+  .tool-cat-tag{font-weight:700;padding:3px 8px;border-radius:6px;font-size:10px;text-transform:uppercase;letter-spacing:.3px}
+  .tool-arrow{color:#9ca3af;transition:transform .2s}
+  .tool-card:hover .tool-arrow{color:#2563eb;transform:translateX(4px)}
+
+  /* Tag colors */
+  .tag-image{background:#d1fae5;color:#059669}
+  .tag-pdf{background:#fee2e2;color:#dc2626}
+  .tag-text{background:#dbeafe;color:#2563eb}
+  .tag-seo{background:#ede9fe;color:#7c3aed}
+  .tag-developer{background:#ffedd5;color:#ea580c}
+  .tag-calculator{background:#cffafe;color:#0891b2}
+  .tag-social{background:#fce7f3;color:#db2777}
+  .tag-utility{background:#ede9fe;color:#7c3aed}
+
+  /* No results */
+  .no-results{display:none;text-align:center;padding:60px 20px;color:#6b7280;grid-column:1/-1}
+  .no-results.visible{display:block}
+  .no-results-icon{font-size:48px;margin-bottom:12px;opacity:.5}
+  .no-results h3{font-size:18px;font-weight:700;color:#1a1a2e;margin-bottom:8px}
+  .no-results p{font-size:14px}
+
+  /* Show more button */
+  .show-more-wrap{text-align:center;margin-top:32px;grid-column:1/-1}
+  .show-more-btn{background:#fff;color:#2563eb;border:1px solid #e5e7eb;padding:12px 32px;border-radius:10px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;transition:all .2s}
+  .show-more-btn:hover{border-color:#2563eb;background:#eff6ff}
+
+  /* CTA */
+  .cta-box{background:linear-gradient(135deg,#2563eb,#4f46e5);border-radius:16px;padding:40px;text-align:center;color:#fff;position:relative;overflow:hidden;margin-top:50px}
+  .cta-box::before{content:'';position:absolute;top:-40px;right:-40px;width:160px;height:160px;background:rgba(255,255,255,.1);border-radius:50%}
+  .cta-title{font-size:24px;font-weight:800;margin-bottom:10px;position:relative;z-index:2}
+  .cta-desc{font-size:15px;color:rgba(255,255,255,.85);margin-bottom:24px;position:relative;z-index:2}
+  .cta-btn{display:inline-flex;align-items:center;gap:8px;background:#fff;color:#2563eb;padding:14px 28px;border-radius:10px;font-size:15px;font-weight:700;text-decoration:none;position:relative;z-index:2;transition:transform .2s}
+  .cta-btn:hover{transform:translateY(-2px)}
+
+  /* FOOTER */
+  .footer{background:#0a0e27;padding:60px 40px 30px;color:#fff;margin-top:60px}
+  .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:40px}
+  .footer-brand{display:flex;align-items:center;gap:8px;font-size:20px;font-weight:800;margin-bottom:12px}
+  .footer-brand span{color:#60a5fa}
+  .footer-tagline{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px}
+  .footer-social{display:flex;gap:12px}
+  .footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:16px;transition:background .2s}
+  .footer-social a:hover{background:rgba(255,255,255,.2)}
+  .footer-heading{font-size:14px;font-weight:700;margin-bottom:20px;color:#fff}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .footer-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;transition:color .2s}
+  .footer-links a:hover{color:#60a5fa}
+  .footer-bottom{max-width:1200px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  .footer-bottom-left{display:flex;gap:20px;font-size:12px;color:rgba(255,255,255,.5)}
+  .footer-bottom-right,.footer-bottom-links a{font-size:12px;color:rgba(255,255,255,.5);text-decoration:none}
+  .footer-bottom-links{display:flex;gap:20px}
+  .footer-bottom-links a:hover{color:#60a5fa}
+
+  /* RESPONSIVE */
+  @media(max-width:1024px){
+    .layout{grid-template-columns:1fr}
+    .cat-sidebar{position:static}
+    .tools-grid{grid-template-columns:repeat(2,1fr)}
+  }
+  @media(max-width:768px){
+    .header{padding:0 20px}.nav{display:none}
+    .hero{padding:30px 20px 40px}
+    .hero-title{font-size:30px}
+    .main-content{padding:24px 20px}
+    .tools-grid{grid-template-columns:1fr}
+    .toolbar{flex-direction:column;align-items:stretch}
+    .search-box{min-width:auto;width:100%}
+    .sort-dropdown{width:100%}
+    .footer-inner{grid-template-columns:1fr 1fr}
+  }
+  @media(max-width:576px){
+    .header{padding:0 16px}.header-right .search-btn,.header-right .theme-btn{display:none}
+    .hero-title{font-size:24px}
+    .footer-inner{grid-template-columns:1fr}
+    .footer-bottom{flex-direction:column;text-align:center}
+  }
+
+  /* DARK MODE */
+  html[data-theme="dark"] body{background:#0f172a;color:#f1f5f9}
+  html[data-theme="dark"] .header,html[data-theme="dark"] .cat-sidebar,html[data-theme="dark"] .tool-card,html[data-theme="dark"] .search-box,html[data-theme="dark"] .sort-dropdown{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .logo,html[data-theme="dark"] .toolbar-left h2,html[data-theme="dark"] .tool-name,html[data-theme="dark"] .cat-sidebar-title,html[data-theme="dark"] .no-results h3{color:#f1f5f9}
+  html[data-theme="dark"] .nav a,html[data-theme="dark"] .cat-item,html[data-theme="dark"] .tool-desc{color:#cbd5e1}
+  html[data-theme="dark"] .cat-item:hover{background:#0f172a}
+  html[data-theme="dark"] .cat-item.active{background:#2563eb;color:#fff}
+  html[data-theme="dark"] .cat-count{background:#0f172a;color:#94a3b8}
+  html[data-theme="dark"] .tool-meta{border-top-color:#334155}
+  html[data-theme="dark"] .search-box input{color:#f1f5f9}
+  html[data-theme="dark"] .sort-dropdown{color:#f1f5f9}
+  html[data-theme="dark"] .show-more-btn{background:#1e293b;border-color:#334155;color:#60a5fa}
+  html[data-theme="dark"] .show-more-btn:hover{background:#0f172a}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "https://bigtoolz.com/tools/#webpage",
+      "url": "https://bigtoolz.com/tools/",
+      "name": "All Tools - 300+ Free Online Tools",
+      "description": "Complete collection of 300+ free online tools across 8 categories.",
+      "isPartOf": {"@id": "https://bigtoolz.com/#website"}
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bigtoolz.com/"},
+        {"@type": "ListItem", "position": 2, "name": "All Tools", "item": "https://bigtoolz.com/tools/"}
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-left">
+    <a href="/" class="logo"><div class="logo-icon">⚒</div>BigToolz</span></a>
+    <nav><ul class="nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/tools/" class="active">All Tools</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about.html">About Us</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul></nav>
+  </div>
+  <div class="header-right">
+    <button class="theme-btn" aria-label="Toggle theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
+    </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <nav class="breadcrumb">
+      <a href="/">Home</a><span class="sep">›</span>
+      <span class="current">All Tools</span>
+    </nav>
+    <h1 class="hero-title">All <span class="blue">300+ Tools</span></h1>
+    <p class="hero-desc">
+      Complete collection of 300+ free online tools across 8 categories. Search, filter, and use any tool instantly no signup required.
+    </p>
+  </div>
+</section>
+
+<!-- MAIN -->
+<main class="main-content">
+
+  <div class="toolbar">
+    <div class="toolbar-left">
+      <h2>Explore All Tools <span class="count-num" id="visibleCount">(300)</span></h2>
+      <p>Click any tool to use it instantly no signup required.</p>
+    </div>
+    <div class="toolbar-right">
+      <div class="search-box">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        <input type="text" id="toolSearch" placeholder="Search 300+ tools..." autocomplete="off">
+      </div>
+      <select class="sort-dropdown" id="sortSelect">
+        <option value="default">Default Order</option>
+        <option value="az">A-Z</option>
+        <option value="za">Z-A</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="layout">
+
+    <!-- Category Sidebar -->
+    <aside class="cat-sidebar">
+      <div class="cat-sidebar-title">Categories</div>
+      <button class="cat-item active" data-category="all">
+        <div class="cat-item-left"><span class="cat-icon">🛠</span>All Tools</div>
+        <span class="cat-count">300</span>
+      </button>
+      <button class="cat-item" data-category="image">
+        <div class="cat-item-left"><span class="cat-icon">🖼</span>Image Tools</div>
+        <span class="cat-count">25</span>
+      </button>
+      <button class="cat-item" data-category="pdf">
+        <div class="cat-item-left"><span class="cat-icon">📕</span>PDF Tools</div>
+        <span class="cat-count">100</span>
+      </button>
+      <button class="cat-item" data-category="text">
+        <div class="cat-item-left"><span class="cat-icon">T</span>Text Tools</div>
+        <span class="cat-count">25</span>
+      </button>
+      <button class="cat-item" data-category="developer">
+        <div class="cat-item-left"><span class="cat-icon">&lt;/&gt;</span>Developer Tools</div>
+        <span class="cat-count">25</span>
+      </button>
+      <button class="cat-item" data-category="calculator">
+        <div class="cat-item-left"><span class="cat-icon">🧮</span>Calculator Tools</div>
+        <span class="cat-count">25</span>
+      </button>
+      <button class="cat-item" data-category="seo">
+        <div class="cat-item-left"><span class="cat-icon">📈</span>SEO Tools</div>
+        <span class="cat-count">25</span>
+      </button>
+      <button class="cat-item" data-category="social">
+        <div class="cat-item-left"><span class="cat-icon">📱</span>Social Tools</div>
+        <span class="cat-count">25</span>
+      </button>
+      <button class="cat-item" data-category="utility">
+        <div class="cat-item-left"><span class="cat-icon">⚙️</span>Utility Tools</div>
+        <span class="cat-count">50</span>
+      </button>
+    </aside>
+
+    <!-- Tools Grid -->
+    <div>
+      <div class="tools-grid" id="toolsGrid"></div>
+      <div class="no-results" id="noResults">
+        <div class="no-results-icon">🔍</div>
+        <h3>No tools found</h3>
+        <p>Try a different search term or category.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-box">
+    <h2 class="cta-title">Can't Find What You Need?</h2>
+    <p class="cta-desc">We're always adding new tools based on user requests. Tell us what you'd like to see.</p>
+    <a href="/contact.html" class="cta-btn">Request a Tool →</a>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand"><div class="logo-icon">⚒</div>BigToolz</span></div>
+      <p class="footer-tagline">Your Ultimate Online Tools Hub</p>
+      <div class="footer-social">
+        <a href="https://facebook.com/bigtoolz" aria-label="Facebook">f</a>
+        <a href="https://twitter.com/bigtoolz" aria-label="Twitter">𝕏</a>
+        <a href="https://youtube.com/@bigtoolz" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+    <div>
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/tools/">All Tools</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Categories</h3>
+      <ul class="footer-links">
+        <li><a href="/tools/image-tools/">Image Tools</a></li>
+        <li><a href="/tools/pdf-tools/">PDF Tools</a></li>
+        <li><a href="/tools/text-tools/">Text Tools</a></li>
+        <li><a href="/tools/seo-tools/">SEO Tools</a></li>
+        <li><a href="/tools/categories.html">All Categories →</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Legal</h3>
+      <ul class="footer-links">
+        <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="/terms.html">Terms of Service</a></li>
+        <li><a href="/disclaimer.html">Disclaimer</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left"><span>✓ 100% Free</span><span>✓ No Sign Up</span><span>✓ No Installation</span></div>
+    <div class="footer-bottom-right">© 2026 BigToolz. All rights reserved.</div>
+    <div class="footer-bottom-links"><a href="/privacy-policy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/disclaimer.html">Disclaimer</a></div>
+  </div>
+</footer>
+
+<script>
+  /* THEME */
+  (function(){try{var t=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&d))document.documentElement.setAttribute('data-theme','dark');else if(t==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();
+  document.querySelector('.theme-btn')?.addEventListener('click',()=>{const h=document.documentElement;const c=h.getAttribute('data-theme');const d=window.matchMedia('(prefers-color-scheme: dark)').matches;let n=c==='dark'?'light':c==='light'?'dark':(d?'light':'dark');h.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}});
+
+  /* ===========================================
+     ALL 300 TOOLS DATABASE
+     =========================================== */
+  const TOOLS = [
+    /* ========== IMAGE TOOLS (25) ========== */
+    { name:'Image Compressor', url:'/tools/image-tools/image-compressor/', desc:'Reduce image size without quality loss.', cat:'image', icon:'🖼', color:'#10b981' },
+    { name:'PNG to JPG', url:'/tools/image-tools/png-to-jpg/', desc:'Convert PNG images to JPG format.', cat:'image', icon:'🔄', color:'#3b82f6' },
+    { name:'JPG to PNG', url:'/tools/image-tools/jpg-to-png/', desc:'Convert JPG images to PNG format.', cat:'image', icon:'🔄', color:'#10b981' },
+    { name:'Image Resizer', url:'/tools/image-tools/image-resizer/', desc:'Resize images to any dimension.', cat:'image', icon:'📐', color:'#8b5cf6' },
+    { name:'Image Crop', url:'/tools/image-tools/image-crop/', desc:'Crop images with precision.', cat:'image', icon:'✂️', color:'#f97316' },
+    { name:'Image Flip', url:'/tools/image-tools/image-flip/', desc:'Flip images horizontally or vertically.', cat:'image', icon:'🔃', color:'#06b6d4' },
+    { name:'Image Rotate', url:'/tools/image-tools/image-rotate/', desc:'Rotate images to any angle.', cat:'image', icon:'🔁', color:'#ec4899' },
+    { name:'Image to Base64', url:'/tools/image-tools/image-to-base64/', desc:'Convert images to Base64 strings.', cat:'image', icon:'🔤', color:'#8b5cf6' },
+    { name:'Base64 to Image', url:'/tools/image-tools/base64-to-image/', desc:'Convert Base64 strings to images.', cat:'image', icon:'🖼', color:'#10b981' },
+    { name:'Image Color Picker', url:'/tools/image-tools/image-color-picker/', desc:'Pick colors from any image.', cat:'image', icon:'🎨', color:'#f59e0b' },
+    { name:'Image Blur', url:'/tools/image-tools/image-blur/', desc:'Blur images or parts of images.', cat:'image', icon:'💨', color:'#64748b' },
+    { name:'Image Brightness', url:'/tools/image-tools/image-brightness/', desc:'Adjust image brightness.', cat:'image', icon:'☀️', color:'#f59e0b' },
+    { name:'Image Contrast', url:'/tools/image-tools/image-contrast/', desc:'Adjust image contrast.', cat:'image', icon:'◐', color:'#1e293b' },
+    { name:'Image Grayscale', url:'/tools/image-tools/image-grayscale/', desc:'Convert images to grayscale.', cat:'image', icon:'⚫', color:'#6b7280' },
+    { name:'Image Pixelator', url:'/tools/image-tools/image-pixelator/', desc:'Pixelate images for privacy.', cat:'image', icon:'🔲', color:'#8b5cf6' },
+    { name:'Image to Sketch', url:'/tools/image-tools/image-sketch/', desc:'Convert photos to sketch.', cat:'image', icon:'✏️', color:'#1e293b' },
+    { name:'Image to ASCII', url:'/tools/image-tools/image-ascii/', desc:'Convert images to ASCII art.', cat:'image', icon:'🔤', color:'#0f172a' },
+    { name:'Image Watermark', url:'/tools/image-tools/image-watermark/', desc:'Add watermarks to images.', cat:'image', icon:'💧', color:'#3b82f6' },
+    { name:'Screenshot Editor', url:'/tools/image-tools/screenshot-editor/', desc:'Edit screenshots online.', cat:'image', icon:'📸', color:'#ec4899' },
+    { name:'Image Metadata Viewer', url:'/tools/image-tools/image-metadata/', desc:'View image EXIF data.', cat:'image', icon:'ℹ️', color:'#06b6d4' },
+    { name:'Aspect Ratio Calculator', url:'/tools/image-tools/aspect-ratio/', desc:'Calculate image aspect ratios.', cat:'image', icon:'📐', color:'#8b5cf6' },
+    { name:'Placeholder Generator', url:'/tools/image-tools/placeholder-generator/', desc:'Generate placeholder images.', cat:'image', icon:'⬜', color:'#64748b' },
+    { name:'QR Code Generator', url:'/tools/image-tools/qr-code-generator/', desc:'Create QR codes.', cat:'image', icon:'▦', color:'#3b82f6' },
+    { name:'SVG to PNG', url:'/tools/image-tools/svg-to-png/', desc:'Convert SVG to PNG format.', cat:'image', icon:'🖼', color:'#10b981' },
+    { name:'Color Extractor', url:'/tools/image-tools/color-extractor/', desc:'Extract colors from images.', cat:'image', icon:'🎨', color:'#f59e0b' },
+
+    /* ========== TEXT TOOLS (25) ========== */
+    { name:'Word Counter', url:'/tools/text-tools/word-counter/', desc:'Count words, characters and more.', cat:'text', icon:'T', color:'#3b82f6' },
+    { name:'Character Counter', url:'/tools/text-tools/character-counter/', desc:'Count characters in text.', cat:'text', icon:'🔤', color:'#8b5cf6' },
+    { name:'Case Converter', url:'/tools/text-tools/case-converter/', desc:'Convert text case.', cat:'text', icon:'Aa', color:'#f97316' },
+    { name:'Fancy Text Generator', url:'/tools/text-tools/fancy-text/', desc:'Generate fancy text styles.', cat:'text', icon:'✨', color:'#ec4899' },
+    { name:'Bold Text Generator', url:'/tools/text-tools/bold-text/', desc:'Convert text to bold.', cat:'text', icon:'B', color:'#1e293b' },
+    { name:'Italic Text Generator', url:'/tools/text-tools/italic-text/', desc:'Convert text to italic.', cat:'text', icon:'I', color:'#64748b' },
+    { name:'Cursive Text Generator', url:'/tools/text-tools/cursive-text/', desc:'Convert text to cursive.', cat:'text', icon:'𝒜', color:'#8b5cf6' },
+    { name:'Upside Down Text', url:'/tools/text-tools/upside-down/', desc:'Flip text upside down.', cat:'text', icon:'🙃', color:'#06b6d4' },
+    { name:'Small Text Generator', url:'/tools/text-tools/small-text/', desc:'Convert text to small text.', cat:'text', icon:'ᵃ', color:'#3b82f6' },
+    { name:'Zalgo Text Generator', url:'/tools/text-tools/zalgo-text/', desc:'Generate glitch text.', cat:'text', icon:'👹', color:'#ef4444' },
+    { name:'Reverse Text', url:'/tools/text-tools/reverse-text/', desc:'Reverse any text.', cat:'text', icon:'🔃', color:'#8b5cf6' },
+    { name:'Text to Binary', url:'/tools/text-tools/text-to-binary/', desc:'Convert text to binary.', cat:'text', icon:'01', color:'#0f172a' },
+    { name:'Binary to Text', url:'/tools/text-tools/binary-to-text/', desc:'Convert binary to text.', cat:'text', icon:'🔤', color:'#3b82f6' },
+    { name:'Text to Hex', url:'/tools/text-tools/text-to-hex/', desc:'Convert text to hexadecimal.', cat:'text', icon:'⬡', color:'#f97316' },
+    { name:'Hex to Text', url:'/tools/text-tools/hex-to-text/', desc:'Convert hex to text.', cat:'text', icon:'🔤', color:'#10b981' },
+    { name:'Text to Morse Code', url:'/tools/text-tools/text-to-morse/', desc:'Convert text to Morse.', cat:'text', icon:'·−', color:'#0f172a' },
+    { name:'Morse Code to Text', url:'/tools/text-tools/morse-to-text/', desc:'Convert Morse to text.', cat:'text', icon:'🔤', color:'#64748b' },
+    { name:'Random Word Generator', url:'/tools/text-tools/random-word/', desc:'Generate random words.', cat:'text', icon:'🎲', color:'#8b5cf6' },
+    { name:'Random Sentence Generator', url:'/tools/text-tools/random-sentence/', desc:'Generate random sentences.', cat:'text', icon:'💬', color:'#3b82f6' },
+    { name:'Lorem Ipsum Generator', url:'/tools/text-tools/lorem-ipsum/', desc:'Generate placeholder text.', cat:'text', icon:'📄', color:'#64748b' },
+    { name:'Text Rephraser', url:'/tools/text-tools/text-rephraser/', desc:'Rephrase text.', cat:'text', icon:'✍️', color:'#10b981' },
+    { name:'Keyword Density Checker', url:'/tools/text-tools/keyword-density/', desc:'Check keyword density.', cat:'text', icon:'📊', color:'#8b5cf6' },
+    { name:'Readability Checker', url:'/tools/text-tools/readability-checker/', desc:'Check readability score.', cat:'text', icon:'📖', color:'#3b82f6' },
+    { name:'Word Frequency Counter', url:'/tools/text-tools/word-frequency/', desc:'Count word frequency.', cat:'text', icon:'📈', color:'#f97316' },
+    { name:'Typing Speed Test', url:'/tools/text-tools/typing-speed/', desc:'Test typing speed.', cat:'text', icon:'⌨️', color:'#06b6d4' },
+
+    /* ========== DEVELOPER TOOLS (25) ========== */
+    { name:'HTML Minifier', url:'/tools/developer-tools/html-minifier/', desc:'Minify HTML code.', cat:'developer', icon:'</>', color:'#f97316' },
+    { name:'CSS Minifier', url:'/tools/developer-tools/css-minifier/', desc:'Minify CSS code.', cat:'developer', icon:'{}', color:'#3b82f6' },
+    { name:'JS Minifier', url:'/tools/developer-tools/js-minifier/', desc:'Minify JavaScript.', cat:'developer', icon:'JS', color:'#f59e0b' },
+    { name:'HTML Formatter', url:'/tools/developer-tools/html-formatter/', desc:'Format HTML.', cat:'developer', icon:'</>', color:'#f97316' },
+    { name:'CSS Formatter', url:'/tools/developer-tools/css-formatter/', desc:'Format CSS.', cat:'developer', icon:'{}', color:'#3b82f6' },
+    { name:'JS Formatter', url:'/tools/developer-tools/js-formatter/', desc:'Format JavaScript.', cat:'developer', icon:'JS', color:'#f59e0b' },
+    { name:'JSON Formatter', url:'/tools/developer-tools/json-formatter/', desc:'Format and beautify JSON.', cat:'developer', icon:'{ }', color:'#10b981' },
+    { name:'JSON Validator', url:'/tools/developer-tools/json-validator/', desc:'Validate JSON data.', cat:'developer', icon:'✓', color:'#10b981' },
+    { name:'JSON to XML', url:'/tools/developer-tools/json-to-xml/', desc:'Convert JSON to XML.', cat:'developer', icon:'🔄', color:'#8b5cf6' },
+    { name:'XML to JSON', url:'/tools/developer-tools/xml-to-json/', desc:'Convert XML to JSON.', cat:'developer', icon:'🔄', color:'#f97316' },
+    { name:'Base64 Encoder', url:'/tools/developer-tools/base64-encoder/', desc:'Encode text to Base64.', cat:'developer', icon:'🔐', color:'#8b5cf6' },
+    { name:'Base64 Decoder', url:'/tools/developer-tools/base64-decoder/', desc:'Decode Base64 to text.', cat:'developer', icon:'🔓', color:'#3b82f6' },
+    { name:'URL Encoder', url:'/tools/developer-tools/url-encoder/', desc:'Encode URL strings.', cat:'developer', icon:'🔗', color:'#06b6d4' },
+    { name:'URL Decoder', url:'/tools/developer-tools/url-decoder/', desc:'Decode URL strings.', cat:'developer', icon:'🔗', color:'#10b981' },
+    { name:'RGB to HEX', url:'/tools/developer-tools/rgb-to-hex/', desc:'Convert RGB color to HEX.', cat:'developer', icon:'🎨', color:'#ec4899' },
+    { name:'HEX to RGB', url:'/tools/developer-tools/hex-to-rgb/', desc:'Convert HEX color to RGB.', cat:'developer', icon:'🎨', color:'#f59e0b' },
+    { name:'CSS Gradient Generator', url:'/tools/developer-tools/css-gradient/', desc:'Create CSS gradients.', cat:'developer', icon:'🌈', color:'#8b5cf6' },
+    { name:'Box Shadow Generator', url:'/tools/developer-tools/box-shadow/', desc:'Generate box shadows.', cat:'developer', icon:'◼', color:'#1e293b' },
+    { name:'Border Radius Generator', url:'/tools/developer-tools/border-radius/', desc:'Generate border radius.', cat:'developer', icon:'▢', color:'#3b82f6' },
+    { name:'Flexbox Playground', url:'/tools/developer-tools/flexbox/', desc:'Experiment with Flexbox.', cat:'developer', icon:'⇄', color:'#10b981' },
+    { name:'CSS Grid Generator', url:'/tools/developer-tools/css-grid/', desc:'Generate CSS grids.', cat:'developer', icon:'⊞', color:'#8b5cf6' },
+    { name:'Meta Tag Generator', url:'/tools/developer-tools/meta-tag/', desc:'Generate SEO meta tags.', cat:'developer', icon:'🏷', color:'#3b82f6' },
+    { name:'Robots.txt Generator', url:'/tools/developer-tools/robots-txt/', desc:'Generate robots.txt.', cat:'developer', icon:'🤖', color:'#64748b' },
+    { name:'Sitemap Generator', url:'/tools/developer-tools/sitemap-generator/', desc:'Generate XML sitemaps.', cat:'developer', icon:'🗺', color:'#f97316' },
+    { name:'Favicon Generator', url:'/tools/developer-tools/favicon-generator/', desc:'Generate favicons.', cat:'developer', icon:'⭐', color:'#f59e0b' },
+
+    /* ========== CALCULATOR TOOLS (25) ========== */
+    { name:'Percentage Calculator', url:'/tools/calculator-tools/percentage-calculator/', desc:'Calculate percentages.', cat:'calculator', icon:'%', color:'#3b82f6' },
+    { name:'Age Calculator', url:'/tools/calculator-tools/age-calculator/', desc:'Calculate exact age.', cat:'calculator', icon:'🎂', color:'#ec4899' },
+    { name:'BMI Calculator', url:'/tools/calculator-tools/bmi-calculator/', desc:'Calculate your BMI.', cat:'calculator', icon:'⚖️', color:'#10b981' },
+    { name:'Calorie Calculator', url:'/tools/calculator-tools/calorie-calculator/', desc:'Calculate daily calories.', cat:'calculator', icon:'🍎', color:'#f97316' },
+    { name:'Loan EMI Calculator', url:'/tools/calculator-tools/loan-emi/', desc:'Calculate loan EMI.', cat:'calculator', icon:'🏦', color:'#3b82f6' },
+    { name:'SIP Calculator', url:'/tools/calculator-tools/sip-calculator/', desc:'Calculate SIP returns.', cat:'calculator', icon:'📈', color:'#10b981' },
+    { name:'Compound Interest Calculator', url:'/tools/calculator-tools/compound-interest/', desc:'Calculate compound interest.', cat:'calculator', icon:'💰', color:'#f59e0b' },
+    { name:'GST Calculator', url:'/tools/calculator-tools/gst-calculator/', desc:'Calculate GST.', cat:'calculator', icon:'₹', color:'#8b5cf6' },
+    { name:'Discount Calculator', url:'/tools/calculator-tools/discount-calculator/', desc:'Calculate discounts.', cat:'calculator', icon:'🏷', color:'#ec4899' },
+    { name:'Tip Calculator', url:'/tools/calculator-tools/tip-calculator/', desc:'Calculate tips.', cat:'calculator', icon:'💵', color:'#10b981' },
+    { name:'Fuel Cost Calculator', url:'/tools/calculator-tools/fuel-cost/', desc:'Calculate fuel cost.', cat:'calculator', icon:'⛽', color:'#f97316' },
+    { name:'Electricity Bill Calculator', url:'/tools/calculator-tools/electricity-bill/', desc:'Calculate electricity bill.', cat:'calculator', icon:'⚡', color:'#f59e0b' },
+    { name:'Unit Converter', url:'/tools/calculator-tools/unit-converter/', desc:'Convert between units.', cat:'calculator', icon:'🔄', color:'#3b82f6' },
+    { name:'Length Converter', url:'/tools/calculator-tools/length-converter/', desc:'Convert length units.', cat:'calculator', icon:'📏', color:'#8b5cf6' },
+    { name:'Weight Converter', url:'/tools/calculator-tools/weight-converter/', desc:'Convert weight units.', cat:'calculator', icon:'⚖️', color:'#10b981' },
+    { name:'Temperature Converter', url:'/tools/calculator-tools/temperature-converter/', desc:'Convert temperature.', cat:'calculator', icon:'🌡', color:'#ef4444' },
+    { name:'Area Converter', url:'/tools/calculator-tools/area-converter/', desc:'Convert area units.', cat:'calculator', icon:'📐', color:'#06b6d4' },
+    { name:'Volume Converter', url:'/tools/calculator-tools/volume-converter/', desc:'Convert volume units.', cat:'calculator', icon:'🧪', color:'#8b5cf6' },
+    { name:'Speed Converter', url:'/tools/calculator-tools/speed-converter/', desc:'Convert speed units.', cat:'calculator', icon:'🚀', color:'#ec4899' },
+    { name:'Data Storage Converter', url:'/tools/calculator-tools/data-storage/', desc:'Convert data storage.', cat:'calculator', icon:'💾', color:'#3b82f6' },
+    { name:'Time Zone Converter', url:'/tools/calculator-tools/time-zone/', desc:'Convert time zones.', cat:'calculator', icon:'🌍', color:'#10b981' },
+    { name:'Date Difference Calculator', url:'/tools/calculator-tools/date-difference/', desc:'Calculate date difference.', cat:'calculator', icon:'📅', color:'#8b5cf6' },
+    { name:'Ovulation Calculator', url:'/tools/calculator-tools/ovulation-calculator/', desc:'Calculate ovulation.', cat:'calculator', icon:'🌸', color:'#ec4899' },
+    { name:'Pregnancy Calculator', url:'/tools/calculator-tools/pregnancy-calculator/', desc:'Calculate due date.', cat:'calculator', icon:'👶', color:'#f59e0b' },
+    { name:'Macro Calculator', url:'/tools/calculator-tools/macro-calculator/', desc:'Calculate macros.', cat:'calculator', icon:'🥗', color:'#10b981' },
+
+    /* ========== SEO TOOLS (25) ========== */
+    { name:'Meta Description Generator', url:'/tools/seo-tools/meta-description/', desc:'Generate meta descriptions.', cat:'seo', icon:'📝', color:'#8b5cf6' },
+    { name:'SERP Preview', url:'/tools/seo-tools/serp-preview/', desc:'Preview Google results.', cat:'seo', icon:'🔍', color:'#3b82f6' },
+    { name:'Keyword Planner', url:'/tools/seo-tools/keyword-planner/', desc:'Plan SEO keywords.', cat:'seo', icon:'🎯', color:'#8b5cf6' },
+    { name:'Keyword Density Checker', url:'/tools/seo-tools/keyword-density-checker/', desc:'Check keyword density.', cat:'seo', icon:'📊', color:'#10b981' },
+    { name:'Anchor Text Analyzer', url:'/tools/seo-tools/anchor-text/', desc:'Analyze anchor text.', cat:'seo', icon:'🔗', color:'#f97316' },
+    { name:'Domain Age Checker', url:'/tools/seo-tools/domain-age/', desc:'Check domain age.', cat:'seo', icon:'📅', color:'#06b6d4' },
+    { name:'Domain Authority Checker', url:'/tools/seo-tools/domain-authority/', desc:'Check domain authority.', cat:'seo', icon:'🏆', color:'#f59e0b' },
+    { name:'Page Speed Checker', url:'/tools/seo-tools/page-speed/', desc:'Check page speed.', cat:'seo', icon:'⚡', color:'#3b82f6' },
+    { name:'Mobile Friendly Test', url:'/tools/seo-tools/mobile-friendly/', desc:'Test mobile friendliness.', cat:'seo', icon:'📱', color:'#10b981' },
+    { name:'Open Graph Generator', url:'/tools/seo-tools/open-graph/', desc:'Generate OG tags.', cat:'seo', icon:'📘', color:'#3b82f6' },
+    { name:'Twitter Card Generator', url:'/tools/seo-tools/twitter-card/', desc:'Generate Twitter Cards.', cat:'seo', icon:'🐦', color:'#06b6d4' },
+    { name:'Schema Markup Generator', url:'/tools/seo-tools/schema-markup/', desc:'Generate schema markup.', cat:'seo', icon:'🏗', color:'#8b5cf6' },
+    { name:'Article Title Generator', url:'/tools/seo-tools/article-title/', desc:'Generate article titles.', cat:'seo', icon:'📰', color:'#ec4899' },
+    { name:'Blog Idea Generator', url:'/tools/seo-tools/blog-idea/', desc:'Generate blog ideas.', cat:'seo', icon:'💡', color:'#f59e0b' },
+    { name:'YouTube Title Generator', url:'/tools/seo-tools/youtube-title/', desc:'Generate YouTube titles.', cat:'seo', icon:'▶', color:'#ef4444' },
+    { name:'YouTube Description Generator', url:'/tools/seo-tools/youtube-description/', desc:'Generate YouTube descriptions.', cat:'seo', icon:'📝', color:'#ef4444' },
+    { name:'YouTube Tag Generator', url:'/tools/seo-tools/youtube-tag/', desc:'Generate YouTube tags.', cat:'seo', icon:'🏷', color:'#ef4444' },
+    { name:'Instagram Hashtag Generator', url:'/tools/seo-tools/instagram-hashtag/', desc:'Generate Instagram hashtags.', cat:'seo', icon:'#️⃣', color:'#ec4899' },
+    { name:'Facebook Post Generator', url:'/tools/seo-tools/facebook-post/', desc:'Generate Facebook posts.', cat:'seo', icon:'📘', color:'#3b82f6' },
+    { name:'LinkedIn Headline Generator', url:'/tools/seo-tools/linkedin-headline/', desc:'Generate LinkedIn headlines.', cat:'seo', icon:'in', color:'#0077b5' },
+    { name:'Email Signature Generator', url:'/tools/seo-tools/email-signature/', desc:'Create email signatures.', cat:'seo', icon:'✉️', color:'#8b5cf6' },
+    { name:'UTM Builder', url:'/tools/seo-tools/utm-builder/', desc:'Build UTM tracking URLs.', cat:'seo', icon:'🔗', color:'#10b981' },
+    { name:'QR Code with Logo', url:'/tools/seo-tools/qr-code-logo/', desc:'Create QR codes with logo.', cat:'seo', icon:'▦', color:'#3b82f6' },
+    { name:'Barcode Generator', url:'/tools/seo-tools/barcode-generator/', desc:'Generate barcodes.', cat:'seo', icon:'▥', color:'#1e293b' },
+    { name:'Color Palette Generator', url:'/tools/seo-tools/color-palette/', desc:'Generate color palettes.', cat:'seo', icon:'🎨', color:'#ec4899' },
+
+    /* ========== SOCIAL TOOLS (25) ========== */
+    { name:'YouTube Thumbnail Downloader', url:'/tools/social-tools/youtube-thumbnail/', desc:'Download YouTube thumbnails.', cat:'social', icon:'🖼', color:'#ef4444' },
+    { name:'YouTube Tag Extractor', url:'/tools/social-tools/youtube-tag-extractor/', desc:'Extract YouTube tags.', cat:'social', icon:'🏷', color:'#ef4444' },
+    { name:'YouTube Channel ID Finder', url:'/tools/social-tools/youtube-channel-id/', desc:'Find channel ID.', cat:'social', icon:'🔍', color:'#ef4444' },
+    { name:'YouTube Video ID Finder', url:'/tools/social-tools/youtube-video-id/', desc:'Find video ID.', cat:'social', icon:'🔍', color:'#ef4444' },
+    { name:'Instagram Reels Downloader', url:'/tools/social-tools/instagram-reels/', desc:'Download Instagram reels.', cat:'social', icon:'📱', color:'#ec4899' },
+    { name:'Instagram DP Downloader', url:'/tools/social-tools/instagram-dp/', desc:'Download Instagram DPs.', cat:'social', icon:'👤', color:'#ec4899' },
+    { name:'Instagram Font Generator', url:'/tools/social-tools/instagram-font/', desc:'Generate Instagram fonts.', cat:'social', icon:'𝓐', color:'#ec4899' },
+    { name:'Twitter Trends', url:'/tools/social-tools/twitter-trends/', desc:'Check Twitter trends.', cat:'social', icon:'📈', color:'#1e293b' },
+    { name:'Twitter Bio Generator', url:'/tools/social-tools/twitter-bio/', desc:'Generate Twitter bios.', cat:'social', icon:'𝕏', color:'#1e293b' },
+    { name:'Facebook Video Downloader', url:'/tools/social-tools/facebook-video/', desc:'Download FB videos.', cat:'social', icon:'▶', color:'#3b82f6' },
+    { name:'Pinterest Pin Downloader', url:'/tools/social-tools/pinterest-pin/', desc:'Download Pinterest pins.', cat:'social', icon:'📌', color:'#e60023' },
+    { name:'TikTok Video Downloader', url:'/tools/social-tools/tiktok-video/', desc:'Download TikTok videos.', cat:'social', icon:'♪', color:'#000000' },
+    { name:'WhatsApp Link Generator', url:'/tools/social-tools/whatsapp-link/', desc:'Create WhatsApp links.', cat:'social', icon:'💬', color:'#25d366' },
+    { name:'WhatsApp DP Downloader', url:'/tools/social-tools/whatsapp-dp/', desc:'Download WhatsApp DPs.', cat:'social', icon:'👤', color:'#25d366' },
+    { name:'Telegram Bio Generator', url:'/tools/social-tools/telegram-bio/', desc:'Generate Telegram bios.', cat:'social', icon:'✈', color:'#0088cc' },
+    { name:'Discord Emoji Maker', url:'/tools/social-tools/discord-emoji/', desc:'Create Discord emojis.', cat:'social', icon:'😀', color:'#5865f2' },
+    { name:'Reddit Username Generator', url:'/tools/social-tools/reddit-username/', desc:'Generate Reddit usernames.', cat:'social', icon:'👽', color:'#ff4500' },
+    { name:'Snapchat Streak Calculator', url:'/tools/social-tools/snapchat-streak/', desc:'Calculate Snapchat streaks.', cat:'social', icon:'👻', color:'#fffc00' },
+    { name:'Social Media Scheduler', url:'/tools/social-tools/social-scheduler/', desc:'Plan social posts.', cat:'social', icon:'📅', color:'#8b5cf6' },
+    { name:'Caption Generator', url:'/tools/social-tools/caption-generator/', desc:'Generate social captions.', cat:'social', icon:'💬', color:'#ec4899' },
+    { name:'Hashtag Generator', url:'/tools/social-tools/hashtag-generator/', desc:'Generate hashtags.', cat:'social', icon:'#️⃣', color:'#3b82f6' },
+    { name:'Emoji Translator', url:'/tools/social-tools/emoji-translator/', desc:'Translate text to emojis.', cat:'social', icon:'😊', color:'#f59e0b' },
+    { name:'Emoji Remover', url:'/tools/social-tools/emoji-remover/', desc:'Remove emojis from text.', cat:'social', icon:'🚫', color:'#ef4444' },
+    { name:'Hashtag Counter', url:'/tools/social-tools/hashtag-counter/', desc:'Count hashtags.', cat:'social', icon:'📊', color:'#8b5cf6' },
+    { name:'Brand Kit Generator', url:'/tools/social-tools/brand-kit/', desc:'Create brand identity kits.', cat:'social', icon:'🎨', color:'#ec4899' },
+
+    /* ========== UTILITY TOOLS (50) ========== */
+    { name:'Password Strength Checker', url:'/tools/utility-tools/password-strength/', desc:'Check password strength.', cat:'utility', icon:'🛡', color:'#10b981' },
+    { name:'Password Generator', url:'/tools/utility-tools/password-generator/', desc:'Generate strong passwords.', cat:'utility', icon:'🔒', color:'#8b5cf6' },
+    { name:'OTP Generator', url:'/tools/utility-tools/otp-generator/', desc:'Generate random OTPs.', cat:'utility', icon:'🔢', color:'#3b82f6' },
+    { name:'PIN Generator', url:'/tools/utility-tools/pin-generator/', desc:'Generate random PINs.', cat:'utility', icon:'#️⃣', color:'#f97316' },
+    { name:'Lottery Number Generator', url:'/tools/utility-tools/lottery-number/', desc:'Generate lottery numbers.', cat:'utility', icon:'🎰', color:'#ef4444' },
+    { name:'Random Name Picker', url:'/tools/utility-tools/name-picker/', desc:'Pick a random name.', cat:'utility', icon:'🎯', color:'#8b5cf6' },
+    { name:'Team Generator', url:'/tools/utility-tools/team-generator/', desc:'Generate random teams.', cat:'utility', icon:'👥', color:'#3b82f6' },
+    { name:'Wheel of Names', url:'/tools/utility-tools/wheel-names/', desc:'Spin the wheel.', cat:'utility', icon:'🎡', color:'#ec4899' },
+    { name:'Decision Maker', url:'/tools/utility-tools/decision-maker/', desc:'Make random decisions.', cat:'utility', icon:'🎲', color:'#f59e0b' },
+    { name:'Coin Flip', url:'/tools/utility-tools/coin-flip/', desc:'Flip a virtual coin.', cat:'utility', icon:'🪙', color:'#f59e0b' },
+    { name:'Dice Roll', url:'/tools/utility-tools/dice-roll/', desc:'Roll virtual dice.', cat:'utility', icon:'🎲', color:'#ef4444' },
+    { name:'Rock Paper Scissors', url:'/tools/utility-tools/rock-paper-scissors/', desc:'Play RPS.', cat:'utility', icon:'✊', color:'#8b5cf6' },
+    { name:'Tic Tac Toe', url:'/tools/utility-tools/tic-tac-toe/', desc:'Play Tic Tac Toe.', cat:'utility', icon:'⭕', color:'#3b82f6' },
+    { name:'Memory Game', url:'/tools/utility-tools/memory-game/', desc:'Play memory game.', cat:'utility', icon:'🧠', color:'#ec4899' },
+    { name:'Typing Game', url:'/tools/utility-tools/typing-game/', desc:'Practice typing.', cat:'utility', icon:'⌨️', color:'#10b981' },
+    { name:'Reaction Time Test', url:'/tools/utility-tools/reaction-time/', desc:'Test reaction time.', cat:'utility', icon:'⚡', color:'#f97316' },
+    { name:'Aim Trainer', url:'/tools/utility-tools/aim-trainer/', desc:'Practice aim.', cat:'utility', icon:'🎯', color:'#ef4444' },
+    { name:'Color Blind Test', url:'/tools/utility-tools/color-blind/', desc:'Test color blindness.', cat:'utility', icon:'👁', color:'#8b5cf6' },
+    { name:'Eye Test', url:'/tools/utility-tools/eye-test/', desc:'Online eye test.', cat:'utility', icon:'👁', color:'#3b82f6' },
+    { name:'Hearing Test', url:'/tools/utility-tools/hearing-test/', desc:'Test hearing range.', cat:'utility', icon:'👂', color:'#f59e0b' },
+    { name:'IQ Test', url:'/tools/utility-tools/iq-test/', desc:'Take an IQ test.', cat:'utility', icon:'🧠', color:'#8b5cf6' },
+    { name:'Personality Test', url:'/tools/utility-tools/personality-test/', desc:'Discover personality.', cat:'utility', icon:'🧩', color:'#ec4899' },
+    { name:'Love Calculator', url:'/tools/utility-tools/love-calculator/', desc:'Calculate love.', cat:'utility', icon:'❤️', color:'#ef4444' },
+    { name:'Friendship Test', url:'/tools/utility-tools/friendship-test/', desc:'Test friendship.', cat:'utility', icon:'🤝', color:'#10b981' },
+    { name:'Mood Tracker', url:'/tools/utility-tools/mood-tracker/', desc:'Track your mood.', cat:'utility', icon:'😊', color:'#f59e0b' },
+    { name:'Habit Tracker', url:'/tools/utility-tools/habit-tracker/', desc:'Track habits.', cat:'utility', icon:'✅', color:'#10b981' },
+    { name:'Goal Tracker', url:'/tools/utility-tools/goal-tracker/', desc:'Track goals.', cat:'utility', icon:'🎯', color:'#8b5cf6' },
+    { name:'To-Do List', url:'/tools/utility-tools/todo-list/', desc:'Simple to-do list.', cat:'utility', icon:'📋', color:'#3b82f6' },
+    { name:'Daily Quote', url:'/tools/utility-tools/daily-quote/', desc:'Get daily quotes.', cat:'utility', icon:'💭', color:'#f59e0b' },
+    { name:'Affirmation Generator', url:'/tools/utility-tools/affirmation-generator/', desc:'Generate affirmations.', cat:'utility', icon:'✨', color:'#ec4899' },
+    { name:'Manifestation Journal', url:'/tools/utility-tools/manifestation-journal/', desc:'Digital journal.', cat:'utility', icon:'🌟', color:'#8b5cf6' },
+    { name:'Gratitude Journal', url:'/tools/utility-tools/gratitude-journal/', desc:'Gratitude journal.', cat:'utility', icon:'🙏', color:'#10b981' },
+    { name:'Vision Board', url:'/tools/utility-tools/vision-board/', desc:'Create vision boards.', cat:'utility', icon:'🖼', color:'#ec4899' },
+    { name:'Dream Journal', url:'/tools/utility-tools/dream-journal/', desc:'Log dreams.', cat:'utility', icon:'🌙', color:'#8b5cf6' },
+    { name:'Sleep Cycle Calculator', url:'/tools/utility-tools/sleep-cycle/', desc:'Calculate sleep times.', cat:'utility', icon:'😴', color:'#3b82f6' },
+    { name:'Wake Up Time Calculator', url:'/tools/utility-tools/wake-up-time/', desc:'Find wake up times.', cat:'utility', icon:'⏰', color:'#f97316' },
+    { name:'Water Intake Calculator', url:'/tools/utility-tools/water-intake/', desc:'Calculate water intake.', cat:'utility', icon:'💧', color:'#06b6d4' },
+    { name:'Blood Pressure Tracker', url:'/tools/utility-tools/blood-pressure/', desc:'Track blood pressure.', cat:'utility', icon:'🩺', color:'#ef4444' },
+    { name:'Heart Rate Calculator', url:'/tools/utility-tools/heart-rate/', desc:'Calculate target HR.', cat:'utility', icon:'❤️', color:'#ef4444' },
+    { name:'Steps to KM Converter', url:'/tools/utility-tools/steps-km/', desc:'Convert steps to km.', cat:'utility', icon:'👣', color:'#10b981' },
+    { name:'Running Pace Calculator', url:'/tools/utility-tools/running-pace/', desc:'Calculate running pace.', cat:'utility', icon:'🏃', color:'#f97316' },
+    { name:'Yoga Pose Guide', url:'/tools/utility-tools/yoga-pose/', desc:'Learn yoga poses.', cat:'utility', icon:'🧘', color:'#8b5cf6' },
+    { name:'Workout Plan Generator', url:'/tools/utility-tools/workout-plan/', desc:'Generate workout plans.', cat:'utility', icon:'💪', color:'#ef4444' },
+    { name:'Diet Plan Generator', url:'/tools/utility-tools/diet-plan/', desc:'Generate diet plans.', cat:'utility', icon:'🥗', color:'#10b981' },
+    { name:'Recipe Calorie Calculator', url:'/tools/utility-tools/recipe-calorie/', desc:'Calculate recipe calories.', cat:'utility', icon:'🍽', color:'#f59e0b' },
+    { name:'Grocery List Maker', url:'/tools/utility-tools/grocery-list/', desc:'Create grocery lists.', cat:'utility', icon:'🛒', color:'#10b981' },
+    { name:'Birthday Countdown', url:'/tools/utility-tools/birthday-countdown/', desc:'Countdown to birthdays.', cat:'utility', icon:'🎂', color:'#ec4899' },
+    { name:'Event Countdown', url:'/tools/utility-tools/event-countdown/', desc:'Countdown to events.', cat:'utility', icon:'📅', color:'#3b82f6' },
+    { name:'Stopwatch', url:'/tools/utility-tools/stopwatch/', desc:'Online stopwatch.', cat:'utility', icon:'⏱', color:'#f59e0b' },
+    { name:'World Clock', url:'/tools/utility-tools/world-clock/', desc:'Check time in any city.', cat:'utility', icon:'🕐', color:'#06b6d4' },
+
+    /* ========== PDF TOOLS (100) Sample for now ========== */
+    { name:'JPG to PDF', url:'/tools/pdf-tools/convert-pdf/jpg-to-pdf/', desc:'Convert JPG images to PDF.', cat:'pdf', icon:'📕', color:'#ef4444' },
+    { name:'PNG to PDF', url:'/tools/pdf-tools/convert-pdf/png-to-pdf/', desc:'Convert PNG images to PDF.', cat:'pdf', icon:'📕', color:'#ef4444' },
+    { name:'Word to PDF', url:'/tools/pdf-tools/convert-pdf/word-to-pdf/', desc:'Convert Word to PDF.', cat:'pdf', icon:'W', color:'#3b82f6' },
+    { name:'PDF to JPG', url:'/tools/pdf-tools/convert-pdf/pdf-to-jpg/', desc:'Convert PDF to JPG.', cat:'pdf', icon:'🖼', color:'#10b981' },
+    { name:'Merge PDF', url:'/tools/pdf-tools/organize-pdf/merge-pdf/', desc:'Combine multiple PDFs.', cat:'pdf', icon:'📚', color:'#3b82f6' },
+    { name:'Split PDF', url:'/tools/pdf-tools/organize-pdf/split-pdf/', desc:'Split PDF into multiple files.', cat:'pdf', icon:'✂️', color:'#f97316' },
+    { name:'Rotate PDF', url:'/tools/pdf-tools/organize-pdf/rotate-pdf/', desc:'Rotate PDF pages.', cat:'pdf', icon:'🔁', color:'#8b5cf6' },
+    { name:'Watermark PDF', url:'/tools/pdf-tools/organize-pdf/watermark-pdf/', desc:'Add watermark to PDF.', cat:'pdf', icon:'💧', color:'#06b6d4' },
+    { name:'Protect PDF', url:'/tools/pdf-tools/security-pdf/protect-pdf/', desc:'Password protect PDF.', cat:'pdf', icon:'🔒', color:'#10b981' },
+    { name:'Unlock PDF', url:'/tools/pdf-tools/security-pdf/unlock-pdf/', desc:'Remove PDF password.', cat:'pdf', icon:'🔓', color:'#3b82f6' },
+    { name:'Compress PDF', url:'/tools/pdf-tools/visual-pdf/compress-pdf/', desc:'Reduce PDF size.', cat:'pdf', icon:'📉', color:'#10b981' },
+    { name:'Repair PDF', url:'/tools/pdf-tools/visual-pdf/repair-pdf/', desc:'Repair corrupted PDF.', cat:'pdf', icon:'🔧', color:'#f97316' },
+    { name:'PDF to Excel', url:'/tools/pdf-tools/form-pdf/pdf-to-excel/', desc:'Convert PDF to Excel.', cat:'pdf', icon:'X', color:'#10b981' },
+    { name:'Invoice Generator', url:'/tools/pdf-tools/form-pdf/invoice-generator/', desc:'Generate PDF invoices.', cat:'pdf', icon:'🧾', color:'#3b82f6' },
+    { name:'Resume Generator', url:'/tools/pdf-tools/form-pdf/resume-generator/', desc:'Create resumes.', cat:'pdf', icon:'📄', color:'#8b5cf6' },
+    { name:'PDF to Flipbook', url:'/tools/pdf-tools/advanced-pdf/pdf-to-flipbook/', desc:'Convert PDF to flipbook.', cat:'pdf', icon:'📖', color:'#8b5cf6' },
+    { name:'Compare PDF', url:'/tools/pdf-tools/advanced-pdf/pdf-compare/', desc:'Compare two PDFs.', cat:'pdf', icon:'🔍', color:'#3b82f6' },
+    { name:'Text to Speech PDF', url:'/tools/pdf-tools/advanced-pdf/text-to-speech/', desc:'PDF text to speech.', cat:'pdf', icon:'🔊', color:'#f97316' },
+    { name:'Highlight PDF Text', url:'/tools/pdf-tools/visual-pdf/highlight-text/', desc:'Highlight PDF text.', cat:'pdf', icon:'🖍', color:'#f59e0b' },
+    { name:'Underline PDF Text', url:'/tools/pdf-tools/visual-pdf/underline-text/', desc:'Underline PDF text.', cat:'pdf', icon:'⎁', color:'#8b5cf6' },
+    { name:'Strikethrough PDF', url:'/tools/pdf-tools/visual-pdf/strikethrough/', desc:'Cross out PDF text.', cat:'pdf', icon:'⎄', color:'#ef4444' },
+    { name:'Annotate PDF', url:'/tools/pdf-tools/visual-pdf/annotate-pdf/', desc:'Add annotations to PDF.', cat:'pdf', icon:'💬', color:'#8b5cf6' },
+    { name:'Add Page Numbers', url:'/tools/pdf-tools/organize-pdf/page-numbers/', desc:'Add page numbers.', cat:'pdf', icon:'#️⃣', color:'#3b82f6' },
+    { name:'Create PDF Form', url:'/tools/pdf-tools/form-pdf/create-form/', desc:'Create fillable forms.', cat:'pdf', icon:'📝', color:'#8b5cf6' },
+    { name:'Fill PDF Form', url:'/tools/pdf-tools/form-pdf/form-filler/', desc:'Fill PDF forms.', cat:'pdf', icon:'✍️', color:'#3b82f6' },
+    { name:'PDF to CSV', url:'/tools/pdf-tools/form-pdf/pdf-to-csv/', desc:'Convert PDF to CSV.', cat:'pdf', icon:'📊', color:'#3b82f6' },
+    { name:'Certificate Generator', url:'/tools/pdf-tools/form-pdf/certificate-generator/', desc:'Generate certificates.', cat:'pdf', icon:'🏆', color:'#f59e0b' },
+    { name:'PDF Compression Optimizer', url:'/tools/pdf-tools/visual-pdf/optimizer-pdf/', desc:'Optimize PDF.', cat:'pdf', icon:'⚡', color:'#3b82f6' },
+    { name:'Extract PDF Pages', url:'/tools/pdf-tools/organize-pdf/extract-pages/', desc:'Extract specific pages.', cat:'pdf', icon:'📄', color:'#10b981' },
+    { name:'Delete PDF Pages', url:'/tools/pdf-tools/organize-pdf/delete-pages/', desc:'Delete pages from PDF.', cat:'pdf', icon:'🗑', color:'#ef4444' },
+    { name:'Reverse PDF', url:'/tools/pdf-tools/organize-pdf/reverse-pdf/', desc:'Reverse PDF pages.', cat:'pdf', icon:'🔃', color:'#06b6d4' },
+    { name:'Crop PDF', url:'/tools/pdf-tools/organize-pdf/crop-pdf/', desc:'Crop PDF pages.', cat:'pdf', icon:'✂️', color:'#f97316' },
+    { name:'PDF Reader', url:'/tools/pdf-tools/organize-pdf/pdf-reader/', desc:'Read PDF files online.', cat:'pdf', icon:'📖', color:'#10b981' },
+    { name:'Extract PDF Text', url:'/tools/pdf-tools/security-pdf/text-extractor/', desc:'Extract text from PDF.', cat:'pdf', icon:'📝', color:'#10b981' },
+    { name:'PDF Metadata Viewer', url:'/tools/pdf-tools/security-pdf/metadata-viewer/', desc:'View PDF metadata.', cat:'pdf', icon:'ℹ️', color:'#06b6d4' },
+    { name:'PDF Metadata Editor', url:'/tools/pdf-tools/security-pdf/metadata-editor/', desc:'Edit PDF metadata.', cat:'pdf', icon:'✏️', color:'#8b5cf6' },
+    { name:'Remove PDF Metadata', url:'/tools/pdf-tools/security-pdf/metadata-remover/', desc:'Remove metadata.', cat:'pdf', icon:'🗑', color:'#ef4444' },
+    { name:'Invert PDF Colors', url:'/tools/pdf-tools/visual-pdf/invert-colors/', desc:'Invert PDF colors.', cat:'pdf', icon:'🌗', color:'#8b5cf6' },
+    { name:'Convert PDF to B&W', url:'/tools/pdf-tools/visual-pdf/bw-converter/', desc:'Convert to black & white.', cat:'pdf', icon:'⚫', color:'#6b7280' },
+    { name:'Add Barcode to PDF', url:'/tools/pdf-tools/form-pdf/barcode-pdf/', desc:'Add barcodes.', cat:'pdf', icon:'▥', color:'#1e293b' },
+    { name:'Add QR Code to PDF', url:'/tools/pdf-tools/form-pdf/qr-pdf/', desc:'Add QR codes.', cat:'pdf', icon:'▦', color:'#3b82f6' },
+    { name:'PDF Table Extractor', url:'/tools/pdf-tools/form-pdf/table-extractor/', desc:'Extract tables.', cat:'pdf', icon:'📋', color:'#f97316' },
+    { name:'PDF Word Counter', url:'/tools/pdf-tools/advanced-pdf/pdf-word-counter/', desc:'Count PDF words.', cat:'pdf', icon:'🔢', color:'#3b82f6' },
+    { name:'PDF Thumbnail Generator', url:'/tools/pdf-tools/organize-pdf/thumbnail-generator/', desc:'Generate thumbnails.', cat:'pdf', icon:'🖼', color:'#ec4899' },
+    { name:'PDF Bookmark Viewer', url:'/tools/pdf-tools/organize-pdf/bookmark-viewer/', desc:'View PDF bookmarks.', cat:'pdf', icon:'🔖', color:'#f59e0b' },
+    { name:'Compress PDF (Advanced)', url:'/tools/pdf-tools/visual-pdf/compress-pdf/', desc:'Advanced compression.', cat:'pdf', icon:'📉', color:'#10b981' },
+    { name:'PDF Redaction', url:'/tools/pdf-tools/security-pdf/redaction/', desc:'Redact sensitive info.', cat:'pdf', icon:'⬛', color:'#1e293b' },
+    { name:'Add Signature to PDF', url:'/tools/pdf-tools/security-pdf/add-signature/', desc:'Sign PDF digitally.', cat:'pdf', icon:'✍️', color:'#3b82f6' },
+    { name:'Extract PDF Links', url:'/tools/pdf-tools/form-pdf/link-extractor/', desc:'Extract links from PDF.', cat:'pdf', icon:'🔗', color:'#06b6d4' },
+    { name:'Add Links to PDF', url:'/tools/pdf-tools/form-pdf/link-annotator/', desc:'Add hyperlinks.', cat:'pdf', icon:'🔗', color:'#8b5cf6' },
+    { name:'PDF Bookmark Generator', url:'/tools/pdf-tools/form-pdf/bookmark-generator/', desc:'Add bookmarks.', cat:'pdf', icon:'🔖', color:'#f59e0b' },
+    { name:'Highlight PDF Text', url:'/tools/pdf-tools/visual-pdf/highlight-text/', desc:'Highlight text.', cat:'pdf', icon:'🖍', color:'#f59e0b' },
+    { name:'PDF Page Transition', url:'/tools/pdf-tools/visual-pdf/page-transition/', desc:'Add page transitions.', cat:'pdf', icon:'✨', color:'#ec4899' },
+    { name:'PDF Flip Effect', url:'/tools/pdf-tools/visual-pdf/flip-effect/', desc:'Add flip effect.', cat:'pdf', icon:'📖', color:'#f59e0b' },
+    { name:'PDF Print Checker', url:'/tools/pdf-tools/visual-pdf/print-checker/', desc:'Check print readiness.', cat:'pdf', icon:'🖨', color:'#3b82f6' },
+    { name:'OCR PDF Text', url:'/tools/pdf-tools/security-pdf/text-extractor/', desc:'Extract text with OCR.', cat:'pdf', icon:'👁', color:'#8b5cf6' },
+    { name:'Split PDF by Size', url:'/tools/pdf-tools/advanced-pdf/split-by-size/', desc:'Split by file size.', cat:'pdf', icon:'📊', color:'#8b5cf6' },
+    { name:'Split PDF by Keyword', url:'/tools/pdf-tools/advanced-pdf/split-by-keyword/', desc:'Split by keyword.', cat:'pdf', icon:'🔍', color:'#3b82f6' },
+    { name:'Merge PDF Alternately', url:'/tools/pdf-tools/advanced-pdf/merge-alternate/', desc:'Merge alternately.', cat:'pdf', icon:'📚', color:'#8b5cf6' },
+    { name:'Add Background to PDF', url:'/tools/pdf-tools/advanced-pdf/background-adder/', desc:'Add background.', cat:'pdf', icon:'🖼', color:'#f59e0b' },
+    { name:'Extract PDF Foreground', url:'/tools/pdf-tools/advanced-pdf/foreground-extractor/', desc:'Extract foreground.', cat:'pdf', icon:'🎨', color:'#ec4899' },
+    { name:'Change PDF Opacity', url:'/tools/pdf-tools/advanced-pdf/opacity-changer/', desc:'Change opacity.', cat:'pdf', icon:'◐', color:'#06b6d4' },
+    { name:'Overlay PDF Files', url:'/tools/pdf-tools/advanced-pdf/overlay-merger/', desc:'Overlay PDFs.', cat:'pdf', icon:'📚', color:'#3b82f6' },
+    { name:'PDF N-up Layout', url:'/tools/pdf-tools/advanced-pdf/nup-layout/', desc:'Multiple pages per sheet.', cat:'pdf', icon:'⊞', color:'#8b5cf6' },
+    { name:'PDF Poster Printer', url:'/tools/pdf-tools/advanced-pdf/poster-printer/', desc:'Print PDF as poster.', cat:'pdf', icon:'🖨', color:'#f97316' },
+    { name:'PDF Archive Creator', url:'/tools/pdf-tools/advanced-pdf/archive-creator/', desc:'Create PDF archive.', cat:'pdf', icon:'📦', color:'#10b981' },
+    { name:'Compress PDF (Optimizer)', url:'/tools/pdf-tools/visual-pdf/optimizer-pdf/', desc:'Optimize PDF file.', cat:'pdf', icon:'⚡', color:'#3b82f6' },
+    { name:'PDF Contrast Booster', url:'/tools/pdf-tools/visual-pdf/contrast-booster/', desc:'Boost contrast.', cat:'pdf', icon:'◐', color:'#1e293b' },
+    { name:'PDF Repair', url:'/tools/pdf-tools/visual-pdf/repair-pdf/', desc:'Repair damaged PDF.', cat:'pdf', icon:'🔧', color:'#f97316' },
+    { name:'Flatten PDF', url:'/tools/pdf-tools/security-pdf/flatten-pdf/', desc:'Flatten PDF layers.', cat:'pdf', icon:'📄', color:'#8b5cf6' },
+    { name:'PDF Permission Remover', url:'/tools/pdf-tools/security-pdf/permission-remover/', desc:'Remove restrictions.', cat:'pdf', icon:'🔓', color:'#f59e0b' },
+    { name:'PDF Watermark Remover', url:'/tools/pdf-tools/security-pdf/watermark-remover/', desc:'Remove watermark.', cat:'pdf', icon:'🚫', color:'#f97316' },
+    { name:'PDF Encryption Checker', url:'/tools/pdf-tools/security-pdf/encryption-checker/', desc:'Check encryption.', cat:'pdf', icon:'🔍', color:'#3b82f6' },
+    { name:'Digital Signature Verifier', url:'/tools/pdf-tools/security-pdf/digital-signature/', desc:'Verify signatures.', cat:'pdf', icon:'✓', color:'#10b981' },
+    { name:'PDF Anonymizer', url:'/tools/pdf-tools/security-pdf/anonymizer/', desc:'Anonymize PDF.', cat:'pdf', icon:'🕵', color:'#1e293b' },
+    { name:'Secure PDF Sharer', url:'/tools/pdf-tools/security-pdf/secure-sharer/', desc:'Share securely.', cat:'pdf', icon:'🔐', color:'#8b5cf6' },
+    { name:'PDF Page Counter', url:'/tools/pdf-tools/organize-pdf/page-counter/', desc:'Count pages.', cat:'pdf', icon:'🔢', color:'#3b82f6' },
+    { name:'PDF Sort Pages', url:'/tools/pdf-tools/organize-pdf/sort-pdf/', desc:'Sort PDF pages.', cat:'pdf', icon:'🔢', color:'#f59e0b' },
+    { name:'Remove PDF Pages', url:'/tools/pdf-tools/organize-pdf/remove-pages/', desc:'Remove pages.', cat:'pdf', icon:'🗑', color:'#ef4444' },
+    { name:'Change PDF Page Size', url:'/tools/pdf-tools/organize-pdf/page-size/', desc:'Change page size.', cat:'pdf', icon:'📐', color:'#8b5cf6' },
+    { name:'Add Image Stamp', url:'/tools/pdf-tools/organize-pdf/image-stamp/', desc:'Add image stamp.', cat:'pdf', icon:'🖼', color:'#ec4899' },
+    { name:'Remove PDF Attachments', url:'/tools/pdf-tools/organize-pdf/attachment-remover/', desc:'Remove attachments.', cat:'pdf', icon:'📎', color:'#6b7280' },
+    { name:'Remove Duplicate Pages', url:'/tools/pdf-tools/organize-pdf/duplicate-remover/', desc:'Remove duplicates.', cat:'pdf', icon:'🔍', color:'#8b5cf6' },
+    { name:'Batch Rotate PDF', url:'/tools/pdf-tools/organize-pdf/batch-rotator/', desc:'Rotate multiple PDFs.', cat:'pdf', icon:'🔄', color:'#06b6d4' },
+    { name:'PDF Date Stamper', url:'/tools/pdf-tools/advanced-pdf/date-stamper/', desc:'Add date stamp.', cat:'pdf', icon:'📅', color:'#10b981' },
+    { name:'Random PDF Page Picker', url:'/tools/pdf-tools/advanced-pdf/random-page/', desc:'Pick random page.', cat:'pdf', icon:'🎲', color:'#ec4899' },
+    { name:'Remove PDF Page Numbers', url:'/tools/pdf-tools/advanced-pdf/page-number-remover/', desc:'Remove page numbers.', cat:'pdf', icon:'🚫', color:'#ef4444' },
+    { name:'Remove PDF Headers', url:'/tools/pdf-tools/advanced-pdf/header-remover/', desc:'Remove headers.', cat:'pdf', icon:'🚫', color:'#f97316' },
+    { name:'PDF Similarity Checker', url:'/tools/pdf-tools/advanced-pdf/similarity-checker/', desc:'Check similarity.', cat:'pdf', icon:'📊', color:'#8b5cf6' },
+    { name:'PDF Language Detector', url:'/tools/pdf-tools/advanced-pdf/language-detector/', desc:'Detect language.', cat:'pdf', icon:'🌍', color:'#06b6d4' },
+    { name:'PDF Grayscale', url:'/tools/pdf-tools/convert-pdf/pdf-to-grayscale/', desc:'Convert to grayscale.', cat:'pdf', icon:'⚫', color:'#6b7280' },
+    { name:'PDF to PDF/A', url:'/tools/pdf-tools/convert-pdf/pdf-to-pdfa/', desc:'Convert to PDF/A.', cat:'pdf', icon:'📚', color:'#3b82f6' },
+    { name:'PDF to Base64', url:'/tools/pdf-tools/convert-pdf/pdf-to-base64/', desc:'Convert to Base64.', cat:'pdf', icon:'🔤', color:'#8b5cf6' },
+    { name:'Base64 to PDF', url:'/tools/pdf-tools/convert-pdf/base64-to-pdf/', desc:'Decode Base64 to PDF.', cat:'pdf', icon:'🔓', color:'#8b5cf6' },
+    { name:'HTML to PDF', url:'/tools/pdf-tools/convert-pdf/html-to-pdf/', desc:'Convert HTML to PDF.', cat:'pdf', icon:'</>', color:'#f97316' },
+    { name:'Text to PDF', url:'/tools/pdf-tools/convert-pdf/text-to-pdf/', desc:'Convert text to PDF.', cat:'pdf', icon:'📄', color:'#10b981' },
+    { name:'Multiple Images to PDF', url:'/tools/pdf-tools/convert-pdf/multiple-images/', desc:'Combine images to PDF.', cat:'pdf', icon:'📚', color:'#ef4444' },
+    { name:'WebP to PDF', url:'/tools/pdf-tools/convert-pdf/webp-to-pdf/', desc:'Convert WebP to PDF.', cat:'pdf', icon:'📕', color:'#ef4444' },
+    { name:'BMP to PDF', url:'/tools/pdf-tools/convert-pdf/bmp-to-pdf/', desc:'Convert BMP to PDF.', cat:'pdf', icon:'📕', color:'#ef4444' },
+    { name:'GIF to PDF', url:'/tools/pdf-tools/convert-pdf/gif-to-pdf/', desc:'Convert GIF to PDF.', cat:'pdf', icon:'📕', color:'#ef4444' },
+    { name:'PDF to PNG', url:'/tools/pdf-tools/convert-pdf/pdf-to-png/', desc:'Convert PDF to PNG.', cat:'pdf', icon:'🖼', color:'#10b981' },
+    { name:'Excel to PDF', url:'/tools/pdf-tools/form-pdf/excel-to-pdf/', desc:'Convert Excel to PDF.', cat:'pdf', icon:'📕', color:'#10b981' },
+    { name:'PDF Contrast Booster', url:'/tools/pdf-tools/visual-pdf/contrast-booster/', desc:'Increase PDF contrast.', cat:'pdf', icon:'◐', color:'#1e293b' }
+  ];
+
+  const CAT_NAMES = { image:'Image', pdf:'PDF', text:'Text', developer:'Developer', calculator:'Calculator', seo:'SEO', social:'Social', utility:'Utility' };
+  const CAT_TAG_CLASSES = { image:'tag-image', pdf:'tag-pdf', text:'tag-text', developer:'tag-developer', calculator:'tag-calculator', seo:'tag-seo', social:'tag-social', utility:'tag-utility' };
+
+  const state = { category: 'all', search: '', sort: 'default' };
+
+  const toolsGrid = document.getElementById('toolsGrid');
+  const noResults = document.getElementById('noResults');
+  const visibleCount = document.getElementById('visibleCount');
+  const toolSearch = document.getElementById('toolSearch');
+  const sortSelect = document.getElementById('sortSelect');
+
+  function escapeHtml(s) { const d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
+
+  function render() {
+    let filtered = TOOLS.slice();
+
+    if (state.category !== 'all') {
+      filtered = filtered.filter(t => t.cat === state.category);
+    }
+
+    if (state.search) {
+      const q = state.search.toLowerCase();
+      filtered = filtered.filter(t =>
+        t.name.toLowerCase().includes(q) ||
+        t.desc.toLowerCase().includes(q) ||
+        (CAT_NAMES[t.cat] || '').toLowerCase().includes(q)
+      );
+    }
+
+    if (state.sort === 'az') filtered.sort((a,b) => a.name.localeCompare(b.name));
+    else if (state.sort === 'za') filtered.sort((a,b) => b.name.localeCompare(a.name));
+
+    visibleCount.textContent = '(' + filtered.length + ')';
+
+    if (!filtered.length) {
+      toolsGrid.innerHTML = '';
+      noResults.classList.add('visible');
+      return;
+    }
+    noResults.classList.remove('visible');
+
+    toolsGrid.innerHTML = filtered.map(t => `
+      <a href="${t.url}" class="tool-card">
+        <div class="tool-top">
+          <div class="tool-icon" style="background:${t.color};">${escapeHtml(t.icon)}</div>
+          <div class="tool-name">${escapeHtml(t.name)}</div>
+        </div>
+        <div class="tool-desc">${escapeHtml(t.desc)}</div>
+        <div class="tool-meta">
+          <span class="tool-cat-tag ${CAT_TAG_CLASSES[t.cat] || ''}">${CAT_NAMES[t.cat] || ''}</span>
+          <span class="tool-arrow">→</span>
+        </div>
+      </a>
+    `).join('');
+  }
+
+  /* Category click */
+  document.querySelectorAll('.cat-item').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.cat-item').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      state.category = btn.dataset.category;
+      render();
+      window.scrollTo({ top: document.querySelector('.toolbar').offsetTop - 80, behavior: 'smooth' });
+    });
+  });
+
+  /* Search */
+  toolSearch.addEventListener('input', (e) => {
+    state.search = e.target.value.trim();
+    render();
+  });
+
+  /* Sort */
+  sortSelect.addEventListener('change', (e) => {
+    state.sort = e.target.value;
+    render();
+  });
+
+  /* Initial render */
+  render();
+</script>
+
+</body>
+</html>

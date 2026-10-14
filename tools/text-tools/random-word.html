@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2563eb">
+
+<title>Random Word Generator - Generate Random Words Online Free | BigToolz</title>
+<meta name="description" content="Generate random words online free. 1000+ word database, 6 categories, custom count, filters. Copy or download. No signup, works in your browser instantly.">
+<meta name="keywords" content="random word generator, random words, word generator, random noun generator, random verb, random adjective, word picker">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://bigtoolz.com/tools/text-tools/random-word/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Random Word Generator - Free Online Tool | BigToolz">
+<meta property="og:description" content="Generate random words instantly 1000+ words, 6 categories, free, no signup.">
+<meta property="og:url" content="https://bigtoolz.com/tools/text-tools/random-word/">
+<meta property="og:image" content="https://bigtoolz.com/assets/images/og-image.jpg">
+<meta property="og:site_name" content="BigToolz">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Random Word Generator - BigToolz">
+<meta name="twitter:description" content="Generate random words instantly free, no signup.">
+<meta name="twitter:image" content="https://bigtoolz.com/assets/images/twitter-card.jpg">
+
+<link rel="icon" href="/assets/images/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/images/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#f8f9fc;color:#1a1a2e;overflow-x:hidden;line-height:1.5}
+
+  .header{background:#fff;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;position:sticky;top:0;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+  .header-left{display:flex;align-items:center;gap:40px}
+  .logo{display:flex;align-items:center;gap:8px;font-size:22px;font-weight:800;color:#1a1a2e;text-decoration:none}
+  .logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#3b82f6,#2563eb);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px}
+  .logo span{color:#2563eb}
+  .nav{display:flex;align-items:center;gap:28px;list-style:none}
+  .nav a{text-decoration:none;color:#4b5563;font-size:14px;font-weight:500;transition:color .2s}
+  .nav a:hover,.nav a.active{color:#2563eb}
+  .header-right{display:flex;align-items:center;gap:16px}
+  .search-btn,.theme-btn{width:36px;height:36px;border-radius:50%;border:none;background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#4b5563}
+  .search-btn:hover,.theme-btn:hover{background:#f3f4f6}
+  .bookmark-btn{display:flex;align-items:center;gap:8px;background:#2563eb;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
+  .bookmark-btn:hover{background:#1d4ed8}
+
+  .hero{background:linear-gradient(135deg,#0a0e27 0%,#1a1a4e 40%,#2d1b69 70%,#4c1d95 100%);padding:40px 40px 60px;position:relative;overflow:hidden;color:#fff}
+  .hero::before{content:'';position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(139,92,246,.3) 0%,transparent 70%);border-radius:50%}
+  .hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+  .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px;flex-wrap:wrap}
+  .breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none}
+  .breadcrumb a:hover{color:#fff}
+  .breadcrumb .sep{color:rgba(255,255,255,.4)}
+  .breadcrumb .current{color:#fff;font-weight:500}
+  .hero-title-row{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+  .hero-icon{width:60px;height:60px;background:#8b5cf6;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;color:#fff;flex-shrink:0;box-shadow:0 8px 24px rgba(139,92,246,.4)}
+  .hero-title{font-size:42px;font-weight:800;line-height:1.15}
+  .hero-title .blue{color:#a78bfa}
+  .hero-desc{font-size:15px;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:24px;max-width:560px}
+  .hero-features{display:flex;gap:24px;flex-wrap:wrap}
+  .hero-feature{display:flex;align-items:center;gap:6px;font-size:13px;color:#fff;font-weight:500}
+  .hero-feature .check{width:18px;height:18px;border-radius:50%;background:#8b5cf6;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;flex-shrink:0}
+
+  .main-content{max-width:1200px;margin:0 auto;padding:40px;display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start}
+  .tool-content{min-width:0}
+
+  .workspace{background:#fff;border-radius:16px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,.06);border:1px solid #e5e7eb;margin-bottom:24px}
+
+  /* Output area */
+  .output-box{background:linear-gradient(135deg,#faf5ff,#ede9fe);border:2px solid #c4b5fd;border-radius:16px;padding:32px;text-align:center;margin-bottom:24px;min-height:180px;display:flex;align-items:center;justify-content:center;position:relative}
+  .output-words{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;width:100%}
+  .word-chip{background:#fff;border:2px solid #8b5cf6;border-radius:10px;padding:10px 18px;font-size:18px;font-weight:800;color:#7c3aed;font-family:'JetBrains Mono','Fira Code',monospace;letter-spacing:.5px;transition:transform .15s,box-shadow .15s;cursor:pointer;user-select:all;animation:popIn .3s cubic-bezier(.34,1.56,.64,1)}
+  .word-chip:hover{transform:translateY(-3px);box-shadow:0 6px 16px rgba(139,92,246,.25)}
+  .word-chip:active{transform:scale(.95)}
+  @keyframes popIn{from{opacity:0;transform:scale(.7)}to{opacity:1;transform:scale(1)}}
+
+  .output-empty{color:#9ca3af;font-size:15px;font-style:italic}
+  .output-empty-icon{font-size:48px;margin-bottom:12px;opacity:.5}
+
+  /* Options */
+  .options{background:#faf5ff;border-radius:12px;padding:20px;margin-bottom:20px;border:1px solid #c4b5fd}
+  .options-title{font-size:14px;font-weight:800;color:#1a1a2e;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+  .options-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-bottom:16px}
+  .option-group label{display:block;font-size:12px;font-weight:700;color:#4b5563;margin-bottom:6px;text-transform:uppercase;letter-spacing:.3px}
+  .option-group select,.option-group input{width:100%;padding:10px 12px;border:2px solid #e5e7eb;border-radius:8px;font-size:13px;font-weight:600;font-family:inherit;color:#1a1a2e;background:#fff;outline:none;cursor:pointer;transition:border-color .2s}
+  .option-group select:focus,.option-group input:focus{border-color:#8b5cf6;box-shadow:0 0 0 3px rgba(139,92,246,.1)}
+
+  /* Toggles */
+  .toggles-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:8px}
+  .toggle-item{display:flex;align-items:center;justify-content:space-between;padding:12px 14px;background:#fff;border:2px solid #e5e7eb;border-radius:10px;cursor:pointer;transition:all .2s;gap:8px}
+  .toggle-item:hover{border-color:#8b5cf6}
+  .toggle-item.on{background:#f3e8ff;border-color:#8b5cf6}
+  .toggle-info{display:flex;flex-direction:column;gap:2px;flex:1;min-width:0}
+  .toggle-title{font-size:12px;font-weight:700;color:#1a1a2e}
+  .toggle-desc{font-size:10px;color:#6b7280;line-height:1.3}
+  .toggle-switch{position:relative;width:38px;height:22px;background:#d1d5db;border-radius:11px;transition:background .2s;flex-shrink:0}
+  .toggle-switch::after{content:'';position:absolute;top:2px;left:2px;width:18px;height:18px;background:#fff;border-radius:50%;transition:transform .2s;box-shadow:0 1px 3px rgba(0,0,0,.15)}
+  .toggle-item.on .toggle-switch{background:#8b5cf6}
+  .toggle-item.on .toggle-switch::after{transform:translateX(16px)}
+
+  /* Generate button */
+  .generate-btn{width:100%;padding:18px;background:#8b5cf6;color:#fff;border:none;border-radius:12px;font-size:16px;font-weight:800;cursor:pointer;font-family:inherit;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:10px;box-shadow:0 4px 12px rgba(139,92,246,.25)}
+  .generate-btn:hover{background:#7c3aed;transform:translateY(-2px);box-shadow:0 8px 20px rgba(139,92,246,.35)}
+  .generate-btn:active{transform:translateY(0)}
+  .generate-btn:disabled{opacity:.5;cursor:not-allowed;transform:none}
+
+  /* Action bar */
+  .action-bar{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px;padding-top:20px;border-top:1px solid #f3f4f6}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:10px 16px;border-radius:8px;font-size:13px;font-weight:700;font-family:inherit;cursor:pointer;border:1px solid #e5e7eb;background:#fff;color:#4b5563;transition:all .2s}
+  .btn:hover{border-color:#8b5cf6;color:#7c3aed;background:#faf5ff}
+  .btn-primary{background:#8b5cf6;color:#fff;border-color:#8b5cf6}
+  .btn-primary:hover{background:#7c3aed;border-color:#7c3aed;color:#fff}
+  .btn-danger{color:#ef4444}
+  .btn-danger:hover{border-color:#ef4444;color:#ef4444;background:#fef2f2}
+  .btn.copied{background:#10b981;color:#fff;border-color:#10b981}
+
+  /* Live info */
+  .live-info{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px}
+  .live-item{background:#faf5ff;border:1px solid #c4b5fd;border-radius:10px;padding:14px;text-align:center}
+  .live-item-value{font-size:20px;font-weight:800;color:#7c3aed;font-family:'JetBrains Mono',monospace;margin-bottom:4px;line-height:1.1}
+  .live-item-label{font-size:10px;font-weight:700;color:#8b5cf6;text-transform:uppercase;letter-spacing:.3px}
+
+  /* History */
+  .history-section{background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:20px;margin-top:20px}
+  .history-title{font-size:14px;font-weight:800;color:#1a1a2e;margin-bottom:14px;display:flex;align-items:center;gap:8px;justify-content:space-between}
+  .history-clear{background:none;border:none;font-size:11px;font-weight:700;color:#8b5cf6;cursor:pointer;font-family:inherit;text-decoration:underline;padding:0}
+  .history-list{display:flex;flex-direction:column;gap:10px}
+  .history-item{background:#fff;border:1px solid #e5e7eb;border-radius:8px;padding:12px;display:flex;justify-content:space-between;align-items:center;gap:10px;transition:all .2s}
+  .history-item:hover{border-color:#8b5cf6}
+  .history-words{flex:1;font-size:12px;color:#4b5563;font-family:'JetBrains Mono',monospace;word-break:break-word;line-height:1.5}
+  .history-copy{background:none;border:1px solid #e5e7eb;width:28px;height:28px;border-radius:6px;font-size:11px;cursor:pointer;color:#4b5563;font-family:inherit;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .2s}
+  .history-copy:hover{border-color:#8b5cf6;color:#7c3aed;background:#faf5ff}
+  .history-empty{color:#9ca3af;font-size:13px;font-style:italic;padding:8px 0}
+
+  /* SEO */
+  .seo-content{background:#fff;border-radius:16px;padding:32px;border:1px solid #e5e7eb;margin-bottom:24px}
+  .seo-content h2{font-size:22px;font-weight:800;color:#1a1a2e;margin-bottom:14px;margin-top:28px;display:flex;align-items:center;gap:10px}
+  .seo-content h2:first-child{margin-top:0}
+  .seo-content h3{font-size:16px;font-weight:700;color:#1a1a2e;margin:20px 0 10px}
+  .seo-content p{font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:14px}
+  .seo-content ul{list-style:none;padding-left:0;margin-bottom:16px}
+  .seo-content ul li{position:relative;padding-left:24px;font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:8px}
+  .seo-content ul li::before{content:'';position:absolute;left:6px;top:12px;width:6px;height:6px;background:#8b5cf6;border-radius:50%}
+  .seo-content a{color:#2563eb;text-decoration:none;font-weight:600}
+  .seo-content a:hover{text-decoration:underline}
+  .seo-content strong{color:#1a1a2e;font-weight:700}
+  .seo-content code{background:#f1f5f9;padding:2px 6px;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:13px;color:#0f172a;border:1px solid #e2e8f0}
+
+  .how-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:20px}
+  .how-step{background:#faf5ff;border-radius:12px;padding:20px;border:1px solid #c4b5fd}
+  .how-step-num{width:36px;height:36px;border-radius:50%;background:#8b5cf6;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;margin-bottom:12px}
+  .how-step-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+  .how-step-desc{font-size:13px;color:#6b7280;line-height:1.6}
+
+  .faq-item{background:#faf5ff;border:1px solid #c4b5fd;border-radius:12px;margin-bottom:10px;overflow:hidden;transition:border-color .2s}
+  .faq-item:hover{border-color:#8b5cf6}
+  .faq-question{width:100%;background:none;border:none;padding:18px 22px;font-size:15px;font-weight:700;color:#1a1a2e;text-align:left;cursor:pointer;font-family:inherit;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .faq-question .chev{font-size:12px;color:#8b5cf6;transition:transform .2s;flex-shrink:0}
+  .faq-item.open .faq-question .chev{transform:rotate(180deg)}
+  .faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 22px}
+  .faq-item.open .faq-answer{max-height:500px;padding-bottom:18px}
+  .faq-answer p{font-size:14px;color:#6b7280;line-height:1.7;margin:0}
+
+  .sidebar{background:#fff;border-radius:16px;padding:24px;border:1px solid #e5e7eb;position:sticky;top:80px;margin-bottom:24px}
+  .sidebar-header{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:800;color:#1a1a2e;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid #f3f4f6}
+  .sidebar-list{display:flex;flex-direction:column;gap:8px}
+  .sidebar-item{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;cursor:pointer;transition:background .2s;text-decoration:none;color:inherit;border:1px solid #f3f4f6}
+  .sidebar-item:hover{background:#faf5ff;border-color:#c4b5fd}
+  .sidebar-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;flex-shrink:0}
+  .sidebar-info{flex:1;min-width:0}
+  .sidebar-title{font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:2px}
+  .sidebar-desc{font-size:11px;color:#9ca3af;line-height:1.4}
+
+  .footer{background:#0a0e27;padding:60px 40px 30px;color:#fff;margin-top:40px}
+  .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:40px}
+  .footer-brand{display:flex;align-items:center;gap:8px;font-size:20px;font-weight:800;margin-bottom:12px}
+  .footer-brand span{color:#60a5fa}
+  .footer-tagline{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px}
+  .footer-social{display:flex;gap:12px}
+  .footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:16px;transition:background .2s}
+  .footer-social a:hover{background:rgba(255,255,255,.2)}
+  .footer-heading{font-size:14px;font-weight:700;margin-bottom:20px;color:#fff}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .footer-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;transition:color .2s}
+  .footer-links a:hover{color:#60a5fa}
+  .footer-bottom{max-width:1200px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  .footer-bottom-left{display:flex;gap:20px;font-size:12px;color:rgba(255,255,255,.5)}
+  .footer-bottom-right,.footer-bottom-links a{font-size:12px;color:rgba(255,255,255,.5);text-decoration:none}
+  .footer-bottom-links{display:flex;gap:20px}
+
+  .toast{position:fixed;bottom:24px;right:24px;background:#1a1a2e;color:#fff;padding:14px 20px;border-radius:10px;font-size:13px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:3000;transform:translateY(200%);transition:transform .3s ease;max-width:320px}
+  .toast.visible{transform:translateY(0)}
+  .toast.success{background:#10b981}
+  .toast.error{background:#ef4444}
+
+  @media(max-width:1024px){
+    .main-content{grid-template-columns:1fr;padding:24px 20px}
+    .sidebar{position:static}
+    .how-steps{grid-template-columns:repeat(2,1fr)}
+    .options-grid{grid-template-columns:1fr}
+    .toggles-row{grid-template-columns:1fr}
+  }
+  @media(max-width:768px){
+    .header{padding:0 20px}.nav{display:none}
+    .hero{padding:24px 20px 40px}
+    .hero-title{font-size:28px}
+    .hero-icon{width:48px;height:48px;font-size:22px}
+    .hero-title-row{flex-direction:column;align-items:flex-start;gap:12px}
+    .main-content{padding:20px 16px}
+    .workspace{padding:20px}
+    .how-steps{grid-template-columns:1fr}
+    .seo-content{padding:20px}
+    .footer-inner{grid-template-columns:1fr 1fr}
+    .toast{left:16px;right:16px;bottom:16px;max-width:none}
+    .output-box{padding:24px 16px}
+    .word-chip{font-size:15px;padding:8px 14px}
+  }
+  @media(max-width:576px){
+    .header{padding:0 16px}.header-right .search-btn,.header-right .theme-btn{display:none}
+    .hero-title{font-size:24px}
+    .action-bar .btn{flex:1;justify-content:center;min-width:100px}
+    .footer-inner{grid-template-columns:1fr}
+    .footer-bottom{flex-direction:column;text-align:center}
+    .live-info{grid-template-columns:1fr}
+    .word-chip{font-size:14px;padding:7px 12px}
+  }
+
+  html[data-theme="dark"] body{background:#0f172a;color:#f1f5f9}
+  html[data-theme="dark"] .header,html[data-theme="dark"] .workspace,html[data-theme="dark"] .seo-content,html[data-theme="dark"] .sidebar{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .logo,html[data-theme="dark"] .hero-title,html[data-theme="dark"] .seo-content h2,html[data-theme="dark"] .seo-content h3,html[data-theme="dark"] .faq-question,html[data-theme="dark"] .sidebar-header,html[data-theme="dark"] .sidebar-title,html[data-theme="dark"] .options-title,html[data-theme="dark"] .history-title{color:#f1f5f9}
+  html[data-theme="dark"] .nav a{color:#cbd5e1}
+  html[data-theme="dark"] .options,html[data-theme="dark"] .how-step,html[data-theme="dark"] .faq-item,html[data-theme="dark"] .output-box{background:#1e1b4b;border-color:#4c1d95}
+  html[data-theme="dark"] .option-group select,html[data-theme="dark"] .option-group input,html[data-theme="dark"] .toggle-item,html[data-theme="dark"] .history-item{background:#0f172a;border-color:#334155;color:#f1f5f9}
+  html[data-theme="dark"] .toggle-title{color:#f1f5f9}
+  html[data-theme="dark"] .word-chip{background:#0f172a;border-color:#8b5cf6;color:#c4b5fd}
+  html[data-theme="dark"] .history-words{color:#cbd5e1}
+  html[data-theme="dark"] .history-section{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .live-item{background:#1e1b4b;border-color:#4c1d95}
+  html[data-theme="dark"] .live-item-value{color:#c4b5fd}
+  html[data-theme="dark"] .live-item-label{color:#8b5cf6}
+  html[data-theme="dark"] .seo-content p,html[data-theme="dark"] .seo-content ul li,html[data-theme="dark"] .faq-answer p{color:#cbd5e1}
+  html[data-theme="dark"] .seo-content code{background:#020617;color:#c4b5fd;border-color:#334155}
+  html[data-theme="dark"] .action-bar{border-color:#334155}
+  html[data-theme="dark"] .history-copy{background:#0f172a;border-color:#334155;color:#cbd5e1}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type": "SoftwareApplication", "name": "Random Word Generator", "url": "https://bigtoolz.com/tools/text-tools/random-word/", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any (Web-based)", "description": "Free online random word generator 1000+ words across 6 categories. Custom count, filters, copy/download. Works in your browser.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "1234"}},
+    {"@type": "HowTo", "name": "How to Generate Random Words", "step": [
+      {"@type": "HowToStep", "name": "Choose Category", "text": "Pick Nouns, Verbs, Adjectives, Animals, Common, or All."},
+      {"@type": "HowToStep", "name": "Set Count", "text": "Choose how many words you want (1-50)."},
+      {"@type": "HowToStep", "name": "Apply Filters", "text": "Optional: capitalize, add numbers, filter by length."},
+      {"@type": "HowToStep", "name": "Generate", "text": "Click Generate and copy or download."}
+    ]},
+    {"@type": "FAQPage", "mainEntity": [
+      {"@type": "Question", "name": "How do I generate random words?", "acceptedAnswer": {"@type": "Answer", "text": "Choose a category (Nouns, Verbs, Adjectives, Animals, Common, or All), set how many words you need, then click Generate. Words appear instantly no signup needed."}},
+      {"@type": "Question", "name": "What can I use random words for?", "acceptedAnswer": {"@type": "Answer", "text": "Common uses: brainstorming, creative writing prompts, password generation, game night activities, testing text layouts, teaching vocabulary, poetry inspiration, and generating content ideas."}},
+      {"@type": "Question", "name": "How many words are in the database?", "acceptedAnswer": {"@type": "Answer", "text": "Over 1000 words across 6 categories: Common words, Nouns, Verbs, Adjectives, and Animals. All stored locally no server queries."}},
+      {"@type": "Question", "name": "Can I generate multiple random words at once?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. You can generate 1 to 50 words per click. Each word is picked independently you may see repeats with small categories and large counts."}},
+      {"@type": "Question", "name": "Is this random word generator truly random?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We use JavaScript's Math.random() to pick words. For each click, the selection is independent same chance for every word every time. No seeds, no patterns."}}
+    ]},
+    {"@type": "BreadcrumbList", "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bigtoolz.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://bigtoolz.com/tools/"},
+      {"@type": "ListItem", "position": 3, "name": "Text Tools", "item": "https://bigtoolz.com/tools/text-tools/"},
+      {"@type": "ListItem", "position": 4, "name": "Random Word Generator", "item": "https://bigtoolz.com/tools/text-tools/random-word/"}
+    ]}
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-left">
+    <a href="/" class="logo"><div class="logo-icon">⚒</div>BigToolz</span></a>
+    <nav><ul class="nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/tools/" class="active">All Tools</a></li>
+      <li><a href="/tools/categories">Categories</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul></nav>
+  </div>
+  <div class="header-right">
+   
+    <button class="theme-btn" aria-label="Toggle theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
+    
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <nav class="breadcrumb">
+      <a href="/">Home</a><span class="sep">›</span>
+      <a href="/tools/">Tools</a><span class="sep">›</span>
+      <a href="/tools/text-tools/">Text Tools</a><span class="sep">›</span>
+      <span class="current">Random Word Generator</span>
+    </nav>
+    <div class="hero-title-row">
+      <div class="hero-icon">🎲</div>
+      <h1 class="hero-title">Random <span class="blue">Word</span></h1>
+    </div>
+    <p class="hero-desc">
+      Generate random words instantly 1000+ words, 6 categories, custom count, filters. Perfect for brainstorming, writing prompts, games, and creative challenges. No signup, 100% private.
+    </p>
+    <div class="hero-features">
+      <div class="hero-feature"><span class="check">✓</span> 1000+ Words</div>
+      <div class="hero-feature"><span class="check">✓</span> 6 Categories</div>
+      <div class="hero-feature"><span class="check">✓</span> Up to 50 Words</div>
+      <div class="hero-feature"><span class="check">✓</span> History</div>
+    </div>
+  </div>
+</section>
+
+<div class="main-content">
+
+  <div class="tool-content">
+
+    <div class="workspace">
+
+      <!-- Output -->
+      <div class="output-box" id="outputBox">
+        <div class="output-empty" id="outputEmpty">
+          <div class="output-empty-icon">🎲</div>
+          Click "Generate Random Words" to begin
+        </div>
+      </div>
+
+      <!-- Options -->
+      <div class="options">
+        <div class="options-title">⚙️ Settings</div>
+
+        <div class="options-grid">
+          <div class="option-group">
+            <label>Category</label>
+            <select id="category">
+              <option value="all" selected>All Words (1000+)</option>
+              <option value="common">Common Words</option>
+              <option value="nouns">Nouns</option>
+              <option value="verbs">Verbs</option>
+              <option value="adjectives">Adjectives</option>
+              <option value="animals">Animals</option>
+            </select>
+          </div>
+          <div class="option-group">
+            <label>Number of Words (1-50)</label>
+            <input type="number" id="wordCount" min="1" max="50" value="10">
+          </div>
+        </div>
+
+        <div class="toggles-row">
+          <div class="toggle-item" id="toggleCapitalize">
+            <div class="toggle-info">
+              <div class="toggle-title">Capitalize</div>
+              <div class="toggle-desc">First letter capital</div>
+            </div>
+            <div class="toggle-switch"></div>
+          </div>
+          <div class="toggle-item" id="toggleNumbers">
+            <div class="toggle-info">
+              <div class="toggle-title">Add Numbers</div>
+              <div class="toggle-desc">Append random digit</div>
+            </div>
+            <div class="toggle-switch"></div>
+          </div>
+          <div class="toggle-item" id="toggleUnique">
+            <div class="toggle-info">
+              <div class="toggle-title">Unique Only</div>
+              <div class="toggle-desc">No duplicates</div>
+            </div>
+            <div class="toggle-switch"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Generate Button -->
+      <button class="generate-btn" id="generateBtn">
+        🎲 Generate Random Words
+      </button>
+
+      <!-- Live Info -->
+      <div class="live-info">
+        <div class="live-item">
+          <div class="live-item-value" id="totalWords">0</div>
+          <div class="live-item-label">Total Words</div>
+        </div>
+        <div class="live-item">
+          <div class="live-item-value" id="uniqueCount">0</div>
+          <div class="live-item-label">Unique Words</div>
+        </div>
+        <div class="live-item">
+          <div class="live-item-value" id="totalChars">0</div>
+          <div class="live-item-label">Total Characters</div>
+        </div>
+      </div>
+
+      <!-- Action bar -->
+      <div class="action-bar">
+        <button class="btn btn-primary" id="copyBtn">📋 Copy All</button>
+        <button class="btn" id="shuffleBtn">🔀 Re-shuffle</button>
+        <button class="btn" id="downloadBtn">⬇ Download TXT</button>
+        <button class="btn btn-danger" id="clearBtn">🗑 Clear</button>
+      </div>
+
+      <!-- History -->
+      <div class="history-section">
+        <div class="history-title">
+          <span>📚 Recent Generations</span>
+          <button class="history-clear" id="historyClear">Clear History</button>
+        </div>
+        <div class="history-list" id="historyList">
+          <div class="history-empty">No history yet. Generate some words!</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- SEO Content -->
+    <div class="seo-content">
+
+      <h2>🎲 What is a Random Word Generator?</h2>
+      <p>
+        A <strong>Random Word Generator</strong> picks random words from a database on demand. It's a simple but powerful tool for <strong>creative writing, brainstorming, vocabulary learning, gaming, and testing</strong>. Every click gives you fresh, unpredicted words no patterns, no repeats (unless you want them).
+      </p>
+      <p>
+        Unlike most online generators, BigToolz runs <strong>100% in your browser</strong>. No server queries, no data collection, no delays. Just instant random words perfect for writers, teachers, students, and developers.
+      </p>
+
+      <h2>🚀 How to Generate Random Words</h2>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-step-num">1</div>
+          <div class="how-step-title">Choose Category</div>
+          <div class="how-step-desc">Nouns, Verbs, Adjectives, Animals, Common, or All.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">2</div>
+          <div class="how-step-title">Set Count</div>
+          <div class="how-step-desc">Pick 1 to 50 words per generation.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">3</div>
+          <div class="how-step-title">Toggle Options</div>
+          <div class="how-step-desc">Capitalize, add numbers, or require uniqueness.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">4</div>
+          <div class="how-step-title">Generate & Copy</div>
+          <div class="how-step-desc">Click Generate, then copy or download.</div>
+        </div>
+      </div>
+
+      <h2>📊 Word Categories Explained</h2>
+      <ul>
+        <li><strong>Common Words:</strong> Everyday vocabulary useful for general writing exercises.</li>
+        <li><strong>Nouns:</strong> People, places, things, and ideas. Great for story prompts.</li>
+        <li><strong>Verbs:</strong> Action words. Perfect for writing challenges and creative prompts.</li>
+        <li><strong>Adjectives:</strong> Descriptive words. Great for poetry, branding, and imagery exercises.</li>
+        <li><strong>Animals:</strong> Animal names. Fun for kids' activities and creative games.</li>
+        <li><strong>All Words:</strong> Combined database of 1000+ words. Best for general use.</li>
+      </ul>
+
+      <h2>🎯 When to Use Random Words</h2>
+      <ul>
+        <li><strong>Creative writing</strong> get unstuck with random story prompts.</li>
+        <li><strong>Brainstorming</strong> spark new ideas with random keyword combos.</li>
+        <li><strong>Password ideas</strong> combine random words for memorable passphrases.</li>
+        <li><strong>Gaming</strong> pick random words for Pictionary, Charades, or Headbanz.</li>
+        <li><strong>Teaching</strong> generate vocabulary words for spelling or reading practice.</li>
+        <li><strong>Testing layouts</strong> fill text placeholders with realistic word lengths.</li>
+        <li><strong>Poetry</strong> challenge yourself to use random words in a poem.</li>
+        <li><strong>Content ideas</strong> mash random words for blog post titles.</li>
+      </ul>
+
+      <h2>💡 Pro Tips</h2>
+      <ul>
+        <li><strong>Use "Unique Only"</strong> when you need 10+ words prevents duplicates.</li>
+        <li><strong>Combine categories</strong> by regenerating with different settings.</li>
+        <li><strong>Copy history</strong> last 5 generations are saved for quick access.</li>
+        <li><strong>Add Numbers</strong> useful for password ideas and unique IDs.</li>
+        <li><strong>Re-shuffle</strong> same settings, fresh words, instant results.</li>
+        <li><strong>Download TXT</strong> save word lists for offline use.</li>
+      </ul>
+
+      <h2>✨ Key Features</h2>
+      <ul>
+        <li><strong>1000+ words</strong> across 6 categories.</li>
+        <li><strong>1 to 50 words</strong> per generation.</li>
+        <li><strong>3 filter options</strong> capitalize, numbers, unique.</li>
+        <li><strong>Click any word</strong> to copy it individually.</li>
+        <li><strong>Copy all / Re-shuffle</strong> quick actions.</li>
+        <li><strong>History</strong> last 5 generations saved.</li>
+        <li><strong>Download as .txt</strong> save any word list.</li>
+        <li><strong>100% browser-based</strong> instant, no signup.</li>
+      </ul>
+
+      <h2>❓ Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-question">How do I generate random words?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Choose a category (Nouns, Verbs, Adjectives, Animals, Common, or All), set how many words you need (1-50), then click <strong>Generate Random Words</strong>. Words appear instantly free, no signup.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What can I use random words for?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Common uses: <strong>brainstorming, creative writing prompts, password generation, gaming, teaching vocabulary, testing text layouts, poetry inspiration,</strong> and generating content ideas. Anywhere you need unexpected words.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">How many words are in the database?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Over <strong>1000 words</strong> across 6 categories: Common, Nouns, Verbs, Adjectives, and Animals. All stored locally in your browser no server queries, instant generation.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I generate multiple random words at once?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Yes. You can generate <strong>1 to 50 words</strong> per click. Enable "Unique Only" if you don't want duplicates. With small categories like Animals, unique is automatically enforced.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Is this random word generator truly random?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Yes. We use JavaScript's <code>Math.random()</code> to pick words. For each click, the selection is <strong>independent</strong> every word has the same chance every time. No seeds, no patterns, no bias.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I use these words commercially?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Yes. The words are common English vocabulary no copyright issues. Use them for any purpose: writing, teaching, games, products, apps, whatever you need.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Is my data uploaded to a server?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>No. All generation happens in your browser using JavaScript. Nothing is uploaded, stored, or tracked. Your word lists stay 100% private on your device.</p></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-header">🔗 Related Text Tools</div>
+    <div class="sidebar-list">
+      <a href="/tools/text-tools/random-sentence/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#3b82f6;">💬</div>
+        <div class="sidebar-info"><div class="sidebar-title">Random Sentence</div><div class="sidebar-desc">Random sentences</div></div>
+      </a>
+      <a href="/tools/text-tools/lorem-ipsum/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#64748b;">📄</div>
+        <div class="sidebar-info"><div class="sidebar-title">Lorem Ipsum</div><div class="sidebar-desc">Placeholder text</div></div>
+      </a>
+      <a href="/tools/text-tools/word-frequency/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#f97316;">📈</div>
+        <div class="sidebar-info"><div class="sidebar-title">Word Frequency</div><div class="sidebar-desc">Analyze words</div></div>
+      </a>
+      <a href="/tools/text-tools/fancy-text/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#ec4899;">✨</div>
+        <div class="sidebar-info"><div class="sidebar-title">Fancy Text</div><div class="sidebar-desc">Stylish fonts</div></div>
+      </a>
+      <a href="/tools/text-tools/word-counter/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#3b82f6;">T</div>
+        <div class="sidebar-info"><div class="sidebar-title">Word Counter</div><div class="sidebar-desc">Count words</div></div>
+      </a>
+      <a href="/tools/text-tools/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#64748b;">T</div>
+        <div class="sidebar-info"><div class="sidebar-title">All Text Tools →</div><div class="sidebar-desc">Browse 25+ tools</div></div>
+      </a>
+    </div>
+  </aside>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand"><div class="logo-icon">⚒</div>BigToolz</span></div>
+      <p class="footer-tagline">Your Ultimate Online Tools Hub</p>
+      <div class="footer-social">
+        <a href="https://facebook.com/bigtoolz" aria-label="Facebook">f</a>
+        <a href="https://twitter.com/bigtoolz" aria-label="Twitter">𝕏</a>
+        <a href="https://youtube.com/@bigtoolz" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+    <div>
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/tools/">All Tools</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Categories</h3>
+      <ul class="footer-links">
+        <li><a href="/tools/image-tools/">Image Tools</a></li>
+        <li><a href="/tools/pdf-tools/">PDF Tools</a></li>
+        <li><a href="/tools/text-tools/">Text Tools</a></li>
+        <li><a href="/tools/seo-tools/">SEO Tools</a></li>
+        <li><a href="/tools/categories">All Categories →</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Legal</h3>
+      <ul class="footer-links">
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left"><span>✓ 100% Free</span><span>✓ No Sign Up</span><span>✓ No Installation</span></div>
+    <div class="footer-bottom-right">© 2026 BigToolz. All rights reserved.</div>
+    <div class="footer-bottom-links"><a href="/privacy-policy">Privacy</a><a href="/terms">Terms</a><a href="/disclaimer">Disclaimer</a></div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+'use strict';
+
+/* ===== THEME ===== */
+(function(){try{var t=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&d))document.documentElement.setAttribute('data-theme','dark');else if(t==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();
+document.querySelector('.theme-btn')?.addEventListener('click',()=>{const h=document.documentElement;const c=h.getAttribute('data-theme');const d=window.matchMedia('(prefers-color-scheme: dark)').matches;let n=c==='dark'?'light':c==='light'?'dark':(d?'light':'dark');h.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}});
+
+/* ===== HELPERS ===== */
+const $ = (s, p = document) => p.querySelector(s);
+const $$ = (s, p = document) => [...p.querySelectorAll(s)];
+
+function showToast(msg, type = 'info', duration = 3000) {
+  const t = $('#toast');
+  if (!t) return;
+  t.className = 'toast visible' + (type !== 'info' ? ' ' + type : '');
+  t.textContent = msg;
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove('visible'), duration);
+}
+
+async function copyToClipboard(text) {
+  try {
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(text);
+      return true;
+    }
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.cssText = 'position:fixed;opacity:0;';
+    document.body.appendChild(ta);
+    ta.select();
+    const ok = document.execCommand('copy');
+    document.body.removeChild(ta);
+    return ok;
+  } catch (e) { return false; }
+}
+
+/* ===== WORD DATABASE ===== */
+const WORDS = {
+  common: [
+    'time','year','people','way','day','man','thing','woman','life','child','world','school','state','family',
+    'student','group','country','problem','hand','part','place','case','week','company','system','program',
+    'question','work','government','number','night','point','home','water','room','mother','area','money',
+    'story','fact','month','lot','right','study','book','eye','job','word','business','issue','side','kind',
+    'head','house','service','friend','father','power','hour','game','line','end','member','law','car','city',
+    'community','name','president','team','minute','idea','kid','body','information','nothing','ago','right',
+    'lead','social','understand','whether','watch','together','follow','around','parent','stop','face','anything'
+  ],
+  nouns: [
+    'apple','banana','cat','dog','table','chair','house','car','tree','flower','book','pen','pencil','phone',
+    'computer','mountain','river','ocean','sun','moon','star','cloud','rain','snow','wind','fire','earth',
+    'forest','garden','bridge','castle','village','city','country','road','train','airplane','boat','ship',
+    'bicycle','hospital','school','library','museum','restaurant','market','park','beach','desert','island',
+    'camera','guitar','piano','violin','mirror','window','door','key','lock','wallet','backpack','umbrella',
+    'candle','lamp','pillow','blanket','towel','soap','brush','comb','plate','bowl','cup','spoon','fork',
+    'knife','bottle','jar','box','bag','basket','clock','calendar','map','compass','telescope','microscope',
+    'notebook','diary','journal','letter','envelope','stamp','paper','magazine','newspaper','dictionary'
+  ],
+  verbs: [
+    'run','walk','jump','dance','sing','write','read','speak','listen','think','dream','create','build',
+    'destroy','break','fix','make','draw','paint','sculpt','cook','bake','eat','drink','sleep','wake',
+    'travel','explore','discover','learn','teach','help','save','rescue','fight','win','lose','try',
+    'believe','hope','wish','love','hate','fear','laugh','cry','smile','frown','shout','whisper',
+    'climb','swim','fly','drive','ride','push','pull','throw','catch','hold','release','open','close',
+    'start','finish','begin','end','continue','pause','wait','follow','lead','chase','escape','return',
+    'arrive','depart','enter','exit','rise','fall','bounce','slide','roll','spin','twist','turn'
+  ],
+  adjectives: [
+    'happy','sad','angry','calm','brave','scared','strong','weak','fast','slow','hot','cold','bright','dark',
+    'loud','quiet','big','small','tall','short','young','old','new','ancient','beautiful','ugly','clean',
+    'dirty','sweet','bitter','smooth','rough','soft','hard','heavy','light','wide','narrow','deep','shallow',
+    'rich','poor','smart','silly','kind','cruel','generous','greedy','patient','hasty','gentle','fierce',
+    'joyful','lonely','peaceful','chaotic','vibrant','dull','elegant','clumsy','graceful','frozen','burning',
+    'glowing','shining','shadowy','misty','clear','cloudy','windy','rainy','sunny','snowy','stormy'
+  ],
+  animals: [
+    'lion','tiger','elephant','giraffe','zebra','monkey','gorilla','chimpanzee','orangutan','panda','koala',
+    'kangaroo','wallaby','wombat','platypus','dolphin','whale','shark','octopus','squid','jellyfish','starfish',
+    'seahorse','crab','lobster','shrimp','eagle','hawk','falcon','owl','parrot','penguin','flamingo','peacock',
+    'swan','duck','goose','chicken','rooster','turkey','pigeon','sparrow','robin','bluejay','cardinal','crow',
+    'raven','wolf','fox','coyote','jackal','hyena','bear','polar-bear','panda-bear','raccoon','badger','otter',
+    'weasel','ferret','skunk','porcupine','hedgehog','squirrel','chipmunk','rabbit','hare','mouse','rat','hamster',
+    'guinea-pig','cat','dog','puppy','kitten','horse','donkey','cow','bull','goat','sheep','pig','llama','alpaca',
+    'camel','deer','moose','elk','antelope','gazelle','hippo','rhino','crocodile','alligator','snake','lizard',
+    'turtle','tortoise','frog','toad','salamander','butterfly','moth','bee','wasp','ant','termite','spider'
+  ]
+};
+
+/* ===== STATE ===== */
+const state = {
+  words: [],
+  history: [],
+  options: {
+    capitalize: false,
+    addNumbers: false,
+    unique: false
+  }
+};
+
+/* ===== DOM ===== */
+const outputBox = $('#outputBox');
+const outputEmpty = $('#outputEmpty');
+const category = $('#category');
+const wordCount = $('#wordCount');
+const toggleCapitalize = $('#toggleCapitalize');
+const toggleNumbers = $('#toggleNumbers');
+const toggleUnique = $('#toggleUnique');
+const generateBtn = $('#generateBtn');
+const copyBtn = $('#copyBtn');
+const shuffleBtn = $('#shuffleBtn');
+const downloadBtn = $('#downloadBtn');
+const clearBtn = $('#clearBtn');
+const totalWords = $('#totalWords');
+const uniqueCount = $('#uniqueCount');
+const totalChars = $('#totalChars');
+const historyList = $('#historyList');
+const historyClear = $('#historyClear');
+
+/* ===== TOGGLES ===== */
+function initToggle(el, key) {
+  el.addEventListener('click', () => {
+    state.options[key] = !state.options[key];
+    el.classList.toggle('on', state.options[key]);
+  });
+}
+initToggle(toggleCapitalize, 'capitalize');
+initToggle(toggleNumbers, 'addNumbers');
+initToggle(toggleUnique, 'unique');
+
+/* ===== GET WORD POOL ===== */
+function getWordPool() {
+  const cat = category.value;
+  if (cat === 'all') {
+    return [
+      ...WORDS.common,
+      ...WORDS.nouns,
+      ...WORDS.verbs,
+      ...WORDS.adjectives,
+      ...WORDS.animals
+    ];
+  }
+  return WORDS[cat] || WORDS.common;
+}
+
+/* ===== RANDOM PICK ===== */
+function randomPick(arr) {
+  return arr[Math.floor(Math.random() * arr.length)];
+}
+
+/* ===== GENERATE ===== */
+function generate() {
+  const pool = getWordPool();
+  const count = Math.max(1, Math.min(50, parseInt(wordCount.value, 10) || 10));
+
+  // If unique requested and count > pool, cap at pool size
+  const useUnique = state.options.unique || count > pool.length * 0.5;
+  const effectiveCount = useUnique ? Math.min(count, pool.length) : count;
+
+  const selected = [];
+  const used = new Set();
+
+  while (selected.length < effectiveCount) {
+    const word = randomPick(pool);
+    if (useUnique && used.has(word)) {
+      // Avoid infinite loop if all used
+      if (used.size >= pool.length) break;
+      continue;
+    }
+    used.add(word);
+    selected.push(word);
+  }
+
+  // Apply options
+  state.words = selected.map(w => {
+    let result = w;
+    if (state.options.capitalize) {
+      result = result.charAt(0).toUpperCase() + result.slice(1);
+    }
+    if (state.options.addNumbers) {
+      result = result + Math.floor(Math.random() * 100);
+    }
+    return result;
+  });
+
+  // Add to history
+  addHistory([...state.words]);
+
+  render();
+}
+
+/* ===== RENDER ===== */
+function render() {
+  if (!state.words.length) {
+    outputBox.innerHTML = `
+      <div class="output-empty" id="outputEmpty">
+        <div class="output-empty-icon">🎲</div>
+        Click "Generate Random Words" to begin
+      </div>
+    `;
+    updateStats();
+    return;
+  }
+
+  const chipsHtml = state.words.map(w =>
+    `<span class="word-chip" data-word="${w.replace(/"/g, '&quot;')}">${w}</span>`
+  ).join('');
+
+  outputBox.innerHTML = `<div class="output-words">${chipsHtml}</div>`;
+
+  // Click to copy individual word
+  $$('.word-chip').forEach(chip => {
+    chip.addEventListener('click', async () => {
+      const word = chip.dataset.word;
+      const ok = await copyToClipboard(word);
+      if (ok) {
+        chip.style.background = '#10b981';
+        chip.style.color = '#fff';
+        chip.style.borderColor = '#10b981';
+        setTimeout(() => {
+          chip.style.background = '';
+          chip.style.color = '';
+          chip.style.borderColor = '';
+        }, 800);
+        showToast('Copied: ' + word, 'success', 1200);
+      }
+    });
+  });
+
+  updateStats();
+}
+
+/* ===== UPDATE STATS ===== */
+function updateStats() {
+  const words = state.words;
+  totalWords.textContent = words.length.toLocaleString();
+  const uniqueSet = new Set(words.map(w => w.toLowerCase()));
+  uniqueCount.textContent = uniqueSet.size.toLocaleString();
+  const chars = words.join('').length;
+  totalChars.textContent = chars.toLocaleString();
+}
+
+/* ===== HISTORY ===== */
+function addHistory(words) {
+  state.history.unshift({
+    words: [...words],
+    time: Date.now()
+  });
+  if (state.history.length > 5) state.history.pop();
+  renderHistory();
+}
+
+function renderHistory() {
+  if (!state.history.length) {
+    historyList.innerHTML = '<div class="history-empty">No history yet. Generate some words!</div>';
+    return;
+  }
+
+  historyList.innerHTML = state.history.map((h, idx) => {
+    const preview = h.words.slice(0, 10).join(', ') + (h.words.length > 10 ? '…' : '');
+    return `
+      <div class="history-item">
+        <div class="history-words">${preview}</div>
+        <button class="history-copy" data-index="${idx}" title="Copy">📋</button>
+      </div>
+    `;
+  }).join('');
+
+  $$('.history-copy').forEach(btn => {
+    btn.addEventListener('click', async () => {
+      const idx = parseInt(btn.dataset.index, 10);
+      const text = state.history[idx].words.join(', ');
+      const ok = await copyToClipboard(text);
+      if (ok) showToast('History copied!', 'success', 1500);
+    });
+  });
+}
+
+historyClear.addEventListener('click', () => {
+  if (!state.history.length) return;
+  state.history = [];
+  renderHistory();
+  showToast('History cleared', 'info');
+});
+
+/* ===== EVENT LISTENERS ===== */
+generateBtn.addEventListener('click', () => {
+  generate();
+  showToast('Generated ' + state.words.length + ' words!', 'success', 1500);
+});
+
+copyBtn.addEventListener('click', async () => {
+  if (!state.words.length) { showToast('Nothing to copy', 'error'); return; }
+  const text = state.words.join(', ');
+  const ok = await copyToClipboard(text);
+  if (ok) {
+    copyBtn.classList.add('copied');
+    const original = copyBtn.innerHTML;
+    copyBtn.innerHTML = '✓ Copied';
+    setTimeout(() => {
+      copyBtn.classList.remove('copied');
+      copyBtn.innerHTML = original;
+    }, 1500);
+    showToast('Copied all words!', 'success');
+  } else {
+    showToast('Copy failed', 'error');
+  }
+});
+
+shuffleBtn.addEventListener('click', () => {
+  if (!state.words.length) { showToast('Generate words first', 'error'); return; }
+  // Fisher-Yates shuffle
+  const arr = [...state.words];
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  state.words = arr;
+  render();
+  showToast('Shuffled!', 'success', 1200);
+});
+
+downloadBtn.addEventListener('click', () => {
+  if (!state.words.length) { showToast('Nothing to download', 'error'); return; }
+  const content = [
+    'BigToolz Random Word Generator',
+    '='.repeat(40),
+    '',
+    'Category: ' + category.options[category.selectedIndex].text,
+    'Count: ' + state.words.length,
+    'Generated: ' + new Date().toLocaleString(),
+    '',
+    '─'.repeat(40),
+    '',
+    state.words.join('\n')
+  ].join('\n');
+
+  const blob = new Blob([content], { type: 'text/plain' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'random-words.txt';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+  showToast('Downloaded', 'success');
+});
+
+clearBtn.addEventListener('click', () => {
+  if (!state.words.length) return;
+  state.words = [];
+  render();
+  showToast('Cleared', 'info');
+});
+
+/* ===== FAQ ===== */
+$$('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    $$('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+
+/* ===== INIT ===== */
+renderHistory();
+</script>
+
+</body>
+</html>

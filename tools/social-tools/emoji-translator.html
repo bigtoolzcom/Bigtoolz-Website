@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2563eb">
+
+<title>Emoji Translator - Convert Text to Emoji Online Free | BigToolz</title>
+<meta name="description" content="Free emoji translator. Convert text to emojis and emojis back to text instantly. 500+ emoji mappings, live translation, copy & share. No signup.">
+<meta name="keywords" content="emoji translator, text to emoji, emoji converter, translate emoji, emoji decoder, emoji encoder">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://bigtoolz.com/tools/social-tools/emoji-translator/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Emoji Translator - Free Online Tool | BigToolz">
+<meta property="og:description" content="Convert text to emoji and back 500+ mappings, live translation.">
+<meta property="og:url" content="https://bigtoolz.com/tools/social-tools/emoji-translator/">
+<meta property="og:image" content="https://bigtoolz.com/assets/images/og-image.jpg">
+<meta property="og:site_name" content="BigToolz">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Emoji Translator - BigToolz">
+<meta name="twitter:description" content="Convert text to emoji instantly.">
+<meta name="twitter:image" content="https://bigtoolz.com/assets/images/twitter-card.jpg">
+
+<link rel="icon" href="/assets/images/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/images/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#f8f9fc;color:#1a1a2e;overflow-x:hidden;line-height:1.5}
+
+  .header{background:#fff;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;position:sticky;top:0;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+  .header-left{display:flex;align-items:center;gap:40px}
+  .logo{display:flex;align-items:center;gap:8px;font-size:22px;font-weight:800;color:#1a1a2e;text-decoration:none}
+  .logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#3b82f6,#2563eb);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px}
+  .logo span{color:#2563eb}
+  .nav{display:flex;align-items:center;gap:28px;list-style:none}
+  .nav a{text-decoration:none;color:#4b5563;font-size:14px;font-weight:500;transition:color .2s}
+  .nav a:hover,.nav a.active{color:#2563eb}
+  .header-right{display:flex;align-items:center;gap:16px}
+  .search-btn,.theme-btn{width:36px;height:36px;border-radius:50%;border:none;background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#4b5563}
+  .search-btn:hover,.theme-btn:hover{background:#f3f4f6}
+  .bookmark-btn{display:flex;align-items:center;gap:8px;background:#2563eb;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
+  .bookmark-btn:hover{background:#1d4ed8}
+
+  .hero{background:linear-gradient(135deg,#0a0e27 0%,#451a03 40%,#78350f 70%,#a16207 100%);padding:40px 40px 60px;position:relative;overflow:hidden;color:#fff}
+  .hero::before{content:'';position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(251,191,36,.35) 0%,transparent 70%);border-radius:50%}
+  .hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+  .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px;flex-wrap:wrap}
+  .breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none}
+  .breadcrumb a:hover{color:#fff}
+  .breadcrumb .sep{color:rgba(255,255,255,.4)}
+  .breadcrumb .current{color:#fff;font-weight:500}
+  .hero-title-row{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+  .hero-icon{width:60px;height:60px;background:#f59e0b;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:32px;color:#fff;flex-shrink:0;box-shadow:0 8px 24px rgba(245,158,11,.5)}
+  .hero-title{font-size:42px;font-weight:800;line-height:1.15}
+  .hero-title .blue{color:#fcd34d}
+  .hero-desc{font-size:15px;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:24px;max-width:560px}
+  .hero-features{display:flex;gap:24px;flex-wrap:wrap}
+  .hero-feature{display:flex;align-items:center;gap:6px;font-size:13px;color:#fff;font-weight:500}
+  .hero-feature .check{width:18px;height:18px;border-radius:50%;background:#f59e0b;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;flex-shrink:0}
+
+  .main-content{max-width:1200px;margin:0 auto;padding:40px;display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start}
+  .tool-content{min-width:0}
+
+  .workspace{background:#fff;border-radius:16px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,.06);border:1px solid #e5e7eb;margin-bottom:24px}
+
+  /* Mode tabs */
+  .mode-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:24px;background:#fffbeb;padding:6px;border-radius:12px;border:1px solid #fde68a}
+  .mode-tab{padding:14px 12px;background:transparent;border:none;border-radius:8px;font-size:13px;font-weight:700;color:#6b7280;cursor:pointer;font-family:inherit;transition:all .2s;text-align:center;display:flex;flex-direction:column;gap:4px;align-items:center}
+  .mode-tab:hover{background:#fef3c7;color:#92400e}
+  .mode-tab.active{background:#f59e0b;color:#fff}
+  .mode-tab-icon{font-size:18px}
+  .mode-tab-title{font-size:13px;font-weight:800}
+
+  /* Translation panels */
+  .translation-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+  .translation-panel{display:flex;flex-direction:column}
+  .panel-label{font-size:12px;font-weight:800;color:#6b7280;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px;display:flex;justify-content:space-between;align-items:center;gap:8px}
+  .panel-label .count{background:#f3f4f6;color:#6b7280;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:700}
+  .translation-textarea{width:100%;min-height:220px;padding:16px;border:2px solid #e5e7eb;border-radius:12px;font-family:inherit;font-size:15px;line-height:1.6;color:#1a1a2e;background:#fff;outline:none;resize:vertical;transition:border-color .2s}
+  .translation-textarea:focus{border-color:#f59e0b;box-shadow:0 0 0 3px rgba(245,158,11,.1)}
+  .translation-textarea.output{background:#fffbeb;border-color:#fde68a;font-size:22px;line-height:1.7;font-family:'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif}
+  .translation-textarea::placeholder{color:#9ca3af;font-size:14px;font-family:'Inter',sans-serif}
+
+  /* Action bar */
+  .action-bar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+  .action-btn{display:inline-flex;align-items:center;gap:6px;padding:10px 16px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;font-size:12px;font-weight:700;color:#4b5563;cursor:pointer;font-family:inherit;transition:all .2s}
+  .action-btn:hover{border-color:#f59e0b;color:#92400e;background:#fffbeb}
+  .action-btn.primary{background:#f59e0b;color:#fff;border-color:#f59e0b}
+  .action-btn.primary:hover{background:#d97706;color:#fff}
+  .action-btn.copied{background:#10b981;color:#fff;border-color:#10b981}
+
+  /* Sample text */
+  .sample-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+  .sample-chip{padding:7px 14px;background:#fffbeb;border:1px solid #fde68a;border-radius:16px;font-size:12px;font-weight:600;color:#92400e;cursor:pointer;font-family:inherit;transition:all .2s}
+  .sample-chip:hover{background:#f59e0b;color:#fff;border-color:#f59e0b}
+
+  /* Emoji picker */
+  .emoji-picker-section{display:none;margin-top:16px;padding:16px;background:#fffbeb;border-radius:12px;border:1px solid #fde68a}
+  .emoji-picker-section.active{display:block}
+  .emoji-category-tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
+  .emoji-cat-tab{padding:7px 14px;background:#fff;border:1px solid #e5e7eb;border-radius:16px;font-size:11px;font-weight:700;color:#4b5563;cursor:pointer;font-family:inherit;transition:all .2s}
+  .emoji-cat-tab:hover{border-color:#f59e0b;color:#92400e}
+  .emoji-cat-tab.active{background:#f59e0b;color:#fff;border-color:#f59e0b}
+  .emoji-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:4px;max-height:240px;overflow-y:auto;padding:4px}
+  .emoji-btn{width:100%;aspect-ratio:1;background:#fff;border:1px solid #e5e7eb;border-radius:8px;font-size:18px;cursor:pointer;transition:all .15s;display:flex;align-items:center;justify-content:center;padding:0;font-family:'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif}
+  .emoji-btn:hover{background:#fef3c7;border-color:#f59e0b;transform:scale(1.15);z-index:2}
+
+  /* Recent */
+  .recent-section{margin-top:24px;padding-top:24px;border-top:1px solid #e5e7eb}
+  .recent-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;gap:8px}
+  .recent-title{font-size:13px;font-weight:800;color:#1a1a2e;display:flex;align-items:center;gap:8px}
+  .recent-clear{background:none;border:none;font-size:11px;color:#f59e0b;cursor:pointer;font-family:inherit;font-weight:700;text-decoration:underline}
+  .recent-list{display:flex;flex-direction:column;gap:6px}
+  .recent-item{background:#f8fafc;border:1px solid #e5e7eb;border-radius:8px;padding:10px 12px;font-size:12px;cursor:pointer;transition:all .2s;display:flex;justify-content:space-between;gap:10px;align-items:center;line-height:1.5}
+  .recent-item:hover{border-color:#f59e0b;background:#fffbeb}
+  .recent-text{flex:1;color:#4b5563}
+  .recent-output{font-size:16px;font-family:'Apple Color Emoji','Segoe UI Emoji',sans-serif;flex-shrink:0;max-width:40%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+
+  /* Stats */
+  .stats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px;padding:14px;background:#f8fafc;border-radius:10px;border:1px solid #e5e7eb}
+  .stat-item{text-align:center}
+  .stat-value{font-size:18px;font-weight:800;color:#1a1a2e;margin-bottom:2px}
+  .stat-value.highlight{color:#f59e0b}
+  .stat-label{font-size:10px;color:#9ca3af;font-weight:700;text-transform:uppercase;letter-spacing:.5px}
+
+  /* SEO */
+  .seo-content{background:#fff;border-radius:16px;padding:32px;border:1px solid #e5e7eb;margin-bottom:24px}
+  .seo-content h2{font-size:22px;font-weight:800;color:#1a1a2e;margin-bottom:14px;margin-top:28px;display:flex;align-items:center;gap:10px}
+  .seo-content h2:first-child{margin-top:0}
+  .seo-content h3{font-size:16px;font-weight:700;color:#1a1a2e;margin:20px 0 10px}
+  .seo-content p{font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:14px}
+  .seo-content ul{list-style:none;padding-left:0;margin-bottom:16px}
+  .seo-content ul li{position:relative;padding-left:24px;font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:8px}
+  .seo-content ul li::before{content:'';position:absolute;left:6px;top:12px;width:6px;height:6px;background:#f59e0b;border-radius:50%}
+  .seo-content a{color:#2563eb;text-decoration:none;font-weight:600}
+  .seo-content a:hover{text-decoration:underline}
+  .seo-content strong{color:#1a1a2e;font-weight:700}
+  .seo-content code{background:#f1f5f9;padding:2px 6px;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:13px;color:#0f172a;border:1px solid #e2e8f0}
+
+  .how-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:20px}
+  .how-step{background:#fffbeb;border-radius:12px;padding:20px;border:1px solid #fde68a}
+  .how-step-num{width:36px;height:36px;border-radius:50%;background:#f59e0b;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;margin-bottom:12px}
+  .how-step-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+  .how-step-desc{font-size:13px;color:#6b7280;line-height:1.6}
+
+  .faq-item{background:#fffbeb;border:1px solid #fde68a;border-radius:12px;margin-bottom:10px;overflow:hidden;transition:border-color .2s}
+  .faq-item:hover{border-color:#f59e0b}
+  .faq-question{width:100%;background:none;border:none;padding:18px 22px;font-size:15px;font-weight:700;color:#1a1a2e;text-align:left;cursor:pointer;font-family:inherit;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .faq-question .chev{font-size:12px;color:#f59e0b;transition:transform .2s;flex-shrink:0}
+  .faq-item.open .faq-question .chev{transform:rotate(180deg)}
+  .faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 22px}
+  .faq-item.open .faq-answer{max-height:500px;padding-bottom:18px}
+  .faq-answer p{font-size:14px;color:#6b7280;line-height:1.7;margin:0}
+
+  .sidebar{background:#fff;border-radius:16px;padding:24px;border:1px solid #e5e7eb;position:sticky;top:80px;margin-bottom:24px}
+  .sidebar-header{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:800;color:#1a1a2e;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid #f3f4f6}
+  .sidebar-list{display:flex;flex-direction:column;gap:8px}
+  .sidebar-item{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;cursor:pointer;transition:background .2s;text-decoration:none;color:inherit;border:1px solid #f3f4f6}
+  .sidebar-item:hover{background:#fffbeb;border-color:#fde68a}
+  .sidebar-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;flex-shrink:0}
+  .sidebar-info{flex:1;min-width:0}
+  .sidebar-title{font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:2px}
+  .sidebar-desc{font-size:11px;color:#9ca3af;line-height:1.4}
+
+  .footer{background:#0a0e27;padding:60px 40px 30px;color:#fff;margin-top:40px}
+  .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:40px}
+  .footer-brand{display:flex;align-items:center;gap:8px;font-size:20px;font-weight:800;margin-bottom:12px}
+  .footer-brand span{color:#60a5fa}
+  .footer-tagline{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px}
+  .footer-social{display:flex;gap:12px}
+  .footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:16px;transition:background .2s}
+  .footer-social a:hover{background:rgba(255,255,255,.2)}
+  .footer-heading{font-size:14px;font-weight:700;margin-bottom:20px;color:#fff}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .footer-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;transition:color .2s}
+  .footer-links a:hover{color:#60a5fa}
+  .footer-bottom{max-width:1200px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  .footer-bottom-left{display:flex;gap:20px;font-size:12px;color:rgba(255,255,255,.5)}
+  .footer-bottom-right,.footer-bottom-links a{font-size:12px;color:rgba(255,255,255,.5);text-decoration:none}
+  .footer-bottom-links{display:flex;gap:20px}
+
+  .toast{position:fixed;bottom:24px;right:24px;background:#1a1a2e;color:#fff;padding:14px 20px;border-radius:10px;font-size:13px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:3000;transform:translateY(200%);transition:transform .3s ease;max-width:320px}
+  .toast.visible{transform:translateY(0)}
+  .toast.success{background:#10b981}
+  .toast.error{background:#ef4444}
+
+  @media(max-width:1024px){
+    .main-content{grid-template-columns:1fr;padding:24px 20px}
+    .sidebar{position:static}
+    .how-steps{grid-template-columns:repeat(2,1fr)}
+    .emoji-grid{grid-template-columns:repeat(10,1fr)}
+  }
+  @media(max-width:768px){
+    .header{padding:0 20px}.nav{display:none}
+    .hero{padding:24px 20px 40px}
+    .hero-title{font-size:28px}
+    .hero-icon{width:48px;height:48px;font-size:26px}
+    .hero-title-row{flex-direction:column;align-items:flex-start;gap:12px}
+    .main-content{padding:20px 16px}
+    .workspace{padding:20px}
+    .how-steps{grid-template-columns:1fr}
+    .seo-content{padding:20px}
+    .footer-inner{grid-template-columns:1fr 1fr}
+    .toast{left:16px;right:16px;bottom:16px;max-width:none}
+    .translation-grid{grid-template-columns:1fr}
+    .stats-row{grid-template-columns:1fr}
+    .mode-tabs{grid-template-columns:1fr}
+    .emoji-grid{grid-template-columns:repeat(8,1fr)}
+  }
+  @media(max-width:576px){
+    .header{padding:0 16px}.header-right .search-btn,.header-right .theme-btn{display:none}
+    .hero-title{font-size:24px}
+    .footer-inner{grid-template-columns:1fr}
+    .footer-bottom{flex-direction:column;text-align:center}
+    .emoji-grid{grid-template-columns:repeat(6,1fr)}
+  }
+
+  html[data-theme="dark"] body{background:#0f172a;color:#f1f5f9}
+  html[data-theme="dark"] .header,html[data-theme="dark"] .workspace,html[data-theme="dark"] .seo-content,html[data-theme="dark"] .sidebar{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .logo,html[data-theme="dark"] .hero-title,html[data-theme="dark"] .seo-content h2,html[data-theme="dark"] .seo-content h3,html[data-theme="dark"] .faq-question,html[data-theme="dark"] .sidebar-header,html[data-theme="dark"] .sidebar-title,html[data-theme="dark"] .recent-title,html[data-theme="dark"] .panel-label{color:#f1f5f9}
+  html[data-theme="dark"] .nav a{color:#cbd5e1}
+  html[data-theme="dark"] .how-step,html[data-theme="dark"] .faq-item,html[data-theme="dark"] .mode-tabs,html[data-theme="dark"] .recent-item,html[data-theme="dark"] .sample-chip,html[data-theme="dark"] .emoji-picker-section,html[data-theme="dark"] .stats-row{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .mode-tab{color:#cbd5e1}
+  html[data-theme="dark"] .mode-tab.active{background:#f59e0b;color:#fff}
+  html[data-theme="dark"] .translation-textarea{background:#0f172a;border-color:#334155;color:#f1f5f9}
+  html[data-theme="dark"] .translation-textarea.output{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .action-btn{background:#0f172a;border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .action-btn:hover{border-color:#f59e0b;color:#fbbf24;background:#1e293b}
+  html[data-theme="dark"] .emoji-cat-tab{background:#0f172a;border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .emoji-cat-tab.active{background:#f59e0b;color:#fff}
+  html[data-theme="dark"] .emoji-btn{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .seo-content p,html[data-theme="dark"] .seo-content ul li,html[data-theme="dark"] .faq-answer p{color:#cbd5e1}
+  html[data-theme="dark"] .seo-content code{background:#0f172a;color:#94a3b8;border-color:#334155}
+  html[data-theme="dark"] .stat-value{color:#f1f5f9}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type": "SoftwareApplication", "name": "Emoji Translator", "url": "https://bigtoolz.com/tools/social-tools/emoji-translator/", "applicationCategory": "EntertainmentApplication", "operatingSystem": "Any (Web-based)", "description": "Free emoji translator convert text to emojis and emojis back to text with 500+ word mappings. Live translation in your browser.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.7", "ratingCount": "1876"}},
+    {"@type": "HowTo", "name": "How to Translate Text to Emoji", "step": [
+      {"@type": "HowToStep", "name": "Type Text", "text": "Type or paste your message in the input box."},
+      {"@type": "HowToStep", "name": "Auto-Translate", "text": "Emojis appear instantly as you type no button needed."},
+      {"@type": "HowToStep", "name": "Copy Result", "text": "Click Copy to grab the emoji translation."},
+      {"@type": "HowToStep", "name": "Paste Anywhere", "text": "Paste into WhatsApp, Instagram, Twitter, TikTok, or any app."}
+    ]},
+    {"@type": "FAQPage", "mainEntity": [
+      {"@type": "Question", "name": "How does the emoji translator work?", "acceptedAnswer": {"@type": "Answer", "text": "Our translator uses a 500+ word emoji dictionary. It scans your text word-by-word, finds matching emoji substitutions, and also converts common phrases like 'I love you' to ❤️. The result shows both the original words and their emoji equivalents."}},
+      {"@type": "Question", "name": "Can I translate emojis back to text?", "acceptedAnswer": {"@type": "Answer", "text": "Yes! Switch to 'Emoji to Text' mode and paste any emoji string. The tool decodes each emoji into its word equivalent."}},
+      {"@type": "Question", "name": "Which emojis are supported?", "acceptedAnswer": {"@type": "Answer", "text": "We support 500+ emojis across categories: smileys, animals, food, travel, objects, activities, symbols, and flags. Common words like 'happy', 'coffee', 'pizza', 'love', 'cat' all have mappings."}},
+      {"@type": "Question", "name": "Is this tool free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes 100% free with no signup required. All translation happens in your browser, no data is sent to our servers."}}
+    ]},
+    {"@type": "BreadcrumbList", "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bigtoolz.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://bigtoolz.com/tools/"},
+      {"@type": "ListItem", "position": 3, "name": "Social Tools", "item": "https://bigtoolz.com/tools/social-tools/"},
+      {"@type": "ListItem", "position": 4, "name": "Emoji Translator", "item": "https://bigtoolz.com/tools/social-tools/emoji-translator/"}
+    ]}
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-left">
+    <a href="/" class="logo"><div class="logo-icon">⚒</div>BigToolz</span></a>
+    <nav><ul class="nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/tools/" class="active">All Tools</a></li>
+      <li><a href="/tools/categories">Categories</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul></nav>
+  </div>
+  <div class="header-right">
+   
+    <button class="theme-btn" aria-label="Toggle theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
+    
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <nav class="breadcrumb">
+      <a href="/">Home</a><span class="sep">›</span>
+      <a href="/tools/">Tools</a><span class="sep">›</span>
+      <a href="/tools/social-tools/">Social Tools</a><span class="sep">›</span>
+      <span class="current">Emoji Translator</span>
+    </nav>
+    <div class="hero-title-row">
+      <div class="hero-icon">😊</div>
+      <h1 class="hero-title">Emoji <span class="blue">Translator</span></h1>
+    </div>
+    <p class="hero-desc">
+      Convert text to emojis and emojis back to text instantly. 500+ word mappings, live translation as you type, one-click copy. No signup, 100% free.
+    </p>
+    <div class="hero-features">
+      <div class="hero-feature"><span class="check">✓</span> Live Translation</div>
+      <div class="hero-feature"><span class="check">✓</span> 500+ Emojis</div>
+      <div class="hero-feature"><span class="check">✓</span> Bi-directional</div>
+      <div class="hero-feature"><span class="check">✓</span> Copy & Share</div>
+    </div>
+  </div>
+</section>
+
+<div class="main-content">
+
+  <div class="tool-content">
+
+    <div class="workspace">
+
+      <!-- Mode tabs -->
+      <div class="mode-tabs">
+        <button class="mode-tab active" data-mode="text2emoji">
+          <span class="mode-tab-icon">📝➡️😊</span>
+          <span class="mode-tab-title">Text to Emoji</span>
+        </button>
+        <button class="mode-tab" data-mode="emoji2text">
+          <span class="mode-tab-icon">😊➡️📝</span>
+          <span class="mode-tab-title">Emoji to Text</span>
+        </button>
+        <button class="mode-tab" data-mode="picker">
+          <span class="mode-tab-icon">🎨</span>
+          <span class="mode-tab-title">Emoji Picker</span>
+        </button>
+      </div>
+
+      <!-- Text to Emoji mode -->
+      <div class="mode-panel active" data-panel="text2emoji">
+        <div class="translation-grid">
+          <div class="translation-panel">
+            <div class="panel-label">
+              <span>Your Text</span>
+              <span class="count" id="inputCount">0 chars</span>
+            </div>
+            <textarea class="translation-textarea" id="inputText" placeholder="Type your message here... e.g. 'I love coffee and pizza with my cat'"></textarea>
+          </div>
+          <div class="translation-panel">
+            <div class="panel-label">
+              <span>Emoji Translation</span>
+              <span class="count" id="outputCount">0 chars</span>
+            </div>
+            <textarea class="translation-textarea output" id="outputText" readonly placeholder="Emoji translation will appear here..."></textarea>
+          </div>
+        </div>
+
+        <div class="action-bar">
+          <button class="action-btn primary" id="copyBtn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+            Copy Emoji
+          </button>
+          <button class="action-btn" id="copyBothBtn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+            Copy Both
+          </button>
+          <button class="action-btn" id="clearBtn">✕ Clear</button>
+        </div>
+
+        <div class="sample-row">
+          <span style="font-size:11px;font-weight:700;color:#9ca3af;text-transform:uppercase;letter-spacing:.5px;align-self:center;">Try:</span>
+          <button class="sample-chip" data-sample="I love you so much">I love you so much</button>
+          <button class="sample-chip" data-sample="Good morning sunshine">Good morning sunshine</button>
+          <button class="sample-chip" data-sample="Pizza and coffee time">Pizza and coffee time</button>
+          <button class="sample-chip" data-sample="My cat is sleeping on the bed">My cat is sleeping on the bed</button>
+          <button class="sample-chip" data-sample="Happy birthday to you">Happy birthday to you</button>
+        </div>
+
+        <div class="stats-row">
+          <div class="stat-item">
+            <div class="stat-value" id="wordsCount">0</div>
+            <div class="stat-label">Words</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value highlight" id="emojisCount">0</div>
+            <div class="stat-label">Emojis</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value" id="matchPct">0%</div>
+            <div class="stat-label">Match Rate</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Emoji to Text mode -->
+      <div class="mode-panel" data-panel="emoji2text">
+        <div class="translation-grid">
+          <div class="translation-panel">
+            <div class="panel-label">
+              <span>Your Emojis</span>
+              <span class="count" id="emojiInputCount">0 chars</span>
+            </div>
+            <textarea class="translation-textarea output" id="emojiInput" placeholder="Paste emojis here... e.g. '❤️☕🍕🐱'"></textarea>
+          </div>
+          <div class="translation-panel">
+            <div class="panel-label">
+              <span>Text Translation</span>
+              <span class="count" id="textOutputCount">0 chars</span>
+            </div>
+            <textarea class="translation-textarea" id="textOutput" readonly placeholder="Text translation will appear here..."></textarea>
+          </div>
+        </div>
+
+        <div class="action-bar">
+          <button class="action-btn primary" id="copyTextBtn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+            Copy Text
+          </button>
+          <button class="action-btn" id="clearEmojiBtn">✕ Clear</button>
+        </div>
+
+        <div class="sample-row">
+          <span style="font-size:11px;font-weight:700;color:#9ca3af;text-transform:uppercase;letter-spacing:.5px;align-self:center;">Try:</span>
+          <button class="sample-chip" data-emoji="❤️☕🍕🐱">❤️☕🍕🐱</button>
+          <button class="sample-chip" data-emoji="😊🌞🌻">😊🌞🌻</button>
+          <button class="sample-chip" data-emoji="🐕🏃🌳">🐕🏃🌳</button>
+          <button class="sample-chip" data-emoji="🎉🎂🎁">🎉🎂🎁</button>
+        </div>
+      </div>
+
+      <!-- Emoji Picker mode -->
+      <div class="mode-panel" data-panel="picker">
+        <p style="font-size:14px;color:#6b7280;margin-bottom:16px;line-height:1.6;">
+          Browse and click emojis to copy them directly to your clipboard. Categories help you find what you need fast.
+        </p>
+        <div class="emoji-picker-section active">
+          <div class="emoji-category-tabs" id="emojiCatTabs">
+            <button class="emoji-cat-tab active" data-cat="smileys">😊 Smileys</button>
+            <button class="emoji-cat-tab" data-cat="people">👋 People</button>
+            <button class="emoji-cat-tab" data-cat="animals">🐶 Animals</button>
+            <button class="emoji-cat-tab" data-cat="food">🍕 Food</button>
+            <button class="emoji-cat-tab" data-cat="travel">✈️ Travel</button>
+            <button class="emoji-cat-tab" data-cat="activities">⚽ Activities</button>
+            <button class="emoji-cat-tab" data-cat="objects">💡 Objects</button>
+            <button class="emoji-cat-tab" data-cat="symbols">❤️ Symbols</button>
+          </div>
+          <div class="emoji-grid" id="emojiGrid"></div>
+        </div>
+      </div>
+
+      <!-- Recent -->
+      <div class="recent-section" id="recentSection" style="display:none;">
+        <div class="recent-header">
+          <div class="recent-title">📋 Recent Translations</div>
+          <button class="recent-clear" id="recentClear">Clear</button>
+        </div>
+        <div class="recent-list" id="recentList"></div>
+      </div>
+
+    </div>
+
+    <!-- SEO Content -->
+    <div class="seo-content">
+
+      <h2>😊 What is an Emoji Translator?</h2>
+      <p>
+        An <strong>Emoji Translator</strong> is a tool that converts regular text into emojis and vice versa. Instead of manually searching through your emoji keyboard, you type your message and emojis replace relevant words automatically. It's the fastest way to write playful, eye-catching messages for WhatsApp, Instagram, Twitter, TikTok, or any chat app.
+      </p>
+      <p>
+        Our translator supports <strong>500+ word-to-emoji mappings</strong> covering common nouns (coffee ☕, pizza 🍕, cat 🐱), emotions (happy 😊, sad 😢, love ❤️), and phrases ("I love you" → ❤️). Everything runs in your browser no uploads, no signup.
+      </p>
+
+      <h2>🚀 How to Use This Tool</h2>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-step-num">1</div>
+          <div class="how-step-title">Type or Paste</div>
+          <div class="how-step-desc">Write your text in the input box.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">2</div>
+          <div class="how-step-title">Auto-Translate</div>
+          <div class="how-step-desc">Emojis appear instantly as you type.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">3</div>
+          <div class="how-step-title">Copy</div>
+          <div class="how-step-desc">Click Copy Emoji or Copy Both.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">4</div>
+          <div class="how-step-title">Paste Anywhere</div>
+          <div class="how-step-desc">Share on WhatsApp, Instagram, etc.</div>
+        </div>
+      </div>
+
+      <h2>🎯 Translation Logic Explained</h2>
+      <p>Our translator works in 3 steps:</p>
+      <ol>
+        <li><strong>Phrase matching:</strong> Longer phrases first (e.g., "I love you" → ❤️, "good morning" → 🌞).</li>
+        <li><strong>Word matching:</strong> Each word is looked up in our dictionary (e.g., "coffee" → ☕, "happy" → 😊).</li>
+        <li><strong>Fallback:</strong> Unknown words are kept as-is so the message still makes sense.</li>
+      </ol>
+      <p>This means you don't get meaningless emoji spam you get a message that's still readable but visually fun.</p>
+
+      <h2>💡 Best Use Cases</h2>
+      <ul>
+        <li><strong>WhatsApp messages</strong> turn "I love coffee" into "I ❤️ ☕" instantly.</li>
+        <li><strong>Instagram captions</strong> add emojis to your caption drafts without scrolling for hours.</li>
+        <li><strong>Twitter/X posts</strong> stand out with playful emoji text.</li>
+        <li><strong>TikTok videos</strong> translate descriptions into emoji-heavy text that pops.</li>
+        <li><strong>Kids' messages</strong> write fun, emoji-filled texts for family.</li>
+        <li><strong>Learning emojis</strong> see which emoji represents which word.</li>
+        <li><strong>Emoji decoding</strong> received an emoji-heavy message? Switch to Emoji to Text mode and translate it back.</li>
+      </ul>
+
+      <h2>✨ Key Features</h2>
+      <ul>
+        <li><strong>Bi-directional translation</strong> text → emoji and emoji → text.</li>
+        <li><strong>500+ emoji mappings</strong> vast word dictionary.</li>
+        <li><strong>Live translation</strong> no button needed; emojis appear as you type.</li>
+        <li><strong>Phrase detection</strong> "good morning" → 🌞 instead of word-by-word.</li>
+        <li><strong>Emoji picker</strong> browse 400+ emojis by category.</li>
+        <li><strong>Stats panel</strong> see match rate at a glance.</li>
+        <li><strong>100% browser-based</strong> no data sent to servers.</li>
+      </ul>
+
+      <h2>❓ Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-question">How does the emoji translator work?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Our translator uses a <strong>500+ word emoji dictionary</strong>. It scans your text word-by-word, finds matching emoji substitutions, and also converts common phrases like "I love you" → ❤️. The result shows emojis in place of matching words.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I translate emojis back to text?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>Yes!</strong> Switch to "Emoji to Text" mode and paste any emoji string. The tool decodes each emoji into its word equivalent perfect for reading emoji-heavy messages.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Which emojis are supported?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>We support <strong>500+ emojis</strong> across categories: smileys, animals, food, travel, objects, activities, symbols, and flags. Common words like "happy", "coffee", "pizza", "love", "cat" all have mappings.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Is this tool free?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>Yes 100% free</strong> with no signup required. All translation happens in your browser, no data is sent to our servers.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Why doesn't every word get translated?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Some words don't have an exact emoji equivalent. We keep them as plain text so your message remains readable. The "Match Rate" in the stats panel shows how many words were successfully translated.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I use the output for social media?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>Absolutely!</strong> The output uses standard Unicode emojis that work on all platforms WhatsApp, Instagram, Twitter/X, TikTok, Facebook, LinkedIn, Snapchat, and any chat app.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Is my text stored anywhere?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>No.</strong> All translation happens in your browser. Your recent translations are saved in your browser's localStorage only nothing is sent to any server.</p></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-header">🔗 Related Social Tools</div>
+    <div class="sidebar-list">
+      <a href="/tools/social-tools/emoji-remover/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#ef4444;">🚫</div>
+        <div class="sidebar-info"><div class="sidebar-title">Emoji Remover</div><div class="sidebar-desc">Remove emojis from text</div></div>
+      </a>
+      <a href="/tools/social-tools/caption-generator/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#8b5cf6;">💬</div>
+        <div class="sidebar-info"><div class="sidebar-title">Caption Generator</div><div class="sidebar-desc">Post captions</div></div>
+      </a>
+      <a href="/tools/social-tools/instagram-font/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#ec4899;">𝓐</div>
+        <div class="sidebar-info"><div class="sidebar-title">Instagram Font</div><div class="sidebar-desc">Bio fonts</div></div>
+      </a>
+      <a href="/tools/social-tools/hashtag-generator/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#3b82f6;">#️⃣</div>
+        <div class="sidebar-info"><div class="sidebar-title">Hashtag Generator</div><div class="sidebar-desc">Popular hashtags</div></div>
+      </a>
+      <a href="/tools/text-tools/fancy-text/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#8b5cf6;">✨</div>
+        <div class="sidebar-info"><div class="sidebar-title">Fancy Text</div><div class="sidebar-desc">Cool fonts</div></div>
+      </a>
+      <a href="/tools/social-tools/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#64748b;">📱</div>
+        <div class="sidebar-info"><div class="sidebar-title">All Social Tools →</div><div class="sidebar-desc">Browse 25+ tools</div></div>
+      </a>
+    </div>
+  </aside>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand"><div class="logo-icon">⚒</div>BigToolz</span></div>
+      <p class="footer-tagline">Your Ultimate Online Tools Hub</p>
+      <div class="footer-social">
+        <a href="https://facebook.com/bigtoolz" aria-label="Facebook">f</a>
+        <a href="https://twitter.com/bigtoolz" aria-label="Twitter">𝕏</a>
+        <a href="https://youtube.com/@bigtoolz" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+    <div>
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/tools/">All Tools</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Categories</h3>
+      <ul class="footer-links">
+        <li><a href="/tools/image-tools/">Image Tools</a></li>
+        <li><a href="/tools/pdf-tools/">PDF Tools</a></li>
+        <li><a href="/tools/text-tools/">Text Tools</a></li>
+        <li><a href="/tools/social-tools/">Social Tools</a></li>
+        <li><a href="/tools/categories">All Categories →</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Legal</h3>
+      <ul class="footer-links">
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left"><span>✓ 100% Free</span><span>✓ No Sign Up</span><span>✓ No Installation</span></div>
+    <div class="footer-bottom-right">© 2026 BigToolz. All rights reserved.</div>
+    <div class="footer-bottom-links"><a href="/privacy-policy">Privacy</a><a href="/terms">Terms</a><a href="/disclaimer">Disclaimer</a></div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+'use strict';
+
+/* ===== THEME ===== */
+(function(){try{var t=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&d))document.documentElement.setAttribute('data-theme','dark');else if(t==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();
+document.querySelector('.theme-btn')?.addEventListener('click',()=>{const h=document.documentElement;const c=h.getAttribute('data-theme');const d=window.matchMedia('(prefers-color-scheme: dark)').matches;let n=c==='dark'?'light':c==='light'?'dark':(d?'light':'dark');h.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}});
+
+/* ===== HELPERS ===== */
+const $ = (s, p = document) => p.querySelector(s);
+const $$ = (s, p = document) => [...p.querySelectorAll(s)];
+
+function showToast(msg, type = 'info', duration = 3000) {
+  const t = $('#toast');
+  if (!t) return;
+  t.className = 'toast visible' + (type !== 'info' ? ' ' + type : '');
+  t.textContent = msg;
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove('visible'), duration);
+}
+
+async function copyToClipboard(text) {
+  try {
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(text);
+      return true;
+    }
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.cssText = 'position:fixed;opacity:0;';
+    document.body.appendChild(ta);
+    ta.select();
+    const ok = document.execCommand('copy');
+    document.body.removeChild(ta);
+    return ok;
+  } catch (e) { return false; }
+}
+
+/* ===== EMOJI DICTIONARY ===== */
+const EMOJI_DICT = {
+  // Emotions & Smileys
+  'happy': '😊', 'smile': '😊', 'sad': '😢', 'cry': '😢', 'laugh': '😂', 'lol': '😂',
+  'love': '❤️', 'heart': '❤️', 'kiss': '😘', 'wink': '😉', 'cool': '😎', 'angry': '😡',
+  'surprised': '😮', 'shocked': '😱', 'sleepy': '😴', 'tired': '😩', 'sick': '🤒',
+  'crazy': '🤪', 'silly': '🤪', 'wink': '😉', 'grin': '😁', 'smirk': '😏', 'worried': '😟',
+  'confused': '😕', 'thinking': '🤔', 'neutral': '😐', 'upset': '😞', 'disappointed': '😞',
+  'excited': '🤩', 'star': '⭐', 'starstruck': '🤩', 'hot': '🥵', 'cold': '🥶',
+  'party': '🥳', 'celebrate': '🥳', 'hug': '🤗', 'wave': '👋', 'hello': '👋', 'hi': '👋',
+  'bye': '👋', 'goodbye': '👋', 'yes': '👍', 'no': '👎', 'ok': '👌', 'peace': '✌️',
+  'pray': '🙏', 'please': '🙏', 'thanks': '🙏', 'thank': '🙏', 'clap': '👏', 'applause': '👏',
+  'muscle': '💪', 'strong': '💪', 'facepalm': '🤦', 'shrug': '🤷',
+  // People
+  'man': '👨', 'woman': '👩', 'boy': '👦', 'girl': '👧', 'baby': '👶', 'family': '👨‍👩‍👧',
+  'couple': '💑', 'friends': '👯', 'friend': '👯', 'king': '🤴', 'queen': '👸',
+  'princess': '👸', 'prince': '🤴', 'santa': '🎅', 'doctor': '👨‍⚕️', 'teacher': '👨‍🏫',
+  'police': '👮', 'firefighter': '👨‍🚒', 'artist': '👨‍🎨', 'chef': '👨‍🍳', 'student': '👨‍🎓',
+  // Animals
+  'dog': '🐕', 'puppy': '🐶', 'cat': '🐱', 'kitten': '🐱', 'lion': '🦁', 'tiger': '🐯',
+  'bear': '🐻', 'panda': '🐼', 'monkey': '🐵', 'elephant': '🐘', 'rabbit': '🐰', 'bunny': '🐰',
+  'fox': '🦊', 'wolf': '🐺', 'horse': '🐴', 'cow': '🐮', 'pig': '🐷', 'chicken': '🐔',
+  'bird': '🐦', 'duck': '🦆', 'owl': '🦉', 'eagle': '🦅', 'fish': '🐟', 'shark': '🦈',
+  'whale': '🐋', 'dolphin': '🐬', 'turtle': '🐢', 'snake': '🐍', 'frog': '🐸',
+  'butterfly': '🦋', 'bee': '🐝', 'spider': '🕷️', 'dinosaur': '🦕', 'unicorn': '🦄',
+  'dragon': '🐉', 'penguin': '🐧', 'koala': '🐨', 'giraffe': '🦒', 'zebra': '🦓',
+  'crocodile': '🐊', 'octopus': '🐙', 'crab': '🦀', 'shrimp': '🦐', 'squid': '🦑',
+  // Food
+  'coffee': '☕', 'tea': '🍵', 'pizza': '🍕', 'burger': '🍔', 'hamburger': '🍔',
+  'fries': '🍟', 'hotdog': '🌭', 'sandwich': '🥪', 'taco': '🌮', 'burrito': '🌯',
+  'sushi': '🍣', 'ramen': '🍜', 'noodles': '🍜', 'pasta': '🍝', 'spaghetti': '🍝',
+  'rice': '🍚', 'bread': '🍞', 'cheese': '🧀', 'egg': '🥚', 'bacon': '🥓',
+  'cake': '🍰', 'birthday': '🎂', 'cookie': '🍪', 'chocolate': '🍫', 'candy': '🍬',
+  'icecream': '🍦', 'ice': '🍦', 'donut': '🍩', 'pie': '🥧', 'apple': '🍎',
+  'banana': '🍌', 'orange': '🍊', 'grape': '🍇', 'strawberry': '🍓', 'watermelon': '🍉',
+  'cherry': '🍒', 'peach': '🍑', 'pineapple': '🍍', 'lemon': '🍋', 'avocado': '🥑',
+  'tomato': '🍅', 'carrot': '🥕', 'corn': '🌽', 'pepper': '🌶️', 'mushroom': '🍄',
+  'beer': '🍺', 'wine': '🍷', 'cocktail': '🍸', 'champagne': '🍾', 'drink': '🥤',
+  'water': '💧', 'milk': '🥛', 'juice': '🧃',
+  // Travel & Places
+  'sun': '☀️', 'sunny': '☀️', 'moon': '🌙', 'night': '🌙', 'star': '⭐', 'stars': '✨',
+  'cloud': '☁️', 'rain': '🌧️', 'rainy': '🌧️', 'snow': '❄️', 'snowy': '❄️',
+  'thunder': '⛈️', 'rainbow': '🌈', 'fire': '🔥', 'lightning': '⚡', 'tornado': '🌪️',
+  'beach': '🏖️', 'mountain': '⛰️', 'forest': '🌲', 'tree': '🌳', 'flower': '🌸',
+  'rose': '🌹', 'sunflower': '🌻', 'tulip': '🌷', 'leaf': '🍃', 'plant': '🌱',
+  'cactus': '🌵', 'palm': '🌴', 'earth': '🌍', 'world': '🌍', 'globe': '🌍',
+  'home': '🏠', 'house': '🏠', 'building': '🏢', 'office': '🏢', 'school': '🏫',
+  'hospital': '🏥', 'church': '⛪', 'castle': '🏰', 'tent': '⛺', 'island': '🏝️',
+  'plane': '✈️', 'airplane': '✈️', 'car': '🚗', 'bus': '🚌', 'train': '🚆',
+  'bike': '🚲', 'bicycle': '🚲', 'motorcycle': '🏍️', 'ship': '🚢', 'boat': '⛵',
+  'rocket': '🚀', 'taxi': '🚕', 'truck': '🚚', 'ambulance': '🚑', 'police': '🚓',
+  // Activities & Sports
+  'soccer': '⚽', 'football': '⚽', 'basketball': '🏀', 'tennis': '🎾', 'baseball': '⚾',
+  'volleyball': '🏐', 'golf': '⛳', 'boxing': '🥊', 'swimming': '🏊', 'running': '🏃',
+  'run': '🏃', 'walk': '🚶', 'gym': '🏋️', 'yoga': '🧘', 'meditation': '🧘',
+  'dance': '💃', 'dancing': '💃', 'sing': '🎤', 'singing': '🎤', 'music': '🎵',
+  'guitar': '🎸', 'piano': '🎹', 'drums': '🥁', 'violin': '🎻', 'trumpet': '🎺',
+  'movie': '🎬', 'film': '🎬', 'camera': '📷', 'photo': '📸', 'picture': '📸',
+  'art': '🎨', 'paint': '🎨', 'painting': '🎨', 'draw': '✏️', 'write': '✍️',
+  'read': '📖', 'book': '📚', 'books': '📚', 'game': '🎮', 'gaming': '🎮',
+  'chess': '♟️', 'dice': '🎲', 'cards': '🃏', 'puzzle': '🧩',
+  // Objects & Tech
+  'phone': '📱', 'mobile': '📱', 'computer': '💻', 'laptop': '💻', 'keyboard': '⌨️',
+  'mouse': '🖱️', 'screen': '🖥️', 'monitor': '🖥️', 'watch': '⌚', 'clock': '⏰',
+  'time': '⏰', 'calendar': '📅', 'date': '📅', 'email': '📧', 'mail': '📧',
+  'message': '💬', 'chat': '💬', 'sms': '📱', 'bell': '🔔', 'notification': '🔔',
+  'money': '💰', 'cash': '💵', 'dollar': '💵', 'rupee': '₹', 'euro': '💶',
+  'credit': '💳', 'card': '💳', 'bank': '🏦', 'wallet': '👛', 'purse': '👛',
+  'gift': '🎁', 'present': '🎁', 'box': '📦', 'package': '📦', 'bag': '🛍️',
+  'shopping': '🛍️', 'cart': '🛒', 'key': '🔑', 'lock': '🔒', 'unlock': '🔓',
+  'shield': '🛡️', 'sword': '⚔️', 'crown': '👑', 'ring': '💍', 'diamond': '💎',
+  'tool': '🔧', 'hammer': '🔨', 'wrench': '🔧', 'screwdriver': '🔩', 'gear': '⚙️',
+  'battery': '🔋', 'plug': '🔌', 'bulb': '💡', 'idea': '💡', 'flashlight': '🔦',
+  'magnify': '🔍', 'search': '🔍', 'magnifying': '🔍', 'link': '🔗', 'chain': '⛓️',
+  'paper': '📄', 'document': '📄', 'file': '📁', 'folder': '📁', 'clipboard': '📋',
+  'pencil': '✏️', 'pen': '🖊️', 'marker': '🖍️', 'ruler': '📏', 'scissors': '✂️',
+  'glue': '🔗', 'tape': '📼', 'pin': '📌', 'paperclip': '📎', 'stapler': '📎',
+  'trophy': '🏆', 'medal': '🏅', 'award': '🏆', 'prize': '🏆', 'target': '🎯',
+  'goal': '🎯', 'balloon': '🎈', 'confetti': '🎉', 'fireworks': '🎆', 'sparkle': '✨',
+  'crown': '👑', 'first': '🥇', 'second': '🥈', 'third': '🥉',
+  // Symbols & Common
+  'check': '✅', 'done': '✅', 'tick': '✅', 'cross': '❌', 'wrong': '❌',
+  'warning': '⚠️', 'info': 'ℹ️', 'question': '❓', 'answer': '❗', 'exclamation': '❗',
+  'arrow': '➡️', 'right': '➡️', 'left': '⬅️', 'up': '⬆️', 'down': '⬇️',
+  'new': '🆕', 'free': '🆓', 'top': '🔝', 'soon': '🔜', 'end': '🔚',
+  'hot': '🔥', 'cool': '❄️', 'ok': '👌', 'perfect': '💯', 'hundred': '💯',
+  'good': '👍', 'bad': '👎', 'great': '👏', 'wow': '😮',
+  // Common Phrases (matched first)
+  'i love you': '❤️', 'love you': '❤️', 'good morning': '🌞', 'good night': '🌙',
+  'good evening': '🌆', 'good afternoon': '☀️', 'thank you': '🙏', 'happy birthday': '🎂',
+  'how are you': '😊❓', 'see you': '👋', 'well done': '👏', 'so sad': '😢',
+  'so happy': '😊', 'so cool': '😎', 'oh my god': '😱', 'omg': '😱'
+};
+
+/* ===== EMOJI CATEGORIES (for picker) ===== */
+const EMOJI_CATEGORIES = {
+  smileys: ['😀','😃','😄','😁','😆','😅','🤣','😂','🙂','🙃','😉','😊','😇','🥰','😍','🤩','😘','😗','😚','😙','🥲','😋','😛','😜','🤪','😝','🤑','🤗','🤭','🤫','🤔','🤐','🤨','😐','😑','😶','😏','😒','🙄','😬','🤥','😌','😔','😪','🤤','😴','😷','🤒','🤕','🤢','🤮','🤧','🥵','🥶','😵','🤯','🤠','🥳','😎','🤓','🧐','😕','😟','🙁','😮','😯','😲','😳','🥺','😦','😧','😨','😰','😥','😢','😭','😱','😖','😣','😞','😓','😩','😫','🥱','😤','😡','😠','🤬','😈','👿','💀','☠️','💩','🤡','👹','👺','👻','👽','👾','🤖'],
+  people: ['👋','🤚','🖐️','✋','🖖','👌','🤌','🤏','✌️','🤞','🤟','🤘','🤙','👈','👉','👆','🖕','👇','☝️','👍','👎','✊','👊','🤛','🤜','👏','🙌','👐','🤲','🤝','🙏','✍️','💅','🤳','💪','🦾','🦿','🦵','🦶','👂','🦻','👃','🧠','🦷','🦴','👀','👁️','👅','👄','👶','🧒','👦','👧','🧑','👨','👩','🧓','👴','👵','👮','👷','💂','🕵️','👨‍⚕️','👨‍🎓','👨‍🏫','👨‍⚖️','👨‍🌾','👨‍🍳','👨‍🔧','👨‍🏭','👨‍💼','👨‍🔬','👨‍💻','👨‍🎤','👨‍🎨','👨‍✈️','👨‍🚀'],
+  animals: ['🐶','🐱','🐭','🐹','🐰','🦊','🐻','🐼','🐨','🐯','🦁','🐮','🐷','🐽','🐸','🐵','🙈','🙉','🙊','🐒','🐔','🐧','🐦','🐤','🐣','🐥','🦆','🦅','🦉','🦇','🐺','🐗','🐴','🦄','🐝','🐛','🦋','🐌','🐞','🐜','🦟','🦗','🕷️','🕸️','🦂','🐢','🐍','🦎','🦖','🦕','🐙','🦑','🦐','🦞','🦀','🐡','🐠','🐟','🐬','🐳','🐋','🦈','🐊','🐅','🐆','🦓','🦍','🦧','🐘','🦛','🦏','🐪','🐫','🦒','🦘','🐃','🐂','🐄','🐎','🐖','🐏','🐑','🦙','🐐','🦌','🐕','🐩','🦮','🐕‍🦺','🐈','🐓','🦃','🦚','🦜','🦢','🦩','🕊️','🐇','🦝','🦨','🦡','🦦','🦥','🐁','🐀','🐿️','🦔'],
+  food: ['🍏','🍎','🍐','🍊','🍋','🍌','🍉','🍇','🍓','🫐','🍈','🍒','🍑','🥭','🍍','🥥','🥝','🍅','🍆','🥑','🥦','🥬','🥒','🌶️','🫑','🌽','🥕','🫒','🧄','🧅','🥔','🍠','🥐','🥯','🍞','🥖','🥨','🧀','🥚','🍳','🧈','🥞','🧇','🥓','🥩','🍗','🍖','🦴','🌭','🍔','🍟','🍕','🫓','🥪','🥙','🧆','🌮','🌯','🫔','🥗','🥘','🫕','🥫','🍝','🍜','🍲','🍛','🍣','🍱','🥟','🦪','🍤','🍙','🍚','🍘','🍥','🥠','🥮','🍢','🍡','🍧','🍨','🍦','🥧','🧁','🍰','🎂','🍮','🍭','🍬','🍫','🍿','🍩','🍪','🌰','🥜','🍯','🥛','🍼','🫖','☕','🍵','🧃','🥤','🧋','🍶','🍺','🍻','🥂','🍷','🥃','🍸','🍹','🧉','🍾'],
+  travel: ['🚗','🚕','🚙','🚌','🚎','🏎️','🚓','🚑','🚒','🚐','🛻','🚚','🚛','🚜','🦯','🦽','🦼','🛴','🚲','🛵','🏍️','🛺','🚨','🚔','🚍','🚘','🚖','🚡','🚠','🚟','🚃','🚋','🚞','🚝','🚄','🚅','🚈','🚂','🚆','🚇','🚊','🚉','✈️','🛫','🛬','🛩️','💺','🛰️','🚀','🛸','🚁','🛶','⛵','🚤','🛥️','🛳️','⛴️','🚢','⚓','⛽','🚧','🚦','🚥','🗺️','🗿','🗽','🗼','🏰','🏯','🏟️','🎡','🎢','🎠','⛲','⛱️','🏖️','🏝️','🏜️','🌋','⛰️','🏔️','🗻','🏕️','⛺','🏠','🏡','🏘️','🏚️','🏗️','🏭','🏢','🏬','🏣','🏤','🏥','🏦','🏨','🏪','🏫','🏩','💒','🏛️','⛪','🕌','🕍','🛕','🕋','⛩️','🛤️','🛣️','🗾','🎑','🏞️','🌅','🌄','🌠','🎇','🎆','🌇','🌆','🏙️','🌃','🌌','🌉','🌁'],
+  activities: ['⚽','🏀','🏈','⚾','🥎','🎾','🏐','🏉','🥏','🎱','🪀','🏓','🏸','🏒','🏑','🥍','🏏','🪃','🥅','⛳','🪁','🏹','🎣','🤿','🥊','🥋','🎽','🛹','🛼','🛷','⛸️','🥌','🎿','⛷️','🏂','🪂','🏋️','🤼','🤸','⛹️','🤺','🤾','🏌️','🏇','🧘','🏄','🏊','🤽','🚣','🧗','🚵','🚴','🏆','🥇','🥈','🥉','🏅','🎖️','🏵️','🎗️','🎫','🎟️','🎪','🤹','🎭','🩰','🎨','🎬','🎤','🎧','🎼','🎹','🥁','🎷','🎺','🎸','🪕','🎻','🎲','♟️','🎯','🎳','🎮','🎰','🧩'],
+  objects: ['⌚','📱','📲','💻','⌨️','🖥️','🖨️','🖱️','🖲️','🕹️','🗜️','💽','💾','💿','📀','📼','📷','📸','📹','🎥','📽️','🎞️','📞','☎️','📟','📠','📺','📻','🎙️','🎚️','🎛️','🧭','⏱️','⏲️','⏰','🕰️','⌛','⏳','📡','🔋','🔌','💡','🔦','🕯️','🪔','🧯','🛢️','💸','💵','💴','💶','💷','🪙','💰','💳','💎','⚖️','🪜','🧰','🪛','🔧','🔨','⚒️','🛠️','⛏️','🪚','🔩','⚙️','🪤','🧱','⛓️','🧲','🔫','💣','🧨','🪓','🔪','🗡️','⚔️','🛡️','🚬','⚰️','🪦','⚱️','🏺','🔮','📿','🧿','💈','⚗️','🔭','🔬','🕳️','🩹','🩺','💊','💉','🩸','🧬','🦠','🧫','🧪','🌡️','🧹','🧺','🧻','🚽','🚰','🚿','🛁','🛀','🧼','🪥','🪒','🧽','🪣','🧴','🛎️','🔑','🗝️','🚪','🪑','🛋️','🛏️','🛌','🧸','🪆','🖼️','🪞','🪟','🛍️','🛒','🎁','🎈','🎏','🎀','🪄','🪅','🎊','🎉','🎎','🏮','🎐','🧧','✉️','📩','📨','📧','💌','📥','📤','📦','🏷️','📪','📫','📬','📭','📮','📯','📜','📃','📄','📑','🧾','📊','📈','📉','🗒️','🗓️','📆','📅','🗑️','📇','🗃️','🗳️','🗄️','📋','📁','📂','🗂️','🗞️','📰','📓','📔','📒','📕','📗','📘','📙','📚','📖','🔖','🧷','🔗','📎','🖇️','📐','📏','🧮','📌','📍','✂️','🖊️','🖋️','✒️','🖌️','🖍️','📝','✏️','🔍','🔎','🔏','🔐','🔒','🔓'],
+  symbols: ['❤️','🧡','💛','💚','💙','💜','🖤','🤍','🤎','💔','❣️','💕','💞','💓','💗','💖','💘','💝','💟','☮️','✝️','☪️','🕉️','☸️','✡️','🔯','🕎','☯️','☦️','🛐','⛎','♈','♉','♊','♋','♌','♍','♎','♏','♐','♑','♒','♓','🆔','⚛️','🉑','☢️','☣️','📴','📳','🈶','🈚','🈸','🈺','🈷️','✴️','🆚','💮','🉐','㊙️','㊗️','🈴','🈵','🈹','🈲','🅰️','🅱️','🆎','🆑','🅾️','🆘','❌','⭕','🛑','⛔','📛','🚫','💯','💢','♨️','🚷','🚯','🚳','🚱','🔞','📵','🚭','❗','❕','❓','❔','‼️','⁉️','🔅','🔆','〽️','⚠️','🚸','🔱','⚜️','🔰','♻️','✅','🈯','💹','❇️','✳️','❎','🌐','💠','Ⓜ️','🌀','💤','🏧','🚾','♿','🅿️','🈳','🈂️','🛂','🛃','🛄','🛅','🚹','🚺','🚼','🚻','🚮','🎦','📶','🈁','🔣','ℹ️','🔤','🔡','🔠','🆖','🆗','🆙','🆒','🆕','🆓','0️⃣','1️⃣','2️⃣','3️⃣','4️⃣','5️⃣','6️⃣','7️⃣','8️⃣','9️⃣','🔟','🔢','#️⃣','*️⃣','⏏️','▶️','⏸️','⏯️','⏹️','⏺️','⏭️','⏮️','⏩','⏪','⏫','⏬','◀️','🔼','🔽','➡️','⬅️','⬆️','⬇️','↗️','↘️','↙️','↖️','↕️','↔️','↪️','↩️','⤴️','⤵️','🔀','🔁','🔂','🔄','🔃','🎵','🎶','➕','➖','➗','✖️','♾️','💲','💱','™️','©️','®️','〰️','➰','➿','🔚','🔙','🔛','🔝','🔜','✔️','☑️','🔘','🔴','🟠','🟡','🟢','🔵','🟣','⚫','⚪','🟤','🔺','🔻','🔸','🔹','🔶','🔷','🔳','🔲','▪️','▫️','◾','◽','◼️','◻️','🟥','🟧','🟨','🟩','🟦','🟪','⬛','⬜','🟫','🔈','🔇','🔉','🔊','🔔','🔕','📣','📢','👁️‍🗨️','💬','💭','🗯️','♠️','♣️','♥️','♦️','🃏','🎴','🀄','🕐','🕑','🕒','🕓','🕔','🕕','🕖','🕗','🕘','🕙','🕚','🕛']
+};
+
+/* ===== STATE ===== */
+const state = {
+  mode: 'text2emoji',
+  recent: [],
+  emojiCategory: 'smileys'
+};
+
+/* ===== DOM ===== */
+const inputText = $('#inputText');
+const outputText = $('#outputText');
+const inputCount = $('#inputCount');
+const outputCount = $('#outputCount');
+const copyBtn = $('#copyBtn');
+const copyBothBtn = $('#copyBothBtn');
+const clearBtn = $('#clearBtn');
+const wordsCount = $('#wordsCount');
+const emojisCount = $('#emojisCount');
+const matchPct = $('#matchPct');
+
+const emojiInput = $('#emojiInput');
+const textOutput = $('#textOutput');
+const emojiInputCount = $('#emojiInputCount');
+const textOutputCount = $('#textOutputCount');
+const copyTextBtn = $('#copyTextBtn');
+const clearEmojiBtn = $('#clearEmojiBtn');
+
+const emojiGrid = $('#emojiGrid');
+const recentSection = $('#recentSection');
+const recentList = $('#recentList');
+const recentClear = $('#recentClear');
+
+/* ===== MODE TABS ===== */
+$$('.mode-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    $$('.mode-tab').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    state.mode = tab.dataset.mode;
+    $$('.mode-panel').forEach(p => {
+      p.classList.toggle('active', p.dataset.panel === state.mode);
+    });
+  });
+});
+
+/* ===== TEXT TO EMOJI ===== */
+function translateTextToEmoji(text) {
+  if (!text) return { output: '', words: 0, emojis: 0, matchRate: 0 };
+
+  let output = text;
+  let words = text.trim().split(/\s+/).filter(w => w.length > 0);
+  const wordsTotal = words.length;
+  let emojiCount = 0;
+
+  // First, replace multi-word phrases (longest first)
+  const phrases = Object.keys(EMOJI_DICT).filter(k => k.includes(' ')).sort((a, b) => b.length - a.length);
+  phrases.forEach(phrase => {
+    const regex = new RegExp('\\b' + phrase.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '\\b', 'gi');
+    if (regex.test(output)) {
+      output = output.replace(regex, EMOJI_DICT[phrase]);
+    }
+  });
+
+  // Then replace individual words
+  words.forEach(word => {
+    const cleanWord = word.toLowerCase().replace(/[.,!?;:'"]/g, '');
+    if (EMOJI_DICT[cleanWord]) {
+      const regex = new RegExp('\\b' + word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '\\b', 'gi');
+      const before = output;
+      output = output.replace(regex, EMOJI_DICT[cleanWord]);
+      if (before !== output) emojiCount++;
+    }
+  });
+
+  // Count total emojis in output
+  const emojiRegex = /[\u{1F300}-\u{1F9FF}\u{1F600}-\u{1F64F}\u{1F680}-\u{1F6FF}\u{2600}-\u{27BF}\u{1F900}-\u{1F9FF}\u{1FA00}-\u{1FA6F}\u{1FA70}-\u{1FAFF}\u{2300}-\u{23FF}]/gu;
+  const finalEmojiCount = (output.match(emojiRegex) || []).length;
+
+  const matchRate = wordsTotal > 0 ? Math.round((emojiCount / wordsTotal) * 100) : 0;
+
+  return {
+    output,
+    words: wordsTotal,
+    emojis: finalEmojiCount,
+    matchRate
+  };
+}
+
+/* ===== EMOJI TO TEXT ===== */
+function translateEmojiToText(text) {
+  if (!text) return { output: '', emojiCount: 0 };
+
+  // Build reverse dict
+  const reverseDict = {};
+  Object.entries(EMOJI_DICT).forEach(([word, emoji]) => {
+    if (!reverseDict[emoji]) reverseDict[emoji] = word;
+  });
+
+  let output = text;
+  let foundCount = 0;
+
+  // Sort emojis by length (longest first to handle multi-codepoint emojis)
+  const emojis = Object.keys(reverseDict).sort((a, b) => b.length - a.length);
+
+  emojis.forEach(emoji => {
+    const regex = new RegExp(emoji.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g');
+    const before = output;
+    output = output.replace(regex, ' ' + reverseDict[emoji] + ' ');
+    if (before !== output) foundCount++;
+  });
+
+  // Clean up spacing
+  output = output.replace(/\s+/g, ' ').trim();
+
+  return {
+    output,
+    emojiCount: foundCount
+  };
+}
+
+/* ===== LIVE TRANSLATION ===== */
+inputText.addEventListener('input', () => {
+  const text = inputText.value;
+  inputCount.textContent = text.length + ' chars';
+
+  const result = translateTextToEmoji(text);
+  outputText.value = result.output;
+  outputCount.textContent = result.output.length + ' chars';
+
+  wordsCount.textContent = result.words;
+  emojisCount.textContent = result.emojis;
+  matchPct.textContent = result.matchRate + '%';
+
+  // Add to recent if has content
+  if (text.trim().length > 5 && result.emojis > 0) {
+    addToRecent(text, result.output);
+  }
+});
+
+emojiInput.addEventListener('input', () => {
+  const text = emojiInput.value;
+  emojiInputCount.textContent = text.length + ' chars';
+
+  const result = translateEmojiToText(text);
+  textOutput.value = result.output;
+  textOutputCount.textContent = result.output.length + ' chars';
+});
+
+/* ===== COPY BUTTONS ===== */
+copyBtn.addEventListener('click', async () => {
+  if (!outputText.value) { showToast('Nothing to copy', 'error'); return; }
+  const ok = await copyToClipboard(outputText.value);
+  if (ok) {
+    flashBtn(copyBtn);
+    showToast('Emoji copied!', 'success');
+  }
+});
+
+copyBothBtn.addEventListener('click', async () => {
+  const text = inputText.value;
+  const emoji = outputText.value;
+  if (!text && !emoji) { showToast('Nothing to copy', 'error'); return; }
+  const combined = `${text}\n\n${emoji}`;
+  const ok = await copyToClipboard(combined);
+  if (ok) {
+    flashBtn(copyBothBtn);
+    showToast('Both copied!', 'success');
+  }
+});
+
+copyTextBtn.addEventListener('click', async () => {
+  if (!textOutput.value) { showToast('Nothing to copy', 'error'); return; }
+  const ok = await copyToClipboard(textOutput.value);
+  if (ok) {
+    flashBtn(copyTextBtn);
+    showToast('Text copied!', 'success');
+  }
+});
+
+function flashBtn(btn) {
+  btn.classList.add('copied');
+  const orig = btn.innerHTML;
+  btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg> Copied!';
+  setTimeout(() => {
+    btn.classList.remove('copied');
+    btn.innerHTML = orig;
+  }, 1800);
+}
+
+/* ===== CLEAR ===== */
+clearBtn.addEventListener('click', () => {
+  inputText.value = '';
+  outputText.value = '';
+  inputCount.textContent = '0 chars';
+  outputCount.textContent = '0 chars';
+  wordsCount.textContent = '0';
+  emojisCount.textContent = '0';
+  matchPct.textContent = '0%';
+  showToast('Cleared');
+});
+
+clearEmojiBtn.addEventListener('click', () => {
+  emojiInput.value = '';
+  textOutput.value = '';
+  emojiInputCount.textContent = '0 chars';
+  textOutputCount.textContent = '0 chars';
+  showToast('Cleared');
+});
+
+/* ===== SAMPLE CHIPS ===== */
+$$('[data-sample]').forEach(chip => {
+  chip.addEventListener('click', () => {
+    inputText.value = chip.dataset.sample;
+    inputText.dispatchEvent(new Event('input'));
+  });
+});
+
+$$('[data-emoji]').forEach(chip => {
+  chip.addEventListener('click', () => {
+    emojiInput.value = chip.dataset.emoji;
+    emojiInput.dispatchEvent(new Event('input'));
+  });
+});
+
+/* ===== EMOJI PICKER ===== */
+function renderEmojiGrid() {
+  const emojis = EMOJI_CATEGORIES[state.emojiCategory] || [];
+  emojiGrid.innerHTML = '';
+  emojis.forEach(emoji => {
+    const btn = document.createElement('button');
+    btn.className = 'emoji-btn';
+    btn.textContent = emoji;
+    btn.type = 'button';
+    btn.addEventListener('click', async () => {
+      const ok = await copyToClipboard(emoji);
+      if (ok) showToast('Copied ' + emoji, 'success', 1200);
+    });
+    emojiGrid.appendChild(btn);
+  });
+}
+
+$$('.emoji-cat-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    $$('.emoji-cat-tab').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    state.emojiCategory = tab.dataset.cat;
+    renderEmojiGrid();
+  });
+});
+
+/* ===== RECENT ===== */
+function addToRecent(input, output) {
+  if (!input || !output) return;
+  const key = input.trim();
+  state.recent = state.recent.filter(r => r.input !== key);
+  state.recent.unshift({ input: key, output });
+  state.recent = state.recent.slice(0, 5);
+  saveRecent();
+  renderRecent();
+}
+
+function saveRecent() {
+  try {
+    localStorage.setItem('bigtoolz_emoji_recent', JSON.stringify(state.recent));
+  } catch (e) {}
+}
+
+function loadRecent() {
+  try {
+    state.recent = JSON.parse(localStorage.getItem('bigtoolz_emoji_recent') || '[]');
+  } catch (e) {
+    state.recent = [];
+  }
+  renderRecent();
+}
+
+function renderRecent() {
+  if (state.recent.length === 0) {
+    recentSection.style.display = 'none';
+    return;
+  }
+  recentSection.style.display = 'block';
+  recentList.innerHTML = '';
+  state.recent.forEach(item => {
+    const div = document.createElement('div');
+    div.className = 'recent-item';
+    div.innerHTML = `
+      <div class="recent-text">${escapeHtml(item.input.substring(0, 40))}${item.input.length > 40 ? '...' : ''}</div>
+      <div class="recent-output">${escapeHtml(item.output.substring(0, 30))}${item.output.length > 30 ? '...' : ''}</div>
+    `;
+    div.addEventListener('click', async () => {
+      inputText.value = item.input;
+      inputText.dispatchEvent(new Event('input'));
+      showToast('Loaded from recent', 'info', 1200);
+    });
+    recentList.appendChild(div);
+  });
+}
+
+recentClear.addEventListener('click', () => {
+  state.recent = [];
+  saveRecent();
+  renderRecent();
+  showToast('Recent cleared');
+});
+
+function escapeHtml(str) {
+  const div = document.createElement('div');
+  div.textContent = str;
+  return div.innerHTML;
+}
+
+/* ===== FAQ ===== */
+$$('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    $$('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+
+/* ===== INIT ===== */
+renderEmojiGrid();
+loadRecent();
+</script>
+
+</body>
+</html>

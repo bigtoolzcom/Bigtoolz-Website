@@ -1,0 +1,1374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2563eb">
+
+<title>Personality Test - Free 16-Type, Big Five & DISC Quiz Online | BigToolz</title>
+<meta name="description" content="Free online personality test. Discover your 16-Type MBTI, Big Five (OCEAN), DISC, or Introvert/Extrovert personality. 20-question quiz with detailed results. No signup.">
+<meta name="keywords" content="personality test, mbti test, big five test, disc test, introvert extrovert test, 16 personalities quiz">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://bigtoolz.com/tools/utility-tools/personality-test/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Personality Test - Free Online Tool | BigToolz">
+<meta property="og:description" content="Free personality test 4 frameworks, instant results, no signup.">
+<meta property="og:url" content="https://bigtoolz.com/tools/utility-tools/personality-test/">
+<meta property="og:image" content="https://bigtoolz.com/assets/images/og-image.jpg">
+<meta property="og:site_name" content="BigToolz">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Personality Test - BigToolz">
+<meta name="twitter:description" content="Discover your personality type free, instant.">
+<meta name="twitter:image" content="https://bigtoolz.com/assets/images/twitter-card.jpg">
+
+<link rel="icon" href="/assets/images/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/images/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#f8f9fc;color:#1a1a2e;overflow-x:hidden;line-height:1.5}
+
+  .header{background:#fff;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;position:sticky;top:0;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+  .header-left{display:flex;align-items:center;gap:40px}
+  .logo{display:flex;align-items:center;gap:8px;font-size:22px;font-weight:800;color:#1a1a2e;text-decoration:none}
+  .logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#3b82f6,#2563eb);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px}
+  .logo span{color:#2563eb}
+  .nav{display:flex;align-items:center;gap:28px;list-style:none}
+  .nav a{text-decoration:none;color:#4b5563;font-size:14px;font-weight:500;transition:color .2s}
+  .nav a:hover,.nav a.active{color:#2563eb}
+  .header-right{display:flex;align-items:center;gap:16px}
+  .search-btn,.theme-btn{width:36px;height:36px;border-radius:50%;border:none;background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#4b5563}
+  .search-btn:hover,.theme-btn:hover{background:#f3f4f6}
+  .bookmark-btn{display:flex;align-items:center;gap:8px;background:#2563eb;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
+  .bookmark-btn:hover{background:#1d4ed8}
+
+  .hero{background:linear-gradient(135deg,#0a0e27 0%,#1a1a4e 40%,#2d1b69 70%,#4c1d95 100%);padding:40px 40px 60px;position:relative;overflow:hidden;color:#fff}
+  .hero::before{content:'';position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(139,92,246,.3) 0%,transparent 70%);border-radius:50%}
+  .hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+  .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px;flex-wrap:wrap}
+  .breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none}
+  .breadcrumb a:hover{color:#fff}
+  .breadcrumb .sep{color:rgba(255,255,255,.4)}
+  .breadcrumb .current{color:#fff;font-weight:500}
+  .hero-title-row{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+  .hero-icon{width:60px;height:60px;background:#8b5cf6;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;color:#fff;flex-shrink:0;box-shadow:0 8px 24px rgba(139,92,246,.4)}
+  .hero-title{font-size:42px;font-weight:800;line-height:1.15}
+  .hero-title .blue{color:#a78bfa}
+  .hero-desc{font-size:15px;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:24px;max-width:560px}
+  .hero-features{display:flex;gap:24px;flex-wrap:wrap}
+  .hero-feature{display:flex;align-items:center;gap:6px;font-size:13px;color:#fff;font-weight:500}
+  .hero-feature .check{width:18px;height:18px;border-radius:50%;background:#8b5cf6;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;flex-shrink:0}
+
+  .main-content{max-width:1200px;margin:0 auto;padding:40px;display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start}
+  .tool-content{min-width:0}
+
+  .workspace{background:#fff;border-radius:16px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,.06);border:1px solid #e5e7eb;margin-bottom:24px}
+
+  /* START SCREEN */
+  .start-screen{display:block}
+  .start-screen.hidden{display:none}
+
+  .start-title{font-size:26px;font-weight:800;color:#1a1a2e;margin-bottom:12px;text-align:center}
+  .start-desc{font-size:15px;color:#6b7280;line-height:1.7;margin-bottom:28px;text-align:center;max-width:600px;margin-left:auto;margin-right:auto}
+
+  .test-options{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-bottom:28px}
+  .test-option{background:#faf5ff;border:2px solid #ede9fe;border-radius:14px;padding:20px;cursor:pointer;font-family:inherit;transition:all .2s;text-align:left}
+  .test-option:hover{border-color:#8b5cf6;background:#f3e8ff;transform:translateY(-2px)}
+  .test-option.active{border-color:#8b5cf6;background:#8b5cf6;color:#fff}
+  .test-option.active .test-option-desc,.test-option.active .test-option-details{color:rgba(255,255,255,.85)}
+  .test-option-icon{font-size:28px;margin-bottom:10px;display:block;line-height:1}
+  .test-option-title{font-size:16px;font-weight:800;color:#1a1a2e;margin-bottom:6px}
+  .test-option.active .test-option-title{color:#fff}
+  .test-option-desc{font-size:13px;color:#6b7280;line-height:1.5;margin-bottom:8px}
+  .test-option-details{font-size:11px;color:#9ca3af;font-weight:600;text-transform:uppercase;letter-spacing:.5px}
+
+  .start-btn{width:100%;background:#8b5cf6;color:#fff;border:none;padding:16px;border-radius:12px;font-size:16px;font-weight:800;cursor:pointer;font-family:inherit;transition:all .2s;box-shadow:0 4px 12px rgba(139,92,246,.2)}
+  .start-btn:hover{background:#7c3aed;transform:translateY(-2px);box-shadow:0 6px 20px rgba(139,92,246,.3)}
+
+  /* QUIZ SCREEN */
+  .quiz-screen{display:none}
+  .quiz-screen.active{display:block}
+
+  .progress-bar-wrap{margin-bottom:24px}
+  .progress-bar-header{display:flex;justify-content:space-between;font-size:12px;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}
+  .progress-bar-track{height:8px;background:#ede9fe;border-radius:4px;overflow:hidden}
+  .progress-bar-fill{height:100%;background:linear-gradient(90deg,#a78bfa,#8b5cf6);border-radius:4px;transition:width .3s ease;width:0%}
+
+  .question-card{background:#faf5ff;border-radius:16px;padding:32px;border:1px solid #ede9fe;margin-bottom:24px;min-height:280px;display:flex;flex-direction:column}
+  .question-num{font-size:12px;font-weight:700;color:#8b5cf6;text-transform:uppercase;letter-spacing:.8px;margin-bottom:12px}
+  .question-text{font-size:22px;font-weight:800;color:#1a1a2e;line-height:1.4;margin-bottom:28px;flex:1}
+
+  .answers{display:flex;flex-direction:column;gap:10px}
+  .answer-btn{padding:16px 20px;background:#fff;border:2px solid #e5e7eb;border-radius:12px;font-size:14px;font-weight:600;color:#4b5563;cursor:pointer;font-family:inherit;transition:all .2s;text-align:left;display:flex;align-items:center;gap:12px}
+  .answer-btn:hover{border-color:#8b5cf6;background:#f3e8ff;color:#7c3aed;transform:translateX(4px)}
+  .answer-btn .bullet{width:22px;height:22px;border-radius:50%;border:2px solid #d1d5db;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#9ca3af;flex-shrink:0}
+  .answer-btn:hover .bullet{border-color:#8b5cf6;color:#8b5cf6}
+
+  .quiz-actions{display:flex;justify-content:space-between;gap:12px}
+  .back-btn{padding:12px 20px;background:#fff;border:1px solid #e5e7eb;border-radius:10px;font-size:13px;font-weight:600;color:#6b7280;cursor:pointer;font-family:inherit;transition:all .2s}
+  .back-btn:hover{border-color:#8b5cf6;color:#8b5cf6}
+  .back-btn:disabled{opacity:.4;cursor:not-allowed}
+
+  /* RESULT SCREEN */
+  .result-screen{display:none}
+  .result-screen.active{display:block}
+
+  .result-hero{background:linear-gradient(135deg,#8b5cf6,#7c3aed);border-radius:16px;padding:36px 28px;color:#fff;text-align:center;margin-bottom:24px;position:relative;overflow:hidden}
+  .result-hero::before{content:'';position:absolute;top:-40px;right:-40px;width:200px;height:200px;background:rgba(255,255,255,.1);border-radius:50%}
+  .result-hero-icon{font-size:56px;line-height:1;margin-bottom:14px;position:relative;z-index:2}
+  .result-hero-label{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,.85);margin-bottom:8px;position:relative;z-index:2}
+  .result-hero-type{font-size:38px;font-weight:900;line-height:1.1;margin-bottom:10px;position:relative;z-index:2}
+  .result-hero-name{font-size:16px;font-weight:600;color:rgba(255,255,255,.9);position:relative;z-index:2}
+
+  .result-section{background:#faf5ff;border-radius:14px;padding:24px;border:1px solid #ede9fe;margin-bottom:20px}
+  .result-section-title{font-size:14px;font-weight:800;color:#1a1a2e;text-transform:uppercase;letter-spacing:.5px;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+  .result-section p{font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:12px}
+  .result-section p:last-child{margin-bottom:0}
+
+  .traits-list{display:flex;flex-direction:column;gap:12px}
+  .trait-row{display:flex;align-items:center;gap:12px}
+  .trait-label{font-size:13px;font-weight:700;color:#4b5563;min-width:80px}
+  .trait-bar{flex:1;height:10px;background:#ede9fe;border-radius:5px;overflow:hidden}
+  .trait-bar-fill{height:100%;background:linear-gradient(90deg,#a78bfa,#8b5cf6);border-radius:5px;transition:width .6s ease}
+  .trait-value{font-size:13px;font-weight:800;color:#8b5cf6;min-width:45px;text-align:right}
+
+  .traits-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+  .traits-grid-item{background:#fff;border-radius:10px;padding:14px;border:1px solid #e5e7eb}
+  .traits-grid-item .label{font-size:11px;font-weight:700;color:#9ca3af;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px}
+  .traits-grid-item .value{font-size:14px;font-weight:800;color:#1a1a2e}
+
+  .chip-list{display:flex;flex-wrap:wrap;gap:8px}
+  .chip{padding:8px 14px;background:#fff;border:1px solid #e5e7eb;border-radius:20px;font-size:12px;font-weight:700;color:#4b5563}
+  .chip.strength{background:#f0fdf4;border-color:#86efac;color:#059669}
+  .chip.weakness{background:#fef2f2;border-color:#fecaca;color:#dc2626}
+
+  .result-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
+  .result-btn{display:inline-flex;align-items:center;gap:6px;padding:12px 20px;background:#fff;border:1px solid #e5e7eb;border-radius:10px;font-size:13px;font-weight:700;color:#4b5563;cursor:pointer;font-family:inherit;transition:all .2s}
+  .result-btn:hover{border-color:#8b5cf6;color:#8b5cf6;background:#faf5ff}
+  .result-btn.primary{background:#8b5cf6;color:#fff;border-color:#8b5cf6}
+  .result-btn.primary:hover{background:#7c3aed;color:#fff;border-color:#7c3aed}
+
+  /* SEO */
+  .seo-content{background:#fff;border-radius:16px;padding:32px;border:1px solid #e5e7eb;margin-bottom:24px}
+  .seo-content h2{font-size:22px;font-weight:800;color:#1a1a2e;margin-bottom:14px;margin-top:28px;display:flex;align-items:center;gap:10px}
+  .seo-content h2:first-child{margin-top:0}
+  .seo-content h3{font-size:16px;font-weight:700;color:#1a1a2e;margin:20px 0 10px}
+  .seo-content p{font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:14px}
+  .seo-content ul{list-style:none;padding-left:0;margin-bottom:16px}
+  .seo-content ul li{position:relative;padding-left:24px;font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:8px}
+  .seo-content ul li::before{content:'';position:absolute;left:6px;top:12px;width:6px;height:6px;background:#8b5cf6;border-radius:50%}
+  .seo-content a{color:#2563eb;text-decoration:none;font-weight:600}
+  .seo-content a:hover{text-decoration:underline}
+  .seo-content strong{color:#1a1a2e;font-weight:700}
+
+  .how-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:20px}
+  .how-step{background:#faf5ff;border-radius:12px;padding:20px;border:1px solid #ede9fe}
+  .how-step-num{width:36px;height:36px;border-radius:50%;background:#8b5cf6;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;margin-bottom:12px}
+  .how-step-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+  .how-step-desc{font-size:13px;color:#6b7280;line-height:1.6}
+
+  .faq-item{background:#faf5ff;border:1px solid #ede9fe;border-radius:12px;margin-bottom:10px;overflow:hidden;transition:border-color .2s}
+  .faq-item:hover{border-color:#8b5cf6}
+  .faq-question{width:100%;background:none;border:none;padding:18px 22px;font-size:15px;font-weight:700;color:#1a1a2e;text-align:left;cursor:pointer;font-family:inherit;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .faq-question .chev{font-size:12px;color:#8b5cf6;transition:transform .2s;flex-shrink:0}
+  .faq-item.open .faq-question .chev{transform:rotate(180deg)}
+  .faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 22px}
+  .faq-item.open .faq-answer{max-height:500px;padding-bottom:18px}
+  .faq-answer p{font-size:14px;color:#6b7280;line-height:1.7;margin:0}
+
+  .sidebar{background:#fff;border-radius:16px;padding:24px;border:1px solid #e5e7eb;position:sticky;top:80px;margin-bottom:24px}
+  .sidebar-header{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:800;color:#1a1a2e;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid #f3f4f6}
+  .sidebar-list{display:flex;flex-direction:column;gap:8px}
+  .sidebar-item{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;cursor:pointer;transition:background .2s;text-decoration:none;color:inherit;border:1px solid #f3f4f6}
+  .sidebar-item:hover{background:#faf5ff;border-color:#ede9fe}
+  .sidebar-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;flex-shrink:0}
+  .sidebar-info{flex:1;min-width:0}
+  .sidebar-title{font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:2px}
+  .sidebar-desc{font-size:11px;color:#9ca3af;line-height:1.4}
+
+  .footer{background:#0a0e27;padding:60px 40px 30px;color:#fff;margin-top:40px}
+  .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:40px}
+  .footer-brand{display:flex;align-items:center;gap:8px;font-size:20px;font-weight:800;margin-bottom:12px}
+  .footer-brand span{color:#60a5fa}
+  .footer-tagline{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px}
+  .footer-social{display:flex;gap:12px}
+  .footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:16px;transition:background .2s}
+  .footer-social a:hover{background:rgba(255,255,255,.2)}
+  .footer-heading{font-size:14px;font-weight:700;margin-bottom:20px;color:#fff}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .footer-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;transition:color .2s}
+  .footer-links a:hover{color:#60a5fa}
+  .footer-bottom{max-width:1200px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  .footer-bottom-left{display:flex;gap:20px;font-size:12px;color:rgba(255,255,255,.5)}
+  .footer-bottom-right,.footer-bottom-links a{font-size:12px;color:rgba(255,255,255,.5);text-decoration:none}
+  .footer-bottom-links{display:flex;gap:20px}
+
+  .toast{position:fixed;bottom:24px;right:24px;background:#1a1a2e;color:#fff;padding:14px 20px;border-radius:10px;font-size:13px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:3000;transform:translateY(200%);transition:transform .3s ease;max-width:320px}
+  .toast.visible{transform:translateY(0)}
+  .toast.success{background:#10b981}
+  .toast.error{background:#ef4444}
+
+  @media(max-width:1024px){
+    .main-content{grid-template-columns:1fr;padding:24px 20px}
+    .sidebar{position:static}
+    .how-steps{grid-template-columns:repeat(2,1fr)}
+  }
+  @media(max-width:768px){
+    .header{padding:0 20px}.nav{display:none}
+    .hero{padding:24px 20px 40px}
+    .hero-title{font-size:28px}
+    .hero-icon{width:48px;height:48px;font-size:22px}
+    .hero-title-row{flex-direction:column;align-items:flex-start;gap:12px}
+    .main-content{padding:20px 16px}
+    .workspace{padding:20px}
+    .how-steps{grid-template-columns:1fr}
+    .seo-content{padding:20px}
+    .footer-inner{grid-template-columns:1fr 1fr}
+    .toast{left:16px;right:16px;bottom:16px;max-width:none}
+    .test-options{grid-template-columns:1fr}
+    .traits-grid{grid-template-columns:1fr}
+    .question-text{font-size:18px}
+    .result-hero-type{font-size:30px}
+  }
+  @media(max-width:576px){
+    .header{padding:0 16px}.header-right .search-btn,.header-right .theme-btn{display:none}
+    .hero-title{font-size:24px}
+    .footer-inner{grid-template-columns:1fr}
+    .footer-bottom{flex-direction:column;text-align:center}
+    .question-card{padding:24px}
+    .result-hero{padding:28px 20px}
+    .result-hero-type{font-size:26px}
+  }
+
+  html[data-theme="dark"] body{background:#0f172a;color:#f1f5f9}
+  html[data-theme="dark"] .header,html[data-theme="dark"] .workspace,html[data-theme="dark"] .seo-content,html[data-theme="dark"] .sidebar{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .logo,html[data-theme="dark"] .hero-title,html[data-theme="dark"] .seo-content h2,html[data-theme="dark"] .seo-content h3,html[data-theme="dark"] .faq-question,html[data-theme="dark"] .sidebar-header,html[data-theme="dark"] .sidebar-title,html[data-theme="dark"] .start-title,html[data-theme="dark"] .question-text,html[data-theme="dark"] .result-section-title{color:#f1f5f9}
+  html[data-theme="dark"] .nav a{color:#cbd5e1}
+  html[data-theme="dark"] .how-step,html[data-theme="dark"] .faq-item,html[data-theme="dark"] .question-card,html[data-theme="dark"] .result-section,html[data-theme="dark"] .test-option,html[data-theme="dark"] .answer-btn{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .test-option-title,html[data-theme="dark"] .traits-grid-item .value{color:#f1f5f9}
+  html[data-theme="dark"] .test-option.active{background:#8b5cf6;color:#fff}
+  html[data-theme="dark"] .test-option.active .test-option-title{color:#fff}
+  html[data-theme="dark"] .answer-btn{color:#cbd5e1}
+  html[data-theme="dark"] .answer-btn:hover{background:#1e293b}
+  html[data-theme="dark"] .traits-grid-item{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .chip{background:#0f172a;border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .result-btn{background:#0f172a;border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .back-btn{background:#0f172a;border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .seo-content p,html[data-theme="dark"] .seo-content ul li,html[data-theme="dark"] .faq-answer p,html[data-theme="dark"] .result-section p{color:#cbd5e1}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type": "SoftwareApplication", "name": "Personality Test", "url": "https://bigtoolz.com/tools/utility-tools/personality-test/", "applicationCategory": "LifestyleApplication", "operatingSystem": "Any (Web-based)", "description": "Free online personality test 16-Type MBTI-style, Big Five OCEAN, DISC, and Introvert/Extrovert. Instant detailed results.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.8", "ratingCount": "3567"}},
+    {"@type": "HowTo", "name": "How to Take a Personality Test", "step": [
+      {"@type": "HowToStep", "name": "Choose Test Type", "text": "Pick 16-Type, Big Five, DISC, or Introvert/Extrovert."},
+      {"@type": "HowToStep", "name": "Answer Questions", "text": "Answer each question honestly first instinct is usually best."},
+      {"@type": "HowToStep", "name": "Get Results", "text": "See your personality type with detailed traits and insights."},
+      {"@type": "HowToStep", "name": "Share or Save", "text": "Copy your result or share with friends."}
+    ]},
+    {"@type": "FAQPage", "mainEntity": [
+      {"@type": "Question", "name": "Are online personality tests accurate?", "acceptedAnswer": {"@type": "Answer", "text": "Online personality tests are useful for self-reflection but are not scientifically diagnostic. For clinical assessments, consult a licensed psychologist. Our tests are inspired by well-known frameworks (MBTI-style, Big Five, DISC) and are for entertainment and self-discovery purposes."}},
+      {"@type": "Question", "name": "Which personality framework is most reliable?", "acceptedAnswer": {"@type": "Answer", "text": "The Big Five (OCEAN) model has the strongest scientific backing. MBTI-style 16-type tests are popular but have limited academic support. DISC is widely used in business contexts but less validated academically."}},
+      {"@type": "Question", "name": "Can my personality type change over time?", "acceptedAnswer": {"@type": "Answer", "text": "Core personality traits are relatively stable but can shift slightly over years, especially in young adulthood. Life events, therapy, and personal growth can influence how you express your traits."}},
+      {"@type": "Question", "name": "Is this test free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, completely free. No signup, no email, no hidden charges. The test runs entirely in your browser, and your answers are never stored or sent to any server."}},
+      {"@type": "Question", "name": "How many questions are in each test?", "acceptedAnswer": {"@type": "Answer", "text": "16-Type MBTI-style: 20 questions. Big Five OCEAN: 15 questions. DISC: 12 questions. Introvert/Extrovert: 10 questions. All tests take 3-7 minutes to complete."}}
+    ]},
+    {"@type": "BreadcrumbList", "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bigtoolz.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://bigtoolz.com/tools/"},
+      {"@type": "ListItem", "position": 3, "name": "Utility Tools", "item": "https://bigtoolz.com/tools/utility-tools/"},
+      {"@type": "ListItem", "position": 4, "name": "Personality Test", "item": "https://bigtoolz.com/tools/utility-tools/personality-test/"}
+    ]}
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-left">
+    <a href="/" class="logo"><div class="logo-icon">⚒</div>BigToolz</span></a>
+    <nav><ul class="nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/tools/" class="active">All Tools</a></li>
+      <li><a href="/tools/categories">Categories</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul></nav>
+  </div>
+  <div class="header-right">
+   
+    <button class="theme-btn" aria-label="Toggle theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
+    
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <nav class="breadcrumb">
+      <a href="/">Home</a><span class="sep">›</span>
+      <a href="/tools/">Tools</a><span class="sep">›</span>
+      <a href="/tools/utility-tools/">Utility Tools</a><span class="sep">›</span>
+      <span class="current">Personality Test</span>
+    </nav>
+    <div class="hero-title-row">
+      <div class="hero-icon">🧩</div>
+      <h1 class="hero-title">Personality <span class="blue">Test</span></h1>
+    </div>
+    <p class="hero-desc">
+      Discover your personality type with 4 frameworks 16-Type (MBTI-style), Big Five (OCEAN), DISC, or Introvert/Extrovert. Free, instant, detailed results. No signup.
+    </p>
+    <div class="hero-features">
+      <div class="hero-feature"><span class="check">✓</span> 4 Test Types</div>
+      <div class="hero-feature"><span class="check">✓</span> Instant Results</div>
+      <div class="hero-feature"><span class="check">✓</span> Detailed Insights</div>
+      <div class="hero-feature"><span class="check">✓</span> 100% Private</div>
+    </div>
+  </div>
+</section>
+
+<div class="main-content">
+
+  <div class="tool-content">
+
+    <div class="workspace">
+
+      <!-- START SCREEN -->
+      <div class="start-screen" id="startScreen">
+        <h2 class="start-title">Choose Your Test</h2>
+        <p class="start-desc">Answer honestly first instinct is usually the most accurate. Each test takes 3-7 minutes.</p>
+
+        <div class="test-options" id="testOptions">
+          <button class="test-option active" data-test="mbti">
+            <span class="test-option-icon">🧩</span>
+            <div class="test-option-title">16-Type (MBTI-style)</div>
+            <div class="test-option-desc">Discover your type from 16 possibilities INTJ, ENFP, and more.</div>
+            <div class="test-option-details">20 questions · ~5 min</div>
+          </button>
+          <button class="test-option" data-test="bigfive">
+            <span class="test-option-icon">🌊</span>
+            <div class="test-option-title">Big Five (OCEAN)</div>
+            <div class="test-option-desc">Scientifically backed trait model openness, conscientiousness, extraversion, agreeableness, neuroticism.</div>
+            <div class="test-option-details">15 questions · ~4 min</div>
+          </button>
+          <button class="test-option" data-test="disc">
+            <span class="test-option-icon">🎯</span>
+            <div class="test-option-title">DISC Profile</div>
+            <div class="test-option-desc">Business-oriented assessment Dominance, Influence, Steadiness, Compliance.</div>
+            <div class="test-option-details">12 questions · ~3 min</div>
+          </button>
+          <button class="test-option" data-test="introextro">
+            <span class="test-option-icon">⚡</span>
+            <div class="test-option-title">Introvert / Extrovert</div>
+            <div class="test-option-desc">Quick test to find where you fall on the social energy spectrum.</div>
+            <div class="test-option-details">10 questions · ~2 min</div>
+          </button>
+        </div>
+
+        <button class="start-btn" id="startBtn">Start Test →</button>
+      </div>
+
+      <!-- QUIZ SCREEN -->
+      <div class="quiz-screen" id="quizScreen">
+        <div class="progress-bar-wrap">
+          <div class="progress-bar-header">
+            <span id="progressLabel">Question 1 of 20</span>
+            <span id="progressPct">0%</span>
+          </div>
+          <div class="progress-bar-track">
+            <div class="progress-bar-fill" id="progressFill"></div>
+          </div>
+        </div>
+
+        <div class="question-card" id="questionCard">
+          <div class="question-num" id="questionNum">Q1</div>
+          <div class="question-text" id="questionText">Loading question...</div>
+          <div class="answers" id="answersBox"></div>
+        </div>
+
+        <div class="quiz-actions">
+          <button class="back-btn" id="backBtn" disabled>← Back</button>
+          <button class="back-btn" id="cancelBtn">✕ Cancel</button>
+        </div>
+      </div>
+
+      <!-- RESULT SCREEN -->
+      <div class="result-screen" id="resultScreen">
+        <div class="result-hero" id="resultHero">
+          <div class="result-hero-icon" id="resultIcon">🧩</div>
+          <div class="result-hero-label" id="resultLabel">Your Type</div>
+          <div class="result-hero-type" id="resultType">INTJ</div>
+          <div class="result-hero-name" id="resultName">The Architect</div>
+        </div>
+
+        <div class="result-section">
+          <div class="result-section-title">📖 About Your Type</div>
+          <p id="resultDescription"></p>
+        </div>
+
+        <div class="result-section" id="traitsSection">
+          <div class="result-section-title">📊 Your Trait Breakdown</div>
+          <div class="traits-list" id="traitsList"></div>
+        </div>
+
+        <div class="result-section">
+          <div class="result-section-title">✨ Strengths</div>
+          <div class="chip-list" id="strengthsList"></div>
+        </div>
+
+        <div class="result-section">
+          <div class="result-section-title">⚠️ Growth Areas</div>
+          <div class="chip-list" id="weaknessesList"></div>
+        </div>
+
+        <div class="result-section">
+          <div class="result-section-title">👥 Famous Examples</div>
+          <div class="chip-list" id="examplesList"></div>
+        </div>
+
+        <div class="result-actions">
+          <button class="result-btn primary" id="retakeBtn">🔄 Take Another Test</button>
+          <button class="result-btn" id="copyResultBtn">📋 Copy Result</button>
+          <button class="result-btn" id="shareTwitterBtn">𝕏 Share on X</button>
+          <button class="result-btn" id="shareWhatsappBtn">💬 WhatsApp</button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- SEO Content -->
+    <div class="seo-content">
+
+      <h2>🧩 What is a Personality Test?</h2>
+      <p>
+        A <strong>personality test</strong> is a questionnaire designed to reveal your characteristic patterns of thinking, feeling, and behaving. Psychologists have developed many frameworks over the last century, and each captures a different angle on personality. Our tool offers <strong>4 popular frameworks</strong> 16-Type (MBTI-style), Big Five (OCEAN), DISC, and Introvert/Extrovert so you can explore your personality from multiple angles.
+      </p>
+      <p>
+        All tests run <strong>100% in your browser</strong>. Your answers never leave your device no signup, no email, no storage. Complete privacy for honest reflection.
+      </p>
+
+      <h2>🎯 The 4 Personality Frameworks</h2>
+
+      <h3>🧩 16-Type (MBTI-style)</h3>
+      <p>The most popular personality test worldwide. It measures 4 dimensions <strong>Introversion/Extraversion (I/E)</strong>, <strong>Sensing/Intuition (S/N)</strong>, <strong>Thinking/Feeling (T/F)</strong>, and <strong>Judging/Perceiving (J/P)</strong> and combines them into 16 types like INTJ, ENFP, ISTP. Best for understanding your communication style, work preferences, and relationship dynamics.</p>
+
+      <h3>🌊 Big Five (OCEAN)</h3>
+      <p>The most <strong>scientifically validated</strong> model in modern psychology. It measures five independent traits: <strong>O</strong>penness, <strong>C</strong>onscientiousness, <strong>E</strong>xtraversion, <strong>A</strong>greeableness, and <strong>N</strong>euroticism. Rather than typing you into one box, Big Five gives you a score for each trait a more nuanced and accurate picture.</p>
+
+      <h3>🎯 DISC Profile</h3>
+      <p>Widely used in <strong>business and leadership development</strong>. It measures 4 behavioral tendencies: <strong>D</strong>ominance (how you handle problems), <strong>I</strong>nfluence (how you handle people), <strong>S</strong>teadiness (how you handle pace), and <strong>C</strong>ompliance (how you handle procedures). Best for workplace dynamics and team building.</p>
+
+      <h3>⚡ Introvert / Extrovert</h3>
+      <p>The simplest and most intuitive. Measures where you fall on the <strong>social energy spectrum</strong> from full introvert to full extrovert, with most people being ambiverts (a mix of both). Best for understanding your social needs and recharge patterns.</p>
+
+      <h2>🚀 How to Take the Test</h2>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-step-num">1</div>
+          <div class="how-step-title">Pick Framework</div>
+          <div class="how-step-desc">Choose from 4 test types.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">2</div>
+          <div class="how-step-title">Answer Honestly</div>
+          <div class="how-step-desc">Go with your first instinct don't overthink.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">3</div>
+          <div class="how-step-title">See Result</div>
+          <div class="how-step-desc">Get your type with detailed traits and insights.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">4</div>
+          <div class="how-step-title">Share / Reflect</div>
+          <div class="how-step-desc">Copy your result or share with friends.</div>
+        </div>
+      </div>
+
+      <h2>💡 How to Get Accurate Results</h2>
+      <ul>
+        <li><strong>Answer honestly, not aspirationally.</strong> Don't pick what sounds "better" pick what's actually true.</li>
+        <li><strong>Go with first instinct.</strong> Overthinking leads to answers that reflect your ideal self, not your real self.</li>
+        <li><strong>Think about typical behavior.</strong> Answer based on how you usually are, not how you were in one unusual situation.</li>
+        <li><strong>Don't try to game the test.</strong> You'll only fool yourself these tests are useful only if honest.</li>
+        <li><strong>Take it more than once.</strong> If results feel "off," retake it after a week small variations in mood can shift answers.</li>
+        <li><strong>Remember it's a snapshot.</strong> Personality is nuanced and evolves. No 20-question test captures your full complexity.</li>
+      </ul>
+
+      <h2>⚠️ What Personality Tests Can & Can't Do</h2>
+      <p><strong>They CAN:</strong> give language to your tendencies, help you understand relationship and work dynamics, provide a starting point for self-reflection, and suggest areas for growth.</p>
+      <p><strong>They CAN'T:</strong> diagnose mental health conditions, predict your future success, replace a professional assessment, or fully capture who you are. Use them as tools for reflection, not as labels.</p>
+
+      <h2>❓ Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-question">Are online personality tests accurate?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Online tests are useful for self-reflection but are not scientifically diagnostic. For clinical assessments, consult a licensed psychologist. Our tests are inspired by well-known frameworks (MBTI-style, Big Five, DISC) and are for entertainment and self-discovery.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Which framework is most reliable?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>The <strong>Big Five (OCEAN)</strong> model has the strongest scientific backing. <strong>MBTI-style</strong> 16-type tests are popular but have limited academic support. <strong>DISC</strong> is widely used in business but less validated academically.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can my personality type change over time?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Core personality traits are relatively stable but can shift slightly over years especially in young adulthood. Life events, therapy, and personal growth can influence how you express your traits, though the underlying tendencies tend to persist.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">How many questions are in each test?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>16-Type MBTI-style:</strong> 20 questions (~5 min). <strong>Big Five OCEAN:</strong> 15 questions (~4 min). <strong>DISC:</strong> 12 questions (~3 min). <strong>Introvert/Extrovert:</strong> 10 questions (~2 min).</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Is this test free?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Yes, completely free. No signup, no email, no hidden charges. The test runs entirely in your browser, and your answers are never stored or sent to any server.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I use these results for career decisions?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Personality type can be <strong>one input</strong> for career exploration knowing whether you're introverted or extroverted, analytical or people-oriented can help narrow choices. But don't base major decisions solely on a test result. Consider skills, values, education, and real-world experience too.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Are my answers private?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Absolutely. All processing happens in your browser using JavaScript. Your answers never leave your device, and nothing is stored on any server. No tracking, no analytics on individual responses.</p></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-header">🔗 Related Utility Tools</div>
+    <div class="sidebar-list">
+      <a href="/tools/utility-tools/iq-test/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#8b5cf6;">🧠</div>
+        <div class="sidebar-info"><div class="sidebar-title">IQ Test</div><div class="sidebar-desc">Intelligence test</div></div>
+      </a>
+      <a href="/tools/utility-tools/love-calculator/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#ef4444;">❤️</div>
+        <div class="sidebar-info"><div class="sidebar-title">Love Calculator</div><div class="sidebar-desc">Compatibility test</div></div>
+      </a>
+      <a href="/tools/utility-tools/friendship-test/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#10b981;">🤝</div>
+        <div class="sidebar-info"><div class="sidebar-title">Friendship Test</div><div class="sidebar-desc">Friend compatibility</div></div>
+      </a>
+      <a href="/tools/utility-tools/reaction-time/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#f97316;">⚡</div>
+        <div class="sidebar-info"><div class="sidebar-title">Reaction Time</div><div class="sidebar-desc">Reflex test</div></div>
+      </a>
+      <a href="/tools/utility-tools/aim-trainer/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#ef4444;">🎯</div>
+        <div class="sidebar-info"><div class="sidebar-title">Aim Trainer</div><div class="sidebar-desc">Gaming practice</div></div>
+      </a>
+      <a href="/tools/utility-tools/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#64748b;">⚙️</div>
+        <div class="sidebar-info"><div class="sidebar-title">All Utility Tools →</div><div class="sidebar-desc">Browse 50+ tools</div></div>
+      </a>
+    </div>
+  </aside>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand"><div class="logo-icon">⚒</div>BigToolz</span></div>
+      <p class="footer-tagline">Your Ultimate Online Tools Hub</p>
+      <div class="footer-social">
+        <a href="https://facebook.com/bigtoolz" aria-label="Facebook">f</a>
+        <a href="https://twitter.com/bigtoolz" aria-label="Twitter">𝕏</a>
+        <a href="https://youtube.com/@bigtoolz" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+    <div>
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/tools/">All Tools</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Categories</h3>
+      <ul class="footer-links">
+        <li><a href="/tools/image-tools/">Image Tools</a></li>
+        <li><a href="/tools/pdf-tools/">PDF Tools</a></li>
+        <li><a href="/tools/text-tools/">Text Tools</a></li>
+        <li><a href="/tools/utility-tools/">Utility Tools</a></li>
+        <li><a href="/tools/categories">All Categories →</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Legal</h3>
+      <ul class="footer-links">
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left"><span>✓ 100% Free</span><span>✓ No Sign Up</span><span>✓ No Installation</span></div>
+    <div class="footer-bottom-right">© 2026 BigToolz. All rights reserved.</div>
+    <div class="footer-bottom-links"><a href="/privacy-policy">Privacy</a><a href="/terms">Terms</a><a href="/disclaimer">Disclaimer</a></div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+'use strict';
+
+/* ===== THEME ===== */
+(function(){try{var t=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&d))document.documentElement.setAttribute('data-theme','dark');else if(t==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();
+document.querySelector('.theme-btn')?.addEventListener('click',()=>{const h=document.documentElement;const c=h.getAttribute('data-theme');const d=window.matchMedia('(prefers-color-scheme: dark)').matches;let n=c==='dark'?'light':c==='light'?'dark':(d?'light':'dark');h.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}});
+
+/* ===== HELPERS ===== */
+const $ = (s, p = document) => p.querySelector(s);
+const $$ = (s, p = document) => [...p.querySelectorAll(s)];
+
+function showToast(msg, type = 'info', duration = 3000) {
+  const t = $('#toast');
+  if (!t) return;
+  t.className = 'toast visible' + (type !== 'info' ? ' ' + type : '');
+  t.textContent = msg;
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove('visible'), duration);
+}
+
+async function copyToClipboard(text) {
+  try {
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(text);
+      return true;
+    }
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.cssText = 'position:fixed;opacity:0;';
+    document.body.appendChild(ta);
+    ta.select();
+    const ok = document.execCommand('copy');
+    document.body.removeChild(ta);
+    return ok;
+  } catch (e) { return false; }
+}
+
+/* ===== QUIZ DATA ===== */
+const TESTS = {
+  mbti: {
+    name: '16-Type (MBTI-style)',
+    icon: '🧩',
+    questions: [
+      { text: 'At a party, you usually:', answers: [
+        { text: 'Meet many new people and stay energized', value: 'E' },
+        { text: 'Talk to a few close friends or leave early', value: 'I' }
+      ]},
+      { text: 'When solving a problem, you prefer:', answers: [
+        { text: 'Concrete facts and proven methods', value: 'S' },
+        { text: 'Big-picture ideas and possibilities', value: 'N' }
+      ]},
+      { text: 'When making decisions, you rely more on:', answers: [
+        { text: 'Logic and objective analysis', value: 'T' },
+        { text: 'Values and how it affects people', value: 'F' }
+      ]},
+      { text: 'You prefer your life to be:', answers: [
+        { text: 'Planned and organized', value: 'J' },
+        { text: 'Flexible and spontaneous', value: 'P' }
+      ]},
+      { text: 'After a long day, you recharge by:', answers: [
+        { text: 'Being around people', value: 'E' },
+        { text: 'Having quiet time alone', value: 'I' }
+      ]},
+      { text: 'You trust more:', answers: [
+        { text: 'Your experience and observation', value: 'S' },
+        { text: 'Your intuition and gut feeling', value: 'N' }
+      ]},
+      { text: 'You are more convinced by:', answers: [
+        { text: 'A logical argument', value: 'T' },
+        { text: 'A heartfelt story', value: 'F' }
+      ]},
+      { text: 'You work best with:', answers: [
+        { text: 'Clear deadlines and structure', value: 'J' },
+        { text: 'Open-ended freedom', value: 'P' }
+      ]},
+      { text: 'In a group discussion, you tend to:', answers: [
+        { text: 'Speak up early and often', value: 'E' },
+        { text: 'Listen first, speak when ready', value: 'I' }
+      ]},
+      { text: 'You enjoy learning about:', answers: [
+        { text: 'Practical, real-world applications', value: 'S' },
+        { text: 'Theories and future possibilities', value: 'N' }
+      ]},
+      { text: 'When a friend has a problem, you:', answers: [
+        { text: 'Offer solutions', value: 'T' },
+        { text: 'Offer emotional support', value: 'F' }
+      ]},
+      { text: 'You prefer to:', answers: [
+        { text: 'Finish tasks before starting new ones', value: 'J' },
+        { text: 'Start new things while old ones are open', value: 'P' }
+      ]},
+      { text: 'You feel more comfortable:', answers: [
+        { text: 'In busy, active environments', value: 'E' },
+        { text: 'In calm, quiet environments', value: 'I' }
+      ]},
+      { text: 'You notice more:', answers: [
+        { text: 'Details others miss', value: 'S' },
+        { text: 'Patterns and hidden meanings', value: 'N' }
+      ]},
+      { text: 'You prefer giving feedback that is:', answers: [
+        { text: 'Direct and honest', value: 'T' },
+        { text: 'Kind and encouraging', value: 'F' }
+      ]},
+      { text: 'You feel best when:', answers: [
+        { text: 'Things are decided and settled', value: 'J' },
+        { text: 'Options remain open', value: 'P' }
+      ]},
+      { text: 'Your conversations are usually:', answers: [
+        { text: 'Frequent and wide-ranging', value: 'E' },
+        { text: 'Deep and focused', value: 'I' }
+      ]},
+      { text: 'You prefer books/movies that are:', answers: [
+        { text: 'Realistic and factual', value: 'S' },
+        { text: 'Imaginative and symbolic', value: 'N' }
+      ]},
+      { text: 'It bothers you more when someone is:', answers: [
+        { text: 'Irrational', value: 'T' },
+        { text: 'Insensitive', value: 'F' }
+      ]},
+      { text: 'When traveling, you prefer:', answers: [
+        { text: 'A detailed itinerary', value: 'J' },
+        { text: 'Going with the flow', value: 'P' }
+      ]}
+    ]
+  },
+  bigfive: {
+    name: 'Big Five (OCEAN)',
+    icon: '🌊',
+    questions: [
+      { text: 'I enjoy trying new experiences and ideas.', trait: 'O' },
+      { text: 'I keep my belongings and schedule organized.', trait: 'C' },
+      { text: 'I feel energized when I am around many people.', trait: 'E' },
+      { text: 'I genuinely care about other people\'s feelings.', trait: 'A' },
+      { text: 'I often worry about things that could go wrong.', trait: 'N' },
+      { text: 'I appreciate art, music, and creative expression.', trait: 'O' },
+      { text: 'I complete tasks thoroughly and on time.', trait: 'C' },
+      { text: 'I often start conversations with strangers.', trait: 'E' },
+      { text: 'I try to help others even when it\'s inconvenient.', trait: 'A' },
+      { text: 'I get stressed easily in challenging situations.', trait: 'N' },
+      { text: 'I think about abstract concepts for fun.', trait: 'O' },
+      { text: 'I plan ahead for most things in life.', trait: 'C' },
+      { text: 'I prefer being the center of attention.', trait: 'E' },
+      { text: 'I trust people until they give me a reason not to.', trait: 'A' },
+      { text: 'My mood can change quickly.', trait: 'N' }
+    ]
+  },
+  disc: {
+    name: 'DISC Profile',
+    icon: '🎯',
+    questions: [
+      { text: 'In meetings, I tend to:', answers: [
+        { text: 'Take charge and drive decisions', value: 'D' },
+        { text: 'Motivate and inspire others', value: 'I' },
+        { text: 'Support and listen carefully', value: 'S' },
+        { text: 'Focus on facts and accuracy', value: 'C' }
+      ]},
+      { text: 'When facing a problem, I:', answers: [
+        { text: 'Attack it head-on', value: 'D' },
+        { text: 'Talk it out with others', value: 'I' },
+        { text: 'Stay calm and steady', value: 'S' },
+        { text: 'Analyze before acting', value: 'C' }
+      ]},
+      { text: 'People describe me as:', answers: [
+        { text: 'Bold and direct', value: 'D' },
+        { text: 'Enthusiastic and outgoing', value: 'I' },
+        { text: 'Patient and reliable', value: 'S' },
+        { text: 'Precise and careful', value: 'C' }
+      ]},
+      { text: 'I am most motivated by:', answers: [
+        { text: 'Winning and achieving results', value: 'D' },
+        { text: 'Recognition and influence', value: 'I' },
+        { text: 'Stability and harmony', value: 'S' },
+        { text: 'Accuracy and quality', value: 'C' }
+      ]},
+      { text: 'My biggest fear is:', answers: [
+        { text: 'Losing control', value: 'D' },
+        { text: 'Being ignored', value: 'I' },
+        { text: 'Sudden change', value: 'S' },
+        { text: 'Making mistakes', value: 'C' }
+      ]},
+      { text: 'I communicate in a style that is:', answers: [
+        { text: 'Direct and to-the-point', value: 'D' },
+        { text: 'Warm and expressive', value: 'I' },
+        { text: 'Calm and consistent', value: 'S' },
+        { text: 'Detailed and logical', value: 'C' }
+      ]},
+      { text: 'When under pressure, I:', answers: [
+        { text: 'Become more demanding', value: 'D' },
+        { text: 'Talk more and get scattered', value: 'I' },
+        { text: 'Withdraw and slow down', value: 'S' },
+        { text: 'Become more critical', value: 'C' }
+      ]},
+      { text: 'I work best in environments that:', answers: [
+        { text: 'Are fast-paced and competitive', value: 'D' },
+        { text: 'Are social and collaborative', value: 'I' },
+        { text: 'Are stable and predictable', value: 'S' },
+        { text: 'Have clear rules and standards', value: 'C' }
+      ]},
+      { text: 'My ideal role is:', answers: [
+        { text: 'Leading a team', value: 'D' },
+        { text: 'Presenting ideas', value: 'I' },
+        { text: 'Supporting people', value: 'S' },
+        { text: 'Ensuring quality', value: 'C' }
+      ]},
+      { text: 'In a conflict, I usually:', answers: [
+        { text: 'Confront it directly', value: 'D' },
+        { text: 'Try to smooth it over', value: 'I' },
+        { text: 'Avoid taking sides', value: 'S' },
+        { text: 'Want to see all facts', value: 'C' }
+      ]},
+      { text: 'I make decisions based on:', answers: [
+        { text: 'Speed and impact', value: 'D' },
+        { text: 'Gut and relationships', value: 'I' },
+        { text: 'Team harmony', value: 'S' },
+        { text: 'Data and logic', value: 'C' }
+      ]},
+      { text: 'Others would say my weakness is:', answers: [
+        { text: 'Being too pushy', value: 'D' },
+        { text: 'Being disorganized', value: 'I' },
+        { text: 'Being too passive', value: 'S' },
+        { text: 'Being too picky', value: 'C' }
+      ]}
+    ]
+  },
+  introextro: {
+    name: 'Introvert / Extrovert',
+    icon: '⚡',
+    questions: [
+      { text: 'After a social event, you usually feel:', answers: [
+        { text: 'Energized and excited', value: 'E' },
+        { text: 'Drained and need alone time', value: 'I' }
+      ]},
+      { text: 'You prefer to spend free time:', answers: [
+        { text: 'With a group of people', value: 'E' },
+        { text: 'Alone or with one close person', value: 'I' }
+      ]},
+      { text: 'When you have a problem, you:', answers: [
+        { text: 'Talk it through with others', value: 'E' },
+        { text: 'Think about it privately', value: 'I' }
+      ]},
+      { text: 'You find small talk:', answers: [
+        { text: 'Easy and enjoyable', value: 'E' },
+        { text: 'Tiring and pointless', value: 'I' }
+      ]},
+      { text: 'In a meeting, you:', answers: [
+        { text: 'Speak up frequently', value: 'E' },
+        { text: 'Only speak when needed', value: 'I' }
+      ]},
+      { text: 'You would rather:', answers: [
+        { text: 'Go to a party', value: 'E' },
+        { text: 'Read a book at home', value: 'I' }
+      ]},
+      { text: 'You get bored:', answers: [
+        { text: 'When alone too long', value: 'E' },
+        { text: 'When with people too long', value: 'I' }
+      ]},
+      { text: 'You prefer to work:', answers: [
+        { text: 'In a team', value: 'E' },
+        { text: 'Independently', value: 'I' }
+      ]},
+      { text: 'When you enter a new group, you:', answers: [
+        { text: 'Introduce yourself easily', value: 'E' },
+        { text: 'Wait to be approached', value: 'I' }
+      ]},
+      { text: 'You process ideas best by:', answers: [
+        { text: 'Talking out loud', value: 'E' },
+        { text: 'Thinking silently', value: 'I' }
+      ]},
+      { text: 'Your ideal weekend involves:', answers: [
+        { text: 'Multiple activities with friends', value: 'E' },
+        { text: 'Quiet time and one-on-one interactions', value: 'I' }
+      ]}
+    ]
+  }
+};
+
+/* ===== MBTI TYPE DESCRIPTIONS ===== */
+const MBTI_TYPES = {
+  INTJ: { name: 'The Architect', desc: 'Strategic, analytical, and independent. INTJs see the big picture and love solving complex problems with logic. You value competence and plan far into the future.', strengths: ['Strategic thinking', 'Independence', 'Problem-solving', 'Long-term planning'], weaknesses: ['Can seem cold', 'Overly critical', 'Impatient with inefficiency', 'Perfectionism'], examples: ['Elon Musk', 'Friedrich Nietzsche', 'Michelle Obama', 'Isaac Newton'] },
+  INTP: { name: 'The Logician', desc: 'Curious, inventive, and analytical. INTPs love exploring theories and ideas. You\'re driven by curiosity and enjoy deep intellectual work.', strengths: ['Analytical mind', 'Creativity', 'Open-mindedness', 'Problem-solving'], weaknesses: ['Can be indecisive', 'Dislike rules', 'May neglect practical matters'], examples: ['Albert Einstein', 'Bill Gates', 'Marie Curie', 'Charles Darwin'] },
+  ENTJ: { name: 'The Commander', desc: 'Bold, driven, and natural leaders. ENTJs love challenges and rally teams toward big goals. You have natural executive presence.', strengths: ['Leadership', 'Confidence', 'Strategic vision', 'Decision-making'], weaknesses: ['Impatient', 'Can be domineering', 'Overly intense'], examples: ['Steve Jobs', 'Sheryl Sandberg', 'Margaret Thatcher', 'Jim Carrey'] },
+  ENTP: { name: 'The Debater', desc: 'Quick-witted, inventive, and love a good debate. ENTPs are energized by new ideas and challenges. You\'re a born entrepreneur.', strengths: ['Quick thinking', 'Innovation', 'Charisma', 'Adaptability'], weaknesses: ['Argumentative', 'Can be insensitive', 'Easily bored'], examples: ['Thomas Edison', 'Celine Dion', 'Tom Hanks', 'Mark Twain'] },
+  INFJ: { name: 'The Advocate', desc: 'Idealistic, insightful, and principled. INFJs are driven by a deep sense of purpose and genuinely want to help others. You\'re a rare type both visionary and empathic.', strengths: ['Deep empathy', 'Insightful', 'Purposeful', 'Creative'], weaknesses: ['Perfectionism', 'Overly sensitive', 'Can burn out easily'], examples: ['Nelson Mandela', 'Lady Gaga', 'Mother Teresa', 'Martin Luther King Jr.'] },
+  INFP: { name: 'The Mediator', desc: 'Idealistic, loyal, and creative. INFPs are driven by values and imagination. You seek meaning in everything and are deeply creative.', strengths: ['Creativity', 'Empathy', 'Idealism', 'Open-mindedness'], weaknesses: ['Overly idealistic', 'Impractical', 'Self-critical'], examples: ['William Shakespeare', 'J.R.R. Tolkien', 'Johnny Depp', 'Julia Roberts'] },
+  ENFJ: { name: 'The Protagonist', desc: 'Charismatic, inspiring, and altruistic. ENFJs are natural leaders who care deeply about people. You inspire others to be their best.', strengths: ['Charisma', 'Empathy', 'Leadership', 'Communication'], weaknesses: ['Overly idealistic', 'Can be too selfless', 'Struggle to say no'], examples: ['Barack Obama', 'Oprah Winfrey', 'Jennifer Lawrence', 'Ben Affleck'] },
+  ENFP: { name: 'The Campaigner', desc: 'Enthusiastic, creative, and sociable. ENFPs are free spirits who see possibilities everywhere. You bring energy and warmth to everything.', strengths: ['Enthusiasm', 'Creativity', 'Sociability', 'Empathy'], weaknesses: ['Easily distracted', 'Overthinker', 'Can be unreliable'], examples: ['Robert Downey Jr.', 'Robin Williams', 'Ellen DeGeneres', 'Walt Disney'] },
+  ISTJ: { name: 'The Logistician', desc: 'Practical, reliable, and dutiful. ISTJs value tradition and order. You are the backbone of any team you get things done.', strengths: ['Reliability', 'Duty', 'Detail-oriented', 'Conscientious'], weaknesses: ['Rigid', 'Judgmental', 'Can be stubborn'], examples: ['George Washington', 'Angela Merkel', 'Warren Buffett', 'Natalie Portman'] },
+  ISFJ: { name: 'The Defender', desc: 'Warm, responsible, and protective. ISFJs are dedicated to those they love and quietly support the people around them.', strengths: ['Supportive', 'Reliable', 'Patient', 'Hardworking'], weaknesses: ['Overly selfless', 'Hates conflict', 'Can be taken advantage of'], examples: ['Kate Middleton', 'Queen Elizabeth II', 'Captain America', 'Beyoncé'] },
+  ESTJ: { name: 'The Executive', desc: 'Organized, dependable, and natural administrators. ESTJs love structure and getting things done. You thrive in leadership roles.', strengths: ['Organization', 'Dedication', 'Strong-willed', 'Direct'], weaknesses: ['Inflexible', 'Judgmental', 'Can be insensitive'], examples: ['Judge Judy', 'John D. Rockefeller', 'Sonia Sotomayor', 'Frank Sinatra'] },
+  ESFJ: { name: 'The Consul', desc: 'Caring, social, and popular. ESFJs are highly attuned to others\' needs. You are the social glue in any group.', strengths: ['Warmth', 'Sociability', 'Duty', 'Loyalty'], weaknesses: ['Needy for approval', 'Overly sensitive to criticism', 'Inflexible'], examples: ['Taylor Swift', 'Bill Clinton', 'Jennifer Garner', 'Hugh Jackman'] },
+  ISTP: { name: 'The Virtuoso', desc: 'Bold, practical, and experimental. ISTPs love hands-on problem-solving. You are calm under pressure and love tinkering.', strengths: ['Problem-solving', 'Calm under pressure', 'Practical', 'Adaptable'], weaknesses: ['Insensitive', 'Easily bored', 'Dislike commitment'], examples: ['Clint Eastwood', 'Tom Cruise', 'Michael Jordan', 'Scarlett Johansson'] },
+  ISFP: { name: 'The Adventurer', desc: 'Artistic, sensitive, and curious. ISFPs live in the moment and love exploring new experiences through their senses.', strengths: ['Artistic', 'Empathetic', 'Curious', 'Passionate'], weaknesses: ['Unpredictable', 'Easily stressed', 'Overly competitive'], examples: ['Michael Jackson', 'Frida Kahlo', 'Lana Del Rey', 'David Bowie'] },
+  ESTP: { name: 'The Entrepreneur', desc: 'Bold, pragmatic, and action-oriented. ESTPs are the ultimate doers energetic, spontaneous, and always ready for the next challenge.', strengths: ['Bold', 'Direct', 'Sociable', 'Perceptive'], weaknesses: ['Impatient', 'Risky', 'Can miss the big picture'], examples: ['Madonna', 'Ernest Hemingway', 'Jack Nicholson', 'Eddie Murphy'] },
+  ESFP: { name: 'The Entertainer', desc: 'Spontaneous, energetic, and enthusiastic. ESFPs love the spotlight and bring joy to everything they do. You are a natural performer.', strengths: ['Enthusiastic', 'Friendly', 'Observant', 'Practical'], weaknesses: ['Easily bored', 'Dislikes conflict', 'Overly sensitive'], examples: ['Marilyn Monroe', 'Jamie Oliver', 'Adele', 'Will Smith'] }
+};
+
+/* ===== BIG FIVE DESCRIPTIONS ===== */
+const BIG_FIVE_INFO = {
+  O: { name: 'Openness', high: 'You are creative, curious, and open to new experiences. You enjoy abstract thinking and appreciate art, ideas, and novelty.', low: 'You prefer familiarity and practicality. You value tried-and-tested approaches over new experiments.' },
+  C: { name: 'Conscientiousness', high: 'You are organized, reliable, and goal-oriented. You plan ahead and get things done on time.', low: 'You are flexible and spontaneous, but may struggle with deadlines and organization.' },
+  E: { name: 'Extraversion', high: 'You are outgoing, energetic, and thrive in social situations. You enjoy being around people.', low: 'You are reserved, reflective, and prefer quiet environments. You are more introverted.' },
+  A: { name: 'Agreeableness', high: 'You are warm, compassionate, and cooperative. You value harmony and are easy to get along with.', low: 'You are more skeptical and competitive. You prioritize truth over harmony.' },
+  N: { name: 'Neuroticism', high: 'You experience emotions intensely and may feel anxious or stressed easily. You are sensitive to your environment.', low: 'You are emotionally stable, calm, and resilient under pressure.' }
+};
+
+/* ===== DISC DESCRIPTIONS ===== */
+const DISC_INFO = {
+  D: { name: 'Dominance', icon: '🦁', desc: 'You are direct, decisive, and results-oriented. You love taking charge and getting things done. You thrive in leadership roles.', strengths: ['Bold', 'Decisive', 'Results-driven', 'Confident'], weaknesses: ['Impatient', 'Can be blunt', 'Poor listener'] },
+  I: { name: 'Influence', icon: '🎤', desc: 'You are enthusiastic, persuasive, and social. You love connecting with people and are a natural motivator.', strengths: ['Charismatic', 'Optimistic', 'Persuasive', 'Enthusiastic'], weaknesses: ['Disorganized', 'Overly talkative', 'Emotional'] },
+  S: { name: 'Steadiness', icon: '🤝', desc: 'You are calm, patient, and reliable. You are a great listener and value stability and loyalty.', strengths: ['Patient', 'Reliable', 'Supportive', 'Good listener'], weaknesses: ['Resists change', 'Too passive', 'Avoids conflict'] },
+  C: { name: 'Compliance', icon: '📊', desc: 'You are analytical, precise, and detail-oriented. You value accuracy and quality over speed.', strengths: ['Accurate', 'Analytical', 'Systematic', 'Diplomatic'], weaknesses: ['Overly critical', 'Slow to decide', 'Perfectionist'] }
+};
+
+/* ===== STATE ===== */
+const state = {
+  testType: 'mbti',
+  currentQ: 0,
+  answers: [],
+  result: null
+};
+
+/* ===== DOM ===== */
+const startScreen = $('#startScreen');
+const quizScreen = $('#quizScreen');
+const resultScreen = $('#resultScreen');
+const testOptions = $('#testOptions');
+const startBtn = $('#startBtn');
+const progressLabel = $('#progressLabel');
+const progressPct = $('#progressPct');
+const progressFill = $('#progressFill');
+const questionNum = $('#questionNum');
+const questionText = $('#questionText');
+const answersBox = $('#answersBox');
+const backBtn = $('#backBtn');
+const cancelBtn = $('#cancelBtn');
+const resultHero = $('#resultHero');
+const resultIcon = $('#resultIcon');
+const resultLabel = $('#resultLabel');
+const resultType = $('#resultType');
+const resultName = $('#resultName');
+const resultDescription = $('#resultDescription');
+const traitsList = $('#traitsList');
+const strengthsList = $('#strengthsList');
+const weaknessesList = $('#weaknessesList');
+const examplesList = $('#examplesList');
+const traitsSection = $('#traitsSection');
+const retakeBtn = $('#retakeBtn');
+const copyResultBtn = $('#copyResultBtn');
+const shareTwitterBtn = $('#shareTwitterBtn');
+const shareWhatsappBtn = $('#shareWhatsappBtn');
+
+/* ===== TEST SELECTION ===== */
+$$('.test-option').forEach(opt => {
+  opt.addEventListener('click', () => {
+    $$('.test-option').forEach(o => o.classList.remove('active'));
+    opt.classList.add('active');
+    state.testType = opt.dataset.test;
+  });
+});
+
+/* ===== START ===== */
+startBtn.addEventListener('click', () => {
+  state.currentQ = 0;
+  state.answers = [];
+  state.result = null;
+  startScreen.classList.add('hidden');
+  quizScreen.classList.add('active');
+  resultScreen.classList.remove('active');
+  renderQuestion();
+});
+
+/* ===== RENDER QUESTION ===== */
+function renderQuestion() {
+  const test = TESTS[state.testType];
+  const q = test.questions[state.currentQ];
+  const total = test.questions.length;
+
+  progressLabel.textContent = `Question ${state.currentQ + 1} of ${total}`;
+  const pct = Math.round(((state.currentQ) / total) * 100);
+  progressPct.textContent = pct + '%';
+  progressFill.style.width = pct + '%';
+
+  questionNum.textContent = `Q${state.currentQ + 1}`;
+  questionText.textContent = q.text;
+
+  answersBox.innerHTML = '';
+
+  if (q.answers) {
+    // Multiple choice (MBTI, DISC, IntroExtro)
+    q.answers.forEach((ans, i) => {
+      const btn = document.createElement('button');
+      btn.className = 'answer-btn';
+      btn.innerHTML = `<span class="bullet">${String.fromCharCode(65 + i)}</span> ${ans.text}`;
+      btn.addEventListener('click', () => {
+        state.answers[state.currentQ] = ans.value;
+        nextQuestion();
+      });
+      answersBox.appendChild(btn);
+    });
+  } else if (q.trait) {
+    // Big Five Likert scale 1-5
+    const scale = [
+      { text: 'Strongly Disagree', value: 1 },
+      { text: 'Disagree', value: 2 },
+      { text: 'Neutral', value: 3 },
+      { text: 'Agree', value: 4 },
+      { text: 'Strongly Agree', value: 5 }
+    ];
+    scale.forEach((s, i) => {
+      const btn = document.createElement('button');
+      btn.className = 'answer-btn';
+      btn.innerHTML = `<span class="bullet">${s.value}</span> ${s.text}`;
+      btn.addEventListener('click', () => {
+        state.answers[state.currentQ] = s.value;
+        nextQuestion();
+      });
+      answersBox.appendChild(btn);
+    });
+  }
+
+  backBtn.disabled = state.currentQ === 0;
+}
+
+/* ===== NEXT / BACK ===== */
+function nextQuestion() {
+  const test = TESTS[state.testType];
+  if (state.currentQ < test.questions.length - 1) {
+    state.currentQ++;
+    renderQuestion();
+  } else {
+    // Update progress to 100%
+    progressFill.style.width = '100%';
+    progressPct.textContent = '100%';
+    setTimeout(showResult, 200);
+  }
+}
+
+backBtn.addEventListener('click', () => {
+  if (state.currentQ > 0) {
+    state.currentQ--;
+    renderQuestion();
+  }
+});
+
+cancelBtn.addEventListener('click', () => {
+  if (confirm('Cancel and return to start?')) {
+    resetToStart();
+  }
+});
+
+/* ===== SHOW RESULT ===== */
+function showResult() {
+  quizScreen.classList.remove('active');
+  resultScreen.classList.add('active');
+
+  if (state.testType === 'mbti') {
+    showMBTIResult();
+  } else if (state.testType === 'bigfive') {
+    showBigFiveResult();
+  } else if (state.testType === 'disc') {
+    showDISCResult();
+  } else {
+    showIntroExtroResult();
+  }
+
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+/* ===== MBTI RESULT ===== */
+function showMBTIResult() {
+  const counts = { E: 0, I: 0, S: 0, N: 0, T: 0, F: 0, J: 0, P: 0 };
+  state.answers.forEach(v => { if (v) counts[v]++; });
+
+  const type =
+    (counts.E >= counts.I ? 'E' : 'I') +
+    (counts.S >= counts.N ? 'S' : 'N') +
+    (counts.T >= counts.F ? 'T' : 'F') +
+    (counts.J >= counts.P ? 'J' : 'P');
+
+  const info = MBTI_TYPES[type] || MBTI_TYPES.INTJ;
+
+  resultIcon.textContent = '🧩';
+  resultLabel.textContent = 'Your Type';
+  resultType.textContent = type;
+  resultName.textContent = info.name;
+  resultDescription.textContent = info.desc;
+
+  // Traits
+  const totalE = counts.E + counts.I;
+  const totalS = counts.S + counts.N;
+  const totalT = counts.T + counts.F;
+  const totalJ = counts.J + counts.P;
+
+  const ePct = totalE ? Math.round((counts.E / totalE) * 100) : 50;
+  const sPct = totalS ? Math.round((counts.S / totalS) * 100) : 50;
+  const tPct = totalT ? Math.round((counts.T / totalT) * 100) : 50;
+  const jPct = totalJ ? Math.round((counts.J / totalJ) * 100) : 50;
+
+  traitsList.innerHTML = '';
+  [
+    { left: 'Introversion', right: 'Extraversion', value: ePct, leftPct: 100 - ePct, rightPct: ePct },
+    { left: 'Intuition', right: 'Sensing', value: 100 - sPct, leftPct: 100 - sPct, rightPct: sPct },
+    { left: 'Thinking', right: 'Feeling', value: tPct, leftPct: tPct, rightPct: 100 - tPct },
+    { left: 'Judging', right: 'Perceiving', value: jPct, leftPct: jPct, rightPct: 100 - jPct }
+  ].forEach(t => {
+    const label = t.leftPct > t.rightPct ? t.left : t.right;
+    const pct = Math.max(t.leftPct, t.rightPct);
+    const row = document.createElement('div');
+    row.className = 'trait-row';
+    row.innerHTML = `
+      <div class="trait-label">${label}</div>
+      <div class="trait-bar"><div class="trait-bar-fill" style="width:${pct}%"></div></div>
+      <div class="trait-value">${pct}%</div>
+    `;
+    traitsList.appendChild(row);
+  });
+
+  renderChips(strengthsList, info.strengths, 'strength');
+  renderChips(weaknessesList, info.weaknesses, 'weakness');
+  renderChips(examplesList, info.examples, '');
+
+  state.result = { type, name: info.name, test: 'MBTI' };
+}
+
+/* ===== BIG FIVE RESULT ===== */
+function showBigFiveResult() {
+  const test = TESTS.bigfive;
+  const sums = { O: 0, C: 0, E: 0, A: 0, N: 0 };
+  const counts = { O: 0, C: 0, E: 0, A: 0, N: 0 };
+
+  state.answers.forEach((v, i) => {
+    const q = test.questions[i];
+    if (q && q.trait) {
+      sums[q.trait] += v || 3;
+      counts[q.trait]++;
+    }
+  });
+
+  const scores = {};
+  Object.keys(sums).forEach(k => {
+    scores[k] = counts[k] ? Math.round((sums[k] / (counts[k] * 5)) * 100) : 50;
+  });
+
+  // Determine dominant trait
+  const dominant = Object.entries(scores).sort((a, b) => b[1] - a[1])[0][0];
+
+  resultIcon.textContent = '🌊';
+  resultLabel.textContent = 'Your Dominant Trait';
+  resultType.textContent = dominant;
+  resultName.textContent = BIG_FIVE_INFO[dominant].name;
+  resultDescription.textContent = scores[dominant] > 50
+    ? BIG_FIVE_INFO[dominant].high
+    : BIG_FIVE_INFO[dominant].low;
+
+  // All 5 traits
+  traitsList.innerHTML = '';
+  ['O', 'C', 'E', 'A', 'N'].forEach(k => {
+    const row = document.createElement('div');
+    row.className = 'trait-row';
+    row.innerHTML = `
+      <div class="trait-label">${BIG_FIVE_INFO[k].name}</div>
+      <div class="trait-bar"><div class="trait-bar-fill" style="width:${scores[k]}%"></div></div>
+      <div class="trait-value">${scores[k]}%</div>
+    `;
+    traitsList.appendChild(row);
+  });
+
+  // Strengths/weaknesses based on high/low traits
+  const high = Object.entries(scores).filter(([k, v]) => v >= 60).map(([k]) => BIG_FIVE_INFO[k].name);
+  const low = Object.entries(scores).filter(([k, v]) => v < 40).map(([k]) => BIG_FIVE_INFO[k].name);
+
+  renderChips(strengthsList, high.length ? high : ['Balanced traits across the board'], 'strength');
+  renderChips(weaknessesList, low.length ? low : ['No significant weaknesses'], 'weakness');
+  renderChips(examplesList, ['Explore how each trait influences your daily life', 'Share with friends to compare'], '');
+
+  state.result = { type: dominant, name: BIG_FIVE_INFO[dominant].name, test: 'Big Five' };
+}
+
+/* ===== DISC RESULT ===== */
+function showDISCResult() {
+  const counts = { D: 0, I: 0, S: 0, C: 0 };
+  state.answers.forEach(v => { if (v) counts[v]++; });
+
+  const dominant = Object.entries(counts).sort((a, b) => b[1] - a[1])[0][0];
+  const info = DISC_INFO[dominant];
+
+  resultIcon.textContent = info.icon;
+  resultLabel.textContent = 'Your DISC Type';
+  resultType.textContent = dominant;
+  resultName.textContent = info.name;
+  resultDescription.textContent = info.desc;
+
+  const total = Object.values(counts).reduce((a, b) => a + b, 0);
+
+  traitsList.innerHTML = '';
+  ['D', 'I', 'S', 'C'].forEach(k => {
+    const pct = total ? Math.round((counts[k] / total) * 100) : 25;
+    const row = document.createElement('div');
+    row.className = 'trait-row';
+    row.innerHTML = `
+      <div class="trait-label">${DISC_INFO[k].name}</div>
+      <div class="trait-bar"><div class="trait-bar-fill" style="width:${pct}%"></div></div>
+      <div class="trait-value">${pct}%</div>
+    `;
+    traitsList.appendChild(row);
+  });
+
+  renderChips(strengthsList, info.strengths, 'strength');
+  renderChips(weaknessesList, info.weaknesses, 'weakness');
+  renderChips(examplesList, [`You're a natural ${info.name.toLowerCase()} type`, 'Great fit for roles that leverage your strengths'], '');
+
+  state.result = { type: dominant, name: info.name, test: 'DISC' };
+}
+
+/* ===== INTRO/EXTRO RESULT ===== */
+function showIntroExtroResult() {
+  const counts = { E: 0, I: 0 };
+  state.answers.forEach(v => { if (v) counts[v]++; });
+
+  const total = counts.E + counts.I;
+  const ePct = total ? Math.round((counts.E / total) * 100) : 50;
+  const iPct = 100 - ePct;
+
+  let type, name, desc;
+  if (ePct >= 70) {
+    type = 'Extrovert';
+    name = 'The Socializer';
+    desc = 'You thrive in social environments and gain energy from being around people. You love meeting new people, group activities, and high-energy settings. Your outgoing nature makes you a natural connector and motivator.';
+  } else if (iPct >= 70) {
+    type = 'Introvert';
+    name = 'The Reflector';
+    desc = 'You prefer depth over breadth in relationships and recharge in quiet, familiar environments. You think before speaking, value meaningful conversation, and often surprise people with your insight when you do share.';
+  } else if (ePct > iPct) {
+    type = 'Ambivert (E-leaning)';
+    name = 'The Balanced Socializer';
+    desc = 'You\'re an ambivert who leans slightly extroverted. You enjoy socializing but also value alone time. You can adapt to both high-energy and quiet settings with ease a rare and useful flexibility.';
+  } else if (iPct > ePct) {
+    type = 'Ambivert (I-leaning)';
+    name = 'The Balanced Reflector';
+    desc = 'You\'re an ambivert who leans slightly introverted. You enjoy people in moderation but need alone time to recharge. You\'re equally comfortable in small groups and solo activities.';
+  } else {
+    type = 'Ambivert';
+    name = 'The True Ambivert';
+    desc = 'You\'re a rare 50/50 ambivert equally comfortable alone and in groups. You adapt to whatever a situation requires and don\'t feel drained by either social time or solitude.';
+  }
+
+  resultIcon.textContent = '⚡';
+  resultLabel.textContent = 'Your Spectrum';
+  resultType.textContent = type;
+  resultName.textContent = name;
+  resultDescription.textContent = desc;
+
+  traitsList.innerHTML = '';
+  [
+    { label: 'Extroversion', value: ePct },
+    { label: 'Introversion', value: iPct }
+  ].forEach(t => {
+    const row = document.createElement('div');
+    row.className = 'trait-row';
+    row.innerHTML = `
+      <div class="trait-label">${t.label}</div>
+      <div class="trait-bar"><div class="trait-bar-fill" style="width:${t.value}%"></div></div>
+      <div class="trait-value">${t.value}%</div>
+    `;
+    traitsList.appendChild(row);
+  });
+
+  const strengths = ePct > 50
+    ? ['Sociable', 'Energetic', 'Great networker', 'Comfortable in groups']
+    : ['Deep listener', 'Thoughtful', 'Independent', 'Focused'];
+  const weaknesses = ePct > 50
+    ? ['May talk too much', 'Needs external validation', 'Can be impulsive']
+    : ['May seem distant', 'Slow to warm up', 'Can avoid networking'];
+
+  renderChips(strengthsList, strengths, 'strength');
+  renderChips(weaknessesList, weaknesses, 'weakness');
+  renderChips(examplesList, ['Celebrate your natural energy style', 'Your flexibility is your strength'], '');
+
+  state.result = { type, name, test: 'Introvert/Extrovert' };
+}
+
+/* ===== RENDER CHIPS ===== */
+function renderChips(container, items, type) {
+  container.innerHTML = '';
+  items.forEach(item => {
+    const chip = document.createElement('span');
+    chip.className = 'chip ' + (type || '');
+    chip.textContent = item;
+    container.appendChild(chip);
+  });
+}
+
+/* ===== RETAKE ===== */
+retakeBtn.addEventListener('click', resetToStart);
+
+function resetToStart() {
+  state.currentQ = 0;
+  state.answers = [];
+  state.result = null;
+  quizScreen.classList.remove('active');
+  resultScreen.classList.remove('active');
+  startScreen.classList.remove('hidden');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+/* ===== COPY RESULT ===== */
+copyResultBtn.addEventListener('click', async () => {
+  if (!state.result) return;
+  const text = `My Personality Type: ${state.result.type} ${state.result.name}\nTest: ${state.result.test}\nTake yours free at bigtoolz.com`;
+  const ok = await copyToClipboard(text);
+  if (ok) showToast('Result copied!', 'success');
+});
+
+/* ===== SHARE ===== */
+shareTwitterBtn.addEventListener('click', () => {
+  if (!state.result) return;
+  const text = `I just took the ${state.result.test} test and I'm a ${state.result.type} (${state.result.name})! Take the free test:`;
+  const url = 'https://bigtoolz.com/tools/utility-tools/personality-test/';
+  window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`, '_blank');
+});
+
+shareWhatsappBtn.addEventListener('click', () => {
+  if (!state.result) return;
+  const text = `I just took the ${state.result.test} test and I'm a ${state.result.type} (${state.result.name})! Take yours free: https://bigtoolz.com/tools/utility-tools/personality-test/`;
+  window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`, '_blank');
+});
+
+/* ===== FAQ ===== */
+$$('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    $$('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+</script>
+
+</body>
+</html>

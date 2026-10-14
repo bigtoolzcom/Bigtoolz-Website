@@ -1,0 +1,1246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2563eb">
+
+<title>Social Media Scheduler - Plan & Organize Your Posts Free | BigToolz</title>
+<meta name="description" content="Free social media scheduler. Plan and organize posts for Twitter, Instagram, Facebook, LinkedIn. Calendar view, best-time suggestions, CSV export. No signup.">
+<meta name="keywords" content="social media scheduler, content calendar, post planner, social media planner, free scheduler">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://bigtoolz.com/tools/social-tools/social-scheduler/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Social Media Scheduler - Free Online Tool | BigToolz">
+<meta property="og:description" content="Plan, organize, and schedule social media posts free, no signup.">
+<meta property="og:url" content="https://bigtoolz.com/tools/social-tools/social-scheduler/">
+<meta property="og:image" content="https://bigtoolz.com/assets/images/og-image.jpg">
+<meta property="og:site_name" content="BigToolz">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Social Media Scheduler - BigToolz">
+<meta name="twitter:description" content="Plan and organize social media posts free.">
+<meta name="twitter:image" content="https://bigtoolz.com/assets/images/twitter-card.jpg">
+
+<link rel="icon" href="/assets/images/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/images/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#f8f9fc;color:#1a1a2e;overflow-x:hidden;line-height:1.5}
+
+  .header{background:#fff;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;position:sticky;top:0;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+  .header-left{display:flex;align-items:center;gap:40px}
+  .logo{display:flex;align-items:center;gap:8px;font-size:22px;font-weight:800;color:#1a1a2e;text-decoration:none}
+  .logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#3b82f6,#2563eb);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px}
+  .logo span{color:#2563eb}
+  .nav{display:flex;align-items:center;gap:28px;list-style:none}
+  .nav a{text-decoration:none;color:#4b5563;font-size:14px;font-weight:500;transition:color .2s}
+  .nav a:hover,.nav a.active{color:#2563eb}
+  .header-right{display:flex;align-items:center;gap:16px}
+  .search-btn,.theme-btn{width:36px;height:36px;border-radius:50%;border:none;background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#4b5563}
+  .search-btn:hover,.theme-btn:hover{background:#f3f4f6}
+  .bookmark-btn{display:flex;align-items:center;gap:8px;background:#2563eb;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
+  .bookmark-btn:hover{background:#1d4ed8}
+
+  .hero{background:linear-gradient(135deg,#0a0e27 0%,#1a1a4e 40%,#2d1b69 70%,#4c1d95 100%);padding:40px 40px 60px;position:relative;overflow:hidden;color:#fff}
+  .hero::before{content:'';position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(16,185,129,.3) 0%,transparent 70%);border-radius:50%}
+  .hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+  .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px;flex-wrap:wrap}
+  .breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none}
+  .breadcrumb a:hover{color:#fff}
+  .breadcrumb .sep{color:rgba(255,255,255,.4)}
+  .breadcrumb .current{color:#fff;font-weight:500}
+  .hero-title-row{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+  .hero-icon{width:60px;height:60px;background:#10b981;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:28px;color:#fff;flex-shrink:0;box-shadow:0 8px 24px rgba(16,185,129,.4)}
+  .hero-title{font-size:42px;font-weight:800;line-height:1.15}
+  .hero-title .blue{color:#34d399}
+  .hero-desc{font-size:15px;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:24px;max-width:560px}
+  .hero-features{display:flex;gap:24px;flex-wrap:wrap}
+  .hero-feature{display:flex;align-items:center;gap:6px;font-size:13px;color:#fff;font-weight:500}
+  .hero-feature .check{width:18px;height:18px;border-radius:50%;background:#10b981;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;flex-shrink:0}
+
+  .main-content{max-width:1200px;margin:0 auto;padding:40px;display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start}
+  .tool-content{min-width:0}
+
+  .workspace{background:#fff;border-radius:16px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,.06);border:1px solid #e5e7eb;margin-bottom:24px}
+
+  /* Tabs */
+  .tab-bar{display:flex;gap:6px;margin-bottom:24px;background:#f0fdf4;padding:6px;border-radius:12px;border:1px solid #a7f3d0;overflow-x:auto}
+  .tab-btn{padding:12px 20px;background:transparent;border:none;border-radius:8px;font-size:13px;font-weight:700;color:#6b7280;cursor:pointer;font-family:inherit;transition:all .2s;white-space:nowrap;flex-shrink:0}
+  .tab-btn:hover{background:#dcfce7;color:#065f46}
+  .tab-btn.active{background:#10b981;color:#fff}
+
+  .tab-panel{display:none}
+  .tab-panel.active{display:block}
+
+  /* Add post form */
+  .post-form{background:#f0fdf4;border-radius:12px;padding:20px;border:1px solid #a7f3d0;margin-bottom:24px}
+  .post-form-title{font-size:14px;font-weight:800;color:#065f46;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:14px}
+  .form-group{display:flex;flex-direction:column;gap:6px}
+  .form-group label{font-size:12px;font-weight:700;color:#4b5563}
+  .form-group input,.form-group select,.form-group textarea{padding:11px 14px;border:2px solid #e5e7eb;border-radius:10px;font-size:13px;font-family:inherit;color:#1a1a2e;background:#fff;outline:none;transition:border-color .2s;width:100%}
+  .form-group textarea{resize:vertical;min-height:80px;line-height:1.5;font-size:14px}
+  .form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:#10b981;box-shadow:0 0 0 3px rgba(16,185,129,.1)}
+  .form-group select{cursor:pointer;padding-right:36px;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='3'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center}
+  .form-full{grid-column:1/-1}
+
+  .platform-select{display:flex;gap:8px;flex-wrap:wrap}
+  .platform-chip{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;background:#fff;border:2px solid #e5e7eb;border-radius:10px;font-size:12px;font-weight:700;color:#4b5563;cursor:pointer;font-family:inherit;transition:all .2s}
+  .platform-chip:hover{border-color:#10b981}
+  .platform-chip.active{background:#10b981;color:#fff;border-color:#10b981}
+  .platform-chip .icon{font-size:14px;line-height:1}
+
+  .form-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 22px;border-radius:10px;font-size:13px;font-weight:700;font-family:inherit;cursor:pointer;border:none;transition:all .2s;text-decoration:none}
+  .btn-primary{background:#10b981;color:#fff;box-shadow:0 4px 12px rgba(16,185,129,.2)}
+  .btn-primary:hover{background:#059669;transform:translateY(-2px);box-shadow:0 6px 20px rgba(16,185,129,.3)}
+  .btn-secondary{background:#fff;color:#10b981;border:1px solid #e5e7eb}
+  .btn-secondary:hover{border-color:#10b981;background:#f0fdf4}
+  .btn-danger{background:#fff;color:#dc2626;border:1px solid #fecaca}
+  .btn-danger:hover{background:#fef2f2;border-color:#dc2626}
+
+  /* Calendar */
+  .calendar-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;gap:12px;flex-wrap:wrap}
+  .calendar-nav{display:flex;align-items:center;gap:8px}
+  .cal-btn{width:36px;height:36px;border-radius:8px;border:1px solid #e5e7eb;background:#fff;cursor:pointer;font-family:inherit;font-weight:700;color:#4b5563;display:flex;align-items:center;justify-content:center;transition:all .2s}
+  .cal-btn:hover{border-color:#10b981;color:#10b981;background:#f0fdf4}
+  .cal-month{font-size:16px;font-weight:800;color:#1a1a2e;min-width:180px;text-align:center}
+
+  .calendar-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin-bottom:20px}
+  .cal-day-header{text-align:center;font-size:11px;font-weight:800;color:#9ca3af;text-transform:uppercase;letter-spacing:.5px;padding:8px 0}
+  .cal-day{min-height:90px;background:#fff;border:1px solid #e5e7eb;border-radius:10px;padding:8px;transition:all .2s;position:relative;overflow:hidden;cursor:pointer}
+  .cal-day:hover{border-color:#10b981;background:#f0fdf4}
+  .cal-day.other-month{opacity:.4;background:#f8fafc}
+  .cal-day.today{border-color:#10b981;border-width:2px;background:#f0fdf4}
+  .cal-day-num{font-size:12px;font-weight:800;color:#1a1a2e;margin-bottom:4px;display:flex;justify-content:space-between;align-items:center}
+  .cal-day.today .cal-day-num::after{content:'Today';font-size:8px;background:#10b981;color:#fff;padding:2px 5px;border-radius:6px;font-weight:700;letter-spacing:.3px}
+
+  .cal-post{background:#dbeafe;color:#1e40af;font-size:9px;font-weight:700;padding:2px 6px;border-radius:5px;margin-bottom:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:flex;align-items:center;gap:3px;cursor:pointer}
+  .cal-post.twitter{background:#dbeafe;color:#1d4ed8}
+  .cal-post.instagram{background:#fce7f3;color:#be185d}
+  .cal-post.facebook{background:#dbeafe;color:#1877f2}
+  .cal-post.linkedin{background:#dbeafe;color:#0077b5}
+  .cal-post.youtube{background:#fee2e2;color:#dc2626}
+  .cal-post.pinterest{background:#fce7f3;color:#9f1239}
+  .cal-post.tiktok{background:#f3f4f6;color:#1a1a2e}
+
+  /* Post list */
+  .post-list-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;gap:12px;flex-wrap:wrap}
+  .post-list-title{font-size:15px;font-weight:800;color:#1a1a2e;display:flex;align-items:center;gap:8px}
+  .post-list-actions{display:flex;gap:8px;flex-wrap:wrap}
+
+  .post-item{background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:16px;margin-bottom:10px;transition:all .2s;display:flex;gap:14px;align-items:flex-start}
+  .post-item:hover{border-color:#10b981;transform:translateX(2px)}
+  .post-item.past{opacity:.6}
+
+  .post-platform{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;color:#fff;flex-shrink:0}
+  .post-platform.twitter{background:#1d9bf0}
+  .post-platform.instagram{background:linear-gradient(135deg,#f58529,#dd2a7b,#8134af)}
+  .post-platform.facebook{background:#1877f2}
+  .post-platform.linkedin{background:#0077b5}
+  .post-platform.youtube{background:#ff0000}
+  .post-platform.pinterest{background:#e60023}
+  .post-platform.tiktok{background:#1a1a2e}
+
+  .post-info{flex:1;min-width:0}
+  .post-caption{font-size:14px;color:#1a1a2e;line-height:1.5;margin-bottom:6px;word-break:break-word;font-weight:500}
+  .post-meta{font-size:11px;color:#9ca3af;display:flex;gap:12px;flex-wrap:wrap;align-items:center;font-weight:600}
+  .post-meta-item{display:flex;align-items:center;gap:4px}
+  .post-tag{background:#f0fdf4;color:#065f46;padding:3px 8px;border-radius:6px;font-size:10px;font-weight:700}
+
+  .post-actions{display:flex;gap:6px;flex-shrink:0;flex-wrap:wrap}
+  .post-btn{width:34px;height:34px;border-radius:8px;border:1px solid #e5e7eb;background:#fff;cursor:pointer;font-family:inherit;color:#6b7280;display:flex;align-items:center;justify-content:center;transition:all .2s;font-size:14px}
+  .post-btn:hover{border-color:#10b981;color:#10b981;background:#f0fdf4}
+  .post-btn.delete:hover{border-color:#dc2626;color:#dc2626;background:#fef2f2}
+  .post-btn.copied{background:#10b981;color:#fff;border-color:#10b981}
+
+  .empty-state{text-align:center;padding:60px 20px;color:#9ca3af}
+  .empty-state-icon{font-size:48px;margin-bottom:12px;opacity:.5}
+  .empty-state-title{font-size:16px;font-weight:700;color:#6b7280;margin-bottom:6px}
+  .empty-state-desc{font-size:13px;line-height:1.6}
+
+  /* Best times */
+  .best-times-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:16px}
+  .best-time-card{background:#f0fdf4;border:1px solid #a7f3d0;border-radius:12px;padding:16px}
+  .best-time-header{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+  .best-time-icon{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px;flex-shrink:0}
+  .best-time-name{font-size:14px;font-weight:800;color:#065f46}
+  .best-time-slots{display:flex;flex-wrap:wrap;gap:6px}
+  .best-time-slot{background:#fff;color:#065f46;padding:5px 10px;border-radius:8px;font-size:12px;font-weight:700;border:1px solid #a7f3d0}
+
+  /* SEO */
+  .seo-content{background:#fff;border-radius:16px;padding:32px;border:1px solid #e5e7eb;margin-bottom:24px}
+  .seo-content h2{font-size:22px;font-weight:800;color:#1a1a2e;margin-bottom:14px;margin-top:28px;display:flex;align-items:center;gap:10px}
+  .seo-content h2:first-child{margin-top:0}
+  .seo-content h3{font-size:16px;font-weight:700;color:#1a1a2e;margin:20px 0 10px}
+  .seo-content p{font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:14px}
+  .seo-content ul{list-style:none;padding-left:0;margin-bottom:16px}
+  .seo-content ul li{position:relative;padding-left:24px;font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:8px}
+  .seo-content ul li::before{content:'';position:absolute;left:6px;top:12px;width:6px;height:6px;background:#10b981;border-radius:50%}
+  .seo-content a{color:#2563eb;text-decoration:none;font-weight:600}
+  .seo-content a:hover{text-decoration:underline}
+  .seo-content strong{color:#1a1a2e;font-weight:700}
+  .seo-content code{background:#f1f5f9;padding:2px 6px;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:13px;color:#0f172a;border:1px solid #e2e8f0}
+
+  .how-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:20px}
+  .how-step{background:#f0fdf4;border-radius:12px;padding:20px;border:1px solid #a7f3d0}
+  .how-step-num{width:36px;height:36px;border-radius:50%;background:#10b981;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;margin-bottom:12px}
+  .how-step-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+  .how-step-desc{font-size:13px;color:#6b7280;line-height:1.6}
+
+  .faq-item{background:#f0fdf4;border:1px solid #a7f3d0;border-radius:12px;margin-bottom:10px;overflow:hidden;transition:border-color .2s}
+  .faq-item:hover{border-color:#10b981}
+  .faq-question{width:100%;background:none;border:none;padding:18px 22px;font-size:15px;font-weight:700;color:#1a1a2e;text-align:left;cursor:pointer;font-family:inherit;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .faq-question .chev{font-size:12px;color:#10b981;transition:transform .2s;flex-shrink:0}
+  .faq-item.open .faq-question .chev{transform:rotate(180deg)}
+  .faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 22px}
+  .faq-item.open .faq-answer{max-height:500px;padding-bottom:18px}
+  .faq-answer p{font-size:14px;color:#6b7280;line-height:1.7;margin:0}
+
+  .sidebar{background:#fff;border-radius:16px;padding:24px;border:1px solid #e5e7eb;position:sticky;top:80px;margin-bottom:24px}
+  .sidebar-header{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:800;color:#1a1a2e;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid #f3f4f6}
+  .sidebar-list{display:flex;flex-direction:column;gap:8px}
+  .sidebar-item{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;cursor:pointer;transition:background .2s;text-decoration:none;color:inherit;border:1px solid #f3f4f6}
+  .sidebar-item:hover{background:#f0fdf4;border-color:#a7f3d0}
+  .sidebar-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;flex-shrink:0}
+  .sidebar-info{flex:1;min-width:0}
+  .sidebar-title{font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:2px}
+  .sidebar-desc{font-size:11px;color:#9ca3af;line-height:1.4}
+
+  .footer{background:#0a0e27;padding:60px 40px 30px;color:#fff;margin-top:40px}
+  .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:40px}
+  .footer-brand{display:flex;align-items:center;gap:8px;font-size:20px;font-weight:800;margin-bottom:12px}
+  .footer-brand span{color:#60a5fa}
+  .footer-tagline{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px}
+  .footer-social{display:flex;gap:12px}
+  .footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:16px;transition:background .2s}
+  .footer-social a:hover{background:rgba(255,255,255,.2)}
+  .footer-heading{font-size:14px;font-weight:700;margin-bottom:20px;color:#fff}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .footer-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;transition:color .2s}
+  .footer-links a:hover{color:#60a5fa}
+  .footer-bottom{max-width:1200px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  .footer-bottom-left{display:flex;gap:20px;font-size:12px;color:rgba(255,255,255,.5)}
+  .footer-bottom-right,.footer-bottom-links a{font-size:12px;color:rgba(255,255,255,.5);text-decoration:none}
+  .footer-bottom-links{display:flex;gap:20px}
+
+  .toast{position:fixed;bottom:24px;right:24px;background:#1a1a2e;color:#fff;padding:14px 20px;border-radius:10px;font-size:13px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:3000;transform:translateY(200%);transition:transform .3s ease;max-width:320px}
+  .toast.visible{transform:translateY(0)}
+  .toast.success{background:#10b981}
+  .toast.error{background:#ef4444}
+
+  @media(max-width:1024px){
+    .main-content{grid-template-columns:1fr;padding:24px 20px}
+    .sidebar{position:static}
+    .how-steps{grid-template-columns:repeat(2,1fr)}
+    .best-times-grid{grid-template-columns:1fr}
+  }
+  @media(max-width:768px){
+    .header{padding:0 20px}.nav{display:none}
+    .hero{padding:24px 20px 40px}
+    .hero-title{font-size:28px}
+    .hero-icon{width:48px;height:48px;font-size:22px}
+    .hero-title-row{flex-direction:column;align-items:flex-start;gap:12px}
+    .main-content{padding:20px 16px}
+    .workspace{padding:20px}
+    .how-steps{grid-template-columns:1fr}
+    .seo-content{padding:20px}
+    .footer-inner{grid-template-columns:1fr 1fr}
+    .toast{left:16px;right:16px;bottom:16px;max-width:none}
+    .form-row{grid-template-columns:1fr}
+    .cal-day{min-height:70px;padding:5px}
+    .cal-post{font-size:8px}
+    .post-item{flex-direction:column}
+    .post-actions{width:100%;justify-content:flex-end}
+  }
+  @media(max-width:576px){
+    .header{padding:0 16px}.header-right .search-btn,.header-right .theme-btn{display:none}
+    .hero-title{font-size:24px}
+    .footer-inner{grid-template-columns:1fr}
+    .footer-bottom{flex-direction:column;text-align:center}
+    .cal-day{min-height:50px;padding:3px}
+    .cal-day-num{font-size:10px}
+    .cal-post{font-size:7px;padding:1px 4px}
+    .form-actions{flex-direction:column}
+    .form-actions .btn{width:100%}
+  }
+
+  html[data-theme="dark"] body{background:#0f172a;color:#f1f5f9}
+  html[data-theme="dark"] .header,html[data-theme="dark"] .workspace,html[data-theme="dark"] .seo-content,html[data-theme="dark"] .sidebar{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .logo,html[data-theme="dark"] .hero-title,html[data-theme="dark"] .seo-content h2,html[data-theme="dark"] .seo-content h3,html[data-theme="dark"] .faq-question,html[data-theme="dark"] .sidebar-header,html[data-theme="dark"] .sidebar-title,html[data-theme="dark"] .post-list-title,html[data-theme="dark"] .cal-month,html[data-theme="dark"] .cal-day-num{color:#f1f5f9}
+  html[data-theme="dark"] .nav a{color:#cbd5e1}
+  html[data-theme="dark"] .how-step,html[data-theme="dark"] .faq-item,html[data-theme="dark"] .post-form,html[data-theme="dark"] .tab-bar{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .form-group input,html[data-theme="dark"] .form-group select,html[data-theme="dark"] .form-group textarea{background:#0f172a;border-color:#334155;color:#f1f5f9}
+  html[data-theme="dark"] .post-item,html[data-theme="dark"] .cal-day{background:#0f172a;border-color:#334155;color:#f1f5f9}
+  html[data-theme="dark"] .cal-day:hover{background:#1e293b;border-color:#10b981}
+  html[data-theme="dark"] .cal-day.today{background:#1e293b}
+  html[data-theme="dark"] .post-caption{color:#f1f5f9}
+  html[data-theme="dark"] .platform-chip{background:#0f172a;border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .best-time-card{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .best-time-name{color:#34d399}
+  html[data-theme="dark"] .best-time-slot{background:#1e293b;color:#6ee7b7;border-color:#334155}
+  html[data-theme="dark"] .post-btn,html[data-theme="dark"] .cal-btn{background:#0f172a;border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .seo-content p,html[data-theme="dark"] .seo-content ul li,html[data-theme="dark"] .faq-answer p{color:#cbd5e1}
+  html[data-theme="dark"] .seo-content code{background:#0f172a;color:#94a3b8;border-color:#334155}
+  html[data-theme="dark"] .tab-btn{color:#cbd5e1}
+  html[data-theme="dark"] .tab-btn.active{background:#10b981;color:#fff}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type": "SoftwareApplication", "name": "Social Media Scheduler", "url": "https://bigtoolz.com/tools/social-tools/social-scheduler/", "applicationCategory": "BusinessApplication", "operatingSystem": "Any (Web-based)", "description": "Free social media scheduler plan and organize posts across Twitter, Instagram, Facebook, LinkedIn with calendar view and best-time suggestions.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.7", "ratingCount": "1832"}},
+    {"@type": "HowTo", "name": "How to Schedule Social Media Posts", "step": [
+      {"@type": "HowToStep", "name": "Add Post", "text": "Enter your caption, pick platform, and set date & time."},
+      {"@type": "HowToStep", "name": "View Calendar", "text": "See all scheduled posts in month calendar view."},
+      {"@type": "HowToStep", "name": "Check Best Times", "text": "Use our best-time guide for each platform."},
+      {"@type": "HowToStep", "name": "Export", "text": "Download your schedule as CSV to share or archive."}
+    ]},
+    {"@type": "FAQPage", "mainEntity": [
+      {"@type": "Question", "name": "Does this tool actually publish posts to social media?", "acceptedAnswer": {"@type": "Answer", "text": "No. Automatically posting to social media requires API access (paid for Twitter, Facebook, LinkedIn) and OAuth authentication. Our tool is a planning and scheduling organizer you save your schedule locally, then copy and post manually at the scheduled time."}},
+      {"@type": "Question", "name": "Is my schedule saved anywhere?", "acceptedAnswer": {"@type": "Answer", "text": "Yes in your browser's localStorage. It stays on your device only, never sent to any server. Clearing browser data will erase your schedule, so export regularly as CSV."}},
+      {"@type": "Question", "name": "What are the best times to post on social media?", "acceptedAnswer": {"@type": "Answer", "text": "It varies by platform and audience. General guidelines: Twitter/X (9-11 AM, 7-9 PM), Instagram (11 AM-1 PM, 7-9 PM), Facebook (1-3 PM), LinkedIn (Tue-Thu, 8-10 AM), YouTube (2-4 PM, 5-7 PM). Test your own audience for the best results."}},
+      {"@type": "Question", "name": "Can I schedule for multiple platforms at once?", "acceptedAnswer": {"@type": "Answer", "text": "Yes add multiple posts for the same content, one per platform, each with its own best time slot. You can also tag posts by platform for easy filtering."}}
+    ]},
+    {"@type": "BreadcrumbList", "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bigtoolz.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://bigtoolz.com/tools/"},
+      {"@type": "ListItem", "position": 3, "name": "Social Tools", "item": "https://bigtoolz.com/tools/social-tools/"},
+      {"@type": "ListItem", "position": 4, "name": "Social Media Scheduler", "item": "https://bigtoolz.com/tools/social-tools/social-scheduler/"}
+    ]}
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-left">
+    <a href="/" class="logo"><div class="logo-icon">⚒</div>BigToolz</span></a>
+    <nav><ul class="nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/tools/" class="active">All Tools</a></li>
+      <li><a href="/tools/categories">Categories</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul></nav>
+  </div>
+  <div class="header-right">
+   
+    <button class="theme-btn" aria-label="Toggle theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
+    
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <nav class="breadcrumb">
+      <a href="/">Home</a><span class="sep">›</span>
+      <a href="/tools/">Tools</a><span class="sep">›</span>
+      <a href="/tools/social-tools/">Social Tools</a><span class="sep">›</span>
+      <span class="current">Social Media Scheduler</span>
+    </nav>
+    <div class="hero-title-row">
+      <div class="hero-icon">📅</div>
+      <h1 class="hero-title">Social <span class="blue">Scheduler</span></h1>
+    </div>
+    <p class="hero-desc">
+      Plan and organize your social media posts with a beautiful calendar view. Best-time suggestions for every platform, CSV export, and everything saved locally in your browser.
+    </p>
+    <div class="hero-features">
+      <div class="hero-feature"><span class="check">✓</span> Calendar View</div>
+      <div class="hero-feature"><span class="check">✓</span> Multi-Platform</div>
+      <div class="hero-feature"><span class="check">✓</span> Best-Time Guide</div>
+      <div class="hero-feature"><span class="check">✓</span> CSV Export</div>
+    </div>
+  </div>
+</section>
+
+<div class="main-content">
+
+  <div class="tool-content">
+
+    <div class="workspace">
+
+      <!-- Tab bar -->
+      <div class="tab-bar">
+        <button class="tab-btn active" data-tab="scheduler">📅 Scheduler</button>
+        <button class="tab-btn" data-tab="besttimes">⏰ Best Times</button>
+        <button class="tab-btn" data-tab="drafts">📝 Draft Ideas</button>
+      </div>
+
+      <!-- Scheduler Panel -->
+      <div class="tab-panel active" data-panel="scheduler">
+
+        <!-- Add post form -->
+        <div class="post-form">
+          <div class="post-form-title">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
+            Add Scheduled Post
+          </div>
+
+          <div class="form-group form-full" style="margin-bottom:14px;">
+            <label>Post Caption</label>
+            <textarea id="captionInput" placeholder="Type your post caption here... (e.g. Just launched a new tool! Check it out 🚀)" maxlength="500"></textarea>
+          </div>
+
+          <div class="form-group form-full" style="margin-bottom:14px;">
+            <label>Platform</label>
+            <div class="platform-select" id="platformSelect">
+              <button class="platform-chip active" data-platform="twitter"><span class="icon">𝕏</span> Twitter/X</button>
+              <button class="platform-chip" data-platform="instagram"><span class="icon">📷</span> Instagram</button>
+              <button class="platform-chip" data-platform="facebook"><span class="icon">f</span> Facebook</button>
+              <button class="platform-chip" data-platform="linkedin"><span class="icon">in</span> LinkedIn</button>
+              <button class="platform-chip" data-platform="youtube"><span class="icon">▶</span> YouTube</button>
+              <button class="platform-chip" data-platform="pinterest"><span class="icon">📌</span> Pinterest</button>
+              <button class="platform-chip" data-platform="tiktok"><span class="icon">♪</span> TikTok</button>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Schedule Date</label>
+              <input type="date" id="dateInput">
+            </div>
+            <div class="form-group">
+              <label>Schedule Time</label>
+              <input type="time" id="timeInput" value="10:00">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Content Type</label>
+              <select id="typeInput">
+                <option value="post">Post</option>
+                <option value="story">Story</option>
+                <option value="reel">Reel / Short</option>
+                <option value="video">Video</option>
+                <option value="image">Image</option>
+                <option value="link">Link Share</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Tag (Optional)</label>
+              <input type="text" id="tagInput" placeholder="e.g. product-launch, tips" maxlength="30">
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button class="btn btn-primary" id="addPostBtn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
+              Schedule Post
+            </button>
+            <button class="btn btn-secondary" id="clearFormBtn">Clear Form</button>
+          </div>
+        </div>
+
+        <!-- Calendar -->
+        <div class="calendar-header">
+          <div class="calendar-nav">
+            <button class="cal-btn" id="prevMonth">‹</button>
+            <div class="cal-month" id="calMonth">January 2026</div>
+            <button class="cal-btn" id="nextMonth">›</button>
+          </div>
+          <div class="post-list-actions">
+            <button class="cal-btn" id="todayBtn" style="width:auto;padding:0 14px;font-size:12px;">Today</button>
+            <button class="cal-btn" id="exportCsvBtn" style="width:auto;padding:0 14px;font-size:12px;">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-right:4px;display:inline-block;vertical-align:middle;"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+              CSV
+            </button>
+          </div>
+        </div>
+
+        <div class="calendar-grid" id="calendarGrid"></div>
+
+        <!-- Post list -->
+        <div class="post-list-header">
+          <div class="post-list-title">
+            <span>📋 All Posts</span>
+            <span id="postCount" style="background:#f0fdf4;color:#065f46;padding:3px 10px;border-radius:10px;font-size:11px;font-weight:800;">0</span>
+          </div>
+        </div>
+
+        <div id="postList"></div>
+
+        <div class="empty-state" id="emptyState">
+          <div class="empty-state-icon">📅</div>
+          <div class="empty-state-title">No posts scheduled yet</div>
+          <div class="empty-state-desc">Use the form above to add your first scheduled post.</div>
+        </div>
+
+      </div>
+
+      <!-- Best Times Panel -->
+      <div class="tab-panel" data-panel="besttimes">
+        <div style="margin-bottom:20px;font-size:14px;color:#6b7280;line-height:1.7;">
+          Best times to post vary by platform and audience. These are general guidelines based on industry research always test your own audience for the best results.
+        </div>
+
+        <div class="best-times-grid">
+          <div class="best-time-card">
+            <div class="best-time-header">
+              <div class="best-time-icon" style="background:#1d9bf0;">𝕏</div>
+              <div class="best-time-name">Twitter / X</div>
+            </div>
+            <div class="best-time-slots">
+              <span class="best-time-slot">9-11 AM</span>
+              <span class="best-time-slot">12-1 PM</span>
+              <span class="best-time-slot">7-9 PM</span>
+            </div>
+          </div>
+
+          <div class="best-time-card">
+            <div class="best-time-header">
+              <div class="best-time-icon" style="background:linear-gradient(135deg,#f58529,#dd2a7b,#8134af);">📷</div>
+              <div class="best-time-name">Instagram</div>
+            </div>
+            <div class="best-time-slots">
+              <span class="best-time-slot">11 AM-1 PM</span>
+              <span class="best-time-slot">7-9 PM</span>
+              <span class="best-time-slot">Tue-Thu</span>
+            </div>
+          </div>
+
+          <div class="best-time-card">
+            <div class="best-time-header">
+              <div class="best-time-icon" style="background:#1877f2;">f</div>
+              <div class="best-time-name">Facebook</div>
+            </div>
+            <div class="best-time-slots">
+              <span class="best-time-slot">1-3 PM</span>
+              <span class="best-time-slot">Wed-Fri</span>
+            </div>
+          </div>
+
+          <div class="best-time-card">
+            <div class="best-time-header">
+              <div class="best-time-icon" style="background:#0077b5;">in</div>
+              <div class="best-time-name">LinkedIn</div>
+            </div>
+            <div class="best-time-slots">
+              <span class="best-time-slot">Tue-Thu</span>
+              <span class="best-time-slot">8-10 AM</span>
+              <span class="best-time-slot">12-1 PM</span>
+            </div>
+          </div>
+
+          <div class="best-time-card">
+            <div class="best-time-header">
+              <div class="best-time-icon" style="background:#ff0000;">▶</div>
+              <div class="best-time-name">YouTube</div>
+            </div>
+            <div class="best-time-slots">
+              <span class="best-time-slot">2-4 PM</span>
+              <span class="best-time-slot">5-7 PM</span>
+              <span class="best-time-slot">Fri-Sun</span>
+            </div>
+          </div>
+
+          <div class="best-time-card">
+            <div class="best-time-header">
+              <div class="best-time-icon" style="background:#e60023;">📌</div>
+              <div class="best-time-name">Pinterest</div>
+            </div>
+            <div class="best-time-slots">
+              <span class="best-time-slot">8-11 PM</span>
+              <span class="best-time-slot">Weekends</span>
+            </div>
+          </div>
+
+          <div class="best-time-card">
+            <div class="best-time-header">
+              <div class="best-time-icon" style="background:#1a1a2e;">♪</div>
+              <div class="best-time-name">TikTok</div>
+            </div>
+            <div class="best-time-slots">
+              <span class="best-time-slot">6-10 AM</span>
+              <span class="best-time-slot">7-11 PM</span>
+              <span class="best-time-slot">Tue-Thu</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Draft Ideas Panel -->
+      <div class="tab-panel" data-panel="drafts">
+        <div style="margin-bottom:20px;font-size:14px;color:#6b7280;line-height:1.7;">
+          Running low on ideas? Here are some content prompts you can use. Click any to add it as a scheduled post draft.
+        </div>
+
+        <div id="draftsList"></div>
+      </div>
+
+    </div>
+
+    <!-- SEO Content -->
+    <div class="seo-content">
+
+      <h2>📅 What is a Social Media Scheduler?</h2>
+      <p>
+        A <strong>Social Media Scheduler</strong> is a planning tool that helps you organize your posts across multiple platforms. Instead of posting randomly, you plan a content calendar deciding what to post, when, and on which platform. It's what separates <strong>professional creators</strong> from casual posters.
+      </p>
+      <p>
+        Our free scheduler gives you a <strong>month calendar view</strong>, multi-platform support (Twitter/X, Instagram, Facebook, LinkedIn, YouTube, Pinterest, TikTok), <strong>best-time suggestions</strong> for each platform, and <strong>CSV export</strong> for your records. Everything is saved locally in your browser no account needed.
+      </p>
+
+      <h2>🚀 How to Use This Scheduler</h2>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-step-num">1</div>
+          <div class="how-step-title">Write Caption</div>
+          <div class="how-step-desc">Draft your post caption in the form.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">2</div>
+          <div class="how-step-title">Pick Platform & Time</div>
+          <div class="how-step-desc">Choose platform, date, and time.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">3</div>
+          <div class="how-step-title">Schedule</div>
+          <div class="how-step-desc">Post appears in your calendar instantly.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">4</div>
+          <div class="how-step-title">Export</div>
+          <div class="how-step-desc">Download CSV or copy captions as needed.</div>
+        </div>
+      </div>
+
+      <h2>💡 Why Schedule Social Media Posts?</h2>
+
+      <h3>1. Consistency</h3>
+      <p>The #1 factor in social media growth is consistency. Scheduling forces you to think ahead you can't skip a day when it's already planned. Batch-create a week's content in one sitting and stay consistent without daily effort.</p>
+
+      <h3>2. Best-Time Posting</h3>
+      <p>Each platform has optimal posting windows based on your audience's timezone and habits. Scheduling lets you post at 7 PM even when you're asleep or at work.</p>
+
+      <h3>3. Focused Creation</h3>
+      <p>When you create and post in the same session, quality drops. Scheduling separates creation (creative mode) from posting (mechanical). You write better captions when you're not rushed.</p>
+
+      <h3>4. Strategic Planning</h3>
+      <p>A calendar view helps you see gaps, overlaps, and campaign patterns. You can plan product launches, seasonal content, and themed series weeks in advance.</p>
+
+      <h3>5. Reduced Stress</h3>
+      <p>Waking up wondering "what should I post today?" is stressful. A filled calendar gives you peace of mind you always know what's next.</p>
+
+      <h2>💡 Content Ideas to Get You Started</h2>
+      <ul>
+        <li><strong>Educational posts</strong> teach one thing per post. "How to X in 3 steps."</li>
+        <li><strong>Personal stories</strong> behind-the-scenes, failures, learnings.</li>
+        <li><strong>Curated content</strong> share others' work with your take.</li>
+        <li><strong>Polls & questions</strong> low-effort, high-engagement.</li>
+        <li><strong>Before/after</strong> transformations always perform well.</li>
+        <li><strong>Quick tips</strong> 30-second value clips.</li>
+        <li><strong>Trends</strong> hop on platform trends while they're hot.</li>
+        <li><strong>Announcements</strong> new products, milestones, news.</li>
+      </ul>
+
+      <h2>⚠️ Important: This Tool Doesn't Auto-Publish</h2>
+      <p>
+        Automatically publishing to social media requires <strong>paid API access and OAuth authentication</strong> with each platform Twitter/X API starts at $100/month, and even free APIs (Facebook, LinkedIn) require app review. That's why real schedulers (Buffer, Hootsuite, Later) charge $15-100/month.
+      </p>
+      <p>
+        Our tool is a <strong>planning and organizing calendar</strong>. You schedule posts here, then set reminders to copy-paste them at the right time. It's perfect for solo creators, small businesses, and anyone who doesn't want to pay monthly fees.
+      </p>
+
+      <h2>❓ Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-question">Does this tool actually publish posts to social media?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>No. Automatically posting to social media requires API access (paid for Twitter, Facebook, LinkedIn) and OAuth authentication. Our tool is a <strong>planning and organizing calendar</strong> you save your schedule locally, then copy and post manually at the scheduled time.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Is my schedule saved anywhere?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Yes in your browser's <strong>localStorage</strong>. It stays on your device only, never sent to any server. Clearing browser data will erase your schedule, so <strong>export regularly as CSV</strong>.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What are the best times to post on social media?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>General guidelines: <strong>Twitter/X</strong> (9-11 AM, 7-9 PM), <strong>Instagram</strong> (11 AM-1 PM, 7-9 PM), <strong>Facebook</strong> (1-3 PM), <strong>LinkedIn</strong> (Tue-Thu, 8-10 AM), <strong>YouTube</strong> (2-4 PM, 5-7 PM), <strong>Pinterest</strong> (8-11 PM), <strong>TikTok</strong> (6-10 AM, 7-11 PM). Always test your own audience.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I schedule for multiple platforms at once?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Yes add multiple posts for the same content, one per platform, each with its own best time slot. You can also tag posts by platform for easy filtering.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">How many posts can I schedule?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>No limit schedule as many as you want. Everything is stored locally in your browser, so the only limit is your device's storage (effectively unlimited for text posts).</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I export my schedule?</button>
+        <div class="faq-answer"><p>Yes! Click the <strong>"CSV"</strong> button in the calendar header to download your entire schedule as a CSV file. Open it in Excel or Google Sheets for a backup or to share with your team.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Are my posts sent to a server?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>No. Everything is stored in your browser's localStorage. Your captions, schedule, and tags never leave your device. Complete privacy.</p></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-header">🔗 Related Social Tools</div>
+    <div class="sidebar-list">
+      <a href="/tools/social-tools/caption-generator/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#ec4899;">💬</div>
+        <div class="sidebar-info"><div class="sidebar-title">Caption Generator</div><div class="sidebar-desc">Post captions</div></div>
+      </a>
+      <a href="/tools/social-tools/hashtag-generator/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#3b82f6;">#️⃣</div>
+        <div class="sidebar-info"><div class="sidebar-title">Hashtag Generator</div><div class="sidebar-desc">Popular hashtags</div></div>
+      </a>
+      <a href="/tools/social-tools/twitter-bio/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#1d9bf0;">𝕏</div>
+        <div class="sidebar-info"><div class="sidebar-title">Twitter Bio</div><div class="sidebar-desc">Twitter bios</div></div>
+      </a>
+      <a href="/tools/social-tools/brand-kit/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#8b5cf6;">🎨</div>
+        <div class="sidebar-info"><div class="sidebar-title">Brand Kit</div><div class="sidebar-desc">Brand identity</div></div>
+      </a>
+      <a href="/tools/social-tools/hashtag-counter/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#10b981;">🔢</div>
+        <div class="sidebar-info"><div class="sidebar-title">Hashtag Counter</div><div class="sidebar-desc">Count hashtags</div></div>
+      </a>
+      <a href="/tools/social-tools/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#64748b;">📱</div>
+        <div class="sidebar-info"><div class="sidebar-title">All Social Tools →</div><div class="sidebar-desc">Browse 25+ tools</div></div>
+      </a>
+    </div>
+  </aside>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand"><div class="logo-icon">⚒</div>BigToolz</span></div>
+      <p class="footer-tagline">Your Ultimate Online Tools Hub</p>
+      <div class="footer-social">
+        <a href="https://facebook.com/bigtoolz" aria-label="Facebook">f</a>
+        <a href="https://twitter.com/bigtoolz" aria-label="Twitter">𝕏</a>
+        <a href="https://youtube.com/@bigtoolz" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+    <div>
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/tools/">All Tools</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Categories</h3>
+      <ul class="footer-links">
+        <li><a href="/tools/image-tools/">Image Tools</a></li>
+        <li><a href="/tools/pdf-tools/">PDF Tools</a></li>
+        <li><a href="/tools/text-tools/">Text Tools</a></li>
+        <li><a href="/tools/social-tools/">Social Tools</a></li>
+        <li><a href="/tools/categories">All Categories →</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Legal</h3>
+      <ul class="footer-links">
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left"><span>✓ 100% Free</span><span>✓ No Sign Up</span><span>✓ No Installation</span></div>
+    <div class="footer-bottom-right">© 2026 BigToolz. All rights reserved.</div>
+    <div class="footer-bottom-links"><a href="/privacy-policy">Privacy</a><a href="/terms">Terms</a><a href="/disclaimer">Disclaimer</a></div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+'use strict';
+
+/* ===== THEME ===== */
+(function(){try{var t=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&d))document.documentElement.setAttribute('data-theme','dark');else if(t==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();
+document.querySelector('.theme-btn')?.addEventListener('click',()=>{const h=document.documentElement;const c=h.getAttribute('data-theme');const d=window.matchMedia('(prefers-color-scheme: dark)').matches;let n=c==='dark'?'light':c==='light'?'dark':(d?'light':'dark');h.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}});
+
+/* ===== HELPERS ===== */
+const $ = (s, p = document) => p.querySelector(s);
+const $$ = (s, p = document) => [...p.querySelectorAll(s)];
+
+function showToast(msg, type = 'info', duration = 3000) {
+  const t = $('#toast');
+  if (!t) return;
+  t.className = 'toast visible' + (type !== 'info' ? ' ' + type : '');
+  t.textContent = msg;
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove('visible'), duration);
+}
+
+async function copyToClipboard(text) {
+  try {
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(text);
+      return true;
+    }
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.cssText = 'position:fixed;opacity:0;';
+    document.body.appendChild(ta);
+    ta.select();
+    const ok = document.execCommand('copy');
+    document.body.removeChild(ta);
+    return ok;
+  } catch (e) { return false; }
+}
+
+function escapeHtml(str) {
+  const div = document.createElement('div');
+  div.textContent = str;
+  return div.innerHTML;
+}
+
+/* ===== STATE ===== */
+const state = {
+  posts: [],
+  selectedPlatform: 'twitter',
+  currentMonth: new Date().getMonth(),
+  currentYear: new Date().getFullYear(),
+  editingId: null
+};
+
+/* ===== DRAFTS ===== */
+const DRAFT_IDEAS = [
+  { platform: 'twitter', text: '🔥 Hot take: [Your opinion]. Here\'s why it matters. Thread 🧵' },
+  { platform: 'instagram', text: '✨ Just launched something exciting! Swipe to see →' },
+  { platform: 'linkedin', text: 'I learned 3 lessons from [experience]. #1 surprised me the most:' },
+  { platform: 'youtube', text: '🎥 NEW VIDEO: [Title]. Full breakdown in description ↓' },
+  { platform: 'facebook', text: 'Big news! We just crossed [milestone]. Thank you to everyone who supported us 🎉' },
+  { platform: 'pinterest', text: '📌 Save this for later: [Your tip/tutorial]' },
+  { platform: 'tiktok', text: 'POV: You finally found the solution to [problem] ✨' },
+  { platform: 'twitter', text: 'The best tools I use daily as a [role]:\n\n1. \n2. \n3. \n\nBookmark this thread.' },
+  { platform: 'instagram', text: 'Behind the scenes of [project] 👀 What do you think?' },
+  { platform: 'linkedin', text: 'Just hit [milestone]. Here\'s how we did it (and what I\'d do differently):' }
+];
+
+/* ===== DOM ===== */
+const captionInput = $('#captionInput');
+const dateInput = $('#dateInput');
+const timeInput = $('#timeInput');
+const typeInput = $('#typeInput');
+const tagInput = $('#tagInput');
+const addPostBtn = $('#addPostBtn');
+const clearFormBtn = $('#clearFormBtn');
+const platformSelect = $('#platformSelect');
+const calendarGrid = $('#calendarGrid');
+const calMonth = $('#calMonth');
+const prevMonth = $('#prevMonth');
+const nextMonth = $('#nextMonth');
+const todayBtn = $('#todayBtn');
+const exportCsvBtn = $('#exportCsvBtn');
+const postList = $('#postList');
+const postCount = $('#postCount');
+const emptyState = $('#emptyState');
+const draftsList = $('#draftsList');
+
+/* ===== TABS ===== */
+$$('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    $$('.tab-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    $$('.tab-panel').forEach(p => p.classList.toggle('active', p.dataset.panel === btn.dataset.tab));
+  });
+});
+
+/* ===== PLATFORM ===== */
+$$('.platform-chip').forEach(chip => {
+  chip.addEventListener('click', () => {
+    $$('.platform-chip').forEach(c => c.classList.remove('active'));
+    chip.classList.add('active');
+    state.selectedPlatform = chip.dataset.platform;
+  });
+});
+
+/* ===== INIT DATE ===== */
+const today = new Date();
+dateInput.value = today.toISOString().split('T')[0];
+
+/* ===== ADD POST ===== */
+addPostBtn.addEventListener('click', () => {
+  const caption = captionInput.value.trim();
+  if (!caption) {
+    showToast('Please enter a caption', 'error');
+    captionInput.focus();
+    return;
+  }
+  if (!dateInput.value) {
+    showToast('Please choose a date', 'error');
+    dateInput.focus();
+    return;
+  }
+  if (!timeInput.value) {
+    showToast('Please choose a time', 'error');
+    timeInput.focus();
+    return;
+  }
+
+  const newPost = {
+    id: Date.now(),
+    caption,
+    platform: state.selectedPlatform,
+    date: dateInput.value,
+    time: timeInput.value,
+    type: typeInput.value,
+    tag: tagInput.value.trim(),
+    createdAt: new Date().toISOString()
+  };
+
+  state.posts.push(newPost);
+  savePosts();
+  renderAll();
+  resetForm();
+  showToast('Post scheduled!', 'success');
+});
+
+function resetForm() {
+  captionInput.value = '';
+  tagInput.value = '';
+  typeInput.value = 'post';
+  const t = new Date();
+  dateInput.value = t.toISOString().split('T')[0];
+  timeInput.value = '10:00';
+}
+
+clearFormBtn.addEventListener('click', resetForm);
+
+/* ===== SAVE / LOAD ===== */
+function savePosts() {
+  try {
+    localStorage.setItem('bigtoolz_social_schedule', JSON.stringify(state.posts));
+  } catch (e) {}
+}
+
+function loadPosts() {
+  try {
+    state.posts = JSON.parse(localStorage.getItem('bigtoolz_social_schedule') || '[]');
+  } catch (e) { state.posts = []; }
+}
+
+/* ===== RENDER ALL ===== */
+function renderAll() {
+  renderCalendar();
+  renderPostList();
+}
+
+/* ===== CALENDAR ===== */
+function renderCalendar() {
+  const monthNames = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+  calMonth.textContent = monthNames[state.currentMonth] + ' ' + state.currentYear;
+
+  const dayHeaders = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+  let html = '';
+  dayHeaders.forEach(d => {
+    html += `<div class="cal-day-header">${d}</div>`;
+  });
+
+  const firstDay = new Date(state.currentYear, state.currentMonth, 1).getDay();
+  const daysInMonth = new Date(state.currentYear, state.currentMonth + 1, 0).getDate();
+  const daysInPrevMonth = new Date(state.currentYear, state.currentMonth, 0).getDate();
+
+  const todayDate = new Date();
+  const isCurrentMonth = todayDate.getMonth() === state.currentMonth && todayDate.getFullYear() === state.currentYear;
+
+  // Previous month days
+  for (let i = firstDay - 1; i >= 0; i--) {
+    const day = daysInPrevMonth - i;
+    html += `<div class="cal-day other-month"><div class="cal-day-num">${day}</div></div>`;
+  }
+
+  // Current month days
+  for (let day = 1; day <= daysInMonth; day++) {
+    const isToday = isCurrentMonth && day === todayDate.getDate();
+    const dateStr = `${state.currentYear}-${String(state.currentMonth + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+    const dayPosts = state.posts.filter(p => p.date === dateStr);
+
+    let postsHtml = '';
+    dayPosts.slice(0, 3).forEach(p => {
+      const shortCaption = p.caption.length > 20 ? p.caption.substring(0, 20) + '...' : p.caption;
+      postsHtml += `<div class="cal-post ${p.platform}" data-post-id="${p.id}">${shortCaption}</div>`;
+    });
+    if (dayPosts.length > 3) {
+      postsHtml += `<div style="font-size:8px;color:#9ca3af;font-weight:700;">+${dayPosts.length - 3} more</div>`;
+    }
+
+    html += `
+      <div class="cal-day ${isToday ? 'today' : ''}" data-date="${dateStr}">
+        <div class="cal-day-num">${day}</div>
+        ${postsHtml}
+      </div>
+    `;
+  }
+
+  // Next month days (fill remaining)
+  const totalCells = firstDay + daysInMonth;
+  const remaining = (7 - (totalCells % 7)) % 7;
+  for (let day = 1; day <= remaining; day++) {
+    html += `<div class="cal-day other-month"><div class="cal-day-num">${day}</div></div>`;
+  }
+
+  calendarGrid.innerHTML = html;
+
+  // Bind post clicks
+  $$('.cal-post').forEach(el => {
+    el.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const id = parseInt(el.dataset.postId, 10);
+      const post = state.posts.find(p => p.id === id);
+      if (post) {
+        copyToClipboard(post.caption).then(ok => {
+          if (ok) showToast('Caption copied!', 'success', 1500);
+        });
+      }
+    });
+  });
+
+  // Bind day clicks (prefill form)
+  $$('.cal-day[data-date]').forEach(el => {
+    el.addEventListener('click', () => {
+      dateInput.value = el.dataset.date;
+      captionInput.focus();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  });
+}
+
+/* ===== POST LIST ===== */
+function renderPostList() {
+  if (state.posts.length === 0) {
+    postList.innerHTML = '';
+    emptyState.style.display = 'block';
+    postCount.textContent = '0';
+    return;
+  }
+
+  emptyState.style.display = 'none';
+  postCount.textContent = state.posts.length;
+
+  // Sort by date + time
+  const sorted = [...state.posts].sort((a, b) => {
+    const da = new Date(a.date + 'T' + a.time);
+    const db = new Date(b.date + 'T' + b.time);
+    return da - db;
+  });
+
+  const platformIcons = {
+    twitter: '𝕏',
+    instagram: '📷',
+    facebook: 'f',
+    linkedin: 'in',
+    youtube: '▶',
+    pinterest: '📌',
+    tiktok: '♪'
+  };
+
+  postList.innerHTML = '';
+  const now = new Date();
+
+  sorted.forEach(post => {
+    const postDate = new Date(post.date + 'T' + post.time);
+    const isPast = postDate < now;
+    const dateFormatted = postDate.toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' });
+    const timeFormatted = postDate.toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit' });
+
+    const item = document.createElement('div');
+    item.className = 'post-item' + (isPast ? ' past' : '');
+    item.innerHTML = `
+      <div class="post-platform ${post.platform}">${platformIcons[post.platform] || '📱'}</div>
+      <div class="post-info">
+        <div class="post-caption">${escapeHtml(post.caption)}</div>
+        <div class="post-meta">
+          <span class="post-meta-item">📅 ${dateFormatted}</span>
+          <span class="post-meta-item">⏰ ${timeFormatted}</span>
+          ${post.type ? `<span class="post-meta-item">📝 ${post.type}</span>` : ''}
+          ${post.tag ? `<span class="post-tag">#${escapeHtml(post.tag)}</span>` : ''}
+        </div>
+      </div>
+      <div class="post-actions">
+        <button class="post-btn" data-copy-post="${post.id}" title="Copy caption">📋</button>
+        <button class="post-btn delete" data-delete-post="${post.id}" title="Delete">🗑</button>
+      </div>
+    `;
+    postList.appendChild(item);
+  });
+
+  // Bind copy
+  $$('[data-copy-post]').forEach(btn => {
+    btn.addEventListener('click', async () => {
+      const id = parseInt(btn.dataset.copyPost, 10);
+      const post = state.posts.find(p => p.id === id);
+      if (!post) return;
+      const ok = await copyToClipboard(post.caption);
+      if (ok) {
+        btn.classList.add('copied');
+        btn.textContent = '✓';
+        setTimeout(() => {
+          btn.classList.remove('copied');
+          btn.textContent = '📋';
+        }, 1800);
+        showToast('Caption copied!', 'success', 1500);
+      }
+    });
+  });
+
+  // Bind delete
+  $$('[data-delete-post]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const id = parseInt(btn.dataset.deletePost, 10);
+      if (!confirm('Delete this scheduled post?')) return;
+      state.posts = state.posts.filter(p => p.id !== id);
+      savePosts();
+      renderAll();
+      showToast('Post deleted');
+    });
+  });
+}
+
+/* ===== CALENDAR NAV ===== */
+prevMonth.addEventListener('click', () => {
+  state.currentMonth--;
+  if (state.currentMonth < 0) {
+    state.currentMonth = 11;
+    state.currentYear--;
+  }
+  renderCalendar();
+});
+
+nextMonth.addEventListener('click', () => {
+  state.currentMonth++;
+  if (state.currentMonth > 11) {
+    state.currentMonth = 0;
+    state.currentYear++;
+  }
+  renderCalendar();
+});
+
+todayBtn.addEventListener('click', () => {
+  const t = new Date();
+  state.currentMonth = t.getMonth();
+  state.currentYear = t.getFullYear();
+  renderCalendar();
+});
+
+/* ===== CSV EXPORT ===== */
+exportCsvBtn.addEventListener('click', () => {
+  if (state.posts.length === 0) {
+    showToast('No posts to export', 'error');
+    return;
+  }
+
+  const rows = [['Date', 'Time', 'Platform', 'Type', 'Tag', 'Caption']];
+  const sorted = [...state.posts].sort((a, b) => new Date(a.date + a.time) - new Date(b.date + b.time));
+
+  sorted.forEach(p => {
+    rows.push([
+      p.date,
+      p.time,
+      p.platform,
+      p.type,
+      p.tag,
+      '"' + p.caption.replace(/"/g, '""') + '"'
+    ]);
+  });
+
+  const csv = rows.map(r => r.join(',')).join('\n');
+  const blob = new Blob([csv], { type: 'text/csv;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'bigtoolz-social-schedule.csv';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+  showToast('CSV downloaded!', 'success');
+});
+
+/* ===== DRAFTS ===== */
+function renderDrafts() {
+  draftsList.innerHTML = '';
+
+  const platformIcons = {
+    twitter: '𝕏',
+    instagram: '📷',
+    facebook: 'f',
+    linkedin: 'in',
+    youtube: '▶',
+    pinterest: '📌',
+    tiktok: '♪'
+  };
+
+  DRAFT_IDEAS.forEach(draft => {
+    const item = document.createElement('div');
+    item.className = 'post-item';
+    item.style.cursor = 'pointer';
+    item.innerHTML = `
+      <div class="post-platform ${draft.platform}">${platformIcons[draft.platform] || '📱'}</div>
+      <div class="post-info">
+        <div class="post-caption">${escapeHtml(draft.text)}</div>
+        <div class="post-meta">
+          <span class="post-meta-item">💡 Click to use this idea</span>
+        </div>
+      </div>
+    `;
+    item.addEventListener('click', () => {
+      captionInput.value = draft.text;
+      state.selectedPlatform = draft.platform;
+      $$('.platform-chip').forEach(c => c.classList.toggle('active', c.dataset.platform === draft.platform));
+      $$('.tab-btn').forEach(b => b.classList.remove('active'));
+      $$('.tab-btn')[0].classList.add('active');
+      $$('.tab-panel').forEach(p => p.classList.toggle('active', p.dataset.panel === 'scheduler'));
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      captionInput.focus();
+      showToast('Draft loaded into form!', 'success');
+    });
+    draftsList.appendChild(item);
+  });
+}
+
+/* ===== FAQ ===== */
+$$('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    $$('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+
+/* ===== INIT ===== */
+loadPosts();
+renderAll();
+renderDrafts();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,337 @@
+# ===========================================
+# BigToolz - Auto Deploy Workflow
+# ===========================================
+# Deploys the static site to Vercel (primary)
+# and/or GitHub Pages (backup) on push to main.
+#
+# Setup:
+#   1. Vercel: Add secrets VERCEL_TOKEN, VERCEL_ORG_ID, VERCEL_PROJECT_ID
+#   2. GitHub Pages: Enable in Settings → Pages → Source: GitHub Actions
+#   3. Optional: Add SLACK_WEBHOOK for notifications
+# ===========================================
+
+name: Deploy
+
+# ===== TRIGGERS =====
+on:
+  push:
+    branches:
+      - main
+      - master
+  pull_request:
+    branches:
+      - main
+      - master
+  workflow_dispatch:
+    inputs:
+      target:
+        description: 'Deployment target'
+        required: true
+        default: 'vercel'
+        type: choice
+        options:
+          - vercel
+          - github-pages
+          - both
+
+# ===== PERMISSIONS =====
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+  pull-requests: write
+
+# ===== CONCURRENCY =====
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: true
+
+# ===== ENVIRONMENT =====
+env:
+  NODE_VERSION: '20'
+  FORCE_COLOR: '1'
+
+# ===== JOBS =====
+jobs:
+
+  # ===========================================
+  # JOB 1: BUILD & VERIFY
+  # ===========================================
+  build:
+    name: 🔨 Build & Verify
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+
+      - name: 🟢 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: 📦 Install dependencies
+        run: |
+          if [ -f package.json ]; then
+            npm ci || npm install
+          else
+            echo "No package.json — static site, skipping install"
+          fi
+
+      - name: 🔍 Verify HTML structure
+        run: |
+          echo "Verifying core HTML files..."
+          for file in index.html about.html contact.html privacy-policy.html terms.html disclaimer.html 404.html; do
+            if [ ! -f "$file" ]; then
+              echo "❌ Missing: $file"
+              exit 1
+            fi
+            echo "✓ $file"
+          done
+          echo "✅ All core HTML files present"
+
+      - name: 🔍 Verify critical assets
+        run: |
+          echo "Verifying assets..."
+          for dir in assets/css assets/js data; do
+            if [ ! -d "$dir" ]; then
+              echo "❌ Missing: $dir"
+              exit 1
+            fi
+            echo "✓ $dir"
+          done
+          echo "✅ All critical directories present"
+
+      - name: 🔍 Verify sitemap + robots
+        run: |
+          for file in sitemap.xml robots.txt ads.txt manifest.json; do
+            if [ ! -f "$file" ]; then
+              echo "⚠️  Warning: $file not found (recommended)"
+            else
+              echo "✓ $file"
+            fi
+          done
+
+      - name: 📊 Count tool pages
+        run: |
+          TOOL_COUNT=$(find tools -name "*.html" -type f 2>/dev/null | wc -l)
+          echo "📄 Total HTML pages in /tools: $TOOL_COUNT"
+          echo "tool_count=$TOOL_COUNT" >> $GITHUB_OUTPUT
+        id: tools
+
+      - name: 🏗️ Build site (if build script exists)
+        run: |
+          if [ -f package.json ] && grep -q '"build"' package.json; then
+            npm run build
+          else
+            echo "No build script — static site ready"
+          fi
+
+      - name: 📤 Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: static-site
+          path: .
+          retention-days: 7
+          if-no-files-found: warn
+
+  # ===========================================
+  # JOB 2: DEPLOY TO VERCEL
+  # ===========================================
+  deploy-vercel:
+    name: 🚀 Deploy to Vercel
+    needs: build
+    runs-on: ubuntu-latest
+    if: |
+      (github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master')) ||
+      (github.event_name == 'workflow_dispatch' && (github.event.inputs.target == 'vercel' || github.event.inputs.target == 'both'))
+
+    environment:
+      name: production
+      url: ${{ steps.deploy.outputs.url }}
+
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+
+      - name: 🟢 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: 🚀 Install Vercel CLI
+        run: npm install --global vercel@latest
+
+      - name: 📥 Pull Vercel environment
+        run: |
+          vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
+        env:
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+
+      - name: 🏗️ Build for Vercel
+        run: |
+          vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
+        env:
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+
+      - name: 🚀 Deploy to Vercel
+        id: deploy
+        run: |
+          URL=$(vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }})
+          echo "url=$URL" >> $GITHUB_OUTPUT
+          echo "✅ Deployed to: $URL"
+        env:
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+
+      - name: 📝 Comment on PR (if PR)
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: '🚀 **Preview deployed!**\n\nURL: ${{ steps.deploy.outputs.url }}'
+            });
+
+  # ===========================================
+  # JOB 3: PREVIEW DEPLOY (Pull Requests)
+  # ===========================================
+  deploy-preview:
+    name: 🔍 Preview Deploy
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+
+      - name: 🚀 Install Vercel CLI
+        run: npm install --global vercel@latest
+
+      - name: 📥 Pull Vercel environment (preview)
+        run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}
+        env:
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+
+      - name: 🏗️ Build for preview
+        run: vercel build --token=${{ secrets.VERCEL_TOKEN }}
+        env:
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+
+      - name: 🔍 Deploy preview
+        id: preview
+        run: |
+          URL=$(vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }})
+          echo "url=$URL" >> $GITHUB_OUTPUT
+        env:
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+
+      - name: 💬 Comment preview URL on PR
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: '🔍 **Preview ready!**\n\nPreview URL: ${{ steps.preview.outputs.url }}\n\nReview before merging.'
+            });
+
+  # ===========================================
+  # JOB 4: DEPLOY TO GITHUB PAGES (Backup)
+  # ===========================================
+  deploy-github-pages:
+    name: 🌐 Deploy to GitHub Pages
+    needs: build
+    runs-on: ubuntu-latest
+    if: |
+      (github.event_name == 'workflow_dispatch' && (github.event.inputs.target == 'github-pages' || github.event.inputs.target == 'both'))
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+
+      - name: ⚙️ Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: 📤 Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+
+      - name: 🚀 Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+  # ===========================================
+  # JOB 5: LIGHTHOUSE CI AUDIT (Post-Deploy)
+  # ===========================================
+  lighthouse:
+    name: 📊 Lighthouse Audit
+    needs: deploy-vercel
+    runs-on: ubuntu-latest
+    if: success()
+    continue-on-error: true
+
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+
+      - name: 📊 Run Lighthouse CI
+        uses: treosh/lighthouse-ci-action@v11
+        with:
+          urls: |
+            https://bigtoolz.com/
+            https://bigtoolz.com/tools/
+            https://bigtoolz.com/tools/image-tools/image-compressor/
+          uploadArtifacts: true
+          temporaryPublicStorage: true
+          runs: 3
+
+  # ===========================================
+  # JOB 6: NOTIFY (Slack/Discord)
+  # ===========================================
+  notify:
+    name: 📢 Notify
+    needs: [deploy-vercel]
+    runs-on: ubuntu-latest
+    if: always() && github.event_name == 'push'
+
+    steps:
+      - name: 📢 Slack notification
+        if: secrets.SLACK_WEBHOOK != ''
+        uses: 8398a7/action-slack@v3
+        with:
+          status: ${{ needs.deploy-vercel.result }}
+          text: |
+            🚀 BigToolz deploy ${{ needs.deploy-vercel.result }}
+            Commit: ${{ github.sha }}
+            By: ${{ github.actor }}
+          webhook_url: ${{ secrets.SLACK_WEBHOOK }}
+          fields: repo,message,commit,author,action,eventName,ref,workflow
+
+      - name: 📢 Discord notification
+        if: secrets.DISCORD_WEBHOOK != ''
+        uses: sarisia/actions-status-discord@v1
+        with:
+          webhook: ${{ secrets.DISCORD_WEBHOOK }}
+          status: ${{ needs.deploy-vercel.result }}
+          title: "BigToolz Deploy"
+          description: |
+            Deploy ${{ needs.deploy-vercel.result }}
+            Commit: ${{ github.sha }}
+            Author: ${{ github.actor }}

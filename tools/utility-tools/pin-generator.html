@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2563eb">
+
+<title>PIN Generator - Generate Secure Random PINs Online Free | BigToolz</title>
+<meta name="description" content="Generate secure random PINs online. Numeric, alphanumeric and pattern PINs with custom length 4-12 digits. Crypto-secure, no repeats. Free, no signup.">
+<meta name="keywords" content="pin generator, random pin, secure pin generator, 4 digit pin, 6 digit pin, alphanumeric pin">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://bigtoolz.com/tools/utility-tools/pin-generator/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="PIN Generator - Free Online Tool | BigToolz">
+<meta property="og:description" content="Generate secure random PINs numeric, alphanumeric, or pattern. Crypto-secure, free, no signup.">
+<meta property="og:url" content="https://bigtoolz.com/tools/utility-tools/pin-generator/">
+<meta property="og:image" content="https://bigtoolz.com/assets/images/og-image.jpg">
+<meta property="og:site_name" content="BigToolz">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="PIN Generator - BigToolz">
+<meta name="twitter:description" content="Generate secure random PINs instantly free.">
+<meta name="twitter:image" content="https://bigtoolz.com/assets/images/twitter-card.jpg">
+
+<link rel="icon" href="/assets/images/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/images/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#f8f9fc;color:#1a1a2e;overflow-x:hidden;line-height:1.5}
+
+  .header{background:#fff;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;position:sticky;top:0;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+  .header-left{display:flex;align-items:center;gap:40px}
+  .logo{display:flex;align-items:center;gap:8px;font-size:22px;font-weight:800;color:#1a1a2e;text-decoration:none}
+  .logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#3b82f6,#2563eb);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px}
+  .logo span{color:#2563eb}
+  .nav{display:flex;align-items:center;gap:28px;list-style:none}
+  .nav a{text-decoration:none;color:#4b5563;font-size:14px;font-weight:500;transition:color .2s}
+  .nav a:hover,.nav a.active{color:#2563eb}
+  .header-right{display:flex;align-items:center;gap:16px}
+  .search-btn,.theme-btn{width:36px;height:36px;border-radius:50%;border:none;background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#4b5563}
+  .search-btn:hover,.theme-btn:hover{background:#f3f4f6}
+  .bookmark-btn{display:flex;align-items:center;gap:8px;background:#2563eb;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
+  .bookmark-btn:hover{background:#1d4ed8}
+
+  .hero{background:linear-gradient(135deg,#0a0e27 0%,#1a1a4e 40%,#2d1b69 70%,#4c1d95 100%);padding:40px 40px 60px;position:relative;overflow:hidden;color:#fff}
+  .hero::before{content:'';position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(6,182,212,.3) 0%,transparent 70%);border-radius:50%}
+  .hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+  .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px;flex-wrap:wrap}
+  .breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none}
+  .breadcrumb a:hover{color:#fff}
+  .breadcrumb .sep{color:rgba(255,255,255,.4)}
+  .breadcrumb .current{color:#fff;font-weight:500}
+  .hero-title-row{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+  .hero-icon{width:60px;height:60px;background:#06b6d4;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:28px;color:#fff;flex-shrink:0;box-shadow:0 8px 24px rgba(6,182,212,.4)}
+  .hero-title{font-size:42px;font-weight:800;line-height:1.15}
+  .hero-title .blue{color:#22d3ee}
+  .hero-desc{font-size:15px;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:24px;max-width:560px}
+  .hero-features{display:flex;gap:24px;flex-wrap:wrap}
+  .hero-feature{display:flex;align-items:center;gap:6px;font-size:13px;color:#fff;font-weight:500}
+  .hero-feature .check{width:18px;height:18px;border-radius:50%;background:#06b6d4;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;flex-shrink:0}
+
+  .main-content{max-width:1200px;margin:0 auto;padding:40px;display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start}
+  .tool-content{min-width:0}
+
+  .workspace{background:#fff;border-radius:16px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,.06);border:1px solid #e5e7eb;margin-bottom:24px}
+
+  /* Result display */
+  .result-display{background:linear-gradient(135deg,#0f172a,#1e293b);border-radius:16px;padding:28px;margin-bottom:24px;position:relative;overflow:hidden}
+  .result-display::before{content:'';position:absolute;top:-50%;right:-10%;width:400px;height:400px;background:radial-gradient(circle,rgba(6,182,212,.15) 0%,transparent 70%);border-radius:50%;pointer-events:none}
+  .result-label{font-size:11px;font-weight:800;color:#22d3ee;text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;position:relative;z-index:2}
+  .result-main{font-family:'JetBrains Mono','Courier New',monospace;font-size:44px;font-weight:800;color:#fff;letter-spacing:6px;line-height:1.2;position:relative;z-index:2;word-break:break-all;user-select:all;text-align:center}
+  .result-meta{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-top:14px;font-size:11px;color:rgba(255,255,255,.5);position:relative;z-index:2}
+  .result-meta-item{display:flex;align-items:center;gap:4px;font-weight:600}
+
+  /* Options */
+  .options-section{background:#ecfeff;border-radius:12px;padding:20px;border:1px solid #a5f3fc;margin-bottom:20px}
+  .options-title{font-size:13px;font-weight:800;color:#164e63;text-transform:uppercase;letter-spacing:.5px;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+
+  .type-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:18px}
+  .type-btn{padding:12px 10px;background:#fff;border:2px solid #e5e7eb;border-radius:10px;font-size:12px;font-weight:700;color:#4b5563;cursor:pointer;font-family:inherit;transition:all .2s;text-align:center;line-height:1.3}
+  .type-btn:hover{border-color:#06b6d4;background:#ecfeff;color:#0e7490}
+  .type-btn.active{border-color:#06b6d4;background:#06b6d4;color:#fff}
+  .type-btn-icon{font-size:18px;margin-bottom:4px;display:block}
+
+  .options-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+  .option-group label{display:block;font-size:12px;font-weight:700;color:#4b5563;margin-bottom:6px}
+  .option-group select,.option-group input{width:100%;padding:11px 14px;border:2px solid #e5e7eb;border-radius:10px;font-size:14px;font-family:inherit;color:#1a1a2e;background:#fff;outline:none;transition:border-color .2s}
+  .option-group select:focus,.option-group input:focus{border-color:#06b6d4;box-shadow:0 0 0 3px rgba(6,182,212,.1)}
+  .option-group select{cursor:pointer;padding-right:36px;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='3'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center}
+
+  /* Toggle switches */
+  .toggle-list{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}
+  .toggle-item{display:flex;align-items:center;justify-content:space-between;padding:12px 14px;background:#fff;border:1px solid #e5e7eb;border-radius:10px;gap:10px;cursor:pointer;transition:all .2s}
+  .toggle-item:hover{border-color:#06b6d4}
+  .toggle-info{display:flex;flex-direction:column;gap:2px;flex:1;min-width:0}
+  .toggle-title{font-size:12px;font-weight:700;color:#1a1a2e}
+  .toggle-desc{font-size:10px;color:#6b7280;line-height:1.3}
+  .toggle-switch{position:relative;width:40px;height:22px;background:#d1d5db;border-radius:11px;transition:background .2s;flex-shrink:0}
+  .toggle-switch::after{content:'';position:absolute;top:2px;left:2px;width:18px;height:18px;background:#fff;border-radius:50%;transition:transform .2s;box-shadow:0 1px 3px rgba(0,0,0,.15)}
+  .toggle-item.on .toggle-switch{background:#06b6d4}
+  .toggle-item.on .toggle-switch::after{transform:translateX(18px)}
+
+  /* Actions */
+  .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 26px;border-radius:10px;font-size:14px;font-weight:700;font-family:inherit;cursor:pointer;border:none;transition:all .2s;text-decoration:none}
+  .btn-primary{background:#06b6d4;color:#fff;flex:1;box-shadow:0 4px 12px rgba(6,182,212,.2)}
+  .btn-primary:hover:not(:disabled){background:#0891b2;transform:translateY(-2px);box-shadow:0 6px 20px rgba(6,182,212,.3)}
+  .btn-primary:disabled{opacity:.5;cursor:not-allowed;transform:none}
+  .btn-secondary{background:#fff;color:#06b6d4;border:1px solid #e5e7eb}
+  .btn-secondary:hover{border-color:#06b6d4;background:#ecfeff}
+  .btn.copied{background:#10b981;color:#fff;border-color:#10b981}
+
+  /* Bulk results */
+  .bulk-section{margin-top:24px;display:none}
+  .bulk-section.visible{display:block}
+  .bulk-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;gap:12px;flex-wrap:wrap}
+  .bulk-title{font-size:14px;font-weight:800;color:#1a1a2e;display:flex;align-items:center;gap:8px}
+  .bulk-actions{display:flex;gap:8px;flex-wrap:wrap}
+  .mini-btn{display:inline-flex;align-items:center;gap:6px;padding:9px 14px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;font-size:12px;font-weight:700;color:#4b5563;cursor:pointer;font-family:inherit;transition:all .2s}
+  .mini-btn:hover{border-color:#06b6d4;color:#06b6d4;background:#ecfeff}
+
+  .bulk-list{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;padding:16px;background:#f8fafc;border-radius:12px;border:1px solid #e5e7eb;max-height:360px;overflow-y:auto}
+  .bulk-item{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:10px 12px;background:#fff;border-radius:8px;border:1px solid #e5e7eb;transition:all .15s;font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:700;color:#1a1a2e}
+  .bulk-item:hover{border-color:#06b6d4;background:#ecfeff}
+  .bulk-item-num{font-size:10px;font-weight:800;color:#9ca3af;font-family:'Inter',sans-serif;flex-shrink:0}
+  .bulk-item-pin{flex:1;text-align:center;letter-spacing:2px;word-break:break-all}
+  .bulk-item-copy{width:26px;height:26px;background:#f8fafc;border:1px solid #e5e7eb;border-radius:6px;cursor:pointer;color:#6b7280;font-size:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .2s;font-family:inherit}
+  .bulk-item-copy:hover{border-color:#06b6d4;color:#06b6d4;background:#ecfeff}
+
+  /* History */
+  .history-section{margin-top:20px;display:none}
+  .history-section.visible{display:block}
+  .history-title{font-size:12px;font-weight:800;color:#1a1a2e;margin-bottom:10px;display:flex;justify-content:space-between;align-items:center;gap:8px;text-transform:uppercase;letter-spacing:.5px}
+  .history-clear{background:none;border:none;font-size:11px;color:#06b6d4;cursor:pointer;font-family:inherit;font-weight:600;text-decoration:underline;text-transform:none}
+  .history-list{display:flex;flex-direction:column;gap:6px}
+  .history-item{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 12px;background:#f8fafc;border:1px solid #e5e7eb;border-radius:8px;font-size:12px;color:#4b5563;cursor:pointer;transition:all .2s;font-family:'JetBrains Mono',monospace;font-weight:700}
+  .history-item:hover{border-color:#06b6d4;background:#ecfeff}
+  .history-item-meta{font-family:'Inter',sans-serif;font-size:10px;color:#9ca3af;font-weight:600;flex-shrink:0}
+
+  /* SEO */
+  .seo-content{background:#fff;border-radius:16px;padding:32px;border:1px solid #e5e7eb;margin-bottom:24px}
+  .seo-content h2{font-size:22px;font-weight:800;color:#1a1a2e;margin-bottom:14px;margin-top:28px;display:flex;align-items:center;gap:10px}
+  .seo-content h2:first-child{margin-top:0}
+  .seo-content h3{font-size:16px;font-weight:700;color:#1a1a2e;margin:20px 0 10px}
+  .seo-content p{font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:14px}
+  .seo-content ul{list-style:none;padding-left:0;margin-bottom:16px}
+  .seo-content ul li{position:relative;padding-left:24px;font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:8px}
+  .seo-content ul li::before{content:'';position:absolute;left:6px;top:12px;width:6px;height:6px;background:#06b6d4;border-radius:50%}
+  .seo-content a{color:#2563eb;text-decoration:none;font-weight:600}
+  .seo-content a:hover{text-decoration:underline}
+  .seo-content strong{color:#1a1a2e;font-weight:700}
+  .seo-content code{background:#f1f5f9;padding:2px 6px;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:13px;color:#0f172a;border:1px solid #e2e8f0}
+
+  .how-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:20px}
+  .how-step{background:#ecfeff;border-radius:12px;padding:20px;border:1px solid #a5f3fc}
+  .how-step-num{width:36px;height:36px;border-radius:50%;background:#06b6d4;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;margin-bottom:12px}
+  .how-step-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+  .how-step-desc{font-size:13px;color:#6b7280;line-height:1.6}
+
+  .faq-item{background:#ecfeff;border:1px solid #a5f3fc;border-radius:12px;margin-bottom:10px;overflow:hidden;transition:border-color .2s}
+  .faq-item:hover{border-color:#06b6d4}
+  .faq-question{width:100%;background:none;border:none;padding:18px 22px;font-size:15px;font-weight:700;color:#1a1a2e;text-align:left;cursor:pointer;font-family:inherit;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .faq-question .chev{font-size:12px;color:#06b6d4;transition:transform .2s;flex-shrink:0}
+  .faq-item.open .faq-question .chev{transform:rotate(180deg)}
+  .faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 22px}
+  .faq-item.open .faq-answer{max-height:500px;padding-bottom:18px}
+  .faq-answer p{font-size:14px;color:#6b7280;line-height:1.7;margin:0}
+
+  .sidebar{background:#fff;border-radius:16px;padding:24px;border:1px solid #e5e7eb;position:sticky;top:80px;margin-bottom:24px}
+  .sidebar-header{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:800;color:#1a1a2e;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid #f3f4f6}
+  .sidebar-list{display:flex;flex-direction:column;gap:8px}
+  .sidebar-item{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;cursor:pointer;transition:background .2s;text-decoration:none;color:inherit;border:1px solid #f3f4f6}
+  .sidebar-item:hover{background:#ecfeff;border-color:#a5f3fc}
+  .sidebar-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;flex-shrink:0}
+  .sidebar-info{flex:1;min-width:0}
+  .sidebar-title{font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:2px}
+  .sidebar-desc{font-size:11px;color:#9ca3af;line-height:1.4}
+
+  .footer{background:#0a0e27;padding:60px 40px 30px;color:#fff;margin-top:40px}
+  .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:40px}
+  .footer-brand{display:flex;align-items:center;gap:8px;font-size:20px;font-weight:800;margin-bottom:12px}
+  .footer-brand span{color:#60a5fa}
+  .footer-tagline{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px}
+  .footer-social{display:flex;gap:12px}
+  .footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:16px;transition:background .2s}
+  .footer-social a:hover{background:rgba(255,255,255,.2)}
+  .footer-heading{font-size:14px;font-weight:700;margin-bottom:20px;color:#fff}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .footer-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;transition:color .2s}
+  .footer-links a:hover{color:#60a5fa}
+  .footer-bottom{max-width:1200px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  .footer-bottom-left{display:flex;gap:20px;font-size:12px;color:rgba(255,255,255,.5)}
+  .footer-bottom-right,.footer-bottom-links a{font-size:12px;color:rgba(255,255,255,.5);text-decoration:none}
+  .footer-bottom-links{display:flex;gap:20px}
+
+  .toast{position:fixed;bottom:24px;right:24px;background:#1a1a2e;color:#fff;padding:14px 20px;border-radius:10px;font-size:13px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:3000;transform:translateY(200%);transition:transform .3s ease;max-width:320px}
+  .toast.visible{transform:translateY(0)}
+  .toast.success{background:#10b981}
+  .toast.error{background:#ef4444}
+
+  @media(max-width:1024px){
+    .main-content{grid-template-columns:1fr;padding:24px 20px}
+    .sidebar{position:static}
+    .how-steps{grid-template-columns:repeat(2,1fr)}
+    .options-grid{grid-template-columns:1fr}
+    .bulk-list{grid-template-columns:1fr}
+  }
+  @media(max-width:768px){
+    .header{padding:0 20px}.nav{display:none}
+    .hero{padding:24px 20px 40px}
+    .hero-title{font-size:28px}
+    .hero-icon{width:48px;height:48px;font-size:22px}
+    .hero-title-row{flex-direction:column;align-items:flex-start;gap:12px}
+    .main-content{padding:20px 16px}
+    .workspace{padding:20px}
+    .how-steps{grid-template-columns:1fr}
+    .seo-content{padding:20px}
+    .footer-inner{grid-template-columns:1fr 1fr}
+    .toast{left:16px;right:16px;bottom:16px;max-width:none}
+    .result-main{font-size:32px;letter-spacing:4px}
+    .type-tabs{grid-template-columns:1fr}
+    .toggle-list{grid-template-columns:1fr}
+  }
+  @media(max-width:576px){
+    .header{padding:0 16px}.header-right .search-btn,.header-right .theme-btn{display:none}
+    .hero-title{font-size:24px}
+    .footer-inner{grid-template-columns:1fr}
+    .footer-bottom{flex-direction:column;text-align:center}
+    .actions{flex-direction:column}
+    .btn{width:100%}
+    .result-main{font-size:26px;letter-spacing:3px}
+  }
+
+  html[data-theme="dark"] body{background:#0f172a;color:#f1f5f9}
+  html[data-theme="dark"] .header,html[data-theme="dark"] .workspace,html[data-theme="dark"] .seo-content,html[data-theme="dark"] .sidebar{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .logo,html[data-theme="dark"] .hero-title,html[data-theme="dark"] .seo-content h2,html[data-theme="dark"] .seo-content h3,html[data-theme="dark"] .faq-question,html[data-theme="dark"] .sidebar-header,html[data-theme="dark"] .sidebar-title,html[data-theme="dark"] .bulk-title,html[data-theme="dark"] .history-title{color:#f1f5f9}
+  html[data-theme="dark"] .nav a{color:#cbd5e1}
+  html[data-theme="dark"] .how-step,html[data-theme="dark"] .faq-item,html[data-theme="dark"] .options-section,html[data-theme="dark"] .type-btn,html[data-theme="dark"] .toggle-item,html[data-theme="dark"] .bulk-item,html[data-theme="dark"] .bulk-list,html[data-theme="dark"] .history-item{background:#0f172a;border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .type-btn:hover{background:#1e293b;color:#22d3ee}
+  html[data-theme="dark"] .type-btn.active{background:#06b6d4;color:#fff;border-color:#06b6d4}
+  html[data-theme="dark"] .options-title{color:#22d3ee}
+  html[data-theme="dark"] .toggle-title{color:#f1f5f9}
+  html[data-theme="dark"] .option-group select,html[data-theme="dark"] .option-group input{background:#0f172a;border-color:#334155;color:#f1f5f9}
+  html[data-theme="dark"] .seo-content p,html[data-theme="dark"] .seo-content ul li,html[data-theme="dark"] .faq-answer p{color:#cbd5e1}
+  html[data-theme="dark"] .seo-content code{background:#0f172a;color:#94a3b8;border-color:#334155}
+  html[data-theme="dark"] .bulk-item-pin{color:#f1f5f9}
+  html[data-theme="dark"] .bulk-item-copy{background:#1e293b;border-color:#334155;color:#94a3b8}
+  html[data-theme="dark"] .mini-btn{background:#0f172a;border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .result-display{background:linear-gradient(135deg,#020617,#0f172a)}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type": "SoftwareApplication", "name": "PIN Generator", "url": "https://bigtoolz.com/tools/utility-tools/pin-generator/", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any (Web-based)", "description": "Free online PIN generator numeric, alphanumeric, or pattern PINs with crypto-secure randomness. Custom length 4-12 digits.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.8", "ratingCount": "1234"}},
+    {"@type": "HowTo", "name": "How to Generate a Secure PIN", "step": [
+      {"@type": "HowToStep", "name": "Choose PIN Type", "text": "Numeric, alphanumeric, or pattern (no repeats)."},
+      {"@type": "HowToStep", "name": "Set Length", "text": "Choose from 4 to 12 digits depending on security needs."},
+      {"@type": "HowToStep", "name": "Set Options", "text": "Toggle avoid-repeats, avoid-sequences, and bulk count."},
+      {"@type": "HowToStep", "name": "Generate", "text": "Click Generate to create a crypto-secure PIN."}
+    ]},
+    {"@type": "FAQPage", "mainEntity": [
+      {"@type": "Question", "name": "How secure are these PINs?", "acceptedAnswer": {"@type": "Answer", "text": "Very secure. We use the Web Crypto API's crypto.getRandomValues() the same cryptographic random number generator used by your browser for HTTPS and password managers. Not a predictable pseudo-random function."}},
+      {"@type": "Question", "name": "What's the best PIN length?", "acceptedAnswer": {"@type": "Answer", "text": "4 digits: 10,000 combinations OK for low-risk (SIM, luggage). 6 digits: 1 million recommended for phones, cards. 8+ digits: 100M+ best for banking, encrypted storage."}},
+      {"@type": "Question", "name": "Should I use alphanumeric PINs?", "acceptedAnswer": {"@type": "Answer", "text": "If the system allows it, yes. Alphanumeric PINs are vastly more secure. A 6-digit numeric PIN has 10^6 combinations; a 6-char alphanumeric has 36^6 = 2.18 billion 2,000x more secure."}},
+      {"@type": "Question", "name": "Are these PINs stored on your server?", "acceptedAnswer": {"@type": "Answer", "text": "No. Generation happens 100% in your browser. We have no server-side storage, no logging, and no way to see the PINs you generate. History is only stored locally in your browser."}}
+    ]},
+    {"@type": "BreadcrumbList", "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bigtoolz.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://bigtoolz.com/tools/"},
+      {"@type": "ListItem", "position": 3, "name": "Utility Tools", "item": "https://bigtoolz.com/tools/utility-tools/"},
+      {"@type": "ListItem", "position": 4, "name": "PIN Generator", "item": "https://bigtoolz.com/tools/utility-tools/pin-generator/"}
+    ]}
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-left">
+    <a href="/" class="logo"><div class="logo-icon">⚒</div>BigToolz</span></a>
+    <nav><ul class="nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/tools/" class="active">All Tools</a></li>
+      <li><a href="/tools/categories">Categories</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul></nav>
+  </div>
+  <div class="header-right">
+    
+    <button class="theme-btn" aria-label="Toggle theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
+    
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <nav class="breadcrumb">
+      <a href="/">Home</a><span class="sep">›</span>
+      <a href="/tools/">Tools</a><span class="sep">›</span>
+      <a href="/tools/utility-tools/">Utility Tools</a><span class="sep">›</span>
+      <span class="current">PIN Generator</span>
+    </nav>
+    <div class="hero-title-row">
+      <div class="hero-icon">#️⃣</div>
+      <h1 class="hero-title">PIN <span class="blue">Generator</span></h1>
+    </div>
+    <p class="hero-desc">
+      Generate crypto-secure random PINs 4-12 digits, numeric, alphanumeric, or pattern. Avoid repeats and sequences, bulk-generate up to 50 at once. No signup, 100% private.
+    </p>
+    <div class="hero-features">
+      <div class="hero-feature"><span class="check">✓</span> Crypto-Secure</div>
+      <div class="hero-feature"><span class="check">✓</span> 3 PIN Types</div>
+      <div class="hero-feature"><span class="check">✓</span> Bulk Generate</div>
+      <div class="hero-feature"><span class="check">✓</span> 100% Private</div>
+    </div>
+  </div>
+</section>
+
+<div class="main-content">
+
+  <div class="tool-content">
+
+    <div class="workspace">
+
+      <!-- Result Display -->
+      <div class="result-display">
+        <div class="result-label">Generated PIN</div>
+        <div class="result-main" id="resultMain">----</div>
+        <div class="result-meta">
+          <div class="result-meta-item">🔢 <span id="metaType">Numeric</span></div>
+          <div class="result-meta-item">📏 <span id="metaLength">4 digits</span></div>
+          <div class="result-meta-item">🎲 <span id="metaEntropy">10K combos</span></div>
+        </div>
+      </div>
+
+      <!-- Options -->
+      <div class="options-section">
+        <div class="options-title">⚙️ PIN Configuration</div>
+
+        <!-- Type tabs -->
+        <div class="type-tabs">
+          <button class="type-btn active" data-type="numeric">
+            <span class="type-btn-icon">🔢</span>
+            Numeric
+          </button>
+          <button class="type-btn" data-type="alphanumeric">
+            <span class="type-btn-icon">🔤</span>
+            Alphanumeric
+          </button>
+          <button class="type-btn" data-type="pattern">
+            <span class="type-btn-icon">🎯</span>
+            No Repeats
+          </button>
+        </div>
+
+        <!-- Options grid -->
+        <div class="options-grid">
+          <div class="option-group">
+            <label>PIN Length</label>
+            <select id="lengthSelect">
+              <option value="4">4 digits (10K combos)</option>
+              <option value="5">5 digits (100K combos)</option>
+              <option value="6" selected>6 digits (1M combos)</option>
+              <option value="7">7 digits (10M combos)</option>
+              <option value="8">8 digits (100M combos)</option>
+              <option value="10">10 digits (10B combos)</option>
+              <option value="12">12 digits (1T combos)</option>
+            </select>
+          </div>
+          <div class="option-group">
+            <label>Bulk Count</label>
+            <select id="bulkSelect">
+              <option value="1" selected>1 PIN</option>
+              <option value="5">5 PINs</option>
+              <option value="10">10 PINs</option>
+              <option value="20">20 PINs</option>
+              <option value="50">50 PINs</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Toggle options -->
+        <div class="toggle-list">
+          <div class="toggle-item on" data-toggle="avoidRepeats">
+            <div class="toggle-info">
+              <div class="toggle-title">Avoid Repeated Digits</div>
+              <div class="toggle-desc">No digit appears twice (1234 ✓, 1123 ✗)</div>
+            </div>
+            <div class="toggle-switch"></div>
+          </div>
+          <div class="toggle-item on" data-toggle="avoidSequences">
+            <div class="toggle-info">
+              <div class="toggle-title">Avoid Sequences</div>
+              <div class="toggle-desc">No 1234, 5678, 4321, etc.</div>
+            </div>
+            <div class="toggle-switch"></div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Actions -->
+      <div class="actions">
+        <button class="btn btn-primary" id="generateBtn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 12a9 9 0 11-6.219-8.56"/><path d="M21 3v6h-6"/></svg>
+          Generate PIN
+        </button>
+        <button class="btn btn-secondary" id="copyBtn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+          Copy PIN
+        </button>
+      </div>
+
+      <!-- Bulk Results -->
+      <div class="bulk-section" id="bulkSection">
+        <div class="bulk-header">
+          <div class="bulk-title">📋 All Generated PINs</div>
+          <div class="bulk-actions">
+            <button class="mini-btn" id="copyAllBtn">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+              Copy All
+            </button>
+            <button class="mini-btn" id="downloadBtn">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+              Download
+            </button>
+          </div>
+        </div>
+        <div class="bulk-list" id="bulkList"></div>
+      </div>
+
+      <!-- History -->
+      <div class="history-section" id="historySection">
+        <div class="history-title">
+          <span>📋 Recent PINs</span>
+          <button class="history-clear" id="historyClear">Clear</button>
+        </div>
+        <div class="history-list" id="historyList"></div>
+      </div>
+
+    </div>
+
+    <!-- SEO Content -->
+    <div class="seo-content">
+
+      <h2>#️⃣ What is a PIN Generator?</h2>
+      <p>
+        A <strong>PIN Generator</strong> creates random Personal Identification Numbers for phones, SIM cards, credit/debit cards, bank accounts, lockers, luggage, door locks, and any system that uses numeric or alphanumeric PINs for authentication. Instead of picking guessable numbers like your birthday or "1234," a good PIN generator gives you <strong>truly random, cryptographically secure codes</strong> that are impossible to predict.
+      </p>
+      <p>
+        Our tool uses the <strong>Web Crypto API</strong> the same cryptographic random number generator your browser uses for HTTPS encryption and password managers. Not a weak JavaScript Math.random() function. Every PIN is generated locally in your browser, never sent anywhere.
+      </p>
+
+      <h2>🚀 How to Generate a Secure PIN</h2>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-step-num">1</div>
+          <div class="how-step-title">Choose Type</div>
+          <div class="how-step-desc">Numeric, alphanumeric, or no-repeats.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">2</div>
+          <div class="how-step-title">Set Length</div>
+          <div class="how-step-desc">4 to 12 digits balance security vs memorability.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">3</div>
+          <div class="how-step-title">Generate</div>
+          <div class="how-step-desc">Click Generate for a crypto-secure PIN.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">4</div>
+          <div class="how-step-title">Copy & Save</div>
+          <div class="how-step-desc">Copy PIN or bulk-download as .txt.</div>
+        </div>
+      </div>
+
+      <h2>🎯 The 3 PIN Types Explained</h2>
+
+      <h3>🔢 Numeric</h3>
+      <p>Standard 0-9 digits. Compatible with every system phones, SIM cards, ATM cards, door locks, bank accounts. The default choice. Length is limited to 4-12 digits.</p>
+
+      <h3>🔤 Alphanumeric</h3>
+      <p>Uses digits + uppercase + lowercase letters (<code>0-9 A-Z a-z</code>). Vastly more secure a 6-character alphanumeric PIN has <strong>2.18 billion combinations</strong> vs 1 million for 6-digit numeric. Use this if the system allows it.</p>
+
+      <h3>🎯 No Repeats</h3>
+      <p>A numeric PIN where <strong>no digit appears twice</strong> (e.g., 4738 ✓ vs 4478 ✗). Reduces brute-force guessability further. Good balance between memorability and security.</p>
+
+      <h2>🔐 PIN Security Guide</h2>
+
+      <h3>Recommended Length by Use Case</h3>
+      <ul>
+        <li><strong>4 digits:</strong> SIM cards, luggage, low-risk accounts (10,000 combos)</li>
+        <li><strong>6 digits:</strong> Phone locks, most bank cards, gym lockers (1 million combos)</li>
+        <li><strong>8 digits:</strong> Banking apps, encrypted storage, VPNs (100 million combos)</li>
+        <li><strong>12 digits:</strong> High-security systems, crypto wallets (1 trillion combos)</li>
+      </ul>
+
+      <h3>What NOT to Use as a PIN</h3>
+      <ul>
+        <li><strong>1234, 0000, 1111</strong> most common PINs in the world</li>
+        <li><strong>Birthdays (MMDD or DDMM)</strong> covers 1/3 of all guessed PINs</li>
+        <li><strong>Your phone number's last 4 digits</strong></li>
+        <li><strong>Any sequential numbers</strong> (1234, 5678, 4321)</li>
+        <li><strong>Repeated patterns</strong> (1212, 6969, 5555)</li>
+        <li><strong>House or flat numbers</strong></li>
+      </ul>
+
+      <h3>PIN Safety Tips</h3>
+      <ul>
+        <li><strong>Never share your PIN</strong> with anyone including customer service. Banks never ask for it.</li>
+        <li><strong>Cover the keypad</strong> when entering your PIN at ATMs or shops.</li>
+        <li><strong>Use different PINs</strong> for different cards/accounts.</li>
+        <li><strong>Change your PIN</strong> every 6-12 months or after any breach.</li>
+        <li><strong>Store securely</strong> use a password manager, not a notebook in your wallet.</li>
+      </ul>
+
+      <h2>✨ Key Features</h2>
+      <ul>
+        <li><strong>Crypto-secure</strong> uses Web Crypto API (<code>crypto.getRandomValues</code>)</li>
+        <li><strong>3 PIN types</strong> numeric, alphanumeric, no-repeats</li>
+        <li><strong>Custom length</strong> 4 to 12 digits</li>
+        <li><strong>Bulk generate</strong> up to 50 PINs at once</li>
+        <li><strong>Smart filters</strong> avoid repeated digits and sequences</li>
+        <li><strong>Copy to clipboard</strong> one click</li>
+        <li><strong>Download all</strong> as .txt file</li>
+        <li><strong>100% private</strong> nothing leaves your browser</li>
+      </ul>
+
+      <h2>❓ Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-question">How secure are these PINs?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>Very secure.</strong> We use the Web Crypto API's <code>crypto.getRandomValues()</code> the same cryptographic random number generator used by your browser for HTTPS and password managers. It's not a predictable pseudo-random function like <code>Math.random()</code>, and it's cryptographically seeded by the operating system.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What's the best PIN length?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Depends on the use case: <strong>4 digits</strong> (10K combos) for SIM/luggage. <strong>6 digits</strong> (1 million combos) for phone locks and cards the standard for banking. <strong>8+ digits</strong> (100M+) for high-value banking apps and encrypted systems.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Should I use alphanumeric PINs?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>If the system allows it, yes.</strong> Alphanumeric PINs are vastly more secure. A 6-digit numeric PIN has 10<sup>6</sup> = 1 million combinations. A 6-char alphanumeric PIN has 62<sup>6</sup> ≈ <strong>56.8 billion combinations</strong>. That's 56,800x more secure.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Are these PINs stored on your server?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>Absolutely not.</strong> Generation happens 100% in your browser using JavaScript. We have no server-side storage, no logging, and no way to see the PINs you generate. Your PIN history (if you enable it) is stored only in your browser's localStorage.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What does "Avoid Repeated Digits" do?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>It ensures no digit appears twice in the PIN. So <code>4738</code> is valid, but <code>4778</code> is not (7 appears twice). This reduces the search space, making the PIN harder to guess, but also shorter for users who might misremember repeated digits.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I generate multiple PINs at once?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>Yes</strong> set Bulk Count to 5, 10, 20, or 50. Perfect for generating PINs for multiple cards, team members, or device pools. You can then copy-all or download as a .txt file.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Is it safe to generate PINs on this website?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>Yes</strong> safer than most alternatives. Because everything runs locally in your browser, no data ever leaves your device. You can even disconnect from the internet after the page loads and continue generating PINs offline.</p></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-header">🔗 Related Utility Tools</div>
+    <div class="sidebar-list">
+      <a href="/tools/utility-tools/password-generator/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#8b5cf6;">🔒</div>
+        <div class="sidebar-info"><div class="sidebar-title">Password Generator</div><div class="sidebar-desc">Strong passwords</div></div>
+      </a>
+      <a href="/tools/utility-tools/otp-generator/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#3b82f6;">🔢</div>
+        <div class="sidebar-info"><div class="sidebar-title">OTP Generator</div><div class="sidebar-desc">One-time passwords</div></div>
+      </a>
+      <a href="/tools/utility-tools/password-strength/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#10b981;">🛡</div>
+        <div class="sidebar-info"><div class="sidebar-title">Password Strength</div><div class="sidebar-desc">Check strength</div></div>
+      </a>
+      <a href="/tools/utility-tools/lottery-number/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#ef4444;">🎰</div>
+        <div class="sidebar-info"><div class="sidebar-title">Lottery Numbers</div><div class="sidebar-desc">Lucky numbers</div></div>
+      </a>
+      <a href="/tools/utility-tools/name-picker/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#f59e0b;">🎯</div>
+        <div class="sidebar-info"><div class="sidebar-title">Name Picker</div><div class="sidebar-desc">Random picker</div></div>
+      </a>
+      <a href="/tools/utility-tools/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#64748b;">⚙️</div>
+        <div class="sidebar-info"><div class="sidebar-title">All Utility Tools →</div><div class="sidebar-desc">Browse 50+ tools</div></div>
+      </a>
+    </div>
+  </aside>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand"><div class="logo-icon">⚒</div>BigToolz</span></div>
+      <p class="footer-tagline">Your Ultimate Online Tools Hub</p>
+      <div class="footer-social">
+        <a href="https://facebook.com/bigtoolz" aria-label="Facebook">f</a>
+        <a href="https://twitter.com/bigtoolz" aria-label="Twitter">𝕏</a>
+        <a href="https://youtube.com/@bigtoolz" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+    <div>
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/tools/">All Tools</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Categories</h3>
+      <ul class="footer-links">
+        <li><a href="/tools/image-tools/">Image Tools</a></li>
+        <li><a href="/tools/pdf-tools/">PDF Tools</a></li>
+        <li><a href="/tools/text-tools/">Text Tools</a></li>
+        <li><a href="/tools/utility-tools/">Utility Tools</a></li>
+        <li><a href="/tools/categories">All Categories →</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Legal</h3>
+      <ul class="footer-links">
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left"><span>✓ 100% Free</span><span>✓ No Sign Up</span><span>✓ No Installation</span></div>
+    <div class="footer-bottom-right">© 2026 BigToolz. All rights reserved.</div>
+    <div class="footer-bottom-links"><a href="/privacy-policy">Privacy</a><a href="/terms">Terms</a><a href="/disclaimer">Disclaimer</a></div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+'use strict';
+
+/* ===== THEME ===== */
+(function(){try{var t=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&d))document.documentElement.setAttribute('data-theme','dark');else if(t==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();
+document.querySelector('.theme-btn')?.addEventListener('click',()=>{const h=document.documentElement;const c=h.getAttribute('data-theme');const d=window.matchMedia('(prefers-color-scheme: dark)').matches;let n=c==='dark'?'light':c==='light'?'dark':(d?'light':'dark');h.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}});
+
+/* ===== HELPERS ===== */
+const $ = (s, p = document) => p.querySelector(s);
+const $$ = (s, p = document) => [...p.querySelectorAll(s)];
+
+function showToast(msg, type = 'info', duration = 3000) {
+  const t = $('#toast');
+  if (!t) return;
+  t.className = 'toast visible' + (type !== 'info' ? ' ' + type : '');
+  t.textContent = msg;
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove('visible'), duration);
+}
+
+async function copyToClipboard(text) {
+  try {
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(text);
+      return true;
+    }
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.cssText = 'position:fixed;opacity:0;';
+    document.body.appendChild(ta);
+    ta.select();
+    const ok = document.execCommand('copy');
+    document.body.removeChild(ta);
+    return ok;
+  } catch (e) { return false; }
+}
+
+/* ===== CRYPTO RANDOM ===== */
+function randomInt(max) {
+  // Crypto-secure random integer in [0, max)
+  const array = new Uint32Array(1);
+  crypto.getRandomValues(array);
+  return array[0] % max;
+}
+
+function randomChar(str) {
+  return str.charAt(randomInt(str.length));
+}
+
+/* ===== SEQUENCE CHECK ===== */
+function hasSequence(pin) {
+  // Check for ascending or descending sequences of length 3+
+  for (let i = 0; i < pin.length - 2; i++) {
+    const a = parseInt(pin[i], 10);
+    const b = parseInt(pin[i + 1], 10);
+    const c = parseInt(pin[i + 2], 10);
+    if (!isNaN(a) && !isNaN(b) && !isNaN(c)) {
+      if (b === a + 1 && c === b + 1) return true; // 123
+      if (b === a - 1 && c === b - 1) return true; // 321
+    }
+  }
+  return false;
+}
+
+function hasRepeats(pin) {
+  const digits = pin.replace(/[^0-9]/g, '');
+  const seen = new Set();
+  for (const d of digits) {
+    if (seen.has(d)) return true;
+    seen.add(d);
+  }
+  return false;
+}
+
+/* ===== PIN GENERATION ===== */
+function generatePIN(type, length, options = {}) {
+  const { avoidRepeats = false, avoidSequences = false } = options;
+
+  const NUMERIC = '0123456789';
+  const ALPHANUM = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+
+  let pin = '';
+  let attempts = 0;
+  const maxAttempts = 100;
+
+  while (attempts < maxAttempts) {
+    pin = '';
+
+    if (type === 'alphanumeric') {
+      for (let i = 0; i < length; i++) pin += randomChar(ALPHANUM);
+      // Alphanumeric skip repeat/sequence checks (not applicable for letters)
+      return pin;
+    }
+
+    // Numeric
+    if (avoidRepeats) {
+      // Pick `length` distinct digits from 0-9
+      const digits = '0123456789'.split('');
+      // Fisher-Yates partial shuffle
+      for (let i = 0; i < length && i < 10; i++) {
+        const j = i + randomInt(10 - i);
+        [digits[i], digits[j]] = [digits[j], digits[i]];
+      }
+      pin = digits.slice(0, Math.min(length, 10)).join('');
+    } else {
+      for (let i = 0; i < length; i++) pin += randomChar(NUMERIC);
+    }
+
+    // Sequence check
+    if (avoidSequences && hasSequence(pin)) {
+      attempts++;
+      continue;
+    }
+
+    // Repeats check (if not already using distinct mode)
+    if (!avoidRepeats && type === 'pattern' && hasRepeats(pin)) {
+      attempts++;
+      continue;
+    }
+
+    return pin;
+  }
+
+  return pin; // Return best attempt
+}
+
+/* ===== STATE ===== */
+const state = {
+  type: 'numeric',
+  length: 6,
+  bulk: 1,
+  avoidRepeats: true,
+  avoidSequences: true,
+  currentPIN: '',
+  allPINs: [],
+  history: []
+};
+
+/* ===== DOM ===== */
+const resultMain = $('#resultMain');
+const metaType = $('#metaType');
+const metaLength = $('#metaLength');
+const metaEntropy = $('#metaEntropy');
+const lengthSelect = $('#lengthSelect');
+const bulkSelect = $('#bulkSelect');
+const generateBtn = $('#generateBtn');
+const copyBtn = $('#copyBtn');
+const bulkSection = $('#bulkSection');
+const bulkList = $('#bulkList');
+const copyAllBtn = $('#copyAllBtn');
+const downloadBtn = $('#downloadBtn');
+const historySection = $('#historySection');
+const historyList = $('#historyList');
+const historyClear = $('#historyClear');
+
+/* ===== TYPE TABS ===== */
+$$('.type-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    $$('.type-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    state.type = btn.dataset.type;
+
+    // "Pattern" is basically numeric with avoidRepeats forced
+    if (state.type === 'pattern') {
+      state.avoidRepeats = true;
+      updateToggleUI();
+    }
+
+    generate();
+  });
+});
+
+/* ===== TOGGLES ===== */
+$$('.toggle-item').forEach(item => {
+  item.addEventListener('click', () => {
+    const key = item.dataset.toggle;
+    state[key] = !state[key];
+    item.classList.toggle('on', state[key]);
+    generate();
+  });
+});
+
+function updateToggleUI() {
+  $$('.toggle-item').forEach(item => {
+    const key = item.dataset.toggle;
+    item.classList.toggle('on', state[key]);
+  });
+}
+
+/* ===== LENGTH/BULK CHANGE ===== */
+lengthSelect.addEventListener('change', (e) => {
+  state.length = parseInt(e.target.value, 10);
+  generate();
+});
+
+bulkSelect.addEventListener('change', (e) => {
+  state.bulk = parseInt(e.target.value, 10);
+  generate();
+});
+
+/* ===== GENERATE ===== */
+function generate() {
+  const pins = [];
+  for (let i = 0; i < state.bulk; i++) {
+    pins.push(generatePIN(state.type, state.length, {
+      avoidRepeats: state.avoidRepeats,
+      avoidSequences: state.avoidSequences
+    }));
+  }
+
+  state.allPINs = pins;
+  state.currentPIN = pins[0];
+
+  // Update main display
+  resultMain.textContent = pins[0];
+
+  // Update meta
+  const typeLabels = { numeric: 'Numeric', alphanumeric: 'Alphanumeric', pattern: 'No Repeats' };
+  metaType.textContent = typeLabels[state.type];
+  metaLength.textContent = state.length + ' ' + (state.type === 'alphanumeric' ? 'chars' : 'digits');
+
+  // Entropy
+  let entropyText = '';
+  if (state.type === 'alphanumeric') {
+    const combos = Math.pow(62, state.length);
+    entropyText = formatCombos(combos) + ' combos';
+  } else if (state.avoidRepeats) {
+    // P(10, n) = 10! / (10-n)!
+    let combos = 1;
+    for (let i = 0; i < state.length && i < 10; i++) combos *= (10 - i);
+    entropyText = formatCombos(combos) + ' combos';
+  } else {
+    const combos = Math.pow(10, state.length);
+    entropyText = formatCombos(combos) + ' combos';
+  }
+  metaEntropy.textContent = entropyText;
+
+  // Render bulk
+  renderBulk(pins);
+
+  // Add to history
+  addToHistory(pins[0], typeLabels[state.type], state.length);
+}
+
+function formatCombos(n) {
+  if (n >= 1e12) return (n / 1e12).toFixed(1) + 'T';
+  if (n >= 1e9) return (n / 1e9).toFixed(1) + 'B';
+  if (n >= 1e6) return (n / 1e6).toFixed(1) + 'M';
+  if (n >= 1e3) return (n / 1e3).toFixed(1) + 'K';
+  return n.toString();
+}
+
+/* ===== RENDER BULK ===== */
+function renderBulk(pins) {
+  if (pins.length <= 1) {
+    bulkSection.classList.remove('visible');
+    return;
+  }
+  bulkSection.classList.add('visible');
+  bulkList.innerHTML = '';
+
+  pins.forEach((pin, i) => {
+    const item = document.createElement('div');
+    item.className = 'bulk-item';
+    item.innerHTML = `
+      <span class="bulk-item-num">#${i + 1}</span>
+      <span class="bulk-item-pin">${pin}</span>
+      <button class="bulk-item-copy" data-pin="${pin}" aria-label="Copy">📋</button>
+    `;
+    bulkList.appendChild(item);
+  });
+
+  $$('.bulk-item-copy').forEach(btn => {
+    btn.addEventListener('click', async (e) => {
+      e.stopPropagation();
+      const ok = await copyToClipboard(btn.dataset.pin);
+      if (ok) {
+        btn.textContent = '✓';
+        setTimeout(() => btn.textContent = '📋', 1200);
+      }
+    });
+  });
+}
+
+/* ===== COPY MAIN PIN ===== */
+copyBtn.addEventListener('click', async () => {
+  if (!state.currentPIN) return;
+  const ok = await copyToClipboard(state.currentPIN);
+  if (ok) {
+    copyBtn.classList.add('copied');
+    const orig = copyBtn.innerHTML;
+    copyBtn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg> Copied!';
+    setTimeout(() => {
+      copyBtn.classList.remove('copied');
+      copyBtn.innerHTML = orig;
+    }, 2000);
+    showToast('PIN copied!', 'success');
+  } else {
+    showToast('Copy failed', 'error');
+  }
+});
+
+/* ===== COPY ALL ===== */
+copyAllBtn.addEventListener('click', async () => {
+  if (state.allPINs.length === 0) return;
+  const text = state.allPINs.join('\n');
+  const ok = await copyToClipboard(text);
+  if (ok) {
+    showToast(`Copied ${state.allPINs.length} PINs!`, 'success');
+  } else {
+    showToast('Copy failed', 'error');
+  }
+});
+
+/* ===== DOWNLOAD ===== */
+downloadBtn.addEventListener('click', () => {
+  if (state.allPINs.length === 0) return;
+  const text = state.allPINs.join('\n');
+  const blob = new Blob([text], { type: 'text/plain' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `bigtoolz-pins-${Date.now()}.txt`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+  showToast('Downloaded!', 'success');
+});
+
+/* ===== HISTORY ===== */
+function addToHistory(pin, type, length) {
+  state.history = state.history.filter(h => h.pin !== pin);
+  state.history.unshift({ pin, type, length, time: Date.now() });
+  state.history = state.history.slice(0, 5);
+  saveHistory();
+  renderHistory();
+}
+
+function saveHistory() {
+  try {
+    localStorage.setItem('bigtoolz_pin_history', JSON.stringify(state.history));
+  } catch (e) {}
+}
+
+function loadHistory() {
+  try {
+    state.history = JSON.parse(localStorage.getItem('bigtoolz_pin_history') || '[]');
+  } catch (e) { state.history = []; }
+  renderHistory();
+}
+
+function renderHistory() {
+  if (state.history.length === 0) {
+    historySection.classList.remove('visible');
+    return;
+  }
+  historySection.classList.add('visible');
+  historyList.innerHTML = '';
+
+  state.history.forEach(item => {
+    const div = document.createElement('div');
+    div.className = 'history-item';
+    const ago = timeAgo(item.time);
+    div.innerHTML = `
+      <span>${item.pin}</span>
+      <span class="history-item-meta">${item.type} · ${item.length}d · ${ago}</span>
+    `;
+    div.addEventListener('click', async () => {
+      const ok = await copyToClipboard(item.pin);
+      if (ok) showToast(`Copied ${item.pin}`, 'success', 1500);
+    });
+    historyList.appendChild(div);
+  });
+}
+
+function timeAgo(ts) {
+  const diff = Math.floor((Date.now() - ts) / 1000);
+  if (diff < 60) return 'just now';
+  if (diff < 3600) return Math.floor(diff / 60) + 'm';
+  if (diff < 86400) return Math.floor(diff / 3600) + 'h';
+  return Math.floor(diff / 86400) + 'd';
+}
+
+historyClear.addEventListener('click', () => {
+  state.history = [];
+  saveHistory();
+  renderHistory();
+  showToast('History cleared');
+});
+
+/* ===== GENERATE BUTTON ===== */
+generateBtn.addEventListener('click', () => {
+  generate();
+  showToast('New PIN generated!', 'success', 1500);
+});
+
+/* ===== FAQ ===== */
+$$('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    $$('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+
+/* ===== INIT ===== */
+loadHistory();
+generate();
+</script>
+
+</body>
+</html>

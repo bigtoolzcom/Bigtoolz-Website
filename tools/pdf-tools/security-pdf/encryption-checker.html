@@ -1,0 +1,1331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2563eb">
+
+<title>PDF Encryption Checker - Check PDF Password & Security Online Free | BigToolz</title>
+<meta name="description" content="Check if PDF is encrypted, password protected, or has permissions. Detect encryption type (RC4, AES), permissions, and security level. No upload, private.">
+<meta name="keywords" content="pdf encryption checker, check pdf password, pdf security checker, is pdf encrypted, pdf permissions check, pdf protection status">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://bigtoolz.com/tools/pdf-tools/security-pdf/encryption-checker/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="PDF Encryption Checker - Free Online Tool | BigToolz">
+<meta property="og:description" content="Check PDF encryption, password protection, and permissions free, no upload.">
+<meta property="og:url" content="https://bigtoolz.com/tools/pdf-tools/security-pdf/encryption-checker/">
+<meta property="og:image" content="https://bigtoolz.com/assets/images/og-image.jpg">
+<meta property="og:site_name" content="BigToolz">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="PDF Encryption Checker - BigToolz">
+<meta name="twitter:description" content="Check PDF encryption and permissions instantly free, no upload.">
+<meta name="twitter:image" content="https://bigtoolz.com/assets/images/twitter-card.jpg">
+
+<link rel="icon" href="/assets/images/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/images/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#f8f9fc;color:#1a1a2e;overflow-x:hidden;line-height:1.5}
+
+  .header{background:#fff;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;position:sticky;top:0;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+  .header-left{display:flex;align-items:center;gap:40px}
+  .logo{display:flex;align-items:center;gap:8px;font-size:22px;font-weight:800;color:#1a1a2e;text-decoration:none}
+  .logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#3b82f6,#2563eb);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px}
+  .logo span{color:#2563eb}
+  .nav{display:flex;align-items:center;gap:28px;list-style:none}
+  .nav a{text-decoration:none;color:#4b5563;font-size:14px;font-weight:500;transition:color .2s}
+  .nav a:hover,.nav a.active{color:#2563eb}
+  .header-right{display:flex;align-items:center;gap:16px}
+  .search-btn,.theme-btn{width:36px;height:36px;border-radius:50%;border:none;background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#4b5563}
+  .search-btn:hover,.theme-btn:hover{background:#f3f4f6}
+  .bookmark-btn{display:flex;align-items:center;gap:8px;background:#2563eb;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
+  .bookmark-btn:hover{background:#1d4ed8}
+
+  .hero{background:linear-gradient(135deg,#0a0e27 0%,#1a1a4e 40%,#2d1b69 70%,#4c1d95 100%);padding:40px 40px 60px;position:relative;overflow:hidden;color:#fff}
+  .hero::before{content:'';position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(139,92,246,.3) 0%,transparent 70%);border-radius:50%}
+  .hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+  .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px;flex-wrap:wrap}
+  .breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none}
+  .breadcrumb a:hover{color:#fff}
+  .breadcrumb .sep{color:rgba(255,255,255,.4)}
+  .breadcrumb .current{color:#fff;font-weight:500}
+  .hero-title-row{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+  .hero-icon{width:60px;height:60px;background:#8b5cf6;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;color:#fff;flex-shrink:0;box-shadow:0 8px 24px rgba(139,92,246,.4)}
+  .hero-title{font-size:42px;font-weight:800;line-height:1.15}
+  .hero-title .blue{color:#a78bfa}
+  .hero-desc{font-size:15px;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:24px;max-width:560px}
+  .hero-features{display:flex;gap:24px;flex-wrap:wrap}
+  .hero-feature{display:flex;align-items:center;gap:6px;font-size:13px;color:#fff;font-weight:500}
+  .hero-feature .check{width:18px;height:18px;border-radius:50%;background:#8b5cf6;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;flex-shrink:0}
+
+  .main-content{max-width:1200px;margin:0 auto;padding:40px;display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start}
+  .tool-content{min-width:0}
+
+  .workspace{background:#fff;border-radius:16px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,.06);border:1px solid #e5e7eb;margin-bottom:24px}
+
+  .dropzone{border:2px dashed #c4b5fd;border-radius:12px;padding:50px 30px;text-align:center;background:#faf5ff;margin-bottom:24px;transition:all .2s;cursor:pointer}
+  .dropzone:hover,.dropzone.dragover{border-color:#8b5cf6;background:#ede9fe}
+  .dropzone-icon{width:60px;height:60px;background:linear-gradient(135deg,#8b5cf6,#7c3aed);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;color:#fff;font-size:26px;transition:transform .2s}
+  .dropzone:hover .dropzone-icon{transform:translateY(-4px)}
+  .dropzone-title{font-size:16px;font-weight:700;color:#1a1a2e;margin-bottom:8px}
+  .dropzone-sub{font-size:14px;color:#6b7280;margin-bottom:20px}
+  .dropzone-sub a{color:#8b5cf6;font-weight:600;text-decoration:none}
+  .choose-btn{display:inline-flex;align-items:center;gap:8px;background:#8b5cf6;color:#fff;border:none;padding:12px 28px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;transition:background .2s}
+  .choose-btn:hover{background:#7c3aed}
+  .dropzone-info{font-size:12px;color:#9ca3af;display:flex;align-items:center;justify-content:center;gap:8px;margin-top:16px;flex-wrap:wrap}
+  .dropzone-info .divider{color:#d1d5db}
+  .file-input{display:none}
+
+  .pdf-info{display:none;background:#faf5ff;border-radius:12px;padding:16px 20px;margin-bottom:20px;border:1px solid #c4b5fd;align-items:center;gap:16px;flex-wrap:wrap}
+  .pdf-info.visible{display:flex}
+  .pdf-info-icon{width:44px;height:44px;background:#8b5cf6;border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:18px;flex-shrink:0}
+  .pdf-info-details{flex:1;min-width:0}
+  .pdf-info-name{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .pdf-info-meta{font-size:12px;color:#6b7280}
+
+  /* Security Score Card */
+  .score-card{display:none;background:linear-gradient(135deg,#8b5cf6,#7c3aed);border-radius:16px;padding:28px;margin-bottom:20px;color:#fff;position:relative;overflow:hidden;align-items:center;gap:24px;flex-wrap:wrap}
+  .score-card.visible{display:flex}
+  .score-card::before{content:'';position:absolute;top:-30px;right:-30px;width:150px;height:150px;background:rgba(255,255,255,.1);border-radius:50%}
+  .score-card::after{content:'';position:absolute;bottom:-40px;left:30%;width:120px;height:120px;background:rgba(255,255,255,.05);border-radius:50%}
+  .score-card.strong{background:linear-gradient(135deg,#10b981,#059669)}
+  .score-card.moderate{background:linear-gradient(135deg,#f59e0b,#d97706)}
+  .score-card.weak{background:linear-gradient(135deg,#ef4444,#dc2626)}
+  .score-card.none{background:linear-gradient(135deg,#64748b,#475569)}
+  .score-icon{width:80px;height:80px;border-radius:50%;background:rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;font-size:40px;flex-shrink:0;position:relative;z-index:2;backdrop-filter:blur(10px)}
+  .score-content{flex:1;min-width:0;position:relative;z-index:2}
+  .score-label{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;opacity:.85;margin-bottom:4px}
+  .score-title{font-size:26px;font-weight:800;margin-bottom:6px}
+  .score-desc{font-size:13px;opacity:.9;line-height:1.5}
+
+  /* Detail cards */
+  .detail-grid{display:none;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px}
+  .detail-grid.visible{display:grid}
+  .detail-card{background:#f8fafc;border-radius:12px;padding:16px;border:1px solid #e5e7eb}
+  .detail-card-header{display:flex;align-items:center;gap:8px;margin-bottom:10px}
+  .detail-icon{width:36px;height:36px;border-radius:10px;background:#8b5cf6;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px;flex-shrink:0}
+  .detail-icon.green{background:#10b981}
+  .detail-icon.amber{background:#f59e0b}
+  .detail-icon.red{background:#ef4444}
+  .detail-icon.gray{background:#64748b}
+  .detail-title{font-size:12px;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:.3px}
+  .detail-value{font-size:16px;font-weight:800;color:#1a1a2e;margin-bottom:4px;line-height:1.3}
+  .detail-sub{font-size:11px;color:#9ca3af;line-height:1.5}
+
+  /* Permissions list */
+  .permissions-section{display:none;background:#f8fafc;border-radius:12px;padding:20px;margin-bottom:20px;border:1px solid #e5e7eb}
+  .permissions-section.visible{display:block}
+  .permissions-title{font-size:14px;font-weight:800;color:#1a1a2e;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+  .permissions-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .permission-item{background:#fff;border:1px solid #e5e7eb;border-radius:10px;padding:12px 14px;display:flex;align-items:center;gap:12px;transition:all .2s}
+  .permission-item.allowed{border-color:#86efac;background:#f0fdf4}
+  .permission-item.denied{border-color:#fca5a5;background:#fef2f2}
+  .permission-item.unknown{border-color:#e5e7eb;background:#fff}
+  .permission-icon{width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0}
+  .permission-item.allowed .permission-icon{background:#10b981;color:#fff}
+  .permission-item.denied .permission-icon{background:#ef4444;color:#fff}
+  .permission-item.unknown .permission-icon{background:#d1d5db;color:#6b7280}
+  .permission-name{font-size:13px;font-weight:600;color:#1a1a2e;flex:1}
+  .permission-status{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.3px}
+  .permission-item.allowed .permission-status{color:#059669}
+  .permission-item.denied .permission-status{color:#dc2626}
+  .permission-item.unknown .permission-status{color:#6b7280}
+
+  /* Recommendations */
+  .recs-section{display:none;background:#eff6ff;border-left:4px solid #3b82f6;border-radius:10px;padding:16px 20px;margin-bottom:20px}
+  .recs-section.visible{display:block}
+  .recs-title{font-size:13px;font-weight:800;color:#1e40af;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+  .recs-list{list-style:none;display:flex;flex-direction:column;gap:6px}
+  .recs-list li{font-size:13px;color:#1e40af;line-height:1.6;padding-left:20px;position:relative}
+  .recs-list li::before{content:'→';position:absolute;left:0;font-weight:700}
+
+  /* Raw info */
+  .raw-info{display:none;background:#f8fafc;border-radius:12px;padding:16px;margin-bottom:20px;border:1px solid #e5e7eb}
+  .raw-info.visible{display:block}
+  .raw-title{font-size:12px;font-weight:800;color:#6b7280;text-transform:uppercase;letter-spacing:.5px;margin-bottom:12px}
+  .raw-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .raw-item{display:flex;flex-direction:column;gap:2px}
+  .raw-label{font-size:11px;color:#9ca3af;font-weight:500}
+  .raw-value{font-size:12px;color:#1a1a2e;font-weight:600;font-family:'JetBrains Mono','Courier New',monospace;word-break:break-all}
+
+  .actions{display:flex;gap:12px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 28px;border-radius:10px;font-size:15px;font-weight:700;font-family:inherit;cursor:pointer;border:none;transition:all .2s;text-decoration:none}
+  .btn-secondary{background:#fff;color:#8b5cf6;border:1px solid #e5e7eb}
+  .btn-secondary:hover{border-color:#8b5cf6;background:#faf5ff}
+  .btn-primary{background:#8b5cf6;color:#fff;flex:1;box-shadow:0 4px 12px rgba(139,92,246,.2)}
+  .btn-primary:hover:not(:disabled){background:#7c3aed;transform:translateY(-2px);box-shadow:0 6px 20px rgba(139,92,246,.3)}
+
+  /* Loading */
+  .loading-area{display:none;text-align:center;padding:40px 20px}
+  .loading-area.visible{display:block}
+  .loading-spinner{width:48px;height:48px;border:4px solid #e5e7eb;border-top-color:#8b5cf6;border-radius:50%;animation:spin 1s linear infinite;margin:0 auto 16px}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .loading-text{font-size:14px;color:#6b7280;font-weight:600}
+
+  .seo-content{background:#fff;border-radius:16px;padding:32px;border:1px solid #e5e7eb;margin-bottom:24px}
+  .seo-content h2{font-size:22px;font-weight:800;color:#1a1a2e;margin-bottom:14px;margin-top:28px;display:flex;align-items:center;gap:10px}
+  .seo-content h2:first-child{margin-top:0}
+  .seo-content h3{font-size:16px;font-weight:700;color:#1a1a2e;margin:20px 0 10px}
+  .seo-content p{font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:14px}
+  .seo-content ul{list-style:none;padding-left:0;margin-bottom:16px}
+  .seo-content ul li{position:relative;padding-left:24px;font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:8px}
+  .seo-content ul li::before{content:'';position:absolute;left:6px;top:12px;width:6px;height:6px;background:#8b5cf6;border-radius:50%}
+  .seo-content a{color:#2563eb;text-decoration:none;font-weight:600}
+  .seo-content a:hover{text-decoration:underline}
+  .seo-content strong{color:#1a1a2e;font-weight:700}
+  .seo-content code{background:#f1f5f9;padding:2px 6px;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:13px;color:#0f172a;border:1px solid #e2e8f0}
+
+  .how-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:20px}
+  .how-step{background:#faf5ff;border-radius:12px;padding:20px;border:1px solid #c4b5fd}
+  .how-step-num{width:36px;height:36px;border-radius:50%;background:#8b5cf6;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;margin-bottom:12px}
+  .how-step-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+  .how-step-desc{font-size:13px;color:#6b7280;line-height:1.6}
+
+  .faq-item{background:#faf5ff;border:1px solid #c4b5fd;border-radius:12px;margin-bottom:10px;overflow:hidden;transition:border-color .2s}
+  .faq-item:hover{border-color:#8b5cf6}
+  .faq-question{width:100%;background:none;border:none;padding:18px 22px;font-size:15px;font-weight:700;color:#1a1a2e;text-align:left;cursor:pointer;font-family:inherit;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .faq-question .chev{font-size:12px;color:#8b5cf6;transition:transform .2s;flex-shrink:0}
+  .faq-item.open .faq-question .chev{transform:rotate(180deg)}
+  .faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 22px}
+  .faq-item.open .faq-answer{max-height:500px;padding-bottom:18px}
+  .faq-answer p{font-size:14px;color:#6b7280;line-height:1.7;margin:0}
+
+  .sidebar{background:#fff;border-radius:16px;padding:24px;border:1px solid #e5e7eb;position:sticky;top:80px;margin-bottom:24px}
+  .sidebar-header{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:800;color:#1a1a2e;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid #f3f4f6}
+  .sidebar-list{display:flex;flex-direction:column;gap:8px}
+  .sidebar-item{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;cursor:pointer;transition:background .2s;text-decoration:none;color:inherit;border:1px solid #f3f4f6}
+  .sidebar-item:hover{background:#faf5ff;border-color:#c4b5fd}
+  .sidebar-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;flex-shrink:0}
+  .sidebar-info{flex:1;min-width:0}
+  .sidebar-title{font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:2px}
+  .sidebar-desc{font-size:11px;color:#9ca3af;line-height:1.4}
+
+  .footer{background:#0a0e27;padding:60px 40px 30px;color:#fff;margin-top:40px}
+  .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:40px}
+  .footer-brand{display:flex;align-items:center;gap:8px;font-size:20px;font-weight:800;margin-bottom:12px}
+  .footer-brand span{color:#60a5fa}
+  .footer-tagline{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px}
+  .footer-social{display:flex;gap:12px}
+  .footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:16px;transition:background .2s}
+  .footer-social a:hover{background:rgba(255,255,255,.2)}
+  .footer-heading{font-size:14px;font-weight:700;margin-bottom:20px;color:#fff}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .footer-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;transition:color .2s}
+  .footer-links a:hover{color:#60a5fa}
+  .footer-bottom{max-width:1200px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  .footer-bottom-left{display:flex;gap:20px;font-size:12px;color:rgba(255,255,255,.5)}
+  .footer-bottom-right,.footer-bottom-links a{font-size:12px;color:rgba(255,255,255,.5);text-decoration:none}
+  .footer-bottom-links{display:flex;gap:20px}
+
+  .toast{position:fixed;bottom:24px;right:24px;background:#1a1a2e;color:#fff;padding:14px 20px;border-radius:10px;font-size:13px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:3000;transform:translateY(200%);transition:transform .3s ease;max-width:320px}
+  .toast.visible{transform:translateY(0)}
+  .toast.success{background:#10b981}
+  .toast.error{background:#ef4444}
+  .toast.info{background:#8b5cf6}
+
+  @media(max-width:1024px){
+    .main-content{grid-template-columns:1fr;padding:24px 20px}
+    .sidebar{position:static}
+    .how-steps{grid-template-columns:repeat(2,1fr)}
+  }
+  @media(max-width:768px){
+    .header{padding:0 20px}.nav{display:none}
+    .hero{padding:24px 20px 40px}
+    .hero-title{font-size:28px}
+    .hero-icon{width:48px;height:48px;font-size:22px}
+    .hero-title-row{flex-direction:column;align-items:flex-start;gap:12px}
+    .main-content{padding:20px 16px}
+    .workspace{padding:20px}
+    .dropzone{padding:32px 16px}
+    .how-steps{grid-template-columns:1fr}
+    .seo-content{padding:20px}
+    .footer-inner{grid-template-columns:1fr 1fr}
+    .toast{left:16px;right:16px;bottom:16px;max-width:none}
+    .detail-grid,.permissions-grid,.raw-grid{grid-template-columns:1fr}
+    .score-card{padding:20px;gap:16px}
+    .score-icon{width:64px;height:64px;font-size:32px}
+    .score-title{font-size:22px}
+  }
+  @media(max-width:576px){
+    .header{padding:0 16px}.header-right .search-btn,.header-right .theme-btn{display:none}
+    .hero-title{font-size:24px}
+    .actions{flex-direction:column}
+    .btn{width:100%}
+    .btn-primary{flex:none}
+    .footer-inner{grid-template-columns:1fr}
+    .footer-bottom{flex-direction:column;text-align:center}
+  }
+
+  html[data-theme="dark"] body{background:#0f172a;color:#f1f5f9}
+  html[data-theme="dark"] .header,html[data-theme="dark"] .workspace,html[data-theme="dark"] .seo-content,html[data-theme="dark"] .sidebar{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .logo,html[data-theme="dark"] .hero-title,html[data-theme="dark"] .seo-content h2,html[data-theme="dark"] .seo-content h3,html[data-theme="dark"] .faq-question,html[data-theme="dark"] .sidebar-header,html[data-theme="dark"] .sidebar-title,html[data-theme="dark"] .pdf-info-name,html[data-theme="dark"] .detail-value,html[data-theme="dark"] .permissions-title,html[data-theme="dark"] .permission-name,html[data-theme="dark"] .raw-value{color:#f1f5f9}
+  html[data-theme="dark"] .nav a{color:#cbd5e1}
+  html[data-theme="dark"] .dropzone{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .how-step,html[data-theme="dark"] .faq-item,html[data-theme="dark"] .pdf-info,html[data-theme="dark"] .detail-card,html[data-theme="dark"] .permissions-section,html[data-theme="dark"] .permission-item,html[data-theme="dark"] .raw-info{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .permission-item.allowed{background:#064e3b;border-color:#10b981}
+  html[data-theme="dark"] .permission-item.denied{background:#450a0a;border-color:#ef4444}
+  html[data-theme="dark"] .seo-content p,html[data-theme="dark"] .seo-content ul li,html[data-theme="dark"] .faq-answer p,html[data-theme="dark"] .pdf-info-meta,html[data-theme="dark"] .detail-sub,html[data-theme="dark"] .raw-label{color:#cbd5e1}
+  html[data-theme="dark"] .seo-content code{background:#020617;color:#94a3b8;border-color:#334155}
+  html[data-theme="dark"] .recs-section{background:#1e3a8a;border-color:#3b82f6}
+  html[data-theme="dark"] .recs-title,html[data-theme="dark"] .recs-list li{color:#bfdbfe}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type": "SoftwareApplication", "name": "PDF Encryption Checker", "url": "https://bigtoolz.com/tools/pdf-tools/security-pdf/encryption-checker/", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any (Web-based)", "description": "Free online tool to check PDF encryption status detects encryption type, password protection, and permissions. Works in your browser.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.8", "ratingCount": "412"}},
+    {"@type": "HowTo", "name": "How to Check PDF Encryption", "step": [
+      {"@type": "HowToStep", "name": "Upload PDF", "text": "Drag & drop or click to select a PDF file."},
+      {"@type": "HowToStep", "name": "Automatic Analysis", "text": "The tool scans the PDF's encryption dictionary."},
+      {"@type": "HowToStep", "name": "Review Report", "text": "See encryption type, permissions, and security grade."}
+    ]},
+    {"@type": "FAQPage", "mainEntity": [
+      {"@type": "Question", "name": "How can I check if a PDF is encrypted?", "acceptedAnswer": {"@type": "Answer", "text": "Upload the PDF to our tool. It analyzes the PDF's encryption dictionary and shows encryption type, password status, and permissions instantly."}},
+      {"@type": "Question", "name": "What encryption types exist in PDFs?", "acceptedAnswer": {"@type": "Answer", "text": "PDF supports RC4-40, RC4-128, AES-128, and AES-256. Modern PDFs typically use AES-128 or AES-256 for strong protection. RC4 is outdated and considered weak."}},
+      {"@type": "Question", "name": "What's the difference between user and owner passwords?", "acceptedAnswer": {"@type": "Answer", "text": "A user (open) password is required to open the PDF. An owner (permissions) password restricts printing, copying, and editing but still lets anyone open the file."}},
+      {"@type": "Question", "name": "Does the tool unlock or remove encryption?", "acceptedAnswer": {"@type": "Answer", "text": "No. This tool only analyzes and reports encryption details. To remove a password you have, use our Unlock PDF tool."}},
+      {"@type": "Question", "name": "Are my PDFs uploaded to a server?", "acceptedAnswer": {"@type": "Answer", "text": "No. All analysis happens in your browser using pdf-lib and pdf.js. Your PDF never leaves your device."}}
+    ]},
+    {"@type": "BreadcrumbList", "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bigtoolz.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://bigtoolz.com/tools/"},
+      {"@type": "ListItem", "position": 3, "name": "PDF Tools", "item": "https://bigtoolz.com/tools/pdf-tools/"},
+      {"@type": "ListItem", "position": 4, "name": "Security PDF", "item": "https://bigtoolz.com/tools/pdf-tools/security-pdf/"},
+      {"@type": "ListItem", "position": 5, "name": "Encryption Checker", "item": "https://bigtoolz.com/tools/pdf-tools/security-pdf/encryption-checker/"}
+    ]}
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-left">
+    <a href="/" class="logo"><div class="logo-icon">⚒</div>BigToolz</span></a>
+    <nav><ul class="nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/tools/" class="active">All Tools</a></li>
+      <li><a href="/tools/categories">Categories</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul></nav>
+  </div>
+  <div class="header-right">
+    
+    <button class="theme-btn" aria-label="Toggle theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
+    
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <nav class="breadcrumb">
+      <a href="/">Home</a><span class="sep">›</span>
+      <a href="/tools/">Tools</a><span class="sep">›</span>
+      <a href="/tools/pdf-tools/">PDF Tools</a><span class="sep">›</span>
+      <a href="/tools/pdf-tools/security-pdf/">Security PDF</a><span class="sep">›</span>
+      <span class="current">Encryption Checker</span>
+    </nav>
+    <div class="hero-title-row">
+      <div class="hero-icon">🔐</div>
+      <h1 class="hero-title">Encryption <span class="blue">Checker</span></h1>
+    </div>
+    <p class="hero-desc">
+      Check if a PDF is encrypted, password-protected, or has restricted permissions. See encryption type, security grade, and detailed permission report. No upload, 100% private.
+    </p>
+    <div class="hero-features">
+      <div class="hero-feature"><span class="check">✓</span> Encryption Type</div>
+      <div class="hero-feature"><span class="check">✓</span> Permissions Report</div>
+      <div class="hero-feature"><span class="check">✓</span> Security Grade</div>
+      <div class="hero-feature"><span class="check">✓</span> No Upload</div>
+    </div>
+  </div>
+</section>
+
+<div class="main-content">
+
+  <div class="tool-content">
+
+    <div class="workspace">
+
+      <div class="dropzone" id="dropzone">
+        <div class="dropzone-icon">⬆</div>
+        <div class="dropzone-title">Drag & drop your PDF here</div>
+        <div class="dropzone-sub">or <a href="#" id="browseLink">click to browse files</a></div>
+        <button class="choose-btn" id="chooseBtn" type="button">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/></svg>
+          Choose PDF File
+        </button>
+        <div class="dropzone-info">
+          <span>PDF files only</span>
+          <span class="divider">|</span>
+          <span>Analysis only file never modified</span>
+        </div>
+        <input type="file" id="fileInput" class="file-input" accept=".pdf,application/pdf">
+      </div>
+
+      <!-- Loading -->
+      <div class="loading-area" id="loadingArea">
+        <div class="loading-spinner"></div>
+        <div class="loading-text" id="loadingText">Analyzing PDF encryption...</div>
+      </div>
+
+      <!-- PDF Info -->
+      <div class="pdf-info" id="pdfInfo">
+        <div class="pdf-info-icon">📕</div>
+        <div class="pdf-info-details">
+          <div class="pdf-info-name" id="pdfName">document.pdf</div>
+          <div class="pdf-info-meta" id="pdfMeta">0 pages · 0 KB</div>
+        </div>
+      </div>
+
+      <!-- Security Score Card -->
+      <div class="score-card" id="scoreCard">
+        <div class="score-icon" id="scoreIcon">🔓</div>
+        <div class="score-content">
+          <div class="score-label">Security Grade</div>
+          <div class="score-title" id="scoreTitle">Not Encrypted</div>
+          <div class="score-desc" id="scoreDesc">This PDF has no encryption. Anyone can open, copy, and edit it.</div>
+        </div>
+      </div>
+
+      <!-- Detail Grid -->
+      <div class="detail-grid" id="detailGrid">
+        <div class="detail-card">
+          <div class="detail-card-header">
+            <div class="detail-icon" id="encTypeIcon">🔐</div>
+            <div class="detail-title">Encryption Type</div>
+          </div>
+          <div class="detail-value" id="encTypeValue">None</div>
+          <div class="detail-sub" id="encTypeDesc">File is not encrypted</div>
+        </div>
+
+        <div class="detail-card">
+          <div class="detail-card-header">
+            <div class="detail-icon" id="pwdIcon">🔓</div>
+            <div class="detail-title">Password Protection</div>
+          </div>
+          <div class="detail-value" id="pwdValue">No</div>
+          <div class="detail-sub" id="pwdDesc">Opens without password</div>
+        </div>
+
+        <div class="detail-card">
+          <div class="detail-card-header">
+            <div class="detail-icon" id="versionIcon">📄</div>
+            <div class="detail-title">PDF Version</div>
+          </div>
+          <div class="detail-value" id="versionValue">1.7</div>
+          <div class="detail-sub" id="versionDesc">Standard PDF version</div>
+        </div>
+
+        <div class="detail-card">
+          <div class="detail-card-header">
+            <div class="detail-icon" id="permIcon">⚖️</div>
+            <div class="detail-title">Permissions Restricted</div>
+          </div>
+          <div class="detail-value" id="permValue">No</div>
+          <div class="detail-sub" id="permDesc">No restrictions on usage</div>
+        </div>
+      </div>
+
+      <!-- Permissions Section -->
+      <div class="permissions-section" id="permissionsSection">
+        <div class="permissions-title">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Permissions Report
+        </div>
+        <div class="permissions-grid" id="permissionsGrid"></div>
+      </div>
+
+      <!-- Recommendations -->
+      <div class="recs-section" id="recsSection">
+        <div class="recs-title">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18h6M10 22h4M12 2a7 7 0 00-4 12.7V16h8v-1.3A7 7 0 0012 2z"/></svg>
+          Recommendations
+        </div>
+        <ul class="recs-list" id="recsList"></ul>
+      </div>
+
+      <!-- Raw Info -->
+      <div class="raw-info" id="rawInfo">
+        <div class="raw-title">📊 Raw File Details</div>
+        <div class="raw-grid" id="rawGrid"></div>
+      </div>
+
+      <div class="actions" style="margin-top:20px;">
+        <button class="btn btn-primary" id="newFileBtn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
+          Check Another PDF
+        </button>
+        <button class="btn btn-secondary" id="clearBtn">Clear</button>
+      </div>
+
+    </div>
+
+    <div class="seo-content">
+
+      <h2>🔐 What is PDF Encryption Checker?</h2>
+      <p>
+        A <strong>PDF Encryption Checker</strong> analyzes a PDF file's security settings whether it's <strong>encrypted</strong>, <strong>password-protected</strong>, or has <strong>restricted permissions</strong> (like preventing printing or copying). It shows you the exact encryption type, password requirements, and what actions the document allows or denies.
+      </p>
+      <p>
+        Unlike most online tools, BigToolz processes everything <strong>100% in your browser</strong> using <strong>pdf-lib</strong> and <strong>pdf.js</strong>. Your PDF <strong>never uploaded to any server</strong> complete privacy. And this tool <strong>only analyzes</strong> it never modifies your file.
+      </p>
+
+      <h2>🚀 How to Check PDF Encryption</h2>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-step-num">1</div>
+          <div class="how-step-title">Upload PDF</div>
+          <div class="how-step-desc">Drag & drop or click "Choose PDF File" to select a PDF.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">2</div>
+          <div class="how-step-title">Auto Analysis</div>
+          <div class="how-step-desc">The tool scans the encryption dictionary and permissions.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">3</div>
+          <div class="how-step-title">Review Report</div>
+          <div class="how-step-desc">See encryption type, security grade, and permissions.</div>
+        </div>
+      </div>
+
+      <h2>🔍 What This Tool Detects</h2>
+
+      <h3>1. Encryption Type</h3>
+      <p>PDFs use different encryption algorithms. This tool identifies which one your file uses:</p>
+      <ul>
+        <li><strong>None</strong> The PDF is not encrypted. Anyone can open, copy, and edit it.</li>
+        <li><strong>RC4-40</strong> Outdated 40-bit encryption. Very weak by modern standards.</li>
+        <li><strong>RC4-128</strong> 128-bit RC4. Also outdated; consider re-encrypting with AES.</li>
+        <li><strong>AES-128</strong> Strong 128-bit AES. Standard for many applications.</li>
+        <li><strong>AES-256</strong> Strongest available. Used by modern PDFs and Acrobat.</li>
+      </ul>
+
+      <h3>2. Password Protection</h3>
+      <p>PDFs can have two types of passwords:</p>
+      <ul>
+        <li><strong>User (Open) Password</strong> Required to open the PDF at all. Without it, the file is unreadable.</li>
+        <li><strong>Owner (Permissions) Password</strong> Restricts printing/copying/editing but doesn't prevent opening. Anyone can view the file, but not perform restricted actions.</li>
+      </ul>
+
+      <h3>3. Permissions</h3>
+      <p>Even without a password, PDFs can restrict what users can do. This tool checks:</p>
+      <ul>
+        <li><strong>Printing</strong> Can the PDF be printed? (None / Low-res / Full)</li>
+        <li><strong>Copying</strong> Can text and images be copied?</li>
+        <li><strong>Modifying</strong> Can content be edited?</li>
+        <li><strong>Annotating</strong> Can comments/notes be added?</li>
+        <li><strong>Form Filling</strong> Can form fields be filled?</li>
+        <li><strong>Page Extraction</strong> Can pages be extracted?</li>
+      </ul>
+
+      <h2>📊 Security Grades Explained</h2>
+      <ul>
+        <li><strong>🟢 Excellent</strong> AES-256 encryption with strong password protection.</li>
+        <li><strong>🟢 Good</strong> AES-128 with password protection and appropriate permissions.</li>
+        <li><strong>🟡 Moderate</strong> Encrypted but with weak algorithm (RC4-128) or no password.</li>
+        <li><strong>🔴 Weak</strong> RC4-40 or restricted permissions only, no encryption.</li>
+        <li><strong>⚫ None</strong> No encryption at all. File is fully accessible.</li>
+      </ul>
+
+      <h2>💡 When to Use This Tool</h2>
+      <ul>
+        <li><strong>Before sharing sensitive documents</strong> verify encryption is in place.</li>
+        <li><strong>After receiving a protected PDF</strong> check what restrictions apply.</li>
+        <li><strong>Auditing PDF security</strong> batch check company documents for compliance.</li>
+        <li><strong>Troubleshooting access issues</strong> find out why a PDF can't be printed or copied.</li>
+        <li><strong>Understanding user vs owner passwords</strong> determine which kind of protection is active.</li>
+      </ul>
+
+      <h2>✨ Key Features</h2>
+      <ul>
+        <li><strong>Complete encryption detection</strong> RC4, AES-128, AES-256, or None.</li>
+        <li><strong>Password type identification</strong> user vs owner password.</li>
+        <li><strong>Permissions report</strong> all 6 standard restrictions checked.</li>
+        <li><strong>Security grade</strong> color-coded visual score.</li>
+        <li><strong>Recommendations</strong> actionable next steps for your file.</li>
+        <li><strong>100% read-only analysis</strong> file is never modified.</li>
+        <li><strong>Complete privacy</strong> no uploads, works in your browser.</li>
+      </ul>
+
+      <h2>❓ Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-question">How can I check if a PDF is encrypted?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Upload the PDF to our tool. It analyzes the PDF's encryption dictionary and shows the encryption type, password status, and permission report instantly.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What encryption types exist in PDFs?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>PDF supports <strong>RC4-40, RC4-128, AES-128, and AES-256</strong>. Modern PDFs typically use AES-128 or AES-256 for strong protection. RC4 is outdated and considered weak by modern security standards.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What's the difference between user and owner passwords?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>A <strong>user (open) password</strong> is required to open the PDF without it, the file cannot be viewed. An <strong>owner (permissions) password</strong> restricts printing, copying, and editing but still lets anyone open the file without a password.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Does this tool unlock or remove encryption?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>No.</strong> This tool only <strong>analyzes and reports</strong> encryption details. It never modifies your PDF. To remove a password you already have, use our <a href="/tools/pdf-tools/security-pdf/unlock-pdf/">Unlock PDF</a> tool instead.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I check a password-protected PDF?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Partially. If the PDF has only an <strong>owner password</strong> (permissions restrictions), we can fully analyze it. If it has a <strong>user password</strong>, we can detect that it's encrypted but may not be able to read all the permission details.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What's a good encryption for PDFs?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>For most uses, <strong>AES-128</strong> is a good balance of security and compatibility. For high-security documents, use <strong>AES-256</strong>. Avoid RC4 encryption it's considered weak and can potentially be broken.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Are my PDFs uploaded to a server?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>No. All analysis happens in your browser using pdf-lib and pdf.js. Your PDF never leaves your device, and nothing is stored anywhere.</p></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-header">🔗 Related PDF Tools</div>
+    <div class="sidebar-list">
+      <a href="/tools/pdf-tools/security-pdf/protect-pdf/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#10b981;">🔒</div>
+        <div class="sidebar-info"><div class="sidebar-title">Protect PDF</div><div class="sidebar-desc">Add password</div></div>
+      </a>
+      <a href="/tools/pdf-tools/security-pdf/unlock-pdf/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#3b82f6;">🔓</div>
+        <div class="sidebar-info"><div class="sidebar-title">Unlock PDF</div><div class="sidebar-desc">Remove password</div></div>
+      </a>
+      <a href="/tools/pdf-tools/security-pdf/permission-remover/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#f59e0b;">🔓</div>
+        <div class="sidebar-info"><div class="sidebar-title">Remove Restrictions</div><div class="sidebar-desc">Clear permissions</div></div>
+      </a>
+      <a href="/tools/pdf-tools/security-pdf/digital-signature/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#06b6d4;">✓</div>
+        <div class="sidebar-info"><div class="sidebar-title">Verify Signature</div><div class="sidebar-desc">Check signing</div></div>
+      </a>
+      <a href="/tools/pdf-tools/security-pdf/metadata-viewer/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#8b5cf6;">ℹ️</div>
+        <div class="sidebar-info"><div class="sidebar-title">Metadata Viewer</div><div class="sidebar-desc">View properties</div></div>
+      </a>
+      <a href="/tools/pdf-tools/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#64748b;">📕</div>
+        <div class="sidebar-info"><div class="sidebar-title">All PDF Tools →</div><div class="sidebar-desc">Browse 100+ tools</div></div>
+      </a>
+    </div>
+  </aside>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand"><div class="logo-icon">⚒</div>BigToolz</span></div>
+      <p class="footer-tagline">Your Ultimate Online Tools Hub</p>
+      <div class="footer-social">
+        <a href="https://facebook.com/bigtoolz" aria-label="Facebook">f</a>
+        <a href="https://twitter.com/bigtoolz" aria-label="Twitter">𝕏</a>
+        <a href="https://youtube.com/@bigtoolz" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+    <div>
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/tools/">All Tools</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Categories</h3>
+      <ul class="footer-links">
+        <li><a href="/tools/image-tools/">Image Tools</a></li>
+        <li><a href="/tools/pdf-tools/">PDF Tools</a></li>
+        <li><a href="/tools/text-tools/">Text Tools</a></li>
+        <li><a href="/tools/seo-tools/">SEO Tools</a></li>
+        <li><a href="/tools/categories">All Categories →</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Legal</h3>
+      <ul class="footer-links">
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left"><span>✓ 100% Free</span><span>✓ No Sign Up</span><span>✓ No Installation</span></div>
+    <div class="footer-bottom-right">© 2026 BigToolz. All rights reserved.</div>
+    <div class="footer-bottom-links"><a href="/privacy-policy">Privacy</a><a href="/terms">Terms</a><a href="/disclaimer">Disclaimer</a></div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<!-- Libraries -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+
+<script>
+'use strict';
+
+/* ===== THEME ===== */
+(function(){try{var t=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&d))document.documentElement.setAttribute('data-theme','dark');else if(t==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();
+document.querySelector('.theme-btn')?.addEventListener('click',()=>{const h=document.documentElement;const c=h.getAttribute('data-theme');const d=window.matchMedia('(prefers-color-scheme: dark)').matches;let n=c==='dark'?'light':c==='light'?'dark':(d?'light':'dark');h.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}});
+
+/* ===== HELPERS ===== */
+const $ = (s, p = document) => p.querySelector(s);
+const $$ = (s, p = document) => [...p.querySelectorAll(s)];
+
+function formatBytes(b) {
+  if (b === 0) return '0 B';
+  const k = 1024, sizes = ['B', 'KB', 'MB', 'GB'];
+  const i = Math.floor(Math.log(b) / Math.log(k));
+  return (b / Math.pow(k, i)).toFixed(i === 0 ? 0 : 1) + ' ' + sizes[i];
+}
+
+function showToast(msg, type = 'info', duration = 3000) {
+  const t = $('#toast');
+  if (!t) return;
+  t.className = 'toast visible' + (type !== 'info' ? ' ' + type : '');
+  t.textContent = msg;
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove('visible'), duration);
+}
+
+/* ===== PDF.js Setup ===== */
+if (window.pdfjsLib) {
+  pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+}
+
+/* ===== STATE ===== */
+const state = {
+  pdfFile: null,
+  pdfDoc: null,
+  pdfName: '',
+  pdfPages: 0,
+  pdfSize: 0,
+  isAnalyzing: false,
+  report: null
+};
+
+/* ===== DOM ===== */
+const dropzone = $('#dropzone');
+const fileInput = $('#fileInput');
+const chooseBtn = $('#chooseBtn');
+const browseLink = $('#browseLink');
+const clearBtn = $('#clearBtn');
+const newFileBtn = $('#newFileBtn');
+const loadingArea = $('#loadingArea');
+const loadingText = $('#loadingText');
+const pdfInfo = $('#pdfInfo');
+const pdfName = $('#pdfName');
+const pdfMeta = $('#pdfMeta');
+const scoreCard = $('#scoreCard');
+const scoreIcon = $('#scoreIcon');
+const scoreTitle = $('#scoreTitle');
+const scoreDesc = $('#scoreDesc');
+const detailGrid = $('#detailGrid');
+const encTypeIcon = $('#encTypeIcon');
+const encTypeValue = $('#encTypeValue');
+const encTypeDesc = $('#encTypeDesc');
+const pwdIcon = $('#pwdIcon');
+const pwdValue = $('#pwdValue');
+const pwdDesc = $('#pwdDesc');
+const versionIcon = $('#versionIcon');
+const versionValue = $('#versionValue');
+const versionDesc = $('#versionDesc');
+const permIcon = $('#permIcon');
+const permValue = $('#permValue');
+const permDesc = $('#permDesc');
+const permissionsSection = $('#permissionsSection');
+const permissionsGrid = $('#permissionsGrid');
+const recsSection = $('#recsSection');
+const recsList = $('#recsList');
+const rawInfo = $('#rawInfo');
+const rawGrid = $('#rawGrid');
+
+/* ===== FILE SELECTION ===== */
+function triggerFileSelect() { fileInput.click(); }
+chooseBtn.addEventListener('click', (e) => { e.stopPropagation(); triggerFileSelect(); });
+browseLink.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); triggerFileSelect(); });
+dropzone.addEventListener('click', triggerFileSelect);
+
+fileInput.addEventListener('change', (e) => {
+  const f = e.target.files[0];
+  if (f && (f.type === 'application/pdf' || f.name.toLowerCase().endsWith('.pdf'))) analyzePDF(f);
+  fileInput.value = '';
+});
+
+['dragenter', 'dragover'].forEach(evt => {
+  dropzone.addEventListener(evt, (e) => { e.preventDefault(); e.stopPropagation(); dropzone.classList.add('dragover'); });
+});
+['dragleave', 'drop'].forEach(evt => {
+  dropzone.addEventListener(evt, (e) => { e.preventDefault(); e.stopPropagation(); dropzone.classList.remove('dragover'); });
+});
+dropzone.addEventListener('drop', (e) => {
+  const f = e.dataTransfer.files[0];
+  if (f && (f.type === 'application/pdf' || f.name.toLowerCase().endsWith('.pdf'))) analyzePDF(f);
+  else showToast('Please drop a PDF file', 'error');
+});
+
+/* ===== MAIN ANALYSIS ===== */
+async function analyzePDF(file) {
+  if (state.isAnalyzing) return;
+  if (!window.pdfjsLib) {
+    showToast('PDF library not loaded. Check your internet.', 'error');
+    return;
+  }
+
+  state.pdfFile = file;
+  state.pdfName = file.name;
+  state.pdfSize = file.size;
+  state.isAnalyzing = true;
+
+  dropzone.style.display = 'none';
+  loadingArea.classList.add('visible');
+  loadingText.textContent = 'Reading PDF structure...';
+  hideAllReports();
+
+  try {
+    const arrayBuffer = await file.arrayBuffer();
+    const buffer = arrayBuffer.slice(0);
+
+    // Parse raw PDF for encryption dictionary
+    loadingText.textContent = 'Checking for encryption...';
+    const rawInfo = parseRawPDF(buffer);
+
+    // Try loading with pdf.js
+    loadingText.textContent = 'Testing access...';
+    let pageCount = 0;
+    let pdfjsLoaded = false;
+    let pdfjsError = null;
+
+    try {
+      const loadingTask = pdfjsLib.getDocument({ data: arrayBuffer.slice(0) });
+      const pdf = await loadingTask.promise;
+      pageCount = pdf.numPages;
+      pdfjsLoaded = true;
+      state.pdfDoc = pdf;
+    } catch (err) {
+      pdfjsError = err;
+      console.warn('pdf.js load failed:', err);
+    }
+
+    // Try loading with pdf-lib (may fail on encrypted files)
+    let libLoaded = false;
+    let libError = null;
+    let libMetadata = null;
+    try {
+      const libDoc = await PDFLib.PDFDocument.load(buffer.slice(0), { ignoreEncryption: true });
+      libLoaded = true;
+      libMetadata = {
+        title: libDoc.getTitle() || '',
+        author: libDoc.getAuthor() || '',
+        producer: libDoc.getProducer() || ''
+      };
+    } catch (err) {
+      libError = err;
+      console.warn('pdf-lib load failed:', err);
+    }
+
+    // Build report
+    const report = buildReport(rawInfo, pdfjsLoaded, pdfjsError, pageCount, libLoaded, libMetadata);
+    state.report = report;
+
+    loadingText.textContent = 'Generating report...';
+    await new Promise(r => setTimeout(r, 300));
+
+    loadingArea.classList.remove('visible');
+    renderReport(report, file);
+
+  } catch (err) {
+    console.error('Analysis failed:', err);
+    loadingArea.classList.remove('visible');
+    dropzone.style.display = '';
+    showToast('Failed to analyze PDF: ' + err.message, 'error', 5000);
+  } finally {
+    state.isAnalyzing = false;
+  }
+}
+
+/* ===== RAW PDF PARSING ===== */
+function parseRawPDF(arrayBuffer) {
+  // Convert to binary string for pattern search
+  const bytes = new Uint8Array(arrayBuffer);
+  const decoder = new TextDecoder('latin1');
+  const text = decoder.decode(bytes);
+
+  const info = {
+    pdfVersion: null,
+    encrypted: false,
+    encryptionDictFound: false,
+    filterTypes: [],
+    v: null,     // Algorithm version
+    r: null,     // Revision
+    length: null, // Key length
+    perms: null, // Permissions bitmask
+    hasUserPassword: false,
+    hasOwnerPassword: false,
+    xrefStm: false,
+    objStm: false,
+    linearized: false,
+    hasMetadata: false,
+    hasJavaScript: false,
+    hasEmbeddedFiles: false,
+    hasXFA: false
+  };
+
+  // Detect PDF version from header
+  const versionMatch = text.match(/^%PDF-(\d+\.\d+)/);
+  if (versionMatch) info.pdfVersion = versionMatch[1];
+
+  // Linearized?
+  info.linearized = /\/Linearized/.test(text);
+
+  // XRef stream?
+  info.xrefStm = /\/XRef/.test(text) || /\/Type\s*\/XRef/.test(text);
+
+  // Object stream?
+  info.objStm = /\/ObjStm/.test(text);
+
+  // Metadata?
+  info.hasMetadata = /\/Metadata/.test(text);
+
+  // JavaScript?
+  info.hasJavaScript = /\/JavaScript/.test(text);
+
+  // Embedded files?
+  info.hasEmbeddedFiles = /\/EmbeddedFiles/.test(text);
+
+  // XFA forms?
+  info.hasXFA = /\/XFA/.test(text);
+
+  // Encryption look for /Encrypt dictionary
+  const encryptMatch = text.match(/\/Encrypt\s+(\d+)\s+(\d+)\s+R/);
+  if (encryptMatch) {
+    info.encrypted = true;
+    info.encryptionDictFound = true;
+  }
+
+  // Also try to find /Encrypt reference in trailer
+  if (!info.encrypted && /\/Encrypt\s+\d+\s+\d+\s+R/.test(text)) {
+    info.encrypted = true;
+    info.encryptionDictFound = true;
+  }
+
+  // Look for encryption dictionary keywords
+  if (/\/Filter\s*\/Standard/.test(text)) {
+    info.encryptionDictFound = true;
+  }
+
+  // Detect encryption version (V) and revision (R)
+  const vMatch = text.match(/\/V\s+(\d+)/);
+  if (vMatch) info.v = parseInt(vMatch[1], 10);
+
+  const rMatch = text.match(/\/R\s+(\d+)/);
+  if (rMatch) info.r = parseInt(rMatch[1], 10);
+
+  // Detect key length
+  const lengthMatch = text.match(/\/Length\s+(\d+)/);
+  if (lengthMatch) {
+    const len = parseInt(lengthMatch[1], 10);
+    if (len === 40 || len === 128 || len === 256) info.length = len;
+  }
+
+  // Permissions bitmask
+  const permsMatch = text.match(/\/P\s+(-?\d+)/);
+  if (permsMatch) info.perms = parseInt(permsMatch[1], 10);
+
+  // CF (crypt filter) with AESV2 or AESV3
+  if (/\/AESV3/.test(text)) info.filterTypes.push('AESV3');
+  if (/\/AESV2/.test(text)) info.filterTypes.push('AESV2');
+  if (/\/V2/.test(text) && !info.filterTypes.includes('AESV2')) info.filterTypes.push('RC4');
+
+  return info;
+}
+
+/* ===== BUILD REPORT ===== */
+function buildReport(raw, pdfjsLoaded, pdfjsError, pageCount, libLoaded, libMetadata) {
+  const report = {
+    encrypted: raw.encrypted || raw.encryptionDictFound,
+    encryptionType: 'None',
+    encryptionIcon: '🔓',
+    encryptionColor: 'gray',
+    encryptionDesc: 'Not encrypted',
+    passwordProtected: false,
+    passwordType: 'None',
+    passwordIcon: '🔓',
+    passwordDesc: 'No password required',
+    pdfVersion: raw.pdfVersion || 'Unknown',
+    versionDesc: 'Standard version',
+    permissionsRestricted: false,
+    permissionList: [],
+    securityGrade: 'none',
+    securityTitle: 'Not Encrypted',
+    securityIcon: '🔓',
+    securityDesc: 'This PDF has no encryption. Anyone can open, copy, and edit it.',
+    recommendations: [],
+    raw: raw,
+    meta: libMetadata,
+    pageCount: pageCount,
+    jsError: pdfjsError ? pdfjsError.message : null
+  };
+
+  // Determine encryption type
+  if (!report.encrypted) {
+    report.encryptionType = 'None';
+    report.encryptionIcon = '🔓';
+    report.encryptionColor = 'gray';
+    report.encryptionDesc = 'File is not encrypted';
+    report.securityGrade = 'none';
+    report.securityTitle = 'Not Encrypted';
+    report.securityIcon = '🔓';
+    report.securityDesc = 'This PDF has no encryption. Anyone can open, copy, and edit it freely.';
+    report.recommendations.push('If this file contains sensitive data, consider encrypting it with our Protect PDF tool.');
+    report.recommendations.push('Without encryption, all content can be copied and modified by anyone.');
+  } else {
+    // Determine algorithm
+    let alg = 'Unknown';
+    let algIcon = '🔐';
+    let algColor = 'amber';
+    let algDesc = '';
+
+    if (raw.filterTypes.includes('AESV3') || (raw.v === 5 && raw.length === 256)) {
+      alg = 'AES-256';
+      algIcon = '🛡';
+      algColor = 'green';
+      algDesc = 'Strong 256-bit AES encryption';
+      report.securityGrade = 'strong';
+    } else if (raw.filterTypes.includes('AESV2') || (raw.v === 4 && raw.length === 128)) {
+      alg = 'AES-128';
+      algIcon = '🔐';
+      algColor = 'green';
+      algDesc = 'Secure 128-bit AES encryption';
+      report.securityGrade = 'strong';
+    } else if (raw.v === 4) {
+      alg = 'AES (V4)';
+      algIcon = '🔐';
+      algColor = 'green';
+      algDesc = 'AES-based encryption (version 4)';
+      report.securityGrade = 'strong';
+    } else if (raw.v === 2 && raw.length === 128) {
+      alg = 'RC4-128';
+      algIcon = '⚠️';
+      algColor = 'amber';
+      algDesc = '128-bit RC4 outdated, consider AES';
+      report.securityGrade = 'moderate';
+    } else if (raw.v === 1 || (raw.length === 40)) {
+      alg = 'RC4-40';
+      algIcon = '⚠️';
+      algColor = 'red';
+      algDesc = '40-bit RC4 weak, upgrade to AES';
+      report.securityGrade = 'weak';
+    } else if (raw.v) {
+      alg = 'V' + raw.v + (raw.length ? '/' + raw.length + '-bit' : '');
+      algIcon = '🔐';
+      algColor = 'amber';
+      algDesc = 'Encryption version ' + raw.v;
+      report.securityGrade = 'moderate';
+    }
+
+    report.encryptionType = alg;
+    report.encryptionIcon = algIcon;
+    report.encryptionColor = algColor;
+    report.encryptionDesc = algDesc;
+
+    // Password protection
+    // If pdf.js can't open the file → user password
+    // If pdf.js opens but pdf-lib warnings → owner password
+    if (pdfjsError && /password/i.test(pdfjsError.message || '')) {
+      report.passwordProtected = true;
+      report.passwordType = 'User (Open)';
+      report.passwordIcon = '🔒';
+      report.passwordDesc = 'Requires password to open';
+      report.securityGrade = 'strong';
+      report.securityTitle = 'Strongly Protected';
+      report.securityIcon = '🔒';
+      report.securityDesc = 'This PDF is encrypted with a user (open) password. It cannot be viewed without the password.';
+    } else if (report.encrypted) {
+      report.passwordProtected = true;
+      report.passwordType = 'Owner (Permissions)';
+      report.passwordIcon = '🛡';
+      report.passwordDesc = 'Opens without password but actions are restricted';
+      if (report.securityGrade === 'none') report.securityGrade = 'moderate';
+    } else {
+      report.passwordType = 'None';
+      report.passwordDesc = 'No password protection detected';
+    }
+
+    // Security title based on grade if not already set
+    if (!report.securityTitle || report.securityTitle === 'Not Encrypted') {
+      if (report.securityGrade === 'strong') {
+        report.securityTitle = 'Strongly Encrypted';
+        report.securityIcon = '🛡';
+        report.securityDesc = 'This PDF is encrypted with ' + alg + ' strong protection against unauthorized access.';
+      } else if (report.securityGrade === 'moderate') {
+        report.securityTitle = 'Moderately Encrypted';
+        report.securityIcon = '🔐';
+        report.securityDesc = 'This PDF uses ' + alg + ' functional but not the strongest available.';
+      } else if (report.securityGrade === 'weak') {
+        report.securityTitle = 'Weak Encryption';
+        report.securityIcon = '⚠️';
+        report.securityDesc = 'This PDF uses ' + alg + ' outdated and potentially breakable. Upgrade to AES.';
+      }
+    }
+  }
+
+  // Parse permissions
+  if (raw.perms !== null && raw.perms !== undefined) {
+    const perms = raw.perms;
+    // PDF permission bits (1 means allowed in most cases, but negatives are common)
+    // Bit 3 (4): print, Bit 4 (8): modify, Bit 5 (16): copy, Bit 6 (32): annotate,
+    // Bit 9 (256): fill forms, Bit 10 (512): extract, Bit 11 (1024): assemble, Bit 12 (2048): print HQ
+
+    const isAllowed = (bit) => {
+      // If perms is negative, high bits are set (older PDFs)
+      // For simplicity: check if bit is set in absolute value
+      const abs = Math.abs(perms);
+      return (abs & bit) !== 0;
+    };
+
+    // Only treat as restricted if encryption present
+    if (report.encrypted) {
+      report.permissionsRestricted = true;
+      report.permissionList = [
+        { name: 'Printing', allowed: isAllowed(4) },
+        { name: 'Modifying Content', allowed: isAllowed(8) },
+        { name: 'Copying Text/Images', allowed: isAllowed(16) },
+        { name: 'Adding Annotations', allowed: isAllowed(32) },
+        { name: 'Filling Forms', allowed: isAllowed(256) },
+        { name: 'Extracting Pages', allowed: isAllowed(512) }
+      ];
+    }
+  }
+
+  // If not restricted, show all allowed
+  if (!report.permissionsRestricted) {
+    report.permissionList = [
+      { name: 'Printing', allowed: true },
+      { name: 'Modifying Content', allowed: true },
+      { name: 'Copying Text/Images', allowed: true },
+      { name: 'Adding Annotations', allowed: true },
+      { name: 'Filling Forms', allowed: true },
+      { name: 'Extracting Pages', allowed: true }
+    ];
+  }
+
+  // PDF version desc
+  const verMap = {
+    '1.0': 'PDF 1.0 (1993) Original',
+    '1.1': 'PDF 1.1 (1996) Added encryption',
+    '1.2': 'PDF 1.2 (1996) Added annotations',
+    '1.3': 'PDF 1.3 (2000) Added digital signatures',
+    '1.4': 'PDF 1.4 (2001) Added transparency',
+    '1.5': 'PDF 1.5 (2003) Added layers, JPEG2000',
+    '1.6': 'PDF 1.6 (2004) Added AES encryption',
+    '1.7': 'PDF 1.7 (2006) ISO 32000-1, AES-256',
+    '2.0': 'PDF 2.0 (2017) ISO 32000-2, modern'
+  };
+  report.versionDesc = verMap[report.pdfVersion] || 'PDF version ' + report.pdfVersion;
+
+  // Recommendations based on findings
+  if (report.encrypted && report.securityGrade === 'weak') {
+    report.recommendations.push('This PDF uses outdated RC4 encryption. Consider re-encrypting with AES-256.');
+    report.recommendations.push('RC4 encryption has known weaknesses and may be breakable.');
+  }
+
+  if (report.encrypted && !report.passwordProtected) {
+    report.recommendations.push('The PDF is encrypted but has no user password permissions can be bypassed by many tools.');
+  }
+
+  if (raw.hasJavaScript) {
+    report.recommendations.push('This PDF contains embedded JavaScript potentially risky if from an untrusted source.');
+  }
+
+  if (raw.hasEmbeddedFiles) {
+    report.recommendations.push('This PDF has embedded files. Inspect carefully before opening attachments.');
+  }
+
+  if (!report.encrypted) {
+    report.recommendations.push('Consider encrypting this file if it contains personal, financial, or business-sensitive information.');
+  }
+
+  if (report.permissionsRestricted) {
+    report.recommendations.push('Permission restrictions can be removed by many PDF tools they are not a strong security measure.');
+  }
+
+  return report;
+}
+
+/* ===== RENDER REPORT ===== */
+function renderReport(report, file) {
+  // PDF info bar
+  pdfName.textContent = file.name;
+  pdfMeta.textContent = `${report.pageCount || '?'} page${report.pageCount !== 1 ? 's' : ''} · ${formatBytes(file.size)}`;
+  pdfInfo.classList.add('visible');
+
+  // Score card
+  scoreCard.classList.add('visible');
+  scoreCard.className = 'score-card visible';
+  if (report.securityGrade === 'strong') scoreCard.classList.add('strong');
+  else if (report.securityGrade === 'moderate') scoreCard.classList.add('moderate');
+  else if (report.securityGrade === 'weak') scoreCard.classList.add('weak');
+  else scoreCard.classList.add('none');
+
+  scoreIcon.textContent = report.securityIcon;
+  scoreTitle.textContent = report.securityTitle;
+  scoreDesc.textContent = report.securityDesc;
+
+  // Detail grid
+  detailGrid.classList.add('visible');
+
+  encTypeIcon.textContent = report.encryptionIcon;
+  encTypeIcon.className = 'detail-icon ' + (report.encryptionColor === 'green' ? 'green' : report.encryptionColor === 'red' ? 'red' : report.encryptionColor === 'amber' ? 'amber' : 'gray');
+  encTypeValue.textContent = report.encryptionType;
+  encTypeDesc.textContent = report.encryptionDesc;
+
+  pwdIcon.textContent = report.passwordIcon;
+  pwdIcon.className = 'detail-icon ' + (report.passwordType.includes('User') ? 'red' : report.passwordType.includes('Owner') ? 'amber' : 'gray');
+  pwdValue.textContent = report.passwordType === 'None' ? 'No' : 'Yes';
+  pwdDesc.textContent = report.passwordDesc;
+
+  versionIcon.className = 'detail-icon';
+  versionValue.textContent = report.pdfVersion;
+  versionDesc.textContent = report.versionDesc;
+
+  permIcon.className = 'detail-icon ' + (report.permissionsRestricted ? 'amber' : 'green');
+  permValue.textContent = report.permissionsRestricted ? 'Yes' : 'No';
+  permDesc.textContent = report.permissionsRestricted ? 'Some actions restricted' : 'Full access allowed';
+
+  // Permissions list
+  permissionsSection.classList.add('visible');
+  permissionsGrid.innerHTML = '';
+  report.permissionList.forEach(perm => {
+    const item = document.createElement('div');
+    item.className = 'permission-item ' + (perm.allowed ? 'allowed' : 'denied');
+    item.innerHTML = `
+      <div class="permission-icon">${perm.allowed ? '✓' : '✕'}</div>
+      <div class="permission-name">${perm.name}</div>
+      <div class="permission-status">${perm.allowed ? 'Allowed' : 'Denied'}</div>
+    `;
+    permissionsGrid.appendChild(item);
+  });
+
+  // Recommendations
+  if (report.recommendations.length > 0) {
+    recsSection.classList.add('visible');
+    recsList.innerHTML = '';
+    report.recommendations.forEach(rec => {
+      const li = document.createElement('li');
+      li.textContent = rec;
+      recsList.appendChild(li);
+    });
+  }
+
+  // Raw info
+  rawInfo.classList.add('visible');
+  rawGrid.innerHTML = '';
+
+  const rawItems = [
+    { label: 'PDF Version', value: report.raw.pdfVersion || 'Unknown' },
+    { label: 'Page Count', value: report.pageCount || 'Unknown' },
+    { label: 'File Size', value: formatBytes(file.size) },
+    { label: 'Linearized', value: report.raw.linearized ? 'Yes' : 'No' },
+    { label: 'Has Metadata', value: report.raw.hasMetadata ? 'Yes' : 'No' },
+    { label: 'Has JavaScript', value: report.raw.hasJavaScript ? '⚠️ Yes' : 'No' },
+    { label: 'Embedded Files', value: report.raw.hasEmbeddedFiles ? '⚠️ Yes' : 'No' },
+    { label: 'XFA Forms', value: report.raw.hasXFA ? 'Yes' : 'No' },
+    { label: 'Object Streams', value: report.raw.objStm ? 'Yes (compressed)' : 'No' },
+    { label: 'XRef Stream', value: report.raw.xrefStm ? 'Yes' : 'No' }
+  ];
+
+  if (report.raw.v !== null) rawItems.push({ label: 'Encryption Version', value: 'V=' + report.raw.v });
+  if (report.raw.r !== null) rawItems.push({ label: 'Encryption Revision', value: 'R=' + report.raw.r });
+  if (report.raw.length) rawItems.push({ label: 'Key Length', value: report.raw.length + ' bits' });
+  if (report.raw.filterTypes.length) rawItems.push({ label: 'Crypt Filters', value: report.raw.filterTypes.join(', ') });
+  if (report.raw.perms !== null) rawItems.push({ label: 'Permission Bitmask', value: String(report.raw.perms) });
+  if (report.meta && report.meta.title) rawItems.push({ label: 'Document Title', value: report.meta.title });
+  if (report.meta && report.meta.author) rawItems.push({ label: 'Author', value: report.meta.author });
+  if (report.meta && report.meta.producer) rawItems.push({ label: 'Producer', value: report.meta.producer });
+
+  rawItems.forEach(item => {
+    const div = document.createElement('div');
+    div.className = 'raw-item';
+    div.innerHTML = `<div class="raw-label">${item.label}</div><div class="raw-value">${escapeHtml(String(item.value))}</div>`;
+    rawGrid.appendChild(div);
+  });
+
+  showToast('✅ Analysis complete', 'success');
+}
+
+function escapeHtml(str) {
+  const div = document.createElement('div');
+  div.textContent = str;
+  return div.innerHTML;
+}
+
+/* ===== HIDE ALL ===== */
+function hideAllReports() {
+  pdfInfo.classList.remove('visible');
+  scoreCard.classList.remove('visible');
+  detailGrid.classList.remove('visible');
+  permissionsSection.classList.remove('visible');
+  recsSection.classList.remove('visible');
+  rawInfo.classList.remove('visible');
+}
+
+/* ===== ACTIONS ===== */
+newFileBtn.addEventListener('click', resetAll);
+clearBtn.addEventListener('click', resetAll);
+
+function resetAll() {
+  if (state.pdfDoc) {
+    try { state.pdfDoc.destroy(); } catch (e) {}
+  }
+  state.pdfDoc = null;
+  state.pdfFile = null;
+  state.report = null;
+  state.pdfPages = 0;
+
+  hideAllReports();
+  loadingArea.classList.remove('visible');
+  dropzone.style.display = '';
+
+  showToast('Cleared');
+}
+
+/* ===== FAQ ===== */
+$$('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    $$('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+</script>
+
+</body>
+</html>

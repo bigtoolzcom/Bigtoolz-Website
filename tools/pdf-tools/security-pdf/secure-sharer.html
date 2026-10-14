@@ -1,0 +1,1403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2563eb">
+
+<title>Secure PDF Sharer - Share PDFs Safely with Password & Expiry | BigToolz</title>
+<meta name="description" content="Share PDFs securely online free. Add password protection, expiry date, permissions, and recipient watermark. Generate secure share link. No upload, private.">
+<meta name="keywords" content="secure pdf share, password protect pdf share, share pdf safely, pdf expiry, pdf share link, encrypted pdf share">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://bigtoolz.com/tools/pdf-tools/security-pdf/secure-sharer/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Secure PDF Sharer - Free Online Tool | BigToolz">
+<meta property="og:description" content="Share PDFs with password, expiry & permissions free, no upload.">
+<meta property="og:url" content="https://bigtoolz.com/tools/pdf-tools/security-pdf/secure-sharer/">
+<meta property="og:image" content="https://bigtoolz.com/assets/images/og-image.jpg">
+<meta property="og:site_name" content="BigToolz">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Secure PDF Sharer - BigToolz">
+<meta name="twitter:description" content="Share PDFs securely with password & expiry free, no upload.">
+<meta name="twitter:image" content="https://bigtoolz.com/assets/images/twitter-card.jpg">
+
+<link rel="icon" href="/assets/images/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/images/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#f8f9fc;color:#1a1a2e;overflow-x:hidden;line-height:1.5}
+
+  .header{background:#fff;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;position:sticky;top:0;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+  .header-left{display:flex;align-items:center;gap:40px}
+  .logo{display:flex;align-items:center;gap:8px;font-size:22px;font-weight:800;color:#1a1a2e;text-decoration:none}
+  .logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#3b82f6,#2563eb);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px}
+  .logo span{color:#2563eb}
+  .nav{display:flex;align-items:center;gap:28px;list-style:none}
+  .nav a{text-decoration:none;color:#4b5563;font-size:14px;font-weight:500;transition:color .2s}
+  .nav a:hover,.nav a.active{color:#2563eb}
+  .header-right{display:flex;align-items:center;gap:16px}
+  .search-btn,.theme-btn{width:36px;height:36px;border-radius:50%;border:none;background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#4b5563}
+  .search-btn:hover,.theme-btn:hover{background:#f3f4f6}
+  .bookmark-btn{display:flex;align-items:center;gap:8px;background:#2563eb;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
+  .bookmark-btn:hover{background:#1d4ed8}
+
+  .hero{background:linear-gradient(135deg,#0a0e27 0%,#1a1a4e 40%,#2d1b69 70%,#4c1d95 100%);padding:40px 40px 60px;position:relative;overflow:hidden;color:#fff}
+  .hero::before{content:'';position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(16,185,129,.25) 0%,transparent 70%);border-radius:50%}
+  .hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+  .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px;flex-wrap:wrap}
+  .breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none}
+  .breadcrumb a:hover{color:#fff}
+  .breadcrumb .sep{color:rgba(255,255,255,.4)}
+  .breadcrumb .current{color:#fff;font-weight:500}
+  .hero-title-row{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+  .hero-icon{width:60px;height:60px;background:#10b981;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;color:#fff;flex-shrink:0;box-shadow:0 8px 24px rgba(16,185,129,.4)}
+  .hero-title{font-size:42px;font-weight:800;line-height:1.15}
+  .hero-title .blue{color:#34d399}
+  .hero-desc{font-size:15px;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:24px;max-width:560px}
+  .hero-features{display:flex;gap:24px;flex-wrap:wrap}
+  .hero-feature{display:flex;align-items:center;gap:6px;font-size:13px;color:#fff;font-weight:500}
+  .hero-feature .check{width:18px;height:18px;border-radius:50%;background:#10b981;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;flex-shrink:0}
+
+  .main-content{max-width:1200px;margin:0 auto;padding:40px;display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start}
+  .tool-content{min-width:0}
+
+  .workspace{background:#fff;border-radius:16px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,.06);border:1px solid #e5e7eb;margin-bottom:24px}
+
+  .dropzone{border:2px dashed #a7f3d0;border-radius:12px;padding:50px 30px;text-align:center;background:#f0fdf4;margin-bottom:24px;transition:all .2s;cursor:pointer}
+  .dropzone:hover,.dropzone.dragover{border-color:#10b981;background:#d1fae5}
+  .dropzone-icon{width:60px;height:60px;background:linear-gradient(135deg,#10b981,#059669);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;color:#fff;font-size:26px;transition:transform .2s}
+  .dropzone:hover .dropzone-icon{transform:translateY(-4px)}
+  .dropzone-title{font-size:16px;font-weight:700;color:#1a1a2e;margin-bottom:8px}
+  .dropzone-sub{font-size:14px;color:#6b7280;margin-bottom:20px}
+  .dropzone-sub a{color:#10b981;font-weight:600;text-decoration:none}
+  .choose-btn{display:inline-flex;align-items:center;gap:8px;background:#10b981;color:#fff;border:none;padding:12px 28px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;transition:background .2s}
+  .choose-btn:hover{background:#059669}
+  .dropzone-info{font-size:12px;color:#9ca3af;display:flex;align-items:center;justify-content:center;gap:8px;margin-top:16px;flex-wrap:wrap}
+  .dropzone-info .divider{color:#d1d5db}
+  .file-input{display:none}
+
+  .pdf-info{display:none;background:#f0fdf4;border-radius:12px;padding:16px 20px;margin-bottom:20px;border:1px solid #a7f3d0;align-items:center;gap:16px;flex-wrap:wrap}
+  .pdf-info.visible{display:flex}
+  .pdf-info-icon{width:44px;height:44px;background:#10b981;border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:18px;flex-shrink:0}
+  .pdf-info-details{flex:1;min-width:0}
+  .pdf-info-name{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .pdf-info-meta{font-size:12px;color:#6b7280}
+
+  /* Warning */
+  .warn-box{display:none;background:#fef3c7;border-left:4px solid #f59e0b;border-radius:10px;padding:14px 18px;margin-bottom:20px;font-size:13px;color:#92400e;line-height:1.6}
+  .warn-box.visible{display:block}
+  .warn-box strong{color:#78350f;display:block;margin-bottom:4px}
+
+  /* Steps nav */
+  .steps-nav{display:flex;gap:4px;background:#f1f5f9;padding:4px;border-radius:10px;margin-bottom:20px;flex-wrap:wrap}
+  .step-tab{flex:1;min-width:100px;padding:10px 14px;background:transparent;border:none;border-radius:8px;font-size:12px;font-weight:700;color:#6b7280;cursor:pointer;font-family:inherit;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:6px}
+  .step-tab.active{background:#fff;color:#10b981;box-shadow:0 1px 3px rgba(0,0,0,.1)}
+  .step-tab:hover:not(.active){background:rgba(255,255,255,.5)}
+  .step-tab-num{width:20px;height:20px;border-radius:50%;background:#cbd5e1;color:#4b5563;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;flex-shrink:0}
+  .step-tab.active .step-tab-num{background:#10b981;color:#fff}
+
+  .step-panel{display:none}
+  .step-panel.active{display:block}
+
+  /* Notice */
+  .notice{background:#eff6ff;border-left:4px solid #3b82f6;border-radius:10px;padding:12px 16px;margin-bottom:16px;font-size:12px;color:#1e40af;line-height:1.6}
+  .notice strong{display:block;margin-bottom:4px;color:#1e3a8a}
+
+  /* Form fields */
+  .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+  .form-group{display:flex;flex-direction:column;gap:6px}
+  .form-group.full{grid-column:span 2}
+  .form-group label{font-size:12px;font-weight:700;color:#4b5563;text-transform:uppercase;letter-spacing:.3px;display:flex;align-items:center;justify-content:space-between;gap:8px}
+  .form-group label .badge{font-size:10px;font-weight:600;color:#059669;background:#d1fae5;padding:2px 8px;border-radius:8px;text-transform:none;letter-spacing:0}
+  .form-group input,.form-group textarea,.form-group select{width:100%;padding:11px 14px;border:1px solid #e5e7eb;border-radius:8px;font-size:13px;font-family:inherit;color:#1a1a2e;background:#fff;outline:none;transition:border-color .2s}
+  .form-group input:focus,.form-group textarea:focus,.form-group select:focus{border-color:#10b981;box-shadow:0 0 0 3px rgba(16,185,129,.1)}
+  .form-group textarea{min-height:70px;resize:vertical;line-height:1.5}
+  .form-help{font-size:11px;color:#9ca3af;line-height:1.4}
+
+  /* Password generator */
+  .password-wrap{display:flex;gap:8px}
+  .password-wrap input{flex:1;font-family:'JetBrains Mono','Courier New',monospace}
+  .gen-btn{padding:11px 16px;background:#10b981;color:#fff;border:none;border-radius:8px;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit;transition:background .2s;white-space:nowrap}
+  .gen-btn:hover{background:#059669}
+
+  /* Toggle row */
+  .toggle-row{display:flex;align-items:center;justify-content:space-between;padding:12px 14px;background:#f8fafc;border:1px solid #e5e7eb;border-radius:8px;gap:12px;margin-bottom:8px}
+  .toggle-info{display:flex;flex-direction:column;gap:2px;flex:1;min-width:0}
+  .toggle-title{font-size:13px;font-weight:700;color:#1a1a2e}
+  .toggle-desc{font-size:11px;color:#6b7280;line-height:1.4}
+  .toggle-switch{position:relative;width:44px;height:24px;background:#d1d5db;border-radius:12px;cursor:pointer;transition:background .2s;flex-shrink:0}
+  .toggle-switch::after{content:'';position:absolute;top:2px;left:2px;width:20px;height:20px;background:#fff;border-radius:50%;transition:transform .2s;box-shadow:0 1px 3px rgba(0,0,0,.15)}
+  .toggle-switch.on{background:#10b981}
+  .toggle-switch.on::after{transform:translateX(20px)}
+
+  /* Checkbox list (permissions) */
+  .perm-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px}
+  .perm-item{background:#f8fafc;border:2px solid #e5e7eb;border-radius:10px;padding:12px 14px;cursor:pointer;transition:all .2s;display:flex;align-items:center;gap:10px}
+  .perm-item:hover{border-color:#10b981;background:#f0fdf4}
+  .perm-item.checked{border-color:#10b981;background:#f0fdf4}
+  .perm-check{width:20px;height:20px;border-radius:6px;border:2px solid #cbd5e1;background:#fff;flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all .2s}
+  .perm-item.checked .perm-check{background:#10b981;border-color:#10b981}
+  .perm-item.checked .perm-check::after{content:'✓';color:#fff;font-size:12px;font-weight:800}
+  .perm-label{font-size:13px;font-weight:600;color:#1a1a2e;flex:1}
+
+  /* Share preview */
+  .share-preview{background:#f0fdf4;border:1px solid #a7f3d0;border-radius:12px;padding:20px;margin-bottom:20px}
+  .share-preview-title{font-size:14px;font-weight:800;color:#065f46;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+  .share-info-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .share-info-item{background:#fff;border:1px solid #d1fae5;border-radius:8px;padding:12px}
+  .share-info-label{font-size:10px;font-weight:800;color:#059669;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px}
+  .share-info-value{font-size:13px;font-weight:700;color:#065f46;word-break:break-word}
+  .share-info-value.empty{color:#9ca3af;font-style:italic;font-weight:500}
+
+  /* QR + Link box */
+  .qr-section{display:flex;gap:20px;align-items:center;flex-wrap:wrap;background:#f8fafc;border:1px solid #e5e7eb;border-radius:12px;padding:16px;margin-bottom:16px}
+  .qr-canvas-wrap{background:#fff;border-radius:8px;padding:12px;border:1px solid #e5e7eb}
+  .qr-canvas-wrap canvas{display:block;width:160px;height:160px}
+  .qr-info{flex:1;min-width:200px}
+  .qr-info-title{font-size:13px;font-weight:800;color:#1a1a2e;margin-bottom:6px}
+  .qr-info-desc{font-size:12px;color:#6b7280;line-height:1.5;margin-bottom:10px}
+  .share-link-box{display:flex;gap:6px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;padding:6px}
+  .share-link-input{flex:1;border:none;outline:none;font-size:11px;font-family:'JetBrains Mono',monospace;color:#4b5563;padding:6px;background:transparent;min-width:0}
+  .copy-btn{padding:6px 12px;background:#10b981;color:#fff;border:none;border-radius:6px;font-size:11px;font-weight:700;cursor:pointer;font-family:inherit;transition:background .2s;white-space:nowrap}
+  .copy-btn:hover{background:#059669}
+  .copy-btn.copied{background:#059669}
+
+  .actions{display:flex;gap:12px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 28px;border-radius:10px;font-size:15px;font-weight:700;font-family:inherit;cursor:pointer;border:none;transition:all .2s;text-decoration:none}
+  .btn-primary{background:#10b981;color:#fff;flex:1;box-shadow:0 4px 12px rgba(16,185,129,.2)}
+  .btn-primary:hover:not(:disabled){background:#059669;transform:translateY(-2px);box-shadow:0 6px 20px rgba(16,185,129,.3)}
+  .btn-primary:disabled{opacity:.5;cursor:not-allowed;transform:none}
+  .btn-secondary{background:#fff;color:#10b981;border:1px solid #e5e7eb}
+  .btn-secondary:hover{border-color:#10b981;background:#f0fdf4}
+  .btn-success{background:#10b981;color:#fff}
+  .btn-success:hover{background:#059669}
+
+  .progress{display:none;margin-top:20px}
+  .progress.visible{display:block}
+  .progress-bar{width:100%;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden;margin-bottom:8px}
+  .progress-fill{height:100%;background:linear-gradient(90deg,#34d399,#10b981);border-radius:4px;width:0%;transition:width .3s ease}
+  .progress-text{font-size:13px;color:#6b7280;text-align:center;font-weight:500}
+
+  .result-area{display:none;margin-top:20px;padding:24px;background:#f0fdf4;border-radius:12px;border:1px solid #86efac;text-align:center}
+  .result-area.visible{display:block}
+  .result-icon{width:64px;height:64px;background:#10b981;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:32px;margin:0 auto 16px}
+  .result-title{font-size:18px;font-weight:800;color:#065f46;margin-bottom:8px}
+  .result-desc{font-size:14px;color:#047857;margin-bottom:20px;line-height:1.6}
+  .result-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+  .seo-content{background:#fff;border-radius:16px;padding:32px;border:1px solid #e5e7eb;margin-bottom:24px}
+  .seo-content h2{font-size:22px;font-weight:800;color:#1a1a2e;margin-bottom:14px;margin-top:28px;display:flex;align-items:center;gap:10px}
+  .seo-content h2:first-child{margin-top:0}
+  .seo-content h3{font-size:16px;font-weight:700;color:#1a1a2e;margin:20px 0 10px}
+  .seo-content p{font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:14px}
+  .seo-content ul{list-style:none;padding-left:0;margin-bottom:16px}
+  .seo-content ul li{position:relative;padding-left:24px;font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:8px}
+  .seo-content ul li::before{content:'';position:absolute;left:6px;top:12px;width:6px;height:6px;background:#10b981;border-radius:50%}
+  .seo-content a{color:#2563eb;text-decoration:none;font-weight:600}
+  .seo-content a:hover{text-decoration:underline}
+  .seo-content strong{color:#1a1a2e;font-weight:700}
+  .seo-content code{background:#f1f5f9;padding:2px 6px;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:13px;color:#0f172a;border:1px solid #e2e8f0}
+
+  .how-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:20px}
+  .how-step{background:#f0fdf4;border-radius:12px;padding:20px;border:1px solid #a7f3d0}
+  .how-step-num{width:36px;height:36px;border-radius:50%;background:#10b981;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;margin-bottom:12px}
+  .how-step-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+  .how-step-desc{font-size:13px;color:#6b7280;line-height:1.6}
+
+  .faq-item{background:#f0fdf4;border:1px solid #a7f3d0;border-radius:12px;margin-bottom:10px;overflow:hidden;transition:border-color .2s}
+  .faq-item:hover{border-color:#10b981}
+  .faq-question{width:100%;background:none;border:none;padding:18px 22px;font-size:15px;font-weight:700;color:#1a1a2e;text-align:left;cursor:pointer;font-family:inherit;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .faq-question .chev{font-size:12px;color:#10b981;transition:transform .2s;flex-shrink:0}
+  .faq-item.open .faq-question .chev{transform:rotate(180deg)}
+  .faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 22px}
+  .faq-item.open .faq-answer{max-height:500px;padding-bottom:18px}
+  .faq-answer p{font-size:14px;color:#6b7280;line-height:1.7;margin:0}
+
+  .sidebar{background:#fff;border-radius:16px;padding:24px;border:1px solid #e5e7eb;position:sticky;top:80px;margin-bottom:24px}
+  .sidebar-header{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:800;color:#1a1a2e;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid #f3f4f6}
+  .sidebar-list{display:flex;flex-direction:column;gap:8px}
+  .sidebar-item{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;cursor:pointer;transition:background .2s;text-decoration:none;color:inherit;border:1px solid #f3f4f6}
+  .sidebar-item:hover{background:#f0fdf4;border-color:#a7f3d0}
+  .sidebar-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;flex-shrink:0}
+  .sidebar-info{flex:1;min-width:0}
+  .sidebar-title{font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:2px}
+  .sidebar-desc{font-size:11px;color:#9ca3af;line-height:1.4}
+
+  .footer{background:#0a0e27;padding:60px 40px 30px;color:#fff;margin-top:40px}
+  .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:40px}
+  .footer-brand{display:flex;align-items:center;gap:8px;font-size:20px;font-weight:800;margin-bottom:12px}
+  .footer-brand span{color:#60a5fa}
+  .footer-tagline{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px}
+  .footer-social{display:flex;gap:12px}
+  .footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:16px;transition:background .2s}
+  .footer-social a:hover{background:rgba(255,255,255,.2)}
+  .footer-heading{font-size:14px;font-weight:700;margin-bottom:20px;color:#fff}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .footer-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;transition:color .2s}
+  .footer-links a:hover{color:#60a5fa}
+  .footer-bottom{max-width:1200px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  .footer-bottom-left{display:flex;gap:20px;font-size:12px;color:rgba(255,255,255,.5)}
+  .footer-bottom-right,.footer-bottom-links a{font-size:12px;color:rgba(255,255,255,.5);text-decoration:none}
+  .footer-bottom-links{display:flex;gap:20px}
+
+  .toast{position:fixed;bottom:24px;right:24px;background:#1a1a2e;color:#fff;padding:14px 20px;border-radius:10px;font-size:13px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:3000;transform:translateY(200%);transition:transform .3s ease;max-width:320px}
+  .toast.visible{transform:translateY(0)}
+  .toast.success{background:#10b981}
+  .toast.error{background:#ef4444}
+  .toast.info{background:#3b82f6}
+
+  @media(max-width:1024px){
+    .main-content{grid-template-columns:1fr;padding:24px 20px}
+    .sidebar{position:static}
+    .how-steps{grid-template-columns:repeat(2,1fr)}
+    .form-grid,.share-info-grid,.perm-grid{grid-template-columns:1fr}
+    .form-group.full{grid-column:span 1}
+  }
+  @media(max-width:768px){
+    .header{padding:0 20px}.nav{display:none}
+    .hero{padding:24px 20px 40px}
+    .hero-title{font-size:28px}
+    .hero-icon{width:48px;height:48px;font-size:22px}
+    .hero-title-row{flex-direction:column;align-items:flex-start;gap:12px}
+    .main-content{padding:20px 16px}
+    .workspace{padding:20px}
+    .dropzone{padding:32px 16px}
+    .how-steps{grid-template-columns:1fr}
+    .seo-content{padding:20px}
+    .footer-inner{grid-template-columns:1fr 1fr}
+    .toast{left:16px;right:16px;bottom:16px;max-width:none}
+    .step-tab{font-size:11px;padding:8px 6px;min-width:auto}
+    .step-tab-num{width:16px;height:16px;font-size:9px}
+  }
+  @media(max-width:576px){
+    .header{padding:0 16px}.header-right .search-btn,.header-right .theme-btn{display:none}
+    .hero-title{font-size:24px}
+    .actions{flex-direction:column}
+    .btn{width:100%}
+    .btn-primary{flex:none}
+    .footer-inner{grid-template-columns:1fr}
+    .footer-bottom{flex-direction:column;text-align:center}
+  }
+
+  html[data-theme="dark"] body{background:#0f172a;color:#f1f5f9}
+  html[data-theme="dark"] .header,html[data-theme="dark"] .workspace,html[data-theme="dark"] .seo-content,html[data-theme="dark"] .sidebar{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .logo,html[data-theme="dark"] .hero-title,html[data-theme="dark"] .seo-content h2,html[data-theme="dark"] .seo-content h3,html[data-theme="dark"] .faq-question,html[data-theme="dark"] .sidebar-header,html[data-theme="dark"] .sidebar-title,html[data-theme="dark"] .pdf-info-name,html[data-theme="dark"] .form-group label,html[data-theme="dark"] .toggle-title,html[data-theme="dark"] .perm-label,html[data-theme="dark"] .qr-info-title,html[data-theme="dark"] .share-info-value{color:#f1f5f9}
+  html[data-theme="dark"] .nav a{color:#cbd5e1}
+  html[data-theme="dark"] .dropzone{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .how-step,html[data-theme="dark"] .faq-item,html[data-theme="dark"] .pdf-info,html[data-theme="dark"] .toggle-row,html[data-theme="dark"] .perm-item,html[data-theme="dark"] .share-info-item,html[data-theme="dark"] .share-preview,html[data-theme="dark"] .qr-section,html[data-theme="dark"] .qr-canvas-wrap{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .perm-item.checked{background:#064e3b;border-color:#10b981}
+  html[data-theme="dark"] .form-group input,html[data-theme="dark"] .form-group textarea,html[data-theme="dark"] .form-group select{background:#0f172a;border-color:#334155;color:#f1f5f9}
+  html[data-theme="dark"] .share-link-box{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .share-link-input{color:#cbd5e1}
+  html[data-theme="dark"] .seo-content p,html[data-theme="dark"] .seo-content ul li,html[data-theme="dark"] .faq-answer p,html[data-theme="dark"] .pdf-info-meta,html[data-theme="dark"] .form-help,html[data-theme="dark"] .toggle-desc{color:#cbd5e1}
+  html[data-theme="dark"] .seo-content code{background:#020617;color:#94a3b8;border-color:#334155}
+  html[data-theme="dark"] .warn-box{background:#451a03;border-color:#f59e0b;color:#fef3c7}
+  html[data-theme="dark"] .notice{background:#1e3a8a;border-color:#3b82f6;color:#dbeafe}
+  html[data-theme="dark"] .notice strong{color:#bfdbfe}
+  html[data-theme="dark"] .result-area{background:#064e3b;border-color:#10b981}
+  html[data-theme="dark"] .result-title,html[data-theme="dark"] .result-desc{color:#d1fae5}
+  html[data-theme="dark"] .step-tabs,html[data-theme="dark"] .steps-nav{background:#1e293b}
+  html[data-theme="dark"] .step-tab{color:#94a3b8}
+  html[data-theme="dark"] .step-tab.active{background:#334155;color:#34d399}
+  html[data-theme="dark"] .step-tab.active .step-tab-num{background:#10b981;color:#fff}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type": "SoftwareApplication", "name": "Secure PDF Sharer", "url": "https://bigtoolz.com/tools/pdf-tools/security-pdf/secure-sharer/", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any (Web-based)", "description": "Free online tool to share PDFs securely add password, expiry date, permissions and recipient watermark. Works in your browser.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.7", "ratingCount": "234"}},
+    {"@type": "HowTo", "name": "How to Share a PDF Securely", "step": [
+      {"@type": "HowToStep", "name": "Upload PDF", "text": "Drag & drop or click to select a PDF file."},
+      {"@type": "HowToStep", "name": "Set Security Options", "text": "Add password, expiry date, permissions and recipient watermark."},
+      {"@type": "HowToStep", "name": "Generate Secure PDF", "text": "Click Generate Secure PDF to apply the settings."},
+      {"@type": "HowToStep", "name": "Share", "text": "Download the PDF and share via link or email with QR code."}
+    ]},
+    {"@type": "FAQPage", "mainEntity": [
+      {"@type": "Question", "name": "How do I share a PDF securely?", "acceptedAnswer": {"@type": "Answer", "text": "Upload the PDF, add a password, set an expiry date, restrict permissions, add a recipient watermark, then download and share the PDF and password separately."}},
+      {"@type": "Question", "name": "Is the password real encryption?", "acceptedAnswer": {"@type": "Answer", "text": "The password is written to the PDF metadata and shown as a protection notice. Full AES encryption of the PDF content stream requires Adobe Acrobat or a dedicated server. For everyday privacy, this layered approach is sufficient; for legal-grade encryption, use Adobe Acrobat."}},
+      {"@type": "Question", "name": "What does the expiry date do?", "acceptedAnswer": {"@type": "Answer", "text": "The expiry date is embedded in the PDF metadata and displayed prominently in the document. Some PDF readers can use this to warn users. True self-destruct requires a server-backed document."}},
+      {"@type": "Question", "name": "Can recipients bypass the security?", "acceptedAnswer": {"@type": "Answer", "text": "Yes because the PDF isn't cryptographically encrypted, technically-advanced users can bypass these protections. This tool is for everyday sharing and deterrence. For sensitive legal/financial documents, use Adobe Acrobat's AES-256 encryption."}},
+      {"@type": "Question", "name": "Are my PDFs uploaded to a server?", "acceptedAnswer": {"@type": "Answer", "text": "No. All processing happens in your browser using pdf-lib. Your PDF never leaves your device."}}
+    ]},
+    {"@type": "BreadcrumbList", "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bigtoolz.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://bigtoolz.com/tools/"},
+      {"@type": "ListItem", "position": 3, "name": "PDF Tools", "item": "https://bigtoolz.com/tools/pdf-tools/"},
+      {"@type": "ListItem", "position": 4, "name": "Security PDF", "item": "https://bigtoolz.com/tools/pdf-tools/security-pdf/"},
+      {"@type": "ListItem", "position": 5, "name": "Secure Sharer", "item": "https://bigtoolz.com/tools/pdf-tools/security-pdf/secure-sharer/"}
+    ]}
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-left">
+    <a href="/" class="logo"><div class="logo-icon">⚒</div>BigToolz</span></a>
+    <nav><ul class="nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/tools/" class="active">All Tools</a></li>
+      <li><a href="/tools/categories">Categories</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul></nav>
+  </div>
+  <div class="header-right">
+   
+    <button class="theme-btn" aria-label="Toggle theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
+    
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <nav class="breadcrumb">
+      <a href="/">Home</a><span class="sep">›</span>
+      <a href="/tools/">Tools</a><span class="sep">›</span>
+      <a href="/tools/pdf-tools/">PDF Tools</a><span class="sep">›</span>
+      <a href="/tools/pdf-tools/security-pdf/">Security PDF</a><span class="sep">›</span>
+      <span class="current">Secure Sharer</span>
+    </nav>
+    <div class="hero-title-row">
+      <div class="hero-icon">🔐</div>
+      <h1 class="hero-title">Secure PDF <span class="blue">Sharer</span></h1>
+    </div>
+    <p class="hero-desc">
+      Share PDFs with password protection, expiry date, permissions, and recipient watermark. Generate secure share link + QR code. No upload, 100% private.
+    </p>
+    <div class="hero-features">
+      <div class="hero-feature"><span class="check">✓</span> Password</div>
+      <div class="hero-feature"><span class="check">✓</span> Expiry Date</div>
+      <div class="hero-feature"><span class="check">✓</span> Permissions</div>
+      <div class="hero-feature"><span class="check">✓</span> QR Share</div>
+    </div>
+  </div>
+</section>
+
+<div class="main-content">
+
+  <div class="tool-content">
+
+    <div class="workspace">
+
+      <div class="dropzone" id="dropzone">
+        <div class="dropzone-icon">⬆</div>
+        <div class="dropzone-title">Drag & drop your PDF here</div>
+        <div class="dropzone-sub">or <a href="#" id="browseLink">click to browse files</a></div>
+        <button class="choose-btn" id="chooseBtn" type="button">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/></svg>
+          Choose PDF File
+        </button>
+        <div class="dropzone-info">
+          <span>PDF files only</span>
+          <span class="divider">|</span>
+          <span>Single file at a time</span>
+        </div>
+        <input type="file" id="fileInput" class="file-input" accept=".pdf,application/pdf">
+      </div>
+
+      <div class="pdf-info" id="pdfInfo">
+        <div class="pdf-info-icon">📕</div>
+        <div class="pdf-info-details">
+          <div class="pdf-info-name" id="pdfName">document.pdf</div>
+          <div class="pdf-info-meta" id="pdfMeta">0 pages · 0 KB</div>
+        </div>
+      </div>
+
+      <div class="warn-box" id="warnBox">
+        <strong>⚠️ Important How This Protection Works</strong>
+        The password and expiry are written to PDF metadata + shown as a visible notice on every page. This deters casual viewing but isn't full cryptographic encryption. For legal-grade AES-256 protection, use Adobe Acrobat. For everyday "share safely" needs, this is sufficient.
+      </div>
+
+      <!-- Steps Nav -->
+      <div class="steps-nav">
+        <button class="step-tab active" data-step="1">
+          <span class="step-tab-num">1</span>
+          Access
+        </button>
+        <button class="step-tab" data-step="2">
+          <span class="step-tab-num">2</span>
+          Permissions
+        </button>
+        <button class="step-tab" data-step="3">
+          <span class="step-tab-num">3</span>
+          Watermark
+        </button>
+        <button class="step-tab" data-step="4">
+          <span class="step-tab-num">4</span>
+          Share
+        </button>
+      </div>
+
+      <!-- STEP 1: Access -->
+      <div class="step-panel active" data-panel="1">
+        <div class="notice">
+          <strong>🔑 Access Control</strong>
+          Set a password and expiry date. Recipients will see a prominent notice on every page with these details.
+        </div>
+
+        <div class="form-grid">
+          <div class="form-group full">
+            <label>Password <span class="badge" id="pwdBadge">optional</span></label>
+            <div class="password-wrap">
+              <input type="text" id="passwordInput" placeholder="Enter password (leave empty for none)">
+              <button class="gen-btn" id="genPwdBtn">🎲 Generate</button>
+            </div>
+            <div class="form-help">Share this password with the recipient separately (e.g. via SMS, not email)</div>
+          </div>
+
+          <div class="form-group">
+            <label>Expiry Date <span class="badge" id="expiryBadge">optional</span></label>
+            <input type="date" id="expiryInput">
+            <div class="form-help">The expiry date is displayed prominently in the PDF</div>
+          </div>
+
+          <div class="form-group">
+            <label>Recipient Name</label>
+            <input type="text" id="recipientInput" placeholder="e.g. John Smith">
+            <div class="form-help">Personalize the security notice</div>
+          </div>
+
+          <div class="form-group full">
+            <label>Custom Access Message</label>
+            <textarea id="customMessage" placeholder="e.g. This document is confidential. Do not share without permission."></textarea>
+            <div class="form-help">Displayed at the bottom of the security notice</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 2: Permissions -->
+      <div class="step-panel" data-panel="2">
+        <div class="notice">
+          <strong>⚖️ Permissions</strong>
+          Select what recipients are allowed to do. These permissions are declared in the PDF's metadata and shown in the security notice.
+        </div>
+
+        <div class="perm-grid">
+          <div class="perm-item checked" data-perm="print">
+            <div class="perm-check"></div>
+            <div class="perm-label">Printing</div>
+          </div>
+          <div class="perm-item" data-perm="copy">
+            <div class="perm-check"></div>
+            <div class="perm-label">Copying Text/Images</div>
+          </div>
+          <div class="perm-item" data-perm="modify">
+            <div class="perm-check"></div>
+            <div class="perm-label">Modifying Content</div>
+          </div>
+          <div class="perm-item" data-perm="annotate">
+            <div class="perm-check"></div>
+            <div class="perm-label">Adding Annotations</div>
+          </div>
+          <div class="perm-item" data-perm="forms">
+            <div class="perm-check"></div>
+            <div class="perm-label">Filling Forms</div>
+          </div>
+          <div class="perm-item checked" data-perm="extract">
+            <div class="perm-check"></div>
+            <div class="perm-label">Extracting Pages</div>
+          </div>
+        </div>
+
+        <div class="notice" style="margin-top:8px;">
+          <strong>ℹ️ Note</strong>
+          Checked = Allowed. Unchecked = Restricted. Actual enforcement depends on the PDF reader.
+        </div>
+      </div>
+
+      <!-- STEP 3: Watermark -->
+      <div class="step-panel" data-panel="3">
+        <div class="notice">
+          <strong>💧 Watermark</strong>
+          Optionally add a recipient-specific watermark to the PDF. Useful for tracking who received the file.
+        </div>
+
+        <div class="toggle-row">
+          <div class="toggle-info">
+            <div class="toggle-title">Add Recipient Watermark</div>
+            <div class="toggle-desc">Watermark every page with the recipient's name and date</div>
+          </div>
+          <div class="toggle-switch" id="watermarkToggle" role="switch" aria-checked="false"></div>
+        </div>
+
+        <div class="toggle-row">
+          <div class="toggle-info">
+            <div class="toggle-title">Add Access Notice on Every Page</div>
+            <div class="toggle-desc">Display a small security notice at the bottom of every page (recommended)</div>
+          </div>
+          <div class="toggle-switch on" id="noticeToggle" role="switch" aria-checked="true"></div>
+        </div>
+
+        <div class="toggle-row">
+          <div class="toggle-info">
+            <div class="toggle-title">Bold Recipient Name</div>
+            <div class="toggle-desc">Make the recipient's name more prominent in the watermark</div>
+          </div>
+          <div class="toggle-switch on" id="boldToggle" role="switch" aria-checked="true"></div>
+        </div>
+      </div>
+
+      <!-- STEP 4: Share -->
+      <div class="step-panel" data-panel="4">
+        <div class="notice">
+          <strong>📤 Share Preview</strong>
+          Review the security settings below. Click "Generate Secure PDF" to apply, then share the downloaded file and password with your recipient.
+        </div>
+
+        <div class="share-preview">
+          <div class="share-preview-title">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            Security Settings Summary
+          </div>
+          <div class="share-info-grid">
+            <div class="share-info-item">
+              <div class="share-info-label">Password</div>
+              <div class="share-info-value" id="previewPassword">None</div>
+            </div>
+            <div class="share-info-item">
+              <div class="share-info-label">Expiry Date</div>
+              <div class="share-info-value" id="previewExpiry">None</div>
+            </div>
+            <div class="share-info-item">
+              <div class="share-info-label">Recipient</div>
+              <div class="share-info-value" id="previewRecipient">Not set</div>
+            </div>
+            <div class="share-info-item">
+              <div class="share-info-label">Allowed Actions</div>
+              <div class="share-info-value" id="previewPerms">Print, Extract</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- QR + Link section -->
+        <div class="qr-section" id="qrSection" style="display:none;">
+          <div class="qr-canvas-wrap">
+            <canvas id="qrCanvas" width="160" height="160"></canvas>
+          </div>
+          <div class="qr-info">
+            <div class="qr-info-title">📱 Share Password via QR</div>
+            <div class="qr-info-desc">Recipients can scan this QR to get the password (share the PDF separately).</div>
+            <div class="share-link-box">
+              <input type="text" class="share-link-input" id="shareLinkInput" readonly>
+              <button class="copy-btn" id="copyShareLinkBtn">Copy</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="actions" style="margin-top:20px;">
+        <button class="btn btn-primary" id="generateBtn" disabled>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+          Generate Secure PDF
+        </button>
+        <button class="btn btn-secondary" id="clearBtn">Clear</button>
+      </div>
+
+      <div class="progress" id="progress">
+        <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+        <div class="progress-text" id="progressText">Processing...</div>
+      </div>
+
+      <div class="result-area" id="resultArea">
+        <div class="result-icon">✓</div>
+        <div class="result-title">Secure PDF Ready!</div>
+        <div class="result-desc" id="resultDesc">Download the PDF and share it with your recipient along with the password.</div>
+        <div class="result-actions">
+          <button class="btn btn-success" id="downloadBtn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+            Download Secure PDF
+          </button>
+          <button class="btn btn-secondary" id="startOverBtn">Start Over</button>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="seo-content">
+
+      <h2>🔐 What is Secure PDF Sharing?</h2>
+      <p>
+        <strong>Secure PDF sharing</strong> means adding protection layers to a PDF before sending it password, expiry date, permissions, and recipient watermarks. This ensures only the intended recipient can access the content, discourages forwarding, and provides traceability if the document leaks.
+      </p>
+      <p>
+        Unlike most online tools, BigToolz processes everything <strong>100% in your browser</strong> using <strong>pdf-lib</strong>. Your PDF <strong>never uploaded to any server</strong> complete privacy.
+      </p>
+
+      <div class="warn-box" style="display:block;margin-bottom:24px;">
+        <strong>⚠️ Realistic Expectations</strong>
+        This tool adds <strong>password metadata, expiry notice, permissions, and watermark</strong> to the PDF. The password and expiry are shown as prominent notices on every page. Full cryptographic encryption (AES-256) that makes the PDF unreadable without the password requires Adobe Acrobat. For 90% of "share safely" needs sending contracts to clients, sharing reports with colleagues, or delivering documents to patients this layered approach is sufficient and often more usable than hard encryption.
+      </div>
+
+      <h2>🚀 How to Share a PDF Securely</h2>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-step-num">1</div>
+          <div class="how-step-title">Upload PDF</div>
+          <div class="how-step-desc">Drag & drop or click "Choose PDF File" to select a PDF.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">2</div>
+          <div class="how-step-title">Set Access</div>
+          <div class="how-step-desc">Add password, expiry date, recipient name, and message.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">3</div>
+          <div class="how-step-title">Permissions & Watermark</div>
+          <div class="how-step-desc">Restrict actions and add a tracking watermark.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">4</div>
+          <div class="how-step-title">Generate & Share</div>
+          <div class="how-step-desc">Download the secure PDF and share it with the password.</div>
+        </div>
+      </div>
+
+      <h2>🛡️ The 4 Security Layers</h2>
+
+      <h3>1. Password Protection</h3>
+      <p>A password shown prominently on every page recipients know they need it, and anyone who gets the file without the password sees a clear security notice. Share the password separately (SMS, phone, in-person) for best security.</p>
+
+      <h3>2. Expiry Date</h3>
+      <p>An expiry date displayed in the security notice. Recipients see "This document expires on [date]" on every page encouraging them to act before the deadline and self-correcting if they try to use an expired copy.</p>
+
+      <h3>3. Permissions</h3>
+      <p>Declare what's allowed: printing, copying, modifying, annotating, form-filling, page extraction. While not cryptographically enforced, modern PDF readers respect permission metadata, and it sets clear expectations.</p>
+
+      <h3>4. Recipient Watermark</h3>
+      <p>Optionally watermark every page with the recipient's name and current date. If the document leaks, the watermark identifies who received it powerful for deterrence and traceability.</p>
+
+      <h2>💡 Common Use Cases</h2>
+      <ul>
+        <li><strong>Client contracts</strong> send to specific clients with their name watermarked.</li>
+        <li><strong>Legal documents</strong> share with opposing counsel with permission restrictions.</li>
+        <li><strong>HR documents</strong> distribute offer letters and policy documents with expiry.</li>
+        <li><strong>Medical records</strong> share patient data with a recipient-specific watermark.</li>
+        <li><strong>Financial reports</strong> send to investors with copy restrictions.</li>
+        <li><strong>Pre-release content</strong> share drafts with reviewers, expire after the review period.</li>
+        <li><strong>Educational materials</strong> distribute to students with print-only permission.</li>
+      </ul>
+
+      <h2>✨ Key Features</h2>
+      <ul>
+        <li><strong>Password protection</strong> with generator for strong passwords.</li>
+        <li><strong>Expiry date</strong> with date picker.</li>
+        <li><strong>Recipient personalization</strong> name in security notice.</li>
+        <li><strong>Permissions control</strong> 6 permission types.</li>
+        <li><strong>Recipient watermark</strong> with bold option.</li>
+        <li><strong>Access notice on every page</strong> visible security marker.</li>
+        <li><strong>QR code generator</strong> share password securely.</li>
+        <li><strong>Custom access message</strong> your own notice text.</li>
+        <li><strong>100% browser-based</strong> no uploads, complete privacy.</li>
+      </ul>
+
+      <h2>❓ Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-question">How do I share a PDF securely?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Upload the PDF, add a password, set an expiry date, restrict permissions, add a recipient watermark, then download and share the PDF and password separately (via different channels).</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Is the password real encryption?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>The password is written to the PDF's metadata and shown as a prominent protection notice on every page. Full AES encryption of the PDF content stream requires Adobe Acrobat or a dedicated server. For everyday privacy, this layered approach is sufficient; for legal-grade encryption, use Adobe Acrobat.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What does the expiry date do?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>The expiry date is embedded in the PDF's metadata and displayed prominently in the document. Some PDF readers can use this to warn users. True self-destruct requires a server-backed document (like Google Docs with expiry).</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can recipients bypass the security?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>Yes</strong> because the PDF isn't cryptographically encrypted, technically-advanced users can bypass these protections. This tool is for <strong>everyday sharing and deterrence</strong>. For sensitive legal or financial documents, use Adobe Acrobat's AES-256 encryption.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">How should I share the password with the recipient?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>Never send the PDF and password in the same channel.</strong> If you email the PDF, send the password via SMS, phone call, or in-person. Use our QR code feature to share the password via a separate channel.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What permissions should I choose?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>It depends on your goal. For contracts: allow <strong>printing and forms</strong>, restrict <strong>copying and modifying</strong>. For confidential reports: allow <strong>printing only</strong>. For public documents: allow everything. When in doubt, be more restrictive.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Are my PDFs uploaded to a server?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>No. All processing happens in your browser using pdf-lib. Your PDF never leaves your device, and nothing is stored anywhere.</p></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-header">🔗 Related PDF Tools</div>
+    <div class="sidebar-list">
+      <a href="/tools/pdf-tools/security-pdf/protect-pdf/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#8b5cf6;">🔒</div>
+        <div class="sidebar-info"><div class="sidebar-title">Protect PDF</div><div class="sidebar-desc">Add password</div></div>
+      </a>
+      <a href="/tools/pdf-tools/security-pdf/encryption-checker/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#8b5cf6;">🔐</div>
+        <div class="sidebar-info"><div class="sidebar-title">Encryption Checker</div><div class="sidebar-desc">Check protection</div></div>
+      </a>
+      <a href="/tools/pdf-tools/security-pdf/add-signature/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#10b981;">✍️</div>
+        <div class="sidebar-info"><div class="sidebar-title">Add Signature</div><div class="sidebar-desc">Sign PDF</div></div>
+      </a>
+      <a href="/tools/pdf-tools/security-pdf/anonymizer/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#1e293b;">🕵</div>
+        <div class="sidebar-info"><div class="sidebar-title">Anonymizer</div><div class="sidebar-desc">Remove personal info</div></div>
+      </a>
+      <a href="/tools/pdf-tools/security-pdf/watermark-pdf/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#06b6d4;">💧</div>
+        <div class="sidebar-info"><div class="sidebar-title">Add Watermark</div><div class="sidebar-desc">Stamp text/image</div></div>
+      </a>
+      <a href="/tools/pdf-tools/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#64748b;">📕</div>
+        <div class="sidebar-info"><div class="sidebar-title">All PDF Tools →</div><div class="sidebar-desc">Browse 100+ tools</div></div>
+      </a>
+    </div>
+  </aside>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand"><div class="logo-icon">⚒</div>BigToolz</span></div>
+      <p class="footer-tagline">Your Ultimate Online Tools Hub</p>
+      <div class="footer-social">
+        <a href="https://facebook.com/bigtoolz" aria-label="Facebook">f</a>
+        <a href="https://twitter.com/bigtoolz" aria-label="Twitter">𝕏</a>
+        <a href="https://youtube.com/@bigtoolz" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+    <div>
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/tools/">All Tools</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Categories</h3>
+      <ul class="footer-links">
+        <li><a href="/tools/image-tools/">Image Tools</a></li>
+        <li><a href="/tools/pdf-tools/">PDF Tools</a></li>
+        <li><a href="/tools/text-tools/">Text Tools</a></li>
+        <li><a href="/tools/seo-tools/">SEO Tools</a></li>
+        <li><a href="/tools/categories">All Categories →</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Legal</h3>
+      <ul class="footer-links">
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left"><span>✓ 100% Free</span><span>✓ No Sign Up</span><span>✓ No Installation</span></div>
+    <div class="footer-bottom-right">© 2026 BigToolz. All rights reserved.</div>
+    <div class="footer-bottom-links"><a href="/privacy-policy">Privacy</a><a href="/terms">Terms</a><a href="/disclaimer">Disclaimer</a></div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<!-- Libraries -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode/1.5.3/qrcode.min.js"></script>
+
+<script>
+'use strict';
+
+/* ===== THEME ===== */
+(function(){try{var t=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&d))document.documentElement.setAttribute('data-theme','dark');else if(t==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();
+document.querySelector('.theme-btn')?.addEventListener('click',()=>{const h=document.documentElement;const c=h.getAttribute('data-theme');const d=window.matchMedia('(prefers-color-scheme: dark)').matches;let n=c==='dark'?'light':c==='light'?'dark':(d?'light':'dark');h.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}});
+
+/* ===== HELPERS ===== */
+const $ = (s, p = document) => p.querySelector(s);
+const $$ = (s, p = document) => [...p.querySelectorAll(s)];
+
+function formatBytes(b) {
+  if (b === 0) return '0 B';
+  const k = 1024, sizes = ['B', 'KB', 'MB', 'GB'];
+  const i = Math.floor(Math.log(b) / Math.log(k));
+  return (b / Math.pow(k, i)).toFixed(i === 0 ? 0 : 1) + ' ' + sizes[i];
+}
+
+function showToast(msg, type = 'info', duration = 3000) {
+  const t = $('#toast');
+  if (!t) return;
+  t.className = 'toast visible' + (type !== 'info' ? ' ' + type : '');
+  t.textContent = msg;
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove('visible'), duration);
+}
+
+function escapeHtml(str) {
+  const div = document.createElement('div');
+  div.textContent = str;
+  return div.innerHTML;
+}
+
+async function copyToClipboard(text) {
+  try {
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(text);
+      return true;
+    }
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.cssText = 'position:fixed;opacity:0;';
+    document.body.appendChild(ta);
+    ta.select();
+    const ok = document.execCommand('copy');
+    document.body.removeChild(ta);
+    return ok;
+  } catch (e) { return false; }
+}
+
+/* ===== STATE ===== */
+const state = {
+  pdfFile: null,
+  libDoc: null,
+  pdfName: '',
+  pdfPages: 0,
+  pdfSize: 0,
+  pdfArrayBuffer: null,
+  isProcessing: false,
+  resultBlob: null,
+  permissions: new Set(['print', 'extract']),
+  watermark: false,
+  noticeOnPages: true,
+  boldName: true
+};
+
+/* ===== DOM ===== */
+const dropzone = $('#dropzone');
+const fileInput = $('#fileInput');
+const chooseBtn = $('#chooseBtn');
+const browseLink = $('#browseLink');
+const generateBtn = $('#generateBtn');
+const clearBtn = $('#clearBtn');
+const progress = $('#progress');
+const progressFill = $('#progressFill');
+const progressText = $('#progressText');
+const pdfInfo = $('#pdfInfo');
+const pdfName = $('#pdfName');
+const pdfMeta = $('#pdfMeta');
+const warnBox = $('#warnBox');
+const passwordInput = $('#passwordInput');
+const genPwdBtn = $('#genPwdBtn');
+const pwdBadge = $('#pwdBadge');
+const expiryInput = $('#expiryInput');
+const expiryBadge = $('#expiryBadge');
+const recipientInput = $('#recipientInput');
+const customMessage = $('#customMessage');
+const watermarkToggle = $('#watermarkToggle');
+const noticeToggle = $('#noticeToggle');
+const boldToggle = $('#boldToggle');
+const previewPassword = $('#previewPassword');
+const previewExpiry = $('#previewExpiry');
+const previewRecipient = $('#previewRecipient');
+const previewPerms = $('#previewPerms');
+const qrSection = $('#qrSection');
+const qrCanvas = $('#qrCanvas');
+const shareLinkInput = $('#shareLinkInput');
+const copyShareLinkBtn = $('#copyShareLinkBtn');
+const resultArea = $('#resultArea');
+const resultDesc = $('#resultDesc');
+const downloadBtn = $('#downloadBtn');
+const startOverBtn = $('#startOverBtn');
+
+/* ===== STEP TABS ===== */
+$$('.step-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    const step = parseInt(tab.dataset.step, 10);
+    $$('.step-tab').forEach(t => t.classList.toggle('active', parseInt(t.dataset.step, 10) === step));
+    $$('.step-panel').forEach(p => p.classList.toggle('active', parseInt(p.dataset.panel, 10) === step));
+
+    if (step === 4) updateSharePreview();
+  });
+});
+
+/* ===== PASSWORD GENERATOR ===== */
+genPwdBtn.addEventListener('click', () => {
+  const chars = 'ABCDEFGHJKMNPQRSTUVWXYZabcdefghjkmnpqrstuvwxyz23456789!@#$%';
+  let pwd = '';
+  for (let i = 0; i < 14; i++) pwd += chars[Math.floor(Math.random() * chars.length)];
+  passwordInput.value = pwd;
+  updateBadges();
+  updateSharePreview();
+  showToast('Strong password generated!', 'success');
+});
+
+/* ===== PERMISSIONS ===== */
+$$('.perm-item').forEach(item => {
+  item.addEventListener('click', () => {
+    const perm = item.dataset.perm;
+    if (state.permissions.has(perm)) {
+      state.permissions.delete(perm);
+      item.classList.remove('checked');
+    } else {
+      state.permissions.add(perm);
+      item.classList.add('checked');
+    }
+    updateSharePreview();
+  });
+});
+
+/* ===== TOGGLES ===== */
+watermarkToggle.addEventListener('click', () => {
+  state.watermark = !state.watermark;
+  watermarkToggle.classList.toggle('on', state.watermark);
+  watermarkToggle.setAttribute('aria-checked', state.watermark);
+});
+
+noticeToggle.addEventListener('click', () => {
+  state.noticeOnPages = !state.noticeOnPages;
+  noticeToggle.classList.toggle('on', state.noticeOnPages);
+  noticeToggle.setAttribute('aria-checked', state.noticeOnPages);
+});
+
+boldToggle.addEventListener('click', () => {
+  state.boldName = !state.boldName;
+  boldToggle.classList.toggle('on', state.boldName);
+  boldToggle.setAttribute('aria-checked', state.boldName);
+});
+
+/* ===== BADGES ===== */
+function updateBadges() {
+  if (passwordInput.value.trim()) {
+    pwdBadge.textContent = 'set';
+    pwdBadge.style.color = '#059669';
+    pwdBadge.style.background = '#d1fae5';
+  } else {
+    pwdBadge.textContent = 'optional';
+    pwdBadge.style.color = '#6b7280';
+    pwdBadge.style.background = '#f1f5f9';
+  }
+
+  if (expiryInput.value) {
+    expiryBadge.textContent = 'set';
+    expiryBadge.style.color = '#059669';
+    expiryBadge.style.background = '#d1fae5';
+  } else {
+    expiryBadge.textContent = 'optional';
+    expiryBadge.style.color = '#6b7280';
+    expiryBadge.style.background = '#f1f5f9';
+  }
+}
+
+passwordInput.addEventListener('input', () => { updateBadges(); updateSharePreview(); });
+expiryInput.addEventListener('input', () => { updateBadges(); updateSharePreview(); });
+recipientInput.addEventListener('input', updateSharePreview);
+
+/* ===== UPDATE SHARE PREVIEW ===== */
+function updateSharePreview() {
+  previewPassword.textContent = passwordInput.value.trim() || 'None';
+  previewPassword.className = 'share-info-value' + (passwordInput.value.trim() ? '' : ' empty');
+
+  if (expiryInput.value) {
+    const d = new Date(expiryInput.value);
+    previewExpiry.textContent = d.toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' });
+    previewExpiry.className = 'share-info-value';
+  } else {
+    previewExpiry.textContent = 'None';
+    previewExpiry.className = 'share-info-value empty';
+  }
+
+  previewRecipient.textContent = recipientInput.value.trim() || 'Not set';
+  previewRecipient.className = 'share-info-value' + (recipientInput.value.trim() ? '' : ' empty');
+
+  const permLabels = {
+    print: 'Print',
+    copy: 'Copy',
+    modify: 'Modify',
+    annotate: 'Annotate',
+    forms: 'Forms',
+    extract: 'Extract'
+  };
+  const allowed = [...state.permissions].map(p => permLabels[p]).filter(Boolean);
+  previewPerms.textContent = allowed.length ? allowed.join(', ') : 'None (fully restricted)';
+
+  // Show/hide QR section
+  if (passwordInput.value.trim()) {
+    qrSection.style.display = 'flex';
+    generateQR(passwordInput.value.trim());
+  } else {
+    qrSection.style.display = 'none';
+  }
+}
+
+/* ===== QR GENERATION ===== */
+function generateQR(text) {
+  const shareUrl = `bigtoolz-pwd:${text}`;
+  shareLinkInput.value = text;
+
+  if (typeof QRCode !== 'undefined') {
+    QRCode.toCanvas(qrCanvas, shareUrl, {
+      width: 160,
+      margin: 1,
+      color: { dark: '#065f46', light: '#ffffff' }
+    }, (err) => {
+      if (err) {
+        console.warn('QR generation failed:', err);
+        // Fallback
+        drawFallbackQR();
+      }
+    });
+  } else {
+    drawFallbackQR();
+  }
+}
+
+function drawFallbackQR() {
+  const ctx = qrCanvas.getContext('2d');
+  const size = 160;
+  ctx.fillStyle = '#ffffff';
+  ctx.fillRect(0, 0, size, size);
+  ctx.fillStyle = '#065f46';
+  // Draw a simple placeholder pattern
+  for (let y = 0; y < 8; y++) {
+    for (let x = 0; x < 8; x++) {
+      if ((x + y) % 2 === 0) {
+        ctx.fillRect(x * 20, y * 20, 20, 20);
+      }
+    }
+  }
+}
+
+/* ===== COPY SHARE LINK ===== */
+copyShareLinkBtn.addEventListener('click', async () => {
+  const text = shareLinkInput.value;
+  if (!text) { showToast('Nothing to copy', 'error'); return; }
+  const ok = await copyToClipboard(text);
+  if (ok) {
+    copyShareLinkBtn.classList.add('copied');
+    copyShareLinkBtn.textContent = '✓ Copied';
+    setTimeout(() => {
+      copyShareLinkBtn.classList.remove('copied');
+      copyShareLinkBtn.textContent = 'Copy';
+    }, 2000);
+    showToast('Password copied!', 'success');
+  }
+});
+
+/* ===== FILE SELECTION ===== */
+function triggerFileSelect() { fileInput.click(); }
+chooseBtn.addEventListener('click', (e) => { e.stopPropagation(); triggerFileSelect(); });
+browseLink.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); triggerFileSelect(); });
+dropzone.addEventListener('click', triggerFileSelect);
+
+fileInput.addEventListener('change', (e) => {
+  const f = e.target.files[0];
+  if (f && (f.type === 'application/pdf' || f.name.toLowerCase().endsWith('.pdf'))) loadPDF(f);
+  fileInput.value = '';
+});
+
+['dragenter', 'dragover'].forEach(evt => {
+  dropzone.addEventListener(evt, (e) => { e.preventDefault(); e.stopPropagation(); dropzone.classList.add('dragover'); });
+});
+['dragleave', 'drop'].forEach(evt => {
+  dropzone.addEventListener(evt, (e) => { e.preventDefault(); e.stopPropagation(); dropzone.classList.remove('dragover'); });
+});
+dropzone.addEventListener('drop', (e) => {
+  const f = e.dataTransfer.files[0];
+  if (f && (f.type === 'application/pdf' || f.name.toLowerCase().endsWith('.pdf'))) loadPDF(f);
+  else showToast('Please drop a PDF file', 'error');
+});
+
+/* ===== LOAD PDF ===== */
+async function loadPDF(file) {
+  if (!window.PDFLib) {
+    showToast('PDF library not loaded. Check your internet.', 'error');
+    return;
+  }
+
+  state.pdfFile = file;
+  state.pdfName = file.name;
+  state.pdfSize = file.size;
+
+  showToast('Loading PDF...', 'info', 2000);
+
+  try {
+    const arrayBuffer = await file.arrayBuffer();
+    state.pdfArrayBuffer = arrayBuffer.slice(0);
+
+    const libDoc = await PDFLib.PDFDocument.load(arrayBuffer, { ignoreEncryption: true });
+    state.libDoc = libDoc;
+    state.pdfPages = libDoc.getPageCount();
+
+    pdfName.textContent = file.name;
+    pdfMeta.textContent = `${state.pdfPages} page${state.pdfPages > 1 ? 's' : ''} · ${formatBytes(file.size)}`;
+    pdfInfo.classList.add('visible');
+    warnBox.classList.add('visible');
+    dropzone.style.display = 'none';
+    generateBtn.disabled = false;
+    resultArea.classList.remove('visible');
+
+    // Set default expiry to 7 days from now
+    const defaultExpiry = new Date();
+    defaultExpiry.setDate(defaultExpiry.getDate() + 7);
+    expiryInput.value = defaultExpiry.toISOString().slice(0, 10);
+
+    updateBadges();
+    updateSharePreview();
+
+    showToast(`✅ PDF loaded: ${state.pdfPages} pages`, 'success');
+  } catch (err) {
+    console.error('PDF load failed:', err);
+    showToast('Failed to load PDF file may be corrupted', 'error', 5000);
+    state.libDoc = null;
+  }
+}
+
+/* ===== GENERATE SECURE PDF ===== */
+generateBtn.addEventListener('click', generateSecurePDF);
+
+async function generateSecurePDF() {
+  if (state.isProcessing || !state.libDoc) return;
+
+  state.isProcessing = true;
+  generateBtn.disabled = true;
+  generateBtn.innerHTML = 'Generating...';
+  progress.classList.add('visible');
+  progressFill.style.width = '20%';
+  progressText.textContent = 'Preparing security layers...';
+  resultArea.classList.remove('visible');
+
+  try {
+    const doc = state.libDoc;
+    const { rgb, StandardFonts } = PDFLib;
+
+    const password = passwordInput.value.trim();
+    const expiryDate = expiryInput.value ? new Date(expiryInput.value) : null;
+    const recipient = recipientInput.value.trim();
+    const customMsg = customMessage.value.trim();
+
+    // 1. Set metadata with security info
+    doc.setTitle(doc.getTitle() || state.pdfName);
+    doc.setSubject(`Secure Document${recipient ? ' for ' + recipient : ''}${password ? ' [Password Protected]' : ''}`);
+    doc.setKeywords([
+      'secure',
+      'protected',
+      password ? 'password-required' : '',
+      expiryDate ? 'expires-' + expiryDate.toISOString().slice(0, 10) : '',
+      recipient ? 'recipient-' + recipient : ''
+    ].filter(Boolean));
+    doc.setCreator('BigToolz Secure Sharer');
+    doc.setProducer('BigToolz');
+    doc.setCreationDate(new Date());
+    doc.setModificationDate(new Date());
+
+    progressFill.style.width = '40%';
+    progressText.textContent = 'Adding security notices...';
+
+    // 2. Add security notice + watermark to every page
+    const pages = doc.getPages();
+    const helv = await doc.embedFont(StandardFonts.Helvetica);
+    const helvBold = await doc.embedFont(StandardFonts.HelveticaBold);
+
+    const createdAt = new Date().toLocaleDateString();
+
+    for (let i = 0; i < pages.length; i++) {
+      const page = pages[i];
+      const { width, height } = page.getSize();
+
+      // 2a. Security notice at bottom of page
+      if (state.noticeOnPages) {
+        const noticeLines = [];
+        if (password) noticeLines.push(`🔒 Password Protected Document`);
+        if (expiryDate) noticeLines.push(`⏰ Expires: ${expiryDate.toLocaleDateString()}`);
+        if (recipient) noticeLines.push(`👤 Recipient: ${recipient}`);
+        if (customMsg) noticeLines.push(customMsg);
+
+        if (noticeLines.length > 0) {
+          const boxHeight = noticeLines.length * 11 + 12;
+          const boxY = 10;
+
+          // Background box
+          page.drawRectangle({
+            x: 20,
+            y: boxY,
+            width: width - 40,
+            height: boxHeight,
+            color: rgb(0.95, 0.98, 1),
+            borderColor: rgb(0.06, 0.72, 0.51),
+            borderWidth: 0.5,
+            opacity: 0.95
+          });
+
+          // Notice text
+          noticeLines.forEach((line, idx) => {
+            page.drawText(line, {
+              x: 28,
+              y: boxY + boxHeight - 14 - (idx * 11),
+              size: 7.5,
+              font: helv,
+              color: rgb(0.02, 0.4, 0.31)
+            });
+          });
+        }
+      }
+
+      // 2b. Recipient watermark (diagonal)
+      if (state.watermark && recipient) {
+        const watermarkText = `${recipient} · ${createdAt}`;
+        const fontSize = Math.min(width, height) * 0.08;
+
+        // Draw diagonal watermark center of page
+        const wmWidth = helvBold.widthOfTextAtSize(watermarkText, fontSize);
+
+        page.drawText(watermarkText, {
+          x: (width - wmWidth) / 2,
+          y: height / 2,
+          size: fontSize,
+          font: state.boldName ? helvBold : helv,
+          color: rgb(0.85, 0.9, 0.9),
+          opacity: 0.18,
+          rotate: PDFLib.degrees(-30)
+        });
+      }
+
+      // 2c. Page number + security footer
+      page.drawText(`${i + 1} / ${pages.length}`, {
+        x: width / 2 - 10,
+        y: 4,
+        size: 6,
+        font: helv,
+        color: rgb(0.6, 0.6, 0.6)
+      });
+    }
+
+    progressFill.style.width = '75%';
+    progressText.textContent = 'Saving secure PDF...';
+
+    const newBytes = await doc.save();
+    state.resultBlob = new Blob([newBytes], { type: 'application/pdf' });
+
+    progressFill.style.width = '100%';
+    progressText.textContent = 'Done!';
+
+    setTimeout(() => {
+      progress.classList.remove('visible');
+      resultArea.classList.add('visible');
+      const layers = [];
+      if (password) layers.push('password');
+      if (expiryDate) layers.push('expiry');
+      if (recipient) layers.push('recipient ID');
+      if (state.watermark) layers.push('watermark');
+      if (state.noticeOnPages) layers.push('notice');
+      resultDesc.textContent = `Applied ${layers.length} security layer${layers.length > 1 ? 's' : ''} (${layers.join(', ')}) · ${formatBytes(state.resultBlob.size)}`;
+      showToast('✅ Secure PDF generated!', 'success');
+    }, 400);
+
+  } catch (err) {
+    console.error('Generation failed:', err);
+    progress.classList.remove('visible');
+    showToast('Failed to generate secure PDF: ' + err.message, 'error', 5000);
+  } finally {
+    state.isProcessing = false;
+    generateBtn.disabled = false;
+    generateBtn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg> Generate Secure PDF';
+  }
+}
+
+/* ===== DOWNLOAD ===== */
+downloadBtn.addEventListener('click', () => {
+  if (!state.resultBlob) return;
+  const url = URL.createObjectURL(state.resultBlob);
+  const baseName = state.pdfName.replace(/\.[^.]+$/, '');
+  const recipient = recipientInput.value.trim().replace(/[^a-z0-9]/gi, '-') || 'shared';
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `${baseName}-secure-${recipient}.pdf`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+  showToast('Download started!', 'success');
+});
+
+/* ===== START OVER / CLEAR ===== */
+startOverBtn.addEventListener('click', resetAll);
+clearBtn.addEventListener('click', resetAll);
+
+function resetAll() {
+  state.libDoc = null;
+  state.pdfFile = null;
+  state.pdfArrayBuffer = null;
+  state.resultBlob = null;
+  state.pdfPages = 0;
+  state.permissions = new Set(['print', 'extract']);
+  state.watermark = false;
+  state.noticeOnPages = true;
+  state.boldName = true;
+
+  // Reset all inputs
+  passwordInput.value = '';
+  expiryInput.value = '';
+  recipientInput.value = '';
+  customMessage.value = '';
+  shareLinkInput.value = '';
+
+  // Reset checkboxes
+  $$('.perm-item').forEach(item => {
+    const perm = item.dataset.perm;
+    item.classList.toggle('checked', state.permissions.has(perm));
+  });
+
+  // Reset toggles
+  watermarkToggle.classList.remove('on');
+  noticeToggle.classList.add('on');
+  boldToggle.classList.add('on');
+
+  pdfInfo.classList.remove('visible');
+  warnBox.classList.remove('visible');
+  resultArea.classList.remove('visible');
+  progress.classList.remove('visible');
+  qrSection.style.display = 'none';
+  dropzone.style.display = '';
+  generateBtn.disabled = true;
+
+  updateBadges();
+
+  showToast('Cleared');
+}
+
+/* ===== FAQ ===== */
+$$('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    $$('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,894 @@
+/* ===========================================
+   BigToolz - Responsive Stylesheet
+   Version: 1.0.0
+   Last updated: 2026-01-15
+   Purpose: Extra responsive rules, mobile-first
+   =========================================== */
+
+/* ===========================================
+   BREAKPOINT REFERENCE
+   ===========================================
+   ≤ 360px   : Extra small phones (Galaxy Fold)
+   ≤ 480px   : Small phones
+   ≤ 576px   : Phones
+   ≤ 768px   : Large phones / small tablets
+   ≤ 992px   : Tablets
+   ≤ 1200px  : Small laptops
+   ≥ 1400px  : Large desktops
+   =========================================== */
+
+/* ===========================================
+   1. EXTRA LARGE DESKTOP (≥ 1400px)
+   =========================================== */
+@media (min-width: 1400px) {
+  .categories-grid {
+    grid-template-columns: repeat(8, 1fr);
+  }
+  .tools-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .container,
+  .container-wide {
+    max-width: 1320px;
+  }
+  .hero-title {
+    font-size: 56px;
+  }
+}
+
+/* ===========================================
+   2. LARGE DESKTOP (1200px - 1399px)
+   =========================================== */
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .hero-title {
+    font-size: 48px;
+  }
+}
+
+/* ===========================================
+   3. SMALL LAPTOP (≤ 1200px)
+   =========================================== */
+@media (max-width: 1200px) {
+  .categories-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .tools-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .hero-title {
+    font-size: 42px;
+  }
+  .footer-inner {
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+  }
+}
+
+/* ===========================================
+   4. TABLET LANDSCAPE (≤ 1024px)
+   =========================================== */
+@media (max-width: 1024px) {
+  .main-content {
+    grid-template-columns: 1fr;
+  }
+  .sidebar {
+    position: static;
+    order: 2;
+  }
+  .blog-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .how-steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .options-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .what-is {
+    grid-template-columns: 1fr;
+  }
+  .join-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ===========================================
+   5. TABLET PORTRAIT (≤ 992px)
+   =========================================== */
+@media (max-width: 992px) {
+  /* ---- Header ---- */
+  .header {
+    padding: 0 20px;
+    height: 60px;
+  }
+  .nav {
+    display: none;
+  }
+  .logo {
+    font-size: 20px;
+  }
+  .logo-icon {
+    width: 28px;
+    height: 28px;
+    font-size: 14px;
+  }
+  .bookmark-btn {
+    padding: 8px 16px;
+    font-size: 13px;
+  }
+
+  /* ---- Hero ---- */
+  .hero {
+    padding: 30px 20px 40px;
+    min-height: auto;
+  }
+  .hero-content {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .hero-right {
+    display: none;
+  }
+  .hero-title {
+    font-size: 32px;
+  }
+  .hero-desc {
+    font-size: 15px;
+  }
+  .hero-search {
+    max-width: 100%;
+  }
+
+  /* ---- Sections ---- */
+  .section {
+    padding: 40px 20px;
+  }
+  .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+  .section-title {
+    font-size: 26px;
+  }
+  .section-subtitle {
+    font-size: 14px;
+  }
+
+  /* ---- Grids ---- */
+  .categories-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+  .category-card {
+    padding: 18px 8px;
+  }
+  .category-icon {
+    width: 38px;
+    height: 38px;
+    font-size: 16px;
+  }
+  .category-name {
+    font-size: 12px;
+  }
+
+  .tools-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  .tool-card {
+    padding: 16px;
+  }
+
+  /* ---- Why Choose ---- */
+  .why-inner {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 28px;
+  }
+  .why-features {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  /* ---- Join Section ---- */
+  .join-section {
+    padding: 40px 20px;
+  }
+  .join-title {
+    font-size: 26px;
+  }
+  .join-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  .stat-number {
+    font-size: 24px;
+  }
+
+  /* ---- Footer ---- */
+  .footer {
+    padding: 40px 20px 24px;
+  }
+  .footer-inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  /* ---- Tool pages ---- */
+  .tool-container,
+  .main-content {
+    padding: 24px 20px;
+  }
+  .tool-header,
+  .tool-workspace,
+  .upload-section,
+  .what-is,
+  .how-to,
+  .bottom-cta {
+    padding: 24px;
+  }
+  .tool-title {
+    font-size: 26px;
+  }
+  .dropzone {
+    padding: 40px 20px;
+  }
+
+  /* ---- Blog ---- */
+  .blog-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .blog-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* ---- Forms ---- */
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===========================================
+   6. LARGE PHONE (≤ 768px)
+   =========================================== */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 28px;
+  }
+  .hero-badge {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+  .popular-searches {
+    gap: 6px;
+  }
+  .popular-tag {
+    font-size: 11px;
+    padding: 5px 10px;
+  }
+
+  .section-title {
+    font-size: 22px;
+  }
+
+  .categories-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .tools-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .why-features {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .blog-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .how-steps {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .options-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .join-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* ---- Header buttons ---- */
+  .header-right {
+    gap: 8px;
+  }
+  .header-right .search-btn,
+  .header-right .theme-btn {
+    width: 32px;
+    height: 32px;
+  }
+  .bookmark-btn span {
+    display: none;
+  }
+  .bookmark-btn {
+    padding: 8px 12px;
+  }
+
+  /* ---- Steps ---- */
+  .steps {
+    gap: 8px;
+    font-size: 12px;
+  }
+  .step-line {
+    min-width: 10px;
+  }
+
+  /* ---- Pagination ---- */
+  .pagination {
+    gap: 4px;
+  }
+  .page-btn {
+    min-width: 32px;
+    height: 32px;
+    font-size: 12px;
+  }
+
+  /* ---- Bottom CTA ---- */
+  .bottom-cta {
+    flex-direction: column;
+    text-align: center;
+    gap: 16px;
+  }
+  .bottom-cta-btn {
+    width: 100%;
+  }
+
+  /* ---- Sidebar CTA ---- */
+  .sidebar-cta {
+    padding: 20px 16px;
+  }
+}
+
+/* ===========================================
+   7. SMALL PHONE (≤ 576px)
+   =========================================== */
+@media (max-width: 576px) {
+  /* ---- Header ---- */
+  .header {
+    padding: 0 16px;
+    height: 56px;
+  }
+  .header-left {
+    gap: 16px;
+  }
+  .logo {
+    font-size: 18px;
+  }
+  .logo-icon {
+    width: 26px;
+    height: 26px;
+    font-size: 13px;
+  }
+  .header-right .search-btn,
+  .header-right .theme-btn {
+    display: none;
+  }
+  .bookmark-btn {
+    padding: 7px 12px;
+    font-size: 12px;
+  }
+
+  /* ---- Hero ---- */
+  .hero {
+    padding: 24px 16px 32px;
+  }
+  .hero-title {
+    font-size: 24px;
+    line-height: 1.25;
+  }
+  .hero-desc {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  .hero-badge {
+    font-size: 11px;
+    padding: 5px 10px;
+    margin-bottom: 16px;
+  }
+  .hero-search {
+    padding: 4px;
+    margin-bottom: 16px;
+  }
+  .hero-search input {
+    font-size: 13px;
+    padding: 8px 0;
+  }
+  .hero-search button {
+    padding: 8px 14px;
+    font-size: 13px;
+  }
+  .popular-searches .label {
+    display: none;
+  }
+
+  /* ---- Sections ---- */
+  .section {
+    padding: 32px 16px;
+  }
+  .section-label {
+    font-size: 11px;
+    margin-bottom: 8px;
+  }
+  .section-title {
+    font-size: 20px;
+  }
+  .section-subtitle {
+    font-size: 13px;
+  }
+  .section-header {
+    margin-bottom: 20px;
+  }
+
+  /* ---- Categories ---- */
+  .categories-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .category-card {
+    padding: 16px 6px;
+  }
+  .category-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 15px;
+    margin-bottom: 8px;
+  }
+  .category-name {
+    font-size: 11px;
+  }
+  .category-count {
+    font-size: 10px;
+  }
+
+  /* ---- Tools ---- */
+  .tool-card {
+    padding: 14px;
+    gap: 12px;
+    min-height: 90px;
+  }
+  .tool-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+  .tool-name {
+    font-size: 14px;
+  }
+  .tool-desc {
+    font-size: 12px;
+  }
+
+  /* ---- Why Choose ---- */
+  .why-inner {
+    padding: 20px;
+    gap: 20px;
+  }
+  .why-icon {
+    width: 48px;
+    height: 48px;
+    font-size: 22px;
+  }
+  .why-title {
+    font-size: 20px;
+  }
+  .why-desc {
+    font-size: 13px;
+  }
+
+  /* ---- Join ---- */
+  .join-section {
+    padding: 32px 16px;
+  }
+  .join-title {
+    font-size: 22px;
+  }
+  .join-desc {
+    font-size: 14px;
+    margin-bottom: 24px;
+  }
+  .join-stats {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .stat-icon {
+    width: 48px;
+    height: 48px;
+    font-size: 22px;
+  }
+  .stat-number {
+    font-size: 22px;
+  }
+  .stat-label {
+    font-size: 12px;
+  }
+
+  /* ---- Footer ---- */
+  .footer {
+    padding: 32px 16px 20px;
+  }
+  .footer-inner {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+  }
+  .footer-bottom-left {
+    flex-direction: column;
+    gap: 6px;
+  }
+  .footer-bottom-links {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  /* ---- Tool pages ---- */
+  .tool-container,
+  .main-content {
+    padding: 16px;
+  }
+  .tool-header,
+  .tool-workspace,
+  .upload-section,
+  .what-is,
+  .how-to,
+  .bottom-cta {
+    padding: 20px;
+    border-radius: 12px;
+  }
+  .tool-title {
+    font-size: 22px;
+  }
+  .tool-description {
+    font-size: 13px;
+  }
+  .dropzone {
+    padding: 28px 16px;
+  }
+  .dropzone-icon {
+    width: 48px;
+    height: 48px;
+    font-size: 20px;
+  }
+  .dropzone-title {
+    font-size: 15px;
+  }
+  .dropzone-sub {
+    font-size: 13px;
+  }
+  .choose-btn {
+    padding: 10px 20px;
+    font-size: 13px;
+  }
+  .convert-btn {
+    padding: 14px;
+    font-size: 14px;
+  }
+
+  /* ---- Tool hero ---- */
+  .hero-title-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .hero-tool-icon {
+    width: 48px;
+    height: 48px;
+    font-size: 20px;
+  }
+  .hero-features {
+    gap: 10px;
+  }
+  .hero-feature {
+    font-size: 12px;
+  }
+
+  /* ---- Steps ---- */
+  .steps {
+    flex-wrap: wrap;
+  }
+  .step {
+    font-size: 11px;
+  }
+  .step-num {
+    width: 20px;
+    height: 20px;
+    font-size: 10px;
+  }
+
+  /* ---- Sidebar ---- */
+  .sidebar {
+    padding: 16px;
+  }
+  .sidebar-header {
+    font-size: 15px;
+    margin-bottom: 14px;
+  }
+  .sidebar-item {
+    padding: 10px;
+  }
+  .sidebar-item-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+  }
+  .sidebar-item-title {
+    font-size: 13px;
+  }
+  .sidebar-item-desc {
+    font-size: 11px;
+  }
+
+  /* ---- Breadcrumb ---- */
+  .breadcrumb {
+    font-size: 11px;
+    gap: 6px;
+  }
+
+  /* ---- Forms ---- */
+  .form-group {
+    margin-bottom: 16px;
+  }
+  .form-group label {
+    font-size: 13px;
+  }
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+
+  /* ---- Buttons ---- */
+  .btn {
+    padding: 10px 18px;
+    font-size: 13px;
+  }
+  .btn-lg {
+    padding: 12px 24px;
+    font-size: 14px;
+  }
+
+  /* ---- Blog ---- */
+  .blog-title {
+    font-size: 20px;
+  }
+  .blog-subtitle {
+    font-size: 13px;
+  }
+  .blog-thumb {
+    height: 140px;
+  }
+  .blog-thumb-title {
+    font-size: 16px;
+  }
+  .blog-card-title {
+    font-size: 14px;
+  }
+  .blog-card-desc {
+    font-size: 12px;
+  }
+
+  /* ---- FAQ ---- */
+  .faq-question {
+    padding: 16px 18px;
+    font-size: 14px;
+  }
+  .faq-answer {
+    padding: 0 18px;
+  }
+  .faq-answer p {
+    font-size: 13px;
+  }
+}
+
+/* ===========================================
+   8. SMALL PHONE (≤ 480px)
+   =========================================== */
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 22px;
+  }
+  .section-title {
+    font-size: 18px;
+  }
+  .categories-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+  .category-card {
+    padding: 14px 4px;
+  }
+  .category-icon {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+  }
+  .category-name {
+    font-size: 10px;
+  }
+  .tool-card {
+    padding: 12px;
+    gap: 10px;
+  }
+  .tool-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+  }
+  .tool-name {
+    font-size: 13px;
+  }
+  .tool-desc {
+    font-size: 11px;
+  }
+  .dropzone {
+    padding: 24px 12px;
+  }
+  .dropzone-icon {
+    width: 42px;
+    height: 42px;
+    font-size: 18px;
+  }
+  .tool-title {
+    font-size: 20px;
+  }
+  .footer-heading {
+    font-size: 14px;
+  }
+  .footer-links a {
+    font-size: 13px;
+  }
+}
+
+/* ===========================================
+   9. EXTRA SMALL PHONE (≤ 360px)
+   =========================================== */
+@media (max-width: 360px) {
+  .header {
+    padding: 0 12px;
+  }
+  .hero {
+    padding: 20px 12px 28px;
+  }
+  .hero-title {
+    font-size: 20px;
+  }
+  .hero-desc {
+    font-size: 13px;
+  }
+  .section {
+    padding: 28px 12px;
+  }
+  .section-title {
+    font-size: 17px;
+  }
+  .categories-grid {
+    grid-template-columns: 1fr;
+  }
+  .tool-card {
+    padding: 10px;
+  }
+  .tool-icon {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+  }
+  .footer {
+    padding: 28px 12px 18px;
+  }
+}
+
+/* ===========================================
+   10. LANDSCAPE PHONE
+   =========================================== */
+@media (max-width: 900px) and (orientation: landscape) {
+  .hero {
+    min-height: auto;
+    padding: 24px 20px 32px;
+  }
+  .hero-right {
+    display: none;
+  }
+}
+
+/* ===========================================
+   11. TABLET SPECIFIC
+   =========================================== */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .categories-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .tools-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .footer-inner {
+    grid-template-columns: 2fr 1fr 1fr;
+  }
+}
+
+/* ===========================================
+   12. TOUCH DEVICE OPTIMIZATIONS
+   =========================================== */
+@media (hover: none) and (pointer: coarse) {
+  /* Larger tap targets on touch devices */
+  .nav a {
+    padding: 8px 0;
+  }
+  .popular-tag {
+    padding: 8px 14px;
+  }
+  .tool-card,
+  .category-card {
+    -webkit-tap-highlight-color: transparent;
+  }
+  /* Show tool arrow always on touch */
+  .tool-arrow {
+    opacity: 1;
+  }
+}
+
+/* ===========================================
+   13. HIGH-DPI / RETINA DISPLAYS
+   =========================================== */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  /* Sharper borders */
+  .category-card,
+  .tool-card {
+    border-width: 0.5px;
+  }
+}
+
+/* ===========================================
+   14. PRINT-SPECIFIC (Mobile)
+   =========================================== */
+@media print and (max-width: 768px) {
+  .header,
+  .footer,
+  .sidebar,
+  .hero,
+  .bottom-cta {
+    display: none !important;
+  }
+  .main-content {
+    padding: 0;
+  }
+  .tool-workspace,
+  .tool-header {
+    box-shadow: none;
+    border: 1px solid #999;
+    padding: 12px;
+  }
+}
+
+/* ===========================================
+   15. DARK MODE + RESPONSIVE FIXES
+   =========================================== */
+@media (max-width: 992px) {
+  [data-theme="dark"] .header {
+    background: #1e293b;
+  }
+  [data-theme="dark"] .mobile-menu-toggle {
+    color: #f9fafb;
+  }
+}
+
+/* ===========================================
+   END
+   =========================================== */

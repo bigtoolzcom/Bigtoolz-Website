@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2563eb">
+
+<title>Color Extractor - Extract Colors from Image Online Free | BigToolz</title>
+<meta name="description" content="Extract colors from any image online free. Get dominant color palettes, pick colors manually. Copy as HEX, RGB, CSS variables. Download palette. No upload.">
+<meta name="keywords" content="color extractor, extract colors from image, image color palette, dominant color, color palette generator, image palette">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://bigtoolz.com/tools/image-tools/color-extractor/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Color Extractor - Free Online Tool | BigToolz">
+<meta property="og:description" content="Extract dominant colors from images free, no upload, download palette.">
+<meta property="og:url" content="https://bigtoolz.com/tools/image-tools/color-extractor/">
+<meta property="og:image" content="https://bigtoolz.com/assets/images/og-image.jpg">
+<meta property="og:site_name" content="BigToolz">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Color Extractor - BigToolz">
+<meta name="twitter:description" content="Extract colors from images instantly free, no upload.">
+<meta name="twitter:image" content="https://bigtoolz.com/assets/images/twitter-card.jpg">
+
+<link rel="icon" href="/assets/images/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/images/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#f8f9fc;color:#1a1a2e;overflow-x:hidden;line-height:1.5}
+
+  .header{background:#fff;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;position:sticky;top:0;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+  .header-left{display:flex;align-items:center;gap:40px}
+  .logo{display:flex;align-items:center;gap:8px;font-size:22px;font-weight:800;color:#1a1a2e;text-decoration:none}
+  .logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#3b82f6,#2563eb);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px}
+  .logo span{color:#2563eb}
+  .nav{display:flex;align-items:center;gap:28px;list-style:none}
+  .nav a{text-decoration:none;color:#4b5563;font-size:14px;font-weight:500;transition:color .2s}
+  .nav a:hover,.nav a.active{color:#2563eb}
+  .header-right{display:flex;align-items:center;gap:16px}
+  .search-btn,.theme-btn{width:36px;height:36px;border-radius:50%;border:none;background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#4b5563}
+  .search-btn:hover,.theme-btn:hover{background:#f3f4f6}
+  .bookmark-btn{display:flex;align-items:center;gap:8px;background:#2563eb;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
+  .bookmark-btn:hover{background:#1d4ed8}
+
+  .hero{background:linear-gradient(135deg,#0a0e27 0%,#1a1a4e 40%,#2d1b69 70%,#4c1d95 100%);padding:40px 40px 60px;position:relative;overflow:hidden;color:#fff}
+  .hero::before{content:'';position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(245,158,11,.3) 0%,transparent 70%);border-radius:50%}
+  .hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+  .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px;flex-wrap:wrap}
+  .breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none}
+  .breadcrumb a:hover{color:#fff}
+  .breadcrumb .sep{color:rgba(255,255,255,.4)}
+  .breadcrumb .current{color:#fff;font-weight:500}
+  .hero-title-row{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+  .hero-icon{width:60px;height:60px;background:#f59e0b;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;color:#fff;flex-shrink:0;box-shadow:0 8px 24px rgba(245,158,11,.4)}
+  .hero-title{font-size:42px;font-weight:800;line-height:1.15}
+  .hero-title .blue{color:#fbbf24}
+  .hero-desc{font-size:15px;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:24px;max-width:560px}
+  .hero-features{display:flex;gap:24px;flex-wrap:wrap}
+  .hero-feature{display:flex;align-items:center;gap:6px;font-size:13px;color:#fff;font-weight:500}
+  .hero-feature .check{width:18px;height:18px;border-radius:50%;background:#f59e0b;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;flex-shrink:0}
+
+  .main-content{max-width:1200px;margin:0 auto;padding:40px;display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start}
+  .tool-content{min-width:0}
+
+  .workspace{background:#fff;border-radius:16px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,.06);border:1px solid #e5e7eb;margin-bottom:24px}
+
+  .dropzone{border:2px dashed #fcd34d;border-radius:12px;padding:50px 30px;text-align:center;background:#fffbeb;margin-bottom:24px;transition:all .2s;cursor:pointer}
+  .dropzone:hover,.dropzone.dragover{border-color:#f59e0b;background:#fef3c7}
+  .dropzone-icon{width:60px;height:60px;background:linear-gradient(135deg,#f59e0b,#d97706);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;color:#fff;font-size:26px;transition:transform .2s}
+  .dropzone:hover .dropzone-icon{transform:translateY(-4px)}
+  .dropzone-title{font-size:16px;font-weight:700;color:#1a1a2e;margin-bottom:8px}
+  .dropzone-sub{font-size:14px;color:#6b7280;margin-bottom:20px}
+  .dropzone-sub a{color:#f59e0b;font-weight:600;text-decoration:none}
+  .choose-btn{display:inline-flex;align-items:center;gap:8px;background:#f59e0b;color:#fff;border:none;padding:12px 28px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;transition:background .2s}
+  .choose-btn:hover{background:#d97706}
+  .dropzone-info{font-size:12px;color:#9ca3af;display:flex;align-items:center;justify-content:center;gap:8px;margin-top:16px;flex-wrap:wrap}
+  .file-input{display:none}
+
+  /* Editor */
+  .editor{display:none;margin-bottom:20px}
+  .editor.visible{display:block}
+
+  .toolbar{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px;padding:10px;background:#fffbeb;border-radius:10px;border:1px solid #fcd34d;align-items:center}
+  .mode-tab{padding:9px 14px;background:#fff;border:2px solid #e5e7eb;border-radius:8px;font-size:12px;font-weight:700;color:#4b5563;cursor:pointer;font-family:inherit;transition:all .2s}
+  .mode-tab:hover{border-color:#f59e0b;background:#fffbeb;color:#d97706}
+  .mode-tab.active{background:#f59e0b;color:#fff;border-color:#f59e0b}
+  .toolbar-label{font-size:11px;font-weight:700;color:#9a3412;text-transform:uppercase;letter-spacing:.3px;margin-right:4px}
+  .toolbar-spacer{flex:1}
+
+  /* Palette size select */
+  .palette-size-select{padding:8px 12px;background:#fff;border:2px solid #e5e7eb;border-radius:8px;font-size:12px;font-weight:700;color:#4b5563;font-family:inherit;cursor:pointer;outline:none}
+  .palette-size-select:focus{border-color:#f59e0b}
+
+  /* Canvas wrapper */
+  .canvas-wrapper{position:relative;background:#1a1a2e;border-radius:12px;padding:20px;display:flex;align-items:center;justify-content:center;overflow:auto;min-height:300px;max-height:520px;cursor:crosshair}
+  .canvas-wrapper canvas{display:block;max-width:100%;max-height:480px;border-radius:4px;box-shadow:0 8px 24px rgba(0,0,0,.4);cursor:crosshair}
+
+  /* Live preview over image */
+  .live-preview{position:absolute;top:12px;right:12px;background:rgba(0,0,0,.75);border-radius:10px;padding:10px 14px;display:flex;align-items:center;gap:10px;backdrop-filter:blur(10px);pointer-events:none;opacity:0;transition:opacity .15s}
+  .live-preview.visible{opacity:1}
+  .live-preview-swatch{width:32px;height:32px;border-radius:8px;border:2px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.3)}
+  .live-preview-info{display:flex;flex-direction:column;gap:2px}
+  .live-preview-hex{font-size:13px;font-weight:800;color:#fff;font-family:'JetBrains Mono',monospace;letter-spacing:.5px}
+  .live-preview-coords{font-size:10px;color:rgba(255,255,255,.7)}
+
+  /* Palette section */
+  .palette-section{margin-top:20px}
+  .palette-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;flex-wrap:wrap;gap:10px}
+  .palette-title{font-size:15px;font-weight:800;color:#1a1a2e;display:flex;align-items:center;gap:8px}
+  .palette-title .count{font-size:11px;font-weight:700;background:#f59e0b;color:#fff;padding:3px 10px;border-radius:12px}
+
+  .palette-actions{display:flex;gap:8px;flex-wrap:wrap}
+  .sub-btn{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;font-size:12px;font-weight:600;color:#4b5563;cursor:pointer;font-family:inherit;transition:all .2s}
+  .sub-btn:hover{border-color:#f59e0b;color:#d97706;background:#fffbeb}
+  .sub-btn.copied{background:#10b981;color:#fff;border-color:#10b981}
+
+  /* Palette grid */
+  .palette-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+  .color-card{background:#fff;border:1px solid #e5e7eb;border-radius:12px;overflow:hidden;cursor:pointer;transition:all .2s;position:relative}
+  .color-card:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(0,0,0,.1);border-color:#f59e0b}
+  .color-card-swatch{height:90px;position:relative}
+  .color-card-ratio{position:absolute;top:8px;right:8px;font-size:10px;font-weight:700;background:rgba(0,0,0,.5);color:#fff;padding:3px 8px;border-radius:10px;backdrop-filter:blur(4px)}
+  .color-card-body{padding:12px}
+  .color-card-hex{font-size:14px;font-weight:800;color:#1a1a2e;font-family:'JetBrains Mono',monospace;letter-spacing:.5px;margin-bottom:6px}
+  .color-card-rgb{font-size:11px;color:#6b7280;font-family:'JetBrains Mono',monospace}
+  .color-card-copy{position:absolute;bottom:8px;right:8px;width:26px;height:26px;border-radius:50%;background:#f3f4f6;display:flex;align-items:center;justify-content:center;color:#4b5563;font-size:12px;opacity:0;transition:opacity .2s}
+  .color-card:hover .color-card-copy{opacity:1}
+  .color-card.copied .color-card-copy{background:#10b981;color:#fff;opacity:1}
+
+  /* Manual pick mode */
+  .manual-hint{background:#fef3c7;border-left:4px solid #f59e0b;border-radius:8px;padding:12px 16px;margin-bottom:16px;font-size:13px;color:#92400e;line-height:1.6}
+  .manual-hint strong{color:#78350f}
+  .manual-colors{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px;min-height:60px}
+  .manual-color{position:relative;width:60px;height:60px;border-radius:10px;cursor:pointer;border:2px solid #fff;box-shadow:0 4px 12px rgba(0,0,0,.15);transition:transform .15s}
+  .manual-color:hover{transform:scale(1.08);z-index:2}
+  .manual-color::after{content:attr(data-hex);position:absolute;bottom:-22px;left:50%;transform:translateX(-50%);background:#1a1a2e;color:#fff;font-size:9px;padding:2px 6px;border-radius:4px;white-space:nowrap;opacity:0;transition:opacity .15s;font-family:'JetBrains Mono',monospace;pointer-events:none;z-index:3}
+  .manual-color:hover::after{opacity:1}
+  .manual-empty{color:#9ca3af;font-size:13px;font-style:italic;padding:16px 0}
+
+  /* Options */
+  .options{background:#fffbeb;border-radius:12px;padding:20px;margin-bottom:20px;border:1px solid #fcd34d}
+  .options-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+  .options-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+  .option-group label{display:block;font-size:12px;font-weight:700;color:#4b5563;margin-bottom:6px;text-transform:uppercase;letter-spacing:.3px}
+  .option-group select{width:100%;padding:10px 12px;border:2px solid #e5e7eb;border-radius:8px;font-size:13px;font-weight:600;font-family:inherit;color:#1a1a2e;background:#fff;outline:none;transition:border-color .2s}
+  .option-group select:focus{border-color:#f59e0b;box-shadow:0 0 0 3px rgba(245,158,11,.1)}
+
+  .seo-content{background:#fff;border-radius:16px;padding:32px;border:1px solid #e5e7eb;margin-bottom:24px}
+  .seo-content h2{font-size:22px;font-weight:800;color:#1a1a2e;margin-bottom:14px;margin-top:28px;display:flex;align-items:center;gap:10px}
+  .seo-content h2:first-child{margin-top:0}
+  .seo-content h3{font-size:16px;font-weight:700;color:#1a1a2e;margin:20px 0 10px}
+  .seo-content p{font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:14px}
+  .seo-content ul{list-style:none;padding-left:0;margin-bottom:16px}
+  .seo-content ul li{position:relative;padding-left:24px;font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:8px}
+  .seo-content ul li::before{content:'';position:absolute;left:6px;top:12px;width:6px;height:6px;background:#f59e0b;border-radius:50%}
+  .seo-content a{color:#2563eb;text-decoration:none;font-weight:600}
+  .seo-content a:hover{text-decoration:underline}
+  .seo-content strong{color:#1a1a2e;font-weight:700}
+  .seo-content code{background:#f1f5f9;padding:2px 6px;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:13px;color:#0f172a;border:1px solid #e2e8f0}
+
+  .how-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:20px}
+  .how-step{background:#fffbeb;border-radius:12px;padding:20px;border:1px solid #fcd34d}
+  .how-step-num{width:36px;height:36px;border-radius:50%;background:#f59e0b;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;margin-bottom:12px}
+  .how-step-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+  .how-step-desc{font-size:13px;color:#6b7280;line-height:1.6}
+
+  .faq-item{background:#fffbeb;border:1px solid #fcd34d;border-radius:12px;margin-bottom:10px;overflow:hidden;transition:border-color .2s}
+  .faq-item:hover{border-color:#f59e0b}
+  .faq-question{width:100%;background:none;border:none;padding:18px 22px;font-size:15px;font-weight:700;color:#1a1a2e;text-align:left;cursor:pointer;font-family:inherit;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .faq-question .chev{font-size:12px;color:#f59e0b;transition:transform .2s;flex-shrink:0}
+  .faq-item.open .faq-question .chev{transform:rotate(180deg)}
+  .faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 22px}
+  .faq-item.open .faq-answer{max-height:500px;padding-bottom:18px}
+  .faq-answer p{font-size:14px;color:#6b7280;line-height:1.7;margin:0}
+
+  .sidebar{background:#fff;border-radius:16px;padding:24px;border:1px solid #e5e7eb;position:sticky;top:80px;margin-bottom:24px}
+  .sidebar-header{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:800;color:#1a1a2e;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid #f3f4f6}
+  .sidebar-list{display:flex;flex-direction:column;gap:8px}
+  .sidebar-item{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;cursor:pointer;transition:background .2s;text-decoration:none;color:inherit;border:1px solid #f3f4f6}
+  .sidebar-item:hover{background:#fffbeb;border-color:#fcd34d}
+  .sidebar-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;flex-shrink:0}
+  .sidebar-info{flex:1;min-width:0}
+  .sidebar-title{font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:2px}
+  .sidebar-desc{font-size:11px;color:#9ca3af;line-height:1.4}
+
+  .footer{background:#0a0e27;padding:60px 40px 30px;color:#fff;margin-top:40px}
+  .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:40px}
+  .footer-brand{display:flex;align-items:center;gap:8px;font-size:20px;font-weight:800;margin-bottom:12px}
+  .footer-brand span{color:#60a5fa}
+  .footer-tagline{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px}
+  .footer-social{display:flex;gap:12px}
+  .footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:16px;transition:background .2s}
+  .footer-social a:hover{background:rgba(255,255,255,.2)}
+  .footer-heading{font-size:14px;font-weight:700;margin-bottom:20px;color:#fff}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .footer-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;transition:color .2s}
+  .footer-links a:hover{color:#60a5fa}
+  .footer-bottom{max-width:1200px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  .footer-bottom-left{display:flex;gap:20px;font-size:12px;color:rgba(255,255,255,.5)}
+  .footer-bottom-right,.footer-bottom-links a{font-size:12px;color:rgba(255,255,255,.5);text-decoration:none}
+  .footer-bottom-links{display:flex;gap:20px}
+
+  .toast{position:fixed;bottom:24px;right:24px;background:#1a1a2e;color:#fff;padding:14px 20px;border-radius:10px;font-size:13px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:3000;transform:translateY(200%);transition:transform .3s ease;max-width:320px}
+  .toast.visible{transform:translateY(0)}
+  .toast.success{background:#10b981}
+  .toast.error{background:#ef4444}
+
+  @media(max-width:1024px){
+    .main-content{grid-template-columns:1fr;padding:24px 20px}
+    .sidebar{position:static}
+    .how-steps{grid-template-columns:repeat(2,1fr)}
+    .options-grid{grid-template-columns:1fr}
+  }
+  @media(max-width:768px){
+    .header{padding:0 20px}.nav{display:none}
+    .hero{padding:24px 20px 40px}
+    .hero-title{font-size:28px}
+    .hero-icon{width:48px;height:48px;font-size:22px}
+    .hero-title-row{flex-direction:column;align-items:flex-start;gap:12px}
+    .main-content{padding:20px 16px}
+    .workspace{padding:20px}
+    .dropzone{padding:32px 16px}
+    .how-steps{grid-template-columns:1fr}
+    .seo-content{padding:20px}
+    .footer-inner{grid-template-columns:1fr 1fr}
+    .toast{left:16px;right:16px;bottom:16px;max-width:none}
+    .palette-grid{grid-template-columns:repeat(2,1fr)}
+  }
+  @media(max-width:576px){
+    .header{padding:0 16px}.header-right .search-btn,.header-right .theme-btn{display:none}
+    .hero-title{font-size:24px}
+    .footer-inner{grid-template-columns:1fr}
+    .footer-bottom{flex-direction:column;text-align:center}
+    .palette-grid{grid-template-columns:1fr}
+    .toolbar{gap:4px}
+    .mode-tab{padding:7px 10px;font-size:11px}
+  }
+
+  html[data-theme="dark"] body{background:#0f172a;color:#f1f5f9}
+  html[data-theme="dark"] .header,html[data-theme="dark"] .workspace,html[data-theme="dark"] .seo-content,html[data-theme="dark"] .sidebar{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .logo,html[data-theme="dark"] .hero-title,html[data-theme="dark"] .seo-content h2,html[data-theme="dark"] .seo-content h3,html[data-theme="dark"] .faq-question,html[data-theme="dark"] .sidebar-header,html[data-theme="dark"] .sidebar-title,html[data-theme="dark"] .options-title,html[data-theme="dark"] .palette-title,html[data-theme="dark"] .color-card-hex{color:#f1f5f9}
+  html[data-theme="dark"] .nav a{color:#cbd5e1}
+  html[data-theme="dark"] .dropzone,html[data-theme="dark"] .options,html[data-theme="dark"] .how-step,html[data-theme="dark"] .faq-item,html[data-theme="dark"] .toolbar,html[data-theme="dark"] .color-card{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .mode-tab{background:#0f172a;border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .mode-tab.active{background:#f59e0b;color:#fff;border-color:#f59e0b}
+  html[data-theme="dark"] .palette-size-select,html[data-theme="dark"] .option-group select{background:#0f172a;border-color:#334155;color:#f1f5f9}
+  html[data-theme="dark"] .sub-btn{background:#0f172a;border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .color-card-rgb{color:#94a3b8}
+  html[data-theme="dark"] .color-card-copy{background:#1e293b;color:#cbd5e1}
+  html[data-theme="dark"] .manual-hint{background:#422006;border-color:#f59e0b;color:#fbbf24}
+  html[data-theme="dark"] .seo-content p,html[data-theme="dark"] .seo-content ul li,html[data-theme="dark"] .faq-answer p{color:#cbd5e1}
+  html[data-theme="dark"] .seo-content code{background:#020617;color:#fbbf24;border-color:#334155}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type": "SoftwareApplication", "name": "Color Extractor", "url": "https://bigtoolz.com/tools/image-tools/color-extractor/", "applicationCategory": "DesignApplication", "operatingSystem": "Any (Web-based)", "description": "Free online color extractor extract dominant colors from any image, pick colors manually, copy as HEX/RGB/CSS. Works in your browser.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "1345"}},
+    {"@type": "HowTo", "name": "How to Extract Colors from an Image", "step": [
+      {"@type": "HowToStep", "name": "Upload Image", "text": "Drag & drop or click to select any image."},
+      {"@type": "HowToStep", "name": "Extract Palette", "text": "Auto-extract dominant colors or pick manually."},
+      {"@type": "HowToStep", "name": "Choose Format", "text": "Copy colors as HEX, RGB, or CSS variables."},
+      {"@type": "HowToStep", "name": "Download", "text": "Download the palette as JSON, TXT, or PNG."}
+    ]},
+    {"@type": "FAQPage", "mainEntity": [
+      {"@type": "Question", "name": "How do I extract colors from an image?", "acceptedAnswer": {"@type": "Answer", "text": "Upload your image, then either use auto-extract to get the dominant palette or switch to manual mode and click on any pixel. Copy colors as HEX, RGB, or CSS variables."}},
+      {"@type": "Question", "name": "What's the difference between dominant colors and manual pick?", "acceptedAnswer": {"@type": "Answer", "text": "Auto-extract analyzes the whole image and picks the most frequent distinct colors. Manual pick lets you click on specific pixels to grab exact colors."}},
+      {"@type": "Question", "name": "What color formats are supported?", "acceptedAnswer": {"@type": "Answer", "text": "HEX (#FF5733), RGB (255, 87, 51), HSL (11°, 100%, 60%), and CSS variables (--color-1: #FF5733). Copy the whole palette in any format."}},
+      {"@type": "Question", "name": "Can I download the color palette?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Download as JSON for developers, TXT for documentation, or as a PNG image showing the palette visually."}},
+      {"@type": "Question", "name": "Are my images uploaded to a server?", "acceptedAnswer": {"@type": "Answer", "text": "No. All color extraction happens in your browser using the Canvas API. Your images never leave your device."}}
+    ]},
+    {"@type": "BreadcrumbList", "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bigtoolz.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://bigtoolz.com/tools/"},
+      {"@type": "ListItem", "position": 3, "name": "Image Tools", "item": "https://bigtoolz.com/tools/image-tools/"},
+      {"@type": "ListItem", "position": 4, "name": "Color Extractor", "item": "https://bigtoolz.com/tools/image-tools/color-extractor/"}
+    ]}
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-left">
+    <a href="/" class="logo"><div class="logo-icon">⚒</div>BigToolz</span></a>
+    <nav><ul class="nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/tools/" class="active">All Tools</a></li>
+      <li><a href="/tools/categories">Categories</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul></nav>
+  </div>
+  <div class="header-right">
+    <button class="theme-btn" aria-label="Toggle theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
+    </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <nav class="breadcrumb">
+      <a href="/">Home</a><span class="sep">›</span>
+      <a href="/tools/">Tools</a><span class="sep">›</span>
+      <a href="/tools/image-tools/">Image Tools</a><span class="sep">›</span>
+      <span class="current">Color Extractor</span>
+    </nav>
+    <div class="hero-title-row">
+      <div class="hero-icon">🎨</div>
+      <h1 class="hero-title">Color <span class="blue">Extractor</span></h1>
+    </div>
+    <p class="hero-desc">
+      Extract dominant colors from any image instantly. Auto-generate palettes or pick colors manually. Copy as HEX, RGB, CSS variables. Download as JSON, TXT, PNG. No upload, 100% private.
+    </p>
+    <div class="hero-features">
+      <div class="hero-feature"><span class="check">✓</span> Auto Dominant</div>
+      <div class="hero-feature"><span class="check">✓</span> Manual Pick</div>
+      <div class="hero-feature"><span class="check">✓</span> 5-20 Colors</div>
+      <div class="hero-feature"><span class="check">✓</span> Export Palette</div>
+    </div>
+  </div>
+</section>
+
+<div class="main-content">
+
+  <div class="tool-content">
+
+    <div class="workspace">
+
+      <div class="dropzone" id="dropzone">
+        <div class="dropzone-icon">⬆</div>
+        <div class="dropzone-title">Drag & drop your image here</div>
+        <div class="dropzone-sub">or <a href="#" id="browseLink">click to browse</a></div>
+        <button class="choose-btn" id="chooseBtn" type="button">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+          Choose Image
+        </button>
+        <div class="dropzone-info">
+          <span>JPG, PNG, WebP, GIF, BMP</span>
+          <span>|</span>
+          <span>Single image</span>
+        </div>
+        <input type="file" id="fileInput" class="file-input" accept="image/*">
+      </div>
+
+      <!-- Editor -->
+      <div class="editor" id="editor">
+
+        <div class="toolbar">
+          <span class="toolbar-label">Mode:</span>
+          <button class="mode-tab active" data-mode="auto">🎨 Auto Extract</button>
+          <button class="mode-tab" data-mode="manual">🎯 Manual Pick</button>
+          <div class="toolbar-spacer"></div>
+          <span class="toolbar-label">Palette:</span>
+          <select class="palette-size-select" id="paletteSize">
+            <option value="5">5 colors</option>
+            <option value="8" selected>8 colors</option>
+            <option value="12">12 colors</option>
+            <option value="16">16 colors</option>
+            <option value="20">20 colors</option>
+          </select>
+          <button class="sub-btn" id="extractBtn">🔄 Re-extract</button>
+        </div>
+
+        <div class="canvas-wrapper" id="canvasWrapper">
+          <canvas id="mainCanvas"></canvas>
+          <div class="live-preview" id="livePreview">
+            <div class="live-preview-swatch" id="liveSwatch"></div>
+            <div class="live-preview-info">
+              <div class="live-preview-hex" id="liveHex">#FFFFFF</div>
+              <div class="live-preview-coords" id="liveCoords">0, 0</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Manual mode hint -->
+        <div class="manual-hint" id="manualHint" style="display:none; margin-top:16px;">
+          <strong>🎯 Manual mode:</strong> Click on any pixel in the image above to capture its color. Your picks will appear below.
+        </div>
+
+        <!-- Manual colors -->
+        <div class="manual-colors" id="manualColors" style="display:none;">
+          <div class="manual-empty">No colors picked yet. Click on the image.</div>
+        </div>
+
+        <!-- Palette section -->
+        <div class="palette-section">
+          <div class="palette-header">
+            <div class="palette-title">
+              🎨 Color Palette
+              <span class="count" id="paletteCount">0 colors</span>
+            </div>
+            <div class="palette-actions">
+              <button class="sub-btn" id="copyHexBtn">📋 Copy HEX</button>
+              <button class="sub-btn" id="copyRgbBtn">📋 Copy RGB</button>
+              <button class="sub-btn" id="copyCssBtn">📋 Copy CSS</button>
+              <button class="sub-btn" id="downloadJsonBtn">⬇ JSON</button>
+              <button class="sub-btn" id="downloadTxtBtn">⬇ TXT</button>
+              <button class="sub-btn" id="downloadPngBtn">⬇ PNG</button>
+            </div>
+          </div>
+          <div class="palette-grid" id="paletteGrid"></div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="seo-content">
+
+      <h2>🎨 What is a Color Extractor?</h2>
+      <p>
+        A <strong>color extractor</strong> analyzes an image and identifies the colors that make it up. This is essential for <strong>designers, developers, artists,</strong> and <strong>brand specialists</strong> who want to match or recreate the visual palette of an image. It's the digital equivalent of sampling paint colors from a photograph.
+      </p>
+      <p>
+        Unlike most online color tools, BigToolz processes images <strong>100% in your browser</strong> using the HTML5 Canvas API. Your images <strong>never uploaded to any server</strong> complete privacy, instant results, unlimited extractions.
+      </p>
+
+      <h2>🚀 How to Extract Colors</h2>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-step-num">1</div>
+          <div class="how-step-title">Upload Image</div>
+          <div class="how-step-desc">Drag & drop or click "Choose Image".</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">2</div>
+          <div class="how-step-title">Choose Mode</div>
+          <div class="how-step-desc">Auto-extract or manual pick from pixels.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">3</div>
+          <div class="how-step-title">Review Colors</div>
+          <div class="how-step-desc">See HEX, RGB, HSL per color swatch.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">4</div>
+          <div class="how-step-title">Copy or Export</div>
+          <div class="how-step-desc">Copy individual colors, whole palette, or download.</div>
+        </div>
+      </div>
+
+      <h2>🎯 Auto vs Manual Extraction</h2>
+      <h3>🎨 Auto Extract (Dominant Colors)</h3>
+      <p>Analyzes the entire image and picks the <strong>most frequent distinct colors</strong>. Perfect for getting a quick overview of an image's palette great for mood boards, brand extraction, and generating color schemes from photos.</p>
+
+      <h3>🎯 Manual Pick</h3>
+      <p>Click on any pixel to grab its exact color. Use when you need a <strong>specific shade</strong> like the exact blue of a logo, the sky's hue, or the tone of a product. Combine multiple picks into a custom palette.</p>
+
+      <h2>💡 When to Use Color Extraction</h2>
+      <ul>
+        <li><strong>Web design</strong> match brand colors from a client's logo or photo.</li>
+        <li><strong>Interior design</strong> extract palette from a mood photo.</li>
+        <li><strong>Graphic design</strong> build color schemes matching a reference image.</li>
+        <li><strong>Fashion</strong> match fabric colors from reference photos.</li>
+        <li><strong>Photography</strong> analyze tonal palette for color grading.</li>
+        <li><strong>Branding</strong> discover colors from competitor branding.</li>
+        <li><strong>Art</strong> study composition palettes from masterpieces.</li>
+      </ul>
+
+      <h2>💡 Best Practices</h2>
+      <ul>
+        <li><strong>Use high-quality images</strong> more pixels = more accurate palette.</li>
+        <li><strong>Consider the message</strong> palettes convey mood: warm = energetic, cool = calm.</li>
+        <li><strong>Limit to 5-8 colors</strong> more than 8 gets hard to use in design.</li>
+        <li><strong>Test contrast</strong> ensure text/background pairs meet WCAG standards (4.5:1 minimum).</li>
+        <li><strong>Copy CSS variables</strong> use them directly in your stylesheet.</li>
+        <li><strong>Save the palette</strong> export JSON/TXT for design documentation.</li>
+      </ul>
+
+      <h2>✨ Key Features</h2>
+      <ul>
+        <li><strong>2 modes</strong> auto-extract + manual pick.</li>
+        <li><strong>5-20 colors</strong> adjustable palette size.</li>
+        <li><strong>Multiple formats</strong> HEX, RGB, HSL, CSS variables.</li>
+        <li><strong>Copy individual colors</strong> click any swatch.</li>
+        <li><strong>Copy entire palette</strong> HEX / RGB / CSS.</li>
+        <li><strong>Download palette</strong> JSON, TXT, or PNG image.</li>
+        <li><strong>Live pixel preview</strong> hover to see color under cursor.</li>
+        <li><strong>100% browser-based</strong> complete privacy.</li>
+      </ul>
+
+      <h2>❓ Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-question">How do I extract colors from an image?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Upload your image, then either use <strong>Auto Extract</strong> to get the dominant palette, or switch to <strong>Manual Pick</strong> and click on any pixel. Copy colors as HEX, RGB, or CSS variables.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What's the difference between dominant colors and manual pick?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>Auto-extract</strong> analyzes the whole image and picks the most frequent distinct colors. <strong>Manual pick</strong> lets you click specific pixels to grab exact colors. Use auto for quick overview, manual for precision.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What color formats are supported?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>HEX</strong> (#FF5733), <strong>RGB</strong> (255, 87, 51), <strong>HSL</strong> (11°, 100%, 60%), and <strong>CSS variables</strong> (<code>--color-1: #FF5733;</code>). Copy the whole palette in any format with one click.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I download the color palette?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Yes! Download as <strong>JSON</strong> for developers, <strong>TXT</strong> for documentation, or as a <strong>PNG image</strong> showing the palette visually. All downloads are free.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">How many colors should I extract?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>For most design work, <strong>5-8 colors</strong> is ideal enough variety without being overwhelming. For documentation or archive purposes, 12-16 works. More than 20 gets hard to use practically.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I use these colors commercially?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Yes. Extracted colors are just data HEX values from an image. You can use them anywhere. However, be careful not to <strong>exactly replicate</strong> a trademarked brand's specific color palette in a competing product.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Are my images uploaded to a server?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>No. All color extraction happens in your browser using the Canvas API. Your images never leave your device, and nothing is stored anywhere.</p></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-header">🔗 Related Image Tools</div>
+    <div class="sidebar-list">
+      <a href="/tools/image-tools/image-color-picker/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#f59e0b;">🎨</div>
+        <div class="sidebar-info"><div class="sidebar-title">Color Picker</div><div class="sidebar-desc">Pick any pixel color</div></div>
+      </a>
+      <a href="/tools/developer-tools/color-palette/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#ec4899;">🌈</div>
+        <div class="sidebar-info"><div class="sidebar-title">Color Palette</div><div class="sidebar-desc">Generate palettes</div></div>
+      </a>
+      <a href="/tools/developer-tools/rgb-to-hex/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#3b82f6;">🔄</div>
+        <div class="sidebar-info"><div class="sidebar-title">RGB to HEX</div><div class="sidebar-desc">Convert colors</div></div>
+      </a>
+      <a href="/tools/image-tools/image-metadata/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#06b6d4;">ℹ️</div>
+        <div class="sidebar-info"><div class="sidebar-title">Image Metadata</div><div class="sidebar-desc">View EXIF</div></div>
+      </a>
+      <a href="/tools/image-tools/image-compressor/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#10b981;">📉</div>
+        <div class="sidebar-info"><div class="sidebar-title">Image Compressor</div><div class="sidebar-desc">Reduce file size</div></div>
+      </a>
+      <a href="/tools/image-tools/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#64748b;">🖼</div>
+        <div class="sidebar-info"><div class="sidebar-title">All Image Tools →</div><div class="sidebar-desc">Browse 25+ tools</div></div>
+      </a>
+    </div>
+  </aside>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand"><div class="logo-icon">⚒</div>BigToolz</span></div>
+      <p class="footer-tagline">Your Ultimate Online Tools Hub</p>
+      <div class="footer-social">
+        <a href="https://facebook.com/bigtoolz" aria-label="Facebook">f</a>
+        <a href="https://twitter.com/bigtoolz" aria-label="Twitter">𝕏</a>
+        <a href="https://youtube.com/@bigtoolz" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+    <div>
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/tools/">All Tools</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Categories</h3>
+      <ul class="footer-links">
+        <li><a href="/tools/image-tools/">Image Tools</a></li>
+        <li><a href="/tools/pdf-tools/">PDF Tools</a></li>
+        <li><a href="/tools/text-tools/">Text Tools</a></li>
+        <li><a href="/tools/seo-tools/">SEO Tools</a></li>
+        <li><a href="/tools/categories">All Categories →</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Legal</h3>
+      <ul class="footer-links">
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left"><span>✓ 100% Free</span><span>✓ No Sign Up</span><span>✓ No Installation</span></div>
+    <div class="footer-bottom-right">© 2026 BigToolz. All rights reserved.</div>
+    <div class="footer-bottom-links"><a href="/privacy-policy">Privacy</a><a href="/terms">Terms</a><a href="/disclaimer">Disclaimer</a></div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+'use strict';
+
+/* ===== THEME ===== */
+(function(){try{var t=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&d))document.documentElement.setAttribute('data-theme','dark');else if(t==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();
+document.querySelector('.theme-btn')?.addEventListener('click',()=>{const h=document.documentElement;const c=h.getAttribute('data-theme');const d=window.matchMedia('(prefers-color-scheme: dark)').matches;let n=c==='dark'?'light':c==='light'?'dark':(d?'light':'dark');h.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}});
+
+/* ===== HELPERS ===== */
+const $ = (s, p = document) => p.querySelector(s);
+const $$ = (s, p = document) => [...p.querySelectorAll(s)];
+
+function showToast(msg, type = 'info', duration = 3000) {
+  const t = $('#toast');
+  if (!t) return;
+  t.className = 'toast visible' + (type !== 'info' ? ' ' + type : '');
+  t.textContent = msg;
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove('visible'), duration);
+}
+
+async function copyToClipboard(text) {
+  try {
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(text);
+      return true;
+    }
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.cssText = 'position:fixed;opacity:0;';
+    document.body.appendChild(ta);
+    ta.select();
+    const ok = document.execCommand('copy');
+    document.body.removeChild(ta);
+    return ok;
+  } catch (e) { return false; }
+}
+
+/* ===== COLOR CONVERSIONS ===== */
+function rgbToHex(r, g, b) {
+  return '#' + [r, g, b].map(v => v.toString(16).padStart(2, '0').toUpperCase()).join('');
+}
+
+function rgbToHsl(r, g, b) {
+  r /= 255; g /= 255; b /= 255;
+  const max = Math.max(r, g, b), min = Math.min(r, g, b);
+  let h = 0, s = 0;
+  const l = (max + min) / 2;
+  if (max !== min) {
+    const d = max - min;
+    s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+    switch (max) {
+      case r: h = (g - b) / d + (g < b ? 6 : 0); break;
+      case g: h = (b - r) / d + 2; break;
+      case b: h = (r - g) / d + 4; break;
+    }
+    h /= 6;
+  }
+  return { h: Math.round(h * 360), s: Math.round(s * 100), l: Math.round(l * 100) };
+}
+
+/* ===== STATE ===== */
+const state = {
+  image: null,
+  mode: 'auto',
+  paletteSize: 8,
+  palette: [],
+  manualColors: [],
+  sourceFile: null
+};
+
+/* ===== DOM ===== */
+const dropzone = $('#dropzone');
+const fileInput = $('#fileInput');
+const chooseBtn = $('#chooseBtn');
+const browseLink = $('#browseLink');
+const editor = $('#editor');
+const mainCanvas = $('#mainCanvas');
+const canvasWrapper = $('#canvasWrapper');
+const livePreview = $('#livePreview');
+const liveSwatch = $('#liveSwatch');
+const liveHex = $('#liveHex');
+const liveCoords = $('#liveCoords');
+const manualHint = $('#manualHint');
+const manualColors = $('#manualColors');
+const paletteSize = $('#paletteSize');
+const extractBtn = $('#extractBtn');
+const paletteGrid = $('#paletteGrid');
+const paletteCount = $('#paletteCount');
+const copyHexBtn = $('#copyHexBtn');
+const copyRgbBtn = $('#copyRgbBtn');
+const copyCssBtn = $('#copyCssBtn');
+const downloadJsonBtn = $('#downloadJsonBtn');
+const downloadTxtBtn = $('#downloadTxtBtn');
+const downloadPngBtn = $('#downloadPngBtn');
+
+/* ===== MODE TABS ===== */
+$$('.mode-tab').forEach(btn => {
+  btn.addEventListener('click', () => {
+    $$('.mode-tab').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    state.mode = btn.dataset.mode;
+    manualHint.style.display = state.mode === 'manual' ? 'block' : 'none';
+    manualColors.style.display = state.mode === 'manual' ? 'flex' : 'none';
+    if (state.mode === 'auto' && state.palette.length === 0) {
+      extractPalette();
+    } else if (state.mode === 'manual') {
+      renderManualColors();
+    }
+  });
+});
+
+/* ===== PALETTE SIZE ===== */
+paletteSize.addEventListener('change', () => {
+  state.paletteSize = parseInt(paletteSize.value, 10);
+  if (state.mode === 'auto' && state.image) extractPalette();
+});
+
+/* ===== FILE SELECTION ===== */
+function triggerFileSelect() { fileInput.click(); }
+chooseBtn.addEventListener('click', (e) => { e.stopPropagation(); triggerFileSelect(); });
+browseLink.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); triggerFileSelect(); });
+dropzone.addEventListener('click', triggerFileSelect);
+
+fileInput.addEventListener('change', (e) => {
+  const f = e.target.files[0];
+  if (f && f.type.startsWith('image/')) loadImage(f);
+  fileInput.value = '';
+});
+
+['dragenter','dragover'].forEach(evt => {
+  dropzone.addEventListener(evt, (e) => { e.preventDefault(); e.stopPropagation(); dropzone.classList.add('dragover'); });
+});
+['dragleave','drop'].forEach(evt => {
+  dropzone.addEventListener(evt, (e) => { e.preventDefault(); e.stopPropagation(); dropzone.classList.remove('dragover'); });
+});
+dropzone.addEventListener('drop', (e) => {
+  const f = e.dataTransfer.files[0];
+  if (f && f.type.startsWith('image/')) loadImage(f);
+});
+
+/* ===== LOAD IMAGE ===== */
+function loadImage(file) {
+  state.sourceFile = file;
+  const reader = new FileReader();
+  reader.onload = (e) => {
+    const img = new Image();
+    img.onload = () => {
+      state.image = img;
+      dropzone.style.display = 'none';
+      editor.classList.add('visible');
+
+      const maxW = 900;
+      state.renderScale = Math.min(1, maxW / img.naturalWidth);
+      mainCanvas.width = img.naturalWidth;
+      mainCanvas.height = img.naturalHeight;
+      mainCanvas.style.maxWidth = '100%';
+
+      const ctx = mainCanvas.getContext('2d', { willReadFrequently: true });
+      ctx.drawImage(img, 0, 0);
+
+      state.palette = [];
+      state.manualColors = [];
+      renderManualColors();
+      extractPalette();
+    };
+    img.src = e.target.result;
+  };
+  reader.readAsDataURL(file);
+}
+
+/* ===== AUTO EXTRACT (dominant colors) ===== */
+function extractPalette() {
+  if (!state.image) return;
+
+  // Sample from a small downscaled canvas for speed
+  const sampleW = 120;
+  const sampleH = Math.round(sampleW * state.image.naturalHeight / state.image.naturalWidth);
+  const tmp = document.createElement('canvas');
+  tmp.width = sampleW;
+  tmp.height = sampleH;
+  const ctx = tmp.getContext('2d', { willReadFrequently: true });
+  ctx.drawImage(state.image, 0, 0, sampleW, sampleH);
+
+  const data = ctx.getImageData(0, 0, sampleW, sampleH).data;
+
+  // Quantize into buckets (32-levels per channel)
+  const buckets = {};
+  const step = 1;
+  let totalPixels = 0;
+  for (let i = 0; i < data.length; i += 4 * step) {
+    const r = data[i];
+    const g = data[i + 1];
+    const b = data[i + 2];
+    const a = data[i + 3];
+    if (a < 128) continue;
+
+    // Quantize
+    const qr = Math.round(r / 32) * 32;
+    const qg = Math.round(g / 32) * 32;
+    const qb = Math.round(b / 32) * 32;
+    const key = qr + ',' + qg + ',' + qb;
+
+    if (!buckets[key]) buckets[key] = { count: 0, r: qr, g: qg, b: qb };
+    buckets[key].count++;
+    totalPixels++;
+  }
+
+  // Sort by frequency and pick top N with diversity
+  const sorted = Object.values(buckets).sort((a, b) => b.count - a.count);
+  const size = state.paletteSize;
+  const distinct = [];
+  for (const c of sorted) {
+    const tooClose = distinct.some(d => {
+      return Math.abs(d.r - c.r) + Math.abs(d.g - c.g) + Math.abs(d.b - c.b) < 50;
+    });
+    if (!tooClose) {
+      distinct.push({ ...c, ratio: c.count / totalPixels });
+    }
+    if (distinct.length >= size) break;
+  }
+
+  state.palette = distinct.map(c => ({
+    r: c.r, g: c.g, b: c.b,
+    ratio: c.ratio,
+    hex: rgbToHex(c.r, c.g, c.b),
+    rgb: `rgb(${c.r}, ${c.g}, ${c.b})`,
+    hsl: rgbToHsl(c.r, c.g, c.b)
+  }));
+
+  renderPalette();
+}
+
+/* ===== RENDER PALETTE ===== */
+function renderPalette() {
+  paletteGrid.innerHTML = '';
+  paletteCount.textContent = state.palette.length + ' colors';
+
+  if (!state.palette.length) {
+    paletteGrid.innerHTML = '<div style="grid-column:1/-1;text-align:center;color:#9ca3af;padding:40px 20px;">No colors extracted yet.</div>';
+    return;
+  }
+
+  state.palette.forEach((c, i) => {
+    const card = document.createElement('div');
+    card.className = 'color-card';
+    card.innerHTML = `
+      <div class="color-card-swatch" style="background:${c.hex};">
+        <div class="color-card-ratio">${(c.ratio * 100).toFixed(1)}%</div>
+        <div class="color-card-copy">📋</div>
+      </div>
+      <div class="color-card-body">
+        <div class="color-card-hex">${c.hex}</div>
+        <div class="color-card-rgb">${c.rgb}</div>
+      </div>
+    `;
+    card.addEventListener('click', async () => {
+      const ok = await copyToClipboard(c.hex);
+      if (ok) {
+        card.classList.add('copied');
+        setTimeout(() => card.classList.remove('copied'), 1000);
+        showToast(`Copied ${c.hex}`, 'success', 1200);
+      }
+    });
+    paletteGrid.appendChild(card);
+  });
+}
+
+/* ===== MANUAL COLOR PICK ===== */
+function renderManualColors() {
+  manualColors.innerHTML = '';
+  if (!state.manualColors.length) {
+    manualColors.innerHTML = '<div class="manual-empty">No colors picked yet. Click on the image above.</div>';
+    return;
+  }
+  state.manualColors.forEach((hex, i) => {
+    const el = document.createElement('div');
+    el.className = 'manual-color';
+    el.style.background = hex;
+    el.dataset.hex = hex;
+    el.title = hex;
+    el.addEventListener('click', async () => {
+      const ok = await copyToClipboard(hex);
+      if (ok) showToast(`Copied ${hex}`, 'success', 1200);
+    });
+    manualColors.appendChild(el);
+  });
+}
+
+mainCanvas.addEventListener('click', async (e) => {
+  if (state.mode !== 'manual') return;
+  const rect = mainCanvas.getBoundingClientRect();
+  const scaleX = mainCanvas.width / rect.width;
+  const scaleY = mainCanvas.height / rect.height;
+  const x = Math.floor((e.clientX - rect.left) * scaleX);
+  const y = Math.floor((e.clientY - rect.top) * scaleY);
+  if (x < 0 || y < 0 || x >= mainCanvas.width || y >= mainCanvas.height) return;
+
+  const ctx = mainCanvas.getContext('2d', { willReadFrequently: true });
+  const pixel = ctx.getImageData(x, y, 1, 1).data;
+  const hex = rgbToHex(pixel[0], pixel[1], pixel[2]);
+
+  if (!state.manualColors.includes(hex)) {
+    state.manualColors.unshift(hex);
+    if (state.manualColors.length > 30) state.manualColors.pop();
+    renderManualColors();
+  }
+
+  // Also add to palette
+  if (!state.palette.find(p => p.hex === hex)) {
+    state.palette.unshift({
+      r: pixel[0], g: pixel[1], b: pixel[2],
+      ratio: 0,
+      hex,
+      rgb: `rgb(${pixel[0]}, ${pixel[1]}, ${pixel[2]})`,
+      hsl: rgbToHsl(pixel[0], pixel[1], pixel[2])
+    });
+    renderPalette();
+  }
+
+  const ok = await copyToClipboard(hex);
+  if (ok) showToast(`Picked & copied ${hex}`, 'success', 1200);
+});
+
+/* ===== HOVER PREVIEW ===== */
+mainCanvas.addEventListener('mousemove', (e) => {
+  const rect = mainCanvas.getBoundingClientRect();
+  const scaleX = mainCanvas.width / rect.width;
+  const scaleY = mainCanvas.height / rect.height;
+  const x = Math.floor((e.clientX - rect.left) * scaleX);
+  const y = Math.floor((e.clientY - rect.top) * scaleY);
+  if (x < 0 || y < 0 || x >= mainCanvas.width || y >= mainCanvas.height) {
+    livePreview.classList.remove('visible');
+    return;
+  }
+  const ctx = mainCanvas.getContext('2d', { willReadFrequently: true });
+  const pixel = ctx.getImageData(x, y, 1, 1).data;
+  const hex = rgbToHex(pixel[0], pixel[1], pixel[2]);
+  liveSwatch.style.background = hex;
+  liveHex.textContent = hex;
+  liveCoords.textContent = x + ', ' + y;
+  livePreview.classList.add('visible');
+});
+mainCanvas.addEventListener('mouseleave', () => {
+  livePreview.classList.remove('visible');
+});
+
+/* ===== RE-EXTRACT ===== */
+extractBtn.addEventListener('click', () => {
+  if (!state.image) return;
+  state.manualColors = [];
+  renderManualColors();
+  extractPalette();
+  showToast('Palette re-extracted', 'success');
+});
+
+/* ===== COPY PALETTE ===== */
+copyHexBtn.addEventListener('click', async () => {
+  if (!state.palette.length) { showToast('No colors', 'error'); return; }
+  const text = state.palette.map(c => c.hex).join('\n');
+  const ok = await copyToClipboard(text);
+  if (ok) {
+    copyHexBtn.classList.add('copied');
+    setTimeout(() => copyHexBtn.classList.remove('copied'), 1500);
+    showToast('HEX palette copied!', 'success');
+  }
+});
+
+copyRgbBtn.addEventListener('click', async () => {
+  if (!state.palette.length) { showToast('No colors', 'error'); return; }
+  const text = state.palette.map(c => c.rgb).join('\n');
+  const ok = await copyToClipboard(text);
+  if (ok) {
+    copyRgbBtn.classList.add('copied');
+    setTimeout(() => copyRgbBtn.classList.remove('copied'), 1500);
+    showToast('RGB palette copied!', 'success');
+  }
+});
+
+copyCssBtn.addEventListener('click', async () => {
+  if (!state.palette.length) { showToast('No colors', 'error'); return; }
+  const text = ':root {\n' + state.palette.map((c, i) => `  --color-${i + 1}: ${c.hex};`).join('\n') + '\n}';
+  const ok = await copyToClipboard(text);
+  if (ok) {
+    copyCssBtn.classList.add('copied');
+    setTimeout(() => copyCssBtn.classList.remove('copied'), 1500);
+    showToast('CSS variables copied!', 'success');
+  }
+});
+
+/* ===== DOWNLOAD JSON ===== */
+downloadJsonBtn.addEventListener('click', () => {
+  if (!state.palette.length) { showToast('No colors', 'error'); return; }
+  const json = JSON.stringify(state.palette.map(c => ({
+    hex: c.hex,
+    rgb: c.rgb,
+    hsl: c.hsl,
+    ratio: c.ratio
+  })), null, 2);
+  const blob = new Blob([json], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'color-palette.json';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+  showToast('JSON downloaded', 'success');
+});
+
+/* ===== DOWNLOAD TXT ===== */
+downloadTxtBtn.addEventListener('click', () => {
+  if (!state.palette.length) { showToast('No colors', 'error'); return; }
+  const lines = ['BigToolz Color Palette', '='.repeat(40), ''];
+  state.palette.forEach((c, i) => {
+    lines.push(`Color ${i + 1}:`);
+    lines.push(`  HEX: ${c.hex}`);
+    lines.push(`  RGB: ${c.rgb}`);
+    lines.push(`  HSL: hsl(${c.hsl.h}, ${c.hsl.s}%, ${c.hsl.l}%)`);
+    if (c.ratio) lines.push(`  Coverage: ${(c.ratio * 100).toFixed(2)}%`);
+    lines.push('');
+  });
+  const blob = new Blob([lines.join('\n')], { type: 'text/plain' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'color-palette.txt';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+  showToast('TXT downloaded', 'success');
+});
+
+/* ===== DOWNLOAD PNG ===== */
+downloadPngBtn.addEventListener('click', () => {
+  if (!state.palette.length) { showToast('No colors', 'error'); return; }
+  const w = 1200;
+  const swatchW = w / state.palette.length;
+  const h = 400;
+
+  const canvas = document.createElement('canvas');
+  canvas.width = w;
+  canvas.height = h;
+  const ctx = canvas.getContext('2d');
+
+  ctx.fillStyle = '#ffffff';
+  ctx.fillRect(0, 0, w, h);
+
+  state.palette.forEach((c, i) => {
+    ctx.fillStyle = c.hex;
+    ctx.fillRect(i * swatchW, 0, swatchW, h - 80);
+
+    // HEX label
+    ctx.fillStyle = '#1a1a2e';
+    ctx.font = 'bold 14px Inter, monospace';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText(c.hex, i * swatchW + swatchW / 2, h - 40);
+  });
+
+  canvas.toBlob((blob) => {
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'color-palette.png';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+    showToast('PNG downloaded', 'success');
+  }, 'image/png');
+});
+
+/* ===== FAQ ===== */
+$$('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    $$('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2563eb">
+
+<title>Instagram Reel Info Viewer - Get Reel Details & Links | BigToolz</title>
+<meta name="description" content="View Instagram Reel info instantly thumbnail preview, shortcode, direct link. Paste any Instagram reel URL. Free tool, no signup, works in your browser.">
+<meta name="keywords" content="instagram reels, reels info, instagram reel viewer, reel shortcode extractor, instagram reel thumbnail, instagram reel link">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://bigtoolz.com/tools/social-tools/instagram-reels/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Instagram Reel Info Viewer - Free Online Tool | BigToolz">
+<meta property="og:description" content="View Instagram Reel info thumbnail, shortcode, direct link. Free, no signup.">
+<meta property="og:url" content="https://bigtoolz.com/tools/social-tools/instagram-reels/">
+<meta property="og:image" content="https://bigtoolz.com/assets/images/og-image.jpg">
+<meta property="og:site_name" content="BigToolz">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Instagram Reel Info Viewer - BigToolz">
+<meta name="twitter:description" content="View Instagram Reel info instantly free.">
+<meta name="twitter:image" content="https://bigtoolz.com/assets/images/twitter-card.jpg">
+
+<link rel="icon" href="/assets/images/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/images/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#f8f9fc;color:#1a1a2e;overflow-x:hidden;line-height:1.5}
+
+  .header{background:#fff;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;position:sticky;top:0;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+  .header-left{display:flex;align-items:center;gap:40px}
+  .logo{display:flex;align-items:center;gap:8px;font-size:22px;font-weight:800;color:#1a1a2e;text-decoration:none}
+  .logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#3b82f6,#2563eb);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px}
+  .logo span{color:#2563eb}
+  .nav{display:flex;align-items:center;gap:28px;list-style:none}
+  .nav a{text-decoration:none;color:#4b5563;font-size:14px;font-weight:500;transition:color .2s}
+  .nav a:hover,.nav a.active{color:#2563eb}
+  .header-right{display:flex;align-items:center;gap:16px}
+  .search-btn,.theme-btn{width:36px;height:36px;border-radius:50%;border:none;background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#4b5563}
+  .search-btn:hover,.theme-btn:hover{background:#f3f4f6}
+  .bookmark-btn{display:flex;align-items:center;gap:8px;background:#2563eb;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
+  .bookmark-btn:hover{background:#1d4ed8}
+
+  .hero{background:linear-gradient(135deg,#0a0e27 0%,#1a1a4e 40%,#2d1b69 70%,#4c1d95 100%);padding:40px 40px 60px;position:relative;overflow:hidden;color:#fff}
+  .hero::before{content:'';position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(236,72,153,.3) 0%,transparent 70%);border-radius:50%}
+  .hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+  .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px;flex-wrap:wrap}
+  .breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none}
+  .breadcrumb a:hover{color:#fff}
+  .breadcrumb .sep{color:rgba(255,255,255,.4)}
+  .breadcrumb .current{color:#fff;font-weight:500}
+  .hero-title-row{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+  .hero-icon{width:60px;height:60px;background:#ec4899;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px;color:#fff;flex-shrink:0;box-shadow:0 8px 24px rgba(236,72,153,.4)}
+  .hero-title{font-size:42px;font-weight:800;line-height:1.15}
+  .hero-title .blue{color:#f472b6}
+  .hero-desc{font-size:15px;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:24px;max-width:560px}
+  .hero-features{display:flex;gap:24px;flex-wrap:wrap}
+  .hero-feature{display:flex;align-items:center;gap:6px;font-size:13px;color:#fff;font-weight:500}
+  .hero-feature .check{width:18px;height:18px;border-radius:50%;background:#ec4899;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;flex-shrink:0}
+
+  .main-content{max-width:1200px;margin:0 auto;padding:40px;display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start}
+  .tool-content{min-width:0}
+
+  .workspace{background:#fff;border-radius:16px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,.06);border:1px solid #e5e7eb;margin-bottom:24px}
+
+  /* Honest notice */
+  .honest-notice{background:#fef3c7;border-left:4px solid #f59e0b;border-radius:8px;padding:16px 20px;margin-bottom:24px;font-size:13px;color:#78350f;line-height:1.7}
+  .honest-notice strong{color:#78350f;font-weight:800;display:block;margin-bottom:6px;font-size:14px}
+
+  /* Mode tabs */
+  .mode-tabs{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:24px;background:#fdf2f8;padding:6px;border-radius:12px;border:1px solid #fbcfe8}
+  .mode-tab{padding:14px 16px;background:transparent;border:none;border-radius:8px;font-size:13px;font-weight:700;color:#6b7280;cursor:pointer;font-family:inherit;transition:all .2s;display:flex;flex-direction:column;gap:3px;align-items:center;text-align:center}
+  .mode-tab:hover{background:#fce7f3;color:#be185d}
+  .mode-tab.active{background:#ec4899;color:#fff}
+  .mode-tab-title{font-size:13px;font-weight:700}
+  .mode-tab-desc{font-size:10px;opacity:.85;font-weight:500}
+
+  .mode-panel{display:none}
+  .mode-panel.active{display:block}
+
+  .input-section{margin-bottom:20px}
+  .input-label{display:block;font-size:13px;font-weight:700;color:#4b5563;margin-bottom:8px}
+  .url-input-wrap{position:relative;display:flex;align-items:center}
+  .url-input-wrap .prefix-icon{position:absolute;left:14px;color:#ec4899;font-size:16px;font-weight:800;pointer-events:none}
+  .url-input{width:100%;padding:14px 16px 14px 42px;border:2px solid #e5e7eb;border-radius:10px;font-size:15px;font-weight:600;font-family:inherit;color:#1a1a2e;background:#fff;outline:none;transition:border-color .2s}
+  .url-input:focus{border-color:#ec4899;box-shadow:0 0 0 3px rgba(236,72,153,.1)}
+
+  .textarea-input{width:100%;min-height:160px;padding:14px 16px;border:2px solid #e5e7eb;border-radius:10px;font-size:13px;font-family:'JetBrains Mono','Courier New',monospace;font-weight:500;color:#1a1a2e;background:#fff;outline:none;resize:vertical;transition:border-color .2s;line-height:1.7}
+  .textarea-input:focus{border-color:#ec4899;box-shadow:0 0 0 3px rgba(236,72,153,.1)}
+
+  .input-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 24px;border-radius:10px;font-size:14px;font-weight:700;font-family:inherit;cursor:pointer;border:none;transition:all .2s;text-decoration:none}
+  .btn-primary{background:#ec4899;color:#fff;box-shadow:0 4px 12px rgba(236,72,153,.2)}
+  .btn-primary:hover:not(:disabled){background:#db2777;transform:translateY(-2px);box-shadow:0 6px 20px rgba(236,72,153,.3)}
+  .btn-secondary{background:#fff;color:#ec4899;border:1px solid #e5e7eb}
+  .btn-secondary:hover{border-color:#ec4899;background:#fdf2f8}
+
+  .input-hint{font-size:12px;color:#9ca3af;margin-top:8px;line-height:1.6}
+  .input-hint code{background:#f1f5f9;padding:1px 6px;border-radius:4px;font-size:11px;color:#0f172a;font-weight:600}
+
+  /* Error */
+  .error-box{display:none;background:#fef2f2;border:1px solid #fecaca;border-radius:10px;padding:14px 18px;margin-top:16px;font-size:13px;color:#991b1b;align-items:flex-start;gap:10px;line-height:1.6}
+  .error-box.visible{display:flex}
+  .error-box strong{font-weight:700}
+
+  /* Results */
+  .results-section{display:none;margin-top:24px}
+  .results-section.visible{display:block}
+
+  .reel-card{background:linear-gradient(135deg,#fdf2f8,#fce7f3);border:1px solid #fbcfe8;border-radius:16px;padding:24px;margin-bottom:20px}
+  .reel-header{display:flex;align-items:center;gap:12px;margin-bottom:18px;flex-wrap:wrap}
+  .reel-icon{width:56px;height:56px;background:linear-gradient(135deg,#ec4899,#a855f7);border-radius:14px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:24px;flex-shrink:0;box-shadow:0 4px 16px rgba(236,72,153,.3)}
+  .reel-info{flex:1;min-width:200px}
+  .reel-label{font-size:11px;font-weight:700;color:#9d174d;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px}
+  .reel-title{font-size:16px;font-weight:800;color:#1a1a2e;word-break:break-word;line-height:1.4}
+
+  /* Thumbnail preview */
+  .reel-thumb-wrap{background:#0f172a;border-radius:12px;overflow:hidden;margin-bottom:16px;max-width:400px;aspect-ratio:9/16;position:relative;display:flex;align-items:center;justify-content:center}
+  .reel-thumb-wrap img{width:100%;height:100%;object-fit:cover;display:block}
+  .reel-thumb-placeholder{color:#64748b;font-size:13px;font-weight:600;text-align:center;padding:20px;line-height:1.6}
+  .reel-thumb-placeholder .icon{font-size:48px;display:block;margin-bottom:12px;opacity:.5}
+
+  /* Shortcode box */
+  .shortcode-box{background:#fff;border-radius:12px;padding:16px 18px;border:1px solid #fbcfe8;display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+  .shortcode-label{font-size:11px;font-weight:700;color:#9d174d;text-transform:uppercase;letter-spacing:.5px;width:100%;margin-bottom:6px}
+  .shortcode-value{flex:1;font-family:'JetBrains Mono',monospace;font-size:15px;font-weight:800;color:#ec4899;word-break:break-all;min-width:150px;letter-spacing:.5px}
+
+  /* URL box */
+  .url-box{background:#f8fafc;border-radius:12px;padding:14px 16px;border:1px solid #e5e7eb;margin-bottom:12px}
+  .url-box-label{font-size:11px;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+  .url-box-value{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600;color:#1a1a2e;word-break:break-all;line-height:1.6}
+
+  .reel-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+
+  .mini-btn{display:inline-flex;align-items:center;gap:6px;padding:10px 16px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;font-size:12px;font-weight:700;color:#4b5563;cursor:pointer;font-family:inherit;transition:all .2s;white-space:nowrap;text-decoration:none}
+  .mini-btn:hover{border-color:#ec4899;color:#ec4899;background:#fdf2f8}
+  .mini-btn.primary{background:#ec4899;color:#fff;border-color:#ec4899}
+  .mini-btn.primary:hover{background:#db2777;border-color:#db2777;color:#fff}
+  .mini-btn.copied{background:#10b981;color:#fff;border-color:#10b981}
+
+  /* Instructions box */
+  .instructions{background:#eff6ff;border-radius:12px;padding:16px 18px;border:1px solid #bfdbfe;margin-top:16px;font-size:13px;color:#1e40af;line-height:1.7}
+  .instructions strong{color:#1e3a8a;font-weight:800;display:block;margin-bottom:8px;font-size:14px}
+  .instructions ol{margin-left:20px}
+  .instructions ol li{margin-bottom:6px}
+  .instructions kbd{background:#1a1a2e;color:#fff;padding:2px 6px;border-radius:4px;font-size:11px;font-family:'JetBrains Mono',monospace;font-weight:700}
+
+  /* Bulk results */
+  .bulk-header{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:14px;flex-wrap:wrap}
+  .bulk-title{font-size:15px;font-weight:800;color:#1a1a2e;display:flex;align-items:center;gap:8px}
+  .bulk-count{background:#ec4899;color:#fff;font-size:11px;font-weight:800;padding:3px 10px;border-radius:20px}
+  .bulk-actions{display:flex;gap:6px;flex-wrap:wrap}
+
+  .bulk-list{display:flex;flex-direction:column;gap:8px;max-height:500px;overflow-y:auto;padding-right:4px}
+  .bulk-item{display:flex;align-items:center;gap:12px;padding:10px 14px;background:#f8fafc;border:1px solid #e5e7eb;border-radius:10px;transition:all .2s}
+  .bulk-item:hover{border-color:#ec4899;background:#fdf2f8}
+  .bulk-index{width:28px;height:28px;background:#ec4899;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;flex-shrink:0}
+  .bulk-id{flex:1;font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#1a1a2e;word-break:break-all;min-width:0}
+  .bulk-actions-inline{display:flex;gap:4px;flex-shrink:0}
+
+  /* SEO */
+  .seo-content{background:#fff;border-radius:16px;padding:32px;border:1px solid #e5e7eb;margin-bottom:24px}
+  .seo-content h2{font-size:22px;font-weight:800;color:#1a1a2e;margin-bottom:14px;margin-top:28px;display:flex;align-items:center;gap:10px}
+  .seo-content h2:first-child{margin-top:0}
+  .seo-content h3{font-size:16px;font-weight:700;color:#1a1a2e;margin:20px 0 10px}
+  .seo-content p{font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:14px}
+  .seo-content ul{list-style:none;padding-left:0;margin-bottom:16px}
+  .seo-content ul li{position:relative;padding-left:24px;font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:8px}
+  .seo-content ul li::before{content:'';position:absolute;left:6px;top:12px;width:6px;height:6px;background:#ec4899;border-radius:50%}
+  .seo-content a{color:#2563eb;text-decoration:none;font-weight:600}
+  .seo-content a:hover{text-decoration:underline}
+  .seo-content strong{color:#1a1a2e;font-weight:700}
+  .seo-content code{background:#f1f5f9;padding:2px 6px;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:13px;color:#0f172a;border:1px solid #e2e8f0}
+
+  .how-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:20px}
+  .how-step{background:#fdf2f8;border-radius:12px;padding:20px;border:1px solid #fbcfe8}
+  .how-step-num{width:36px;height:36px;border-radius:50%;background:#ec4899;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;margin-bottom:12px}
+  .how-step-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+  .how-step-desc{font-size:13px;color:#6b7280;line-height:1.6}
+
+  .faq-item{background:#fdf2f8;border:1px solid #fbcfe8;border-radius:12px;margin-bottom:10px;overflow:hidden;transition:border-color .2s}
+  .faq-item:hover{border-color:#ec4899}
+  .faq-question{width:100%;background:none;border:none;padding:18px 22px;font-size:15px;font-weight:700;color:#1a1a2e;text-align:left;cursor:pointer;font-family:inherit;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .faq-question .chev{font-size:12px;color:#ec4899;transition:transform .2s;flex-shrink:0}
+  .faq-item.open .faq-question .chev{transform:rotate(180deg)}
+  .faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 22px}
+  .faq-item.open .faq-answer{max-height:500px;padding-bottom:18px}
+  .faq-answer p{font-size:14px;color:#6b7280;line-height:1.7;margin:0}
+
+  .sidebar{background:#fff;border-radius:16px;padding:24px;border:1px solid #e5e7eb;position:sticky;top:80px;margin-bottom:24px}
+  .sidebar-header{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:800;color:#1a1a2e;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid #f3f4f6}
+  .sidebar-list{display:flex;flex-direction:column;gap:8px}
+  .sidebar-item{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;cursor:pointer;transition:background .2s;text-decoration:none;color:inherit;border:1px solid #f3f4f6}
+  .sidebar-item:hover{background:#fdf2f8;border-color:#fbcfe8}
+  .sidebar-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;flex-shrink:0}
+  .sidebar-info{flex:1;min-width:0}
+  .sidebar-title{font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:2px}
+  .sidebar-desc{font-size:11px;color:#9ca3af;line-height:1.4}
+
+  .footer{background:#0a0e27;padding:60px 40px 30px;color:#fff;margin-top:40px}
+  .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:40px}
+  .footer-brand{display:flex;align-items:center;gap:8px;font-size:20px;font-weight:800;margin-bottom:12px}
+  .footer-brand span{color:#60a5fa}
+  .footer-tagline{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px}
+  .footer-social{display:flex;gap:12px}
+  .footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:16px;transition:background .2s}
+  .footer-social a:hover{background:rgba(255,255,255,.2)}
+  .footer-heading{font-size:14px;font-weight:700;margin-bottom:20px;color:#fff}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .footer-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;transition:color .2s}
+  .footer-links a:hover{color:#60a5fa}
+  .footer-bottom{max-width:1200px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  .footer-bottom-left{display:flex;gap:20px;font-size:12px;color:rgba(255,255,255,.5)}
+  .footer-bottom-right,.footer-bottom-links a{font-size:12px;color:rgba(255,255,255,.5);text-decoration:none}
+  .footer-bottom-links{display:flex;gap:20px}
+
+  .toast{position:fixed;bottom:24px;right:24px;background:#1a1a2e;color:#fff;padding:14px 20px;border-radius:10px;font-size:13px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:3000;transform:translateY(200%);transition:transform .3s ease;max-width:320px}
+  .toast.visible{transform:translateY(0)}
+  .toast.success{background:#10b981}
+  .toast.error{background:#ef4444}
+
+  @media(max-width:1024px){
+    .main-content{grid-template-columns:1fr;padding:24px 20px}
+    .sidebar{position:static}
+    .how-steps{grid-template-columns:repeat(2,1fr)}
+  }
+  @media(max-width:768px){
+    .header{padding:0 20px}.nav{display:none}
+    .hero{padding:24px 20px 40px}
+    .hero-title{font-size:28px}
+    .hero-icon{width:48px;height:48px;font-size:20px}
+    .hero-title-row{flex-direction:column;align-items:flex-start;gap:12px}
+    .main-content{padding:20px 16px}
+    .workspace{padding:20px}
+    .how-steps{grid-template-columns:1fr}
+    .seo-content{padding:20px}
+    .footer-inner{grid-template-columns:1fr 1fr}
+    .toast{left:16px;right:16px;bottom:16px;max-width:none}
+    .mode-tabs{grid-template-columns:1fr}
+  }
+  @media(max-width:576px){
+    .header{padding:0 16px}.header-right .search-btn,.header-right .theme-btn{display:none}
+    .hero-title{font-size:24px}
+    .footer-inner{grid-template-columns:1fr}
+    .footer-bottom{flex-direction:column;text-align:center}
+    .reel-actions{width:100%}
+    .mini-btn{flex:1}
+  }
+
+  html[data-theme="dark"] body{background:#0f172a;color:#f1f5f9}
+  html[data-theme="dark"] .header,html[data-theme="dark"] .workspace,html[data-theme="dark"] .seo-content,html[data-theme="dark"] .sidebar{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .logo,html[data-theme="dark"] .hero-title,html[data-theme="dark"] .seo-content h2,html[data-theme="dark"] .seo-content h3,html[data-theme="dark"] .faq-question,html[data-theme="dark"] .sidebar-header,html[data-theme="dark"] .sidebar-title,html[data-theme="dark"] .reel-title,html[data-theme="dark"] .bulk-title,html[data-theme="dark"] .bulk-id{color:#f1f5f9}
+  html[data-theme="dark"] .nav a{color:#cbd5e1}
+  html[data-theme="dark"] .how-step,html[data-theme="dark"] .faq-item,html[data-theme="dark"] .mode-tabs,html[data-theme="dark"] .shortcode-box,html[data-theme="dark"] .history-item,html[data-theme="dark"] .bulk-item,html[data-theme="dark"] .url-box{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .url-input,html[data-theme="dark"] .textarea-input{background:#0f172a;border-color:#334155;color:#f1f5f9}
+  html[data-theme="dark"] .reel-card{background:linear-gradient(135deg,#1e293b,#0f172a);border-color:#334155}
+  html[data-theme="dark"] .reel-label,html[data-theme="dark"] .shortcode-label{color:#94a3b8}
+  html[data-theme="dark"] .shortcode-value{color:#f472b6}
+  html[data-theme="dark"] .url-box-value{color:#e2e8f0}
+  html[data-theme="dark"] .seo-content p,html[data-theme="dark"] .seo-content ul li,html[data-theme="dark"] .faq-answer p{color:#cbd5e1}
+  html[data-theme="dark"] .seo-content code{background:#0f172a;color:#94a3b8;border-color:#334155}
+  html[data-theme="dark"] .mini-btn{background:#0f172a;border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .mode-tab{color:#cbd5e1}
+  html[data-theme="dark"] .mode-tab.active{background:#ec4899;color:#fff}
+  html[data-theme="dark"] .error-box{background:#7f1d1d;border-color:#991b1b;color:#fecaca}
+  html[data-theme="dark"] .honest-notice{background:#78350f;border-color:#b45309;color:#fef3c7}
+  html[data-theme="dark"] .honest-notice strong{color:#fbbf24}
+  html[data-theme="dark"] .instructions{background:#1e3a8a;border-color:#3b82f6;color:#dbeafe}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type": "SoftwareApplication", "name": "Instagram Reel Info Viewer", "url": "https://bigtoolz.com/tools/social-tools/instagram-reels/", "applicationCategory": "MultimediaApplication", "operatingSystem": "Any (Web-based)", "description": "View Instagram Reel information thumbnail preview, shortcode, and direct links. Free, browser-based, no signup.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.7", "ratingCount": "987"}},
+    {"@type": "HowTo", "name": "How to View Instagram Reel Info", "step": [
+      {"@type": "HowToStep", "name": "Copy Reel URL", "text": "Copy the Instagram reel URL from the app or browser."},
+      {"@type": "HowToStep", "name": "Paste URL", "text": "Paste into our tool's input."},
+      {"@type": "HowToStep", "name": "View Info", "text": "Get shortcode, thumbnail preview, and direct links."},
+      {"@type": "HowToStep", "name": "Copy & Use", "text": "Copy shortcode or open reel in Instagram."}
+    ]},
+    {"@type": "FAQPage", "mainEntity": [
+      {"@type": "Question", "name": "Can I download Instagram reels with this tool?", "acceptedAnswer": {"@type": "Answer", "text": "Instagram blocks direct downloads from third-party tools both legally and technically. This tool is an information viewer that shows the shortcode, thumbnail, and direct link. For actual download, use a native mobile screen recorder or Instagram's own save feature."}},
+      {"@type": "Question", "name": "What is an Instagram Reel shortcode?", "acceptedAnswer": {"@type": "Answer", "text": "A shortcode is the unique identifier in an Instagram URL. Example: instagram.com/reel/Cxyz123ABC/ 'Cxyz123ABC' is the shortcode. It's used in embed codes and API calls."}},
+      {"@type": "Question", "name": "Why doesn't my reel show a thumbnail?", "acceptedAnswer": {"@type": "Answer", "text": "Instagram only serves thumbnails for public reels. Private reels don't expose thumbnails. Also, Instagram may block requests from some regions or IPs in that case, the info still works but the preview doesn't load."}},
+      {"@type": "Question", "name": "Can I get reel details for private accounts?", "acceptedAnswer": {"@type": "Answer", "text": "No. Instagram does not expose data for private accounts. This tool only works for public reels the same ones anyone can view without following."}}
+    ]},
+    {"@type": "BreadcrumbList", "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bigtoolz.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://bigtoolz.com/tools/"},
+      {"@type": "ListItem", "position": 3, "name": "Social Tools", "item": "https://bigtoolz.com/tools/social-tools/"},
+      {"@type": "ListItem", "position": 4, "name": "Instagram Reel Info Viewer", "item": "https://bigtoolz.com/tools/social-tools/instagram-reels/"}
+    ]}
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-left">
+    <a href="/" class="logo"><div class="logo-icon">⚒</div>BigToolz</span></a>
+    <nav><ul class="nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/tools/" class="active">All Tools</a></li>
+      <li><a href="/tools/categories">Categories</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul></nav>
+  </div>
+  <div class="header-right">
+   
+    <button class="theme-btn" aria-label="Toggle theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
+    
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <nav class="breadcrumb">
+      <a href="/">Home</a><span class="sep">›</span>
+      <a href="/tools/">Tools</a><span class="sep">›</span>
+      <a href="/tools/social-tools/">Social Tools</a><span class="sep">›</span>
+      <span class="current">Instagram Reel Info Viewer</span>
+    </nav>
+    <div class="hero-title-row">
+      <div class="hero-icon">📱</div>
+      <h1 class="hero-title">Instagram <span class="blue">Reel Info Viewer</span></h1>
+    </div>
+    <p class="hero-desc">
+      View any Instagram Reel's shortcode, thumbnail preview, direct link, and embed code. Paste a reel URL get all info instantly. Works with reel, Reels, and TV formats.
+    </p>
+    <div class="hero-features">
+      <div class="hero-feature"><span class="check">✓</span> Shortcode Extract</div>
+      <div class="hero-feature"><span class="check">✓</span> Thumbnail Preview</div>
+      <div class="hero-feature"><span class="check">✓</span> Embed Code</div>
+      <div class="hero-feature"><span class="check">✓</span> Bulk Support</div>
+    </div>
+  </div>
+</section>
+
+<div class="main-content">
+
+  <div class="tool-content">
+
+    <div class="workspace">
+
+      <!-- Honest notice -->
+      <div class="honest-notice">
+        <strong>⚠️ Honest disclaimer</strong>
+        Instagram blocks direct downloads from third-party websites both technically (CORS, signed URLs, rate limits) and legally (TOS violation). <strong>This tool is an info viewer, not a downloader.</strong> It shows shortcode, thumbnail, direct link, and embed code. For actual download, use Instagram's official "Save" option (some reels), a native screen recorder (iOS/Android), or a dedicated downloader app from the App Store/Play Store.
+      </div>
+
+      <!-- Mode tabs -->
+      <div class="mode-tabs">
+        <button class="mode-tab active" data-mode="single">
+          <span class="mode-tab-title">🎯 Single Reel</span>
+          <span class="mode-tab-desc">One at a time</span>
+        </button>
+        <button class="mode-tab" data-mode="bulk">
+          <span class="mode-tab-title">📚 Bulk Mode</span>
+          <span class="mode-tab-desc">Multiple reels</span>
+        </button>
+      </div>
+
+      <!-- Single panel -->
+      <div class="mode-panel active" data-panel="single">
+        <div class="input-section">
+          <label class="input-label" for="urlInput">Paste Instagram Reel URL</label>
+          <div class="url-input-wrap">
+            <span class="prefix-icon">📷</span>
+            <input type="text" id="urlInput" class="url-input" placeholder="https://www.instagram.com/reel/Cxyz123ABC/" autocomplete="off">
+          </div>
+          <div class="input-actions">
+            <button class="btn btn-primary" id="extractBtn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+              Get Reel Info
+            </button>
+            <button class="btn btn-secondary" id="pasteBtn">📋 Paste from Clipboard</button>
+          </div>
+          <div class="input-hint">
+            Supported formats: <code>instagram.com/reel/XXX</code> · <code>instagram.com/reels/XXX</code> · <code>instagram.com/p/XXX</code> · <code>instagram.com/tv/XXX</code>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bulk panel -->
+      <div class="mode-panel" data-panel="bulk">
+        <div class="input-section">
+          <label class="input-label" for="bulkInput">Paste Multiple Reel URLs (one per line)</label>
+          <textarea id="bulkInput" class="textarea-input" placeholder="https://www.instagram.com/reel/Cxyz123ABC/&#10;https://www.instagram.com/reel/Dabc456DEF/&#10;https://www.instagram.com/p/Ghij789KLM/"></textarea>
+          <div class="input-actions">
+            <button class="btn btn-primary" id="extractBulkBtn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 17l6-6-6-6M12 19h8"/></svg>
+              Extract All Shortcodes
+            </button>
+            <button class="btn btn-secondary" id="clearBulkBtn">Clear</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Error -->
+      <div class="error-box" id="errorBox">
+        <strong>⚠️</strong>
+        <span id="errorMsg"></span>
+      </div>
+
+      <!-- Single Result -->
+      <div class="results-section" id="singleResults">
+        <div class="reel-card">
+          <div class="reel-header">
+            <div class="reel-icon">✓</div>
+            <div class="reel-info">
+              <div class="reel-label">Instagram Reel</div>
+              <div class="reel-title">Info extracted successfully</div>
+            </div>
+          </div>
+
+          <!-- Thumbnail -->
+          <div class="reel-thumb-wrap" id="thumbWrap">
+            <div class="reel-thumb-placeholder" id="thumbPlaceholder">
+              <span class="icon">📷</span>
+              Loading thumbnail...
+            </div>
+            <img id="thumbImg" src="" alt="Reel thumbnail" style="display:none;" loading="lazy">
+          </div>
+
+          <!-- Shortcode -->
+          <div class="shortcode-box">
+            <div class="shortcode-label">Shortcode</div>
+            <div class="shortcode-value" id="shortcodeValue">Cxyz123ABC</div>
+          </div>
+
+          <!-- Clean URL -->
+          <div class="url-box">
+            <div class="url-box-label">Clean URL</div>
+            <div class="url-box-value" id="cleanUrlValue">https://www.instagram.com/reel/Cxyz123ABC/</div>
+          </div>
+
+          <!-- Embed code -->
+          <div class="url-box">
+            <div class="url-box-label">Embed Code</div>
+            <div class="url-box-value" id="embedCodeValue" style="font-size:11px;"></div>
+          </div>
+
+          <div class="reel-actions">
+            <button class="mini-btn primary" id="copyShortcodeBtn">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+              Copy Shortcode
+            </button>
+            <button class="mini-btn" id="copyUrlBtn">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+              Copy URL
+            </button>
+            <a href="#" target="_blank" rel="noopener" class="mini-btn primary" id="openReelBtn">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+              Open in Instagram
+            </a>
+          </div>
+
+          <!-- Instructions -->
+          <div class="instructions">
+            <strong>💡 How to save or download this reel:</strong>
+            <ol>
+              <li><strong>Mobile:</strong> Use the built-in screen recorder (iOS Control Center / Android Quick Settings) while playing the reel.</li>
+              <li><strong>Save option:</strong> If the creator allowed it, tap ⋯ → <strong>Save</strong> on Instagram.</li>
+              <li><strong>Third-party apps:</strong> Search "Instagram downloader" on App Store / Play Store for dedicated tools.</li>
+              <li><strong>Desktop:</strong> Use browser extensions like "Video DownloadHelper" (Chrome/Firefox).</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bulk Results -->
+      <div class="results-section" id="bulkResults">
+        <div class="bulk-header">
+          <div class="bulk-title">
+            Extracted Shortcodes <span class="bulk-count" id="bulkCount">0</span>
+          </div>
+          <div class="bulk-actions">
+            <button class="mini-btn primary" id="copyAllBulkBtn">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+              Copy All
+            </button>
+            <button class="mini-btn" id="downloadCsvBtn">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+              CSV
+            </button>
+            <button class="mini-btn" id="clearBulkResultsBtn">Clear</button>
+          </div>
+        </div>
+        <div class="bulk-list" id="bulkList"></div>
+      </div>
+
+    </div>
+
+    <!-- SEO Content -->
+    <div class="seo-content">
+
+      <h2>📱 What is an Instagram Reel Info Viewer?</h2>
+      <p>
+        An <strong>Instagram Reel Info Viewer</strong> is a tool that extracts key information from an Instagram Reel URL including the <strong>shortcode</strong> (unique identifier), <strong>thumbnail preview</strong>, <strong>clean URL</strong>, and <strong>embed code</strong>. It's useful for developers building Instagram integrations, marketers analyzing reels, and content creators archiving their own work.
+      </p>
+      <p>
+        Unlike misleading "downloader" tools that promise direct video downloads, this viewer is <strong>honest about its capabilities</strong>. Instagram technically and legally prevents third-party direct downloads, so instead of failing, we give you the info you actually need plus clear instructions on how to save reels using official methods.
+      </p>
+
+      <h2>🚀 How to Use This Tool</h2>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-step-num">1</div>
+          <div class="how-step-title">Copy Reel URL</div>
+          <div class="how-step-desc">Tap Share → Copy Link in Instagram, or copy the browser URL.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">2</div>
+          <div class="how-step-title">Paste URL</div>
+          <div class="how-step-desc">Paste into our input shortcode extracts instantly.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">3</div>
+          <div class="how-step-title">View Info</div>
+          <div class="how-step-desc">Shortcode, thumbnail, clean URL, and embed code all appear.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">4</div>
+          <div class="how-step-title">Copy & Use</div>
+          <div class="how-step-desc">Copy shortcode, URL, or open in Instagram.</div>
+        </div>
+      </div>
+
+      <h2>📋 Instagram URL Formats Supported</h2>
+      <ul>
+        <li><strong>Standard Reel:</strong> <code>instagram.com/reel/SHORTCODE/</code></li>
+        <li><strong>Reels tab:</strong> <code>instagram.com/reels/SHORTCODE/</code></li>
+        <li><strong>Post (older format):</strong> <code>instagram.com/p/SHORTCODE/</code></li>
+        <li><strong>IGTV (legacy):</strong> <code>instagram.com/tv/SHORTCODE/</code></li>
+        <li><strong>With username path:</strong> <code>instagram.com/username/reel/SHORTCODE/</code></li>
+        <li><strong>Mobile URLs:</strong> <code>m.instagram.com/...</code></li>
+      </ul>
+
+      <h2>🎯 What is a Reel Shortcode?</h2>
+      <p>
+        The <strong>shortcode</strong> is Instagram's unique identifier for a post or reel like <code>Cxyz123ABC</code>. It's short, alphanumeric, and case-sensitive. Every reel has exactly one shortcode that never changes.
+      </p>
+      <p>
+        Shortcodes are used in:
+      </p>
+      <ul>
+        <li><strong>Instagram embed codes</strong> <code>&lt;blockquote class="instagram-media" data-instgrm-permalink=".../reel/SHORTCODE/"&gt;</code></li>
+        <li><strong>Instagram Graph API</strong> calls (media lookup)</li>
+        <li><strong>oEmbed</strong> requests</li>
+        <li><strong>Third-party tools</strong> and analytics</li>
+        <li><strong>Direct links</strong> in WhatsApp, iMessage, etc.</li>
+      </ul>
+
+      <h2>💡 How to Actually Save Instagram Reels</h2>
+      <h3>1. Save Feature (Official)</h3>
+      <p>If the creator allows saving: tap <strong>⋯</strong> → <strong>Save</strong>. The reel goes to your Saved folder. You can view it anytime but it stays in the app.</p>
+
+      <h3>2. Screen Recording (Recommended)</h3>
+      <p><strong>iOS:</strong> Add Screen Recording to Control Center → swipe down → tap record → play reel → stop. Video saves to Photos.<br>
+      <strong>Android:</strong> Swipe down → Screen Record → play reel → stop. Saves to Gallery.</p>
+
+      <h3>3. Official Instagram "Save to Camera Roll"</h3>
+      <p>For your own reels: go to your profile → reel → ⋯ → <strong>Save to Camera Roll</strong>. This works only for your own content.</p>
+
+      <h3>4. Third-Party Apps</h3>
+      <p>Search "Instagram downloader" on App Store or Play Store. These apps typically use a backend server to bypass Instagram's client-side blocks. <strong>Use at your own risk</strong> read reviews and be cautious about permissions.</p>
+
+      <h3>5. Desktop Extensions</h3>
+      <p>Browser extensions like <strong>Video DownloadHelper</strong> (Chrome/Firefox) can capture video streams. Install → play reel → click extension → download.</p>
+
+      <h2>⚠️ Why Direct Download from Websites Doesn't Work</h2>
+      <ul>
+        <li><strong>CORS blocking:</strong> Instagram's CDN doesn't send CORS headers browsers can't fetch video files.</li>
+        <li><strong>Signed URLs:</strong> Video URLs expire in minutes and are tied to session/IP.</li>
+        <li><strong>Rate limits:</strong> Instagram aggressively blocks automated requests from servers and browsers.</li>
+        <li><strong>TOS violation:</strong> Scraping and downloading violates Instagram's Terms of Service.</li>
+        <li><strong>Login requirement:</strong> Most reels require authentication to view the direct video URL.</li>
+      </ul>
+
+      <h2>❓ Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I download Instagram reels with this tool?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>No.</strong> Instagram blocks direct downloads from third-party tools both technically and legally. This tool is an <strong>information viewer</strong> that shows the shortcode, thumbnail, and direct link. For actual download, use Instagram's official Save option, a native screen recorder, or a dedicated mobile app.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What is an Instagram Reel shortcode?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>A <strong>shortcode</strong> is the unique identifier in an Instagram URL. Example: <code>instagram.com/reel/Cxyz123ABC/</code> <code>Cxyz123ABC</code> is the shortcode. It's used in embed codes, API calls, and shareable links.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Why doesn't my reel show a thumbnail?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Instagram only serves thumbnails for <strong>public reels</strong>. Private reels don't expose thumbnails. Also, Instagram may block requests from some regions or IPs in that case, the info still works but the preview doesn't load.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I get reel details for private accounts?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>No.</strong> Instagram does not expose data for private accounts. This tool only works for public reels the same ones anyone can view without following.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What's the difference between reel, reels, p, and tv URLs?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>/reel/</strong> and <strong>/reels/</strong> are for Reels (short videos). <strong>/p/</strong> is for regular posts (photos, carousels, older videos). <strong>/tv/</strong> is the legacy IGTV format. We support all of them.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Is this tool free to use?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Yes, <strong>100% free</strong> with no signup, no limits, no watermarks. All extraction happens in your browser no server upload, your data stays private.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Why did you make this a viewer instead of a downloader?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Because honest tools are better than fake ones. Hundreds of "Instagram downloaders" fail silently or serve ads. We give you the info we can reliably extract, plus clear guidance on how to save reels through official methods. This way, you get real value not false promises.</p></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-header">🔗 Related Social Tools</div>
+    <div class="sidebar-list">
+      <a href="/tools/social-tools/youtube-thumbnail/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#ef4444;">🖼</div>
+        <div class="sidebar-info"><div class="sidebar-title">YouTube Thumbnail DL</div><div class="sidebar-desc">Download thumbnails</div></div>
+      </a>
+      <a href="/tools/social-tools/youtube-video-id/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#ef4444;">🆔</div>
+        <div class="sidebar-info"><div class="sidebar-title">YouTube Video ID</div><div class="sidebar-desc">Extract video ID</div></div>
+      </a>
+      <a href="/tools/social-tools/instagram-dp/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#ec4899;">👤</div>
+        <div class="sidebar-info"><div class="sidebar-title">Instagram DP Viewer</div><div class="sidebar-desc">Profile picture info</div></div>
+      </a>
+      <a href="/tools/social-tools/hashtag-generator/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#3b82f6;">#️⃣</div>
+        <div class="sidebar-info"><div class="sidebar-title">Hashtag Generator</div><div class="sidebar-desc">Trending hashtags</div></div>
+      </a>
+      <a href="/tools/social-tools/caption-generator/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#ec4899;">💬</div>
+        <div class="sidebar-info"><div class="sidebar-title">Caption Generator</div><div class="sidebar-desc">Social captions</div></div>
+      </a>
+      <a href="/tools/social-tools/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#64748b;">📱</div>
+        <div class="sidebar-info"><div class="sidebar-title">All Social Tools →</div><div class="sidebar-desc">Browse 25+ tools</div></div>
+      </a>
+    </div>
+  </aside>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand"><div class="logo-icon">⚒</div>BigToolz</span></div>
+      <p class="footer-tagline">Your Ultimate Online Tools Hub</p>
+      <div class="footer-social">
+        <a href="https://facebook.com/bigtoolz" aria-label="Facebook">f</a>
+        <a href="https://twitter.com/bigtoolz" aria-label="Twitter">𝕏</a>
+        <a href="https://youtube.com/@bigtoolz" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+    <div>
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/tools/">All Tools</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Categories</h3>
+      <ul class="footer-links">
+        <li><a href="/tools/image-tools/">Image Tools</a></li>
+        <li><a href="/tools/pdf-tools/">PDF Tools</a></li>
+        <li><a href="/tools/text-tools/">Text Tools</a></li>
+        <li><a href="/tools/social-tools/">Social Tools</a></li>
+        <li><a href="/tools/categories">All Categories →</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Legal</h3>
+      <ul class="footer-links">
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left"><span>✓ 100% Free</span><span>✓ No Sign Up</span><span>✓ No Installation</span></div>
+    <div class="footer-bottom-right">© 2026 BigToolz. All rights reserved.</div>
+    <div class="footer-bottom-links"><a href="/privacy-policy">Privacy</a><a href="/terms">Terms</a><a href="/disclaimer">Disclaimer</a></div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+'use strict';
+
+/* ===== THEME ===== */
+(function(){try{var t=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&d))document.documentElement.setAttribute('data-theme','dark');else if(t==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();
+document.querySelector('.theme-btn')?.addEventListener('click',()=>{const h=document.documentElement;const c=h.getAttribute('data-theme');const d=window.matchMedia('(prefers-color-scheme: dark)').matches;let n=c==='dark'?'light':c==='light'?'dark':(d?'light':'dark');h.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}});
+
+/* ===== HELPERS ===== */
+const $ = (s, p = document) => p.querySelector(s);
+const $$ = (s, p = document) => [...p.querySelectorAll(s)];
+
+function showToast(msg, type = 'info', duration = 3000) {
+  const t = $('#toast');
+  if (!t) return;
+  t.className = 'toast visible' + (type !== 'info' ? ' ' + type : '');
+  t.textContent = msg;
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove('visible'), duration);
+}
+
+async function copyToClipboard(text) {
+  try {
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(text);
+      return true;
+    }
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.cssText = 'position:fixed;opacity:0;';
+    document.body.appendChild(ta);
+    ta.select();
+    const ok = document.execCommand('copy');
+    document.body.removeChild(ta);
+    return ok;
+  } catch (e) { return false; }
+}
+
+/* ===== SHORTCODE EXTRACTION ===== */
+function extractShortcode(input) {
+  if (!input) return null;
+  input = input.trim();
+
+  // Direct shortcode (11 chars typically for IG)
+  if (/^[A-Za-z0-9_-]{5,15}$/.test(input)) return input;
+
+  // URL parse
+  try {
+    const u = new URL(input);
+    const match = u.pathname.match(/\/(reel|reels|p|tv)\/([A-Za-z0-9_-]+)/);
+    if (match) return match[2];
+  } catch (e) {}
+
+  // Regex fallback
+  const regex = /instagram\.com\/(?:[^\/]+\/)?(?:reel|reels|p|tv)\/([A-Za-z0-9_-]+)/;
+  const match = input.match(regex);
+  return match ? match[1] : null;
+}
+
+function determineReelType(input) {
+  if (/\/reels?\//i.test(input)) return 'reel';
+  if (/\/tv\//i.test(input)) return 'tv';
+  if (/\/p\//i.test(input)) return 'p';
+  return 'reel';
+}
+
+/* ===== MODE TABS ===== */
+$$('.mode-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    $$('.mode-tab').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    $$('.mode-panel').forEach(p => p.classList.toggle('active', p.dataset.panel === tab.dataset.mode));
+    hideError();
+    if (tab.dataset.mode === 'single') {
+      $('#bulkResults').classList.remove('visible');
+    } else {
+      $('#singleResults').classList.remove('visible');
+    }
+  });
+});
+
+/* ===== ERROR ===== */
+function showError(msg) {
+  $('#errorMsg').textContent = msg;
+  $('#errorBox').classList.add('visible');
+}
+function hideError() {
+  $('#errorBox').classList.remove('visible');
+}
+
+/* ===== DOM ===== */
+const urlInput = $('#urlInput');
+const bulkInput = $('#bulkInput');
+const singleResults = $('#singleResults');
+const bulkResults = $('#bulkResults');
+const shortcodeValue = $('#shortcodeValue');
+const cleanUrlValue = $('#cleanUrlValue');
+const embedCodeValue = $('#embedCodeValue');
+const thumbImg = $('#thumbImg');
+const thumbPlaceholder = $('#thumbPlaceholder');
+const openReelBtn = $('#openReelBtn');
+const bulkList = $('#bulkList');
+const bulkCount = $('#bulkCount');
+
+/* ===== SINGLE EXTRACTION ===== */
+$('#extractBtn').addEventListener('click', () => {
+  hideError();
+  const url = urlInput.value.trim();
+  if (!url) {
+    showError('Please paste an Instagram reel URL.');
+    urlInput.focus();
+    return;
+  }
+
+  const shortcode = extractShortcode(url);
+  if (!shortcode) {
+    showError('Invalid Instagram URL. Please paste a valid reel, reels, p, or tv URL.');
+    return;
+  }
+
+  const type = determineReelType(url);
+  renderSingleResult(shortcode, type);
+  showToast('✅ Reel info extracted!', 'success');
+});
+
+/* ===== AUTO-EXTRACT ON PASTE ===== */
+urlInput.addEventListener('paste', () => {
+  setTimeout(() => {
+    const url = urlInput.value.trim();
+    const shortcode = extractShortcode(url);
+    if (shortcode) {
+      hideError();
+      const type = determineReelType(url);
+      renderSingleResult(shortcode, type);
+    }
+  }, 50);
+});
+
+/* ===== PASTE BUTTON ===== */
+$('#pasteBtn').addEventListener('click', async () => {
+  try {
+    if (navigator.clipboard && navigator.clipboard.readText) {
+      const text = await navigator.clipboard.readText();
+      urlInput.value = text;
+      const shortcode = extractShortcode(text);
+      if (shortcode) {
+        hideError();
+        const type = determineReelType(text);
+        renderSingleResult(shortcode, type);
+        showToast('Pasted and extracted!', 'success');
+      }
+    } else {
+      urlInput.focus();
+      showToast('Press Ctrl+V to paste', 'info');
+    }
+  } catch (e) {
+    urlInput.focus();
+    showToast('Press Ctrl+V to paste', 'info');
+  }
+});
+
+/* ===== RENDER SINGLE RESULT ===== */
+function renderSingleResult(shortcode, type) {
+  singleResults.classList.add('visible');
+  bulkResults.classList.remove('visible');
+
+  // Set shortcode
+  shortcodeValue.textContent = shortcode;
+
+  // Clean URL
+  const cleanUrl = `https://www.instagram.com/${type}/${shortcode}/`;
+  cleanUrlValue.textContent = cleanUrl;
+  openReelBtn.href = cleanUrl;
+
+  // Embed code
+  const embedCode = `<blockquote class="instagram-media" data-instgrm-permalink="${cleanUrl}" data-instgrm-version="14"><a href="${cleanUrl}">View this reel on Instagram</a></blockquote><script async src="//www.instagram.com/embed.js"><\/script>`;
+  embedCodeValue.textContent = embedCode;
+
+  // Thumbnail attempt via Instagram's public media endpoint
+  thumbImg.style.display = 'none';
+  thumbPlaceholder.style.display = 'block';
+  thumbPlaceholder.innerHTML = '<span class="icon">⏳</span>Loading thumbnail...';
+
+  const thumbUrl = `https://www.instagram.com/${type}/${shortcode}/media/?size=l`;
+  thumbImg.onload = function() {
+    if (this.naturalWidth > 50) {
+      this.style.display = 'block';
+      thumbPlaceholder.style.display = 'none';
+    } else {
+      showThumbPlaceholder();
+    }
+  };
+  thumbImg.onerror = function() {
+    showThumbPlaceholder();
+  };
+  thumbImg.src = thumbUrl;
+
+  setTimeout(() => singleResults.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 100);
+}
+
+function showThumbPlaceholder() {
+  thumbImg.style.display = 'none';
+  thumbPlaceholder.style.display = 'block';
+  thumbPlaceholder.innerHTML = '<span class="icon">🔒</span><strong>Thumbnail not available</strong><br>Instagram blocked the request, or this is a private reel. The shortcode and links above still work.';
+}
+
+/* ===== COPY SHORTCODE ===== */
+$('#copyShortcodeBtn').addEventListener('click', async () => {
+  const text = shortcodeValue.textContent;
+  if (!text) return;
+  const ok = await copyToClipboard(text);
+  if (ok) {
+    flashButton($('#copyShortcodeBtn'), '✓ Copied!');
+    showToast('Shortcode copied!', 'success');
+  }
+});
+
+/* ===== COPY URL ===== */
+$('#copyUrlBtn').addEventListener('click', async () => {
+  const text = cleanUrlValue.textContent;
+  if (!text) return;
+  const ok = await copyToClipboard(text);
+  if (ok) {
+    flashButton($('#copyUrlBtn'), '✓ Copied!');
+    showToast('URL copied!', 'success');
+  }
+});
+
+/* ===== BULK EXTRACTION ===== */
+$('#extractBulkBtn').addEventListener('click', () => {
+  hideError();
+  const text = bulkInput.value.trim();
+  if (!text) {
+    showError('Please paste at least one Instagram reel URL.');
+    return;
+  }
+
+  const lines = text.split(/\n/).map(l => l.trim()).filter(l => l.length > 0);
+  const items = [];
+  const seen = new Set();
+
+  lines.forEach(line => {
+    const sc = extractShortcode(line);
+    if (sc && !seen.has(sc)) {
+      seen.add(sc);
+      items.push({ shortcode: sc, type: determineReelType(line) });
+    }
+  });
+
+  if (items.length === 0) {
+    showError('No valid Instagram reel URLs found.');
+    return;
+  }
+
+  renderBulkResults(items);
+  showToast(`✅ ${items.length} shortcodes extracted!`, 'success');
+});
+
+$('#clearBulkBtn').addEventListener('click', () => {
+  bulkInput.value = '';
+  hideError();
+});
+
+/* ===== RENDER BULK ===== */
+function renderBulkResults(items) {
+  bulkResults.classList.add('visible');
+  singleResults.classList.remove('visible');
+
+  bulkCount.textContent = items.length;
+  bulkList.innerHTML = '';
+
+  items.forEach((item, idx) => {
+    const cleanUrl = `https://www.instagram.com/${item.type}/${item.shortcode}/`;
+    const el = document.createElement('div');
+    el.className = 'bulk-item';
+    el.innerHTML = `
+      <div class="bulk-index">${idx + 1}</div>
+      <div class="bulk-id">${item.shortcode}</div>
+      <div class="bulk-actions-inline">
+        <button class="mini-btn" data-copy-bulk="${item.shortcode}">Copy</button>
+        <a href="${cleanUrl}" target="_blank" rel="noopener" class="mini-btn">Open</a>
+      </div>
+    `;
+    bulkList.appendChild(el);
+  });
+
+  // Attach copy handlers
+  $$('[data-copy-bulk]').forEach(btn => {
+    btn.addEventListener('click', async () => {
+      const sc = btn.dataset.copyBulk;
+      const ok = await copyToClipboard(sc);
+      if (ok) {
+        flashButton(btn, '✓ Copied');
+        showToast(`Copied ${sc}`, 'success', 1500);
+      }
+    });
+  });
+
+  setTimeout(() => bulkResults.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 100);
+}
+
+/* ===== COPY ALL ===== */
+$('#copyAllBulkBtn').addEventListener('click', async () => {
+  const items = $$('.bulk-id').map(el => el.textContent);
+  if (items.length === 0) return;
+  const ok = await copyToClipboard(items.join('\n'));
+  if (ok) {
+    flashButton($('#copyAllBulkBtn'), '✓ Copied!');
+    showToast(`${items.length} shortcodes copied!`, 'success');
+  }
+});
+
+/* ===== DOWNLOAD CSV ===== */
+$('#downloadCsvBtn').addEventListener('click', () => {
+  const items = $$('.bulk-id').map(el => el.textContent);
+  if (items.length === 0) return;
+  const rows = [['Index', 'Shortcode', 'URL']];
+  items.forEach((sc, i) => rows.push([i + 1, sc, `https://www.instagram.com/reel/${sc}/`]));
+  const csv = rows.map(r => r.join(',')).join('\n');
+  const blob = new Blob([csv], { type: 'text/csv' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `instagram-shortcodes-${Date.now()}.csv`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+  showToast('CSV downloaded!', 'success');
+});
+
+/* ===== CLEAR BULK RESULTS ===== */
+$('#clearBulkResultsBtn').addEventListener('click', () => {
+  bulkList.innerHTML = '';
+  bulkCount.textContent = '0';
+  bulkResults.classList.remove('visible');
+  showToast('Cleared', 'info', 1500);
+});
+
+/* ===== FLASH BUTTON ===== */
+function flashButton(btn, text) {
+  const orig = btn.innerHTML;
+  btn.classList.add('copied');
+  btn.innerHTML = text;
+  setTimeout(() => {
+    btn.classList.remove('copied');
+    btn.innerHTML = orig;
+  }, 2000);
+}
+
+/* ===== FAQ ===== */
+$$('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    $$('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+</script>
+
+</body>
+</html>

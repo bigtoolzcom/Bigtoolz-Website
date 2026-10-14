@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2563eb">
+
+<title>Steps to KM Converter - Convert Steps to Kilometers Online Free | BigToolz</title>
+<meta name="description" content="Convert steps to kilometers, miles, calories and walking time online free. Auto-calculate stride length by height. Perfect for fitness tracking and step goals.">
+<meta name="keywords" content="steps to km, steps to kilometers, steps to miles, step converter, walking distance calculator, pedometer converter">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://bigtoolz.com/tools/utility-tools/steps-km/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Steps to KM Converter - Free Online Tool | BigToolz">
+<meta property="og:description" content="Convert steps to km, miles, calories, and time instantly free.">
+<meta property="og:url" content="https://bigtoolz.com/tools/utility-tools/steps-km/">
+<meta property="og:image" content="https://bigtoolz.com/assets/images/og-image.jpg">
+<meta property="og:site_name" content="BigToolz">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Steps to KM Converter - BigToolz">
+<meta name="twitter:description" content="Convert steps to kilometers instantly free.">
+<meta name="twitter:image" content="https://bigtoolz.com/assets/images/twitter-card.jpg">
+
+<link rel="icon" href="/assets/images/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/images/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#f8f9fc;color:#1a1a2e;overflow-x:hidden;line-height:1.5}
+
+  .header{background:#fff;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;position:sticky;top:0;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+  .header-left{display:flex;align-items:center;gap:40px}
+  .logo{display:flex;align-items:center;gap:8px;font-size:22px;font-weight:800;color:#1a1a2e;text-decoration:none}
+  .logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#3b82f6,#2563eb);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px}
+  .logo span{color:#2563eb}
+  .nav{display:flex;align-items:center;gap:28px;list-style:none}
+  .nav a{text-decoration:none;color:#4b5563;font-size:14px;font-weight:500;transition:color .2s}
+  .nav a:hover,.nav a.active{color:#2563eb}
+  .header-right{display:flex;align-items:center;gap:16px}
+  .search-btn,.theme-btn{width:36px;height:36px;border-radius:50%;border:none;background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#4b5563}
+  .search-btn:hover,.theme-btn:hover{background:#f3f4f6}
+  .bookmark-btn{display:flex;align-items:center;gap:8px;background:#2563eb;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
+  .bookmark-btn:hover{background:#1d4ed8}
+
+  .hero{background:linear-gradient(135deg,#0a0e27 0%,#1a1a4e 40%,#2d1b69 70%,#4c1d95 100%);padding:40px 40px 60px;position:relative;overflow:hidden;color:#fff}
+  .hero::before{content:'';position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(16,185,129,.3) 0%,transparent 70%);border-radius:50%}
+  .hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+  .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px;flex-wrap:wrap}
+  .breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none}
+  .breadcrumb a:hover{color:#fff}
+  .breadcrumb .sep{color:rgba(255,255,255,.4)}
+  .breadcrumb .current{color:#fff;font-weight:500}
+  .hero-title-row{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+  .hero-icon{width:60px;height:60px;background:#10b981;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px;color:#fff;flex-shrink:0;box-shadow:0 8px 24px rgba(16,185,129,.4)}
+  .hero-title{font-size:42px;font-weight:800;line-height:1.15}
+  .hero-title .blue{color:#34d399}
+  .hero-desc{font-size:15px;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:24px;max-width:560px}
+  .hero-features{display:flex;gap:24px;flex-wrap:wrap}
+  .hero-feature{display:flex;align-items:center;gap:6px;font-size:13px;color:#fff;font-weight:500}
+  .hero-feature .check{width:18px;height:18px;border-radius:50%;background:#10b981;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;flex-shrink:0}
+
+  .main-content{max-width:1200px;margin:0 auto;padding:40px;display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start}
+  .tool-content{min-width:0}
+
+  .workspace{background:#fff;border-radius:16px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,.06);border:1px solid #e5e7eb;margin-bottom:24px}
+
+  /* Main input */
+  .main-input-section{margin-bottom:28px}
+  .main-input-label{font-size:13px;font-weight:700;color:#4b5563;margin-bottom:10px;display:flex;justify-content:space-between;align-items:center;gap:8px}
+  .main-input-label .hint{font-size:11px;color:#9ca3af;font-weight:500}
+  .steps-input-wrap{display:flex;align-items:center;gap:12px;background:#ecfdf5;border:2px solid #10b981;border-radius:14px;padding:8px 16px;transition:all .2s}
+  .steps-input-wrap:focus-within{box-shadow:0 0 0 4px rgba(16,185,129,.15)}
+  .steps-input-wrap input{flex:1;border:none;outline:none;background:transparent;font-size:32px;font-weight:800;color:#065f46;font-family:inherit;padding:8px 0;width:100%}
+  .steps-input-wrap .unit{font-size:16px;font-weight:700;color:#10b981}
+  .quick-steps{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+  .quick-steps-btn{padding:8px 14px;background:#f0fdf4;border:1px solid #86efac;border-radius:20px;font-size:12px;font-weight:700;color:#059669;cursor:pointer;font-family:inherit;transition:all .2s}
+  .quick-steps-btn:hover{background:#10b981;color:#fff;border-color:#10b981}
+
+  /* Result cards */
+  .results-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-bottom:24px}
+  .result-card{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border:1px solid #a7f3d0;border-radius:14px;padding:20px;text-align:center;position:relative;overflow:hidden}
+  .result-card::before{content:'';position:absolute;top:-20px;right:-20px;width:80px;height:80px;background:rgba(16,185,129,.1);border-radius:50%}
+  .result-card.blue{background:linear-gradient(135deg,#eff6ff,#dbeafe);border-color:#bfdbfe}
+  .result-card.blue::before{background:rgba(59,130,246,.1)}
+  .result-card.orange{background:linear-gradient(135deg,#fff7ed,#fed7aa);border-color:#fdba74}
+  .result-card.orange::before{background:rgba(249,115,22,.1)}
+  .result-card.purple{background:linear-gradient(135deg,#faf5ff,#e9d5ff);border-color:#d8b4fe}
+  .result-card.purple::before{background:rgba(139,92,246,.1)}
+  .result-icon{font-size:28px;margin-bottom:8px;position:relative;z-index:2}
+  .result-label{font-size:11px;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px;position:relative;z-index:2}
+  .result-value{font-size:28px;font-weight:800;color:#065f46;line-height:1;position:relative;z-index:2}
+  .result-card.blue .result-value{color:#1e40af}
+  .result-card.orange .result-value{color:#9a3412}
+  .result-card.purple .result-value{color:#6b21a8}
+  .result-unit{font-size:12px;font-weight:600;color:#6b7280;margin-top:4px;position:relative;z-index:2}
+
+  /* Settings */
+  .settings-section{background:#f8fafc;border-radius:12px;padding:20px;border:1px solid #e5e7eb;margin-bottom:20px}
+  .settings-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+  .settings-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .form-group label{display:block;font-size:12px;font-weight:700;color:#4b5563;margin-bottom:6px}
+  .form-group input,.form-group select{width:100%;padding:10px 12px;border:1px solid #e5e7eb;border-radius:8px;font-size:13px;font-family:inherit;color:#1a1a2e;background:#fff;outline:none;transition:border-color .2s}
+  .form-group input:focus,.form-group select:focus{border-color:#10b981;box-shadow:0 0 0 3px rgba(16,185,129,.1)}
+  .form-group .unit-suffix{position:absolute;right:12px;top:50%;transform:translateY(-50%);font-size:11px;color:#9ca3af;font-weight:600;pointer-events:none}
+
+  /* Stride info */
+  .stride-info{background:#ecfdf5;border-left:4px solid #10b981;border-radius:8px;padding:12px 16px;margin-bottom:20px;font-size:13px;color:#065f46;line-height:1.6}
+  .stride-info strong{color:#047857;font-weight:800}
+
+  /* Progress */
+  .progress-section{margin-bottom:20px}
+  .progress-label{display:flex;justify-content:space-between;font-size:13px;font-weight:700;color:#4b5563;margin-bottom:10px;flex-wrap:wrap;gap:8px}
+  .progress-bar{width:100%;height:14px;background:#e5e7eb;border-radius:7px;overflow:hidden;position:relative}
+  .progress-fill{height:100%;background:linear-gradient(90deg,#34d399,#10b981);border-radius:7px;transition:width .4s ease;display:flex;align-items:center;justify-content:flex-end;padding-right:8px;color:#fff;font-size:10px;font-weight:800}
+  .progress-sub{font-size:11px;color:#9ca3af;margin-top:6px;text-align:center}
+
+  /* Copy */
+  .copy-row{display:flex;gap:8px;margin-top:16px;flex-wrap:wrap}
+  .mini-btn{display:inline-flex;align-items:center;gap:6px;padding:10px 16px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;font-size:13px;font-weight:600;color:#4b5563;cursor:pointer;font-family:inherit;transition:all .2s}
+  .mini-btn:hover{border-color:#10b981;color:#10b981;background:#ecfdf5}
+  .mini-btn.copied{background:#10b981;color:#fff;border-color:#10b981}
+
+  /* Common conversions table */
+  .common-table{width:100%;border-collapse:collapse;margin:16px 0;border:1px solid #e5e7eb;border-radius:8px;overflow:hidden}
+  .common-table th{background:#ecfdf5;padding:12px 16px;text-align:left;font-size:13px;font-weight:700;color:#1a1a2e;border-bottom:1px solid #e5e7eb}
+  .common-table td{padding:12px 16px;font-size:13px;color:#4b5563;border-bottom:1px solid #f3f4f6}
+  .common-table tr:last-child td{border-bottom:none}
+  .common-table td:first-child{font-weight:700;color:#059669}
+
+  /* SEO */
+  .seo-content{background:#fff;border-radius:16px;padding:32px;border:1px solid #e5e7eb;margin-bottom:24px}
+  .seo-content h2{font-size:22px;font-weight:800;color:#1a1a2e;margin-bottom:14px;margin-top:28px;display:flex;align-items:center;gap:10px}
+  .seo-content h2:first-child{margin-top:0}
+  .seo-content h3{font-size:16px;font-weight:700;color:#1a1a2e;margin:20px 0 10px}
+  .seo-content p{font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:14px}
+  .seo-content ul{list-style:none;padding-left:0;margin-bottom:16px}
+  .seo-content ul li{position:relative;padding-left:24px;font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:8px}
+  .seo-content ul li::before{content:'';position:absolute;left:6px;top:12px;width:6px;height:6px;background:#10b981;border-radius:50%}
+  .seo-content a{color:#2563eb;text-decoration:none;font-weight:600}
+  .seo-content a:hover{text-decoration:underline}
+  .seo-content strong{color:#1a1a2e;font-weight:700}
+  .seo-content code{background:#f1f5f9;padding:2px 6px;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:13px;color:#0f172a;border:1px solid #e2e8f0}
+
+  .formula-box{background:#0f172a;color:#e2e8f0;padding:18px 20px;border-radius:10px;font-family:'JetBrains Mono',monospace;font-size:14px;line-height:1.7;margin:16px 0;overflow-x:auto}
+  .formula-box .hl{color:#34d399;font-weight:700}
+
+  .how-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:20px}
+  .how-step{background:#ecfdf5;border-radius:12px;padding:20px;border:1px solid #a7f3d0}
+  .how-step-num{width:36px;height:36px;border-radius:50%;background:#10b981;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;margin-bottom:12px}
+  .how-step-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+  .how-step-desc{font-size:13px;color:#6b7280;line-height:1.6}
+
+  .faq-item{background:#ecfdf5;border:1px solid #a7f3d0;border-radius:12px;margin-bottom:10px;overflow:hidden;transition:border-color .2s}
+  .faq-item:hover{border-color:#10b981}
+  .faq-question{width:100%;background:none;border:none;padding:18px 22px;font-size:15px;font-weight:700;color:#1a1a2e;text-align:left;cursor:pointer;font-family:inherit;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .faq-question .chev{font-size:12px;color:#10b981;transition:transform .2s;flex-shrink:0}
+  .faq-item.open .faq-question .chev{transform:rotate(180deg)}
+  .faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 22px}
+  .faq-item.open .faq-answer{max-height:500px;padding-bottom:18px}
+  .faq-answer p{font-size:14px;color:#6b7280;line-height:1.7;margin:0}
+
+  .sidebar{background:#fff;border-radius:16px;padding:24px;border:1px solid #e5e7eb;position:sticky;top:80px;margin-bottom:24px}
+  .sidebar-header{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:800;color:#1a1a2e;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid #f3f4f6}
+  .sidebar-list{display:flex;flex-direction:column;gap:8px}
+  .sidebar-item{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;cursor:pointer;transition:background .2s;text-decoration:none;color:inherit;border:1px solid #f3f4f6}
+  .sidebar-item:hover{background:#ecfdf5;border-color:#a7f3d0}
+  .sidebar-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;flex-shrink:0}
+  .sidebar-info{flex:1;min-width:0}
+  .sidebar-title{font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:2px}
+  .sidebar-desc{font-size:11px;color:#9ca3af;line-height:1.4}
+
+  .footer{background:#0a0e27;padding:60px 40px 30px;color:#fff;margin-top:40px}
+  .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:40px}
+  .footer-brand{display:flex;align-items:center;gap:8px;font-size:20px;font-weight:800;margin-bottom:12px}
+  .footer-brand span{color:#60a5fa}
+  .footer-tagline{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px}
+  .footer-social{display:flex;gap:12px}
+  .footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:16px;transition:background .2s}
+  .footer-social a:hover{background:rgba(255,255,255,.2)}
+  .footer-heading{font-size:14px;font-weight:700;margin-bottom:20px;color:#fff}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .footer-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;transition:color .2s}
+  .footer-links a:hover{color:#60a5fa}
+  .footer-bottom{max-width:1200px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  .footer-bottom-left{display:flex;gap:20px;font-size:12px;color:rgba(255,255,255,.5)}
+  .footer-bottom-right,.footer-bottom-links a{font-size:12px;color:rgba(255,255,255,.5);text-decoration:none}
+  .footer-bottom-links{display:flex;gap:20px}
+
+  .toast{position:fixed;bottom:24px;right:24px;background:#1a1a2e;color:#fff;padding:14px 20px;border-radius:10px;font-size:13px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:3000;transform:translateY(200%);transition:transform .3s ease;max-width:320px}
+  .toast.visible{transform:translateY(0)}
+  .toast.success{background:#10b981}
+  .toast.error{background:#ef4444}
+
+  @media(max-width:1024px){
+    .main-content{grid-template-columns:1fr;padding:24px 20px}
+    .sidebar{position:static}
+    .how-steps{grid-template-columns:repeat(2,1fr)}
+  }
+  @media(max-width:768px){
+    .header{padding:0 20px}.nav{display:none}
+    .hero{padding:24px 20px 40px}
+    .hero-title{font-size:28px}
+    .hero-icon{width:48px;height:48px;font-size:20px}
+    .hero-title-row{flex-direction:column;align-items:flex-start;gap:12px}
+    .main-content{padding:20px 16px}
+    .workspace{padding:20px}
+    .how-steps{grid-template-columns:1fr}
+    .seo-content{padding:20px}
+    .footer-inner{grid-template-columns:1fr 1fr}
+    .toast{left:16px;right:16px;bottom:16px;max-width:none}
+    .settings-grid{grid-template-columns:1fr}
+    .results-grid{grid-template-columns:1fr}
+    .steps-input-wrap input{font-size:24px}
+  }
+  @media(max-width:576px){
+    .header{padding:0 16px}.header-right .search-btn,.header-right .theme-btn{display:none}
+    .hero-title{font-size:24px}
+    .footer-inner{grid-template-columns:1fr}
+    .footer-bottom{flex-direction:column;text-align:center}
+  }
+
+  html[data-theme="dark"] body{background:#0f172a;color:#f1f5f9}
+  html[data-theme="dark"] .header,html[data-theme="dark"] .workspace,html[data-theme="dark"] .seo-content,html[data-theme="dark"] .sidebar{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .logo,html[data-theme="dark"] .hero-title,html[data-theme="dark"] .seo-content h2,html[data-theme="dark"] .seo-content h3,html[data-theme="dark"] .faq-question,html[data-theme="dark"] .sidebar-header,html[data-theme="dark"] .sidebar-title,html[data-theme="dark"] .settings-title{color:#f1f5f9}
+  html[data-theme="dark"] .nav a{color:#cbd5e1}
+  html[data-theme="dark"] .how-step,html[data-theme="dark"] .faq-item,html[data-theme="dark"] .settings-section{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .form-group input,html[data-theme="dark"] .form-group select{background:#1e293b;border-color:#334155;color:#f1f5f9}
+  html[data-theme="dark"] .seo-content p,html[data-theme="dark"] .seo-content ul li,html[data-theme="dark"] .faq-answer p{color:#cbd5e1}
+  html[data-theme="dark"] .seo-content code{background:#0f172a;color:#94a3b8;border-color:#334155}
+  html[data-theme="dark"] .mini-btn{background:#0f172a;border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .common-table{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .common-table th{background:#0f172a;color:#f1f5f9;border-color:#334155}
+  html[data-theme="dark"] .common-table td{border-color:#334155;color:#cbd5e1}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type": "SoftwareApplication", "name": "Steps to KM Converter", "url": "https://bigtoolz.com/tools/utility-tools/steps-km/", "applicationCategory": "HealthApplication", "operatingSystem": "Any (Web-based)", "description": "Free online steps to kilometers converter. Convert steps to km, miles, calories, and walking time. Auto stride calculation by height.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.8", "ratingCount": "1567"}},
+    {"@type": "HowTo", "name": "How to Convert Steps to Kilometers", "step": [
+      {"@type": "HowToStep", "name": "Enter Step Count", "text": "Type the number of steps from your fitness tracker."},
+      {"@type": "HowToStep", "name": "Set Your Height", "text": "Enter height and gender for accurate stride calculation."},
+      {"@type": "HowToStep", "name": "View Conversion", "text": "See distance in kilometers, miles, calories and time."},
+      {"@type": "HowToStep", "name": "Check Progress", "text": "See how close you are to daily step goals."}
+    ]},
+    {"@type": "FAQPage", "mainEntity": [
+      {"@type": "Question", "name": "How many steps are in 1 kilometer?", "acceptedAnswer": {"@type": "Answer", "text": "It depends on your stride length, which is roughly 0.7–0.8 meters for most adults. On average: 1 km ≈ 1,250–1,450 steps. A common estimate is 1,300 steps per km for an average-height adult."}},
+      {"@type": "Question", "name": "How many steps are in 1 mile?", "acceptedAnswer": {"@type": "Answer", "text": "1 mile = 1.609 km. Since 1 km ≈ 1,300 steps, 1 mile ≈ 2,100 steps. This varies by stride length from 1,900 to 2,400 steps depending on height."}},
+      {"@type": "Question", "name": "What is the average stride length?", "acceptedAnswer": {"@type": "Answer", "text": "Average walking stride length is 0.7–0.8 meters for adults. It's roughly 41.5% of your height for women and 41.5% for men too, but men's longer legs give them slightly longer strides on average."}},
+      {"@type": "Question", "name": "How many calories do 10,000 steps burn?", "acceptedAnswer": {"@type": "Answer", "text": "Roughly 300–500 calories for an average adult (70 kg) walking 10,000 steps. Heavier people burn more; lighter people burn less. It's about 0.04–0.05 calories per step."}},
+      {"@type": "Question", "name": "Why is 10,000 steps a day recommended?", "acceptedAnswer": {"@type": "Answer", "text": "10,000 steps is a popular goal (roughly 7–8 km), but it originated from a 1960s Japanese pedometer marketing campaign. Modern research suggests 7,000–8,000 steps per day provides most health benefits for adults, with diminishing returns beyond that."}}
+    ]},
+    {"@type": "BreadcrumbList", "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bigtoolz.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://bigtoolz.com/tools/"},
+      {"@type": "ListItem", "position": 3, "name": "Utility Tools", "item": "https://bigtoolz.com/tools/utility-tools/"},
+      {"@type": "ListItem", "position": 4, "name": "Steps to KM Converter", "item": "https://bigtoolz.com/tools/utility-tools/steps-km/"}
+    ]}
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-left">
+    <a href="/" class="logo"><div class="logo-icon">⚒</div>BigToolz</span></a>
+    <nav><ul class="nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/tools/" class="active">All Tools</a></li>
+      <li><a href="/tools/categories">Categories</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul></nav>
+  </div>
+  <div class="header-right">
+    
+    <button class="theme-btn" aria-label="Toggle theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
+    
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <nav class="breadcrumb">
+      <a href="/">Home</a><span class="sep">›</span>
+      <a href="/tools/">Tools</a><span class="sep">›</span>
+      <a href="/tools/utility-tools/">Utility Tools</a><span class="sep">›</span>
+      <span class="current">Steps to KM</span>
+    </nav>
+    <div class="hero-title-row">
+      <div class="hero-icon">👣</div>
+      <h1 class="hero-title">Steps to <span class="blue">KM</span></h1>
+    </div>
+    <p class="hero-desc">
+      Convert your daily steps into distance (km, miles), calories burned, and walking time. Auto-calculates stride length based on your height. Perfect for fitness tracking.
+    </p>
+    <div class="hero-features">
+      <div class="hero-feature"><span class="check">✓</span> Instant Conversion</div>
+      <div class="hero-feature"><span class="check">✓</span> Auto Stride Length</div>
+      <div class="hero-feature"><span class="check">✓</span> Calories Estimate</div>
+      <div class="hero-feature"><span class="check">✓</span> Goal Progress</div>
+    </div>
+  </div>
+</section>
+
+<div class="main-content">
+
+  <div class="tool-content">
+
+    <div class="workspace">
+
+      <!-- Main input -->
+      <div class="main-input-section">
+        <label class="main-input-label">
+          Number of Steps
+          <span class="hint">Enter your daily total</span>
+        </label>
+        <div class="steps-input-wrap">
+          <input type="number" id="stepsInput" value="10000" min="0" step="100" placeholder="10000">
+          <span class="unit">👣 steps</span>
+        </div>
+        <div class="quick-steps">
+          <button class="quick-steps-btn" data-steps="1000">1,000</button>
+          <button class="quick-steps-btn" data-steps="2500">2,500</button>
+          <button class="quick-steps-btn" data-steps="5000">5,000</button>
+          <button class="quick-steps-btn" data-steps="7500">7,500</button>
+          <button class="quick-steps-btn" data-steps="10000">10,000</button>
+          <button class="quick-steps-btn" data-steps="15000">15,000</button>
+          <button class="quick-steps-btn" data-steps="20000">20,000</button>
+        </div>
+      </div>
+
+      <!-- Results -->
+      <div class="results-grid">
+        <div class="result-card">
+          <div class="result-icon">📏</div>
+          <div class="result-label">Distance (KM)</div>
+          <div class="result-value" id="kmValue">7.6</div>
+          <div class="result-unit">kilometers</div>
+        </div>
+        <div class="result-card blue">
+          <div class="result-icon">🇺🇸</div>
+          <div class="result-label">Distance (Miles)</div>
+          <div class="result-value" id="miValue">4.72</div>
+          <div class="result-unit">miles</div>
+        </div>
+        <div class="result-card orange">
+          <div class="result-icon">🔥</div>
+          <div class="result-label">Calories Burned</div>
+          <div class="result-value" id="calValue">420</div>
+          <div class="result-unit">kcal</div>
+        </div>
+        <div class="result-card purple">
+          <div class="result-icon">⏱️</div>
+          <div class="result-label">Walking Time</div>
+          <div class="result-value" id="timeValue">1h 24m</div>
+          <div class="result-unit">at 5.5 km/h</div>
+        </div>
+      </div>
+
+      <!-- Settings -->
+      <div class="settings-section">
+        <div class="settings-title">⚙️ Personal Settings</div>
+        <div class="settings-grid">
+          <div class="form-group">
+            <label>Height</label>
+            <select id="height">
+              <option value="150">150 cm (4'11")</option>
+              <option value="155">155 cm (5'1")</option>
+              <option value="160" selected>160 cm (5'3")</option>
+              <option value="165">165 cm (5'5")</option>
+              <option value="170">170 cm (5'7")</option>
+              <option value="175">175 cm (5'9")</option>
+              <option value="180">180 cm (5'11")</option>
+              <option value="185">185 cm (6'1")</option>
+              <option value="190">190 cm (6'3")</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Gender</label>
+            <select id="gender">
+              <option value="female" selected>Female</option>
+              <option value="male">Male</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Weight (kg)</label>
+            <input type="number" id="weight" value="65" min="30" max="200" step="1">
+          </div>
+          <div class="form-group">
+            <label>Walking Speed</label>
+            <select id="speed">
+              <option value="4">Slow Walk (4 km/h)</option>
+              <option value="5.5" selected>Normal Walk (5.5 km/h)</option>
+              <option value="6.5">Brisk Walk (6.5 km/h)</option>
+              <option value="8">Running (8 km/h)</option>
+              <option value="10">Fast Run (10 km/h)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Daily Step Goal</label>
+            <select id="goal">
+              <option value="5000">5,000 steps</option>
+              <option value="7500">7,500 steps</option>
+              <option value="10000" selected>10,000 steps</option>
+              <option value="12000">12,000 steps</option>
+              <option value="15000">15,000 steps</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Stride Length</label>
+            <select id="strideMode">
+              <option value="auto" selected>Auto (from height)</option>
+              <option value="custom">Custom</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group" id="customStrideWrap" style="display:none;margin-top:16px;">
+          <label>Custom Stride (cm)</label>
+          <input type="number" id="customStride" value="70" min="30" max="150" step="1">
+        </div>
+      </div>
+
+      <!-- Stride info -->
+      <div class="stride-info" id="strideInfo">
+        Your stride length: <strong>66.4 cm</strong> · Based on <strong>160 cm height, female</strong>
+      </div>
+
+      <!-- Progress -->
+      <div class="progress-section">
+        <div class="progress-label">
+          <span>🎯 Daily Goal Progress</span>
+          <span id="progressText">100% of 10,000</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" id="progressFill" style="width:100%">100%</div>
+        </div>
+        <div class="progress-sub" id="progressSub">You've reached your daily step goal! 🎉</div>
+      </div>
+
+      <!-- Copy -->
+      <div class="copy-row">
+        <button class="mini-btn" id="copyBtn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+          Copy Result
+        </button>
+      </div>
+
+    </div>
+
+    <!-- SEO Content -->
+    <div class="seo-content">
+
+      <h2>👣 What is a Steps to KM Converter?</h2>
+      <p>
+        A <strong>Steps to KM Converter</strong> transforms the number of steps you take into distance covered in kilometers, miles, and other units. Every fitness tracker (Apple Watch, Fitbit, Garmin, Google Fit, Samsung Health) shows step counts, but the actual <strong>distance varies</strong> depending on your <strong>height, gender, and stride length</strong>. This tool gives you an accurate conversion.
+      </p>
+      <p>
+        It also estimates <strong>calories burned</strong> (based on your weight) and <strong>walking time</strong> (based on your pace) giving you a complete picture of your daily activity. Perfect for step goals, fitness challenges, or planning walking routes.
+      </p>
+
+      <h2>📐 How Steps to KM Conversion Works</h2>
+      <p>The basic math is simple: <strong>Distance = Steps × Stride Length</strong>. But stride length varies by person. Here's how it works:</p>
+
+      <div class="formula-box">
+        <span class="hl">Distance (m)</span> = Steps × Stride Length (m)<br>
+        <span class="hl">Distance (km)</span> = Distance (m) ÷ 1000<br><br>
+        Average stride length:<br>
+        &nbsp;&nbsp;Women: ~41.5% of height<br>
+        &nbsp;&nbsp;Men: ~41.5% of height<br><br>
+        Example (160 cm female, 10,000 steps):<br>
+        &nbsp;&nbsp;Stride = 160 × 0.415 = <span class="hl">66.4 cm</span> = 0.664 m<br>
+        &nbsp;&nbsp;Distance = 10,000 × 0.664 = 6,640 m = <span class="hl">6.64 km</span>
+      </div>
+
+      <h2>🚀 How to Use This Converter</h2>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-step-num">1</div>
+          <div class="how-step-title">Enter Steps</div>
+          <div class="how-step-desc">Type your step count or pick a quick preset.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">2</div>
+          <div class="how-step-title">Set Height & Gender</div>
+          <div class="how-step-desc">For accurate stride length calculation.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">3</div>
+          <div class="how-step-title">Adjust Weight</div>
+          <div class="how-step-desc">For accurate calorie estimates.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">4</div>
+          <div class="how-step-title">See Results</div>
+          <div class="how-step-desc">Distance, calories, time, and goal progress.</div>
+        </div>
+      </div>
+
+      <h2>📊 Common Steps to KM Conversions</h2>
+      <p>Quick reference table for average-height adults (stride ~70 cm):</p>
+      <table class="common-table">
+        <thead>
+          <tr><th>Steps</th><th>Kilometers</th><th>Miles</th><th>Calories (70kg)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1,000</td><td>~0.7 km</td><td>~0.43 mi</td><td>~40 kcal</td></tr>
+          <tr><td>2,500</td><td>~1.75 km</td><td>~1.09 mi</td><td>~100 kcal</td></tr>
+          <tr><td>5,000</td><td>~3.5 km</td><td>~2.17 mi</td><td>~200 kcal</td></tr>
+          <tr><td>7,500</td><td>~5.25 km</td><td>~3.26 mi</td><td>~300 kcal</td></tr>
+          <tr><td>10,000</td><td>~7.0 km</td><td>~4.35 mi</td><td>~400 kcal</td></tr>
+          <tr><td>15,000</td><td>~10.5 km</td><td>~6.52 mi</td><td>~600 kcal</td></tr>
+          <tr><td>20,000</td><td>~14.0 km</td><td>~8.70 mi</td><td>~800 kcal</td></tr>
+        </tbody>
+      </table>
+
+      <h2>🎯 The 10,000 Steps Myth</h2>
+      <p>
+        The famous <strong>10,000 steps</strong> goal didn't come from science it came from a 1960s Japanese pedometer marketing campaign. The device was called <em>manpo-kei</em>, meaning "10,000-step meter."
+      </p>
+      <p>
+        Modern research (2021-2023) shows that:
+      </p>
+      <ul>
+        <li><strong>7,000-8,000 steps</strong> per day provides most of the health benefits for adults.</li>
+        <li>Benefits continue to increase up to <strong>10,000-12,000 steps</strong>, but with diminishing returns.</li>
+        <li>Adults <strong>60+</strong> see maximum benefit around <strong>6,000-8,000 steps</strong>.</li>
+        <li>Adults <strong>under 60</strong> benefit up to <strong>8,000-10,000 steps</strong>.</li>
+        <li>Beyond 12,000 steps, benefits plateau for most people.</li>
+      </ul>
+      <p>
+        So don't stress if you're not hitting 10,000 daily <strong>consistency matters more than the magic number</strong>.
+      </p>
+
+      <h2>✨ Key Features</h2>
+      <ul>
+        <li><strong>Auto stride length</strong> based on height + gender.</li>
+        <li><strong>Custom stride option</strong> if you know your exact stride.</li>
+        <li><strong>Distance in km + miles</strong> both units shown.</li>
+        <li><strong>Calorie estimate</strong> based on weight and steps.</li>
+        <li><strong>Walking time</strong> based on your pace.</li>
+        <li><strong>Goal progress bar</strong> see how close you are to daily goal.</li>
+        <li><strong>Quick presets</strong> 1K, 5K, 10K, 20K steps.</li>
+        <li><strong>100% browser-based</strong> instant, private.</li>
+      </ul>
+
+      <h2>❓ Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-question">How many steps are in 1 kilometer?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>It depends on your stride length (roughly 0.7–0.8 meters for most adults). On average: <strong>1 km ≈ 1,250–1,450 steps</strong>. A common estimate is <strong>1,300 steps per km</strong> for an average-height adult.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">How many steps are in 1 mile?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>1 mile = 1.609 km. Since 1 km ≈ 1,300 steps, <strong>1 mile ≈ 2,100 steps</strong>. This varies by stride length from 1,900 to 2,400 steps depending on height.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What is the average stride length?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Average walking stride length is <strong>0.7–0.8 meters</strong> (70–80 cm) for adults. It's roughly <strong>41.5% of your height</strong>. Men have slightly longer strides than women on average. For running, stride is 20-30% longer.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">How many calories do 10,000 steps burn?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Roughly <strong>300–500 calories</strong> for an average adult (70 kg) walking 10,000 steps. Heavier people burn more; lighter people burn less. It's about <strong>0.04–0.05 calories per step</strong> at normal walking pace.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Why is 10,000 steps a day recommended?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>10,000 steps (roughly 7–8 km) is a popular goal, but it originated from a <strong>1960s Japanese pedometer marketing campaign</strong> not science. Modern research suggests <strong>7,000–8,000 steps per day</strong> provides most health benefits for adults, with diminishing returns beyond that.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Are fitness tracker distances accurate?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Most fitness trackers estimate distance using <strong>average stride length</strong> based on your height. If you have an unusually long or short stride, or if you change pace (walking vs running), the estimate can be 10-20% off. For accuracy, our tool lets you enter a custom stride length.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Does walking speed affect calorie burn?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Yes! Walking faster burns more calories per minute, but fewer total steps per km covered. Brisk walking (6-7 km/h) burns roughly <strong>1.5× more calories per minute</strong> than slow walking (4 km/h). Choose a speed that matches your fitness goal.</p></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-header">🔗 Related Utility Tools</div>
+    <div class="sidebar-list">
+      <a href="/tools/utility-tools/water-intake/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#06b6d4;">💧</div>
+        <div class="sidebar-info"><div class="sidebar-title">Water Intake</div><div class="sidebar-desc">Daily hydration</div></div>
+      </a>
+      <a href="/tools/utility-tools/calorie-calculator/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#f97316;">🍎</div>
+        <div class="sidebar-info"><div class="sidebar-title">Calorie Calculator</div><div class="sidebar-desc">Daily needs</div></div>
+      </a>
+      <a href="/tools/utility-tools/heart-rate/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#ef4444;">❤️</div>
+        <div class="sidebar-info"><div class="sidebar-title">Heart Rate</div><div class="sidebar-desc">Target zones</div></div>
+      </a>
+      <a href="/tools/utility-tools/running-pace/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#8b5cf6;">🏃</div>
+        <div class="sidebar-info"><div class="sidebar-title">Running Pace</div><div class="sidebar-desc">Pace calculator</div></div>
+      </a>
+      <a href="/tools/calculator-tools/bmi-calculator/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#10b981;">⚖️</div>
+        <div class="sidebar-info"><div class="sidebar-title">BMI Calculator</div><div class="sidebar-desc">Body mass index</div></div>
+      </a>
+      <a href="/tools/utility-tools/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#64748b;">⚙️</div>
+        <div class="sidebar-info"><div class="sidebar-title">All Utility Tools →</div><div class="sidebar-desc">Browse 50+ tools</div></div>
+      </a>
+    </div>
+  </aside>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand"><div class="logo-icon">⚒</div>BigToolz</span></div>
+      <p class="footer-tagline">Your Ultimate Online Tools Hub</p>
+      <div class="footer-social">
+        <a href="https://facebook.com/bigtoolz" aria-label="Facebook">f</a>
+        <a href="https://twitter.com/bigtoolz" aria-label="Twitter">𝕏</a>
+        <a href="https://youtube.com/@bigtoolz" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+    <div>
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/tools/">All Tools</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Categories</h3>
+      <ul class="footer-links">
+        <li><a href="/tools/image-tools/">Image Tools</a></li>
+        <li><a href="/tools/pdf-tools/">PDF Tools</a></li>
+        <li><a href="/tools/utility-tools/">Utility Tools</a></li>
+        <li><a href="/tools/calculator-tools/">Calculator Tools</a></li>
+        <li><a href="/tools/categories">All Categories →</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Legal</h3>
+      <ul class="footer-links">
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left"><span>✓ 100% Free</span><span>✓ No Sign Up</span><span>✓ No Installation</span></div>
+    <div class="footer-bottom-right">© 2026 BigToolz. All rights reserved.</div>
+    <div class="footer-bottom-links"><a href="/privacy-policy">Privacy</a><a href="/terms">Terms</a><a href="/disclaimer">Disclaimer</a></div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+'use strict';
+
+/* ===== THEME ===== */
+(function(){try{var t=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&d))document.documentElement.setAttribute('data-theme','dark');else if(t==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();
+document.querySelector('.theme-btn')?.addEventListener('click',()=>{const h=document.documentElement;const c=h.getAttribute('data-theme');const d=window.matchMedia('(prefers-color-scheme: dark)').matches;let n=c==='dark'?'light':c==='light'?'dark':(d?'light':'dark');h.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}});
+
+/* ===== HELPERS ===== */
+const $ = (s, p = document) => p.querySelector(s);
+const $$ = (s, p = document) => [...p.querySelectorAll(s)];
+
+function showToast(msg, type = 'info', duration = 3000) {
+  const t = $('#toast');
+  if (!t) return;
+  t.className = 'toast visible' + (type !== 'info' ? ' ' + type : '');
+  t.textContent = msg;
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove('visible'), duration);
+}
+
+async function copyToClipboard(text) {
+  try {
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(text);
+      return true;
+    }
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.cssText = 'position:fixed;opacity:0;';
+    document.body.appendChild(ta);
+    ta.select();
+    const ok = document.execCommand('copy');
+    document.body.removeChild(ta);
+    return ok;
+  } catch (e) { return false; }
+}
+
+/* ===== DOM ===== */
+const stepsInput = $('#stepsInput');
+const height = $('#height');
+const gender = $('#gender');
+const weight = $('#weight');
+const speed = $('#speed');
+const goal = $('#goal');
+const strideMode = $('#strideMode');
+const customStrideWrap = $('#customStrideWrap');
+const customStride = $('#customStride');
+const kmValue = $('#kmValue');
+const miValue = $('#miValue');
+const calValue = $('#calValue');
+const timeValue = $('#timeValue');
+const strideInfo = $('#strideInfo');
+const progressFill = $('#progressFill');
+const progressText = $('#progressText');
+const progressSub = $('#progressSub');
+const copyBtn = $('#copyBtn');
+
+/* ===== CALCULATE ===== */
+function calculateStride() {
+  const h = parseFloat(height.value) || 170;
+  const g = gender.value;
+
+  // Stride ≈ 41.5% of height for women, 41.5% also for men (adjust slightly)
+  // Actually: men ~41.5%, women ~41.3%. We'll use slightly different factors.
+  const factor = g === 'male' ? 0.415 : 0.413;
+  return (h * factor) / 100; // in meters
+}
+
+function getStride() {
+  if (strideMode.value === 'custom') {
+    return (parseFloat(customStride.value) || 70) / 100; // cm → m
+  }
+  return calculateStride();
+}
+
+function calculate() {
+  const steps = Math.max(0, parseInt(stepsInput.value, 10) || 0);
+  const stride = getStride();
+  const w = parseFloat(weight.value) || 65;
+  const spd = parseFloat(speed.value) || 5.5;
+  const dailyGoal = parseInt(goal.value, 10) || 10000;
+
+  // Distance
+  const distanceM = steps * stride;
+  const distanceKm = distanceM / 1000;
+  const distanceMi = distanceKm * 0.621371;
+
+  // Calories: ~0.04 per step for 70kg, scale by weight
+  // More accurate: MET-based. Walking at 5.5 km/h = 4.3 MET
+  // Calories = MET × weight(kg) × time(hours)
+  const walkingTimeH = distanceKm / spd;
+  const MET = spd < 5 ? 3.5 : spd < 6 ? 4.3 : spd < 7.5 ? 5.0 : 8.3;
+  const calories = Math.round(MET * w * walkingTimeH);
+
+  // Time
+  const totalMin = Math.round(walkingTimeH * 60);
+  const hours = Math.floor(totalMin / 60);
+  const mins = totalMin % 60;
+  const timeStr = hours > 0 ? `${hours}h ${mins}m` : `${mins}m`;
+
+  // Update display
+  kmValue.textContent = distanceKm.toFixed(2);
+  miValue.textContent = distanceMi.toFixed(2);
+  calValue.textContent = calories.toLocaleString();
+
+  // Time label adjusts based on speed
+  timeValue.textContent = timeStr;
+  const timeUnit = timeValue.nextElementSibling;
+  if (timeUnit) timeUnit.textContent = `at ${spd} km/h`;
+
+  // Stride info
+  const strideCm = (stride * 100).toFixed(1);
+  const heightLabel = gender.value === 'male' ? 'male' : 'female';
+  strideInfo.innerHTML = `Your stride length: <strong>${strideCm} cm</strong> · Based on <strong>${height.value} cm height, ${heightLabel}</strong>${strideMode.value === 'custom' ? ' <em>(custom)</em>' : ''}`;
+
+  // Progress
+  const pct = Math.min(100, Math.round((steps / dailyGoal) * 100));
+  progressFill.style.width = pct + '%';
+  progressFill.textContent = pct >= 30 ? pct + '%' : '';
+  progressText.textContent = `${pct}% of ${dailyGoal.toLocaleString()}`;
+
+  if (steps >= dailyGoal) {
+    progressSub.innerHTML = `You've reached your daily step goal! 🎉`;
+  } else {
+    const remaining = dailyGoal - steps;
+    progressSub.textContent = `${remaining.toLocaleString()} more steps to reach your goal (${(remaining * stride / 1000).toFixed(2)} km to go)`;
+  }
+}
+
+/* ===== EVENT LISTENERS ===== */
+stepsInput.addEventListener('input', calculate);
+height.addEventListener('change', calculate);
+gender.addEventListener('change', calculate);
+weight.addEventListener('input', calculate);
+speed.addEventListener('change', calculate);
+goal.addEventListener('change', calculate);
+strideMode.addEventListener('change', () => {
+  if (strideMode.value === 'custom') {
+    customStrideWrap.style.display = 'block';
+    customStride.value = (calculateStride() * 100).toFixed(0);
+  } else {
+    customStrideWrap.style.display = 'none';
+  }
+  calculate();
+});
+customStride.addEventListener('input', calculate);
+
+/* ===== QUICK PRESETS ===== */
+$$('.quick-steps-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    stepsInput.value = btn.dataset.steps;
+    calculate();
+    showToast(`Set to ${parseInt(btn.dataset.steps, 10).toLocaleString()} steps`, 'success', 1500);
+  });
+});
+
+/* ===== COPY ===== */
+copyBtn.addEventListener('click', async () => {
+  const steps = parseInt(stepsInput.value, 10) || 0;
+  const stride = getStride();
+  const distanceKm = (steps * stride / 1000).toFixed(2);
+  const distanceMi = (distanceKm * 0.621371).toFixed(2);
+  const w = parseFloat(weight.value) || 65;
+  const spd = parseFloat(speed.value) || 5.5;
+  const walkingTimeH = (distanceKm / spd);
+  const MET = spd < 5 ? 3.5 : spd < 6 ? 4.3 : spd < 7.5 ? 5.0 : 8.3;
+  const calories = Math.round(MET * w * walkingTimeH);
+  const totalMin = Math.round(walkingTimeH * 60);
+  const hours = Math.floor(totalMin / 60);
+  const mins = totalMin % 60;
+  const timeStr = hours > 0 ? `${hours}h ${mins}m` : `${mins}m`;
+
+  const text = `👣 Steps: ${steps.toLocaleString()}\n📏 Distance: ${distanceKm} km (${distanceMi} mi)\n🔥 Calories: ~${calories} kcal\n⏱️ Walking Time: ${timeStr} at ${spd} km/h\n👤 Stride Length: ${(stride * 100).toFixed(1)} cm`;
+
+  const ok = await copyToClipboard(text);
+  if (ok) {
+    copyBtn.classList.add('copied');
+    const orig = copyBtn.innerHTML;
+    copyBtn.innerHTML = '✓ Copied!';
+    setTimeout(() => {
+      copyBtn.classList.remove('copied');
+      copyBtn.innerHTML = orig;
+    }, 2000);
+    showToast('Result copied!', 'success');
+  } else {
+    showToast('Copy failed', 'error');
+  }
+});
+
+/* ===== FAQ ===== */
+$$('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    $$('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+
+/* ===== INIT ===== */
+calculate();
+</script>
+
+</body>
+</html>

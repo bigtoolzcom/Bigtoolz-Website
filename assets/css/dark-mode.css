@@ -1,0 +1,799 @@
+/* ===========================================
+   BigToolz - Dark Mode Stylesheet
+   Version: 1.0.1
+   Last updated: 2026-01-15
+   =========================================== */
+
+/* ===========================================
+   1. HOW IT WORKS
+   ===========================================
+   Theme toggle 3 modes mein kaam karta hai:
+
+   1. Auto (default)  → System preference follow karta hai
+   2. Light           → <html data-theme="light">
+   3. Dark            → <html data-theme="dark">
+
+   Toggle JS (theme.js) se set hoti hai localStorage mein.
+   =========================================== */
+
+/* ===========================================
+   2. AUTO DARK MODE (System Preference)
+   =========================================== */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --color-text: #f1f5f9;
+    --color-text-muted: #cbd5e1;
+    --color-text-light: #94a3b8;
+    --color-text-lighter: #64748b;
+
+    --color-bg: #0f172a;
+    --color-bg-white: #1e293b;
+    --color-bg-soft: #1e293b;
+    --color-bg-dark: #020617;
+
+    --color-border: #334155;
+    --color-border-light: #1e293b;
+    --color-border-hover: #60a5fa;
+
+    --color-primary-soft: rgba(37, 99, 235, 0.15);
+
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.4);
+    --shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.5);
+    --shadow-focus: 0 0 0 3px rgba(96, 165, 250, 0.2);
+  }
+}
+
+/* ===========================================
+   3. MANUAL DARK MODE (data-theme="dark")
+   =========================================== */
+html[data-theme="dark"] {
+  color-scheme: dark;
+
+  --color-text: #f1f5f9;
+  --color-text-muted: #cbd5e1;
+  --color-text-light: #94a3b8;
+  --color-text-lighter: #64748b;
+
+  --color-bg: #0f172a;
+  --color-bg-white: #1e293b;
+  --color-bg-soft: #1e293b;
+  --color-bg-dark: #020617;
+
+  --color-border: #334155;
+  --color-border-light: #1e293b;
+  --color-border-hover: #60a5fa;
+
+  --color-primary-soft: rgba(37, 99, 235, 0.15);
+
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.4);
+  --shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.5);
+  --shadow-focus: 0 0 0 3px rgba(96, 165, 250, 0.2);
+}
+
+html[data-theme="light"] {
+  color-scheme: light;
+}
+
+/* ===========================================
+   4. GLOBAL BODY  ✅ FIXED
+   =========================================== */
+
+/* Manual dark mode */
+html[data-theme="dark"] body {
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+/* Manual light mode */
+html[data-theme="light"] body {
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+/* Auto dark mode */
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) body {
+    background: var(--color-bg);
+    color: var(--color-text);
+  }
+}
+
+/* Smooth transitions */
+html[data-theme="dark"] *,
+html[data-theme="light"] * {
+  transition-property: background-color, border-color, color;
+  transition-duration: 0.2s;
+  transition-timing-function: ease;
+}
+
+html[data-theme="dark"] .tool-card,
+html[data-theme="dark"] .category-card,
+html[data-theme="dark"] .blog-card {
+  transition: all 0.2s ease;
+}
+
+/* ===========================================
+   5. HEADER
+   =========================================== */
+html[data-theme="dark"] .header {
+  background: #1e293b;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+html[data-theme="dark"] .logo {
+  color: #f1f5f9;
+}
+
+html[data-theme="dark"] .logo span {
+  color: #60a5fa;
+}
+
+html[data-theme="dark"] .nav a {
+  color: #cbd5e1;
+}
+
+html[data-theme="dark"] .nav a:hover,
+html[data-theme="dark"] .nav a.active {
+  color: #60a5fa;
+}
+
+html[data-theme="dark"] .nav a.active::after {
+  background: #60a5fa;
+}
+
+html[data-theme="dark"] .search-btn,
+html[data-theme="dark"] .theme-btn {
+  color: #cbd5e1;
+}
+
+html[data-theme="dark"] .search-btn:hover,
+html[data-theme="dark"] .theme-btn:hover {
+  background: #334155;
+  color: #f1f5f9;
+}
+
+html[data-theme="dark"] .bookmark-btn {
+  background: #3b82f6;
+  color: #ffffff;
+}
+
+html[data-theme="dark"] .bookmark-btn:hover {
+  background: #2563eb;
+}
+
+html[data-theme="dark"] .theme-btn .icon-moon {
+  display: none;
+}
+
+html[data-theme="dark"] .theme-btn .icon-sun {
+  display: block;
+}
+
+/* ===========================================
+   6. HERO
+   =========================================== */
+html[data-theme="dark"] .hero {
+  background: linear-gradient(135deg, #020617 0%, #0f172a 40%, #1e1b4b 70%, #2d1b69 100%);
+}
+
+html[data-theme="dark"] .hero-search {
+  background: #1e293b;
+  border: 1px solid #334155;
+}
+
+html[data-theme="dark"] .hero-search input {
+  color: #f1f5f9;
+}
+
+html[data-theme="dark"] .hero-search input::placeholder {
+  color: #64748b;
+}
+
+html[data-theme="dark"] .hero-search button {
+  background: #3b82f6;
+}
+
+html[data-theme="dark"] .hero-search button:hover {
+  background: #2563eb;
+}
+
+/* ===========================================
+   7. CARDS
+   =========================================== */
+html[data-theme="dark"] .category-card,
+html[data-theme="dark"] .tool-card,
+html[data-theme="dark"] .blog-card {
+  background: #1e293b;
+  border-color: #334155;
+}
+
+html[data-theme="dark"] .category-card:hover,
+html[data-theme="dark"] .tool-card:hover,
+html[data-theme="dark"] .blog-card:hover {
+  border-color: #60a5fa;
+  box-shadow: 0 4px 16px rgba(96, 165, 250, 0.15);
+}
+
+html[data-theme="dark"] .category-name,
+html[data-theme="dark"] .tool-name,
+html[data-theme="dark"] .blog-card-title {
+  color: #f1f5f9;
+}
+
+html[data-theme="dark"] .category-count,
+html[data-theme="dark"] .tool-desc,
+html[data-theme="dark"] .blog-card-desc {
+  color: #94a3b8;
+}
+
+html[data-theme="dark"] .tool-arrow {
+  background: rgba(96, 165, 250, 0.15);
+  color: #60a5fa;
+}
+
+/* ===========================================
+   8. WHY CHOOSE
+   =========================================== */
+html[data-theme="dark"] .why-choose {
+  background: #0f172a;
+}
+
+html[data-theme="dark"] .why-inner {
+  background: #1e293b;
+}
+
+html[data-theme="dark"] .why-title {
+  color: #f1f5f9;
+}
+
+html[data-theme="dark"] .why-desc {
+  color: #94a3b8;
+}
+
+html[data-theme="dark"] .why-feature-title {
+  color: #f1f5f9;
+}
+
+html[data-theme="dark"] .why-feature-desc {
+  color: #94a3b8;
+}
+
+html[data-theme="dark"] .why-feature-icon.green {
+  background: rgba(16, 185, 129, 0.15);
+}
+
+html[data-theme="dark"] .why-feature-icon.blue {
+  background: rgba(59, 130, 246, 0.15);
+}
+
+html[data-theme="dark"] .why-feature-icon.purple {
+  background: rgba(139, 92, 246, 0.15);
+}
+
+html[data-theme="dark"] .why-feature-icon.orange {
+  background: rgba(249, 115, 22, 0.15);
+}
+
+/* ===========================================
+   9. JOIN SECTION
+   =========================================== */
+html[data-theme="dark"] .join-section {
+  background: linear-gradient(135deg, #020617 0%, #0f172a 50%, #1e1b4b 100%);
+}
+
+/* ===========================================
+   10. FOOTER
+   =========================================== */
+html[data-theme="dark"] .footer {
+  background: #020617;
+}
+
+html[data-theme="dark"] .footer-social a {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+html[data-theme="dark"] .footer-social a:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* ===========================================
+   11. TOOL PAGES
+   =========================================== */
+html[data-theme="dark"] .tool-container,
+html[data-theme="dark"] .main-content {
+  background: transparent;
+}
+
+html[data-theme="dark"] .tool-header,
+html[data-theme="dark"] .tool-workspace,
+html[data-theme="dark"] .upload-section,
+html[data-theme="dark"] .what-is,
+html[data-theme="dark"] .how-to,
+html[data-theme="dark"] .policy-block,
+html[data-theme="dark"] .form-block {
+  background: #1e293b;
+  border-color: #334155;
+}
+
+html[data-theme="dark"] .tool-title,
+html[data-theme="dark"] .what-title,
+html[data-theme="dark"] .how-title,
+html[data-theme="dark"] .form-title {
+  color: #f1f5f9;
+}
+
+html[data-theme="dark"] .tool-description,
+html[data-theme="dark"] .what-desc,
+html[data-theme="dark"] .how-step-desc,
+html[data-theme="dark"] .form-sub {
+  color: #94a3b8;
+}
+
+html[data-theme="dark"] .what-features,
+html[data-theme="dark"] .toc {
+  background: #0f172a;
+  border-color: #334155;
+}
+
+html[data-theme="dark"] .what-feature {
+  color: #cbd5e1;
+}
+
+html[data-theme="dark"] .how-step-num {
+  background: #3b82f6;
+}
+
+html[data-theme="dark"] .how-step-title {
+  color: #f1f5f9;
+}
+
+html[data-theme="dark"] .dropzone {
+  background: #0f172a;
+  border-color: #334155;
+}
+
+html[data-theme="dark"] .dropzone:hover,
+html[data-theme="dark"] .dropzone.dragover {
+  background: rgba(37, 99, 235, 0.1);
+  border-color: #60a5fa;
+}
+
+html[data-theme="dark"] .dropzone-title {
+  color: #f1f5f9;
+}
+
+html[data-theme="dark"] .dropzone-sub {
+  color: #94a3b8;
+}
+
+html[data-theme="dark"] .dropzone-sub a {
+  color: #60a5fa;
+}
+
+html[data-theme="dark"] .dropzone-info {
+  color: #64748b;
+}
+
+html[data-theme="dark"] .result-area {
+  background: #0f172a;
+  border-color: #334155;
+}
+
+html[data-theme="dark"] .result-output {
+  background: #020617;
+  color: #f1f5f9;
+  border-color: #334155;
+}
+
+/* ===========================================
+   12. FORMS
+   =========================================== */
+html[data-theme="dark"] .form-group input,
+html[data-theme="dark"] .form-group textarea,
+html[data-theme="dark"] .form-group select,
+html[data-theme="dark"] .form-control {
+  background: #0f172a;
+  color: #f1f5f9;
+  border-color: #334155;
+}
+
+html[data-theme="dark"] .form-group input:focus,
+html[data-theme="dark"] .form-group textarea:focus,
+html[data-theme="dark"] .form-group select:focus {
+  border-color: #60a5fa;
+  box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.15);
+}
+
+html[data-theme="dark"] .form-group input::placeholder,
+html[data-theme="dark"] .form-group textarea::placeholder {
+  color: #64748b;
+}
+
+html[data-theme="dark"] .form-group label {
+  color: #cbd5e1;
+}
+
+html[data-theme="dark"] .option-select {
+  background: #0f172a;
+  color: #f1f5f9;
+  border-color: #334155;
+}
+
+html[data-theme="dark"] .orientation-toggle {
+  border-color: #334155;
+}
+
+html[data-theme="dark"] .orientation-btn {
+  background: #0f172a;
+  color: #94a3b8;
+}
+
+html[data-theme="dark"] .orientation-btn.active {
+  background: #3b82f6;
+  color: #ffffff;
+}
+
+html[data-theme="dark"] .search-box {
+  background: #0f172a;
+  border-color: #334155;
+}
+
+html[data-theme="dark"] .search-box input {
+  color: #f1f5f9;
+}
+
+html[data-theme="dark"] .search-box input::placeholder {
+  color: #64748b;
+}
+
+/* ===========================================
+   13. SIDEBAR
+   =========================================== */
+html[data-theme="dark"] .sidebar,
+html[data-theme="dark"] .widget {
+  background: #1e293b;
+  border-color: #334155;
+}
+
+html[data-theme="dark"] .sidebar-header,
+html[data-theme="dark"] .widget-title {
+  color: #f1f5f9;
+}
+
+html[data-theme="dark"] .sidebar-item {
+  background: #0f172a;
+  border-color: #334155;
+}
+
+html[data-theme="dark"] .sidebar-item:hover {
+  background: #1e293b;
+  border-color: #60a5fa;
+}
+
+html[data-theme="dark"] .sidebar-item-title {
+  color: #f1f5f9;
+}
+
+html[data-theme="dark"] .sidebar-item-desc {
+  color: #94a3b8;
+}
+
+html[data-theme="dark"] .cat-item {
+  color: #cbd5e1;
+}
+
+html[data-theme="dark"] .cat-item:hover {
+  background: #0f172a;
+  color: #60a5fa;
+}
+
+html[data-theme="dark"] .cat-item-count {
+  color: #64748b;
+}
+
+html[data-theme="dark"] .pop-post {
+  border-color: #334155;
+}
+
+html[data-theme="dark"] .pop-title {
+  color: #f1f5f9;
+}
+
+html[data-theme="dark"] .pop-post:hover .pop-title {
+  color: #60a5fa;
+}
+
+html[data-theme="dark"] .pop-date {
+  color: #64748b;
+}
+
+/* ===========================================
+   14. BLOG
+   =========================================== */
+html[data-theme="dark"] .blog-card {
+  background: #1e293b;
+  border-color: #334155;
+}
+
+html[data-theme="dark"] .blog-body {
+  background: #1e293b;
+}
+
+html[data-theme="dark"] .blog-meta {
+  color: #64748b;
+}
+
+html[data-theme="dark"] .read-more {
+  color: #60a5fa;
+}
+
+html[data-theme="dark"] .category-dropdown,
+html[data-theme="dark"] .sort-dropdown {
+  background: #1e293b;
+  border-color: #334155;
+  color: #cbd5e1;
+}
+
+html[data-theme="dark"] .sort-dropdown select {
+  color: #f1f5f9;
+  background: #1e293b;
+}
+
+html[data-theme="dark"] .sort-dropdown select option {
+  background: #1e293b;
+  color: #f1f5f9;
+}
+
+/* ===========================================
+   15. PAGINATION
+   =========================================== */
+html[data-theme="dark"] .page-btn {
+  background: #1e293b;
+  border-color: #334155;
+  color: #cbd5e1;
+}
+
+html[data-theme="dark"] .page-btn:hover {
+  border-color: #60a5fa;
+  color: #60a5fa;
+}
+
+html[data-theme="dark"] .page-btn.active {
+  background: #3b82f6;
+  border-color: #3b82f6;
+  color: #ffffff;
+}
+
+/* ===========================================
+   16. BREADCRUMB
+   =========================================== */
+html[data-theme="dark"] .breadcrumb {
+  color: #64748b;
+}
+
+html[data-theme="dark"] .breadcrumb a {
+  color: #94a3b8;
+}
+
+html[data-theme="dark"] .breadcrumb a:hover {
+  color: #60a5fa;
+}
+
+html[data-theme="dark"] .breadcrumb .current {
+  color: #f1f5f9;
+}
+
+/* ===========================================
+   17. AD SPACES
+   =========================================== */
+html[data-theme="dark"] .ad-space,
+html[data-theme="dark"] .ad-container {
+  background: #1e293b;
+  border-color: #334155;
+}
+
+html[data-theme="dark"] ins.adsbygoogle {
+  background: #0f172a !important;
+}
+
+/* ===========================================
+   18. IMAGES
+   =========================================== */
+html[data-theme="dark"] img:not(.no-dim):not([class*="icon"]):not([class*="logo"]) {
+  filter: brightness(0.92);
+}
+
+html[data-theme="dark"] .logo img,
+html[data-theme="dark"] .footer-brand img,
+html[data-theme="dark"] .tool-icon,
+html[data-theme="dark"] .category-icon {
+  filter: none;
+}
+
+html[data-theme="dark"] .invert-in-dark {
+  filter: invert(1) hue-rotate(180deg);
+}
+
+/* ===========================================
+   19. SCROLLBAR
+   =========================================== */
+html[data-theme="dark"] {
+  scrollbar-color: #334155 #0f172a;
+}
+
+html[data-theme="dark"] ::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+html[data-theme="dark"] ::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+
+html[data-theme="dark"] ::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 5px;
+}
+
+html[data-theme="dark"] ::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+/* ===========================================
+   20. SELECTION
+   =========================================== */
+html[data-theme="dark"] ::selection {
+  background: rgba(96, 165, 250, 0.3);
+  color: #f1f5f9;
+}
+
+/* ===========================================
+   21. THEME TOGGLE ICON
+   =========================================== */
+.theme-btn .icon-sun {
+  display: none;
+}
+
+.theme-btn .icon-moon {
+  display: block;
+}
+
+html[data-theme="dark"] .theme-btn .icon-moon {
+  display: none;
+}
+
+html[data-theme="dark"] .theme-btn .icon-sun {
+  display: block;
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) .theme-btn .icon-moon {
+    display: none;
+  }
+  html:not([data-theme="light"]) .theme-btn .icon-sun {
+    display: block;
+  }
+}
+
+/* ===========================================
+   22. MODALS / DROPDOWNS
+   =========================================== */
+html[data-theme="dark"] .modal,
+html[data-theme="dark"] .dropdown-menu {
+  background: #1e293b;
+  border-color: #334155;
+  color: #f1f5f9;
+}
+
+html[data-theme="dark"] .modal-overlay {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+/* ===========================================
+   23. TABLES
+   =========================================== */
+html[data-theme="dark"] table {
+  background: #1e293b;
+  color: #f1f5f9;
+}
+
+html[data-theme="dark"] th {
+  background: #0f172a;
+  border-color: #334155;
+}
+
+html[data-theme="dark"] td {
+  border-color: #334155;
+}
+
+/* ===========================================
+   24. CODE BLOCKS
+   =========================================== */
+html[data-theme="dark"] code,
+html[data-theme="dark"] pre {
+  background: #020617;
+  color: #e2e8f0;
+  border-color: #334155;
+}
+
+html[data-theme="dark"] code {
+  background: rgba(51, 65, 85, 0.5);
+}
+
+/* ===========================================
+   25. FAQ ACCORDION
+   =========================================== */
+html[data-theme="dark"] .faq-item {
+  background: #1e293b;
+  border-color: #334155;
+}
+
+html[data-theme="dark"] .faq-item:hover {
+  border-color: #60a5fa;
+}
+
+html[data-theme="dark"] .faq-question {
+  color: #f1f5f9;
+}
+
+html[data-theme="dark"] .faq-answer p {
+  color: #94a3b8;
+}
+
+/* ===========================================
+   26. PRINT
+   =========================================== */
+@media print {
+  html[data-theme="dark"],
+  html[data-theme="dark"] body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+  html[data-theme="dark"] .header,
+  html[data-theme="dark"] .footer,
+  html[data-theme="dark"] .sidebar {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+}
+
+/* ===========================================
+   27. TRANSITIONS
+   =========================================== */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  html[data-theme="dark"] body,
+  html[data-theme="light"] body {
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+}
+
+/* ===========================================
+   28. ACCESSIBILITY
+   =========================================== */
+@media (prefers-contrast: more) {
+  html[data-theme="dark"] {
+    --color-text: #ffffff;
+    --color-text-muted: #f1f5f9;
+    --color-text-light: #cbd5e1;
+    --color-border: #475569;
+    --color-border-hover: #93c5fd;
+  }
+}
+
+@media (forced-colors: active) {
+  html[data-theme="dark"] .tool-card,
+  html[data-theme="dark"] .category-card {
+    border: 1px solid CanvasText;
+  }
+}
+
+/* ===========================================
+   END
+   =========================================== */

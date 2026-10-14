@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2563eb">
+
+<title>PDF Metadata Viewer - View PDF Info Online Free | BigToolz</title>
+<meta name="description" content="View PDF metadata online free. Read title, author, subject, keywords, creator, producer, dates and more. Export as JSON. No upload, works in your browser.">
+<meta name="keywords" content="pdf metadata viewer, view pdf metadata, pdf properties, pdf info, pdf author, pdf title viewer">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://bigtoolz.com/tools/pdf-tools/security-pdf/metadata-viewer/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="PDF Metadata Viewer - Free Online Tool | BigToolz">
+<meta property="og:description" content="Read PDF metadata instantly title, author, dates, and more.">
+<meta property="og:url" content="https://bigtoolz.com/tools/pdf-tools/security-pdf/metadata-viewer/">
+<meta property="og:image" content="https://bigtoolz.com/assets/images/og-image.jpg">
+<meta property="og:site_name" content="BigToolz">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="PDF Metadata Viewer - BigToolz">
+<meta name="twitter:description" content="View PDF metadata instantly free, no upload.">
+<meta name="twitter:image" content="https://bigtoolz.com/assets/images/twitter-card.jpg">
+
+<link rel="icon" href="/assets/images/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/images/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#f8f9fc;color:#1a1a2e;overflow-x:hidden;line-height:1.5}
+
+  .header{background:#fff;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;position:sticky;top:0;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+  .header-left{display:flex;align-items:center;gap:40px}
+  .logo{display:flex;align-items:center;gap:8px;font-size:22px;font-weight:800;color:#1a1a2e;text-decoration:none}
+  .logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#3b82f6,#2563eb);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px}
+  .logo span{color:#2563eb}
+  .nav{display:flex;align-items:center;gap:28px;list-style:none}
+  .nav a{text-decoration:none;color:#4b5563;font-size:14px;font-weight:500;transition:color .2s}
+  .nav a:hover,.nav a.active{color:#2563eb}
+  .header-right{display:flex;align-items:center;gap:16px}
+  .search-btn,.theme-btn{width:36px;height:36px;border-radius:50%;border:none;background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#4b5563}
+  .search-btn:hover,.theme-btn:hover{background:#f3f4f6}
+  .bookmark-btn{display:flex;align-items:center;gap:8px;background:#2563eb;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
+  .bookmark-btn:hover{background:#1d4ed8}
+
+  .hero{background:linear-gradient(135deg,#0a0e27 0%,#1a1a4e 40%,#2d1b69 70%,#4c1d95 100%);padding:40px 40px 60px;position:relative;overflow:hidden;color:#fff}
+  .hero::before{content:'';position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(6,182,212,.25) 0%,transparent 70%);border-radius:50%}
+  .hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+  .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px;flex-wrap:wrap}
+  .breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none}
+  .breadcrumb a:hover{color:#fff}
+  .breadcrumb .sep{color:rgba(255,255,255,.4)}
+  .breadcrumb .current{color:#fff;font-weight:500}
+  .hero-title-row{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+  .hero-icon{width:60px;height:60px;background:#06b6d4;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px;color:#fff;flex-shrink:0;box-shadow:0 8px 24px rgba(6,182,212,.4)}
+  .hero-title{font-size:42px;font-weight:800;line-height:1.15}
+  .hero-title .blue{color:#22d3ee}
+  .hero-desc{font-size:15px;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:24px;max-width:560px}
+  .hero-features{display:flex;gap:24px;flex-wrap:wrap}
+  .hero-feature{display:flex;align-items:center;gap:6px;font-size:13px;color:#fff;font-weight:500}
+  .hero-feature .check{width:18px;height:18px;border-radius:50%;background:#06b6d4;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;flex-shrink:0}
+
+  .main-content{max-width:1200px;margin:0 auto;padding:40px;display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start}
+  .tool-content{min-width:0}
+
+  .workspace{background:#fff;border-radius:16px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,.06);border:1px solid #e5e7eb;margin-bottom:24px}
+
+  .dropzone{border:2px dashed #a5f3fc;border-radius:12px;padding:50px 30px;text-align:center;background:#ecfeff;margin-bottom:24px;transition:all .2s;cursor:pointer}
+  .dropzone:hover,.dropzone.dragover{border-color:#06b6d4;background:#cffafe}
+  .dropzone-icon{width:60px;height:60px;background:linear-gradient(135deg,#06b6d4,#0891b2);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;color:#fff;font-size:26px;transition:transform .2s}
+  .dropzone:hover .dropzone-icon{transform:translateY(-4px)}
+  .dropzone-title{font-size:16px;font-weight:700;color:#1a1a2e;margin-bottom:8px}
+  .dropzone-sub{font-size:14px;color:#6b7280;margin-bottom:20px}
+  .dropzone-sub a{color:#06b6d4;font-weight:600;text-decoration:none}
+  .choose-btn{display:inline-flex;align-items:center;gap:8px;background:#06b6d4;color:#fff;border:none;padding:12px 28px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;transition:background .2s}
+  .choose-btn:hover{background:#0891b2}
+  .dropzone-info{font-size:12px;color:#9ca3af;display:flex;align-items:center;justify-content:center;gap:8px;margin-top:16px;flex-wrap:wrap}
+  .dropzone-info .divider{color:#d1d5db}
+  .file-input{display:none}
+
+  /* File info header */
+  .file-header{display:none;background:linear-gradient(135deg,#06b6d4,#0891b2);border-radius:12px;padding:20px;margin-bottom:20px;color:#fff;align-items:center;gap:16px;flex-wrap:wrap;box-shadow:0 8px 24px rgba(6,182,212,.2)}
+  .file-header.visible{display:flex}
+  .file-header-icon{width:56px;height:56px;background:rgba(255,255,255,.2);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0;backdrop-filter:blur(10px)}
+  .file-header-details{flex:1;min-width:0}
+  .file-header-name{font-size:16px;font-weight:800;margin-bottom:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .file-header-meta{font-size:12px;color:rgba(255,255,255,.85);display:flex;gap:14px;flex-wrap:wrap}
+  .file-header-meta span{display:inline-flex;align-items:center;gap:4px}
+
+  /* Metadata grid */
+  .metadata-grid{display:none;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:20px}
+  .metadata-grid.visible{display:grid}
+
+  .meta-card{background:#f8fafc;border:1px solid #cbd5e1;border-radius:12px;padding:16px;transition:all .2s;position:relative;overflow:hidden}
+  .meta-card:hover{border-color:#06b6d4;background:#ecfeff}
+  .meta-card.span-2{grid-column:span 2}
+
+  .meta-label{display:flex;align-items:center;gap:6px;font-size:11px;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}
+  .meta-label-icon{font-size:14px}
+
+  .meta-value{font-size:14px;font-weight:600;color:#1a1a2e;word-break:break-word;line-height:1.5}
+  .meta-value.empty{color:#9ca3af;font-style:italic;font-weight:500}
+
+  .meta-copy-btn{position:absolute;top:12px;right:12px;width:28px;height:28px;border-radius:6px;border:1px solid #e5e7eb;background:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#94a3b8;transition:all .2s;opacity:0}
+  .meta-card:hover .meta-copy-btn{opacity:1}
+  .meta-copy-btn:hover{border-color:#06b6d4;color:#06b6d4;background:#ecfeff}
+  .meta-copy-btn.copied{background:#10b981;border-color:#10b981;color:#fff;opacity:1}
+
+  /* Advanced section */
+  .advanced-section{display:none;background:#f8fafc;border-radius:12px;padding:20px;margin-bottom:20px;border:1px solid #cbd5e1}
+  .advanced-section.visible{display:block}
+  .advanced-title{font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:14px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
+  .advanced-badge{font-size:11px;font-weight:600;color:#0891b2;background:#ecfeff;padding:3px 10px;border-radius:10px}
+  .advanced-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .adv-item{background:#fff;border:1px solid #e5e7eb;border-radius:8px;padding:10px 14px;display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:13px}
+  .adv-key{color:#64748b;font-weight:600;font-family:'JetBrains Mono',monospace;font-size:11px;word-break:break-all}
+  .adv-val{color:#1a1a2e;font-weight:700;font-family:'JetBrains Mono',monospace;font-size:11px;text-align:right;word-break:break-all}
+
+  /* Actions */
+  .actions{display:flex;gap:12px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 28px;border-radius:10px;font-size:15px;font-weight:700;font-family:inherit;cursor:pointer;border:none;transition:all .2s;text-decoration:none}
+  .btn-primary{background:#06b6d4;color:#fff;flex:1;box-shadow:0 4px 12px rgba(6,182,212,.2)}
+  .btn-primary:hover:not(:disabled){background:#0891b2;transform:translateY(-2px);box-shadow:0 6px 20px rgba(6,182,212,.3)}
+  .btn-primary:disabled{opacity:.5;cursor:not-allowed;transform:none}
+  .btn-secondary{background:#fff;color:#06b6d4;border:1px solid #e5e7eb}
+  .btn-secondary:hover{border-color:#06b6d4;background:#ecfeff}
+  .btn-success{background:#10b981;color:#fff}
+  .btn-success:hover{background:#059669}
+
+  .seo-content{background:#fff;border-radius:16px;padding:32px;border:1px solid #e5e7eb;margin-bottom:24px}
+  .seo-content h2{font-size:22px;font-weight:800;color:#1a1a2e;margin-bottom:14px;margin-top:28px;display:flex;align-items:center;gap:10px}
+  .seo-content h2:first-child{margin-top:0}
+  .seo-content h3{font-size:16px;font-weight:700;color:#1a1a2e;margin:20px 0 10px}
+  .seo-content p{font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:14px}
+  .seo-content ul{list-style:none;padding-left:0;margin-bottom:16px}
+  .seo-content ul li{position:relative;padding-left:24px;font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:8px}
+  .seo-content ul li::before{content:'';position:absolute;left:6px;top:12px;width:6px;height:6px;background:#06b6d4;border-radius:50%}
+  .seo-content a{color:#2563eb;text-decoration:none;font-weight:600}
+  .seo-content a:hover{text-decoration:underline}
+  .seo-content strong{color:#1a1a2e;font-weight:700}
+  .seo-content code{background:#f1f5f9;padding:2px 6px;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:13px;color:#0f172a;border:1px solid #e2e8f0}
+
+  .meta-table{width:100%;border-collapse:collapse;margin:20px 0;border:1px solid #e5e7eb;border-radius:8px;overflow:hidden}
+  .meta-table th{background:#ecfeff;padding:12px 16px;text-align:left;font-size:13px;font-weight:700;color:#1a1a2e;border-bottom:1px solid #e5e7eb}
+  .meta-table td{padding:12px 16px;font-size:13px;color:#4b5563;border-bottom:1px solid #f3f4f6}
+  .meta-table td:first-child{font-family:'JetBrains Mono',monospace;color:#0891b2;font-weight:600;font-size:12px}
+  .meta-table tr:last-child td{border-bottom:none}
+
+  .how-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:20px}
+  .how-step{background:#ecfeff;border-radius:12px;padding:20px;border:1px solid #a5f3fc}
+  .how-step-num{width:36px;height:36px;border-radius:50%;background:#06b6d4;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;margin-bottom:12px}
+  .how-step-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+  .how-step-desc{font-size:13px;color:#6b7280;line-height:1.6}
+
+  .faq-item{background:#ecfeff;border:1px solid #a5f3fc;border-radius:12px;margin-bottom:10px;overflow:hidden;transition:border-color .2s}
+  .faq-item:hover{border-color:#06b6d4}
+  .faq-question{width:100%;background:none;border:none;padding:18px 22px;font-size:15px;font-weight:700;color:#1a1a2e;text-align:left;cursor:pointer;font-family:inherit;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .faq-question .chev{font-size:12px;color:#06b6d4;transition:transform .2s;flex-shrink:0}
+  .faq-item.open .faq-question .chev{transform:rotate(180deg)}
+  .faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 22px}
+  .faq-item.open .faq-answer{max-height:500px;padding-bottom:18px}
+  .faq-answer p{font-size:14px;color:#6b7280;line-height:1.7;margin:0}
+
+  .sidebar{background:#fff;border-radius:16px;padding:24px;border:1px solid #e5e7eb;position:sticky;top:80px;margin-bottom:24px}
+  .sidebar-header{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:800;color:#1a1a2e;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid #f3f4f6}
+  .sidebar-list{display:flex;flex-direction:column;gap:8px}
+  .sidebar-item{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;cursor:pointer;transition:background .2s;text-decoration:none;color:inherit;border:1px solid #f3f4f6}
+  .sidebar-item:hover{background:#ecfeff;border-color:#a5f3fc}
+  .sidebar-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;flex-shrink:0}
+  .sidebar-info{flex:1;min-width:0}
+  .sidebar-title{font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:2px}
+  .sidebar-desc{font-size:11px;color:#9ca3af;line-height:1.4}
+
+  .footer{background:#0a0e27;padding:60px 40px 30px;color:#fff;margin-top:40px}
+  .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:40px}
+  .footer-brand{display:flex;align-items:center;gap:8px;font-size:20px;font-weight:800;margin-bottom:12px}
+  .footer-brand span{color:#60a5fa}
+  .footer-tagline{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px}
+  .footer-social{display:flex;gap:12px}
+  .footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:16px;transition:background .2s}
+  .footer-social a:hover{background:rgba(255,255,255,.2)}
+  .footer-heading{font-size:14px;font-weight:700;margin-bottom:20px;color:#fff}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .footer-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;transition:color .2s}
+  .footer-links a:hover{color:#60a5fa}
+  .footer-bottom{max-width:1200px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  .footer-bottom-left{display:flex;gap:20px;font-size:12px;color:rgba(255,255,255,.5)}
+  .footer-bottom-right,.footer-bottom-links a{font-size:12px;color:rgba(255,255,255,.5);text-decoration:none}
+  .footer-bottom-links{display:flex;gap:20px}
+
+  .toast{position:fixed;bottom:24px;right:24px;background:#1a1a2e;color:#fff;padding:14px 20px;border-radius:10px;font-size:13px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:3000;transform:translateY(200%);transition:transform .3s ease;max-width:320px}
+  .toast.visible{transform:translateY(0)}
+  .toast.success{background:#10b981}
+  .toast.error{background:#ef4444}
+  .toast.info{background:#3b82f6}
+
+  @media(max-width:1024px){
+    .main-content{grid-template-columns:1fr;padding:24px 20px}
+    .sidebar{position:static}
+    .how-steps{grid-template-columns:repeat(2,1fr)}
+  }
+  @media(max-width:768px){
+    .header{padding:0 20px}.nav{display:none}
+    .hero{padding:24px 20px 40px}
+    .hero-title{font-size:28px}
+    .hero-icon{width:48px;height:48px;font-size:20px}
+    .hero-title-row{flex-direction:column;align-items:flex-start;gap:12px}
+    .main-content{padding:20px 16px}
+    .workspace{padding:20px}
+    .dropzone{padding:32px 16px}
+    .how-steps{grid-template-columns:1fr}
+    .seo-content{padding:20px}
+    .footer-inner{grid-template-columns:1fr 1fr}
+    .metadata-grid{grid-template-columns:1fr}
+    .meta-card.span-2{grid-column:span 1}
+    .advanced-grid{grid-template-columns:1fr}
+    .toast{left:16px;right:16px;bottom:16px;max-width:none}
+  }
+  @media(max-width:576px){
+    .header{padding:0 16px}.header-right .search-btn,.header-right .theme-btn{display:none}
+    .hero-title{font-size:24px}
+    .actions{flex-direction:column}
+    .btn{width:100%}
+    .btn-primary{flex:none}
+    .footer-inner{grid-template-columns:1fr}
+    .footer-bottom{flex-direction:column;text-align:center}
+  }
+
+  html[data-theme="dark"] body{background:#0f172a;color:#f1f5f9}
+  html[data-theme="dark"] .header,html[data-theme="dark"] .workspace,html[data-theme="dark"] .seo-content,html[data-theme="dark"] .sidebar{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .logo,html[data-theme="dark"] .hero-title,html[data-theme="dark"] .seo-content h2,html[data-theme="dark"] .seo-content h3,html[data-theme="dark"] .faq-question,html[data-theme="dark"] .sidebar-header,html[data-theme="dark"] .sidebar-title,html[data-theme="dark"] .file-header-name,html[data-theme="dark"] .meta-value{color:#f1f5f9}
+  html[data-theme="dark"] .nav a{color:#cbd5e1}
+  html[data-theme="dark"] .dropzone{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .how-step,html[data-theme="dark"] .faq-item,html[data-theme="dark"] .meta-card,html[data-theme="dark"] .advanced-section,html[data-theme="dark"] .adv-item{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .meta-card:hover{background:#164e63}
+  html[data-theme="dark"] .meta-copy-btn{background:#0f172a;border-color:#334155;color:#94a3b8}
+  html[data-theme="dark"] .seo-content p,html[data-theme="dark"] .seo-content ul li,html[data-theme="dark"] .faq-answer p,html[data-theme="dark"] .file-header-meta,html[data-theme="dark"] .adv-key{color:#cbd5e1}
+  html[data-theme="dark"] .seo-content code{background:#020617;color:#94a3b8;border-color:#334155}
+  html[data-theme="dark"] .meta-table{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .meta-table th{background:#0f172a;color:#f1f5f9;border-color:#334155}
+  html[data-theme="dark"] .meta-table td{border-color:#334155;color:#cbd5e1}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type": "SoftwareApplication", "name": "PDF Metadata Viewer", "url": "https://bigtoolz.com/tools/pdf-tools/security-pdf/metadata-viewer/", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any (Web-based)", "description": "Free online tool to view PDF metadata title, author, subject, keywords, creator, producer, dates. Works in your browser.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.8", "ratingCount": "456"}},
+    {"@type": "HowTo", "name": "How to View PDF Metadata", "step": [
+      {"@type": "HowToStep", "name": "Upload PDF", "text": "Drag & drop or click to select a PDF file."},
+      {"@type": "HowToStep", "name": "View Metadata", "text": "See title, author, subject, keywords and other properties instantly."},
+      {"@type": "HowToStep", "name": "Copy or Export", "text": "Copy individual fields or export all metadata as JSON."}
+    ]},
+    {"@type": "FAQPage", "mainEntity": [
+      {"@type": "Question", "name": "What is PDF metadata?", "acceptedAnswer": {"@type": "Answer", "text": "PDF metadata is descriptive information stored inside a PDF file title, author, subject, keywords, creator software, dates, and more. It doesn't appear on printed pages but stays inside the file."}},
+      {"@type": "Question", "name": "How do I view PDF metadata?", "acceptedAnswer": {"@type": "Answer", "text": "Upload your PDF to our tool. Metadata is read instantly and displayed as cards. Copy any field or export all as JSON."}},
+      {"@type": "Question", "name": "What metadata can I view?", "acceptedAnswer": {"@type": "Answer", "text": "Standard fields: Title, Author, Subject, Keywords, Creator, Producer, Creation Date, Mod Date. Plus file info: page count, PDF version, file size."}},
+      {"@type": "Question", "name": "Is PDF metadata private?", "acceptedAnswer": {"@type": "Answer", "text": "Metadata can reveal sensitive info author name, original software, organization name, original file path. Review metadata before sharing documents publicly."}},
+      {"@type": "Question", "name": "Are my PDFs uploaded to a server?", "acceptedAnswer": {"@type": "Answer", "text": "No. All reading happens in your browser using pdf-lib. Your PDF never leaves your device."}}
+    ]},
+    {"@type": "BreadcrumbList", "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bigtoolz.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://bigtoolz.com/tools/"},
+      {"@type": "ListItem", "position": 3, "name": "PDF Tools", "item": "https://bigtoolz.com/tools/pdf-tools/"},
+      {"@type": "ListItem", "position": 4, "name": "Security PDF", "item": "https://bigtoolz.com/tools/pdf-tools/security-pdf/"},
+      {"@type": "ListItem", "position": 5, "name": "Metadata Viewer", "item": "https://bigtoolz.com/tools/pdf-tools/security-pdf/metadata-viewer/"}
+    ]}
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-left">
+    <a href="/" class="logo"><div class="logo-icon">⚒</div>BigToolz</span></a>
+    <nav><ul class="nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/tools/" class="active">All Tools</a></li>
+      <li><a href="/tools/categories">Categories</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul></nav>
+  </div>
+  <div class="header-right">
+   
+    <button class="theme-btn" aria-label="Toggle theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
+    
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <nav class="breadcrumb">
+      <a href="/">Home</a><span class="sep">›</span>
+      <a href="/tools/">Tools</a><span class="sep">›</span>
+      <a href="/tools/pdf-tools/">PDF Tools</a><span class="sep">›</span>
+      <a href="/tools/pdf-tools/security-pdf/">Security PDF</a><span class="sep">›</span>
+      <span class="current">Metadata Viewer</span>
+    </nav>
+    <div class="hero-title-row">
+      <div class="hero-icon">ℹ️</div>
+      <h1 class="hero-title">PDF <span class="blue">Metadata Viewer</span></h1>
+    </div>
+    <p class="hero-desc">
+      Read every piece of hidden metadata inside your PDF title, author, subject, keywords, creator, dates, and more. Copy fields or export as JSON. No upload, 100% private.
+    </p>
+    <div class="hero-features">
+      <div class="hero-feature"><span class="check">✓</span> Full Metadata</div>
+      <div class="hero-feature"><span class="check">✓</span> Copy & Export</div>
+      <div class="hero-feature"><span class="check">✓</span> JSON Output</div>
+      <div class="hero-feature"><span class="check">✓</span> No Upload</div>
+    </div>
+  </div>
+</section>
+
+<div class="main-content">
+
+  <div class="tool-content">
+
+    <div class="workspace">
+
+      <div class="dropzone" id="dropzone">
+        <div class="dropzone-icon">⬆</div>
+        <div class="dropzone-title">Drag & drop your PDF here</div>
+        <div class="dropzone-sub">or <a href="#" id="browseLink">click to browse files</a></div>
+        <button class="choose-btn" id="chooseBtn" type="button">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/></svg>
+          Choose PDF File
+        </button>
+        <div class="dropzone-info">
+          <span>PDF files only</span>
+          <span class="divider">|</span>
+          <span>Single file at a time</span>
+        </div>
+        <input type="file" id="fileInput" class="file-input" accept=".pdf,application/pdf">
+      </div>
+
+      <!-- File header -->
+      <div class="file-header" id="fileHeader">
+        <div class="file-header-icon">📕</div>
+        <div class="file-header-details">
+          <div class="file-header-name" id="fileName">document.pdf</div>
+          <div class="file-header-meta">
+            <span id="fileSize"> KB</span>
+            <span id="filePages"> pages</span>
+            <span id="fileVersion">PDF </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Metadata grid -->
+      <div class="metadata-grid" id="metadataGrid">
+        <div class="meta-card">
+          <button class="meta-copy-btn" data-copy-field="title" title="Copy">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+          </button>
+          <div class="meta-label"><span class="meta-label-icon">📝</span> Title</div>
+          <div class="meta-value empty" id="metaTitle">Not set</div>
+        </div>
+
+        <div class="meta-card">
+          <button class="meta-copy-btn" data-copy-field="author" title="Copy">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+          </button>
+          <div class="meta-label"><span class="meta-label-icon">👤</span> Author</div>
+          <div class="meta-value empty" id="metaAuthor">Not set</div>
+        </div>
+
+        <div class="meta-card span-2">
+          <button class="meta-copy-btn" data-copy-field="subject" title="Copy">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+          </button>
+          <div class="meta-label"><span class="meta-label-icon">📖</span> Subject</div>
+          <div class="meta-value empty" id="metaSubject">Not set</div>
+        </div>
+
+        <div class="meta-card span-2">
+          <button class="meta-copy-btn" data-copy-field="keywords" title="Copy">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+          </button>
+          <div class="meta-label"><span class="meta-label-icon">🔑</span> Keywords</div>
+          <div class="meta-value empty" id="metaKeywords">Not set</div>
+        </div>
+
+        <div class="meta-card">
+          <button class="meta-copy-btn" data-copy-field="creator" title="Copy">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+          </button>
+          <div class="meta-label"><span class="meta-label-icon">✏️</span> Creator</div>
+          <div class="meta-value empty" id="metaCreator">Not set</div>
+        </div>
+
+        <div class="meta-card">
+          <button class="meta-copy-btn" data-copy-field="producer" title="Copy">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+          </button>
+          <div class="meta-label"><span class="meta-label-icon">⚙️</span> Producer</div>
+          <div class="meta-value empty" id="metaProducer">Not set</div>
+        </div>
+
+        <div class="meta-card">
+          <button class="meta-copy-btn" data-copy-field="creationDate" title="Copy">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+          </button>
+          <div class="meta-label"><span class="meta-label-icon">📅</span> Creation Date</div>
+          <div class="meta-value empty" id="metaCreationDate">Not set</div>
+        </div>
+
+        <div class="meta-card">
+          <button class="meta-copy-btn" data-copy-field="modDate" title="Copy">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+          </button>
+          <div class="meta-label"><span class="meta-label-icon">🕐</span> Modified Date</div>
+          <div class="meta-value empty" id="metaModDate">Not set</div>
+        </div>
+      </div>
+
+      <!-- Advanced section (all raw metadata) -->
+      <div class="advanced-section" id="advancedSection">
+        <div class="advanced-title">
+          <span>🔧 All Metadata Fields</span>
+          <span class="advanced-badge" id="fieldCount">0 fields</span>
+        </div>
+        <div class="advanced-grid" id="advancedGrid"></div>
+      </div>
+
+      <div class="actions">
+        <button class="btn btn-primary" id="exportBtn" disabled>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+          Export as JSON
+        </button>
+        <button class="btn btn-secondary" id="copyAllBtn" disabled>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+          Copy All
+        </button>
+        <button class="btn btn-secondary" id="clearBtn">Clear</button>
+      </div>
+
+    </div>
+
+    <div class="seo-content">
+
+      <h2>ℹ️ What is PDF Metadata?</h2>
+      <p>
+        <strong>PDF metadata</strong> is descriptive information stored inside every PDF file. Unlike the visible content, metadata lives in the file's <strong>Document Information Dictionary</strong> and doesn't show up when printed. It typically includes:
+      </p>
+      <ul>
+        <li><strong>Title</strong> the name of the document.</li>
+        <li><strong>Author</strong> who created it.</li>
+        <li><strong>Subject</strong> a brief description.</li>
+        <li><strong>Keywords</strong> search terms.</li>
+        <li><strong>Creator</strong> the software used to create it (e.g. Word, LibreOffice).</li>
+        <li><strong>Producer</strong> the software that generated the PDF (e.g. Adobe, Ghostscript).</li>
+        <li><strong>Creation Date</strong> and <strong>Modification Date</strong>.</li>
+      </ul>
+      <p>
+        Metadata is used by search engines, PDF viewers, digital libraries, and file organizers. It's also a <strong>privacy concern</strong> authors often don't realize how much personal info leaks into PDF metadata.
+      </p>
+
+      <h2>🚀 How to View PDF Metadata</h2>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-step-num">1</div>
+          <div class="how-step-title">Upload PDF</div>
+          <div class="how-step-desc">Drag & drop or click "Choose PDF File" to select a PDF.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">2</div>
+          <div class="how-step-title">View Metadata</div>
+          <div class="how-step-desc">Title, author, subject and more appear instantly.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">3</div>
+          <div class="how-step-title">Copy or Export</div>
+          <div class="how-step-desc">Copy individual fields or export all as JSON.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">4</div>
+          <div class="how-step-title">Review Privacy</div>
+          <div class="how-step-desc">Check for sensitive info before sharing the PDF.</div>
+        </div>
+      </div>
+
+      <h2>📋 Standard Metadata Fields</h2>
+      <table class="meta-table">
+        <thead>
+          <tr><th>Field</th><th>Purpose</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>/Title</td><td>Document title shown in PDF reader's tab and title bar</td></tr>
+          <tr><td>/Author</td><td>Person or organization that created the document</td></tr>
+          <tr><td>/Subject</td><td>Brief description of the document's purpose</td></tr>
+          <tr><td>/Keywords</td><td>Search tags used by search engines and file search</td></tr>
+          <tr><td>/Creator</td><td>Application that created the source (e.g. Microsoft Word)</td></tr>
+          <tr><td>/Producer</td><td>Application that generated the PDF (e.g. Adobe Acrobat)</td></tr>
+          <tr><td>/CreationDate</td><td>When the PDF was originally created</td></tr>
+          <tr><td>/ModDate</td><td>When the PDF was last modified</td></tr>
+        </tbody>
+      </table>
+
+      <h2>🔒 Privacy & Security Concerns</h2>
+      <p>PDF metadata often contains <strong>more information than you'd expect</strong>. Before sharing a PDF publicly or posting it online, check for these common leaks:</p>
+      <ul>
+        <li><strong>Full name of the author</strong> often your real name or company email.</li>
+        <li><strong>Organization name</strong> visible in the Creator field if you used a licensed Word/Office.</li>
+        <li><strong>Original file path</strong> the local path where the file was saved (sometimes includes your username).</li>
+        <li><strong>Software versions</strong> reveal your OS and editing tools.</li>
+        <li><strong>Comments or tracked changes</strong> some PDFs retain reviewer info.</li>
+        <li><strong>GPS coordinates</strong> for photos embedded in PDFs.</li>
+      </ul>
+      <p><strong>Tip:</strong> If your PDF contains sensitive metadata, use our <a href="/tools/pdf-tools/security-pdf/metadata-remover/">Metadata Remover</a> tool to strip it clean before sharing.</p>
+
+      <h2>💡 Common Use Cases</h2>
+      <ul>
+        <li><strong>Before sharing publicly</strong> verify what metadata is embedded.</li>
+        <li><strong>Digital forensics</strong> examine documents for authorship clues.</li>
+        <li><strong>Content management</strong> verify correct titles and authors on digital archives.</li>
+        <li><strong>Search engine optimization</strong> ensure title and keywords are set correctly.</li>
+        <li><strong>Academic research</strong> track PDF generation tools across corpora.</li>
+        <li><strong>Legal review</strong> check for hidden metadata before filing.</li>
+      </ul>
+
+      <h2>✨ Key Features</h2>
+      <ul>
+        <li><strong>100% browser-based</strong> no uploads, complete privacy.</li>
+        <li><strong>Full metadata display</strong> 8 standard fields plus raw values.</li>
+        <li><strong>Copy individual fields</strong> one-click copy per field.</li>
+        <li><strong>Copy all</strong> copy entire metadata as formatted text.</li>
+        <li><strong>Export as JSON</strong> perfect for automation and records.</li>
+        <li><strong>File info</strong> size, page count, PDF version.</li>
+        <li><strong>Advanced view</strong> see all raw metadata keys.</li>
+        <li><strong>Instant results</strong> no waiting, no loading spinners.</li>
+      </ul>
+
+      <h2>❓ Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-question">What is PDF metadata?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>PDF metadata is descriptive information stored inside a PDF file title, author, subject, keywords, creator software, dates, and more. It doesn't appear on printed pages but stays inside the file and can be read by PDF readers and search engines.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">How do I view PDF metadata?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Upload your PDF to our tool. Metadata is read instantly and displayed as cards. Copy any field with a single click, or export the entire metadata as JSON.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What metadata can I view?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Standard PDF fields: <strong>Title, Author, Subject, Keywords, Creator, Producer, Creation Date, Mod Date</strong>. Plus file info: page count, PDF version, and file size. Advanced view shows every raw metadata key.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Is PDF metadata private?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Metadata can reveal <strong>sensitive info</strong> author's real name, original software (which might identify your company), original file path (sometimes contains your username), and more. Always review metadata before sharing documents publicly.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I edit or remove metadata?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Yes! Check our <a href="/tools/pdf-tools/security-pdf/metadata-remover/">Metadata Remover</a> tool to strip all metadata clean, or <a href="/tools/pdf-tools/security-pdf/metadata-editor/">Metadata Editor</a> to change specific fields like title and author.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What does "Producer" reveal?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>The <strong>Producer</strong> field shows which software generated the final PDF like "Adobe Acrobat", "Microsoft Print to PDF", "Skia/PDF", or "Chrome". It can reveal what tools or workflows were used to create the file.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Are my PDFs uploaded to a server?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>No. All reading happens in your browser using pdf-lib. Your PDF never leaves your device, and nothing is stored anywhere.</p></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-header">🔗 Related PDF Tools</div>
+    <div class="sidebar-list">
+      <a href="/tools/pdf-tools/security-pdf/metadata-remover/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#ef4444;">🗑</div>
+        <div class="sidebar-info"><div class="sidebar-title">Metadata Remover</div><div class="sidebar-desc">Strip metadata clean</div></div>
+      </a>
+      <a href="/tools/pdf-tools/security-pdf/metadata-editor/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#3b82f6;">✏️</div>
+        <div class="sidebar-info"><div class="sidebar-title">Metadata Editor</div><div class="sidebar-desc">Edit PDF metadata</div></div>
+      </a>
+      <a href="/tools/pdf-tools/security-pdf/protect-pdf/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#10b981;">🔒</div>
+        <div class="sidebar-info"><div class="sidebar-title">Protect PDF</div><div class="sidebar-desc">Add password</div></div>
+      </a>
+      <a href="/tools/pdf-tools/security-pdf/unlock-pdf/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#3b82f6;">🔓</div>
+        <div class="sidebar-info"><div class="sidebar-title">Unlock PDF</div><div class="sidebar-desc">Remove password</div></div>
+      </a>
+      <a href="/tools/pdf-tools/security-pdf/text-extractor/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#8b5cf6;">📝</div>
+        <div class="sidebar-info"><div class="sidebar-title">Text Extractor</div><div class="sidebar-desc">Extract PDF text</div></div>
+      </a>
+      <a href="/tools/pdf-tools/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#64748b;">📕</div>
+        <div class="sidebar-info"><div class="sidebar-title">All PDF Tools →</div><div class="sidebar-desc">Browse 100+ tools</div></div>
+      </a>
+    </div>
+  </aside>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand"><div class="logo-icon">⚒</div>BigToolz</span></div>
+      <p class="footer-tagline">Your Ultimate Online Tools Hub</p>
+      <div class="footer-social">
+        <a href="https://facebook.com/bigtoolz" aria-label="Facebook">f</a>
+        <a href="https://twitter.com/bigtoolz" aria-label="Twitter">𝕏</a>
+        <a href="https://youtube.com/@bigtoolz" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+    <div>
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/tools/">All Tools</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Categories</h3>
+      <ul class="footer-links">
+        <li><a href="/tools/image-tools/">Image Tools</a></li>
+        <li><a href="/tools/pdf-tools/">PDF Tools</a></li>
+        <li><a href="/tools/text-tools/">Text Tools</a></li>
+        <li><a href="/tools/seo-tools/">SEO Tools</a></li>
+        <li><a href="/tools/categories">All Categories →</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Legal</h3>
+      <ul class="footer-links">
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left"><span>✓ 100% Free</span><span>✓ No Sign Up</span><span>✓ No Installation</span></div>
+    <div class="footer-bottom-right">© 2026 BigToolz. All rights reserved.</div>
+    <div class="footer-bottom-links"><a href="/privacy-policy">Privacy</a><a href="/terms">Terms</a><a href="/disclaimer">Disclaimer</a></div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<!-- pdf-lib library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+
+<script>
+'use strict';
+
+/* ===== THEME ===== */
+(function(){try{var t=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&d))document.documentElement.setAttribute('data-theme','dark');else if(t==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();
+document.querySelector('.theme-btn')?.addEventListener('click',()=>{const h=document.documentElement;const c=h.getAttribute('data-theme');const d=window.matchMedia('(prefers-color-scheme: dark)').matches;let n=c==='dark'?'light':c==='light'?'dark':(d?'light':'dark');h.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}});
+
+/* ===== HELPERS ===== */
+const $ = (s, p = document) => p.querySelector(s);
+const $$ = (s, p = document) => [...p.querySelectorAll(s)];
+
+function formatBytes(b) {
+  if (b === 0) return '0 B';
+  const k = 1024, sizes = ['B', 'KB', 'MB', 'GB'];
+  const i = Math.floor(Math.log(b) / Math.log(k));
+  return (b / Math.pow(k, i)).toFixed(i === 0 ? 0 : 1) + ' ' + sizes[i];
+}
+
+function showToast(msg, type = 'info', duration = 3000) {
+  const t = $('#toast');
+  if (!t) return;
+  t.className = 'toast visible' + (type !== 'info' ? ' ' + type : '');
+  t.textContent = msg;
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove('visible'), duration);
+}
+
+async function copyToClipboard(text) {
+  try {
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(text);
+      return true;
+    }
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.cssText = 'position:fixed;opacity:0;';
+    document.body.appendChild(ta);
+    ta.select();
+    const ok = document.execCommand('copy');
+    document.body.removeChild(ta);
+    return ok;
+  } catch (e) { return false; }
+}
+
+function formatPdfDate(dateStr) {
+  if (!dateStr) return null;
+  // Format: D:YYYYMMDDHHmmSS...
+  try {
+    const s = String(dateStr).replace(/^D:/, '');
+    if (s.length < 14) return dateStr;
+    const y = s.substr(0, 4);
+    const mo = s.substr(4, 2);
+    const d = s.substr(6, 2);
+    const h = s.substr(8, 2);
+    const mi = s.substr(10, 2);
+    const se = s.substr(12, 2);
+    const date = new Date(`${y}-${mo}-${d}T${h}:${mi}:${se}`);
+    if (isNaN(date)) return dateStr;
+    return date.toLocaleString();
+  } catch (e) {
+    return dateStr;
+  }
+}
+
+/* ===== STATE ===== */
+const state = {
+  pdfFile: null,
+  pdfName: '',
+  pdfSize: 0,
+  metadata: {}, // { title, author, subject, keywords, creator, producer, creationDate, modDate, allFields }
+  isProcessing: false
+};
+
+/* ===== DOM ===== */
+const dropzone = $('#dropzone');
+const fileInput = $('#fileInput');
+const chooseBtn = $('#chooseBtn');
+const browseLink = $('#browseLink');
+const fileHeader = $('#fileHeader');
+const fileName = $('#fileName');
+const fileSize = $('#fileSize');
+const filePages = $('#filePages');
+const fileVersion = $('#fileVersion');
+const metadataGrid = $('#metadataGrid');
+const metaTitle = $('#metaTitle');
+const metaAuthor = $('#metaAuthor');
+const metaSubject = $('#metaSubject');
+const metaKeywords = $('#metaKeywords');
+const metaCreator = $('#metaCreator');
+const metaProducer = $('#metaProducer');
+const metaCreationDate = $('#metaCreationDate');
+const metaModDate = $('#metaModDate');
+const advancedSection = $('#advancedSection');
+const advancedGrid = $('#advancedGrid');
+const fieldCount = $('#fieldCount');
+const exportBtn = $('#exportBtn');
+const copyAllBtn = $('#copyAllBtn');
+const clearBtn = $('#clearBtn');
+
+/* ===== FILE SELECTION ===== */
+function triggerFileSelect() { fileInput.click(); }
+chooseBtn.addEventListener('click', (e) => { e.stopPropagation(); triggerFileSelect(); });
+browseLink.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); triggerFileSelect(); });
+dropzone.addEventListener('click', triggerFileSelect);
+
+fileInput.addEventListener('change', (e) => {
+  const f = e.target.files[0];
+  if (f && (f.type === 'application/pdf' || f.name.toLowerCase().endsWith('.pdf'))) loadPDF(f);
+  fileInput.value = '';
+});
+
+['dragenter', 'dragover'].forEach(evt => {
+  dropzone.addEventListener(evt, (e) => { e.preventDefault(); e.stopPropagation(); dropzone.classList.add('dragover'); });
+});
+['dragleave', 'drop'].forEach(evt => {
+  dropzone.addEventListener(evt, (e) => { e.preventDefault(); e.stopPropagation(); dropzone.classList.remove('dragover'); });
+});
+dropzone.addEventListener('drop', (e) => {
+  const f = e.dataTransfer.files[0];
+  if (f && (f.type === 'application/pdf' || f.name.toLowerCase().endsWith('.pdf'))) loadPDF(f);
+  else showToast('Please drop a PDF file', 'error');
+});
+
+/* ===== LOAD PDF ===== */
+async function loadPDF(file) {
+  if (!window.PDFLib) {
+    showToast('PDF library not loaded. Check your internet.', 'error');
+    return;
+  }
+
+  state.pdfFile = file;
+  state.pdfName = file.name;
+  state.pdfSize = file.size;
+
+  showToast('Reading metadata...', 'info', 1500);
+
+  try {
+    const arrayBuffer = await file.arrayBuffer();
+    const srcDoc = await PDFDocument.load(arrayBuffer, { updateMetadata: false });
+
+    // Extract metadata
+    const md = {
+      title: srcDoc.getTitle() || null,
+      author: srcDoc.getAuthor() || null,
+      subject: srcDoc.getSubject() || null,
+      keywords: srcDoc.getKeywords() || null,
+      creator: srcDoc.getCreator() || null,
+      producer: srcDoc.getProducer() || null,
+      creationDate: srcDoc.getCreationDate() || null,
+      modDate: srcDoc.getModificationDate() || null,
+      pageCount: srcDoc.getPageCount()
+    };
+
+    state.metadata = md;
+
+    // Update file header
+    fileName.textContent = file.name;
+    fileSize.textContent = formatBytes(file.size);
+    filePages.textContent = `${md.pageCount} page${md.pageCount > 1 ? 's' : ''}`;
+
+    // Try to detect PDF version from raw header
+    let pdfVersion = 'PDF';
+    try {
+      const headerBytes = new Uint8Array(arrayBuffer.slice(0, 8));
+      const headerStr = String.fromCharCode.apply(null, headerBytes);
+      const match = headerStr.match(/PDF-(\d+\.\d+)/);
+      if (match) pdfVersion = `PDF ${match[1]}`;
+    } catch (e) {}
+    fileVersion.textContent = pdfVersion;
+
+    fileHeader.classList.add('visible');
+
+    // Update metadata cards
+    setField(metaTitle, md.title);
+    setField(metaAuthor, md.author);
+    setField(metaSubject, md.subject);
+    setField(metaKeywords, md.keywords);
+    setField(metaCreator, md.creator);
+    setField(metaProducer, md.producer);
+    setField(metaCreationDate, formatPdfDate(md.creationDate));
+    setField(metaModDate, formatPdfDate(md.modDate));
+
+    metadataGrid.classList.add('visible');
+
+    // Build advanced view (all fields including empty ones)
+    buildAdvancedView(md);
+
+    // Enable buttons
+    exportBtn.disabled = false;
+    copyAllBtn.disabled = false;
+
+    showToast(`✅ Metadata loaded ${md.pageCount} pages`, 'success');
+  } catch (err) {
+    console.error('Metadata read failed:', err);
+    showToast('Failed to read PDF file may be corrupted or password-protected', 'error', 5000);
+  }
+}
+
+function setField(el, value) {
+  if (value && String(value).trim()) {
+    el.textContent = value;
+    el.classList.remove('empty');
+  } else {
+    el.textContent = 'Not set';
+    el.classList.add('empty');
+  }
+}
+
+/* ===== ADVANCED VIEW ===== */
+function buildAdvancedView(md) {
+  const fields = [
+    { key: 'Title', value: md.title },
+    { key: 'Author', value: md.author },
+    { key: 'Subject', value: md.subject },
+    { key: 'Keywords', value: md.keywords },
+    { key: 'Creator', value: md.creator },
+    { key: 'Producer', value: md.producer },
+    { key: 'CreationDate', value: md.creationDate },
+    { key: 'ModDate', value: md.modDate },
+    { key: 'PageCount', value: md.pageCount }
+  ];
+
+  const setFields = fields.filter(f => f.value);
+
+  advancedGrid.innerHTML = '';
+  setFields.forEach(field => {
+    const item = document.createElement('div');
+    item.className = 'adv-item';
+    item.innerHTML = `
+      <span class="adv-key">/${field.key}</span>
+      <span class="adv-val">${escapeHtml(String(field.value))}</span>
+    `;
+    advancedGrid.appendChild(item);
+  });
+
+  fieldCount.textContent = `${setFields.length} fields`;
+  advancedSection.classList.add('visible');
+}
+
+function escapeHtml(str) {
+  const div = document.createElement('div');
+  div.textContent = str;
+  return div.innerHTML;
+}
+
+/* ===== COPY INDIVIDUAL FIELDS ===== */
+$$('[data-copy-field]').forEach(btn => {
+  btn.addEventListener('click', async (e) => {
+    e.stopPropagation();
+    const field = btn.dataset.copyField;
+    const md = state.metadata;
+    let value = md[field];
+
+    if (field === 'creationDate') value = formatPdfDate(md.creationDate);
+    if (field === 'modDate') value = formatPdfDate(md.modDate);
+
+    if (!value) { showToast('Field is empty', 'info'); return; }
+
+    const ok = await copyToClipboard(String(value));
+    if (ok) {
+      btn.classList.add('copied');
+      btn.innerHTML = '✓';
+      setTimeout(() => {
+        btn.classList.remove('copied');
+        btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>';
+      }, 1800);
+      showToast(`Copied: ${field}`, 'success', 1500);
+    } else {
+      showToast('Copy failed', 'error');
+    }
+  });
+});
+
+/* ===== COPY ALL ===== */
+copyAllBtn.addEventListener('click', async () => {
+  const md = state.metadata;
+  const lines = [
+    `File: ${state.pdfName}`,
+    `Size: ${formatBytes(state.pdfSize)}`,
+    `Pages: ${md.pageCount}`,
+    ``,
+    `Title: ${md.title || '(not set)'}`,
+    `Author: ${md.author || '(not set)'}`,
+    `Subject: ${md.subject || '(not set)'}`,
+    `Keywords: ${md.keywords || '(not set)'}`,
+    `Creator: ${md.creator || '(not set)'}`,
+    `Producer: ${md.producer || '(not set)'}`,
+    `Creation Date: ${formatPdfDate(md.creationDate) || '(not set)'}`,
+    `Modified Date: ${formatPdfDate(md.modDate) || '(not set)'}`
+  ];
+
+  const ok = await copyToClipboard(lines.join('\n'));
+  if (ok) {
+    showToast('Copied all metadata!', 'success');
+  } else {
+    showToast('Copy failed', 'error');
+  }
+});
+
+/* ===== EXPORT AS JSON ===== */
+exportBtn.addEventListener('click', () => {
+  const md = state.metadata;
+
+  const exportData = {
+    file: {
+      name: state.pdfName,
+      size: state.pdfSize,
+      sizeFormatted: formatBytes(state.pdfSize),
+      pages: md.pageCount
+    },
+    metadata: {
+      title: md.title || null,
+      author: md.author || null,
+      subject: md.subject || null,
+      keywords: md.keywords || null,
+      creator: md.creator || null,
+      producer: md.producer || null,
+      creationDate: md.creationDate || null,
+      creationDateFormatted: formatPdfDate(md.creationDate) || null,
+      modDate: md.modDate || null,
+      modDateFormatted: formatPdfDate(md.modDate) || null
+    },
+    exportedAt: new Date().toISOString()
+  };
+
+  const json = JSON.stringify(exportData, null, 2);
+  const blob = new Blob([json], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const baseName = state.pdfName.replace(/\.[^.]+$/, '');
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `${baseName}-metadata.json`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+  showToast('Exported as JSON', 'success');
+});
+
+/* ===== CLEAR ===== */
+clearBtn.addEventListener('click', () => {
+  state.metadata = {};
+  state.pdfFile = null;
+  state.pdfName = '';
+  state.pdfSize = 0;
+
+  fileHeader.classList.remove('visible');
+  metadataGrid.classList.remove('visible');
+  advancedSection.classList.remove('visible');
+  dropzone.style.display = '';
+  exportBtn.disabled = true;
+  copyAllBtn.disabled = true;
+
+  showToast('Cleared');
+});
+
+/* ===== FAQ ===== */
+$$('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    $$('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+</script>
+
+</body>
+</html>

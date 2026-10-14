@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2563eb">
+
+<title>Favicon Generator - Create All Favicon Sizes Online Free | BigToolz</title>
+<meta name="description" content="Generate favicons online free 16x16, 32x32, 48x48, 180x180 Apple touch, 192x192, 512x512 PWA. Download all sizes + HTML code. No signup.">
+<meta name="keywords" content="favicon generator, favicon maker, create favicon, favicon ico, apple touch icon, pwa icons">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://bigtoolz.com/tools/developer-tools/favicon-generator/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Favicon Generator - Free Online Tool | BigToolz">
+<meta property="og:description" content="Create all favicon sizes from one image free, no signup.">
+<meta property="og:url" content="https://bigtoolz.com/tools/developer-tools/favicon-generator/">
+<meta property="og:image" content="https://bigtoolz.com/assets/images/og-image.jpg">
+<meta property="og:site_name" content="BigToolz">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Favicon Generator - BigToolz">
+<meta name="twitter:description" content="Create all favicon sizes instantly.">
+<meta name="twitter:image" content="https://bigtoolz.com/assets/images/twitter-card.jpg">
+
+<link rel="icon" href="/assets/images/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/images/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#f8f9fc;color:#1a1a2e;overflow-x:hidden;line-height:1.5}
+
+  .header{background:#fff;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;position:sticky;top:0;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+  .header-left{display:flex;align-items:center;gap:40px}
+  .logo{display:flex;align-items:center;gap:8px;font-size:22px;font-weight:800;color:#1a1a2e;text-decoration:none}
+  .logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#3b82f6,#2563eb);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px}
+  .logo span{color:#2563eb}
+  .nav{display:flex;align-items:center;gap:28px;list-style:none}
+  .nav a{text-decoration:none;color:#4b5563;font-size:14px;font-weight:500;transition:color .2s}
+  .nav a:hover,.nav a.active{color:#2563eb}
+  .header-right{display:flex;align-items:center;gap:16px}
+  .search-btn,.theme-btn{width:36px;height:36px;border-radius:50%;border:none;background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#4b5563}
+  .search-btn:hover,.theme-btn:hover{background:#f3f4f6}
+  .bookmark-btn{display:flex;align-items:center;gap:8px;background:#2563eb;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
+  .bookmark-btn:hover{background:#1d4ed8}
+
+  .hero{background:linear-gradient(135deg,#0a0e27 0%,#1a1a4e 40%,#2d1b69 70%,#4c1d95 100%);padding:40px 40px 60px;position:relative;overflow:hidden;color:#fff}
+  .hero::before{content:'';position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(245,158,11,.3) 0%,transparent 70%);border-radius:50%}
+  .hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+  .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px;flex-wrap:wrap}
+  .breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none}
+  .breadcrumb a:hover{color:#fff}
+  .breadcrumb .sep{color:rgba(255,255,255,.4)}
+  .breadcrumb .current{color:#fff;font-weight:500}
+  .hero-title-row{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+  .hero-icon{width:60px;height:60px;background:#f59e0b;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px;color:#fff;flex-shrink:0;box-shadow:0 8px 24px rgba(245,158,11,.4)}
+  .hero-title{font-size:42px;font-weight:800;line-height:1.15}
+  .hero-title .blue{color:#fbbf24}
+  .hero-desc{font-size:15px;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:24px;max-width:560px}
+  .hero-features{display:flex;gap:24px;flex-wrap:wrap}
+  .hero-feature{display:flex;align-items:center;gap:6px;font-size:13px;color:#fff;font-weight:500}
+  .hero-feature .check{width:18px;height:18px;border-radius:50%;background:#f59e0b;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;flex-shrink:0}
+
+  .main-content{max-width:1200px;margin:0 auto;padding:40px;display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start}
+  .tool-content{min-width:0}
+
+  .workspace{background:#fff;border-radius:16px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,.06);border:1px solid #e5e7eb;margin-bottom:24px}
+
+  .dropzone{border:2px dashed #fde68a;border-radius:12px;padding:50px 30px;text-align:center;background:#fffbeb;margin-bottom:24px;transition:all .2s;cursor:pointer}
+  .dropzone:hover,.dropzone.dragover{border-color:#f59e0b;background:#fef3c7}
+  .dropzone-icon{width:60px;height:60px;background:linear-gradient(135deg,#f59e0b,#d97706);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;color:#fff;font-size:26px;transition:transform .2s}
+  .dropzone:hover .dropzone-icon{transform:translateY(-4px)}
+  .dropzone-title{font-size:16px;font-weight:700;color:#1a1a2e;margin-bottom:8px}
+  .dropzone-sub{font-size:14px;color:#6b7280;margin-bottom:20px}
+  .dropzone-sub a{color:#f59e0b;font-weight:600;text-decoration:none}
+  .choose-btn{display:inline-flex;align-items:center;gap:8px;background:#f59e0b;color:#fff;border:none;padding:12px 28px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;transition:background .2s}
+  .choose-btn:hover{background:#d97706}
+  .dropzone-info{font-size:12px;color:#9ca3af;display:flex;align-items:center;justify-content:center;gap:8px;margin-top:16px;flex-wrap:wrap}
+  .dropzone-info .divider{color:#d1d5db}
+  .file-input{display:none}
+
+  /* Editor */
+  .editor{display:none;margin-bottom:24px}
+  .editor.visible{display:block}
+
+  .preview-sim{background:#f8fafc;border-radius:12px;padding:24px;margin-bottom:20px;border:1px solid #e5e7eb}
+  .preview-sim-title{font-size:11px;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:.5px;margin-bottom:14px;text-align:center}
+  .sim-row{display:flex;justify-content:center;gap:32px;flex-wrap:wrap}
+  .sim-item{text-align:center}
+  .sim-label{font-size:11px;color:#9ca3af;margin-top:8px;font-weight:600}
+
+  /* Browser tab mockup */
+  .browser-tab{background:#fff;border-radius:8px 8px 0 0;padding:8px 12px;display:inline-flex;align-items:center;gap:8px;box-shadow:0 2px 8px rgba(0,0,0,.08);border:1px solid #e5e7eb;border-bottom:none}
+  .browser-tab-fav{width:16px;height:16px;border-radius:2px}
+  .browser-tab-title{font-size:12px;color:#1a1a2e;font-weight:500;max-width:140px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+
+  /* Mobile home screen */
+  .phone-mock{width:120px;background:linear-gradient(135deg,#4f46e5,#7c3aed);border-radius:20px;padding:16px 12px;text-align:center;box-shadow:0 8px 24px rgba(79,70,229,.3)}
+  .phone-app{width:56px;height:56px;border-radius:14px;margin:0 auto 8px;box-shadow:0 2px 6px rgba(0,0,0,.2);display:flex;align-items:center;justify-content:center;overflow:hidden;background:#fff}
+  .phone-app canvas{width:100%;height:100%;border-radius:inherit}
+  .phone-label{font-size:10px;color:#fff;font-weight:600;opacity:.95}
+
+  /* Generated favicon list */
+  .icons-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:12px;margin-bottom:20px}
+  .icon-card{background:#f8fafc;border:1px solid #e5e7eb;border-radius:10px;padding:12px;text-align:center;transition:all .2s;cursor:pointer}
+  .icon-card:hover{border-color:#f59e0b;background:#fffbeb}
+  .icon-card canvas{width:64px;height:64px;margin:0 auto 8px;display:block;border:1px solid #e5e7eb;border-radius:6px;background:repeating-conic-gradient(#e5e7eb 0% 25%, #fff 0% 50%) 50% / 8px 8px}
+  .icon-card-name{font-size:11px;font-weight:700;color:#1a1a2e;margin-bottom:2px}
+  .icon-card-size{font-size:10px;color:#9ca3af}
+  .icon-card-download{font-size:10px;font-weight:600;color:#f59e0b;margin-top:6px;display:block;cursor:pointer}
+  .icon-card-download:hover{text-decoration:underline}
+
+  /* Options */
+  .options{background:#fffbeb;border-radius:12px;padding:20px;margin-bottom:20px;border:1px solid #fde68a}
+  .options-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+  .options-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .option-group label{display:block;font-size:12px;font-weight:700;color:#4b5563;margin-bottom:6px}
+  .option-group select,.option-group input[type="color"]{width:100%;padding:10px 12px;border:1px solid #e5e7eb;border-radius:8px;font-size:13px;font-family:inherit;color:#1a1a2e;background:#fff;outline:none}
+  .option-group input[type="color"]{height:42px;padding:2px;cursor:pointer}
+
+  /* Output tabs */
+  .output-tabs{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:16px}
+  .output-tab{padding:12px;background:#fff;border:2px solid #e5e7eb;border-radius:10px;font-size:13px;font-weight:700;color:#4b5563;cursor:pointer;font-family:inherit;transition:all .2s;text-align:center}
+  .output-tab:hover{border-color:#f59e0b;background:#fffbeb}
+  .output-tab.active{border-color:#f59e0b;background:#f59e0b;color:#fff}
+
+  .output-panel{display:none}
+  .output-panel.active{display:block}
+
+  /* Code output */
+  .code-wrap{background:#0f172a;border-radius:12px;padding:20px;position:relative}
+  .code-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+  .code-title{font-size:11px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.5px}
+  .copy-btn{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;background:#f59e0b;color:#fff;border:none;border-radius:8px;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit;transition:all .2s}
+  .copy-btn:hover{background:#d97706}
+  .copy-btn.copied{background:#10b981}
+  .code{font-family:'JetBrains Mono','Courier New',monospace;font-size:12px;color:#e2e8f0;line-height:1.7;white-space:pre-wrap;word-break:break-all;max-height:400px;overflow-y:auto}
+  .code .tag{color:#94a3b8}
+  .code .attr{color:#60a5fa}
+  .code .val{color:#34d399}
+  .code .comment{color:#64748b;font-style:italic}
+
+  /* Actions */
+  .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 28px;border-radius:10px;font-size:15px;font-weight:700;font-family:inherit;cursor:pointer;border:none;transition:all .2s;text-decoration:none}
+  .btn-primary{background:#f59e0b;color:#fff;flex:1;box-shadow:0 4px 12px rgba(245,158,11,.2)}
+  .btn-primary:hover:not(:disabled){background:#d97706;transform:translateY(-2px);box-shadow:0 6px 20px rgba(245,158,11,.3)}
+  .btn-primary:disabled{opacity:.5;cursor:not-allowed;transform:none}
+  .btn-secondary{background:#fff;color:#f59e0b;border:1px solid #e5e7eb}
+  .btn-secondary:hover{border-color:#f59e0b;background:#fffbeb}
+  .btn-success{background:#10b981;color:#fff}
+  .btn-success:hover{background:#059669}
+
+  /* SEO Content */
+  .seo-content{background:#fff;border-radius:16px;padding:32px;border:1px solid #e5e7eb;margin-bottom:24px}
+  .seo-content h2{font-size:22px;font-weight:800;color:#1a1a2e;margin-bottom:14px;margin-top:28px;display:flex;align-items:center;gap:10px}
+  .seo-content h2:first-child{margin-top:0}
+  .seo-content h3{font-size:16px;font-weight:700;color:#1a1a2e;margin:20px 0 10px}
+  .seo-content p{font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:14px}
+  .seo-content ul{list-style:none;padding-left:0;margin-bottom:16px}
+  .seo-content ul li{position:relative;padding-left:24px;font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:8px}
+  .seo-content ul li::before{content:'';position:absolute;left:6px;top:12px;width:6px;height:6px;background:#f59e0b;border-radius:50%}
+  .seo-content a{color:#2563eb;text-decoration:none;font-weight:600}
+  .seo-content a:hover{text-decoration:underline}
+  .seo-content strong{color:#1a1a2e;font-weight:700}
+  .seo-content code{background:#f1f5f9;padding:2px 6px;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:13px;color:#0f172a;border:1px solid #e2e8f0}
+
+  .how-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:20px}
+  .how-step{background:#fffbeb;border-radius:12px;padding:20px;border:1px solid #fde68a}
+  .how-step-num{width:36px;height:36px;border-radius:50%;background:#f59e0b;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;margin-bottom:12px}
+  .how-step-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+  .how-step-desc{font-size:13px;color:#6b7280;line-height:1.6}
+
+  .faq-item{background:#fffbeb;border:1px solid #fde68a;border-radius:12px;margin-bottom:10px;overflow:hidden;transition:border-color .2s}
+  .faq-item:hover{border-color:#f59e0b}
+  .faq-question{width:100%;background:none;border:none;padding:18px 22px;font-size:15px;font-weight:700;color:#1a1a2e;text-align:left;cursor:pointer;font-family:inherit;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .faq-question .chev{font-size:12px;color:#f59e0b;transition:transform .2s;flex-shrink:0}
+  .faq-item.open .faq-question .chev{transform:rotate(180deg)}
+  .faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 22px}
+  .faq-item.open .faq-answer{max-height:500px;padding-bottom:18px}
+  .faq-answer p{font-size:14px;color:#6b7280;line-height:1.7;margin:0}
+
+  .sidebar{background:#fff;border-radius:16px;padding:24px;border:1px solid #e5e7eb;position:sticky;top:80px;margin-bottom:24px}
+  .sidebar-header{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:800;color:#1a1a2e;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid #f3f4f6}
+  .sidebar-list{display:flex;flex-direction:column;gap:8px}
+  .sidebar-item{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;cursor:pointer;transition:background .2s;text-decoration:none;color:inherit;border:1px solid #f3f4f6}
+  .sidebar-item:hover{background:#fffbeb;border-color:#fde68a}
+  .sidebar-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;flex-shrink:0}
+  .sidebar-info{flex:1;min-width:0}
+  .sidebar-title{font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:2px}
+  .sidebar-desc{font-size:11px;color:#9ca3af;line-height:1.4}
+
+  .footer{background:#0a0e27;padding:60px 40px 30px;color:#fff;margin-top:40px}
+  .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:40px}
+  .footer-brand{display:flex;align-items:center;gap:8px;font-size:20px;font-weight:800;margin-bottom:12px}
+  .footer-brand span{color:#60a5fa}
+  .footer-tagline{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px}
+  .footer-social{display:flex;gap:12px}
+  .footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:16px;transition:background .2s}
+  .footer-social a:hover{background:rgba(255,255,255,.2)}
+  .footer-heading{font-size:14px;font-weight:700;margin-bottom:20px;color:#fff}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .footer-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;transition:color .2s}
+  .footer-links a:hover{color:#60a5fa}
+  .footer-bottom{max-width:1200px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  .footer-bottom-left{display:flex;gap:20px;font-size:12px;color:rgba(255,255,255,.5)}
+  .footer-bottom-right,.footer-bottom-links a{font-size:12px;color:rgba(255,255,255,.5);text-decoration:none}
+  .footer-bottom-links{display:flex;gap:20px}
+
+  .toast{position:fixed;bottom:24px;right:24px;background:#1a1a2e;color:#fff;padding:14px 20px;border-radius:10px;font-size:13px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:3000;transform:translateY(200%);transition:transform .3s ease;max-width:320px}
+  .toast.visible{transform:translateY(0)}
+  .toast.success{background:#10b981}
+  .toast.error{background:#ef4444}
+
+  @media(max-width:1024px){
+    .main-content{grid-template-columns:1fr;padding:24px 20px}
+    .sidebar{position:static}
+    .how-steps{grid-template-columns:repeat(2,1fr)}
+    .options-grid{grid-template-columns:1fr}
+  }
+  @media(max-width:768px){
+    .header{padding:0 20px}.nav{display:none}
+    .hero{padding:24px 20px 40px}
+    .hero-title{font-size:28px}
+    .hero-icon{width:48px;height:48px;font-size:20px}
+    .hero-title-row{flex-direction:column;align-items:flex-start;gap:12px}
+    .main-content{padding:20px 16px}
+    .workspace{padding:20px}
+    .dropzone{padding:32px 16px}
+    .how-steps{grid-template-columns:1fr}
+    .seo-content{padding:20px}
+    .footer-inner{grid-template-columns:1fr 1fr}
+    .toast{left:16px;right:16px;bottom:16px;max-width:none}
+    .icons-grid{grid-template-columns:repeat(2,1fr)}
+  }
+  @media(max-width:576px){
+    .header{padding:0 16px}.header-right .search-btn,.header-right .theme-btn{display:none}
+    .hero-title{font-size:24px}
+    .actions{flex-direction:column}
+    .btn{width:100%}
+    .btn-primary{flex:none}
+    .footer-inner{grid-template-columns:1fr}
+    .footer-bottom{flex-direction:column;text-align:center}
+    .output-tabs{grid-template-columns:1fr}
+  }
+
+  html[data-theme="dark"] body{background:#0f172a;color:#f1f5f9}
+  html[data-theme="dark"] .header,html[data-theme="dark"] .workspace,html[data-theme="dark"] .seo-content,html[data-theme="dark"] .sidebar{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .logo,html[data-theme="dark"] .hero-title,html[data-theme="dark"] .seo-content h2,html[data-theme="dark"] .seo-content h3,html[data-theme="dark"] .faq-question,html[data-theme="dark"] .sidebar-header,html[data-theme="dark"] .sidebar-title,html[data-theme="dark"] .options-title,html[data-theme="dark"] .icon-card-name{color:#f1f5f9}
+  html[data-theme="dark"] .nav a{color:#cbd5e1}
+  html[data-theme="dark"] .dropzone{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .options,html[data-theme="dark"] .how-step,html[data-theme="dark"] .faq-item,html[data-theme="dark"] .icon-card,html[data-theme="dark"] .output-tab,html[data-theme="dark"] .preview-sim{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .output-tab{color:#cbd5e1}
+  html[data-theme="dark"] .output-tab.active{background:#f59e0b;color:#fff;border-color:#f59e0b}
+  html[data-theme="dark"] .option-group select,html[data-theme="dark"] .option-group input[type="color"]{background:#0f172a;border-color:#334155;color:#f1f5f9}
+  html[data-theme="dark"] .seo-content p,html[data-theme="dark"] .seo-content ul li,html[data-theme="dark"] .faq-answer p{color:#cbd5e1}
+  html[data-theme="dark"] .seo-content code{background:#0f172a;color:#94a3b8;border-color:#334155}
+  html[data-theme="dark"] .browser-tab{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .browser-tab-title{color:#f1f5f9}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type": "SoftwareApplication", "name": "Favicon Generator", "url": "https://bigtoolz.com/tools/developer-tools/favicon-generator/", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any (Web-based)", "description": "Free online favicon generator create all favicon sizes (16x16 to 512x512) from one image, with HTML code and PWA manifest.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "2103"}},
+    {"@type": "HowTo", "name": "How to Generate Favicons", "step": [
+      {"@type": "HowToStep", "name": "Upload Image", "text": "Upload a square logo or image (at least 512×512 px recommended)."},
+      {"@type": "HowToStep", "name": "Adjust Options", "text": "Choose shape (square, rounded, circle), background, and padding."},
+      {"@type": "HowToStep", "name": "Generate", "text": "All favicon sizes are automatically generated."},
+      {"@type": "HowToStep", "name": "Download", "text": "Download all sizes as ZIP, copy the HTML code, and add to your site."}
+    ]},
+    {"@type": "FAQPage", "mainEntity": [
+      {"@type": "Question", "name": "What size should my source image be?", "acceptedAnswer": {"@type": "Answer", "text": "Use a square image at least 512×512 pixels. Larger (1024×1024) is even better for high-DPI displays and PWA icons. PNG with transparent background works best."}},
+      {"@type": "Question", "name": "Which favicon sizes do I actually need?", "acceptedAnswer": {"@type": "Answer", "text": "Minimum: 32×32 PNG + 180×180 Apple touch icon. Recommended: 16×16, 32×32, 48×48, 180×180 (Apple), 192×192 + 512×512 (Android/PWA). These cover all modern browsers and devices."}},
+      {"@type": "Question", "name": "What's the difference between favicon.ico and PNG favicons?", "acceptedAnswer": {"@type": "Answer", "text": "favicon.ico is the legacy format still used by older browsers. Modern browsers prefer PNG favicons. Best practice: provide PNGs for modern browsers and include an .ico fallback for legacy support."}},
+      {"@type": "Question", "name": "Where do I put favicon files on my site?", "acceptedAnswer": {"@type": "Answer", "text": "Place favicon.ico in your site root (https://example.com/favicon.ico). Other PNG icons can go in /assets/icons/ or similar. The HTML code references these paths."}},
+      {"@type": "Question", "name": "Are my images uploaded to a server?", "acceptedAnswer": {"@type": "Answer", "text": "No. All favicon generation happens in your browser using the Canvas API. Your images never leave your device."}}
+    ]},
+    {"@type": "BreadcrumbList", "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bigtoolz.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://bigtoolz.com/tools/"},
+      {"@type": "ListItem", "position": 3, "name": "Developer Tools", "item": "https://bigtoolz.com/tools/developer-tools/"},
+      {"@type": "ListItem", "position": 4, "name": "Favicon Generator", "item": "https://bigtoolz.com/tools/developer-tools/favicon-generator/"}
+    ]}
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-left">
+    <a href="/" class="logo"><div class="logo-icon">⚒</div>BigToolz</span></a>
+    <nav><ul class="nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/tools/" class="active">All Tools</a></li>
+      <li><a href="/tools/categories">Categories</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul></nav>
+  </div>
+  <div class="header-right">
+    
+    <button class="theme-btn" aria-label="Toggle theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
+    
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <nav class="breadcrumb">
+      <a href="/">Home</a><span class="sep">›</span>
+      <a href="/tools/">Tools</a><span class="sep">›</span>
+      <a href="/tools/developer-tools/">Developer Tools</a><span class="sep">›</span>
+      <span class="current">Favicon Generator</span>
+    </nav>
+    <div class="hero-title-row">
+      <div class="hero-icon">⭐</div>
+      <h1 class="hero-title">Favicon <span class="blue">Generator</span></h1>
+    </div>
+    <p class="hero-desc">
+      Generate every favicon size from one image 16×16 to 512×512, Apple touch, Android PWA icons. Download all as ZIP + copy-ready HTML code. No signup, 100% free.
+    </p>
+    <div class="hero-features">
+      <div class="hero-feature"><span class="check">✓</span> 8 Sizes Auto-Generated</div>
+      <div class="hero-feature"><span class="check">✓</span> Live Previews</div>
+      <div class="hero-feature"><span class="check">✓</span> HTML + Manifest</div>
+      <div class="hero-feature"><span class="check">✓</span> No Upload</div>
+    </div>
+  </div>
+</section>
+
+<div class="main-content">
+
+  <div class="tool-content">
+
+    <div class="workspace">
+
+      <div class="dropzone" id="dropzone">
+        <div class="dropzone-icon">⬆</div>
+        <div class="dropzone-title">Drag & drop your logo here</div>
+        <div class="dropzone-sub">or <a href="#" id="browseLink">click to browse</a> square PNG, 512×512+ recommended</div>
+        <button class="choose-btn" id="chooseBtn" type="button">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+          Choose Image
+        </button>
+        <div class="dropzone-info">
+          <span>PNG, JPG, SVG, WebP</span>
+          <span class="divider">|</span>
+          <span>Square images work best</span>
+        </div>
+        <input type="file" id="fileInput" class="file-input" accept="image/*">
+      </div>
+
+      <!-- Editor -->
+      <div class="editor" id="editor">
+
+        <!-- Live Preview -->
+        <div class="preview-sim">
+          <div class="preview-sim-title">Live Preview</div>
+          <div class="sim-row">
+            <div class="sim-item">
+              <div class="browser-tab">
+                <div class="browser-tab-fav" id="tabFav"></div>
+                <div class="browser-tab-title">Your Website</div>
+              </div>
+              <div class="sim-label">Browser Tab</div>
+            </div>
+            <div class="sim-item">
+              <div class="phone-mock">
+                <div class="phone-app"><canvas id="phoneCanvas" width="112" height="112"></canvas></div>
+                <div class="phone-label">Home Screen</div>
+              </div>
+              <div class="sim-label">Mobile App Icon</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Options -->
+        <div class="options">
+          <div class="options-title">⚙️ Icon Settings</div>
+          <div class="options-grid">
+            <div class="option-group">
+              <label>Shape</label>
+              <select id="shape">
+                <option value="square">Square</option>
+                <option value="rounded" selected>Rounded Corners</option>
+                <option value="circle">Circle</option>
+              </select>
+            </div>
+            <div class="option-group">
+              <label>Background</label>
+              <select id="bgMode">
+                <option value="transparent" selected>Transparent</option>
+                <option value="solid">Solid Color</option>
+              </select>
+            </div>
+            <div class="option-group">
+              <label>Background Color</label>
+              <input type="color" id="bgColor" value="#ffffff">
+            </div>
+          </div>
+        </div>
+
+        <!-- Generated Icons -->
+        <div class="options-title" style="margin-top:8px;">📦 Generated Icons</div>
+        <div class="icons-grid" id="iconsGrid"></div>
+
+        <!-- Output Tabs -->
+        <div class="output-tabs">
+          <button class="output-tab active" data-output="html">📄 HTML Code</button>
+          <button class="output-tab" data-output="manifest">📱 PWA Manifest</button>
+        </div>
+
+        <!-- HTML Panel -->
+        <div class="output-panel active" data-panel="html">
+          <div class="code-wrap">
+            <div class="code-header">
+              <div class="code-title">Paste in &lt;head&gt;</div>
+              <button class="copy-btn" data-copy="html">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+                Copy
+              </button>
+            </div>
+            <div class="code" id="htmlCode"></div>
+          </div>
+        </div>
+
+        <!-- Manifest Panel -->
+        <div class="output-panel" data-panel="manifest">
+          <div class="code-wrap">
+            <div class="code-header">
+              <div class="code-title">manifest.json</div>
+              <button class="copy-btn" data-copy="manifest">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+                Copy
+              </button>
+            </div>
+            <div class="code" id="manifestCode"></div>
+          </div>
+        </div>
+
+        <!-- Actions -->
+        <div class="actions">
+          <button class="btn btn-primary" id="downloadZipBtn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+            Download All as ZIP
+          </button>
+          <button class="btn btn-secondary" id="newImageBtn">Choose New Image</button>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="seo-content">
+
+      <h2>⭐ What is a Favicon?</h2>
+      <p>
+        A <strong>favicon</strong> ("favorite icon") is the small square image that appears in browser tabs, bookmarks, history lists, and browser address bars. On mobile devices, favicons are used as app icons when users add your site to their home screen. A favicon is a small but essential part of <strong>brand identity</strong> and <strong>user experience</strong> it helps users quickly identify your site among many open tabs.
+      </p>
+      <p>
+        Modern websites need favicons in multiple sizes: 16×16 for browser tabs, 32×32 for retina displays, 180×180 for Apple devices, and 192×192 + 512×512 for Android/PWA. Our generator creates all of them from one image instantly.
+      </p>
+
+      <h2>🚀 How to Generate Favicons</h2>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-step-num">1</div>
+          <div class="how-step-title">Upload Logo</div>
+          <div class="how-step-desc">Use a square image, at least 512×512 px, PNG with transparency.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">2</div>
+          <div class="how-step-title">Choose Shape</div>
+          <div class="how-step-desc">Square, rounded corners, or circle. Pick background color.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">3</div>
+          <div class="how-step-title">Preview & Copy</div>
+          <div class="how-step-desc">See live preview. Copy the HTML & PWA manifest code.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">4</div>
+          <div class="how-step-title">Download & Deploy</div>
+          <div class="how-step-desc">Download ZIP with all icons. Upload to your site root.</div>
+        </div>
+      </div>
+
+      <h2>📐 Favicon Sizes Explained</h2>
+      <ul>
+        <li><strong>16×16 PNG</strong> Browser tab (standard DPI screens).</li>
+        <li><strong>32×32 PNG</strong> Browser tab (retina/HiDPI screens), taskbar.</li>
+        <li><strong>48×48 PNG</strong> Windows site icon, some bookmarks.</li>
+        <li><strong>64×64 PNG</strong> Safari pinned tabs, some browser extensions.</li>
+        <li><strong>180×180 PNG</strong> Apple touch icon (iPhone/iPad home screen).</li>
+        <li><strong>192×192 PNG</strong> Android home screen (PWA).</li>
+        <li><strong>512×512 PNG</strong> Splash screen, PWA store listing, Android.</li>
+        <li><strong>favicon.ico</strong> Legacy fallback (16+32+48 multi-size).</li>
+      </ul>
+
+      <h2>🎯 Favicon Best Practices</h2>
+      <h3>Use a Square Image</h3>
+      <p>Favicons are displayed square. If your logo is not square, it will be stretched or cropped. If you have a horizontal logo, use just the icon/mark portion.</p>
+
+      <h3>Keep it Simple</h3>
+      <p>At 16×16 pixels, there's no room for detail. Simple shapes, bold colors, and high contrast work best. Avoid text it becomes unreadable.</p>
+
+      <h3>Use Transparency</h3>
+      <p>Transparent PNGs look clean on all browser themes (light and dark). A solid background is safer for logos that rely on color, but transparency is more versatile.</p>
+
+      <h3>Test Both Light and Dark Modes</h3>
+      <p>Some browsers use dark backgrounds for tabs. A favicon with a white background will look out of place. Transparent or dark-colored icons work in both themes.</p>
+
+      <h3>Start with 512×512+</h3>
+      <p>Always start with the largest size (512×512 or 1024×1024) so downscaling produces crisp results. Upscaling from 32×32 will look blurry.</p>
+
+      <h2>✨ Key Features</h2>
+      <ul>
+        <li><strong>8 favicon sizes</strong> auto-generated from one image.</li>
+        <li><strong>3 shape options</strong> square, rounded, circle.</li>
+        <li><strong>Transparent or solid background</strong> your choice.</li>
+        <li><strong>Live previews</strong> browser tab and mobile home screen.</li>
+        <li><strong>HTML code output</strong> ready to paste in &lt;head&gt;.</li>
+        <li><strong>PWA manifest generator</strong> for Android/PWA installs.</li>
+        <li><strong>Download all as ZIP</strong> one file with all icons.</li>
+        <li><strong>100% browser-based</strong> complete privacy.</li>
+      </ul>
+
+      <h2>❓ Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-question">What size should my source image be?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Use a square image at least <strong>512×512 pixels</strong>. Larger (1024×1024) is even better for high-DPI displays and PWA icons. PNG with transparent background works best.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Which favicon sizes do I actually need?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>Minimum:</strong> 32×32 PNG + 180×180 Apple touch icon. <strong>Recommended:</strong> 16×16, 32×32, 48×48, 180×180 (Apple), 192×192 + 512×512 (Android/PWA). These cover all modern browsers and devices.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What's the difference between favicon.ico and PNG favicons?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>favicon.ico</strong> is the legacy format still used by older browsers and some systems. <strong>Modern browsers</strong> prefer PNG favicons for better quality. Best practice: provide PNGs for modern browsers and include an .ico fallback for legacy support.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Where do I put favicon files on my site?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Place <code>favicon.ico</code> in your site root (<code>https://example.com/favicon.ico</code>). Other PNG icons can go in <code>/assets/icons/</code> or similar. The HTML code we generate references these paths adjust if your folder structure differs.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Why doesn't my new favicon show up?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Browsers <strong>aggressively cache favicons</strong>. After deploying a new favicon: (1) Hard refresh (Ctrl+Shift+R), (2) Clear browser cache, (3) Try incognito mode, (4) Wait 24-48 hours for full cache expiry. The favicon IS updated the browser just isn't checking.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Do I need a favicon.ico file?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Not strictly modern browsers use PNGs referenced in your HTML. But some systems (RSS readers, some browser bookmarks, legacy software) still request <code>/favicon.ico</code> from your site root. Including it is a good fallback.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Are my images uploaded to a server?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>No. All favicon generation happens in your browser using the Canvas API. Your images never leave your device, and nothing is stored anywhere.</p></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-header">🔗 Related Developer Tools</div>
+    <div class="sidebar-list">
+      <a href="/tools/developer-tools/meta-tag/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#f97316;">🏷</div>
+        <div class="sidebar-info"><div class="sidebar-title">Meta Tag Generator</div><div class="sidebar-desc">SEO meta tags</div></div>
+      </a>
+      <a href="/tools/developer-tools/sitemap-generator/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#f97316;">🗺</div>
+        <div class="sidebar-info"><div class="sidebar-title">Sitemap Generator</div><div class="sidebar-desc">XML sitemaps</div></div>
+      </a>
+      <a href="/tools/developer-tools/robots-txt/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#64748b;">🤖</div>
+        <div class="sidebar-info"><div class="sidebar-title">Robots.txt Generator</div><div class="sidebar-desc">Crawler rules</div></div>
+      </a>
+      <a href="/tools/image-tools/image-resizer/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#8b5cf6;">📐</div>
+        <div class="sidebar-info"><div class="sidebar-title">Image Resizer</div><div class="sidebar-desc">Change dimensions</div></div>
+      </a>
+      <a href="/tools/image-tools/image-compressor/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#10b981;">📉</div>
+        <div class="sidebar-info"><div class="sidebar-title">Image Compressor</div><div class="sidebar-desc">Reduce file size</div></div>
+      </a>
+      <a href="/tools/developer-tools/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#64748b;">&lt;/&gt;</div>
+        <div class="sidebar-info"><div class="sidebar-title">All Developer Tools →</div><div class="sidebar-desc">Browse 25+ tools</div></div>
+      </a>
+    </div>
+  </aside>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand"><div class="logo-icon">⚒</div>BigToolz</span></div>
+      <p class="footer-tagline">Your Ultimate Online Tools Hub</p>
+      <div class="footer-social">
+        <a href="https://facebook.com/bigtoolz" aria-label="Facebook">f</a>
+        <a href="https://twitter.com/bigtoolz" aria-label="Twitter">𝕏</a>
+        <a href="https://youtube.com/@bigtoolz" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+    <div>
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/tools/">All Tools</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Categories</h3>
+      <ul class="footer-links">
+        <li><a href="/tools/image-tools/">Image Tools</a></li>
+        <li><a href="/tools/pdf-tools/">PDF Tools</a></li>
+        <li><a href="/tools/text-tools/">Text Tools</a></li>
+        <li><a href="/tools/developer-tools/">Developer Tools</a></li>
+        <li><a href="/tools/categories">All Categories →</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Legal</h3>
+      <ul class="footer-links">
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left"><span>✓ 100% Free</span><span>✓ No Sign Up</span><span>✓ No Installation</span></div>
+    <div class="footer-bottom-right">© 2026 BigToolz. All rights reserved.</div>
+    <div class="footer-bottom-links"><a href="/privacy-policy">Privacy</a><a href="/terms">Terms</a><a href="/disclaimer">Disclaimer</a></div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+'use strict';
+
+/* ===== THEME ===== */
+(function(){try{var t=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&d))document.documentElement.setAttribute('data-theme','dark');else if(t==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();
+document.querySelector('.theme-btn')?.addEventListener('click',()=>{const h=document.documentElement;const c=h.getAttribute('data-theme');const d=window.matchMedia('(prefers-color-scheme: dark)').matches;let n=c==='dark'?'light':c==='light'?'dark':(d?'light':'dark');h.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}});
+
+/* ===== HELPERS ===== */
+const $ = (s, p = document) => p.querySelector(s);
+const $$ = (s, p = document) => [...p.querySelectorAll(s)];
+
+function showToast(msg, type = 'info', duration = 3000) {
+  const t = $('#toast');
+  if (!t) return;
+  t.className = 'toast visible' + (type !== 'info' ? ' ' + type : '');
+  t.textContent = msg;
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove('visible'), duration);
+}
+
+async function copyToClipboard(text) {
+  try {
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(text);
+      return true;
+    }
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.cssText = 'position:fixed;opacity:0;';
+    document.body.appendChild(ta);
+    ta.select();
+    const ok = document.execCommand('copy');
+    document.body.removeChild(ta);
+    return ok;
+  } catch (e) { return false; }
+}
+
+function escapeHtml(str) {
+  const div = document.createElement('div');
+  div.textContent = str;
+  return div.innerHTML;
+}
+
+/* ===== CONFIG ===== */
+const SIZES = [
+  { size: 16, name: 'favicon-16', desc: 'Browser tab' },
+  { size: 32, name: 'favicon-32', desc: 'Retina tab' },
+  { size: 48, name: 'favicon-48', desc: 'Windows' },
+  { size: 64, name: 'favicon-64', desc: 'Safari' },
+  { size: 180, name: 'apple-touch-icon', desc: 'Apple' },
+  { size: 192, name: 'icon-192', desc: 'Android' },
+  { size: 512, name: 'icon-512', desc: 'PWA' }
+];
+
+/* ===== STATE ===== */
+const state = {
+  imageEl: null,
+  sourceFile: null,
+  shape: 'rounded',
+  bgMode: 'transparent',
+  bgColor: '#ffffff',
+  icons: {},       // { sizeName: blob }
+  htmlCode: '',
+  manifestCode: ''
+};
+
+/* ===== DOM ===== */
+const dropzone = $('#dropzone');
+const fileInput = $('#fileInput');
+const chooseBtn = $('#chooseBtn');
+const browseLink = $('#browseLink');
+const editor = $('#editor');
+const shape = $('#shape');
+const bgMode = $('#bgMode');
+const bgColor = $('#bgColor');
+const iconsGrid = $('#iconsGrid');
+const htmlCode = $('#htmlCode');
+const manifestCode = $('#manifestCode');
+const downloadZipBtn = $('#downloadZipBtn');
+const newImageBtn = $('#newImageBtn');
+const tabFav = $('#tabFav');
+const phoneCanvas = $('#phoneCanvas');
+
+/* ===== FILE SELECTION ===== */
+function triggerFileSelect() { fileInput.click(); }
+chooseBtn.addEventListener('click', (e) => { e.stopPropagation(); triggerFileSelect(); });
+browseLink.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); triggerFileSelect(); });
+dropzone.addEventListener('click', triggerFileSelect);
+
+fileInput.addEventListener('change', (e) => {
+  const f = e.target.files[0];
+  if (f && f.type.startsWith('image/')) loadImage(f);
+  fileInput.value = '';
+});
+
+['dragenter', 'dragover'].forEach(evt => {
+  dropzone.addEventListener(evt, (e) => { e.preventDefault(); e.stopPropagation(); dropzone.classList.add('dragover'); });
+});
+['dragleave', 'drop'].forEach(evt => {
+  dropzone.addEventListener(evt, (e) => { e.preventDefault(); e.stopPropagation(); dropzone.classList.remove('dragover'); });
+});
+dropzone.addEventListener('drop', (e) => {
+  const f = e.dataTransfer.files[0];
+  if (f && f.type.startsWith('image/')) loadImage(f);
+});
+
+/* ===== LOAD IMAGE ===== */
+function loadImage(file) {
+  state.sourceFile = file;
+  const reader = new FileReader();
+  reader.onload = (e) => {
+    const img = new Image();
+    img.onload = () => {
+      state.imageEl = img;
+      dropzone.style.display = 'none';
+      editor.classList.add('visible');
+      generateAll();
+    };
+    img.src = e.target.result;
+  };
+  reader.readAsDataURL(file);
+}
+
+/* ===== RENDER ICON ON CANVAS ===== */
+function renderIcon(size) {
+  const canvas = document.createElement('canvas');
+  canvas.width = size;
+  canvas.height = size;
+  const ctx = canvas.getContext('2d');
+
+  // Background
+  if (state.bgMode === 'solid') {
+    ctx.fillStyle = state.bgColor;
+    ctx.fillRect(0, 0, size, size);
+  }
+
+  // Clip for shape
+  ctx.save();
+  if (state.shape === 'circle') {
+    ctx.beginPath();
+    ctx.arc(size / 2, size / 2, size / 2, 0, Math.PI * 2);
+    ctx.clip();
+  } else if (state.shape === 'rounded') {
+    const r = size * 0.2;
+    ctx.beginPath();
+    if (ctx.roundRect) {
+      ctx.roundRect(0, 0, size, size, r);
+    } else {
+      // Fallback for older browsers
+      ctx.moveTo(r, 0);
+      ctx.lineTo(size - r, 0);
+      ctx.quadraticCurveTo(size, 0, size, r);
+      ctx.lineTo(size, size - r);
+      ctx.quadraticCurveTo(size, size, size - r, size);
+      ctx.lineTo(r, size);
+      ctx.quadraticCurveTo(0, size, 0, size - r);
+      ctx.lineTo(0, r);
+      ctx.quadraticCurveTo(0, 0, r, 0);
+    }
+    ctx.closePath();
+    ctx.clip();
+  }
+
+  // Draw image (fit contain)
+  const img = state.imageEl;
+  const aspect = img.naturalWidth / img.naturalHeight;
+  let dw, dh;
+  if (aspect > 1) {
+    dw = size;
+    dh = size / aspect;
+  } else {
+    dh = size;
+    dw = size * aspect;
+  }
+  const dx = (size - dw) / 2;
+  const dy = (size - dh) / 2;
+
+  ctx.drawImage(img, dx, dy, dw, dh);
+  ctx.restore();
+
+  return canvas;
+}
+
+/* ===== GENERATE ALL ===== */
+function generateAll() {
+  if (!state.imageEl) return;
+
+  // Clear previous icons
+  Object.keys(state.icons).forEach(k => {
+    if (state.icons[k].url) URL.revokeObjectURL(state.icons[k].url);
+  });
+  state.icons = {};
+  iconsGrid.innerHTML = '';
+
+  // Generate each size
+  SIZES.forEach(item => {
+    const canvas = renderIcon(item.size);
+    canvas.toBlob((blob) => {
+      state.icons[item.name] = {
+        blob,
+        url: URL.createObjectURL(blob),
+        size: item.size
+      };
+    }, 'image/png');
+
+    // Add to grid
+    const card = document.createElement('div');
+    card.className = 'icon-card';
+    card.innerHTML = `
+      <img src="${canvas.toDataURL('image/png')}" alt="${item.name}" style="width:64px;height:64px;margin:0 auto 8px;display:block;border:1px solid #e5e7eb;border-radius:6px;background:repeating-conic-gradient(#e5e7eb 0% 25%, #fff 0% 50%) 50% / 8px 8px;">
+      <div class="icon-card-name">${item.name}.png</div>
+      <div class="icon-card-size">${item.size}×${item.size} · ${item.desc}</div>
+      <span class="icon-card-download" data-size="${item.name}">⬇ Download</span>
+    `;
+    iconsGrid.appendChild(card);
+  });
+
+  // Update tab preview
+  const tabCanvas = renderIcon(32);
+  tabFav.style.background = `url(${tabCanvas.toDataURL()}) center/cover no-repeat`;
+
+  // Update phone preview
+  const phoneCanvasEl = phoneCanvas;
+  phoneCanvasEl.width = 112;
+  phoneCanvasEl.height = 112;
+  const phoneCtx = phoneCanvasEl.getContext('2d');
+  phoneCtx.drawImage(renderIcon(112), 0, 0);
+
+  // Generate code
+  generateCode();
+}
+
+/* ===== GENERATE HTML CODE ===== */
+function generateCode() {
+  // HTML
+  const htmlLines = [];
+  htmlLines.push('<!-- Favicons -->');
+  htmlLines.push('<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png">');
+  htmlLines.push('<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16.png">');
+  htmlLines.push('<link rel="icon" type="image/png" sizes="48x48" href="/assets/icons/favicon-48.png">');
+  htmlLines.push('<link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">');
+  htmlLines.push('<link rel="icon" type="image/png" sizes="192x192" href="/assets/icons/icon-192.png">');
+  htmlLines.push('<link rel="icon" type="image/png" sizes="512x512" href="/assets/icons/icon-512.png">');
+  htmlLines.push('<link rel="manifest" href="/manifest.json">');
+  htmlLines.push('<link rel="icon" href="/favicon.ico">');
+
+  state.htmlCode = htmlLines.join('\n');
+  htmlCode.innerHTML = state.htmlCode
+    .split('\n')
+    .map(line => {
+      if (line.trim().startsWith('<!--')) return `<span class="comment">${escapeHtml(line)}</span>`;
+      return escapeHtml(line)
+        .replace(/(&lt;\/?)([\w-]+)/g, '$1<span class="tag">$2</span>')
+        .replace(/([\w-]+)=/g, '<span class="attr">$1</span>=')
+        .replace(/&quot;([^&]*)&quot;/g, '&quot;<span class="val">$1</span>&quot;');
+    })
+    .join('\n');
+
+  // Manifest
+  const manifest = {
+    name: 'Your App Name',
+    short_name: 'Your App',
+    description: 'Your app description',
+    start_url: '/',
+    display: 'standalone',
+    background_color: state.bgMode === 'solid' ? state.bgColor : '#ffffff',
+    theme_color: '#2563eb',
+    icons: [
+      { src: '/assets/icons/icon-192.png', sizes: '192x192', type: 'image/png', purpose: 'any' },
+      { src: '/assets/icons/icon-512.png', sizes: '512x512', type: 'image/png', purpose: 'any' },
+      { src: '/assets/icons/icon-192.png', sizes: '192x192', type: 'image/png', purpose: 'maskable' },
+      { src: '/assets/icons/icon-512.png', sizes: '512x512', type: 'image/png', purpose: 'maskable' }
+    ]
+  };
+
+  state.manifestCode = JSON.stringify(manifest, null, 2);
+  manifestCode.innerHTML = escapeHtml(state.manifestCode)
+    .replace(/&quot;([^&]*)&quot;:/g, '&quot;<span class="attr">$1</span>&quot;:')
+    .replace(/: &quot;([^&]*)&quot;/g, ': &quot;<span class="val">$1</span>&quot;');
+}
+
+/* ===== DOWNLOAD INDIVIDUAL ===== */
+iconsGrid.addEventListener('click', (e) => {
+  const trigger = e.target.closest('[data-size]');
+  if (!trigger) return;
+  const name = trigger.dataset.size;
+  const icon = state.icons[name];
+  if (!icon || !icon.url) return;
+
+  const a = document.createElement('a');
+  a.href = icon.url;
+  a.download = `${name}.png`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  showToast(`Downloaded ${name}.png`, 'success');
+});
+
+/* ===== DOWNLOAD ZIP ===== */
+downloadZipBtn.addEventListener('click', async () => {
+  if (!state.imageEl) return;
+
+  // Wait for all blobs to be ready
+  await new Promise(r => setTimeout(r, 200));
+
+  if (typeof JSZip === 'undefined') {
+    // Fallback: download all individually
+    showToast('ZIP library not loaded downloading files individually', 'info', 4000);
+    Object.keys(state.icons).forEach((name, i) => {
+      setTimeout(() => {
+        const icon = state.icons[name];
+        if (icon && icon.url) {
+          const a = document.createElement('a');
+          a.href = icon.url;
+          a.download = `${name}.png`;
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+        }
+      }, i * 300);
+    });
+    return;
+  }
+
+  try {
+    const zip = new JSZip();
+
+    // Add all icons
+    Object.keys(state.icons).forEach(name => {
+      const icon = state.icons[name];
+      if (icon && icon.blob) {
+        zip.file(`${name}.png`, icon.blob);
+      }
+    });
+
+    // Add HTML code as README
+    const readme = `BigToolz Favicon Package
+=========================
+
+Contents:
+- favicon-16.png (16×16 browser tab)
+- favicon-32.png (32×32 retina tab)
+- favicon-48.png (48×48 Windows)
+- favicon-64.png (64×64 Safari)
+- apple-touch-icon.png (180×180 Apple)
+- icon-192.png (192×192 Android)
+- icon-512.png (512×512 PWA)
+
+Installation:
+1. Upload all PNG files to /assets/icons/ on your site.
+2. Add the following code inside your HTML <head>:
+
+${state.htmlCode}
+
+3. Create /manifest.json at your site root with:
+
+${state.manifestCode}
+
+Generated by BigToolz.com free online tools.
+`;
+
+    zip.file('README.txt', readme);
+
+    // Generate ZIP
+    const blob = await zip.generateAsync({ type: 'blob', compression: 'DEFLATE' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'favicons.zip';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+
+    showToast('✅ Downloaded favicons.zip', 'success');
+  } catch (err) {
+    console.error('ZIP generation failed:', err);
+    showToast('ZIP failed try downloading individually', 'error');
+  }
+});
+
+/* ===== COPY CODE ===== */
+$$('[data-copy]').forEach(btn => {
+  btn.addEventListener('click', async () => {
+    const type = btn.dataset.copy;
+    const code = type === 'html' ? state.htmlCode : state.manifestCode;
+    if (!code) return;
+
+    const ok = await copyToClipboard(code);
+    if (ok) {
+      btn.classList.add('copied');
+      const original = btn.innerHTML;
+      btn.innerHTML = '✓ Copied!';
+      setTimeout(() => {
+        btn.classList.remove('copied');
+        btn.innerHTML = original;
+      }, 2000);
+      showToast('Copied to clipboard!', 'success');
+    }
+  });
+});
+
+/* ===== OUTPUT TABS ===== */
+$$('.output-tab').forEach(btn => {
+  btn.addEventListener('click', () => {
+    $$('.output-tab').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    $$('.output-panel').forEach(p => p.classList.toggle('active', p.dataset.panel === btn.dataset.output));
+  });
+});
+
+/* ===== OPTIONS CHANGE ===== */
+shape.addEventListener('change', (e) => { state.shape = e.target.value; generateAll(); });
+bgMode.addEventListener('change', (e) => {
+  state.bgMode = e.target.value;
+  bgColor.disabled = state.bgMode !== 'solid';
+  generateAll();
+});
+bgColor.addEventListener('input', (e) => { state.bgColor = e.target.value; generateAll(); });
+
+// Initial disable
+bgColor.disabled = true;
+
+/* ===== NEW IMAGE ===== */
+newImageBtn.addEventListener('click', () => {
+  if (!confirm('Choose a new image? Current icons will be discarded.')) return;
+  state.imageEl = null;
+  Object.keys(state.icons).forEach(k => {
+    if (state.icons[k].url) URL.revokeObjectURL(state.icons[k].url);
+  });
+  state.icons = {};
+  editor.classList.remove('visible');
+  dropzone.style.display = '';
+  triggerFileSelect();
+});
+
+/* ===== FAQ ===== */
+$$('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    $$('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+</script>
+
+<!-- JSZip (optional, for ZIP download) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+
+</body>
+</html>

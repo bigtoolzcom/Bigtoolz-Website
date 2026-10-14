@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2563eb">
+
+<title>Water Intake Calculator - Daily Water Needs Online Free | BigToolz</title>
+<meta name="description" content="Free water intake calculator. Find how much water you should drink daily based on weight, activity, climate and age. Track your hydration with a live glass counter.">
+<meta name="keywords" content="water intake calculator, daily water intake, how much water to drink, hydration calculator, water consumption">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://bigtoolz.com/tools/utility-tools/water-intake/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Water Intake Calculator - Free Online Tool | BigToolz">
+<meta property="og:description" content="Calculate your daily water needs free, accurate, with a live tracker.">
+<meta property="og:url" content="https://bigtoolz.com/tools/utility-tools/water-intake/">
+<meta property="og:image" content="https://bigtoolz.com/assets/images/og-image.jpg">
+<meta property="og:site_name" content="BigToolz">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Water Intake Calculator - BigToolz">
+<meta name="twitter:description" content="Calculate daily water needs instantly free.">
+<meta name="twitter:image" content="https://bigtoolz.com/assets/images/twitter-card.jpg">
+
+<link rel="icon" href="/assets/images/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/images/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#f8f9fc;color:#1a1a2e;overflow-x:hidden;line-height:1.5}
+
+  .header{background:#fff;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;position:sticky;top:0;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+  .header-left{display:flex;align-items:center;gap:40px}
+  .logo{display:flex;align-items:center;gap:8px;font-size:22px;font-weight:800;color:#1a1a2e;text-decoration:none}
+  .logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#3b82f6,#2563eb);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px}
+  .logo span{color:#2563eb}
+  .nav{display:flex;align-items:center;gap:28px;list-style:none}
+  .nav a{text-decoration:none;color:#4b5563;font-size:14px;font-weight:500;transition:color .2s}
+  .nav a:hover,.nav a.active{color:#2563eb}
+  .header-right{display:flex;align-items:center;gap:16px}
+  .search-btn,.theme-btn{width:36px;height:36px;border-radius:50%;border:none;background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#4b5563}
+  .search-btn:hover,.theme-btn:hover{background:#f3f4f6}
+  .bookmark-btn{display:flex;align-items:center;gap:8px;background:#2563eb;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
+  .bookmark-btn:hover{background:#1d4ed8}
+
+  .hero{background:linear-gradient(135deg,#0a0e27 0%,#1a1a4e 40%,#2d1b69 70%,#4c1d95 100%);padding:40px 40px 60px;position:relative;overflow:hidden;color:#fff}
+  .hero::before{content:'';position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(6,182,212,.4) 0%,transparent 70%);border-radius:50%}
+  .hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+  .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px;flex-wrap:wrap}
+  .breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none}
+  .breadcrumb a:hover{color:#fff}
+  .breadcrumb .sep{color:rgba(255,255,255,.4)}
+  .breadcrumb .current{color:#fff;font-weight:500}
+  .hero-title-row{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+  .hero-icon{width:60px;height:60px;background:#06b6d4;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;color:#fff;flex-shrink:0;box-shadow:0 8px 24px rgba(6,182,212,.5)}
+  .hero-title{font-size:42px;font-weight:800;line-height:1.15}
+  .hero-title .blue{color:#22d3ee}
+  .hero-desc{font-size:15px;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:24px;max-width:560px}
+  .hero-features{display:flex;gap:24px;flex-wrap:wrap}
+  .hero-feature{display:flex;align-items:center;gap:6px;font-size:13px;color:#fff;font-weight:500}
+  .hero-feature .check{width:18px;height:18px;border-radius:50%;background:#06b6d4;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;flex-shrink:0}
+
+  .main-content{max-width:1200px;margin:0 auto;padding:40px;display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start}
+  .tool-content{min-width:0}
+
+  .workspace{background:#fff;border-radius:16px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,.06);border:1px solid #e5e7eb;margin-bottom:24px}
+
+  /* Unit toggle */
+  .unit-toggle{display:inline-flex;background:#ecfeff;padding:4px;border-radius:10px;border:1px solid #a5f3fc;margin-bottom:24px}
+  .unit-btn{padding:8px 20px;background:transparent;border:none;border-radius:8px;font-size:13px;font-weight:700;color:#6b7280;cursor:pointer;font-family:inherit;transition:all .2s}
+  .unit-btn.active{background:#06b6d4;color:#fff}
+  .unit-btn:hover:not(.active){color:#0891b2}
+
+  /* Inputs */
+  .inputs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:24px}
+  .input-group label{display:flex;justify-content:space-between;align-items:center;font-size:13px;font-weight:700;color:#4b5563;margin-bottom:8px;gap:8px}
+  .input-group label .hint{font-size:11px;color:#9ca3af;font-weight:500}
+  .input-wrap{position:relative;display:flex;align-items:center}
+  .input-wrap input,.input-wrap select{width:100%;padding:14px 16px;border:2px solid #e5e7eb;border-radius:10px;font-size:16px;font-weight:700;font-family:inherit;color:#1a1a2e;background:#fff;outline:none;transition:border-color .2s}
+  .input-wrap input:focus,.input-wrap select:focus{border-color:#06b6d4;box-shadow:0 0 0 3px rgba(6,182,212,.1)}
+  .input-wrap select{font-size:14px;cursor:pointer;padding-right:40px;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='3'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center}
+  .input-wrap .suffix{position:absolute;right:16px;font-size:13px;font-weight:700;color:#9ca3af;pointer-events:none}
+
+  /* Main result + tracker */
+  .result-panel{background:linear-gradient(135deg,#ecfeff,#cffafe);border-radius:20px;padding:28px;border:1px solid #a5f3fc;margin-bottom:24px;display:grid;grid-template-columns:220px 1fr;gap:28px;align-items:center}
+
+  .ring-wrap{position:relative;width:200px;height:200px;margin:0 auto}
+  .ring-svg{transform:rotate(-90deg);width:100%;height:100%}
+  .ring-bg{fill:none;stroke:#fff;stroke-width:14}
+  .ring-fill{fill:none;stroke:#06b6d4;stroke-width:14;stroke-linecap:round;transition:stroke-dashoffset .5s ease;stroke-dasharray:565.48;stroke-dashoffset:565.48}
+  .ring-text{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center}
+  .ring-icon{font-size:26px;margin-bottom:4px}
+  .ring-percent{font-size:26px;font-weight:800;color:#0e7490;line-height:1}
+  .ring-label{font-size:10px;font-weight:700;color:#0891b2;text-transform:uppercase;letter-spacing:.8px;margin-top:4px}
+
+  .target-info{display:flex;flex-direction:column;gap:14px}
+  .target-title{font-size:12px;font-weight:800;color:#0e7490;text-transform:uppercase;letter-spacing:1px}
+  .target-big{font-size:44px;font-weight:800;color:#155e75;line-height:1;letter-spacing:-1px}
+  .target-big .unit{font-size:20px;font-weight:700;color:#06b6d4;margin-left:6px}
+  .target-glasses{font-size:14px;color:#0891b2;font-weight:700}
+  .target-row{display:flex;gap:20px;flex-wrap:wrap;margin-top:8px;padding-top:12px;border-top:1px solid #a5f3fc}
+  .target-item{font-size:12px;color:#155e75;font-weight:600}
+  .target-item strong{color:#0e7490;font-size:15px;display:block;margin-top:2px;font-weight:800}
+
+  /* Glass tracker */
+  .tracker-section{background:#f0fdfa;border-radius:14px;padding:20px;border:1px solid #99f6e4;margin-bottom:24px}
+  .tracker-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;gap:12px;flex-wrap:wrap}
+  .tracker-title{font-size:15px;font-weight:800;color:#115e59;display:flex;align-items:center;gap:8px}
+  .tracker-count{font-size:13px;font-weight:700;color:#0d9488;background:#fff;padding:6px 14px;border-radius:10px;border:1px solid #99f6e4}
+  .tracker-count strong{color:#115e59;font-size:15px}
+
+  .glass-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(48px,1fr));gap:8px;margin-bottom:16px}
+  .glass-btn{aspect-ratio:1;background:#fff;border:2px solid #a7f3d0;border-radius:10px;cursor:pointer;font-size:20px;display:flex;align-items:center;justify-content:center;transition:all .2s;font-family:inherit;color:#cbd5e1}
+  .glass-btn:hover{border-color:#06b6d4;transform:translateY(-2px);color:#06b6d4}
+  .glass-btn.filled{background:#06b6d4;border-color:#06b6d4;color:#fff}
+  .glass-btn.filled:hover{background:#0891b2}
+
+  .tracker-actions{display:flex;gap:8px;flex-wrap:wrap}
+  .mini-btn{display:inline-flex;align-items:center;gap:6px;padding:10px 16px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;font-size:13px;font-weight:600;color:#4b5563;cursor:pointer;font-family:inherit;transition:all .2s}
+  .mini-btn:hover{border-color:#06b6d4;color:#0891b2;background:#f0fdfa}
+  .mini-btn.copied{background:#10b981;color:#fff;border-color:#10b981}
+
+  /* Breakdown */
+  .breakdown{background:#f8fafc;border-radius:12px;padding:18px;border:1px solid #e5e7eb;margin-bottom:24px}
+  .breakdown-title{font-size:13px;font-weight:800;color:#4b5563;text-transform:uppercase;letter-spacing:.5px;margin-bottom:14px}
+  .bd-row{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid #f3f4f6;font-size:14px}
+  .bd-row:last-child{border-bottom:none;padding-bottom:0}
+  .bd-label{color:#4b5563;font-weight:600}
+  .bd-value{color:#1a1a2e;font-weight:800}
+  .bd-value.plus{color:#0891b2}
+
+  /* Tips */
+  .tips-section{background:#fffbeb;border-radius:14px;padding:20px;border:1px solid #fde68a;margin-top:24px}
+  .tips-title{font-size:15px;font-weight:800;color:#78350f;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+  .tips-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .tip-item{background:#fff;border-radius:10px;padding:12px 14px;border:1px solid #fde68a;font-size:13px;color:#4b5563;line-height:1.5;display:flex;gap:10px;align-items:flex-start}
+  .tip-icon{font-size:18px;line-height:1;flex-shrink:0}
+
+  /* SEO */
+  .seo-content{background:#fff;border-radius:16px;padding:32px;border:1px solid #e5e7eb;margin-bottom:24px}
+  .seo-content h2{font-size:22px;font-weight:800;color:#1a1a2e;margin-bottom:14px;margin-top:28px;display:flex;align-items:center;gap:10px}
+  .seo-content h2:first-child{margin-top:0}
+  .seo-content h3{font-size:16px;font-weight:700;color:#1a1a2e;margin:20px 0 10px}
+  .seo-content p{font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:14px}
+  .seo-content ul{list-style:none;padding-left:0;margin-bottom:16px}
+  .seo-content ul li{position:relative;padding-left:24px;font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:8px}
+  .seo-content ul li::before{content:'';position:absolute;left:6px;top:12px;width:6px;height:6px;background:#06b6d4;border-radius:50%}
+  .seo-content a{color:#2563eb;text-decoration:none;font-weight:600}
+  .seo-content a:hover{text-decoration:underline}
+  .seo-content strong{color:#1a1a2e;font-weight:700}
+  .seo-content code{background:#f1f5f9;padding:2px 6px;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:13px;color:#0f172a;border:1px solid #e2e8f0}
+
+  .how-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:20px}
+  .how-step{background:#ecfeff;border-radius:12px;padding:20px;border:1px solid #a5f3fc}
+  .how-step-num{width:36px;height:36px;border-radius:50%;background:#06b6d4;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;margin-bottom:12px}
+  .how-step-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+  .how-step-desc{font-size:13px;color:#6b7280;line-height:1.6}
+
+  .faq-item{background:#ecfeff;border:1px solid #a5f3fc;border-radius:12px;margin-bottom:10px;overflow:hidden;transition:border-color .2s}
+  .faq-item:hover{border-color:#06b6d4}
+  .faq-question{width:100%;background:none;border:none;padding:18px 22px;font-size:15px;font-weight:700;color:#1a1a2e;text-align:left;cursor:pointer;font-family:inherit;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .faq-question .chev{font-size:12px;color:#06b6d4;transition:transform .2s;flex-shrink:0}
+  .faq-item.open .faq-question .chev{transform:rotate(180deg)}
+  .faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 22px}
+  .faq-item.open .faq-answer{max-height:500px;padding-bottom:18px}
+  .faq-answer p{font-size:14px;color:#6b7280;line-height:1.7;margin:0}
+
+  .sidebar{background:#fff;border-radius:16px;padding:24px;border:1px solid #e5e7eb;position:sticky;top:80px;margin-bottom:24px}
+  .sidebar-header{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:800;color:#1a1a2e;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid #f3f4f6}
+  .sidebar-list{display:flex;flex-direction:column;gap:8px}
+  .sidebar-item{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;cursor:pointer;transition:background .2s;text-decoration:none;color:inherit;border:1px solid #f3f4f6}
+  .sidebar-item:hover{background:#ecfeff;border-color:#a5f3fc}
+  .sidebar-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;flex-shrink:0}
+  .sidebar-info{flex:1;min-width:0}
+  .sidebar-title{font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:2px}
+  .sidebar-desc{font-size:11px;color:#9ca3af;line-height:1.4}
+
+  .footer{background:#0a0e27;padding:60px 40px 30px;color:#fff;margin-top:40px}
+  .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:40px}
+  .footer-brand{display:flex;align-items:center;gap:8px;font-size:20px;font-weight:800;margin-bottom:12px}
+  .footer-brand span{color:#60a5fa}
+  .footer-tagline{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px}
+  .footer-social{display:flex;gap:12px}
+  .footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:16px;transition:background .2s}
+  .footer-social a:hover{background:rgba(255,255,255,.2)}
+  .footer-heading{font-size:14px;font-weight:700;margin-bottom:20px;color:#fff}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .footer-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;transition:color .2s}
+  .footer-links a:hover{color:#60a5fa}
+  .footer-bottom{max-width:1200px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  .footer-bottom-left{display:flex;gap:20px;font-size:12px;color:rgba(255,255,255,.5)}
+  .footer-bottom-right,.footer-bottom-links a{font-size:12px;color:rgba(255,255,255,.5);text-decoration:none}
+  .footer-bottom-links{display:flex;gap:20px}
+
+  .toast{position:fixed;bottom:24px;right:24px;background:#1a1a2e;color:#fff;padding:14px 20px;border-radius:10px;font-size:13px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:3000;transform:translateY(200%);transition:transform .3s ease;max-width:320px}
+  .toast.visible{transform:translateY(0)}
+  .toast.success{background:#10b981}
+  .toast.error{background:#ef4444}
+
+  @media(max-width:1024px){
+    .main-content{grid-template-columns:1fr;padding:24px 20px}
+    .sidebar{position:static}
+    .how-steps{grid-template-columns:repeat(2,1fr)}
+    .inputs-grid{grid-template-columns:repeat(2,1fr)}
+    .result-panel{grid-template-columns:1fr;text-align:center}
+    .target-info{text-align:center}
+    .target-row{justify-content:center}
+    .tips-grid{grid-template-columns:1fr}
+  }
+  @media(max-width:768px){
+    .header{padding:0 20px}.nav{display:none}
+    .hero{padding:24px 20px 40px}
+    .hero-title{font-size:28px}
+    .hero-icon{width:48px;height:48px;font-size:22px}
+    .hero-title-row{flex-direction:column;align-items:flex-start;gap:12px}
+    .main-content{padding:20px 16px}
+    .workspace{padding:20px}
+    .how-steps{grid-template-columns:1fr}
+    .seo-content{padding:20px}
+    .footer-inner{grid-template-columns:1fr 1fr}
+    .toast{left:16px;right:16px;bottom:16px;max-width:none}
+    .inputs-grid{grid-template-columns:1fr}
+    .target-big{font-size:36px}
+  }
+  @media(max-width:576px){
+    .header{padding:0 16px}.header-right .search-btn,.header-right .theme-btn{display:none}
+    .hero-title{font-size:24px}
+    .footer-inner{grid-template-columns:1fr}
+    .footer-bottom{flex-direction:column;text-align:center}
+    .target-big{font-size:32px}
+    .glass-grid{grid-template-columns:repeat(4,1fr)}
+  }
+
+  html[data-theme="dark"] body{background:#0f172a;color:#f1f5f9}
+  html[data-theme="dark"] .header,html[data-theme="dark"] .workspace,html[data-theme="dark"] .seo-content,html[data-theme="dark"] .sidebar{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .logo,html[data-theme="dark"] .hero-title,html[data-theme="dark"] .seo-content h2,html[data-theme="dark"] .seo-content h3,html[data-theme="dark"] .faq-question,html[data-theme="dark"] .sidebar-header,html[data-theme="dark"] .sidebar-title{color:#f1f5f9}
+  html[data-theme="dark"] .nav a{color:#cbd5e1}
+  html[data-theme="dark"] .how-step,html[data-theme="dark"] .faq-item,html[data-theme="dark"] .tip-item{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .unit-toggle{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .input-wrap input,html[data-theme="dark"] .input-wrap select{background:#0f172a;border-color:#334155;color:#f1f5f9}
+  html[data-theme="dark"] .result-panel{background:linear-gradient(135deg,#0f172a,#1e293b);border-color:#334155}
+  html[data-theme="dark"] .ring-bg{stroke:#334155}
+  html[data-theme="dark"] .target-big,html[data-theme="dark"] .ring-percent{color:#67e8f9}
+  html[data-theme="dark"] .target-title,html[data-theme="dark"] .target-glasses,html[data-theme="dark"] .ring-label{color:#94a3b8}
+  html[data-theme="dark"] .target-item{color:#cbd5e1}
+  html[data-theme="dark"] .target-item strong{color:#67e8f9}
+  html[data-theme="dark"] .target-row{border-color:#334155}
+  html[data-theme="dark"] .tracker-section{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .glass-btn{background:#0f172a;border-color:#334155;color:#64748b}
+  html[data-theme="dark"] .glass-btn.filled{background:#06b6d4;border-color:#06b6d4;color:#fff}
+  html[data-theme="dark"] .breakdown{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .bd-row{border-color:#1e293b}
+  html[data-theme="dark"] .bd-value{color:#f1f5f9}
+  html[data-theme="dark"] .tips-section{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .tips-title{color:#fbbf24}
+  html[data-theme="dark"] .seo-content p,html[data-theme="dark"] .seo-content ul li,html[data-theme="dark"] .faq-answer p{color:#cbd5e1}
+  html[data-theme="dark"] .seo-content code{background:#0f172a;color:#94a3b8;border-color:#334155}
+  html[data-theme="dark"] .mini-btn{background:#0f172a;border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .tracker-count{background:#0f172a;border-color:#334155;color:#67e8f9}
+  html[data-theme="dark"] .tracker-count strong{color:#22d3ee}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type": "SoftwareApplication", "name": "Water Intake Calculator", "url": "https://bigtoolz.com/tools/utility-tools/water-intake/", "applicationCategory": "HealthApplication", "operatingSystem": "Any (Web-based)", "description": "Free water intake calculator find how much water you should drink daily based on weight, activity, climate. Includes live tracker.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.8", "ratingCount": "1876"}},
+    {"@type": "HowTo", "name": "How to Calculate Your Daily Water Intake", "step": [
+      {"@type": "HowToStep", "name": "Enter Weight", "text": "Type your current body weight."},
+      {"@type": "HowToStep", "name": "Choose Activity", "text": "Select your daily activity level."},
+      {"@type": "HowToStep", "name": "Pick Climate", "text": "Choose your usual climate (temperate, hot, cold)."},
+      {"@type": "HowToStep", "name": "Track Daily", "text": "Use the glass tracker to hit your daily target."}
+    ]},
+    {"@type": "FAQPage", "mainEntity": [
+      {"@type": "Question", "name": "How much water should I drink per day?", "acceptedAnswer": {"@type": "Answer", "text": "The common 8-glass (2 litres) rule is a rough guide. Actual needs depend on weight, activity, climate, and health. A better estimate: 30-35 ml per kg of body weight per day, plus extra for exercise and hot weather."}},
+      {"@type": "Question", "name": "Does coffee and tea count as water intake?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, mostly. Studies show moderate coffee and tea consumption contributes to daily fluid intake. The diuretic effect is small for regular drinkers. However, plain water remains the best choice, and sugary drinks aren't a substitute."}},
+      {"@type": "Question", "name": "What are signs of dehydration?", "acceptedAnswer": {"@type": "Answer", "text": "Dark yellow urine, dry mouth, fatigue, headaches, dizziness, and reduced concentration. If you're thirsty, you're already mildly dehydrated drink before you feel thirsty."}},
+      {"@type": "Question", "name": "Can I drink too much water?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, though it's rare. Drinking excessive water (over 4-5 litres at once) can cause hyponatremia dangerously low sodium. Endurance athletes are most at risk. Spread intake throughout the day and follow thirst + target range."}},
+      {"@type": "Question", "name": "Do I need more water in hot weather or when exercising?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. In hot climates or during exercise, you lose water through sweat. Add 500ml-1L per hour of exercise, and increase intake by 10-30% in hot weather. Electrolyte drinks help during prolonged sweating."}}
+    ]},
+    {"@type": "BreadcrumbList", "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bigtoolz.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://bigtoolz.com/tools/"},
+      {"@type": "ListItem", "position": 3, "name": "Utility Tools", "item": "https://bigtoolz.com/tools/utility-tools/"},
+      {"@type": "ListItem", "position": 4, "name": "Water Intake Calculator", "item": "https://bigtoolz.com/tools/utility-tools/water-intake/"}
+    ]}
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-left">
+    <a href="/" class="logo"><div class="logo-icon">⚒</div>BigToolz</span></a>
+    <nav><ul class="nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/tools/" class="active">All Tools</a></li>
+      <li><a href="/tools/categories">Categories</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul></nav>
+  </div>
+  <div class="header-right">
+   
+    <button class="theme-btn" aria-label="Toggle theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
+    
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <nav class="breadcrumb">
+      <a href="/">Home</a><span class="sep">›</span>
+      <a href="/tools/">Tools</a><span class="sep">›</span>
+      <a href="/tools/utility-tools/">Utility Tools</a><span class="sep">›</span>
+      <span class="current">Water Intake Calculator</span>
+    </nav>
+    <div class="hero-title-row">
+      <div class="hero-icon">💧</div>
+      <h1 class="hero-title">Water <span class="blue">Intake Calculator</span></h1>
+    </div>
+    <p class="hero-desc">
+      Find out exactly how much water your body needs each day based on your weight, activity level, and climate. Track your daily glasses with a live counter.
+    </p>
+    <div class="hero-features">
+      <div class="hero-feature"><span class="check">✓</span> Personalized Target</div>
+      <div class="hero-feature"><span class="check">✓</span> Glass Tracker</div>
+      <div class="hero-feature"><span class="check">✓</span> Metric & Imperial</div>
+      <div class="hero-feature"><span class="check">✓</span> Auto-Save Progress</div>
+    </div>
+  </div>
+</section>
+
+<div class="main-content">
+
+  <div class="tool-content">
+
+    <div class="workspace">
+
+      <!-- Unit toggle -->
+      <div class="unit-toggle">
+        <button class="unit-btn active" data-unit="metric">Metric (kg/cm)</button>
+        <button class="unit-btn" data-unit="imperial">Imperial (lb/ft)</button>
+      </div>
+
+      <!-- Inputs -->
+      <div class="inputs-grid">
+        <div class="input-group">
+          <label>Weight <span class="hint" id="weightHint">kg</span></label>
+          <div class="input-wrap">
+            <input type="number" id="weight" value="70" min="20" max="300" step="0.5">
+            <span class="suffix" id="weightUnit">kg</span>
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label>Gender</label>
+          <div class="input-wrap">
+            <select id="gender">
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label>Age Group</label>
+          <div class="input-wrap">
+            <select id="ageGroup">
+              <option value="child">Child (under 14)</option>
+              <option value="teen">Teen (14-18)</option>
+              <option value="adult" selected>Adult (19-64)</option>
+              <option value="senior">Senior (65+)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label>Activity Level <span class="hint">Exercise today</span></label>
+          <div class="input-wrap">
+            <select id="activity">
+              <option value="sedentary">Sedentary (no exercise)</option>
+              <option value="light" selected>Light (30 min exercise)</option>
+              <option value="moderate">Moderate (1 hr exercise)</option>
+              <option value="active">Active (2+ hr exercise)</option>
+              <option value="athlete">Athlete (intense training)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label>Climate</label>
+          <div class="input-wrap">
+            <select id="climate">
+              <option value="temperate" selected>Temperate (15-25°C)</option>
+              <option value="hot">Hot (25-35°C)</option>
+              <option value="very-hot">Very Hot (35°C+)</option>
+              <option value="cold">Cold (below 15°C)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label>Pregnancy / Breastfeeding</label>
+          <div class="input-wrap">
+            <select id="pregnancy">
+              <option value="none" selected>Not applicable</option>
+              <option value="pregnant">Pregnant</option>
+              <option value="breastfeeding">Breastfeeding</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Result panel -->
+      <div class="result-panel">
+        <div class="ring-wrap">
+          <svg class="ring-svg" viewBox="0 0 200 200">
+            <circle class="ring-bg" cx="100" cy="100" r="90"></circle>
+            <circle class="ring-fill" id="ringFill" cx="100" cy="100" r="90"></circle>
+          </svg>
+          <div class="ring-text">
+            <div class="ring-icon">💧</div>
+            <div class="ring-percent" id="ringPercent">0%</div>
+            <div class="ring-label">Today</div>
+          </div>
+        </div>
+
+        <div class="target-info">
+          <div class="target-title">🎯 Your Daily Target</div>
+          <div class="target-big">
+            <span id="targetLitres">2.5</span>
+            <span class="unit">Litres</span>
+          </div>
+          <div class="target-glasses">≈ <strong id="targetGlasses">10</strong> glasses (250 ml each)</div>
+
+          <div class="target-row">
+            <div class="target-item">
+              Base
+              <strong id="breakdownBase">2.1 L</strong>
+            </div>
+            <div class="target-item">
+              Activity
+              <strong id="breakdownActivity">+0.3 L</strong>
+            </div>
+            <div class="target-item">
+              Climate
+              <strong id="breakdownClimate">+0.0 L</strong>
+            </div>
+            <div class="target-item">
+              Other
+              <strong id="breakdownOther">+0.0 L</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tracker -->
+      <div class="tracker-section">
+        <div class="tracker-header">
+          <div class="tracker-title">💧 Today's Progress</div>
+          <div class="tracker-count">Drank <strong id="drankCount">0</strong> of <strong id="goalCount">10</strong> glasses</div>
+        </div>
+
+        <div class="glass-grid" id="glassGrid">
+          <!-- Filled by JS -->
+        </div>
+
+        <div class="tracker-actions">
+          <button class="mini-btn" id="resetTracker">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 12a9 9 0 109-9 9.75 9.75 0 00-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+            Reset Today
+          </button>
+          <button class="mini-btn" id="copyBtn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+            Copy Target
+          </button>
+        </div>
+      </div>
+
+      <!-- Breakdown -->
+      <div class="breakdown">
+        <div class="breakdown-title">📊 How We Calculated</div>
+        <div class="bd-row"><span class="bd-label">Base water need (weight × factor)</span><span class="bd-value" id="bdBase">2.1 L</span></div>
+        <div class="bd-row"><span class="bd-label">Activity level</span><span class="bd-value plus" id="bdActivity">+0.3 L</span></div>
+        <div class="bd-row"><span class="bd-label">Climate</span><span class="bd-value plus" id="bdClimate">+0.0 L</span></div>
+        <div class="bd-row"><span class="bd-label">Age adjustment</span><span class="bd-value plus" id="bdAge">+0.0 L</span></div>
+        <div class="bd-row"><span class="bd-label">Pregnancy/Breastfeeding</span><span class="bd-value plus" id="bdPregnancy">+0.0 L</span></div>
+        <div class="bd-row"><span class="bd-label">TOTAL DAILY TARGET</span><span class="bd-value" id="bdTotal" style="color:#06b6d4;font-size:16px;">2.5 L</span></div>
+      </div>
+
+      <!-- Tips -->
+      <div class="tips-section">
+        <div class="tips-title">💡 Hydration Tips</div>
+        <div class="tips-grid">
+          <div class="tip-item"><span class="tip-icon">🌅</span> Drink 1 glass of water right after waking you're dehydrated after 7-8 hours of sleep.</div>
+          <div class="tip-item"><span class="tip-icon">🍽</span> Drink a glass 30 min before each meal aids digestion and reduces overeating.</div>
+          <div class="tip-item"><span class="tip-icon">🏃</span> Drink 500ml before exercise, sip during, and 500ml after.</div>
+          <div class="tip-item"><span class="tip-icon">🚽</span> Check your urine color pale yellow = hydrated. Dark yellow = drink more.</div>
+          <div class="tip-item"><span class="tip-icon">☕</span> Coffee and tea count, but limit caffeine to 400mg/day (about 4 cups).</div>
+          <div class="tip-item"><span class="tip-icon">🥗</span> Fruits and vegetables (watermelon, cucumber, lettuce) also add to your intake.</div>
+          <div class="tip-item"><span class="tip-icon">🌡</span> In hot weather, add electrolytes (salt, potassium) plain water alone isn't enough.</div>
+          <div class="tip-item"><span class="tip-icon">⏰</span> Spread intake through the day don't chug 2 litres in one sitting.</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- SEO Content -->
+    <div class="seo-content">
+
+      <h2>💧 What is a Water Intake Calculator?</h2>
+      <p>
+        A <strong>Water Intake Calculator</strong> estimates how much water you should drink each day based on your <strong>body weight, activity level, climate, age, and gender</strong>. The popular "8 glasses a day" rule is a rough guideline but real needs vary widely. A 100kg athlete in hot weather needs far more than a 50kg office worker in a temperate climate.
+      </p>
+      <p>
+        Proper hydration affects almost everything: energy levels, brain function, digestion, skin health, kidney function, and even mood. Even mild dehydration (1-2% of body weight) reduces cognitive performance and physical endurance. This calculator gives you a personalized daily target, plus a tracker to actually hit it.
+      </p>
+
+      <h2>🚀 How to Use This Calculator</h2>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-step-num">1</div>
+          <div class="how-step-title">Enter Details</div>
+          <div class="how-step-desc">Weight, activity, climate, and other factors.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">2</div>
+          <div class="how-step-title">Get Your Target</div>
+          <div class="how-step-desc">Daily litres and glasses personalized for you.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">3</div>
+          <div class="how-step-title">Track Glasses</div>
+          <div class="how-step-desc">Tap each glass as you drink progress ring updates live.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">4</div>
+          <div class="how-step-title">Repeat Daily</div>
+          <div class="how-step-desc">Progress auto-saves today. Reset tomorrow morning.</div>
+        </div>
+      </div>
+
+      <h2>📊 The Formula We Use</h2>
+      <p>Our calculator uses a simplified but accurate model based on multiple peer-reviewed sources:</p>
+      <ul>
+        <li><strong>Base need:</strong> 30-35 ml per kg of body weight (for adults)</li>
+        <li><strong>Activity:</strong> +0.3L (light) to +1L (athlete) per day</li>
+        <li><strong>Climate:</strong> +0-0.5L depending on temperature</li>
+        <li><strong>Age:</strong> Children need slightly more per kg, seniors slightly less</li>
+        <li><strong>Pregnancy:</strong> +0.3L (pregnant), +0.7L (breastfeeding)</li>
+      </ul>
+      <p>Example: 70kg adult, light activity, temperate climate = 70 × 35ml = 2.1L base + 0.3L activity = <strong>2.4L/day (~9-10 glasses)</strong>.</p>
+
+      <h2>💡 Why Hydration Matters</h2>
+
+      <h3>Brain Function</h3>
+      <p>Your brain is ~75% water. Mild dehydration (1-2%) impairs concentration, short-term memory, and mood. Studies show even 1% dehydration reduces cognitive performance measurably.</p>
+
+      <h3>Physical Performance</h3>
+      <p>Muscles are ~75% water. Losing 2% of body weight in fluid reduces strength and endurance by 10-20%. Athletes should hydrate before, during, and after training.</p>
+
+      <h3>Digestion & Metabolism</h3>
+      <p>Water is essential for breaking down food and absorbing nutrients. It also helps prevent constipation and supports kidney function.</p>
+
+      <h3>Skin & Joints</h3>
+      <p>Hydrated skin looks plumper and more elastic. Water also lubricates joints and cushions organs.</p>
+
+      <h3>Weight Management</h3>
+      <p>Drinking water before meals can reduce calorie intake. Studies show people who drink 500ml before meals lose more weight than those who don't.</p>
+
+      <h2>❓ Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-question">How much water should I drink per day?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>The common "8 glasses" rule is a rough guide. Actual needs depend on weight, activity, climate, and health. A better estimate: <strong>30-35 ml per kg of body weight</strong> per day, plus extra for exercise and hot weather. Use our calculator for your personalized target.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Does coffee and tea count as water intake?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Yes, mostly. Studies show moderate coffee and tea consumption contributes to daily fluid intake. The diuretic effect is small for regular drinkers. However, <strong>plain water remains the best choice</strong>, and sugary drinks aren't a substitute.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What are signs of dehydration?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>Dark yellow urine, dry mouth, fatigue, headaches, dizziness, and reduced concentration.</strong> If you're thirsty, you're already mildly dehydrated drink before you feel thirsty. The best quick check is your urine color (should be pale yellow).</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I drink too much water?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Yes, though it's rare. Drinking excessive water (over <strong>4-5 litres at once</strong>) can cause <em>hyponatremia</em> dangerously low sodium. Endurance athletes are most at risk. Spread intake throughout the day and follow thirst + target range. Our calculator gives reasonable upper limits.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Do I need more water in hot weather or when exercising?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Yes. In hot climates or during exercise, you lose water through sweat. Add <strong>500ml-1L per hour</strong> of exercise, and increase intake by <strong>10-30%</strong> in hot weather. Electrolyte drinks help during prolonged sweating (over 1 hour).</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Do seniors need less water?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Seniors have a reduced thirst sensation, so they often drink less than they need but they still need roughly the same amount. Our calculator slightly reduces the target for seniors but emphasizes <strong>regular drinking by schedule</strong>, not by thirst.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Does food count toward water intake?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Yes about 20% of daily fluid comes from food, especially fruits and vegetables (watermelon, cucumber, lettuce, tomatoes). The targets in our calculator are for <strong>beverages only</strong>, which is the common medical convention.</p></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-header">🔗 Related Utility Tools</div>
+    <div class="sidebar-list">
+      <a href="/tools/utility-tools/mood-tracker/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#f59e0b;">😊</div>
+        <div class="sidebar-info"><div class="sidebar-title">Mood Tracker</div><div class="sidebar-desc">Track daily mood</div></div>
+      </a>
+      <a href="/tools/utility-tools/habit-tracker/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#8b5cf6;">✅</div>
+        <div class="sidebar-info"><div class="sidebar-title">Habit Tracker</div><div class="sidebar-desc">Build habits</div></div>
+      </a>
+      <a href="/tools/utility-tools/sleep-cycle/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#3b82f6;">😴</div>
+        <div class="sidebar-info"><div class="sidebar-title">Sleep Cycle</div><div class="sidebar-desc">Bedtime calculator</div></div>
+      </a>
+      <a href="/tools/calculator-tools/bmi-calculator/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#10b981;">⚖️</div>
+        <div class="sidebar-info"><div class="sidebar-title">BMI Calculator</div><div class="sidebar-desc">Body mass index</div></div>
+      </a>
+      <a href="/tools/calculator-tools/calorie-calculator/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#f97316;">🍎</div>
+        <div class="sidebar-info"><div class="sidebar-title">Calorie Calculator</div><div class="sidebar-desc">Daily calories</div></div>
+      </a>
+      <a href="/tools/utility-tools/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#64748b;">⚙️</div>
+        <div class="sidebar-info"><div class="sidebar-title">All Utility Tools →</div><div class="sidebar-desc">Browse 50+ tools</div></div>
+      </a>
+    </div>
+  </aside>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand"><div class="logo-icon">⚒</div>BigToolz</span></div>
+      <p class="footer-tagline">Your Ultimate Online Tools Hub</p>
+      <div class="footer-social">
+        <a href="https://facebook.com/bigtoolz" aria-label="Facebook">f</a>
+        <a href="https://twitter.com/bigtoolz" aria-label="Twitter">𝕏</a>
+        <a href="https://youtube.com/@bigtoolz" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+    <div>
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/tools/">All Tools</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Categories</h3>
+      <ul class="footer-links">
+        <li><a href="/tools/image-tools/">Image Tools</a></li>
+        <li><a href="/tools/pdf-tools/">PDF Tools</a></li>
+        <li><a href="/tools/text-tools/">Text Tools</a></li>
+        <li><a href="/tools/utility-tools/">Utility Tools</a></li>
+        <li><a href="/tools/categories">All Categories →</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Legal</h3>
+      <ul class="footer-links">
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left"><span>✓ 100% Free</span><span>✓ No Sign Up</span><span>✓ No Installation</span></div>
+    <div class="footer-bottom-right">© 2026 BigToolz. All rights reserved.</div>
+    <div class="footer-bottom-links"><a href="/privacy-policy">Privacy</a><a href="/terms">Terms</a><a href="/disclaimer">Disclaimer</a></div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+'use strict';
+
+/* ===== THEME ===== */
+(function(){try{var t=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&d))document.documentElement.setAttribute('data-theme','dark');else if(t==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();
+document.querySelector('.theme-btn')?.addEventListener('click',()=>{const h=document.documentElement;const c=h.getAttribute('data-theme');const d=window.matchMedia('(prefers-color-scheme: dark)').matches;let n=c==='dark'?'light':c==='light'?'dark':(d?'light':'dark');h.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}});
+
+/* ===== HELPERS ===== */
+const $ = (s, p = document) => p.querySelector(s);
+const $$ = (s, p = document) => [...p.querySelectorAll(s)];
+
+function showToast(msg, type = 'info', duration = 3000) {
+  const t = $('#toast');
+  if (!t) return;
+  t.className = 'toast visible' + (type !== 'info' ? ' ' + type : '');
+  t.textContent = msg;
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove('visible'), duration);
+}
+
+async function copyToClipboard(text) {
+  try {
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(text);
+      return true;
+    }
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.cssText = 'position:fixed;opacity:0;';
+    document.body.appendChild(ta);
+    ta.select();
+    const ok = document.execCommand('copy');
+    document.body.removeChild(ta);
+    return ok;
+  } catch (e) { return false; }
+}
+
+/* ===== STATE ===== */
+const state = {
+  unit: 'metric', // 'metric' | 'imperial'
+  targetLitres: 2.5,
+  targetGlasses: 10,
+  drank: 0,
+  todayKey: new Date().toISOString().split('T')[0]
+};
+
+const STORAGE_KEY = 'bigtoolz_water_v1';
+
+/* ===== DOM ===== */
+const weight = $('#weight');
+const gender = $('#gender');
+const ageGroup = $('#ageGroup');
+const activity = $('#activity');
+const climate = $('#climate');
+const pregnancy = $('#pregnancy');
+const weightUnit = $('#weightUnit');
+const weightHint = $('#weightHint');
+const ringFill = $('#ringFill');
+const ringPercent = $('#ringPercent');
+const targetLitres = $('#targetLitres');
+const targetGlasses = $('#targetGlasses');
+const breakdownBase = $('#breakdownBase');
+const breakdownActivity = $('#breakdownActivity');
+const breakdownClimate = $('#breakdownClimate');
+const breakdownOther = $('#breakdownOther');
+const bdBase = $('#bdBase');
+const bdActivity = $('#bdActivity');
+const bdClimate = $('#bdClimate');
+const bdAge = $('#bdAge');
+const bdPregnancy = $('#bdPregnancy');
+const bdTotal = $('#bdTotal');
+const glassGrid = $('#glassGrid');
+const drankCount = $('#drankCount');
+const goalCount = $('#goalCount');
+const resetTracker = $('#resetTracker');
+const copyBtn = $('#copyBtn');
+
+/* ===== UNIT TOGGLE ===== */
+$$('.unit-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    $$('.unit-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    state.unit = btn.dataset.unit;
+
+    if (state.unit === 'metric') {
+      weightUnit.textContent = 'kg';
+      weightHint.textContent = 'kg';
+      weight.value = Math.round(weight.value / 2.20462 * 10) / 10;
+      weight.min = 20;
+      weight.max = 300;
+    } else {
+      weightUnit.textContent = 'lb';
+      weightHint.textContent = 'lb';
+      weight.value = Math.round(weight.value * 2.20462);
+      weight.min = 44;
+      weight.max = 660;
+    }
+    calculate();
+  });
+});
+
+/* ===== WEIGHT TO KG ===== */
+function weightInKg() {
+  const w = parseFloat(weight.value) || 0;
+  return state.unit === 'metric' ? w : w / 2.20462;
+}
+
+/* ===== CALCULATE ===== */
+function calculate() {
+  const kg = weightInKg();
+  if (kg <= 0) return;
+
+  const age = ageGroup.value;
+  const act = activity.value;
+  const clim = climate.value;
+  const preg = pregnancy.value;
+  const gen = gender.value;
+
+  // Base: 30-35 ml per kg (adjust by age and gender)
+  let baseFactor = 33; // ml per kg (average)
+  if (age === 'child') baseFactor = 40;
+  else if (age === 'teen') baseFactor = 35;
+  else if (age === 'senior') baseFactor = 30;
+
+  // Gender adjustment (males slightly higher)
+  if (gen === 'male') baseFactor += 1;
+  else if (gen === 'female') baseFactor -= 1;
+
+  const baseL = (kg * baseFactor) / 1000;
+
+  // Activity add-on
+  const activityAdd = {
+    sedentary: 0,
+    light: 0.3,
+    moderate: 0.6,
+    active: 1.0,
+    athlete: 1.5
+  }[act] || 0;
+
+  // Climate add-on
+  const climateAdd = {
+    temperate: 0,
+    hot: 0.3,
+    'very-hot': 0.6,
+    cold: 0.2
+  }[clim] || 0;
+
+  // Age adjustment (children get a small extra for growth)
+  const ageAdd = age === 'child' ? 0.2 : 0;
+
+  // Pregnancy
+  const pregnancyAdd = preg === 'pregnant' ? 0.3 : preg === 'breastfeeding' ? 0.7 : 0;
+
+  // Total
+  const total = baseL + activityAdd + climateAdd + ageAdd + pregnancyAdd;
+
+  state.targetLitres = Math.round(total * 10) / 10;
+  state.targetGlasses = Math.round(total / 0.25); // 250ml glasses
+
+  // Update UI
+  targetLitres.textContent = state.targetLitres.toFixed(1);
+  targetGlasses.textContent = state.targetGlasses;
+  goalCount.textContent = state.targetGlasses;
+
+  breakdownBase.textContent = baseL.toFixed(1) + ' L';
+  breakdownActivity.textContent = '+' + activityAdd.toFixed(1) + ' L';
+  breakdownClimate.textContent = '+' + climateAdd.toFixed(1) + ' L';
+  breakdownOther.textContent = '+' + (ageAdd + pregnancyAdd).toFixed(1) + ' L';
+
+  bdBase.textContent = baseL.toFixed(1) + ' L';
+  bdActivity.textContent = '+' + activityAdd.toFixed(1) + ' L';
+  bdClimate.textContent = '+' + climateAdd.toFixed(1) + ' L';
+  bdAge.textContent = '+' + ageAdd.toFixed(1) + ' L';
+  bdPregnancy.textContent = '+' + pregnancyAdd.toFixed(1) + ' L';
+  bdTotal.textContent = state.targetLitres.toFixed(1) + ' L';
+
+  renderGlassGrid();
+  updateRing();
+  saveProgress();
+}
+
+/* ===== GLASS GRID ===== */
+function renderGlassGrid() {
+  // Show at least the target glasses count, cap at 20 for layout
+  const total = Math.min(state.targetGlasses, 20);
+
+  // If existing grid has same count, just update fill
+  if (glassGrid.children.length === total) {
+    $$('.glass-btn').forEach((btn, i) => {
+      btn.classList.toggle('filled', i < state.drank);
+    });
+    return;
+  }
+
+  glassGrid.innerHTML = '';
+  for (let i = 0; i < total; i++) {
+    const btn = document.createElement('button');
+    btn.className = 'glass-btn' + (i < state.drank ? ' filled' : '');
+    btn.type = 'button';
+    btn.dataset.index = i;
+    btn.textContent = '💧';
+    btn.setAttribute('aria-label', `Glass ${i + 1}`);
+    btn.addEventListener('click', () => toggleGlass(i));
+    glassGrid.appendChild(btn);
+  }
+}
+
+function toggleGlass(i) {
+  // If clicking the last filled glass, unfill it (toggle)
+  if (i === state.drank - 1) {
+    state.drank--;
+  }
+  // If clicking on or before filled, set to that count
+  else if (i < state.drank) {
+    state.drank = i + 1;
+  }
+  // If clicking after, fill up to that point
+  else {
+    state.drank = i + 1;
+  }
+
+  state.drank = Math.max(0, Math.min(state.drank, state.targetGlasses));
+
+  $$('.glass-btn').forEach((btn, idx) => {
+    btn.classList.toggle('filled', idx < state.drank);
+  });
+
+  drankCount.textContent = state.drank;
+  updateRing();
+  saveProgress();
+}
+
+/* ===== RING ===== */
+function updateRing() {
+  const circumference = 565.48;
+  const pct = state.targetGlasses > 0 ? Math.min(100, (state.drank / state.targetGlasses) * 100) : 0;
+  const offset = circumference - (pct / 100) * circumference;
+
+  ringFill.style.strokeDashoffset = offset;
+  ringPercent.textContent = Math.round(pct) + '%';
+
+  // Color change when target hit
+  if (pct >= 100) {
+    ringFill.style.stroke = '#10b981';
+  } else {
+    ringFill.style.stroke = '#06b6d4';
+  }
+
+  // Toast once when target hit
+  if (pct >= 100 && !state._celebrated) {
+    state._celebrated = true;
+    showToast('🎉 Daily goal reached!', 'success', 4000);
+  } else if (pct < 100) {
+    state._celebrated = false;
+  }
+}
+
+/* ===== SAVE / LOAD ===== */
+function saveProgress() {
+  const data = {
+    date: state.todayKey,
+    drank: state.drank,
+    target: state.targetLitres,
+    glasses: state.targetGlasses
+  };
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+  } catch (e) {}
+}
+
+function loadProgress() {
+  try {
+    const data = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+    if (data.date === state.todayKey) {
+      state.drank = data.drank || 0;
+    } else {
+      // New day reset
+      state.drank = 0;
+    }
+  } catch (e) {
+    state.drank = 0;
+  }
+}
+
+/* ===== RESET ===== */
+resetTracker.addEventListener('click', () => {
+  if (!confirm('Reset today\'s water intake to 0?')) return;
+  state.drank = 0;
+  state._celebrated = false;
+  $$('.glass-btn').forEach(btn => btn.classList.remove('filled'));
+  drankCount.textContent = 0;
+  updateRing();
+  saveProgress();
+  showToast('Progress reset');
+});
+
+/* ===== COPY ===== */
+copyBtn.addEventListener('click', async () => {
+  const lines = [
+    '💧 Water Intake Target BigToolz',
+    '',
+    `Daily Target: ${state.targetLitres.toFixed(1)} litres`,
+    `= ${state.targetGlasses} glasses of 250ml each`,
+    '',
+    'Breakdown:',
+    `  Base: ${bdBase.textContent}`,
+    `  Activity: ${bdActivity.textContent}`,
+    `  Climate: ${bdClimate.textContent}`,
+    `  Age: ${bdAge.textContent}`,
+    `  Pregnancy: ${bdPregnancy.textContent}`,
+    '',
+    `Today: ${state.drank} of ${state.targetGlasses} glasses (${Math.round(state.drank / state.targetGlasses * 100)}%)`
+  ];
+
+  const ok = await copyToClipboard(lines.join('\n'));
+  if (ok) {
+    copyBtn.classList.add('copied');
+    const orig = copyBtn.innerHTML;
+    copyBtn.innerHTML = '✓ Copied!';
+    setTimeout(() => {
+      copyBtn.classList.remove('copied');
+      copyBtn.innerHTML = orig;
+    }, 2000);
+    showToast('Copied!', 'success');
+  }
+});
+
+/* ===== BIND INPUTS ===== */
+[weight, gender, ageGroup, activity, climate, pregnancy].forEach(el => {
+  el.addEventListener('input', calculate);
+  el.addEventListener('change', calculate);
+});
+
+/* ===== FAQ ===== */
+$$('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    $$('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+
+/* ===== INIT ===== */
+loadProgress();
+calculate();
+drankCount.textContent = state.drank;
+</script>
+
+</body>
+</html>

@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2563eb">
+
+<title>Reverse Text Generator - Reverse Text Online Free | BigToolz</title>
+<meta name="description" content="Free online reverse text tool. Reverse text, words, lines, mirror text, flip text instantly. Copy, download, no signup. Works in your browser, 100% free.">
+<meta name="keywords" content="reverse text, reverse text generator, mirror text, backwards text, flip text, text reverser, reverse words">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://bigtoolz.com/tools/text-tools/reverse-text/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Reverse Text Generator - Free Online Tool | BigToolz">
+<meta property="og:description" content="Reverse text, words, lines, and mirror text instantly free, no signup.">
+<meta property="og:url" content="https://bigtoolz.com/tools/text-tools/reverse-text/">
+<meta property="og:image" content="https://bigtoolz.com/assets/images/og-image.jpg">
+<meta property="og:site_name" content="BigToolz">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Reverse Text Generator - BigToolz">
+<meta name="twitter:description" content="Reverse text instantly free, no signup.">
+<meta name="twitter:image" content="https://bigtoolz.com/assets/images/twitter-card.jpg">
+
+<link rel="icon" href="/assets/images/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/images/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#f8f9fc;color:#1a1a2e;overflow-x:hidden;line-height:1.5}
+
+  .header{background:#fff;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;position:sticky;top:0;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+  .header-left{display:flex;align-items:center;gap:40px}
+  .logo{display:flex;align-items:center;gap:8px;font-size:22px;font-weight:800;color:#1a1a2e;text-decoration:none}
+  .logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#3b82f6,#2563eb);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px}
+  .logo span{color:#2563eb}
+  .nav{display:flex;align-items:center;gap:28px;list-style:none}
+  .nav a{text-decoration:none;color:#4b5563;font-size:14px;font-weight:500;transition:color .2s}
+  .nav a:hover,.nav a.active{color:#2563eb}
+  .header-right{display:flex;align-items:center;gap:16px}
+  .search-btn,.theme-btn{width:36px;height:36px;border-radius:50%;border:none;background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#4b5563}
+  .search-btn:hover,.theme-btn:hover{background:#f3f4f6}
+  .bookmark-btn{display:flex;align-items:center;gap:8px;background:#2563eb;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
+  .bookmark-btn:hover{background:#1d4ed8}
+
+  /* HERO */
+  .hero{background:linear-gradient(135deg,#0a0e27 0%,#1a1a4e 40%,#2d1b69 70%,#4c1d95 100%);padding:40px 40px 60px;position:relative;overflow:hidden;color:#fff}
+  .hero::before{content:'';position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(6,182,212,.3) 0%,transparent 70%);border-radius:50%}
+  .hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+  .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px;flex-wrap:wrap}
+  .breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none}
+  .breadcrumb a:hover{color:#fff}
+  .breadcrumb .sep{color:rgba(255,255,255,.4)}
+  .breadcrumb .current{color:#fff;font-weight:500}
+  .hero-title-row{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+  .hero-icon{width:60px;height:60px;background:#06b6d4;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;color:#fff;flex-shrink:0;box-shadow:0 8px 24px rgba(6,182,212,.4)}
+  .hero-title{font-size:42px;font-weight:800;line-height:1.15}
+  .hero-title .blue{color:#22d3ee}
+  .hero-desc{font-size:15px;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:24px;max-width:560px}
+  .hero-features{display:flex;gap:24px;flex-wrap:wrap}
+  .hero-feature{display:flex;align-items:center;gap:6px;font-size:13px;color:#fff;font-weight:500}
+  .hero-feature .check{width:18px;height:18px;border-radius:50%;background:#06b6d4;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;flex-shrink:0}
+
+  /* MAIN */
+  .main-content{max-width:1200px;margin:0 auto;padding:40px;display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start}
+  .tool-content{min-width:0}
+
+  .workspace{background:#fff;border-radius:16px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,.06);border:1px solid #e5e7eb;margin-bottom:24px}
+
+  /* Stats strip */
+  .stats-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:20px}
+  .mini-stat{background:#ecfeff;border:1px solid #a5f3fc;border-radius:10px;padding:12px 10px;text-align:center}
+  .mini-stat-value{font-size:22px;font-weight:800;color:#0e7490;font-family:'JetBrains Mono',monospace;letter-spacing:-.5px;line-height:1.1;margin-bottom:2px}
+  .mini-stat-label{font-size:10px;font-weight:700;color:#06b6d4;text-transform:uppercase;letter-spacing:.3px}
+
+  /* Reverse mode tabs */
+  .mode-tabs{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:20px;background:#ecfeff;padding:8px;border-radius:12px;border:1px solid #a5f3fc}
+  .mode-tab{padding:12px 8px;background:transparent;border:none;border-radius:10px;font-size:11px;font-weight:700;color:#4b5563;cursor:pointer;font-family:inherit;transition:all .2s;text-align:center;line-height:1.3}
+  .mode-tab:hover{background:#cffafe}
+  .mode-tab.active{background:#06b6d4;color:#fff}
+  .mode-icon{display:block;font-size:18px;margin-bottom:4px;line-height:1}
+  .mode-name{display:block;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.3px}
+
+  /* Input/Output */
+  .io-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px}
+  .io-box{position:relative}
+  .io-label{display:flex;justify-content:space-between;align-items:center;font-size:12px;font-weight:800;color:#0e7490;text-transform:uppercase;letter-spacing:.3px;margin-bottom:8px}
+  .io-label .copy-mini{background:#06b6d4;color:#fff;border:none;padding:4px 10px;border-radius:6px;font-size:10px;font-weight:700;cursor:pointer;font-family:inherit;transition:background .2s;display:flex;align-items:center;gap:3px;text-transform:none;letter-spacing:0}
+  .io-label .copy-mini:hover{background:#0891b2}
+  .io-label .copy-mini.copied{background:#10b981}
+  .textarea{width:100%;min-height:240px;padding:16px;border:2px solid #e5e7eb;border-radius:12px;font-family:'Inter',sans-serif;font-size:14px;line-height:1.7;color:#1a1a2e;background:#fafbfc;outline:none;resize:vertical;transition:all .2s}
+  .textarea:focus{border-color:#06b6d4;background:#fff;box-shadow:0 0 0 4px rgba(6,182,212,.1)}
+  .textarea::placeholder{color:#9ca3af}
+  .textarea[readonly]{background:#ecfeff;cursor:text;color:#0e7490;font-weight:600}
+
+  /* Actions */
+  .actions{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:10px 16px;border-radius:8px;font-size:13px;font-weight:700;font-family:inherit;cursor:pointer;border:1px solid #e5e7eb;background:#fff;color:#4b5563;transition:all .2s}
+  .btn:hover{border-color:#06b6d4;color:#0891b2;background:#ecfeff}
+  .btn-primary{background:#06b6d4;color:#fff;border-color:#06b6d4}
+  .btn-primary:hover{background:#0891b2;border-color:#0891b2;color:#fff}
+  .btn-danger{color:#ef4444}
+  .btn-danger:hover{border-color:#ef4444;color:#ef4444;background:#fef2f2}
+
+  /* Presets */
+  .presets-section{margin-top:20px;background:#ecfeff;border:1px solid #a5f3fc;border-radius:12px;padding:20px}
+  .presets-title{font-size:13px;font-weight:800;color:#0e7490;margin-bottom:12px;display:flex;align-items:center;gap:8px;text-transform:uppercase;letter-spacing:.3px}
+  .preset-chips{display:flex;gap:8px;flex-wrap:wrap}
+  .preset-chip{padding:8px 14px;background:#fff;border:1px solid #a5f3fc;border-radius:20px;font-size:12px;font-weight:600;color:#4b5563;cursor:pointer;font-family:inherit;transition:all .2s}
+  .preset-chip:hover{border-color:#06b6d4;background:#cffafe;color:#0891b2}
+
+  /* Info banner */
+  .info-banner{background:#fef3c7;border-left:4px solid #f59e0b;border-radius:8px;padding:14px 18px;margin-top:16px;font-size:13px;color:#92400e;line-height:1.6}
+  .info-banner strong{color:#78350f}
+
+  /* SEO */
+  .seo-content{background:#fff;border-radius:16px;padding:32px;border:1px solid #e5e7eb;margin-bottom:24px}
+  .seo-content h2{font-size:22px;font-weight:800;color:#1a1a2e;margin-bottom:14px;margin-top:28px;display:flex;align-items:center;gap:10px}
+  .seo-content h2:first-child{margin-top:0}
+  .seo-content h3{font-size:16px;font-weight:700;color:#1a1a2e;margin:20px 0 10px}
+  .seo-content p{font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:14px}
+  .seo-content ul{list-style:none;padding-left:0;margin-bottom:16px}
+  .seo-content ul li{position:relative;padding-left:24px;font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:8px}
+  .seo-content ul li::before{content:'';position:absolute;left:6px;top:12px;width:6px;height:6px;background:#06b6d4;border-radius:50%}
+  .seo-content a{color:#2563eb;text-decoration:none;font-weight:600}
+  .seo-content a:hover{text-decoration:underline}
+  .seo-content strong{color:#1a1a2e;font-weight:700}
+  .seo-content code{background:#f1f5f9;padding:2px 6px;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:13px;color:#0f172a;border:1px solid #e2e8f0}
+
+  /* Mode table */
+  .mode-table{width:100%;border-collapse:collapse;margin:20px 0;border:1px solid #e5e7eb;border-radius:8px;overflow:hidden}
+  .mode-table th{background:#ecfeff;padding:12px 16px;text-align:left;font-size:13px;font-weight:700;color:#1a1a2e;border-bottom:1px solid #e5e7eb}
+  .mode-table td{padding:12px 16px;font-size:13px;color:#4b5563;border-bottom:1px solid #f3f4f6}
+  .mode-table tr:last-child td{border-bottom:none}
+  .mode-table code{background:#fff;border:1px solid #e2e8f0;font-family:'JetBrains Mono',monospace;font-size:12px;padding:2px 6px;border-radius:4px;color:#0e7490}
+
+  .how-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:20px}
+  .how-step{background:#ecfeff;border-radius:12px;padding:20px;border:1px solid #a5f3fc}
+  .how-step-num{width:36px;height:36px;border-radius:50%;background:#06b6d4;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;margin-bottom:12px}
+  .how-step-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+  .how-step-desc{font-size:13px;color:#6b7280;line-height:1.6}
+
+  .faq-item{background:#ecfeff;border:1px solid #a5f3fc;border-radius:12px;margin-bottom:10px;overflow:hidden;transition:border-color .2s}
+  .faq-item:hover{border-color:#06b6d4}
+  .faq-question{width:100%;background:none;border:none;padding:18px 22px;font-size:15px;font-weight:700;color:#1a1a2e;text-align:left;cursor:pointer;font-family:inherit;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .faq-question .chev{font-size:12px;color:#06b6d4;transition:transform .2s;flex-shrink:0}
+  .faq-item.open .faq-question .chev{transform:rotate(180deg)}
+  .faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 22px}
+  .faq-item.open .faq-answer{max-height:500px;padding-bottom:18px}
+  .faq-answer p{font-size:14px;color:#6b7280;line-height:1.7;margin:0}
+
+  .sidebar{background:#fff;border-radius:16px;padding:24px;border:1px solid #e5e7eb;position:sticky;top:80px;margin-bottom:24px}
+  .sidebar-header{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:800;color:#1a1a2e;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid #f3f4f6}
+  .sidebar-list{display:flex;flex-direction:column;gap:8px}
+  .sidebar-item{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;cursor:pointer;transition:background .2s;text-decoration:none;color:inherit;border:1px solid #f3f4f6}
+  .sidebar-item:hover{background:#ecfeff;border-color:#a5f3fc}
+  .sidebar-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;flex-shrink:0;font-weight:800}
+  .sidebar-info{flex:1;min-width:0}
+  .sidebar-title{font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:2px}
+  .sidebar-desc{font-size:11px;color:#9ca3af;line-height:1.4}
+
+  .footer{background:#0a0e27;padding:60px 40px 30px;color:#fff;margin-top:40px}
+  .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:40px}
+  .footer-brand{display:flex;align-items:center;gap:8px;font-size:20px;font-weight:800;margin-bottom:12px}
+  .footer-brand span{color:#60a5fa}
+  .footer-tagline{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px}
+  .footer-social{display:flex;gap:12px}
+  .footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:16px;transition:background .2s}
+  .footer-social a:hover{background:rgba(255,255,255,.2)}
+  .footer-heading{font-size:14px;font-weight:700;margin-bottom:20px;color:#fff}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .footer-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;transition:color .2s}
+  .footer-links a:hover{color:#60a5fa}
+  .footer-bottom{max-width:1200px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  .footer-bottom-left{display:flex;gap:20px;font-size:12px;color:rgba(255,255,255,.5)}
+  .footer-bottom-right,.footer-bottom-links a{font-size:12px;color:rgba(255,255,255,.5);text-decoration:none}
+  .footer-bottom-links{display:flex;gap:20px}
+
+  .toast{position:fixed;bottom:24px;right:24px;background:#1a1a2e;color:#fff;padding:14px 20px;border-radius:10px;font-size:13px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:3000;transform:translateY(200%);transition:transform .3s ease;max-width:320px}
+  .toast.visible{transform:translateY(0)}
+  .toast.success{background:#10b981}
+  .toast.error{background:#ef4444}
+
+  @media(max-width:1024px){
+    .main-content{grid-template-columns:1fr;padding:24px 20px}
+    .sidebar{position:static}
+    .how-steps{grid-template-columns:repeat(2,1fr)}
+    .mode-tabs{grid-template-columns:repeat(3,1fr)}
+  }
+  @media(max-width:768px){
+    .header{padding:0 20px}.nav{display:none}
+    .hero{padding:24px 20px 40px}
+    .hero-title{font-size:28px}
+    .hero-icon{width:48px;height:48px;font-size:22px}
+    .hero-title-row{flex-direction:column;align-items:flex-start;gap:12px}
+    .main-content{padding:20px 16px}
+    .workspace{padding:20px}
+    .how-steps{grid-template-columns:1fr}
+    .seo-content{padding:20px}
+    .footer-inner{grid-template-columns:1fr 1fr}
+    .toast{left:16px;right:16px;bottom:16px;max-width:none}
+    .io-grid{grid-template-columns:1fr}
+    .mode-tabs{grid-template-columns:repeat(2,1fr)}
+  }
+  @media(max-width:576px){
+    .header{padding:0 16px}.header-right .search-btn,.header-right .theme-btn{display:none}
+    .hero-title{font-size:24px}
+    .stats-strip{grid-template-columns:1fr}
+    .textarea{min-height:180px;font-size:13px;padding:12px}
+    .actions .btn{flex:1;justify-content:center;min-width:100px}
+    .footer-inner{grid-template-columns:1fr}
+    .footer-bottom{flex-direction:column;text-align:center}
+  }
+
+  html[data-theme="dark"] body{background:#0f172a;color:#f1f5f9}
+  html[data-theme="dark"] .header,html[data-theme="dark"] .workspace,html[data-theme="dark"] .seo-content,html[data-theme="dark"] .sidebar{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .logo,html[data-theme="dark"] .hero-title,html[data-theme="dark"] .seo-content h2,html[data-theme="dark"] .seo-content h3,html[data-theme="dark"] .faq-question,html[data-theme="dark"] .sidebar-header,html[data-theme="dark"] .sidebar-title,html[data-theme="dark"] .presets-title{color:#f1f5f9}
+  html[data-theme="dark"] .nav a{color:#cbd5e1}
+  html[data-theme="dark"] .mini-stat{background:linear-gradient(135deg,#164e63,#155e75);border-color:#0891b2}
+  html[data-theme="dark"] .mini-stat-value{color:#67e8f9}
+  html[data-theme="dark"] .mini-stat-label{color:#22d3ee}
+  html[data-theme="dark"] .mode-tabs,html[data-theme="dark"] .presets-section{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .mode-tab{color:#cbd5e1}
+  html[data-theme="dark"] .mode-tab:hover{background:#1e293b}
+  html[data-theme="dark"] .mode-tab.active{background:#06b6d4;color:#fff}
+  html[data-theme="dark"] .preset-chip{background:#0f172a;border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .textarea{background:#0f172a;border-color:#334155;color:#f1f5f9}
+  html[data-theme="dark"] .textarea:focus{background:#0f172a}
+  html[data-theme="dark"] .textarea[readonly]{background:#164e63;color:#67e8f9}
+  html[data-theme="dark"] .btn{background:#0f172a;border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .btn:hover{border-color:#06b6d4;color:#22d3ee}
+  html[data-theme="dark"] .how-step,html[data-theme="dark"] .faq-item{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .seo-content p,html[data-theme="dark"] .seo-content ul li,html[data-theme="dark"] .faq-answer p{color:#cbd5e1}
+  html[data-theme="dark"] .seo-content code{background:#020617;color:#22d3ee;border-color:#334155}
+  html[data-theme="dark"] .mode-table{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .mode-table th{background:#0f172a;color:#f1f5f9;border-color:#334155}
+  html[data-theme="dark"] .mode-table td{border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .mode-table code{background:#0f172a;color:#22d3ee;border-color:#334155}
+  html[data-theme="dark"] .io-label{color:#22d3ee}
+  html[data-theme="dark"] .info-banner{background:#422006;border-color:#f59e0b;color:#fbbf24}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type": "SoftwareApplication", "name": "Reverse Text Generator", "url": "https://bigtoolz.com/tools/text-tools/reverse-text/", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any (Web-based)", "description": "Free online reverse text tool reverse text, words, lines, mirror and flip text instantly. Copy or download, works in your browser.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "1234"}},
+    {"@type": "HowTo", "name": "How to Reverse Text Online", "step": [
+      {"@type": "HowToStep", "name": "Type or Paste", "text": "Type or paste text into the input box."},
+      {"@type": "HowToStep", "name": "Choose Mode", "text": "Pick Full Reverse, Word Reverse, Line Reverse, Mirror or Flip."},
+      {"@type": "HowToStep", "name": "See Result", "text": "The reversed text appears instantly."},
+      {"@type": "HowToStep", "name": "Copy or Download", "text": "Copy the result or download as .txt."}
+    ]},
+    {"@type": "FAQPage", "mainEntity": [
+      {"@type": "Question", "name": "How do I reverse text online?", "acceptedAnswer": {"@type": "Answer", "text": "Type or paste your text, choose one of the 5 reverse modes, and the reversed text appears instantly. Copy or download free, no signup."}},
+      {"@type": "Question", "name": "What's the difference between Full Reverse and Word Reverse?", "acceptedAnswer": {"@type": "Answer", "text": "Full Reverse flips every character backwards ('hello' → 'olleh'). Word Reverse keeps words intact but reverses their order ('hello world' → 'world hello')."}},
+      {"@type": "Question", "name": "What is mirror text?", "acceptedAnswer": {"@type": "Answer", "text": "Mirror text reverses each word individually and keeps the word order the same so it reads correctly right-to-left, like a mirror. Example: 'hello world' → 'olleh dlrow'."}},
+      {"@type": "Question", "name": "What is flip text?", "acceptedAnswer": {"@type": "Answer", "text": "Flip text reverses both the word order and each word's characters. 'hello world' becomes 'dlrow olleh' used for hidden messages or puzzle text."}},
+      {"@type": "Question", "name": "Is my text uploaded to a server?", "acceptedAnswer": {"@type": "Answer", "text": "No. All reversing happens in your browser using JavaScript. Your text never leaves your device."}}
+    ]},
+    {"@type": "BreadcrumbList", "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bigtoolz.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://bigtoolz.com/tools/"},
+      {"@type": "ListItem", "position": 3, "name": "Text Tools", "item": "https://bigtoolz.com/tools/text-tools/"},
+      {"@type": "ListItem", "position": 4, "name": "Reverse Text", "item": "https://bigtoolz.com/tools/text-tools/reverse-text/"}
+    ]}
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-left">
+    <a href="/" class="logo"><div class="logo-icon">⚒</div>BigToolz</span></a>
+    <nav><ul class="nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/tools/" class="active">All Tools</a></li>
+      <li><a href="/tools/categories">Categories</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul></nav>
+  </div>
+  <div class="header-right">
+    
+    <button class="theme-btn" aria-label="Toggle theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
+   
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <nav class="breadcrumb">
+      <a href="/">Home</a><span class="sep">›</span>
+      <a href="/tools/">Tools</a><span class="sep">›</span>
+      <a href="/tools/text-tools/">Text Tools</a><span class="sep">›</span>
+      <span class="current">Reverse Text</span>
+    </nav>
+    <div class="hero-title-row">
+      <div class="hero-icon">🔃</div>
+      <h1 class="hero-title">Reverse <span class="blue">Text</span></h1>
+    </div>
+    <p class="hero-desc">
+      Reverse text in 5 different ways full character reverse, word reverse, line reverse, mirror, and flip. Instant conversion as you type, one-click copy. No signup, 100% private.
+    </p>
+    <div class="hero-features">
+      <div class="hero-feature"><span class="check">✓</span> 5 Modes</div>
+      <div class="hero-feature"><span class="check">✓</span> Live Result</div>
+      <div class="hero-feature"><span class="check">✓</span> Copy & Download</div>
+      <div class="hero-feature"><span class="check">✓</span> 100% Private</div>
+    </div>
+  </div>
+</section>
+
+<div class="main-content">
+
+  <div class="tool-content">
+
+    <div class="workspace">
+
+      <!-- Stats -->
+      <div class="stats-strip">
+        <div class="mini-stat">
+          <div class="mini-stat-value" id="charStat">0</div>
+          <div class="mini-stat-label">Characters</div>
+        </div>
+        <div class="mini-stat">
+          <div class="mini-stat-value" id="wordStat">0</div>
+          <div class="mini-stat-label">Words</div>
+        </div>
+        <div class="mini-stat">
+          <div class="mini-stat-value" id="lineStat">0</div>
+          <div class="mini-stat-label">Lines</div>
+        </div>
+      </div>
+
+      <!-- Mode Tabs -->
+      <div class="mode-tabs" id="modeTabs">
+        <button class="mode-tab active" data-mode="full">
+          <span class="mode-icon">↔️</span>
+          <span class="mode-name">Full Reverse</span>
+        </button>
+        <button class="mode-tab" data-mode="word">
+          <span class="mode-icon">🔄</span>
+          <span class="mode-name">Word Reverse</span>
+        </button>
+        <button class="mode-tab" data-mode="line">
+          <span class="mode-icon">↕️</span>
+          <span class="mode-name">Line Reverse</span>
+        </button>
+        <button class="mode-tab" data-mode="mirror">
+          <span class="mode-icon">🪞</span>
+          <span class="mode-name">Mirror</span>
+        </button>
+        <button class="mode-tab" data-mode="flip">
+          <span class="mode-icon">🔃</span>
+          <span class="mode-name">Flip</span>
+        </button>
+      </div>
+
+      <!-- Input/Output -->
+      <div class="io-grid">
+        <div class="io-box">
+          <div class="io-label">
+            <span>📝 Input Text</span>
+          </div>
+          <textarea id="textInput" class="textarea" placeholder="Type or paste your text here...">Hello World! Welcome to BigToolz. Reverse this text to see the magic.</textarea>
+        </div>
+        <div class="io-box">
+          <div class="io-label">
+            <span>✨ Reversed Output</span>
+            <button class="copy-mini" id="copyOutput">📋 Copy</button>
+          </div>
+          <textarea id="outputText" class="textarea" readonly></textarea>
+        </div>
+      </div>
+
+      <!-- Actions -->
+      <div class="actions">
+        <button class="btn btn-primary" id="pasteBtn">📋 Paste</button>
+        <button class="btn" id="swapBtn">🔁 Swap Input/Output</button>
+        <button class="btn" id="downloadBtn">⬇ Download</button>
+        <button class="btn btn-danger" id="clearBtn">🗑 Clear</button>
+      </div>
+
+      <!-- Presets -->
+      <div class="presets-section">
+        <div class="presets-title">⚡ Quick Examples</div>
+        <div class="preset-chips" id="presetChips">
+          <button class="preset-chip" data-sample="Hello World">Hello World</button>
+          <button class="preset-chip" data-sample="BigToolz is the best!">BigToolz is the best!</button>
+          <button class="preset-chip" data-sample="Reverse this text">Reverse this text</button>
+          <button class="preset-chip" data-sample="!dlroW olleH">!dlroW olleH</button>
+          <button class="preset-chip" data-sample="I love coding">I love coding</button>
+          <button class="preset-chip" data-sample="1234567890">1234567890</button>
+          <button class="preset-chip" data-sample="sdrawkcab si siht">sdrawkcab si siht</button>
+          <button class="preset-chip" data-sample="Palindrome: racecar">Palindrome: racecar</button>
+        </div>
+      </div>
+
+      <!-- Info Banner -->
+      <div class="info-banner">
+        <strong>💡 Tip:</strong> Use <strong>Full Reverse</strong> to reverse every character, <strong>Word Reverse</strong> to keep words but reverse their order, and <strong>Mirror</strong> for the classic right-to-left mirrored look.
+      </div>
+
+    </div>
+
+    <!-- SEO Content -->
+    <div class="seo-content">
+
+      <h2>🔃 What is Reverse Text?</h2>
+      <p>
+        <strong>Reverse text</strong> is a technique that flips text either character-by-character, word-by-word, line-by-line, or a combination. Reversed text is used for <strong>hidden messages, puzzles, mirror effects, social media styling,</strong> and programming/testing purposes.
+      </p>
+      <p>
+        Unlike most online reverse text tools, BigToolz processes text <strong>100% in your browser</strong> using JavaScript. Your text <strong>never uploaded to any server</strong> complete privacy, instant results, unlimited use.
+      </p>
+
+      <h2>🚀 How to Reverse Text</h2>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-step-num">1</div>
+          <div class="how-step-title">Type Text</div>
+          <div class="how-step-desc">Enter or paste the text you want to reverse.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">2</div>
+          <div class="how-step-title">Choose Mode</div>
+          <div class="how-step-desc">Full, Word, Line, Mirror or Flip one-click switch.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">3</div>
+          <div class="how-step-title">See Result</div>
+          <div class="how-step-desc">Output updates live as you type.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">4</div>
+          <div class="how-step-title">Copy or Download</div>
+          <div class="how-step-desc">Use Copy button or download as .txt.</div>
+        </div>
+      </div>
+
+      <h2>📋 The 5 Reverse Modes Explained</h2>
+      <table class="mode-table">
+        <thead>
+          <tr><th>Mode</th><th>What It Does</th><th>Example ("Hello World")</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>↔️ Full Reverse</strong></td>
+            <td>Flips every character backwards</td>
+            <td><code>dlroW olleH</code></td>
+          </tr>
+          <tr>
+            <td><strong>🔄 Word Reverse</strong></td>
+            <td>Reverses word order, keeps characters</td>
+            <td><code>World Hello</code></td>
+          </tr>
+          <tr>
+            <td><strong>↕️ Line Reverse</strong></td>
+            <td>Reverses line order, keeps text</td>
+            <td>Line 2 first, then Line 1</td>
+          </tr>
+          <tr>
+            <td><strong>🪞 Mirror</strong></td>
+            <td>Reverses each word, keeps order</td>
+            <td><code>olleH dlroW</code></td>
+          </tr>
+          <tr>
+            <td><strong>🔃 Flip</strong></td>
+            <td>Reverses both words and characters</td>
+            <td><code>dlroW olleH</code> → then words flipped</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>🎯 When to Use Reverse Text</h2>
+      <ul>
+        <li><strong>Social media</strong> Twitter, Instagram, TikTok captions with hidden messages.</li>
+        <li><strong>Puzzles and riddles</strong> hidden messages for games and treasure hunts.</li>
+        <li><strong>Programming</strong> testing string manipulation, palindrome checkers.</li>
+        <li><strong>Study tools</strong> memorizing by reading text backwards.</li>
+        <li><strong>Mirror effects</strong> designing mirrored text for logos and decor.</li>
+        <li><strong>Fun and memes</strong> backwards day" challenges with friends.</li>
+        <li><strong>Encryption basics</strong> a simple way to hide casual messages (not secure).</li>
+      </ul>
+
+      <h2>💡 Reverse Text vs Other Tools</h2>
+      <h3>Reverse vs Upside Down</h3>
+      <p><strong>Reverse</strong> keeps letters upright but in reverse order. <strong>Upside Down</strong> flips the actual glyphs upside down (using Unicode). Use our <a href="/tools/text-tools/upside-down/">Upside Down Text</a> tool for that effect.</p>
+
+      <h3>Reverse vs Mirror</h3>
+      <p>In our tool, <strong>Mirror</strong> means reversing each word individually (right-to-left reading). Some tools call this "backwards text." Both are useful pick based on what you need.</p>
+
+      <h3>Reverse vs Flip</h3>
+      <p><strong>Flip</strong> in our tool reverses word order AND each word's characters giving a double-reversed effect. Great for hidden messages that look completely scrambled.</p>
+
+      <h2>✨ Key Features</h2>
+      <ul>
+        <li><strong>5 reverse modes</strong> Full, Word, Line, Mirror, Flip.</li>
+        <li><strong>Live conversion</strong> see result instantly as you type.</li>
+        <li><strong>Swap button</strong> reverse output becomes new input with one click.</li>
+        <li><strong>Copy output</strong> one-click copy of reversed text.</li>
+        <li><strong>Download as .txt</strong> save input and output.</li>
+        <li><strong>Quick examples</strong> 8 sample chips to test modes.</li>
+        <li><strong>Live stats</strong> characters, words, lines.</li>
+        <li><strong>100% browser-based</strong> complete privacy, no signup.</li>
+      </ul>
+
+      <h2>❓ Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-question">How do I reverse text online?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Type or paste your text, choose one of the 5 reverse modes, and the reversed text appears instantly in the output box. Copy or download free, no signup, unlimited use.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What's the difference between Full Reverse and Word Reverse?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>Full Reverse</strong> flips every character backwards: <code>hello</code> → <code>olleh</code>. <strong>Word Reverse</strong> keeps words intact but reverses their order: <code>hello world</code> → <code>world hello</code>.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What is mirror text?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>Mirror text</strong> reverses each word individually but keeps the word order the same so it reads correctly right-to-left, like a mirror. Example: <code>hello world</code> → <code>olleh dlrow</code>.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What is flip text?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>Flip text</strong> reverses both the word order and each word's characters. <code>hello world</code> becomes <code>dlrow olleh</code> used for hidden messages or puzzle text.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I reverse line-by-line?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Yes! Choose the <strong>Line Reverse</strong> mode. If your text has 3 lines (A, B, C), the output will be (C, B, A) the character order inside each line stays the same.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I reverse emojis and Unicode characters?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Emojis and most Unicode characters reverse correctly. Complex characters with combining marks or surrogate pairs may appear slightly off. Simple emojis like 😀 work fine.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Is my text uploaded to a server?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>No. All reversing happens in your browser using JavaScript. Your text never leaves your device safe for confidential content and drafts.</p></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-header">🔗 Related Text Tools</div>
+    <div class="sidebar-list">
+      <a href="/tools/text-tools/upside-down/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#06b6d4;">🙃</div>
+        <div class="sidebar-info"><div class="sidebar-title">Upside Down Text</div><div class="sidebar-desc">Flip text upside down</div></div>
+      </a>
+      <a href="/tools/text-tools/case-converter/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#f97316;">Aa</div>
+        <div class="sidebar-info"><div class="sidebar-title">Case Converter</div><div class="sidebar-desc">Change text case</div></div>
+      </a>
+      <a href="/tools/text-tools/fancy-text/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#ec4899;">✨</div>
+        <div class="sidebar-info"><div class="sidebar-title">Fancy Text</div><div class="sidebar-desc">Stylish fonts</div></div>
+      </a>
+      <a href="/tools/text-tools/zalgo-text/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#ef4444;">👹</div>
+        <div class="sidebar-info"><div class="sidebar-title">Zalgo Text</div><div class="sidebar-desc">Creepy glitch text</div></div>
+      </a>
+      <a href="/tools/text-tools/text-to-binary/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#0f172a;">01</div>
+        <div class="sidebar-info"><div class="sidebar-title">Text to Binary</div><div class="sidebar-desc">Binary encoder</div></div>
+      </a>
+      <a href="/tools/text-tools/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#64748b;">T</div>
+        <div class="sidebar-info"><div class="sidebar-title">All Text Tools →</div><div class="sidebar-desc">Browse 25+ tools</div></div>
+      </a>
+    </div>
+  </aside>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand"><div class="logo-icon">⚒</div>BigToolz</span></div>
+      <p class="footer-tagline">Your Ultimate Online Tools Hub</p>
+      <div class="footer-social">
+        <a href="https://facebook.com/bigtoolz" aria-label="Facebook">f</a>
+        <a href="https://twitter.com/bigtoolz" aria-label="Twitter">𝕏</a>
+        <a href="https://youtube.com/@bigtoolz" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+    <div>
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/tools/">All Tools</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Categories</h3>
+      <ul class="footer-links">
+        <li><a href="/tools/image-tools/">Image Tools</a></li>
+        <li><a href="/tools/pdf-tools/">PDF Tools</a></li>
+        <li><a href="/tools/text-tools/">Text Tools</a></li>
+        <li><a href="/tools/seo-tools/">SEO Tools</a></li>
+        <li><a href="/tools/categories">All Categories →</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Legal</h3>
+      <ul class="footer-links">
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left"><span>✓ 100% Free</span><span>✓ No Sign Up</span><span>✓ No Installation</span></div>
+    <div class="footer-bottom-right">© 2026 BigToolz. All rights reserved.</div>
+    <div class="footer-bottom-links"><a href="/privacy-policy">Privacy</a><a href="/terms">Terms</a><a href="/disclaimer">Disclaimer</a></div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+'use strict';
+
+/* ===== THEME ===== */
+(function(){try{var t=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&d))document.documentElement.setAttribute('data-theme','dark');else if(t==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();
+document.querySelector('.theme-btn')?.addEventListener('click',()=>{const h=document.documentElement;const c=h.getAttribute('data-theme');const d=window.matchMedia('(prefers-color-scheme: dark)').matches;let n=c==='dark'?'light':c==='light'?'dark':(d?'light':'dark');h.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}});
+
+/* ===== HELPERS ===== */
+const $ = (s, p = document) => p.querySelector(s);
+const $$ = (s, p = document) => [...p.querySelectorAll(s)];
+
+function showToast(msg, type = 'info', duration = 3000) {
+  const t = $('#toast');
+  if (!t) return;
+  t.className = 'toast visible' + (type !== 'info' ? ' ' + type : '');
+  t.textContent = msg;
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove('visible'), duration);
+}
+
+async function copyToClipboard(text) {
+  try {
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(text);
+      return true;
+    }
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.cssText = 'position:fixed;opacity:0;';
+    document.body.appendChild(ta);
+    ta.select();
+    const ok = document.execCommand('copy');
+    document.body.removeChild(ta);
+    return ok;
+  } catch (e) { return false; }
+}
+
+/* ===== DOM ===== */
+const textInput = $('#textInput');
+const outputText = $('#outputText');
+const charStat = $('#charStat');
+const wordStat = $('#wordStat');
+const lineStat = $('#lineStat');
+const modeTabs = $('#modeTabs');
+const modeBtns = $$('.mode-tab');
+const presetChips = $$('.preset-chip');
+
+const pasteBtn = $('#pasteBtn');
+const swapBtn = $('#swapBtn');
+const downloadBtn = $('#downloadBtn');
+const clearBtn = $('#clearBtn');
+const copyOutput = $('#copyOutput');
+
+/* ===== STATE ===== */
+const state = {
+  mode: 'full'
+};
+
+/* ===== REVERSE FUNCTIONS ===== */
+function reverseFull(text) {
+  // Handle Unicode properly using Array.from
+  return Array.from(text).reverse().join('');
+}
+
+function reverseWords(text) {
+  // Reverse word order, keep characters
+  return text.split(/\s+/).filter(w => w.length > 0).reverse().join(' ');
+}
+
+function reverseLines(text) {
+  return text.split('\n').reverse().join('\n');
+}
+
+function reverseMirror(text) {
+  // Reverse each word but keep word order mirror effect
+  return text.split(/\s+/).map(w => Array.from(w).reverse().join('')).join(' ');
+}
+
+function reverseFlip(text) {
+  // Reverse word order AND each word's characters
+  return text.split(/\s+/)
+    .filter(w => w.length > 0)
+    .reverse()
+    .map(w => Array.from(w).reverse().join(''))
+    .join(' ');
+}
+
+const REVERSERS = {
+  full: reverseFull,
+  word: reverseWords,
+  line: reverseLines,
+  mirror: reverseMirror,
+  flip: reverseFlip
+};
+
+/* ===== UPDATE OUTPUT ===== */
+function update() {
+  const text = textInput.value;
+  const reverser = REVERSERS[state.mode];
+  const result = text ? reverser(text) : '';
+
+  outputText.value = result;
+
+  // Stats
+  const chars = text.length;
+  const words = text.trim() ? text.trim().split(/\s+/).filter(w => w.length > 0).length : 0;
+  const lines = text ? text.split('\n').length : 0;
+
+  charStat.textContent = chars.toLocaleString();
+  wordStat.textContent = words.toLocaleString();
+  lineStat.textContent = lines.toLocaleString();
+}
+
+/* ===== MODE BUTTONS ===== */
+modeBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    modeBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    state.mode = btn.dataset.mode;
+    update();
+  });
+});
+
+/* ===== TEXT INPUT ===== */
+textInput.addEventListener('input', update);
+
+/* ===== PRESET CHIPS ===== */
+presetChips.forEach(chip => {
+  chip.addEventListener('click', () => {
+    textInput.value = chip.dataset.sample;
+    update();
+    showToast('Example loaded', 'success', 1200);
+  });
+});
+
+/* ===== BUTTONS ===== */
+pasteBtn.addEventListener('click', async () => {
+  try {
+    if (navigator.clipboard && navigator.clipboard.readText) {
+      const t = await navigator.clipboard.readText();
+      textInput.value = textInput.value ? textInput.value + '\n' + t : t;
+      update();
+      showToast('Pasted from clipboard', 'success');
+    } else {
+      textInput.focus();
+      showToast('Press Ctrl+V to paste', 'info');
+    }
+  } catch (err) {
+    textInput.focus();
+    showToast('Clipboard access denied', 'error');
+  }
+});
+
+swapBtn.addEventListener('click', () => {
+  if (!outputText.value) { showToast('Nothing to swap', 'error'); return; }
+  const temp = textInput.value;
+  textInput.value = outputText.value;
+  update();
+  showToast('Swapped! Output becomes new input', 'success');
+});
+
+downloadBtn.addEventListener('click', () => {
+  if (!outputText.value) { showToast('Nothing to download', 'error'); return; }
+  const content = [
+    '════════════════════════════════════════',
+    '  BigToolz Reverse Text Tool',
+    '════════════════════════════════════════',
+    '',
+    `Mode: ${state.mode}`,
+    '',
+    '────── Input ──────',
+    textInput.value,
+    '',
+    '────── Reversed Output ──────',
+    outputText.value
+  ].join('\n');
+
+  const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'reversed-text.txt';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+  showToast('Downloaded .txt', 'success');
+});
+
+clearBtn.addEventListener('click', () => {
+  if (!textInput.value && !outputText.value) return;
+  if (!confirm('Clear input and output? This cannot be undone.')) return;
+  textInput.value = '';
+  update();
+  textInput.focus();
+  showToast('Cleared', 'info');
+});
+
+copyOutput.addEventListener('click', async () => {
+  if (!outputText.value) { showToast('Nothing to copy', 'error'); return; }
+  const ok = await copyToClipboard(outputText.value);
+  if (ok) {
+    copyOutput.classList.add('copied');
+    const orig = copyOutput.innerHTML;
+    copyOutput.innerHTML = '✓ Copied!';
+    setTimeout(() => {
+      copyOutput.classList.remove('copied');
+      copyOutput.innerHTML = orig;
+    }, 1500);
+    showToast('Copied to clipboard!', 'success');
+  } else {
+    showToast('Copy failed', 'error');
+  }
+});
+
+/* ===== INITIAL STATE ===== */
+update();
+
+/* ===== FAQ ===== */
+$$('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    $$('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2563eb">
+
+<title>Character Counter - Count Characters Online Free | BigToolz</title>
+<meta name="description" content="Free online character counter. Count characters with/without spaces, letters, digits, symbols. Track Twitter, SMS, Instagram limits. No signup, works in browser.">
+<meta name="keywords" content="character counter, count characters online, character count tool, letter counter, twitter character counter, free character counter">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://bigtoolz.com/tools/text-tools/character-counter/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Character Counter - Count Characters Free | BigToolz">
+<meta property="og:description" content="Count characters with/without spaces, letters, digits, symbols instantly free, no signup.">
+<meta property="og:url" content="https://bigtoolz.com/tools/text-tools/character-counter/">
+<meta property="og:image" content="https://bigtoolz.com/assets/images/og-image.jpg">
+<meta property="og:site_name" content="BigToolz">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Character Counter - BigToolz">
+<meta name="twitter:description" content="Count characters instantly free, no signup.">
+<meta name="twitter:image" content="https://bigtoolz.com/assets/images/twitter-card.jpg">
+
+<link rel="icon" href="/assets/images/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/images/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#f8f9fc;color:#1a1a2e;overflow-x:hidden;line-height:1.5}
+
+  .header{background:#fff;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;position:sticky;top:0;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+  .header-left{display:flex;align-items:center;gap:40px}
+  .logo{display:flex;align-items:center;gap:8px;font-size:22px;font-weight:800;color:#1a1a2e;text-decoration:none}
+  .logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#3b82f6,#2563eb);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px}
+  .logo span{color:#2563eb}
+  .nav{display:flex;align-items:center;gap:28px;list-style:none}
+  .nav a{text-decoration:none;color:#4b5563;font-size:14px;font-weight:500;transition:color .2s}
+  .nav a:hover,.nav a.active{color:#2563eb}
+  .header-right{display:flex;align-items:center;gap:16px}
+  .search-btn,.theme-btn{width:36px;height:36px;border-radius:50%;border:none;background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#4b5563}
+  .search-btn:hover,.theme-btn:hover{background:#f3f4f6}
+  .bookmark-btn{display:flex;align-items:center;gap:8px;background:#2563eb;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
+  .bookmark-btn:hover{background:#1d4ed8}
+
+  /* HERO */
+  .hero{background:linear-gradient(135deg,#0a0e27 0%,#1a1a4e 40%,#2d1b69 70%,#4c1d95 100%);padding:40px 40px 60px;position:relative;overflow:hidden;color:#fff}
+  .hero::before{content:'';position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(139,92,246,.25) 0%,transparent 70%);border-radius:50%}
+  .hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+  .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px;flex-wrap:wrap}
+  .breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none}
+  .breadcrumb a:hover{color:#fff}
+  .breadcrumb .sep{color:rgba(255,255,255,.4)}
+  .breadcrumb .current{color:#fff;font-weight:500}
+  .hero-title-row{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+  .hero-icon{width:60px;height:60px;background:#8b5cf6;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px;color:#fff;flex-shrink:0;box-shadow:0 8px 24px rgba(139,92,246,.4)}
+  .hero-title{font-size:42px;font-weight:800;line-height:1.15}
+  .hero-title .blue{color:#a78bfa}
+  .hero-desc{font-size:15px;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:24px;max-width:560px}
+  .hero-features{display:flex;gap:24px;flex-wrap:wrap}
+  .hero-feature{display:flex;align-items:center;gap:6px;font-size:13px;color:#fff;font-weight:500}
+  .hero-feature .check{width:18px;height:18px;border-radius:50%;background:#8b5cf6;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;flex-shrink:0}
+
+  /* MAIN */
+  .main-content{max-width:1200px;margin:0 auto;padding:40px;display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start}
+  .tool-content{min-width:0}
+
+  .workspace{background:#fff;border-radius:16px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,.06);border:1px solid #e5e7eb;margin-bottom:24px}
+
+  /* Big stats */
+  .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:20px}
+  .stat-card{background:linear-gradient(135deg,#faf5ff,#ede9fe);border:1px solid #c4b5fd;border-radius:12px;padding:18px 14px;text-align:center;transition:all .2s}
+  .stat-card:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(139,92,246,.15)}
+  .stat-icon{font-size:22px;margin-bottom:6px;line-height:1}
+  .stat-value{font-size:28px;font-weight:800;color:#6d28d9;margin-bottom:4px;font-family:'JetBrains Mono',monospace;letter-spacing:-.5px;line-height:1.1}
+  .stat-label{font-size:11px;font-weight:700;color:#8b5cf6;text-transform:uppercase;letter-spacing:.5px}
+
+  /* Platform limits */
+  .limits-section{background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:20px;margin-bottom:20px}
+  .limits-title{font-size:14px;font-weight:800;color:#1a1a2e;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+  .limits-list{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+  .limit-item{background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:12px 14px;transition:all .2s;display:flex;justify-content:space-between;align-items:center;gap:10px}
+  .limit-item.warn{background:#fef3c7;border-color:#fcd34d}
+  .limit-item.over{background:#fee2e2;border-color:#fca5a5}
+  .limit-item.ok{background:#f0fdf4;border-color:#a7f3d0}
+  .limit-name{font-size:12px;font-weight:700;color:#1a1a2e;display:flex;align-items:center;gap:6px;min-width:0}
+  .limit-name .icon{font-size:14px;flex-shrink:0}
+  .limit-name .label{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .limit-value{font-size:11px;font-weight:800;color:#64748b;font-family:'JetBrains Mono',monospace;flex-shrink:0}
+  .limit-item.ok .limit-value{color:#059669}
+  .limit-item.warn .limit-value{color:#d97706}
+  .limit-item.over .limit-value{color:#dc2626}
+
+  /* Textarea */
+  .textarea-wrapper{position:relative;margin-bottom:20px}
+  .textarea{width:100%;min-height:280px;padding:20px;border:2px solid #e5e7eb;border-radius:12px;font-family:'Inter',sans-serif;font-size:15px;line-height:1.7;color:#1a1a2e;background:#fafbfc;outline:none;resize:vertical;transition:all .2s}
+  .textarea:focus{border-color:#8b5cf6;background:#fff;box-shadow:0 0 0 4px rgba(139,92,246,.1)}
+  .textarea::placeholder{color:#9ca3af}
+  .textarea-meta{display:flex;justify-content:space-between;align-items:center;padding:8px 4px 0;font-size:12px;color:#94a3b8;flex-wrap:wrap;gap:8px}
+  .textarea-meta .hint{font-weight:600;color:#8b5cf6}
+
+  /* Actions */
+  .actions{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:10px 16px;border-radius:8px;font-size:13px;font-weight:700;font-family:inherit;cursor:pointer;border:1px solid #e5e7eb;background:#fff;color:#4b5563;transition:all .2s}
+  .btn:hover{border-color:#8b5cf6;color:#8b5cf6;background:#faf5ff}
+  .btn-primary{background:#8b5cf6;color:#fff;border-color:#8b5cf6}
+  .btn-primary:hover{background:#7c3aed;border-color:#7c3aed;color:#fff}
+  .btn-danger{color:#ef4444}
+  .btn-danger:hover{border-color:#ef4444;color:#ef4444;background:#fef2f2}
+  .btn.copied{background:#10b981;color:#fff;border-color:#10b981}
+
+  /* Character type breakdown */
+  .type-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:20px}
+  .type-item{background:#fff;border:1px solid #e2e8f0;border-radius:8px;padding:14px;text-align:center}
+  .type-value{font-size:22px;font-weight:800;color:#6d28d9;margin-bottom:2px;font-family:'JetBrains Mono',monospace;letter-spacing:-.5px}
+  .type-label{font-size:10px;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:.3px}
+
+  /* Character frequency */
+  .freq-section{background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:20px;margin-bottom:20px}
+  .freq-title{font-size:14px;font-weight:800;color:#1a1a2e;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+  .freq-list{display:flex;flex-direction:column;gap:8px}
+  .freq-row{display:flex;align-items:center;gap:10px;font-size:13px}
+  .freq-char{flex:0 0 auto;min-width:32px;height:32px;display:flex;align-items:center;justify-content:center;font-weight:700;color:#1a1a2e;font-family:'JetBrains Mono',monospace;background:#fff;border:1px solid #e2e8f0;border-radius:6px;font-size:14px}
+  .freq-bar{flex:1;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden;min-width:60px}
+  .freq-fill{height:100%;background:linear-gradient(90deg,#a78bfa,#8b5cf6);border-radius:4px;transition:width .3s}
+  .freq-count{flex:0 0 auto;font-size:11px;font-weight:700;color:#64748b;min-width:50px;text-align:right}
+  .freq-empty{color:#9ca3af;font-size:13px;font-style:italic;padding:8px 0}
+
+  /* SEO */
+  .seo-content{background:#fff;border-radius:16px;padding:32px;border:1px solid #e5e7eb;margin-bottom:24px}
+  .seo-content h2{font-size:22px;font-weight:800;color:#1a1a2e;margin-bottom:14px;margin-top:28px;display:flex;align-items:center;gap:10px}
+  .seo-content h2:first-child{margin-top:0}
+  .seo-content h3{font-size:16px;font-weight:700;color:#1a1a2e;margin:20px 0 10px}
+  .seo-content p{font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:14px}
+  .seo-content ul{list-style:none;padding-left:0;margin-bottom:16px}
+  .seo-content ul li{position:relative;padding-left:24px;font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:8px}
+  .seo-content ul li::before{content:'';position:absolute;left:6px;top:12px;width:6px;height:6px;background:#8b5cf6;border-radius:50%}
+  .seo-content a{color:#2563eb;text-decoration:none;font-weight:600}
+  .seo-content a:hover{text-decoration:underline}
+  .seo-content strong{color:#1a1a2e;font-weight:700}
+  .seo-content code{background:#f1f5f9;padding:2px 6px;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:13px;color:#0f172a;border:1px solid #e2e8f0}
+
+  /* Info table */
+  .info-table{width:100%;border-collapse:collapse;margin:20px 0;border:1px solid #e5e7eb;border-radius:8px;overflow:hidden}
+  .info-table th{background:#faf5ff;padding:12px 16px;text-align:left;font-size:13px;font-weight:700;color:#1a1a2e;border-bottom:1px solid #e5e7eb}
+  .info-table td{padding:12px 16px;font-size:13px;color:#4b5563;border-bottom:1px solid #f3f4f6}
+  .info-table tr:last-child td{border-bottom:none}
+  .info-table code{font-size:12px}
+
+  .how-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:20px}
+  .how-step{background:#faf5ff;border-radius:12px;padding:20px;border:1px solid #c4b5fd}
+  .how-step-num{width:36px;height:36px;border-radius:50%;background:#8b5cf6;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;margin-bottom:12px}
+  .how-step-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+  .how-step-desc{font-size:13px;color:#6b7280;line-height:1.6}
+
+  .faq-item{background:#faf5ff;border:1px solid #c4b5fd;border-radius:12px;margin-bottom:10px;overflow:hidden;transition:border-color .2s}
+  .faq-item:hover{border-color:#8b5cf6}
+  .faq-question{width:100%;background:none;border:none;padding:18px 22px;font-size:15px;font-weight:700;color:#1a1a2e;text-align:left;cursor:pointer;font-family:inherit;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .faq-question .chev{font-size:12px;color:#8b5cf6;transition:transform .2s;flex-shrink:0}
+  .faq-item.open .faq-question .chev{transform:rotate(180deg)}
+  .faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 22px}
+  .faq-item.open .faq-answer{max-height:500px;padding-bottom:18px}
+  .faq-answer p{font-size:14px;color:#6b7280;line-height:1.7;margin:0}
+
+  .sidebar{background:#fff;border-radius:16px;padding:24px;border:1px solid #e5e7eb;position:sticky;top:80px;margin-bottom:24px}
+  .sidebar-header{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:800;color:#1a1a2e;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid #f3f4f6}
+  .sidebar-list{display:flex;flex-direction:column;gap:8px}
+  .sidebar-item{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;cursor:pointer;transition:background .2s;text-decoration:none;color:inherit;border:1px solid #f3f4f6}
+  .sidebar-item:hover{background:#faf5ff;border-color:#c4b5fd}
+  .sidebar-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;flex-shrink:0}
+  .sidebar-info{flex:1;min-width:0}
+  .sidebar-title{font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:2px}
+  .sidebar-desc{font-size:11px;color:#9ca3af;line-height:1.4}
+
+  .footer{background:#0a0e27;padding:60px 40px 30px;color:#fff;margin-top:40px}
+  .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:40px}
+  .footer-brand{display:flex;align-items:center;gap:8px;font-size:20px;font-weight:800;margin-bottom:12px}
+  .footer-brand span{color:#60a5fa}
+  .footer-tagline{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px}
+  .footer-social{display:flex;gap:12px}
+  .footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:16px;transition:background .2s}
+  .footer-social a:hover{background:rgba(255,255,255,.2)}
+  .footer-heading{font-size:14px;font-weight:700;margin-bottom:20px;color:#fff}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .footer-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;transition:color .2s}
+  .footer-links a:hover{color:#60a5fa}
+  .footer-bottom{max-width:1200px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  .footer-bottom-left{display:flex;gap:20px;font-size:12px;color:rgba(255,255,255,.5)}
+  .footer-bottom-right,.footer-bottom-links a{font-size:12px;color:rgba(255,255,255,.5);text-decoration:none}
+  .footer-bottom-links{display:flex;gap:20px}
+
+  .toast{position:fixed;bottom:24px;right:24px;background:#1a1a2e;color:#fff;padding:14px 20px;border-radius:10px;font-size:13px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:3000;transform:translateY(200%);transition:transform .3s ease;max-width:320px}
+  .toast.visible{transform:translateY(0)}
+  .toast.success{background:#10b981}
+  .toast.error{background:#ef4444}
+
+  @media(max-width:1024px){
+    .main-content{grid-template-columns:1fr;padding:24px 20px}
+    .sidebar{position:static}
+    .stats-grid{grid-template-columns:repeat(2,1fr)}
+    .how-steps{grid-template-columns:repeat(2,1fr)}
+    .limits-list{grid-template-columns:1fr}
+  }
+  @media(max-width:768px){
+    .header{padding:0 20px}.nav{display:none}
+    .hero{padding:24px 20px 40px}
+    .hero-title{font-size:28px}
+    .hero-icon{width:48px;height:48px;font-size:22px}
+    .hero-title-row{flex-direction:column;align-items:flex-start;gap:12px}
+    .main-content{padding:20px 16px}
+    .workspace{padding:20px}
+    .how-steps{grid-template-columns:1fr}
+    .seo-content{padding:20px}
+    .footer-inner{grid-template-columns:1fr 1fr}
+    .toast{left:16px;right:16px;bottom:16px;max-width:none}
+    .type-grid{grid-template-columns:repeat(2,1fr)}
+  }
+  @media(max-width:576px){
+    .header{padding:0 16px}.header-right .search-btn,.header-right .theme-btn{display:none}
+    .hero-title{font-size:24px}
+    .stat-value{font-size:22px}
+    .stat-card{padding:14px 8px}
+    .stat-icon{font-size:18px}
+    .stat-label{font-size:10px}
+    .textarea{min-height:220px;font-size:14px;padding:14px}
+    .actions .btn{flex:1;justify-content:center;min-width:100px}
+    .footer-inner{grid-template-columns:1fr}
+    .footer-bottom{flex-direction:column;text-align:center}
+  }
+
+  html[data-theme="dark"] body{background:#0f172a;color:#f1f5f9}
+  html[data-theme="dark"] .header,html[data-theme="dark"] .workspace,html[data-theme="dark"] .seo-content,html[data-theme="dark"] .sidebar{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .logo,html[data-theme="dark"] .hero-title,html[data-theme="dark"] .seo-content h2,html[data-theme="dark"] .seo-content h3,html[data-theme="dark"] .faq-question,html[data-theme="dark"] .sidebar-header,html[data-theme="dark"] .sidebar-title,html[data-theme="dark"] .freq-title,html[data-theme="dark"] .limits-title{color:#f1f5f9}
+  html[data-theme="dark"] .nav a{color:#cbd5e1}
+  html[data-theme="dark"] .stat-card{background:linear-gradient(135deg,#4c1d95,#5b21b6);border-color:#8b5cf6}
+  html[data-theme="dark"] .stat-value{color:#c4b5fd}
+  html[data-theme="dark"] .stat-label{color:#a78bfa}
+  html[data-theme="dark"] .type-item,html[data-theme="dark"] .freq-section,html[data-theme="dark"] .limits-section,html[data-theme="dark"] .limit-item,html[data-theme="dark"] .freq-char{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .type-value,html[data-theme="dark"] .freq-char{color:#c4b5fd}
+  html[data-theme="dark"] .limit-name,html[data-theme="dark"] .limit-value{color:#cbd5e1}
+  html[data-theme="dark"] .limit-item.ok{background:rgba(16,185,129,.1);border-color:#10b981}
+  html[data-theme="dark"] .limit-item.warn{background:rgba(245,158,11,.1);border-color:#f59e0b}
+  html[data-theme="dark"] .limit-item.over{background:rgba(239,68,68,.1);border-color:#ef4444}
+  html[data-theme="dark"] .textarea{background:#0f172a;border-color:#334155;color:#f1f5f9}
+  html[data-theme="dark"] .textarea:focus{background:#0f172a}
+  html[data-theme="dark"] .btn{background:#0f172a;border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .btn:hover{border-color:#8b5cf6;color:#a78bfa}
+  html[data-theme="dark"] .how-step,html[data-theme="dark"] .faq-item{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .seo-content p,html[data-theme="dark"] .seo-content ul li,html[data-theme="dark"] .faq-answer p{color:#cbd5e1}
+  html[data-theme="dark"] .seo-content code{background:#020617;color:#a78bfa;border-color:#334155}
+  html[data-theme="dark"] .info-table{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .info-table th{background:#0f172a;color:#f1f5f9;border-color:#334155}
+  html[data-theme="dark"] .info-table td{border-color:#334155;color:#cbd5e1}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type": "SoftwareApplication", "name": "Character Counter", "url": "https://bigtoolz.com/tools/text-tools/character-counter/", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any (Web-based)", "description": "Free online character counter count characters with/without spaces, letters, digits, symbols. Track Twitter, SMS, Instagram limits.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "1890"}},
+    {"@type": "HowTo", "name": "How to Count Characters Online", "step": [
+      {"@type": "HowToStep", "name": "Type or Paste", "text": "Type or paste your text into the input box."},
+      {"@type": "HowToStep", "name": "See Live Count", "text": "Character counts update instantly as you type."},
+      {"@type": "HowToStep", "name": "Check Platform Limits", "text": "See how close you are to Twitter, SMS, Instagram limits."},
+      {"@type": "HowToStep", "name": "Copy or Download", "text": "Copy text or download your content."}
+    ]},
+    {"@type": "FAQPage", "mainEntity": [
+      {"@type": "Question", "name": "How do I count characters online?", "acceptedAnswer": {"@type": "Answer", "text": "Type or paste your text into the input box. Character count updates instantly free, no signup. We show both with and without spaces."}},
+      {"@type": "Question", "name": "Does character count include spaces?", "acceptedAnswer": {"@type": "Answer", "text": "We show both: characters WITH spaces (the standard count for most platforms) and characters WITHOUT spaces. Twitter, SMS, and most apps count spaces."}},
+      {"@type": "Question", "name": "How many characters for Twitter, Instagram, SMS?", "acceptedAnswer": {"@type": "Answer", "text": "Twitter/X: 280 characters. Instagram caption: 2,200. SMS: 160 per segment. Meta description: 150-160. YouTube title: 100. TikTok caption: 2,200."}},
+      {"@type": "Question", "name": "Do emojis count as one character?", "acceptedAnswer": {"@type": "Answer", "text": "Emojis usually count as 2 characters in JavaScript because they use surrogate pairs. This tool counts emojis accurately using UTF-16 length, matching Twitter, Instagram, and SMS behavior."}},
+      {"@type": "Question", "name": "Is my text uploaded to a server?", "acceptedAnswer": {"@type": "Answer", "text": "No. All counting happens in your browser using JavaScript. Your text never leaves your device."}}
+    ]},
+    {"@type": "BreadcrumbList", "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bigtoolz.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://bigtoolz.com/tools/"},
+      {"@type": "ListItem", "position": 3, "name": "Text Tools", "item": "https://bigtoolz.com/tools/text-tools/"},
+      {"@type": "ListItem", "position": 4, "name": "Character Counter", "item": "https://bigtoolz.com/tools/text-tools/character-counter/"}
+    ]}
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-left">
+    <a href="/" class="logo"><div class="logo-icon">⚒</div>BigToolz</span></a>
+    <nav><ul class="nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/tools/" class="active">All Tools</a></li>
+      <li><a href="/tools/categories">Categories</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul></nav>
+  </div>
+  <div class="header-right">
+   
+    <button class="theme-btn" aria-label="Toggle theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
+    
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <nav class="breadcrumb">
+      <a href="/">Home</a><span class="sep">›</span>
+      <a href="/tools/">Tools</a><span class="sep">›</span>
+      <a href="/tools/text-tools/">Text Tools</a><span class="sep">›</span>
+      <span class="current">Character Counter</span>
+    </nav>
+    <div class="hero-title-row">
+      <div class="hero-icon">🔤</div>
+      <h1 class="hero-title">Character <span class="blue">Counter</span></h1>
+    </div>
+    <p class="hero-desc">
+      Count characters instantly with or without spaces. Track Twitter, SMS, Instagram limits. See letter/digit/symbol breakdown and character frequency. No signup, 100% private.
+    </p>
+    <div class="hero-features">
+      <div class="hero-feature"><span class="check">✓</span> Live Count</div>
+      <div class="hero-feature"><span class="check">✓</span> Platform Limits</div>
+      <div class="hero-feature"><span class="check">✓</span> Char Breakdown</div>
+      <div class="hero-feature"><span class="check">✓</span> 100% Private</div>
+    </div>
+  </div>
+</section>
+
+<div class="main-content">
+
+  <div class="tool-content">
+
+    <div class="workspace">
+
+      <!-- Big Stats -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon">🔤</div>
+          <div class="stat-value" id="totalChars">0</div>
+          <div class="stat-label">Total Chars</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">🔡</div>
+          <div class="stat-value" id="noSpaceChars">0</div>
+          <div class="stat-label">No Spaces</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">📝</div>
+          <div class="stat-value" id="wordCount">0</div>
+          <div class="stat-label">Words</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">📄</div>
+          <div class="stat-value" id="lineCount">0</div>
+          <div class="stat-label">Lines</div>
+        </div>
+      </div>
+
+      <!-- Platform Limits -->
+      <div class="limits-section">
+        <div class="limits-title">📱 Platform Limits</div>
+        <div class="limits-list" id="limitsList"></div>
+      </div>
+
+      <!-- Textarea -->
+      <div class="textarea-wrapper">
+        <textarea id="textInput" class="textarea" placeholder="Type or paste your text here..."></textarea>
+        <div class="textarea-meta">
+          <span>💡 Character count updates as you type</span>
+          <span class="hint" id="hintText">Twitter: 0 / 280</span>
+        </div>
+      </div>
+
+      <!-- Actions -->
+      <div class="actions">
+        <button class="btn btn-primary" id="pasteBtn">📋 Paste</button>
+        <button class="btn" id="copyBtn">📋 Copy</button>
+        <button class="btn" id="downloadBtn">⬇ Download</button>
+        <button class="btn btn-danger" id="clearBtn">🗑 Clear</button>
+      </div>
+
+      <!-- Character Type Breakdown -->
+      <div class="type-grid">
+        <div class="type-item">
+          <div class="type-value" id="letterCount">0</div>
+          <div class="type-label">Letters</div>
+        </div>
+        <div class="type-item">
+          <div class="type-value" id="digitCount">0</div>
+          <div class="type-label">Digits</div>
+        </div>
+        <div class="type-item">
+          <div class="type-value" id="spaceCount">0</div>
+          <div class="type-label">Spaces</div>
+        </div>
+        <div class="type-item">
+          <div class="type-value" id="punctCount">0</div>
+          <div class="type-label">Punctuation</div>
+        </div>
+        <div class="type-item">
+          <div class="type-value" id="symbolCount">0</div>
+          <div class="type-label">Symbols</div>
+        </div>
+        <div class="type-item">
+          <div class="type-value" id="emojiCount">0</div>
+          <div class="type-label">Emojis</div>
+        </div>
+      </div>
+
+      <!-- Character Frequency -->
+      <div class="freq-section">
+        <div class="freq-title">📊 Top Characters</div>
+        <div class="freq-list" id="freqList">
+          <div class="freq-empty">Type or paste text to see character frequency.</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- SEO Content -->
+    <div class="seo-content">
+
+      <h2>🔤 What is a Character Counter?</h2>
+      <p>
+        A <strong>Character Counter</strong> counts every character in your text letters, digits, symbols, spaces, and punctuation. It's essential for <strong>social media posts, SMS messages, meta descriptions, headlines, ads, and product titles</strong> where strict length limits determine whether your content gets cut off or performs well.
+      </p>
+      <p>
+        Unlike most online character counters, BigToolz processes text <strong>100% in your browser</strong> using JavaScript. Your text <strong>never uploaded to any server</strong> complete privacy, especially important for confidential content, drafts, and client work.
+      </p>
+
+      <h2>🚀 How to Count Characters</h2>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-step-num">1</div>
+          <div class="how-step-title">Type or Paste</div>
+          <div class="how-step-desc">Type directly or paste text into the box.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">2</div>
+          <div class="how-step-title">See Live Count</div>
+          <div class="how-step-desc">Character count updates instantly as you type.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">3</div>
+          <div class="how-step-title">Check Limits</div>
+          <div class="how-step-desc">See how close you are to platform limits.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">4</div>
+          <div class="how-step-title">Copy or Clear</div>
+          <div class="how-step-desc">Copy your text or start over.</div>
+        </div>
+      </div>
+
+      <h2>📱 Common Character Limits</h2>
+      <table class="info-table">
+        <thead>
+          <tr><th>Platform / Field</th><th>Limit</th><th>Notes</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Twitter / X post</strong></td><td>280 chars</td><td>Standard (verified users get more)</td></tr>
+          <tr><td><strong>SMS message</strong></td><td>160 chars</td><td>Longer messages split into segments</td></tr>
+          <tr><td><strong>Instagram caption</strong></td><td>2,200 chars</td><td>Only ~125 shown before "more"</td></tr>
+          <tr><td><strong>Meta description</strong></td><td>150-160 chars</td><td>Google truncates beyond this</td></tr>
+          <tr><td><strong>SEO title tag</strong></td><td>50-60 chars</td><td>Google shows ~600px worth</td></tr>
+          <tr><td><strong>YouTube title</strong></td><td>100 chars</td><td>Truncated at ~70 in search</td></tr>
+          <tr><td><strong>TikTok caption</strong></td><td>2,200 chars</td><td>Same as Instagram</td></tr>
+          <tr><td><strong>LinkedIn post</strong></td><td>3,000 chars</td><td>Only ~200 shown before "see more"</td></tr>
+          <tr><td><strong>Facebook post</strong></td><td>63,206 chars</td><td>Truncated at ~477 without engagement</td></tr>
+        </tbody>
+      </table>
+
+      <h2>💡 Why Character Count Matters</h2>
+      <ul>
+        <li><strong>Social media</strong> over-the-limit content gets truncated or rejected.</li>
+        <li><strong>SMS marketing</strong> 160 chars = 1 SMS; longer = multiple charges.</li>
+        <li><strong>SEO</strong> meta descriptions and titles have strict limits for full display.</li>
+        <li><strong>Ads</strong> Google Ads headlines = 30 chars; descriptions = 90 chars.</li>
+        <li><strong>Product listings</strong> Amazon title limit = 200 chars; eBay = 80.</li>
+        <li><strong>Passwords</strong> many systems require min/max character length.</li>
+        <li><strong>Database fields</strong> some apps have hard character limits.</li>
+      </ul>
+
+      <h2>✨ Key Features</h2>
+      <ul>
+        <li><strong>Real-time counting</strong> updates as you type.</li>
+        <li><strong>With/without spaces</strong> both counts shown.</li>
+        <li><strong>Platform limits tracker</strong> Twitter, SMS, Instagram, meta, etc.</li>
+        <li><strong>Character breakdown</strong> letters, digits, spaces, punctuation, symbols, emojis.</li>
+        <li><strong>Character frequency</strong> top 20 chars with bars.</li>
+        <li><strong>Line & word count</strong> complementary stats.</li>
+        <li><strong>Copy / Paste / Clear</strong> quick actions.</li>
+        <li><strong>100% browser-based</strong> complete privacy, no signup.</li>
+      </ul>
+
+      <h2>❓ Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-question">How do I count characters online?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Type or paste your text into the input box. Character count updates instantly free, no signup, no limits. We show both <strong>with spaces</strong> and <strong>without spaces</strong>.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Does character count include spaces?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>We show both: characters <strong>with spaces</strong> (the standard count for most platforms) and characters <strong>without spaces</strong>. Twitter, SMS, and most apps count spaces as characters.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">How many characters for Twitter, Instagram, SMS?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>Twitter/X:</strong> 280. <strong>Instagram caption:</strong> 2,200. <strong>SMS:</strong> 160 per segment. <strong>Meta description:</strong> 150-160. <strong>YouTube title:</strong> 100. <strong>TikTok caption:</strong> 2,200. See the full table above.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Do emojis count as one character?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Emojis typically count as <strong>2 characters</strong> in JavaScript because they use surrogate pairs. Our tool counts them accurately using UTF-16 length, matching Twitter, Instagram, and SMS behavior.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What's the difference between character count and word count?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>Character count</strong> is the total number of individual characters (including spaces). <strong>Word count</strong> counts groups of characters separated by whitespace. Use character count for platforms with strict limits (Twitter); use word count for essays, articles, and blog posts.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I count characters in different languages?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Yes. Our tool uses JavaScript's <code>String.length</code> which counts UTF-16 code units. This works for English, Hindi, Arabic, Chinese, and most languages. Some complex characters (emojis, certain scripts) count as 2 units.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Is my text uploaded to a server?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>No. All counting happens in your browser using JavaScript. Your text never leaves your device, and nothing is stored anywhere. Safe for confidential content and drafts.</p></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-header">🔗 Related Text Tools</div>
+    <div class="sidebar-list">
+      <a href="/tools/text-tools/word-counter/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#3b82f6;">T</div>
+        <div class="sidebar-info"><div class="sidebar-title">Word Counter</div><div class="sidebar-desc">Full text stats</div></div>
+      </a>
+      <a href="/tools/text-tools/case-converter/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#f97316;">Aa</div>
+        <div class="sidebar-info"><div class="sidebar-title">Case Converter</div><div class="sidebar-desc">Change text case</div></div>
+      </a>
+      <a href="/tools/text-tools/keyword-density/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#8b5cf6;">📊</div>
+        <div class="sidebar-info"><div class="sidebar-title">Keyword Density</div><div class="sidebar-desc">Analyze keywords</div></div>
+      </a>
+      <a href="/tools/text-tools/word-frequency/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#f97316;">📈</div>
+        <div class="sidebar-info"><div class="sidebar-title">Word Frequency</div><div class="sidebar-desc">Word analysis</div></div>
+      </a>
+      <a href="/tools/text-tools/readability-checker/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#3b82f6;">📖</div>
+        <div class="sidebar-info"><div class="sidebar-title">Readability Checker</div><div class="sidebar-desc">Flesch-Kincaid</div></div>
+      </a>
+      <a href="/tools/text-tools/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#64748b;">T</div>
+        <div class="sidebar-info"><div class="sidebar-title">All Text Tools →</div><div class="sidebar-desc">Browse 25+ tools</div></div>
+      </a>
+    </div>
+  </aside>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand"><div class="logo-icon">⚒</div>BigToolz</span></div>
+      <p class="footer-tagline">Your Ultimate Online Tools Hub</p>
+      <div class="footer-social">
+        <a href="https://facebook.com/bigtoolz" aria-label="Facebook">f</a>
+        <a href="https://twitter.com/bigtoolz" aria-label="Twitter">𝕏</a>
+        <a href="https://youtube.com/@bigtoolz" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+    <div>
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/tools/">All Tools</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Categories</h3>
+      <ul class="footer-links">
+        <li><a href="/tools/image-tools/">Image Tools</a></li>
+        <li><a href="/tools/pdf-tools/">PDF Tools</a></li>
+        <li><a href="/tools/text-tools/">Text Tools</a></li>
+        <li><a href="/tools/seo-tools/">SEO Tools</a></li>
+        <li><a href="/tools/categories">All Categories →</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Legal</h3>
+      <ul class="footer-links">
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left"><span>✓ 100% Free</span><span>✓ No Sign Up</span><span>✓ No Installation</span></div>
+    <div class="footer-bottom-right">© 2026 BigToolz. All rights reserved.</div>
+    <div class="footer-bottom-links"><a href="/privacy-policy">Privacy</a><a href="/terms">Terms</a><a href="/disclaimer">Disclaimer</a></div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+'use strict';
+
+/* ===== THEME ===== */
+(function(){try{var t=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&d))document.documentElement.setAttribute('data-theme','dark');else if(t==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();
+document.querySelector('.theme-btn')?.addEventListener('click',()=>{const h=document.documentElement;const c=h.getAttribute('data-theme');const d=window.matchMedia('(prefers-color-scheme: dark)').matches;let n=c==='dark'?'light':c==='light'?'dark':(d?'light':'dark');h.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}});
+
+/* ===== HELPERS ===== */
+const $ = (s, p = document) => p.querySelector(s);
+const $$ = (s, p = document) => [...p.querySelectorAll(s)];
+
+function showToast(msg, type = 'info', duration = 3000) {
+  const t = $('#toast');
+  if (!t) return;
+  t.className = 'toast visible' + (type !== 'info' ? ' ' + type : '');
+  t.textContent = msg;
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove('visible'), duration);
+}
+
+async function copyToClipboard(text) {
+  try {
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(text);
+      return true;
+    }
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.cssText = 'position:fixed;opacity:0;';
+    document.body.appendChild(ta);
+    ta.select();
+    const ok = document.execCommand('copy');
+    document.body.removeChild(ta);
+    return ok;
+  } catch (e) { return false; }
+}
+
+/* ===== PLATFORM LIMITS ===== */
+const PLATFORMS = [
+  { id: 'twitter', name: 'Twitter / X', icon: '🐦', limit: 280 },
+  { id: 'sms', name: 'SMS Message', icon: '💬', limit: 160 },
+  { id: 'meta', name: 'Meta Description', icon: '🔍', limit: 160 },
+  { id: 'title', name: 'SEO Title Tag', icon: '📄', limit: 60 },
+  { id: 'youtube', name: 'YouTube Title', icon: '▶', limit: 100 },
+  { id: 'instagram', name: 'Instagram Caption', icon: '📷', limit: 2200 }
+];
+
+/* ===== DOM ===== */
+const textInput = $('#textInput');
+const totalChars = $('#totalChars');
+const noSpaceChars = $('#noSpaceChars');
+const wordCount = $('#wordCount');
+const lineCount = $('#lineCount');
+const letterCount = $('#letterCount');
+const digitCount = $('#digitCount');
+const spaceCount = $('#spaceCount');
+const punctCount = $('#punctCount');
+const symbolCount = $('#symbolCount');
+const emojiCount = $('#emojiCount');
+const freqList = $('#freqList');
+const limitsList = $('#limitsList');
+const hintText = $('#hintText');
+
+const pasteBtn = $('#pasteBtn');
+const copyBtn = $('#copyBtn');
+const downloadBtn = $('#downloadBtn');
+const clearBtn = $('#clearBtn');
+
+/* ===== EMOJI REGEX ===== */
+const EMOJI_REGEX = /[\u{1F300}-\u{1F9FF}\u{1F600}-\u{1F64F}\u{1F680}-\u{1F6FF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}\u{1F900}-\u{1F9FF}\u{1FA70}-\u{1FAFF}\u{1F1E6}-\u{1F1FF}]/gu;
+
+/* ===== UPDATE STATS ===== */
+function updateStats() {
+  const text = textInput.value;
+
+  // Total characters (UTF-16 length)
+  const total = text.length;
+
+  // No spaces (including tabs, newlines)
+  const noSpace = text.replace(/\s/g, '').length;
+
+  // Words
+  const words = text.trim() ? text.trim().split(/\s+/).filter(w => w.length > 0) : [];
+  const wordTotal = words.length;
+
+  // Lines
+  const lines = text ? text.split('\n').length : 0;
+
+  // Character type breakdown
+  let letters = 0, digits = 0, spaces = 0, punct = 0, symbols = 0, emojis = 0;
+
+  // Count emojis first (as they occupy multiple code units)
+  const emojiMatches = text.match(EMOJI_REGEX);
+  if (emojiMatches) emojis = emojiMatches.length;
+
+  for (const ch of text) {
+    if (/\p{Emoji}/u.test(ch) && !/\p{N}/u.test(ch)) {
+      // Will be double-counted; skip
+      continue;
+    }
+    if (/\s/.test(ch)) spaces++;
+    else if (/[a-zA-Z\u0900-\u097F\u0600-\u06FF\u4E00-\u9FFF]/u.test(ch)) letters++;
+    else if (/[0-9]/.test(ch)) digits++;
+    else if (/[.,!?;:'"()\[\]{}<>\/\\|`~@#$%^&*_\-+=]/.test(ch)) punct++;
+    else symbols++;
+  }
+
+  // Character frequency (excluding whitespace)
+  const freq = {};
+  for (const ch of text) {
+    if (/\s/.test(ch)) continue;
+    freq[ch] = (freq[ch] || 0) + 1;
+  }
+
+  // Update DOM
+  totalChars.textContent = total.toLocaleString();
+  noSpaceChars.textContent = noSpace.toLocaleString();
+  wordCount.textContent = wordTotal.toLocaleString();
+  lineCount.textContent = lines.toLocaleString();
+  letterCount.textContent = letters.toLocaleString();
+  digitCount.textContent = digits.toLocaleString();
+  spaceCount.textContent = spaces.toLocaleString();
+  punctCount.textContent = punct.toLocaleString();
+  symbolCount.textContent = symbols.toLocaleString();
+  emojiCount.textContent = emojis.toLocaleString();
+
+  // Twitter hint
+  const twitter = PLATFORMS.find(p => p.id === 'twitter');
+  const remaining = twitter.limit - total;
+  hintText.textContent = total <= twitter.limit
+    ? `Twitter: ${total} / ${twitter.limit}`
+    : `Twitter: ${total} / ${twitter.limit} (${Math.abs(remaining)} over)`;
+  hintText.style.color = total <= twitter.limit ? '#8b5cf6' : '#ef4444';
+
+  // Platform limits
+  renderLimits(total);
+
+  // Frequency
+  renderFrequency(freq);
+}
+
+/* ===== RENDER LIMITS ===== */
+function renderLimits(total) {
+  limitsList.innerHTML = '';
+  PLATFORMS.forEach(p => {
+    const ratio = total / p.limit;
+    let status = 'ok';
+    if (ratio > 1) status = 'over';
+    else if (ratio > 0.85) status = 'warn';
+
+    const item = document.createElement('div');
+    item.className = 'limit-item ' + status;
+    item.innerHTML = `
+      <div class="limit-name">
+        <span class="icon">${p.icon}</span>
+        <span class="label">${p.name}</span>
+      </div>
+      <div class="limit-value">${total} / ${p.limit}</div>
+    `;
+    limitsList.appendChild(item);
+  });
+}
+
+/* ===== RENDER FREQUENCY ===== */
+function renderFrequency(freq) {
+  const entries = Object.entries(freq)
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 20);
+
+  if (!entries.length) {
+    freqList.innerHTML = '<div class="freq-empty">Type or paste text to see character frequency.</div>';
+    return;
+  }
+
+  const max = entries[0][1];
+  freqList.innerHTML = '';
+
+  entries.forEach(([ch, count]) => {
+    const display = ch === ' ' ? '␣' : (ch === '\n' ? '↵' : ch);
+    const pct = (count / max) * 100;
+
+    const row = document.createElement('div');
+    row.className = 'freq-row';
+    row.innerHTML = `
+      <div class="freq-char">${escapeHtml(display)}</div>
+      <div class="freq-bar"><div class="freq-fill" style="width:${pct}%"></div></div>
+      <div class="freq-count">${count}×</div>
+    `;
+    freqList.appendChild(row);
+  });
+}
+
+function escapeHtml(s) {
+  const div = document.createElement('div');
+  div.textContent = s;
+  return div.innerHTML;
+}
+
+/* ===== INPUT LISTENER ===== */
+textInput.addEventListener('input', updateStats);
+
+/* ===== BUTTONS ===== */
+pasteBtn.addEventListener('click', async () => {
+  try {
+    if (navigator.clipboard && navigator.clipboard.readText) {
+      const t = await navigator.clipboard.readText();
+      textInput.value += (textInput.value ? '\n' : '') + t;
+      updateStats();
+      showToast('Pasted from clipboard', 'success');
+    } else {
+      textInput.focus();
+      showToast('Press Ctrl+V to paste', 'info');
+    }
+  } catch (err) {
+    textInput.focus();
+    showToast('Clipboard access denied', 'error');
+  }
+});
+
+copyBtn.addEventListener('click', async () => {
+  if (!textInput.value) { showToast('Nothing to copy', 'error'); return; }
+  const ok = await copyToClipboard(textInput.value);
+  if (ok) {
+    copyBtn.classList.add('copied');
+    const orig = copyBtn.innerHTML;
+    copyBtn.innerHTML = '✓ Copied';
+    setTimeout(() => {
+      copyBtn.classList.remove('copied');
+      copyBtn.innerHTML = orig;
+    }, 1500);
+    showToast('Text copied to clipboard!', 'success');
+  } else {
+    showToast('Copy failed', 'error');
+  }
+});
+
+downloadBtn.addEventListener('click', () => {
+  if (!textInput.value) { showToast('Nothing to download', 'error'); return; }
+  const stats = [
+    '════════════════════════════════════════',
+    '  BigToolz Character Counter Statistics',
+    '════════════════════════════════════════',
+    '',
+    `Total Characters:       ${totalChars.textContent}`,
+    `Characters (no space):  ${noSpaceChars.textContent}`,
+    `Words:                  ${wordCount.textContent}`,
+    `Lines:                  ${lineCount.textContent}`,
+    '',
+    '────── Character Type Breakdown ──────',
+    `Letters:                ${letterCount.textContent}`,
+    `Digits:                 ${digitCount.textContent}`,
+    `Spaces:                 ${spaceCount.textContent}`,
+    `Punctuation:            ${punctCount.textContent}`,
+    `Symbols:                ${symbolCount.textContent}`,
+    `Emojis:                 ${emojiCount.textContent}`,
+    '',
+    '────────── Platform Limits ──────────',
+    ...PLATFORMS.map(p => `${p.name.padEnd(22)} ${totalChars.textContent} / ${p.limit}`),
+    '',
+    '────────── Text ──────────',
+    '',
+    textInput.value
+  ].join('\n');
+
+  const blob = new Blob([stats], { type: 'text/plain' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'character-counter.txt';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+  showToast('Downloaded stats + text', 'success');
+});
+
+clearBtn.addEventListener('click', () => {
+  if (!textInput.value) return;
+  if (!confirm('Clear all text? This cannot be undone.')) return;
+  textInput.value = '';
+  updateStats();
+  textInput.focus();
+  showToast('Text cleared', 'info');
+});
+
+/* ===== INIT ===== */
+updateStats();
+
+/* ===== FAQ ===== */
+$$('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    $$('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+</script>
+
+</body>
+</html>

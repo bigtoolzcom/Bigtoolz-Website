@@ -1,0 +1,664 @@
+<!-- ===========================================
+     BigToolz - Ad Space Component
+     Version: 1.0.0
+     Purpose: Reusable AdSense ad slot widget
+     
+     USAGE:
+     
+     Basic:
+     <div data-ad-space data-ad-slot="1234567890" data-ad-format="auto"></div>
+     
+     Top banner:
+     <div data-ad-space 
+          data-ad-slot="1234567890" 
+          data-ad-format="horizontal"
+          data-ad-position="top"></div>
+     
+     In-content:
+     <div data-ad-space 
+          data-ad-slot="9876543210" 
+          data-ad-format="rectangle"
+          data-ad-position="inline"></div>
+     
+     Sidebar:
+     <div data-ad-space 
+          data-ad-slot="5555555555" 
+          data-ad-format="vertical"
+          data-ad-position="sidebar"></div>
+     
+     REQUIREMENTS:
+     - AdSense Publisher ID must be set in data-ad-client (or globally)
+     - Load ads-loader.js for full functionality
+     =========================================== -->
+
+<!-- ===========================================
+     STYLES
+     =========================================== -->
+<style>
+  /* ========== AD SPACE CONTAINER ========== */
+  .ad-space {
+    display: block;
+    width: 100%;
+    margin: 24px 0;
+    text-align: center;
+    background: #f8fafc;
+    border-radius: 12px;
+    overflow: hidden;
+    contain: layout style;
+    position: relative;
+    transition: background 0.2s ease;
+  }
+
+  /* Reserved space — prevents CLS */
+  .ad-space[data-ad-format="horizontal"] {
+    min-height: 100px;
+  }
+
+  .ad-space[data-ad-format="rectangle"] {
+    min-height: 260px;
+  }
+
+  .ad-space[data-ad-format="square"] {
+    min-height: 260px;
+  }
+
+  .ad-space[data-ad-format="vertical"] {
+    min-height: 620px;
+  }
+
+  .ad-space[data-ad-format="auto"] {
+    min-height: 120px;
+  }
+
+  /* Label */
+  .ad-space::before {
+    content: 'ADVERTISEMENT';
+    display: block;
+    font-size: 9px;
+    font-weight: 700;
+    color: #cbd5e1;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 8px 0 4px;
+    text-align: center;
+  }
+
+  /* Placeholder (dev mode / before approval) */
+  .ad-space .ad-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 8px;
+    padding: 24px;
+    color: #94a3b8;
+    font-size: 13px;
+    font-weight: 500;
+    min-height: inherit;
+  }
+
+  .ad-space .ad-placeholder-icon {
+    font-size: 32px;
+    opacity: 0.4;
+  }
+
+  .ad-space .ad-placeholder-text {
+    font-size: 12px;
+    color: #cbd5e1;
+  }
+
+  /* Real AdSense */
+  .ad-space ins.adsbygoogle {
+    display: block;
+    margin: 0 auto;
+  }
+
+  /* Ad blocker fallback */
+  .ad-space.ad-blocked .ad-placeholder {
+    color: #f59e0b;
+  }
+
+  .ad-space.ad-blocked .ad-placeholder-icon {
+    opacity: 0.6;
+  }
+
+  /* Position-specific tweaks */
+  .ad-space[data-ad-position="top"] {
+    margin-top: 0;
+    margin-bottom: 32px;
+  }
+
+  .ad-space[data-ad-position="inline"] {
+    margin: 32px 0;
+  }
+
+  .ad-space[data-ad-position="sidebar"] {
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+
+  .ad-space[data-ad-position="footer"] {
+    margin-top: 32px;
+    margin-bottom: 0;
+  }
+
+  /* ========== DARK MODE ========== */
+  [data-theme="dark"] .ad-space {
+    background: #1e293b;
+  }
+
+  [data-theme="dark"] .ad-space::before {
+    color: #475569;
+  }
+
+  [data-theme="dark"] .ad-space .ad-placeholder {
+    color: #64748b;
+  }
+
+  [data-theme="dark"] .ad-space .ad-placeholder-text {
+    color: #475569;
+  }
+
+  [data-theme="dark"] .ad-space ins.adsbygoogle {
+    background: #0f172a;
+  }
+
+  /* ========== PRINT ========== */
+  @media print {
+    .ad-space {
+      display: none !important;
+    }
+  }
+
+  /* ========== RESPONSIVE ========== */
+  @media (max-width: 768px) {
+    .ad-space[data-ad-format="vertical"] {
+      min-height: 280px;
+    }
+
+    .ad-space[data-ad-format="rectangle"] {
+      min-height: 260px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .ad-space {
+      margin: 16px 0;
+      border-radius: 8px;
+    }
+
+    .ad-space[data-ad-format="horizontal"] {
+      min-height: 100px;
+    }
+
+    .ad-space[data-ad-format="rectangle"] {
+      min-height: 250px;
+    }
+
+    .ad-space[data-ad-format="auto"] {
+      min-height: 100px;
+    }
+  }
+
+  /* ========== AD BLOCKER MESSAGE ========== */
+  .ad-blocker-notice {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #1e293b;
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    z-index: 3000;
+    display: none;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .ad-blocker-notice.visible {
+    display: flex;
+  }
+
+  .ad-blocker-notice button {
+    background: none;
+    border: none;
+    color: #94a3b8;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 0 4px;
+  }
+
+  .ad-blocker-notice button:hover {
+    color: #fff;
+  }
+</style>
+
+<!-- ===========================================
+     RENDER SCRIPT
+     =========================================== -->
+<script>
+(function () {
+  'use strict';
+
+  /* ===== CONFIG ===== */
+  const CONFIG = {
+    // Replace with your AdSense Publisher ID (or set globally)
+    client: window.AD_CLIENT || 'ca-pub-0000000000000000',
+    // Wait for user consent before loading ads
+    consentRequired: true,
+    // Show placeholder when AdSense not ready
+    showPlaceholder: true,
+    // Detect ad blocker
+    detectBlocker: true,
+    // Lazy-load with IntersectionObserver
+    lazyLoad: true,
+    lazyRootMargin: '200px',
+    // Debug logs
+    debug: false
+  };
+
+  const state = {
+    scriptLoaded: false,
+    scriptLoading: false,
+    consentGranted: false,
+    blockerDetected: false,
+    processed: new WeakSet(),
+    observer: null
+  };
+
+  /* ===== HELPERS ===== */
+  function log(...args) {
+    if (CONFIG.debug) console.log('[Ad Space]', ...args);
+  }
+
+  function getPublisherId() {
+    return window.AD_CLIENT || CONFIG.client;
+  }
+
+  function hasAdConsent() {
+    try {
+      const consent = JSON.parse(localStorage.getItem('bigtoolz_consent') || '{}');
+      return consent.ads === true;
+    } catch (e) {
+      return false;
+    }
+  }
+
+  function hasValidClientId() {
+    const id = getPublisherId();
+    return id && id !== 'ca-pub-0000000000000000';
+  }
+
+  /* ===== LOAD ADSENSE SCRIPT ===== */
+  function loadAdSenseScript() {
+    if (state.scriptLoaded || state.scriptLoading) return Promise.resolve();
+    if (!hasValidClientId()) {
+      log('No valid AdSense client ID — placeholder mode');
+      return Promise.resolve();
+    }
+    if (CONFIG.consentRequired && !state.consentGranted) {
+      log('Waiting for ad consent');
+      return Promise.resolve();
+    }
+
+    state.scriptLoading = true;
+
+    return new Promise((resolve) => {
+      const script = document.createElement('script');
+      script.async = true;
+      script.crossOrigin = 'anonymous';
+      script.src = `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${getPublisherId()}`;
+
+      script.onload = () => {
+        state.scriptLoaded = true;
+        state.scriptLoading = false;
+        log('AdSense script loaded');
+        resolve();
+      };
+
+      script.onerror = () => {
+        state.scriptLoading = false;
+        log('AdSense script failed to load');
+        resolve();
+      };
+
+      document.head.appendChild(script);
+    });
+  }
+
+  /* ===== AD BLOCKER DETECTION ===== */
+  function detectAdBlocker() {
+    if (!CONFIG.detectBlocker) return Promise.resolve(false);
+
+    return new Promise((resolve) => {
+      const bait = document.createElement('div');
+      bait.className = 'adsbygoogle ad-banner ad-banner-top';
+      bait.style.cssText = 'width:1px;height:1px;position:absolute;left:-9999px;top:-9999px;';
+      bait.innerHTML = '&nbsp;';
+      document.body.appendChild(bait);
+
+      setTimeout(() => {
+        const blocked =
+          bait.offsetHeight === 0 ||
+          bait.offsetWidth === 0 ||
+          getComputedStyle(bait).display === 'none';
+
+        bait.remove();
+
+        if (blocked) {
+          state.blockerDetected = true;
+          document.documentElement.classList.add('ad-blocked');
+          log('Ad blocker detected');
+        }
+        resolve(blocked);
+      }, 100);
+    });
+  }
+
+  /* ===== RENDER PLACEHOLDER ===== */
+  function renderPlaceholder(container, reason = 'dev') {
+    if (!CONFIG.showPlaceholder) return;
+
+    const icons = {
+      dev: '📢',
+      consent: '🔒',
+      blocked: '⚠️',
+      error: '🚫'
+    };
+
+    const texts = {
+      dev: 'Ad space — configure your AdSense Publisher ID to activate',
+      consent: 'Ads will appear after you accept cookies',
+      blocked: 'Ad blocker detected — please consider whitelisting us',
+      error: 'Ad could not be loaded'
+    };
+
+    container.innerHTML = `
+      <div class="ad-placeholder">
+        <div class="ad-placeholder-icon">${icons[reason] || icons.dev}</div>
+        <div class="ad-placeholder-text">${texts[reason] || texts.dev}</div>
+      </div>
+    `;
+  }
+
+  /* ===== INITIALIZE AD SLOT ===== */
+  function initAdSlot(container) {
+    if (state.processed.has(container)) return;
+    state.processed.add(container);
+
+    // Set reserved space
+    const format = container.dataset.adFormat || 'auto';
+    container.classList.add('ad-space');
+    container.dataset.adFormat = format;
+
+    // Ad blocker
+    if (state.blockerDetected) {
+      container.classList.add('ad-blocked');
+      renderPlaceholder(container, 'blocked');
+      return;
+    }
+
+    // Consent
+    if (CONFIG.consentRequired && !state.consentGranted) {
+      renderPlaceholder(container, 'consent');
+      return;
+    }
+
+    // No valid client ID
+    if (!hasValidClientId()) {
+      renderPlaceholder(container, 'dev');
+      return;
+    }
+
+    // Script not loaded
+    if (!state.scriptLoaded) {
+      renderPlaceholder(container, 'dev');
+      return;
+    }
+
+    // Build ad
+    const slotId = container.dataset.adSlot || '';
+    if (!slotId) {
+      renderPlaceholder(container, 'error');
+      return;
+    }
+
+    const ins = document.createElement('ins');
+    ins.className = 'adsbygoogle';
+    ins.style.display = 'block';
+    ins.style.textAlign = 'center';
+
+    ins.dataset.adClient = getPublisherId();
+    ins.dataset.adSlot = slotId;
+
+    if (container.dataset.adFormat) {
+      ins.dataset.adFormat = container.dataset.adFormat;
+    }
+    if (container.dataset.adLayout) {
+      ins.dataset.adLayout = container.dataset.adLayout;
+    }
+    if (container.dataset.fullWidthResponsive !== 'false') {
+      ins.dataset.fullWidthResponsive = 'true';
+    }
+
+    // Clear placeholder and insert ad
+    container.innerHTML = '';
+    container.appendChild(ins);
+
+    try {
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
+      log('Ad slot initialized:', slotId);
+
+      // Analytics
+      if (window.BigToolzAnalytics?.track) {
+        window.BigToolzAnalytics.track('ad_impression', {
+          ad_slot: slotId,
+          ad_format: container.dataset.adFormat
+        });
+      }
+    } catch (err) {
+      log('Ad push failed:', err);
+      renderPlaceholder(container, 'error');
+    }
+  }
+
+  /* ===== LAZY OBSERVER ===== */
+  function initLazyObserver() {
+    if (!CONFIG.lazyLoad || !('IntersectionObserver' in window)) {
+      document.querySelectorAll('[data-ad-space]').forEach(initAdSlot);
+      return;
+    }
+
+    state.observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          initAdSlot(entry.target);
+          state.observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      rootMargin: CONFIG.lazyRootMargin,
+      threshold: 0
+    });
+
+    document.querySelectorAll('[data-ad-space]').forEach(el => {
+      if (!state.processed.has(el)) {
+        state.observer.observe(el);
+      }
+    });
+  }
+
+  /* ===== WATCH FOR NEW AD SLOTS (dynamic content) ===== */
+  function initMutationObserver() {
+    const mo = new MutationObserver((mutations) => {
+      mutations.forEach(mutation => {
+        mutation.addedNodes.forEach(node => {
+          if (node.nodeType !== 1) return;
+          if (node.matches && node.matches('[data-ad-space]')) {
+            if (state.observer) state.observer.observe(node);
+            else initAdSlot(node);
+          }
+          if (node.querySelectorAll) {
+            node.querySelectorAll('[data-ad-space]').forEach(el => {
+              if (state.observer) state.observer.observe(el);
+              else initAdSlot(el);
+            });
+          }
+        });
+      });
+    });
+
+    mo.observe(document.body, { childList: true, subtree: true });
+  }
+
+  /* ===== CONSENT LISTENER ===== */
+  function initConsentListener() {
+    window.addEventListener('consentUpdate', (e) => {
+      const { ads } = e.detail || {};
+      if (ads) {
+        state.consentGranted = true;
+        log('Ad consent granted');
+        loadAdSenseScript().then(() => {
+          // Re-process all ad slots
+          document.querySelectorAll('[data-ad-space]').forEach(el => {
+            if (state.processed.has(el)) {
+              // Remove from processed so it can be reinitialized
+              state.processed.delete(el);
+              el.innerHTML = '';
+            }
+            if (state.observer) state.observer.observe(el);
+            else initAdSlot(el);
+          });
+        });
+      }
+    });
+  }
+
+  /* ===== INIT ===== */
+  async function init() {
+    log('Initializing ad space component');
+
+    state.consentGranted = hasAdConsent();
+
+    // Detect blocker
+    await detectAdBlocker();
+
+    // Load AdSense if consent granted
+    if (state.consentGranted) {
+      await loadAdSenseScript();
+    }
+
+    initLazyObserver();
+    initMutationObserver();
+    initConsentListener();
+
+    log('Ad space ready');
+  }
+
+  /* ===== RUN ===== */
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+
+  /* ===== PUBLIC API ===== */
+  window.BigToolzAdSpace = {
+    init: initAdSlot,
+    refresh: (selector) => {
+      const el = selector ? document.querySelector(selector) : null;
+      if (el) {
+        state.processed.delete(el);
+        el.innerHTML = '';
+        initAdSlot(el);
+      }
+    },
+    isBlocked: () => state.blockerDetected,
+    isLoaded: () => state.scriptLoaded,
+    setClient: (id) => { window.AD_CLIENT = id; }
+  };
+
+})();
+</script>
+
+<!-- ===========================================
+     AD BLOCKER NOTICE (optional)
+     =========================================== -->
+<div class="ad-blocker-notice" id="adBlockerNotice">
+  <span>⚠️ Ad blocker detected — please whitelist us.</span>
+  <button onclick="document.getElementById('adBlockerNotice').classList.remove('visible')" aria-label="Dismiss">×</button>
+</div>
+
+<!-- ===========================================
+     USAGE EXAMPLES
+     =========================================== -->
+
+<!-- EXAMPLE 1: Top banner (below header) -->
+<!--
+<div data-ad-space 
+     data-ad-slot="1234567890" 
+     data-ad-format="horizontal"
+     data-ad-position="top"></div>
+-->
+
+<!-- EXAMPLE 2: In-content rectangle -->
+<!--
+<div data-ad-space 
+     data-ad-slot="9876543210" 
+     data-ad-format="rectangle"
+     data-ad-position="inline"></div>
+-->
+
+<!-- EXAMPLE 3: Sidebar vertical -->
+<!--
+<aside class="sidebar">
+  <div data-ad-space 
+       data-ad-slot="5555555555" 
+       data-ad-format="vertical"
+       data-ad-position="sidebar"></div>
+</aside>
+-->
+
+<!-- EXAMPLE 4: Square format -->
+<!--
+<div data-ad-space 
+     data-ad-slot="1111111111" 
+     data-ad-format="square"></div>
+-->
+
+<!-- EXAMPLE 5: Responsive auto -->
+<!--
+<div data-ad-space 
+     data-ad-slot="2222222222" 
+     data-ad-format="auto"
+     data-full-width-responsive="true"></div>
+-->
+
+<!-- EXAMPLE 6: Pre-footer banner -->
+<!--
+<footer>
+  <div data-ad-space 
+       data-ad-slot="3333333333" 
+       data-ad-format="horizontal"
+       data-ad-position="footer"></div>
+</footer>
+-->
+
+<!-- ===========================================
+     HOW TO INCLUDE IN A PAGE
+     ===========================================
+     
+     1. Paste the <style> block (once) — usually in <head>.
+     2. Paste the <script> block (once) — usually before </body>.
+     3. Add one or more <div data-ad-space> containers
+        wherever you want ads.
+     4. Set your Publisher ID:
+        - Globally: <script>window.AD_CLIENT = 'ca-pub-xxxx';</script>
+        - Or edit CONFIG.client in the script above.
+     
+     Done. Ads lazy-load automatically.
+     =========================================== -->

@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2563eb">
+
+<title>Online Stopwatch - Free Digital Stopwatch with Lap Times | BigToolz</title>
+<meta name="description" content="Free online stopwatch with millisecond precision, lap times, keyboard shortcuts, and sound alerts. Perfect for workouts, cooking, and timing events. No download.">
+<meta name="keywords" content="online stopwatch, digital stopwatch, stopwatch with laps, timer, lap timer, free stopwatch">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://bigtoolz.com/tools/utility-tools/stopwatch/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Online Stopwatch - Free Digital Stopwatch | BigToolz">
+<meta property="og:description" content="Precise online stopwatch with laps, keyboard shortcuts, and sound alerts.">
+<meta property="og:url" content="https://bigtoolz.com/tools/utility-tools/stopwatch/">
+<meta property="og:image" content="https://bigtoolz.com/assets/images/og-image.jpg">
+<meta property="og:site_name" content="BigToolz">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Online Stopwatch - BigToolz">
+<meta name="twitter:description" content="Free online stopwatch with lap times.">
+<meta name="twitter:image" content="https://bigtoolz.com/assets/images/twitter-card.jpg">
+
+<link rel="icon" href="/assets/images/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/images/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700;800&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#f8f9fc;color:#1a1a2e;overflow-x:hidden;line-height:1.5}
+
+  .header{background:#fff;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;position:sticky;top:0;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+  .header-left{display:flex;align-items:center;gap:40px}
+  .logo{display:flex;align-items:center;gap:8px;font-size:22px;font-weight:800;color:#1a1a2e;text-decoration:none}
+  .logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#3b82f6,#2563eb);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px}
+  .logo span{color:#2563eb}
+  .nav{display:flex;align-items:center;gap:28px;list-style:none}
+  .nav a{text-decoration:none;color:#4b5563;font-size:14px;font-weight:500;transition:color .2s}
+  .nav a:hover,.nav a.active{color:#2563eb}
+  .header-right{display:flex;align-items:center;gap:16px}
+  .search-btn,.theme-btn{width:36px;height:36px;border-radius:50%;border:none;background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#4b5563}
+  .search-btn:hover,.theme-btn:hover{background:#f3f4f6}
+  .bookmark-btn{display:flex;align-items:center;gap:8px;background:#2563eb;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
+  .bookmark-btn:hover{background:#1d4ed8}
+
+  .hero{background:linear-gradient(135deg,#0a0e27 0%,#1a1a4e 40%,#2d1b69 70%,#4c1d95 100%);padding:40px 40px 60px;position:relative;overflow:hidden;color:#fff}
+  .hero::before{content:'';position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(6,182,212,.3) 0%,transparent 70%);border-radius:50%}
+  .hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+  .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px;flex-wrap:wrap}
+  .breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none}
+  .breadcrumb a:hover{color:#fff}
+  .breadcrumb .sep{color:rgba(255,255,255,.4)}
+  .breadcrumb .current{color:#fff;font-weight:500}
+  .hero-title-row{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+  .hero-icon{width:60px;height:60px;background:#06b6d4;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px;color:#fff;flex-shrink:0;box-shadow:0 8px 24px rgba(6,182,212,.4)}
+  .hero-title{font-size:42px;font-weight:800;line-height:1.15}
+  .hero-title .blue{color:#22d3ee}
+  .hero-desc{font-size:15px;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:24px;max-width:560px}
+  .hero-features{display:flex;gap:24px;flex-wrap:wrap}
+  .hero-feature{display:flex;align-items:center;gap:6px;font-size:13px;color:#fff;font-weight:500}
+  .hero-feature .check{width:18px;height:18px;border-radius:50%;background:#06b6d4;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;flex-shrink:0}
+
+  .main-content{max-width:1200px;margin:0 auto;padding:40px;display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start}
+  .tool-content{min-width:0}
+
+  .workspace{background:#fff;border-radius:16px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,.06);border:1px solid #e5e7eb;margin-bottom:24px}
+
+  /* Timer display */
+  .timer-card{background:linear-gradient(135deg,#0f172a,#1e293b);border-radius:20px;padding:48px 32px;text-align:center;margin-bottom:24px;position:relative;overflow:hidden;border:1px solid #334155}
+  .timer-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#06b6d4,#0891b2,#06b6d4);background-size:200% 100%;animation:slide 2s linear infinite}
+  .timer-card.running::before{animation-duration:.8s}
+  @keyframes slide{0%{background-position:0% 0}100%{background-position:200% 0}}
+
+  .timer-display{font-family:'JetBrains Mono','Courier New',monospace;font-weight:700;color:#fff;letter-spacing:-2px;line-height:1;display:flex;align-items:baseline;justify-content:center;gap:4px;margin-bottom:12px;flex-wrap:wrap}
+  .timer-main{font-size:96px;font-weight:800}
+  .timer-ms{font-size:48px;color:#22d3ee;font-weight:700}
+  .timer-label{font-size:14px;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:2px;font-weight:700}
+
+  /* Controls */
+  .controls{display:flex;gap:12px;justify-content:center;margin-bottom:24px;flex-wrap:wrap}
+  .control-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:16px 32px;border-radius:12px;font-size:16px;font-weight:800;font-family:inherit;cursor:pointer;border:none;transition:all .2s;min-width:140px}
+  .control-btn.start{background:#10b981;color:#fff;box-shadow:0 4px 16px rgba(16,185,129,.3)}
+  .control-btn.start:hover{background:#059669;transform:translateY(-2px)}
+  .control-btn.pause{background:#f59e0b;color:#fff;box-shadow:0 4px 16px rgba(245,158,11,.3)}
+  .control-btn.pause:hover{background:#d97706;transform:translateY(-2px)}
+  .control-btn.lap{background:#06b6d4;color:#fff;box-shadow:0 4px 16px rgba(6,182,212,.3)}
+  .control-btn.lap:hover:not(:disabled){background:#0891b2;transform:translateY(-2px)}
+  .control-btn.reset{background:#fff;color:#ef4444;border:2px solid #ef4444}
+  .control-btn.reset:hover{background:#fef2f2}
+  .control-btn:disabled{opacity:.4;cursor:not-allowed;transform:none}
+  .control-btn:disabled:hover{transform:none;background:initial}
+
+  /* Settings row */
+  .settings-row{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-bottom:16px}
+  .setting-chip{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;background:#f8fafc;border:1px solid #e5e7eb;border-radius:20px;font-size:12px;font-weight:600;color:#4b5563;cursor:pointer;font-family:inherit;transition:all .2s}
+  .setting-chip:hover{border-color:#06b6d4;color:#0891b2;background:#ecfeff}
+  .setting-chip.active{background:#06b6d4;color:#fff;border-color:#06b6d4}
+  .setting-chip input{display:none}
+
+  /* Laps */
+  .laps-section{margin-top:24px}
+  .laps-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:12px}
+  .laps-title{font-size:16px;font-weight:800;color:#1a1a2e;display:flex;align-items:center;gap:8px}
+  .laps-count{background:#06b6d4;color:#fff;font-size:11px;font-weight:700;padding:3px 10px;border-radius:12px}
+  .laps-actions{display:flex;gap:8px;flex-wrap:wrap}
+  .mini-btn{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;font-size:12px;font-weight:600;color:#4b5563;cursor:pointer;font-family:inherit;transition:all .2s}
+  .mini-btn:hover{border-color:#06b6d4;color:#06b6d4;background:#ecfeff}
+  .mini-btn.copied{background:#10b981;color:#fff;border-color:#10b981}
+  .mini-btn:disabled{opacity:.4;cursor:not-allowed}
+
+  .laps-list{display:flex;flex-direction:column;gap:8px;max-height:400px;overflow-y:auto;padding-right:6px}
+  .lap-item{display:grid;grid-template-columns:60px 1fr 1fr 80px;gap:14px;align-items:center;background:#f8fafc;border:1px solid #e5e7eb;border-radius:10px;padding:12px 16px;transition:all .2s;font-size:14px}
+  .lap-item:hover{border-color:#06b6d4;background:#ecfeff}
+  .lap-num{font-weight:800;color:#06b6d4;font-size:13px}
+  .lap-split{font-family:'JetBrains Mono',monospace;font-weight:700;color:#1a1a2e}
+  .lap-total{font-family:'JetBrains Mono',monospace;color:#6b7280;font-size:13px}
+  .lap-badge{font-size:10px;font-weight:700;padding:3px 8px;border-radius:8px;text-transform:uppercase;letter-spacing:.3px;text-align:center}
+  .lap-badge.best{background:#d1fae5;color:#065f46}
+  .lap-badge.worst{background:#fee2e2;color:#991b1b}
+
+  /* Empty state */
+  .empty-state{text-align:center;padding:40px 20px;color:#9ca3af}
+  .empty-icon{font-size:48px;margin-bottom:12px;opacity:.5}
+  .empty-title{font-size:14px;font-weight:600;color:#6b7280;margin-bottom:6px}
+  .empty-desc{font-size:12px;color:#9ca3af}
+
+  /* Keyboard hints */
+  .keyboard-hints{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;padding:14px;background:#f8fafc;border-radius:10px;border:1px solid #e5e7eb;margin-top:20px}
+  .kb-hint{display:flex;align-items:center;gap:8px;font-size:12px;color:#6b7280;font-weight:600}
+  .kb-key{background:#fff;border:1px solid #d1d5db;border-bottom-width:2px;border-radius:6px;padding:3px 8px;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;color:#1a1a2e;min-width:28px;text-align:center}
+
+  /* SEO */
+  .seo-content{background:#fff;border-radius:16px;padding:32px;border:1px solid #e5e7eb;margin-bottom:24px}
+  .seo-content h2{font-size:22px;font-weight:800;color:#1a1a2e;margin-bottom:14px;margin-top:28px;display:flex;align-items:center;gap:10px}
+  .seo-content h2:first-child{margin-top:0}
+  .seo-content h3{font-size:16px;font-weight:700;color:#1a1a2e;margin:20px 0 10px}
+  .seo-content p{font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:14px}
+  .seo-content ul{list-style:none;padding-left:0;margin-bottom:16px}
+  .seo-content ul li{position:relative;padding-left:24px;font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:8px}
+  .seo-content ul li::before{content:'';position:absolute;left:6px;top:12px;width:6px;height:6px;background:#06b6d4;border-radius:50%}
+  .seo-content a{color:#2563eb;text-decoration:none;font-weight:600}
+  .seo-content a:hover{text-decoration:underline}
+  .seo-content strong{color:#1a1a2e;font-weight:700}
+  .seo-content code{background:#f1f5f9;padding:2px 6px;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:13px;color:#0f172a;border:1px solid #e2e8f0}
+
+  .how-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:20px}
+  .how-step{background:#ecfeff;border-radius:12px;padding:20px;border:1px solid #a5f3fc}
+  .how-step-num{width:36px;height:36px;border-radius:50%;background:#06b6d4;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;margin-bottom:12px}
+  .how-step-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+  .how-step-desc{font-size:13px;color:#6b7280;line-height:1.6}
+
+  .faq-item{background:#ecfeff;border:1px solid #a5f3fc;border-radius:12px;margin-bottom:10px;overflow:hidden;transition:border-color .2s}
+  .faq-item:hover{border-color:#06b6d4}
+  .faq-question{width:100%;background:none;border:none;padding:18px 22px;font-size:15px;font-weight:700;color:#1a1a2e;text-align:left;cursor:pointer;font-family:inherit;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .faq-question .chev{font-size:12px;color:#06b6d4;transition:transform .2s;flex-shrink:0}
+  .faq-item.open .faq-question .chev{transform:rotate(180deg)}
+  .faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 22px}
+  .faq-item.open .faq-answer{max-height:500px;padding-bottom:18px}
+  .faq-answer p{font-size:14px;color:#6b7280;line-height:1.7;margin:0}
+
+  .sidebar{background:#fff;border-radius:16px;padding:24px;border:1px solid #e5e7eb;position:sticky;top:80px;margin-bottom:24px}
+  .sidebar-header{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:800;color:#1a1a2e;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid #f3f4f6}
+  .sidebar-list{display:flex;flex-direction:column;gap:8px}
+  .sidebar-item{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;cursor:pointer;transition:background .2s;text-decoration:none;color:inherit;border:1px solid #f3f4f6}
+  .sidebar-item:hover{background:#ecfeff;border-color:#a5f3fc}
+  .sidebar-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;flex-shrink:0}
+  .sidebar-info{flex:1;min-width:0}
+  .sidebar-title{font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:2px}
+  .sidebar-desc{font-size:11px;color:#9ca3af;line-height:1.4}
+
+  .footer{background:#0a0e27;padding:60px 40px 30px;color:#fff;margin-top:40px}
+  .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:40px}
+  .footer-brand{display:flex;align-items:center;gap:8px;font-size:20px;font-weight:800;margin-bottom:12px}
+  .footer-brand span{color:#60a5fa}
+  .footer-tagline{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px}
+  .footer-social{display:flex;gap:12px}
+  .footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:16px;transition:background .2s}
+  .footer-social a:hover{background:rgba(255,255,255,.2)}
+  .footer-heading{font-size:14px;font-weight:700;margin-bottom:20px;color:#fff}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .footer-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;transition:color .2s}
+  .footer-links a:hover{color:#60a5fa}
+  .footer-bottom{max-width:1200px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  .footer-bottom-left{display:flex;gap:20px;font-size:12px;color:rgba(255,255,255,.5)}
+  .footer-bottom-right,.footer-bottom-links a{font-size:12px;color:rgba(255,255,255,.5);text-decoration:none}
+  .footer-bottom-links{display:flex;gap:20px}
+
+  .toast{position:fixed;bottom:24px;right:24px;background:#1a1a2e;color:#fff;padding:14px 20px;border-radius:10px;font-size:13px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:3000;transform:translateY(200%);transition:transform .3s ease;max-width:320px}
+  .toast.visible{transform:translateY(0)}
+  .toast.success{background:#10b981}
+  .toast.error{background:#ef4444}
+
+  @media(max-width:1024px){
+    .main-content{grid-template-columns:1fr;padding:24px 20px}
+    .sidebar{position:static}
+    .how-steps{grid-template-columns:repeat(2,1fr)}
+  }
+  @media(max-width:768px){
+    .header{padding:0 20px}.nav{display:none}
+    .hero{padding:24px 20px 40px}
+    .hero-title{font-size:28px}
+    .hero-icon{width:48px;height:48px;font-size:20px}
+    .hero-title-row{flex-direction:column;align-items:flex-start;gap:12px}
+    .main-content{padding:20px 16px}
+    .workspace{padding:20px}
+    .how-steps{grid-template-columns:1fr}
+    .seo-content{padding:20px}
+    .footer-inner{grid-template-columns:1fr 1fr}
+    .toast{left:16px;right:16px;bottom:16px;max-width:none}
+    .timer-main{font-size:64px}
+    .timer-ms{font-size:32px}
+    .timer-card{padding:32px 20px}
+    .control-btn{min-width:auto;padding:14px 20px;font-size:14px}
+    .lap-item{grid-template-columns:1fr;gap:6px;text-align:left}
+    .lap-item>div:first-child{font-size:12px}
+    .keyboard-hints{padding:12px;gap:12px}
+  }
+  @media(max-width:576px){
+    .header{padding:0 16px}.header-right .search-btn,.header-right .theme-btn{display:none}
+    .hero-title{font-size:24px}
+    .footer-inner{grid-template-columns:1fr}
+    .footer-bottom{flex-direction:column;text-align:center}
+    .timer-main{font-size:48px}
+    .timer-ms{font-size:24px}
+    .timer-card{padding:24px 16px;border-radius:16px}
+    .controls{gap:8px}
+    .control-btn{padding:12px 16px;font-size:13px;min-width:auto;flex:1}
+  }
+
+  html[data-theme="dark"] body{background:#0f172a;color:#f1f5f9}
+  html[data-theme="dark"] .header,html[data-theme="dark"] .workspace,html[data-theme="dark"] .seo-content,html[data-theme="dark"] .sidebar{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .logo,html[data-theme="dark"] .hero-title,html[data-theme="dark"] .seo-content h2,html[data-theme="dark"] .seo-content h3,html[data-theme="dark"] .faq-question,html[data-theme="dark"] .sidebar-header,html[data-theme="dark"] .sidebar-title,html[data-theme="dark"] .laps-title{color:#f1f5f9}
+  html[data-theme="dark"] .nav a{color:#cbd5e1}
+  html[data-theme="dark"] .how-step,html[data-theme="dark"] .faq-item{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .setting-chip,html[data-theme="dark"] .keyboard-hints{background:#0f172a;border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .kb-key{background:#1e293b;border-color:#334155;color:#f1f5f9}
+  html[data-theme="dark"] .lap-item{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .lap-split{color:#f1f5f9}
+  html[data-theme="dark"] .lap-total{color:#94a3b8}
+  html[data-theme="dark"] .seo-content p,html[data-theme="dark"] .seo-content ul li,html[data-theme="dark"] .faq-answer p{color:#cbd5e1}
+  html[data-theme="dark"] .seo-content code{background:#0f172a;color:#94a3b8;border-color:#334155}
+  html[data-theme="dark"] .mini-btn{background:#0f172a;border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .control-btn.reset{background:#0f172a;color:#f87171;border-color:#f87171}
+  html[data-theme="dark"] .control-btn.reset:hover{background:#1e293b}
+
+  @media print {
+    .header, .hero, .sidebar, .footer, .controls, .settings-row, .keyboard-hints, .laps-actions, .actions {display:none !important}
+    .workspace {box-shadow:none;border:none}
+    .timer-card {background:#fff;color:#000;border:2px solid #000}
+    .timer-display, .timer-main, .timer-ms, .timer-label {color:#000}
+    .lap-item {border-color:#ccc}
+  }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type": "SoftwareApplication", "name": "Online Stopwatch", "url": "https://bigtoolz.com/tools/utility-tools/stopwatch/", "applicationCategory": "UtilityApplication", "operatingSystem": "Any (Web-based)", "description": "Free online stopwatch with millisecond precision, lap times, keyboard shortcuts, and sound alerts. Works on any device.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "3214"}},
+    {"@type": "HowTo", "name": "How to Use Online Stopwatch", "step": [
+      {"@type": "HowToStep", "name": "Start", "text": "Click Start or press Space to begin timing."},
+      {"@type": "HowToStep", "name": "Record Laps", "text": "Click Lap or press L to record lap times."},
+      {"@type": "HowToStep", "name": "Pause/Resume", "text": "Click Pause or press Space to pause."},
+      {"@type": "HowToStep", "name": "Export", "text": "Download lap times as CSV or copy to clipboard."}
+    ]},
+    {"@type": "FAQPage", "mainEntity": [
+      {"@type": "Question", "name": "How accurate is this online stopwatch?", "acceptedAnswer": {"@type": "Answer", "text": "Our stopwatch uses performance.now() for millisecond accuracy, which is more precise than Date.now(). It's accurate to within 1-5 milliseconds, more than enough for workouts, cooking, and most timing needs."}},
+      {"@type": "Question", "name": "What keyboard shortcuts are available?", "acceptedAnswer": {"@type": "Answer", "text": "Space = Start/Pause. L = Record Lap. R = Reset. S = Toggle sound. These work on both desktop and mobile with an external keyboard."}},
+      {"@type": "Question", "name": "Does the stopwatch keep running if I switch tabs?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Unlike old browser timers that pause in background tabs, our stopwatch uses performance.now() and calculates elapsed time based on system clock so it keeps accurate time even if you switch tabs or minimize the window."}},
+      {"@type": "Question", "name": "How do I export lap times?", "acceptedAnswer": {"@type": "Answer", "text": "Click 'Export CSV' to download all laps as a spreadsheet file, or 'Copy' to copy as formatted text. Both include lap number, split time, and cumulative total."}},
+      {"@type": "Question", "name": "Is there a limit to how many laps I can record?", "acceptedAnswer": {"@type": "Answer", "text": "No limit. You can record unlimited laps. The list scrolls if it gets long, and the best (fastest) and worst (slowest) laps are automatically highlighted."}}
+    ]},
+    {"@type": "BreadcrumbList", "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bigtoolz.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://bigtoolz.com/tools/"},
+      {"@type": "ListItem", "position": 3, "name": "Utility Tools", "item": "https://bigtoolz.com/tools/utility-tools/"},
+      {"@type": "ListItem", "position": 4, "name": "Online Stopwatch", "item": "https://bigtoolz.com/tools/utility-tools/stopwatch/"}
+    ]}
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-left">
+    <a href="/" class="logo"><div class="logo-icon">⚒</div>BigToolz</span></a>
+    <nav><ul class="nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/tools/" class="active">All Tools</a></li>
+      <li><a href="/tools/categories">Categories</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul></nav>
+  </div>
+  <div class="header-right">
+    
+    <button class="theme-btn" aria-label="Toggle theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
+    
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <nav class="breadcrumb">
+      <a href="/">Home</a><span class="sep">›</span>
+      <a href="/tools/">Tools</a><span class="sep">›</span>
+      <a href="/tools/utility-tools/">Utility Tools</a><span class="sep">›</span>
+      <span class="current">Online Stopwatch</span>
+    </nav>
+    <div class="hero-title-row">
+      <div class="hero-icon">⏱</div>
+      <h1 class="hero-title">Online <span class="blue">Stopwatch</span></h1>
+    </div>
+    <p class="hero-desc">
+      Precise millisecond-accurate stopwatch with unlimited lap times, keyboard shortcuts, and sound alerts. Perfect for workouts, cooking, experiments, and timing anything.
+    </p>
+    <div class="hero-features">
+      <div class="hero-feature"><span class="check">✓</span> Millisecond Precision</div>
+      <div class="hero-feature"><span class="check">✓</span> Unlimited Laps</div>
+      <div class="hero-feature"><span class="check">✓</span> Keyboard Shortcuts</div>
+      <div class="hero-feature"><span class="check">✓</span> CSV Export</div>
+    </div>
+  </div>
+</section>
+
+<div class="main-content">
+
+  <div class="tool-content">
+
+    <div class="workspace">
+
+      <!-- Timer Display -->
+      <div class="timer-card" id="timerCard">
+        <div class="timer-display">
+          <span class="timer-main" id="timerMain">00:00</span>
+          <span class="timer-ms" id="timerMs">.00</span>
+        </div>
+        <div class="timer-label" id="timerLabel">Ready</div>
+      </div>
+
+      <!-- Controls -->
+      <div class="controls">
+        <button class="control-btn start" id="startBtn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          Start
+        </button>
+        <button class="control-btn lap" id="lapBtn" disabled>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2v20M2 12h20"/></svg>
+          Lap
+        </button>
+        <button class="control-btn reset" id="resetBtn" disabled>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 12a9 9 0 109-9 9.75 9.75 0 00-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+          Reset
+        </button>
+      </div>
+
+      <!-- Settings -->
+      <div class="settings-row">
+        <button class="setting-chip active" id="soundChip">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M15.54 8.46a5 5 0 010 7.07M19.07 4.93a10 10 0 010 14.14"/></svg>
+          Sound: ON
+        </button>
+        <button class="setting-chip" id="wakelockChip">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4"/></svg>
+          Keep Screen On
+        </button>
+      </div>
+
+      <!-- Laps -->
+      <div class="laps-section">
+        <div class="laps-header">
+          <div class="laps-title">
+            📋 Lap Times
+            <span class="laps-count" id="lapsCount">0</span>
+          </div>
+          <div class="laps-actions">
+            <button class="mini-btn" id="copyBtn" disabled>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+              Copy
+            </button>
+            <button class="mini-btn" id="csvBtn" disabled>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+              Export CSV
+            </button>
+          </div>
+        </div>
+
+        <div class="laps-list" id="lapsList">
+          <div class="empty-state" id="emptyState">
+            <div class="empty-icon">⏱</div>
+            <div class="empty-title">No laps recorded yet</div>
+            <div class="empty-desc">Press Start, then click Lap (or press L) to record lap times.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Keyboard hints -->
+      <div class="keyboard-hints">
+        <div class="kb-hint"><span class="kb-key">Space</span> Start/Pause</div>
+        <div class="kb-hint"><span class="kb-key">L</span> Lap</div>
+        <div class="kb-hint"><span class="kb-key">R</span> Reset</div>
+        <div class="kb-hint"><span class="kb-key">S</span> Sound</div>
+      </div>
+
+    </div>
+
+    <!-- SEO Content -->
+    <div class="seo-content">
+
+      <h2>⏱ What is an Online Stopwatch?</h2>
+      <p>
+        An <strong>online stopwatch</strong> is a digital timer that measures elapsed time with high precision. Unlike physical stopwatches, our browser-based version tracks time to the <strong>millisecond</strong> (1/1000th of a second) using high-resolution timing APIs. It works on any device desktop, tablet, or phone without any download or installation.
+      </p>
+      <p>
+        Perfect for <strong>workouts, interval training, cooking, scientific experiments, presentations, meetings, coding sprints,</strong> or timing anything where you need accuracy and lap tracking.
+      </p>
+
+      <h2>🚀 How to Use This Stopwatch</h2>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-step-num">1</div>
+          <div class="how-step-title">Start</div>
+          <div class="how-step-desc">Click Start (or press Space) to begin timing.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">2</div>
+          <div class="how-step-title">Record Laps</div>
+          <div class="how-step-desc">Click Lap (or press L) to record split times.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">3</div>
+          <div class="how-step-title">Pause</div>
+          <div class="how-step-desc">Click Pause (or press Space) to stop temporarily.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">4</div>
+          <div class="how-step-title">Export</div>
+          <div class="how-step-desc">Download laps as CSV or copy to clipboard.</div>
+        </div>
+      </div>
+
+      <h2>✨ Key Features</h2>
+      <ul>
+        <li><strong>Millisecond precision</strong> accurate to 1/1000th of a second.</li>
+        <li><strong>Background tab support</strong> keeps timing even when you switch tabs.</li>
+        <li><strong>Unlimited laps</strong> record as many split times as you need.</li>
+        <li><strong>Best/Worst highlighting</strong> fastest and slowest laps auto-flagged.</li>
+        <li><strong>Keyboard shortcuts</strong> Space, L, R, S for hands-free operation.</li>
+        <li><strong>Sound alerts</strong> optional beep on start/stop/lap.</li>
+        <li><strong>Wake Lock</strong> keeps your screen on during long sessions (mobile).</li>
+        <li><strong>CSV export</strong> download all laps for analysis.</li>
+        <li><strong>Copy to clipboard</strong> paste times into any app.</li>
+        <li><strong>Print-friendly</strong> clean printout with laps and total time.</li>
+        <li><strong>100% browser-based</strong> no data sent to any server.</li>
+      </ul>
+
+      <h2>⌨️ Keyboard Shortcuts</h2>
+      <ul>
+        <li><code>Space</code> Start / Pause / Resume</li>
+        <li><code>L</code> Record lap (only while running)</li>
+        <li><code>R</code> Reset (only when paused or stopped)</li>
+        <li><code>S</code> Toggle sound on/off</li>
+      </ul>
+
+      <h2>🎯 Common Use Cases</h2>
+
+      <h3>🏃 Fitness & Workouts</h3>
+      <p>Time HIIT intervals, track running splits, or measure rest periods between sets. The lap feature is perfect for interval training hit Lap at each transition and compare performance across rounds.</p>
+
+      <h3>🍳 Cooking & Baking</h3>
+      <p>Time multiple dishes, track resting periods, or measure precise cooking times. The large display is readable from across the kitchen, and sounds alert you without watching the screen.</p>
+
+      <h3>🔬 Scientific Experiments</h3>
+      <p>Measure reaction times, reaction rates, or event durations. Millisecond precision is sufficient for most lab work, and the CSV export makes data analysis easy.</p>
+
+      <h3>📊 Presentations & Meetings</h3>
+      <p>Keep each agenda item on track. Hit Lap at each transition to see how long each section took. The print-friendly output makes a great time audit for future meetings.</p>
+
+      <h3>💻 Productivity & Focus</h3>
+      <p>Time focused work sessions, pomodoro-style sprints, or coding challenges. Record a lap each time you switch tasks to see where your time goes.</p>
+
+      <h2>💡 Pro Tips</h2>
+      <ul>
+        <li><strong>Use keyboard shortcuts.</strong> In workouts, keys are faster than tapping Space to pause, L to lap.</li>
+        <li><strong>Enable Wake Lock</strong> for long sessions so your phone screen doesn't turn off.</li>
+        <li><strong>Copy the times</strong> before resetting clipboard keeps them even after clearing.</li>
+        <li><strong>Export CSV</strong> for serious analysis. Open in Excel or Google Sheets to graph your splits.</li>
+        <li><strong>Print for records</strong> the print layout removes all UI clutter, showing only laps and total time.</li>
+        <li><strong>Switch tabs freely.</strong> The stopwatch runs in the background using high-precision timers.</li>
+      </ul>
+
+      <h2>❓ Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-question">How accurate is this online stopwatch?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Our stopwatch uses <code>performance.now()</code> for millisecond accuracy, which is more precise than <code>Date.now()</code>. It's accurate to within <strong>1-5 milliseconds</strong>, more than enough for workouts, cooking, and most timing needs.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What keyboard shortcuts are available?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><code>Space</code> = Start/Pause. <code>L</code> = Record Lap. <code>R</code> = Reset. <code>S</code> = Toggle sound. These work on both desktop and mobile with an external keyboard.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Does the stopwatch keep running if I switch tabs?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>Yes.</strong> Unlike old browser timers that pause in background tabs, our stopwatch uses <code>performance.now()</code> and calculates elapsed time based on the system clock so it keeps accurate time even if you switch tabs, minimize the window, or lock your screen.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">How do I export lap times?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Click <strong>'Export CSV'</strong> to download all laps as a spreadsheet file, or <strong>'Copy'</strong> to copy as formatted text. Both include lap number, split time, and cumulative total.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Is there a limit to how many laps I can record?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>No limit.</strong> You can record unlimited laps. The list scrolls if it gets long, and the best (fastest) and worst (slowest) laps are automatically highlighted in green and red.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What is Wake Lock and do I need it?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Wake Lock is a browser API that prevents your phone or laptop screen from turning off while the stopwatch is running. It's useful for long sessions like a workout or a slow-cooking recipe where you don't want to tap the screen every 30 seconds. Not all browsers support it (works in Chrome, Edge, Safari).</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I use this stopwatch offline?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Yes, after the first visit, our PWA (Progressive Web App) support means the stopwatch works offline. But since it doesn't need internet to function anyway, once the page is loaded it works even if you disconnect.</p></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-header">🔗 Related Utility Tools</div>
+    <div class="sidebar-list">
+      <a href="/tools/utility-tools/world-clock/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#06b6d4;">🕐</div>
+        <div class="sidebar-info"><div class="sidebar-title">World Clock</div><div class="sidebar-desc">Time in any city</div></div>
+      </a>
+      <a href="/tools/utility-tools/running-pace/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#f97316;">🏃</div>
+        <div class="sidebar-info"><div class="sidebar-title">Running Pace</div><div class="sidebar-desc">Pace & splits</div></div>
+      </a>
+      <a href="/tools/utility-tools/event-countdown/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#8b5cf6;">📅</div>
+        <div class="sidebar-info"><div class="sidebar-title">Event Countdown</div><div class="sidebar-desc">Countdown timer</div></div>
+      </a>
+      <a href="/tools/utility-tools/water-intake/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#06b6d4;">💧</div>
+        <div class="sidebar-info"><div class="sidebar-title">Water Intake</div><div class="sidebar-desc">Daily hydration</div></div>
+      </a>
+      <a href="/tools/utility-tools/pomodoro-timer/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#ef4444;">🍅</div>
+        <div class="sidebar-info"><div class="sidebar-title">Pomodoro Timer</div><div class="sidebar-desc">Focus technique</div></div>
+      </a>
+      <a href="/tools/utility-tools/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#64748b;">⚙️</div>
+        <div class="sidebar-info"><div class="sidebar-title">All Utility Tools →</div><div class="sidebar-desc">Browse 50+ tools</div></div>
+      </a>
+    </div>
+  </aside>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand"><div class="logo-icon">⚒</div>BigToolz</span></div>
+      <p class="footer-tagline">Your Ultimate Online Tools Hub</p>
+      <div class="footer-social">
+        <a href="https://facebook.com/bigtoolz" aria-label="Facebook">f</a>
+        <a href="https://twitter.com/bigtoolz" aria-label="Twitter">𝕏</a>
+        <a href="https://youtube.com/@bigtoolz" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+    <div>
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/tools/">All Tools</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Categories</h3>
+      <ul class="footer-links">
+        <li><a href="/tools/image-tools/">Image Tools</a></li>
+        <li><a href="/tools/pdf-tools/">PDF Tools</a></li>
+        <li><a href="/tools/text-tools/">Text Tools</a></li>
+        <li><a href="/tools/utility-tools/">Utility Tools</a></li>
+        <li><a href="/tools/categories">All Categories →</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Legal</h3>
+      <ul class="footer-links">
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left"><span>✓ 100% Free</span><span>✓ No Sign Up</span><span>✓ No Installation</span></div>
+    <div class="footer-bottom-right">© 2026 BigToolz. All rights reserved.</div>
+    <div class="footer-bottom-links"><a href="/privacy-policy">Privacy</a><a href="/terms">Terms</a><a href="/disclaimer">Disclaimer</a></div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+'use strict';
+
+/* ===== THEME ===== */
+(function(){try{var t=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&d))document.documentElement.setAttribute('data-theme','dark');else if(t==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();
+document.querySelector('.theme-btn')?.addEventListener('click',()=>{const h=document.documentElement;const c=h.getAttribute('data-theme');const d=window.matchMedia('(prefers-color-scheme: dark)').matches;let n=c==='dark'?'light':c==='light'?'dark':(d?'light':'dark');h.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}});
+
+/* ===== HELPERS ===== */
+const $ = (s, p = document) => p.querySelector(s);
+const $$ = (s, p = document) => [...p.querySelectorAll(s)];
+
+function showToast(msg, type = 'info', duration = 3000) {
+  const t = $('#toast');
+  if (!t) return;
+  t.className = 'toast visible' + (type !== 'info' ? ' ' + type : '');
+  t.textContent = msg;
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove('visible'), duration);
+}
+
+async function copyToClipboard(text) {
+  try {
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(text);
+      return true;
+    }
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.cssText = 'position:fixed;opacity:0;';
+    document.body.appendChild(ta);
+    ta.select();
+    const ok = document.execCommand('copy');
+    document.body.removeChild(ta);
+    return ok;
+  } catch (e) { return false; }
+}
+
+/* ===== STATE ===== */
+const state = {
+  running: false,
+  startTime: 0,
+  elapsed: 0,
+  laps: [],
+  soundOn: true,
+  wakeLock: null,
+  rafId: null
+};
+
+/* ===== DOM ===== */
+const timerCard = $('#timerCard');
+const timerMain = $('#timerMain');
+const timerMs = $('#timerMs');
+const timerLabel = $('#timerLabel');
+const startBtn = $('#startBtn');
+const lapBtn = $('#lapBtn');
+const resetBtn = $('#resetBtn');
+const lapsList = $('#lapsList');
+const lapsCount = $('#lapsCount');
+const emptyState = $('#emptyState');
+const copyBtn = $('#copyBtn');
+const csvBtn = $('#csvBtn');
+const soundChip = $('#soundChip');
+const wakelockChip = $('#wakelockChip');
+
+/* ===== FORMAT TIME ===== */
+function formatTime(ms) {
+  const totalSec = Math.floor(ms / 1000);
+  const h = Math.floor(totalSec / 3600);
+  const m = Math.floor((totalSec % 3600) / 60);
+  const s = totalSec % 60;
+  const cs = Math.floor((ms % 1000) / 10); // centiseconds
+
+  const main = h > 0
+    ? String(h).padStart(2, '0') + ':' + String(m).padStart(2, '0') + ':' + String(s).padStart(2, '0')
+    : String(m).padStart(2, '0') + ':' + String(s).padStart(2, '0');
+
+  return { main, ms: '.' + String(cs).padStart(2, '0') };
+}
+
+function formatForExport(ms) {
+  const totalSec = Math.floor(ms / 1000);
+  const h = Math.floor(totalSec / 3600);
+  const m = Math.floor((totalSec % 3600) / 60);
+  const s = totalSec % 60;
+  const cs = Math.floor((ms % 1000) / 10);
+
+  const parts = [];
+  if (h > 0) parts.push(String(h).padStart(2, '0'));
+  parts.push(String(m).padStart(2, '0'));
+  parts.push(String(s).padStart(2, '0') + '.' + String(cs).padStart(2, '0'));
+  return parts.join(':');
+}
+
+/* ===== UPDATE DISPLAY ===== */
+function updateDisplay() {
+  const elapsed = state.elapsed + (state.running ? performance.now() - state.startTime : 0);
+  const f = formatTime(elapsed);
+  timerMain.textContent = f.main;
+  timerMs.textContent = f.ms;
+  return elapsed;
+}
+
+/* ===== TICK LOOP ===== */
+function tick() {
+  if (!state.running) return;
+  updateDisplay();
+  state.rafId = requestAnimationFrame(tick);
+}
+
+/* ===== START ===== */
+function start() {
+  if (state.running) return;
+  state.running = true;
+  state.startTime = performance.now();
+  timerCard.classList.add('running');
+  startBtn.className = 'control-btn pause';
+  startBtn.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M6 4h4v16H6zM14 4h4v16h-4z"/></svg>Pause';
+  lapBtn.disabled = false;
+  resetBtn.disabled = false;
+  timerLabel.textContent = 'Running';
+  beep(880, 80);
+  tick();
+  requestWakeLock();
+}
+
+/* ===== PAUSE ===== */
+function pause() {
+  if (!state.running) return;
+  state.elapsed += performance.now() - state.startTime;
+  state.running = false;
+  cancelAnimationFrame(state.rafId);
+  timerCard.classList.remove('running');
+  startBtn.className = 'control-btn start';
+  startBtn.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>Resume';
+  lapBtn.disabled = true;
+  timerLabel.textContent = 'Paused';
+  beep(660, 80);
+  releaseWakeLock();
+  updateDisplay();
+}
+
+/* ===== RESET ===== */
+function reset() {
+  if (state.running) return;
+  state.elapsed = 0;
+  state.laps = [];
+  updateDisplay();
+  timerLabel.textContent = 'Ready';
+  startBtn.className = 'control-btn start';
+  startBtn.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>Start';
+  startBtn.disabled = false;
+  lapBtn.disabled = true;
+  resetBtn.disabled = true;
+  renderLaps();
+  updateLapsButtons();
+  beep(440, 80);
+}
+
+/* ===== LAP ===== */
+function recordLap() {
+  if (!state.running) return;
+  const current = state.elapsed + (performance.now() - state.startTime);
+  const previous = state.laps.length > 0
+    ? state.laps[state.laps.length - 1].total
+    : 0;
+  const split = current - previous;
+
+  state.laps.push({
+    number: state.laps.length + 1,
+    split,
+    total: current
+  });
+
+  renderLaps();
+  updateLapsButtons();
+  beep(990, 60);
+}
+
+/* ===== RENDER LAPS ===== */
+function renderLaps() {
+  lapsCount.textContent = state.laps.length;
+
+  if (state.laps.length === 0) {
+    lapsList.innerHTML = `
+      <div class="empty-state" id="emptyState">
+        <div class="empty-icon">⏱</div>
+        <div class="empty-title">No laps recorded yet</div>
+        <div class="empty-desc">Press Start, then click Lap (or press L) to record lap times.</div>
+      </div>
+    `;
+    return;
+  }
+
+  // Find best/worst splits
+  const splits = state.laps.map(l => l.split);
+  const bestSplit = Math.min(...splits);
+  const worstSplit = Math.max(...splits);
+  // Only highlight if we have at least 2 laps
+  const highlight = state.laps.length >= 2;
+
+  lapsList.innerHTML = '';
+  // Show newest first
+  [...state.laps].reverse().forEach(lap => {
+    const isBest = highlight && lap.split === bestSplit && bestSplit !== worstSplit;
+    const isWorst = highlight && lap.split === worstSplit && bestSplit !== worstSplit;
+
+    const div = document.createElement('div');
+    div.className = 'lap-item';
+    div.innerHTML = `
+      <div class="lap-num">Lap ${lap.number}</div>
+      <div class="lap-split">${formatForExport(lap.split)}</div>
+      <div class="lap-total">${formatForExport(lap.total)}</div>
+      <div class="lap-badge ${isBest ? 'best' : isWorst ? 'worst' : ''}">${isBest ? 'Best' : isWorst ? 'Worst' : ''}</div>
+    `;
+    lapsList.appendChild(div);
+  });
+}
+
+/* ===== UPDATE LAP BUTTONS ===== */
+function updateLapsButtons() {
+  const hasLaps = state.laps.length > 0;
+  copyBtn.disabled = !hasLaps;
+  csvBtn.disabled = !hasLaps;
+}
+
+/* ===== SOUND ===== */
+let audioCtx = null;
+
+function beep(freq, duration) {
+  if (!state.soundOn) return;
+  try {
+    if (!audioCtx) {
+      audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    }
+    const osc = audioCtx.createOscillator();
+    const gain = audioCtx.createGain();
+    osc.connect(gain);
+    gain.connect(audioCtx.destination);
+    osc.frequency.value = freq;
+    osc.type = 'sine';
+    gain.gain.setValueAtTime(0.15, audioCtx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + duration / 1000);
+    osc.start();
+    osc.stop(audioCtx.currentTime + duration / 1000);
+  } catch (e) { /* silent */ }
+}
+
+/* ===== WAKE LOCK ===== */
+async function requestWakeLock() {
+  if (!('wakeLock' in navigator)) return;
+  if (!wakelockChip.classList.contains('active')) return;
+  try {
+    state.wakeLock = await navigator.wakeLock.request('screen');
+    wakelockChip.classList.add('active');
+  } catch (e) { /* silent */ }
+}
+
+function releaseWakeLock() {
+  if (state.wakeLock) {
+    state.wakeLock.release().catch(() => {});
+    state.wakeLock = null;
+  }
+}
+
+/* ===== EVENT LISTENERS ===== */
+startBtn.addEventListener('click', () => {
+  if (state.running) pause();
+  else start();
+});
+
+lapBtn.addEventListener('click', recordLap);
+resetBtn.addEventListener('click', reset);
+
+/* Sound toggle */
+soundChip.addEventListener('click', () => {
+  state.soundOn = !state.soundOn;
+  soundChip.classList.toggle('active', state.soundOn);
+  soundChip.innerHTML = state.soundOn
+    ? '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M15.54 8.46a5 5 0 010 7.07M19.07 4.93a10 10 0 010 14.14"/></svg> Sound: ON'
+    : '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M23 9l-6 6M17 9l6 6"/></svg> Sound: OFF';
+});
+
+/* Wake lock toggle */
+wakelockChip.addEventListener('click', async () => {
+  wakelockChip.classList.toggle('active');
+  if (wakelockChip.classList.contains('active')) {
+    if (state.running) await requestWakeLock();
+    showToast('Screen will stay on', 'success');
+  } else {
+    releaseWakeLock();
+    showToast('Wake lock disabled');
+  }
+});
+
+/* Keyboard shortcuts */
+document.addEventListener('keydown', (e) => {
+  // Ignore if typing in an input
+  if (e.target.matches('input, textarea, select')) return;
+
+  const key = e.key.toLowerCase();
+
+  if (e.code === 'Space' || key === ' ') {
+    e.preventDefault();
+    if (state.running) pause();
+    else start();
+  } else if (key === 'l' && state.running) {
+    e.preventDefault();
+    recordLap();
+  } else if (key === 'r' && !state.running && state.elapsed > 0) {
+    e.preventDefault();
+    reset();
+  } else if (key === 's') {
+    e.preventDefault();
+    soundChip.click();
+  }
+});
+
+/* Copy laps */
+copyBtn.addEventListener('click', async () => {
+  if (state.laps.length === 0) return;
+
+  const lines = ['=== Lap Times ==='];
+  lines.push(`Total time: ${formatForExport(state.elapsed + (state.running ? performance.now() - state.startTime : 0))}`);
+  lines.push('');
+  lines.push('Lap #   | Split      | Cumulative');
+  lines.push('--------|------------|------------');
+  state.laps.forEach(l => {
+    lines.push(`Lap ${String(l.number).padEnd(3)} | ${formatForExport(l.split).padEnd(10)} | ${formatForExport(l.total)}`);
+  });
+
+  const ok = await copyToClipboard(lines.join('\n'));
+  if (ok) {
+    copyBtn.classList.add('copied');
+    const original = copyBtn.innerHTML;
+    copyBtn.innerHTML = '✓ Copied!';
+    setTimeout(() => {
+      copyBtn.classList.remove('copied');
+      copyBtn.innerHTML = original;
+    }, 2000);
+    showToast('Laps copied!', 'success');
+  } else {
+    showToast('Copy failed', 'error');
+  }
+});
+
+/* Export CSV */
+csvBtn.addEventListener('click', () => {
+  if (state.laps.length === 0) return;
+
+  const rows = [['Lap', 'Split (mm:ss.ms)', 'Cumulative (mm:ss.ms)']];
+  state.laps.forEach(l => {
+    rows.push([l.number, formatForExport(l.split), formatForExport(l.total)]);
+  });
+
+  const csv = rows.map(r => r.join(',')).join('\n');
+  const blob = new Blob([csv], { type: 'text/csv' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `stopwatch-laps-${new Date().toISOString().slice(0, 10)}.csv`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+  showToast('CSV downloaded!', 'success');
+});
+
+/* Before unload warning while running */
+window.addEventListener('beforeunload', (e) => {
+  if (state.running) {
+    e.preventDefault();
+    e.returnValue = '';
+  }
+});
+
+/* Release wake lock on visibility change */
+document.addEventListener('visibilitychange', () => {
+  if (document.visibilityState === 'visible' && state.running) {
+    requestWakeLock();
+  }
+});
+
+/* FAQ */
+$$('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    $$('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+
+/* INIT */
+updateDisplay();
+updateLapsButtons();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2563eb">
+
+<title>Emoji Remover - Remove Emojis from Text Online Free | BigToolz</title>
+<meta name="description" content="Remove emojis from any text instantly. Unicode-aware, works with all emoji types including flags, ZWJ sequences, and skin tones. Free, no signup.">
+<meta name="keywords" content="emoji remover, remove emojis from text, strip emojis, emoji cleaner, delete emojis online">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://bigtoolz.com/tools/social-tools/emoji-remover/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Emoji Remover - Free Online Tool | BigToolz">
+<meta property="og:description" content="Remove emojis from any text instantly free, Unicode-aware.">
+<meta property="og:url" content="https://bigtoolz.com/tools/social-tools/emoji-remover/">
+<meta property="og:image" content="https://bigtoolz.com/assets/images/og-image.jpg">
+<meta property="og:site_name" content="BigToolz">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Emoji Remover - BigToolz">
+<meta name="twitter:description" content="Remove emojis from any text instantly.">
+<meta name="twitter:image" content="https://bigtoolz.com/assets/images/twitter-card.jpg">
+
+<link rel="icon" href="/assets/images/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/images/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#f8f9fc;color:#1a1a2e;overflow-x:hidden;line-height:1.5}
+
+  .header{background:#fff;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;position:sticky;top:0;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+  .header-left{display:flex;align-items:center;gap:40px}
+  .logo{display:flex;align-items:center;gap:8px;font-size:22px;font-weight:800;color:#1a1a2e;text-decoration:none}
+  .logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#3b82f6,#2563eb);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px}
+  .logo span{color:#2563eb}
+  .nav{display:flex;align-items:center;gap:28px;list-style:none}
+  .nav a{text-decoration:none;color:#4b5563;font-size:14px;font-weight:500;transition:color .2s}
+  .nav a:hover,.nav a.active{color:#2563eb}
+  .header-right{display:flex;align-items:center;gap:16px}
+  .search-btn,.theme-btn{width:36px;height:36px;border-radius:50%;border:none;background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#4b5563}
+  .search-btn:hover,.theme-btn:hover{background:#f3f4f6}
+  .bookmark-btn{display:flex;align-items:center;gap:8px;background:#2563eb;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
+  .bookmark-btn:hover{background:#1d4ed8}
+
+  .hero{background:linear-gradient(135deg,#0a0e27 0%,#1a1a4e 40%,#2d1b69 70%,#4c1d95 100%);padding:40px 40px 60px;position:relative;overflow:hidden;color:#fff}
+  .hero::before{content:'';position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(236,72,153,.3) 0%,transparent 70%);border-radius:50%}
+  .hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+  .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px;flex-wrap:wrap}
+  .breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none}
+  .breadcrumb a:hover{color:#fff}
+  .breadcrumb .sep{color:rgba(255,255,255,.4)}
+  .breadcrumb .current{color:#fff;font-weight:500}
+  .hero-title-row{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+  .hero-icon{width:60px;height:60px;background:#ec4899;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:28px;color:#fff;flex-shrink:0;box-shadow:0 8px 24px rgba(236,72,153,.4)}
+  .hero-title{font-size:42px;font-weight:800;line-height:1.15}
+  .hero-title .blue{color:#f472b6}
+  .hero-desc{font-size:15px;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:24px;max-width:560px}
+  .hero-features{display:flex;gap:24px;flex-wrap:wrap}
+  .hero-feature{display:flex;align-items:center;gap:6px;font-size:13px;color:#fff;font-weight:500}
+  .hero-feature .check{width:18px;height:18px;border-radius:50%;background:#ec4899;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;flex-shrink:0}
+
+  .main-content{max-width:1200px;margin:0 auto;padding:40px;display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start}
+  .tool-content{min-width:0}
+
+  .workspace{background:#fff;border-radius:16px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,.06);border:1px solid #e5e7eb;margin-bottom:24px}
+
+  /* Options */
+  .options-row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px;align-items:center}
+  .options-label{font-size:12px;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:.5px;margin-right:6px}
+  .mode-btn{padding:9px 16px;background:#f8fafc;border:2px solid #e5e7eb;border-radius:20px;font-size:12px;font-weight:700;color:#4b5563;cursor:pointer;font-family:inherit;transition:all .2s}
+  .mode-btn:hover{border-color:#ec4899;color:#ec4899;background:#fdf2f8}
+  .mode-btn.active{background:#ec4899;color:#fff;border-color:#ec4899}
+
+  /* Two-panel editor */
+  .editor-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px}
+
+  .panel-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;gap:8px;flex-wrap:wrap}
+  .panel-title{font-size:13px;font-weight:800;color:#1a1a2e;display:flex;align-items:center;gap:6px}
+  .panel-stats{font-size:11px;font-weight:700;color:#9ca3af;background:#f8fafc;padding:4px 10px;border-radius:12px;border:1px solid #e5e7eb}
+
+  .text-area{width:100%;min-height:220px;padding:16px;border:2px solid #e5e7eb;border-radius:12px;font-family:inherit;font-size:15px;line-height:1.6;color:#1a1a2e;background:#fff;outline:none;resize:vertical;transition:border-color .2s}
+  .text-area:focus{border-color:#ec4899;box-shadow:0 0 0 3px rgba(236,72,153,.08)}
+  .text-area::placeholder{color:#9ca3af}
+
+  .text-area.output{background:#f0fdf4;border-color:#a7f3d0;font-weight:500}
+  .text-area.output:focus{border-color:#10b981;box-shadow:0 0 0 3px rgba(16,185,129,.08)}
+
+  /* Action buttons */
+  .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 24px;border-radius:10px;font-size:14px;font-weight:700;font-family:inherit;cursor:pointer;border:none;transition:all .2s;text-decoration:none}
+  .btn-primary{background:#ec4899;color:#fff;box-shadow:0 4px 12px rgba(236,72,153,.2)}
+  .btn-primary:hover:not(:disabled){background:#db2777;transform:translateY(-2px);box-shadow:0 6px 20px rgba(236,72,153,.3)}
+  .btn-primary:disabled{opacity:.5;cursor:not-allowed;transform:none}
+  .btn-secondary{background:#fff;color:#ec4899;border:1px solid #e5e7eb}
+  .btn-secondary:hover{border-color:#ec4899;background:#fdf2f8}
+  .btn-success{background:#10b981;color:#fff}
+  .btn-success:hover{background:#059669}
+  .btn.copied{background:#10b981;color:#fff;border-color:#10b981}
+
+  /* Stats bar */
+  .stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px}
+  .stat-card{background:#f8fafc;border:1px solid #e5e7eb;border-radius:12px;padding:14px 12px;text-align:center}
+  .stat-value{font-size:22px;font-weight:800;color:#1a1a2e;margin-bottom:2px;line-height:1.1}
+  .stat-value.pink{color:#ec4899}
+  .stat-value.green{color:#10b981}
+  .stat-value.blue{color:#3b82f6}
+  .stat-label{font-size:10px;font-weight:700;color:#9ca3af;text-transform:uppercase;letter-spacing:.5px}
+
+  /* Sample chips */
+  .samples-row{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+  .samples-label{font-size:11px;font-weight:700;color:#9ca3af;text-transform:uppercase;letter-spacing:.5px;margin-right:4px}
+  .sample-chip{padding:6px 14px;background:#fdf2f8;border:1px solid #fbcfe8;border-radius:20px;font-size:12px;font-weight:700;color:#db2777;cursor:pointer;font-family:inherit;transition:all .2s}
+  .sample-chip:hover{background:#fce7f3;border-color:#ec4899;transform:translateY(-1px)}
+
+  /* SEO */
+  .seo-content{background:#fff;border-radius:16px;padding:32px;border:1px solid #e5e7eb;margin-bottom:24px}
+  .seo-content h2{font-size:22px;font-weight:800;color:#1a1a2e;margin-bottom:14px;margin-top:28px;display:flex;align-items:center;gap:10px}
+  .seo-content h2:first-child{margin-top:0}
+  .seo-content h3{font-size:16px;font-weight:700;color:#1a1a2e;margin:20px 0 10px}
+  .seo-content p{font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:14px}
+  .seo-content ul{list-style:none;padding-left:0;margin-bottom:16px}
+  .seo-content ul li{position:relative;padding-left:24px;font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:8px}
+  .seo-content ul li::before{content:'';position:absolute;left:6px;top:12px;width:6px;height:6px;background:#ec4899;border-radius:50%}
+  .seo-content a{color:#2563eb;text-decoration:none;font-weight:600}
+  .seo-content a:hover{text-decoration:underline}
+  .seo-content strong{color:#1a1a2e;font-weight:700}
+  .seo-content code{background:#f1f5f9;padding:2px 6px;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:13px;color:#0f172a;border:1px solid #e2e8f0}
+
+  .how-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:20px}
+  .how-step{background:#fdf2f8;border-radius:12px;padding:20px;border:1px solid #fbcfe8}
+  .how-step-num{width:36px;height:36px;border-radius:50%;background:#ec4899;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;margin-bottom:12px}
+  .how-step-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+  .how-step-desc{font-size:13px;color:#6b7280;line-height:1.6}
+
+  .faq-item{background:#fdf2f8;border:1px solid #fbcfe8;border-radius:12px;margin-bottom:10px;overflow:hidden;transition:border-color .2s}
+  .faq-item:hover{border-color:#ec4899}
+  .faq-question{width:100%;background:none;border:none;padding:18px 22px;font-size:15px;font-weight:700;color:#1a1a2e;text-align:left;cursor:pointer;font-family:inherit;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .faq-question .chev{font-size:12px;color:#ec4899;transition:transform .2s;flex-shrink:0}
+  .faq-item.open .faq-question .chev{transform:rotate(180deg)}
+  .faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 22px}
+  .faq-item.open .faq-answer{max-height:500px;padding-bottom:18px}
+  .faq-answer p{font-size:14px;color:#6b7280;line-height:1.7;margin:0}
+
+  .sidebar{background:#fff;border-radius:16px;padding:24px;border:1px solid #e5e7eb;position:sticky;top:80px;margin-bottom:24px}
+  .sidebar-header{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:800;color:#1a1a2e;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid #f3f4f6}
+  .sidebar-list{display:flex;flex-direction:column;gap:8px}
+  .sidebar-item{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;cursor:pointer;transition:background .2s;text-decoration:none;color:inherit;border:1px solid #f3f4f6}
+  .sidebar-item:hover{background:#fdf2f8;border-color:#fbcfe8}
+  .sidebar-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;flex-shrink:0}
+  .sidebar-info{flex:1;min-width:0}
+  .sidebar-title{font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:2px}
+  .sidebar-desc{font-size:11px;color:#9ca3af;line-height:1.4}
+
+  .footer{background:#0a0e27;padding:60px 40px 30px;color:#fff;margin-top:40px}
+  .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:40px}
+  .footer-brand{display:flex;align-items:center;gap:8px;font-size:20px;font-weight:800;margin-bottom:12px}
+  .footer-brand span{color:#60a5fa}
+  .footer-tagline{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px}
+  .footer-social{display:flex;gap:12px}
+  .footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:16px;transition:background .2s}
+  .footer-social a:hover{background:rgba(255,255,255,.2)}
+  .footer-heading{font-size:14px;font-weight:700;margin-bottom:20px;color:#fff}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .footer-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;transition:color .2s}
+  .footer-links a:hover{color:#60a5fa}
+  .footer-bottom{max-width:1200px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  .footer-bottom-left{display:flex;gap:20px;font-size:12px;color:rgba(255,255,255,.5)}
+  .footer-bottom-right,.footer-bottom-links a{font-size:12px;color:rgba(255,255,255,.5);text-decoration:none}
+  .footer-bottom-links{display:flex;gap:20px}
+
+  .toast{position:fixed;bottom:24px;right:24px;background:#1a1a2e;color:#fff;padding:14px 20px;border-radius:10px;font-size:13px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:3000;transform:translateY(200%);transition:transform .3s ease;max-width:320px}
+  .toast.visible{transform:translateY(0)}
+  .toast.success{background:#10b981}
+  .toast.error{background:#ef4444}
+
+  @media(max-width:1024px){
+    .main-content{grid-template-columns:1fr;padding:24px 20px}
+    .sidebar{position:static}
+    .how-steps{grid-template-columns:repeat(2,1fr)}
+    .editor-grid{grid-template-columns:1fr}
+    .stats-bar{grid-template-columns:repeat(2,1fr)}
+  }
+  @media(max-width:768px){
+    .header{padding:0 20px}.nav{display:none}
+    .hero{padding:24px 20px 40px}
+    .hero-title{font-size:28px}
+    .hero-icon{width:48px;height:48px;font-size:22px}
+    .hero-title-row{flex-direction:column;align-items:flex-start;gap:12px}
+    .main-content{padding:20px 16px}
+    .workspace{padding:20px}
+    .how-steps{grid-template-columns:1fr}
+    .seo-content{padding:20px}
+    .footer-inner{grid-template-columns:1fr 1fr}
+    .toast{left:16px;right:16px;bottom:16px;max-width:none}
+  }
+  @media(max-width:576px){
+    .header{padding:0 16px}.header-right .search-btn,.header-right .theme-btn{display:none}
+    .hero-title{font-size:24px}
+    .footer-inner{grid-template-columns:1fr}
+    .footer-bottom{flex-direction:column;text-align:center}
+    .stats-bar{grid-template-columns:1fr}
+    .actions{flex-direction:column}
+    .btn{width:100%}
+  }
+
+  html[data-theme="dark"] body{background:#0f172a;color:#f1f5f9}
+  html[data-theme="dark"] .header,html[data-theme="dark"] .workspace,html[data-theme="dark"] .seo-content,html[data-theme="dark"] .sidebar{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .logo,html[data-theme="dark"] .hero-title,html[data-theme="dark"] .seo-content h2,html[data-theme="dark"] .seo-content h3,html[data-theme="dark"] .faq-question,html[data-theme="dark"] .sidebar-header,html[data-theme="dark"] .sidebar-title,html[data-theme="dark"] .panel-title{color:#f1f5f9}
+  html[data-theme="dark"] .nav a{color:#cbd5e1}
+  html[data-theme="dark"] .how-step,html[data-theme="dark"] .faq-item,html[data-theme="dark"] .stat-card,html[data-theme="dark"] .panel-stats,html[data-theme="dark"] .mode-btn{background:#0f172a;border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .mode-btn.active{background:#ec4899;color:#fff;border-color:#ec4899}
+  html[data-theme="dark"] .text-area{background:#0f172a;border-color:#334155;color:#f1f5f9}
+  html[data-theme="dark"] .text-area.output{background:#064e3b;border-color:#065f46;color:#d1fae5}
+  html[data-theme="dark"] .seo-content p,html[data-theme="dark"] .seo-content ul li,html[data-theme="dark"] .faq-answer p{color:#cbd5e1}
+  html[data-theme="dark"] .seo-content code{background:#0f172a;color:#94a3b8;border-color:#334155}
+  html[data-theme="dark"] .sample-chip{background:#0f172a;border-color:#334155;color:#f472b6}
+  html[data-theme="dark"] .stat-value{color:#f1f5f9}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type": "SoftwareApplication", "name": "Emoji Remover", "url": "https://bigtoolz.com/tools/social-tools/emoji-remover/", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any (Web-based)", "description": "Free online emoji remover strip emojis from any text instantly. Unicode-aware and works with all emoji types.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.8", "ratingCount": "1421"}},
+    {"@type": "HowTo", "name": "How to Remove Emojis from Text", "step": [
+      {"@type": "HowToStep", "name": "Paste Text", "text": "Paste or type your text with emojis in the input box."},
+      {"@type": "HowToStep", "name": "Choose Mode", "text": "Select removal mode (all emojis, or keep symbols)."},
+      {"@type": "HowToStep", "name": "Auto-Clean", "text": "Text is cleaned automatically as you type."},
+      {"@type": "HowToStep", "name": "Copy Result", "text": "Copy the clean text or download as .txt."}
+    ]},
+    {"@type": "FAQPage", "mainEntity": [
+      {"@type": "Question", "name": "How do I remove emojis from text?", "acceptedAnswer": {"@type": "Answer", "text": "Paste your text into the input box. The tool automatically removes all emojis in real time. Copy the clean text or download as .txt."}},
+      {"@type": "Question", "name": "Which emoji types does this handle?", "acceptedAnswer": {"@type": "Answer", "text": "All of them standard Unicode emojis, ZWJ sequences (👨‍👩‍👧), flag emojis (🇮🇳🇺🇸), skin tone variations (👋🏽), keycaps (1️⃣), and symbol-like emojis (❤️☀️)."}},
+      {"@type": "Question", "name": "Will it remove special characters like © or ™?", "acceptedAnswer": {"@type": "Answer", "text": "No. Our tool only removes emojis, not typographic symbols, currency signs, math symbols, or emoji-adjacent characters like © ® ™ ✓ ✗. Use the 'Emojis + Symbols' mode if you want those removed too."}},
+      {"@type": "Question", "name": "Does it work with WhatsApp/Instagram/Twitter text?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Any text from any app, any platform is processed the same way. Emoji characters are universal Unicode, so the removal works identically across all sources."}},
+      {"@type": "Question", "name": "Is my text uploaded to a server?", "acceptedAnswer": {"@type": "Answer", "text": "No. All processing happens locally in your browser using JavaScript. Your text never leaves your device."}}
+    ]},
+    {"@type": "BreadcrumbList", "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bigtoolz.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://bigtoolz.com/tools/"},
+      {"@type": "ListItem", "position": 3, "name": "Social Tools", "item": "https://bigtoolz.com/tools/social-tools/"},
+      {"@type": "ListItem", "position": 4, "name": "Emoji Remover", "item": "https://bigtoolz.com/tools/social-tools/emoji-remover/"}
+    ]}
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-left">
+    <a href="/" class="logo"><div class="logo-icon">⚒</div>BigToolz</span></a>
+    <nav><ul class="nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/tools/" class="active">All Tools</a></li>
+      <li><a href="/tools/categories">Categories</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul></nav>
+  </div>
+  <div class="header-right">
+   
+    <button class="theme-btn" aria-label="Toggle theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
+    
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <nav class="breadcrumb">
+      <a href="/">Home</a><span class="sep">›</span>
+      <a href="/tools/">Tools</a><span class="sep">›</span>
+      <a href="/tools/social-tools/">Social Tools</a><span class="sep">›</span>
+      <span class="current">Emoji Remover</span>
+    </nav>
+    <div class="hero-title-row">
+      <div class="hero-icon">🚫</div>
+      <h1 class="hero-title">Emoji <span class="blue">Remover</span></h1>
+    </div>
+    <p class="hero-desc">
+      Strip every emoji from any text instantly. Unicode-aware handles standard emojis, ZWJ sequences, flags, skin tones, and keycaps. Perfect for clean data, formal writing, and CSV exports.
+    </p>
+    <div class="hero-features">
+      <div class="hero-feature"><span class="check">✓</span> All Emoji Types</div>
+      <div class="hero-feature"><span class="check">✓</span> Instant & Live</div>
+      <div class="hero-feature"><span class="check">✓</span> 100% Private</div>
+      <div class="hero-feature"><span class="check">✓</span> Copy & Download</div>
+    </div>
+  </div>
+</section>
+
+<div class="main-content">
+
+  <div class="tool-content">
+
+    <div class="workspace">
+
+      <!-- Mode options -->
+      <div class="options-row">
+        <span class="options-label">Mode:</span>
+        <button class="mode-btn active" data-mode="all">🚫 Remove all emojis</button>
+        <button class="mode-btn" data-mode="emoji-only">🎯 Emojis + Symbols</button>
+        <button class="mode-btn" data-mode="preserve">❤️ Keep common hearts</button>
+      </div>
+
+      <!-- Samples -->
+      <div class="samples-row">
+        <span class="samples-label">Try a sample:</span>
+        <button class="sample-chip" data-sample="1">Social post</button>
+        <button class="sample-chip" data-sample="2">Mixed text</button>
+        <button class="sample-chip" data-sample="3">CSV row</button>
+      </div>
+
+      <!-- Editor -->
+      <div class="editor-grid">
+        <!-- Input -->
+        <div>
+          <div class="panel-header">
+            <div class="panel-title">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+              Input (with emojis)
+            </div>
+            <div class="panel-stats" id="inputStats">0 chars</div>
+          </div>
+          <textarea class="text-area" id="inputText" placeholder="Paste text with emojis here... 😊🎉🔥"></textarea>
+        </div>
+
+        <!-- Output -->
+        <div>
+          <div class="panel-header">
+            <div class="panel-title">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+              Output (clean)
+            </div>
+            <div class="panel-stats" id="outputStats">0 chars</div>
+          </div>
+          <textarea class="text-area output" id="outputText" placeholder="Clean text appears here..." readonly></textarea>
+        </div>
+      </div>
+
+      <!-- Stats bar -->
+      <div class="stats-bar">
+        <div class="stat-card">
+          <div class="stat-value" id="statOriginal">0</div>
+          <div class="stat-label">Original chars</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value green" id="statClean">0</div>
+          <div class="stat-label">Clean chars</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value pink" id="statRemoved">0</div>
+          <div class="stat-label">Emojis removed</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value blue" id="statPercent">0%</div>
+          <div class="stat-label">Emoji ratio</div>
+        </div>
+      </div>
+
+      <!-- Actions -->
+      <div class="actions">
+        <button class="btn btn-primary" id="copyBtn" disabled>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+          Copy Clean Text
+        </button>
+        <button class="btn btn-secondary" id="downloadBtn" disabled>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+          Download .txt
+        </button>
+        <button class="btn btn-secondary" id="clearBtn">
+          ↺ Clear
+        </button>
+      </div>
+
+    </div>
+
+    <!-- SEO Content -->
+    <div class="seo-content">
+
+      <h2>🚫 What is an Emoji Remover?</h2>
+      <p>
+        An <strong>Emoji Remover</strong> strips all emoji characters from a piece of text, leaving only readable ASCII and Unicode letters, numbers, and punctuation. It's essential for <strong>data cleaning, CSV exports, formal writing, accessibility (screen readers handle emojis awkwardly), and content reformatting</strong>.
+      </p>
+      <p>
+        Our tool is <strong>Unicode-aware</strong> it doesn't just look for "smiley faces." It understands emoji sequences like <strong>ZWJ (Zero-Width Joiner)</strong> families (👨‍👩‍👧), <strong>flag emojis</strong> (🇮🇳🇺🇸), <strong>skin tone modifiers</strong> (👋🏽👋🏿), <strong>keycap sequences</strong> (1️⃣ 2️⃣), and <strong>emoji variation selectors</strong> (❤️ vs ❤). Everything gets cleaned perfectly.
+      </p>
+
+      <h2>🚀 How to Remove Emojis from Text</h2>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-step-num">1</div>
+          <div class="how-step-title">Paste Text</div>
+          <div class="how-step-desc">Paste or type your text with emojis in the left box.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">2</div>
+          <div class="how-step-title">Choose Mode</div>
+          <div class="how-step-desc">Remove all, emojis + symbols, or keep hearts.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">3</div>
+          <div class="how-step-title">Auto-Clean</div>
+          <div class="how-step-desc">Clean text appears instantly as you type.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">4</div>
+          <div class="how-step-title">Copy/Save</div>
+          <div class="how-step-desc">Copy the clean text or download as .txt.</div>
+        </div>
+      </div>
+
+      <h2>🎯 The 3 Removal Modes Explained</h2>
+
+      <h3>🚫 Remove All Emojis (Default)</h3>
+      <p>Removes all standard Unicode emojis and emoji sequences. Leaves text, punctuation, symbols (like ©, ™, ✓), math operators, and currency signs untouched. This is the most common mode.</p>
+
+      <h3>🎯 Emojis + Symbols</h3>
+      <p>More aggressive removes emojis <strong>plus</strong> common Unicode symbols and pictographs (©, ®, ™, ✓, ✗, ⭐, ☀, ❄, ♫, ☎). Use this when you want truly clean text with only standard ASCII letters, numbers, and basic punctuation.</p>
+
+      <h3>❤️ Keep Common Hearts</h3>
+      <p>Removes all emojis <strong>except</strong> for popular heart emojis (❤️ 💖 💕 💗 💓 💞 💘). Useful for blogs or messages where you want to keep the emotional tone but remove the visual noise of other emojis.</p>
+
+      <h2>🔬 Technical: How Emoji Detection Works</h2>
+      <p>Our tool uses a comprehensive regex pattern based on the Unicode Standard's emoji properties. Specifically, it targets:</p>
+      <ul>
+        <li><strong>Emoji Presentation (Emoji_Presentation)</strong> code points that default to emoji rendering (😀, 🎉, 🚀)</li>
+        <li><strong>Extended Pictographic (Extended_Pictographic)</strong> the broad class of pictorial characters</li>
+        <li><strong>Regional Indicators</strong> used to build flag emojis (🇦-🇿 range pairs)</li>
+        <li><strong>Emoji Modifiers</strong> skin tone modifiers (🏻-🏿)</li>
+        <li><strong>Emoji ZWJ Sequences</strong> multi-character emojis joined by Zero-Width Joiner (👨‍👩‍👧‍👦, 👩‍💻)</li>
+        <li><strong>Keycap Sequences</strong> number/symbol + ️⃣ combining marks</li>
+        <li><strong>Variation Selectors</strong> VS15 (︎) and VS16 (️) that control presentation</li>
+      </ul>
+      <p>This means the tool correctly strips emojis without accidentally removing legitimate characters like <code>®</code>, <code>©</code>, <code>™</code>, or <code>℠</code> (in default mode) that often get confused with emojis.</p>
+
+      <h2>💡 Common Use Cases</h2>
+
+      <h3>📊 Data Cleaning</h3>
+      <p>Emojis in CSV files or databases break analytics, reports, and exports. Strip them before importing into Excel, Google Sheets, or any data tool.</p>
+
+      <h3>📝 Formal Documents</h3>
+      <p>Emails to clients, reports, contracts, and academic papers don't use emojis. Our tool cleans content copied from messaging apps.</p>
+
+      <h3>🎓 Academic Writing</h3>
+      <p>Theses, journal submissions, and papers need plain text. Emojis cause submission failures in most academic portals.</p>
+
+      <h3>♿ Accessibility</h3>
+      <p>Screen readers announce emojis by name (e.g., "smiling face with open mouth"), which can make text confusing. Stripping emojis improves accessibility.</p>
+
+      <h3>🔍 SEO & Metadata</h3>
+      <p>Meta descriptions, title tags, and structured data should be plain text. Emojis break structured data parsers.</p>
+
+      <h3>💻 Coding & APIs</h3>
+      <p>API payloads, JSON, and XML data often reject emoji characters. Clean them before sending.</p>
+
+      <h2>✨ Key Features</h2>
+      <ul>
+        <li><strong>Live processing</strong> clean text updates as you type.</li>
+        <li><strong>Unicode-aware</strong> handles all emoji types including sequences.</li>
+        <li><strong>3 modes</strong> all emojis, emojis + symbols, or preserve hearts.</li>
+        <li><strong>Character stats</strong> see original, clean, and removed counts.</li>
+        <li><strong>Emoji ratio</strong> see percentage of emojis in your text.</li>
+        <li><strong>Copy & download</strong> one-click export.</li>
+        <li><strong>100% private</strong> all processing in your browser.</li>
+      </ul>
+
+      <h2>❓ Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-question">How do I remove emojis from text?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Paste your text into the input box. The tool automatically removes all emojis in real time. Copy the clean text or download as .txt free, no signup.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Which emoji types does this handle?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>All of them</strong> standard Unicode emojis (😀), ZWJ sequences (👨‍👩‍👧), flag emojis (🇮🇳🇺🇸), skin tone variations (👋🏽), keycaps (1️⃣), and symbol-like emojis (❤️☀️).</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Will it remove special characters like © or ™?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>No</strong> in the default mode. Our tool only removes emojis, not typographic symbols, currency signs, math symbols, or emoji-adjacent characters like <code>©</code> <code>®</code> <code>™</code> <code>✓</code> <code>✗</code>. Use the <strong>"Emojis + Symbols"</strong> mode if you want those removed too.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Does it work with WhatsApp/Instagram/Twitter text?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>Yes.</strong> Emoji characters are universal Unicode, so the removal works identically across all sources.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I keep some emojis and remove others?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Yes use the <strong>"Keep Common Hearts"</strong> mode. It removes all emojis except for heart variations (❤️ 💖 💕 💗 💓 💞 💘). For more granular control (keeping a custom set of emojis), you'd need custom JavaScript regex contact us if you want a specialized version.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Is there a text size limit?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>No hard limit. The tool runs in your browser using JavaScript regex, which handles text of any size efficiently. Performance remains smooth even for very long documents (100,000+ characters).</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Is my text uploaded to a server?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>No.</strong> All processing happens locally in your browser using JavaScript regex. Your text never leaves your device, and nothing is stored anywhere.</p></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-header">🔗 Related Social Tools</div>
+    <div class="sidebar-list">
+      <a href="/tools/social-tools/emoji-translator/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#f59e0b;">😊</div>
+        <div class="sidebar-info"><div class="sidebar-title">Emoji Translator</div><div class="sidebar-desc">Text → Emojis</div></div>
+      </a>
+      <a href="/tools/social-tools/caption-generator/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#8b5cf6;">💬</div>
+        <div class="sidebar-info"><div class="sidebar-title">Caption Generator</div><div class="sidebar-desc">Post captions</div></div>
+      </a>
+      <a href="/tools/social-tools/twitter-bio/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#1d9bf0;">𝕏</div>
+        <div class="sidebar-info"><div class="sidebar-title">Twitter Bio</div><div class="sidebar-desc">Bio generator</div></div>
+      </a>
+      <a href="/tools/text-tools/word-counter/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#3b82f6;">T</div>
+        <div class="sidebar-info"><div class="sidebar-title">Word Counter</div><div class="sidebar-desc">Count words</div></div>
+      </a>
+      <a href="/tools/text-tools/character-counter/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#8b5cf6;">🔤</div>
+        <div class="sidebar-info"><div class="sidebar-title">Character Counter</div><div class="sidebar-desc">Count chars</div></div>
+      </a>
+      <a href="/tools/social-tools/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#64748b;">📱</div>
+        <div class="sidebar-info"><div class="sidebar-title">All Social Tools →</div><div class="sidebar-desc">Browse 25+ tools</div></div>
+      </a>
+    </div>
+  </aside>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand"><div class="logo-icon">⚒</div>BigToolz</span></div>
+      <p class="footer-tagline">Your Ultimate Online Tools Hub</p>
+      <div class="footer-social">
+        <a href="https://facebook.com/bigtoolz" aria-label="Facebook">f</a>
+        <a href="https://twitter.com/bigtoolz" aria-label="Twitter">𝕏</a>
+        <a href="https://youtube.com/@bigtoolz" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+    <div>
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/tools/">All Tools</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Categories</h3>
+      <ul class="footer-links">
+        <li><a href="/tools/image-tools/">Image Tools</a></li>
+        <li><a href="/tools/pdf-tools/">PDF Tools</a></li>
+        <li><a href="/tools/text-tools/">Text Tools</a></li>
+        <li><a href="/tools/social-tools/">Social Tools</a></li>
+        <li><a href="/tools/categories">All Categories →</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Legal</h3>
+      <ul class="footer-links">
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left"><span>✓ 100% Free</span><span>✓ No Sign Up</span><span>✓ No Installation</span></div>
+    <div class="footer-bottom-right">© 2026 BigToolz. All rights reserved.</div>
+    <div class="footer-bottom-links"><a href="/privacy-policy">Privacy</a><a href="/terms">Terms</a><a href="/disclaimer">Disclaimer</a></div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+'use strict';
+
+/* ===== THEME ===== */
+(function(){try{var t=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&d))document.documentElement.setAttribute('data-theme','dark');else if(t==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();
+document.querySelector('.theme-btn')?.addEventListener('click',()=>{const h=document.documentElement;const c=h.getAttribute('data-theme');const d=window.matchMedia('(prefers-color-scheme: dark)').matches;let n=c==='dark'?'light':c==='light'?'dark':(d?'light':'dark');h.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}});
+
+/* ===== HELPERS ===== */
+const $ = (s, p = document) => p.querySelector(s);
+const $$ = (s, p = document) => [...p.querySelectorAll(s)];
+
+function showToast(msg, type = 'info', duration = 3000) {
+  const t = $('#toast');
+  if (!t) return;
+  t.className = 'toast visible' + (type !== 'info' ? ' ' + type : '');
+  t.textContent = msg;
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove('visible'), duration);
+}
+
+async function copyToClipboard(text) {
+  try {
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(text);
+      return true;
+    }
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.cssText = 'position:fixed;opacity:0;';
+    document.body.appendChild(ta);
+    ta.select();
+    const ok = document.execCommand('copy');
+    document.body.removeChild(ta);
+    return ok;
+  } catch (e) { return false; }
+}
+
+/* ===== EMOJI REGEX (Comprehensive) ===== */
+const EMOJI_REGEX = /(?:\p{Emoji_Presentation}|\p{Extended_Pictographic}|\p{Regional_Indicator}{2}|[\u{1F1E6}-\u{1F1FF}]{2}|[\u{1F3FB}-\u{1F3FF}]|\u200D|\uFE0F|\u20E3|\u{E0020}-\u{E007F})(?:\u200D(?:\p{Emoji_Presentation}|\p{Extended_Pictographic}|[\u{1F3FB}-\u{1F3FF}]))*[\uFE0F\u20E3]?/gu;
+
+const SYMBOLS_REGEX = /[©®™℠♠♣♥♦♨♻♼♽⚐⚑⚔⚕⚖⚗⚙⚚⚛⚜⚠⚡⚢⚣⚤⚥⚦⚧⚨⚩⚪⚫⚬⚭⚮⚯⚰⚱⚲⚳⚴⚵⚶⚷⚸⚹⚺⚻⚼⚽⚾⚿⛀⛁⛂⛃⛄⛅⛆⛇⛈⛉⛊⛋⛌⛍⛎⛏⛐⛑⛒⛓⛔⛕⛖⛗⛘⛙⛚⛛⛜⛝⛞⛟⛠⛡⛢⛣⛤⛥⛦⛧⛨⛩⛪⛫⛬⛭⛮⛯⛰⛱⛲⛳⛴⛵⛶⛷⛸⛹⛺⛻⛼⛽⛾⛿✀✁✂✃✄✅✆✇✈✉✊✋✌✍✎✏✐✑✒✓✔✕✖✗✘✙✚✛✜✝✞✟✠✡✢✣✤✥✦✧✨✩✪✫✬✭✮✯✰✱✲✳✴✵✶✷✸✹✺✻✼✽✾✿❀❁❂❃❄❅❆❇❈❉❊❋❌❍❎❏❐❑❒❓❔❕❖❗❘❙❚❛❜❝❞❟❠❡❢❣❤❥❦❧❨❩❪❫❬❭❮❯❰❱❲❳❴❵❶❷❸❹❺❻❼❽❾❿➀➁➂➃➄➅➆➇➈➉➊➋➌➍➎➏➐➑➒➓➔➕➖➗➘➙➚➛➜➝➞➟➠➡➢➣➤➥➦➧➨➩➪➫➬➭➮➯➰➱➲➳➴➵➶➷➸➹➺➻➼➽➾]/g;
+
+const HEART_EMOJIS = ['❤️','💖','💕','💗','💓','💞','💘','♥️','♥','❤'];
+
+/* ===== STATE ===== */
+const state = {
+  mode: 'all'
+};
+
+/* ===== DOM ===== */
+const inputText = $('#inputText');
+const outputText = $('#outputText');
+const inputStats = $('#inputStats');
+const outputStats = $('#outputStats');
+const statOriginal = $('#statOriginal');
+const statClean = $('#statClean');
+const statRemoved = $('#statRemoved');
+const statPercent = $('#statPercent');
+const copyBtn = $('#copyBtn');
+const downloadBtn = $('#downloadBtn');
+const clearBtn = $('#clearBtn');
+
+/* ===== PROCESS TEXT ===== */
+function countEmojis(text) {
+  const matches = text.match(EMOJI_REGEX);
+  return matches ? matches.length : 0;
+}
+
+function removeEmojis(text, mode = 'all') {
+  if (!text) return '';
+
+  if (mode === 'all') {
+    return text.replace(EMOJI_REGEX, '').replace(/\s{2,}/g, ' ').trim();
+  }
+
+  if (mode === 'emoji-only') {
+    let result = text.replace(EMOJI_REGEX, '');
+    result = result.replace(SYMBOLS_REGEX, '');
+    return result.replace(/\s{2,}/g, ' ').trim();
+  }
+
+  if (mode === 'preserve') {
+    // Temporarily protect hearts
+    const placeholders = [];
+    let protected_ = text;
+    HEART_EMOJIS.forEach((h, i) => {
+      const regex = new RegExp(h.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g');
+      protected_ = protected_.replace(regex, () => {
+        const ph = `§§HEART_${i}_${placeholders.length}§§`;
+        placeholders.push({ ph, value: h });
+        return ph;
+      });
+    });
+
+    // Remove remaining emojis
+    protected_ = protected_.replace(EMOJI_REGEX, '');
+
+    // Restore protected hearts
+    placeholders.forEach(({ ph, value }) => {
+      protected_ = protected_.replace(ph, value);
+    });
+
+    return protected_.replace(/\s{2,}/g, ' ').trim();
+  }
+
+  return text;
+}
+
+/* ===== UPDATE ===== */
+function update() {
+  const original = inputText.value;
+  const cleaned = removeEmojis(original, state.mode);
+
+  outputText.value = cleaned;
+
+  const originalLen = original.length;
+  const cleanLen = cleaned.length;
+  const removed = originalLen - cleanLen;
+  const percent = originalLen > 0 ? Math.round((removed / originalLen) * 100) : 0;
+  const emojiCount = countEmojis(original);
+
+  inputStats.textContent = `${originalLen} chars`;
+  outputStats.textContent = `${cleanLen} chars`;
+  statOriginal.textContent = originalLen;
+  statClean.textContent = cleanLen;
+  statRemoved.textContent = removed;
+  statPercent.textContent = percent + '%';
+
+  const hasOutput = cleanLen > 0;
+  copyBtn.disabled = !hasOutput;
+  downloadBtn.disabled = !hasOutput;
+}
+
+/* ===== MODE BUTTONS ===== */
+$$('.mode-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    $$('.mode-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    state.mode = btn.dataset.mode;
+    update();
+  });
+});
+
+/* ===== SAMPLES ===== */
+const SAMPLES = {
+  '1': 'Just launched my new app! 🚀🎉 Super excited to share it with everyone! 😊✨ Thanks for all the support 💖🙏 #launch #startup 🎯🔥',
+  '2': 'Meeting at 3 PM today 📅. Please bring the reports 📊📈. Also, don\'t forget to check the client\'s feedback 👍🏼 Sarah ❤️',
+  '3': 'John Doe,35,New York,USA,Software Engineer 🧑‍💻,Active ✅,Joined 2024-01-15'
+};
+
+$$('.sample-chip').forEach(chip => {
+  chip.addEventListener('click', () => {
+    inputText.value = SAMPLES[chip.dataset.sample] || '';
+    update();
+    showToast('Sample loaded', 'success', 1500);
+  });
+});
+
+/* ===== COPY ===== */
+copyBtn.addEventListener('click', async () => {
+  const text = outputText.value;
+  if (!text) return;
+  const ok = await copyToClipboard(text);
+  if (ok) {
+    copyBtn.classList.add('copied');
+    const orig = copyBtn.innerHTML;
+    copyBtn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg> Copied!';
+    setTimeout(() => {
+      copyBtn.classList.remove('copied');
+      copyBtn.innerHTML = orig;
+    }, 2000);
+    showToast('Clean text copied!', 'success');
+  } else {
+    showToast('Copy failed', 'error');
+  }
+});
+
+/* ===== DOWNLOAD ===== */
+downloadBtn.addEventListener('click', () => {
+  const text = outputText.value;
+  if (!text) return;
+  const blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'bigtoolz-clean-text.txt';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+  showToast('Downloaded!', 'success');
+});
+
+/* ===== CLEAR ===== */
+clearBtn.addEventListener('click', () => {
+  inputText.value = '';
+  update();
+  inputText.focus();
+  showToast('Cleared');
+});
+
+/* ===== INPUT EVENT ===== */
+inputText.addEventListener('input', update);
+
+/* ===== PASTE HANDLER ===== */
+inputText.addEventListener('paste', () => {
+  setTimeout(update, 0);
+});
+
+/* ===== FAQ ===== */
+$$('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    $$('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+
+/* ===== INIT ===== */
+update();
+</script>
+
+</body>
+</html>

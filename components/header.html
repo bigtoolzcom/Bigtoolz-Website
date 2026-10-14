@@ -1,0 +1,720 @@
+<!-- ===========================================
+     BigToolz - Header Component
+     Version: 2.0.0
+     Last Updated: 2026-01-15
+     Usage: Include at top of <body> in every page
+     =========================================== -->
+
+<header class="header" id="bigtoolzHeader" role="banner">
+
+  <!-- ===== HEADER LEFT: Logo + Nav ===== -->
+  <div class="header-left">
+
+    <!-- Logo -->
+    <a href="/" class="logo" aria-label="BigToolz — Home">
+      <div class="logo-icon" aria-hidden="true">⚒</div>
+      <span class="logo-text">
+        Big<span class="logo-accent">Toolz</span>
+      </span>
+    </a>
+
+    <!-- Primary Navigation -->
+    <nav class="nav" aria-label="Primary navigation">
+      <ul class="nav-list" role="menubar">
+
+        <!-- Home -->
+        <li role="none">
+          <a href="/" role="menuitem" data-nav="home">Home</a>
+        </li>
+
+        <!-- All Tools -->
+        <li role="none">
+          <a href="/tools/" role="menuitem" data-nav="tools">All Tools</a>
+        </li>
+
+        <!-- Categories Dropdown -->
+        <li role="none" class="nav-dropdown-wrapper">
+          <button
+            type="button"
+            class="nav-dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+            data-nav="categories"
+            id="categoriesDropdownBtn">
+            Categories
+            <svg class="nav-dropdown-chev" width="12" height="12" viewBox="0 0 24 24"
+                 fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true">
+              <path d="M6 9l6 6 6-6"/>
+            </svg>
+          </button>
+
+          <!-- Mega menu / dropdown -->
+          <div class="nav-mega" id="categoriesDropdownMenu" role="menu" aria-labelledby="categoriesDropdownBtn">
+            <div class="mega-grid">
+
+              <a href="/tools/image-tools/" class="mega-item" role="menuitem">
+                <div class="mega-icon" style="background:#10b981;">🖼</div>
+                <div class="mega-text">
+                  <strong>Image Tools</strong>
+                  <span>25 tools</span>
+                </div>
+              </a>
+
+              <a href="/tools/pdf-tools/" class="mega-item" role="menuitem">
+                <div class="mega-icon" style="background:#dc2626;">📕</div>
+                <div class="mega-text">
+                  <strong>PDF Tools</strong>
+                  <span>100 tools</span>
+                </div>
+              </a>
+
+              <a href="/tools/text-tools/" class="mega-item" role="menuitem">
+                <div class="mega-icon" style="background:#3b82f6;">T</div>
+                <div class="mega-text">
+                  <strong>Text Tools</strong>
+                  <span>25 tools</span>
+                </div>
+              </a>
+
+              <a href="/tools/seo-tools/" class="mega-item" role="menuitem">
+                <div class="mega-icon" style="background:#ef4444;">📈</div>
+                <div class="mega-text">
+                  <strong>SEO Tools</strong>
+                  <span>25 tools</span>
+                </div>
+              </a>
+
+              <a href="/tools/developer-tools/" class="mega-item" role="menuitem">
+                <div class="mega-icon" style="background:#f97316;">&lt;/&gt;</div>
+                <div class="mega-text">
+                  <strong>Developer Tools</strong>
+                  <span>25 tools</span>
+                </div>
+              </a>
+
+              <a href="/tools/calculator-tools/" class="mega-item" role="menuitem">
+                <div class="mega-icon" style="background:#8b5cf6;">🧮</div>
+                <div class="mega-text">
+                  <strong>Calculator Tools</strong>
+                  <span>25 tools</span>
+                </div>
+              </a>
+
+              <a href="/tools/social-tools/" class="mega-item" role="menuitem">
+                <div class="mega-icon" style="background:#ec4899;">📱</div>
+                <div class="mega-text">
+                  <strong>Social Tools</strong>
+                  <span>25 tools</span>
+                </div>
+              </a>
+
+              <a href="/tools/utility-tools/" class="mega-item" role="menuitem">
+                <div class="mega-icon" style="background:#06b6d4;">⚙️</div>
+                <div class="mega-text">
+                  <strong>Utility Tools</strong>
+                  <span>50 tools</span>
+                </div>
+              </a>
+
+            </div>
+
+            <div class="mega-footer">
+              <a href="/tools/">Browse all 300+ tools →</a>
+            </div>
+          </div>
+        </li>
+
+        <!-- Blog -->
+        <li role="none">
+          <a href="/blog/" role="menuitem" data-nav="blog">Blog</a>
+        </li>
+
+        <!-- About -->
+        <li role="none">
+          <a href="/about" role="menuitem" data-nav="about">About Us</a>
+        </li>
+
+        <!-- Contact -->
+        <li role="none">
+          <a href="/contact" role="menuitem" data-nav="contact">Contact</a>
+        </li>
+
+      </ul>
+    </nav>
+  </div>
+
+  <!-- ===== HEADER RIGHT: Actions ===== -->
+  <div class="header-right">
+
+    <!-- Search Button (opens overlay) -->
+    <button
+      type="button"
+      class="search-btn"
+      id="headerSearchBtn"
+      aria-label="Open search (Ctrl+K)"
+      title="Search (Ctrl+K)">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+           stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+        <circle cx="11" cy="11" r="8"/>
+        <path d="M21 21l-4.35-4.35"/>
+      </svg>
+    </button>
+
+    <!-- Theme Toggle (Dark / Light) -->
+    <button
+      type="button"
+      class="theme-btn"
+      id="headerThemeBtn"
+      aria-label="Toggle dark mode"
+      title="Toggle theme (Ctrl+Shift+D)">
+      <!-- Moon icon (shown in light mode) -->
+      <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24"
+           fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+      </svg>
+      <!-- Sun icon (shown in dark mode) -->
+      <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24"
+           fill="none" stroke="currentColor" stroke-width="2"
+           style="display:none;" aria-hidden="true">
+        <circle cx="12" cy="12" r="5"/>
+        <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+      </svg>
+    </button>
+
+    <!-- Bookmark CTA -->
+    <button
+      type="button"
+      class="bookmark-btn"
+      id="headerBookmarkBtn"
+      aria-label="Bookmark BigToolz">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+           stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+        <path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/>
+      </svg>
+      <span class="bookmark-text">Bookmark Us</span>
+    </button>
+
+    <!-- Mobile Menu Toggle (visible on mobile only) -->
+    <button
+      type="button"
+      class="mobile-menu-toggle"
+      id="mobileMenuToggle"
+      aria-label="Open menu"
+      aria-expanded="false">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+           stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+        <path d="M3 6h18M3 12h18M3 18h18"/>
+      </svg>
+    </button>
+
+  </div>
+
+</header>
+
+<!-- ===========================================
+     HEADER STYLES
+     In a full project, these live in /assets/css/style.css
+     Inlined here so the component is self-contained for preview.
+     =========================================== -->
+<style>
+  /* ===== HEADER BASE ===== */
+  .header {
+    background: #fff;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 1px 3px rgba(0,0,0,.06);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  /* ===== LEFT SIDE ===== */
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+
+  /* ===== LOGO ===== */
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 22px;
+    font-weight: 800;
+    color: #1a1a2e;
+    text-decoration: none;
+    transition: opacity .2s;
+  }
+  .logo:hover { opacity: .85; }
+
+  .logo-icon {
+    width: 32px;
+    height: 32px;
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+
+  .logo-accent { color: #2563eb; }
+
+  /* ===== NAV ===== */
+  .nav { display: block; }
+  .nav-list {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-list a,
+  .nav-dropdown {
+    text-decoration: none;
+    color: #4b5563;
+    font-size: 14px;
+    font-weight: 500;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    font-family: inherit;
+    transition: color .2s;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .nav-list a:hover,
+  .nav-list a.active,
+  .nav-dropdown:hover {
+    color: #2563eb;
+  }
+
+  .nav-list a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -22px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: #2563eb;
+  }
+
+  /* ===== DROPDOWN ===== */
+  .nav-dropdown-wrapper { position: relative; }
+
+  .nav-dropdown-chev {
+    transition: transform .2s;
+  }
+
+  .nav-dropdown-wrapper:hover .nav-dropdown-chev,
+  .nav-dropdown[aria-expanded="true"] .nav-dropdown-chev {
+    transform: rotate(180deg);
+  }
+
+  .nav-mega {
+    position: absolute;
+    top: calc(100% + 24px);
+    left: 50%;
+    transform: translateX(-50%) translateY(-8px);
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0,0,0,.15);
+    padding: 16px;
+    width: 520px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .2s, transform .2s, visibility .2s;
+    z-index: 1001;
+  }
+
+  .nav-dropdown-wrapper:hover .nav-mega,
+  .nav-mega:hover,
+  .nav-dropdown[aria-expanded="true"] + .nav-mega {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+  }
+
+  .mega-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4px;
+  }
+
+  .mega-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 12px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: inherit;
+    transition: background .2s;
+  }
+
+  .mega-item:hover { background: #f8fafc; }
+
+  .mega-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    color: #fff;
+    flex-shrink: 0;
+  }
+
+  .mega-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+  }
+  .mega-text strong {
+    font-size: 13px;
+    font-weight: 700;
+    color: #1a1a2e;
+  }
+  .mega-text span {
+    font-size: 11px;
+    color: #9ca3af;
+  }
+
+  .mega-footer {
+    margin-top: 8px;
+    padding-top: 12px;
+    border-top: 1px solid #f3f4f6;
+    text-align: center;
+  }
+  .mega-footer a {
+    color: #2563eb;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+  }
+  .mega-footer a:hover { text-decoration: underline; }
+
+  /* ===== RIGHT SIDE ===== */
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .search-btn,
+  .theme-btn,
+  .mobile-menu-toggle {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: none;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #4b5563;
+    transition: background .2s, color .2s;
+  }
+
+  .search-btn:hover,
+  .theme-btn:hover,
+  .mobile-menu-toggle:hover {
+    background: #f3f4f6;
+    color: #1a1a2e;
+  }
+
+  .bookmark-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #2563eb;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+    transition: background .2s, transform .2s;
+  }
+  .bookmark-btn:hover {
+    background: #1d4ed8;
+    transform: translateY(-1px);
+  }
+
+  /* Mobile toggle hidden by default */
+  .mobile-menu-toggle { display: none; }
+
+  /* ===== THEME ICONS ===== */
+  /* Default: moon shown (light mode active) */
+  .icon-sun { display: none; }
+  /* Dark mode: sun shown */
+  html[data-theme="dark"] .icon-moon { display: none; }
+  html[data-theme="dark"] .icon-sun { display: block; }
+  /* Auto dark (system preference) */
+  @media (prefers-color-scheme: dark) {
+    html:not([data-theme="light"]) .icon-moon { display: none; }
+    html:not([data-theme="light"]) .icon-sun { display: block; }
+  }
+
+  /* ===== DARK MODE ===== */
+  html[data-theme="dark"] .header {
+    background: #1e293b;
+    border-bottom: 1px solid #334155;
+  }
+  html[data-theme="dark"] .logo { color: #f1f5f9; }
+  html[data-theme="dark"] .logo-accent { color: #60a5fa; }
+  html[data-theme="dark"] .nav-list a,
+  html[data-theme="dark"] .nav-dropdown {
+    color: #cbd5e1;
+  }
+  html[data-theme="dark"] .nav-list a:hover,
+  html[data-theme="dark"] .nav-list a.active,
+  html[data-theme="dark"] .nav-dropdown:hover {
+    color: #60a5fa;
+  }
+  html[data-theme="dark"] .nav-list a.active::after {
+    background: #60a5fa;
+  }
+  html[data-theme="dark"] .search-btn,
+  html[data-theme="dark"] .theme-btn,
+  html[data-theme="dark"] .mobile-menu-toggle {
+    color: #cbd5e1;
+  }
+  html[data-theme="dark"] .search-btn:hover,
+  html[data-theme="dark"] .theme-btn:hover,
+  html[data-theme="dark"] .mobile-menu-toggle:hover {
+    background: #334155;
+    color: #f1f5f9;
+  }
+  html[data-theme="dark"] .nav-mega {
+    background: #1e293b;
+    border-color: #334155;
+    box-shadow: 0 20px 60px rgba(0,0,0,.5);
+  }
+  html[data-theme="dark"] .mega-item:hover {
+    background: #0f172a;
+  }
+  html[data-theme="dark"] .mega-text strong { color: #f1f5f9; }
+  html[data-theme="dark"] .mega-footer { border-color: #334155; }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 992px) {
+    .header { padding: 0 20px; }
+    .nav { display: none; }
+    .bookmark-text { display: none; }
+    .bookmark-btn { padding: 8px 12px; }
+    .mobile-menu-toggle { display: flex; }
+  }
+
+  @media (max-width: 576px) {
+    .header { padding: 0 16px; height: 56px; }
+    .header-left { gap: 16px; }
+    .logo { font-size: 18px; }
+    .logo-icon { width: 28px; height: 28px; font-size: 14px; }
+    .header-right { gap: 6px; }
+    .search-btn, .theme-btn, .mobile-menu-toggle {
+      width: 34px; height: 34px;
+    }
+    .bookmark-btn { display: none; }
+  }
+
+  /* ===== ACCESSIBILITY ===== */
+  .search-btn:focus-visible,
+  .theme-btn:focus-visible,
+  .mobile-menu-toggle:focus-visible,
+  .bookmark-btn:focus-visible,
+  .nav-list a:focus-visible,
+  .nav-dropdown:focus-visible,
+  .mega-item:focus-visible {
+    outline: 2px solid #2563eb;
+    outline-offset: 2px;
+    border-radius: 6px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .header *,
+    .header *::before,
+    .header *::after {
+      transition: none !important;
+      animation: none !important;
+    }
+  }
+</style>
+
+<!-- ===========================================
+     HEADER JAVASCRIPT
+     Auto-attached behaviors:
+     - Active link highlighting
+     - Dropdown open/close
+     - Theme toggle (delegates to theme.js if loaded)
+     - Search overlay (delegates to search.js if loaded)
+     - Mobile menu toggle (delegates to main.js if loaded)
+     - Bookmark CTA
+     =========================================== -->
+<script>
+(function () {
+  'use strict';
+
+  /* ===== WAIT FOR DOM ===== */
+  const init = () => {
+
+    /* ---------- 1. ACTIVE LINK ---------- */
+    (function setActiveLink() {
+      const path = window.location.pathname;
+      const links = document.querySelectorAll('.nav-list a[data-nav]');
+
+      links.forEach(link => {
+        const href = link.getAttribute('href') || '';
+        const nav = link.dataset.nav;
+
+        let isActive = false;
+
+        if (nav === 'home' && (path === '/' || path === '/index.html')) {
+          isActive = true;
+        } else if (nav === 'tools' && path.startsWith('/tools/')) {
+          isActive = true;
+        } else if (nav === 'blog' && path.startsWith('/blog')) {
+          isActive = true;
+        } else if (nav === 'about' && path.startsWith('/about')) {
+          isActive = true;
+        } else if (nav === 'contact' && path.startsWith('/contact')) {
+          isActive = true;
+        } else if (href !== '/' && path === href) {
+          isActive = true;
+        }
+
+        link.classList.toggle('active', isActive);
+      });
+    })();
+
+    /* ---------- 2. DROPDOWN TOGGLE ---------- */
+    const dropdownBtn = document.getElementById('categoriesDropdownBtn');
+    const dropdownMenu = document.getElementById('categoriesDropdownMenu');
+
+    if (dropdownBtn && dropdownMenu) {
+      // Click toggle
+      dropdownBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const isOpen = dropdownBtn.getAttribute('aria-expanded') === 'true';
+        dropdownBtn.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+      });
+
+      // Click outside closes
+      document.addEventListener('click', (e) => {
+        if (!dropdownBtn.contains(e.target) && !dropdownMenu.contains(e.target)) {
+          dropdownBtn.setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      // ESC closes
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          dropdownBtn.setAttribute('aria-expanded', 'false');
+          dropdownBtn.blur();
+        }
+      });
+    }
+
+    /* ---------- 3. THEME TOGGLE ---------- */
+    const themeBtn = document.getElementById('headerThemeBtn');
+    if (themeBtn) {
+      themeBtn.addEventListener('click', () => {
+        // If theme.js loaded, it will handle via .theme-btn class
+        // Otherwise, do a basic toggle here
+        if (!window.BigToolzTheme) {
+          const html = document.documentElement;
+          const current = html.getAttribute('data-theme');
+          const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          let next;
+
+          if (current === 'dark') next = 'light';
+          else if (current === 'light') next = 'dark';
+          else next = systemDark ? 'light' : 'dark';
+
+          html.setAttribute('data-theme', next);
+          try { localStorage.setItem('theme', next); } catch (e) {}
+        }
+      });
+    }
+
+    /* ---------- 4. SEARCH ---------- */
+    const searchBtn = document.getElementById('headerSearchBtn');
+    if (searchBtn) {
+      searchBtn.addEventListener('click', () => {
+        // If main.js loaded, it handles .search-btn
+        // Otherwise trigger Ctrl+K-like overlay manually
+        if (!window.BigToolzSearch && !window.BigToolzMain) {
+          // Fallback: navigate to search page
+          const q = prompt('Search BigToolz:');
+          if (q) window.location.href = '/search?q=' + encodeURIComponent(q);
+        }
+      });
+    }
+
+    /* ---------- 5. MOBILE MENU ---------- */
+    const mobileToggle = document.getElementById('mobileMenuToggle');
+    if (mobileToggle) {
+      mobileToggle.addEventListener('click', () => {
+        const isOpen = mobileToggle.getAttribute('aria-expanded') === 'true';
+        mobileToggle.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+
+        // If main.js loaded, it handles the actual menu
+        if (window.BigToolzMain && typeof window.BigToolzMain.openMobileMenu === 'function') {
+          isOpen ? window.BigToolzMain.closeMobileMenu() : window.BigToolzMain.openMobileMenu();
+        }
+      });
+    }
+
+    /* ---------- 6. BOOKMARK CTA ---------- */
+    const bookmarkBtn = document.getElementById('headerBookmarkBtn');
+    if (bookmarkBtn) {
+      bookmarkBtn.addEventListener('click', () => {
+        const isMac = navigator.userAgent.match(/Mac/i);
+        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+        let msg;
+        if (isMac) msg = 'Press ⌘ + D to bookmark this page';
+        else if (isMobile) msg = 'Tap menu → Add to Home Screen';
+        else msg = 'Press Ctrl + D to bookmark this page';
+
+        if (typeof window.showToast === 'function') {
+          window.showToast(msg, 'info', 4000);
+        } else {
+          alert(msg);
+        }
+      });
+    }
+
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+
+})();
+</script>
+
+<!-- ===========================================
+     END — header.html
+     =========================================== -->

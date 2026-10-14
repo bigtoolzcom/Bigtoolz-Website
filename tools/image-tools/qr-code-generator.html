@@ -1,0 +1,1742 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2563eb">
+
+<title>QR Code Generator - Create QR Codes Online Free | BigToolz</title>
+<meta name="description" content="Generate QR codes online free. URL, text, email, phone, WiFi, vCard. Custom colors, sizes, error correction. Download PNG/JPG/SVG. No signup, works in browser.">
+<meta name="keywords" content="qr code generator, qr code maker, create qr code, free qr code, qr code online, wifi qr code">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://bigtoolz.com/tools/image-tools/qr-code-generator/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="QR Code Generator - Free Online Tool | BigToolz">
+<meta property="og:description" content="Create QR codes for URL, text, WiFi, vCard free, downloadable PNG/SVG.">
+<meta property="og:url" content="https://bigtoolz.com/tools/image-tools/qr-code-generator/">
+<meta property="og:image" content="https://bigtoolz.com/assets/images/og-image.jpg">
+<meta property="og:site_name" content="BigToolz">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="QR Code Generator - BigToolz">
+<meta name="twitter:description" content="Generate QR codes instantly free, no signup.">
+<meta name="twitter:image" content="https://bigtoolz.com/assets/images/twitter-card.jpg">
+
+<link rel="icon" href="/assets/images/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/images/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#f8f9fc;color:#1a1a2e;overflow-x:hidden;line-height:1.5}
+
+  .header{background:#fff;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;position:sticky;top:0;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+  .header-left{display:flex;align-items:center;gap:40px}
+  .logo{display:flex;align-items:center;gap:8px;font-size:22px;font-weight:800;color:#1a1a2e;text-decoration:none}
+  .logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#3b82f6,#2563eb);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px}
+  .logo span{color:#2563eb}
+  .nav{display:flex;align-items:center;gap:28px;list-style:none}
+  .nav a{text-decoration:none;color:#4b5563;font-size:14px;font-weight:500;transition:color .2s}
+  .nav a:hover,.nav a.active{color:#2563eb}
+  .header-right{display:flex;align-items:center;gap:16px}
+  .search-btn,.theme-btn{width:36px;height:36px;border-radius:50%;border:none;background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#4b5563}
+  .search-btn:hover,.theme-btn:hover{background:#f3f4f6}
+  .bookmark-btn{display:flex;align-items:center;gap:8px;background:#2563eb;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
+  .bookmark-btn:hover{background:#1d4ed8}
+
+  .hero{background:linear-gradient(135deg,#0a0e27 0%,#1a1a4e 40%,#2d1b69 70%,#4c1d95 100%);padding:40px 40px 60px;position:relative;overflow:hidden;color:#fff}
+  .hero::before{content:'';position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(59,130,246,.3) 0%,transparent 70%);border-radius:50%}
+  .hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+  .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px;flex-wrap:wrap}
+  .breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none}
+  .breadcrumb a:hover{color:#fff}
+  .breadcrumb .sep{color:rgba(255,255,255,.4)}
+  .breadcrumb .current{color:#fff;font-weight:500}
+  .hero-title-row{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+  .hero-icon{width:60px;height:60px;background:#3b82f6;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;color:#fff;flex-shrink:0;box-shadow:0 8px 24px rgba(59,130,246,.4)}
+  .hero-title{font-size:42px;font-weight:800;line-height:1.15}
+  .hero-title .blue{color:#60a5fa}
+  .hero-desc{font-size:15px;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:24px;max-width:560px}
+  .hero-features{display:flex;gap:24px;flex-wrap:wrap}
+  .hero-feature{display:flex;align-items:center;gap:6px;font-size:13px;color:#fff;font-weight:500}
+  .hero-feature .check{width:18px;height:18px;border-radius:50%;background:#3b82f6;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;flex-shrink:0}
+
+  .main-content{max-width:1200px;margin:0 auto;padding:40px;display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start}
+  .tool-content{min-width:0}
+
+  .workspace{background:#fff;border-radius:16px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,.06);border:1px solid #e5e7eb;margin-bottom:24px}
+
+  .qr-layout{display:grid;grid-template-columns:1fr 320px;gap:24px;margin-bottom:24px}
+
+  .type-tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-bottom:20px;background:#eff6ff;padding:6px;border-radius:10px;border:1px solid #bfdbfe}
+  .type-tab{padding:10px 6px;background:transparent;border:none;border-radius:8px;font-size:11px;font-weight:700;color:#4b5563;cursor:pointer;font-family:inherit;transition:all .2s;text-align:center;line-height:1.2}
+  .type-tab:hover{background:#dbeafe}
+  .type-tab.active{background:#3b82f6;color:#fff}
+  .type-icon{display:block;font-size:16px;margin-bottom:2px}
+
+  .input-group{margin-bottom:14px}
+  .input-group label{display:block;font-size:12px;font-weight:700;color:#4b5563;margin-bottom:6px;text-transform:uppercase;letter-spacing:.3px}
+  .input-group input,.input-group textarea,.input-group select{width:100%;padding:11px 14px;border:2px solid #e5e7eb;border-radius:8px;font-size:13px;font-weight:500;font-family:inherit;color:#1a1a2e;background:#fff;outline:none;transition:border-color .2s}
+  .input-group input:focus,.input-group textarea:focus,.input-group select:focus{border-color:#3b82f6;box-shadow:0 0 0 3px rgba(59,130,246,.1)}
+  .input-group textarea{resize:vertical;min-height:80px;line-height:1.5}
+  .input-group input[type="color"]{width:100%;height:44px;padding:3px;cursor:pointer}
+  .input-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+
+  .type-panel{display:none}
+  .type-panel.active{display:block}
+
+  .preview-panel{background:#eff6ff;border:1px solid #bfdbfe;border-radius:12px;padding:20px;text-align:center;position:sticky;top:80px}
+  .preview-qr-box{background:#fff;border-radius:12px;padding:16px;margin-bottom:16px;display:flex;align-items:center;justify-content:center;min-height:240px;box-shadow:0 4px 16px rgba(0,0,0,.06);position:relative}
+  .preview-qr-box canvas{display:block;max-width:100%;image-rendering:pixelated;border-radius:4px}
+  .preview-logo{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:22%;height:22%;background:#fff;border-radius:8px;padding:4px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.15);overflow:hidden}
+  .preview-logo img{width:100%;height:100%;object-fit:contain;border-radius:4px}
+  .preview-size{font-size:11px;color:#6b7280;font-weight:600;text-transform:uppercase;letter-spacing:.5px}
+
+  .options-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-bottom:16px}
+  .option-group label{display:block;font-size:12px;font-weight:700;color:#4b5563;margin-bottom:6px;text-transform:uppercase;letter-spacing:.3px}
+  .option-group input,.option-group select{width:100%;padding:10px 12px;border:2px solid #e5e7eb;border-radius:8px;font-size:13px;font-weight:600;font-family:inherit;color:#1a1a2e;background:#fff;outline:none;transition:border-color .2s}
+  .option-group input:focus,.option-group select:focus{border-color:#3b82f6;box-shadow:0 0 0 3px rgba(59,130,246,.1)}
+  .option-group input[type="color"]{height:42px;padding:2px;cursor:pointer}
+
+  .upload-mini{padding:14px;background:#fff;border:2px dashed #bfdbfe;border-radius:10px;text-align:center;cursor:pointer;transition:all .2s;font-size:12px;color:#6b7280;font-weight:600}
+  .upload-mini:hover{border-color:#3b82f6;background:#eff6ff}
+  .upload-mini.has-image{border-style:solid;border-color:#10b981;background:#f0fdf4;color:#059669}
+  .upload-mini input{display:none}
+
+  .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px;padding-top:20px;border-top:1px solid #f3f4f6}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 22px;border-radius:10px;font-size:14px;font-weight:700;font-family:inherit;cursor:pointer;border:none;transition:all .2s;text-decoration:none}
+  .btn-primary{background:#3b82f6;color:#fff;box-shadow:0 4px 12px rgba(59,130,246,.2);flex:1;min-width:160px}
+  .btn-primary:hover{background:#2563eb;transform:translateY(-2px)}
+  .btn-secondary{background:#fff;color:#3b82f6;border:1px solid #e5e7eb}
+  .btn-secondary:hover{border-color:#3b82f6;background:#eff6ff}
+
+  .seo-content{background:#fff;border-radius:16px;padding:32px;border:1px solid #e5e7eb;margin-bottom:24px}
+  .seo-content h2{font-size:22px;font-weight:800;color:#1a1a2e;margin-bottom:14px;margin-top:28px;display:flex;align-items:center;gap:10px}
+  .seo-content h2:first-child{margin-top:0}
+  .seo-content h3{font-size:16px;font-weight:700;color:#1a1a2e;margin:20px 0 10px}
+  .seo-content p{font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:14px}
+  .seo-content ul{list-style:none;padding-left:0;margin-bottom:16px}
+  .seo-content ul li{position:relative;padding-left:24px;font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:8px}
+  .seo-content ul li::before{content:'';position:absolute;left:6px;top:12px;width:6px;height:6px;background:#3b82f6;border-radius:50%}
+  .seo-content a{color:#2563eb;text-decoration:none;font-weight:600}
+  .seo-content a:hover{text-decoration:underline}
+  .seo-content strong{color:#1a1a2e;font-weight:700}
+
+  .type-table{width:100%;border-collapse:collapse;margin:20px 0;border:1px solid #e5e7eb;border-radius:8px;overflow:hidden}
+  .type-table th{background:#eff6ff;padding:12px 16px;text-align:left;font-size:13px;font-weight:700;color:#1a1a2e;border-bottom:1px solid #e5e7eb}
+  .type-table td{padding:12px 16px;font-size:13px;color:#4b5563;border-bottom:1px solid #f3f4f6}
+  .type-table tr:last-child td{border-bottom:none}
+
+  .how-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:20px}
+  .how-step{background:#eff6ff;border-radius:12px;padding:20px;border:1px solid #bfdbfe}
+  .how-step-num{width:36px;height:36px;border-radius:50%;background:#3b82f6;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;margin-bottom:12px}
+  .how-step-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+  .how-step-desc{font-size:13px;color:#6b7280;line-height:1.6}
+
+  .faq-item{background:#eff6ff;border:1px solid #bfdbfe;border-radius:12px;margin-bottom:10px;overflow:hidden;transition:border-color .2s}
+  .faq-item:hover{border-color:#3b82f6}
+  .faq-question{width:100%;background:none;border:none;padding:18px 22px;font-size:15px;font-weight:700;color:#1a1a2e;text-align:left;cursor:pointer;font-family:inherit;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .faq-question .chev{font-size:12px;color:#3b82f6;transition:transform .2s;flex-shrink:0}
+  .faq-item.open .faq-question .chev{transform:rotate(180deg)}
+  .faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 22px}
+  .faq-item.open .faq-answer{max-height:500px;padding-bottom:18px}
+  .faq-answer p{font-size:14px;color:#6b7280;line-height:1.7;margin:0}
+
+  .sidebar{background:#fff;border-radius:16px;padding:24px;border:1px solid #e5e7eb;position:sticky;top:80px;margin-bottom:24px}
+  .sidebar-header{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:800;color:#1a1a2e;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid #f3f4f6}
+  .sidebar-list{display:flex;flex-direction:column;gap:8px}
+  .sidebar-item{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;cursor:pointer;transition:background .2s;text-decoration:none;color:inherit;border:1px solid #f3f4f6}
+  .sidebar-item:hover{background:#eff6ff;border-color:#bfdbfe}
+  .sidebar-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;flex-shrink:0}
+  .sidebar-info{flex:1;min-width:0}
+  .sidebar-title{font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:2px}
+  .sidebar-desc{font-size:11px;color:#9ca3af;line-height:1.4}
+
+  .footer{background:#0a0e27;padding:60px 40px 30px;color:#fff;margin-top:40px}
+  .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:40px}
+  .footer-brand{display:flex;align-items:center;gap:8px;font-size:20px;font-weight:800;margin-bottom:12px}
+  .footer-brand span{color:#60a5fa}
+  .footer-tagline{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px}
+  .footer-social{display:flex;gap:12px}
+  .footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:16px;transition:background .2s}
+  .footer-social a:hover{background:rgba(255,255,255,.2)}
+  .footer-heading{font-size:14px;font-weight:700;margin-bottom:20px;color:#fff}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .footer-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;transition:color .2s}
+  .footer-links a:hover{color:#60a5fa}
+  .footer-bottom{max-width:1200px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  .footer-bottom-left{display:flex;gap:20px;font-size:12px;color:rgba(255,255,255,.5)}
+  .footer-bottom-right,.footer-bottom-links a{font-size:12px;color:rgba(255,255,255,.5);text-decoration:none}
+  .footer-bottom-links{display:flex;gap:20px}
+
+  .toast{position:fixed;bottom:24px;right:24px;background:#1a1a2e;color:#fff;padding:14px 20px;border-radius:10px;font-size:13px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:3000;transform:translateY(200%);transition:transform .3s ease;max-width:320px}
+  .toast.visible{transform:translateY(0)}
+  .toast.success{background:#10b981}
+  .toast.error{background:#ef4444}
+
+  @media(max-width:1024px){
+    .main-content{grid-template-columns:1fr;padding:24px 20px}
+    .sidebar{position:static}
+    .qr-layout{grid-template-columns:1fr}
+    .preview-panel{position:static}
+    .how-steps{grid-template-columns:repeat(2,1fr)}
+  }
+  @media(max-width:768px){
+    .header{padding:0 20px}.nav{display:none}
+    .hero{padding:24px 20px 40px}
+    .hero-title{font-size:28px}
+    .hero-icon{width:48px;height:48px;font-size:22px}
+    .hero-title-row{flex-direction:column;align-items:flex-start;gap:12px}
+    .main-content{padding:20px 16px}
+    .workspace{padding:20px}
+    .how-steps{grid-template-columns:1fr}
+    .seo-content{padding:20px}
+    .footer-inner{grid-template-columns:1fr 1fr}
+    .toast{left:16px;right:16px;bottom:16px;max-width:none}
+    .type-tabs{grid-template-columns:repeat(2,1fr)}
+    .options-grid{grid-template-columns:1fr}
+    .input-row{grid-template-columns:1fr}
+  }
+  @media(max-width:576px){
+    .header{padding:0 16px}.header-right .search-btn,.header-right .theme-btn{display:none}
+    .hero-title{font-size:24px}
+    .actions{flex-direction:column}
+    .btn{width:100%}
+    .footer-inner{grid-template-columns:1fr}
+    .footer-bottom{flex-direction:column;text-align:center}
+  }
+
+  html[data-theme="dark"] body{background:#0f172a;color:#f1f5f9}
+  html[data-theme="dark"] .header,html[data-theme="dark"] .workspace,html[data-theme="dark"] .seo-content,html[data-theme="dark"] .sidebar{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .logo,html[data-theme="dark"] .hero-title,html[data-theme="dark"] .seo-content h2,html[data-theme="dark"] .seo-content h3,html[data-theme="dark"] .faq-question,html[data-theme="dark"] .sidebar-header,html[data-theme="dark"] .sidebar-title{color:#f1f5f9}
+  html[data-theme="dark"] .nav a{color:#cbd5e1}
+  html[data-theme="dark"] .how-step,html[data-theme="dark"] .faq-item,html[data-theme="dark"] .type-tabs,html[data-theme="dark"] .preview-panel,html[data-theme="dark"] .upload-mini{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .type-tab{color:#cbd5e1}
+  html[data-theme="dark"] .type-tab:hover{background:#1e293b}
+  html[data-theme="dark"] .type-tab.active{background:#3b82f6;color:#fff}
+  html[data-theme="dark"] .input-group input,html[data-theme="dark"] .input-group textarea,html[data-theme="dark"] .input-group select,html[data-theme="dark"] .option-group input,html[data-theme="dark"] .option-group select{background:#0f172a;border-color:#334155;color:#f1f5f9}
+  html[data-theme="dark"] .preview-qr-box{background:#f1f5f9}
+  html[data-theme="dark"] .seo-content p,html[data-theme="dark"] .seo-content ul li,html[data-theme="dark"] .faq-answer p{color:#cbd5e1}
+  html[data-theme="dark"] .type-table{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .type-table th{background:#0f172a;color:#f1f5f9;border-color:#334155}
+  html[data-theme="dark"] .type-table td{border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .actions{border-color:#334155}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type": "SoftwareApplication", "name": "QR Code Generator", "url": "https://bigtoolz.com/tools/image-tools/qr-code-generator/", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any (Web-based)", "description": "Free online QR code generator create QR codes for URL, text, email, phone, SMS, WiFi, vCard. Download PNG/JPG/SVG. Works in your browser.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "3421"}},
+    {"@type": "HowTo", "name": "How to Create a QR Code", "step": [
+      {"@type": "HowToStep", "name": "Choose Type", "text": "Pick URL, Text, Email, Phone, SMS, WiFi, or vCard."},
+      {"@type": "HowToStep", "name": "Enter Content", "text": "Fill in the fields for your chosen type."},
+      {"@type": "HowToStep", "name": "Customize", "text": "Adjust colors, size, error correction, and add a logo."},
+      {"@type": "HowToStep", "name": "Download", "text": "Download as PNG/JPG or copy the QR code."}
+    ]},
+    {"@type": "FAQPage", "mainEntity": [
+      {"@type": "Question", "name": "How do I create a QR code for free?", "acceptedAnswer": {"@type": "Answer", "text": "Choose the content type (URL, Text, WiFi, vCard, etc.), enter your content, customize colors and size, then click Download. It's free no signup, no watermark, no expiration."}},
+      {"@type": "Question", "name": "Do my QR codes expire?", "acceptedAnswer": {"@type": "Answer", "text": "No. Our QR codes are static the data is encoded directly into the pattern. They work forever and never expire. No redirects, no tracking, no server dependency."}},
+      {"@type": "Question", "name": "What's the best error correction level?", "acceptedAnswer": {"@type": "Answer", "text": "L (Low, 7%): maximum data capacity, for clean environments. M (Medium, 15%): balanced. Q (Quartile, 25%): for logos. H (High, 30%): best for logos or damaged surfaces."}},
+      {"@type": "Question", "name": "Can I add my logo to a QR code?", "acceptedAnswer": {"@type": "Answer", "text": "Yes! Enable the 'Add Logo' option and upload a PNG with transparent background. Use error correction H (30%) to ensure the QR code remains scannable with the logo covering part of it."}},
+      {"@type": "Question", "name": "Are my QR codes uploaded to a server?", "acceptedAnswer": {"@type": "Answer", "text": "No. All QR code generation happens in your browser. Your data never leaves your device especially important for WiFi passwords and personal info."}}
+    ]},
+    {"@type": "BreadcrumbList", "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bigtoolz.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://bigtoolz.com/tools/"},
+      {"@type": "ListItem", "position": 3, "name": "Image Tools", "item": "https://bigtoolz.com/tools/image-tools/"},
+      {"@type": "ListItem", "position": 4, "name": "QR Code Generator", "item": "https://bigtoolz.com/tools/image-tools/qr-code-generator/"}
+    ]}
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-left">
+    <a href="/" class="logo"><div class="logo-icon">⚒</div>BigToolz</span></a>
+    <nav><ul class="nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/tools/" class="active">All Tools</a></li>
+      <li><a href="/tools/categories">Categories</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul></nav>
+  </div>
+  <div class="header-right">
+   
+    <button class="theme-btn" aria-label="Toggle theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
+    
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <nav class="breadcrumb">
+      <a href="/">Home</a><span class="sep">›</span>
+      <a href="/tools/">Tools</a><span class="sep">›</span>
+      <a href="/tools/image-tools/">Image Tools</a><span class="sep">›</span>
+      <span class="current">QR Code Generator</span>
+    </nav>
+    <div class="hero-title-row">
+      <div class="hero-icon">▦</div>
+      <h1 class="hero-title">QR Code <span class="blue">Generator</span></h1>
+    </div>
+    <p class="hero-desc">
+      Create QR codes for URLs, text, email, phone, WiFi, and contact cards. Custom colors, sizes, error correction, and logo embedding. No signup, no watermark, 100% private.
+    </p>
+    <div class="hero-features">
+      <div class="hero-feature"><span class="check">✓</span> 7 Content Types</div>
+      <div class="hero-feature"><span class="check">✓</span> Custom Colors</div>
+      <div class="hero-feature"><span class="check">✓</span> Logo Embed</div>
+      <div class="hero-feature"><span class="check">✓</span> Never Expires</div>
+    </div>
+  </div>
+</section>
+
+<div class="main-content">
+
+  <div class="tool-content">
+
+    <div class="workspace">
+
+      <div class="qr-layout">
+
+        <div>
+          <div class="type-tabs" id="typeTabs">
+            <button class="type-tab active" data-type="url"><span class="type-icon">🔗</span>URL</button>
+            <button class="type-tab" data-type="text"><span class="type-icon">📝</span>Text</button>
+            <button class="type-tab" data-type="email"><span class="type-icon">✉️</span>Email</button>
+            <button class="type-tab" data-type="phone"><span class="type-icon">📞</span>Phone</button>
+            <button class="type-tab" data-type="sms"><span class="type-icon">💬</span>SMS</button>
+            <button class="type-tab" data-type="wifi"><span class="type-icon">📶</span>WiFi</button>
+            <button class="type-tab" data-type="vcard"><span class="type-icon">👤</span>vCard</button>
+          </div>
+
+          <div class="type-panel active" data-panel="url">
+            <div class="input-group">
+              <label>Website URL</label>
+              <input type="url" id="urlInput" placeholder="https://bigtoolz.com" value="https://bigtoolz.com">
+            </div>
+          </div>
+
+          <div class="type-panel" data-panel="text">
+            <div class="input-group">
+              <label>Plain Text</label>
+              <textarea id="textInput" placeholder="Enter any text here...">Hello from BigToolz!</textarea>
+            </div>
+          </div>
+
+          <div class="type-panel" data-panel="email">
+            <div class="input-group">
+              <label>Email Address</label>
+              <input type="email" id="emailTo" placeholder="hello@example.com" value="hello@bigtoolz.com">
+            </div>
+            <div class="input-group">
+              <label>Subject (optional)</label>
+              <input type="text" id="emailSubject" placeholder="Subject line">
+            </div>
+            <div class="input-group">
+              <label>Body (optional)</label>
+              <textarea id="emailBody" placeholder="Message body"></textarea>
+            </div>
+          </div>
+
+          <div class="type-panel" data-panel="phone">
+            <div class="input-group">
+              <label>Phone Number (with country code)</label>
+              <input type="tel" id="phoneNumber" placeholder="+91 98765 43210" value="+91 9876543210">
+            </div>
+          </div>
+
+          <div class="type-panel" data-panel="sms">
+            <div class="input-group">
+              <label>Phone Number</label>
+              <input type="tel" id="smsNumber" placeholder="+91 98765 43210" value="+91 9876543210">
+            </div>
+            <div class="input-group">
+              <label>Message</label>
+              <textarea id="smsMessage" placeholder="Your SMS text...">Hi! Check out BigToolz!</textarea>
+            </div>
+          </div>
+
+          <div class="type-panel" data-panel="wifi">
+            <div class="input-row">
+              <div class="input-group">
+                <label>Network Name (SSID)</label>
+                <input type="text" id="wifiSSID" placeholder="MyWiFi" value="BigToolz Guest">
+              </div>
+              <div class="input-group">
+                <label>Password</label>
+                <input type="text" id="wifiPass" placeholder="password">
+              </div>
+            </div>
+            <div class="input-group">
+              <label>Encryption Type</label>
+              <select id="wifiEncryption">
+                <option value="WPA" selected>WPA/WPA2</option>
+                <option value="WEP">WEP</option>
+                <option value="nopass">Open (no password)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="type-panel" data-panel="vcard">
+            <div class="input-row">
+              <div class="input-group">
+                <label>First Name</label>
+                <input type="text" id="vcFirst" placeholder="John" value="John">
+              </div>
+              <div class="input-group">
+                <label>Last Name</label>
+                <input type="text" id="vcLast" placeholder="Doe" value="Doe">
+              </div>
+            </div>
+            <div class="input-group">
+              <label>Phone</label>
+              <input type="tel" id="vcPhone" placeholder="+91 98765 43210">
+            </div>
+            <div class="input-group">
+              <label>Email</label>
+              <input type="email" id="vcEmail" placeholder="john@example.com">
+            </div>
+            <div class="input-group">
+              <label>Company (optional)</label>
+              <input type="text" id="vcCompany" placeholder="Company Name">
+            </div>
+            <div class="input-group">
+              <label>Website (optional)</label>
+              <input type="url" id="vcWebsite" placeholder="https://example.com">
+            </div>
+          </div>
+
+          <div class="options-grid" style="margin-top:20px;">
+            <div class="option-group">
+              <label>Size</label>
+              <select id="sizeSelect">
+                <option value="128">128 × 128</option>
+                <option value="256">256 × 256</option>
+                <option value="400" selected>400 × 400</option>
+                <option value="600">600 × 600</option>
+                <option value="800">800 × 800</option>
+                <option value="1000">1000 × 1000</option>
+              </select>
+            </div>
+            <div class="option-group">
+              <label>Error Correction</label>
+              <select id="ecLevel">
+                <option value="L">Low (7%)</option>
+                <option value="M" selected>Medium (15%)</option>
+                <option value="Q">Quartile (25%)</option>
+                <option value="H">High (30%)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="options-grid">
+            <div class="option-group">
+              <label>Foreground Color</label>
+              <input type="color" id="fgColor" value="#000000">
+            </div>
+            <div class="option-group">
+              <label>Background Color</label>
+              <input type="color" id="bgColor" value="#ffffff">
+            </div>
+          </div>
+
+          <div class="input-group">
+            <label>Add Logo (optional)</label>
+            <div class="upload-mini" id="logoUpload">
+              <input type="file" id="logoInput" accept="image/*">
+              <span id="logoText">📷 Click to upload logo (PNG recommended)</span>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="preview-panel">
+          <div class="preview-qr-box">
+            <canvas id="qrCanvas" width="400" height="400"></canvas>
+            <div class="preview-logo" id="previewLogo" style="display:none;">
+              <img id="previewLogoImg" alt="Logo">
+            </div>
+          </div>
+          <div class="preview-size" id="previewSize">400 × 400 px</div>
+        </div>
+
+      </div>
+
+      <div class="actions">
+        <button class="btn btn-primary" id="downloadPngBtn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+          Download PNG
+        </button>
+        <button class="btn btn-secondary" id="downloadSvgBtn">Download SVG</button>
+        <button class="btn btn-secondary" id="copyBtn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+          Copy Image
+        </button>
+      </div>
+
+    </div>
+
+    <div class="seo-content">
+
+      <h2>▦ What is a QR Code?</h2>
+      <p>
+        A <strong>QR code</strong> (Quick Response code) is a 2D barcode that stores information URLs, text, phone numbers, WiFi credentials, or contact details. When scanned by a smartphone camera, the encoded data is instantly recognized and acted upon. QR codes have become essential for <strong>contactless menus, WiFi sharing, business cards, marketing campaigns,</strong> and <strong>payment systems</strong>.
+      </p>
+      <p>
+        Unlike most online QR generators, BigToolz creates <strong>static QR codes</strong> the data is encoded directly into the pattern with no redirects. Your QR code <strong>never expires, never breaks,</strong> and isn't tracked. And all generation happens <strong>100% in your browser</strong> critical for privacy when encoding WiFi passwords or personal data.
+      </p>
+
+      <h2>🚀 How to Create a QR Code</h2>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-step-num">1</div>
+          <div class="how-step-title">Choose Type</div>
+          <div class="how-step-desc">URL, Text, Email, Phone, SMS, WiFi, or vCard.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">2</div>
+          <div class="how-step-title">Enter Content</div>
+          <div class="how-step-desc">Fill in the fields for your chosen type.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">3</div>
+          <div class="how-step-title">Customize</div>
+          <div class="how-step-desc">Adjust colors, size, error correction, add logo.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">4</div>
+          <div class="how-step-title">Download</div>
+          <div class="how-step-desc">Save as PNG or SVG, or copy to clipboard.</div>
+        </div>
+      </div>
+
+      <h2>📱 QR Code Content Types</h2>
+      <table class="type-table">
+        <thead>
+          <tr><th>Type</th><th>Use Case</th><th>Scan Result</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>🔗 URL</strong></td><td>Website links, landing pages, videos</td><td>Opens in browser</td></tr>
+          <tr><td><strong>📝 Text</strong></td><td>Messages, coupon codes, serial numbers</td><td>Shows text</td></tr>
+          <tr><td><strong>✉️ Email</strong></td><td>Contact forms, feedback</td><td>Opens email composer</td></tr>
+          <tr><td><strong>📞 Phone</strong></td><td>Business cards, support lines</td><td>Starts a call</td></tr>
+          <tr><td><strong>💬 SMS</strong></td><td>Text-to-vote, marketing opt-ins</td><td>Opens SMS app</td></tr>
+          <tr><td><strong>📶 WiFi</strong></td><td>Guest networks, cafes, hotels</td><td>Joins WiFi automatically</td></tr>
+          <tr><td><strong>👤 vCard</strong></td><td>Business cards, networking</td><td>Saves to contacts</td></tr>
+        </tbody>
+      </table>
+
+      <h2>⚡ Error Correction Levels Explained</h2>
+      <h3>Low (7% recovery)</h3>
+      <p>Lowest error correction allows more data. Best for QR codes printed on clean surfaces and scanned in ideal conditions. Not recommended for QR codes with logos.</p>
+
+      <h3>Medium (15% recovery)</h3>
+      <p>Balanced error correction. Good default for most uses URLs, text, business cards, marketing materials. Handles minor damage and glare.</p>
+
+      <h3>Quartile (25% recovery)</h3>
+      <p>Higher error correction good for logos and small damage. Use when the QR code will be partially covered or printed on textured surfaces.</p>
+
+      <h3>High (30% recovery)</h3>
+      <p>Maximum error correction recommended for logos covering up to 25% of the QR code. Also great for outdoor environments, stickers, and industrial use.</p>
+
+      <h2>💡 QR Code Best Practices</h2>
+      <ul>
+        <li><strong>High contrast</strong> dark foreground on light background scans best. Avoid low-contrast colors.</li>
+        <li><strong>Quiet zone</strong> leave at least 4 modules of white space around the QR code.</li>
+        <li><strong>Size matters</strong> minimum 2×2 cm for close-range scanning, larger for distance.</li>
+        <li><strong>Test before printing</strong> scan with 3+ different phones to verify.</li>
+        <li><strong>Logo placement</strong> keep logos ≤25% of QR area with error correction H.</li>
+        <li><strong>Short URLs</strong> shorter URLs = simpler QR code = easier to scan.</li>
+        <li><strong>SVG for print</strong> vector format scales infinitely without quality loss.</li>
+      </ul>
+
+      <h2>✨ Key Features</h2>
+      <ul>
+        <li><strong>7 content types</strong> URL, Text, Email, Phone, SMS, WiFi, vCard.</li>
+        <li><strong>Static QR codes</strong> never expire, no redirects, no tracking.</li>
+        <li><strong>Custom colors</strong> foreground and background pickers.</li>
+        <li><strong>Adjustable size</strong> 128 to 1000 pixels.</li>
+        <li><strong>Error correction</strong> L/M/Q/H levels.</li>
+        <li><strong>Logo embedding</strong> add your brand inside the QR.</li>
+        <li><strong>PNG + SVG export</strong> raster and vector formats.</li>
+        <li><strong>100% browser-based</strong> complete privacy, no signup.</li>
+      </ul>
+
+      <h2>❓ Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-question">How do I create a QR code for free?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Choose the content type (URL, Text, WiFi, vCard, etc.), enter your content, customize colors and size, then click Download. It's free no signup, no watermark, no expiration.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Do my QR codes expire?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>No. Our QR codes are <strong>static</strong> the data is encoded directly into the pattern. They work <strong>forever</strong> and never expire. No redirects, no tracking, no server dependency. Even if BigToolz shuts down, your QR codes keep working.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What's the best error correction level?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>L (7%)</strong>: maximum data, clean environments. <strong>M (15%)</strong>: balanced good default. <strong>Q (25%)</strong>: for small logos or textured surfaces. <strong>H (30%)</strong>: best for logos or outdoor/damaged surfaces.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I add my logo to a QR code?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Yes! Enable the logo upload and pick a PNG with transparent background. <strong>Use error correction H (30%)</strong> to ensure the QR code remains scannable with the logo covering part of it. Keep logos ≤25% of the QR area.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">PNG vs SVG which should I download?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>PNG</strong> great for web, social media, and digital use. <strong>SVG</strong> perfect for print (business cards, posters, stickers) because it scales infinitely without quality loss. For print, always choose SVG.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What's the difference between static and dynamic QR codes?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>Static</strong> (ours) data encoded directly, never expires, no tracking, free forever. <strong>Dynamic</strong> data stored on a server, short URL redirect, can be edited but expires and may have tracking. Static is more reliable and private.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Are my QR codes uploaded to a server?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>No. All QR code generation happens in your browser. Your data never leaves your device especially important for <strong>WiFi passwords</strong> and <strong>personal info</strong> in vCards. Nothing is logged or tracked.</p></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-header">🔗 Related Image Tools</div>
+    <div class="sidebar-list">
+      <a href="/tools/image-tools/placeholder-generator/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#8b5cf6;">⬜</div>
+        <div class="sidebar-info"><div class="sidebar-title">Placeholder Generator</div><div class="sidebar-desc">Generate placeholder images</div></div>
+      </a>
+      <a href="/tools/image-tools/image-resizer/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#8b5cf6;">📏</div>
+        <div class="sidebar-info"><div class="sidebar-title">Image Resizer</div><div class="sidebar-desc">Change dimensions</div></div>
+      </a>
+      <a href="/tools/image-tools/image-color-picker/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#f59e0b;">🎨</div>
+        <div class="sidebar-info"><div class="sidebar-title">Color Picker</div><div class="sidebar-desc">Pick any color</div></div>
+      </a>
+      <a href="/tools/image-tools/image-watermark/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#3b82f6;">💧</div>
+        <div class="sidebar-info"><div class="sidebar-title">Image Watermark</div><div class="sidebar-desc">Add watermarks</div></div>
+      </a>
+      <a href="/tools/image-tools/screenshot-editor/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#ec4899;">📸</div>
+        <div class="sidebar-info"><div class="sidebar-title">Screenshot Editor</div><div class="sidebar-desc">Annotate screenshots</div></div>
+      </a>
+      <a href="/tools/image-tools/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#64748b;">🖼</div>
+        <div class="sidebar-info"><div class="sidebar-title">All Image Tools →</div><div class="sidebar-desc">Browse 25+ tools</div></div>
+      </a>
+    </div>
+  </aside>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand"><div class="logo-icon">⚒</div>BigToolz</span></div>
+      <p class="footer-tagline">Your Ultimate Online Tools Hub</p>
+      <div class="footer-social">
+        <a href="https://facebook.com/bigtoolz" aria-label="Facebook">f</a>
+        <a href="https://twitter.com/bigtoolz" aria-label="Twitter">𝕏</a>
+        <a href="https://youtube.com/@bigtoolz" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+    <div>
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/tools/">All Tools</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Categories</h3>
+      <ul class="footer-links">
+        <li><a href="/tools/image-tools/">Image Tools</a></li>
+        <li><a href="/tools/pdf-tools/">PDF Tools</a></li>
+        <li><a href="/tools/text-tools/">Text Tools</a></li>
+        <li><a href="/tools/seo-tools/">SEO Tools</a></li>
+        <li><a href="/tools/categories">All Categories →</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Legal</h3>
+      <ul class="footer-links">
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left"><span>✓ 100% Free</span><span>✓ No Sign Up</span><span>✓ No Installation</span></div>
+    <div class="footer-bottom-right">© 2026 BigToolz. All rights reserved.</div>
+    <div class="footer-bottom-links"><a href="/privacy-policy">Privacy</a><a href="/terms">Terms</a><a href="/disclaimer">Disclaimer</a></div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<!-- ============================================
+     QR CODE ENCODER LIBRARY (fixed & self-contained)
+     Based on Kazuhiko Arase's qrcode-generator (MIT License)
+     ============================================ -->
+<script>
+(function(window){
+'use strict';
+
+function qrcode(typeNumber, errorCorrectionLevel) {
+  var PAD0 = 0xEC, PAD1 = 0x11;
+  var _typeNumber = typeNumber;
+  var _errorCorrectionLevel = QRErrorCorrectionLevel[errorCorrectionLevel];
+  var _modules = null;
+  var _moduleCount = 0;
+  var _dataCache = null;
+  var _dataList = [];
+  var _this = {};
+
+  function makeImpl(test, maskPattern) {
+    _moduleCount = _typeNumber * 4 + 17;
+    _modules = new Array(_moduleCount);
+    for (var row = 0; row < _moduleCount; row++) {
+      _modules[row] = new Array(_moduleCount);
+      for (var col = 0; col < _moduleCount; col++) _modules[row][col] = null;
+    }
+    setupPositionProbePattern(0, 0);
+    setupPositionProbePattern(_moduleCount - 7, 0);
+    setupPositionProbePattern(0, _moduleCount - 7);
+    setupPositionAdjustPattern();
+    setupTimingPattern();
+    setupTypeInfo(test, maskPattern);
+    if (_typeNumber >= 7) setupTypeNumber(test);
+    if (_dataCache == null) _dataCache = createData(_typeNumber, _errorCorrectionLevel, _dataList);
+    mapData(_dataCache, maskPattern);
+  }
+
+  function setupPositionProbePattern(row, col) {
+    for (var r = -1; r <= 7; r++) {
+      if (row + r <= -1 || _moduleCount <= row + r) continue;
+      for (var c = -1; c <= 7; c++) {
+        if (col + c <= -1 || _moduleCount <= col + c) continue;
+        if ((0 <= r && r <= 6 && (c == 0 || c == 6)) ||
+            (0 <= c && c <= 6 && (r == 0 || r == 6)) ||
+            (2 <= r && r <= 4 && 2 <= c && c <= 4)) {
+          _modules[row + r][col + c] = true;
+        } else {
+          _modules[row + r][col + c] = false;
+        }
+      }
+    }
+  }
+
+  function getBestMaskPattern() {
+    var minLostPoint = 0, pattern = 0;
+    for (var i = 0; i < 8; i++) {
+      makeImpl(true, i);
+      var lostPoint = QRUtil.getLostPoint(_modules);
+      if (i == 0 || minLostPoint > lostPoint) {
+        minLostPoint = lostPoint;
+        pattern = i;
+      }
+    }
+    return pattern;
+  }
+
+  function setupTimingPattern() {
+    for (var r = 8; r < _moduleCount - 8; r++) {
+      if (_modules[r][6] != null) continue;
+      _modules[r][6] = (r % 2 == 0);
+    }
+    for (var c = 8; c < _moduleCount - 8; c++) {
+      if (_modules[6][c] != null) continue;
+      _modules[6][c] = (c % 2 == 0);
+    }
+  }
+
+  function setupPositionAdjustPattern() {
+    var pos = QRUtil.getPatternPosition(_typeNumber);
+    for (var i = 0; i < pos.length; i++) {
+      for (var j = 0; j < pos.length; j++) {
+        var row = pos[i], col = pos[j];
+        if (_modules[row][col] != null) continue;
+        for (var r = -2; r <= 2; r++) {
+          for (var c = -2; c <= 2; c++) {
+            if (r == -2 || r == 2 || c == -2 || c == 2 || (r == 0 && c == 0)) {
+              _modules[row + r][col + c] = true;
+            } else {
+              _modules[row + r][col + c] = false;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  function setupTypeNumber(test) {
+    var bits = QRUtil.getBCHTypeNumber(_typeNumber);
+    for (var i = 0; i < 18; i++) {
+      var mod = (!test && ((bits >> i) & 1) == 1);
+      _modules[Math.floor(i / 3)][i % 3 + _moduleCount - 8 - 3] = mod;
+    }
+    for (var i = 0; i < 18; i++) {
+      var mod = (!test && ((bits >> i) & 1) == 1);
+      _modules[i % 3 + _moduleCount - 8 - 3][Math.floor(i / 3)] = mod;
+    }
+  }
+
+  function setupTypeInfo(test, maskPattern) {
+    var data = (_errorCorrectionLevel << 3) | maskPattern;
+    var bits = QRUtil.getBCHTypeInfo(data);
+    for (var i = 0; i < 15; i++) {
+      var mod = (!test && ((bits >> i) & 1) == 1);
+      if (i < 6) _modules[i][8] = mod;
+      else if (i < 8) _modules[i + 1][8] = mod;
+      else _modules[_moduleCount - 15 + i][8] = mod;
+    }
+    for (var i = 0; i < 15; i++) {
+      var mod = (!test && ((bits >> i) & 1) == 1);
+      if (i < 8) _modules[8][_moduleCount - i - 1] = mod;
+      else if (i < 9) _modules[8][15 - i - 1 + 1] = mod;
+      else _modules[8][15 - i - 1] = mod;
+    }
+    _modules[_moduleCount - 8][8] = (!test);
+  }
+
+  function mapData(data, maskPattern) {
+    var inc = -1, row = _moduleCount - 1, bitIndex = 7, byteIndex = 0;
+    var maskFunc = QRUtil.getMaskFunction(maskPattern);
+    for (var col = _moduleCount - 1; col > 0; col -= 2) {
+      if (col == 6) col--;
+      while (true) {
+        for (var c = 0; c < 2; c++) {
+          if (_modules[row][col - c] == null) {
+            var dark = false;
+            if (byteIndex < data.length) {
+              dark = (((data[byteIndex] >>> bitIndex) & 1) == 1);
+            }
+            var mask = maskFunc(row, col - c);
+            if (mask) dark = !dark;
+            _modules[row][col - c] = dark;
+            bitIndex--;
+            if (bitIndex == -1) {
+              byteIndex++;
+              bitIndex = 7;
+            }
+          }
+        }
+        row += inc;
+        if (row < 0 || _moduleCount <= row) {
+          row -= inc;
+          inc = -inc;
+          break;
+        }
+      }
+    }
+  }
+
+  function createBytes(buffer, rsBlocks) {
+    var offset = 0, maxDcCount = 0, maxEcCount = 0;
+    var dcdata = new Array(rsBlocks.length);
+    var ecdata = new Array(rsBlocks.length);
+    for (var r = 0; r < rsBlocks.length; r++) {
+      var dcCount = rsBlocks[r].dataCount;
+      var ecCount = rsBlocks[r].totalCount - dcCount;
+      maxDcCount = Math.max(maxDcCount, dcCount);
+      maxEcCount = Math.max(maxEcCount, ecCount);
+      dcdata[r] = new Array(dcCount);
+      for (var i = 0; i < dcdata[r].length; i++) dcdata[r][i] = 0xff & buffer.getBuffer()[i + offset];
+      offset += dcCount;
+      var rsPoly = QRUtil.getErrorCorrectPolynomial(ecCount);
+      var rawPoly = qrPolynomial(dcdata[r], rsPoly.getLength() - 1);
+      var modPoly = rawPoly.mod(rsPoly);
+      ecdata[r] = new Array(rsPoly.getLength() - 1);
+      for (var i = 0; i < ecdata[r].length; i++) {
+        var modIndex = i + modPoly.getLength() - ecdata[r].length;
+        ecdata[r][i] = (modIndex >= 0) ? modPoly.getAt(modIndex) : 0;
+      }
+    }
+    var totalCodeCount = 0;
+    for (var i = 0; i < rsBlocks.length; i++) totalCodeCount += rsBlocks[i].totalCount;
+    var data = new Array(totalCodeCount);
+    var index = 0;
+    for (var i = 0; i < maxDcCount; i++) {
+      for (var r = 0; r < rsBlocks.length; r++) {
+        if (i < dcdata[r].length) data[index++] = dcdata[r][i];
+      }
+    }
+    for (var i = 0; i < maxEcCount; i++) {
+      for (var r = 0; r < rsBlocks.length; r++) {
+        if (i < ecdata[r].length) data[index++] = ecdata[r][i];
+      }
+    }
+    return data;
+  }
+
+  function createData(typeNumber, errorCorrectionLevel, dataList) {
+    var rsBlocks = QRRSBlock.getRSBlocks(typeNumber, errorCorrectionLevel);
+    var buffer = qrBitBuffer();
+    for (var i = 0; i < dataList.length; i++) {
+      var data = dataList[i];
+      buffer.put(data.getMode(), 4);
+      buffer.put(data.getLength(), QRUtil.getLengthInBits(data.getMode(), typeNumber));
+      data.write(buffer);
+    }
+    var totalDataCount = 0;
+    for (var i = 0; i < rsBlocks.length; i++) totalDataCount += rsBlocks[i].dataCount;
+    if (buffer.getLengthInBits() > totalDataCount * 8) throw 'code length overflow';
+    if (buffer.getLengthInBits() + 4 <= totalDataCount * 8) buffer.put(0, 4);
+    while (buffer.getLengthInBits() % 8 != 0) buffer.putBit(false);
+    while (true) {
+      if (buffer.getLengthInBits() >= totalDataCount * 8) break;
+      buffer.put(PAD0, 8);
+      if (buffer.getLengthInBits() >= totalDataCount * 8) break;
+      buffer.put(PAD1, 8);
+    }
+    return createBytes(buffer, rsBlocks);
+  }
+
+  _this.addData = function(data, mode) {
+    mode = mode || 'Byte';
+    var newData = null;
+    switch (mode) {
+      case 'Numeric': newData = qrNumber(data); break;
+      case 'Alphanumeric': newData = qrAlphaNum(data); break;
+      case 'Byte': newData = qr8BitByte(data); break;
+      default: newData = qr8BitByte(data);
+    }
+    _dataList.push(newData);
+    _dataCache = null;
+  };
+
+  _this.isDark = function(row, col) {
+    if (row < 0 || _moduleCount <= row || col < 0 || _moduleCount <= col) throw row + ',' + col;
+    return _modules[row][col];
+  };
+
+  _this.getModuleCount = function() { return _moduleCount; };
+
+  _this.make = function() {
+    if (_typeNumber < 1) {
+      var typeNumber = 1;
+      for (; typeNumber < 40; typeNumber++) {
+        var rsBlocks = QRRSBlock.getRSBlocks(typeNumber, _errorCorrectionLevel);
+        var buffer = qrBitBuffer();
+        for (var i = 0; i < _dataList.length; i++) {
+          var data = _dataList[i];
+          buffer.put(data.getMode(), 4);
+          buffer.put(data.getLength(), QRUtil.getLengthInBits(data.getMode(), typeNumber));
+          data.write(buffer);
+        }
+        var totalDataCount = 0;
+        for (var i = 0; i < rsBlocks.length; i++) totalDataCount += rsBlocks[i].dataCount;
+        if (buffer.getLengthInBits() <= totalDataCount * 8) break;
+      }
+      _typeNumber = typeNumber;
+    }
+    makeImpl(false, getBestMaskPattern());
+  };
+
+  return _this;
+}
+
+function qrNumber(data) {
+  var _mode = 1, _data = data, _this = {};
+  _this.getMode = function() { return _mode; };
+  _this.getLength = function() { return _data.length; };
+  _this.write = function(buffer) {
+    var data = _data;
+    var i = 0;
+    while (i + 2 < data.length) {
+      buffer.put(strToNum(data.substring(i, i + 3)), 10);
+      i += 3;
+    }
+    if (i < data.length) {
+      if (data.length - i == 1) buffer.put(strToNum(data.substring(i, i + 1)), 4);
+      else if (data.length - i == 2) buffer.put(strToNum(data.substring(i, i + 2)), 7);
+    }
+  };
+  function strToNum(s) {
+    var num = 0;
+    for (var i = 0; i < s.length; i++) num = num * 10 + s.charCodeAt(i) - 48;
+    return num;
+  }
+  return _this;
+}
+
+function qrAlphaNum(data) {
+  var _mode = 2, _data = data, _this = {};
+  var _alphanum = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ $%*+-./:';
+  _this.getMode = function() { return _mode; };
+  _this.getLength = function() { return _data.length; };
+  _this.write = function(buffer) {
+    var s = _data, i = 0;
+    while (i + 1 < s.length) {
+      buffer.put(getCode(s.charAt(i)) * 45 + getCode(s.charAt(i + 1)), 11);
+      i += 2;
+    }
+    if (i < s.length) buffer.put(getCode(s.charAt(i)), 6);
+  };
+  function getCode(c) { return _alphanum.indexOf(c); }
+  return _this;
+}
+
+function qr8BitByte(data) {
+  var _mode = 4, _data = data, _bytes = [], _this = {};
+  for (var i = 0; i < _data.length; i++) {
+    var c = _data.charCodeAt(i);
+    if (c >= 0xD800 && c <= 0xDBFF && i + 1 < _data.length) {
+      var c2 = _data.charCodeAt(i + 1);
+      if (c2 >= 0xDC00 && c2 <= 0xDFFF) {
+        c = ((c - 0xD800) << 10) + (c2 - 0xDC00) + 0x10000;
+        i++;
+      }
+    }
+    if (c < 0x80) {
+      _bytes.push(c);
+    } else if (c < 0x800) {
+      _bytes.push(0xC0 | (c >> 6));
+      _bytes.push(0x80 | (c & 0x3F));
+    } else if (c < 0x10000) {
+      _bytes.push(0xE0 | (c >> 12));
+      _bytes.push(0x80 | ((c >> 6) & 0x3F));
+      _bytes.push(0x80 | (c & 0x3F));
+    } else {
+      _bytes.push(0xF0 | (c >> 18));
+      _bytes.push(0x80 | ((c >> 12) & 0x3F));
+      _bytes.push(0x80 | ((c >> 6) & 0x3F));
+      _bytes.push(0x80 | (c & 0x3F));
+    }
+  }
+  _this.getMode = function() { return _mode; };
+  _this.getLength = function() { return _bytes.length; };
+  _this.write = function(buffer) {
+    for (var i = 0; i < _bytes.length; i++) buffer.put(_bytes[i], 8);
+  };
+  return _this;
+}
+
+function qrBitBuffer() {
+  var _buffer = [], _length = 0, _this = {};
+  _this.getBuffer = function() { return _buffer; };
+  _this.getAt = function(index) {
+    var bufIndex = Math.floor(index / 8);
+    return ((_buffer[bufIndex] >>> (7 - index % 8)) & 1) == 1;
+  };
+  _this.put = function(num, length) {
+    for (var i = 0; i < length; i++) _this.putBit(((num >>> (length - i - 1)) & 1) == 1);
+  };
+  _this.getLengthInBits = function() { return _length; };
+  _this.putBit = function(bit) {
+    var bufIndex = Math.floor(_length / 8);
+    if (_buffer.length <= bufIndex) _buffer.push(0);
+    if (bit) _buffer[bufIndex] |= (0x80 >>> (_length % 8));
+    _length++;
+  };
+  return _this;
+}
+
+function qrPolynomial(num, shift) {
+  if (typeof num.length == 'undefined') throw num.length + '/' + shift;
+  var _num = (function(num) {
+    var offset = 0;
+    while (offset < num.length && num[offset] == 0) offset++;
+    var _num2 = new Array(num.length - offset + shift);
+    for (var i = 0; i < num.length - offset; i++) _num2[i] = num[i + offset];
+    return _num2;
+  })(num);
+  var _this = {};
+  _this.getAt = function(index) { return _num[index]; };
+  _this.getLength = function() { return _num.length; };
+  _this.multiply = function(e) {
+    var num = new Array(_this.getLength() + e.getLength() - 1);
+    for (var i = 0; i < _this.getLength(); i++) {
+      for (var j = 0; j < e.getLength(); j++) {
+        num[i + j] ^= QRMath.gexp(QRMath.glog(_this.getAt(i)) + QRMath.glog(e.getAt(j)));
+      }
+    }
+    return qrPolynomial(num, 0);
+  };
+  _this.mod = function(e) {
+    if (_this.getLength() - e.getLength() < 0) return _this;
+    var ratio = QRMath.glog(_this.getAt(0)) - QRMath.glog(e.getAt(0));
+    var num = new Array(_this.getLength());
+    for (var i = 0; i < _this.getLength(); i++) num[i] = _this.getAt(i);
+    for (var i = 0; i < e.getLength(); i++) num[i] ^= QRMath.gexp(QRMath.glog(e.getAt(i)) + ratio);
+    return qrPolynomial(num, 0).mod(e);
+  };
+  return _this;
+}
+
+var QRMath = (function() {
+  var EXP_TABLE = new Array(256), LOG_TABLE = new Array(256);
+  for (var i = 0; i < 8; i++) EXP_TABLE[i] = 1 << i;
+  for (var i = 8; i < 256; i++) {
+    EXP_TABLE[i] = EXP_TABLE[i - 4] ^ EXP_TABLE[i - 5] ^ EXP_TABLE[i - 6] ^ EXP_TABLE[i - 8];
+  }
+  for (var i = 0; i < 255; i++) LOG_TABLE[EXP_TABLE[i]] = i;
+  return {
+    glog: function(n) {
+      if (n < 1) throw 'glog(' + n + ')';
+      return LOG_TABLE[n];
+    },
+    gexp: function(n) {
+      while (n < 0) n += 255;
+      while (n >= 256) n -= 255;
+      return EXP_TABLE[n];
+    }
+  };
+})();
+
+var QRErrorCorrectionLevel = { L: 1, M: 0, Q: 3, H: 2 };
+
+var QRMaskPattern = {
+  PATTERN000: 0, PATTERN001: 1, PATTERN010: 2, PATTERN011: 3,
+  PATTERN100: 4, PATTERN101: 5, PATTERN110: 6, PATTERN111: 7
+};
+
+var QRUtil = (function() {
+  var PATTERN_POSITION_TABLE = [
+    [], [6, 18], [6, 22], [6, 26], [6, 30], [6, 34],
+    [6, 22, 38], [6, 24, 42], [6, 26, 46], [6, 28, 50], [6, 30, 54], [6, 32, 58], [6, 34, 62],
+    [6, 26, 46, 66], [6, 26, 48, 70], [6, 26, 50, 74], [6, 30, 54, 78], [6, 30, 56, 82], [6, 30, 58, 86], [6, 34, 62, 90],
+    [6, 28, 50, 72, 94], [6, 26, 50, 74, 98], [6, 30, 54, 78, 102], [6, 28, 54, 80, 106], [6, 32, 58, 84, 110], [6, 30, 58, 86, 114], [6, 34, 62, 90, 118],
+    [6, 26, 50, 74, 98, 122], [6, 30, 54, 78, 102, 126], [6, 26, 52, 78, 104, 130], [6, 30, 56, 82, 108, 134], [6, 34, 60, 86, 112, 138], [6, 30, 58, 86, 114, 142], [6, 34, 62, 90, 118, 146],
+    [6, 30, 54, 78, 102, 126, 150], [6, 24, 50, 76, 102, 128, 154], [6, 28, 54, 80, 106, 132, 158], [6, 32, 58, 84, 110, 136, 162], [6, 26, 54, 82, 110, 138, 166], [6, 30, 58, 86, 114, 142, 170]
+  ];
+  var G15 = (1 << 10) | (1 << 8) | (1 << 5) | (1 << 4) | (1 << 2) | (1 << 1) | (1 << 0);
+  var G18 = (1 << 12) | (1 << 11) | (1 << 10) | (1 << 9) | (1 << 8) | (1 << 5) | (1 << 2) | (1 << 0);
+  var G15_MASK = (1 << 14) | (1 << 12) | (1 << 10) | (1 << 4) | (1 << 1);
+  var _this = {};
+
+  _this.getBCHTypeInfo = function(data) {
+    var d = data << 10;
+    while (_this.getBCHDigit(d) - _this.getBCHDigit(G15) >= 0) {
+      d ^= (G15 << (_this.getBCHDigit(d) - _this.getBCHDigit(G15)));
+    }
+    return ((data << 10) | d) ^ G15_MASK;
+  };
+
+  _this.getBCHTypeNumber = function(data) {
+    var d = data << 12;
+    while (_this.getBCHDigit(d) - _this.getBCHDigit(G18) >= 0) {
+      d ^= (G18 << (_this.getBCHDigit(d) - _this.getBCHDigit(G18)));
+    }
+    return (data << 12) | d;
+  };
+
+  _this.getBCHDigit = function(data) {
+    var digit = 0;
+    while (data != 0) {
+      digit++;
+      data >>>= 1;
+    }
+    return digit;
+  };
+
+  _this.getPatternPosition = function(typeNumber) {
+    return PATTERN_POSITION_TABLE[typeNumber - 1];
+  };
+
+  _this.getMaskFunction = function(maskPattern) {
+    switch (maskPattern) {
+      case QRMaskPattern.PATTERN000: return function(i, j) { return (i + j) % 2 == 0; };
+      case QRMaskPattern.PATTERN001: return function(i, j) { return i % 2 == 0; };
+      case QRMaskPattern.PATTERN010: return function(i, j) { return j % 3 == 0; };
+      case QRMaskPattern.PATTERN011: return function(i, j) { return (i + j) % 3 == 0; };
+      case QRMaskPattern.PATTERN100: return function(i, j) { return (Math.floor(i / 2) + Math.floor(j / 3)) % 2 == 0; };
+      case QRMaskPattern.PATTERN101: return function(i, j) { return (i * j) % 2 + (i * j) % 3 == 0; };
+      case QRMaskPattern.PATTERN110: return function(i, j) { return ((i * j) % 2 + (i * j) % 3) % 2 == 0; };
+      case QRMaskPattern.PATTERN111: return function(i, j) { return ((i * j) % 3 + (i + j) % 2) % 2 == 0; };
+      default: throw 'bad maskPattern:' + maskPattern;
+    }
+  };
+
+  _this.getErrorCorrectPolynomial = function(errorCorrectLength) {
+    var a = qrPolynomial([1], 0);
+    for (var i = 0; i < errorCorrectLength; i++) {
+      a = a.multiply(qrPolynomial([1, QRMath.gexp(i)], 0));
+    }
+    return a;
+  };
+
+  _this.getLengthInBits = function(mode, type) {
+    if (1 <= type && type < 10) {
+      switch (mode) {
+        case 1: return 10;
+        case 2: return 9;
+        case 4: return 8;
+        default: throw 'mode:' + mode;
+      }
+    } else if (type < 27) {
+      switch (mode) {
+        case 1: return 12;
+        case 2: return 11;
+        case 4: return 16;
+        default: throw 'mode:' + mode;
+      }
+    } else if (type < 41) {
+      switch (mode) {
+        case 1: return 14;
+        case 2: return 13;
+        case 4: return 16;
+        default: throw 'mode:' + mode;
+      }
+    } else {
+      throw 'type:' + type;
+    }
+  };
+
+  _this.getLostPoint = function(qrcode) {
+    var moduleCount = qrcode.length;
+    var lostPoint = 0;
+
+    for (var row = 0; row < moduleCount; row++) {
+      for (var col = 0; col < moduleCount; col++) {
+        var sameCount = 0;
+        var dark = qrcode[row][col];
+        for (var r = -1; r <= 1; r++) {
+          if (row + r < 0 || moduleCount <= row + r) continue;
+          for (var c = -1; c <= 1; c++) {
+            if (col + c < 0 || moduleCount <= col + c) continue;
+            if (r == 0 && c == 0) continue;
+            if (dark == qrcode[row + r][col + c]) sameCount++;
+          }
+        }
+        if (sameCount > 5) lostPoint += (3 + sameCount - 5);
+      }
+    }
+
+    for (var row = 0; row < moduleCount - 1; row++) {
+      for (var col = 0; col < moduleCount - 1; col++) {
+        var count = 0;
+        if (qrcode[row][col]) count++;
+        if (qrcode[row + 1][col]) count++;
+        if (qrcode[row][col + 1]) count++;
+        if (qrcode[row + 1][col + 1]) count++;
+        if (count == 0 || count == 4) lostPoint += 3;
+      }
+    }
+
+    for (var row = 0; row < moduleCount; row++) {
+      for (var col = 0; col < moduleCount - 6; col++) {
+        if (qrcode[row][col] && !qrcode[row][col + 1] && qrcode[row][col + 2] && qrcode[row][col + 3] && qrcode[row][col + 4] && !qrcode[row][col + 5] && qrcode[row][col + 6]) lostPoint += 40;
+      }
+    }
+    for (var col = 0; col < moduleCount; col++) {
+      for (var row = 0; row < moduleCount - 6; row++) {
+        if (qrcode[row][col] && !qrcode[row + 1][col] && qrcode[row + 2][col] && qrcode[row + 3][col] && qrcode[row + 4][col] && !qrcode[row + 5][col] && qrcode[row + 6][col]) lostPoint += 40;
+      }
+    }
+
+    var darkCount = 0;
+    for (var col = 0; col < moduleCount; col++) {
+      for (var row = 0; row < moduleCount; row++) {
+        if (qrcode[row][col]) darkCount++;
+      }
+    }
+    var ratio = Math.abs(100 * darkCount / moduleCount / moduleCount - 50) / 5;
+    lostPoint += ratio * 10;
+
+    return lostPoint;
+  };
+
+  return _this;
+})();
+
+var QRRSBlock = (function() {
+  var RS_BLOCK_TABLE = [
+    [1, 26, 19], [1, 26, 16], [1, 26, 13], [1, 26, 9],
+    [1, 44, 34], [1, 44, 28], [1, 44, 22], [1, 44, 16],
+    [1, 70, 55], [1, 70, 44], [2, 35, 17], [2, 35, 13],
+    [1, 100, 80], [2, 50, 32], [2, 50, 24], [4, 25, 9],
+    [1, 134, 108], [2, 67, 43], [2, 33, 15, 2, 34, 16], [2, 33, 11, 2, 34, 12],
+    [2, 86, 68], [4, 43, 27], [4, 43, 19], [4, 43, 15],
+    [2, 98, 78], [4, 49, 31], [2, 32, 14, 4, 33, 15], [4, 39, 13, 1, 40, 14],
+    [2, 121, 97], [2, 60, 38, 2, 61, 39], [4, 40, 18, 2, 41, 19], [4, 40, 14, 2, 41, 15],
+    [2, 146, 116], [3, 58, 36, 2, 59, 37], [4, 36, 16, 4, 37, 17], [4, 36, 12, 4, 37, 13],
+    [2, 86, 68, 2, 87, 69], [4, 69, 43, 1, 70, 44], [6, 43, 19, 2, 44, 20], [6, 43, 15, 2, 44, 16],
+    [4, 101, 81], [1, 80, 50, 4, 81, 51], [4, 50, 22, 4, 51, 23], [3, 36, 12, 8, 37, 13],
+    [2, 116, 92, 2, 117, 93], [6, 58, 36, 2, 59, 37], [4, 46, 20, 6, 47, 21], [7, 42, 14, 4, 43, 15],
+    [4, 133, 107], [8, 59, 37, 1, 60, 38], [8, 44, 20, 4, 45, 21], [12, 33, 11, 4, 34, 12],
+    [3, 145, 115, 1, 146, 116], [4, 64, 40, 5, 65, 41], [11, 36, 16, 5, 37, 17], [11, 36, 12, 5, 37, 13],
+    [5, 109, 87, 1, 110, 88], [5, 65, 41, 5, 66, 42], [5, 54, 24, 7, 55, 25], [11, 36, 12, 7, 37, 13],
+    [5, 122, 98, 1, 123, 99], [7, 73, 45, 3, 74, 46], [15, 43, 19, 2, 44, 20], [3, 45, 15, 13, 46, 16],
+    [1, 135, 107, 5, 136, 108], [10, 74, 46, 1, 75, 47], [1, 50, 22, 15, 51, 23], [2, 42, 14, 17, 43, 15],
+    [5, 150, 120, 1, 151, 121], [9, 69, 43, 4, 70, 44], [17, 50, 22, 1, 51, 23], [2, 42, 14, 19, 43, 15],
+    [3, 141, 113, 4, 142, 114], [3, 70, 44, 11, 71, 45], [17, 47, 21, 4, 48, 22], [9, 39, 13, 16, 40, 14],
+    [3, 135, 107, 5, 136, 108], [3, 67, 41, 13, 68, 42], [15, 54, 24, 5, 55, 25], [15, 43, 15, 10, 44, 16],
+    [4, 144, 116, 4, 145, 117], [17, 68, 42], [17, 50, 22, 6, 51, 23], [19, 46, 16, 6, 47, 17],
+    [2, 139, 111, 7, 140, 112], [17, 74, 46], [7, 54, 24, 16, 55, 25], [34, 37, 13],
+    [4, 151, 121, 5, 152, 122], [4, 75, 47, 14, 76, 48], [11, 54, 24, 14, 55, 25], [16, 45, 15, 14, 46, 16],
+    [6, 147, 117, 4, 148, 118], [6, 73, 45, 14, 74, 46], [11, 54, 24, 16, 55, 25], [30, 46, 16, 2, 47, 17],
+    [8, 132, 106, 4, 133, 107], [8, 75, 47, 13, 76, 48], [7, 54, 24, 22, 55, 25], [22, 45, 15, 13, 46, 16],
+    [10, 142, 114, 2, 143, 115], [19, 74, 46, 4, 75, 47], [28, 50, 22, 6, 51, 23], [33, 46, 16, 4, 47, 17],
+    [8, 152, 122, 4, 153, 123], [22, 73, 45, 3, 74, 46], [8, 53, 23, 26, 54, 24], [12, 45, 15, 28, 46, 16],
+    [3, 147, 117, 10, 148, 118], [3, 73, 45, 23, 74, 46], [4, 54, 24, 31, 55, 25], [11, 45, 15, 31, 46, 16],
+    [7, 146, 116, 7, 147, 117], [21, 73, 45, 7, 74, 46], [1, 53, 23, 37, 54, 24], [19, 45, 15, 26, 46, 16],
+    [5, 145, 115, 10, 146, 116], [19, 75, 47, 10, 76, 48], [15, 54, 24, 25, 55, 25], [23, 45, 15, 25, 46, 16],
+    [13, 145, 115, 3, 146, 116], [2, 74, 46, 29, 75, 47], [42, 54, 24, 1, 55, 25], [23, 45, 15, 28, 46, 16],
+    [17, 145, 115], [10, 74, 46, 23, 75, 47], [10, 54, 24, 35, 55, 25], [19, 45, 15, 35, 46, 16],
+    [17, 145, 115, 1, 146, 116], [14, 74, 46, 21, 75, 47], [29, 54, 24, 19, 55, 25], [11, 45, 15, 46, 46, 16],
+    [13, 145, 115, 6, 146, 116], [14, 74, 46, 23, 75, 47], [44, 54, 24, 7, 55, 25], [59, 46, 16, 1, 47, 17],
+    [12, 151, 121, 7, 152, 122], [12, 75, 47, 26, 76, 48], [39, 54, 24, 14, 55, 25], [22, 45, 15, 41, 46, 16],
+    [6, 151, 121, 14, 152, 122], [6, 75, 47, 34, 76, 48], [46, 54, 24, 10, 55, 25], [2, 45, 15, 64, 46, 16],
+    [17, 152, 122, 4, 153, 123], [29, 74, 46, 14, 75, 47], [49, 54, 24, 10, 55, 25], [24, 45, 15, 46, 46, 16],
+    [4, 152, 122, 18, 153, 123], [13, 74, 46, 32, 75, 47], [48, 54, 24, 14, 55, 25], [42, 45, 15, 32, 46, 16],
+    [20, 147, 117, 4, 148, 118], [40, 75, 47, 7, 76, 48], [43, 54, 24, 22, 55, 25], [10, 45, 15, 67, 46, 16],
+    [19, 148, 118, 6, 149, 119], [18, 75, 47, 31, 76, 48], [34, 54, 24, 34, 55, 25], [20, 45, 15, 61, 46, 16]
+  ];
+  var _this = {};
+  _this.getRSBlocks = function(typeNumber, errorCorrectionLevel) {
+    var rsBlock = getRsBlockTable(typeNumber, errorCorrectionLevel);
+    if (!rsBlock) throw 'bad rs block @ typeNumber:' + typeNumber + '/errorCorrectionLevel:' + errorCorrectionLevel;
+    var length = rsBlock.length / 3;
+    var list = [];
+    for (var i = 0; i < length; i++) {
+      var count = rsBlock[i * 3 + 0];
+      var totalCount = rsBlock[i * 3 + 1];
+      var dataCount = rsBlock[i * 3 + 2];
+      for (var j = 0; j < count; j++) list.push({ totalCount: totalCount, dataCount: dataCount });
+    }
+    return list;
+  };
+  function getRsBlockTable(typeNumber, errorCorrectionLevel) {
+    switch (errorCorrectionLevel) {
+      case QRErrorCorrectionLevel.L: return RS_BLOCK_TABLE[(typeNumber - 1) * 4 + 0];
+      case QRErrorCorrectionLevel.M: return RS_BLOCK_TABLE[(typeNumber - 1) * 4 + 1];
+      case QRErrorCorrectionLevel.Q: return RS_BLOCK_TABLE[(typeNumber - 1) * 4 + 2];
+      case QRErrorCorrectionLevel.H: return RS_BLOCK_TABLE[(typeNumber - 1) * 4 + 3];
+      default: return undefined;
+    }
+  }
+  return _this;
+})();
+
+window.qrcode = qrcode;
+})(window);
+</script>
+
+<!-- ============================================
+     MAIN APP runs AFTER library loads
+     ============================================ -->
+<script>
+(function(){
+'use strict';
+
+function init() {
+  /* ===== THEME ===== */
+  (function(){
+    try {
+      var t = localStorage.getItem('theme');
+      var d = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (t === 'dark' || (!t && d)) document.documentElement.setAttribute('data-theme', 'dark');
+      else if (t === 'light') document.documentElement.setAttribute('data-theme', 'light');
+    } catch(e){}
+  })();
+
+  var themeBtn = document.querySelector('.theme-btn');
+  if (themeBtn) {
+    themeBtn.addEventListener('click', function(){
+      var h = document.documentElement;
+      var c = h.getAttribute('data-theme');
+      var d = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      var n = c === 'dark' ? 'light' : c === 'light' ? 'dark' : (d ? 'light' : 'dark');
+      h.setAttribute('data-theme', n);
+      try { localStorage.setItem('theme', n); } catch(e){}
+    });
+  }
+
+  /* ===== HELPERS ===== */
+  function $(s, p) { return (p || document).querySelector(s); }
+  function $$(s, p) { return Array.prototype.slice.call((p || document).querySelectorAll(s)); }
+
+  function showToast(msg, type, duration) {
+    type = type || 'info';
+    duration = duration || 3000;
+    var t = $('#toast');
+    if (!t) return;
+    t.className = 'toast visible' + (type !== 'info' ? ' ' + type : '');
+    t.textContent = msg;
+    clearTimeout(t._timer);
+    t._timer = setTimeout(function(){ t.classList.remove('visible'); }, duration);
+  }
+
+  /* ===== STATE ===== */
+  var state = {
+    type: 'url',
+    size: 400,
+    ecLevel: 'M',
+    fg: '#000000',
+    bg: '#ffffff',
+    logoImg: null
+  };
+
+  /* ===== DOM ===== */
+  var qrCanvas = $('#qrCanvas');
+  var previewSize = $('#previewSize');
+  var sizeSelect = $('#sizeSelect');
+  var ecLevel = $('#ecLevel');
+  var fgColor = $('#fgColor');
+  var bgColor = $('#bgColor');
+  var logoUpload = $('#logoUpload');
+  var logoInput = $('#logoInput');
+  var logoText = $('#logoText');
+  var previewLogo = $('#previewLogo');
+  var previewLogoImg = $('#previewLogoImg');
+
+  if (!qrCanvas) { console.error('QR canvas not found'); return; }
+
+  /* ===== TYPE TABS ===== */
+  $$('.type-tab').forEach(function(tab){
+    tab.addEventListener('click', function(){
+      $$('.type-tab').forEach(function(t){ t.classList.remove('active'); });
+      tab.classList.add('active');
+      state.type = tab.dataset.type;
+      $$('.type-panel').forEach(function(p){
+        p.classList.toggle('active', p.dataset.panel === state.type);
+      });
+      render();
+    });
+  });
+
+  /* ===== BUILD CONTENT ===== */
+  function buildContent() {
+    var type = state.type;
+    if (type === 'url') {
+      var el = $('#urlInput');
+      return el ? el.value.trim() : '';
+    }
+    if (type === 'text') {
+      var el = $('#textInput');
+      return el ? el.value.trim() : '';
+    }
+    if (type === 'email') {
+      var to = $('#emailTo') ? $('#emailTo').value.trim() : '';
+      if (!to) return '';
+      var subj = $('#emailSubject') ? $('#emailSubject').value.trim() : '';
+      var body = $('#emailBody') ? $('#emailBody').value.trim() : '';
+      var url = 'mailto:' + to;
+      var params = [];
+      if (subj) params.push('subject=' + encodeURIComponent(subj));
+      if (body) params.push('body=' + encodeURIComponent(body));
+      if (params.length) url += '?' + params.join('&');
+      return url;
+    }
+    if (type === 'phone') {
+      var el = $('#phoneNumber');
+      return 'tel:' + (el ? el.value.trim().replace(/\s/g, '') : '');
+    }
+    if (type === 'sms') {
+      var num = $('#smsNumber') ? $('#smsNumber').value.trim().replace(/\s/g, '') : '';
+      var msg = $('#smsMessage') ? $('#smsMessage').value.trim() : '';
+      return 'SMSTO:' + num + ':' + msg;
+    }
+    if (type === 'wifi') {
+      var ssid = $('#wifiSSID') ? $('#wifiSSID').value.trim() : '';
+      var pass = $('#wifiPass') ? $('#wifiPass').value : '';
+      var enc = $('#wifiEncryption') ? $('#wifiEncryption').value : 'WPA';
+      return 'WIFI:T:' + enc + ';S:' + ssid + ';P:' + pass + ';;';
+    }
+    if (type === 'vcard') {
+      var first = $('#vcFirst') ? $('#vcFirst').value.trim() : '';
+      var last = $('#vcLast') ? $('#vcLast').value.trim() : '';
+      var phone = $('#vcPhone') ? $('#vcPhone').value.trim() : '';
+      var email = $('#vcEmail') ? $('#vcEmail').value.trim() : '';
+      var company = $('#vcCompany') ? $('#vcCompany').value.trim() : '';
+      var website = $('#vcWebsite') ? $('#vcWebsite').value.trim() : '';
+      var v = 'BEGIN:VCARD\nVERSION:3.0\n';
+      v += 'N:' + last + ';' + first + '\n';
+      v += 'FN:' + first + ' ' + last + '\n';
+      if (company) v += 'ORG:' + company + '\n';
+      if (phone) v += 'TEL:' + phone + '\n';
+      if (email) v += 'EMAIL:' + email + '\n';
+      if (website) v += 'URL:' + website + '\n';
+      v += 'END:VCARD';
+      return v;
+    }
+    return '';
+  }
+
+  /* ===== RENDER ===== */
+  function render() {
+    if (typeof window.qrcode !== 'function') {
+      console.error('QR library not loaded');
+      return;
+    }
+
+    var content = buildContent();
+    if (!content) {
+      qrCanvas.width = state.size;
+      qrCanvas.height = state.size;
+      var ctx0 = qrCanvas.getContext('2d');
+      ctx0.fillStyle = '#f9fafb';
+      ctx0.fillRect(0, 0, state.size, state.size);
+      ctx0.fillStyle = '#9ca3af';
+      ctx0.font = '14px Inter, sans-serif';
+      ctx0.textAlign = 'center';
+      ctx0.textBaseline = 'middle';
+      ctx0.fillText('Enter content above', state.size / 2, state.size / 2);
+      previewSize.textContent = state.size + ' × ' + state.size + ' px';
+      return;
+    }
+
+    try {
+      var qr = window.qrcode(0, state.ecLevel);
+      var mode = 'Byte';
+      if (/^\d+$/.test(content)) mode = 'Numeric';
+      else if (/^[0-9A-Z $%*+\-./:]+$/.test(content)) mode = 'Alphanumeric';
+      qr.addData(content, mode);
+      qr.make();
+
+      var count = qr.getModuleCount();
+      var size = state.size;
+      var cellSize = Math.floor(size / count);
+      var actualSize = cellSize * count;
+      var margin = Math.floor((size - actualSize) / 2);
+
+      qrCanvas.width = size;
+      qrCanvas.height = size;
+      var ctx = qrCanvas.getContext('2d');
+
+      ctx.fillStyle = state.bg;
+      ctx.fillRect(0, 0, size, size);
+
+      ctx.fillStyle = state.fg;
+      for (var row = 0; row < count; row++) {
+        for (var col = 0; col < count; col++) {
+          if (qr.isDark(row, col)) {
+            ctx.fillRect(margin + col * cellSize, margin + row * cellSize, cellSize, cellSize);
+          }
+        }
+      }
+
+      if (state.logoImg) drawLogoOnCanvas();
+
+      previewSize.textContent = size + ' × ' + size + ' px';
+    } catch (err) {
+      console.error('QR generation error:', err);
+      qrCanvas.width = state.size;
+      qrCanvas.height = state.size;
+      var ctxE = qrCanvas.getContext('2d');
+      ctxE.fillStyle = '#fef2f2';
+      ctxE.fillRect(0, 0, state.size, state.size);
+      ctxE.fillStyle = '#ef4444';
+      ctxE.font = '13px Inter, sans-serif';
+      ctxE.textAlign = 'center';
+      ctxE.textBaseline = 'middle';
+      ctxE.fillText('Content too long try shorter text', state.size / 2, state.size / 2);
+    }
+  }
+
+  function drawLogoOnCanvas() {
+    if (!state.logoImg) return;
+    var size = state.size;
+    var logoSize = Math.round(size * 0.22);
+    var logoX = (size - logoSize) / 2;
+    var logoY = (size - logoSize) / 2;
+    var ctx = qrCanvas.getContext('2d');
+    ctx.fillStyle = state.bg;
+    ctx.beginPath();
+    ctx.arc(size / 2, size / 2, logoSize / 2 + 4, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.drawImage(state.logoImg, logoX, logoY, logoSize, logoSize);
+  }
+
+  /* ===== LISTENERS ===== */
+  $$('.type-panel input, .type-panel textarea, .type-panel select').forEach(function(el){
+    el.addEventListener('input', render);
+    el.addEventListener('change', render);
+  });
+
+  if (sizeSelect) {
+    sizeSelect.addEventListener('change', function(){
+      state.size = parseInt(sizeSelect.value, 10);
+      render();
+    });
+  }
+
+  if (ecLevel) {
+    ecLevel.addEventListener('change', function(){
+      state.ecLevel = ecLevel.value;
+      render();
+    });
+  }
+
+  if (fgColor) {
+    fgColor.addEventListener('input', function(){
+      state.fg = fgColor.value;
+      render();
+    });
+  }
+
+  if (bgColor) {
+    bgColor.addEventListener('input', function(){
+      state.bg = bgColor.value;
+      render();
+    });
+  }
+
+  /* ===== LOGO UPLOAD ===== */
+  if (logoUpload) {
+    logoUpload.addEventListener('click', function(){ logoInput.click(); });
+  }
+
+  if (logoInput) {
+    logoInput.addEventListener('change', function(e){
+      var f = e.target.files[0];
+      if (!f) return;
+      var reader = new FileReader();
+      reader.onload = function(ev) {
+        var img = new Image();
+        img.onload = function() {
+          state.logoImg = img;
+          logoUpload.classList.add('has-image');
+          logoText.textContent = '✓ ' + f.name;
+          previewLogo.style.display = 'flex';
+          previewLogoImg.src = ev.target.result;
+          render();
+        };
+        img.src = ev.target.result;
+      };
+      reader.readAsDataURL(f);
+    });
+  }
+
+  /* ===== DOWNLOAD PNG ===== */
+  var downloadPngBtn = $('#downloadPngBtn');
+  if (downloadPngBtn) {
+    downloadPngBtn.addEventListener('click', function(){
+      qrCanvas.toBlob(function(blob){
+        var url = URL.createObjectURL(blob);
+        var a = document.createElement('a');
+        a.href = url;
+        a.download = 'qrcode-' + state.type + '-' + state.size + 'x' + state.size + '.png';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        setTimeout(function(){ URL.revokeObjectURL(url); }, 1000);
+        showToast('✅ QR code downloaded!', 'success');
+      }, 'image/png');
+    });
+  }
+
+  /* ===== DOWNLOAD SVG ===== */
+  var downloadSvgBtn = $('#downloadSvgBtn');
+  if (downloadSvgBtn) {
+    downloadSvgBtn.addEventListener('click', function(){
+      var content = buildContent();
+      if (!content) { showToast('Enter content first', 'error'); return; }
+      try {
+        var qr = window.qrcode(0, state.ecLevel);
+        var mode = 'Byte';
+        if (/^\d+$/.test(content)) mode = 'Numeric';
+        else if (/^[0-9A-Z $%*+\-./:]+$/.test(content)) mode = 'Alphanumeric';
+        qr.addData(content, mode);
+        qr.make();
+
+        var count = qr.getModuleCount();
+        var viewSize = state.size;
+        var margin = Math.round(viewSize * 0.04);
+        var cellSize = (viewSize - margin * 2) / count;
+
+        var svg = '<svg xmlns="http://www.w3.org/2000/svg" width="' + viewSize + '" height="' + viewSize + '" viewBox="0 0 ' + viewSize + ' ' + viewSize + '">';
+        svg += '<rect width="100%" height="100%" fill="' + state.bg + '"/>';
+        svg += '<g fill="' + state.fg + '">';
+        for (var row = 0; row < count; row++) {
+          for (var col = 0; col < count; col++) {
+            if (qr.isDark(row, col)) {
+              var x = margin + col * cellSize;
+              var y = margin + row * cellSize;
+              svg += '<rect x="' + x.toFixed(2) + '" y="' + y.toFixed(2) + '" width="' + cellSize.toFixed(2) + '" height="' + cellSize.toFixed(2) + '"/>';
+            }
+          }
+        }
+        svg += '</g>';
+        if (state.logoImg) {
+          var logoDataUrl = previewLogoImg.src;
+          var logoSize = viewSize * 0.22;
+          var logoX = (viewSize - logoSize) / 2;
+          var logoY = (viewSize - logoSize) / 2;
+          svg += '<circle cx="' + (viewSize / 2) + '" cy="' + (viewSize / 2) + '" r="' + (logoSize / 2 + 4) + '" fill="' + state.bg + '"/>';
+          svg += '<image href="' + logoDataUrl + '" x="' + logoX + '" y="' + logoY + '" width="' + logoSize + '" height="' + logoSize + '"/>';
+        }
+        svg += '</svg>';
+
+        var blob = new Blob([svg], { type: 'image/svg+xml' });
+        var url = URL.createObjectURL(blob);
+        var a = document.createElement('a');
+        a.href = url;
+        a.download = 'qrcode-' + state.type + '.svg';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        setTimeout(function(){ URL.revokeObjectURL(url); }, 1000);
+        showToast('✅ SVG downloaded!', 'success');
+      } catch (err) {
+        console.error(err);
+        showToast('SVG generation failed', 'error');
+      }
+    });
+  }
+
+  /* ===== COPY IMAGE ===== */
+  var copyBtn = $('#copyBtn');
+  if (copyBtn) {
+    copyBtn.addEventListener('click', function(){
+      qrCanvas.toBlob(function(blob){
+        if (navigator.clipboard && navigator.clipboard.write) {
+          navigator.clipboard.write([new ClipboardItem({ 'image/png': blob })])
+            .then(function(){ showToast('✅ QR code copied!', 'success'); })
+            .catch(function(){ showToast('Copy failed try downloading', 'error'); });
+        } else {
+          showToast('Clipboard not supported in this browser', 'error');
+        }
+      }, 'image/png');
+    });
+  }
+
+  /* ===== FAQ ===== */
+  $$('.faq-question').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var item = btn.parentElement;
+      var isOpen = item.classList.contains('open');
+      $$('.faq-item').forEach(function(i){ i.classList.remove('open'); });
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+
+  /* ===== INITIAL RENDER ===== */
+  render();
+}
+
+/* Run after DOM is ready */
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', init);
+} else {
+  init();
+}
+
+})();
+</script>
+
+</body>
+</html>

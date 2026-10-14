@@ -1,0 +1,1198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2563eb">
+
+<title>PDF to Grayscale Converter - Convert Color PDF to Black & White Free | BigToolz</title>
+<meta name="description" content="Convert color PDF to grayscale online free. Reduce file size, prepare for B&W printing, or convert PDF pages to grayscale images. No upload, works in your browser.">
+<meta name="keywords" content="pdf to grayscale, pdf to black and white, grayscale pdf converter, pdf grayscale online, color pdf to bw, reduce pdf size grayscale">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://bigtoolz.com/tools/pdf-tools/convert-pdf/pdf-to-grayscale/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="PDF to Grayscale Converter - Free Online Tool | BigToolz">
+<meta property="og:description" content="Convert color PDF to grayscale smaller file, B&W print ready.">
+<meta property="og:url" content="https://bigtoolz.com/tools/pdf-tools/convert-pdf/pdf-to-grayscale/">
+<meta property="og:image" content="https://bigtoolz.com/assets/images/og-image.jpg">
+<meta property="og:site_name" content="BigToolz">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="PDF to Grayscale - BigToolz">
+<meta name="twitter:description" content="Convert color PDF to grayscale instantly free, no upload.">
+<meta name="twitter:image" content="https://bigtoolz.com/assets/images/twitter-card.jpg">
+
+<link rel="icon" href="/assets/images/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/images/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#f8f9fc;color:#1a1a2e;overflow-x:hidden;line-height:1.5}
+
+  .header{background:#fff;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;position:sticky;top:0;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+  .header-left{display:flex;align-items:center;gap:40px}
+  .logo{display:flex;align-items:center;gap:8px;font-size:22px;font-weight:800;color:#1a1a2e;text-decoration:none}
+  .logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#3b82f6,#2563eb);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px}
+  .logo span{color:#2563eb}
+  .nav{display:flex;align-items:center;gap:28px;list-style:none}
+  .nav a{text-decoration:none;color:#4b5563;font-size:14px;font-weight:500;transition:color .2s}
+  .nav a:hover,.nav a.active{color:#2563eb}
+  .header-right{display:flex;align-items:center;gap:16px}
+  .search-btn,.theme-btn{width:36px;height:36px;border-radius:50%;border:none;background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#4b5563}
+  .search-btn:hover,.theme-btn:hover{background:#f3f4f6}
+  .bookmark-btn{display:flex;align-items:center;gap:8px;background:#2563eb;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
+  .bookmark-btn:hover{background:#1d4ed8}
+
+  .hero{background:linear-gradient(135deg,#0a0e27 0%,#1a1a4e 40%,#2d1b69 70%,#4c1d95 100%);padding:40px 40px 60px;position:relative;overflow:hidden;color:#fff}
+  .hero::before{content:'';position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(100,116,139,.35) 0%,transparent 70%);border-radius:50%}
+  .hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+  .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px;flex-wrap:wrap}
+  .breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none}
+  .breadcrumb a:hover{color:#fff}
+  .breadcrumb .sep{color:rgba(255,255,255,.4)}
+  .breadcrumb .current{color:#fff;font-weight:500}
+  .hero-title-row{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+  .hero-icon{width:60px;height:60px;background:#64748b;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;color:#fff;flex-shrink:0;box-shadow:0 8px 24px rgba(100,116,139,.4);font-family:'JetBrains Mono',monospace}
+  .hero-title{font-size:42px;font-weight:800;line-height:1.15}
+  .hero-title .blue{color:#94a3b8}
+  .hero-desc{font-size:15px;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:24px;max-width:560px}
+  .hero-features{display:flex;gap:24px;flex-wrap:wrap}
+  .hero-feature{display:flex;align-items:center;gap:6px;font-size:13px;color:#fff;font-weight:500}
+  .hero-feature .check{width:18px;height:18px;border-radius:50%;background:#64748b;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;flex-shrink:0}
+
+  .main-content{max-width:1200px;margin:0 auto;padding:40px;display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start}
+  .tool-content{min-width:0}
+
+  .workspace{background:#fff;border-radius:16px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,.06);border:1px solid #e5e7eb;margin-bottom:24px}
+
+  .dropzone{border:2px dashed #cbd5e1;border-radius:12px;padding:50px 30px;text-align:center;background:#f8fafc;margin-bottom:24px;transition:all .2s;cursor:pointer}
+  .dropzone:hover,.dropzone.dragover{border-color:#64748b;background:#f1f5f9}
+  .dropzone-icon{width:60px;height:60px;background:linear-gradient(135deg,#64748b,#475569);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;color:#fff;font-size:26px;transition:transform .2s}
+  .dropzone:hover .dropzone-icon{transform:translateY(-4px)}
+  .dropzone-title{font-size:16px;font-weight:700;color:#1a1a2e;margin-bottom:8px}
+  .dropzone-sub{font-size:14px;color:#6b7280;margin-bottom:20px}
+  .dropzone-sub a{color:#64748b;font-weight:600;text-decoration:none}
+  .choose-btn{display:inline-flex;align-items:center;gap:8px;background:#64748b;color:#fff;border:none;padding:12px 28px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;transition:background .2s}
+  .choose-btn:hover{background:#475569}
+  .dropzone-info{font-size:12px;color:#9ca3af;display:flex;align-items:center;justify-content:center;gap:8px;margin-top:16px;flex-wrap:wrap}
+  .dropzone-info .divider{color:#d1d5db}
+  .file-input{display:none}
+
+  /* PDF info */
+  .pdf-info{display:none;background:#f8fafc;border-radius:12px;padding:16px 20px;margin-bottom:20px;border:1px solid #cbd5e1;align-items:center;gap:16px;flex-wrap:wrap}
+  .pdf-info.visible{display:flex}
+  .pdf-info-icon{width:44px;height:44px;background:#64748b;border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:18px;flex-shrink:0}
+  .pdf-info-details{flex:1;min-width:0}
+  .pdf-info-name{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .pdf-info-meta{font-size:12px;color:#6b7280}
+
+  .options{background:#f8fafc;border-radius:12px;padding:20px;margin-bottom:20px;border:1px solid #cbd5e1}
+  .options-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+
+  /* Output type tabs */
+  .type-tabs{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:16px}
+  .type-btn{padding:12px 10px;background:#fff;border:2px solid #e5e7eb;border-radius:10px;font-size:12px;font-weight:600;color:#4b5563;cursor:pointer;font-family:inherit;transition:all .2s;text-align:center;line-height:1.3}
+  .type-btn:hover{border-color:#64748b;background:#f8fafc}
+  .type-btn.active{border-color:#64748b;background:#64748b;color:#fff}
+  .type-btn-title{font-size:13px;font-weight:700;margin-bottom:2px}
+  .type-btn-desc{font-size:10px;opacity:.75}
+
+  .options-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .option-group label{display:block;font-size:12px;font-weight:600;color:#4b5563;margin-bottom:6px}
+  .option-group select,.option-group input[type="text"]{width:100%;padding:10px 12px;border:1px solid #e5e7eb;border-radius:8px;font-size:13px;font-family:inherit;color:#1a1a2e;background:#fff;outline:none;transition:border-color .2s}
+  .option-group select:focus,.option-group input:focus{border-color:#64748b;box-shadow:0 0 0 3px rgba(100,116,139,.1)}
+
+  /* Toggle */
+  .toggle-row{display:flex;align-items:center;justify-content:space-between;padding:12px 14px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;gap:12px;margin-top:16px}
+  .toggle-info{display:flex;flex-direction:column;gap:2px}
+  .toggle-title{font-size:13px;font-weight:700;color:#1a1a2e}
+  .toggle-desc{font-size:11px;color:#6b7280;line-height:1.4}
+  .toggle-switch{position:relative;width:44px;height:24px;background:#d1d5db;border-radius:12px;cursor:pointer;transition:background .2s;flex-shrink:0}
+  .toggle-switch::after{content:'';position:absolute;top:2px;left:2px;width:20px;height:20px;background:#fff;border-radius:50%;transition:transform .2s;box-shadow:0 1px 3px rgba(0,0,0,.15)}
+  .toggle-switch.on{background:#64748b}
+  .toggle-switch.on::after{transform:translateX(20px)}
+
+  .actions{display:flex;gap:12px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 28px;border-radius:10px;font-size:15px;font-weight:700;font-family:inherit;cursor:pointer;border:none;transition:all .2s;text-decoration:none}
+  .btn-primary{background:#64748b;color:#fff;flex:1;box-shadow:0 4px 12px rgba(100,116,139,.2)}
+  .btn-primary:hover:not(:disabled){background:#475569;transform:translateY(-2px);box-shadow:0 6px 20px rgba(100,116,139,.3)}
+  .btn-primary:disabled{opacity:.5;cursor:not-allowed;transform:none}
+  .btn-secondary{background:#fff;color:#64748b;border:1px solid #e5e7eb}
+  .btn-secondary:hover{border-color:#64748b;background:#f8fafc}
+  .btn-success{background:#10b981;color:#fff}
+  .btn-success:hover{background:#059669}
+
+  .progress{display:none;margin-top:20px}
+  .progress.visible{display:block}
+  .progress-bar{width:100%;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden;margin-bottom:8px}
+  .progress-fill{height:100%;background:linear-gradient(90deg,#94a3b8,#64748b);border-radius:4px;width:0%;transition:width .3s ease}
+  .progress-text{font-size:13px;color:#6b7280;text-align:center;font-weight:500}
+
+  .results{display:none;margin-top:20px}
+  .results.visible{display:block}
+  .results-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:12px}
+  .results-title{font-size:16px;font-weight:700;color:#1a1a2e;display:flex;align-items:center;gap:8px}
+  .results-title .success-icon{width:24px;height:24px;background:#10b981;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px}
+
+  /* Single PDF result */
+  .pdf-single-result{background:#f8fafc;border:1px solid #cbd5e1;border-radius:12px;padding:20px;margin-bottom:16px;display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+  .pdf-single-icon{width:64px;height:64px;background:#64748b;border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:28px;flex-shrink:0}
+  .pdf-single-info{flex:1;min-width:0}
+  .pdf-single-name{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:4px}
+  .pdf-single-meta{font-size:12px;color:#6b7280;display:flex;gap:12px;flex-wrap:wrap}
+
+  /* Image grid */
+  .file-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:12px}
+  .file-item{background:#f8fafc;border:1px solid #cbd5e1;border-radius:12px;padding:10px;transition:border-color .2s;text-align:center}
+  .file-item:hover{border-color:#64748b}
+  .file-thumb{width:100%;aspect-ratio:1;border-radius:8px;background:#fff;border:1px solid #e5e7eb;overflow:hidden;margin-bottom:8px;position:relative;display:flex;align-items:center;justify-content:center}
+  .file-thumb img{width:100%;height:100%;object-fit:contain}
+  .file-page-badge{position:absolute;top:6px;left:6px;background:rgba(100,116,139,.95);color:#fff;font-size:10px;font-weight:700;padding:3px 8px;border-radius:6px}
+  .file-name{font-size:11px;font-weight:600;color:#1a1a2e;margin-bottom:6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .file-actions{display:flex;gap:4px;justify-content:center}
+  .icon-btn{width:32px;height:32px;border-radius:6px;border:1px solid #e5e7eb;background:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#4b5563;transition:all .2s}
+  .icon-btn:hover{border-color:#64748b;color:#64748b;background:#f8fafc}
+  .icon-btn.download{background:#10b981;color:#fff;border-color:#10b981}
+  .icon-btn.download:hover{background:#059669;border-color:#059669;color:#fff}
+
+  .seo-content{background:#fff;border-radius:16px;padding:32px;border:1px solid #e5e7eb;margin-bottom:24px}
+  .seo-content h2{font-size:22px;font-weight:800;color:#1a1a2e;margin-bottom:14px;margin-top:28px;display:flex;align-items:center;gap:10px}
+  .seo-content h2:first-child{margin-top:0}
+  .seo-content h3{font-size:16px;font-weight:700;color:#1a1a2e;margin:20px 0 10px}
+  .seo-content p{font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:14px}
+  .seo-content ul{list-style:none;padding-left:0;margin-bottom:16px}
+  .seo-content ul li{position:relative;padding-left:24px;font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:8px}
+  .seo-content ul li::before{content:'';position:absolute;left:6px;top:12px;width:6px;height:6px;background:#64748b;border-radius:50%}
+  .seo-content a{color:#2563eb;text-decoration:none;font-weight:600}
+  .seo-content a:hover{text-decoration:underline}
+  .seo-content strong{color:#1a1a2e;font-weight:700}
+  .seo-content code{background:#f1f5f9;padding:2px 6px;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:13px;color:#0f172a;border:1px solid #e2e8f0}
+
+  .how-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:20px}
+  .how-step{background:#f8fafc;border-radius:12px;padding:20px;border:1px solid #cbd5e1}
+  .how-step-num{width:36px;height:36px;border-radius:50%;background:#64748b;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;margin-bottom:12px}
+  .how-step-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+  .how-step-desc{font-size:13px;color:#6b7280;line-height:1.6}
+
+  .faq-item{background:#f8fafc;border:1px solid #cbd5e1;border-radius:12px;margin-bottom:10px;overflow:hidden;transition:border-color .2s}
+  .faq-item:hover{border-color:#64748b}
+  .faq-question{width:100%;background:none;border:none;padding:18px 22px;font-size:15px;font-weight:700;color:#1a1a2e;text-align:left;cursor:pointer;font-family:inherit;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .faq-question .chev{font-size:12px;color:#64748b;transition:transform .2s;flex-shrink:0}
+  .faq-item.open .faq-question .chev{transform:rotate(180deg)}
+  .faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 22px}
+  .faq-item.open .faq-answer{max-height:500px;padding-bottom:18px}
+  .faq-answer p{font-size:14px;color:#6b7280;line-height:1.7;margin:0}
+
+  .sidebar{background:#fff;border-radius:16px;padding:24px;border:1px solid #e5e7eb;position:sticky;top:80px;margin-bottom:24px}
+  .sidebar-header{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:800;color:#1a1a2e;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid #f3f4f6}
+  .sidebar-list{display:flex;flex-direction:column;gap:8px}
+  .sidebar-item{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;cursor:pointer;transition:background .2s;text-decoration:none;color:inherit;border:1px solid #f3f4f6}
+  .sidebar-item:hover{background:#f8fafc;border-color:#cbd5e1}
+  .sidebar-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;flex-shrink:0}
+  .sidebar-info{flex:1;min-width:0}
+  .sidebar-title{font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:2px}
+  .sidebar-desc{font-size:11px;color:#9ca3af;line-height:1.4}
+
+  .footer{background:#0a0e27;padding:60px 40px 30px;color:#fff;margin-top:40px}
+  .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:40px}
+  .footer-brand{display:flex;align-items:center;gap:8px;font-size:20px;font-weight:800;margin-bottom:12px}
+  .footer-brand span{color:#60a5fa}
+  .footer-tagline{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px}
+  .footer-social{display:flex;gap:12px}
+  .footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:16px;transition:background .2s}
+  .footer-social a:hover{background:rgba(255,255,255,.2)}
+  .footer-heading{font-size:14px;font-weight:700;margin-bottom:20px;color:#fff}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .footer-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;transition:color .2s}
+  .footer-links a:hover{color:#60a5fa}
+  .footer-bottom{max-width:1200px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  .footer-bottom-left{display:flex;gap:20px;font-size:12px;color:rgba(255,255,255,.5)}
+  .footer-bottom-right,.footer-bottom-links a{font-size:12px;color:rgba(255,255,255,.5);text-decoration:none}
+  .footer-bottom-links{display:flex;gap:20px}
+
+  .toast{position:fixed;bottom:24px;right:24px;background:#1a1a2e;color:#fff;padding:14px 20px;border-radius:10px;font-size:13px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:3000;transform:translateY(200%);transition:transform .3s ease;max-width:320px}
+  .toast.visible{transform:translateY(0)}
+  .toast.success{background:#10b981}
+  .toast.error{background:#ef4444}
+  .toast.info{background:#3b82f6}
+
+  @media(max-width:1024px){
+    .main-content{grid-template-columns:1fr;padding:24px 20px}
+    .sidebar{position:static}
+    .how-steps{grid-template-columns:repeat(2,1fr)}
+    .options-grid{grid-template-columns:1fr 1fr}
+  }
+  @media(max-width:768px){
+    .header{padding:0 20px}.nav{display:none}
+    .hero{padding:24px 20px 40px}
+    .hero-title{font-size:28px}
+    .hero-icon{width:48px;height:48px;font-size:22px}
+    .hero-title-row{flex-direction:column;align-items:flex-start;gap:12px}
+    .main-content{padding:20px 16px}
+    .workspace{padding:20px}
+    .dropzone{padding:32px 16px}
+    .how-steps{grid-template-columns:1fr}
+    .seo-content{padding:20px}
+    .footer-inner{grid-template-columns:1fr 1fr}
+    .options-grid{grid-template-columns:1fr}
+    .file-list{grid-template-columns:repeat(auto-fill,minmax(110px,1fr))}
+    .toast{left:16px;right:16px;bottom:16px;max-width:none}
+    .type-tabs{grid-template-columns:1fr}
+  }
+  @media(max-width:576px){
+    .header{padding:0 16px}.header-right .search-btn,.header-right .theme-btn{display:none}
+    .hero-title{font-size:24px}
+    .actions{flex-direction:column}
+    .btn{width:100%}
+    .btn-primary{flex:none}
+    .footer-inner{grid-template-columns:1fr}
+    .footer-bottom{flex-direction:column;text-align:center}
+  }
+
+  html[data-theme="dark"] body{background:#0f172a;color:#f1f5f9}
+  html[data-theme="dark"] .header,html[data-theme="dark"] .workspace,html[data-theme="dark"] .seo-content,html[data-theme="dark"] .sidebar{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .logo,html[data-theme="dark"] .hero-title,html[data-theme="dark"] .seo-content h2,html[data-theme="dark"] .seo-content h3,html[data-theme="dark"] .faq-question,html[data-theme="dark"] .results-title,html[data-theme="dark"] .sidebar-header,html[data-theme="dark"] .sidebar-title,html[data-theme="dark"] .options-title,html[data-theme="dark"] .pdf-info-name,html[data-theme="dark"] .toggle-title,html[data-theme="dark"] .pdf-single-name{color:#f1f5f9}
+  html[data-theme="dark"] .nav a{color:#cbd5e1}
+  html[data-theme="dark"] .dropzone{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .options,html[data-theme="dark"] .how-step,html[data-theme="dark"] .faq-item,html[data-theme="dark"] .file-item,html[data-theme="dark"] .file-thumb,html[data-theme="dark"] .pdf-info,html[data-theme="dark"] .toggle-row,html[data-theme="dark"] .type-btn,html[data-theme="dark"] .pdf-single-result{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .type-btn{color:#cbd5e1}
+  html[data-theme="dark"] .type-btn.active{background:#334155;color:#fff;border-color:#334155}
+  html[data-theme="dark"] .option-group select,html[data-theme="dark"] .option-group input{background:#1e293b;border-color:#334155;color:#f1f5f9}
+  html[data-theme="dark"] .seo-content p,html[data-theme="dark"] .seo-content ul li,html[data-theme="dark"] .faq-answer p,html[data-theme="dark"] .pdf-info-meta,html[data-theme="dark"] .pdf-single-meta{color:#cbd5e1}
+  html[data-theme="dark"] .seo-content code{background:#020617;color:#94a3b8;border-color:#334155}
+  html[data-theme="dark"] .icon-btn{background:#0f172a;border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .file-name{color:#f1f5f9}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type": "SoftwareApplication", "name": "PDF to Grayscale Converter", "url": "https://bigtoolz.com/tools/pdf-tools/convert-pdf/pdf-to-grayscale/", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any (Web-based)", "description": "Free online PDF to grayscale converter convert color PDF to black & white. Reduce file size, prepare for B&W printing. Works in your browser.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.8", "ratingCount": "876"}},
+    {"@type": "HowTo", "name": "How to Convert PDF to Grayscale", "step": [
+      {"@type": "HowToStep", "name": "Upload PDF", "text": "Drag & drop or click to select a PDF file."},
+      {"@type": "HowToStep", "name": "Choose Settings", "text": "Pick output type (PDF or images), scale, and grayscale mode."},
+      {"@type": "HowToStep", "name": "Convert", "text": "Click Convert to Grayscale."},
+      {"@type": "HowToStep", "name": "Download", "text": "Download the grayscale PDF or images."}
+    ]},
+    {"@type": "FAQPage", "mainEntity": [
+      {"@type": "Question", "name": "How do I convert a color PDF to grayscale?", "acceptedAnswer": {"@type": "Answer", "text": "Upload your PDF, choose Grayscale PDF as output type, then click Convert. The B&W PDF downloads instantly free, no signup."}},
+      {"@type": "Question", "name": "Does grayscale reduce PDF file size?", "acceptedAnswer": {"@type": "Answer", "text": "Usually yes removing color information can significantly reduce file size, especially for PDFs with colorful graphics. Text-only PDFs see smaller savings."}},
+      {"@type": "Question", "name": "Will grayscale affect readability?", "acceptedAnswer": {"@type": "Answer", "text": "Not for text. Black text on white remains identical. Colored backgrounds and images become shades of gray most remain perfectly readable. Enable contrast boost if the result looks washed out."}},
+      {"@type": "Question", "name": "Can I get grayscale images instead of a PDF?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Choose Image output type, and each page becomes a separate grayscale JPG, PNG, or WebP image."}},
+      {"@type": "Question", "name": "Are my PDFs uploaded to a server?", "acceptedAnswer": {"@type": "Answer", "text": "No. All conversion happens in your browser using pdf.js and pdf-lib. Your PDF never leaves your device."}}
+    ]},
+    {"@type": "BreadcrumbList", "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bigtoolz.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://bigtoolz.com/tools/"},
+      {"@type": "ListItem", "position": 3, "name": "PDF Tools", "item": "https://bigtoolz.com/tools/pdf-tools/"},
+      {"@type": "ListItem", "position": 4, "name": "Convert PDF", "item": "https://bigtoolz.com/tools/pdf-tools/convert-pdf/"},
+      {"@type": "ListItem", "position": 5, "name": "PDF to Grayscale", "item": "https://bigtoolz.com/tools/pdf-tools/convert-pdf/pdf-to-grayscale/"}
+    ]}
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-left">
+    <a href="/" class="logo"><div class="logo-icon">⚒</div>BigToolz</span></a>
+    <nav><ul class="nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/tools/" class="active">All Tools</a></li>
+      <li><a href="/tools/categories">Categories</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul></nav>
+  </div>
+  <div class="header-right">
+  
+    <button class="theme-btn" aria-label="Toggle theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
+    
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <nav class="breadcrumb">
+      <a href="/">Home</a><span class="sep">›</span>
+      <a href="/tools/">Tools</a><span class="sep">›</span>
+      <a href="/tools/pdf-tools/">PDF Tools</a><span class="sep">›</span>
+      <a href="/tools/pdf-tools/convert-pdf/">Convert PDF</a><span class="sep">›</span>
+      <span class="current">PDF to Grayscale</span>
+    </nav>
+    <div class="hero-title-row">
+      <div class="hero-icon">◐</div>
+      <h1 class="hero-title">PDF to <span class="blue">Grayscale</span></h1>
+    </div>
+    <p class="hero-desc">
+      Convert color PDF files to black & white (grayscale). Reduce file size, prepare for B&W printing, or extract grayscale images from each page. No upload, 100% private.
+    </p>
+    <div class="hero-features">
+      <div class="hero-feature"><span class="check">✓</span> Grayscale PDF</div>
+      <div class="hero-feature"><span class="check">✓</span> Or Images</div>
+      <div class="hero-feature"><span class="check">✓</span> 3 Modes</div>
+      <div class="hero-feature"><span class="check">✓</span> No Upload</div>
+    </div>
+  </div>
+</section>
+
+<div class="main-content">
+
+  <div class="tool-content">
+
+    <div class="workspace">
+
+      <div class="dropzone" id="dropzone">
+        <div class="dropzone-icon">⬆</div>
+        <div class="dropzone-title">Drag & drop your PDF here</div>
+        <div class="dropzone-sub">or <a href="#" id="browseLink">click to browse files</a></div>
+        <button class="choose-btn" id="chooseBtn" type="button">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/></svg>
+          Choose PDF File
+        </button>
+        <div class="dropzone-info">
+          <span>PDF files only</span>
+          <span class="divider">|</span>
+          <span>Single file at a time</span>
+        </div>
+        <input type="file" id="fileInput" class="file-input" accept=".pdf,application/pdf">
+      </div>
+
+      <div class="pdf-info" id="pdfInfo">
+        <div class="pdf-info-icon">📕</div>
+        <div class="pdf-info-details">
+          <div class="pdf-info-name" id="pdfName">document.pdf</div>
+          <div class="pdf-info-meta" id="pdfMeta">0 pages · 0 KB</div>
+        </div>
+      </div>
+
+      <div class="options">
+        <div class="options-title">⚙️ Conversion Settings</div>
+
+        <div class="type-tabs" id="typeTabs">
+          <button class="type-btn active" data-type="pdf">
+            <div class="type-btn-title">📕 Grayscale PDF</div>
+            <div class="type-btn-desc">Single PDF with B&W pages</div>
+          </button>
+          <button class="type-btn" data-type="images">
+            <div class="type-btn-title">🖼 Grayscale Images</div>
+            <div class="type-btn-desc">Each page as JPG/PNG</div>
+          </button>
+        </div>
+
+        <div class="options-grid" id="pdfOptions">
+          <div class="option-group">
+            <label>Grayscale Mode</label>
+            <select id="grayscaleMode">
+              <option value="luminosity" selected>Luminosity (natural B&W)</option>
+              <option value="classic">Classic (equal RGB weights)</option>
+              <option value="desaturate">Desaturate (HSL based)</option>
+            </select>
+          </div>
+          <div class="option-group">
+            <label>Scale (DPI)</label>
+            <select id="scale">
+              <option value="1">1x (72 DPI - Small)</option>
+              <option value="1.5" selected>1.5x (108 DPI - Balanced)</option>
+              <option value="2">2x (144 DPI - Sharp)</option>
+              <option value="3">3x (216 DPI - Print)</option>
+            </select>
+          </div>
+          <div class="option-group">
+            <label>Page Range</label>
+            <input type="text" id="pageRange" placeholder="All (e.g. 1-3,5,7-9)">
+          </div>
+        </div>
+
+        <div class="options-grid" id="imageOptions" style="display:none;">
+          <div class="option-group">
+            <label>Grayscale Mode</label>
+            <select id="imgGrayscaleMode">
+              <option value="luminosity" selected>Luminosity (natural B&W)</option>
+              <option value="classic">Classic (equal RGB weights)</option>
+              <option value="desaturate">Desaturate (HSL based)</option>
+            </select>
+          </div>
+          <div class="option-group">
+            <label>Output Format</label>
+            <select id="imgFormat">
+              <option value="image/jpeg" selected>JPG (smallest)</option>
+              <option value="image/png">PNG (lossless)</option>
+              <option value="image/webp">WebP (modern)</option>
+            </select>
+          </div>
+          <div class="option-group">
+            <label>Page Range</label>
+            <input type="text" id="imgPageRange" placeholder="All (e.g. 1-3,5,7-9)">
+          </div>
+        </div>
+
+        <div class="toggle-row">
+          <div class="toggle-info">
+            <div class="toggle-title">Boost Contrast</div>
+            <div class="toggle-desc">Increases contrast in grayscale output better for print</div>
+          </div>
+          <div class="toggle-switch" id="contrastToggle" role="switch" aria-checked="false"></div>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button class="btn btn-primary" id="convertBtn" disabled>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2v20M2 12h20"/></svg>
+          Convert to Grayscale
+        </button>
+        <button class="btn btn-secondary" id="clearBtn">Clear</button>
+      </div>
+
+      <div class="progress" id="progress">
+        <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+        <div class="progress-text" id="progressText">Converting...</div>
+      </div>
+
+      <div class="results" id="results">
+        <div class="results-header">
+          <div class="results-title"><span class="success-icon">✓</span> <span id="resultCount">Conversion Complete</span></div>
+          <button class="btn btn-success" id="downloadAllBtn" style="padding:10px 20px;font-size:13px;">⬇ Download All</button>
+        </div>
+
+        <div class="pdf-single-result" id="pdfResult" style="display:none;">
+          <div class="pdf-single-icon">📕</div>
+          <div class="pdf-single-info">
+            <div class="pdf-single-name" id="pdfResultName">grayscale.pdf</div>
+            <div class="pdf-single-meta" id="pdfResultMeta">0 pages · 0 B</div>
+          </div>
+          <div class="file-actions">
+            <button class="icon-btn download" id="downloadPdfBtn" title="Download PDF" style="width:44px;height:44px;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="file-list" id="fileList"></div>
+      </div>
+
+    </div>
+
+    <div class="seo-content">
+
+      <h2>◐ What is PDF to Grayscale Conversion?</h2>
+      <p>
+        <strong>PDF to Grayscale</strong> conversion transforms a color PDF into a black-and-white version, replacing every colored pixel with its corresponding shade of gray. This is useful for <strong>reducing file size</strong>, <strong>preparing documents for black-and-white printing</strong> (which saves ink), and <strong>creating consistent-looking archives</strong> from mixed-color sources.
+      </p>
+      <p>
+        Unlike most online converters, BigToolz processes everything <strong>100% in your browser</strong> using <strong>pdf.js</strong> and <strong>pdf-lib</strong>. Your PDF <strong>never uploaded to any server</strong> complete privacy, instant results.
+      </p>
+
+      <h2>🚀 How to Convert PDF to Grayscale</h2>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-step-num">1</div>
+          <div class="how-step-title">Upload PDF</div>
+          <div class="how-step-desc">Drag & drop or click "Choose PDF File".</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">2</div>
+          <div class="how-step-title">Pick Type</div>
+          <div class="how-step-desc">Grayscale PDF or grayscale images per page.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">3</div>
+          <div class="how-step-title">Convert</div>
+          <div class="how-step-desc">Click "Convert to Grayscale" to process.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">4</div>
+          <div class="how-step-title">Download</div>
+          <div class="how-step-desc">Download the B&W PDF or images.</div>
+        </div>
+      </div>
+
+      <h2>🎯 3 Grayscale Modes Explained</h2>
+      <h3>Luminosity (Recommended)</h3>
+      <p>Weights colors by <strong>human perception</strong> greens become brighter, blues darker, reds medium. Produces the most natural-looking black & white. Use this for <strong>99% of documents</strong>.</p>
+
+      <h3>Classic</h3>
+      <p>Uses <strong>equal weights</strong> for red, green, and blue channels. Sometimes produces a flatter result, but works well for technical and graphic content.</p>
+
+      <h3>Desaturate</h3>
+      <p>Sets HSL saturation to zero mathematically removes color. Similar result to Luminosity for most documents, but produces subtly different tones.</p>
+
+      <h2>📊 PDF vs Image Output</h2>
+      <ul>
+        <li><strong>Grayscale PDF:</strong> Single PDF containing all pages converted to B&W. Best for sharing, archiving, or printing as a document.</li>
+        <li><strong>Grayscale Images:</strong> Each PDF page becomes a separate JPG, PNG, or WebP image. Best when you need the pages as pictures.</li>
+      </ul>
+
+      <h2>💡 When to Use PDF to Grayscale</h2>
+      <ul>
+        <li><strong>Reduce file size</strong> removing color info can shrink PDFs dramatically.</li>
+        <li><strong>Black & white printing</strong> save color ink, keep documents readable.</li>
+        <li><strong>Archive preparation</strong> normalize mixed-color PDFs to consistent B&W.</li>
+        <li><strong>Professional documents</strong> some industries require grayscale PDFs (legal, academic).</li>
+        <li><strong>Accessibility</strong> B&W versions help users with color vision deficiencies.</li>
+        <li><strong>Storage savings</strong> B&W PDFs take up less cloud storage space.</li>
+      </ul>
+
+      <h2>✨ Key Features</h2>
+      <ul>
+        <li><strong>Two output types</strong> Grayscale PDF or per-page images.</li>
+        <li><strong>3 grayscale modes</strong> Luminosity, Classic, Desaturate.</li>
+        <li><strong>Contrast boost</strong> improves print legibility.</li>
+        <li><strong>Page range selection</strong> convert only the pages you need.</li>
+        <li><strong>Scale control</strong> 1x to 3x (72–216 DPI).</li>
+        <li><strong>PDF.js + pdf-lib</strong> same tech as Firefox's PDF viewer.</li>
+        <li><strong>100% browser-based</strong> complete privacy.</li>
+        <li><strong>File size comparison</strong> see how much you saved.</li>
+      </ul>
+
+      <h2>❓ Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-question">How do I convert a color PDF to grayscale?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Upload your PDF, choose <strong>Grayscale PDF</strong> as the output type, then click "Convert to Grayscale". The B&W PDF downloads instantly free, no signup.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Does grayscale reduce PDF file size?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Usually yes removing color information can significantly reduce file size, especially for PDFs with colorful graphics or photos. Text-only PDFs see smaller savings. Use <strong>scale 1x</strong> and <strong>JPEG format</strong> for maximum size reduction when converting to images.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Will grayscale affect readability?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Not for text. Black text on white remains identical. Colored backgrounds and images become shades of gray most remain perfectly readable. Enable <strong>Boost Contrast</strong> if the result looks washed out.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I get grayscale images instead of a PDF?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Yes. Choose <strong>Grayscale Images</strong> as the output type. Each PDF page becomes a separate grayscale JPG, PNG, or WebP image, which you can download individually or all at once.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What's the best grayscale mode for printing?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>Luminosity</strong> produces the most natural-looking B&W and is the recommended mode. Enable <strong>Boost Contrast</strong> for print jobs it makes text crisper and graphics more readable on paper.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I convert only certain pages?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Yes. In the <strong>Page Range</strong> field, enter specific pages like <code>1-3,5,7-9</code> to convert only those. Leave empty for the entire PDF.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Are my PDFs uploaded to a server?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>No. All conversion happens in your browser using pdf.js and pdf-lib. Your PDF never leaves your device, and nothing is stored anywhere.</p></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-header">🔗 Related PDF Tools</div>
+    <div class="sidebar-list">
+      <a href="/tools/pdf-tools/convert-pdf/pdf-to-jpg/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#ef4444;">🖼</div>
+        <div class="sidebar-info"><div class="sidebar-title">PDF to JPG</div><div class="sidebar-desc">Pages to images</div></div>
+      </a>
+      <a href="/tools/pdf-tools/convert-pdf/pdf-to-png/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#10b981;">🖼</div>
+        <div class="sidebar-info"><div class="sidebar-title">PDF to PNG</div><div class="sidebar-desc">Lossless images</div></div>
+      </a>
+      <a href="/tools/pdf-tools/visual-pdf/compress-pdf/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#8b5cf6;">📉</div>
+        <div class="sidebar-info"><div class="sidebar-title">Compress PDF</div><div class="sidebar-desc">Reduce size</div></div>
+      </a>
+      <a href="/tools/pdf-tools/visual-pdf/bw-converter/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#1e293b;">⚫</div>
+        <div class="sidebar-info"><div class="sidebar-title">PDF to B&W</div><div class="sidebar-desc">Pure black & white</div></div>
+      </a>
+      <a href="/tools/image-tools/image-grayscale/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#6b7280;">⚫</div>
+        <div class="sidebar-info"><div class="sidebar-title">Image Grayscale</div><div class="sidebar-desc">For images</div></div>
+      </a>
+      <a href="/tools/pdf-tools/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#64748b;">📕</div>
+        <div class="sidebar-info"><div class="sidebar-title">All PDF Tools →</div><div class="sidebar-desc">Browse 100+ tools</div></div>
+      </a>
+    </div>
+  </aside>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand"><div class="logo-icon">⚒</div>BigToolz</span></div>
+      <p class="footer-tagline">Your Ultimate Online Tools Hub</p>
+      <div class="footer-social">
+        <a href="https://facebook.com/bigtoolz" aria-label="Facebook">f</a>
+        <a href="https://twitter.com/bigtoolz" aria-label="Twitter">𝕏</a>
+        <a href="https://youtube.com/@bigtoolz" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+    <div>
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/tools/">All Tools</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Categories</h3>
+      <ul class="footer-links">
+        <li><a href="/tools/image-tools/">Image Tools</a></li>
+        <li><a href="/tools/pdf-tools/">PDF Tools</a></li>
+        <li><a href="/tools/text-tools/">Text Tools</a></li>
+        <li><a href="/tools/seo-tools/">SEO Tools</a></li>
+        <li><a href="/tools/categories">All Categories →</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Legal</h3>
+      <ul class="footer-links">
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left"><span>✓ 100% Free</span><span>✓ No Sign Up</span><span>✓ No Installation</span></div>
+    <div class="footer-bottom-right">© 2026 BigToolz. All rights reserved.</div>
+    <div class="footer-bottom-links"><a href="/privacy-policy">Privacy</a><a href="/terms">Terms</a><a href="/disclaimer">Disclaimer</a></div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<!-- pdf.js + pdf-lib -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+
+<script>
+'use strict';
+
+/* ===== THEME ===== */
+(function(){try{var t=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&d))document.documentElement.setAttribute('data-theme','dark');else if(t==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();
+document.querySelector('.theme-btn')?.addEventListener('click',()=>{const h=document.documentElement;const c=h.getAttribute('data-theme');const d=window.matchMedia('(prefers-color-scheme: dark)').matches;let n=c==='dark'?'light':c==='light'?'dark':(d?'light':'dark');h.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}});
+
+/* ===== pdf.js worker ===== */
+if (window.pdfjsLib) {
+  pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+}
+
+/* ===== HELPERS ===== */
+const $ = (s, p = document) => p.querySelector(s);
+const $$ = (s, p = document) => [...p.querySelectorAll(s)];
+
+function formatBytes(b) {
+  if (b === 0) return '0 B';
+  const k = 1024, sizes = ['B', 'KB', 'MB', 'GB'];
+  const i = Math.floor(Math.log(b) / Math.log(k));
+  return (b / Math.pow(k, i)).toFixed(i === 0 ? 0 : 1) + ' ' + sizes[i];
+}
+
+function showToast(msg, type = 'info', duration = 3000) {
+  const t = $('#toast');
+  if (!t) return;
+  t.className = 'toast visible' + (type !== 'info' ? ' ' + type : '');
+  t.textContent = msg;
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove('visible'), duration);
+}
+
+function escapeHtml(str) {
+  const div = document.createElement('div');
+  div.textContent = str;
+  return div.innerHTML;
+}
+
+/* ===== GRAYSCALE PROCESSING ===== */
+function applyGrayscale(ctx, w, h, mode, boostContrast) {
+  const imageData = ctx.getImageData(0, 0, w, h);
+  const d = imageData.data;
+
+  for (let i = 0; i < d.length; i += 4) {
+    const r = d[i];
+    const g = d[i + 1];
+    const b = d[i + 2];
+    let gray;
+
+    if (mode === 'luminosity') {
+      gray = 0.2126 * r + 0.7152 * g + 0.0722 * b;
+    } else if (mode === 'classic') {
+      gray = (r + g + b) / 3;
+    } else {
+      gray = (Math.max(r, g, b) + Math.min(r, g, b)) / 2;
+    }
+
+    if (boostContrast) {
+      gray = Math.max(0, Math.min(255, (gray - 128) * 1.2 + 128));
+    }
+
+    d[i] = d[i + 1] = d[i + 2] = gray;
+  }
+
+  ctx.putImageData(imageData, 0, 0);
+}
+
+/* ===== STATE ===== */
+const state = {
+  pdfFile: null,
+  pdfDoc: null,
+  pdfName: '',
+  pdfPages: 0,
+  pdfSize: 0,
+  outputType: 'pdf',
+  results: [],
+  pdfResult: null,
+  isProcessing: false,
+  boostContrast: false
+};
+
+let resultIdCounter = 0;
+
+/* ===== DOM ===== */
+const dropzone = $('#dropzone');
+const fileInput = $('#fileInput');
+const chooseBtn = $('#chooseBtn');
+const browseLink = $('#browseLink');
+const convertBtn = $('#convertBtn');
+const clearBtn = $('#clearBtn');
+const progress = $('#progress');
+const progressFill = $('#progressFill');
+const progressText = $('#progressText');
+const results = $('#results');
+const fileList = $('#fileList');
+const pdfInfo = $('#pdfInfo');
+const pdfName = $('#pdfName');
+const pdfMeta = $('#pdfMeta');
+const pdfOptions = $('#pdfOptions');
+const imageOptions = $('#imageOptions');
+const grayscaleMode = $('#grayscaleMode');
+const imgGrayscaleMode = $('#imgGrayscaleMode');
+const scale = $('#scale');
+const imgFormat = $('#imgFormat');
+const pageRange = $('#pageRange');
+const imgPageRange = $('#imgPageRange');
+const contrastToggle = $('#contrastToggle');
+const downloadAllBtn = $('#downloadAllBtn');
+const resultCount = $('#resultCount');
+const pdfResult = $('#pdfResult');
+const pdfResultName = $('#pdfResultName');
+const pdfResultMeta = $('#pdfResultMeta');
+const downloadPdfBtn = $('#downloadPdfBtn');
+
+/* ===== TYPE TABS ===== */
+$$('.type-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    $$('.type-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    state.outputType = btn.dataset.type;
+    pdfOptions.style.display = state.outputType === 'pdf' ? 'grid' : 'none';
+    imageOptions.style.display = state.outputType === 'images' ? 'grid' : 'none';
+  });
+});
+
+/* ===== CONTRAST TOGGLE ===== */
+contrastToggle.addEventListener('click', () => {
+  state.boostContrast = !state.boostContrast;
+  contrastToggle.classList.toggle('on', state.boostContrast);
+  contrastToggle.setAttribute('aria-checked', state.boostContrast);
+  showToast(state.boostContrast ? 'Contrast boost ON' : 'Contrast boost OFF', 'info', 1500);
+});
+
+/* ===== FILE SELECTION ===== */
+function triggerFileSelect() { fileInput.click(); }
+chooseBtn.addEventListener('click', (e) => { e.stopPropagation(); triggerFileSelect(); });
+browseLink.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); triggerFileSelect(); });
+dropzone.addEventListener('click', triggerFileSelect);
+
+fileInput.addEventListener('change', (e) => {
+  const f = e.target.files[0];
+  if (f && (f.type === 'application/pdf' || f.name.toLowerCase().endsWith('.pdf'))) loadPDF(f);
+  fileInput.value = '';
+});
+
+['dragenter', 'dragover'].forEach(evt => {
+  dropzone.addEventListener(evt, (e) => { e.preventDefault(); e.stopPropagation(); dropzone.classList.add('dragover'); });
+});
+['dragleave', 'drop'].forEach(evt => {
+  dropzone.addEventListener(evt, (e) => { e.preventDefault(); e.stopPropagation(); dropzone.classList.remove('dragover'); });
+});
+dropzone.addEventListener('drop', (e) => {
+  const f = e.dataTransfer.files[0];
+  if (f && (f.type === 'application/pdf' || f.name.toLowerCase().endsWith('.pdf'))) loadPDF(f);
+  else showToast('Please drop a PDF file', 'error');
+});
+
+/* ===== LOAD PDF ===== */
+async function loadPDF(file) {
+  if (!window.pdfjsLib) {
+    showToast('PDF library not loaded. Check your internet.', 'error');
+    return;
+  }
+
+  state.pdfFile = file;
+  state.pdfName = file.name;
+  state.pdfSize = file.size;
+
+  showToast('Loading PDF...', 'info', 2000);
+
+  try {
+    const arrayBuffer = await file.arrayBuffer();
+    const pdf = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
+
+    state.pdfDoc = pdf;
+    state.pdfPages = pdf.numPages;
+
+    pdfName.textContent = file.name;
+    pdfMeta.textContent = `${pdf.numPages} page${pdf.numPages > 1 ? 's' : ''} · ${formatBytes(file.size)}`;
+    pdfInfo.classList.add('visible');
+    dropzone.style.display = 'none';
+    convertBtn.disabled = false;
+
+    showToast(`✅ PDF loaded: ${pdf.numPages} pages`, 'success');
+  } catch (err) {
+    console.error('PDF load failed:', err);
+    showToast('Failed to load PDF file may be corrupted or password-protected', 'error', 5000);
+    state.pdfDoc = null;
+    convertBtn.disabled = true;
+  }
+}
+
+/* ===== PARSE PAGE RANGE ===== */
+function parsePageRange(rangeStr, totalPages) {
+  rangeStr = (rangeStr || '').trim();
+  if (!rangeStr) return Array.from({ length: totalPages }, (_, i) => i + 1);
+
+  const pages = new Set();
+  const parts = rangeStr.split(',');
+
+  for (const part of parts) {
+    const trimmed = part.trim();
+    if (!trimmed) continue;
+    if (trimmed.includes('-')) {
+      const [startStr, endStr] = trimmed.split('-');
+      const start = parseInt(startStr, 10);
+      const end = parseInt(endStr, 10);
+      if (isNaN(start) || isNaN(end)) continue;
+      const lo = Math.max(1, Math.min(start, end));
+      const hi = Math.min(totalPages, Math.max(start, end));
+      for (let i = lo; i <= hi; i++) pages.add(i);
+    } else {
+      const num = parseInt(trimmed, 10);
+      if (!isNaN(num) && num >= 1 && num <= totalPages) pages.add(num);
+    }
+  }
+  return [...pages].sort((a, b) => a - b);
+}
+
+/* ===== CONVERT ===== */
+convertBtn.addEventListener('click', convertAll);
+
+async function convertAll() {
+  if (state.isProcessing || !state.pdfDoc) return;
+
+  state.isProcessing = true;
+  convertBtn.disabled = true;
+  convertBtn.innerHTML = 'Converting...';
+  results.classList.remove('visible');
+  pdfResult.style.display = 'none';
+  fileList.innerHTML = '';
+  state.results = [];
+  state.pdfResult = null;
+
+  progress.classList.add('visible');
+  progressFill.style.width = '0%';
+
+  try {
+    if (state.outputType === 'pdf') {
+      await convertToPdf();
+    } else {
+      await convertToImages();
+    }
+    results.classList.add('visible');
+  } catch (err) {
+    console.error('Conversion failed:', err);
+    showToast('Conversion failed', 'error');
+  }
+
+  progress.classList.remove('visible');
+  state.isProcessing = false;
+  convertBtn.disabled = false;
+  convertBtn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2v20M2 12h20"/></svg> Convert to Grayscale';
+}
+
+async function convertToPdf() {
+  const pages = parsePageRange(pageRange.value, state.pdfPages);
+  if (!pages.length) throw new Error('No pages selected');
+
+  const scaleVal = parseFloat(scale.value) || 1.5;
+  const mode = grayscaleMode.value;
+
+  // Create new PDF
+  const { PDFDocument } = PDFLib;
+  const outPdf = await PDFDocument.create();
+
+  const total = pages.length;
+  let completed = 0;
+
+  for (const pageNum of pages) {
+    const page = await state.pdfDoc.getPage(pageNum);
+    const viewport = page.getViewport({ scale: scaleVal });
+
+    const canvas = document.createElement('canvas');
+    canvas.width = Math.round(viewport.width);
+    canvas.height = Math.round(viewport.height);
+    const ctx = canvas.getContext('2d', { willReadFrequently: true });
+
+    // White bg
+    ctx.fillStyle = '#ffffff';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    await page.render({ canvasContext: ctx, viewport }).promise;
+
+    // Apply grayscale
+    applyGrayscale(ctx, canvas.width, canvas.height, mode, state.boostContrast);
+
+    // Convert to JPEG bytes
+    const jpegDataUrl = canvas.toDataURL('image/jpeg', 0.88);
+    const jpegBytes = dataUrlToUint8Array(jpegDataUrl);
+
+    const img = await outPdf.embedJpg(jpegBytes);
+
+    // Add page with same size
+    const pdfPage = outPdf.addPage([img.width, img.height]);
+    pdfPage.drawImage(img, {
+      x: 0,
+      y: 0,
+      width: img.width,
+      height: img.height
+    });
+
+    completed++;
+    progressFill.style.width = Math.round((completed / total) * 100) + '%';
+    progressText.textContent = `Converting ${completed} of ${total}...`;
+  }
+
+  const pdfBytes = await outPdf.save();
+  const blob = new Blob([pdfBytes], { type: 'application/pdf' });
+
+  const baseName = state.pdfName.replace(/\.[^.]+$/, '');
+  const fileName = `${baseName}-grayscale.pdf`;
+
+  state.pdfResult = {
+    blob,
+    url: URL.createObjectURL(blob),
+    name: fileName,
+    size: blob.size,
+    pages: pages.length
+  };
+
+  // Show result
+  pdfResultName.textContent = fileName;
+  pdfResultMeta.textContent = `${pages.length} page${pages.length > 1 ? 's' : ''} · ${formatBytes(blob.size)} · Original: ${formatBytes(state.pdfSize)}`;
+  pdfResult.style.display = 'flex';
+
+  resultCount.textContent = 'Grayscale PDF created';
+  showToast(`✅ Grayscale PDF created (${pages.length} pages)`, 'success');
+}
+
+async function convertToImages() {
+  const pages = parsePageRange(imgPageRange.value, state.pdfPages);
+  if (!pages.length) throw new Error('No pages selected');
+
+  const scaleVal = parseFloat(scale.value) || 2;
+  const mode = imgGrayscaleMode.value;
+  const format = imgFormat.value;
+  const ext = format === 'image/jpeg' ? 'jpg' : format === 'image/png' ? 'png' : 'webp';
+
+  const baseName = state.pdfName.replace(/\.[^.]+$/, '');
+  const total = pages.length;
+  let completed = 0;
+
+  for (const pageNum of pages) {
+    const page = await state.pdfDoc.getPage(pageNum);
+    const viewport = page.getViewport({ scale: scaleVal });
+
+    const canvas = document.createElement('canvas');
+    canvas.width = Math.round(viewport.width);
+    canvas.height = Math.round(viewport.height);
+    const ctx = canvas.getContext('2d', { willReadFrequently: true });
+
+    ctx.fillStyle = '#ffffff';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    await page.render({ canvasContext: ctx, viewport }).promise;
+
+    // Apply grayscale
+    applyGrayscale(ctx, canvas.width, canvas.height, mode, state.boostContrast);
+
+    const blob = await new Promise((res) => canvas.toBlob(res, format, 0.92));
+    if (!blob) continue;
+
+    // Thumbnail
+    const thumbCanvas = document.createElement('canvas');
+    const thumbSize = 200;
+    const ratio = Math.min(thumbSize / canvas.width, thumbSize / canvas.height);
+    thumbCanvas.width = canvas.width * ratio;
+    thumbCanvas.height = canvas.height * ratio;
+    thumbCanvas.getContext('2d').drawImage(canvas, 0, 0, thumbCanvas.width, thumbCanvas.height);
+    const thumbnail = thumbCanvas.toDataURL('image/jpeg', 0.7);
+
+    const paddedNum = String(pageNum).padStart(3, '0');
+    const fileName = `${baseName}-page-${paddedNum}-grayscale.${ext}`;
+
+    state.results.push({
+      id: ++resultIdCounter,
+      pageNum,
+      blob,
+      url: URL.createObjectURL(blob),
+      name: fileName,
+      size: blob.size,
+      thumbnail
+    });
+
+    completed++;
+    progressFill.style.width = Math.round((completed / total) * 100) + '%';
+    progressText.textContent = `Converting ${completed} of ${total}...`;
+  }
+
+  renderImageResults();
+  resultCount.textContent = `${state.results.length} grayscale image${state.results.length > 1 ? 's' : ''}`;
+  showToast(`✅ ${state.results.length} grayscale images created!`, 'success');
+}
+
+function dataUrlToUint8Array(dataUrl) {
+  const base64 = dataUrl.split(',')[1];
+  const binary = atob(base64);
+  const arr = new Uint8Array(binary.length);
+  for (let i = 0; i < binary.length; i++) arr[i] = binary.charCodeAt(i);
+  return arr;
+}
+
+/* ===== RENDER IMAGE RESULTS ===== */
+function renderImageResults() {
+  fileList.innerHTML = '';
+
+  state.results.forEach((result) => {
+    const item = document.createElement('div');
+    item.className = 'file-item';
+    item.innerHTML = `
+      <div class="file-thumb">
+        <span class="file-page-badge">Page ${result.pageNum}</span>
+        <img src="${result.thumbnail}" alt="${escapeHtml(result.name)}">
+      </div>
+      <div class="file-name" title="${escapeHtml(result.name)}">${escapeHtml(result.name)}</div>
+      <div class="file-actions">
+        <button class="icon-btn download" data-download="${result.id}" title="Download">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+          </svg>
+        </button>
+      </div>
+    `;
+    fileList.appendChild(item);
+  });
+
+  $$('[data-download]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const id = parseInt(btn.dataset.download, 10);
+      const result = state.results.find(r => r.id === id);
+      if (result) downloadResult(result);
+    });
+  });
+}
+
+function downloadResult(result) {
+  const a = document.createElement('a');
+  a.href = result.url;
+  a.download = result.name;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+}
+
+/* ===== DOWNLOAD ALL ===== */
+downloadAllBtn.addEventListener('click', () => {
+  if (state.pdfResult) {
+    // Download PDF
+    const a = document.createElement('a');
+    a.href = state.pdfResult.url;
+    a.download = state.pdfResult.name;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    showToast('Downloading grayscale PDF...', 'success');
+  } else if (state.results.length) {
+    showToast(`Downloading ${state.results.length} images sequentially...`, 'info');
+    state.results.forEach((r, i) => setTimeout(() => downloadResult(r), i * 300));
+  }
+});
+
+/* ===== DOWNLOAD PDF BUTTON ===== */
+downloadPdfBtn.addEventListener('click', () => {
+  if (!state.pdfResult) return;
+  const a = document.createElement('a');
+  a.href = state.pdfResult.url;
+  a.download = state.pdfResult.name;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  showToast('Downloading...', 'success');
+});
+
+/* ===== CLEAR ===== */
+clearBtn.addEventListener('click', () => {
+  state.results.forEach(r => URL.revokeObjectURL(r.url));
+  if (state.pdfResult && state.pdfResult.url) URL.revokeObjectURL(state.pdfResult.url);
+  if (state.pdfDoc) {
+    try { state.pdfDoc.destroy(); } catch (e) {}
+  }
+  state.pdfDoc = null;
+  state.pdfFile = null;
+  state.results = [];
+  state.pdfResult = null;
+  state.boostContrast = false;
+  contrastToggle.classList.remove('on');
+  contrastToggle.setAttribute('aria-checked', 'false');
+  fileList.innerHTML = '';
+  results.classList.remove('visible');
+  pdfResult.style.display = 'none';
+  progress.classList.remove('visible');
+  pdfInfo.classList.remove('visible');
+  dropzone.style.display = '';
+  convertBtn.disabled = true;
+  pageRange.value = '';
+  imgPageRange.value = '';
+  showToast('Cleared');
+});
+
+/* ===== FAQ ===== */
+$$('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    $$('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+</script>
+
+</body>
+</html>

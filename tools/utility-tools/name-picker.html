@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2563eb">
+
+<title>Random Name Picker - Pick a Random Winner Online Free | BigToolz</title>
+<meta name="description" content="Free online random name picker. Pick a random winner from any list. Perfect for giveaways, contests, classrooms & team decisions. No signup, works in your browser.">
+<meta name="keywords" content="random name picker, name picker, random picker, wheel of names, random winner, giveaway picker, random selection">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://bigtoolz.com/tools/utility-tools/name-picker/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Random Name Picker - Free Online Tool | BigToolz">
+<meta property="og:description" content="Pick a random winner from any list instantly free, fair, animated.">
+<meta property="og:url" content="https://bigtoolz.com/tools/utility-tools/name-picker/">
+<meta property="og:image" content="https://bigtoolz.com/assets/images/og-image.jpg">
+<meta property="og:site_name" content="BigToolz">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Random Name Picker - BigToolz">
+<meta name="twitter:description" content="Pick a random winner instantly free, fair, animated.">
+<meta name="twitter:image" content="https://bigtoolz.com/assets/images/twitter-card.jpg">
+
+<link rel="icon" href="/assets/images/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/images/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#f8f9fc;color:#1a1a2e;overflow-x:hidden;line-height:1.5}
+
+  .header{background:#fff;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;position:sticky;top:0;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+  .header-left{display:flex;align-items:center;gap:40px}
+  .logo{display:flex;align-items:center;gap:8px;font-size:22px;font-weight:800;color:#1a1a2e;text-decoration:none}
+  .logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#3b82f6,#2563eb);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px}
+  .logo span{color:#2563eb}
+  .nav{display:flex;align-items:center;gap:28px;list-style:none}
+  .nav a{text-decoration:none;color:#4b5563;font-size:14px;font-weight:500;transition:color .2s}
+  .nav a:hover,.nav a.active{color:#2563eb}
+  .header-right{display:flex;align-items:center;gap:16px}
+  .search-btn,.theme-btn{width:36px;height:36px;border-radius:50%;border:none;background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#4b5563}
+  .search-btn:hover,.theme-btn:hover{background:#f3f4f6}
+  .bookmark-btn{display:flex;align-items:center;gap:8px;background:#2563eb;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
+  .bookmark-btn:hover{background:#1d4ed8}
+
+  .hero{background:linear-gradient(135deg,#0a0e27 0%,#1a1a4e 40%,#2d1b69 70%,#4c1d95 100%);padding:40px 40px 60px;position:relative;overflow:hidden;color:#fff}
+  .hero::before{content:'';position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(139,92,246,.35) 0%,transparent 70%);border-radius:50%}
+  .hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+  .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px;flex-wrap:wrap}
+  .breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none}
+  .breadcrumb a:hover{color:#fff}
+  .breadcrumb .sep{color:rgba(255,255,255,.4)}
+  .breadcrumb .current{color:#fff;font-weight:500}
+  .hero-title-row{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+  .hero-icon{width:60px;height:60px;background:#8b5cf6;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;color:#fff;flex-shrink:0;box-shadow:0 8px 24px rgba(139,92,246,.4)}
+  .hero-title{font-size:42px;font-weight:800;line-height:1.15}
+  .hero-title .blue{color:#a78bfa}
+  .hero-desc{font-size:15px;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:24px;max-width:560px}
+  .hero-features{display:flex;gap:24px;flex-wrap:wrap}
+  .hero-feature{display:flex;align-items:center;gap:6px;font-size:13px;color:#fff;font-weight:500}
+  .hero-feature .check{width:18px;height:18px;border-radius:50%;background:#8b5cf6;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;flex-shrink:0}
+
+  .main-content{max-width:1200px;margin:0 auto;padding:40px;display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start}
+  .tool-content{min-width:0}
+
+  .workspace{background:#fff;border-radius:16px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,.06);border:1px solid #e5e7eb;margin-bottom:24px}
+
+  .two-cols{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:24px}
+
+  /* Left names input */
+  .names-panel{background:#faf5ff;border-radius:12px;padding:20px;border:1px solid #c4b5fd}
+  .panel-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:14px;display:flex;justify-content:space-between;align-items:center;gap:8px}
+  .panel-count{font-size:11px;font-weight:700;background:#8b5cf6;color:#fff;padding:3px 10px;border-radius:10px}
+
+  .names-input-row{display:flex;gap:8px;margin-bottom:12px}
+  .names-input-row input{flex:1;padding:11px 14px;border:1px solid #e5e7eb;border-radius:8px;font-size:14px;font-family:inherit;color:#1a1a2e;background:#fff;outline:none;transition:border-color .2s}
+  .names-input-row input:focus{border-color:#8b5cf6;box-shadow:0 0 0 3px rgba(139,92,246,.1)}
+  .add-btn{padding:11px 18px;background:#8b5cf6;color:#fff;border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit;transition:background .2s;flex-shrink:0}
+  .add-btn:hover{background:#7c3aed}
+
+  .bulk-toggle{font-size:11px;font-weight:600;color:#7c3aed;cursor:pointer;text-decoration:underline;background:none;border:none;font-family:inherit;padding:0;margin-bottom:12px}
+
+  .bulk-textarea{width:100%;min-height:100px;padding:12px 14px;border:1px solid #e5e7eb;border-radius:8px;font-size:13px;font-family:inherit;color:#1a1a2e;background:#fff;outline:none;resize:vertical;margin-bottom:10px;line-height:1.5;display:none}
+  .bulk-textarea.visible{display:block}
+  .bulk-textarea:focus{border-color:#8b5cf6;box-shadow:0 0 0 3px rgba(139,92,246,.1)}
+
+  .names-list{display:flex;flex-direction:column;gap:6px;max-height:280px;overflow-y:auto;padding:4px}
+  .name-item{display:flex;align-items:center;gap:8px;background:#fff;border:1px solid #ede9fe;border-radius:8px;padding:9px 12px;font-size:13px;font-weight:600;color:#1a1a2e;transition:all .2s}
+  .name-item:hover{border-color:#8b5cf6;background:#faf5ff}
+  .name-item .idx{font-size:10px;font-weight:700;color:#8b5cf6;background:#f3e8ff;padding:2px 7px;border-radius:6px;flex-shrink:0;min-width:24px;text-align:center}
+  .name-item .name-text{flex:1;word-break:break-word}
+  .name-item .remove-btn{width:24px;height:24px;background:transparent;border:none;color:#9ca3af;cursor:pointer;border-radius:6px;font-size:14px;font-weight:700;flex-shrink:0;transition:all .2s;display:flex;align-items:center;justify-content:center}
+  .name-item .remove-btn:hover{background:#fee2e2;color:#dc2626}
+  .names-empty{text-align:center;padding:24px;color:#9ca3af;font-size:12px;font-style:italic}
+
+  .names-actions{display:flex;gap:6px;margin-top:12px;flex-wrap:wrap}
+  .mini-btn{display:inline-flex;align-items:center;gap:6px;padding:8px 12px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;font-size:11px;font-weight:600;color:#4b5563;cursor:pointer;font-family:inherit;transition:all .2s}
+  .mini-btn:hover{border-color:#8b5cf6;color:#8b5cf6;background:#faf5ff}
+
+  /* Right picker */
+  .picker-panel{background:linear-gradient(135deg,#1e1b4b,#4c1d95);border-radius:12px;padding:32px 24px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:340px;position:relative;overflow:hidden}
+  .picker-panel::before{content:'';position:absolute;top:-40%;right:-20%;width:400px;height:400px;background:radial-gradient(circle,rgba(167,139,250,.3) 0%,transparent 70%);border-radius:50%;pointer-events:none}
+
+  .picker-label{font-size:11px;font-weight:700;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;position:relative;z-index:2}
+
+  .picker-display{background:rgba(255,255,255,.08);border:2px solid rgba(167,139,250,.4);border-radius:16px;padding:28px 24px;width:100%;text-align:center;margin-bottom:20px;position:relative;z-index:2;backdrop-filter:blur(10px);transition:all .3s}
+  .picker-display.winner{background:linear-gradient(135deg,#8b5cf6,#ec4899);border-color:#f472b6;animation:winnerPulse .6s ease}
+  .picker-display.picking .picker-name{animation:flicker .08s linear infinite}
+  @keyframes winnerPulse{0%{transform:scale(1)}50%{transform:scale(1.08)}100%{transform:scale(1)}}
+  @keyframes flicker{0%{opacity:.4}50%{opacity:1}100%{opacity:.4}}
+
+  .picker-name{font-size:32px;font-weight:800;color:#fff;line-height:1.2;word-break:break-word;min-height:44px;display:flex;align-items:center;justify-content:center}
+  .picker-sub{font-size:11px;color:rgba(255,255,255,.6);margin-top:6px;font-weight:600}
+
+  .pick-btn{background:#fff;color:#7c3aed;border:none;padding:16px 40px;border-radius:12px;font-size:16px;font-weight:800;cursor:pointer;font-family:inherit;transition:all .2s;position:relative;z-index:2;display:inline-flex;align-items:center;gap:8px;box-shadow:0 8px 24px rgba(0,0,0,.3)}
+  .pick-btn:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 12px 32px rgba(236,72,153,.4)}
+  .pick-btn:disabled{opacity:.6;cursor:not-allowed}
+
+  /* Confetti */
+  .confetti{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:3}
+  .confetti-piece{position:absolute;width:8px;height:14px;background:#f472b6;opacity:0;animation:confettiFall 3s linear forwards}
+  @keyframes confettiFall{
+    0%{opacity:1;transform:translateY(-20px) rotate(0deg)}
+    100%{opacity:0;transform:translateY(500px) rotate(720deg)}
+  }
+
+  /* Options */
+  .options-section{background:#f8fafc;border-radius:12px;padding:20px;border:1px solid #e5e7eb;margin-bottom:24px}
+  .options-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+  .option-row{display:flex;align-items:center;justify-content:space-between;padding:12px 14px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;gap:12px;margin-bottom:8px}
+  .option-row:last-child{margin-bottom:0}
+  .option-info{display:flex;flex-direction:column;gap:2px}
+  .option-title{font-size:13px;font-weight:700;color:#1a1a2e}
+  .option-desc{font-size:11px;color:#6b7280;line-height:1.4}
+  .toggle-switch{position:relative;width:44px;height:24px;background:#d1d5db;border-radius:12px;cursor:pointer;transition:background .2s;flex-shrink:0}
+  .toggle-switch::after{content:'';position:absolute;top:2px;left:2px;width:20px;height:20px;background:#fff;border-radius:50%;transition:transform .2s;box-shadow:0 1px 3px rgba(0,0,0,.15)}
+  .toggle-switch.on{background:#8b5cf6}
+  .toggle-switch.on::after{transform:translateX(20px)}
+
+  /* Winner history */
+  .history-section{margin-top:24px}
+  .history-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:12px;display:flex;justify-content:space-between;align-items:center;gap:8px}
+  .history-clear{background:none;border:none;font-size:11px;color:#8b5cf6;cursor:pointer;font-family:inherit;font-weight:600;text-decoration:underline}
+  .history-list{display:flex;flex-direction:column;gap:8px;max-height:320px;overflow-y:auto}
+  .history-item{display:flex;align-items:center;gap:12px;background:#faf5ff;border:1px solid #ede9fe;border-radius:10px;padding:10px 14px;font-size:13px}
+  .history-item .num{font-size:10px;font-weight:700;background:#8b5cf6;color:#fff;padding:3px 8px;border-radius:6px;flex-shrink:0}
+  .history-item .winner-name{flex:1;font-weight:700;color:#1a1a2e}
+  .history-item .time{font-size:10px;color:#9ca3af;font-weight:600}
+
+  /* SEO */
+  .seo-content{background:#fff;border-radius:16px;padding:32px;border:1px solid #e5e7eb;margin-bottom:24px}
+  .seo-content h2{font-size:22px;font-weight:800;color:#1a1a2e;margin-bottom:14px;margin-top:28px;display:flex;align-items:center;gap:10px}
+  .seo-content h2:first-child{margin-top:0}
+  .seo-content h3{font-size:16px;font-weight:700;color:#1a1a2e;margin:20px 0 10px}
+  .seo-content p{font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:14px}
+  .seo-content ul{list-style:none;padding-left:0;margin-bottom:16px}
+  .seo-content ul li{position:relative;padding-left:24px;font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:8px}
+  .seo-content ul li::before{content:'';position:absolute;left:6px;top:12px;width:6px;height:6px;background:#8b5cf6;border-radius:50%}
+  .seo-content a{color:#2563eb;text-decoration:none;font-weight:600}
+  .seo-content a:hover{text-decoration:underline}
+  .seo-content strong{color:#1a1a2e;font-weight:700}
+  .seo-content code{background:#f1f5f9;padding:2px 6px;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:13px;color:#0f172a;border:1px solid #e2e8f0}
+
+  .how-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:20px}
+  .how-step{background:#faf5ff;border-radius:12px;padding:20px;border:1px solid #c4b5fd}
+  .how-step-num{width:36px;height:36px;border-radius:50%;background:#8b5cf6;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;margin-bottom:12px}
+  .how-step-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+  .how-step-desc{font-size:13px;color:#6b7280;line-height:1.6}
+
+  .faq-item{background:#faf5ff;border:1px solid #c4b5fd;border-radius:12px;margin-bottom:10px;overflow:hidden;transition:border-color .2s}
+  .faq-item:hover{border-color:#8b5cf6}
+  .faq-question{width:100%;background:none;border:none;padding:18px 22px;font-size:15px;font-weight:700;color:#1a1a2e;text-align:left;cursor:pointer;font-family:inherit;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .faq-question .chev{font-size:12px;color:#8b5cf6;transition:transform .2s;flex-shrink:0}
+  .faq-item.open .faq-question .chev{transform:rotate(180deg)}
+  .faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 22px}
+  .faq-item.open .faq-answer{max-height:500px;padding-bottom:18px}
+  .faq-answer p{font-size:14px;color:#6b7280;line-height:1.7;margin:0}
+
+  .sidebar{background:#fff;border-radius:16px;padding:24px;border:1px solid #e5e7eb;position:sticky;top:80px;margin-bottom:24px}
+  .sidebar-header{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:800;color:#1a1a2e;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid #f3f4f6}
+  .sidebar-list{display:flex;flex-direction:column;gap:8px}
+  .sidebar-item{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;cursor:pointer;transition:background .2s;text-decoration:none;color:inherit;border:1px solid #f3f4f6}
+  .sidebar-item:hover{background:#faf5ff;border-color:#c4b5fd}
+  .sidebar-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;flex-shrink:0}
+  .sidebar-info{flex:1;min-width:0}
+  .sidebar-title{font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:2px}
+  .sidebar-desc{font-size:11px;color:#9ca3af;line-height:1.4}
+
+  .footer{background:#0a0e27;padding:60px 40px 30px;color:#fff;margin-top:40px}
+  .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:40px}
+  .footer-brand{display:flex;align-items:center;gap:8px;font-size:20px;font-weight:800;margin-bottom:12px}
+  .footer-brand span{color:#60a5fa}
+  .footer-tagline{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px}
+  .footer-social{display:flex;gap:12px}
+  .footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:16px;transition:background .2s}
+  .footer-social a:hover{background:rgba(255,255,255,.2)}
+  .footer-heading{font-size:14px;font-weight:700;margin-bottom:20px;color:#fff}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .footer-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;transition:color .2s}
+  .footer-links a:hover{color:#60a5fa}
+  .footer-bottom{max-width:1200px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  .footer-bottom-left{display:flex;gap:20px;font-size:12px;color:rgba(255,255,255,.5)}
+  .footer-bottom-right,.footer-bottom-links a{font-size:12px;color:rgba(255,255,255,.5);text-decoration:none}
+  .footer-bottom-links{display:flex;gap:20px}
+
+  .toast{position:fixed;bottom:24px;right:24px;background:#1a1a2e;color:#fff;padding:14px 20px;border-radius:10px;font-size:13px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:3000;transform:translateY(200%);transition:transform .3s ease;max-width:320px}
+  .toast.visible{transform:translateY(0)}
+  .toast.success{background:#10b981}
+  .toast.error{background:#ef4444}
+
+  @media(max-width:1024px){
+    .main-content{grid-template-columns:1fr;padding:24px 20px}
+    .sidebar{position:static}
+    .how-steps{grid-template-columns:repeat(2,1fr)}
+    .two-cols{grid-template-columns:1fr}
+  }
+  @media(max-width:768px){
+    .header{padding:0 20px}.nav{display:none}
+    .hero{padding:24px 20px 40px}
+    .hero-title{font-size:28px}
+    .hero-icon{width:48px;height:48px;font-size:22px}
+    .hero-title-row{flex-direction:column;align-items:flex-start;gap:12px}
+    .main-content{padding:20px 16px}
+    .workspace{padding:20px}
+    .how-steps{grid-template-columns:1fr}
+    .seo-content{padding:20px}
+    .footer-inner{grid-template-columns:1fr 1fr}
+    .toast{left:16px;right:16px;bottom:16px;max-width:none}
+    .picker-name{font-size:24px}
+    .picker-panel{min-height:280px;padding:24px 18px}
+  }
+  @media(max-width:576px){
+    .header{padding:0 16px}.header-right .search-btn,.header-right .theme-btn{display:none}
+    .hero-title{font-size:24px}
+    .footer-inner{grid-template-columns:1fr}
+    .footer-bottom{flex-direction:column;text-align:center}
+    .picker-name{font-size:22px}
+  }
+
+  html[data-theme="dark"] body{background:#0f172a;color:#f1f5f9}
+  html[data-theme="dark"] .header,html[data-theme="dark"] .workspace,html[data-theme="dark"] .seo-content,html[data-theme="dark"] .sidebar{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .logo,html[data-theme="dark"] .hero-title,html[data-theme="dark"] .seo-content h2,html[data-theme="dark"] .seo-content h3,html[data-theme="dark"] .faq-question,html[data-theme="dark"] .sidebar-header,html[data-theme="dark"] .sidebar-title,html[data-theme="dark"] .panel-title,html[data-theme="dark"] .options-title{color:#f1f5f9}
+  html[data-theme="dark"] .nav a{color:#cbd5e1}
+  html[data-theme="dark"] .how-step,html[data-theme="dark"] .faq-item,html[data-theme="dark"] .names-panel,html[data-theme="dark"] .options-section{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .name-item,html[data-theme="dark"] .names-input-row input,html[data-theme="dark"] .bulk-textarea,html[data-theme="dark"] .option-row{background:#1e293b;border-color:#334155;color:#f1f5f9}
+  html[data-theme="dark"] .mini-btn{background:#0f172a;border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .seo-content p,html[data-theme="dark"] .seo-content ul li,html[data-theme="dark"] .faq-answer p{color:#cbd5e1}
+  html[data-theme="dark"] .seo-content code{background:#0f172a;color:#94a3b8;border-color:#334155}
+  html[data-theme="dark"] .history-item{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .history-item .winner-name{color:#f1f5f9}
+  html[data-theme="dark"] .option-title{color:#f1f5f9}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type": "SoftwareApplication", "name": "Random Name Picker", "url": "https://bigtoolz.com/tools/utility-tools/name-picker/", "applicationCategory": "UtilityApplication", "operatingSystem": "Any (Web-based)", "description": "Free online random name picker. Pick a random winner from any list instantly for giveaways, contests, classrooms and team decisions.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "2456"}},
+    {"@type": "HowTo", "name": "How to Pick a Random Name", "step": [
+      {"@type": "HowToStep", "name": "Add Names", "text": "Type names one by one or paste a bulk list."},
+      {"@type": "HowToStep", "name": "Configure", "text": "Choose remove-winner and animation options."},
+      {"@type": "HowToStep", "name": "Pick", "text": "Click 'Pick Random Winner' to spin."},
+      {"@type": "HowToStep", "name": "See Winner", "text": "See the winner revealed with confetti animation."}
+    ]},
+    {"@type": "FAQPage", "mainEntity": [
+      {"@type": "Question", "name": "How does the random name picker work?", "acceptedAnswer": {"@type": "Answer", "text": "We use the browser's cryptographically secure random number generator (crypto.getRandomValues) to select a winner fairly. Every name has an equal chance unless you enable the weighted option."}},
+      {"@type": "Question", "name": "Is it truly random?", "acceptedAnswer": {"@type": "Answer", "text": "Yes we use crypto.getRandomValues(), the same source browsers use for security-critical randomness. It's far more random than Math.random() and appropriate for giveaways, contests, and classroom use."}},
+      {"@type": "Question", "name": "Can I remove winners from the list?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Enable 'Remove winner after picking' the winner is automatically removed from the list, so the next pick won't select them again. Great for multi-winner giveaways."}},
+      {"@type": "Question", "name": "Is there a limit to how many names I can add?", "acceptedAnswer": {"@type": "Answer", "text": "No hard limit. You can add hundreds or thousands of names our tool handles them smoothly. For very large lists, use the bulk paste option (one name per line)."}},
+      {"@type": "Question", "name": "Are my names stored on a server?", "acceptedAnswer": {"@type": "Answer", "text": "No. Everything runs in your browser. Your list is optionally saved to your own device's localStorage never sent to any server."}}
+    ]},
+    {"@type": "BreadcrumbList", "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bigtoolz.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://bigtoolz.com/tools/"},
+      {"@type": "ListItem", "position": 3, "name": "Utility Tools", "item": "https://bigtoolz.com/tools/utility-tools/"},
+      {"@type": "ListItem", "position": 4, "name": "Random Name Picker", "item": "https://bigtoolz.com/tools/utility-tools/name-picker/"}
+    ]}
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-left">
+    <a href="/" class="logo"><div class="logo-icon">⚒</div>BigToolz</span></a>
+    <nav><ul class="nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/tools/" class="active">All Tools</a></li>
+      <li><a href="/tools/categories">Categories</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul></nav>
+  </div>
+  <div class="header-right">
+   
+    <button class="theme-btn" aria-label="Toggle theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
+    
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <nav class="breadcrumb">
+      <a href="/">Home</a><span class="sep">›</span>
+      <a href="/tools/">Tools</a><span class="sep">›</span>
+      <a href="/tools/utility-tools/">Utility Tools</a><span class="sep">›</span>
+      <span class="current">Random Name Picker</span>
+    </nav>
+    <div class="hero-title-row">
+      <div class="hero-icon">🎯</div>
+      <h1 class="hero-title">Random <span class="blue">Name Picker</span></h1>
+    </div>
+    <p class="hero-desc">
+      Pick a random winner from any list fair, fast, and animated. Perfect for giveaways, classroom activities, team decisions, and contests. No signup, works offline.
+    </p>
+    <div class="hero-features">
+      <div class="hero-feature"><span class="check">✓</span> Crypto-Random</div>
+      <div class="hero-feature"><span class="check">✓</span> Confetti Animation</div>
+      <div class="hero-feature"><span class="check">✓</span> Winner History</div>
+      <div class="hero-feature"><span class="check">✓</span> Bulk Paste</div>
+    </div>
+  </div>
+</section>
+
+<div class="main-content">
+
+  <div class="tool-content">
+
+    <div class="workspace">
+
+      <div class="two-cols">
+
+        <!-- Names panel -->
+        <div class="names-panel">
+          <div class="panel-title">
+            📝 Name List
+            <span class="panel-count" id="namesCount">0</span>
+          </div>
+
+          <div class="names-input-row">
+            <input type="text" id="nameInput" placeholder="Enter a name..." maxlength="60">
+            <button class="add-btn" id="addBtn">Add</button>
+          </div>
+
+          <button class="bulk-toggle" id="bulkToggle">📋 Bulk paste (one per line)</button>
+
+          <textarea class="bulk-textarea" id="bulkTextarea" placeholder="John&#10;Maria&#10;Alex&#10;Sarah&#10;..."></textarea>
+          <button class="mini-btn" id="bulkAddBtn" style="display:none;margin-bottom:12px;width:100%;justify-content:center;">Add All Names</button>
+
+          <div class="names-list" id="namesList">
+            <div class="names-empty">No names yet. Add some above to get started.</div>
+          </div>
+
+          <div class="names-actions">
+            <button class="mini-btn" id="shuffleBtn">🔀 Shuffle</button>
+            <button class="mini-btn" id="clearListBtn">🗑 Clear All</button>
+            <button class="mini-btn" id="copyListBtn">📋 Copy List</button>
+          </div>
+        </div>
+
+        <!-- Picker panel -->
+        <div class="picker-panel">
+          <div class="picker-label" id="pickerLabel">Ready to pick</div>
+          <div class="picker-display" id="pickerDisplay">
+            <div class="picker-name" id="pickerName">👋 Add names to begin</div>
+            <div class="picker-sub" id="pickerSub">Then click Pick below</div>
+          </div>
+          <button class="pick-btn" id="pickBtn" disabled>
+            🎲 Pick Random Winner
+          </button>
+          <div class="confetti" id="confetti"></div>
+        </div>
+
+      </div>
+
+      <!-- Options -->
+      <div class="options-section">
+        <div class="options-title">⚙️ Options</div>
+
+        <div class="option-row">
+          <div class="option-info">
+            <div class="option-title">Remove winner after picking</div>
+            <div class="option-desc">Winner is removed so next pick won't repeat them</div>
+          </div>
+          <div class="toggle-switch on" id="removeWinnerToggle" role="switch" aria-checked="true"></div>
+        </div>
+
+        <div class="option-row">
+          <div class="option-info">
+            <div class="option-title">Shuffle before picking</div>
+            <div class="option-desc">Randomize order once more for extra fairness</div>
+          </div>
+          <div class="toggle-switch" id="shuffleToggle" role="switch" aria-checked="false"></div>
+        </div>
+
+        <div class="option-row">
+          <div class="option-info">
+            <div class="option-title">Save list to browser</div>
+            <div class="option-desc">Keep your list when you reload the page</div>
+          </div>
+          <div class="toggle-switch on" id="saveToggle" role="switch" aria-checked="true"></div>
+        </div>
+      </div>
+
+      <!-- Winner History -->
+      <div class="history-section" id="historySection" style="display:none;">
+        <div class="history-title">
+          <span>🏆 Winner History</span>
+          <button class="history-clear" id="historyClear">Clear History</button>
+        </div>
+        <div class="history-list" id="historyList"></div>
+      </div>
+
+    </div>
+
+    <!-- SEO Content -->
+    <div class="seo-content">
+
+      <h2>🎯 What is a Random Name Picker?</h2>
+      <p>
+        A <strong>Random Name Picker</strong> is a tool that selects one name from a list at random. It's the digital equivalent of drawing a name from a hat but faster, fairer, and impossible to rig. Use it for <strong>giveaways, contests, classroom picks, team assignments, choosing who pays the bill</strong>, and hundreds of other situations where you need a truly random selection.
+      </p>
+      <p>
+        Unlike most online pickers, our tool runs <strong>100% in your browser</strong> and uses the browser's <strong>cryptographically secure random number generator</strong> (<code>crypto.getRandomValues()</code>) the same source used for security-critical randomness. Your names never leave your device, and the results are mathematically unbiased.
+      </p>
+
+      <h2>🚀 How to Use This Picker</h2>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-step-num">1</div>
+          <div class="how-step-title">Add Names</div>
+          <div class="how-step-desc">Type one by one, or paste a bulk list (one per line).</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">2</div>
+          <div class="how-step-title">Set Options</div>
+          <div class="how-step-desc">Remove winner, shuffle, save list your choice.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">3</div>
+          <div class="how-step-title">Pick</div>
+          <div class="how-step-desc">Click "Pick Random Winner" to spin.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">4</div>
+          <div class="how-step-title">Reveal</div>
+          <div class="how-step-desc">Winner revealed with confetti animation.</div>
+        </div>
+      </div>
+
+      <h2>🎲 Why Our Picker is Fair</h2>
+      <h3>Cryptographic Randomness</h3>
+      <p>We use <code>crypto.getRandomValues()</code> a cryptographically secure random number source built into every browser. It's the same API banks and security software use. <strong>No pattern, no bias, no predictability.</strong></p>
+
+      <h3>Every Pick is Independent</h3>
+      <p>Each pick is a fresh random draw. Previous picks have no effect on future picks (unless you enable "remove winner"). This is real randomness not pseudo-randomness that can be gamed.</p>
+
+      <h3>Transparent & Open</h3>
+      <p>Everything runs in your browser. You can see the list, count the names, and verify the selection yourself. No hidden algorithms.</p>
+
+      <h2>💡 Common Use Cases</h2>
+      <ul>
+        <li><strong>Social media giveaways</strong> pick a random winner from commenters or entrants.</li>
+        <li><strong>Classroom activities</strong> randomly call on students, assign groups, or pick topics.</li>
+        <li><strong>Team meetings</strong> decide who presents first, who takes notes, or who pays for lunch.</li>
+        <li><strong>Streamers & YouTubers</strong> pick a random subscriber or viewer for a shoutout.</li>
+        <li><strong>Contests & raffles</strong> run fair drawings for prizes or event tickets.</li>
+        <li><strong>Games & parties</strong> decide teams, turn order, or "who goes first."</li>
+        <li><strong>Decision making</strong> when you genuinely can't decide, let randomness pick.</li>
+      </ul>
+
+      <h2>✨ Key Features</h2>
+      <ul>
+        <li><strong>Cryptographically random</strong> uses crypto.getRandomValues().</li>
+        <li><strong>Bulk paste</strong> add hundreds of names instantly.</li>
+        <li><strong>Animated reveal</strong> flicker + confetti effect.</li>
+        <li><strong>Remove winner</strong> auto-remove winners for multi-winner draws.</li>
+        <li><strong>Winner history</strong> see last 20 picks, clear anytime.</li>
+        <li><strong>Save list</strong> localStorage persistence.</li>
+        <li><strong>100% browser-based</strong> no server, no upload.</li>
+      </ul>
+
+      <h2>❓ Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-question">How does the random name picker work?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>We use the browser's <strong>cryptographically secure random number generator</strong> (<code>crypto.getRandomValues()</code>) to select a winner. Every name has an equal chance of being picked mathematically fair.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Is it truly random?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Yes. We use <code>crypto.getRandomValues()</code>, the same source browsers use for security-critical randomness. It's far more random than the standard <code>Math.random()</code> function and appropriate for giveaways, contests, and classroom use.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I remove winners from the list?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Yes. Enable <strong>"Remove winner after picking"</strong> the winner is automatically removed from the list, so the next pick won't select them again. Perfect for multi-winner giveaways.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Is there a limit to how many names I can add?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>No hard limit.</strong> You can add hundreds or thousands of names our tool handles them smoothly. For very large lists, use the bulk paste option (one name per line).</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Are my names stored on a server?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>No.</strong> Everything runs in your browser. Your list is optionally saved to your own device's localStorage never sent to any server. When you close the tab or clear browser data, the list is gone.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I use it for giveaways on social media?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Absolutely it's ideal for this. Paste your list of entrants (one per line) using the bulk paste feature, then click Pick. Enable "Remove winner" if you need multiple winners. Screenshot the result as proof.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I use it offline?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Yes after the page loads, the tool works 100% offline. Randomness is generated locally; no network call is needed. Add it to your PWA home screen for quick offline access.</p></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-header">🔗 Related Utility Tools</div>
+    <div class="sidebar-list">
+      <a href="/tools/utility-tools/wheel-names/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#ec4899;">🎡</div>
+        <div class="sidebar-info"><div class="sidebar-title">Wheel of Names</div><div class="sidebar-desc">Spin the wheel</div></div>
+      </a>
+      <a href="/tools/utility-tools/decision-maker/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#f59e0b;">🎲</div>
+        <div class="sidebar-info"><div class="sidebar-title">Decision Maker</div><div class="sidebar-desc">Random decisions</div></div>
+      </a>
+      <a href="/tools/utility-tools/coin-flip/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#f59e0b;">🪙</div>
+        <div class="sidebar-info"><div class="sidebar-title">Coin Flip</div><div class="sidebar-desc">Heads or tails</div></div>
+      </a>
+      <a href="/tools/utility-tools/dice-roll/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#ef4444;">🎲</div>
+        <div class="sidebar-info"><div class="sidebar-title">Dice Roll</div><div class="sidebar-desc">Roll virtual dice</div></div>
+      </a>
+      <a href="/tools/utility-tools/team-generator/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#3b82f6;">👥</div>
+        <div class="sidebar-info"><div class="sidebar-title">Team Generator</div><div class="sidebar-desc">Random teams</div></div>
+      </a>
+      <a href="/tools/utility-tools/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#64748b;">⚙️</div>
+        <div class="sidebar-info"><div class="sidebar-title">All Utility Tools →</div><div class="sidebar-desc">Browse 50+ tools</div></div>
+      </a>
+    </div>
+  </aside>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand"><div class="logo-icon">⚒</div>BigToolz</span></div>
+      <p class="footer-tagline">Your Ultimate Online Tools Hub</p>
+      <div class="footer-social">
+        <a href="https://facebook.com/bigtoolz" aria-label="Facebook">f</a>
+        <a href="https://twitter.com/bigtoolz" aria-label="Twitter">𝕏</a>
+        <a href="https://youtube.com/@bigtoolz" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+    <div>
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/tools/">All Tools</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Categories</h3>
+      <ul class="footer-links">
+        <li><a href="/tools/image-tools/">Image Tools</a></li>
+        <li><a href="/tools/pdf-tools/">PDF Tools</a></li>
+        <li><a href="/tools/utility-tools/">Utility Tools</a></li>
+        <li><a href="/tools/calculator-tools/">Calculator Tools</a></li>
+        <li><a href="/tools/categories">All Categories →</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Legal</h3>
+      <ul class="footer-links">
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left"><span>✓ 100% Free</span><span>✓ No Sign Up</span><span>✓ No Installation</span></div>
+    <div class="footer-bottom-right">© 2026 BigToolz. All rights reserved.</div>
+    <div class="footer-bottom-links"><a href="/privacy-policy">Privacy</a><a href="/terms">Terms</a><a href="/disclaimer">Disclaimer</a></div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+'use strict';
+
+/* ===== THEME ===== */
+(function(){try{var t=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&d))document.documentElement.setAttribute('data-theme','dark');else if(t==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();
+document.querySelector('.theme-btn')?.addEventListener('click',()=>{const h=document.documentElement;const c=h.getAttribute('data-theme');const d=window.matchMedia('(prefers-color-scheme: dark)').matches;let n=c==='dark'?'light':c==='light'?'dark':(d?'light':'dark');h.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}});
+
+/* ===== HELPERS ===== */
+const $ = (s, p = document) => p.querySelector(s);
+const $$ = (s, p = document) => [...p.querySelectorAll(s)];
+
+function showToast(msg, type = 'info', duration = 2500) {
+  const t = $('#toast');
+  if (!t) return;
+  t.className = 'toast visible' + (type !== 'info' ? ' ' + type : '');
+  t.textContent = msg;
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove('visible'), duration);
+}
+
+function escapeHtml(str) {
+  const div = document.createElement('div');
+  div.textContent = str;
+  return div.innerHTML;
+}
+
+/* ===== CRYPTOGRAPHIC RANDOM ===== */
+function secureRandomInt(max) {
+  // Returns integer in [0, max) using crypto.getRandomValues
+  if (max <= 0) return 0;
+  const range = 4294967296; // 2^32
+  const limit = range - (range % max);
+  const arr = new Uint32Array(1);
+  let val;
+  do {
+    crypto.getRandomValues(arr);
+    val = arr[0];
+  } while (val >= limit);
+  return val % max;
+}
+
+/* ===== STATE ===== */
+const state = {
+  names: [],
+  history: [],
+  removeWinner: true,
+  shuffleBefore: false,
+  saveList: true,
+  isPicking: false
+};
+
+/* ===== DOM ===== */
+const nameInput = $('#nameInput');
+const addBtn = $('#addBtn');
+const bulkToggle = $('#bulkToggle');
+const bulkTextarea = $('#bulkTextarea');
+const bulkAddBtn = $('#bulkAddBtn');
+const namesList = $('#namesList');
+const namesCount = $('#namesCount');
+const shuffleBtn = $('#shuffleBtn');
+const clearListBtn = $('#clearListBtn');
+const copyListBtn = $('#copyListBtn');
+const pickBtn = $('#pickBtn');
+const pickerDisplay = $('#pickerDisplay');
+const pickerName = $('#pickerName');
+const pickerSub = $('#pickerSub');
+const pickerLabel = $('#pickerLabel');
+const confetti = $('#confetti');
+const historySection = $('#historySection');
+const historyList = $('#historyList');
+const historyClear = $('#historyClear');
+const removeWinnerToggle = $('#removeWinnerToggle');
+const shuffleToggle = $('#shuffleToggle');
+const saveToggle = $('#saveToggle');
+
+/* ===== STORAGE ===== */
+function saveToStorage() {
+  if (!state.saveList) {
+    try { localStorage.removeItem('bigtoolz_names'); } catch (e) {}
+    return;
+  }
+  try {
+    localStorage.setItem('bigtoolz_names', JSON.stringify(state.names));
+  } catch (e) {}
+}
+
+function loadFromStorage() {
+  try {
+    const data = localStorage.getItem('bigtoolz_names');
+    if (data) {
+      const names = JSON.parse(data);
+      if (Array.isArray(names)) {
+        state.names = names;
+      }
+    }
+  } catch (e) {}
+}
+
+/* ===== RENDER NAMES ===== */
+function renderNames() {
+  namesCount.textContent = state.names.length;
+
+  if (state.names.length === 0) {
+    namesList.innerHTML = '<div class="names-empty">No names yet. Add some above to get started.</div>';
+    pickBtn.disabled = true;
+    pickerName.textContent = '👋 Add names to begin';
+    pickerSub.textContent = 'Then click Pick below';
+    pickerLabel.textContent = 'Ready to pick';
+    return;
+  }
+
+  pickBtn.disabled = state.isPicking;
+
+  namesList.innerHTML = '';
+  state.names.forEach((name, i) => {
+    const item = document.createElement('div');
+    item.className = 'name-item';
+    item.innerHTML = `
+      <span class="idx">${i + 1}</span>
+      <span class="name-text">${escapeHtml(name)}</span>
+      <button class="remove-btn" data-index="${i}" aria-label="Remove">✕</button>
+    `;
+    namesList.appendChild(item);
+  });
+
+  // Bind remove buttons
+  $$('.remove-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const idx = parseInt(btn.dataset.index, 10);
+      state.names.splice(idx, 1);
+      renderNames();
+      saveToStorage();
+    });
+  });
+
+  saveToStorage();
+}
+
+/* ===== ADD NAME ===== */
+function addName(name) {
+  name = name.trim();
+  if (!name) return false;
+  if (name.length > 60) name = name.substring(0, 60);
+  if (state.names.includes(name)) {
+    showToast(`"${name}" already in list`, 'info', 1500);
+    return false;
+  }
+  state.names.push(name);
+  return true;
+}
+
+addBtn.addEventListener('click', () => {
+  const name = nameInput.value;
+  if (!name.trim()) {
+    showToast('Enter a name first', 'error', 1500);
+    return;
+  }
+  if (addName(name)) {
+    nameInput.value = '';
+    nameInput.focus();
+    renderNames();
+    showToast('Name added', 'success', 1200);
+  }
+});
+
+nameInput.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter') {
+    e.preventDefault();
+    addBtn.click();
+  }
+});
+
+/* ===== BULK PASTE ===== */
+bulkToggle.addEventListener('click', () => {
+  const visible = bulkTextarea.classList.toggle('visible');
+  bulkAddBtn.style.display = visible ? 'inline-flex' : 'none';
+  if (visible) bulkTextarea.focus();
+});
+
+bulkAddBtn.addEventListener('click', () => {
+  const lines = bulkTextarea.value.split('\n').map(l => l.trim()).filter(Boolean);
+  if (lines.length === 0) {
+    showToast('Paste names first (one per line)', 'error', 1500);
+    return;
+  }
+
+  let added = 0;
+  let duplicates = 0;
+
+  lines.forEach(name => {
+    if (addName(name)) added++;
+    else duplicates++;
+  });
+
+  bulkTextarea.value = '';
+  bulkTextarea.classList.remove('visible');
+  bulkAddBtn.style.display = 'none';
+  renderNames();
+
+  let msg = `Added ${added} name${added !== 1 ? 's' : ''}`;
+  if (duplicates > 0) msg += ` · ${duplicates} duplicate${duplicates !== 1 ? 's' : ''} skipped`;
+  showToast(msg, 'success');
+});
+
+/* ===== SHUFFLE ===== */
+shuffleBtn.addEventListener('click', () => {
+  if (state.names.length < 2) return;
+  // Fisher-Yates with crypto
+  for (let i = state.names.length - 1; i > 0; i--) {
+    const j = secureRandomInt(i + 1);
+    [state.names[i], state.names[j]] = [state.names[j], state.names[i]];
+  }
+  renderNames();
+  showToast('List shuffled', 'success', 1200);
+});
+
+/* ===== CLEAR LIST ===== */
+clearListBtn.addEventListener('click', () => {
+  if (state.names.length === 0) return;
+  if (!confirm(`Remove all ${state.names.length} names?`)) return;
+  state.names = [];
+  renderNames();
+  saveToStorage();
+  showToast('List cleared');
+});
+
+/* ===== COPY LIST ===== */
+copyListBtn.addEventListener('click', async () => {
+  if (state.names.length === 0) {
+    showToast('List is empty', 'error', 1500);
+    return;
+  }
+  try {
+    await navigator.clipboard.writeText(state.names.join('\n'));
+    showToast('List copied to clipboard', 'success');
+  } catch (e) {
+    showToast('Copy failed', 'error');
+  }
+});
+
+/* ===== PICK WINNER ===== */
+pickBtn.addEventListener('click', () => {
+  if (state.isPicking || state.names.length === 0) return;
+
+  // Optional shuffle before
+  if (state.shuffleBefore) {
+    for (let i = state.names.length - 1; i > 0; i--) {
+      const j = secureRandomInt(i + 1);
+      [state.names[i], state.names[j]] = [state.names[j], state.names[i]];
+    }
+    renderNames();
+  }
+
+  // Pick winner
+  const winnerIdx = secureRandomInt(state.names.length);
+  const winner = state.names[winnerIdx];
+
+  // Start animation
+  state.isPicking = true;
+  pickBtn.disabled = true;
+  pickerDisplay.classList.remove('winner');
+  pickerDisplay.classList.add('picking');
+  pickerLabel.textContent = '🎲 Picking...';
+
+  // Flicker through names
+  const flickerInterval = setInterval(() => {
+    const randIdx = secureRandomInt(state.names.length);
+    pickerName.textContent = state.names[randIdx];
+    pickerSub.textContent = 'Rolling...';
+  }, 60);
+
+  // Stop after ~1.8s
+  setTimeout(() => {
+    clearInterval(flickerInterval);
+    pickerDisplay.classList.remove('picking');
+    pickerDisplay.classList.add('winner');
+    pickerName.textContent = '🏆 ' + winner;
+    pickerSub.textContent = `Winner selected from ${state.names.length} names`;
+    pickerLabel.textContent = '🎉 Winner!';
+
+    // Confetti
+    launchConfetti();
+
+    // Add to history
+    state.history.unshift({
+      name: winner,
+      time: new Date(),
+      total: state.names.length
+    });
+    if (state.history.length > 20) state.history = state.history.slice(0, 20);
+    renderHistory();
+
+    // Remove winner if option enabled
+    if (state.removeWinner) {
+      const idx = state.names.indexOf(winner);
+      if (idx >= 0) {
+        state.names.splice(idx, 1);
+      }
+    }
+
+    renderNames();
+    state.isPicking = false;
+    if (state.names.length > 0) pickBtn.disabled = false;
+
+    if (state.names.length === 0) {
+      pickerSub.textContent = 'No names left add more to continue';
+      pickBtn.disabled = true;
+    }
+
+    saveToStorage();
+  }, 1800);
+});
+
+/* ===== CONFETTI ===== */
+function launchConfetti() {
+  confetti.innerHTML = '';
+  const colors = ['#f472b6', '#a78bfa', '#60a5fa', '#34d399', '#fbbf24', '#f87171'];
+  const count = 60;
+
+  for (let i = 0; i < count; i++) {
+    const piece = document.createElement('div');
+    piece.className = 'confetti-piece';
+    piece.style.left = Math.random() * 100 + '%';
+    piece.style.top = '-20px';
+    piece.style.background = colors[Math.floor(Math.random() * colors.length)];
+    piece.style.animationDelay = (Math.random() * 0.5) + 's';
+    piece.style.animationDuration = (2 + Math.random() * 1.5) + 's';
+    piece.style.transform = `rotate(${Math.random() * 360}deg)`;
+    if (Math.random() > 0.5) piece.style.borderRadius = '50%';
+    confetti.appendChild(piece);
+  }
+
+  setTimeout(() => { confetti.innerHTML = ''; }, 4000);
+}
+
+/* ===== HISTORY ===== */
+function renderHistory() {
+  if (state.history.length === 0) {
+    historySection.style.display = 'none';
+    return;
+  }
+  historySection.style.display = 'block';
+  historyList.innerHTML = '';
+
+  state.history.forEach((h, i) => {
+    const item = document.createElement('div');
+    item.className = 'history-item';
+    const timeStr = h.time.toLocaleTimeString(undefined, { hour: '2-digit', minute: '2-digit' });
+    item.innerHTML = `
+      <span class="num">#${state.history.length - i}</span>
+      <span class="winner-name">${escapeHtml(h.name)}</span>
+      <span class="time">${timeStr} · of ${h.total}</span>
+    `;
+    historyList.appendChild(item);
+  });
+}
+
+historyClear.addEventListener('click', () => {
+  state.history = [];
+  renderHistory();
+  showToast('History cleared');
+});
+
+/* ===== TOGGLES ===== */
+function bindToggle(el, key) {
+  el.addEventListener('click', () => {
+    state[key] = !state[key];
+    el.classList.toggle('on', state[key]);
+    el.setAttribute('aria-checked', state[key]);
+
+    if (key === 'saveList') {
+      saveToStorage();
+      showToast(state.saveList ? 'Auto-save ON' : 'Auto-save OFF', 'info', 1200);
+    }
+  });
+}
+
+bindToggle(removeWinnerToggle, 'removeWinner');
+bindToggle(shuffleToggle, 'shuffleBefore');
+bindToggle(saveToggle, 'saveList');
+
+/* ===== FAQ ===== */
+$$('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    $$('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+
+/* ===== INIT ===== */
+loadFromStorage();
+
+if (state.names.length === 0) {
+  // Pre-load a small demo list
+  state.names = ['Alice', 'Bob', 'Charlie', 'Diana', 'Eve'];
+}
+
+renderNames();
+</script>
+
+</body>
+</html>

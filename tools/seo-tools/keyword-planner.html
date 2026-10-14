@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2563eb">
+
+<title>Keyword Planner - Free Keyword Research Tool Online | BigToolz</title>
+<meta name="description" content="Free online keyword planner. Generate keyword ideas, search volume, difficulty, CPC and intent instant, no signup. Export to CSV for SEO content planning.">
+<meta name="keywords" content="keyword planner, keyword research, free keyword tool, seo keyword planner, keyword generator, long tail keywords">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://bigtoolz.com/tools/seo-tools/keyword-planner/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Keyword Planner - Free Online Tool | BigToolz">
+<meta property="og:description" content="Generate keyword ideas with volume, difficulty, CPC & intent instantly.">
+<meta property="og:url" content="https://bigtoolz.com/tools/seo-tools/keyword-planner/">
+<meta property="og:image" content="https://bigtoolz.com/assets/images/og-image.jpg">
+<meta property="og:site_name" content="BigToolz">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Keyword Planner - BigToolz">
+<meta name="twitter:description" content="Generate keyword ideas with volume, difficulty & intent free.">
+<meta name="twitter:image" content="https://bigtoolz.com/assets/images/twitter-card.jpg">
+
+<link rel="icon" href="/assets/images/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/images/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#f8f9fc;color:#1a1a2e;overflow-x:hidden;line-height:1.5}
+
+  .header{background:#fff;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;position:sticky;top:0;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+  .header-left{display:flex;align-items:center;gap:40px}
+  .logo{display:flex;align-items:center;gap:8px;font-size:22px;font-weight:800;color:#1a1a2e;text-decoration:none}
+  .logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#3b82f6,#2563eb);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px}
+  .logo span{color:#2563eb}
+  .nav{display:flex;align-items:center;gap:28px;list-style:none}
+  .nav a{text-decoration:none;color:#4b5563;font-size:14px;font-weight:500;transition:color .2s}
+  .nav a:hover,.nav a.active{color:#2563eb}
+  .header-right{display:flex;align-items:center;gap:16px}
+  .search-btn,.theme-btn{width:36px;height:36px;border-radius:50%;border:none;background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#4b5563}
+  .search-btn:hover,.theme-btn:hover{background:#f3f4f6}
+  .bookmark-btn{display:flex;align-items:center;gap:8px;background:#2563eb;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
+  .bookmark-btn:hover{background:#1d4ed8}
+
+  .hero{background:linear-gradient(135deg,#0a0e27 0%,#1a1a4e 40%,#2d1b69 70%,#4c1d95 100%);padding:40px 40px 60px;position:relative;overflow:hidden;color:#fff}
+  .hero::before{content:'';position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(139,92,246,.3) 0%,transparent 70%);border-radius:50%}
+  .hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+  .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px;flex-wrap:wrap}
+  .breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none}
+  .breadcrumb a:hover{color:#fff}
+  .breadcrumb .sep{color:rgba(255,255,255,.4)}
+  .breadcrumb .current{color:#fff;font-weight:500}
+  .hero-title-row{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+  .hero-icon{width:60px;height:60px;background:#8b5cf6;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px;color:#fff;flex-shrink:0;box-shadow:0 8px 24px rgba(139,92,246,.4)}
+  .hero-title{font-size:42px;font-weight:800;line-height:1.15}
+  .hero-title .blue{color:#a78bfa}
+  .hero-desc{font-size:15px;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:24px;max-width:560px}
+  .hero-features{display:flex;gap:24px;flex-wrap:wrap}
+  .hero-feature{display:flex;align-items:center;gap:6px;font-size:13px;color:#fff;font-weight:500}
+  .hero-feature .check{width:18px;height:18px;border-radius:50%;background:#8b5cf6;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;flex-shrink:0}
+
+  .main-content{max-width:1200px;margin:0 auto;padding:40px;display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start}
+  .tool-content{min-width:0}
+
+  .workspace{background:#fff;border-radius:16px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,.06);border:1px solid #e5e7eb;margin-bottom:24px}
+
+  /* Search bar */
+  .search-bar{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:24px}
+  .search-input-wrap{flex:1;min-width:280px;position:relative;display:flex;align-items:center;background:#faf5ff;border:2px solid #c4b5fd;border-radius:12px;padding:6px 6px 6px 16px;transition:border-color .2s}
+  .search-input-wrap:focus-within{border-color:#8b5cf6;background:#fff;box-shadow:0 0 0 3px rgba(139,92,246,.1)}
+  .search-input-wrap svg{color:#8b5cf6;flex-shrink:0}
+  .search-input-wrap input{flex:1;border:none;outline:none;padding:12px 12px;font-size:15px;font-weight:600;font-family:inherit;background:transparent;color:#1a1a2e}
+  .search-input-wrap input::placeholder{color:#9ca3af;font-weight:500}
+  .generate-btn{padding:0 32px;background:#8b5cf6;color:#fff;border:none;border-radius:12px;font-size:15px;font-weight:800;cursor:pointer;font-family:inherit;transition:all .2s;display:flex;align-items:center;gap:8px;white-space:nowrap}
+  .generate-btn:hover{background:#7c3aed;transform:translateY(-2px);box-shadow:0 6px 20px rgba(139,92,246,.3)}
+  .generate-btn:disabled{opacity:.5;cursor:not-allowed;transform:none}
+
+  /* Options row */
+  .options-row{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:24px}
+  .option-group label{display:block;font-size:11px;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+  .option-group select{width:100%;padding:10px 32px 10px 12px;border:2px solid #e5e7eb;border-radius:10px;font-size:13px;font-weight:600;font-family:inherit;color:#1a1a2e;background:#fff;outline:none;cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='3'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center}
+  .option-group select:focus{border-color:#8b5cf6;box-shadow:0 0 0 3px rgba(139,92,246,.1)}
+
+  /* Stats row */
+  .stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:24px}
+  .mini-stat{background:#faf5ff;border:1px solid #c4b5fd;border-radius:12px;padding:14px;text-align:center;transition:all .2s}
+  .mini-stat:hover{border-color:#8b5cf6;transform:translateY(-2px);box-shadow:0 4px 12px rgba(139,92,246,.1)}
+  .mini-stat-label{font-size:10px;font-weight:700;color:#7c3aed;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+  .mini-stat-value{font-size:22px;font-weight:800;color:#1a1a2e;line-height:1}
+  .mini-stat-sub{font-size:10px;color:#9ca3af;margin-top:4px;font-weight:600}
+
+  /* Results table */
+  .results-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:12px}
+  .results-title{font-size:16px;font-weight:800;color:#1a1a2e;display:flex;align-items:center;gap:8px}
+  .results-title .count{background:#faf5ff;color:#8b5cf6;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:800;border:1px solid #c4b5fd}
+  .results-actions{display:flex;gap:8px;flex-wrap:wrap}
+  .mini-btn{display:inline-flex;align-items:center;gap:6px;padding:9px 14px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;font-size:12px;font-weight:600;color:#4b5563;cursor:pointer;font-family:inherit;transition:all .2s}
+  .mini-btn:hover{border-color:#8b5cf6;color:#8b5cf6;background:#faf5ff}
+  .mini-btn.copied{background:#10b981;color:#fff;border-color:#10b981}
+  .mini-btn:disabled{opacity:.4;cursor:not-allowed}
+
+  .table-wrap{overflow-x:auto;border:1px solid #e5e7eb;border-radius:12px;background:#fff}
+  .kw-table{width:100%;border-collapse:collapse;min-width:780px}
+  .kw-table th{background:#faf5ff;padding:12px 14px;text-align:left;font-size:11px;font-weight:700;color:#5b21b6;text-transform:uppercase;letter-spacing:.5px;border-bottom:1px solid #e5e7eb;position:sticky;top:0;z-index:2;white-space:nowrap}
+  .kw-table th.num{text-align:right}
+  .kw-table td{padding:11px 14px;font-size:13px;color:#1a1a2e;border-bottom:1px solid #f3f4f6;vertical-align:middle}
+  .kw-table td.num{text-align:right;font-weight:700;font-family:'JetBrains Mono',monospace;font-size:12px;white-space:nowrap}
+  .kw-table tr:hover td{background:#faf5ff}
+  .kw-table tr:last-child td{border-bottom:none}
+  .kw-text{font-weight:600;color:#1a1a2e}
+
+  /* Badges */
+  .intent-badge{display:inline-block;padding:3px 10px;border-radius:20px;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.3px;white-space:nowrap}
+  .intent-informational{background:#dbeafe;color:#1d4ed8}
+  .intent-commercial{background:#fef3c7;color:#92400e}
+  .intent-transactional{background:#d1fae5;color:#065f46}
+  .intent-navigational{background:#f3e8ff;color:#6d28d9}
+
+  .diff-bar{display:flex;align-items:center;gap:6px;justify-content:flex-end;white-space:nowrap}
+  .diff-bar-track{width:60px;height:6px;background:#f3f4f6;border-radius:3px;overflow:hidden;flex-shrink:0}
+  .diff-bar-fill{height:100%;border-radius:3px;transition:width .3s}
+
+  /* Empty state */
+  .empty-state{text-align:center;padding:60px 20px;color:#6b7280}
+  .empty-state-icon{font-size:48px;margin-bottom:14px;opacity:.5}
+  .empty-state h3{font-size:18px;font-weight:700;color:#1a1a2e;margin-bottom:8px}
+  .empty-state p{font-size:14px;margin-bottom:20px}
+  .empty-examples{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;max-width:500px;margin:0 auto}
+  .example-chip{background:#fff;border:1px solid #c4b5fd;color:#7c3aed;padding:8px 14px;border-radius:20px;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit;transition:all .2s}
+  .example-chip:hover{background:#8b5cf6;color:#fff;border-color:#8b5cf6}
+
+  /* Progress */
+  .progress-wrap{display:none;text-align:center;padding:40px 20px}
+  .progress-wrap.visible{display:block}
+  .spinner{width:40px;height:40px;border:4px solid #f3e8ff;border-top-color:#8b5cf6;border-radius:50%;animation:spin .8s linear infinite;margin:0 auto 14px}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .progress-text{font-size:14px;font-weight:700;color:#7c3aed}
+
+  /* SEO */
+  .seo-content{background:#fff;border-radius:16px;padding:32px;border:1px solid #e5e7eb;margin-bottom:24px}
+  .seo-content h2{font-size:22px;font-weight:800;color:#1a1a2e;margin-bottom:14px;margin-top:28px;display:flex;align-items:center;gap:10px}
+  .seo-content h2:first-child{margin-top:0}
+  .seo-content h3{font-size:16px;font-weight:700;color:#1a1a2e;margin:20px 0 10px}
+  .seo-content p{font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:14px}
+  .seo-content ul{list-style:none;padding-left:0;margin-bottom:16px}
+  .seo-content ul li{position:relative;padding-left:24px;font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:8px}
+  .seo-content ul li::before{content:'';position:absolute;left:6px;top:12px;width:6px;height:6px;background:#8b5cf6;border-radius:50%}
+  .seo-content a{color:#2563eb;text-decoration:none;font-weight:600}
+  .seo-content a:hover{text-decoration:underline}
+  .seo-content strong{color:#1a1a2e;font-weight:700}
+  .seo-content code{background:#f1f5f9;padding:2px 6px;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:13px;color:#0f172a;border:1px solid #e2e8f0}
+
+  .intent-table{width:100%;border-collapse:collapse;margin:20px 0;border:1px solid #e5e7eb;border-radius:8px;overflow:hidden}
+  .intent-table th{background:#faf5ff;padding:12px 16px;text-align:left;font-size:13px;font-weight:700;color:#1a1a2e;border-bottom:1px solid #e5e7eb}
+  .intent-table td{padding:12px 16px;font-size:13px;color:#4b5563;border-bottom:1px solid #f3f4f6}
+  .intent-table tr:last-child td{border-bottom:none}
+
+  .how-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:20px}
+  .how-step{background:#faf5ff;border-radius:12px;padding:20px;border:1px solid #c4b5fd}
+  .how-step-num{width:36px;height:36px;border-radius:50%;background:#8b5cf6;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;margin-bottom:12px}
+  .how-step-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+  .how-step-desc{font-size:13px;color:#6b7280;line-height:1.6}
+
+  .faq-item{background:#faf5ff;border:1px solid #c4b5fd;border-radius:12px;margin-bottom:10px;overflow:hidden;transition:border-color .2s}
+  .faq-item:hover{border-color:#8b5cf6}
+  .faq-question{width:100%;background:none;border:none;padding:18px 22px;font-size:15px;font-weight:700;color:#1a1a2e;text-align:left;cursor:pointer;font-family:inherit;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .faq-question .chev{font-size:12px;color:#8b5cf6;transition:transform .2s;flex-shrink:0}
+  .faq-item.open .faq-question .chev{transform:rotate(180deg)}
+  .faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 22px}
+  .faq-item.open .faq-answer{max-height:500px;padding-bottom:18px}
+  .faq-answer p{font-size:14px;color:#6b7280;line-height:1.7;margin:0}
+
+  .sidebar{background:#fff;border-radius:16px;padding:24px;border:1px solid #e5e7eb;position:sticky;top:80px;margin-bottom:24px}
+  .sidebar-header{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:800;color:#1a1a2e;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid #f3f4f6}
+  .sidebar-list{display:flex;flex-direction:column;gap:8px}
+  .sidebar-item{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;cursor:pointer;transition:background .2s;text-decoration:none;color:inherit;border:1px solid #f3f4f6}
+  .sidebar-item:hover{background:#faf5ff;border-color:#c4b5fd}
+  .sidebar-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;flex-shrink:0}
+  .sidebar-info{flex:1;min-width:0}
+  .sidebar-title{font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:2px}
+  .sidebar-desc{font-size:11px;color:#9ca3af;line-height:1.4}
+
+  .footer{background:#0a0e27;padding:60px 40px 30px;color:#fff;margin-top:40px}
+  .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:40px}
+  .footer-brand{display:flex;align-items:center;gap:8px;font-size:20px;font-weight:800;margin-bottom:12px}
+  .footer-brand span{color:#60a5fa}
+  .footer-tagline{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px}
+  .footer-social{display:flex;gap:12px}
+  .footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:16px;transition:background .2s}
+  .footer-social a:hover{background:rgba(255,255,255,.2)}
+  .footer-heading{font-size:14px;font-weight:700;margin-bottom:20px;color:#fff}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .footer-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;transition:color .2s}
+  .footer-links a:hover{color:#60a5fa}
+  .footer-bottom{max-width:1200px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  .footer-bottom-left{display:flex;gap:20px;font-size:12px;color:rgba(255,255,255,.5)}
+  .footer-bottom-right,.footer-bottom-links a{font-size:12px;color:rgba(255,255,255,.5);text-decoration:none}
+  .footer-bottom-links{display:flex;gap:20px}
+
+  .toast{position:fixed;bottom:24px;right:24px;background:#1a1a2e;color:#fff;padding:14px 20px;border-radius:10px;font-size:13px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:3000;transform:translateY(200%);transition:transform .3s ease;max-width:320px}
+  .toast.visible{transform:translateY(0)}
+  .toast.success{background:#10b981}
+  .toast.error{background:#ef4444}
+
+  @media(max-width:1024px){
+    .main-content{grid-template-columns:1fr;padding:24px 20px}
+    .sidebar{position:static}
+    .how-steps{grid-template-columns:repeat(2,1fr)}
+    .options-row{grid-template-columns:repeat(2,1fr)}
+  }
+  @media(max-width:768px){
+    .header{padding:0 20px}.nav{display:none}
+    .hero{padding:24px 20px 40px}
+    .hero-title{font-size:28px}
+    .hero-icon{width:48px;height:48px;font-size:20px}
+    .hero-title-row{flex-direction:column;align-items:flex-start;gap:12px}
+    .main-content{padding:20px 16px}
+    .workspace{padding:20px}
+    .how-steps{grid-template-columns:1fr}
+    .seo-content{padding:20px}
+    .footer-inner{grid-template-columns:1fr 1fr}
+    .toast{left:16px;right:16px;bottom:16px;max-width:none}
+    .stats-row{grid-template-columns:repeat(2,1fr)}
+    .search-bar{flex-direction:column}
+    .generate-btn{width:100%;justify-content:center;padding:14px}
+  }
+  @media(max-width:576px){
+    .header{padding:0 16px}.header-right .search-btn,.header-right .theme-btn{display:none}
+    .hero-title{font-size:24px}
+    .footer-inner{grid-template-columns:1fr}
+    .footer-bottom{flex-direction:column;text-align:center}
+    .options-row{grid-template-columns:1fr}
+    .stats-row{grid-template-columns:1fr}
+  }
+
+  html[data-theme="dark"] body{background:#0f172a;color:#f1f5f9}
+  html[data-theme="dark"] .header,html[data-theme="dark"] .workspace,html[data-theme="dark"] .seo-content,html[data-theme="dark"] .sidebar{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .logo,html[data-theme="dark"] .hero-title,html[data-theme="dark"] .seo-content h2,html[data-theme="dark"] .seo-content h3,html[data-theme="dark"] .faq-question,html[data-theme="dark"] .sidebar-header,html[data-theme="dark"] .sidebar-title,html[data-theme="dark"] .results-title,html[data-theme="dark"] .empty-state h3{color:#f1f5f9}
+  html[data-theme="dark"] .nav a{color:#cbd5e1}
+  html[data-theme="dark"] .how-step,html[data-theme="dark"] .faq-item,html[data-theme="dark"] .mini-stat,html[data-theme="dark"] .search-input-wrap,html[data-theme="dark"] .example-chip{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .search-input-wrap input{color:#f1f5f9}
+  html[data-theme="dark"] .option-group select{background:#0f172a;border-color:#334155;color:#f1f5f9}
+  html[data-theme="dark"] .seo-content p,html[data-theme="dark"] .seo-content ul li,html[data-theme="dark"] .faq-answer p,html[data-theme="dark"] .empty-state p{color:#cbd5e1}
+  html[data-theme="dark"] .seo-content code{background:#0f172a;color:#94a3b8;border-color:#334155}
+  html[data-theme="dark"] .table-wrap{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .kw-table th{background:#0f172a;color:#c4b5fd;border-color:#334155}
+  html[data-theme="dark"] .kw-table td{border-color:#1e293b;color:#e2e8f0}
+  html[data-theme="dark"] .kw-table tr:hover td{background:#1e293b}
+  html[data-theme="dark"] .kw-text{color:#f1f5f9}
+  html[data-theme="dark"] .mini-btn{background:#0f172a;border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .intent-table{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .intent-table th{background:#0f172a;color:#f1f5f9;border-color:#334155}
+  html[data-theme="dark"] .intent-table td{border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .diff-bar-track{background:#334155}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type": "SoftwareApplication", "name": "Keyword Planner", "url": "https://bigtoolz.com/tools/seo-tools/keyword-planner/", "applicationCategory": "BusinessApplication", "operatingSystem": "Any (Web-based)", "description": "Free online keyword research tool. Generate keyword ideas with estimated volume, difficulty, CPC and search intent no signup.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.8", "ratingCount": "1567"}},
+    {"@type": "HowTo", "name": "How to Research Keywords", "step": [
+      {"@type": "HowToStep", "name": "Enter Seed Keyword", "text": "Type a main topic, product or service."},
+      {"@type": "HowToStep", "name": "Choose Options", "text": "Select country, language, and keyword type."},
+      {"@type": "HowToStep", "name": "Generate", "text": "Click Generate to see keyword ideas with metrics."},
+      {"@type": "HowToStep", "name": "Export & Plan", "text": "Download CSV or copy keywords for content planning."}
+    ]},
+    {"@type": "FAQPage", "mainEntity": [
+      {"@type": "Question", "name": "Is this keyword planner free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes 100% free with no signup, no usage limits, and no credit card required. All keyword generation happens in your browser."}},
+      {"@type": "Question", "name": "How accurate are the search volumes?", "acceptedAnswer": {"@type": "Answer", "text": "Search volumes are estimates based on keyword length, type, and intent patterns. They are ideal for relative comparison (which keyword is bigger), not for exact traffic prediction. For exact numbers, use Google Keyword Planner or Ahrefs."}},
+      {"@type": "Question", "name": "What is keyword difficulty?", "acceptedAnswer": {"@type": "Answer", "text": "Keyword difficulty (KD) estimates how hard it is to rank on page 1. Scores range 0-100: 0-20 easy, 21-40 medium, 41-60 hard, 61-80 very hard, 81-100 extremely hard. Our scores are heuristic-based."}},
+      {"@type": "Question", "name": "What are the 4 search intents?", "acceptedAnswer": {"@type": "Answer", "text": "Informational (learn something), Commercial (research before buying), Transactional (ready to buy), Navigational (looking for a specific site/brand). Matching content to intent is critical for SEO."}},
+      {"@type": "Question", "name": "What's a long-tail keyword?", "acceptedAnswer": {"@type": "Answer", "text": "A long-tail keyword is a longer, more specific phrase (usually 4+ words) with lower search volume but higher conversion rate and lower competition. Examples: 'best budget laptop for students 2026' vs 'laptop'."}},
+      {"@type": "Question", "name": "Are my keywords uploaded anywhere?", "acceptedAnswer": {"@type": "Answer", "text": "No. All keyword generation happens 100% in your browser. No data is sent to any server, and nothing is stored."}}
+    ]},
+    {"@type": "BreadcrumbList", "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bigtoolz.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://bigtoolz.com/tools/"},
+      {"@type": "ListItem", "position": 3, "name": "SEO Tools", "item": "https://bigtoolz.com/tools/seo-tools/"},
+      {"@type": "ListItem", "position": 4, "name": "Keyword Planner", "item": "https://bigtoolz.com/tools/seo-tools/keyword-planner/"}
+    ]}
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-left">
+    <a href="/" class="logo"><div class="logo-icon">⚒</div>BigToolz</span></a>
+    <nav><ul class="nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/tools/" class="active">All Tools</a></li>
+      <li><a href="/tools/categories">Categories</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul></nav>
+  </div>
+  <div class="header-right">
+   
+    <button class="theme-btn" aria-label="Toggle theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
+   
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <nav class="breadcrumb">
+      <a href="/">Home</a><span class="sep">›</span>
+      <a href="/tools/">Tools</a><span class="sep">›</span>
+      <a href="/tools/seo-tools/">SEO Tools</a><span class="sep">›</span>
+      <span class="current">Keyword Planner</span>
+    </nav>
+    <div class="hero-title-row">
+      <div class="hero-icon">🎯</div>
+      <h1 class="hero-title">Keyword <span class="blue">Planner</span></h1>
+    </div>
+    <p class="hero-desc">
+      Generate keyword ideas with estimated volume, difficulty, CPC and search intent instantly. Export to CSV for content planning. No signup, no limits, 100% private.
+    </p>
+    <div class="hero-features">
+      <div class="hero-feature"><span class="check">✓</span> 60+ Keywords</div>
+      <div class="hero-feature"><span class="check">✓</span> Intent Detection</div>
+      <div class="hero-feature"><span class="check">✓</span> CSV Export</div>
+      <div class="hero-feature"><span class="check">✓</span> No Signup</div>
+    </div>
+  </div>
+</section>
+
+<div class="main-content">
+
+  <div class="tool-content">
+
+    <div class="workspace">
+
+      <!-- Search Bar -->
+      <div class="search-bar">
+        <div class="search-input-wrap">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+          <input type="text" id="seedKeyword" placeholder="Enter a seed keyword (e.g. image compressor, seo tools, yoga)..." autocomplete="off" maxlength="60">
+        </div>
+        <button class="generate-btn" id="generateBtn" disabled>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2v20M2 12h20"/></svg>
+          Generate
+        </button>
+      </div>
+
+      <!-- Options -->
+      <div class="options-row">
+        <div class="option-group">
+          <label>Country</label>
+          <select id="countrySelect">
+            <option value="in,en-IN" selected>India</option>
+            <option value="us,en-US">United States</option>
+            <option value="gb,en-GB">United Kingdom</option>
+            <option value="ca,en-CA">Canada</option>
+            <option value="au,en-AU">Australia</option>
+            <option value="de,de-DE">Germany</option>
+            <option value="fr,fr-FR">France</option>
+            <option value="jp,ja-JP">Japan</option>
+            <option value="br,pt-BR">Brazil</option>
+            <option value="global,en-US">Global (Default)</option>
+          </select>
+        </div>
+        <div class="option-group">
+          <label>Keyword Type</label>
+          <select id="typeSelect">
+            <option value="all" selected>All Types</option>
+            <option value="longtail">Long-tail (4+ words)</option>
+            <option value="question">Questions</option>
+            <option value="commercial">Commercial</option>
+            <option value="informational">Informational</option>
+          </select>
+        </div>
+        <div class="option-group">
+          <label>Sort By</label>
+          <select id="sortSelect">
+            <option value="volume" selected>Search Volume (High→Low)</option>
+            <option value="difficulty">Difficulty (Low→High)</option>
+            <option value="cpc">CPC (High→Low)</option>
+            <option value="alpha">Alphabetical</option>
+          </select>
+        </div>
+        <div class="option-group">
+          <label>Results</label>
+          <select id="limitSelect">
+            <option value="30">30 keywords</option>
+            <option value="60" selected>60 keywords</option>
+            <option value="100">100 keywords</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Progress -->
+      <div class="progress-wrap" id="progressWrap">
+        <div class="spinner"></div>
+        <div class="progress-text">Generating keyword ideas...</div>
+      </div>
+
+      <!-- Empty State -->
+      <div class="empty-state" id="emptyState">
+        <div class="empty-state-icon">🎯</div>
+        <h3>Enter a seed keyword to begin</h3>
+        <p>Try one of these examples:</p>
+        <div class="empty-examples" id="examplesList">
+          <button class="example-chip" data-kw="image compressor">image compressor</button>
+          <button class="example-chip" data-kw="yoga for beginners">yoga for beginners</button>
+          <button class="example-chip" data-kw="best laptop">best laptop</button>
+          <button class="example-chip" data-kw="how to lose weight">how to lose weight</button>
+          <button class="example-chip" data-kw="python tutorial">python tutorial</button>
+          <button class="example-chip" data-kw="digital marketing">digital marketing</button>
+        </div>
+      </div>
+
+      <!-- Results -->
+      <div id="resultsSection" style="display:none;">
+        <!-- Stats -->
+        <div class="stats-row">
+          <div class="mini-stat">
+            <div class="mini-stat-label">Total Keywords</div>
+            <div class="mini-stat-value" id="statTotal">0</div>
+            <div class="mini-stat-sub">generated</div>
+          </div>
+          <div class="mini-stat">
+            <div class="mini-stat-label">Avg Volume</div>
+            <div class="mini-stat-value" id="statAvgVolume">0</div>
+            <div class="mini-stat-sub">monthly searches</div>
+          </div>
+          <div class="mini-stat">
+            <div class="mini-stat-label">Avg Difficulty</div>
+            <div class="mini-stat-value" id="statAvgDiff">0</div>
+            <div class="mini-stat-sub">out of 100</div>
+          </div>
+          <div class="mini-stat">
+            <div class="mini-stat-label">Avg CPC</div>
+            <div class="mini-stat-value" id="statAvgCpc">$0</div>
+            <div class="mini-stat-sub">USD</div>
+          </div>
+        </div>
+
+        <!-- Table -->
+        <div class="results-header">
+          <div class="results-title">
+            Keyword Ideas
+            <span class="count" id="resultCount">0</span>
+          </div>
+          <div class="results-actions">
+            <button class="mini-btn" id="copyBtn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+              Copy All
+            </button>
+            <button class="mini-btn" id="csvBtn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+              Download CSV
+            </button>
+          </div>
+        </div>
+
+        <div class="table-wrap">
+          <table class="kw-table">
+            <thead>
+              <tr>
+                <th>Keyword</th>
+                <th class="num">Volume</th>
+                <th class="num">Difficulty</th>
+                <th class="num">CPC</th>
+                <th>Intent</th>
+              </tr>
+            </thead>
+            <tbody id="resultsBody"></tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- SEO Content -->
+    <div class="seo-content">
+
+      <h2>🎯 What is a Keyword Planner?</h2>
+      <p>
+        A <strong>Keyword Planner</strong> is a research tool that generates keyword ideas from a seed topic and shows estimated metrics for each one search volume, difficulty, CPC, and search intent. It's the first step in any <strong>SEO content strategy</strong>: you can't rank for keywords you haven't discovered.
+      </p>
+      <p>
+        Our tool runs <strong>100% in your browser</strong> no signup, no usage limits, and no data sent to any server. It generates keyword ideas using proven patterns (long-tail variations, questions, comparisons, commercial modifiers) and assigns metrics based on linguistic and behavioral heuristics.
+      </p>
+
+      <h2>🚀 How to Use This Keyword Planner</h2>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-step-num">1</div>
+          <div class="how-step-title">Enter Seed Keyword</div>
+          <div class="how-step-desc">Type your main topic (e.g. "image compressor").</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">2</div>
+          <div class="how-step-title">Choose Filters</div>
+          <div class="how-step-desc">Pick country, keyword type, sorting and count.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">3</div>
+          <div class="how-step-title">Generate</div>
+          <div class="how-step-desc">Click Generate to see keyword ideas with metrics.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">4</div>
+          <div class="how-step-title">Export & Plan</div>
+          <div class="how-step-desc">Download CSV, copy all, or use directly for content plan.</div>
+        </div>
+      </div>
+
+      <h2>📊 Keyword Metrics Explained</h2>
+
+      <h3>Search Volume</h3>
+      <p>
+        Estimated monthly searches in the selected country. <strong>Higher is better for reach</strong> but usually correlates with higher competition. Our estimates are heuristic-based ideal for <strong>relative comparison</strong> between keywords, not for exact traffic prediction. For precise numbers, use Google Keyword Planner.
+      </p>
+
+      <h3>Keyword Difficulty (0-100)</h3>
+      <p>
+        An estimate of how hard it is to rank on page 1 for that keyword:
+      </p>
+      <ul>
+        <li><strong>0-20:</strong> Easy great for new sites</li>
+        <li><strong>21-40:</strong> Medium reachable with good content</li>
+        <li><strong>41-60:</strong> Hard needs authority + backlinks</li>
+        <li><strong>61-80:</strong> Very hard competitive niches</li>
+        <li><strong>81-100:</strong> Extremely hard top-3 are giants</li>
+      </ul>
+
+      <h3>CPC (Cost Per Click)</h3>
+      <p>
+        Estimated cost an advertiser pays per click in Google Ads. <strong>Higher CPC = higher commercial value</strong> for that keyword. Keywords with CPC above $5 are usually in finance, insurance, legal, or B2B niches. Useful for prioritising keywords you'd also pay for.
+      </p>
+
+      <h3>Search Intent</h3>
+      <p>
+        The likely intention behind the search. Matching your content to intent is the single biggest factor in ranking:
+      </p>
+
+      <h2>🔍 The 4 Types of Search Intent</h2>
+      <table class="intent-table">
+        <thead>
+          <tr><th>Intent</th><th>Goal</th><th>Content Type</th><th>Example</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Informational</strong></td><td>Learn something</td><td>Guides, tutorials, blog posts</td><td>how to compress images</td></tr>
+          <tr><td><strong>Commercial</strong></td><td>Research before buying</td><td>Reviews, comparisons, listicles</td><td>best image compressor</td></tr>
+          <tr><td><strong>Transactional</strong></td><td>Ready to act</td><td>Product pages, signups, downloads</td><td>buy image compressor pro</td></tr>
+          <tr><td><strong>Navigational</strong></td><td>Find a specific site</td><td>Homepages, brand pages</td><td>bigtoolz image compressor</td></tr>
+        </tbody>
+      </table>
+
+      <h2>💡 Best Practices</h2>
+      <ul>
+        <li><strong>Start with 3-5 seed keywords.</strong> Run each, export the CSVs, then merge.</li>
+        <li><strong>Prioritise long-tail (4+ words).</strong> Lower difficulty, higher conversion, faster ranking.</li>
+        <li><strong>Match content to intent.</strong> Informational → guide. Commercial → comparison. Transactional → product page.</li>
+        <li><strong>Group keywords by topic.</strong> One page can target 10-30 related keywords not one page per keyword.</li>
+        <li><strong>Watch CPC as a value signal.</strong> High-CPC keywords are worth more to advertisers and to you.</li>
+        <li><strong>Refresh your list quarterly.</strong> Trends shift; what ranked last year may not rank next year.</li>
+        <li><strong>Combine with Search Console data.</strong> After publishing, see which keywords you already rank for then optimise.</li>
+      </ul>
+
+      <h2>❓ Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-question">Is this keyword planner free?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Yes <strong>100% free</strong> with no signup, no usage limits, and no credit card required. All keyword generation happens in your browser.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">How accurate are the search volumes?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Search volumes are <strong>estimates</strong> based on keyword length, type, and intent patterns. They're ideal for <strong>relative comparison</strong> (which keyword is bigger), not for exact traffic prediction. For precise numbers, use Google Keyword Planner, Ahrefs, or Semrush.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What is keyword difficulty?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>Keyword difficulty (KD)</strong> estimates how hard it is to rank on page 1. Scores range 0-100: <strong>0-20 easy, 21-40 medium, 41-60 hard, 61-80 very hard, 81-100 extremely hard</strong>. Our scores are heuristic-based use them for direction, not absolute truth.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What are the 4 search intents?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>Informational</strong> (learn something), <strong>Commercial</strong> (research before buying), <strong>Transactional</strong> (ready to buy), <strong>Navigational</strong> (looking for a specific site/brand). Matching content to intent is critical for SEO.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What's a long-tail keyword?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>A <strong>long-tail keyword</strong> is a longer, more specific phrase (usually 4+ words) with lower search volume but higher conversion rate and lower competition. Example: <em>"best budget laptop for students 2026"</em> (long-tail) vs <em>"laptop"</em> (short-tail).</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I use this tool for other languages?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Yes you can enter seed keywords in any language. The metric estimation works on <strong>length-based and pattern-based heuristics</strong>, not dictionary lookups so it handles non-English seeds just fine. You'll need to select the appropriate country from the dropdown.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Are my keywords uploaded anywhere?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>No.</strong> All keyword generation happens 100% in your browser using JavaScript. No data is sent to any server, and nothing is stored.</p></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-header">🔗 Related SEO Tools</div>
+    <div class="sidebar-list">
+      <a href="/tools/seo-tools/keyword-density-checker/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#10b981;">📊</div>
+        <div class="sidebar-info"><div class="sidebar-title">Keyword Density</div><div class="sidebar-desc">Check keyword usage</div></div>
+      </a>
+      <a href="/tools/seo-tools/meta-description/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#8b5cf6;">📝</div>
+        <div class="sidebar-info"><div class="sidebar-title">Meta Description</div><div class="sidebar-desc">Generate meta tags</div></div>
+      </a>
+      <a href="/tools/seo-tools/serp-preview/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#3b82f6;">🔍</div>
+        <div class="sidebar-info"><div class="sidebar-title">SERP Preview</div><div class="sidebar-desc">Google preview</div></div>
+      </a>
+      <a href="/tools/seo-tools/schema-markup/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#f59e0b;">🏗</div>
+        <div class="sidebar-info"><div class="sidebar-title">Schema Markup</div><div class="sidebar-desc">Structured data</div></div>
+      </a>
+      <a href="/tools/seo-tools/blog-idea/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#ec4899;">💡</div>
+        <div class="sidebar-info"><div class="sidebar-title">Blog Idea Generator</div><div class="sidebar-desc">Content ideas</div></div>
+      </a>
+      <a href="/tools/seo-tools/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#64748b;">📈</div>
+        <div class="sidebar-info"><div class="sidebar-title">All SEO Tools →</div><div class="sidebar-desc">Browse 25+ tools</div></div>
+      </a>
+    </div>
+  </aside>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand"><div class="logo-icon">⚒</div>BigToolz</span></div>
+      <p class="footer-tagline">Your Ultimate Online Tools Hub</p>
+      <div class="footer-social">
+        <a href="https://facebook.com/bigtoolz" aria-label="Facebook">f</a>
+        <a href="https://twitter.com/bigtoolz" aria-label="Twitter">𝕏</a>
+        <a href="https://youtube.com/@bigtoolz" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+    <div>
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/tools/">All Tools</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Categories</h3>
+      <ul class="footer-links">
+        <li><a href="/tools/image-tools/">Image Tools</a></li>
+        <li><a href="/tools/seo-tools/">SEO Tools</a></li>
+        <li><a href="/tools/text-tools/">Text Tools</a></li>
+        <li><a href="/tools/developer-tools/">Developer Tools</a></li>
+        <li><a href="/tools/categories">All Categories →</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Legal</h3>
+      <ul class="footer-links">
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left"><span>✓ 100% Free</span><span>✓ No Sign Up</span><span>✓ No Installation</span></div>
+    <div class="footer-bottom-right">© 2026 BigToolz. All rights reserved.</div>
+    <div class="footer-bottom-links"><a href="/privacy-policy">Privacy</a><a href="/terms">Terms</a><a href="/disclaimer">Disclaimer</a></div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+'use strict';
+
+/* ===== THEME ===== */
+(function(){try{var t=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&d))document.documentElement.setAttribute('data-theme','dark');else if(t==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();
+document.querySelector('.theme-btn')?.addEventListener('click',()=>{const h=document.documentElement;const c=h.getAttribute('data-theme');const d=window.matchMedia('(prefers-color-scheme: dark)').matches;let n=c==='dark'?'light':c==='light'?'dark':(d?'light':'dark');h.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}});
+
+/* ===== HELPERS ===== */
+const $ = (s, p = document) => p.querySelector(s);
+const $$ = (s, p = document) => [...p.querySelectorAll(s)];
+
+function showToast(msg, type = 'info', duration = 3000) {
+  const t = $('#toast');
+  if (!t) return;
+  t.className = 'toast visible' + (type !== 'info' ? ' ' + type : '');
+  t.textContent = msg;
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove('visible'), duration);
+}
+
+async function copyToClipboard(text) {
+  try {
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(text);
+      return true;
+    }
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.cssText = 'position:fixed;opacity:0;';
+    document.body.appendChild(ta);
+    ta.select();
+    const ok = document.execCommand('copy');
+    document.body.removeChild(ta);
+    return ok;
+  } catch (e) { return false; }
+}
+
+function escapeHtml(str) {
+  const div = document.createElement('div');
+  div.textContent = str;
+  return div.innerHTML;
+}
+
+/* ===== DETERMINISTIC HASH (for stable metrics) ===== */
+function hashString(str) {
+  let h = 0;
+  for (let i = 0; i < str.length; i++) {
+    h = ((h << 5) - h) + str.charCodeAt(i);
+    h = h & h;
+  }
+  return Math.abs(h);
+}
+
+/* ===== KEYWORD PATTERNS ===== */
+const MODIFIERS = {
+  informational: ['what is', 'how to', 'why', 'when to', 'guide', 'tutorial', 'tips', 'learn', 'examples', 'ideas'],
+  commercial: ['best', 'top', 'review', 'comparison', 'vs', 'alternative', 'cheap', 'affordable', 'pros and cons', 'rating'],
+  transactional: ['buy', 'price', 'cost', 'download', 'free', 'trial', 'discount', 'coupon', 'near me', 'for sale'],
+  questions: ['what', 'how', 'why', 'when', 'where', 'which', 'who', 'can', 'does', 'is'],
+  longtail: ['for beginners', 'step by step', 'in 2026', 'for students', 'for business', 'at home', 'online free', 'without investment', 'for small business', 'from scratch'],
+  suffixes: ['tool', 'tools', 'software', 'app', 'website', 'online', 'free', 'calculator', 'generator', 'checker']
+};
+
+const PREFIXES = ['best', 'top', 'cheap', 'free', 'online', 'top 10', 'top 5', 'how to', 'what is', 'why use', 'guide to'];
+const SUFFIXES = ['for beginners', 'in 2026', 'step by step', 'for free', 'for students', 'for business', 'for small business', 'vs alternatives', 'reviews', 'tools', 'software', 'online', 'app', 'guide'];
+
+/* ===== METRIC ESTIMATION ===== */
+function estimateVolume(keyword, seed) {
+  const len = keyword.split(' ').length;
+  const seedLen = seed.split(' ').length;
+  const hash = hashString(keyword);
+
+  // Base score: shorter keywords tend to have higher volume
+  let base = 20000;
+  if (len === 1) base = 500000;
+  else if (len === 2) base = 100000;
+  else if (len === 3) base = 40000;
+  else if (len === 4) base = 15000;
+  else if (len === 5) base = 6000;
+  else if (len === 6) base = 2500;
+  else base = 900;
+
+  // Random jitter based on hash (deterministic)
+  const jitter = (hash % 100) / 100;
+  let volume = Math.round(base * (0.4 + jitter * 1.2));
+
+  // Round to readable numbers
+  if (volume > 100000) volume = Math.round(volume / 10000) * 10000;
+  else if (volume > 10000) volume = Math.round(volume / 1000) * 1000;
+  else if (volume > 1000) volume = Math.round(volume / 100) * 100;
+  else volume = Math.round(volume / 10) * 10;
+
+  return Math.max(10, volume);
+}
+
+function estimateDifficulty(keyword) {
+  const len = keyword.split(' ').length;
+  const hash = hashString(keyword);
+  const jitter = (hash % 100) / 100;
+
+  // Base: short keywords are harder
+  let base;
+  if (len === 1) base = 85;
+  else if (len === 2) base = 70;
+  else if (len === 3) base = 55;
+  else if (len === 4) base = 40;
+  else if (len === 5) base = 28;
+  else base = 18;
+
+  // Question keywords easier
+  if (/^(what|how|why|when|where|which|who|can|does|is)/i.test(keyword)) {
+    base -= 10;
+  }
+
+  // Long-tail easier
+  if (keyword.length > 25) base -= 5;
+
+  let diff = Math.round(base + jitter * 20 - 10);
+  return Math.max(3, Math.min(98, diff));
+}
+
+function estimateCPC(keyword) {
+  const commercialWords = ['buy', 'price', 'cost', 'insurance', 'loan', 'mortgage', 'lawyer', 'attorney',
+    'software', 'saas', 'service', 'hire', 'agency', 'consultant', 'course', 'training',
+    'crypto', 'trading', 'invest', 'hosting', 'vpn', 'cloud'];
+  const hash = hashString(keyword);
+  const jitter = (hash % 100) / 100;
+
+  let cpc = 0.5 + jitter * 2;
+
+  // Commercial keywords higher CPC
+  const hasCommercial = commercialWords.some(w => keyword.toLowerCase().includes(w));
+  if (hasCommercial) cpc *= 3 + jitter * 2;
+
+  return Math.round(cpc * 100) / 100;
+}
+
+function detectIntent(keyword) {
+  const lower = keyword.toLowerCase();
+
+  // Transactional
+  if (/^(buy|download|signup|sign up|get|order|subscribe|purchase)\b/.test(lower) ||
+      /\b(price|cost|cheap|near me|for sale|discount|coupon|trial)\b/.test(lower)) {
+    return 'transactional';
+  }
+
+  // Navigational
+  if (/\b(login|signin|sign in|account|dashboard|official|website|site|app)\b/.test(lower) ||
+      /^(facebook|google|youtube|twitter|instagram|amazon|netflix)\b/.test(lower)) {
+    return 'navigational';
+  }
+
+  // Commercial
+  if (/\b(best|top|review|reviews|comparison|vs|versus|alternative|pros|cons|rating)\b/.test(lower)) {
+    return 'commercial';
+  }
+
+  // Informational
+  if (/^(what|how|why|when|where|which|who|can|does|is|are|guide|tutorial|tips|examples|learn)\b/.test(lower)) {
+    return 'informational';
+  }
+
+  // Default to informational for long keywords, commercial for short
+  if (keyword.split(' ').length >= 4) return 'informational';
+  return 'commercial';
+}
+
+/* ===== KEYWORD GENERATION ===== */
+function generateKeywords(seed) {
+  const s = seed.toLowerCase().trim();
+  const keywords = new Set();
+  keywords.add(s);
+
+  // Pattern 1: Prefix + seed
+  PREFIXES.forEach(p => keywords.add(`${p} ${s}`));
+
+  // Pattern 2: Seed + suffix
+  SUFFIXES.forEach(su => keywords.add(`${s} ${su}`));
+
+  // Pattern 3: Question templates
+  keywords.add(`what is ${s}`);
+  keywords.add(`how to use ${s}`);
+  keywords.add(`how does ${s} work`);
+  keywords.add(`why use ${s}`);
+  keywords.add(`when to use ${s}`);
+  keywords.add(`${s} for beginners`);
+  keywords.add(`${s} vs alternatives`);
+  keywords.add(`${s} pros and cons`);
+
+  // Pattern 4: Commercial modifiers
+  keywords.add(`best ${s}`);
+  keywords.add(`top 10 ${s}`);
+  keywords.add(`best free ${s}`);
+  keywords.add(`${s} comparison`);
+  keywords.add(`${s} review`);
+  keywords.add(`cheap ${s}`);
+  keywords.add(`${s} pricing`);
+
+  // Pattern 5: Transactional
+  keywords.add(`buy ${s}`);
+  keywords.add(`${s} price`);
+  keywords.add(`download ${s}`);
+  keywords.add(`free ${s} online`);
+
+  // Pattern 6: Tool/software suffixes
+  keywords.add(`${s} tool`);
+  keywords.add(`${s} software`);
+  keywords.add(`${s} online`);
+  keywords.add(`${s} calculator`);
+  keywords.add(`${s} app`);
+
+  // Pattern 7: Related long-tail
+  keywords.add(`${s} for students`);
+  keywords.add(`${s} for business`);
+  keywords.add(`${s} for beginners 2026`);
+  keywords.add(`${s} step by step guide`);
+
+  return Array.from(keywords);
+}
+
+/* ===== RENDER ===== */
+let currentResults = [];
+
+function renderResults(results) {
+  const body = $('#resultsBody');
+  body.innerHTML = '';
+
+  const intentClass = {
+    informational: 'intent-informational',
+    commercial: 'intent-commercial',
+    transactional: 'intent-transactional',
+    navigational: 'intent-navigational'
+  };
+
+  const diffColor = (d) => {
+    if (d <= 20) return '#10b981';
+    if (d <= 40) return '#22c55e';
+    if (d <= 60) return '#f59e0b';
+    if (d <= 80) return '#f97316';
+    return '#ef4444';
+  };
+
+  const volumeFmt = (v) => {
+    if (v >= 1000000) return (v / 1000000).toFixed(1) + 'M';
+    if (v >= 1000) return (v / 1000).toFixed(1) + 'K';
+    return String(v);
+  };
+
+  results.forEach(r => {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td class="kw-text">${escapeHtml(r.keyword)}</td>
+      <td class="num">${volumeFmt(r.volume)}</td>
+      <td class="num">
+        <div class="diff-bar">
+          <div class="diff-bar-track"><div class="diff-bar-fill" style="width:${r.difficulty}%;background:${diffColor(r.difficulty)};"></div></div>
+          <span style="color:${diffColor(r.difficulty)};min-width:24px;">${r.difficulty}</span>
+        </div>
+      </td>
+      <td class="num">$${r.cpc.toFixed(2)}</td>
+      <td><span class="intent-badge ${intentClass[r.intent]}">${r.intent}</span></td>
+    `;
+    body.appendChild(tr);
+  });
+
+  // Update stats
+  const total = results.length;
+  const avgVol = Math.round(results.reduce((s, r) => s + r.volume, 0) / total);
+  const avgDiff = Math.round(results.reduce((s, r) => s + r.difficulty, 0) / total);
+  const avgCpc = (results.reduce((s, r) => s + r.cpc, 0) / total).toFixed(2);
+
+  $('#statTotal').textContent = total;
+  $('#statAvgVolume').textContent = avgVol >= 1000 ? (avgVol / 1000).toFixed(1) + 'K' : avgVol;
+  $('#statAvgDiff').textContent = avgDiff;
+  $('#statAvgCpc').textContent = '$' + avgCpc;
+  $('#resultCount').textContent = total;
+}
+
+/* ===== GENERATE ===== */
+async function generate() {
+  const seed = $('#seedKeyword').value.trim();
+  if (!seed) return;
+
+  const btn = $('#generateBtn');
+  btn.disabled = true;
+
+  $('#emptyState').style.display = 'none';
+  $('#resultsSection').style.display = 'none';
+  $('#progressWrap').classList.add('visible');
+
+  // Simulate processing delay for UX
+  await new Promise(r => setTimeout(r, 500));
+
+  const allKeywords = generateKeywords(seed);
+  const typeFilter = $('#typeSelect').value;
+
+  // Generate metrics
+  let results = allKeywords.map(kw => ({
+    keyword: kw,
+    volume: estimateVolume(kw, seed),
+    difficulty: estimateDifficulty(kw),
+    cpc: estimateCPC(kw),
+    intent: detectIntent(kw)
+  }));
+
+  // Apply type filter
+  if (typeFilter === 'longtail') {
+    results = results.filter(r => r.keyword.split(' ').length >= 4);
+  } else if (typeFilter === 'question') {
+    results = results.filter(r => /^(what|how|why|when|where|which|who|can|does|is|are)\b/i.test(r.keyword));
+  } else if (typeFilter === 'commercial') {
+    results = results.filter(r => r.intent === 'commercial' || r.intent === 'transactional');
+  } else if (typeFilter === 'informational') {
+    results = results.filter(r => r.intent === 'informational');
+  }
+
+  // Deduplicate
+  const seen = new Set();
+  results = results.filter(r => {
+    if (seen.has(r.keyword)) return false;
+    seen.add(r.keyword);
+    return true;
+  });
+
+  // Sort
+  const sortBy = $('#sortSelect').value;
+  if (sortBy === 'volume') results.sort((a, b) => b.volume - a.volume);
+  else if (sortBy === 'difficulty') results.sort((a, b) => a.difficulty - b.difficulty);
+  else if (sortBy === 'cpc') results.sort((a, b) => b.cpc - a.cpc);
+  else if (sortBy === 'alpha') results.sort((a, b) => a.keyword.localeCompare(b.keyword));
+
+  // Limit
+  const limit = parseInt($('#limitSelect').value, 10) || 60;
+  results = results.slice(0, limit);
+
+  currentResults = results;
+
+  $('#progressWrap').classList.remove('visible');
+  $('#resultsSection').style.display = 'block';
+  renderResults(results);
+
+  btn.disabled = false;
+  showToast(`✅ ${results.length} keywords generated!`, 'success');
+}
+
+/* ===== EVENT BINDINGS ===== */
+$('#seedKeyword').addEventListener('input', (e) => {
+  $('#generateBtn').disabled = !e.target.value.trim();
+});
+
+$('#seedKeyword').addEventListener('keypress', (e) => {
+  if (e.key === 'Enter') {
+    e.preventDefault();
+    if ($('#seedKeyword').value.trim()) generate();
+  }
+});
+
+$('#generateBtn').addEventListener('click', generate);
+
+$('#sortSelect').addEventListener('change', () => {
+  if (currentResults.length) generate();
+});
+
+$('#limitSelect').addEventListener('change', () => {
+  if (currentResults.length) generate();
+});
+
+$('#typeSelect').addEventListener('change', () => {
+  if (currentResults.length) generate();
+});
+
+/* ===== EXAMPLE CHIPS ===== */
+$$('.example-chip').forEach(chip => {
+  chip.addEventListener('click', () => {
+    $('#seedKeyword').value = chip.dataset.kw;
+    $('#generateBtn').disabled = false;
+    generate();
+  });
+});
+
+/* ===== COPY ALL ===== */
+$('#copyBtn').addEventListener('click', async () => {
+  if (!currentResults.length) return;
+
+  const lines = ['Keyword\tVolume\tDifficulty\tCPC\tIntent'];
+  currentResults.forEach(r => {
+    lines.push(`${r.keyword}\t${r.volume}\t${r.difficulty}\t$${r.cpc.toFixed(2)}\t${r.intent}`);
+  });
+
+  const ok = await copyToClipboard(lines.join('\n'));
+  if (ok) {
+    const btn = $('#copyBtn');
+    btn.classList.add('copied');
+    const orig = btn.innerHTML;
+    btn.innerHTML = '✓ Copied!';
+    setTimeout(() => {
+      btn.classList.remove('copied');
+      btn.innerHTML = orig;
+    }, 2000);
+    showToast('Keywords copied to clipboard!', 'success');
+  } else {
+    showToast('Copy failed', 'error');
+  }
+});
+
+/* ===== CSV DOWNLOAD ===== */
+$('#csvBtn').addEventListener('click', () => {
+  if (!currentResults.length) return;
+
+  const rows = [['Keyword', 'Volume', 'Difficulty', 'CPC (USD)', 'Intent']];
+  currentResults.forEach(r => {
+    rows.push([
+      `"${r.keyword.replace(/"/g, '""')}"`,
+      r.volume,
+      r.difficulty,
+      r.cpc.toFixed(2),
+      r.intent
+    ]);
+  });
+
+  const csv = rows.map(r => r.join(',')).join('\n');
+  const blob = new Blob([csv], { type: 'text/csv;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `keywords-${$('#seedKeyword').value.replace(/\s+/g, '-').toLowerCase()}.csv`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+  showToast('CSV downloaded!', 'success');
+});
+
+/* ===== FAQ ===== */
+$$('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    $$('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2563eb">
+
+<title>To-Do List - Free Online Task Manager | BigToolz</title>
+<meta name="description" content="Free online to-do list. Add tasks, set priorities, due dates, and categories. Track progress with stats. 100% private data saved in your browser.">
+<meta name="keywords" content="todo list, task manager, online todo, task tracker, to do app, daily tasks, checklist">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://bigtoolz.com/tools/utility-tools/todo-list/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="To-Do List - Free Online Task Manager | BigToolz">
+<meta property="og:description" content="Manage tasks with priorities, due dates, categories. 100% private, browser-based.">
+<meta property="og:url" content="https://bigtoolz.com/tools/utility-tools/todo-list/">
+<meta property="og:image" content="https://bigtoolz.com/assets/images/og-image.jpg">
+<meta property="og:site_name" content="BigToolz">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="To-Do List - BigToolz">
+<meta name="twitter:description" content="Manage your daily tasks free, private, no signup.">
+<meta name="twitter:image" content="https://bigtoolz.com/assets/images/twitter-card.jpg">
+
+<link rel="icon" href="/assets/images/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/images/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#f8f9fc;color:#1a1a2e;overflow-x:hidden;line-height:1.5}
+
+  .header{background:#fff;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;position:sticky;top:0;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+  .header-left{display:flex;align-items:center;gap:40px}
+  .logo{display:flex;align-items:center;gap:8px;font-size:22px;font-weight:800;color:#1a1a2e;text-decoration:none}
+  .logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#3b82f6,#2563eb);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px}
+  .logo span{color:#2563eb}
+  .nav{display:flex;align-items:center;gap:28px;list-style:none}
+  .nav a{text-decoration:none;color:#4b5563;font-size:14px;font-weight:500;transition:color .2s}
+  .nav a:hover,.nav a.active{color:#2563eb}
+  .header-right{display:flex;align-items:center;gap:16px}
+  .search-btn,.theme-btn{width:36px;height:36px;border-radius:50%;border:none;background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#4b5563}
+  .search-btn:hover,.theme-btn:hover{background:#f3f4f6}
+  .bookmark-btn{display:flex;align-items:center;gap:8px;background:#2563eb;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
+  .bookmark-btn:hover{background:#1d4ed8}
+
+  .hero{background:linear-gradient(135deg,#0a0e27 0%,#1a1a4e 40%,#2d1b69 70%,#4c1d95 100%);padding:40px 40px 60px;position:relative;overflow:hidden;color:#fff}
+  .hero::before{content:'';position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(59,130,246,.3) 0%,transparent 70%);border-radius:50%}
+  .hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+  .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px;flex-wrap:wrap}
+  .breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none}
+  .breadcrumb a:hover{color:#fff}
+  .breadcrumb .sep{color:rgba(255,255,255,.4)}
+  .breadcrumb .current{color:#fff;font-weight:500}
+  .hero-title-row{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+  .hero-icon{width:60px;height:60px;background:#3b82f6;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;color:#fff;flex-shrink:0;box-shadow:0 8px 24px rgba(59,130,246,.4)}
+  .hero-title{font-size:42px;font-weight:800;line-height:1.15}
+  .hero-title .blue{color:#60a5fa}
+  .hero-desc{font-size:15px;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:24px;max-width:560px}
+  .hero-features{display:flex;gap:24px;flex-wrap:wrap}
+  .hero-feature{display:flex;align-items:center;gap:6px;font-size:13px;color:#fff;font-weight:500}
+  .hero-feature .check{width:18px;height:18px;border-radius:50%;background:#3b82f6;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;flex-shrink:0}
+
+  .main-content{max-width:1200px;margin:0 auto;padding:40px;display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start}
+  .tool-content{min-width:0}
+
+  .workspace{background:#fff;border-radius:16px;padding:28px;box-shadow:0 1px 3px rgba(0,0,0,.06);border:1px solid #e5e7eb;margin-bottom:24px}
+
+  /* Add task form */
+  .add-form{display:flex;gap:10px;margin-bottom:16px;flex-wrap:wrap}
+  .add-input{flex:1;min-width:200px;padding:14px 16px;border:2px solid #e5e7eb;border-radius:10px;font-size:15px;font-weight:500;font-family:inherit;color:#1a1a2e;background:#fff;outline:none;transition:border-color .2s}
+  .add-input:focus{border-color:#3b82f6;box-shadow:0 0 0 3px rgba(59,130,246,.1)}
+  .add-btn{display:inline-flex;align-items:center;gap:8px;padding:14px 24px;background:#3b82f6;color:#fff;border:none;border-radius:10px;font-size:15px;font-weight:700;font-family:inherit;cursor:pointer;transition:all .2s;white-space:nowrap}
+  .add-btn:hover{background:#2563eb;transform:translateY(-1px)}
+
+  /* Advanced options */
+  .advanced-toggle{display:flex;align-items:center;gap:8px;background:none;border:none;color:#3b82f6;font-size:13px;font-weight:700;font-family:inherit;cursor:pointer;padding:6px 0;margin-bottom:10px}
+  .advanced-toggle:hover{color:#1d4ed8}
+  .advanced-toggle .chev{transition:transform .2s;font-size:11px}
+  .advanced-toggle.open .chev{transform:rotate(180deg)}
+  .advanced-body{display:none;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:16px;padding:16px;background:#f8fafc;border-radius:10px;border:1px solid #e5e7eb}
+  .advanced-body.open{display:grid}
+  .adv-field{display:flex;flex-direction:column;gap:6px}
+  .adv-field label{font-size:11px;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:.5px}
+  .adv-field input,.adv-field select{padding:10px 12px;border:1px solid #e5e7eb;border-radius:8px;font-size:13px;font-family:inherit;font-weight:600;color:#1a1a2e;background:#fff;outline:none;cursor:pointer;transition:border-color .2s}
+  .adv-field input:focus,.adv-field select:focus{border-color:#3b82f6}
+
+  /* Stats bar */
+  .stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px;padding:16px;background:#f8fafc;border-radius:12px;border:1px solid #e5e7eb}
+  .stat-item{text-align:center}
+  .stat-item-label{font-size:10px;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px}
+  .stat-item-value{font-size:20px;font-weight:800;color:#1a1a2e}
+  .stat-item-value.pending{color:#f59e0b}
+  .stat-item-value.done{color:#10b981}
+  .stat-item-value.overdue{color:#ef4444}
+
+  /* Progress bar */
+  .progress-wrap{margin-bottom:20px;padding:16px;background:#fff;border-radius:12px;border:1px solid #e5e7eb}
+  .progress-label{display:flex;justify-content:space-between;font-size:12px;font-weight:700;color:#4b5563;margin-bottom:8px}
+  .progress-track{height:10px;background:#e5e7eb;border-radius:5px;overflow:hidden}
+  .progress-fill{height:100%;background:linear-gradient(90deg,#60a5fa,#3b82f6);border-radius:5px;transition:width .4s ease;width:0%}
+
+  /* Toolbar - filters & search */
+  .toolbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:16px;padding:12px;background:#f8fafc;border-radius:10px;border:1px solid #e5e7eb}
+  .filter-tabs{display:flex;gap:4px;background:#fff;padding:4px;border-radius:8px;border:1px solid #e5e7eb;flex-wrap:wrap}
+  .filter-tab{padding:8px 14px;background:transparent;border:none;border-radius:6px;font-size:12px;font-weight:700;color:#6b7280;cursor:pointer;font-family:inherit;transition:all .2s;white-space:nowrap}
+  .filter-tab:hover{background:#f1f5f9}
+  .filter-tab.active{background:#3b82f6;color:#fff}
+  .filter-tab .count{font-size:10px;opacity:.8;margin-left:4px;font-weight:600}
+
+  .search-input{flex:1;min-width:150px;padding:8px 12px;border:1px solid #e5e7eb;border-radius:8px;font-size:13px;font-family:inherit;font-weight:500;color:#1a1a2e;background:#fff;outline:none;transition:border-color .2s}
+  .search-input:focus{border-color:#3b82f6}
+
+  .sort-select{padding:8px 12px;border:1px solid #e5e7eb;border-radius:8px;font-size:13px;font-weight:700;font-family:inherit;color:#1a1a2e;background:#fff;outline:none;cursor:pointer}
+
+  /* Task list */
+  .task-list{display:flex;flex-direction:column;gap:8px;min-height:60px}
+  .task-item{background:#fff;border:1px solid #e5e7eb;border-left:4px solid #cbd5e1;border-radius:10px;padding:14px 16px;display:flex;gap:12px;align-items:flex-start;transition:all .2s;position:relative}
+  .task-item:hover{border-color:#3b82f6;border-left-color:#3b82f6;box-shadow:0 4px 12px rgba(59,130,246,.08);transform:translateX(2px)}
+  .task-item[data-priority="high"]{border-left-color:#ef4444}
+  .task-item[data-priority="medium"]{border-left-color:#f59e0b}
+  .task-item[data-priority="low"]{border-left-color:#10b981}
+  .task-item.completed{opacity:.6;background:#f9fafb}
+  .task-item.completed .task-title{text-decoration:line-through;color:#9ca3af}
+  .task-item.overdue{border-left-color:#dc2626;background:#fef2f2}
+  html[data-theme="dark"] .task-item.overdue{background:rgba(220,38,38,.08)}
+
+  .task-checkbox{width:20px;height:20px;border:2px solid #cbd5e1;border-radius:6px;cursor:pointer;flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all .2s;margin-top:2px;background:#fff}
+  .task-checkbox:hover{border-color:#3b82f6}
+  .task-checkbox.checked{background:#3b82f6;border-color:#3b82f6;color:#fff}
+  .task-checkbox.checked::after{content:'✓';font-size:13px;font-weight:900;color:#fff}
+
+  .task-content{flex:1;min-width:0}
+  .task-title{font-size:14px;font-weight:700;color:#1a1a2e;line-height:1.4;margin-bottom:4px;word-break:break-word;cursor:pointer}
+  .task-meta{display:flex;gap:10px;flex-wrap:wrap;font-size:11px;color:#6b7280;align-items:center;font-weight:600}
+  .task-badge{padding:3px 8px;border-radius:5px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.3px}
+  .task-badge.priority-high{background:#fee2e2;color:#991b1b}
+  .task-badge.priority-medium{background:#fef3c7;color:#92400e}
+  .task-badge.priority-low{background:#d1fae5;color:#065f46}
+  .task-badge.category{background:#e0e7ff;color:#3730a3}
+  .task-badge.due{background:#dbeafe;color:#1e40af}
+  .task-badge.due.overdue{background:#fee2e2;color:#991b1b}
+  .task-badge.due.today{background:#fef3c7;color:#92400e}
+
+  .task-actions{display:flex;gap:4px;flex-shrink:0}
+  .task-btn{width:30px;height:30px;background:transparent;border:1px solid transparent;border-radius:6px;cursor:pointer;color:#9ca3af;font-size:14px;font-family:inherit;display:flex;align-items:center;justify-content:center;transition:all .2s}
+  .task-btn:hover{background:#f3f4f6;color:#3b82f6;border-color:#e5e7eb}
+  .task-btn.delete:hover{background:#fef2f2;color:#ef4444;border-color:#fecaca}
+
+  .empty-state{text-align:center;padding:60px 20px;color:#9ca3af}
+  .empty-state .icon{font-size:56px;display:block;margin-bottom:12px;opacity:.5}
+  .empty-state .title{font-size:16px;font-weight:700;color:#4b5563;margin-bottom:6px}
+  .empty-state .desc{font-size:13px}
+
+  /* Bulk actions */
+  .bulk-actions{display:flex;gap:8px;margin-top:16px;padding-top:16px;border-top:1px solid #f3f4f6;flex-wrap:wrap}
+  .mini-btn{display:inline-flex;align-items:center;gap:6px;padding:9px 14px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;font-size:12px;font-weight:600;color:#4b5563;cursor:pointer;font-family:inherit;transition:all .2s}
+  .mini-btn:hover{border-color:#3b82f6;color:#3b82f6;background:#eff6ff}
+  .mini-btn.danger:hover{border-color:#ef4444;color:#dc2626;background:#fef2f2}
+
+  /* SEO */
+  .seo-content{background:#fff;border-radius:16px;padding:32px;border:1px solid #e5e7eb;margin-bottom:24px}
+  .seo-content h2{font-size:22px;font-weight:800;color:#1a1a2e;margin-bottom:14px;margin-top:28px;display:flex;align-items:center;gap:10px}
+  .seo-content h2:first-child{margin-top:0}
+  .seo-content h3{font-size:16px;font-weight:700;color:#1a1a2e;margin:20px 0 10px}
+  .seo-content p{font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:14px}
+  .seo-content ul{list-style:none;padding-left:0;margin-bottom:16px}
+  .seo-content ul li{position:relative;padding-left:24px;font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:8px}
+  .seo-content ul li::before{content:'';position:absolute;left:6px;top:12px;width:6px;height:6px;background:#3b82f6;border-radius:50%}
+  .seo-content a{color:#2563eb;text-decoration:none;font-weight:600}
+  .seo-content a:hover{text-decoration:underline}
+  .seo-content strong{color:#1a1a2e;font-weight:700}
+
+  .how-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:20px}
+  .how-step{background:#eff6ff;border-radius:12px;padding:20px;border:1px solid #bfdbfe}
+  .how-step-num{width:36px;height:36px;border-radius:50%;background:#3b82f6;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;margin-bottom:12px}
+  .how-step-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+  .how-step-desc{font-size:13px;color:#6b7280;line-height:1.6}
+
+  .faq-item{background:#eff6ff;border:1px solid #bfdbfe;border-radius:12px;margin-bottom:10px;overflow:hidden;transition:border-color .2s}
+  .faq-item:hover{border-color:#3b82f6}
+  .faq-question{width:100%;background:none;border:none;padding:18px 22px;font-size:15px;font-weight:700;color:#1a1a2e;text-align:left;cursor:pointer;font-family:inherit;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .faq-question .chev{font-size:12px;color:#3b82f6;transition:transform .2s;flex-shrink:0}
+  .faq-item.open .faq-question .chev{transform:rotate(180deg)}
+  .faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 22px}
+  .faq-item.open .faq-answer{max-height:500px;padding-bottom:18px}
+  .faq-answer p{font-size:14px;color:#6b7280;line-height:1.7;margin:0}
+
+  .sidebar{background:#fff;border-radius:16px;padding:24px;border:1px solid #e5e7eb;position:sticky;top:80px;margin-bottom:24px}
+  .sidebar-header{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:800;color:#1a1a2e;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid #f3f4f6}
+  .sidebar-list{display:flex;flex-direction:column;gap:8px}
+  .sidebar-item{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;cursor:pointer;transition:background .2s;text-decoration:none;color:inherit;border:1px solid #f3f4f6}
+  .sidebar-item:hover{background:#eff6ff;border-color:#bfdbfe}
+  .sidebar-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;flex-shrink:0}
+  .sidebar-info{flex:1;min-width:0}
+  .sidebar-title{font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:2px}
+  .sidebar-desc{font-size:11px;color:#9ca3af;line-height:1.4}
+
+  .footer{background:#0a0e27;padding:60px 40px 30px;color:#fff;margin-top:40px}
+  .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:40px}
+  .footer-brand{display:flex;align-items:center;gap:8px;font-size:20px;font-weight:800;margin-bottom:12px}
+  .footer-brand span{color:#60a5fa}
+  .footer-tagline{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px}
+  .footer-social{display:flex;gap:12px}
+  .footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:16px;transition:background .2s}
+  .footer-social a:hover{background:rgba(255,255,255,.2)}
+  .footer-heading{font-size:14px;font-weight:700;margin-bottom:20px;color:#fff}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .footer-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;transition:color .2s}
+  .footer-links a:hover{color:#60a5fa}
+  .footer-bottom{max-width:1200px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  .footer-bottom-left{display:flex;gap:20px;font-size:12px;color:rgba(255,255,255,.5)}
+  .footer-bottom-right,.footer-bottom-links a{font-size:12px;color:rgba(255,255,255,.5);text-decoration:none}
+  .footer-bottom-links{display:flex;gap:20px}
+
+  .toast{position:fixed;bottom:24px;right:24px;background:#1a1a2e;color:#fff;padding:14px 20px;border-radius:10px;font-size:13px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:3000;transform:translateY(200%);transition:transform .3s ease;max-width:320px}
+  .toast.visible{transform:translateY(0)}
+  .toast.success{background:#10b981}
+  .toast.error{background:#ef4444}
+
+  @media(max-width:1024px){
+    .main-content{grid-template-columns:1fr;padding:24px 20px}
+    .sidebar{position:static}
+    .how-steps{grid-template-columns:repeat(2,1fr)}
+  }
+  @media(max-width:768px){
+    .header{padding:0 20px}.nav{display:none}
+    .hero{padding:24px 20px 40px}
+    .hero-title{font-size:28px}
+    .hero-icon{width:48px;height:48px;font-size:22px}
+    .hero-title-row{flex-direction:column;align-items:flex-start;gap:12px}
+    .main-content{padding:20px 16px}
+    .workspace{padding:18px}
+    .how-steps{grid-template-columns:1fr}
+    .seo-content{padding:20px}
+    .footer-inner{grid-template-columns:1fr 1fr}
+    .toast{left:16px;right:16px;bottom:16px;max-width:none}
+    .stats-bar{grid-template-columns:repeat(2,1fr)}
+    .advanced-body{grid-template-columns:1fr}
+    .filter-tabs{width:100%}
+    .filter-tab{flex:1;text-align:center}
+    .task-actions{flex-direction:column}
+    .task-btn{width:28px;height:28px}
+  }
+  @media(max-width:576px){
+    .header{padding:0 16px}.header-right .search-btn,.header-right .theme-btn{display:none}
+    .hero-title{font-size:24px}
+    .footer-inner{grid-template-columns:1fr}
+    .footer-bottom{flex-direction:column;text-align:center}
+    .add-form{flex-direction:column}
+    .add-btn{width:100%;justify-content:center}
+    .toolbar{flex-direction:column;align-items:stretch}
+    .search-input{width:100%}
+    .sort-select{width:100%}
+  }
+
+  html[data-theme="dark"] body{background:#0f172a;color:#f1f5f9}
+  html[data-theme="dark"] .header,html[data-theme="dark"] .workspace,html[data-theme="dark"] .seo-content,html[data-theme="dark"] .sidebar,html[data-theme="dark"] .progress-wrap,html[data-theme="dark"] .task-item{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .logo,html[data-theme="dark"] .hero-title,html[data-theme="dark"] .seo-content h2,html[data-theme="dark"] .seo-content h3,html[data-theme="dark"] .faq-question,html[data-theme="dark"] .sidebar-header,html[data-theme="dark"] .sidebar-title{color:#f1f5f9}
+  html[data-theme="dark"] .nav a{color:#cbd5e1}
+  html[data-theme="dark"] .how-step,html[data-theme="dark"] .faq-item{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .add-input,html[data-theme="dark"] .search-input,html[data-theme="dark"] .sort-select,html[data-theme="dark"] .adv-field input,html[data-theme="dark"] .adv-field select{background:#0f172a;border-color:#334155;color:#f1f5f9}
+  html[data-theme="dark"] .stats-bar,html[data-theme="dark"] .toolbar,html[data-theme="dark"] .advanced-body{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .stat-item-value,html[data-theme="dark"] .task-title{color:#f1f5f9}
+  html[data-theme="dark"] .filter-tabs{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .task-item.completed{background:#0f172a}
+  html[data-theme="dark"] .task-checkbox{background:#0f172a;border-color:#475569}
+  html[data-theme="dark"] .progress-track{background:#334155}
+  html[data-theme="dark"] .task-btn:hover{background:#334155}
+  html[data-theme="dark"] .seo-content p,html[data-theme="dark"] .seo-content ul li,html[data-theme="dark"] .faq-answer p{color:#cbd5e1}
+  html[data-theme="dark"] .mini-btn{background:#0f172a;border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .empty-state .title{color:#cbd5e1}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type": "SoftwareApplication", "name": "To-Do List", "url": "https://bigtoolz.com/tools/utility-tools/todo-list/", "applicationCategory": "ProductivityApplication", "operatingSystem": "Any (Web-based)", "description": "Free online to-do list with priorities, due dates, categories, and stats. 100% private data saved in your browser.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "2145"}},
+    {"@type": "HowTo", "name": "How to Use the To-Do List", "step": [
+      {"@type": "HowToStep", "name": "Add a Task", "text": "Type your task and press Add. Set priority, due date and category optionally."},
+      {"@type": "HowToStep", "name": "Organize", "text": "Use filters, search, and sort to focus on what matters."},
+      {"@type": "HowToStep", "name": "Complete", "text": "Click the checkbox to mark a task as done."},
+      {"@type": "HowToStep", "name": "Track Progress", "text": "See stats and progress bar update as you complete tasks."}
+    ]},
+    {"@type": "FAQPage", "mainEntity": [
+      {"@type": "Question", "name": "Is my to-do list private?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, 100%. Your tasks are stored only in your browser's localStorage. Nothing is sent to any server. You can export or delete your data anytime."}},
+      {"@type": "Question", "name": "What happens if I clear my browser data?", "acceptedAnswer": {"@type": "Answer", "text": "If you clear your browser's storage, your tasks will be lost. Export a JSON backup regularly to prevent this. You can re-import the backup anytime."}},
+      {"@type": "Question", "name": "Can I set priorities and due dates?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Click 'More options' to add priority (Low/Medium/High), due date, and a category tag to any task. Overdue tasks are highlighted in red."}},
+      {"@type": "Question", "name": "Can I use it offline?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. After your first visit, the tool loads from your browser's cache and works completely offline. Your data is stored locally."}}
+    ]},
+    {"@type": "BreadcrumbList", "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bigtoolz.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://bigtoolz.com/tools/"},
+      {"@type": "ListItem", "position": 3, "name": "Utility Tools", "item": "https://bigtoolz.com/tools/utility-tools/"},
+      {"@type": "ListItem", "position": 4, "name": "To-Do List", "item": "https://bigtoolz.com/tools/utility-tools/todo-list/"}
+    ]}
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-left">
+    <a href="/" class="logo"><div class="logo-icon">⚒</div>BigToolz</span></a>
+    <nav><ul class="nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/tools/" class="active">All Tools</a></li>
+      <li><a href="/tools/categories">Categories</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul></nav>
+  </div>
+  <div class="header-right">
+   
+    <button class="theme-btn" aria-label="Toggle theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
+    
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <nav class="breadcrumb">
+      <a href="/">Home</a><span class="sep">›</span>
+      <a href="/tools/">Tools</a><span class="sep">›</span>
+      <a href="/tools/utility-tools/">Utility Tools</a><span class="sep">›</span>
+      <span class="current">To-Do List</span>
+    </nav>
+    <div class="hero-title-row">
+      <div class="hero-icon">📋</div>
+      <h1 class="hero-title">To-Do <span class="blue">List</span></h1>
+    </div>
+    <p class="hero-desc">
+      Organize your day with priorities, due dates, and categories. Track progress, filter tasks, and stay focused. Your data stays 100% private saved only in your browser.
+    </p>
+    <div class="hero-features">
+      <div class="hero-feature"><span class="check">✓</span> Priorities</div>
+      <div class="hero-feature"><span class="check">✓</span> Due Dates</div>
+      <div class="hero-feature"><span class="check">✓</span> Categories</div>
+      <div class="hero-feature"><span class="check">✓</span> Offline & Private</div>
+    </div>
+  </div>
+</section>
+
+<div class="main-content">
+
+  <div class="tool-content">
+
+    <div class="workspace">
+
+      <!-- Add Task -->
+      <div class="add-form">
+        <input type="text" class="add-input" id="taskInput" placeholder="What needs to be done?" maxlength="200" autocomplete="off">
+        <button class="add-btn" id="addBtn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
+          Add Task
+        </button>
+      </div>
+
+      <button class="advanced-toggle" id="advToggle">
+        <span class="chev">▼</span>
+        More options (priority, due date, category)
+      </button>
+      <div class="advanced-body" id="advBody">
+        <div class="adv-field">
+          <label>Priority</label>
+          <select id="priorityInput">
+            <option value="low">🟢 Low</option>
+            <option value="medium" selected>🟡 Medium</option>
+            <option value="high">🔴 High</option>
+          </select>
+        </div>
+        <div class="adv-field">
+          <label>Due Date</label>
+          <input type="date" id="dueDateInput">
+        </div>
+        <div class="adv-field">
+          <label>Category</label>
+          <input type="text" id="categoryInput" placeholder="e.g. Work, Personal" maxlength="20" list="categoryList">
+          <datalist id="categoryList"></datalist>
+        </div>
+      </div>
+
+      <!-- Stats -->
+      <div class="stats-bar">
+        <div class="stat-item">
+          <div class="stat-item-label">Total</div>
+          <div class="stat-item-value" id="statTotal">0</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-item-label">Pending</div>
+          <div class="stat-item-value pending" id="statPending">0</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-item-label">Completed</div>
+          <div class="stat-item-value done" id="statDone">0</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-item-label">Overdue</div>
+          <div class="stat-item-value overdue" id="statOverdue">0</div>
+        </div>
+      </div>
+
+      <!-- Progress -->
+      <div class="progress-wrap">
+        <div class="progress-label">
+          <span>Progress</span>
+          <span id="progressText">0% complete</span>
+        </div>
+        <div class="progress-track">
+          <div class="progress-fill" id="progressFill"></div>
+        </div>
+      </div>
+
+      <!-- Toolbar -->
+      <div class="toolbar">
+        <div class="filter-tabs" id="filterTabs">
+          <button class="filter-tab active" data-filter="all">All <span class="count" id="countAll">0</span></button>
+          <button class="filter-tab" data-filter="active">Active <span class="count" id="countActive">0</span></button>
+          <button class="filter-tab" data-filter="completed">Done <span class="count" id="countCompleted">0</span></button>
+          <button class="filter-tab" data-filter="today">Today <span class="count" id="countToday">0</span></button>
+          <button class="filter-tab" data-filter="overdue">Overdue <span class="count" id="countOverdue">0</span></button>
+        </div>
+        <input type="text" class="search-input" id="searchInput" placeholder="🔍 Search tasks..." autocomplete="off">
+        <select class="sort-select" id="sortSelect">
+          <option value="created">Newest First</option>
+          <option value="created-asc">Oldest First</option>
+          <option value="priority">Priority (High→Low)</option>
+          <option value="dueDate">Due Date (Soonest)</option>
+          <option value="alpha">A → Z</option>
+        </select>
+      </div>
+
+      <!-- Task List -->
+      <div class="task-list" id="taskList"></div>
+
+      <!-- Bulk Actions -->
+      <div class="bulk-actions">
+        <button class="mini-btn" id="exportBtn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+          Export JSON
+        </button>
+        <button class="mini-btn" id="importBtn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>
+          Import JSON
+        </button>
+        <input type="file" id="importFile" accept=".json" style="display:none;">
+        <button class="mini-btn danger" id="clearCompletedBtn">🗑 Clear Completed</button>
+        <button class="mini-btn danger" id="deleteAllBtn">🗑 Delete All</button>
+      </div>
+
+    </div>
+
+    <!-- SEO Content -->
+    <div class="seo-content">
+
+      <h2>📋 What is a To-Do List?</h2>
+      <p>
+        A <strong>to-do list</strong> is a simple but powerful productivity tool. By writing down your tasks and marking them off as you complete them you free your mind from remembering everything. Research shows that to-do lists <strong>reduce stress</strong>, <strong>improve focus</strong>, and <strong>boost completion rates</strong> by up to 40%.
+      </p>
+      <p>
+        Unlike most online task managers, BigToolz's to-do list runs <strong>100% in your browser</strong>. Your tasks are saved locally on your device using the browser's built-in storage <strong>nothing is uploaded to any server</strong>. No signup, no ads, no tracking. You can export or delete your data anytime.
+      </p>
+
+      <h2>🚀 How to Use the To-Do List</h2>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-step-num">1</div>
+          <div class="how-step-title">Add a Task</div>
+          <div class="how-step-desc">Type your task and click Add.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">2</div>
+          <div class="how-step-title">Add Details</div>
+          <div class="how-step-desc">Set priority, due date, category via "More options".</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">3</div>
+          <div class="how-step-title">Organize</div>
+          <div class="how-step-desc">Filter, sort, and search to stay focused.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">4</div>
+          <div class="how-step-title">Complete</div>
+          <div class="how-step-desc">Check off tasks and watch your progress grow.</div>
+        </div>
+      </div>
+
+      <h2>🎯 Features Explained</h2>
+      <h3>Priorities</h3>
+      <p>Each task has a <strong>priority</strong> Low, Medium, or High. High priority tasks appear with a red left border, so you can spot them instantly. Use priority to decide what to work on first.</p>
+
+      <h3>Due Dates</h3>
+      <p>Add a <strong>due date</strong> to each task. Tasks due today show a yellow badge, and overdue tasks turn red. Perfect for deadlines and daily planning.</p>
+
+      <h3>Categories</h3>
+      <p>Tag tasks with <strong>categories</strong> like "Work", "Personal", "Shopping" then filter by category using the search box. Great for separating life and work tasks.</p>
+
+      <h3>Filters</h3>
+      <p>Filter tabs let you focus on <strong>All, Active, Completed, Today, or Overdue</strong> tasks. Each tab shows a live count so you always know how many tasks are in each bucket.</p>
+
+      <h3>Progress Tracking</h3>
+      <p>A <strong>progress bar</strong> shows your completion percentage. There's a psychological reward in watching it grow it motivates you to finish more tasks.</p>
+
+      <h2>💡 To-Do List Best Practices</h2>
+      <ul>
+        <li><strong>Keep it small.</strong> 5-10 tasks per day is realistic. 50 is overwhelming.</li>
+        <li><strong>Use action verbs.</strong> "Call client" beats "Client". Specific tasks get done.</li>
+        <li><strong>Set priorities honestly.</strong> Not everything is High. Reserve High for truly urgent work.</li>
+        <li><strong>Add due dates.</strong> A task without a deadline tends to slip forever.</li>
+        <li><strong>Review daily.</strong> Spend 2 minutes each morning planning, 2 minutes each evening reflecting.</li>
+        <li><strong>Break big tasks.</strong> "Launch website" → "Buy domain", "Design homepage", etc.</li>
+        <li><strong>Celebrate completions.</strong> The progress bar and stats are there to motivate you.</li>
+      </ul>
+
+      <h2>🔒 Privacy First</h2>
+      <ul>
+        <li><strong>No signup</strong> start working immediately.</li>
+        <li><strong>No cloud storage</strong> data stays on your device.</li>
+        <li><strong>No ads</strong> clean, focused task management.</li>
+        <li><strong>Export anytime</strong> your data, your control.</li>
+        <li><strong>Works offline</strong> no internet required after first visit.</li>
+      </ul>
+
+      <h2>❓ Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-question">Is my to-do list private?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>Yes, 100%.</strong> Your tasks are stored only in your browser's localStorage. Nothing is sent to any server. You can export or delete your data anytime.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What happens if I clear my browser data?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>If you clear your browser's storage or cookies, your tasks will be lost. To prevent this, <strong>export a JSON backup regularly</strong>. You can re-import it anytime.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I set priorities and due dates?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Yes. Click <strong>"More options"</strong> to add priority (Low/Medium/High), due date, and category tag to any task. Overdue tasks are highlighted in red automatically.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I use it offline?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Yes. After your first visit, the tool loads from your browser's cache and works completely offline. Your data is stored locally so nothing is lost.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">How do I delete all tasks?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Click <strong>"Delete All"</strong> at the bottom of the tool. You'll be asked to confirm twice to prevent accidental data loss. Export a backup first if you want to keep your tasks.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I use it on my phone?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Yes. The to-do list is fully responsive works on mobile, tablet, and desktop. Add it to your home screen for quick access.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Is there a task limit?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>No hard limit. localStorage typically holds 5-10 MB, which is thousands of tasks. For typical daily use, you'll never hit the limit.</p></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-header">🔗 Related Utility Tools</div>
+    <div class="sidebar-list">
+      <a href="/tools/utility-tools/habit-tracker/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#10b981;">✅</div>
+        <div class="sidebar-info"><div class="sidebar-title">Habit Tracker</div><div class="sidebar-desc">Build daily habits</div></div>
+      </a>
+      <a href="/tools/utility-tools/mood-tracker/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#fbbf24;">😊</div>
+        <div class="sidebar-info"><div class="sidebar-title">Mood Tracker</div><div class="sidebar-desc">Track emotions</div></div>
+      </a>
+      <a href="/tools/utility-tools/goal-tracker/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#8b5cf6;">🎯</div>
+        <div class="sidebar-info"><div class="sidebar-title">Goal Tracker</div><div class="sidebar-desc">Track your goals</div></div>
+      </a>
+      <a href="/tools/utility-tools/stopwatch/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#f59e0b;">⏱</div>
+        <div class="sidebar-info"><div class="sidebar-title">Stopwatch</div><div class="sidebar-desc">Precise timer</div></div>
+      </a>
+      <a href="/tools/utility-tools/world-clock/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#06b6d4;">🕐</div>
+        <div class="sidebar-info"><div class="sidebar-title">World Clock</div><div class="sidebar-desc">Multiple time zones</div></div>
+      </a>
+      <a href="/tools/utility-tools/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#64748b;">⚙️</div>
+        <div class="sidebar-info"><div class="sidebar-title">All Utility Tools →</div><div class="sidebar-desc">Browse 50+ tools</div></div>
+      </a>
+    </div>
+  </aside>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand"><div class="logo-icon">⚒</div>BigToolz</span></div>
+      <p class="footer-tagline">Your Ultimate Online Tools Hub</p>
+      <div class="footer-social">
+        <a href="https://facebook.com/bigtoolz" aria-label="Facebook">f</a>
+        <a href="https://twitter.com/bigtoolz" aria-label="Twitter">𝕏</a>
+        <a href="https://youtube.com/@bigtoolz" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+    <div>
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/tools/">All Tools</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Categories</h3>
+      <ul class="footer-links">
+        <li><a href="/tools/image-tools/">Image Tools</a></li>
+        <li><a href="/tools/pdf-tools/">PDF Tools</a></li>
+        <li><a href="/tools/text-tools/">Text Tools</a></li>
+        <li><a href="/tools/utility-tools/">Utility Tools</a></li>
+        <li><a href="/tools/categories">All Categories →</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Legal</h3>
+      <ul class="footer-links">
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left"><span>✓ 100% Free</span><span>✓ No Sign Up</span><span>✓ No Installation</span></div>
+    <div class="footer-bottom-right">© 2026 BigToolz. All rights reserved.</div>
+    <div class="footer-bottom-links"><a href="/privacy-policy">Privacy</a><a href="/terms">Terms</a><a href="/disclaimer">Disclaimer</a></div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+'use strict';
+
+/* ===== THEME ===== */
+(function(){try{var t=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&d))document.documentElement.setAttribute('data-theme','dark');else if(t==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();
+document.querySelector('.theme-btn')?.addEventListener('click',()=>{const h=document.documentElement;const c=h.getAttribute('data-theme');const d=window.matchMedia('(prefers-color-scheme: dark)').matches;let n=c==='dark'?'light':c==='light'?'dark':(d?'light':'dark');h.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}});
+
+/* ===== HELPERS ===== */
+const $ = (s, p = document) => p.querySelector(s);
+const $$ = (s, p = document) => [...p.querySelectorAll(s)];
+
+function showToast(msg, type = 'info', duration = 3000) {
+  const t = $('#toast');
+  if (!t) return;
+  t.className = 'toast visible' + (type !== 'info' ? ' ' + type : '');
+  t.textContent = msg;
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove('visible'), duration);
+}
+
+function escapeHtml(str) {
+  const div = document.createElement('div');
+  div.textContent = str;
+  return div.innerHTML;
+}
+
+function todayStr() {
+  return new Date().toISOString().split('T')[0];
+}
+
+function formatDate(dateStr) {
+  if (!dateStr) return '';
+  const [y, m, d] = dateStr.split('-');
+  const date = new Date(parseInt(y), parseInt(m) - 1, parseInt(d));
+  const today = new Date();
+  today.setHours(0,0,0,0);
+  const diff = Math.round((date - today) / (1000 * 60 * 60 * 24));
+  if (diff === 0) return 'Today';
+  if (diff === 1) return 'Tomorrow';
+  if (diff === -1) return 'Yesterday';
+  if (diff < 0) return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+  return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+}
+
+/* ===== STATE ===== */
+const STORAGE_KEY = 'bigtoolz_todo_list';
+
+const state = {
+  tasks: [],
+  filter: 'all',
+  search: '',
+  sort: 'created'
+};
+
+let taskIdCounter = 0;
+
+/* ===== STORAGE ===== */
+function loadTasks() {
+  try {
+    const data = localStorage.getItem(STORAGE_KEY);
+    if (data) {
+      const parsed = JSON.parse(data);
+      state.tasks = Array.isArray(parsed) ? parsed : [];
+      // Set counter to max ID + 1
+      const maxId = state.tasks.reduce((m, t) => Math.max(m, t.id || 0), 0);
+      taskIdCounter = maxId;
+    }
+  } catch (e) {
+    state.tasks = [];
+  }
+}
+
+function saveTasks() {
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(state.tasks));
+  } catch (e) {
+    showToast('Failed to save tasks', 'error');
+  }
+}
+
+/* ===== DOM ===== */
+const taskInput = $('#taskInput');
+const addBtn = $('#addBtn');
+const advToggle = $('#advToggle');
+const advBody = $('#advBody');
+const priorityInput = $('#priorityInput');
+const dueDateInput = $('#dueDateInput');
+const categoryInput = $('#categoryInput');
+const categoryList = $('#categoryList');
+const taskList = $('#taskList');
+const filterTabs = $('#filterTabs');
+const searchInput = $('#searchInput');
+const sortSelect = $('#sortSelect');
+const statTotal = $('#statTotal');
+const statPending = $('#statPending');
+const statDone = $('#statDone');
+const statOverdue = $('#statOverdue');
+const progressFill = $('#progressFill');
+const progressText = $('#progressText');
+const countAll = $('#countAll');
+const countActive = $('#countActive');
+const countCompleted = $('#countCompleted');
+const countToday = $('#countToday');
+const countOverdue = $('#countOverdue');
+
+/* ===== ADVANCED TOGGLE ===== */
+advToggle.addEventListener('click', () => {
+  advToggle.classList.toggle('open');
+  advBody.classList.toggle('open');
+});
+
+/* ===== ADD TASK ===== */
+addBtn.addEventListener('click', addTask);
+taskInput.addEventListener('keypress', (e) => {
+  if (e.key === 'Enter') addTask();
+});
+
+function addTask() {
+  const title = taskInput.value.trim();
+  if (!title) {
+    showToast('Enter a task', 'error');
+    taskInput.focus();
+    return;
+  }
+
+  const task = {
+    id: ++taskIdCounter,
+    title: title,
+    priority: priorityInput.value,
+    dueDate: dueDateInput.value || '',
+    category: categoryInput.value.trim(),
+    completed: false,
+    createdAt: Date.now(),
+    completedAt: null
+  };
+
+  state.tasks.unshift(task);
+  saveTasks();
+
+  // Reset inputs
+  taskInput.value = '';
+  dueDateInput.value = '';
+  // Keep priority and category for convenience
+
+  taskInput.focus();
+  render();
+  showToast('✅ Task added!', 'success');
+}
+
+/* ===== RENDER ===== */
+function render() {
+  renderTaskList();
+  renderStats();
+  renderCategoryList();
+}
+
+function renderCategoryList() {
+  const cats = new Set();
+  state.tasks.forEach(t => { if (t.category) cats.add(t.category); });
+  categoryList.innerHTML = [...cats].map(c => `<option value="${escapeHtml(c)}">`).join('');
+}
+
+function renderStats() {
+  const total = state.tasks.length;
+  const completed = state.tasks.filter(t => t.completed).length;
+  const pending = total - completed;
+  const today = todayStr();
+  const overdue = state.tasks.filter(t => !t.completed && t.dueDate && t.dueDate < today).length;
+
+  statTotal.textContent = total;
+  statPending.textContent = pending;
+  statDone.textContent = completed;
+  statOverdue.textContent = overdue;
+
+  const pct = total === 0 ? 0 : Math.round((completed / total) * 100);
+  progressFill.style.width = pct + '%';
+  progressText.textContent = pct + '% complete';
+
+  countAll.textContent = total;
+  countActive.textContent = pending;
+  countCompleted.textContent = completed;
+  countToday.textContent = state.tasks.filter(t => !t.completed && t.dueDate === today).length;
+  countOverdue.textContent = overdue;
+}
+
+function getFilteredTasks() {
+  let list = [...state.tasks];
+  const today = todayStr();
+
+  // Filter
+  if (state.filter === 'active') list = list.filter(t => !t.completed);
+  else if (state.filter === 'completed') list = list.filter(t => t.completed);
+  else if (state.filter === 'today') list = list.filter(t => !t.completed && t.dueDate === today);
+  else if (state.filter === 'overdue') list = list.filter(t => !t.completed && t.dueDate && t.dueDate < today);
+
+  // Search
+  if (state.search) {
+    const q = state.search.toLowerCase();
+    list = list.filter(t =>
+      t.title.toLowerCase().includes(q) ||
+      (t.category || '').toLowerCase().includes(q)
+    );
+  }
+
+  // Sort
+  if (state.sort === 'created') list.sort((a, b) => b.createdAt - a.createdAt);
+  else if (state.sort === 'created-asc') list.sort((a, b) => a.createdAt - b.createdAt);
+  else if (state.sort === 'priority') {
+    const rank = { high: 0, medium: 1, low: 2 };
+    list.sort((a, b) => rank[a.priority] - rank[b.priority]);
+  }
+  else if (state.sort === 'dueDate') {
+    list.sort((a, b) => {
+      if (!a.dueDate && !b.dueDate) return 0;
+      if (!a.dueDate) return 1;
+      if (!b.dueDate) return -1;
+      return a.dueDate.localeCompare(b.dueDate);
+    });
+  }
+  else if (state.sort === 'alpha') list.sort((a, b) => a.title.localeCompare(b.title));
+
+  return list;
+}
+
+function renderTaskList() {
+  const tasks = getFilteredTasks();
+
+  if (tasks.length === 0) {
+    const messages = {
+      all: { icon: '📝', title: 'No tasks yet', desc: 'Add your first task above to get started!' },
+      active: { icon: '🎉', title: 'All caught up!', desc: 'No active tasks. Time to relax or add new ones.' },
+      completed: { icon: '☑️', title: 'No completed tasks', desc: 'Complete some tasks to see them here.' },
+      today: { icon: '📅', title: 'Nothing due today', desc: 'No tasks due today. Enjoy your day!' },
+      overdue: { icon: '✨', title: 'No overdue tasks', desc: 'You are on top of your schedule!' }
+    };
+    const m = messages[state.filter] || messages.all;
+    taskList.innerHTML = `
+      <div class="empty-state">
+        <span class="icon">${m.icon}</span>
+        <div class="title">${m.title}</div>
+        <div class="desc">${m.desc}</div>
+      </div>
+    `;
+    return;
+  }
+
+  taskList.innerHTML = '';
+  tasks.forEach(task => {
+    const today = todayStr();
+    const isOverdue = !task.completed && task.dueDate && task.dueDate < today;
+    const isToday = !task.completed && task.dueDate === today;
+
+    const div = document.createElement('div');
+    div.className = 'task-item';
+    div.dataset.priority = task.priority;
+    if (task.completed) div.classList.add('completed');
+    if (isOverdue) div.classList.add('overdue');
+
+    let badges = '';
+    badges += `<span class="task-badge priority-${task.priority}">${task.priority}</span>`;
+    if (task.category) badges += `<span class="task-badge category">${escapeHtml(task.category)}</span>`;
+    if (task.dueDate) {
+      const dueClass = isOverdue ? 'overdue' : isToday ? 'today' : '';
+      badges += `<span class="task-badge due ${dueClass}">📅 ${formatDate(task.dueDate)}</span>`;
+    }
+
+    div.innerHTML = `
+      <div class="task-checkbox ${task.completed ? 'checked' : ''}" data-id="${task.id}" role="checkbox" aria-checked="${task.completed}"></div>
+      <div class="task-content">
+        <div class="task-title">${escapeHtml(task.title)}</div>
+        <div class="task-meta">${badges}</div>
+      </div>
+      <div class="task-actions">
+        <button class="task-btn edit" data-id="${task.id}" title="Edit">✎</button>
+        <button class="task-btn delete" data-id="${task.id}" title="Delete">✕</button>
+      </div>
+    `;
+    taskList.appendChild(div);
+  });
+
+  // Bind events
+  $$('.task-checkbox').forEach(cb => {
+    cb.addEventListener('click', () => toggleTask(parseInt(cb.dataset.id, 10)));
+  });
+
+  $$('.task-btn.edit').forEach(btn => {
+    btn.addEventListener('click', () => editTask(parseInt(btn.dataset.id, 10)));
+  });
+
+  $$('.task-btn.delete').forEach(btn => {
+    btn.addEventListener('click', () => deleteTask(parseInt(btn.dataset.id, 10)));
+  });
+
+  // Double-click title to edit
+  $$('.task-title').forEach(title => {
+    title.addEventListener('dblclick', (e) => {
+      const id = parseInt(e.target.closest('.task-item').querySelector('.task-checkbox').dataset.id, 10);
+      editTask(id);
+    });
+  });
+}
+
+/* ===== TASK ACTIONS ===== */
+function toggleTask(id) {
+  const task = state.tasks.find(t => t.id === id);
+  if (!task) return;
+  task.completed = !task.completed;
+  task.completedAt = task.completed ? Date.now() : null;
+  saveTasks();
+  render();
+}
+
+function deleteTask(id) {
+  const task = state.tasks.find(t => t.id === id);
+  if (!task) return;
+  if (!confirm(`Delete "${task.title}"?`)) return;
+  state.tasks = state.tasks.filter(t => t.id !== id);
+  saveTasks();
+  render();
+  showToast('Task deleted');
+}
+
+function editTask(id) {
+  const task = state.tasks.find(t => t.id === id);
+  if (!task) return;
+
+  const newTitle = prompt('Edit task:', task.title);
+  if (newTitle === null) return;
+  const trimmed = newTitle.trim();
+  if (!trimmed) {
+    showToast('Title cannot be empty', 'error');
+    return;
+  }
+  task.title = trimmed;
+  saveTasks();
+  render();
+  showToast('Task updated', 'success');
+}
+
+/* ===== FILTERS ===== */
+$$('.filter-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    $$('.filter-tab').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    state.filter = tab.dataset.filter;
+    renderTaskList();
+  });
+});
+
+/* ===== SEARCH ===== */
+let searchTimer;
+searchInput.addEventListener('input', (e) => {
+  clearTimeout(searchTimer);
+  searchTimer = setTimeout(() => {
+    state.search = e.target.value.trim();
+    renderTaskList();
+  }, 150);
+});
+
+/* ===== SORT ===== */
+sortSelect.addEventListener('change', (e) => {
+  state.sort = e.target.value;
+  renderTaskList();
+});
+
+/* ===== EXPORT / IMPORT ===== */
+$('#exportBtn').addEventListener('click', () => {
+  const blob = new Blob([JSON.stringify(state.tasks, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `todo-backup-${todayStr()}.json`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+  showToast('JSON exported!', 'success');
+});
+
+$('#importBtn').addEventListener('click', () => $('#importFile').click());
+
+$('#importFile').addEventListener('change', (e) => {
+  const file = e.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = (ev) => {
+    try {
+      const data = JSON.parse(ev.target.result);
+      if (Array.isArray(data)) {
+        if (confirm(`Import ${data.length} tasks? This will merge with existing tasks.`)) {
+          data.forEach(t => {
+            if (t.title) {
+              taskIdCounter = Math.max(taskIdCounter, t.id || 0) + 1;
+              state.tasks.push({
+                id: t.id || ++taskIdCounter,
+                title: t.title,
+                priority: t.priority || 'medium',
+                dueDate: t.dueDate || '',
+                category: t.category || '',
+                completed: !!t.completed,
+                createdAt: t.createdAt || Date.now(),
+                completedAt: t.completedAt || null
+              });
+            }
+          });
+          saveTasks();
+          render();
+          showToast(`✅ Imported ${data.length} tasks!`, 'success');
+        }
+      } else {
+        showToast('Invalid format expected an array', 'error');
+      }
+    } catch (err) {
+      showToast('Failed to parse JSON', 'error');
+    }
+  };
+  reader.readAsText(file);
+  e.target.value = '';
+});
+
+/* ===== BULK ACTIONS ===== */
+$('#clearCompletedBtn').addEventListener('click', () => {
+  const count = state.tasks.filter(t => t.completed).length;
+  if (count === 0) {
+    showToast('No completed tasks to clear');
+    return;
+  }
+  if (!confirm(`Delete ${count} completed task${count > 1 ? 's' : ''}?`)) return;
+  state.tasks = state.tasks.filter(t => !t.completed);
+  saveTasks();
+  render();
+  showToast(`Cleared ${count} completed tasks`);
+});
+
+$('#deleteAllBtn').addEventListener('click', () => {
+  if (state.tasks.length === 0) {
+    showToast('No tasks to delete');
+    return;
+  }
+  if (!confirm(`⚠️ Delete ALL ${state.tasks.length} tasks? This cannot be undone.`)) return;
+  if (!confirm('Are you absolutely sure? Export a backup first if needed.')) return;
+  state.tasks = [];
+  saveTasks();
+  render();
+  showToast('All tasks deleted');
+});
+
+/* ===== FAQ ===== */
+$$('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    $$('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+
+/* ===== INIT ===== */
+loadTasks();
+render();
+taskInput.focus();
+</script>
+
+</body>
+</html>

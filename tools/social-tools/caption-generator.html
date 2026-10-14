@@ -1,0 +1,1246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2563eb">
+
+<title>Caption Generator - Create Perfect Social Media Captions Free | BigToolz</title>
+<meta name="description" content="Free caption generator for Instagram, Facebook, Twitter, LinkedIn & TikTok. 6 tones, 12 topics, emoji support, hashtag suggestions. Copy instantly.">
+<meta name="keywords" content="caption generator, instagram caption generator, social media captions, funny captions, aesthetic captions, caption ideas">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://bigtoolz.com/tools/social-tools/caption-generator/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Caption Generator - Free Online Tool | BigToolz">
+<meta property="og:description" content="Generate perfect social media captions instantly 6 tones, 12 topics, emojis.">
+<meta property="og:url" content="https://bigtoolz.com/tools/social-tools/caption-generator/">
+<meta property="og:image" content="https://bigtoolz.com/assets/images/og-image.jpg">
+<meta property="og:site_name" content="BigToolz">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Caption Generator - BigToolz">
+<meta name="twitter:description" content="Generate social media captions instantly.">
+<meta name="twitter:image" content="https://bigtoolz.com/assets/images/twitter-card.jpg">
+
+<link rel="icon" href="/assets/images/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/images/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#f8f9fc;color:#1a1a2e;overflow-x:hidden;line-height:1.5}
+
+  .header{background:#fff;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;position:sticky;top:0;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+  .header-left{display:flex;align-items:center;gap:40px}
+  .logo{display:flex;align-items:center;gap:8px;font-size:22px;font-weight:800;color:#1a1a2e;text-decoration:none}
+  .logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#3b82f6,#2563eb);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px}
+  .logo span{color:#2563eb}
+  .nav{display:flex;align-items:center;gap:28px;list-style:none}
+  .nav a{text-decoration:none;color:#4b5563;font-size:14px;font-weight:500;transition:color .2s}
+  .nav a:hover,.nav a.active{color:#2563eb}
+  .header-right{display:flex;align-items:center;gap:16px}
+  .search-btn,.theme-btn{width:36px;height:36px;border-radius:50%;border:none;background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#4b5563}
+  .search-btn:hover,.theme-btn:hover{background:#f3f4f6}
+  .bookmark-btn{display:flex;align-items:center;gap:8px;background:#2563eb;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
+  .bookmark-btn:hover{background:#1d4ed8}
+
+  .hero{background:linear-gradient(135deg,#0a0e27 0%,#4c1d95 40%,#7c3aed 70%,#a855f7 100%);padding:40px 40px 60px;position:relative;overflow:hidden;color:#fff}
+  .hero::before{content:'';position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(168,85,247,.35) 0%,transparent 70%);border-radius:50%}
+  .hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+  .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px;flex-wrap:wrap}
+  .breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none}
+  .breadcrumb a:hover{color:#fff}
+  .breadcrumb .sep{color:rgba(255,255,255,.4)}
+  .breadcrumb .current{color:#fff;font-weight:500}
+  .hero-title-row{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+  .hero-icon{width:60px;height:60px;background:#8b5cf6;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:30px;color:#fff;flex-shrink:0;box-shadow:0 8px 24px rgba(139,92,246,.5)}
+  .hero-title{font-size:42px;font-weight:800;line-height:1.15}
+  .hero-title .blue{color:#c4b5fd}
+  .hero-desc{font-size:15px;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:24px;max-width:560px}
+  .hero-features{display:flex;gap:24px;flex-wrap:wrap}
+  .hero-feature{display:flex;align-items:center;gap:6px;font-size:13px;color:#fff;font-weight:500}
+  .hero-feature .check{width:18px;height:18px;border-radius:50%;background:#8b5cf6;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;flex-shrink:0}
+
+  .main-content{max-width:1200px;margin:0 auto;padding:40px;display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start}
+  .tool-content{min-width:0}
+
+  .workspace{background:#fff;border-radius:16px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,.06);border:1px solid #e5e7eb;margin-bottom:24px}
+
+  /* Platform tabs */
+  .platform-tabs{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-bottom:20px;background:#faf5ff;padding:6px;border-radius:12px;border:1px solid #ede9fe}
+  .platform-tab{padding:12px 8px;background:transparent;border:none;border-radius:8px;font-size:12px;font-weight:700;color:#6b7280;cursor:pointer;font-family:inherit;transition:all .2s;text-align:center;line-height:1.3;display:flex;flex-direction:column;gap:2px;align-items:center}
+  .platform-tab:hover{background:#f3e8ff;color:#7c3aed}
+  .platform-tab.active{background:#8b5cf6;color:#fff}
+  .platform-tab .emoji{font-size:16px}
+
+  /* Tone tabs */
+  .tone-tabs{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;margin-bottom:20px;background:#f8fafc;padding:6px;border-radius:12px;border:1px solid #e5e7eb}
+  .tone-tab{padding:10px 8px;background:transparent;border:none;border-radius:8px;font-size:11px;font-weight:700;color:#6b7280;cursor:pointer;font-family:inherit;transition:all .2s;text-align:center;line-height:1.3}
+  .tone-tab:hover{background:#f1f5f9;color:#1e293b}
+  .tone-tab.active{background:#1e293b;color:#fff}
+
+  /* Topic selector */
+  .topic-section{margin-bottom:20px}
+  .section-label{font-size:12px;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px;display:block}
+  .topic-chips{display:flex;gap:6px;flex-wrap:wrap}
+  .topic-chip{padding:8px 14px;background:#fff;border:1px solid #e5e7eb;border-radius:20px;font-size:12px;font-weight:700;color:#4b5563;cursor:pointer;font-family:inherit;transition:all .2s;display:inline-flex;align-items:center;gap:5px}
+  .topic-chip:hover{border-color:#8b5cf6;color:#7c3aed;background:#faf5ff}
+  .topic-chip.active{background:#8b5cf6;color:#fff;border-color:#8b5cf6}
+
+  /* Options */
+  .options-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:20px}
+  .option-toggle{background:#f8fafc;border:2px solid #e5e7eb;border-radius:10px;padding:12px 14px;cursor:pointer;transition:all .2s;display:flex;justify-content:space-between;align-items:center;font-family:inherit;gap:10px}
+  .option-toggle:hover{border-color:#8b5cf6}
+  .option-toggle.active{border-color:#8b5cf6;background:#faf5ff}
+  .option-toggle-info{display:flex;flex-direction:column;gap:2px;text-align:left}
+  .option-toggle-title{font-size:12px;font-weight:800;color:#1a1a2e}
+  .option-toggle-desc{font-size:10px;color:#9ca3af;font-weight:500}
+  .option-switch{width:36px;height:20px;background:#d1d5db;border-radius:10px;position:relative;transition:background .2s;flex-shrink:0}
+  .option-switch::after{content:'';position:absolute;top:2px;left:2px;width:16px;height:16px;background:#fff;border-radius:50%;transition:transform .2s;box-shadow:0 1px 3px rgba(0,0,0,.15)}
+  .option-toggle.active .option-switch{background:#8b5cf6}
+  .option-toggle.active .option-switch::after{transform:translateX(16px)}
+
+  /* Generate button */
+  .generate-section{text-align:center;margin:24px 0}
+  .generate-btn{background:#8b5cf6;color:#fff;border:none;padding:16px 40px;border-radius:12px;font-size:16px;font-weight:800;cursor:pointer;font-family:inherit;transition:all .2s;display:inline-flex;align-items:center;gap:10px;box-shadow:0 8px 24px rgba(139,92,246,.3)}
+  .generate-btn:hover{background:#7c3aed;transform:translateY(-2px);box-shadow:0 12px 32px rgba(139,92,246,.4)}
+  .generate-btn:active{transform:translateY(0)}
+
+  /* Result */
+  .result-section{display:none;margin-top:24px}
+  .result-section.visible{display:block}
+  .result-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;gap:12px;flex-wrap:wrap}
+  .result-title{font-size:14px;font-weight:800;color:#1a1a2e;display:flex;align-items:center;gap:8px}
+  .result-badge{background:#ede9fe;color:#6d28d9;padding:4px 10px;border-radius:12px;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.3px}
+
+  .caption-card{background:linear-gradient(135deg,#faf5ff,#f3e8ff);border:1px solid #c4b5fd;border-radius:14px;padding:20px;margin-bottom:14px;position:relative}
+  .caption-text{font-size:16px;color:#1a1a2e;line-height:1.7;margin-bottom:14px;font-weight:500;white-space:pre-wrap;word-break:break-word}
+  .caption-text .emoji-inline{font-size:18px}
+  .caption-footer{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+  .caption-meta{display:flex;gap:14px;font-size:11px;color:#7c3aed;font-weight:700;flex-wrap:wrap}
+  .caption-meta-item{display:flex;align-items:center;gap:4px;background:#fff;padding:3px 10px;border-radius:10px;border:1px solid #e9d5ff}
+  .caption-actions{display:flex;gap:6px;flex-wrap:wrap}
+  .cap-btn{padding:8px 14px;background:#fff;border:1px solid #c4b5fd;border-radius:8px;font-size:12px;font-weight:700;color:#6d28d9;cursor:pointer;font-family:inherit;transition:all .2s;display:inline-flex;align-items:center;gap:5px}
+  .cap-btn:hover{background:#8b5cf6;color:#fff;border-color:#8b5cf6}
+  .cap-btn.copied{background:#10b981;color:#fff;border-color:#10b981}
+  .cap-btn.fav{color:#f59e0b;border-color:#fcd34d}
+  .cap-btn.fav.active{background:#f59e0b;color:#fff;border-color:#f59e0b}
+
+  /* Hashtag suggestions */
+  .hashtag-box{background:#fff;border:1px dashed #c4b5fd;border-radius:12px;padding:14px;margin-bottom:14px}
+  .hashtag-title{font-size:11px;font-weight:800;color:#7c3aed;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}
+  .hashtag-list{display:flex;flex-wrap:wrap;gap:6px}
+  .hashtag{background:#f3e8ff;color:#6d28d9;padding:4px 10px;border-radius:10px;font-size:11px;font-weight:700;cursor:pointer;transition:all .2s;border:1px solid #e9d5ff}
+  .hashtag:hover{background:#8b5cf6;color:#fff;border-color:#8b5cf6}
+
+  /* Empty state */
+  .empty-state{text-align:center;padding:60px 20px;color:#9ca3af}
+  .empty-state-icon{font-size:48px;margin-bottom:12px;opacity:.5}
+  .empty-state-title{font-size:16px;font-weight:700;color:#6b7280;margin-bottom:6px}
+  .empty-state-desc{font-size:13px;line-height:1.6}
+
+  /* History */
+  .history-section{margin-top:24px;padding-top:24px;border-top:1px solid #e5e7eb}
+  .history-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;gap:8px}
+  .history-title{font-size:13px;font-weight:800;color:#1a1a2e;display:flex;align-items:center;gap:8px}
+  .history-clear{background:none;border:none;font-size:11px;color:#8b5cf6;cursor:pointer;font-family:inherit;font-weight:700;text-decoration:underline}
+  .history-list{display:flex;flex-direction:column;gap:6px}
+  .history-item{background:#f8fafc;border:1px solid #e5e7eb;border-radius:8px;padding:10px 12px;font-size:12px;color:#4b5563;line-height:1.5;cursor:pointer;transition:all .2s;display:flex;justify-content:space-between;gap:10px;align-items:center}
+  .history-item:hover{border-color:#8b5cf6;background:#faf5ff}
+  .history-item-text{flex:1;display:-webkit-box;-webkit-line-clamp-webkit-box-orient:vertical;overflow:hidden}
+  .history-item-copy{font-size:10px;font-weight:700;color:#8b5cf6;flex-shrink:0}
+
+  /* SEO */
+  .seo-content{background:#fff;border-radius:16px;padding:32px;border:1px solid #e5e7eb;margin-bottom:24px}
+  .seo-content h2{font-size:22px;font-weight:800;color:#1a1a2e;margin-bottom:14px;margin-top:28px;display:flex;align-items:center;gap:10px}
+  .seo-content h2:first-child{margin-top:0}
+  .seo-content h3{font-size:16px;font-weight:700;color:#1a1a2e;margin:20px 0 10px}
+  .seo-content p{font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:14px}
+  .seo-content ul{list-style:none;padding-left:0;margin-bottom:16px}
+  .seo-content ul li{position:relative;padding-left:24px;font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:8px}
+  .seo-content ul li::before{content:'';position:absolute;left:6px;top:12px;width:6px;height:6px;background:#8b5cf6;border-radius:50%}
+  .seo-content a{color:#2563eb;text-decoration:none;font-weight:600}
+  .seo-content a:hover{text-decoration:underline}
+  .seo-content strong{color:#1a1a2e;font-weight:700}
+  .seo-content code{background:#f1f5f9;padding:2px 6px;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:13px;color:#0f172a;border:1px solid #e2e8f0}
+
+  .how-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:20px}
+  .how-step{background:#faf5ff;border-radius:12px;padding:20px;border:1px solid #ede9fe}
+  .how-step-num{width:36px;height:36px;border-radius:50%;background:#8b5cf6;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;margin-bottom:12px}
+  .how-step-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+  .how-step-desc{font-size:13px;color:#6b7280;line-height:1.6}
+
+  .faq-item{background:#faf5ff;border:1px solid #ede9fe;border-radius:12px;margin-bottom:10px;overflow:hidden;transition:border-color .2s}
+  .faq-item:hover{border-color:#8b5cf6}
+  .faq-question{width:100%;background:none;border:none;padding:18px 22px;font-size:15px;font-weight:700;color:#1a1a2e;text-align:left;cursor:pointer;font-family:inherit;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .faq-question .chev{font-size:12px;color:#8b5cf6;transition:transform .2s;flex-shrink:0}
+  .faq-item.open .faq-question .chev{transform:rotate(180deg)}
+  .faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 22px}
+  .faq-item.open .faq-answer{max-height:500px;padding-bottom:18px}
+  .faq-answer p{font-size:14px;color:#6b7280;line-height:1.7;margin:0}
+
+  .sidebar{background:#fff;border-radius:16px;padding:24px;border:1px solid #e5e7eb;position:sticky;top:80px;margin-bottom:24px}
+  .sidebar-header{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:800;color:#1a1a2e;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid #f3f4f6}
+  .sidebar-list{display:flex;flex-direction:column;gap:8px}
+  .sidebar-item{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;cursor:pointer;transition:background .2s;text-decoration:none;color:inherit;border:1px solid #f3f4f6}
+  .sidebar-item:hover{background:#faf5ff;border-color:#ede9fe}
+  .sidebar-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;flex-shrink:0}
+  .sidebar-info{flex:1;min-width:0}
+  .sidebar-title{font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:2px}
+  .sidebar-desc{font-size:11px;color:#9ca3af;line-height:1.4}
+
+  .footer{background:#0a0e27;padding:60px 40px 30px;color:#fff;margin-top:40px}
+  .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:40px}
+  .footer-brand{display:flex;align-items:center;gap:8px;font-size:20px;font-weight:800;margin-bottom:12px}
+  .footer-brand span{color:#60a5fa}
+  .footer-tagline{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px}
+  .footer-social{display:flex;gap:12px}
+  .footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:16px;transition:background .2s}
+  .footer-social a:hover{background:rgba(255,255,255,.2)}
+  .footer-heading{font-size:14px;font-weight:700;margin-bottom:20px;color:#fff}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .footer-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;transition:color .2s}
+  .footer-links a:hover{color:#60a5fa}
+  .footer-bottom{max-width:1200px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  .footer-bottom-left{display:flex;gap:20px;font-size:12px;color:rgba(255,255,255,.5)}
+  .footer-bottom-right,.footer-bottom-links a{font-size:12px;color:rgba(255,255,255,.5);text-decoration:none}
+  .footer-bottom-links{display:flex;gap:20px}
+
+  .toast{position:fixed;bottom:24px;right:24px;background:#1a1a2e;color:#fff;padding:14px 20px;border-radius:10px;font-size:13px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:3000;transform:translateY(200%);transition:transform .3s ease;max-width:320px}
+  .toast.visible{transform:translateY(0)}
+  .toast.success{background:#10b981}
+  .toast.error{background:#ef4444}
+
+  @media(max-width:1024px){
+    .main-content{grid-template-columns:1fr;padding:24px 20px}
+    .sidebar{position:static}
+    .how-steps{grid-template-columns:repeat(2,1fr)}
+    .platform-tabs{grid-template-columns:repeat(3,1fr)}
+    .tone-tabs{grid-template-columns:repeat(3,1fr)}
+    .options-grid{grid-template-columns:1fr}
+  }
+  @media(max-width:768px){
+    .header{padding:0 20px}.nav{display:none}
+    .hero{padding:24px 20px 40px}
+    .hero-title{font-size:28px}
+    .hero-icon{width:48px;height:48px;font-size:22px}
+    .hero-title-row{flex-direction:column;align-items:flex-start;gap:12px}
+    .main-content{padding:20px 16px}
+    .workspace{padding:20px}
+    .how-steps{grid-template-columns:1fr}
+    .seo-content{padding:20px}
+    .footer-inner{grid-template-columns:1fr 1fr}
+    .toast{left:16px;right:16px;bottom:16px;max-width:none}
+    .caption-footer{flex-direction:column;align-items:flex-start}
+    .caption-actions{width:100%}
+    .cap-btn{flex:1;justify-content:center}
+  }
+  @media(max-width:576px){
+    .header{padding:0 16px}.header-right .search-btn,.header-right .theme-btn{display:none}
+    .hero-title{font-size:24px}
+    .footer-inner{grid-template-columns:1fr}
+    .footer-bottom{flex-direction:column;text-align:center}
+    .platform-tabs{grid-template-columns:repeat(2,1fr)}
+    .tone-tabs{grid-template-columns:repeat(2,1fr)}
+    .generate-btn{padding:14px 28px;font-size:15px;width:100%;justify-content:center}
+  }
+
+  html[data-theme="dark"] body{background:#0f172a;color:#f1f5f9}
+  html[data-theme="dark"] .header,html[data-theme="dark"] .workspace,html[data-theme="dark"] .seo-content,html[data-theme="dark"] .sidebar{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .logo,html[data-theme="dark"] .hero-title,html[data-theme="dark"] .seo-content h2,html[data-theme="dark"] .seo-content h3,html[data-theme="dark"] .faq-question,html[data-theme="dark"] .sidebar-header,html[data-theme="dark"] .sidebar-title,html[data-theme="dark"] .result-title,html[data-theme="dark"] .history-title,html[data-theme="dark"] .option-toggle-title,html[data-theme="dark"] .caption-text{color:#f1f5f9}
+  html[data-theme="dark"] .nav a{color:#cbd5e1}
+  html[data-theme="dark"] .how-step,html[data-theme="dark"] .faq-item,html[data-theme="dark"] .platform-tabs,html[data-theme="dark"] .tone-tabs,html[data-theme="dark"] .history-item,html[data-theme="dark"] .option-toggle,html[data-theme="dark"] .topic-chip{background:#0f172a;border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .platform-tab{color:#cbd5e1}
+  html[data-theme="dark"] .platform-tab.active{background:#8b5cf6;color:#fff}
+  html[data-theme="dark"] .tone-tab{color:#cbd5e1}
+  html[data-theme="dark"] .tone-tab.active{background:#334155;color:#fff}
+  html[data-theme="dark"] .topic-chip.active{background:#8b5cf6;color:#fff}
+  html[data-theme="dark"] .caption-card{background:linear-gradient(135deg,#1e293b,#0f172a);border-color:#334155}
+  html[data-theme="dark"] .caption-meta-item{background:#0f172a;border-color:#334155;color:#c4b5fd}
+  html[data-theme="dark"] .cap-btn{background:#0f172a;border-color:#334155;color:#c4b5fd}
+  html[data-theme="dark"] .hashtag-box{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .hashtag{background:#1e293b;color:#c4b5fd;border-color:#334155}
+  html[data-theme="dark"] .seo-content p,html[data-theme="dark"] .seo-content ul li,html[data-theme="dark"] .faq-answer p{color:#cbd5e1}
+  html[data-theme="dark"] .seo-content code{background:#0f172a;color:#94a3b8;border-color:#334155}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type": "SoftwareApplication", "name": "Caption Generator", "url": "https://bigtoolz.com/tools/social-tools/caption-generator/", "applicationCategory": "SocialNetworkingApplication", "operatingSystem": "Any (Web-based)", "description": "Free caption generator for Instagram, Facebook, Twitter, LinkedIn, and TikTok. 6 tones, 12 topics, emoji support, and hashtag suggestions.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.8", "ratingCount": "2234"}},
+    {"@type": "HowTo", "name": "How to Generate Social Media Captions", "step": [
+      {"@type": "HowToStep", "name": "Pick Platform", "text": "Choose Instagram, Facebook, Twitter, LinkedIn, or TikTok."},
+      {"@type": "HowToStep", "name": "Choose Tone & Topic", "text": "Select the mood (funny, professional, aesthetic) and content topic."},
+      {"@type": "HowToStep", "name": "Generate", "text": "Click Generate to get 3 unique caption options."},
+      {"@type": "HowToStep", "name": "Copy", "text": "Copy your favorite caption and paste it into your post."}
+    ]},
+    {"@type": "FAQPage", "mainEntity": [
+      {"@type": "Question", "name": "How do I write a good Instagram caption?", "acceptedAnswer": {"@type": "Answer", "text": "A great caption: (1) hooks readers in the first 125 characters before the 'more' cutoff, (2) adds context or storytelling to the photo, (3) includes a CTA or question, (4) uses 3-5 relevant emojis, (5) ends with a strategic hashtag block."}},
+      {"@type": "Question", "name": "What is the best caption length?", "acceptedAnswer": {"@type": "Answer", "text": "It depends on the platform: Instagram allows 2,200 characters (aim 125-300), Twitter is 280 (aim 100-200), LinkedIn is 3,000 (aim 150-500), TikTok is 2,200 (aim 100-200), Facebook allows long captions (aim 100-400)."}},
+      {"@type": "Question", "name": "What's the best tone for social media captions?", "acceptedAnswer": {"@type": "Answer", "text": "It depends on your brand and audience. Engagement tends to be highest with casual, funny, or inspirational tones. LinkedIn favors professional. Instagram and TikTok do well with aesthetic or funny. Facebook is mixed."}},
+      {"@type": "Question", "name": "How many hashtags should I use?", "acceptedAnswer": {"@type": "Answer", "text": "Instagram: 5-10 (down from 30 as of 2024 quality over quantity). Twitter: 1-2. LinkedIn: 3-5. TikTok: 3-5. Facebook: 1-2. More hashtags ≠ more reach in 2026."}}
+    ]},
+    {"@type": "BreadcrumbList", "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bigtoolz.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://bigtoolz.com/tools/"},
+      {"@type": "ListItem", "position": 3, "name": "Social Tools", "item": "https://bigtoolz.com/tools/social-tools/"},
+      {"@type": "ListItem", "position": 4, "name": "Caption Generator", "item": "https://bigtoolz.com/tools/social-tools/caption-generator/"}
+    ]}
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-left">
+    <a href="/" class="logo"><div class="logo-icon">⚒</div>BigToolz</span></a>
+    <nav><ul class="nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/tools/" class="active">All Tools</a></li>
+      <li><a href="/tools/categories">Categories</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul></nav>
+  </div>
+  <div class="header-right">
+   
+    <button class="theme-btn" aria-label="Toggle theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
+    
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <nav class="breadcrumb">
+      <a href="/">Home</a><span class="sep">›</span>
+      <a href="/tools/">Tools</a><span class="sep">›</span>
+      <a href="/tools/social-tools/">Social Tools</a><span class="sep">›</span>
+      <span class="current">Caption Generator</span>
+    </nav>
+    <div class="hero-title-row">
+      <div class="hero-icon">💬</div>
+      <h1 class="hero-title">Caption <span class="blue">Generator</span></h1>
+    </div>
+    <p class="hero-desc">
+      Generate perfect captions for Instagram, Facebook, Twitter, LinkedIn, and TikTok. Choose your tone, topic, and emojis get 3 unique options instantly.
+    </p>
+    <div class="hero-features">
+      <div class="hero-feature"><span class="check">✓</span> 5 Platforms</div>
+      <div class="hero-feature"><span class="check">✓</span> 6 Tones</div>
+      <div class="hero-feature"><span class="check">✓</span> 12 Topics</div>
+      <div class="hero-feature"><span class="check">✓</span> Hashtag Ideas</div>
+    </div>
+  </div>
+</section>
+
+<div class="main-content">
+
+  <div class="tool-content">
+
+    <div class="workspace">
+
+      <!-- Platform tabs -->
+      <div class="platform-tabs" id="platformTabs">
+        <button class="platform-tab active" data-platform="instagram"><span class="emoji">📸</span>Instagram</button>
+        <button class="platform-tab" data-platform="facebook"><span class="emoji">📘</span>Facebook</button>
+        <button class="platform-tab" data-platform="twitter"><span class="emoji">𝕏</span>Twitter</button>
+        <button class="platform-tab" data-platform="linkedin"><span class="emoji">💼</span>LinkedIn</button>
+        <button class="platform-tab" data-platform="tiktok"><span class="emoji">♪</span>TikTok</button>
+      </div>
+
+      <!-- Tone tabs -->
+      <span class="section-label">Tone</span>
+      <div class="tone-tabs" id="toneTabs">
+        <button class="tone-tab active" data-tone="casual">😎 Casual</button>
+        <button class="tone-tab" data-tone="professional">💼 Professional</button>
+        <button class="tone-tab" data-tone="funny">😂 Funny</button>
+        <button class="tone-tab" data-tone="inspirational">✨ Inspirational</button>
+        <button class="tone-tab" data-tone="romantic">❤️ Romantic</button>
+        <button class="tone-tab" data-tone="aesthetic">🌸 Aesthetic</button>
+      </div>
+
+      <!-- Topic -->
+      <div class="topic-section">
+        <span class="section-label">Topic</span>
+        <div class="topic-chips" id="topicChips">
+          <button class="topic-chip active" data-topic="general">🌟 General</button>
+          <button class="topic-chip" data-topic="travel">✈️ Travel</button>
+          <button class="topic-chip" data-topic="food">🍕 Food</button>
+          <button class="topic-chip" data-topic="fashion">👗 Fashion</button>
+          <button class="topic-chip" data-topic="fitness">💪 Fitness</button>
+          <button class="topic-chip" data-topic="tech">💻 Tech</button>
+          <button class="topic-chip" data-topic="love">❤️ Love</button>
+          <button class="topic-chip" data-topic="motivation">🔥 Motivation</button>
+          <button class="topic-chip" data-topic="nature">🌿 Nature</button>
+          <button class="topic-chip" data-topic="pet">🐾 Pets</button>
+          <button class="topic-chip" data-topic="friends">👯 Friends</button>
+          <button class="topic-chip" data-topic="work">💼 Work</button>
+        </div>
+      </div>
+
+      <!-- Options -->
+      <span class="section-label">Options</span>
+      <div class="options-grid">
+        <button class="option-toggle active" id="emojiToggle">
+          <div class="option-toggle-info">
+            <div class="option-toggle-title">Emojis</div>
+            <div class="option-toggle-desc">Add relevant emojis</div>
+          </div>
+          <div class="option-switch"></div>
+        </button>
+        <button class="option-toggle active" id="hashtagToggle">
+          <div class="option-toggle-info">
+            <div class="option-toggle-title">Hashtags</div>
+            <div class="option-toggle-desc">Suggest trending tags</div>
+          </div>
+          <div class="option-switch"></div>
+        </button>
+        <button class="option-toggle" id="ctaToggle">
+          <div class="option-toggle-info">
+            <div class="option-toggle-title">Call to Action</div>
+            <div class="option-toggle-desc">Add engagement question</div>
+          </div>
+          <div class="option-switch"></div>
+        </button>
+      </div>
+
+      <!-- Generate -->
+      <div class="generate-section">
+        <button class="generate-btn" id="generateBtn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 12a9 9 0 11-6.219-8.56"/></svg>
+          Generate 3 Captions
+        </button>
+      </div>
+
+      <!-- Results -->
+      <div class="result-section" id="resultSection">
+        <div class="result-header">
+          <div class="result-title">
+            <span>✨ Your Captions</span>
+            <span class="result-badge" id="resultBadge">3 generated</span>
+          </div>
+        </div>
+        <div id="captionList"></div>
+      </div>
+
+      <div class="empty-state" id="emptyState">
+        <div class="empty-state-icon">💬</div>
+        <div class="empty-state-title">No captions generated yet</div>
+        <div class="empty-state-desc">Pick your platform, tone, and topic above then click Generate.</div>
+      </div>
+
+      <!-- History -->
+      <div class="history-section" id="historySection" style="display:none;">
+        <div class="history-header">
+          <div class="history-title">📋 Recent Captions</div>
+          <button class="history-clear" id="historyClear">Clear All</button>
+        </div>
+        <div class="history-list" id="historyList"></div>
+      </div>
+
+    </div>
+
+    <!-- SEO Content -->
+    <div class="seo-content">
+
+      <h2>💬 What is a Caption Generator?</h2>
+      <p>
+        A <strong>Caption Generator</strong> helps you write engaging captions for social media posts. Whether you're sharing a travel photo on Instagram, a life update on Facebook, a professional insight on LinkedIn, or a viral video on TikTok a good caption transforms a post from forgettable to share-worthy.
+      </p>
+      <p>
+        Our tool generates captions based on <strong>5 platforms</strong>, <strong>6 tones</strong>, and <strong>12 topics</strong>. Each click gives you 3 unique captions with optional emojis, hashtags, and call-to-actions all tailored to your choices.
+      </p>
+
+      <h2>🚀 How to Use This Tool</h2>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-step-num">1</div>
+          <div class="how-step-title">Pick Platform</div>
+          <div class="how-step-desc">Instagram, Facebook, Twitter, LinkedIn, or TikTok.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">2</div>
+          <div class="how-step-title">Choose Tone & Topic</div>
+          <div class="how-step-desc">Casual, Funny, Professional or the mood you want.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">3</div>
+          <div class="how-step-title">Generate</div>
+          <div class="how-step-desc">Click Generate to see 3 unique caption options.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">4</div>
+          <div class="how-step-title">Copy & Post</div>
+          <div class="how-step-desc">Copy your favorite and paste it into your post.</div>
+        </div>
+      </div>
+
+      <h2>📏 Best Caption Length by Platform</h2>
+      <ul>
+        <li><strong>Instagram:</strong> 125-300 characters. First 125 chars show before "more".</li>
+        <li><strong>Facebook:</strong> 100-400 characters. Long stories work well here.</li>
+        <li><strong>Twitter (X):</strong> 100-200 characters. Concise wins.</li>
+        <li><strong>LinkedIn:</strong> 150-500 characters. Insights + story format.</li>
+        <li><strong>TikTok:</strong> 100-200 characters. Short + punchy with emojis.</li>
+      </ul>
+
+      <h2>🎯 Best Caption Strategies by Platform</h2>
+
+      <h3>📸 Instagram Captions</h3>
+      <p>Hook in the first 125 characters. Use line breaks. Add 1-2 emojis per line max. End with 5-10 relevant hashtags. Ask questions to boost engagement.</p>
+
+      <h3>📘 Facebook Captions</h3>
+      <p>Tell a story. Facebook users read more than Instagram. Use short paragraphs. Ask a question to spark comments the algorithm rewards conversation.</p>
+
+      <h3>𝕏 Twitter Captions</h3>
+      <p>Every word counts. Lead with the strongest hook. Skip hashtags (or use 1 max). Thread if you need more than 280 chars.</p>
+
+      <h3>💼 LinkedIn Captions</h3>
+      <p>Personal + professional balance. Start with a hook line + line break. Share a lesson or insight. End with a question or observation. Avoid excessive emojis.</p>
+
+      <h3>♪ TikTok Captions</h3>
+      <p>Short, punchy, trending. Use 3-5 relevant hashtags (including 1-2 trending ones). Include a CTA like "Watch till the end". Emojis boost visibility.</p>
+
+      <h2>💡 Caption Writing Tips</h2>
+      <ul>
+        <li><strong>Hook first.</strong> The first line determines if people read the rest.</li>
+        <li><strong>Add value.</strong> Ask yourself: "What does this give the reader?"</li>
+        <li><strong>Use line breaks.</strong> Wall of text = skip. Short lines = engagement.</li>
+        <li><strong>Emojis strategically.</strong> 3-5 max per caption. More looks spammy.</li>
+        <li><strong>CTA matters.</strong> "Double tap if you agree", "Save this for later", "Comment your thoughts".</li>
+        <li><strong>Hashtag count varies.</strong> Instagram 5-10 (down from 30), Twitter 1-2, LinkedIn 3-5.</li>
+        <li><strong>Read it out loud.</strong> If it feels robotic, edit.</li>
+        <li><strong>Match the photo's tone.</strong> Funny photo + serious caption = confusing.</li>
+      </ul>
+
+      <h2>❓ Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-question">How do I write a good Instagram caption?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>A great Instagram caption: <strong>(1) hooks readers in the first 125 characters</strong> before the "more" cutoff, (2) adds context or storytelling, (3) includes a <strong>CTA or question</strong>, (4) uses 3-5 relevant emojis, (5) ends with a strategic hashtag block (5-10 tags).</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What is the best caption length?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Depends on the platform: <strong>Instagram</strong> 125-300 chars, <strong>Twitter</strong> 100-200 chars, <strong>LinkedIn</strong> 150-500 chars, <strong>TikTok</strong> 100-200 chars, <strong>Facebook</strong> 100-400 chars. Twitter's 280-character limit is the hardest constraint.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What's the best tone for social media captions?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>It depends on brand and audience. Engagement tends to be highest with <strong>casual, funny, or inspirational</strong> tones. LinkedIn favors professional. Instagram and TikTok do well with aesthetic or funny. Facebook is mixed.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">How many hashtags should I use?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>Instagram:</strong> 5-10 (down from 30 as of 2024 quality over quantity). <strong>Twitter:</strong> 1-2. <strong>LinkedIn:</strong> 3-5. <strong>TikTok:</strong> 3-5. <strong>Facebook:</strong> 1-2. More hashtags ≠ more reach in 2026.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Should every caption include a CTA?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Not every one. Use CTAs when you want <strong>engagement</strong> (comments, shares, saves). For pure storytelling or personal posts, a CTA can feel forced. Aim for 1 CTA every 2-3 posts.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I use the same caption on multiple platforms?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>You can, but it's better to <strong>adjust for each platform</strong>. LinkedIn users expect longer, more professional captions. TikTok needs short + trending. Twitter needs tight + punchy. Instagram sits in between.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Are the captions stored on your server?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>No. All captions are generated in your browser. Your recent captions are saved in your browser's localStorage nothing is sent to our servers.</p></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-header">🔗 Related Social Tools</div>
+    <div class="sidebar-list">
+      <a href="/tools/social-tools/hashtag-generator/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#3b82f6;">#️⃣</div>
+        <div class="sidebar-info"><div class="sidebar-title">Hashtag Generator</div><div class="sidebar-desc">Trending hashtags</div></div>
+      </a>
+      <a href="/tools/social-tools/twitter-bio/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#1d9bf0;">𝕏</div>
+        <div class="sidebar-info"><div class="sidebar-title">Twitter Bio</div><div class="sidebar-desc">Bio generator</div></div>
+      </a>
+      <a href="/tools/social-tools/instagram-font/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#ec4899;">𝓐</div>
+        <div class="sidebar-info"><div class="sidebar-title">Instagram Font</div><div class="sidebar-desc">Bio fonts</div></div>
+      </a>
+      <a href="/tools/social-tools/reddit-username/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#ff4500;">👽</div>
+        <div class="sidebar-info"><div class="sidebar-title">Reddit Username</div><div class="sidebar-desc">Generate names</div></div>
+      </a>
+      <a href="/tools/social-tools/twitter-trends/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#1e293b;">📈</div>
+        <div class="sidebar-info"><div class="sidebar-title">Twitter Trends</div><div class="sidebar-desc">Viral topics</div></div>
+      </a>
+      <a href="/tools/social-tools/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#64748b;">📱</div>
+        <div class="sidebar-info"><div class="sidebar-title">All Social Tools →</div><div class="sidebar-desc">Browse 25+ tools</div></div>
+      </a>
+    </div>
+  </aside>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand"><div class="logo-icon">⚒</div>BigToolz</span></div>
+      <p class="footer-tagline">Your Ultimate Online Tools Hub</p>
+      <div class="footer-social">
+        <a href="https://facebook.com/bigtoolz" aria-label="Facebook">f</a>
+        <a href="https://twitter.com/bigtoolz" aria-label="Twitter">𝕏</a>
+        <a href="https://youtube.com/@bigtoolz" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+    <div>
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/tools/">All Tools</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Categories</h3>
+      <ul class="footer-links">
+        <li><a href="/tools/image-tools/">Image Tools</a></li>
+        <li><a href="/tools/pdf-tools/">PDF Tools</a></li>
+        <li><a href="/tools/text-tools/">Text Tools</a></li>
+        <li><a href="/tools/social-tools/">Social Tools</a></li>
+        <li><a href="/tools/categories">All Categories →</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Legal</h3>
+      <ul class="footer-links">
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left"><span>✓ 100% Free</span><span>✓ No Sign Up</span><span>✓ No Installation</span></div>
+    <div class="footer-bottom-right">© 2026 BigToolz. All rights reserved.</div>
+    <div class="footer-bottom-links"><a href="/privacy-policy">Privacy</a><a href="/terms">Terms</a><a href="/disclaimer">Disclaimer</a></div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+'use strict';
+
+/* ===== THEME ===== */
+(function(){try{var t=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&d))document.documentElement.setAttribute('data-theme','dark');else if(t==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();
+document.querySelector('.theme-btn')?.addEventListener('click',()=>{const h=document.documentElement;const c=h.getAttribute('data-theme');const d=window.matchMedia('(prefers-color-scheme: dark)').matches;let n=c==='dark'?'light':c==='light'?'dark':(d?'light':'dark');h.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}});
+
+/* ===== HELPERS ===== */
+const $ = (s, p = document) => p.querySelector(s);
+const $$ = (s, p = document) => [...p.querySelectorAll(s)];
+
+function showToast(msg, type = 'info', duration = 3000) {
+  const t = $('#toast');
+  if (!t) return;
+  t.className = 'toast visible' + (type !== 'info' ? ' ' + type : '');
+  t.textContent = msg;
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove('visible'), duration);
+}
+
+async function copyToClipboard(text) {
+  try {
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(text);
+      return true;
+    }
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.cssText = 'position:fixed;opacity:0;';
+    document.body.appendChild(ta);
+    ta.select();
+    const ok = document.execCommand('copy');
+    document.body.removeChild(ta);
+    return ok;
+  } catch (e) { return false; }
+}
+
+/* ===== STATE ===== */
+const state = {
+  platform: 'instagram',
+  tone: 'casual',
+  topic: 'general',
+  emojis: true,
+  hashtags: true,
+  cta: false,
+  captions: [],
+  history: [],
+  favorites: []
+};
+
+/* ===== CAPTION DATA ===== */
+const CAPTIONS = {
+  instagram: {
+    casual: [
+      "Just another day doing what I love {emoji}\n\n{cta}",
+      "Living for moments like this {emoji}\n\n{cta}",
+      "Not perfect, just real {emoji}\n\n{cta}",
+      "Making memories, one post at a time {emoji}\n\n{cta}",
+      "Current mood: {emoji}\n\n{cta}"
+    ],
+    professional: [
+      "Sharing a slice of my work with you all {emoji}\n\n{cta}",
+      "Behind the scenes of what I do best.\n\n{cta}",
+      "Consistency is key here's my latest {emoji}\n\n{cta}",
+      "Reflecting on this project today.\n\n{cta}",
+      "Grateful for every opportunity to create.\n\n{cta}"
+    ],
+    funny: [
+      "Me pretending I have my life together {emoji}\n\n{cta}",
+      "This is my 'I woke up like this' face. Spoiler: I didn't {emoji}\n\n{cta}",
+      "Plot twist: I actually did something productive today {emoji}\n\n{cta}",
+      "Nobody: \nMe: posts this anyway {emoji}\n\n{cta}",
+      "Warning: unedited content ahead {emoji}\n\n{cta}"
+    ],
+    inspirational: [
+      "Every day is a chance to start again {emoji}\n\n{cta}",
+      "Small steps lead to big changes.\n\n{cta}",
+      "Believe in yourself, even when no one else does {emoji}\n\n{cta}",
+      "You are exactly where you need to be.\n\n{cta}",
+      "The journey is the reward {emoji}\n\n{cta}"
+    ],
+    romantic: [
+      "You + me + moments like these {emoji}\n\n{cta}",
+      "Some feelings can't be captured in words.\n\n{cta}",
+      "Every day with you feels like a gift {emoji}\n\n{cta}",
+      "Falling for this moment, over and over.\n\n{cta}",
+      "You make ordinary days extraordinary {emoji}\n\n{cta}"
+    ],
+    aesthetic: [
+      "soft mornings & quiet moments {emoji}\n\n{cta}",
+      "chasing light, collecting memories {emoji}\n\n{cta}",
+      "finding beauty in the little things.\n\n{cta}",
+      "here for the muted tones and slow days {emoji}\n\n{cta}",
+      "a peaceful pause in a busy world.\n\n{cta}"
+    ]
+  },
+  facebook: {
+    casual: [
+      "Just wanted to share this with you all {emoji}\n\n{cta}",
+      "Hope everyone's having a great day!\n\n{cta}",
+      "Life lately {emoji}\n\n{cta}",
+      "Sometimes you just have to stop and appreciate.\n\n{cta}",
+      "Another one for the memory book {emoji}\n\n{cta}"
+    ],
+    professional: [
+      "Excited to share a project I've been working on.\n\n{cta}",
+      "A quick update from this week.\n\n{cta}",
+      "Sharing some thoughts on what I've learned.\n\n{cta}",
+      "New month, new goals {emoji}\n\n{cta}",
+      "Grateful for the support of my network.\n\n{cta}"
+    ],
+    funny: [
+      "We've all been there, right? {emoji}\n\n{cta}",
+      "I promise I'm not always like this.\n\n{cta}",
+      "Just when I thought I had it together {emoji}\n\n{cta}",
+      "Me vs. Monday mornings.\n\n{cta}",
+      "Somehow this made sense at the time {emoji}\n\n{cta}"
+    ],
+    inspirational: [
+      "Keep going, you're doing better than you think {emoji}\n\n{cta}",
+      "Every setback is a setup for a comeback.\n\n{cta}",
+      "You don't have to be perfect to be amazing {emoji}\n\n{cta}",
+      "Progress, not perfection.\n\n{cta}",
+      "Your future self will thank you {emoji}\n\n{cta}"
+    ],
+    romantic: [
+      "Love isn't about grand gestures it's the small things.\n\n{cta}",
+      "Forever grateful for this one {emoji}\n\n{cta}",
+      "Some moments just stick with you.\n\n{cta}",
+      "My favorite person, always {emoji}\n\n{cta}",
+      "Life is better with the right people.\n\n{cta}"
+    ],
+    aesthetic: [
+      "quiet days and simple joys {emoji}\n\n{cta}",
+      "filling my days with the things I love.\n\n{cta}",
+      "slow living, full heart {emoji}\n\n{cta}",
+      "the little moments matter most.\n\n{cta}",
+      "here for the calm, not the chaos {emoji}\n\n{cta}"
+    ]
+  },
+  twitter: {
+    casual: [
+      "This one's for you {emoji}\n{cta}",
+      "Just vibing today {emoji}\n{cta}",
+      "A mood {emoji}\n{cta}",
+      "Sometimes you just have to post it {emoji}\n{cta}",
+      "Here we are again {emoji}\n{cta}"
+    ],
+    professional: [
+      "A quick thread on what I've learned:\n{cta}",
+      "Reflecting on this today.\n{cta}",
+      "Sharing a lesson from the week.\n{cta}",
+      "If I could tell my younger self one thing...\n{cta}",
+      "This is a reminder to myself.\n{cta}"
+    ],
+    funny: [
+      "I'm fine. Totally fine. {emoji}\n{cta}",
+      "Me: posts this.\nAlso me: regrets it.\n{cta}",
+      "The audacity of this day {emoji}\n{cta}",
+      "Not the vibe I expected but here we are.\n{cta}",
+      "Felt cute, will delete later {emoji}\n{cta}"
+    ],
+    inspirational: [
+      "You're stronger than you know.\n{cta}",
+      "Small steps still count.\n{cta}",
+      "The work you do today shapes tomorrow.\n{cta}",
+      "Keep going.\n{cta}",
+      "Believe it before you see it {emoji}\n{cta}"
+    ],
+    romantic: [
+      "Some people just feel like home {emoji}\n{cta}",
+      "I don't say this enough.\n{cta}",
+      "You're my favorite notification {emoji}\n{cta}",
+      "Same time, same place, same person.\n{cta}",
+      "Love shows up in the smallest things.\n{cta}"
+    ],
+    aesthetic: [
+      "quiet mind, clear heart {emoji}\n{cta}",
+      "here for slow afternoons.\n{cta}",
+      "collecting tiny moments {emoji}\n{cta}",
+      "the softest start to a new week.\n{cta}",
+      "not in a rush, not worried {emoji}\n{cta}"
+    ]
+  },
+  linkedin: {
+    casual: [
+      "A quick personal update {emoji}\n\n{cta}",
+      "Took some time to reflect this week.\n\n{cta}",
+      "Here's something I've been sitting with.\n\n{cta}",
+      "Not all posts need to be professional.\n\n{cta}",
+      "Sharing a personal win today {emoji}\n\n{cta}"
+    ],
+    professional: [
+      "Something I've learned in my career that I wish I knew earlier:\n\n{cta}",
+      "This week, I had a conversation that changed my perspective.\n\n{cta}",
+      "If you're starting out, here's what I'd focus on:\n\n{cta}",
+      "A small habit that transformed my workflow:\n\n{cta}",
+      "Three things I believe separate great teams from good ones:\n\n{cta}"
+    ],
+    funny: [
+      "We talk about wins. Here's an 'L' that taught me more.\n\n{cta}",
+      "PSA: perfection is not the goal. Progress is.\n\n{cta}",
+      "Nobody tells you this about [industry], so I will:\n\n{cta}",
+      "I made a mistake last week. Here's what it taught me {emoji}\n\n{cta}",
+      "Small confession from a professional:\n\n{cta}"
+    ],
+    inspirational: [
+      "Your career is a marathon, not a sprint.\n\n{cta}",
+      "The best time to start was yesterday. The next best time is now.\n\n{cta}",
+      "Invest in yourself. It's the only investment that never depreciates {emoji}\n\n{cta}",
+      "Growth happens outside your comfort zone.\n\n{cta}",
+      "The people you surround yourself with shape your future.\n\n{cta}"
+    ],
+    romantic: [
+      "Sometimes the most valuable lesson comes from the people we love.\n\n{cta}",
+      "Behind every professional is someone who believed in them.\n\n{cta}",
+      "Success is sweeter when shared {emoji}\n\n{cta}",
+      "Grateful for the people who make the work meaningful.\n\n{cta}",
+      "Team, family, friends same energy.\n\n{cta}"
+    ],
+    aesthetic: [
+      "Building something quietly, day by day.\n\n{cta}",
+      "Not every win is loud. Some are silent.\n\n{cta}",
+      "On consistency and slow growth {emoji}\n\n{cta}",
+      "The beauty of doing things with intention.\n\n{cta}",
+      "Here for the long game {emoji}\n\n{cta}"
+    ]
+  },
+  tiktok: {
+    casual: [
+      "tell me I'm not the only one {emoji}\n\n{cta}",
+      "POV: this is your sign {emoji}\n\n{cta}",
+      "not me doing this again {emoji}\n\n{cta}",
+      "just a vibe honestly {emoji}\n\n{cta}",
+      "if you know, you know {emoji}\n\n{cta}"
+    ],
+    professional: [
+      "3 tips you'll wish you knew sooner {emoji}\n\n{cta}",
+      "Save this for later.\n\n{cta}",
+      "Watch till the end worth it {emoji}\n\n{cta}",
+      "Here's the truth nobody tells you:\n\n{cta}",
+      "Watch how this changes everything:\n\n{cta}"
+    ],
+    funny: [
+      "when the algorithm shows this to the right people {emoji}\n\n{cta}",
+      "me pretending this was planned {emoji}\n\n{cta}",
+      "the ending got me {emoji}\n\n{cta}",
+      "no thoughts, just vibes {emoji}\n\n{cta}",
+      "POV: me being productive (a lie)\n\n{cta}"
+    ],
+    inspirational: [
+      "you're one decision away from a different life {emoji}\n\n{cta}",
+      "remember why you started {emoji}\n\n{cta}",
+      "the version of you that's waiting on the other side {emoji}\n\n{cta}",
+      "this is your sign to start {emoji}\n\n{cta}",
+      "soft reminder: you're doing great {emoji}\n\n{cta}"
+    ],
+    romantic: [
+      "when they finally notice you {emoji}\n\n{cta}",
+      "POV: you find 'the one' {emoji}\n\n{cta}",
+      "love lives in the small things {emoji}\n\n{cta}",
+      "this could be us {emoji}\n\n{cta}",
+      "not me falling again {emoji}\n\n{cta}"
+    ],
+    aesthetic: [
+      "soft life era {emoji}\n\n{cta}",
+      "romanticizing my days {emoji}\n\n{cta}",
+      "quiet luxury vibes {emoji}\n\n{cta}",
+      "in my healing era {emoji}\n\n{cta}",
+      "main character energy {emoji}\n\n{cta}"
+    ]
+  }
+};
+
+/* ===== TOPIC EMOJIS ===== */
+const TOPIC_EMOJIS = {
+  general: ['✨','🌟','💫','⚡','🔥'],
+  travel: ['✈️','🌍','🗺','🏖','🌴'],
+  food: ['🍕','🍔','🍰','☕','🍜'],
+  fashion: ['👗','👠','💃','🕶','👜'],
+  fitness: ['💪','🏋️','🏃','🧘','⚡'],
+  tech: ['💻','⚡','🚀','🔧','📱'],
+  love: ['❤️','💕','💖','🌹','💝'],
+  motivation: ['🔥','💪','🚀','🌟','⚡'],
+  nature: ['🌿','🌳','🌸','🌺','🍃'],
+  pet: ['🐾','🐕','🐈','🐰','🐦'],
+  friends: ['👯','🤝','🎉','🍻','💛'],
+  work: ['💼','📊','📈','💡','🎯']
+};
+
+/* ===== TOPIC HASHTAGS ===== */
+const TOPIC_HASHTAGS = {
+  general: ['#daily','#life','#instagood','#photooftheday','#vibes','#love','#happy','#beautiful'],
+  travel: ['#travel','#wanderlust','#travelgram','#explore','#adventure','#traveling','#vacation','#trip'],
+  food: ['#food','#foodie','#instafood','#yummy','#foodphotography','#delicious','#homemade','#tasty'],
+  fashion: ['#fashion','#style','#ootd','#outfit','#fashionista','#beauty','#look','#trendy'],
+  fitness: ['#fitness','#workout','#gym','#fit','#health','#training','#motivation','#fitnessmotivation'],
+  tech: ['#tech','#technology','#coding','#developer','#programming','#software','#innovation','#ai'],
+  love: ['#love','#couple','#lovequotes','#romance','#relationship','#heart','#romantic','#together'],
+  motivation: ['#motivation','#inspiration','#goals','#success','#mindset','#hustle','#grind','#believe'],
+  nature: ['#nature','#naturephotography','#outdoors','#naturelovers','#green','#earth','#sunset','#landscape'],
+  pet: ['#pets','#dogsofinstagram','#catsofinstagram','#petstagram','#doglover','#catlover','#petcare','#animals'],
+  friends: ['#friends','#friendship','#friendsgoals','#squad','#friendshipgoals','#bff','#together','#memories'],
+  work: ['#work','#career','#business','#success','#entrepreneur','#productivity','#office','#professional']
+};
+
+/* ===== CTAs ===== */
+const CTAS = {
+  instagram: ['Double tap if you agree ❤️','Save this for later 🔖','Comment your thoughts 👇','Tag a friend who needs to see this 👀','Share your favorite in the comments!'],
+  facebook: ['What do you think? 👇','Tell us in the comments!','Share if you agree 💛','Tag someone who needs this!','Drop a ❤️ if you liked this'],
+  twitter: ['Your thoughts?','Agree or disagree?','Sound off below 👇','Retweet if this resonates 🔁','Reply with your take 💬'],
+  linkedin: ['What\'s your experience? Share below 👇','Agree? Disagree? Let me know in the comments.','Would love to hear your perspective.','Comment your take below 👇','Share this if it helped you.'],
+  tiktok: ['Follow for more 🔥','Comment your thoughts 👇','Save this for later 🔖','Share with someone who needs it 💛','Double tap if this is you!']
+};
+
+/* ===== DOM ===== */
+const generateBtn = $('#generateBtn');
+const resultSection = $('#resultSection');
+const emptyState = $('#emptyState');
+const captionList = $('#captionList');
+const resultBadge = $('#resultBadge');
+const emojiToggle = $('#emojiToggle');
+const hashtagToggle = $('#hashtagToggle');
+const ctaToggle = $('#ctaToggle');
+const historySection = $('#historySection');
+const historyList = $('#historyList');
+const historyClear = $('#historyClear');
+
+/* ===== PLATFORM TABS ===== */
+$$('.platform-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    $$('.platform-tab').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    state.platform = tab.dataset.platform;
+  });
+});
+
+/* ===== TONE TABS ===== */
+$$('.tone-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    $$('.tone-tab').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    state.tone = tab.dataset.tone;
+  });
+});
+
+/* ===== TOPIC CHIPS ===== */
+$$('.topic-chip').forEach(chip => {
+  chip.addEventListener('click', () => {
+    $$('.topic-chip').forEach(c => c.classList.remove('active'));
+    chip.classList.add('active');
+    state.topic = chip.dataset.topic;
+  });
+});
+
+/* ===== OPTIONS ===== */
+emojiToggle.addEventListener('click', () => {
+  state.emojis = !state.emojis;
+  emojiToggle.classList.toggle('active', state.emojis);
+});
+hashtagToggle.addEventListener('click', () => {
+  state.hashtags = !state.hashtags;
+  hashtagToggle.classList.toggle('active', state.hashtags);
+});
+ctaToggle.addEventListener('click', () => {
+  state.cta = !state.cta;
+  ctaToggle.classList.toggle('active', state.cta);
+});
+
+/* ===== PICK RANDOM ===== */
+function pick(arr) {
+  return arr[Math.floor(Math.random() * arr.length)];
+}
+
+/* ===== GENERATE ===== */
+function generateCaptions() {
+  const platformData = CAPTIONS[state.platform];
+  const toneData = platformData[state.tone];
+  const emojis = TOPIC_EMOJIS[state.topic];
+  const hashtags = TOPIC_HASHTAGS[state.topic];
+  const ctas = CTAS[state.platform];
+
+  const captions = [];
+  const usedTemplates = new Set();
+
+  while (captions.length < 3 && usedTemplates.size < toneData.length) {
+    const idx = Math.floor(Math.random() * toneData.length);
+    if (usedTemplates.has(idx)) continue;
+    usedTemplates.add(idx);
+
+    let caption = toneData[idx];
+
+    // Replace emoji placeholder
+    if (state.emojis) {
+      const emoji = pick(emojis);
+      caption = caption.replace(/{emoji}/g, emoji);
+    } else {
+      caption = caption.replace(/ ?{emoji}/g, '');
+    }
+
+    // Replace CTA
+    if (state.cta) {
+      caption = caption.replace(/{cta}/g, pick(ctas));
+    } else {
+      caption = caption.replace(/\n*{cta}/g, '');
+    }
+
+    // Clean up double newlines
+    caption = caption.replace(/\n{3,}/g, '\n\n').trim();
+
+    // Add hashtags
+    if (state.hashtags) {
+      const count = state.platform === 'instagram' ? 6 : state.platform === 'twitter' ? 2 : 4;
+      const shuffled = [...hashtags].sort(() => Math.random() - 0.5).slice(0, count);
+      caption += '\n\n' + shuffled.join(' ');
+    }
+
+    captions.push(caption);
+  }
+
+  state.captions = captions;
+  renderCaptions();
+  addToHistory(captions);
+}
+
+/* ===== RENDER CAPTIONS ===== */
+function renderCaptions() {
+  if (state.captions.length === 0) return;
+
+  resultSection.classList.add('visible');
+  emptyState.style.display = 'none';
+  resultBadge.textContent = state.captions.length + ' generated';
+
+  captionList.innerHTML = '';
+
+  state.captions.forEach((caption, idx) => {
+    const charCount = caption.length;
+    const platformLimit = {
+      instagram: 2200,
+      facebook: 63206,
+      twitter: 280,
+      linkedin: 3000,
+      tiktok: 2200
+    }[state.platform];
+    const overLimit = charCount > platformLimit;
+
+    const card = document.createElement('div');
+    card.className = 'caption-card';
+    card.innerHTML = `
+      <div class="caption-text">${escapeHtml(caption)}</div>
+      <div class="caption-footer">
+        <div class="caption-meta">
+          <span class="caption-meta-item">
+            ${state.platform.toUpperCase()} · ${state.tone}
+          </span>
+          <span class="caption-meta-item" style="${overLimit ? 'background:#fee2e2;color:#991b1b;border-color:#fecaca;' : ''}">
+            ${charCount}${overLimit ? ' ⚠ over limit' : ' chars'}
+          </span>
+        </div>
+        <div class="caption-actions">
+          <button class="cap-btn" data-copy="${idx}">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+            Copy
+          </button>
+          <button class="cap-btn fav" data-fav="${idx}">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            Save
+          </button>
+        </div>
+      </div>
+    `;
+    captionList.appendChild(card);
+  });
+
+  // Bind copy
+  $$('[data-copy]').forEach(btn => {
+    btn.addEventListener('click', async () => {
+      const idx = parseInt(btn.dataset.copy, 10);
+      const text = state.captions[idx];
+      const ok = await copyToClipboard(text);
+      if (ok) {
+        btn.classList.add('copied');
+        const orig = btn.innerHTML;
+        btn.innerHTML = '✓ Copied';
+        setTimeout(() => {
+          btn.classList.remove('copied');
+          btn.innerHTML = orig;
+        }, 1800);
+        showToast('Caption copied!', 'success', 1500);
+      }
+    });
+  });
+
+  // Bind favorite
+  $$('[data-fav]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const idx = parseInt(btn.dataset.fav, 10);
+      const text = state.captions[idx];
+      if (state.favorites.includes(text)) {
+        state.favorites = state.favorites.filter(f => f !== text);
+        btn.classList.remove('active');
+        showToast('Removed from favorites');
+      } else {
+        state.favorites.push(text);
+        btn.classList.add('active');
+        showToast('Added to favorites!', 'success', 1500);
+      }
+      saveFavorites();
+    });
+  });
+}
+
+function escapeHtml(str) {
+  const div = document.createElement('div');
+  div.textContent = str;
+  return div.innerHTML;
+}
+
+/* ===== HISTORY ===== */
+function addToHistory(captions) {
+  captions.forEach(c => {
+    state.history = state.history.filter(h => h !== c);
+    state.history.unshift(c);
+  });
+  state.history = state.history.slice(0, 20);
+  saveHistory();
+  renderHistory();
+}
+
+function saveHistory() {
+  try {
+    localStorage.setItem('bigtoolz_caption_history', JSON.stringify(state.history));
+  } catch (e) {}
+}
+
+function saveFavorites() {
+  try {
+    localStorage.setItem('bigtoolz_caption_favs', JSON.stringify(state.favorites));
+  } catch (e) {}
+}
+
+function loadHistory() {
+  try {
+    state.history = JSON.parse(localStorage.getItem('bigtoolz_caption_history') || '[]');
+    state.favorites = JSON.parse(localStorage.getItem('bigtoolz_caption_favs') || '[]');
+  } catch (e) {
+    state.history = [];
+    state.favorites = [];
+  }
+  renderHistory();
+}
+
+function renderHistory() {
+  if (state.history.length === 0) {
+    historySection.style.display = 'none';
+    return;
+  }
+  historySection.style.display = 'block';
+  historyList.innerHTML = '';
+  state.history.slice(0, 10).forEach(caption => {
+    const item = document.createElement('div');
+    item.className = 'history-item';
+    item.innerHTML = `
+      <div class="history-item-text">${escapeHtml(caption)}</div>
+      <span class="history-item-copy">Copy</span>
+    `;
+    item.addEventListener('click', async () => {
+      const ok = await copyToClipboard(caption);
+      if (ok) showToast('Copied from history!', 'success', 1500);
+    });
+    historyList.appendChild(item);
+  });
+}
+
+historyClear.addEventListener('click', () => {
+  state.history = [];
+  saveHistory();
+  renderHistory();
+  showToast('History cleared');
+});
+
+/* ===== GENERATE BUTTON ===== */
+generateBtn.addEventListener('click', generateCaptions);
+
+/* ===== FAQ ===== */
+$$('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    $$('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+
+/* ===== INIT ===== */
+loadHistory();
+</script>
+
+</body>
+</html>

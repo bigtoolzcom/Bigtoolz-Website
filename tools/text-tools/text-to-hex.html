@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2563eb">
+
+<title>Text to Hex Converter - Convert Text to Hexadecimal Online Free | BigToolz</title>
+<meta name="description" content="Convert text to hexadecimal online free. UTF-8 support, custom formats (space, colon, 0x), uppercase/lowercase. No signup, works in your browser instantly.">
+<meta name="keywords" content="text to hex, text to hexadecimal, convert text to hex, hex converter, text hex encoder, utf-8 to hex">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://bigtoolz.com/tools/text-tools/text-to-hex/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Text to Hex Converter - Free Online Tool | BigToolz">
+<meta property="og:description" content="Convert text to hex instantly UTF-8, custom formats, free, no signup.">
+<meta property="og:url" content="https://bigtoolz.com/tools/text-tools/text-to-hex/">
+<meta property="og:image" content="https://bigtoolz.com/assets/images/og-image.jpg">
+<meta property="og:site_name" content="BigToolz">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Text to Hex - BigToolz">
+<meta name="twitter:description" content="Convert text to hex instantly free, no signup.">
+<meta name="twitter:image" content="https://bigtoolz.com/assets/images/twitter-card.jpg">
+
+<link rel="icon" href="/assets/images/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/images/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#f8f9fc;color:#1a1a2e;overflow-x:hidden;line-height:1.5}
+
+  .header{background:#fff;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;position:sticky;top:0;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+  .header-left{display:flex;align-items:center;gap:40px}
+  .logo{display:flex;align-items:center;gap:8px;font-size:22px;font-weight:800;color:#1a1a2e;text-decoration:none}
+  .logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#3b82f6,#2563eb);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px}
+  .logo span{color:#2563eb}
+  .nav{display:flex;align-items:center;gap:28px;list-style:none}
+  .nav a{text-decoration:none;color:#4b5563;font-size:14px;font-weight:500;transition:color .2s}
+  .nav a:hover,.nav a.active{color:#2563eb}
+  .header-right{display:flex;align-items:center;gap:16px}
+  .search-btn,.theme-btn{width:36px;height:36px;border-radius:50%;border:none;background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#4b5563}
+  .search-btn:hover,.theme-btn:hover{background:#f3f4f6}
+  .bookmark-btn{display:flex;align-items:center;gap:8px;background:#2563eb;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
+  .bookmark-btn:hover{background:#1d4ed8}
+
+  /* HERO */
+  .hero{background:linear-gradient(135deg,#0a0e27 0%,#1a1a4e 40%,#2d1b69 70%,#4c1d95 100%);padding:40px 40px 60px;position:relative;overflow:hidden;color:#fff}
+  .hero::before{content:'';position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(59,130,246,.25) 0%,transparent 70%);border-radius:50%}
+  .hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+  .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px;flex-wrap:wrap}
+  .breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none}
+  .breadcrumb a:hover{color:#fff}
+  .breadcrumb .sep{color:rgba(255,255,255,.4)}
+  .breadcrumb .current{color:#fff;font-weight:500}
+  .hero-title-row{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+  .hero-icon{width:60px;height:60px;background:#3b82f6;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;color:#fff;flex-shrink:0;box-shadow:0 8px 24px rgba(59,130,246,.4);font-family:'JetBrains Mono',monospace;font-weight:800}
+  .hero-title{font-size:42px;font-weight:800;line-height:1.15}
+  .hero-title .blue{color:#60a5fa}
+  .hero-desc{font-size:15px;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:24px;max-width:560px}
+  .hero-features{display:flex;gap:24px;flex-wrap:wrap}
+  .hero-feature{display:flex;align-items:center;gap:6px;font-size:13px;color:#fff;font-weight:500}
+  .hero-feature .check{width:18px;height:18px;border-radius:50%;background:#3b82f6;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;flex-shrink:0}
+
+  /* MAIN */
+  .main-content{max-width:1200px;margin:0 auto;padding:40px;display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start}
+  .tool-content{min-width:0}
+
+  .workspace{background:#fff;border-radius:16px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,.06);border:1px solid #e5e7eb;margin-bottom:24px}
+
+  /* Mode tabs */
+  .mode-tabs{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:20px;background:#eff6ff;padding:6px;border-radius:12px;border:1px solid #bfdbfe}
+  .mode-tab{padding:14px 12px;background:transparent;border:none;border-radius:10px;font-size:13px;font-weight:700;color:#4b5563;cursor:pointer;font-family:inherit;transition:all .2s;text-align:center;line-height:1.3}
+  .mode-tab:hover{background:#dbeafe}
+  .mode-tab.active{background:#3b82f6;color:#fff}
+  .mode-icon{display:block;font-size:18px;margin-bottom:4px;font-family:'JetBrains Mono',monospace;font-weight:800}
+
+  /* Converter layout */
+  .converter{display:grid;grid-template-columns:1fr auto 1fr;gap:16px;align-items:center;margin-bottom:20px}
+
+  .pane{display:flex;flex-direction:column}
+  .pane-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;gap:8px;flex-wrap:wrap}
+  .pane-label{font-size:12px;font-weight:700;color:#4b5563;text-transform:uppercase;letter-spacing:.3px;display:flex;align-items:center;gap:6px}
+  .pane-actions{display:flex;gap:6px}
+  .pane-btn{display:inline-flex;align-items:center;gap:4px;padding:6px 10px;background:#fff;border:1px solid #e5e7eb;border-radius:6px;font-size:11px;font-weight:600;color:#4b5563;cursor:pointer;font-family:inherit;transition:all .2s}
+  .pane-btn:hover{border-color:#3b82f6;color:#3b82f6;background:#eff6ff}
+  .pane-btn.copied{background:#10b981;color:#fff;border-color:#10b981}
+
+  .pane-textarea{width:100%;min-height:260px;padding:16px;border:2px solid #e5e7eb;border-radius:12px;font-family:'JetBrains Mono','Fira Code',Consolas,monospace;font-size:13px;line-height:1.6;color:#1a1a2e;background:#fafbfc;outline:none;resize:vertical;transition:all .2s}
+  .pane-textarea:focus{border-color:#3b82f6;background:#fff;box-shadow:0 0 0 4px rgba(59,130,246,.1)}
+  .pane-textarea::placeholder{color:#9ca3af;font-family:'Inter',sans-serif;font-size:13px}
+
+  .pane-meta{font-size:11px;color:#94a3b8;margin-top:6px;font-weight:500;display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
+  .pane-meta .val{font-weight:700;color:#3b82f6}
+
+  /* Swap button */
+  .swap-btn{width:44px;height:44px;border-radius:50%;background:#3b82f6;color:#fff;border:none;font-size:18px;cursor:pointer;font-family:inherit;transition:all .2s;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(59,130,246,.2);align-self:center}
+  .swap-btn:hover{background:#2563eb;transform:scale(1.1)}
+
+  /* Options */
+  .options{background:#f8fafc;border-radius:12px;padding:20px;margin-bottom:20px;border:1px solid #e2e8f0}
+  .options-title{font-size:14px;font-weight:800;color:#1a1a2e;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+  .options-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .option-group label{display:block;font-size:11px;font-weight:700;color:#4b5563;margin-bottom:6px;text-transform:uppercase;letter-spacing:.3px}
+  .option-group select{width:100%;padding:10px 12px;border:2px solid #e5e7eb;border-radius:8px;font-size:13px;font-weight:600;font-family:inherit;color:#1a1a2e;background:#fff;outline:none;cursor:pointer;transition:border-color .2s}
+  .option-group select:focus{border-color:#3b82f6;box-shadow:0 0 0 3px rgba(59,130,246,.1)}
+
+  /* Example chips */
+  .examples{margin-top:16px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+  .examples-label{font-size:11px;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:.3px}
+  .example-chip{padding:6px 12px;background:#fff;border:1px solid #e5e7eb;border-radius:20px;font-size:12px;font-weight:600;color:#4b5563;cursor:pointer;font-family:inherit;transition:all .2s}
+  .example-chip:hover{border-color:#3b82f6;color:#3b82f6;background:#eff6ff}
+
+  /* Action bar */
+  .action-bar{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px;padding-top:20px;border-top:1px solid #f3f4f6}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:10px 16px;border-radius:8px;font-size:13px;font-weight:700;font-family:inherit;cursor:pointer;border:1px solid #e5e7eb;background:#fff;color:#4b5563;transition:all .2s}
+  .btn:hover{border-color:#3b82f6;color:#3b82f6;background:#eff6ff}
+  .btn-primary{background:#3b82f6;color:#fff;border-color:#3b82f6}
+  .btn-primary:hover{background:#2563eb;border-color:#2563eb;color:#fff}
+  .btn-danger{color:#ef4444}
+  .btn-danger:hover{border-color:#ef4444;color:#ef4444;background:#fef2f2}
+  .btn-success{background:#10b981;color:#fff;border-color:#10b981}
+  .btn-success:hover{background:#059669;border-color:#059669}
+  .btn.copied{background:#10b981;color:#fff;border-color:#10b981}
+
+  /* Live preview for text side (byte count) */
+  .live-info{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px}
+  .live-item{background:#eff6ff;border:1px solid #bfdbfe;border-radius:10px;padding:14px;text-align:center}
+  .live-item-value{font-size:20px;font-weight:800;color:#1e40af;font-family:'JetBrains Mono',monospace;margin-bottom:4px;line-height:1.1}
+  .live-item-label{font-size:10px;font-weight:700;color:#3b82f6;text-transform:uppercase;letter-spacing:.3px}
+
+  /* SEO */
+  .seo-content{background:#fff;border-radius:16px;padding:32px;border:1px solid #e5e7eb;margin-bottom:24px}
+  .seo-content h2{font-size:22px;font-weight:800;color:#1a1a2e;margin-bottom:14px;margin-top:28px;display:flex;align-items:center;gap:10px}
+  .seo-content h2:first-child{margin-top:0}
+  .seo-content h3{font-size:16px;font-weight:700;color:#1a1a2e;margin:20px 0 10px}
+  .seo-content p{font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:14px}
+  .seo-content ul{list-style:none;padding-left:0;margin-bottom:16px}
+  .seo-content ul li{position:relative;padding-left:24px;font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:8px}
+  .seo-content ul li::before{content:'';position:absolute;left:6px;top:12px;width:6px;height:6px;background:#3b82f6;border-radius:50%}
+  .seo-content a{color:#2563eb;text-decoration:none;font-weight:600}
+  .seo-content a:hover{text-decoration:underline}
+  .seo-content strong{color:#1a1a2e;font-weight:700}
+  .seo-content code{background:#f1f5f9;padding:2px 6px;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:13px;color:#0f172a;border:1px solid #e2e8f0}
+
+  /* Info table */
+  .info-table{width:100%;border-collapse:collapse;margin:20px 0;border:1px solid #e5e7eb;border-radius:8px;overflow:hidden}
+  .info-table th{background:#eff6ff;padding:12px 16px;text-align:left;font-size:13px;font-weight:700;color:#1a1a2e;border-bottom:1px solid #e5e7eb}
+  .info-table td{padding:12px 16px;font-size:13px;color:#4b5563;border-bottom:1px solid #f3f4f6;font-family:'JetBrains Mono',monospace}
+  .info-table tr:last-child td{border-bottom:none}
+  .info-table td:first-child{font-family:'Inter',sans-serif;font-weight:600}
+
+  .how-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:20px}
+  .how-step{background:#eff6ff;border-radius:12px;padding:20px;border:1px solid #bfdbfe}
+  .how-step-num{width:36px;height:36px;border-radius:50%;background:#3b82f6;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;margin-bottom:12px}
+  .how-step-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+  .how-step-desc{font-size:13px;color:#6b7280;line-height:1.6}
+
+  .faq-item{background:#eff6ff;border:1px solid #bfdbfe;border-radius:12px;margin-bottom:10px;overflow:hidden;transition:border-color .2s}
+  .faq-item:hover{border-color:#3b82f6}
+  .faq-question{width:100%;background:none;border:none;padding:18px 22px;font-size:15px;font-weight:700;color:#1a1a2e;text-align:left;cursor:pointer;font-family:inherit;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .faq-question .chev{font-size:12px;color:#3b82f6;transition:transform .2s;flex-shrink:0}
+  .faq-item.open .faq-question .chev{transform:rotate(180deg)}
+  .faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 22px}
+  .faq-item.open .faq-answer{max-height:500px;padding-bottom:18px}
+  .faq-answer p{font-size:14px;color:#6b7280;line-height:1.7;margin:0}
+
+  .sidebar{background:#fff;border-radius:16px;padding:24px;border:1px solid #e5e7eb;position:sticky;top:80px;margin-bottom:24px}
+  .sidebar-header{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:800;color:#1a1a2e;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid #f3f4f6}
+  .sidebar-list{display:flex;flex-direction:column;gap:8px}
+  .sidebar-item{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;cursor:pointer;transition:background .2s;text-decoration:none;color:inherit;border:1px solid #f3f4f6}
+  .sidebar-item:hover{background:#eff6ff;border-color:#bfdbfe}
+  .sidebar-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;flex-shrink:0;font-family:'JetBrains Mono',monospace;font-weight:800}
+  .sidebar-info{flex:1;min-width:0}
+  .sidebar-title{font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:2px}
+  .sidebar-desc{font-size:11px;color:#9ca3af;line-height:1.4}
+
+  .footer{background:#0a0e27;padding:60px 40px 30px;color:#fff;margin-top:40px}
+  .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:40px}
+  .footer-brand{display:flex;align-items:center;gap:8px;font-size:20px;font-weight:800;margin-bottom:12px}
+  .footer-brand span{color:#60a5fa}
+  .footer-tagline{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px}
+  .footer-social{display:flex;gap:12px}
+  .footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:16px;transition:background .2s}
+  .footer-social a:hover{background:rgba(255,255,255,.2)}
+  .footer-heading{font-size:14px;font-weight:700;margin-bottom:20px;color:#fff}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .footer-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;transition:color .2s}
+  .footer-links a:hover{color:#60a5fa}
+  .footer-bottom{max-width:1200px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  .footer-bottom-left{display:flex;gap:20px;font-size:12px;color:rgba(255,255,255,.5)}
+  .footer-bottom-right,.footer-bottom-links a{font-size:12px;color:rgba(255,255,255,.5);text-decoration:none}
+  .footer-bottom-links{display:flex;gap:20px}
+
+  .toast{position:fixed;bottom:24px;right:24px;background:#1a1a2e;color:#fff;padding:14px 20px;border-radius:10px;font-size:13px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:3000;transform:translateY(200%);transition:transform .3s ease;max-width:320px}
+  .toast.visible{transform:translateY(0)}
+  .toast.success{background:#10b981}
+  .toast.error{background:#ef4444}
+
+  @media(max-width:1024px){
+    .main-content{grid-template-columns:1fr;padding:24px 20px}
+    .sidebar{position:static}
+    .how-steps{grid-template-columns:repeat(2,1fr)}
+    .options-grid{grid-template-columns:repeat(2,1fr)}
+  }
+  @media(max-width:768px){
+    .header{padding:0 20px}.nav{display:none}
+    .hero{padding:24px 20px 40px}
+    .hero-title{font-size:28px}
+    .hero-icon{width:48px;height:48px;font-size:20px}
+    .hero-title-row{flex-direction:column;align-items:flex-start;gap:12px}
+    .main-content{padding:20px 16px}
+    .workspace{padding:20px}
+    .how-steps{grid-template-columns:1fr}
+    .seo-content{padding:20px}
+    .footer-inner{grid-template-columns:1fr 1fr}
+    .toast{left:16px;right:16px;bottom:16px;max-width:none}
+    .converter{grid-template-columns:1fr;}
+    .swap-btn{transform:rotate(90deg);margin:0 auto}
+    .swap-btn:hover{transform:rotate(90deg) scale(1.1)}
+  }
+  @media(max-width:576px){
+    .header{padding:0 16px}.header-right .search-btn,.header-right .theme-btn{display:none}
+    .hero-title{font-size:24px}
+    .action-bar .btn{flex:1;justify-content:center;min-width:100px}
+    .footer-inner{grid-template-columns:1fr}
+    .footer-bottom{flex-direction:column;text-align:center}
+    .options-grid{grid-template-columns:1fr}
+    .live-info{grid-template-columns:1fr}
+  }
+
+  html[data-theme="dark"] body{background:#0f172a;color:#f1f5f9}
+  html[data-theme="dark"] .header,html[data-theme="dark"] .workspace,html[data-theme="dark"] .seo-content,html[data-theme="dark"] .sidebar{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .logo,html[data-theme="dark"] .hero-title,html[data-theme="dark"] .seo-content h2,html[data-theme="dark"] .seo-content h3,html[data-theme="dark"] .faq-question,html[data-theme="dark"] .sidebar-header,html[data-theme="dark"] .sidebar-title,html[data-theme="dark"] .options-title{color:#f1f5f9}
+  html[data-theme="dark"] .nav a{color:#cbd5e1}
+  html[data-theme="dark"] .mode-tabs,html[data-theme="dark"] .how-step,html[data-theme="dark"] .faq-item,html[data-theme="dark"] .options{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .mode-tab{color:#cbd5e1}
+  html[data-theme="dark"] .mode-tab:hover{background:#1e293b}
+  html[data-theme="dark"] .mode-tab.active{background:#3b82f6;color:#fff}
+  html[data-theme="dark"] .pane-textarea{background:#0f172a;border-color:#334155;color:#f1f5f9}
+  html[data-theme="dark"] .pane-textarea:focus{background:#0f172a}
+  html[data-theme="dark"] .option-group select,html[data-theme="dark"] .pane-btn,html[data-theme="dark"] .btn{background:#0f172a;border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .btn:hover,html[data-theme="dark"] .pane-btn:hover{border-color:#3b82f6;color:#60a5fa}
+  html[data-theme="dark"] .example-chip{background:#0f172a;border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .live-item{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .live-item-value{color:#93c5fd}
+  html[data-theme="dark"] .live-item-label{color:#60a5fa}
+  html[data-theme="dark"] .seo-content p,html[data-theme="dark"] .seo-content ul li,html[data-theme="dark"] .faq-answer p{color:#cbd5e1}
+  html[data-theme="dark"] .seo-content code{background:#020617;color:#60a5fa;border-color:#334155}
+  html[data-theme="dark"] .info-table{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .info-table th{background:#0f172a;color:#f1f5f9;border-color:#334155}
+  html[data-theme="dark"] .info-table td{border-color:#334155;color:#cbd5e1}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type": "SoftwareApplication", "name": "Text to Hex Converter", "url": "https://bigtoolz.com/tools/text-tools/text-to-hex/", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any (Web-based)", "description": "Free online text to hex converter UTF-8 support, custom formats (space, colon, 0x), uppercase/lowercase. Works in your browser.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "876"}},
+    {"@type": "HowTo", "name": "How to Convert Text to Hex", "step": [
+      {"@type": "HowToStep", "name": "Enter Text", "text": "Type or paste your text into the input box."},
+      {"@type": "HowToStep", "name": "Choose Format", "text": "Pick separator, case, and prefix options."},
+      {"@type": "HowToStep", "name": "Copy Result", "text": "Copy or download the hex output."},
+      {"@type": "HowToStep", "name": "Reverse (Optional)", "text": "Click the swap button to convert hex back to text."}
+    ]},
+    {"@type": "FAQPage", "mainEntity": [
+      {"@type": "Question", "name": "What is hex encoding?", "acceptedAnswer": {"@type": "Answer", "text": "Hex encoding (base-16) represents each byte of data using two hexadecimal characters (0-9, A-F). It's used in computing for compact representation of binary data visible in file viewers, hash outputs, and programming contexts."}},
+      {"@type": "Question", "name": "Is text to hex the same as base16?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Hex encoding IS base16. Each byte (8 bits) is represented as two hex digits (4 bits each). 'Text to hex' and 'text to base16' describe the same conversion."}},
+      {"@type": "Question", "name": "How does UTF-8 affect text to hex?", "acceptedAnswer": {"@type": "Answer", "text": "UTF-8 encodes each character into one or more bytes. ASCII characters (A-Z, 0-9) = 1 byte, so 'A' = '41'. Non-ASCII characters like é, हिंदी, or emojis = 2-4 bytes each, so 'é' = 'C3 A9'."}},
+      {"@type": "Question", "name": "What separators should I use?", "acceptedAnswer": {"@type": "Answer", "text": "No separator: '48656C6C6F'. Space: '48 65 6C 6C 6F'. Colon: '48:65:6C:6C:6F'. 0x prefix: '0x48 0x65...'. CSS-style: '\\48 \\65...'. Choose based on your target format."}},
+      {"@type": "Question", "name": "Is my text uploaded to a server?", "acceptedAnswer": {"@type": "Answer", "text": "No. All conversion happens in your browser using JavaScript. Your text never leaves your device."}}
+    ]},
+    {"@type": "BreadcrumbList", "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bigtoolz.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://bigtoolz.com/tools/"},
+      {"@type": "ListItem", "position": 3, "name": "Text Tools", "item": "https://bigtoolz.com/tools/text-tools/"},
+      {"@type": "ListItem", "position": 4, "name": "Text to Hex", "item": "https://bigtoolz.com/tools/text-tools/text-to-hex/"}
+    ]}
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-left">
+    <a href="/" class="logo"><div class="logo-icon">⚒</div>BigToolz</span></a>
+    <nav><ul class="nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/tools/" class="active">All Tools</a></li>
+      <li><a href="/tools/categories">Categories</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul></nav>
+  </div>
+  <div class="header-right">
+   
+    <button class="theme-btn" aria-label="Toggle theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
+    
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <nav class="breadcrumb">
+      <a href="/">Home</a><span class="sep">›</span>
+      <a href="/tools/">Tools</a><span class="sep">›</span>
+      <a href="/tools/text-tools/">Text Tools</a><span class="sep">›</span>
+      <span class="current">Text to Hex</span>
+    </nav>
+    <div class="hero-title-row">
+      <div class="hero-icon">⬡</div>
+      <h1 class="hero-title">Text to <span class="blue">Hex</span></h1>
+    </div>
+    <p class="hero-desc">
+      Convert text to hexadecimal instantly. Full UTF-8 support, custom separators, 0x prefix, uppercase/lowercase. Two-way conversion with live preview. No signup, 100% private.
+    </p>
+    <div class="hero-features">
+      <div class="hero-feature"><span class="check">✓</span> UTF-8 Support</div>
+      <div class="hero-feature"><span class="check">✓</span> 5 Formats</div>
+      <div class="hero-feature"><span class="check">✓</span> Two-Way</div>
+      <div class="hero-feature"><span class="check">✓</span> Live Preview</div>
+    </div>
+  </div>
+</section>
+
+<div class="main-content">
+
+  <div class="tool-content">
+
+    <div class="workspace">
+
+      <!-- Mode tabs -->
+      <div class="mode-tabs" id="modeTabs">
+        <button class="mode-tab active" data-mode="encode">
+          <span class="mode-icon">A → 41</span>
+          Text to Hex
+        </button>
+        <button class="mode-tab" data-mode="decode">
+          <span class="mode-icon">41 → A</span>
+          Hex to Text
+        </button>
+      </div>
+
+      <!-- Converter -->
+      <div class="converter">
+        <div class="pane">
+          <div class="pane-header">
+            <div class="pane-label" id="inputLabel">📝 Text Input</div>
+            <div class="pane-actions">
+              <button class="pane-btn" id="pasteBtn">📋 Paste</button>
+              <button class="pane-btn" id="clearInputBtn">✕ Clear</button>
+            </div>
+          </div>
+          <textarea class="pane-textarea" id="inputText" placeholder="Type or paste text here..."></textarea>
+          <div class="pane-meta">
+            <span id="inputMeta">0 characters</span>
+          </div>
+        </div>
+
+        <button class="swap-btn" id="swapBtn" title="Swap">⇄</button>
+
+        <div class="pane">
+          <div class="pane-header">
+            <div class="pane-label" id="outputLabel">🔢 Hex Output</div>
+            <div class="pane-actions">
+              <button class="pane-btn" id="copyOutputBtn">📋 Copy</button>
+            </div>
+          </div>
+          <textarea class="pane-textarea" id="outputText" placeholder="Hex output will appear here..." readonly></textarea>
+          <div class="pane-meta">
+            <span id="outputMeta">0 bytes</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Options -->
+      <div class="options">
+        <div class="options-title">⚙️ Format Options</div>
+        <div class="options-grid">
+          <div class="option-group">
+            <label>Separator</label>
+            <select id="separator">
+              <option value="space" selected>Space (48 65 6C)</option>
+              <option value="none">None (48656C)</option>
+              <option value="colon">Colon (48:65:6C)</option>
+              <option value="comma">Comma (48,65,6C)</option>
+              <option value="dash">Dash (48-65-6C)</option>
+            </select>
+          </div>
+          <div class="option-group">
+            <label>Hex Case</label>
+            <select id="hexCase">
+              <option value="upper" selected>UPPERCASE (48 65)</option>
+              <option value="lower">lowercase (48 65)</option>
+            </select>
+          </div>
+          <div class="option-group">
+            <label>Prefix (encode only)</label>
+            <select id="prefix">
+              <option value="none" selected>None</option>
+              <option value="0x">0x</option>
+              <option value="backslash">\x (backslash)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="examples" id="examples">
+          <span class="examples-label">Try:</span>
+          <button class="example-chip" data-example="Hello">"Hello"</button>
+          <button class="example-chip" data-example="BigToolz">"BigToolz"</button>
+          <button class="example-chip" data-example="Hello World! 123">"Hello World! 123"</button>
+          <button class="example-chip" data-example="नमस्ते">"नमस्ते"</button>
+          <button class="example-chip" data-example="🚀🌍✨">Emojis</button>
+        </div>
+      </div>
+
+      <!-- Live info -->
+      <div class="live-info">
+        <div class="live-item">
+          <div class="live-item-value" id="bytesCount">0</div>
+          <div class="live-item-label">Bytes (UTF-8)</div>
+        </div>
+        <div class="live-item">
+          <div class="live-item-value" id="charsCount">0</div>
+          <div class="live-item-label">Characters</div>
+        </div>
+        <div class="live-item">
+          <div class="live-item-value" id="hexCount">0</div>
+          <div class="live-item-label">Hex Output Size</div>
+        </div>
+      </div>
+
+      <!-- Action bar -->
+      <div class="action-bar">
+        <button class="btn btn-primary" id="convertBtn">⚡ Convert Now</button>
+        <button class="btn" id="downloadTxtBtn">⬇ Download TXT</button>
+        <button class="btn btn-danger" id="clearAllBtn">🗑 Clear All</button>
+      </div>
+
+    </div>
+
+    <!-- SEO Content -->
+    <div class="seo-content">
+
+      <h2>⬡ What is Text to Hex Conversion?</h2>
+      <p>
+        <strong>Text to Hex conversion</strong> transforms readable text into its hexadecimal (base-16) representation. Each character of text is encoded as bytes (usually UTF-8), and each byte is represented by two hex digits. For example, the letter <code>A</code> becomes <code>41</code>, the word <code>Hello</code> becomes <code>48 65 6C 6C 6F</code>.
+      </p>
+      <p>
+        Hex encoding is essential in <strong>programming, debugging, file analysis, cryptography, and network protocols</strong>. Unlike most online converters, BigToolz processes text <strong>100% in your browser</strong> your data <strong>never uploaded to any server</strong>, perfect for confidential strings, API keys, and sensitive data.
+      </p>
+
+      <h2>🚀 How to Convert Text to Hex</h2>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-step-num">1</div>
+          <div class="how-step-title">Enter Text</div>
+          <div class="how-step-desc">Type or paste your text into the input box.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">2</div>
+          <div class="how-step-title">Choose Format</div>
+          <div class="how-step-desc">Pick separator, case, and prefix.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">3</div>
+          <div class="how-step-title">Auto-Convert</div>
+          <div class="how-step-desc">Output updates live as you type.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">4</div>
+          <div class="how-step-title">Copy or Download</div>
+          <div class="how-step-desc">Copy hex or download as .txt.</div>
+        </div>
+      </div>
+
+      <h2>📊 Common Examples</h2>
+      <table class="info-table">
+        <thead>
+          <tr><th>Text</th><th>Hex (UTF-8)</th><th>Notes</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>A</td><td>41</td><td>1 byte</td></tr>
+          <tr><td>Hello</td><td>48 65 6C 6C 6F</td><td>5 bytes</td></tr>
+          <tr><td>123</td><td>31 32 33</td><td>Numbers are ASCII</td></tr>
+          <tr><td>é</td><td>C3 A9</td><td>2 bytes (UTF-8)</td></tr>
+          <tr><td>नमस्ते</td><td>E0 A4 A8 E0 A4 AE...</td><td>Hindi = 3 bytes per char</td></tr>
+          <tr><td>🚀</td><td>F0 9F 9A 80</td><td>Emoji = 4 bytes</td></tr>
+          <tr><td>Space</td><td>20</td><td>0x20</td></tr>
+          <tr><td>Newline</td><td>0A</td><td>Line feed (\n)</td></tr>
+        </tbody>
+      </table>
+
+      <h2>🎯 When to Use Text to Hex</h2>
+      <ul>
+        <li><strong>Programming</strong> debugging strings, comparing bytes, encoding data for protocols.</li>
+        <li><strong>Cryptography</strong> displaying hash outputs (MD5, SHA-1, SHA-256) as hex.</li>
+        <li><strong>Networking</strong> analyzing packet data, HTTP headers in hex dumps.</li>
+        <li><strong>File analysis</strong> hex editors show file bytes, decode them back here.</li>
+        <li><strong>CSS/HTML</strong> encode non-ASCII characters as hex entities (<code>&amp;#x41;</code>).</li>
+        <li><strong>Embedded systems</strong> writing hex string constants in C/C++.</li>
+        <li><strong>Learning</strong> understand how characters map to bytes.</li>
+      </ul>
+
+      <h2>🎨 Understanding UTF-8 Hex</h2>
+      <p>
+        UTF-8 is the modern standard for encoding text. Every character in the Unicode standard is represented by <strong>1 to 4 bytes</strong> in UTF-8:
+      </p>
+      <ul>
+        <li><strong>ASCII (A-Z, 0-9, common symbols):</strong> 1 byte → 2 hex digits. Example: <code>A</code> = <code>41</code></li>
+        <li><strong>Latin/Euro chars (é, £, ¥):</strong> 2 bytes → 4 hex digits. Example: <code>é</code> = <code>C3 A9</code></li>
+        <li><strong>Most scripts (Hindi, Chinese, Arabic):</strong> 3 bytes → 6 hex digits. Example: <code>न</code> = <code>E0 A4 A8</code></li>
+        <li><strong>Emojis & rare symbols:</strong> 4 bytes → 8 hex digits. Example: <code>🚀</code> = <code>F0 9F 9A 80</code></li>
+      </ul>
+
+      <h2>✨ Key Features</h2>
+      <ul>
+        <li><strong>Two-way conversion</strong> Text → Hex and Hex → Text.</li>
+        <li><strong>Full UTF-8 support</strong> emojis, Hindi, Chinese, Arabic, any language.</li>
+        <li><strong>5 separator styles</strong> none, space, colon, comma, dash.</li>
+        <li><strong>Case options</strong> UPPERCASE or lowercase hex.</li>
+        <li><strong>Prefix options</strong> 0x or \x for programming.</li>
+        <li><strong>Live conversion</strong> updates as you type.</li>
+        <li><strong>Copy & download</strong> save output as .txt.</li>
+        <li><strong>100% browser-based</strong> complete privacy.</li>
+      </ul>
+
+      <h2>❓ Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-question">What is hex encoding?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Hex encoding (base-16) represents each byte of data using two hexadecimal characters (<code>0-9</code>, <code>A-F</code>). It's used in computing for compact representation of binary data visible in file viewers, hash outputs, and programming contexts.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Is text to hex the same as base16?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Yes. Hex encoding <strong>is base16</strong>. Each byte (8 bits) is represented as two hex digits (4 bits each). "Text to hex" and "text to base16" describe the same conversion the words are interchangeable.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">How does UTF-8 affect text to hex?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>UTF-8 encodes each character into one or more bytes. <strong>ASCII characters</strong> (A-Z, 0-9) = 1 byte, so 'A' = '41'. <strong>Non-ASCII characters</strong> like é, हिंदी, or emojis = 2-4 bytes each, so 'é' = 'C3 A9' and '🚀' = 'F0 9F 9A 80'.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What separators should I use?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>No separator:</strong> <code>48656C6C6F</code> compact. <strong>Space:</strong> <code>48 65 6C 6C 6F</code> most readable. <strong>Colon:</strong> <code>48:65:6C:6C:6F</code> common in MAC addresses. <strong>0x prefix:</strong> <code>0x48 0x65...</code> for C/C++ code. <strong>Backslash:</strong> <code>\x48\x65...</code> for Python/JS strings.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I convert hex back to text?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Yes! Click the <strong>swap button (⇄)</strong> in the middle, or select the "Hex to Text" mode tab. The tool decodes hex back to readable text handling separators automatically.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Why does 1 character sometimes equal 4 hex digits?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Because that character uses <strong>more than 1 byte</strong> in UTF-8. ASCII = 1 byte = 2 hex digits. Latin accented = 2 bytes = 4 hex digits. Most non-Latin scripts = 3 bytes = 6 hex digits. Emojis = 4 bytes = 8 hex digits.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Is my text uploaded to a server?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>No. All conversion happens in your browser using JavaScript's <code>TextEncoder</code> and <code>TextDecoder</code> APIs. Your text never leaves your device safe for API keys, tokens, and confidential strings.</p></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-header">🔗 Related Text Tools</div>
+    <div class="sidebar-list">
+      <a href="/tools/text-tools/hex-to-text/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#10b981;">🔤</div>
+        <div class="sidebar-info"><div class="sidebar-title">Hex to Text</div><div class="sidebar-desc">Reverse conversion</div></div>
+      </a>
+      <a href="/tools/text-tools/text-to-binary/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#0f172a;">01</div>
+        <div class="sidebar-info"><div class="sidebar-title">Text to Binary</div><div class="sidebar-desc">Binary encoding</div></div>
+      </a>
+      <a href="/tools/text-tools/binary-to-text/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#3b82f6;">🔤</div>
+        <div class="sidebar-info"><div class="sidebar-title">Binary to Text</div><div class="sidebar-desc">Decode binary</div></div>
+      </a>
+      <a href="/tools/text-tools/text-to-morse/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#0f172a;">·−</div>
+        <div class="sidebar-info"><div class="sidebar-title">Text to Morse</div><div class="sidebar-desc">Morse code</div></div>
+      </a>
+      <a href="/tools/text-tools/case-converter/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#f97316;">Aa</div>
+        <div class="sidebar-info"><div class="sidebar-title">Case Converter</div><div class="sidebar-desc">Change text case</div></div>
+      </a>
+      <a href="/tools/text-tools/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#64748b;">T</div>
+        <div class="sidebar-info"><div class="sidebar-title">All Text Tools →</div><div class="sidebar-desc">Browse 25+ tools</div></div>
+      </a>
+    </div>
+  </aside>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand"><div class="logo-icon">⚒</div>BigToolz</span></div>
+      <p class="footer-tagline">Your Ultimate Online Tools Hub</p>
+      <div class="footer-social">
+        <a href="https://facebook.com/bigtoolz" aria-label="Facebook">f</a>
+        <a href="https://twitter.com/bigtoolz" aria-label="Twitter">𝕏</a>
+        <a href="https://youtube.com/@bigtoolz" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+    <div>
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/tools/">All Tools</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Categories</h3>
+      <ul class="footer-links">
+        <li><a href="/tools/image-tools/">Image Tools</a></li>
+        <li><a href="/tools/pdf-tools/">PDF Tools</a></li>
+        <li><a href="/tools/text-tools/">Text Tools</a></li>
+        <li><a href="/tools/seo-tools/">SEO Tools</a></li>
+        <li><a href="/tools/categories">All Categories →</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Legal</h3>
+      <ul class="footer-links">
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left"><span>✓ 100% Free</span><span>✓ No Sign Up</span><span>✓ No Installation</span></div>
+    <div class="footer-bottom-right">© 2026 BigToolz. All rights reserved.</div>
+    <div class="footer-bottom-links"><a href="/privacy-policy">Privacy</a><a href="/terms">Terms</a><a href="/disclaimer">Disclaimer</a></div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+'use strict';
+
+/* ===== THEME ===== */
+(function(){try{var t=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&d))document.documentElement.setAttribute('data-theme','dark');else if(t==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();
+document.querySelector('.theme-btn')?.addEventListener('click',()=>{const h=document.documentElement;const c=h.getAttribute('data-theme');const d=window.matchMedia('(prefers-color-scheme: dark)').matches;let n=c==='dark'?'light':c==='light'?'dark':(d?'light':'dark');h.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}});
+
+/* ===== HELPERS ===== */
+const $ = (s, p = document) => p.querySelector(s);
+const $$ = (s, p = document) => [...p.querySelectorAll(s)];
+
+function showToast(msg, type = 'info', duration = 3000) {
+  const t = $('#toast');
+  if (!t) return;
+  t.className = 'toast visible' + (type !== 'info' ? ' ' + type : '');
+  t.textContent = msg;
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove('visible'), duration);
+}
+
+async function copyToClipboard(text) {
+  try {
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(text);
+      return true;
+    }
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.cssText = 'position:fixed;opacity:0;';
+    document.body.appendChild(ta);
+    ta.select();
+    const ok = document.execCommand('copy');
+    document.body.removeChild(ta);
+    return ok;
+  } catch (e) { return false; }
+}
+
+/* ===== STATE ===== */
+const state = {
+  mode: 'encode',     // 'encode' or 'decode'
+  separator: 'space',
+  hexCase: 'upper',
+  prefix: 'none'
+};
+
+/* ===== DOM ===== */
+const modeTabs = $('#modeTabs');
+const inputLabel = $('#inputLabel');
+const outputLabel = $('#outputLabel');
+const inputText = $('#inputText');
+const outputText = $('#outputText');
+const inputMeta = $('#inputMeta');
+const outputMeta = $('#outputMeta');
+const separator = $('#separator');
+const hexCase = $('#hexCase');
+const prefix = $('#prefix');
+const bytesCount = $('#bytesCount');
+const charsCount = $('#charsCount');
+const hexCount = $('#hexCount');
+const pasteBtn = $('#pasteBtn');
+const clearInputBtn = $('#clearInputBtn');
+const copyOutputBtn = $('#copyOutputBtn');
+const swapBtn = $('#swapBtn');
+const convertBtn = $('#convertBtn');
+const downloadTxtBtn = $('#downloadTxtBtn');
+const clearAllBtn = $('#clearAllBtn');
+
+/* ===== MODE TABS ===== */
+$$('.mode-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    $$('.mode-tab').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    state.mode = tab.dataset.mode;
+    updateLabels();
+    convert();
+  });
+});
+
+function updateLabels() {
+  if (state.mode === 'encode') {
+    inputLabel.innerHTML = '📝 Text Input';
+    outputLabel.innerHTML = '🔢 Hex Output';
+    inputText.placeholder = 'Type or paste text here...';
+    outputText.placeholder = 'Hex output will appear here...';
+    prefix.disabled = false;
+  } else {
+    inputLabel.innerHTML = '🔢 Hex Input';
+    outputLabel.innerHTML = '📝 Text Output';
+    inputText.placeholder = 'Type or paste hex here (48 65 6C 6C 6F)...';
+    outputText.placeholder = 'Decoded text will appear here...';
+    prefix.disabled = true;
+  }
+}
+
+/* ===== OPTIONS ===== */
+separator.addEventListener('change', () => {
+  state.separator = separator.value;
+  convert();
+});
+hexCase.addEventListener('change', () => {
+  state.hexCase = hexCase.value;
+  convert();
+});
+prefix.addEventListener('change', () => {
+  state.prefix = prefix.value;
+  convert();
+});
+
+/* ===== SEPARATOR STRINGS ===== */
+function getSepChar() {
+  switch (state.separator) {
+    case 'space': return ' ';
+    case 'none': return '';
+    case 'colon': return ':';
+    case 'comma': return ',';
+    case 'dash': return '-';
+    default: return ' ';
+  }
+}
+
+/* ===== ENCODE (Text → Hex) ===== */
+function encodeText(text) {
+  if (!text) return '';
+  // UTF-8 encode via TextEncoder
+  const bytes = new TextEncoder().encode(text);
+  const sep = getSepChar();
+
+  return Array.from(bytes)
+    .map(b => {
+      let h = b.toString(16).padStart(2, '0');
+      if (state.hexCase === 'upper') h = h.toUpperCase();
+      if (state.prefix === '0x') h = '0x' + h;
+      else if (state.prefix === 'backslash') h = '\\x' + h;
+      return h;
+    })
+    .join(sep);
+}
+
+/* ===== DECODE (Hex → Text) ===== */
+function decodeText(hex) {
+  if (!hex) return '';
+  try {
+    // Remove common prefixes and separators
+    let clean = hex
+      .replace(/0x/gi, '')
+      .replace(/\\x/gi, '')
+      .replace(/[^0-9a-fA-F]/g, '');
+
+    // Must be even length
+    if (clean.length % 2 !== 0) {
+      clean = clean.slice(0, -1);
+    }
+
+    // Convert to byte array
+    const bytes = new Uint8Array(clean.length / 2);
+    for (let i = 0; i < clean.length; i += 2) {
+      bytes[i / 2] = parseInt(clean.substr(i, 2), 16);
+    }
+
+    // Decode UTF-8
+    return new TextDecoder('utf-8', { fatal: false }).decode(bytes);
+  } catch (e) {
+    return '[Invalid hex input]';
+  }
+}
+
+/* ===== MAIN CONVERT ===== */
+function convert() {
+  const input = inputText.value;
+
+  if (state.mode === 'encode') {
+    // Text → Hex
+    const hex = encodeText(input);
+    outputText.value = hex;
+
+    // Stats
+    const bytes = new TextEncoder().encode(input);
+    bytesCount.textContent = bytes.length.toLocaleString();
+    charsCount.textContent = input.length.toLocaleString();
+    hexCount.textContent = hex.length.toLocaleString();
+
+    inputMeta.textContent = input.length + ' characters';
+    outputMeta.textContent = bytes.length + ' bytes · ' + hex.length + ' hex chars';
+  } else {
+    // Hex → Text
+    const text = decodeText(input);
+    outputText.value = text;
+
+    const bytes = new TextEncoder().encode(text);
+    bytesCount.textContent = bytes.length.toLocaleString();
+    charsCount.textContent = text.length.toLocaleString();
+    hexCount.textContent = input.replace(/\s/g, '').length.toLocaleString();
+
+    inputMeta.textContent = input.length + ' hex chars';
+    outputMeta.textContent = text.length + ' characters · ' + bytes.length + ' bytes';
+  }
+}
+
+/* ===== INPUT LISTENER ===== */
+inputText.addEventListener('input', convert);
+
+/* ===== PASTE ===== */
+pasteBtn.addEventListener('click', async () => {
+  try {
+    if (navigator.clipboard && navigator.clipboard.readText) {
+      const text = await navigator.clipboard.readText();
+      inputText.value = text;
+      convert();
+      showToast('Pasted from clipboard', 'success');
+    } else {
+      inputText.focus();
+      showToast('Press Ctrl+V to paste', 'info');
+    }
+  } catch (err) {
+    inputText.focus();
+    showToast('Clipboard access denied', 'error');
+  }
+});
+
+/* ===== CLEAR INPUT ===== */
+clearInputBtn.addEventListener('click', () => {
+  inputText.value = '';
+  convert();
+  inputText.focus();
+});
+
+/* ===== COPY OUTPUT ===== */
+copyOutputBtn.addEventListener('click', async () => {
+  if (!outputText.value) { showToast('Nothing to copy', 'error'); return; }
+  const ok = await copyToClipboard(outputText.value);
+  if (ok) {
+    copyOutputBtn.classList.add('copied');
+    const original = copyOutputBtn.innerHTML;
+    copyOutputBtn.innerHTML = '✓ Copied';
+    setTimeout(() => {
+      copyOutputBtn.classList.remove('copied');
+      copyOutputBtn.innerHTML = original;
+    }, 1500);
+    showToast('Output copied!', 'success');
+  } else {
+    showToast('Copy failed', 'error');
+  }
+});
+
+/* ===== SWAP ===== */
+swapBtn.addEventListener('click', () => {
+  // Switch mode
+  state.mode = state.mode === 'encode' ? 'decode' : 'encode';
+  $$('.mode-tab').forEach(t => t.classList.toggle('active', t.dataset.mode === state.mode));
+  updateLabels();
+
+  // Swap text
+  const prevOutput = outputText.value;
+  inputText.value = prevOutput;
+  convert();
+});
+
+/* ===== CONVERT BUTTON ===== */
+convertBtn.addEventListener('click', () => {
+  convert();
+  showToast('Converted', 'success');
+});
+
+/* ===== DOWNLOAD ===== */
+downloadTxtBtn.addEventListener('click', () => {
+  if (!outputText.value) { showToast('Nothing to download', 'error'); return; }
+  const content = `BigToolz Text to Hex Output\n${'='.repeat(40)}\n\nMode: ${state.mode === 'encode' ? 'Text → Hex' : 'Hex → Text'}\nSeparator: ${state.separator}\nCase: ${state.hexCase}\nPrefix: ${state.prefix}\n\n${'─'.repeat(40)}\nINPUT:\n${inputText.value}\n\n${'─'.repeat(40)}\nOUTPUT:\n${outputText.value}\n`;
+  const blob = new Blob([content], { type: 'text/plain' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = state.mode === 'encode' ? 'text-to-hex.txt' : 'hex-to-text.txt';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+  showToast('Downloaded', 'success');
+});
+
+/* ===== CLEAR ALL ===== */
+clearAllBtn.addEventListener('click', () => {
+  if (!inputText.value && !outputText.value) return;
+  if (!confirm('Clear all input and output?')) return;
+  inputText.value = '';
+  outputText.value = '';
+  convert();
+  showToast('Cleared', 'info');
+});
+
+/* ===== EXAMPLE CHIPS ===== */
+$$('.example-chip').forEach(chip => {
+  chip.addEventListener('click', () => {
+    inputText.value = chip.dataset.example;
+    convert();
+    showToast('Example loaded', 'success', 1500);
+  });
+});
+
+/* ===== FAQ ===== */
+$$('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    $$('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+
+/* ===== INIT ===== */
+updateLabels();
+convert();
+</script>
+
+</body>
+</html>

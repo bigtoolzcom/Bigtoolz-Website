@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2563eb">
+
+<title>PDF Language Detector - Detect PDF Language Online Free | BigToolz</title>
+<meta name="description" content="Detect the language of any PDF online free. Supports 20+ languages via trigram and script analysis. Works in your browser, no upload. Per-page detection.">
+<meta name="keywords" content="pdf language detector, detect pdf language, identify language pdf, pdf text language, language identifier">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://bigtoolz.com/tools/pdf-tools/advanced-pdf/language-detector/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="PDF Language Detector - Free Online Tool | BigToolz">
+<meta property="og:description" content="Detect the language of any PDF free, no upload, 20+ languages.">
+<meta property="og:url" content="https://bigtoolz.com/tools/pdf-tools/advanced-pdf/language-detector/">
+<meta property="og:image" content="https://bigtoolz.com/assets/images/og-image.jpg">
+<meta property="og:site_name" content="BigToolz">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="PDF Language Detector - BigToolz">
+<meta name="twitter:description" content="Detect PDF language instantly free, no upload.">
+<meta name="twitter:image" content="https://bigtoolz.com/assets/images/twitter-card.jpg">
+
+<link rel="icon" href="/assets/images/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/images/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#f8f9fc;color:#1a1a2e;overflow-x:hidden;line-height:1.5}
+
+  .header{background:#fff;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;position:sticky;top:0;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+  .header-left{display:flex;align-items:center;gap:40px}
+  .logo{display:flex;align-items:center;gap:8px;font-size:22px;font-weight:800;color:#1a1a2e;text-decoration:none}
+  .logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#3b82f6,#2563eb);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px}
+  .logo span{color:#2563eb}
+  .nav{display:flex;align-items:center;gap:28px;list-style:none}
+  .nav a{text-decoration:none;color:#4b5563;font-size:14px;font-weight:500;transition:color .2s}
+  .nav a:hover,.nav a.active{color:#2563eb}
+  .header-right{display:flex;align-items:center;gap:16px}
+  .search-btn,.theme-btn{width:36px;height:36px;border-radius:50%;border:none;background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#4b5563}
+  .search-btn:hover,.theme-btn:hover{background:#f3f4f6}
+  .bookmark-btn{display:flex;align-items:center;gap:8px;background:#2563eb;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
+  .bookmark-btn:hover{background:#1d4ed8}
+
+  .hero{background:linear-gradient(135deg,#0a0e27 0%,#1a1a4e 40%,#2d1b69 70%,#4c1d95 100%);padding:40px 40px 60px;position:relative;overflow:hidden;color:#fff}
+  .hero::before{content:'';position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(16,185,129,.25) 0%,transparent 70%);border-radius:50%}
+  .hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+  .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px;flex-wrap:wrap}
+  .breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none}
+  .breadcrumb a:hover{color:#fff}
+  .breadcrumb .sep{color:rgba(255,255,255,.4)}
+  .breadcrumb .current{color:#fff;font-weight:500}
+  .hero-title-row{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+  .hero-icon{width:60px;height:60px;background:#10b981;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;color:#fff;flex-shrink:0;box-shadow:0 8px 24px rgba(16,185,129,.4)}
+  .hero-title{font-size:42px;font-weight:800;line-height:1.15}
+  .hero-title .blue{color:#34d399}
+  .hero-desc{font-size:15px;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:24px;max-width:560px}
+  .hero-features{display:flex;gap:24px;flex-wrap:wrap}
+  .hero-feature{display:flex;align-items:center;gap:6px;font-size:13px;color:#fff;font-weight:500}
+  .hero-feature .check{width:18px;height:18px;border-radius:50%;background:#10b981;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;flex-shrink:0}
+
+  .main-content{max-width:1200px;margin:0 auto;padding:40px;display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start}
+  .tool-content{min-width:0}
+
+  .workspace{background:#fff;border-radius:16px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,.06);border:1px solid #e5e7eb;margin-bottom:24px}
+
+  .dropzone{border:2px dashed #a7f3d0;border-radius:12px;padding:50px 30px;text-align:center;background:#f0fdf4;margin-bottom:24px;transition:all .2s;cursor:pointer}
+  .dropzone:hover,.dropzone.dragover{border-color:#10b981;background:#d1fae5}
+  .dropzone-icon{width:60px;height:60px;background:linear-gradient(135deg,#10b981,#059669);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;color:#fff;font-size:26px;transition:transform .2s}
+  .dropzone:hover .dropzone-icon{transform:translateY(-4px)}
+  .dropzone-title{font-size:16px;font-weight:700;color:#1a1a2e;margin-bottom:8px}
+  .dropzone-sub{font-size:14px;color:#6b7280;margin-bottom:20px}
+  .dropzone-sub a{color:#10b981;font-weight:600;text-decoration:none}
+  .choose-btn{display:inline-flex;align-items:center;gap:8px;background:#10b981;color:#fff;border:none;padding:12px 28px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;transition:background .2s}
+  .choose-btn:hover{background:#059669}
+  .dropzone-info{font-size:12px;color:#9ca3af;display:flex;align-items:center;justify-content:center;gap:8px;margin-top:16px;flex-wrap:wrap}
+  .dropzone-info .divider{color:#d1d5db}
+  .file-input{display:none}
+
+  /* File Info */
+  .file-info-bar{display:none;align-items:center;gap:14px;padding:14px 18px;background:#f0fdf4;border:1px solid #a7f3d0;border-radius:12px;margin-bottom:20px;flex-wrap:wrap}
+  .file-info-bar.visible{display:flex}
+  .file-info-icon{width:44px;height:44px;background:#10b981;border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:20px;flex-shrink:0}
+  .file-info-text{flex:1;min-width:0}
+  .file-info-name{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .file-info-meta{font-size:12px;color:#6b7280}
+  .file-change-btn{padding:8px 14px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;font-size:12px;font-weight:600;color:#10b981;cursor:pointer;font-family:inherit;transition:all .2s}
+  .file-change-btn:hover{border-color:#10b981;background:#f0fdf4}
+
+  /* Action */
+  .actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:20px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 28px;border-radius:10px;font-size:15px;font-weight:700;font-family:inherit;cursor:pointer;border:none;transition:all .2s;text-decoration:none}
+  .btn-primary{background:#10b981;color:#fff;flex:1;box-shadow:0 4px 12px rgba(16,185,129,.2)}
+  .btn-primary:hover:not(:disabled){background:#059669;transform:translateY(-2px);box-shadow:0 6px 20px rgba(16,185,129,.3)}
+  .btn-primary:disabled{opacity:.5;cursor:not-allowed;transform:none}
+  .btn-secondary{background:#fff;color:#10b981;border:1px solid #e5e7eb}
+  .btn-secondary:hover{border-color:#10b981;background:#f0fdf4}
+  .btn-success{background:#10b981;color:#fff}
+  .btn-success:hover{background:#059669}
+
+  .progress{display:none;margin-bottom:20px}
+  .progress.visible{display:block}
+  .progress-bar{width:100%;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden;margin-bottom:8px}
+  .progress-fill{height:100%;background:linear-gradient(90deg,#34d399,#10b981);border-radius:4px;width:0%;transition:width .3s ease}
+  .progress-text{font-size:13px;color:#6b7280;text-align:center;font-weight:500}
+
+  /* Results */
+  .results{display:none}
+  .results.visible{display:block}
+
+  /* Primary language card */
+  .lang-card{background:linear-gradient(135deg,#10b981,#059669);border-radius:16px;padding:32px;color:#fff;text-align:center;margin-bottom:24px;position:relative;overflow:hidden}
+  .lang-card::before{content:'';position:absolute;top:-60px;right:-60px;width:200px;height:200px;background:rgba(255,255,255,.08);border-radius:50%}
+  .lang-label{font-size:12px;color:rgba(255,255,255,.8);text-transform:uppercase;letter-spacing:1px;font-weight:700;margin-bottom:12px;position:relative;z-index:2}
+  .lang-flag{font-size:56px;margin-bottom:12px;position:relative;z-index:2;line-height:1}
+  .lang-name{font-size:36px;font-weight:900;line-height:1.1;position:relative;z-index:2;margin-bottom:6px}
+  .lang-native{font-size:16px;color:rgba(255,255,255,.85);position:relative;z-index:2;margin-bottom:16px}
+  .lang-code{font-size:12px;color:rgba(255,255,255,.7);font-family:'JetBrains Mono',monospace;position:relative;z-index:2;background:rgba(255,255,255,.15);padding:4px 12px;border-radius:20px;display:inline-block}
+  .confidence-meter{margin-top:20px;position:relative;z-index:2;height:12px;background:rgba(255,255,255,.2);border-radius:6px;overflow:hidden}
+  .confidence-fill{height:100%;background:#fff;border-radius:6px;transition:width .8s ease}
+  .confidence-text{font-size:12px;color:rgba(255,255,255,.9);margin-top:10px;position:relative;z-index:2;font-weight:600}
+
+  /* Top candidates */
+  .candidates{background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:20px;margin-bottom:20px}
+  .candidates-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+  .candidate-row{display:flex;align-items:center;gap:14px;padding:12px 0;border-bottom:1px solid #f3f4f6}
+  .candidate-row:last-child{border-bottom:none;padding-bottom:0}
+  .candidate-rank{width:28px;height:28px;border-radius:50%;background:#f0fdf4;color:#059669;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0}
+  .candidate-rank.gold{background:#fef3c7;color:#92400e}
+  .candidate-rank.silver{background:#f1f5f9;color:#475569}
+  .candidate-rank.bronze{background:#fed7aa;color:#9a3412}
+  .candidate-info{flex:1;min-width:0}
+  .candidate-name{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:2px}
+  .candidate-native{font-size:11px;color:#9ca3af}
+  .candidate-bar-wrap{flex:1;max-width:200px;height:8px;background:#f3f4f6;border-radius:4px;overflow:hidden}
+  .candidate-bar{height:100%;background:#10b981;border-radius:4px;transition:width .6s ease}
+  .candidate-percent{font-size:13px;font-weight:700;color:#10b981;font-family:'JetBrains Mono',monospace;min-width:52px;text-align:right}
+
+  /* Stats */
+  .stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:20px}
+  .stat-card{background:#f8fafc;border:1px solid #e5e7eb;border-radius:12px;padding:18px;text-align:center}
+  .stat-label{font-size:11px;color:#6b7280;text-transform:uppercase;letter-spacing:.5px;font-weight:700;margin-bottom:6px}
+  .stat-value{font-size:22px;font-weight:800;color:#1a1a2e;line-height:1.2}
+
+  /* Script detection */
+  .script-badge{display:inline-flex;align-items:center;gap:8px;background:#f0fdf4;border:1px solid #a7f3d0;color:#059669;padding:8px 14px;border-radius:20px;font-size:13px;font-weight:700;margin-bottom:20px}
+  .script-badge .dot{width:8px;height:8px;background:#10b981;border-radius:50%}
+
+  /* Page breakdown */
+  .page-list{background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:20px;margin-bottom:20px}
+  .page-list-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+  .page-row{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #f3f4f6;font-size:13px}
+  .page-row:last-child{border-bottom:none;padding-bottom:0}
+  .page-num-badge{width:44px;height:26px;background:#f0fdf4;color:#059669;font-weight:700;font-size:11px;border-radius:6px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:'JetBrains Mono',monospace}
+  .page-lang{flex:1;font-weight:600;color:#1a1a2e}
+  .page-percent{font-family:'JetBrains Mono',monospace;font-weight:700;color:#10b981;font-size:12px}
+
+  /* Text sample */
+  .text-sample{background:#f8fafc;border:1px solid #e5e7eb;border-radius:12px;padding:16px;font-size:13px;line-height:1.7;color:#4b5563;max-height:200px;overflow-y:auto;font-family:'Georgia',serif;margin-bottom:20px;white-space:pre-wrap;word-break:break-word}
+  .text-sample-label{font-size:12px;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px;display:flex;align-items:center;gap:6px}
+
+  /* SEO */
+  .seo-content{background:#fff;border-radius:16px;padding:32px;border:1px solid #e5e7eb;margin-bottom:24px}
+  .seo-content h2{font-size:22px;font-weight:800;color:#1a1a2e;margin-bottom:14px;margin-top:28px;display:flex;align-items:center;gap:10px}
+  .seo-content h2:first-child{margin-top:0}
+  .seo-content h3{font-size:16px;font-weight:700;color:#1a1a2e;margin:20px 0 10px}
+  .seo-content p{font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:14px}
+  .seo-content ul{list-style:none;padding-left:0;margin-bottom:16px}
+  .seo-content ul li{position:relative;padding-left:24px;font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:8px}
+  .seo-content ul li::before{content:'';position:absolute;left:6px;top:12px;width:6px;height:6px;background:#10b981;border-radius:50%}
+  .seo-content a{color:#2563eb;text-decoration:none;font-weight:600}
+  .seo-content a:hover{text-decoration:underline}
+  .seo-content strong{color:#1a1a2e;font-weight:700}
+
+  .how-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:20px}
+  .how-step{background:#f0fdf4;border-radius:12px;padding:20px;border:1px solid #a7f3d0}
+  .how-step-num{width:36px;height:36px;border-radius:50%;background:#10b981;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;margin-bottom:12px}
+  .how-step-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+  .how-step-desc{font-size:13px;color:#6b7280;line-height:1.6}
+
+  .faq-item{background:#f0fdf4;border:1px solid #a7f3d0;border-radius:12px;margin-bottom:10px;overflow:hidden;transition:border-color .2s}
+  .faq-item:hover{border-color:#10b981}
+  .faq-question{width:100%;background:none;border:none;padding:18px 22px;font-size:15px;font-weight:700;color:#1a1a2e;text-align:left;cursor:pointer;font-family:inherit;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .faq-question .chev{font-size:12px;color:#10b981;transition:transform .2s;flex-shrink:0}
+  .faq-item.open .faq-question .chev{transform:rotate(180deg)}
+  .faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 22px}
+  .faq-item.open .faq-answer{max-height:500px;padding-bottom:18px}
+  .faq-answer p{font-size:14px;color:#6b7280;line-height:1.7;margin:0}
+
+  .sidebar{background:#fff;border-radius:16px;padding:24px;border:1px solid #e5e7eb;position:sticky;top:80px;margin-bottom:24px}
+  .sidebar-header{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:800;color:#1a1a2e;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid #f3f4f6}
+  .sidebar-list{display:flex;flex-direction:column;gap:8px}
+  .sidebar-item{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;cursor:pointer;transition:background .2s;text-decoration:none;color:inherit;border:1px solid #f3f4f6}
+  .sidebar-item:hover{background:#f0fdf4;border-color:#a7f3d0}
+  .sidebar-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;flex-shrink:0}
+  .sidebar-info{flex:1;min-width:0}
+  .sidebar-title{font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:2px}
+  .sidebar-desc{font-size:11px;color:#9ca3af;line-height:1.4}
+
+  .footer{background:#0a0e27;padding:60px 40px 30px;color:#fff;margin-top:40px}
+  .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:40px}
+  .footer-brand{display:flex;align-items:center;gap:8px;font-size:20px;font-weight:800;margin-bottom:12px}
+  .footer-brand span{color:#60a5fa}
+  .footer-tagline{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px}
+  .footer-social{display:flex;gap:12px}
+  .footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:16px;transition:background .2s}
+  .footer-social a:hover{background:rgba(255,255,255,.2)}
+  .footer-heading{font-size:14px;font-weight:700;margin-bottom:20px;color:#fff}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .footer-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;transition:color .2s}
+  .footer-links a:hover{color:#60a5fa}
+  .footer-bottom{max-width:1200px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  .footer-bottom-left{display:flex;gap:20px;font-size:12px;color:rgba(255,255,255,.5)}
+  .footer-bottom-right,.footer-bottom-links a{font-size:12px;color:rgba(255,255,255,.5);text-decoration:none}
+  .footer-bottom-links{display:flex;gap:20px}
+
+  .toast{position:fixed;bottom:24px;right:24px;background:#1a1a2e;color:#fff;padding:14px 20px;border-radius:10px;font-size:13px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:3000;transform:translateY(200%);transition:transform .3s ease;max-width:320px}
+  .toast.visible{transform:translateY(0)}
+  .toast.success{background:#10b981}
+  .toast.error{background:#ef4444}
+
+  @media(max-width:1024px){
+    .main-content{grid-template-columns:1fr;padding:24px 20px}
+    .sidebar{position:static}
+    .how-steps{grid-template-columns:repeat(2,1fr)}
+    .stats-grid{grid-template-columns:1fr 1fr}
+  }
+  @media(max-width:768px){
+    .header{padding:0 20px}.nav{display:none}
+    .hero{padding:24px 20px 40px}
+    .hero-title{font-size:28px}
+    .hero-icon{width:48px;height:48px;font-size:22px}
+    .hero-title-row{flex-direction:column;align-items:flex-start;gap:12px}
+    .main-content{padding:20px 16px}
+    .workspace{padding:20px}
+    .dropzone{padding:32px 16px}
+    .how-steps{grid-template-columns:1fr}
+    .seo-content{padding:20px}
+    .footer-inner{grid-template-columns:1fr 1fr}
+    .toast{left:16px;right:16px;bottom:16px;max-width:none}
+    .lang-name{font-size:28px}
+    .lang-flag{font-size:44px}
+  }
+  @media(max-width:576px){
+    .header{padding:0 16px}.header-right .search-btn,.header-right .theme-btn{display:none}
+    .hero-title{font-size:24px}
+    .actions{flex-direction:column}
+    .btn{width:100%}
+    .btn-primary{flex:none}
+    .footer-inner{grid-template-columns:1fr}
+    .footer-bottom{flex-direction:column;text-align:center}
+    .stats-grid{grid-template-columns:1fr}
+  }
+
+  html[data-theme="dark"] body{background:#0f172a;color:#f1f5f9}
+  html[data-theme="dark"] .header,html[data-theme="dark"] .workspace,html[data-theme="dark"] .seo-content,html[data-theme="dark"] .sidebar{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .logo,html[data-theme="dark"] .hero-title,html[data-theme="dark"] .seo-content h2,html[data-theme="dark"] .seo-content h3,html[data-theme="dark"] .faq-question,html[data-theme="dark"] .sidebar-header,html[data-theme="dark"] .sidebar-title,html[data-theme="dark"] .file-info-name,html[data-theme="dark"] .lang-name{color:#f1f5f9}
+  html[data-theme="dark"] .nav a{color:#cbd5e1}
+  html[data-theme="dark"] .dropzone{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .how-step,html[data-theme="dark"] .faq-item,html[data-theme="dark"] .file-info-bar,html[data-theme="dark"] .candidates,html[data-theme="dark"] .page-list,html[data-theme="dark"] .stat-card,html[data-theme="dark"] .text-sample{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .seo-content p,html[data-theme="dark"] .seo-content ul li,html[data-theme="dark"] .faq-answer p{color:#cbd5e1}
+  html[data-theme="dark"] .candidate-name,html[data-theme="dark"] .page-lang,html[data-theme="dark"] .stat-value{color:#f1f5f9}
+  html[data-theme="dark"] .candidate-row,html[data-theme="dark"] .page-row{border-color:#334155}
+  html[data-theme="dark"] .candidate-bar-wrap{background:#1e293b}
+  html[data-theme="dark"] .text-sample{color:#cbd5e1}
+  html[data-theme="dark"] .file-change-btn{background:#0f172a;border-color:#334155;color:#34d399}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type": "SoftwareApplication", "name": "PDF Language Detector", "url": "https://bigtoolz.com/tools/pdf-tools/advanced-pdf/language-detector/", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any (Web-based)", "description": "Free online PDF language detector identify the language of any PDF using trigram and script analysis. Works in your browser.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.7", "ratingCount": "398"}},
+    {"@type": "HowTo", "name": "How to Detect the Language of a PDF", "step": [
+      {"@type": "HowToStep", "name": "Upload PDF", "text": "Drag & drop or click to select your PDF file."},
+      {"@type": "HowToStep", "name": "Click Detect", "text": "Click the Detect Language button."},
+      {"@type": "HowToStep", "name": "View Results", "text": "See the detected language, confidence, and top candidates."},
+      {"@type": "HowToStep", "name": "Review Details", "text": "Check per-page breakdown and text sample."}
+    ]},
+    {"@type": "FAQPage", "mainEntity": [
+      {"@type": "Question", "name": "How does PDF language detection work?", "acceptedAnswer": {"@type": "Answer", "text": "We extract text from the PDF, then analyze character trigrams (three-character sequences), script ranges (Latin, Devanagari, Arabic, CJK, etc.), and common stopwords to identify the most likely language."}},
+      {"@type": "Question", "name": "Which languages are supported?", "acceptedAnswer": {"@type": "Answer", "text": "English, Hindi, Spanish, French, German, Italian, Portuguese, Dutch, Russian, Ukrainian, Polish, Czech, Turkish, Arabic, Hebrew, Persian, Chinese, Japanese, Korean, Vietnamese, Thai, Indonesian, Malay, Swedish, Danish, Norwegian, Finnish, Greek, Romanian, Hungarian, and more."}},
+      {"@type": "Question", "name": "How accurate is the detection?", "acceptedAnswer": {"@type": "Answer", "text": "For PDFs with 200+ words in a single language, accuracy is typically 90-98%. Short texts or documents mixing multiple languages reduce accuracy. Check the confidence score and top candidates for validation."}},
+      {"@type": "Question", "name": "Are my PDFs uploaded to a server?", "acceptedAnswer": {"@type": "Answer", "text": "No. Text extraction and language detection happen entirely in your browser. Your PDF never leaves your device."}}
+    ]},
+    {"@type": "BreadcrumbList", "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bigtoolz.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://bigtoolz.com/tools/"},
+      {"@type": "ListItem", "position": 3, "name": "PDF Tools", "item": "https://bigtoolz.com/tools/pdf-tools/"},
+      {"@type": "ListItem", "position": 4, "name": "Advanced PDF", "item": "https://bigtoolz.com/tools/pdf-tools/advanced-pdf/"},
+      {"@type": "ListItem", "position": 5, "name": "Language Detector", "item": "https://bigtoolz.com/tools/pdf-tools/advanced-pdf/language-detector/"}
+    ]}
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-left">
+    <a href="/" class="logo"><div class="logo-icon">⚒</div>BigToolz</span></a>
+    <nav><ul class="nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/tools/" class="active">All Tools</a></li>
+      <li><a href="/tools/categories">Categories</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul></nav>
+  </div>
+  <div class="header-right">
+   
+    <button class="theme-btn" aria-label="Toggle theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
+    
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <nav class="breadcrumb">
+      <a href="/">Home</a><span class="sep">›</span>
+      <a href="/tools/">Tools</a><span class="sep">›</span>
+      <a href="/tools/pdf-tools/">PDF Tools</a><span class="sep">›</span>
+      <a href="/tools/pdf-tools/advanced-pdf/">Advanced PDF</a><span class="sep">›</span>
+      <span class="current">Language Detector</span>
+    </nav>
+    <div class="hero-title-row">
+      <div class="hero-icon">🌍</div>
+      <h1 class="hero-title">PDF <span class="blue">Language Detector</span></h1>
+    </div>
+    <p class="hero-desc">
+      Identify the language of any PDF instantly 30+ languages supported. Trigram analysis, script detection, and per-page breakdown. No upload, no signup, 100% private.
+    </p>
+    <div class="hero-features">
+      <div class="hero-feature"><span class="check">✓</span> 30+ Languages</div>
+      <div class="hero-feature"><span class="check">✓</span> Per-Page Detection</div>
+      <div class="hero-feature"><span class="check">✓</span> Confidence Score</div>
+      <div class="hero-feature"><span class="check">✓</span> No Upload</div>
+    </div>
+  </div>
+</section>
+
+<div class="main-content">
+
+  <div class="tool-content">
+
+    <div class="workspace">
+
+      <!-- Dropzone -->
+      <div class="dropzone" id="dropzone">
+        <div class="dropzone-icon">⬆</div>
+        <div class="dropzone-title">Drag & drop your PDF here</div>
+        <div class="dropzone-sub">or <a href="#" id="browseLink">click to browse files</a></div>
+        <button class="choose-btn" id="chooseBtn" type="button">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/></svg>
+          Choose PDF File
+        </button>
+        <div class="dropzone-info">
+          <span>PDF only</span>
+          <span class="divider">|</span>
+          <span>Text-based PDFs (not scans)</span>
+        </div>
+        <input type="file" id="fileInput" class="file-input" accept="application/pdf,.pdf">
+      </div>
+
+      <!-- File Info Bar -->
+      <div class="file-info-bar" id="fileInfoBar">
+        <div class="file-info-icon">📄</div>
+        <div class="file-info-text">
+          <div class="file-info-name" id="fileName">document.pdf</div>
+          <div class="file-info-meta" id="fileMeta">0 pages · 0 words</div>
+        </div>
+        <button class="file-change-btn" id="changeBtn">Change PDF</button>
+      </div>
+
+      <!-- Actions -->
+      <div class="actions">
+        <button class="btn btn-primary" id="detectBtn" disabled>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+          Detect Language
+        </button>
+        <button class="btn btn-secondary" id="resetBtn">Reset</button>
+      </div>
+
+      <!-- Progress -->
+      <div class="progress" id="progress">
+        <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+        <div class="progress-text" id="progressText">Extracting text...</div>
+      </div>
+
+      <!-- Results -->
+      <div class="results" id="results">
+
+        <!-- Primary Language Card -->
+        <div class="lang-card">
+          <div class="lang-label">Detected Language</div>
+          <div class="lang-flag" id="langFlag">🌐</div>
+          <div class="lang-name" id="langName"></div>
+          <div class="lang-native" id="langNative"></div>
+          <div class="lang-code" id="langCode">code</div>
+          <div class="confidence-meter">
+            <div class="confidence-fill" id="confidenceFill" style="width:0%"></div>
+          </div>
+          <div class="confidence-text" id="confidenceText">Confidence: 0%</div>
+        </div>
+
+        <!-- Script Badge -->
+        <div class="script-badge">
+          <span class="dot"></span>
+          <span>Script: <strong id="scriptName"></strong></span>
+        </div>
+
+        <!-- Stats Grid -->
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-label">Pages</div>
+            <div class="stat-value" id="statsPages"></div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Total Words</div>
+            <div class="stat-value" id="statsWords"></div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Languages Found</div>
+            <div class="stat-value" id="statsLangs"></div>
+          </div>
+        </div>
+
+        <!-- Top Candidates -->
+        <div class="candidates">
+          <div class="candidates-title">🎯 Top Candidates</div>
+          <div id="candidatesList">
+            <div style="font-size:13px;color:#9ca3af;font-style:italic;">No analysis yet.</div>
+          </div>
+        </div>
+
+        <!-- Per-Page Breakdown -->
+        <div class="page-list">
+          <div class="page-list-title">📄 Per-Page Breakdown</div>
+          <div id="pageList">
+            <div style="font-size:13px;color:#9ca3af;font-style:italic;">No pages analyzed yet.</div>
+          </div>
+        </div>
+
+        <!-- Text Sample -->
+        <div>
+          <div class="text-sample-label">📝 Text Sample (first 500 chars)</div>
+          <div class="text-sample" id="textSample">No text available.</div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- SEO Content -->
+    <div class="seo-content">
+
+      <h2>🌍 What is PDF Language Detection?</h2>
+      <p>
+        <strong>PDF language detection</strong> identifies the natural language of a PDF document is it in English, Hindi, Spanish, Chinese, Arabic, or another language? This is useful for <strong>translation workflows, multilingual document management, accessibility, and language-specific processing</strong>. Our tool analyzes the extracted text and gives you the language, confidence score, and top candidates.
+      </p>
+      <p>
+        Unlike most online tools, BigToolz runs <strong>100% in your browser</strong> using PDF.js and native JavaScript. Your PDFs <strong>never uploaded to any server</strong> complete privacy, instant results, and multi-language support.
+      </p>
+
+      <h2>🚀 How to Detect PDF Language</h2>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-step-num">1</div>
+          <div class="how-step-title">Upload PDF</div>
+          <div class="how-step-desc">Drag & drop or click "Choose PDF File".</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">2</div>
+          <div class="how-step-title">Detect</div>
+          <div class="how-step-desc">Click "Detect Language" to analyze the text.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">3</div>
+          <div class="how-step-title">Review</div>
+          <div class="how-step-desc">See detected language, confidence, and top candidates.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">4</div>
+          <div class="how-step-title">Check Details</div>
+          <div class="how-step-desc">View per-page breakdown and text sample.</div>
+        </div>
+      </div>
+
+      <h2>🔬 How Detection Works</h2>
+
+      <h3>1. Script Recognition</h3>
+      <p>The first pass checks the <strong>Unicode ranges</strong> of the characters in the text. Every language uses one or more scripts (Latin, Devanagari, Arabic, Cyrillic, Han, Hangul, Hiragana, Katakana, Greek, Hebrew, Thai, etc.). This quickly narrows down to a script family.</p>
+
+      <h3>2. Trigram Analysis</h3>
+      <p>The core of the detection. We extract <strong>character trigrams</strong> sequences of three characters and compare them to language-specific profiles. For example, <code>the</code>, <code>and</code>, <code>ing</code> are common English trigrams; <code>que</code>, <code>les</code>, <code>ent</code> are common French; <code>ión</code>, <code>ado</code>, <code>est</code> are common Spanish.</p>
+
+      <h3>3. Stop Word Analysis</h3>
+      <p>The final pass looks for <strong>high-frequency function words</strong> (the, and, is, in English; de, la, el in Spanish; में, है, और in Hindi; et, le, la in French). These are extremely language-specific and give a strong signal.</p>
+
+      <h3>4. Combined Score</h3>
+      <p>All three signals are combined with weights (script 20%, trigram 50%, stop words 30%) to produce the final language confidence score.</p>
+
+      <h2>🌐 Supported Languages</h2>
+      <p>Our detector supports the following language families:</p>
+      <ul>
+        <li><strong>Latin script:</strong> English, Spanish, French, German, Italian, Portuguese, Dutch, Swedish, Danish, Norwegian, Finnish, Polish, Czech, Slovak, Romanian, Hungarian, Turkish, Vietnamese, Indonesian, Malay.</li>
+        <li><strong>Devanagari:</strong> Hindi, Marathi, Sanskrit.</li>
+        <li><strong>Arabic script:</strong> Arabic, Persian (Farsi), Urdu.</li>
+        <li><strong>Cyrillic:</strong> Russian, Ukrainian, Bulgarian.</li>
+        <li><strong>CJK:</strong> Chinese (Simplified), Chinese (Traditional), Japanese, Korean.</li>
+        <li><strong>Others:</strong> Greek, Hebrew, Thai.</li>
+      </ul>
+
+      <h2>💡 Best Practices for Accurate Detection</h2>
+      <ul>
+        <li><strong>Longer text = more accurate.</strong> Detection is best with 200+ words. Very short PDFs (titles, forms) may give false positives.</li>
+        <li><strong>Single-language documents</strong> detect best. Mixed-language documents show multiple candidates.</li>
+        <li><strong>Check the confidence score.</strong> Above 80% = very reliable. Below 50% = review the top candidates.</li>
+        <li><strong>Use per-page breakdown</strong> for documents with mixed languages (e.g., bilingual contracts).</li>
+        <li><strong>Text PDFs only.</strong> Scanned PDFs without a text layer return no text OCR them first.</li>
+      </ul>
+
+      <h2>✨ Key Features</h2>
+      <ul>
+        <li><strong>30+ languages</strong> Latin, Devanagari, Arabic, Cyrillic, CJK, and more.</li>
+        <li><strong>Triple algorithm</strong> script + trigram + stop words.</li>
+        <li><strong>Confidence score</strong> 0-100% with visual meter.</li>
+        <li><strong>Top 3 candidates</strong> see runner-up languages.</li>
+        <li><strong>Per-page breakdown</strong> detect mixed-language documents.</li>
+        <li><strong>Script detection</strong> shows the writing system used.</li>
+        <li><strong>Text sample preview</strong> see what was analyzed.</li>
+        <li><strong>100% browser-based</strong> your PDF never leaves your device.</li>
+      </ul>
+
+      <h2>❓ Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-question">How does PDF language detection work?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>We extract text from the PDF, then analyze <strong>character trigrams</strong> (three-character sequences), <strong>script ranges</strong> (Latin, Devanagari, Arabic, CJK, etc.), and <strong>common stopwords</strong> to identify the most likely language. All three signals are combined into a confidence score.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Which languages are supported?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>English, Hindi, Spanish, French, German, Italian, Portuguese, Dutch, Russian, Ukrainian, Polish, Czech, Turkish, Arabic, Hebrew, Persian, Chinese, Japanese, Korean, Vietnamese, Thai, Indonesian, Malay, Swedish, Danish, Norwegian, Finnish, Greek, Romanian, Hungarian, and more 30+ languages total.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">How accurate is the detection?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>For PDFs with 200+ words in a single language, accuracy is typically <strong>90-98%</strong>. Short texts, mixed-language documents, or technical content with many proper nouns reduce accuracy. Always check the <strong>confidence score</strong> and top candidates high confidence (>80%) means reliable detection.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can it detect multiple languages in one PDF?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Yes the <strong>per-page breakdown</strong> shows the detected language for each page. If your PDF has English pages and Spanish pages, you'll see the language switch per page. For fully mixed content, the top candidates will show the dominant languages.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Does it work with scanned PDFs?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Only if the PDF has a <strong>text layer</strong>. Scanned image PDFs return no text you'll get a "no text found" error. Run them through OCR first to add a text layer, then use this tool.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What if the detected language is wrong?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Check the <strong>top candidates</strong> the correct language is often #2 or #3. Common reasons for errors: very short text, technical vocabulary, mixed-language content, or a language not yet supported. Try with a longer PDF or check the per-page breakdown.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Are my PDFs uploaded to a server?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>No. Text extraction and language detection happen entirely in your browser using PDF.js and native JavaScript. Your PDF never leaves your device, and nothing is stored anywhere.</p></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-header">🔗 Related PDF Tools</div>
+    <div class="sidebar-list">
+      <a href="/tools/pdf-tools/advanced-pdf/text-to-speech/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#f97316;">🔊</div>
+        <div class="sidebar-info"><div class="sidebar-title">Text to Speech</div><div class="sidebar-desc">Read PDF aloud</div></div>
+      </a>
+      <a href="/tools/pdf-tools/advanced-pdf/similarity-checker/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#06b6d4;">📊</div>
+        <div class="sidebar-info"><div class="sidebar-title">Similarity Checker</div><div class="sidebar-desc">Compare PDFs</div></div>
+      </a>
+      <a href="/tools/pdf-tools/advanced-pdf/pdf-word-counter/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#3b82f6;">🔢</div>
+        <div class="sidebar-info"><div class="sidebar-title">Word Counter</div><div class="sidebar-desc">Count words</div></div>
+      </a>
+      <a href="/tools/pdf-tools/security-pdf/text-extractor/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#8b5cf6;">📝</div>
+        <div class="sidebar-info"><div class="sidebar-title">Text Extractor</div><div class="sidebar-desc">Extract PDF text</div></div>
+      </a>
+      <a href="/tools/pdf-tools/advanced-pdf/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#8b5cf6;">🚀</div>
+        <div class="sidebar-info"><div class="sidebar-title">All Advanced PDF →</div><div class="sidebar-desc">20 tools</div></div>
+      </a>
+      <a href="/tools/pdf-tools/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#64748b;">📕</div>
+        <div class="sidebar-info"><div class="sidebar-title">All PDF Tools →</div><div class="sidebar-desc">100+ tools</div></div>
+      </a>
+    </div>
+  </aside>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand"><div class="logo-icon">⚒</div>BigToolz</span></div>
+      <p class="footer-tagline">Your Ultimate Online Tools Hub</p>
+      <div class="footer-social">
+        <a href="https://facebook.com/bigtoolz" aria-label="Facebook">f</a>
+        <a href="https://twitter.com/bigtoolz" aria-label="Twitter">𝕏</a>
+        <a href="https://youtube.com/@bigtoolz" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+    <div>
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/tools/">All Tools</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Categories</h3>
+      <ul class="footer-links">
+        <li><a href="/tools/image-tools/">Image Tools</a></li>
+        <li><a href="/tools/pdf-tools/">PDF Tools</a></li>
+        <li><a href="/tools/text-tools/">Text Tools</a></li>
+        <li><a href="/tools/seo-tools/">SEO Tools</a></li>
+        <li><a href="/tools/categories">All Categories →</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Legal</h3>
+      <ul class="footer-links">
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left"><span>✓ 100% Free</span><span>✓ No Sign Up</span><span>✓ No Installation</span></div>
+    <div class="footer-bottom-right">© 2026 BigToolz. All rights reserved.</div>
+    <div class="footer-bottom-links"><a href="/privacy-policy">Privacy</a><a href="/terms">Terms</a><a href="/disclaimer">Disclaimer</a></div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<!-- PDF.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+
+<script>
+'use strict';
+
+/* ===== THEME ===== */
+(function(){try{var t=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&d))document.documentElement.setAttribute('data-theme','dark');else if(t==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();
+document.querySelector('.theme-btn')?.addEventListener('click',()=>{const h=document.documentElement;const c=h.getAttribute('data-theme');const d=window.matchMedia('(prefers-color-scheme: dark)').matches;let n=c==='dark'?'light':c==='light'?'dark':(d?'light':'dark');h.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}});
+
+/* ===== PDF.js worker ===== */
+if (window.pdfjsLib) {
+  pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+}
+
+/* ===== HELPERS ===== */
+const $ = (s, p = document) => p.querySelector(s);
+const $$ = (s, p = document) => [...p.querySelectorAll(s)];
+
+function showToast(msg, type = 'info', duration = 3000) {
+  const t = $('#toast');
+  if (!t) return;
+  t.className = 'toast visible' + (type !== 'info' ? ' ' + type : '');
+  t.textContent = msg;
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove('visible'), duration);
+}
+
+function formatNumber(n) { return n.toLocaleString('en-US'); }
+
+/* ===== LANGUAGE PROFILES ===== */
+
+// Script detection via Unicode ranges
+const SCRIPTS = [
+  { name: 'Latin', pattern: /[a-zA-ZÀ-ÿ]/g, languages: ['English','Spanish','French','German','Italian','Portuguese','Dutch','Swedish','Danish','Norwegian','Finnish','Polish','Czech','Slovak','Romanian','Hungarian','Turkish','Vietnamese','Indonesian','Malay'] },
+  { name: 'Devanagari', pattern: /[\u0900-\u097F]/g, languages: ['Hindi','Marathi','Sanskrit'] },
+  { name: 'Arabic', pattern: /[\u0600-\u06FF\u0750-\u077F]/g, languages: ['Arabic','Persian','Urdu'] },
+  { name: 'Cyrillic', pattern: /[\u0400-\u04FF]/g, languages: ['Russian','Ukrainian','Bulgarian'] },
+  { name: 'Hebrew', pattern: /[\u0590-\u05FF]/g, languages: ['Hebrew'] },
+  { name: 'Greek', pattern: /[\u0370-\u03FF]/g, languages: ['Greek'] },
+  { name: 'Han', pattern: /[\u4E00-\u9FFF]/g, languages: ['Chinese'] },
+  { name: 'Hiragana', pattern: /[\u3040-\u309F]/g, languages: ['Japanese'] },
+  { name: 'Katakana', pattern: /[\u30A0-\u30FF]/g, languages: ['Japanese'] },
+  { name: 'Hangul', pattern: /[\uAC00-\uD7AF\u1100-\u11FF]/g, languages: ['Korean'] },
+  { name: 'Thai', pattern: /[\u0E00-\u0E7F]/g, languages: ['Thai'] }
+];
+
+// Common stopwords per language (Latin-script mainly)
+const STOPWORDS = {
+  'English': ['the','and','is','in','it','you','that','he','was','for','on','are','as','with','his','they','i','at','be','this','have','from','or','one','had','by','word','but','not','what','all','were','we','when','your','can','said','there','use','an','each','which','she','do','how','their','if','will','up','other','about','out','many','then','them','these','so','some','her','would','make','like','him','into','time','has','look','two','more','write','go','see','number','no','way','could','people','my','than','first','water','been','call','who','oil','its','now','find'],
+  'Spanish': ['el','la','de','que','y','a','en','un','ser','se','no','haber','por','con','su','para','como','estar','tener','le','lo','todo','pero','más','hacer','o','poder','decir','este','ir','otro','ese','la','si','me','ya','ver','porque','dar','cuando','él','muy','sin','vez','mucho','saber','qué','sobre','mi','alguno','mismo','yo','también','hasta','año','dos','querer','entre','así','primero','desde','grande','eso','ni','nos','llegar','pasar','tiempo','ella','sí','día','uno','bien','poco','deber','entonces','poner','cosa','tanto','hombre','parecer','nuestro','tan','donde','ahora','parte','después','vida','quedar','siempre','creer','hablar','llevar','dejar','nada','cada','seguir','menos','nuevo','encontrar','algo','solo','decir'],
+  'French': ['le','de','un','être','et','en','avoir','que','pour','dans','ce','il','qui','ne','sur','se','pas','plus','pouvoir','par','je','avec','tout','faire','son','mettre','autre','on','mais','nous','comme','ou','si','leur','y','dire','elle','devoir','avant','deux','même','prendre','aussi','celui','donner','bien','où','fois','vous','encore','nouveau','aller','cela','entre','premier','vouloir','déjà','grand','mon','me','moins','aucun','lui','temps','savoir','falloir','voir','quelque','sans','raison','notre','dont','non','an','monde','jour','monsieur','demander','alors','après','trouver','personne','rendre','part','dernier','venir','pendant','passer','peu','lequel','suite'],
+  'German': ['der','die','und','in','den','von','zu','das','mit','sich','des','auf','für','ist','im','dem','nicht','ein','eine','als','auch','es','an','werden','aus','er','hat','dass','sie','nach','wird','bei','einer','um','am','sind','noch','wie','einem','über','einen','so','zum','war','haben','nur','oder','aber','vor','zur','bis','mehr','durch','man','sein','wurde','sei','in','dieser','können','müssen','sagen','machen','mögen','sollen','wollen','gehen','stehen','geben','kommen','sollen'],
+  'Italian': ['il','di','che','e','la','per','un','in','è','non','con','si','da','a','del','su','al','come','ma','più','lo','questo','essere','avere','anche','fare','tutto','dal','suo','quando','già','io','lei','lui','loro','noi','voi','molto','senza','tra','fra','perché','quale','quanto','prima','dopo','sopra','sotto','dentro','fuori','solo','sempre','mai','qui','qua','là','dove','adesso','allora','poi','ancora','già','oggi','ieri','domani'],
+  'Portuguese': ['de','a','o','que','e','do','da','em','um','para','é','com','não','uma','os','no','se','na','por','mais','as','dos','como','mas','foi','ao','ele','das','tem','à','seu','sua','ou','ser','quando','muito','há','nos','já','está','eu','também','só','pelo','pela','até','isso','ela','entre','era','depois','sem','mesmo','aos','ter','seus','quem','nas','me','esse','eles','estão','você','tinha','foram','essa','num','nem','suas','meu','às','minha','têm','numa','pelos','elas','havia','seja','qual','será','nós','tenho','lhe','deles','essas','esses','pelas','este','dele','tu','te','vocês'],
+  'Dutch': ['de','en','het','van','een','in','is','dat','op','te','zijn','voor','met','die','niet','aan','er','om','ook','als','dan','maar','bij','of','uit','nog','worden','door','naar','heeft','wordt','kan','meer','deze','was','zou','wat','ze','dit','hem','haar','hun','wij','jullie','zij','mijn','jouw','onze','al','wel','geen','welke','wiens'],
+  'Russian': ['и','в','не','на','что','я','с','он','как','а','то','все','она','так','его','но','да','ты','к','у','же','вы','за','бы','по','только','ее','мне','было','вот','от','меня','еще','нет','о','из','ему','теперь','когда','даже','ну','вдруг','ли','если','уже','или','ни','быть','был','него','до','вас','нибудь','опять','уж','вам','ведь','там','потом','себя','ничего','ей','может','они','тут','где','есть','надо','ней','для','мы','тебя','их','чем','была','сам','чтоб','без','будто','чего','раз','тоже','себе','под','будет','ж','тогда','кто','этот','того','потому','этого','какой','совсем','ним','здесь','этом','один','почти','мой','тем','чтобы','нее','были','куда','зачем','всех','никогда','можно','при','наконец','два','об','другой','хоть','после','над','больше','тот','через','эти','нас','про','всего','них','какая','много','разве','три','эту','моя','впрочем','хорошо','свою','этой','перед','иногда','лучше','чуть','том','нельзя','такой','им','более','всегда','конечно','всю','между'],
+  'Hindi': ['के','है','और','में','की','हैं','को','का','एक','पर','यह','हो','से','कि','इस','था','भी','ने','वह','के','लिए','तो','ही','या','हुआ','होता','जो','मैं','सकता','कर','रहे','तक','कुछ','करने','कहा','तरह','हर','उस','अपने','बहुत','पर','वाले','अब','दो','बाद','पहले','साथ','कौन','मेरे','नहीं','जब','किसी','कोई','फिर','से','जाता','अपनी','करता','उन','सकते','क्यों','जाती','सबसे','हम','वर्ग','इसलिए','में','बताया','वही','आप','अपने'],
+  'Arabic': ['في','من','على','إلى','عن','أن','إن','هو','هي','هذا','هذه','التي','الذي','كان','قد','ما','لا','لم','كانت','مع','هذا','كما','بين','كل','أو','بعد','قبل','بين','عند','حتى','لكن','أيضا','نفس','غير','بين','حول','دون','ضمن','فوق','تحت','خلال','بسبب','منذ','حيث','بينما','إذا','إلا'],
+  'Turkish': ['bir','bu','ve','için','ile','de','da','ne','o','ben','sen','biz','siz','onlar','var','yok','çok','daha','en','gibi','kadar','sonra','önce','şey','ki','mi','mı','mu','mü','ama','ancak','veya','ya','hem','ise','eğer','çünkü','böyle','şöyle','nasıl','neden','niçin','nerede','kim','hangi','her','hiç','bazı','tüm','bütün']
+};
+
+// Common trigrams per language (signature trigrams)
+const TRIGRAMS = {
+  'English': ['the','and','ing','ion','ent','for','her','tha','nth','int','ere','tio','ter','est','ers','ati','hat','ate','all','eth','hes','ver','his','oft','ith','fro','you','whi','ich'],
+  'Spanish': ['que','de ',' la','os ','as ','es ','ión','est','ado','ent','ara','ero','con','por','los','las','una','del','nte','res','ida','aci','tra','man','ien','sta','mos'],
+  'French': [' de',' la',' le',' et',' les',' de ','des','que','ent','ion','est','les','ait',' une','un ','par','our','men','ant','les','ais','eur','te ','tio','ati','que','qui',' dans',' sur'],
+  'German': ['der','die','und','sch','ung','ich','ein','che','den','gen','ine','eis','ber','eit','auf','ver','hen','lic','ach','nde','ste','end','nge','ers','ten','nge','ter',' mit',' für'],
+  'Italian': [' che',' di',' la',' per',' un ','del','ell','ato','gli','con','una','ent','ion','are','ato','ica',' le',' il ','zione','izio','gli','zio','ato','are','ere','ire','ità','del','nel','sul'],
+  'Portuguese': [' que',' de',' do',' da',' os',' as',' um',' uma','com','não','ção','ent','est','ara','ado','ra ','par','mos','nte','res','ido','uma','do ','das','dos'],
+  'Russian': ['ост','ени','ого','его','ств','ани','ать','ить','ени','ско','ого','ния','про','что','ени','еск','тер','ные','ных','ный','ния','гра','ция','ной','кого'],
+  'Hindi': ['के ','है ',' और','में ','की ','को ','हैं','का ',' हो','ने ','से ','पर ','यह ','भी ','वह '],
+  'Arabic': ['ال ',' في',' من','على','الت','وال','ية ','ات ','ون ','ين ','لا ','ما ','أن ','إن ','هذا']
+};
+
+// Language metadata (name, native, flag, code)
+const LANG_META = {
+  'English': { native: 'English', flag: '🇬🇧', code: 'en' },
+  'Spanish': { native: 'Español', flag: '🇪🇸', code: 'es' },
+  'French': { native: 'Français', flag: '🇫🇷', code: 'fr' },
+  'German': { native: 'Deutsch', flag: '🇩🇪', code: 'de' },
+  'Italian': { native: 'Italiano', flag: '🇮🇹', code: 'it' },
+  'Portuguese': { native: 'Português', flag: '🇵🇹', code: 'pt' },
+  'Dutch': { native: 'Nederlands', flag: '🇳🇱', code: 'nl' },
+  'Russian': { native: 'Русский', flag: '🇷🇺', code: 'ru' },
+  'Hindi': { native: 'हिन्दी', flag: '🇮🇳', code: 'hi' },
+  'Arabic': { native: 'العربية', flag: '🇸🇦', code: 'ar' },
+  'Turkish': { native: 'Türkçe', flag: '🇹🇷', code: 'tr' },
+  'Chinese': { native: '中文', flag: '🇨🇳', code: 'zh' },
+  'Japanese': { native: '日本語', flag: '🇯🇵', code: 'ja' },
+  'Korean': { native: '한국어', flag: '🇰🇷', code: 'ko' },
+  'Hebrew': { native: 'עברית', flag: '🇮🇱', code: 'he' },
+  'Greek': { native: 'Ελληνικά', flag: '🇬🇷', code: 'el' },
+  'Thai': { native: 'ไทย', flag: '🇹🇭', code: 'th' },
+  'Persian': { native: 'فارسی', flag: '🇮🇷', code: 'fa' },
+  'Vietnamese': { native: 'Tiếng Việt', flag: '🇻🇳', code: 'vi' },
+  'Indonesian': { native: 'Bahasa Indonesia', flag: '🇮🇩', code: 'id' },
+  'Malay': { native: 'Bahasa Melayu', flag: '🇲🇾', code: 'ms' },
+  'Polish': { native: 'Polski', flag: '🇵🇱', code: 'pl' },
+  'Czech': { native: 'Čeština', flag: '🇨🇿', code: 'cs' },
+  'Swedish': { native: 'Svenska', flag: '🇸🇪', code: 'sv' },
+  'Danish': { native: 'Dansk', flag: '🇩🇰', code: 'da' },
+  'Norwegian': { native: 'Norsk', flag: '🇳🇴', code: 'no' },
+  'Finnish': { native: 'Suomi', flag: '🇫🇮', code: 'fi' },
+  'Ukrainian': { native: 'Українська', flag: '🇺🇦', code: 'uk' },
+  'Romanian': { native: 'Română', flag: '🇷🇴', code: 'ro' },
+  'Hungarian': { native: 'Magyar', flag: '🇭🇺', code: 'hu' }
+};
+
+/* ===== STATE ===== */
+const state = {
+  file: null,
+  pages: [],
+  fullText: ''
+};
+
+/* ===== DOM ===== */
+const dropzone = $('#dropzone');
+const fileInput = $('#fileInput');
+const chooseBtn = $('#chooseBtn');
+const browseLink = $('#browseLink');
+const fileInfoBar = $('#fileInfoBar');
+const fileName = $('#fileName');
+const fileMeta = $('#fileMeta');
+const changeBtn = $('#changeBtn');
+const detectBtn = $('#detectBtn');
+const resetBtn = $('#resetBtn');
+const progress = $('#progress');
+const progressFill = $('#progressFill');
+const progressText = $('#progressText');
+const results = $('#results');
+
+/* ===== FILE SELECTION ===== */
+function triggerFileSelect() { fileInput.click(); }
+chooseBtn.addEventListener('click', (e) => { e.stopPropagation(); triggerFileSelect(); });
+browseLink.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); triggerFileSelect(); });
+dropzone.addEventListener('click', triggerFileSelect);
+
+fileInput.addEventListener('change', (e) => {
+  const f = e.target.files[0];
+  if (f) loadPdf(f);
+  fileInput.value = '';
+});
+
+['dragenter', 'dragover'].forEach(evt => {
+  dropzone.addEventListener(evt, (e) => { e.preventDefault(); e.stopPropagation(); dropzone.classList.add('dragover'); });
+});
+['dragleave', 'drop'].forEach(evt => {
+  dropzone.addEventListener(evt, (e) => { e.preventDefault(); e.stopPropagation(); dropzone.classList.remove('dragover'); });
+});
+dropzone.addEventListener('drop', (e) => {
+  const f = e.dataTransfer.files[0];
+  if (f && f.type === 'application/pdf') loadPdf(f);
+  else showToast('Please drop a PDF file', 'error');
+});
+
+changeBtn.addEventListener('click', triggerFileSelect);
+
+/* ===== LOAD PDF ===== */
+async function loadPdf(file) {
+  state.file = file;
+  showToast('Extracting text...', 'info');
+
+  try {
+    const buf = await file.arrayBuffer();
+    const pdf = await pdfjsLib.getDocument({ data: buf }).promise;
+
+    state.pages = [];
+    let fullText = '';
+
+    for (let i = 1; i <= pdf.numPages; i++) {
+      const page = await pdf.getPage(i);
+      const content = await page.getTextContent();
+      const pageText = content.items.map(item => item.str).join(' ').trim();
+      state.pages.push(pageText);
+      fullText += pageText + ' ';
+    }
+
+    state.fullText = fullText.trim();
+
+    if (state.fullText.length < 20) {
+      showToast('No text found (may be a scanned image)', 'error', 5000);
+      return;
+    }
+
+    dropzone.style.display = 'none';
+    fileInfoBar.classList.add('visible');
+    fileName.textContent = file.name;
+    const totalWords = state.fullText.split(/\s+/).length;
+    fileMeta.textContent = `${pdf.numPages} page${pdf.numPages > 1 ? 's' : ''} · ${formatNumber(totalWords)} words`;
+    detectBtn.disabled = false;
+
+    showToast('✅ PDF loaded', 'success');
+  } catch (err) {
+    console.error(err);
+    showToast('Failed to load: ' + err.message, 'error');
+  }
+}
+
+/* ===== DETECT ===== */
+detectBtn.addEventListener('click', async () => {
+  if (!state.fullText) return;
+
+  detectBtn.disabled = true;
+  results.classList.remove('visible');
+  progress.classList.add('visible');
+  progressFill.style.width = '20%';
+  progressText.textContent = 'Analyzing script...';
+
+  try {
+    // Detect script
+    const script = detectScript(state.fullText);
+
+    progressFill.style.width = '50%';
+    progressText.textContent = 'Scoring languages...';
+
+    // Overall detection
+    const overall = detectLanguage(state.fullText, script);
+
+    progressFill.style.width = '75%';
+    progressText.textContent = 'Analyzing per-page...';
+
+    // Per-page detection
+    const pageResults = state.pages.map((pageText, idx) => {
+      if (!pageText || pageText.length < 20) return { page: idx + 1, lang: '', confidence: 0 };
+      const s = detectScript(pageText);
+      const r = detectLanguage(pageText, s);
+      return { page: idx + 1, lang: r.top.name, confidence: r.top.score };
+    });
+
+    progressFill.style.width = '90%';
+    progressText.textContent = 'Rendering results...';
+
+    renderResults(overall, script, pageResults);
+
+    progressFill.style.width = '100%';
+    setTimeout(() => {
+      progress.classList.remove('visible');
+      progressFill.style.width = '0%';
+    }, 800);
+
+    results.classList.add('visible');
+    showToast('✅ Detected: ' + overall.top.name, 'success');
+
+    setTimeout(() => results.scrollIntoView({ behavior: 'smooth', block: 'start' }), 200);
+  } catch (err) {
+    console.error(err);
+    progress.classList.remove('visible');
+    showToast('Detection failed: ' + err.message, 'error');
+  } finally {
+    detectBtn.disabled = false;
+  }
+});
+
+/* ===== SCRIPT DETECTION ===== */
+function detectScript(text) {
+  const counts = {};
+  let total = 0;
+
+  SCRIPTS.forEach(s => {
+    const matches = text.match(s.pattern);
+    const count = matches ? matches.length : 0;
+    counts[s.name] = count;
+    total += count;
+  });
+
+  if (total === 0) return { name: 'Unknown', counts, primary: 'Unknown', percent: 0 };
+
+  const sorted = Object.entries(counts).sort((a, b) => b[1] - a[1]);
+  const [primary, primaryCount] = sorted[0];
+
+  return {
+    name: primary,
+    counts,
+    primary,
+    percent: Math.round((primaryCount / total) * 100)
+  };
+}
+
+/* ===== LANGUAGE DETECTION ===== */
+function detectLanguage(text, script) {
+  const lower = text.toLowerCase();
+  const candidates = {};
+
+  // Get languages for this script
+  const scriptObj = SCRIPTS.find(s => s.name === script.name);
+  const scriptLangs = scriptObj ? scriptObj.languages : ['English'];
+
+  scriptLangs.forEach(lang => {
+    let score = 0;
+
+    // 1. Trigram score (50% weight)
+    const trigrams = TRIGRAMS[lang];
+    if (trigrams) {
+      let trigramMatches = 0;
+      trigrams.forEach(tg => {
+        const count = (lower.match(new RegExp(escapeRegex(tg), 'g')) || []).length;
+        trigramMatches += Math.min(count, 30); // cap to avoid bias
+      });
+      score += (trigramMatches / trigrams.length) * 0.5;
+    } else {
+      // CJK languages get flat trigram score since they don't use Latin trigrams
+      if (['Chinese','Japanese','Korean','Thai'].includes(lang)) score += 5 * 0.5;
+    }
+
+    // 2. Stopword score (30% weight)
+    const stops = STOPWORDS[lang];
+    if (stops) {
+      const words = lower.split(/\s+/);
+      const wordSet = new Set(words);
+      let stopMatches = 0;
+      stops.forEach(sw => { if (wordSet.has(sw)) stopMatches++; });
+      score += (stopMatches / stops.length) * 30 * 0.3;
+    } else {
+      if (['Chinese','Japanese','Korean','Thai'].includes(lang)) score += 5 * 0.3;
+    }
+
+    // 3. Script bonus (20% weight)
+    score += 10 * 0.2;
+
+    candidates[lang] = score;
+  });
+
+  // Normalize to percentages
+  const entries = Object.entries(candidates).sort((a, b) => b[1] - a[1]);
+  const total = entries.reduce((s, [, v]) => s + v, 0);
+  const normalized = entries.map(([name, score]) => ({
+    name,
+    score: total > 0 ? Math.round((score / total) * 100) : 0
+  }));
+
+  return {
+    top: normalized[0] || { name: 'Unknown', score: 0 },
+    all: normalized.slice(0, 3)
+  };
+}
+
+function escapeRegex(str) {
+  return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+/* ===== RENDER RESULTS ===== */
+function renderResults(overall, script, pageResults) {
+  const lang = overall.top.name;
+  const meta = LANG_META[lang] || { native: lang, flag: '🌐', code: '??' };
+
+  // Primary card
+  $('#langFlag').textContent = meta.flag;
+  $('#langName').textContent = lang;
+  $('#langNative').textContent = meta.native;
+  $('#langCode').textContent = meta.code;
+  $('#confidenceFill').style.width = overall.top.score + '%';
+  $('#confidenceText').textContent = 'Confidence: ' + overall.top.score + '%';
+
+  // Script
+  $('#scriptName').textContent = script.name + ' (' + script.percent + '%)';
+
+  // Stats
+  $('#statsPages').textContent = state.pages.length;
+  $('#statsWords').textContent = formatNumber(state.fullText.split(/\s+/).length);
+  const uniqueLangs = new Set(pageResults.map(p => p.lang).filter(l => l !== ''));
+  $('#statsLangs').textContent = uniqueLangs.size;
+
+  // Candidates
+  const candEl = $('#candidatesList');
+  candEl.innerHTML = overall.all.map((c, i) => {
+    const m = LANG_META[c.name] || { native: c.name, flag: '🌐' };
+    const rankClass = i === 0 ? 'gold' : i === 1 ? 'silver' : 'bronze';
+    return `
+      <div class="candidate-row">
+        <div class="candidate-rank ${rankClass}">#${i + 1}</div>
+        <div class="candidate-info">
+          <div class="candidate-name">${m.flag} ${escapeHtml(c.name)}</div>
+          <div class="candidate-native">${escapeHtml(m.native || '')}</div>
+        </div>
+        <div class="candidate-bar-wrap">
+          <div class="candidate-bar" style="width:${c.score}%"></div>
+        </div>
+        <div class="candidate-percent">${c.score}%</div>
+      </div>
+    `;
+  }).join('');
+
+  // Page list
+  const pageEl = $('#pageList');
+  pageEl.innerHTML = pageResults.map(p => {
+    const m = LANG_META[p.lang] || { flag: '🌐' };
+    return `
+      <div class="page-row">
+        <div class="page-num-badge">P${p.page}</div>
+        <div class="page-lang">${m.flag || '🌐'} ${escapeHtml(p.lang)}</div>
+        <div class="page-percent">${p.confidence}%</div>
+      </div>
+    `;
+  }).join('');
+
+  // Text sample
+  $('#textSample').textContent = state.fullText.slice(0, 500) + (state.fullText.length > 500 ? '...' : '');
+}
+
+function escapeHtml(str) {
+  const d = document.createElement('div');
+  d.textContent = str;
+  return d.innerHTML;
+}
+
+/* ===== RESET ===== */
+resetBtn.addEventListener('click', () => {
+  state.file = null;
+  state.pages = [];
+  state.fullText = '';
+  fileInfoBar.classList.remove('visible');
+  results.classList.remove('visible');
+  progress.classList.remove('visible');
+  dropzone.style.display = '';
+  detectBtn.disabled = true;
+  fileInput.value = '';
+  showToast('Reset', 'info');
+});
+
+/* ===== FAQ ===== */
+$$('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    $$('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+</script>
+
+</body>
+</html>

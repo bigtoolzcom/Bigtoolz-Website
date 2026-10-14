@@ -1,0 +1,1258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2563eb">
+
+<title>Blood Pressure Tracker - Log & Monitor BP Online Free | BigToolz</title>
+<meta name="description" content="Free blood pressure tracker. Log BP readings with systolic, diastolic, pulse. See AHA categories, trend charts, averages. Data stays in your browser. Export CSV.">
+<meta name="keywords" content="blood pressure tracker, bp log, blood pressure monitor, bp chart, hypertension tracker">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://bigtoolz.com/tools/utility-tools/blood-pressure/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Blood Pressure Tracker - Free Online Tool | BigToolz">
+<meta property="og:description" content="Log, monitor and analyze your blood pressure readings free, private.">
+<meta property="og:url" content="https://bigtoolz.com/tools/utility-tools/blood-pressure/">
+<meta property="og:image" content="https://bigtoolz.com/assets/images/og-image.jpg">
+<meta property="og:site_name" content="BigToolz">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Blood Pressure Tracker - BigToolz">
+<meta name="twitter:description" content="Log your BP readings instantly free, private.">
+<meta name="twitter:image" content="https://bigtoolz.com/assets/images/twitter-card.jpg">
+
+<link rel="icon" href="/assets/images/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/images/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#f8f9fc;color:#1a1a2e;overflow-x:hidden;line-height:1.5}
+
+  .header{background:#fff;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;position:sticky;top:0;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+  .header-left{display:flex;align-items:center;gap:40px}
+  .logo{display:flex;align-items:center;gap:8px;font-size:22px;font-weight:800;color:#1a1a2e;text-decoration:none}
+  .logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#3b82f6,#2563eb);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px}
+  .logo span{color:#2563eb}
+  .nav{display:flex;align-items:center;gap:28px;list-style:none}
+  .nav a{text-decoration:none;color:#4b5563;font-size:14px;font-weight:500;transition:color .2s}
+  .nav a:hover,.nav a.active{color:#2563eb}
+  .header-right{display:flex;align-items:center;gap:16px}
+  .search-btn,.theme-btn{width:36px;height:36px;border-radius:50%;border:none;background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#4b5563}
+  .search-btn:hover,.theme-btn:hover{background:#f3f4f6}
+  .bookmark-btn{display:flex;align-items:center;gap:8px;background:#2563eb;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
+  .bookmark-btn:hover{background:#1d4ed8}
+
+  .hero{background:linear-gradient(135deg,#0a0e27 0%,#1a1a4e 40%,#2d1b69 70%,#4c1d95 100%);padding:40px 40px 60px;position:relative;overflow:hidden;color:#fff}
+  .hero::before{content:'';position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(239,68,68,.35) 0%,transparent 70%);border-radius:50%}
+  .hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+  .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px;flex-wrap:wrap}
+  .breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none}
+  .breadcrumb a:hover{color:#fff}
+  .breadcrumb .sep{color:rgba(255,255,255,.4)}
+  .breadcrumb .current{color:#fff;font-weight:500}
+  .hero-title-row{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+  .hero-icon{width:60px;height:60px;background:#ef4444;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;color:#fff;flex-shrink:0;box-shadow:0 8px 24px rgba(239,68,68,.5)}
+  .hero-title{font-size:42px;font-weight:800;line-height:1.15}
+  .hero-title .blue{color:#f87171}
+  .hero-desc{font-size:15px;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:24px;max-width:560px}
+  .hero-features{display:flex;gap:24px;flex-wrap:wrap}
+  .hero-feature{display:flex;align-items:center;gap:6px;font-size:13px;color:#fff;font-weight:500}
+  .hero-feature .check{width:18px;height:18px;border-radius:50%;background:#ef4444;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;flex-shrink:0}
+
+  .main-content{max-width:1200px;margin:0 auto;padding:40px;display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start}
+  .tool-content{min-width:0}
+
+  .workspace{background:#fff;border-radius:16px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,.06);border:1px solid #e5e7eb;margin-bottom:24px}
+
+  /* Stats */
+  .stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:24px}
+  .stat-card{background:#f8fafc;border-radius:12px;padding:16px;border:1px solid #e5e7eb;text-align:center}
+  .stat-icon{font-size:20px;margin-bottom:6px}
+  .stat-num{font-size:22px;font-weight:800;color:#1a1a2e;line-height:1}
+  .stat-num .small{font-size:12px;color:#9ca3af;font-weight:600}
+  .stat-lbl{font-size:10px;color:#6b7280;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-top:6px}
+
+  /* Entry form */
+  .entry-form{background:#f8fafc;border-radius:14px;padding:22px;border:1px solid #e5e7eb;margin-bottom:24px}
+  .form-title{font-size:15px;font-weight:800;color:#1a1a2e;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+  .form-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:16px}
+  .form-grid.three{grid-template-columns:repeat(3,1fr);}
+  .form-grid.two{grid-template-columns:1fr 1fr;}
+  .form-grid.full{grid-template-columns:1fr;}
+  .form-group label{display:flex;justify-content:space-between;align-items:center;font-size:11px;font-weight:700;color:#4b5563;margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px;gap:6px}
+  .form-group label .hint{font-size:10px;color:#9ca3af;text-transform:none;font-weight:500}
+  .form-group input,.form-group textarea,.form-group select{width:100%;padding:11px 14px;border:1.5px solid #e5e7eb;border-radius:10px;font-size:14px;font-weight:700;font-family:inherit;color:#1a1a2e;background:#fff;outline:none;transition:border-color .2s}
+  .form-group input:focus,.form-group textarea:focus,.form-group select:focus{border-color:#ef4444;box-shadow:0 0 0 3px rgba(239,68,68,.1)}
+  .form-group textarea{resize:vertical;min-height:60px;font-weight:500;font-size:13px;line-height:1.6}
+
+  /* Tags */
+  .tags-wrap{display:flex;flex-wrap:wrap;gap:6px;padding:8px 10px;border:1.5px solid #e5e7eb;border-radius:10px;background:#fff;min-height:42px;align-items:center;cursor:text}
+  .tags-wrap:focus-within{border-color:#ef4444;box-shadow:0 0 0 3px rgba(239,68,68,.1)}
+  .tag-pill{display:inline-flex;align-items:center;gap:5px;padding:4px 10px;background:#fee2e2;color:#991b1b;border-radius:10px;font-size:11px;font-weight:700}
+  .tag-pill button{background:none;border:none;color:#991b1b;cursor:pointer;font-size:11px;padding:0;font-weight:800;line-height:1}
+  .tag-input{flex:1;min-width:80px;border:none;outline:none;font-size:12px;font-family:inherit;color:#1a1a2e;background:transparent;padding:4px}
+
+  /* Buttons */
+  .form-actions{display:flex;gap:10px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 24px;border-radius:10px;font-size:14px;font-weight:700;font-family:inherit;cursor:pointer;border:none;transition:all .2s;text-decoration:none}
+  .btn-primary{background:#ef4444;color:#fff;flex:1;box-shadow:0 4px 12px rgba(239,68,68,.25)}
+  .btn-primary:hover:not(:disabled){background:#dc2626;transform:translateY(-2px);box-shadow:0 6px 20px rgba(239,68,68,.35)}
+  .btn-primary:disabled{opacity:.5;cursor:not-allowed;transform:none}
+  .btn-secondary{background:#fff;color:#4b5563;border:1.5px solid #e5e7eb}
+  .btn-secondary:hover{border-color:#ef4444;color:#ef4444;background:#fef2f2}
+
+  /* Latest reading */
+  .latest-card{background:#fff;border-radius:16px;padding:24px;border:2px solid #e5e7eb;margin-bottom:24px;display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center;transition:all .2s}
+  .latest-card.normal{border-color:#10b981;background:linear-gradient(135deg,#f0fdf4,#ecfdf5)}
+  .latest-card.elevated{border-color:#eab308;background:linear-gradient(135deg,#fefce8,#fef9c3)}
+  .latest-card.stage1{border-color:#f97316;background:linear-gradient(135deg,#fff7ed,#ffedd5)}
+  .latest-card.stage2{border-color:#ef4444;background:linear-gradient(135deg,#fef2f2,#fee2e2)}
+  .latest-card.crisis{border-color:#991b1b;background:linear-gradient(135deg,#fef2f2,#fecaca)}
+  .latest-info{display:flex;flex-direction:column;gap:4px}
+  .latest-label{font-size:11px;font-weight:800;color:#6b7280;text-transform:uppercase;letter-spacing:1px}
+  .latest-value{font-size:42px;font-weight:800;color:#1a1a2e;line-height:1;letter-spacing:-2px}
+  .latest-value .slash{color:#9ca3af;font-weight:400;margin:0 6px;}
+  .latest-value .unit{font-size:14px;color:#6b7280;font-weight:700;margin-left:6px;letter-spacing:0}
+  .latest-meta{font-size:12px;color:#6b7280;font-weight:600;margin-top:4px}
+  .latest-badge{padding:10px 18px;border-radius:12px;font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:#fff;text-align:center;min-width:120px}
+  .latest-badge.normal{background:#10b981}
+  .latest-badge.elevated{background:#eab308}
+  .latest-badge.stage1{background:#f97316}
+  .latest-badge.stage2{background:#ef4444}
+  .latest-badge.crisis{background:#991b1b;animation:pulse 1.5s infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.7}}
+
+  /* Empty state */
+  .empty-state{background:#fff;border-radius:16px;padding:50px 20px;text-align:center;border:2px dashed #e5e7eb;color:#9ca3af;margin-bottom:24px}
+  .empty-icon{font-size:52px;margin-bottom:12px;opacity:.6}
+  .empty-title{font-size:17px;font-weight:800;color:#4b5563;margin-bottom:6px}
+  .empty-desc{font-size:13px;max-width:400px;margin:0 auto;line-height:1.6}
+
+  /* Chart */
+  .chart-section{background:#f8fafc;border-radius:14px;padding:20px;border:1px solid #e5e7eb;margin-bottom:24px}
+  .chart-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;gap:12px;flex-wrap:wrap}
+  .chart-title{font-size:15px;font-weight:800;color:#1a1a2e;display:flex;align-items:center;gap:8px}
+  .chart-legend{display:flex;gap:16px;flex-wrap:wrap}
+  .legend-item{display:flex;align-items:center;gap:6px;font-size:11px;font-weight:700;color:#6b7280}
+  .legend-dot{width:10px;height:10px;border-radius:50%}
+  .chart-wrap{position:relative;height:240px}
+  .chart-wrap canvas{max-width:100%;height:100%}
+
+  /* Filter */
+  .filter-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px;align-items:center}
+  .filter-label{font-size:11px;font-weight:800;color:#6b7280;text-transform:uppercase;letter-spacing:.5px;margin-right:6px}
+  .filter-btn{padding:7px 14px;background:#fff;border:1.5px solid #e5e7eb;border-radius:8px;font-size:12px;font-weight:700;color:#6b7280;cursor:pointer;font-family:inherit;transition:all .2s}
+  .filter-btn:hover{border-color:#ef4444;color:#ef4444}
+  .filter-btn.active{background:#ef4444;border-color:#ef4444;color:#fff}
+
+  /* Entries */
+  .entries-list{display:flex;flex-direction:column;gap:10px}
+  .entry-row{background:#fff;border-radius:12px;padding:14px 16px;border:1px solid #e5e7eb;display:grid;grid-template-columns:auto 1fr auto auto;gap:16px;align-items:center;transition:all .2s}
+  .entry-row:hover{border-color:#ef4444;box-shadow:0 4px 12px rgba(239,68,68,.08)}
+  .entry-dot{width:12px;height:12px;border-radius:50%;flex-shrink:0}
+  .entry-dot.normal{background:#10b981}
+  .entry-dot.elevated{background:#eab308}
+  .entry-dot.stage1{background:#f97316}
+  .entry-dot.stage2{background:#ef4444}
+  .entry-dot.crisis{background:#991b1b}
+  .entry-info{min-width:0}
+  .entry-bp{font-size:16px;font-weight:800;color:#1a1a2e;line-height:1.2}
+  .entry-bp .slash{color:#9ca3af;font-weight:400;margin:0 3px;}
+  .entry-bp .pulse{font-size:11px;color:#6b7280;font-weight:600;margin-left:8px}
+  .entry-meta{font-size:11px;color:#9ca3af;font-weight:600;margin-top:2px;display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+  .entry-notes{font-size:11px;color:#6b7280;font-style:italic;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:200px}
+  .entry-tags{display:flex;gap:4px;flex-wrap:wrap;margin-top:4px}
+  .entry-tag{padding:2px 8px;background:#fef2f2;border-radius:8px;font-size:10px;color:#991b1b;font-weight:700}
+  .entry-actions{display:flex;gap:4px}
+  .icon-btn{width:30px;height:30px;border-radius:8px;border:1px solid #e5e7eb;background:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#6b7280;font-size:13px;transition:all .2s}
+  .icon-btn:hover{border-color:#ef4444;color:#ef4444;background:#fef2f2}
+  .icon-btn.danger:hover{border-color:#dc2626;color:#dc2626;background:#fef2f2}
+
+  /* Action row */
+  .action-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px}
+  .mini-btn{display:inline-flex;align-items:center;gap:6px;padding:10px 16px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;font-size:12px;font-weight:700;color:#4b5563;cursor:pointer;font-family:inherit;transition:all .2s}
+  .mini-btn:hover{border-color:#ef4444;color:#ef4444;background:#fef2f2}
+
+  /* SEO */
+  .seo-content{background:#fff;border-radius:16px;padding:32px;border:1px solid #e5e7eb;margin-bottom:24px}
+  .seo-content h2{font-size:22px;font-weight:800;color:#1a1a2e;margin-bottom:14px;margin-top:28px;display:flex;align-items:center;gap:10px}
+  .seo-content h2:first-child{margin-top:0}
+  .seo-content h3{font-size:16px;font-weight:700;color:#1a1a2e;margin:20px 0 10px}
+  .seo-content p{font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:14px}
+  .seo-content ul{list-style:none;padding-left:0;margin-bottom:16px}
+  .seo-content ul li{position:relative;padding-left:24px;font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:8px}
+  .seo-content ul li::before{content:'';position:absolute;left:6px;top:12px;width:6px;height:6px;background:#ef4444;border-radius:50%}
+  .seo-content a{color:#2563eb;text-decoration:none;font-weight:600}
+  .seo-content a:hover{text-decoration:underline}
+  .seo-content strong{color:#1a1a2e;font-weight:700}
+  .seo-content code{background:#f1f5f9;padding:2px 6px;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:13px;color:#0f172a;border:1px solid #e2e8f0}
+
+  .cat-table{width:100%;border-collapse:collapse;margin:20px 0;border:1px solid #e5e7eb;border-radius:8px;overflow:hidden}
+  .cat-table th{background:#fef2f2;padding:12px 16px;text-align:left;font-size:13px;font-weight:700;color:#1a1a2e;border-bottom:1px solid #e5e7eb}
+  .cat-table td{padding:12px 16px;font-size:13px;color:#4b5563;border-bottom:1px solid #f3f4f6}
+  .cat-table tr:last-child td{border-bottom:none}
+
+  .how-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:20px}
+  .how-step{background:#fef2f2;border-radius:12px;padding:20px;border:1px solid #fee2e2}
+  .how-step-num{width:36px;height:36px;border-radius:50%;background:#ef4444;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;margin-bottom:12px}
+  .how-step-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+  .how-step-desc{font-size:13px;color:#6b7280;line-height:1.6}
+
+  .faq-item{background:#fef2f2;border:1px solid #fee2e2;border-radius:12px;margin-bottom:10px;overflow:hidden;transition:border-color .2s}
+  .faq-item:hover{border-color:#ef4444}
+  .faq-question{width:100%;background:none;border:none;padding:18px 22px;font-size:15px;font-weight:700;color:#1a1a2e;text-align:left;cursor:pointer;font-family:inherit;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .faq-question .chev{font-size:12px;color:#ef4444;transition:transform .2s;flex-shrink:0}
+  .faq-item.open .faq-question .chev{transform:rotate(180deg)}
+  .faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 22px}
+  .faq-item.open .faq-answer{max-height:500px;padding-bottom:18px}
+  .faq-answer p{font-size:14px;color:#6b7280;line-height:1.7;margin:0}
+
+  .sidebar{background:#fff;border-radius:16px;padding:24px;border:1px solid #e5e7eb;position:sticky;top:80px;margin-bottom:24px}
+  .sidebar-header{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:800;color:#1a1a2e;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid #f3f4f6}
+  .sidebar-list{display:flex;flex-direction:column;gap:8px}
+  .sidebar-item{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;cursor:pointer;transition:background .2s;text-decoration:none;color:inherit;border:1px solid #f3f4f6}
+  .sidebar-item:hover{background:#fef2f2;border-color:#fee2e2}
+  .sidebar-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;flex-shrink:0}
+  .sidebar-info{flex:1;min-width:0}
+  .sidebar-title{font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:2px}
+  .sidebar-desc{font-size:11px;color:#9ca3af;line-height:1.4}
+
+  .warning-box{background:#fef2f2;border:1px solid #fecaca;border-radius:12px;padding:14px 16px;margin:20px 0;display:flex;gap:12px;align-items:flex-start;font-size:13px;color:#991b1b;line-height:1.6}
+  .warning-box strong{color:#7f1d1d;display:block;margin-bottom:2px;}
+
+  .footer{background:#0a0e27;padding:60px 40px 30px;color:#fff;margin-top:40px}
+  .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:40px}
+  .footer-brand{display:flex;align-items:center;gap:8px;font-size:20px;font-weight:800;margin-bottom:12px}
+  .footer-brand span{color:#60a5fa}
+  .footer-tagline{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px}
+  .footer-social{display:flex;gap:12px}
+  .footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:16px;transition:background .2s}
+  .footer-social a:hover{background:rgba(255,255,255,.2)}
+  .footer-heading{font-size:14px;font-weight:700;margin-bottom:20px;color:#fff}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .footer-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;transition:color .2s}
+  .footer-links a:hover{color:#60a5fa}
+  .footer-bottom{max-width:1200px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  .footer-bottom-left{display:flex;gap:20px;font-size:12px;color:rgba(255,255,255,.5)}
+  .footer-bottom-right,.footer-bottom-links a{font-size:12px;color:rgba(255,255,255,.5);text-decoration:none}
+  .footer-bottom-links{display:flex;gap:20px}
+
+  .toast{position:fixed;bottom:24px;right:24px;background:#1a1a2e;color:#fff;padding:14px 20px;border-radius:10px;font-size:13px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:3000;transform:translateY(200%);transition:transform .3s ease;max-width:320px}
+  .toast.visible{transform:translateY(0)}
+  .toast.success{background:#10b981}
+  .toast.error{background:#ef4444}
+
+  @media(max-width:1024px){
+    .main-content{grid-template-columns:1fr;padding:24px 20px}
+    .sidebar{position:static}
+    .how-steps{grid-template-columns:repeat(2,1fr)}
+    .form-grid{grid-template-columns:repeat(2,1fr)}
+    .stats-bar{grid-template-columns:repeat(2,1fr)}
+  }
+  @media(max-width:768px){
+    .header{padding:0 20px}.nav{display:none}
+    .hero{padding:24px 20px 40px}
+    .hero-title{font-size:28px}
+    .hero-icon{width:48px;height:48px;font-size:22px}
+    .hero-title-row{flex-direction:column;align-items:flex-start;gap:12px}
+    .main-content{padding:20px 16px}
+    .workspace{padding:20px}
+    .how-steps{grid-template-columns:1fr}
+    .seo-content{padding:20px}
+    .footer-inner{grid-template-columns:1fr 1fr}
+    .toast{left:16px;right:16px;bottom:16px;max-width:none}
+    .form-grid{grid-template-columns:1fr}
+    .form-grid.three{grid-template-columns:1fr;}
+    .form-grid.two{grid-template-columns:1fr;}
+    .latest-card{grid-template-columns:1fr;}
+    .entry-row{grid-template-columns:auto 1fr auto;gap:10px;}
+    .entry-actions{grid-column:1 / -1;justify-content:flex-end;margin-top:6px;}
+  }
+  @media(max-width:576px){
+    .header{padding:0 16px}.header-right .search-btn,.header-right .theme-btn{display:none}
+    .hero-title{font-size:24px}
+    .footer-inner{grid-template-columns:1fr}
+    .footer-bottom{flex-direction:column;text-align:center}
+    .latest-value{font-size:32px}
+    .stats-bar{grid-template-columns:1fr;}
+    .form-actions{flex-direction:column}
+    .btn{width:100%}
+  }
+
+  html[data-theme="dark"] body{background:#0f172a;color:#f1f5f9}
+  html[data-theme="dark"] .header,html[data-theme="dark"] .workspace,html[data-theme="dark"] .seo-content,html[data-theme="dark"] .sidebar{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .logo,html[data-theme="dark"] .hero-title,html[data-theme="dark"] .seo-content h2,html[data-theme="dark"] .seo-content h3,html[data-theme="dark"] .faq-question,html[data-theme="dark"] .sidebar-header,html[data-theme="dark"] .sidebar-title,html[data-theme="dark"] .form-title,html[data-theme="dark"] .chart-title{color:#f1f5f9}
+  html[data-theme="dark"] .nav a{color:#cbd5e1}
+  html[data-theme="dark"] .how-step,html[data-theme="dark"] .faq-item,html[data-theme="dark"] .stat-card,html[data-theme="dark"] .entry-form,html[data-theme="dark"] .entry-row,html[data-theme="dark"] .chart-section,html[data-theme="dark"] .filter-btn,html[data-theme="dark"] .tags-wrap{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .form-group input,html[data-theme="dark"] .form-group textarea,html[data-theme="dark"] .form-group select{background:#0f172a;border-color:#334155;color:#f1f5f9}
+  html[data-theme="dark"] .latest-card{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .latest-value{color:#f1f5f9}
+  html[data-theme="dark"] .latest-value .slash{color:#475569;}
+  html[data-theme="dark"] .latest-label{color:#94a3b8}
+  html[data-theme="dark"] .entry-bp{color:#f1f5f9}
+  html[data-theme="dark"] .entry-bp .slash{color:#475569;}
+  html[data-theme="dark"] .seo-content p,html[data-theme="dark"] .seo-content ul li,html[data-theme="dark"] .faq-answer p,html[data-theme="dark"] .entry-notes{color:#cbd5e1}
+  html[data-theme="dark"] .seo-content code{background:#0f172a;color:#94a3b8;border-color:#334155}
+  html[data-theme="dark"] .mini-btn{background:#0f172a;border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .cat-table{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .cat-table th{background:#0f172a;color:#f1f5f9;border-color:#334155}
+  html[data-theme="dark"] .cat-table td{border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .filter-btn{color:#cbd5e1}
+  html[data-theme="dark"] .icon-btn{background:#0f172a;border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .latest-card.normal{background:linear-gradient(135deg,#0f172a,#1e293b)}
+  html[data-theme="dark"] .latest-card.elevated{background:linear-gradient(135deg,#1e293b,#0f172a)}
+  html[data-theme="dark"] .latest-card.stage1{background:linear-gradient(135deg,#1e293b,#0f172a)}
+  html[data-theme="dark"] .latest-card.stage2{background:linear-gradient(135deg,#1e293b,#0f172a)}
+  html[data-theme="dark"] .latest-card.crisis{background:linear-gradient(135deg,#1e293b,#0f172a)}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type": "SoftwareApplication", "name": "Blood Pressure Tracker", "url": "https://bigtoolz.com/tools/utility-tools/blood-pressure/", "applicationCategory": "HealthApplication", "operatingSystem": "Any (Web-based)", "description": "Free blood pressure tracker log BP readings with systolic, diastolic, pulse. See AHA categories, trend charts, and export CSV.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "1023"}},
+    {"@type": "HowTo", "name": "How to Track Blood Pressure", "step": [
+      {"@type": "HowToStep", "name": "Measure BP", "text": "Use a validated BP monitor. Sit quietly for 5 min before measuring."},
+      {"@type": "HowToStep", "name": "Log Reading", "text": "Enter systolic, diastolic, pulse, and any notes or tags."},
+      {"@type": "HowToStep", "name": "Review Trends", "text": "Watch the chart over days and weeks to spot patterns."},
+      {"@type": "HowToStep", "name": "Share with Doctor", "text": "Export CSV to show your doctor at the next appointment."}
+    ]},
+    {"@type": "FAQPage", "mainEntity": [
+      {"@type": "Question", "name": "What is a normal blood pressure?", "acceptedAnswer": {"@type": "Answer", "text": "According to the American Heart Association (AHA): Normal is less than 120/80 mmHg. Elevated is 120-129/<80. Stage 1 hypertension is 130-139/80-89. Stage 2 is 140+/90+. Crisis is 180+/120+."}},
+      {"@type": "Question", "name": "When should I measure my blood pressure?", "acceptedAnswer": {"@type": "Answer", "text": "Best times are morning (within 1 hour of waking, before coffee/medication) and evening (before dinner). Measure at the same times daily. Sit quietly for 5 minutes before, feet flat, arm supported at heart level."}},
+      {"@type": "Question", "name": "Which number is more important systolic or diastolic?", "acceptedAnswer": {"@type": "Answer", "text": "Both matter. Systolic (top number) is often more predictive for people over 50. Diastolic (bottom) matters more for younger adults. Doctors evaluate both together."}},
+      {"@type": "Question", "name": "Is this tool a substitute for medical advice?", "acceptedAnswer": {"@type": "Answer", "text": "No. This tracker is for personal logging only. If your readings are consistently high, in the Stage 2 or Crisis range, see a doctor immediately. Do not change medications based on this tool."}},
+      {"@type": "Question", "name": "What is a hypertensive crisis?", "acceptedAnswer": {"@type": "Answer", "text": "A hypertensive crisis is a reading of 180/120 mmHg or higher. If you have this reading, wait 5 minutes and measure again. If it's still 180/120+, seek emergency medical help immediately."}}
+    ]},
+    {"@type": "BreadcrumbList", "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bigtoolz.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://bigtoolz.com/tools/"},
+      {"@type": "ListItem", "position": 3, "name": "Utility Tools", "item": "https://bigtoolz.com/tools/utility-tools/"},
+      {"@type": "ListItem", "position": 4, "name": "Blood Pressure Tracker", "item": "https://bigtoolz.com/tools/utility-tools/blood-pressure/"}
+    ]}
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-left">
+    <a href="/" class="logo"><div class="logo-icon">⚒</div>BigToolz</span></a>
+    <nav><ul class="nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/tools/" class="active">All Tools</a></li>
+      <li><a href="/tools/categories">Categories</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul></nav>
+  </div>
+  <div class="header-right">
+    
+    <button class="theme-btn" aria-label="Toggle theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
+    
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <nav class="breadcrumb">
+      <a href="/">Home</a><span class="sep">›</span>
+      <a href="/tools/">Tools</a><span class="sep">›</span>
+      <a href="/tools/utility-tools/">Utility Tools</a><span class="sep">›</span>
+      <span class="current">Blood Pressure Tracker</span>
+    </nav>
+    <div class="hero-title-row">
+      <div class="hero-icon">🩺</div>
+      <h1 class="hero-title">Blood Pressure <span class="blue">Tracker</span></h1>
+    </div>
+    <p class="hero-desc">
+      Log your blood pressure readings, see AHA categories instantly, track trends over time. All data stays in your browser 100% private.
+    </p>
+    <div class="hero-features">
+      <div class="hero-feature"><span class="check">✓</span> AHA Categories</div>
+      <div class="hero-feature"><span class="check">✓</span> Trend Chart</div>
+      <div class="hero-feature"><span class="check">✓</span> CSV Export</div>
+      <div class="hero-feature"><span class="check">✓</span> 100% Private</div>
+    </div>
+  </div>
+</section>
+
+<div class="main-content">
+
+  <div class="tool-content">
+
+    <div class="workspace">
+
+      <!-- Stats -->
+      <div class="stats-bar">
+        <div class="stat-card">
+          <div class="stat-icon">📊</div>
+          <div class="stat-num" id="statTotal">0</div>
+          <div class="stat-lbl">Total Readings</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">📈</div>
+          <div class="stat-num" id="statAvg"></div>
+          <div class="stat-lbl">7-Day Average</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">🟢</div>
+          <div class="stat-num" id="statNormal">0</div>
+          <div class="stat-lbl">Normal Readings</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">⚠️</div>
+          <div class="stat-num" id="statHigh">0</div>
+          <div class="stat-lbl">High Readings</div>
+        </div>
+      </div>
+
+      <!-- Entry form -->
+      <div class="entry-form">
+        <div class="form-title">➕ Add New Reading</div>
+
+        <div class="form-grid">
+          <div class="form-group">
+            <label>Systolic <span class="hint">Top</span></label>
+            <input type="number" id="systolic" placeholder="120" min="50" max="300">
+          </div>
+          <div class="form-group">
+            <label>Diastolic <span class="hint">Bottom</span></label>
+            <input type="number" id="diastolic" placeholder="80" min="30" max="200">
+          </div>
+          <div class="form-group">
+            <label>Pulse <span class="hint">bpm</span></label>
+            <input type="number" id="pulse" placeholder="72" min="30" max="250">
+          </div>
+          <div class="form-group">
+            <label>Date & Time</label>
+            <input type="datetime-local" id="readingDate">
+          </div>
+        </div>
+
+        <div class="form-grid full" style="margin-bottom:14px;">
+          <div class="form-group">
+            <label>Tags <span class="hint">press Enter</span></label>
+            <div class="tags-wrap" id="tagsWrap">
+              <input type="text" class="tag-input" id="tagInput" placeholder="morning, after coffee, stressed...">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-grid full" style="margin-bottom:16px;">
+          <div class="form-group">
+            <label>Notes <span class="hint">Optional</span></label>
+            <textarea id="notes" placeholder="Anything notable sleep, stress, medication, etc."></textarea>
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button class="btn btn-primary" id="saveBtn" disabled>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+            <span id="saveBtnText">Save Reading</span>
+          </button>
+          <button class="btn btn-secondary" id="clearFormBtn">Clear</button>
+        </div>
+      </div>
+
+      <!-- Latest -->
+      <div id="latestContainer"></div>
+
+      <!-- Filter -->
+      <div class="filter-row" id="filterRow" style="display:none;">
+        <span class="filter-label">Show:</span>
+        <button class="filter-btn active" data-filter="7">7 Days</button>
+        <button class="filter-btn" data-filter="30">30 Days</button>
+        <button class="filter-btn" data-filter="90">90 Days</button>
+        <button class="filter-btn" data-filter="all">All</button>
+      </div>
+
+      <!-- Chart -->
+      <div class="chart-section" id="chartSection" style="display:none;">
+        <div class="chart-header">
+          <div class="chart-title">📈 Trend</div>
+          <div class="chart-legend">
+            <div class="legend-item"><span class="legend-dot" style="background:#ef4444;"></span> Systolic</div>
+            <div class="legend-item"><span class="legend-dot" style="background:#3b82f6;"></span> Diastolic</div>
+            <div class="legend-item"><span class="legend-dot" style="background:#10b981;"></span> Pulse</div>
+          </div>
+        </div>
+        <div class="chart-wrap">
+          <canvas id="bpChart"></canvas>
+        </div>
+      </div>
+
+      <!-- Entries -->
+      <div class="entries-list" id="entriesList"></div>
+
+      <!-- Actions -->
+      <div class="action-row" id="actionRow" style="display:none;">
+        <button class="mini-btn" id="exportBtn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+          Export CSV
+        </button>
+        <button class="mini-btn" id="clearAllBtn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 6h18M8 6V4a2 2 0 012-2h4a2 2 0 012 2v2M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/></svg>
+          Delete All
+        </button>
+      </div>
+
+    </div>
+
+    <!-- SEO Content -->
+    <div class="seo-content">
+
+      <h2>🩺 What is a Blood Pressure Tracker?</h2>
+      <p>
+        A <strong>Blood Pressure Tracker</strong> is a personal log for recording your blood pressure readings over time. Since hypertension (high BP) is often <em>asymptomatic</em>, regular tracking is one of the most important things you can do for your heart health. It reveals trends that a single doctor's-office reading can't and gives your doctor a much clearer picture.
+      </p>
+      <p>
+        Our tracker stores readings in your browser <strong>never uploaded to a server</strong>. It shows your AHA (American Heart Association) category instantly, charts your trend over time, calculates averages, and lets you export a CSV for doctor visits.
+      </p>
+
+      <div class="warning-box">
+        <div style="font-size:20px;">⚠️</div>
+        <div>
+          <strong>Medical Disclaimer</strong>
+          This tool is for personal logging only not medical advice. If your readings are consistently in Stage 2 (140/90+) or Crisis (180/120+), seek medical help immediately. Never change medications without your doctor's guidance.
+        </div>
+      </div>
+
+      <h2>🚀 How to Use This Tracker</h2>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-step-num">1</div>
+          <div class="how-step-title">Measure BP</div>
+          <div class="how-step-desc">Sit quietly 5 min, feet flat, arm at heart level. Use a validated monitor.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">2</div>
+          <div class="how-step-title">Log Reading</div>
+          <div class="how-step-desc">Enter systolic, diastolic, pulse. Add tags like "morning" or "after exercise".</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">3</div>
+          <div class="how-step-title">Review Trends</div>
+          <div class="how-step-desc">The chart shows patterns over 7/30/90 days. Spot triggers and improvements.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">4</div>
+          <div class="how-step-title">Share with Doctor</div>
+          <div class="how-step-desc">Export CSV before your next appointment doctors love the data.</div>
+        </div>
+      </div>
+
+      <h2>📊 AHA Blood Pressure Categories</h2>
+      <table class="cat-table">
+        <thead>
+          <tr><th>Category</th><th>Systolic (mmHg)</th><th>Diastolic (mmHg)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong style="color:#10b981;">🟢 Normal</strong></td><td>Less than 120</td><td>and less than 80</td></tr>
+          <tr><td><strong style="color:#eab308;">🟡 Elevated</strong></td><td>120–129</td><td>and less than 80</td></tr>
+          <tr><td><strong style="color:#f97316;">🟠 Stage 1 Hypertension</strong></td><td>130–139</td><td>or 80–89</td></tr>
+          <tr><td><strong style="color:#ef4444;">🔴 Stage 2 Hypertension</strong></td><td>140 or higher</td><td>or 90 or higher</td></tr>
+          <tr><td><strong style="color:#991b1b;">🚨 Hypertensive Crisis</strong></td><td>180 or higher</td><td>and/or 120 or higher</td></tr>
+        </tbody>
+      </table>
+
+      <h2>💡 Best Practices for Measuring</h2>
+      <ul>
+        <li><strong>Same time daily.</strong> Measure in the morning (before coffee/meds) and evening (before dinner). Consistency reveals trends.</li>
+        <li><strong>Sit quietly for 5 minutes</strong> before measuring rushing inflates readings.</li>
+        <li><strong>Feet flat on floor, back supported.</strong> Crossed legs or slouching raise BP.</li>
+        <li><strong>Arm at heart level.</strong> Support your forearm on a table. Don't hold it up.</li>
+        <li><strong>No caffeine, exercise, or smoking</strong> for 30 minutes before.</li>
+        <li><strong>Empty your bladder first</strong> a full bladder can add 10-15 mmHg.</li>
+        <li><strong>Take 2-3 readings</strong> 1 minute apart. Average them.</li>
+        <li><strong>Use a validated monitor.</strong> Wrist monitors are less accurate than upper-arm cuffs.</li>
+        <li><strong>Don't talk during measurement</strong> talking adds up to 15 mmHg.</li>
+        <li><strong>Log consistently,</strong> even if readings are "good" the trend matters more than any single number.</li>
+      </ul>
+
+      <h2>🔒 Privacy</h2>
+      <p>
+        All readings are stored in your browser's <code>localStorage</code>. Nothing is uploaded. No account, no tracking. But remember: clearing browser data will erase your log. Use <strong>Export CSV</strong> regularly for backup and doctor sharing.
+      </p>
+
+      <h2>❓ Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-question">What is a normal blood pressure?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>According to the American Heart Association: <strong>Normal</strong> is less than 120/80 mmHg. <strong>Elevated</strong> is 120-129/<80. <strong>Stage 1</strong> is 130-139/80-89. <strong>Stage 2</strong> is 140+/90+. <strong>Crisis</strong> is 180+/120+. Individual targets may differ ask your doctor what's right for you.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">When should I measure my blood pressure?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Best times are <strong>morning</strong> (within 1 hour of waking, before coffee/medication) and <strong>evening</strong> (before dinner). Measure at the same times daily. Sit quietly for 5 minutes before, feet flat, arm supported at heart level.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Which number is more important systolic or diastolic?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Both matter. <strong>Systolic</strong> (top number) is often more predictive for people over 50. <strong>Diastolic</strong> (bottom) matters more for younger adults. Doctors evaluate both together. Isolated systolic hypertension (high systolic, normal diastolic) is common in seniors.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Is this tool a substitute for medical advice?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>No.</strong> This tracker is for personal logging only. If your readings are consistently high, in the Stage 2 or Crisis range, see a doctor immediately. Do not change medications based on this tool. Always discuss any concerns with a qualified healthcare professional.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What is a hypertensive crisis?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>A <strong>hypertensive crisis</strong> is a reading of <strong>180/120 mmHg or higher</strong>. If you get this reading, wait 5 minutes and measure again. If it's still 180/120+, seek <strong>emergency medical help immediately</strong>. Symptoms of crisis include chest pain, shortness of breath, vision changes, or severe headache.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I track BP for a family member?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Yes. Use the "Tags" field to distinguish people for example, tag readings "mom" or "dad". You can also export separate CSVs. If you need multi-user support regularly, use a separate browser for each person's data.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Will I lose my data if I clear my browser?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Yes. Data is stored in <code>localStorage</code>, which lives on your device. Clearing browser data or using private/incognito mode will erase it. <strong>Export CSV regularly</strong> as a backup, especially before major browser updates or device changes.</p></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-header">🔗 Related Health Tools</div>
+    <div class="sidebar-list">
+      <a href="/tools/utility-tools/heart-rate/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#ef4444;">❤️</div>
+        <div class="sidebar-info"><div class="sidebar-title">Heart Rate Calculator</div><div class="sidebar-desc">Target HR zones</div></div>
+      </a>
+      <a href="/tools/calculator-tools/bmi-calculator/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#10b981;">⚖️</div>
+        <div class="sidebar-info"><div class="sidebar-title">BMI Calculator</div><div class="sidebar-desc">Body mass index</div></div>
+      </a>
+      <a href="/tools/calculator-tools/calorie-calculator/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#f97316;">🍎</div>
+        <div class="sidebar-info"><div class="sidebar-title">Calorie Calculator</div><div class="sidebar-desc">Daily calories</div></div>
+      </a>
+      <a href="/tools/utility-tools/water-intake/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#06b6d4;">💧</div>
+        <div class="sidebar-info"><div class="sidebar-title">Water Intake</div><div class="sidebar-desc">Daily water needs</div></div>
+      </a>
+      <a href="/tools/utility-tools/sleep-cycle/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#3b82f6;">😴</div>
+        <div class="sidebar-info"><div class="sidebar-title">Sleep Cycle</div><div class="sidebar-desc">Bedtime calculator</div></div>
+      </a>
+      <a href="/tools/utility-tools/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#64748b;">⚙️</div>
+        <div class="sidebar-info"><div class="sidebar-title">All Utility Tools →</div><div class="sidebar-desc">Browse 50+ tools</div></div>
+      </a>
+    </div>
+  </aside>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand"><div class="logo-icon">⚒</div>BigToolz</span></div>
+      <p class="footer-tagline">Your Ultimate Online Tools Hub</p>
+      <div class="footer-social">
+        <a href="https://facebook.com/bigtoolz" aria-label="Facebook">f</a>
+        <a href="https://twitter.com/bigtoolz" aria-label="Twitter">𝕏</a>
+        <a href="https://youtube.com/@bigtoolz" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+    <div>
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/tools/">All Tools</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Categories</h3>
+      <ul class="footer-links">
+        <li><a href="/tools/image-tools/">Image Tools</a></li>
+        <li><a href="/tools/pdf-tools/">PDF Tools</a></li>
+        <li><a href="/tools/text-tools/">Text Tools</a></li>
+        <li><a href="/tools/utility-tools/">Utility Tools</a></li>
+        <li><a href="/tools/categories">All Categories →</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Legal</h3>
+      <ul class="footer-links">
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left"><span>✓ 100% Free</span><span>✓ No Sign Up</span><span>✓ No Installation</span></div>
+    <div class="footer-bottom-right">© 2026 BigToolz. All rights reserved.</div>
+    <div class="footer-bottom-links"><a href="/privacy-policy">Privacy</a><a href="/terms">Terms</a><a href="/disclaimer">Disclaimer</a></div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+'use strict';
+
+/* ===== THEME ===== */
+(function(){try{var t=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&d))document.documentElement.setAttribute('data-theme','dark');else if(t==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();
+document.querySelector('.theme-btn')?.addEventListener('click',()=>{const h=document.documentElement;const c=h.getAttribute('data-theme');const d=window.matchMedia('(prefers-color-scheme: dark)').matches;let n=c==='dark'?'light':c==='light'?'dark':(d?'light':'dark');h.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}});
+
+/* ===== HELPERS ===== */
+const $ = (s, p = document) => p.querySelector(s);
+const $$ = (s, p = document) => [...p.querySelectorAll(s)];
+
+function showToast(msg, type = 'info', duration = 3000) {
+  const t = $('#toast');
+  if (!t) return;
+  t.className = 'toast visible' + (type !== 'info' ? ' ' + type : '');
+  t.textContent = msg;
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove('visible'), duration);
+}
+
+function escapeHtml(str) {
+  if (!str) return '';
+  const div = document.createElement('div');
+  div.textContent = str;
+  return div.innerHTML;
+}
+
+/* ===== STATE ===== */
+const state = {
+  readings: [],
+  tags: [],
+  filter: '7', // days
+  editingId: null
+};
+
+const STORAGE_KEY = 'bigtoolz_bp_v1';
+
+/* ===== DOM ===== */
+const systolic = $('#systolic');
+const diastolic = $('#diastolic');
+const pulse = $('#pulse');
+const readingDate = $('#readingDate');
+const tagInput = $('#tagInput');
+const tagsWrap = $('#tagsWrap');
+const notes = $('#notes');
+const saveBtn = $('#saveBtn');
+const saveBtnText = $('#saveBtnText');
+const clearFormBtn = $('#clearFormBtn');
+const latestContainer = $('#latestContainer');
+const filterRow = $('#filterRow');
+const chartSection = $('#chartSection');
+const bpChart = $('#bpChart');
+const entriesList = $('#entriesList');
+const actionRow = $('#actionRow');
+const exportBtn = $('#exportBtn');
+const clearAllBtn = $('#clearAllBtn');
+const statTotal = $('#statTotal');
+const statAvg = $('#statAvg');
+const statNormal = $('#statNormal');
+const statHigh = $('#statHigh');
+
+/* ===== STORAGE ===== */
+function loadReadings() {
+  try {
+    state.readings = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+  } catch (e) {
+    state.readings = [];
+  }
+}
+
+function saveReadings() {
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(state.readings));
+  } catch (e) {}
+}
+
+/* ===== CATEGORY ===== */
+function getCategory(sys, dia) {
+  if (sys >= 180 || dia >= 120) return 'crisis';
+  if (sys >= 140 || dia >= 90) return 'stage2';
+  if (sys >= 130 || dia >= 80) return 'stage1';
+  if (sys >= 120) return 'elevated';
+  return 'normal';
+}
+
+function getCategoryLabel(cat) {
+  return {
+    normal: '🟢 Normal',
+    elevated: '🟡 Elevated',
+    stage1: '🟠 Stage 1',
+    stage2: '🔴 Stage 2',
+    crisis: '🚨 Crisis'
+  }[cat] || '';
+}
+
+/* ===== TAGS ===== */
+function renderTags() {
+  $$('.tag-pill', tagsWrap).forEach(p => p.remove());
+
+  state.tags.forEach((tag, idx) => {
+    const pill = document.createElement('span');
+    pill.className = 'tag-pill';
+    pill.innerHTML = `${escapeHtml(tag)} <button data-tag-idx="${idx}" aria-label="Remove tag">✕</button>`;
+    tagsWrap.insertBefore(pill, tagInput);
+  });
+
+  $$('[data-tag-idx]', tagsWrap).forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const i = parseInt(btn.dataset.tagIdx, 10);
+      state.tags.splice(i, 1);
+      renderTags();
+    });
+  });
+}
+
+tagInput.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter' || e.key === ',') {
+    e.preventDefault();
+    const v = tagInput.value.trim().toLowerCase().replace(/,/g, '');
+    if (v && !state.tags.includes(v) && state.tags.length < 8) {
+      state.tags.push(v);
+      tagInput.value = '';
+      renderTags();
+    }
+  } else if (e.key === 'Backspace' && !tagInput.value && state.tags.length > 0) {
+    state.tags.pop();
+    renderTags();
+  }
+});
+
+tagsWrap.addEventListener('click', () => tagInput.focus());
+
+/* ===== FORM VALIDATION ===== */
+function validateForm() {
+  const sys = parseInt(systolic.value, 10);
+  const dia = parseInt(diastolic.value, 10);
+  const valid = sys >= 50 && sys <= 300 && dia >= 30 && dia <= 200;
+  saveBtn.disabled = !valid;
+}
+
+[systolic, diastolic].forEach(el => el.addEventListener('input', validateForm));
+
+/* ===== SAVE ===== */
+saveBtn.addEventListener('click', () => {
+  const sys = parseInt(systolic.value, 10);
+  const dia = parseInt(diastolic.value, 10);
+  const p = parseInt(pulse.value, 10) || null;
+
+  if (!sys || !dia) return;
+
+  const dt = readingDate.value || new Date().toISOString().slice(0, 16);
+
+  const entry = {
+    id: Date.now() + Math.random().toString(36).slice(2, 6),
+    systolic: sys,
+    diastolic: dia,
+    pulse: p,
+    datetime: dt,
+    tags: [...state.tags],
+    notes: notes.value.trim(),
+    category: getCategory(sys, dia)
+  };
+
+  if (state.editingId) {
+    const idx = state.readings.findIndex(r => r.id === state.editingId);
+    if (idx !== -1) {
+      entry.id = state.editingId;
+      state.readings[idx] = entry;
+    }
+    showToast('Reading updated', 'success');
+  } else {
+    state.readings.push(entry);
+    showToast('Reading saved', 'success');
+  }
+
+  saveReadings();
+  clearForm();
+  renderAll();
+});
+
+/* ===== CLEAR FORM ===== */
+function clearForm() {
+  systolic.value = '';
+  diastolic.value = '';
+  pulse.value = '';
+  notes.value = '';
+  tagInput.value = '';
+  state.tags = [];
+  state.editingId = null;
+  renderTags();
+  validateForm();
+  saveBtnText.textContent = 'Save Reading';
+  readingDate.value = new Date().toISOString().slice(0, 16);
+}
+
+clearFormBtn.addEventListener('click', clearForm);
+
+/* ===== FILTER ===== */
+$$('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    $$('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    state.filter = btn.dataset.filter;
+    renderAll();
+  });
+});
+
+/* ===== GET FILTERED ===== */
+function getFiltered() {
+  let list = [...state.readings];
+  if (state.filter !== 'all') {
+    const days = parseInt(state.filter, 10);
+    const cutoff = new Date();
+    cutoff.setDate(cutoff.getDate() - days);
+    list = list.filter(r => new Date(r.datetime) >= cutoff);
+  }
+  list.sort((a, b) => new Date(b.datetime) - new Date(a.datetime));
+  return list;
+}
+
+/* ===== STATS ===== */
+function renderStats() {
+  const total = state.readings.length;
+  statTotal.textContent = total;
+
+  // 7-day avg
+  const cutoff = new Date();
+  cutoff.setDate(cutoff.getDate() - 7);
+  const week = state.readings.filter(r => new Date(r.datetime) >= cutoff);
+  if (week.length > 0) {
+    const avgSys = Math.round(week.reduce((s, r) => s + r.systolic, 0) / week.length);
+    const avgDia = Math.round(week.reduce((s, r) => s + r.diastolic, 0) / week.length);
+    statAvg.textContent = `${avgSys}/${avgDia}`;
+  } else {
+    statAvg.textContent = '';
+  }
+
+  const normal = state.readings.filter(r => r.category === 'normal').length;
+  const high = state.readings.filter(r => ['stage1', 'stage2', 'crisis'].includes(r.category)).length;
+  statNormal.textContent = normal;
+  statHigh.textContent = high;
+}
+
+/* ===== LATEST ===== */
+function renderLatest() {
+  if (state.readings.length === 0) {
+    latestContainer.innerHTML = `
+      <div class="empty-state">
+        <div class="empty-icon">🩺</div>
+        <div class="empty-title">No readings yet</div>
+        <div class="empty-desc">Log your first blood pressure reading above. Your latest reading will appear here with its AHA category.</div>
+      </div>
+    `;
+    return;
+  }
+
+  const latest = [...state.readings].sort((a, b) => new Date(b.datetime) - new Date(a.datetime))[0];
+  const cat = latest.category;
+  const catLabel = getCategoryLabel(cat);
+  const dateStr = formatDateTime(latest.datetime);
+
+  latestContainer.innerHTML = `
+    <div class="latest-card ${cat}">
+      <div class="latest-info">
+        <div class="latest-label">Latest Reading · ${dateStr}</div>
+        <div class="latest-value">${latest.systolic}<span class="slash">/</span>${latest.diastolic}<span class="unit">mmHg</span></div>
+        <div class="latest-meta">
+          ${latest.pulse ? `❤️ Pulse: ${latest.pulse} bpm · ` : ''}
+          ${latest.tags && latest.tags.length ? 'Tags: ' + latest.tags.map(t => '#' + t).join(' ') : ''}
+        </div>
+      </div>
+      <div class="latest-badge ${cat}">${catLabel}</div>
+    </div>
+  `;
+}
+
+function formatDateTime(dt) {
+  try {
+    const d = new Date(dt);
+    return d.toLocaleString(undefined, { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' });
+  } catch (e) {
+    return dt;
+  }
+}
+
+/* ===== RENDER ENTRIES ===== */
+function renderEntries() {
+  const list = getFiltered();
+  entriesList.innerHTML = '';
+
+  if (state.readings.length === 0) return;
+
+  if (list.length === 0) {
+    entriesList.innerHTML = '<div style="text-align:center;padding:20px;color:#9ca3af;font-size:13px;">No readings in the selected range.</div>';
+    return;
+  }
+
+  list.forEach(r => {
+    const row = document.createElement('div');
+    row.className = 'entry-row';
+    row.innerHTML = `
+      <div class="entry-dot ${r.category}"></div>
+      <div class="entry-info">
+        <div class="entry-bp">${r.systolic}<span class="slash">/</span>${r.diastolic}<span class="pulse">${r.pulse ? '❤️ ' + r.pulse + ' bpm' : ''}</span></div>
+        <div class="entry-meta">
+          <span>📅 ${formatDateTime(r.datetime)}</span>
+          <span style="color:#ef4444;font-weight:800;">${getCategoryLabel(r.category)}</span>
+        </div>
+        ${r.notes ? `<div class="entry-notes">${escapeHtml(r.notes)}</div>` : ''}
+        ${r.tags && r.tags.length ? `<div class="entry-tags">${r.tags.map(t => `<span class="entry-tag">#${escapeHtml(t)}</span>`).join('')}</div>` : ''}
+      </div>
+      <div class="entry-actions">
+        <button class="icon-btn" data-edit="${r.id}" title="Edit">✏️</button>
+        <button class="icon-btn danger" data-del="${r.id}" title="Delete">🗑</button>
+      </div>
+    `;
+    entriesList.appendChild(row);
+  });
+
+  $$('[data-edit]').forEach(btn => {
+    btn.addEventListener('click', () => editReading(btn.dataset.edit));
+  });
+  $$('[data-del]').forEach(btn => {
+    btn.addEventListener('click', () => deleteReading(btn.dataset.del));
+  });
+}
+
+function editReading(id) {
+  const r = state.readings.find(x => x.id === id);
+  if (!r) return;
+
+  systolic.value = r.systolic;
+  diastolic.value = r.diastolic;
+  pulse.value = r.pulse || '';
+  readingDate.value = r.datetime;
+  notes.value = r.notes || '';
+  state.tags = [...(r.tags || [])];
+  state.editingId = id;
+  renderTags();
+  validateForm();
+  saveBtnText.textContent = 'Update Reading';
+
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function deleteReading(id) {
+  if (!confirm('Delete this reading?')) return;
+  state.readings = state.readings.filter(r => r.id !== id);
+  saveReadings();
+  renderAll();
+  showToast('Reading deleted');
+}
+
+/* ===== CHART ===== */
+function renderChart() {
+  const list = getFiltered().slice().reverse(); // oldest first
+
+  if (list.length === 0 || state.readings.length === 0) {
+    chartSection.style.display = 'none';
+    return;
+  }
+  chartSection.style.display = 'block';
+
+  const canvas = bpChart;
+  const dpr = window.devicePixelRatio || 1;
+  const rect = canvas.parentElement.getBoundingClientRect();
+  const W = rect.width;
+  const H = rect.height || 240;
+
+  canvas.width = W * dpr;
+  canvas.height = H * dpr;
+  canvas.style.width = W + 'px';
+  canvas.style.height = H + 'px';
+
+  const ctx = canvas.getContext('2d');
+  ctx.scale(dpr, dpr);
+  ctx.clearRect(0, 0, W, H);
+
+  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+  const grid = isDark ? '#334155' : '#e5e7eb';
+  const txt = isDark ? '#94a3b8' : '#6b7280';
+
+  const padding = { top: 16, right: 16, bottom: 30, left: 40 };
+  const cw = W - padding.left - padding.right;
+  const ch = H - padding.top - padding.bottom;
+
+  // Y range
+  const values = list.flatMap(r => [r.systolic, r.diastolic, r.pulse || 0]);
+  const maxV = Math.max(...values, 100) * 1.1;
+  const minV = 40;
+
+  const xStep = list.length > 1 ? cw / (list.length - 1) : cw / 2;
+
+  // Grid
+  ctx.strokeStyle = grid;
+  ctx.lineWidth = 1;
+  ctx.font = '10px Inter, sans-serif';
+  ctx.fillStyle = txt;
+  ctx.textAlign = 'right';
+  ctx.textBaseline = 'middle';
+
+  for (let i = 0; i <= 4; i++) {
+    const y = padding.top + (ch / 4) * i;
+    const val = Math.round(maxV - (maxV - minV) * (i / 4));
+    ctx.beginPath();
+    ctx.moveTo(padding.left, y);
+    ctx.lineTo(padding.left + cw, y);
+    ctx.stroke();
+    ctx.fillText(val, padding.left - 6, y);
+  }
+
+  // Lines
+  function drawLine(key, color) {
+    ctx.strokeStyle = color;
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    let started = false;
+    list.forEach((r, i) => {
+      const v = key === 'pulse' ? r.pulse : r[key];
+      if (!v) return;
+      const x = padding.left + i * xStep;
+      const y = padding.top + ch - ((v - minV) / (maxV - minV)) * ch;
+      if (!started) { ctx.moveTo(x, y); started = true; }
+      else ctx.lineTo(x, y);
+    });
+    ctx.stroke();
+
+    // Dots
+    list.forEach((r, i) => {
+      const v = key === 'pulse' ? r.pulse : r[key];
+      if (!v) return;
+      const x = padding.left + i * xStep;
+      const y = padding.top + ch - ((v - minV) / (maxV - minV)) * ch;
+      ctx.fillStyle = color;
+      ctx.beginPath();
+      ctx.arc(x, y, 3, 0, Math.PI * 2);
+      ctx.fill();
+    });
+  }
+
+  drawLine('diastolic', '#3b82f6');
+  drawLine('pulse', '#10b981');
+  drawLine('systolic', '#ef4444');
+
+  // X labels (sparse)
+  ctx.fillStyle = txt;
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'top';
+  const labelEvery = Math.max(1, Math.ceil(list.length / 6));
+  list.forEach((r, i) => {
+    if (i % labelEvery === 0 || i === list.length - 1) {
+      const x = padding.left + i * xStep;
+      const d = new Date(r.datetime);
+      const label = `${d.getMonth() + 1}/${d.getDate()}`;
+      ctx.fillText(label, x, padding.top + ch + 8);
+    }
+  });
+}
+
+/* ===== EXPORT CSV ===== */
+exportBtn.addEventListener('click', () => {
+  if (state.readings.length === 0) {
+    showToast('No readings to export', 'error');
+    return;
+  }
+
+  const rows = [['Date/Time', 'Systolic', 'Diastolic', 'Pulse', 'Category', 'Tags', 'Notes']];
+  const sorted = [...state.readings].sort((a, b) => new Date(a.datetime) - new Date(b.datetime));
+
+  sorted.forEach(r => {
+    rows.push([
+      r.datetime,
+      r.systolic,
+      r.diastolic,
+      r.pulse || '',
+      r.category,
+      (r.tags || []).join(' '),
+      (r.notes || '').replace(/"/g, '""').replace(/\n/g, ' ')
+    ]);
+  });
+
+  const csv = rows.map(row =>
+    row.map(cell => `"${cell}"`).join(',')
+  ).join('\n');
+
+  const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `bp-log-${new Date().toISOString().split('T')[0]}.csv`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+  showToast('CSV downloaded', 'success');
+});
+
+/* ===== CLEAR ALL ===== */
+clearAllBtn.addEventListener('click', () => {
+  if (!confirm('Delete ALL readings? This cannot be undone.')) return;
+  state.readings = [];
+  saveReadings();
+  renderAll();
+  showToast('All readings cleared');
+});
+
+/* ===== RENDER ALL ===== */
+function renderAll() {
+  renderStats();
+  renderLatest();
+  renderEntries();
+
+  if (state.readings.length > 0) {
+    filterRow.style.display = 'flex';
+    actionRow.style.display = 'flex';
+    renderChart();
+  } else {
+    filterRow.style.display = 'none';
+    actionRow.style.display = 'none';
+    chartSection.style.display = 'none';
+  }
+}
+
+/* ===== FAQ ===== */
+$$('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    $$('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+
+/* ===== RESIZE ===== */
+let resizeTimer;
+window.addEventListener('resize', () => {
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(renderChart, 200);
+});
+
+/* ===== INIT ===== */
+loadReadings();
+readingDate.value = new Date().toISOString().slice(0, 16);
+renderAll();
+</script>
+
+</body>
+</html>

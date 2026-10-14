@@ -1,0 +1,1075 @@
+<!-- ===========================================
+     BigToolz - Search Bar Component
+     Version: 1.0.0
+     Purpose: Reusable search with live results
+     
+     USAGE:
+     
+     Default (header):
+     <div data-search-bar data-search-variant="default"></div>
+     
+     Compact (mobile):
+     <div data-search-bar data-search-variant="compact"></div>
+     
+     Hero (large, centered):
+     <div data-search-bar data-search-variant="hero"></div>
+     
+     Overlay (Ctrl+K modal):
+     <div data-search-bar data-search-variant="overlay"></div>
+     
+     REQUIREMENTS:
+     - tools-database.js must be loaded first
+     =========================================== -->
+
+<!-- ===========================================
+     STYLES
+     =========================================== -->
+<style>
+  /* ========== BASE WRAPPER ========== */
+  .search-bar {
+    position: relative;
+    width: 100%;
+  }
+
+  /* ========== DEFAULT VARIANT ========== */
+  .search-bar-default .search-bar-input-wrap {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #f8fafc;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 0 14px;
+    transition: all 0.2s ease;
+    max-width: 480px;
+    width: 100%;
+  }
+
+  .search-bar-default .search-bar-input-wrap:focus-within {
+    background: #fff;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+  }
+
+  .search-bar-default .search-bar-icon {
+    color: #9ca3af;
+    flex-shrink: 0;
+  }
+
+  .search-bar-default input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 11px 0;
+    font-size: 14px;
+    font-family: inherit;
+    background: transparent;
+    color: #1a1a2e;
+  }
+
+  .search-bar-default input::placeholder {
+    color: #9ca3af;
+  }
+
+  .search-bar-default .search-bar-shortcut {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 3px 8px;
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    color: #6b7280;
+    flex-shrink: 0;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  /* ========== COMPACT VARIANT ========== */
+  .search-bar-compact .search-bar-input-wrap {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: #f8fafc;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 0 10px;
+    transition: all 0.2s ease;
+    width: 100%;
+  }
+
+  .search-bar-compact .search-bar-input-wrap:focus-within {
+    background: #fff;
+    border-color: #2563eb;
+  }
+
+  .search-bar-compact input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 9px 0;
+    font-size: 13px;
+    font-family: inherit;
+    background: transparent;
+    color: #1a1a2e;
+  }
+
+  .search-bar-compact input::placeholder {
+    color: #9ca3af;
+  }
+
+  /* ========== HERO VARIANT ========== */
+  .search-bar-hero .search-bar-input-wrap {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #fff;
+    border-radius: 14px;
+    padding: 8px 8px 8px 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    max-width: 640px;
+    width: 100%;
+    margin: 0 auto;
+    border: 2px solid transparent;
+    transition: border-color 0.2s ease;
+  }
+
+  .search-bar-hero .search-bar-input-wrap:focus-within {
+    border-color: #2563eb;
+  }
+
+  .search-bar-hero .search-bar-icon {
+    color: #9ca3af;
+    flex-shrink: 0;
+  }
+
+  .search-bar-hero input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 12px 0;
+    font-size: 16px;
+    font-family: inherit;
+    background: transparent;
+    color: #1a1a2e;
+  }
+
+  .search-bar-hero input::placeholder {
+    color: #9ca3af;
+  }
+
+  .search-bar-hero .search-bar-btn {
+    background: #2563eb;
+    color: #fff;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: inherit;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+
+  .search-bar-hero .search-bar-btn:hover {
+    background: #1d4ed8;
+  }
+
+  /* ========== OVERLAY VARIANT ========== */
+  .search-bar-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(10, 14, 39, 0.85);
+    backdrop-filter: blur(8px);
+    z-index: 2000;
+    display: none;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 100px;
+  }
+
+  .search-bar-overlay.open {
+    display: flex;
+    animation: searchOverlayIn 0.2s ease;
+  }
+
+  @keyframes searchOverlayIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  .search-bar-overlay .search-bar-panel {
+    width: 100%;
+    max-width: 640px;
+    margin: 0 20px;
+    animation: searchPanelIn 0.25s ease;
+  }
+
+  @keyframes searchPanelIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .search-bar-overlay .search-bar-input-wrap {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #fff;
+    border-radius: 14px;
+    padding: 8px 8px 8px 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    border: 2px solid transparent;
+    transition: border-color 0.2s ease;
+  }
+
+  .search-bar-overlay .search-bar-input-wrap:focus-within {
+    border-color: #2563eb;
+  }
+
+  .search-bar-overlay input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 12px 0;
+    font-size: 16px;
+    font-family: inherit;
+    background: transparent;
+    color: #1a1a2e;
+  }
+
+  .search-bar-overlay input::placeholder {
+    color: #9ca3af;
+  }
+
+  .search-bar-overlay .search-bar-close {
+    background: none;
+    border: none;
+    padding: 8px 12px;
+    color: #9ca3af;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+  }
+
+  .search-bar-overlay .search-bar-close:hover {
+    color: #1a1a2e;
+    background: #f3f4f6;
+  }
+
+  /* ========== DROPDOWN RESULTS ========== */
+  .search-bar-results {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    right: 0;
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+    max-height: 480px;
+    overflow-y: auto;
+    z-index: 100;
+    display: none;
+  }
+
+  .search-bar-overlay .search-bar-results {
+    position: static;
+    margin-top: 12px;
+    border-radius: 14px;
+    max-height: 500px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  }
+
+  .search-bar-results.open {
+    display: block;
+    animation: searchDropdownIn 0.15s ease;
+  }
+
+  @keyframes searchDropdownIn {
+    from {
+      opacity: 0;
+      transform: translateY(-6px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Section */
+  .search-bar-section {
+    padding: 10px 0;
+    border-bottom: 1px solid #f3f4f6;
+  }
+
+  .search-bar-section:last-child {
+    border-bottom: none;
+  }
+
+  .search-bar-section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 16px 8px;
+  }
+
+  .search-bar-section-title {
+    font-size: 11px;
+    font-weight: 700;
+    color: #9ca3af;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .search-bar-clear {
+    font-size: 11px;
+    font-weight: 600;
+    color: #2563eb;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    padding: 2px 6px;
+    border-radius: 6px;
+    transition: background 0.2s ease;
+  }
+
+  .search-bar-clear:hover {
+    background: #eff6ff;
+    text-decoration: underline;
+  }
+
+  /* Recent chips */
+  .search-bar-recents {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding: 0 16px;
+  }
+
+  .search-bar-recent {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 5px 12px;
+    border-radius: 20px;
+    background: #f8fafc;
+    color: #4b5563;
+    border: 1px solid #e5e7eb;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.2s ease;
+  }
+
+  .search-bar-recent:hover {
+    background: #2563eb;
+    color: #fff;
+    border-color: #2563eb;
+  }
+
+  /* Results list */
+  .search-bar-list {
+    display: flex;
+    flex-direction: column;
+    padding: 4px 8px;
+  }
+
+  .search-bar-result {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 12px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: inherit;
+    transition: background 0.15s ease;
+    cursor: pointer;
+    border: none;
+    background: none;
+    font-family: inherit;
+    text-align: left;
+    width: 100%;
+  }
+
+  .search-bar-result:hover,
+  .search-bar-result.active {
+    background: #f8fafc;
+  }
+
+  .search-bar-result-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+
+  .search-bar-result-info {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .search-bar-result-name {
+    font-size: 13px;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin-bottom: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .search-bar-result-name mark {
+    background: rgba(37, 99, 235, 0.15);
+    color: #2563eb;
+    padding: 0 2px;
+    border-radius: 2px;
+    font-weight: 800;
+  }
+
+  .search-bar-result-desc {
+    font-size: 11px;
+    color: #6b7280;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .search-bar-result-desc mark {
+    background: rgba(37, 99, 235, 0.1);
+    color: #2563eb;
+    padding: 0 2px;
+    border-radius: 2px;
+  }
+
+  .search-bar-result-tag {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 8px;
+    background: #eff6ff;
+    color: #2563eb;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    flex-shrink: 0;
+    display: none;
+  }
+
+  @media (min-width: 576px) {
+    .search-bar-result-tag {
+      display: block;
+    }
+  }
+
+  /* View all */
+  .search-bar-view-all {
+    display: block;
+    padding: 12px 16px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 700;
+    color: #2563eb;
+    text-decoration: none;
+    border-top: 1px solid #f3f4f6;
+    background: #f8fafc;
+    border-radius: 0 0 14px 14px;
+    transition: background 0.2s ease;
+  }
+
+  .search-bar-view-all:hover {
+    background: #eff6ff;
+  }
+
+  /* No results */
+  .search-bar-no-results {
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  .search-bar-no-results-icon {
+    font-size: 36px;
+    opacity: 0.4;
+    margin-bottom: 10px;
+  }
+
+  .search-bar-no-results-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin-bottom: 6px;
+  }
+
+  .search-bar-no-results-desc {
+    font-size: 12px;
+    color: #6b7280;
+    line-height: 1.5;
+  }
+
+  /* ========== DARK MODE ========== */
+  [data-theme="dark"] .search-bar-default .search-bar-input-wrap,
+  [data-theme="dark"] .search-bar-compact .search-bar-input-wrap {
+    background: #1e293b;
+    border-color: #334155;
+  }
+
+  [data-theme="dark"] .search-bar-default input,
+  [data-theme="dark"] .search-bar-compact input {
+    color: #f1f5f9;
+  }
+
+  [data-theme="dark"] .search-bar-default .search-bar-shortcut {
+    background: #0f172a;
+    border-color: #334155;
+    color: #94a3b8;
+  }
+
+  [data-theme="dark"] .search-bar-results {
+    background: #1e293b;
+    border-color: #334155;
+  }
+
+  [data-theme="dark"] .search-bar-section {
+    border-color: #334155;
+  }
+
+  [data-theme="dark"] .search-bar-result:hover,
+  [data-theme="dark"] .search-bar-result.active {
+    background: #0f172a;
+  }
+
+  [data-theme="dark"] .search-bar-result-name {
+    color: #f1f5f9;
+  }
+
+  [data-theme="dark"] .search-bar-recent {
+    background: #0f172a;
+    border-color: #334155;
+    color: #cbd5e1;
+  }
+
+  [data-theme="dark"] .search-bar-view-all {
+    background: #0f172a;
+    border-color: #334155;
+  }
+
+  /* ========== RESPONSIVE ========== */
+  @media (max-width: 768px) {
+    .search-bar-overlay {
+      padding-top: 60px;
+    }
+
+    .search-bar-hero .search-bar-input-wrap {
+      padding: 6px 6px 6px 16px;
+    }
+
+    .search-bar-hero input {
+      font-size: 14px;
+      padding: 10px 0;
+    }
+
+    .search-bar-hero .search-bar-btn {
+      padding: 10px 20px;
+      font-size: 13px;
+    }
+
+    .search-bar-default .search-bar-shortcut {
+      display: none;
+    }
+  }
+</style>
+
+<!-- ===========================================
+     RENDER SCRIPT
+     =========================================== -->
+<script>
+(function () {
+  'use strict';
+
+  /* ===== CONFIG ===== */
+  const CONFIG = {
+    maxResults: 8,
+    minChars: 1,
+    debounceMs: 120,
+    storageKey: 'bigtoolz_recent_searches',
+    maxRecent: 5,
+    searchUrl: '/search?q='
+  };
+
+  /* ===== STATE ===== */
+  const state = {
+    query: '',
+    results: [],
+    selectedIndex: -1,
+    recent: [],
+    isOpen: false
+  };
+
+  /* ===== HELPERS ===== */
+  const $ = (s, p = document) => p.querySelector(s);
+  const $$ = (s, p = document) => [...p.querySelectorAll(s)];
+
+  function debounce(fn, delay) {
+    let t;
+    return function (...args) {
+      clearTimeout(t);
+      t = setTimeout(() => fn.apply(this, args), delay);
+    };
+  }
+
+  function escapeHtml(str) {
+    const d = document.createElement('div');
+    d.textContent = String(str || '');
+    return d.innerHTML;
+  }
+
+  function escapeRegex(str) {
+    return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  }
+
+  function highlight(text, query) {
+    if (!query) return escapeHtml(text);
+    const re = new RegExp(`(${escapeRegex(query)})`, 'gi');
+    return escapeHtml(text).replace(re, '<mark>$1</mark>');
+  }
+
+  /* ===== RECENT SEARCHES ===== */
+  function loadRecent() {
+    try {
+      state.recent = JSON.parse(localStorage.getItem(CONFIG.storageKey) || '[]');
+    } catch (e) {
+      state.recent = [];
+    }
+  }
+
+  function saveRecent(query) {
+    if (!query || query.length < 2) return;
+    const q = query.trim();
+    state.recent = state.recent.filter(r => r.toLowerCase() !== q.toLowerCase());
+    state.recent.unshift(q);
+    state.recent = state.recent.slice(0, CONFIG.maxRecent);
+    try {
+      localStorage.setItem(CONFIG.storageKey, JSON.stringify(state.recent));
+    } catch (e) {}
+  }
+
+  function clearRecent() {
+    state.recent = [];
+    try { localStorage.removeItem(CONFIG.storageKey); } catch (e) {}
+  }
+
+  /* ===== SEARCH ENGINE ===== */
+  function performSearch(q) {
+    if (!window.ToolsData) return [];
+    if (!q || q.length < CONFIG.minChars) return [];
+    return window.ToolsData.search(q).slice(0, CONFIG.maxResults);
+  }
+
+  /* ===== RENDER DROPDOWN ===== */
+  function renderDropdown(container) {
+    const dropdown = container.querySelector('.search-bar-results');
+    if (!dropdown) return;
+
+    const q = state.query.trim();
+
+    // Empty state → show recent + trending
+    if (!q || q.length < CONFIG.minChars) {
+      renderDefault(dropdown);
+      return;
+    }
+
+    // No results
+    if (!state.results.length) {
+      dropdown.innerHTML = `
+        <div class="search-bar-no-results">
+          <div class="search-bar-no-results-icon">🔍</div>
+          <div class="search-bar-no-results-title">No tools found</div>
+          <div class="search-bar-no-results-desc">Try a different keyword like "compress", "PDF", or "QR".</div>
+        </div>
+      `;
+      dropdown.classList.add('open');
+      return;
+    }
+
+    // Results
+    let html = '<div class="search-bar-list">';
+    state.results.forEach((tool, i) => {
+      html += `
+        <a href="${tool.url}" 
+           class="search-bar-result ${i === state.selectedIndex ? 'active' : ''}"
+           data-index="${i}">
+          <div class="search-bar-result-icon" style="background:${tool.color || '#2563eb'};">
+            ${escapeHtml(tool.icon || '🛠')}
+          </div>
+          <div class="search-bar-result-info">
+            <div class="search-bar-result-name">${highlight(tool.name, q)}</div>
+            <div class="search-bar-result-desc">${highlight(tool.description || '', q)}</div>
+          </div>
+          <div class="search-bar-result-tag">${escapeHtml(tool.categoryName || '')}</div>
+        </a>
+      `;
+    });
+    html += '</div>';
+
+    html += `
+      <a href="${CONFIG.searchUrl}${encodeURIComponent(q)}" class="search-bar-view-all">
+        View all results for "${escapeHtml(q)}" →
+      </a>
+    `;
+
+    dropdown.innerHTML = html;
+    dropdown.classList.add('open');
+  }
+
+  function renderDefault(dropdown) {
+    let html = '';
+
+    // Recent searches
+    if (state.recent.length) {
+      html += `
+        <div class="search-bar-section">
+          <div class="search-bar-section-header">
+            <span class="search-bar-section-title">Recent Searches</span>
+            <button class="search-bar-clear" data-clear-recent>Clear</button>
+          </div>
+          <div class="search-bar-recents">
+            ${state.recent.map(r => `
+              <button class="search-bar-recent" data-recent="${escapeHtml(r)}">
+                <span>🕐</span> ${escapeHtml(r)}
+              </button>
+            `).join('')}
+          </div>
+        </div>
+      `;
+    }
+
+    // Trending
+    if (window.ToolsData) {
+      const trending = window.ToolsData.getTrending(5);
+      if (trending.length) {
+        html += `
+          <div class="search-bar-section">
+            <div class="search-bar-section-header">
+              <span class="search-bar-section-title">🔥 Trending Tools</span>
+            </div>
+            <div class="search-bar-list">
+              ${trending.map(tool => `
+                <a href="${tool.url}" class="search-bar-result">
+                  <div class="search-bar-result-icon" style="background:${tool.color || '#2563eb'};">
+                    ${escapeHtml(tool.icon || '🛠')}
+                  </div>
+                  <div class="search-bar-result-info">
+                    <div class="search-bar-result-name">${escapeHtml(tool.name)}</div>
+                    <div class="search-bar-result-desc">${escapeHtml(tool.description || '')}</div>
+                  </div>
+                  <div class="search-bar-result-tag">${escapeHtml(tool.categoryName || '')}</div>
+                </a>
+              `).join('')}
+            </div>
+          </div>
+        `;
+      }
+    }
+
+    if (!html) {
+      html = `
+        <div class="search-bar-no-results">
+          <div class="search-bar-no-results-icon">🔍</div>
+          <div class="search-bar-no-results-title">Search 300+ tools</div>
+          <div class="search-bar-no-results-desc">Try "image compressor", "PDF merge", "word counter", etc.</div>
+        </div>
+      `;
+    }
+
+    dropdown.innerHTML = html;
+    dropdown.classList.add('open');
+  }
+
+  /* ===== BUILD SEARCH BAR HTML ===== */
+  function buildSearchBar(variant) {
+    const isOverlay = variant === 'overlay';
+    const isHero = variant === 'hero';
+
+    const searchIcon = `
+      <svg class="search-bar-icon" width="${isHero ? 20 : 16}" height="${isHero ? 20 : 16}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <circle cx="11" cy="11" r="8"/>
+        <path d="M21 21l-4.35-4.35"/>
+      </svg>
+    `;
+
+    const placeholder = isHero
+      ? 'Search 300+ tools...'
+      : isOverlay
+        ? 'Search tools...'
+        : 'Search tools...';
+
+    const inputHtml = `
+      <div class="search-bar-input-wrap">
+        ${searchIcon}
+        <input type="search" 
+               placeholder="${placeholder}" 
+               autocomplete="off"
+               aria-label="Search tools"
+               role="combobox"
+               aria-expanded="false">
+        ${variant === 'default' ? '<span class="search-bar-shortcut">Ctrl K</span>' : ''}
+        ${isHero ? '<button class="search-bar-btn" type="button">Search</button>' : ''}
+        ${isOverlay ? '<button class="search-bar-close" type="button" aria-label="Close">✕</button>' : ''}
+      </div>
+    `;
+
+    if (isOverlay) {
+      return `
+        <div class="search-bar search-bar-overlay" data-search-inner>
+          <div class="search-bar-panel">
+            ${inputHtml}
+            <div class="search-bar-results" role="listbox"></div>
+          </div>
+        </div>
+      `;
+    }
+
+    return `
+      <div class="search-bar search-bar-${variant}" data-search-inner>
+        ${inputHtml}
+        <div class="search-bar-results" role="listbox"></div>
+      </div>
+    `;
+  }
+
+  /* ===== ATTACH HANDLERS ===== */
+  function attachHandlers(container) {
+    const input = container.querySelector('input');
+    const dropdown = container.querySelector('.search-bar-results');
+    const closeBtn = container.querySelector('.search-bar-close');
+    const isOverlay = container.classList.contains('search-bar-overlay');
+
+    if (!input || !dropdown) return;
+
+    // Debounced search
+    const doSearch = debounce((q) => {
+      state.query = q;
+      state.selectedIndex = -1;
+      state.results = performSearch(q);
+      renderDropdown(container);
+    }, CONFIG.debounceMs);
+
+    // Input event
+    input.addEventListener('input', (e) => {
+      doSearch(e.target.value.trim());
+    });
+
+    // Focus
+    input.addEventListener('focus', () => {
+      state.isOpen = true;
+      if (!input.value.trim()) {
+        renderDefault(dropdown);
+      } else {
+        doSearch(input.value.trim());
+      }
+    });
+
+    // Blur (delayed for clicks)
+    input.addEventListener('blur', () => {
+      setTimeout(() => {
+        if (!dropdown.matches(':hover')) {
+          dropdown.classList.remove('open');
+          state.isOpen = false;
+          state.selectedIndex = -1;
+        }
+      }, 200);
+    });
+
+    // Keyboard navigation
+    input.addEventListener('keydown', (e) => {
+      const items = dropdown.querySelectorAll('.search-bar-result');
+
+      if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        if (items.length) {
+          state.selectedIndex = Math.min(state.selectedIndex + 1, items.length - 1);
+          updateActive(dropdown, items);
+        }
+      } else if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        state.selectedIndex = Math.max(state.selectedIndex - 1, -1);
+        updateActive(dropdown, items);
+      } else if (e.key === 'Enter') {
+        if (state.selectedIndex >= 0 && items[state.selectedIndex]) {
+          e.preventDefault();
+          items[state.selectedIndex].click();
+        } else if (state.query) {
+          e.preventDefault();
+          saveRecent(state.query);
+          window.location.href = CONFIG.searchUrl + encodeURIComponent(state.query);
+        }
+      } else if (e.key === 'Escape') {
+        dropdown.classList.remove('open');
+        state.selectedIndex = -1;
+        if (isOverlay) {
+          closeOverlay(container);
+        } else {
+          input.blur();
+        }
+      }
+    });
+
+    // Close button (overlay)
+    if (closeBtn) {
+      closeBtn.addEventListener('click', () => closeOverlay(container));
+    }
+
+    // Overlay backdrop click
+    if (isOverlay) {
+      container.addEventListener('click', (e) => {
+        if (e.target === container) {
+          closeOverlay(container);
+        }
+      });
+    }
+
+    // Click on recent chips / clear button / results
+    dropdown.addEventListener('click', (e) => {
+      const recentBtn = e.target.closest('[data-recent]');
+      if (recentBtn) {
+        input.value = recentBtn.dataset.recent;
+        input.dispatchEvent(new Event('input', { bubbles: true }));
+        input.focus();
+        return;
+      }
+
+      const clearBtn = e.target.closest('[data-clear-recent]');
+      if (clearBtn) {
+        clearRecent();
+        renderDefault(dropdown);
+        return;
+      }
+
+      const resultItem = e.target.closest('.search-bar-result');
+      if (resultItem && state.query) {
+        saveRecent(state.query);
+      }
+    });
+
+    // Global Ctrl+K
+    document.addEventListener('keydown', (e) => {
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
+        e.preventDefault();
+        if (isOverlay) openOverlay(container);
+        else input.focus();
+      }
+    });
+  }
+
+  function updateActive(dropdown, items) {
+    items.forEach((item, i) => {
+      item.classList.toggle('active', i === state.selectedIndex);
+    });
+    const active = items[state.selectedIndex];
+    if (active) active.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+  }
+
+  function openOverlay(container) {
+    container.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    setTimeout(() => {
+      const input = container.querySelector('input');
+      if (input) input.focus();
+    }, 50);
+  }
+
+  function closeOverlay(container) {
+    container.classList.remove('open');
+    document.body.style.overflow = '';
+    const dropdown = container.querySelector('.search-bar-results');
+    if (dropdown) dropdown.classList.remove('open');
+    state.selectedIndex = -1;
+  }
+
+  /* ===== INIT ===== */
+  function init() {
+    loadRecent();
+    const containers = $$('[data-search-bar]');
+    containers.forEach(container => {
+      const variant = container.dataset.searchVariant || 'default';
+      container.innerHTML = buildSearchBar(variant);
+      attachHandlers(container);
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+
+  /* ===== PUBLIC API ===== */
+  window.BigToolzSearchBar = {
+    open: () => {
+      const overlay = document.querySelector('.search-bar-overlay');
+      if (overlay) openOverlay(overlay);
+    },
+    close: () => {
+      const overlay = document.querySelector('.search-bar-overlay');
+      if (overlay) closeOverlay(overlay);
+    },
+    focus: () => {
+      const input = document.querySelector('[data-search-bar] input');
+      if (input) input.focus();
+    }
+  };
+
+})();
+</script>
+
+<!-- ===========================================
+     USAGE EXAMPLES
+     =========================================== -->
+
+<!-- EXAMPLE 1: Default (header) -->
+<!--
+<div data-search-bar data-search-variant="default"></div>
+-->
+
+<!-- EXAMPLE 2: Compact (mobile menu) -->
+<!--
+<div data-search-bar data-search-variant="compact"></div>
+-->
+
+<!-- EXAMPLE 3: Hero (homepage, centered) -->
+<!--
+<div data-search-bar data-search-variant="hero"></div>
+-->
+
+<!-- EXAMPLE 4: Overlay (Ctrl+K modal) -->
+<!--
+<div data-search-bar data-search-variant="overlay"></div>
+-->
+
+<!-- ===========================================
+     HOW TO INCLUDE IN A PAGE
+     ===========================================
+     
+     1. Load tools-database.js first:
+        <script src="/data/tools-database.js" defer></script>
+     
+     2. Paste the <style> block (once) — in <head>.
+     3. Paste the <script> block (once) — before </body>.
+     4. Add search bar containers wherever needed:
+        <div data-search-bar data-search-variant="default"></div>
+     
+     5. Done. Live search works automatically.
+     =========================================== -->

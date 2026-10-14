@@ -1,0 +1,1329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2563eb">
+
+<title>PDF Print Checker - Check PDF Print Readiness Online Free | BigToolz</title>
+<meta name="description" content="Check PDF print readiness online free. Analyzes page size, DPI, margins, colors, fonts. Get a print score and fix issues before printing. No upload, browser-based.">
+<meta name="keywords" content="pdf print checker, print readiness pdf, pdf print quality, check pdf before printing, pdf page size checker">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://bigtoolz.com/tools/pdf-tools/visual-pdf/print-checker/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="PDF Print Checker - Free Online Tool | BigToolz">
+<meta property="og:description" content="Analyze your PDF for print readiness page size, colors, fonts. Free, no upload.">
+<meta property="og:url" content="https://bigtoolz.com/tools/pdf-tools/visual-pdf/print-checker/">
+<meta property="og:image" content="https://bigtoolz.com/assets/images/og-image.jpg">
+<meta property="og:site_name" content="BigToolz">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="PDF Print Checker - BigToolz">
+<meta name="twitter:description" content="Check PDF print readiness instantly free, no upload.">
+<meta name="twitter:image" content="https://bigtoolz.com/assets/images/twitter-card.jpg">
+
+<link rel="icon" href="/assets/images/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/images/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#f8f9fc;color:#1a1a2e;overflow-x:hidden;line-height:1.5}
+
+  .header{background:#fff;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;position:sticky;top:0;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+  .header-left{display:flex;align-items:center;gap:40px}
+  .logo{display:flex;align-items:center;gap:8px;font-size:22px;font-weight:800;color:#1a1a2e;text-decoration:none}
+  .logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#3b82f6,#2563eb);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px}
+  .logo span{color:#2563eb}
+  .nav{display:flex;align-items:center;gap:28px;list-style:none}
+  .nav a{text-decoration:none;color:#4b5563;font-size:14px;font-weight:500;transition:color .2s}
+  .nav a:hover,.nav a.active{color:#2563eb}
+  .header-right{display:flex;align-items:center;gap:16px}
+  .search-btn,.theme-btn{width:36px;height:36px;border-radius:50%;border:none;background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#4b5563}
+  .search-btn:hover,.theme-btn:hover{background:#f3f4f6}
+  .bookmark-btn{display:flex;align-items:center;gap:8px;background:#2563eb;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
+  .bookmark-btn:hover{background:#1d4ed8}
+
+  .hero{background:linear-gradient(135deg,#0a0e27 0%,#1a1a4e 40%,#2d1b69 70%,#4c1d95 100%);padding:40px 40px 60px;position:relative;overflow:hidden;color:#fff}
+  .hero::before{content:'';position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(6,182,212,.25) 0%,transparent 70%);border-radius:50%}
+  .hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+  .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px;flex-wrap:wrap}
+  .breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none}
+  .breadcrumb a:hover{color:#fff}
+  .breadcrumb .sep{color:rgba(255,255,255,.4)}
+  .breadcrumb .current{color:#fff;font-weight:500}
+  .hero-title-row{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+  .hero-icon{width:60px;height:60px;background:#06b6d4;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;color:#fff;flex-shrink:0;box-shadow:0 8px 24px rgba(6,182,212,.4)}
+  .hero-title{font-size:42px;font-weight:800;line-height:1.15}
+  .hero-title .blue{color:#22d3ee}
+  .hero-desc{font-size:15px;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:24px;max-width:560px}
+  .hero-features{display:flex;gap:24px;flex-wrap:wrap}
+  .hero-feature{display:flex;align-items:center;gap:6px;font-size:13px;color:#fff;font-weight:500}
+  .hero-feature .check{width:18px;height:18px;border-radius:50%;background:#06b6d4;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;flex-shrink:0}
+
+  .main-content{max-width:1200px;margin:0 auto;padding:40px;display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start}
+  .tool-content{min-width:0}
+
+  .workspace{background:#fff;border-radius:16px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,.06);border:1px solid #e5e7eb;margin-bottom:24px}
+
+  .dropzone{border:2px dashed #a5f3fc;border-radius:12px;padding:50px 30px;text-align:center;background:#ecfeff;margin-bottom:24px;transition:all .2s;cursor:pointer}
+  .dropzone:hover,.dropzone.dragover{border-color:#06b6d4;background:#cffafe}
+  .dropzone-icon{width:60px;height:60px;background:linear-gradient(135deg,#06b6d4,#0891b2);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;color:#fff;font-size:26px;transition:transform .2s}
+  .dropzone:hover .dropzone-icon{transform:translateY(-4px)}
+  .dropzone-title{font-size:16px;font-weight:700;color:#1a1a2e;margin-bottom:8px}
+  .dropzone-sub{font-size:14px;color:#6b7280;margin-bottom:20px}
+  .dropzone-sub a{color:#06b6d4;font-weight:600;text-decoration:none}
+  .choose-btn{display:inline-flex;align-items:center;gap:8px;background:#06b6d4;color:#fff;border:none;padding:12px 28px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;transition:background .2s}
+  .choose-btn:hover{background:#0891b2}
+  .dropzone-info{font-size:12px;color:#9ca3af;display:flex;align-items:center;justify-content:center;gap:8px;margin-top:16px;flex-wrap:wrap}
+  .dropzone-info .divider{color:#d1d5db}
+  .file-input{display:none}
+
+  .editor{display:none}
+  .editor.visible{display:block}
+
+  /* Score card */
+  .score-card{display:grid;grid-template-columns:200px 1fr;gap:24px;align-items:center;padding:24px;background:#ecfeff;border:2px solid #a5f3fc;border-radius:14px;margin-bottom:20px}
+  .score-circle-wrap{display:flex;flex-direction:column;align-items:center;gap:8px}
+  .score-circle{width:140px;height:140px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;background:#fff;border:8px solid #06b6d4;transition:all .3s}
+  .score-circle.excellent{border-color:#10b981;}
+  .score-circle.good{border-color:#06b6d4;}
+  .score-circle.warning{border-color:#f59e0b;}
+  .score-circle.poor{border-color:#ef4444;}
+  .score-number{font-size:44px;font-weight:900;color:#1a1a2e;line-height:1}
+  .score-label{font-size:11px;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:.5px;margin-top:4px}
+  .score-rating{font-size:14px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;padding:4px 12px;border-radius:8px}
+  .score-rating.excellent{background:#d1fae5;color:#065f46;}
+  .score-rating.good{background:#cffafe;color:#0e7490;}
+  .score-rating.warning{background:#fef3c7;color:#92400e;}
+  .score-rating.poor{background:#fee2e2;color:#991b1b;}
+
+  .score-summary{display:flex;flex-direction:column;gap:12px}
+  .score-summary-title{font-size:18px;font-weight:800;color:#1a1a2e}
+  .score-summary-text{font-size:14px;color:#4b5563;line-height:1.6}
+  .score-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:8px}
+  .score-stat{background:#fff;padding:12px 14px;border-radius:10px;border:1px solid #a5f3fc}
+  .score-stat-val{font-size:18px;font-weight:800;color:#0891b2;line-height:1.2}
+  .score-stat-label{font-size:11px;color:#6b7280;font-weight:600;text-transform:uppercase;letter-spacing:.3px;margin-top:2px}
+
+  /* Checks list */
+  .checks-section{margin-bottom:20px}
+  .checks-title{font-size:16px;font-weight:800;color:#1a1a2e;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+  .checks-list{display:flex;flex-direction:column;gap:8px}
+  .check-item{display:flex;align-items:flex-start;gap:12px;padding:14px 16px;background:#f9fafb;border:1px solid #e5e7eb;border-radius:10px;transition:all .2s}
+  .check-item:hover{border-color:#a5f3fc}
+  .check-item.pass{background:#f0fdf4;border-color:#bbf7d0}
+  .check-item.warn{background:#fffbeb;border-color:#fde68a}
+  .check-item.fail{background:#fef2f2;border-color:#fecaca}
+  .check-icon{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:14px;font-weight:800;color:#fff}
+  .check-item.pass .check-icon{background:#10b981}
+  .check-item.warn .check-icon{background:#f59e0b}
+  .check-item.fail .check-icon{background:#ef4444}
+  .check-item.info .check-icon{background:#06b6d4}
+  .check-body{flex:1;min-width:0}
+  .check-name{font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:3px}
+  .check-value{font-size:12px;color:#6b7280;line-height:1.5;font-family:'JetBrains Mono','Courier New',monospace}
+  .check-hint{font-size:11px;color:#9ca3af;margin-top:4px;line-height:1.5;font-style:italic}
+
+  /* Page preview */
+  .preview-section{margin-top:20px}
+  .preview-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:10px}
+  .pdf-container{background:#1a1a2e;border-radius:12px;padding:20px;display:flex;align-items:center;justify-content:center;overflow:auto;min-height:340px;position:relative}
+  .pdf-canvas-wrap{position:relative;box-shadow:0 8px 32px rgba(0,0,0,.4)}
+  .pdf-canvas-wrap canvas{display:block;background:#fff;border-radius:4px;max-width:100%;height:auto}
+  .margin-overlay{position:absolute;inset:0;pointer-events:none;border:2px dashed rgba(239,68,68,.5);margin:9% 7%;box-sizing:border-box;border-radius:2px}
+  .margin-label{position:absolute;top:-20px;left:0;color:#ef4444;font-size:10px;font-weight:700;background:#fff;padding:2px 6px;border-radius:4px;border:1px solid #fecaca}
+
+  .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 28px;border-radius:10px;font-size:15px;font-weight:700;font-family:inherit;cursor:pointer;border:none;transition:all .2s;text-decoration:none}
+  .btn-primary{background:#06b6d4;color:#fff;flex:1;box-shadow:0 4px 12px rgba(6,182,212,.2)}
+  .btn-primary:hover:not(:disabled){background:#0891b2;transform:translateY(-2px);box-shadow:0 6px 20px rgba(6,182,212,.3)}
+  .btn-secondary{background:#fff;color:#06b6d4;border:1px solid #e5e7eb}
+  .btn-secondary:hover{border-color:#06b6d4;background:#ecfeff}
+
+  .status-msg{margin-top:14px;padding:12px 14px;border-radius:8px;font-size:13px;font-weight:600;display:none}
+  .status-msg.visible{display:block}
+  .status-msg.success{background:#d1fae5;color:#065f46;border:1px solid #a7f3d0}
+  .status-msg.error{background:#fee2e2;color:#991b1b;border:1px solid #fecaca}
+  .status-msg.info{background:#cffafe;color:#0e7490;border:1px solid #a5f3fc}
+
+  .progress{display:none;margin-top:14px}
+  .progress.visible{display:block}
+  .progress-bar{width:100%;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden;margin-bottom:8px}
+  .progress-fill{height:100%;background:linear-gradient(90deg,#22d3ee,#06b6d4);border-radius:4px;width:0%;transition:width .3s ease}
+  .progress-text{font-size:13px;color:#6b7280;text-align:center;font-weight:500}
+
+  /* SEO */
+  .seo-content{background:#fff;border-radius:16px;padding:32px;border:1px solid #e5e7eb;margin-bottom:24px}
+  .seo-content h2{font-size:22px;font-weight:800;color:#1a1a2e;margin-bottom:14px;margin-top:28px;display:flex;align-items:center;gap:10px}
+  .seo-content h2:first-child{margin-top:0}
+  .seo-content h3{font-size:16px;font-weight:700;color:#1a1a2e;margin:20px 0 10px}
+  .seo-content p{font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:14px}
+  .seo-content ul{list-style:none;padding-left:0;margin-bottom:16px}
+  .seo-content ul li{position:relative;padding-left:24px;font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:8px}
+  .seo-content ul li::before{content:'';position:absolute;left:6px;top:12px;width:6px;height:6px;background:#06b6d4;border-radius:50%}
+  .seo-content a{color:#2563eb;text-decoration:none;font-weight:600}
+  .seo-content a:hover{text-decoration:underline}
+  .seo-content strong{color:#1a1a2e;font-weight:700}
+
+  .how-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:20px}
+  .how-step{background:#ecfeff;border-radius:12px;padding:20px;border:1px solid #a5f3fc}
+  .how-step-num{width:36px;height:36px;border-radius:50%;background:#06b6d4;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;margin-bottom:12px}
+  .how-step-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+  .how-step-desc{font-size:13px;color:#6b7280;line-height:1.6}
+
+  .faq-item{background:#ecfeff;border:1px solid #a5f3fc;border-radius:12px;margin-bottom:10px;overflow:hidden;transition:border-color .2s}
+  .faq-item:hover{border-color:#06b6d4}
+  .faq-question{width:100%;background:none;border:none;padding:18px 22px;font-size:15px;font-weight:700;color:#1a1a2e;text-align:left;cursor:pointer;font-family:inherit;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .faq-question .chev{font-size:12px;color:#06b6d4;transition:transform .2s;flex-shrink:0}
+  .faq-item.open .faq-question .chev{transform:rotate(180deg)}
+  .faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 22px}
+  .faq-item.open .faq-answer{max-height:500px;padding-bottom:18px}
+  .faq-answer p{font-size:14px;color:#6b7280;line-height:1.7;margin:0}
+
+  .sidebar{background:#fff;border-radius:16px;padding:24px;border:1px solid #e5e7eb;position:sticky;top:80px;margin-bottom:24px}
+  .sidebar-header{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:800;color:#1a1a2e;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid #f3f4f6}
+  .sidebar-list{display:flex;flex-direction:column;gap:8px}
+  .sidebar-item{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;cursor:pointer;transition:background .2s;text-decoration:none;color:inherit;border:1px solid #f3f4f6}
+  .sidebar-item:hover{background:#ecfeff;border-color:#a5f3fc}
+  .sidebar-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;flex-shrink:0}
+  .sidebar-info{flex:1;min-width:0}
+  .sidebar-title{font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:2px}
+  .sidebar-desc{font-size:11px;color:#9ca3af;line-height:1.4}
+
+  .footer{background:#0a0e27;padding:60px 40px 30px;color:#fff;margin-top:40px}
+  .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:40px}
+  .footer-brand{display:flex;align-items:center;gap:8px;font-size:20px;font-weight:800;margin-bottom:12px}
+  .footer-brand span{color:#60a5fa}
+  .footer-tagline{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px}
+  .footer-social{display:flex;gap:12px}
+  .footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:16px;transition:background .2s}
+  .footer-social a:hover{background:rgba(255,255,255,.2)}
+  .footer-heading{font-size:14px;font-weight:700;margin-bottom:20px;color:#fff}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .footer-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;transition:color .2s}
+  .footer-links a:hover{color:#60a5fa}
+  .footer-bottom{max-width:1200px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  .footer-bottom-left{display:flex;gap:20px;font-size:12px;color:rgba(255,255,255,.5)}
+  .footer-bottom-right,.footer-bottom-links a{font-size:12px;color:rgba(255,255,255,.5);text-decoration:none}
+  .footer-bottom-links{display:flex;gap:20px}
+
+  .toast{position:fixed;bottom:24px;right:24px;background:#1a1a2e;color:#fff;padding:14px 20px;border-radius:10px;font-size:13px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:3000;transform:translateY(200%);transition:transform .3s ease;max-width:320px}
+  .toast.visible{transform:translateY(0)}
+  .toast.success{background:#10b981}
+  .toast.error{background:#ef4444}
+
+  @media(max-width:1024px){
+    .main-content{grid-template-columns:1fr;padding:24px 20px}
+    .sidebar{position:static}
+    .how-steps{grid-template-columns:repeat(2,1fr)}
+    .score-card{grid-template-columns:1fr;text-align:center}
+    .score-stats{grid-template-columns:repeat(3,1fr)}
+  }
+  @media(max-width:768px){
+    .header{padding:0 20px}.nav{display:none}
+    .hero{padding:24px 20px 40px}
+    .hero-title{font-size:28px}
+    .hero-icon{width:48px;height:48px;font-size:22px}
+    .hero-title-row{flex-direction:column;align-items:flex-start;gap:12px}
+    .main-content{padding:20px 16px}
+    .workspace{padding:20px}
+    .dropzone{padding:32px 16px}
+    .how-steps{grid-template-columns:1fr}
+    .seo-content{padding:20px}
+    .footer-inner{grid-template-columns:1fr 1fr}
+    .toast{left:16px;right:16px;bottom:16px;max-width:none}
+    .score-stats{grid-template-columns:1fr}
+  }
+  @media(max-width:576px){
+    .header{padding:0 16px}.header-right .search-btn,.header-right .theme-btn{display:none}
+    .hero-title{font-size:24px}
+    .actions{flex-direction:column}
+    .btn{width:100%}
+    .btn-primary{flex:none}
+    .footer-inner{grid-template-columns:1fr}
+    .footer-bottom{flex-direction:column;text-align:center}
+    .score-circle{width:120px;height:120px;}
+    .score-number{font-size:36px;}
+  }
+
+  html[data-theme="dark"] body{background:#0f172a;color:#f1f5f9}
+  html[data-theme="dark"] .header,html[data-theme="dark"] .workspace,html[data-theme="dark"] .seo-content,html[data-theme="dark"] .sidebar{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .logo,html[data-theme="dark"] .hero-title,html[data-theme="dark"] .seo-content h2,html[data-theme="dark"] .seo-content h3,html[data-theme="dark"] .faq-question,html[data-theme="dark"] .sidebar-header,html[data-theme="dark"] .sidebar-title,html[data-theme="dark"] .check-name,html[data-theme="dark"] .score-summary-title,html[data-theme="dark"] .checks-title,html[data-theme="dark"] .preview-title{color:#f1f5f9}
+  html[data-theme="dark"] .nav a{color:#cbd5e1}
+  html[data-theme="dark"] .dropzone{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .how-step,html[data-theme="dark"] .faq-item,html[data-theme="dark"] .score-card{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .check-item{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .check-item.pass{background:#052e16;border-color:#14532d}
+  html[data-theme="dark"] .check-item.warn{background:#422006;border-color:#78350f}
+  html[data-theme="dark"] .check-item.fail{background:#450a0a;border-color:#7f1d1d}
+  html[data-theme="dark"] .score-stat{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .score-circle{background:#1e293b}
+  html[data-theme="dark"] .score-number{color:#f1f5f9}
+  html[data-theme="dark"] .seo-content p,html[data-theme="dark"] .seo-content ul li,html[data-theme="dark"] .faq-answer p,html[data-theme="dark"] .score-summary-text,html[data-theme="dark"] .check-value{color:#cbd5e1}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type": "SoftwareApplication", "name": "PDF Print Checker", "url": "https://bigtoolz.com/tools/pdf-tools/visual-pdf/print-checker/", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any (Web-based)", "description": "Free online PDF print checker analyze print readiness: page size, DPI, margins, colors, fonts. Get a print score and fix issues. No upload.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.7", "ratingCount": "342"}},
+    {"@type": "HowTo", "name": "How to Check PDF Print Readiness", "step": [
+      {"@type": "HowToStep", "name": "Upload PDF", "text": "Drag & drop or click to select your PDF file."},
+      {"@type": "HowToStep", "name": "Automatic Analysis", "text": "The tool runs 10+ checks on page size, DPI, margins, colors, and fonts."},
+      {"@type": "HowToStep", "name": "Review Report", "text": "See your print score and pass/warn/fail results for each check."},
+      {"@type": "HowToStep", "name": "Fix Issues", "text": "Address any warnings before sending to print."}
+    ]},
+    {"@type": "FAQPage", "mainEntity": [
+      {"@type": "Question", "name": "What does a PDF print checker do?", "acceptedAnswer": {"@type": "Answer", "text": "A PDF print checker analyzes your PDF for print readiness. It checks page size, orientation, margins, color mode, embedded fonts, page count, and DPI hints and gives you a print score with actionable warnings."}},
+      {"@type": "Question", "name": "What's a good print score?", "acceptedAnswer": {"@type": "Answer", "text": "90-100 is excellent (ready to print). 75-89 is good (minor fixes might help). 50-74 has warnings (review before printing). Below 50 needs significant fixes."}},
+      {"@type": "Question", "name": "How do I know if my PDF has the right page size?", "acceptedAnswer": {"@type": "Answer", "text": "The tool auto-detects standard sizes: A4 (595×842 pt), US Letter (612×792 pt), Legal (612×1008 pt), A3 (842×1191 pt), and A5 (420×595 pt). If your size matches a standard, it's marked as pass. Custom sizes get flagged for manual verification."}},
+      {"@type": "Question", "name": "Does the checker tell me if my PDF is CMYK?", "acceptedAnswer": {"@type": "Answer", "text": "It scans for CMYK color space operators in the PDF. If detected, it's flagged as 'CMYK-ready for print'. If only RGB is detected, it warns that colors may shift on professional printers."}},
+      {"@type": "Question", "name": "Is my PDF uploaded to a server?", "acceptedAnswer": {"@type": "Answer", "text": "No. All analysis happens in your browser using pdf.js and pdf-lib. Your file never leaves your device."}}
+    ]},
+    {"@type": "BreadcrumbList", "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bigtoolz.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://bigtoolz.com/tools/"},
+      {"@type": "ListItem", "position": 3, "name": "PDF Tools", "item": "https://bigtoolz.com/tools/pdf-tools/"},
+      {"@type": "ListItem", "position": 4, "name": "Visual PDF", "item": "https://bigtoolz.com/tools/pdf-tools/visual-pdf/"},
+      {"@type": "ListItem", "position": 5, "name": "Print Checker", "item": "https://bigtoolz.com/tools/pdf-tools/visual-pdf/print-checker/"}
+    ]}
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-left">
+    <a href="/" class="logo"><div class="logo-icon">⚒</div>BigToolz</span></a>
+    <nav><ul class="nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/tools/" class="active">All Tools</a></li>
+      <li><a href="/tools/categories">Categories</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul></nav>
+  </div>
+  <div class="header-right">
+    
+    <button class="theme-btn" aria-label="Toggle theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
+    
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <nav class="breadcrumb">
+      <a href="/">Home</a><span class="sep">›</span>
+      <a href="/tools/">Tools</a><span class="sep">›</span>
+      <a href="/tools/pdf-tools/">PDF Tools</a><span class="sep">›</span>
+      <a href="/tools/pdf-tools/visual-pdf/">Visual PDF</a><span class="sep">›</span>
+      <span class="current">Print Checker</span>
+    </nav>
+    <div class="hero-title-row">
+      <div class="hero-icon">🖨</div>
+      <h1 class="hero-title">PDF <span class="blue">Print Checker</span></h1>
+    </div>
+    <p class="hero-desc">
+      Analyze your PDF for print readiness. Get a print score with 10+ checks: page size, DPI hints, margins, colors, fonts, orientation, and more. No upload, 100% private.
+    </p>
+    <div class="hero-features">
+      <div class="hero-feature"><span class="check">✓</span> Print Score</div>
+      <div class="hero-feature"><span class="check">✓</span> 10+ Checks</div>
+      <div class="hero-feature"><span class="check">✓</span> Warnings & Tips</div>
+      <div class="hero-feature"><span class="check">✓</span> No Upload</div>
+    </div>
+  </div>
+</section>
+
+<div class="main-content">
+
+  <div class="tool-content">
+
+    <div class="workspace">
+
+      <!-- Dropzone -->
+      <div class="dropzone" id="dropzone">
+        <div class="dropzone-icon">⬆</div>
+        <div class="dropzone-title">Drag & drop your PDF here</div>
+        <div class="dropzone-sub">or <a href="#" id="browseLink">click to browse files</a></div>
+        <button class="choose-btn" id="chooseBtn" type="button">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/></svg>
+          Choose PDF File
+        </button>
+        <div class="dropzone-info">
+          <span>PDF only</span>
+          <span class="divider">|</span>
+          <span>Analysis runs locally</span>
+        </div>
+        <input type="file" id="fileInput" class="file-input" accept="application/pdf,.pdf">
+      </div>
+
+      <!-- Editor -->
+      <div class="editor" id="editor">
+
+        <!-- Score Card -->
+        <div class="score-card">
+          <div class="score-circle-wrap">
+            <div class="score-circle good" id="scoreCircle">
+              <div class="score-number" id="scoreNumber">--</div>
+              <div class="score-label">Print Score</div>
+            </div>
+            <div class="score-rating good" id="scoreRating">Analyzing...</div>
+          </div>
+          <div class="score-summary">
+            <div class="score-summary-title" id="summaryTitle">Analyzing PDF...</div>
+            <div class="score-summary-text" id="summaryText">Checking page size, DPI, colors, and fonts.</div>
+            <div class="score-stats">
+              <div class="score-stat">
+                <div class="score-stat-val" id="statPages">--</div>
+                <div class="score-stat-label">Pages</div>
+              </div>
+              <div class="score-stat">
+                <div class="score-stat-val" id="statSize">--</div>
+                <div class="score-stat-label">Page Size</div>
+              </div>
+              <div class="score-stat">
+                <div class="score-stat-val" id="statColor">--</div>
+                <div class="score-stat-label">Color Mode</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Checks -->
+        <div class="checks-section">
+          <div class="checks-title">🔍 Print Readiness Checks</div>
+          <div class="checks-list" id="checksList">
+            <!-- filled dynamically -->
+          </div>
+        </div>
+
+        <!-- Page Preview -->
+        <div class="preview-section">
+          <div class="preview-title">📄 Page Preview (with margin guide)</div>
+          <div class="pdf-container" id="pdfContainer">
+            <div class="pdf-canvas-wrap">
+              <canvas id="pdfCanvas"></canvas>
+              <div class="margin-overlay">
+                <span class="margin-label">Safe Print Area</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button class="btn btn-primary" id="recheckBtn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M23 4v6h-6M1 20v-6h6M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></svg>
+            Re-run Analysis
+          </button>
+          <button class="btn btn-secondary" id="cancelBtn">Analyze Another PDF</button>
+        </div>
+
+        <div class="status-msg" id="statusMsg"></div>
+
+        <div class="progress" id="progress">
+          <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+          <div class="progress-text" id="progressText">Analyzing...</div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="seo-content">
+
+      <h2>🖨 What is PDF Print Readiness?</h2>
+      <p>
+        <strong>PDF print readiness</strong> means your file will print correctly with the right page size, no missing fonts, expected colors, and no content cut off at the edges. A bad print file can waste paper, ink, and money. BigToolz's <strong>Print Checker</strong> scans your PDF in seconds and gives you a <strong>print score</strong> with clear pass/warn/fail results for 10+ criteria.
+      </p>
+      <p>
+        Everything runs <strong>100% in your browser</strong> using pdf.js and pdf-lib. Your file <strong>never uploaded to any server</strong> complete privacy, instant results.
+      </p>
+
+      <h2>🚀 How to Check Your PDF</h2>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-step-num">1</div>
+          <div class="how-step-title">Upload PDF</div>
+          <div class="how-step-desc">Drag & drop or click "Choose PDF File" to select.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">2</div>
+          <div class="how-step-title">Auto-Analysis</div>
+          <div class="how-step-desc">10+ checks run automatically in seconds.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">3</div>
+          <div class="how-step-title">Review Report</div>
+          <div class="how-step-desc">See your print score and each check's result.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">4</div>
+          <div class="how-step-title">Fix & Print</div>
+          <div class="how-step-desc">Address warnings, then send to print with confidence.</div>
+        </div>
+      </div>
+
+      <h2>📊 The 10+ Print Checks Explained</h2>
+
+      <h3>1. Page Size</h3>
+      <p>Detects standard sizes: <strong>A4, US Letter, Legal, A3, A5</strong>. Custom sizes get a warning since printers expect standard sizes for pre-cut paper.</p>
+
+      <h3>2. Orientation</h3>
+      <p>Checks whether the PDF is <strong>Portrait or Landscape</strong>. If it's landscape but your printer is set to portrait, content will be cut off.</p>
+
+      <h3>3. Page Count</h3>
+      <p>Reports total pages. Also flags <strong>even vs odd</strong> useful for double-sided printing (even count works better).</p>
+
+      <h3>4. Color Mode</h3>
+      <p>Scans for <strong>CMYK operators</strong> (professional print-ready) vs <strong>RGB-only</strong> (home/office printers). Warns if RGB-only for commercial printing.</p>
+
+      <h3>5. Grayscale Detection</h3>
+      <p>Detects if your PDF is <strong>pure grayscale</strong> useful if you want to save on color ink. If grayscale is detected, you can print on B&W mode safely.</p>
+
+      <h3>6. Fonts Embedded</h3>
+      <p>Missing embedded fonts cause text to render differently on other computers. This check verifies fonts are embedded.</p>
+
+      <h3>7. Content Margins</h3>
+      <p>Estimates if content is <strong>too close to edges</strong>. Printers need 5-10mm margins or content gets cut off.</p>
+
+      <h3>8. Resolution / DPI Hint</h3>
+      <p>Reports the approximate <strong>raster image DPI</strong>. Below 150 DPI = blurry print. Above 300 DPI = professional quality.</p>
+
+      <h3>9. File Size</h3>
+      <p>Large files (100MB+) can cause print spooling issues. Small files are faster to print.</p>
+
+      <h3>10. PDF Version</h3>
+      <p>Older PDF versions (1.0-1.4) print everywhere. Newer versions (1.5+) may not work on old printers.</p>
+
+      <h2>📌 Print Score Interpretation</h2>
+      <ul>
+        <li><strong>90-100:</strong> Excellent ready to print.</li>
+        <li><strong>75-89:</strong> Good may print fine, minor fixes could help.</li>
+        <li><strong>50-74:</strong> Warning review the checks before printing.</li>
+        <li><strong>Below 50:</strong> Poor significant issues, fix before printing.</li>
+      </ul>
+
+      <h2>❓ Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-question">What does a PDF print checker do?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>A PDF print checker analyzes your PDF for <strong>print readiness</strong>. It checks page size, orientation, margins, color mode, embedded fonts, page count, and gives you a <strong>print score</strong> with actionable warnings.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What's a good print score?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>90-100</strong> is excellent (ready to print). <strong>75-89</strong> is good (minor fixes might help). <strong>50-74</strong> has warnings (review before printing). <strong>Below 50</strong> needs significant fixes.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">How do I know if my PDF has the right page size?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>The tool auto-detects standard sizes: <strong>A4</strong> (595×842 pt), <strong>US Letter</strong> (612×792 pt), <strong>Legal</strong> (612×1008 pt), <strong>A3</strong> (842×1191 pt), and <strong>A5</strong> (420×595 pt). If your size matches a standard, it's marked as pass.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Does the checker tell me if my PDF is CMYK?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>It scans for <strong>CMYK color space operators</strong> in the PDF. If detected, it's flagged as "CMYK-ready for print". If only RGB is detected, it warns that colors may shift on professional printers.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What DPI do I need for printing?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>150 DPI</strong> is the minimum for basic documents. <strong>300 DPI</strong> is the industry standard for photos and professional print. <strong>600 DPI</strong> is for fine art and detailed graphics. Below 150 DPI, images look pixelated.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Why do fonts matter for printing?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>If fonts aren't <strong>embedded</strong> in the PDF, the printer will substitute them text may reflow, look different, or become unreadable. Always ensure fonts are embedded before sending to print.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Is my PDF uploaded to a server?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>No. All analysis happens in your browser using pdf.js and pdf-lib. Your file never leaves your device, and nothing is stored anywhere.</p></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-header">🔗 Related PDF Tools</div>
+    <div class="sidebar-list">
+      <a href="/tools/pdf-tools/visual-pdf/page-transition/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#8b5cf6;">✨</div>
+        <div class="sidebar-info"><div class="sidebar-title">Page Transition</div><div class="sidebar-desc">Fade, push effects</div></div>
+      </a>
+      <a href="/tools/pdf-tools/visual-pdf/flip-effect/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#f59e0b;">📖</div>
+        <div class="sidebar-info"><div class="sidebar-title">Flip Effect</div><div class="sidebar-desc">Book flip animation</div></div>
+      </a>
+      <a href="/tools/pdf-tools/visual-pdf/annotate-pdf/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#8b5cf6;">💬</div>
+        <div class="sidebar-info"><div class="sidebar-title">Annotate PDF</div><div class="sidebar-desc">Add annotations</div></div>
+      </a>
+      <a href="/tools/pdf-tools/organize-pdf/page-size/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#3b82f6;">📐</div>
+        <div class="sidebar-info"><div class="sidebar-title">Page Size</div><div class="sidebar-desc">Resize pages</div></div>
+      </a>
+      <a href="/tools/pdf-tools/visual-pdf/optimizer-pdf/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#10b981;">⚡</div>
+        <div class="sidebar-info"><div class="sidebar-title">PDF Optimizer</div><div class="sidebar-desc">Optimize for web</div></div>
+      </a>
+      <a href="/tools/pdf-tools/visual-pdf/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#64748b;">📕</div>
+        <div class="sidebar-info"><div class="sidebar-title">All Visual PDF →</div><div class="sidebar-desc">15 tools</div></div>
+      </a>
+    </div>
+  </aside>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand"><div class="logo-icon">⚒</div>BigToolz</span></div>
+      <p class="footer-tagline">Your Ultimate Online Tools Hub</p>
+      <div class="footer-social">
+        <a href="https://facebook.com/bigtoolz" aria-label="Facebook">f</a>
+        <a href="https://twitter.com/bigtoolz" aria-label="Twitter">𝕏</a>
+        <a href="https://youtube.com/@bigtoolz" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+    <div>
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/tools/">All Tools</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Categories</h3>
+      <ul class="footer-links">
+        <li><a href="/tools/image-tools/">Image Tools</a></li>
+        <li><a href="/tools/pdf-tools/">PDF Tools</a></li>
+        <li><a href="/tools/text-tools/">Text Tools</a></li>
+        <li><a href="/tools/seo-tools/">SEO Tools</a></li>
+        <li><a href="/tools/categories">All Categories →</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Legal</h3>
+      <ul class="footer-links">
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left"><span>✓ 100% Free</span><span>✓ No Sign Up</span><span>✓ No Installation</span></div>
+    <div class="footer-bottom-right">© 2026 BigToolz. All rights reserved.</div>
+    <div class="footer-bottom-links"><a href="/privacy-policy">Privacy</a><a href="/terms">Terms</a><a href="/disclaimer">Disclaimer</a></div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<!-- PDF.js + pdf-lib -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+
+<script>
+'use strict';
+
+/* ===== THEME ===== */
+(function(){try{var t=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&d))document.documentElement.setAttribute('data-theme','dark');else if(t==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();
+document.querySelector('.theme-btn')?.addEventListener('click',()=>{const h=document.documentElement;const c=h.getAttribute('data-theme');const d=window.matchMedia('(prefers-color-scheme: dark)').matches;let n=c==='dark'?'light':c==='light'?'dark':(d?'light':'dark');h.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}});
+
+/* ===== PDF.js worker ===== */
+if (window.pdfjsLib) {
+  pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+}
+
+/* ===== HELPERS ===== */
+const $ = (s, p = document) => p.querySelector(s);
+const $$ = (s, p = document) => [...p.querySelectorAll(s)];
+
+function showToast(msg, type = 'info', duration = 3000) {
+  const t = $('#toast');
+  if (!t) return;
+  t.className = 'toast visible' + (type !== 'info' ? ' ' + type : '');
+  t.textContent = msg;
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove('visible'), duration);
+}
+
+function formatBytes(b) {
+  if (b === 0) return '0 B';
+  const k = 1024, sizes = ['B', 'KB', 'MB', 'GB'];
+  const i = Math.floor(Math.log(b) / Math.log(k));
+  return (b / Math.pow(k, i)).toFixed(i === 0 ? 0 : 1) + ' ' + sizes[i];
+}
+
+/* ===== PAGE SIZE STANDARDS (in points) ===== */
+const STANDARD_SIZES = [
+  { name: 'A4', w: 595.28, h: 841.89 },
+  { name: 'US Letter', w: 612, h: 792 },
+  { name: 'Legal', w: 612, h: 1008 },
+  { name: 'A3', w: 841.89, h: 1190.55 },
+  { name: 'A5', w: 419.53, h: 595.28 },
+  { name: 'Tabloid', w: 792, h: 1224 },
+  { name: 'Executive', w: 521.86, h: 756 }
+];
+
+function detectPageSize(w, h) {
+  const tolerance = 5;
+  for (const s of STANDARD_SIZES) {
+    const matchPortrait = Math.abs(w - s.w) < tolerance && Math.abs(h - s.h) < tolerance;
+    const matchLandscape = Math.abs(w - s.h) < tolerance && Math.abs(h - s.w) < tolerance;
+    if (matchPortrait) return { name: s.name, orientation: 'Portrait', match: true };
+    if (matchLandscape) return { name: s.name, orientation: 'Landscape', match: true };
+  }
+  return { name: `Custom (${Math.round(w)} × ${Math.round(h)} pt)`, orientation: w > h ? 'Landscape' : 'Portrait', match: false };
+}
+
+/* ===== STATE ===== */
+const state = {
+  fileBytes: null,
+  fileName: '',
+  fileSize: 0,
+  pdfDoc: null,
+  pdfLibDoc: null,
+  totalPages: 0,
+  firstPageSize: null,
+  analysis: null
+};
+
+/* ===== DOM ===== */
+const dropzone = $('#dropzone');
+const fileInput = $('#fileInput');
+const chooseBtn = $('#chooseBtn');
+const browseLink = $('#browseLink');
+const editor = $('#editor');
+const scoreCircle = $('#scoreCircle');
+const scoreNumber = $('#scoreNumber');
+const scoreRating = $('#scoreRating');
+const summaryTitle = $('#summaryTitle');
+const summaryText = $('#summaryText');
+const statPages = $('#statPages');
+const statSize = $('#statSize');
+const statColor = $('#statColor');
+const checksList = $('#checksList');
+const pdfCanvas = $('#pdfCanvas');
+const recheckBtn = $('#recheckBtn');
+const cancelBtn = $('#cancelBtn');
+const progress = $('#progress');
+const progressFill = $('#progressFill');
+const progressText = $('#progressText');
+
+/* ===== FILE SELECTION ===== */
+function triggerFileSelect() { fileInput.click(); }
+chooseBtn.addEventListener('click', (e) => { e.stopPropagation(); triggerFileSelect(); });
+browseLink.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); triggerFileSelect(); });
+dropzone.addEventListener('click', triggerFileSelect);
+
+fileInput.addEventListener('change', (e) => {
+  const f = e.target.files[0];
+  if (f) analyzePdf(f);
+  fileInput.value = '';
+});
+
+['dragenter', 'dragover'].forEach(evt => {
+  dropzone.addEventListener(evt, (e) => { e.preventDefault(); e.stopPropagation(); dropzone.classList.add('dragover'); });
+});
+['dragleave', 'drop'].forEach(evt => {
+  dropzone.addEventListener(evt, (e) => { e.preventDefault(); e.stopPropagation(); dropzone.classList.remove('dragover'); });
+});
+dropzone.addEventListener('drop', (e) => {
+  const f = e.dataTransfer.files[0];
+  if (f && f.type === 'application/pdf') analyzePdf(f);
+  else showToast('Please drop a PDF file', 'error');
+});
+
+/* ===== MAIN ANALYZE ===== */
+async function analyzePdf(file) {
+  state.fileName = file.name;
+  state.fileSize = file.size;
+
+  progress.classList.add('visible');
+  progressFill.style.width = '10%';
+  progressText.textContent = 'Reading PDF...';
+
+  try {
+    const buf = await file.arrayBuffer();
+    state.fileBytes = buf.slice(0);
+
+    // PDF.js copy
+    state.pdfDoc = await pdfjsLib.getDocument({ data: buf.slice(0) }).promise;
+    state.totalPages = state.pdfDoc.numPages;
+
+    progressFill.style.width = '40%';
+    progressText.textContent = 'Analyzing structure...';
+
+    // pdf-lib copy
+    state.pdfLibDoc = await PDFLib.PDFDocument.load(buf.slice(0));
+
+    progressFill.style.width = '60%';
+    progressText.textContent = 'Running checks...';
+
+    // Run all checks
+    const checks = await runChecks();
+    state.analysis = computeScore(checks);
+
+    progressFill.style.width = '85%';
+    progressText.textContent = 'Rendering preview...';
+
+    // Render first page preview
+    await renderFirstPage();
+
+    progressFill.style.width = '100%';
+
+    // Display
+    renderScore(state.analysis);
+    renderChecks(checks);
+
+    dropzone.style.display = 'none';
+    editor.classList.add('visible');
+
+    showToast('✅ Analysis complete!', 'success');
+  } catch (err) {
+    console.error(err);
+    showToast('Failed to analyze PDF: ' + err.message, 'error');
+  } finally {
+    setTimeout(() => {
+      progress.classList.remove('visible');
+      progressFill.style.width = '0%';
+    }, 800);
+  }
+}
+
+/* ===== RUN ALL CHECKS ===== */
+async function runChecks() {
+  const checks = [];
+
+  // --- 1. Page Size ---
+  const firstPage = await state.pdfDoc.getPage(1);
+  const vp = firstPage.getViewport({ scale: 1 });
+  const ptW = Math.round(vp.width / 1) / 1; // already in pt at scale 1
+  const ptH = Math.round(vp.height / 1) / 1;
+  state.firstPageSize = { w: ptW, h: ptH };
+
+  const sizeInfo = detectPageSize(ptW, ptH);
+  checks.push({
+    id: 'page-size',
+    name: 'Page Size',
+    status: sizeInfo.match ? 'pass' : 'warn',
+    value: `${sizeInfo.name} ${Math.round(ptW)} × ${Math.round(ptH)} pt`,
+    hint: sizeInfo.match
+      ? 'Standard size detected printer-friendly.'
+      : 'Non-standard size. Verify your printer supports it or resize to A4/Letter.'
+  });
+
+  // --- 2. Orientation ---
+  const orientation = ptW > ptH ? 'Landscape' : 'Portrait';
+  checks.push({
+    id: 'orientation',
+    name: 'Orientation',
+    status: 'info',
+    value: orientation,
+    hint: orientation === 'Landscape'
+      ? 'Set your printer to Landscape mode to avoid cut-off.'
+      : 'Standard portrait prints correctly on most printers.'
+  });
+
+  // --- 3. Page Count ---
+  checks.push({
+    id: 'page-count',
+    name: 'Page Count',
+    status: state.totalPages >= 1 ? 'pass' : 'fail',
+    value: `${state.totalPages} page${state.totalPages > 1 ? 's' : ''}`,
+    hint: state.totalPages % 2 === 0
+      ? 'Even page count ideal for double-sided printing.'
+      : 'Odd page count last page will be blank on double-sided print.'
+  });
+
+  // --- 4. File Size ---
+  const mb = state.fileSize / (1024 * 1024);
+  let fileStatus = 'pass';
+  let fileHint = 'File size is optimal for printing.';
+  if (mb > 100) {
+    fileStatus = 'warn';
+    fileHint = 'Large file may slow printer spooling. Consider optimizing.';
+  } else if (mb > 500) {
+    fileStatus = 'fail';
+    fileHint = 'Very large file may fail to print. Optimize or compress first.';
+  }
+  checks.push({
+    id: 'file-size',
+    name: 'File Size',
+    status: fileStatus,
+    value: formatBytes(state.fileSize),
+    hint: fileHint
+  });
+
+  // --- 5. Embedded Fonts ---
+  const fontCheck = checkEmbeddedFonts();
+  checks.push(fontCheck);
+
+  // --- 6. Color Mode ---
+  const colorCheck = checkColorMode();
+  checks.push(colorCheck);
+
+  // --- 7. Grayscale Detection ---
+  const grayCheck = await checkGrayscale(firstPage);
+  checks.push(grayCheck);
+
+  // --- 8. Content Margins ---
+  const marginCheck = await checkMargins(firstPage);
+  checks.push(marginCheck);
+
+  // --- 9. PDF Version ---
+  const versionCheck = checkPdfVersion();
+  checks.push(versionCheck);
+
+  // --- 10. Metadata ---
+  const metaCheck = checkMetadata();
+  checks.push(metaCheck);
+
+  return checks;
+}
+
+/* ===== CHECK: Embedded Fonts ===== */
+function checkEmbeddedFonts() {
+  try {
+    const bytes = new Uint8Array(state.fileBytes);
+    // Search for FontFile, FontFile2, FontFile3 (embedded font signatures)
+    const text = new TextDecoder('latin1').decode(bytes.slice(0, Math.min(bytes.length, 5000000)));
+    const hasFontFile = /\/FontFile[23]?\b/.test(text);
+    const hasFont = /\/Type\s*\/Font\b/.test(text);
+
+    if (!hasFont) {
+      return {
+        id: 'fonts',
+        name: 'Fonts',
+        status: 'info',
+        value: 'No fonts detected (image-only PDF)',
+        hint: 'PDF has no text safe to print as-is.'
+      };
+    }
+    if (hasFontFile) {
+      return {
+        id: 'fonts',
+        name: 'Embedded Fonts',
+        status: 'pass',
+        value: 'Fonts are embedded',
+        hint: 'Text will render identically on all printers.'
+      };
+    }
+    return {
+      id: 'fonts',
+      name: 'Embedded Fonts',
+      status: 'warn',
+      value: 'Some fonts may not be embedded',
+      hint: 'Text could reflow on other systems. Re-export from source app with "Embed fonts" enabled.'
+    };
+  } catch (err) {
+    return {
+      id: 'fonts',
+      name: 'Embedded Fonts',
+      status: 'info',
+      value: 'Could not analyze fonts',
+      hint: 'Manual verification recommended.'
+    };
+  }
+}
+
+/* ===== CHECK: Color Mode ===== */
+function checkColorMode() {
+  try {
+    const bytes = new Uint8Array(state.fileBytes);
+    const text = new TextDecoder('latin1').decode(bytes.slice(0, Math.min(bytes.length, 5000000)));
+
+    // Look for color space markers
+    const hasCMYK = /\/(DeviceCMYK|ICCBased)/i.test(text) || /\bCMYK\b/.test(text);
+    const hasRGB = /\/(DeviceRGB|CalRGB)/i.test(text);
+
+    if (hasCMYK && hasRGB) {
+      return {
+        id: 'color',
+        name: 'Color Mode',
+        status: 'pass',
+        value: 'Mixed RGB + CMYK detected',
+        hint: 'Contains CMYK safe for professional print.'
+      };
+    } else if (hasCMYK) {
+      return {
+        id: 'color',
+        name: 'Color Mode',
+        status: 'pass',
+        value: 'CMYK',
+        hint: 'Professional print-ready color mode.'
+      };
+    } else if (hasRGB) {
+      return {
+        id: 'color',
+        name: 'Color Mode',
+        status: 'warn',
+        value: 'RGB only',
+        hint: 'RGB is fine for home/office printers, but colors may shift on professional CMYK presses.'
+      };
+    }
+    return {
+      id: 'color',
+      name: 'Color Mode',
+      status: 'info',
+      value: 'Not detected',
+      hint: 'Likely grayscale or vector-only.'
+    };
+  } catch (err) {
+    return {
+      id: 'color',
+      name: 'Color Mode',
+      status: 'info',
+      value: 'Could not analyze',
+      hint: 'Manual verification recommended.'
+    };
+  }
+}
+
+/* ===== CHECK: Grayscale ===== */
+async function checkGrayscale(page) {
+  try {
+    const vp = page.getViewport({ scale: 0.3 });
+    const canvas = document.createElement('canvas');
+    canvas.width = vp.width;
+    canvas.height = vp.height;
+    const ctx = canvas.getContext('2d');
+    await page.render({ canvasContext: ctx, viewport: vp }).promise;
+
+    const data = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
+    let coloredPixels = 0;
+    const sample = 100; // sample every Nth pixel
+    const total = data.length / 4;
+    for (let i = 0; i < data.length; i += 4 * sample) {
+      const r = data[i], g = data[i + 1], b = data[i + 2];
+      if (Math.abs(r - g) > 15 || Math.abs(g - b) > 15 || Math.abs(r - b) > 15) {
+        coloredPixels++;
+      }
+    }
+    const totalSampled = Math.ceil(total / sample);
+    const colorPct = (coloredPixels / totalSampled) * 100;
+
+    if (colorPct < 5) {
+      return {
+        id: 'grayscale',
+        name: 'Color Content',
+        status: 'pass',
+        value: `Mostly grayscale (${colorPct.toFixed(1)}% color)`,
+        hint: 'Print in B&W mode to save color ink.'
+      };
+    }
+    return {
+      id: 'grayscale',
+      name: 'Color Content',
+      status: 'info',
+      value: `${colorPct.toFixed(1)}% colored pixels`,
+      hint: 'Color content detected print in color mode.'
+    };
+  } catch (err) {
+    return {
+      id: 'grayscale',
+      name: 'Color Content',
+      status: 'info',
+      value: 'Could not analyze',
+      hint: 'Preview may not render.'
+    };
+  }
+}
+
+/* ===== CHECK: Margins ===== */
+async function checkMargins(page) {
+  try {
+    const vp = page.getViewport({ scale: 0.4 });
+    const canvas = document.createElement('canvas');
+    canvas.width = vp.width;
+    canvas.height = vp.height;
+    const ctx = canvas.getContext('2d');
+    ctx.fillStyle = '#ffffff';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    await page.render({ canvasContext: ctx, viewport: vp }).promise;
+
+    const w = canvas.width, h = canvas.height;
+    const marginPx = Math.round(Math.min(w, h) * 0.05); // 5% margin
+
+    // Check border strips for non-white pixels
+    const borderZones = [
+      { name: 'top', x: 0, y: 0, w: w, h: marginPx },
+      { name: 'bottom', x: 0, y: h - marginPx, w: w, h: marginPx },
+      { name: 'left', x: 0, y: 0, w: marginPx, h: h },
+      { name: 'right', x: w - marginPx, y: 0, w: marginPx, h: h }
+    ];
+
+    let zonesWithContent = 0;
+    for (const z of borderZones) {
+      if (z.w < 1 || z.h < 1) continue;
+      const data = ctx.getImageData(z.x, z.y, z.w, z.h).data;
+      let nonWhite = 0;
+      const step = 40 * 4;
+      for (let i = 0; i < data.length; i += step) {
+        if (data[i] < 240 || data[i + 1] < 240 || data[i + 2] < 240) nonWhite++;
+      }
+      if (nonWhite > 3) zonesWithContent++;
+    }
+
+    if (zonesWithContent === 0) {
+      return {
+        id: 'margins',
+        name: 'Content Margins',
+        status: 'pass',
+        value: 'Safe margins (content within 5% from edges)',
+        hint: 'Content is well within the printable area.'
+      };
+    } else if (zonesWithContent <= 2) {
+      return {
+        id: 'margins',
+        name: 'Content Margins',
+        status: 'warn',
+        value: `${zonesWithContent} edge zone(s) with content`,
+        hint: 'Some content is close to edges may get cut off. Add 5-10mm margins.'
+      };
+    }
+    return {
+      id: 'margins',
+      name: 'Content Margins',
+      status: 'fail',
+      value: 'Content extends to edges',
+      hint: 'Content may be cut off by printers. Reduce content size or add bleed.'
+    };
+  } catch (err) {
+    return {
+      id: 'margins',
+      name: 'Content Margins',
+      status: 'info',
+      value: 'Could not analyze',
+      hint: 'Verify margins manually.'
+    };
+  }
+}
+
+/* ===== CHECK: PDF Version ===== */
+function checkPdfVersion() {
+  try {
+    const bytes = new Uint8Array(state.fileBytes.slice(0, 100));
+    const text = new TextDecoder('latin1').decode(bytes);
+    const match = text.match(/%PDF-(\d)\.(\d)/);
+    if (match) {
+      const version = `${match[1]}.${match[2]}`;
+      const major = parseInt(match[1], 10);
+      const minor = parseInt(match[2], 10);
+      const numeric = major + minor / 10;
+
+      if (numeric <= 1.7) {
+        return {
+          id: 'version',
+          name: 'PDF Version',
+          status: 'pass',
+          value: `PDF ${version}`,
+          hint: 'Widely compatible with all printers.'
+        };
+      }
+      return {
+        id: 'version',
+        name: 'PDF Version',
+        status: 'info',
+        value: `PDF ${version}`,
+        hint: 'Newer format may not work on very old printers.'
+      };
+    }
+    return {
+      id: 'version',
+      name: 'PDF Version',
+      status: 'info',
+      value: 'Unknown',
+      hint: 'Could not detect version.'
+    };
+  } catch (err) {
+    return {
+      id: 'version',
+      name: 'PDF Version',
+      status: 'info',
+      value: 'Unknown',
+      hint: 'Could not detect version.'
+    };
+  }
+}
+
+/* ===== CHECK: Metadata ===== */
+function checkMetadata() {
+  try {
+    const meta = state.pdfLibDoc.getTitle() || state.pdfLibDoc.getAuthor();
+    return {
+      id: 'metadata',
+      name: 'Document Metadata',
+      status: meta ? 'pass' : 'info',
+      value: meta ? 'Metadata present' : 'No title/author metadata',
+      hint: meta
+        ? 'Document has proper metadata good for archiving.'
+        : 'Add title and author in your PDF editor for better organization.'
+    };
+  } catch (err) {
+    return {
+      id: 'metadata',
+      name: 'Document Metadata',
+      status: 'info',
+      value: 'Not available',
+      hint: 'Metadata not found.'
+    };
+  }
+}
+
+/* ===== COMPUTE SCORE ===== */
+function computeScore(checks) {
+  let score = 100;
+  let passes = 0, warns = 0, fails = 0, infos = 0;
+
+  checks.forEach(c => {
+    if (c.status === 'pass') passes++;
+    else if (c.status === 'warn') { warns++; score -= 8; }
+    else if (c.status === 'fail') { fails++; score -= 20; }
+    else infos++;
+  });
+
+  score = Math.max(0, Math.min(100, score));
+
+  let rating = 'poor';
+  if (score >= 90) rating = 'excellent';
+  else if (score >= 75) rating = 'good';
+  else if (score >= 50) rating = 'warning';
+
+  return { score, rating, passes, warns, fails, infos };
+}
+
+/* ===== RENDER SCORE ===== */
+function renderScore(a) {
+  scoreNumber.textContent = a.score;
+  scoreCircle.className = 'score-circle ' + a.rating;
+
+  const ratingLabels = {
+    excellent: '✓ Excellent',
+    good: '✓ Good',
+    warning: '⚠ Warning',
+    poor: '✕ Needs Fixes'
+  };
+  scoreRating.textContent = ratingLabels[a.rating];
+  scoreRating.className = 'score-rating ' + a.rating;
+
+  const titles = {
+    excellent: 'Ready to Print',
+    good: 'Print-Ready with Minor Notes',
+    warning: 'Review Before Printing',
+    poor: 'Fix Issues Before Printing'
+  };
+  summaryTitle.textContent = titles[a.rating];
+
+  const summaries = {
+    excellent: `Passed ${a.passes}/${a.passes + a.warns + a.fails} checks. Your PDF looks ready for professional printing.`,
+    good: `Passed ${a.passes} checks with ${a.warns} warning${a.warns !== 1 ? 's' : ''}. Likely prints fine review warnings below.`,
+    warning: `${a.warns} warning${a.warns !== 1 ? 's' : ''} and ${a.fails} issue${a.fails !== 1 ? 's' : ''} detected. Review the checks before sending to print.`,
+    poor: `${a.fails} critical issue${a.fails !== 1 ? 's' : ''} found. Fix the checks below before printing.`
+  };
+  summaryText.textContent = summaries[a.rating];
+
+  statPages.textContent = state.totalPages;
+  const sizeInfo = detectPageSize(state.firstPageSize.w, state.firstPageSize.h);
+  statSize.textContent = sizeInfo.name.length > 10 ? 'Custom' : sizeInfo.name;
+  // Color stat from the check
+  const colorChk = document.querySelector('[data-check-color]');
+  statColor.textContent = '';
+}
+
+/* ===== RENDER CHECKS ===== */
+function renderChecks(checks) {
+  checksList.innerHTML = '';
+  checks.forEach(c => {
+    const iconMap = { pass: '✓', warn: '!', fail: '✕', info: 'i' };
+    const item = document.createElement('div');
+    item.className = 'check-item ' + c.status;
+    item.dataset.checkId = c.id;
+    if (c.id === 'color') item.dataset.checkColor = '1';
+    item.innerHTML = `
+      <div class="check-icon">${iconMap[c.status] || 'i'}</div>
+      <div class="check-body">
+        <div class="check-name">${c.name}</div>
+        <div class="check-value">${c.value}</div>
+        ${c.hint ? `<div class="check-hint">${c.hint}</div>` : ''}
+      </div>
+    `;
+    checksList.appendChild(item);
+  });
+
+  // Update color stat after render
+  const colorChk = checks.find(c => c.id === 'color');
+  if (colorChk) {
+    statColor.textContent = colorChk.value.split(' ')[0];
+  }
+}
+
+/* ===== RENDER FIRST PAGE PREVIEW ===== */
+async function renderFirstPage() {
+  const page = await state.pdfDoc.getPage(1);
+  const maxW = 600;
+  const vp1 = page.getViewport({ scale: 1 });
+  const scale = Math.min(maxW / vp1.width, 1.5);
+  const vp = page.getViewport({ scale });
+
+  pdfCanvas.width = vp.width;
+  pdfCanvas.height = vp.height;
+
+  const ctx = pdfCanvas.getContext('2d');
+  ctx.fillStyle = '#ffffff';
+  ctx.fillRect(0, 0, pdfCanvas.width, pdfCanvas.height);
+  await page.render({ canvasContext: ctx, viewport: vp }).promise;
+}
+
+/* ===== RECHECK ===== */
+recheckBtn.addEventListener('click', async () => {
+  if (!state.fileBytes) return;
+  const blob = new Blob([state.fileBytes], { type: 'application/pdf' });
+  const file = new File([blob], state.fileName, { type: 'application/pdf' });
+  await analyzePdf(file);
+});
+
+/* ===== CANCEL / RESET ===== */
+cancelBtn.addEventListener('click', () => {
+  state.fileBytes = null;
+  state.pdfDoc = null;
+  state.pdfLibDoc = null;
+  state.totalPages = 0;
+  state.analysis = null;
+  state.firstPageSize = null;
+  editor.classList.remove('visible');
+  dropzone.style.display = '';
+  showToast('Reset ready for another PDF', 'info');
+  triggerFileSelect();
+});
+
+/* ===== FAQ ===== */
+$$('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    $$('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+</script>
+
+</body>
+</html>

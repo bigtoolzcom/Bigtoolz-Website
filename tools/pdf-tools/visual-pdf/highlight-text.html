@@ -1,0 +1,1491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2563eb">
+
+<title>Highlight Text in PDF - Highlight PDF Online Free | BigToolz</title>
+<meta name="description" content="Highlight text in PDF online free. Search words or draw highlight regions with 4 colors. Adjustable opacity. No upload, works in your browser.">
+<meta name="keywords" content="highlight pdf, highlight text in pdf, pdf highlighter, pdf text marker, annotate pdf free">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://bigtoolz.com/tools/pdf-tools/visual-pdf/highlight-text/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Highlight Text in PDF - Free Online Tool | BigToolz">
+<meta property="og:description" content="Highlight text or regions in PDF with 4 colors free, no upload.">
+<meta property="og:url" content="https://bigtoolz.com/tools/pdf-tools/visual-pdf/highlight-text/">
+<meta property="og:image" content="https://bigtoolz.com/assets/images/og-image.jpg">
+<meta property="og:site_name" content="BigToolz">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Highlight PDF - BigToolz">
+<meta name="twitter:description" content="Highlight text in PDF instantly free, no upload.">
+<meta name="twitter:image" content="https://bigtoolz.com/assets/images/twitter-card.jpg">
+
+<link rel="icon" href="/assets/images/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/images/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#f8f9fc;color:#1a1a2e;overflow-x:hidden;line-height:1.5}
+
+  .header{background:#fff;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;position:sticky;top:0;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+  .header-left{display:flex;align-items:center;gap:40px}
+  .logo{display:flex;align-items:center;gap:8px;font-size:22px;font-weight:800;color:#1a1a2e;text-decoration:none}
+  .logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#3b82f6,#2563eb);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px}
+  .logo span{color:#2563eb}
+  .nav{display:flex;align-items:center;gap:28px;list-style:none}
+  .nav a{text-decoration:none;color:#4b5563;font-size:14px;font-weight:500;transition:color .2s}
+  .nav a:hover,.nav a.active{color:#2563eb}
+  .header-right{display:flex;align-items:center;gap:16px}
+  .search-btn,.theme-btn{width:36px;height:36px;border-radius:50%;border:none;background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#4b5563}
+  .search-btn:hover,.theme-btn:hover{background:#f3f4f6}
+  .bookmark-btn{display:flex;align-items:center;gap:8px;background:#2563eb;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
+  .bookmark-btn:hover{background:#1d4ed8}
+
+  .hero{background:linear-gradient(135deg,#0a0e27 0%,#1a1a4e 40%,#2d1b69 70%,#4c1d95 100%);padding:40px 40px 60px;position:relative;overflow:hidden;color:#fff}
+  .hero::before{content:'';position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(234,179,8,.25) 0%,transparent 70%);border-radius:50%}
+  .hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+  .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px;flex-wrap:wrap}
+  .breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none}
+  .breadcrumb a:hover{color:#fff}
+  .breadcrumb .sep{color:rgba(255,255,255,.4)}
+  .breadcrumb .current{color:#fff;font-weight:500}
+  .hero-title-row{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+  .hero-icon{width:60px;height:60px;background:#eab308;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;color:#fff;flex-shrink:0;box-shadow:0 8px 24px rgba(234,179,8,.4)}
+  .hero-title{font-size:42px;font-weight:800;line-height:1.15}
+  .hero-title .blue{color:#facc15}
+  .hero-desc{font-size:15px;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:24px;max-width:560px}
+  .hero-features{display:flex;gap:24px;flex-wrap:wrap}
+  .hero-feature{display:flex;align-items:center;gap:6px;font-size:13px;color:#fff;font-weight:500}
+  .hero-feature .check{width:18px;height:18px;border-radius:50%;background:#eab308;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;flex-shrink:0}
+
+  .main-content{max-width:1200px;margin:0 auto;padding:40px;display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start}
+  .tool-content{min-width:0}
+
+  .workspace{background:#fff;border-radius:16px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,.06);border:1px solid #e5e7eb;margin-bottom:24px}
+
+  .dropzone{border:2px dashed #fde047;border-radius:12px;padding:50px 30px;text-align:center;background:#fefce8;margin-bottom:24px;transition:all .2s;cursor:pointer}
+  .dropzone:hover,.dropzone.dragover{border-color:#eab308;background:#fef9c3}
+  .dropzone-icon{width:60px;height:60px;background:linear-gradient(135deg,#eab308,#ca8a04);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;color:#fff;font-size:26px;transition:transform .2s}
+  .dropzone:hover .dropzone-icon{transform:translateY(-4px)}
+  .dropzone-title{font-size:16px;font-weight:700;color:#1a1a2e;margin-bottom:8px}
+  .dropzone-sub{font-size:14px;color:#6b7280;margin-bottom:20px}
+  .dropzone-sub a{color:#eab308;font-weight:600;text-decoration:none}
+  .choose-btn{display:inline-flex;align-items:center;gap:8px;background:#eab308;color:#fff;border:none;padding:12px 28px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;transition:background .2s}
+  .choose-btn:hover{background:#ca8a04}
+  .dropzone-info{font-size:12px;color:#9ca3af;display:flex;align-items:center;justify-content:center;gap:8px;margin-top:16px;flex-wrap:wrap}
+  .dropzone-info .divider{color:#d1d5db}
+  .file-input{display:none}
+
+  .pdf-info{display:none;background:#fefce8;border-radius:12px;padding:16px 20px;margin-bottom:20px;border:1px solid #fde047;align-items:center;gap:16px;flex-wrap:wrap}
+  .pdf-info.visible{display:flex}
+  .pdf-info-icon{width:44px;height:44px;background:#eab308;border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:18px;flex-shrink:0}
+  .pdf-info-details{flex:1;min-width:0}
+  .pdf-info-name{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .pdf-info-meta{font-size:12px;color:#6b7280}
+
+  /* Mode tabs */
+  .mode-tabs{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:20px}
+  .mode-btn{padding:14px 12px;background:#fff;border:2px solid #e5e7eb;border-radius:10px;font-size:12px;font-weight:600;color:#4b5563;cursor:pointer;font-family:inherit;transition:all .2s;text-align:center;line-height:1.3;display:flex;flex-direction:column;align-items:center;gap:6px}
+  .mode-btn:hover{border-color:#eab308;background:#fefce8}
+  .mode-btn.active{border-color:#eab308;background:#eab308;color:#fff}
+  .mode-btn-icon{font-size:22px;line-height:1}
+  .mode-btn-title{font-size:13px;font-weight:700}
+  .mode-btn-desc{font-size:10px;opacity:.75;font-weight:500}
+
+  /* Search mode */
+  .mode-panel{display:none}
+  .mode-panel.active{display:block}
+
+  .search-row{display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap}
+  .search-input{flex:1;min-width:180px;padding:11px 14px;border:1px solid #e5e7eb;border-radius:8px;font-size:13px;font-family:inherit;color:#1a1a2e;outline:none;transition:border-color .2s}
+  .search-input:focus{border-color:#eab308;box-shadow:0 0 0 3px rgba(234,179,8,.1)}
+  .search-btn{padding:11px 20px;background:#eab308;color:#fff;border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit;transition:background .2s}
+  .search-btn:hover{background:#ca8a04}
+
+  .match-info{background:#fefce8;border:1px solid #fde047;border-radius:8px;padding:10px 14px;font-size:12px;color:#854d0e;margin-bottom:12px;display:none;align-items:center;gap:8px}
+  .match-info.visible{display:flex}
+  .match-info strong{font-weight:800}
+
+  /* Region mode */
+  .region-hint{background:#eff6ff;border-left:4px solid #3b82f6;border-radius:8px;padding:10px 14px;font-size:12px;color:#1e40af;margin-bottom:12px;line-height:1.5}
+  .region-hint strong{font-weight:800}
+
+  /* Options */
+  .options{background:#fefce8;border-radius:12px;padding:20px;margin-bottom:20px;border:1px solid #fde047}
+  .options-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+
+  .color-row{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap}
+  .color-swatch{width:44px;height:44px;border-radius:10px;cursor:pointer;border:3px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.15);transition:transform .15s;position:relative}
+  .color-swatch:hover{transform:scale(1.08)}
+  .color-swatch.active{border-color:#1a1a2e;transform:scale(1.08)}
+  .color-swatch.active::after{content:'✓';position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#fff;font-size:18px;font-weight:900;text-shadow:0 1px 3px rgba(0,0,0,.5)}
+
+  .slider-group{margin-bottom:16px}
+  .slider-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+  .slider-header label{font-size:13px;font-weight:600;color:#4b5563}
+  .slider-header .val{font-size:13px;font-weight:800;color:#ca8a04;background:#fff;padding:4px 10px;border-radius:8px;border:1px solid #fde047;min-width:60px;text-align:center}
+  .range-slider{width:100%;-webkit-appearance:none;appearance:none;height:8px;background:#fde047;border-radius:4px;outline:none}
+  .range-slider::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:22px;height:22px;background:#eab308;border-radius:50%;cursor:pointer;box-shadow:0 2px 6px rgba(234,179,8,.4);transition:transform .15s;border:3px solid #fff}
+  .range-slider::-webkit-slider-thumb:hover{transform:scale(1.15)}
+  .range-slider::-moz-range-thumb{width:22px;height:22px;background:#eab308;border:3px solid #fff;border-radius:50%;cursor:pointer}
+
+  /* Preview */
+  .preview-wrap{display:none;background:#0f172a;border-radius:12px;padding:20px;margin-bottom:20px;text-align:center;align-items:center;justify-content:center;min-height:280px;overflow:auto;max-height:560px}
+  .preview-wrap.visible{display:flex}
+  .preview-canvas{max-width:100%;cursor:crosshair;border-radius:6px;background:#fff;box-shadow:0 4px 16px rgba(0,0,0,.4);display:block}
+  .preview-canvas.region-mode{cursor:crosshair}
+  .preview-canvas.search-mode{cursor:default}
+
+  /* Toolbar for preview */
+  .preview-toolbar{display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap;align-items:center;padding:10px;background:#f8fafc;border-radius:10px;border:1px solid #cbd5e1}
+  .preview-toolbar-label{font-size:12px;font-weight:700;color:#4b5563;text-transform:uppercase;letter-spacing:.3px}
+  .toolbar-btn{padding:7px 12px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;font-size:12px;font-weight:600;color:#4b5563;cursor:pointer;font-family:inherit;transition:all .2s;display:inline-flex;align-items:center;gap:6px}
+  .toolbar-btn:hover{border-color:#eab308;color:#ca8a04;background:#fefce8}
+
+  /* Page thumbs */
+  .pages-preview{display:grid;grid-template-columns:repeat(auto-fill,minmax(90px,1fr));gap:10px;margin-bottom:16px}
+  .page-thumb{background:#fff;border:2px solid #e5e7eb;border-radius:8px;padding:6px;cursor:pointer;transition:all .2s;position:relative;text-align:center}
+  .page-thumb:hover{border-color:#eab308;transform:translateY(-2px)}
+  .page-thumb.selected{border-color:#eab308;background:#fefce8}
+  .page-thumb.has-highlight::after{content:'✓';position:absolute;top:4px;right:4px;width:18px;height:18px;background:#eab308;color:#fff;border-radius:50%;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center}
+  .page-thumb-img{width:100%;aspect-ratio:0.707;background:#f8fafc;border-radius:4px;overflow:hidden;margin-bottom:4px;display:flex;align-items:center;justify-content:center}
+  .page-thumb-img img{width:100%;height:100%;object-fit:contain}
+  .page-thumb-num{font-size:10px;font-weight:700;color:#1a1a2e}
+
+  .actions{display:flex;gap:12px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 28px;border-radius:10px;font-size:15px;font-weight:700;font-family:inherit;cursor:pointer;border:none;transition:all .2s;text-decoration:none}
+  .btn-primary{background:#eab308;color:#fff;flex:1;box-shadow:0 4px 12px rgba(234,179,8,.2)}
+  .btn-primary:hover:not(:disabled){background:#ca8a04;transform:translateY(-2px);box-shadow:0 6px 20px rgba(234,179,8,.3)}
+  .btn-primary:disabled{opacity:.5;cursor:not-allowed;transform:none}
+  .btn-secondary{background:#fff;color:#eab308;border:1px solid #e5e7eb}
+  .btn-secondary:hover{border-color:#eab308;background:#fefce8}
+  .btn-success{background:#10b981;color:#fff}
+  .btn-success:hover{background:#059669}
+
+  .progress{display:none;margin-top:20px}
+  .progress.visible{display:block}
+  .progress-bar{width:100%;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden;margin-bottom:8px}
+  .progress-fill{height:100%;background:linear-gradient(90deg,#facc15,#eab308);border-radius:4px;width:0%;transition:width .3s ease}
+  .progress-text{font-size:13px;color:#6b7280;text-align:center;font-weight:500}
+
+  .result-area{display:none;margin-top:20px;padding:24px;background:#f0fdf4;border-radius:12px;border:1px solid #86efac;text-align:center}
+  .result-area.visible{display:block}
+  .result-icon{width:64px;height:64px;background:#10b981;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:32px;margin:0 auto 16px}
+  .result-title{font-size:18px;font-weight:800;color:#065f46;margin-bottom:8px}
+  .result-desc{font-size:14px;color:#047857;margin-bottom:20px;line-height:1.6}
+  .result-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+  .seo-content{background:#fff;border-radius:16px;padding:32px;border:1px solid #e5e7eb;margin-bottom:24px}
+  .seo-content h2{font-size:22px;font-weight:800;color:#1a1a2e;margin-bottom:14px;margin-top:28px;display:flex;align-items:center;gap:10px}
+  .seo-content h2:first-child{margin-top:0}
+  .seo-content h3{font-size:16px;font-weight:700;color:#1a1a2e;margin:20px 0 10px}
+  .seo-content p{font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:14px}
+  .seo-content ul{list-style:none;padding-left:0;margin-bottom:16px}
+  .seo-content ul li{position:relative;padding-left:24px;font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:8px}
+  .seo-content ul li::before{content:'';position:absolute;left:6px;top:12px;width:6px;height:6px;background:#eab308;border-radius:50%}
+  .seo-content a{color:#2563eb;text-decoration:none;font-weight:600}
+  .seo-content a:hover{text-decoration:underline}
+  .seo-content strong{color:#1a1a2e;font-weight:700}
+  .seo-content code{background:#f1f5f9;padding:2px 6px;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:13px;color:#0f172a;border:1px solid #e2e8f0}
+
+  .how-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:20px}
+  .how-step{background:#fefce8;border-radius:12px;padding:20px;border:1px solid #fde047}
+  .how-step-num{width:36px;height:36px;border-radius:50%;background:#eab308;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;margin-bottom:12px}
+  .how-step-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+  .how-step-desc{font-size:13px;color:#6b7280;line-height:1.6}
+
+  .faq-item{background:#fefce8;border:1px solid #fde047;border-radius:12px;margin-bottom:10px;overflow:hidden;transition:border-color .2s}
+  .faq-item:hover{border-color:#eab308}
+  .faq-question{width:100%;background:none;border:none;padding:18px 22px;font-size:15px;font-weight:700;color:#1a1a2e;text-align:left;cursor:pointer;font-family:inherit;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .faq-question .chev{font-size:12px;color:#eab308;transition:transform .2s;flex-shrink:0}
+  .faq-item.open .faq-question .chev{transform:rotate(180deg)}
+  .faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 22px}
+  .faq-item.open .faq-answer{max-height:500px;padding-bottom:18px}
+  .faq-answer p{font-size:14px;color:#6b7280;line-height:1.7;margin:0}
+
+  .sidebar{background:#fff;border-radius:16px;padding:24px;border:1px solid #e5e7eb;position:sticky;top:80px;margin-bottom:24px}
+  .sidebar-header{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:800;color:#1a1a2e;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid #f3f4f6}
+  .sidebar-list{display:flex;flex-direction:column;gap:8px}
+  .sidebar-item{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;cursor:pointer;transition:background .2s;text-decoration:none;color:inherit;border:1px solid #f3f4f6}
+  .sidebar-item:hover{background:#fefce8;border-color:#fde047}
+  .sidebar-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;flex-shrink:0}
+  .sidebar-info{flex:1;min-width:0}
+  .sidebar-title{font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:2px}
+  .sidebar-desc{font-size:11px;color:#9ca3af;line-height:1.4}
+
+  .footer{background:#0a0e27;padding:60px 40px 30px;color:#fff;margin-top:40px}
+  .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:40px}
+  .footer-brand{display:flex;align-items:center;gap:8px;font-size:20px;font-weight:800;margin-bottom:12px}
+  .footer-brand span{color:#60a5fa}
+  .footer-tagline{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px}
+  .footer-social{display:flex;gap:12px}
+  .footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:16px;transition:background .2s}
+  .footer-social a:hover{background:rgba(255,255,255,.2)}
+  .footer-heading{font-size:14px;font-weight:700;margin-bottom:20px;color:#fff}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .footer-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;transition:color .2s}
+  .footer-links a:hover{color:#60a5fa}
+  .footer-bottom{max-width:1200px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  .footer-bottom-left{display:flex;gap:20px;font-size:12px;color:rgba(255,255,255,.5)}
+  .footer-bottom-right,.footer-bottom-links a{font-size:12px;color:rgba(255,255,255,.5);text-decoration:none}
+  .footer-bottom-links{display:flex;gap:20px}
+
+  .toast{position:fixed;bottom:24px;right:24px;background:#1a1a2e;color:#fff;padding:14px 20px;border-radius:10px;font-size:13px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:3000;transform:translateY(200%);transition:transform .3s ease;max-width:320px}
+  .toast.visible{transform:translateY(0)}
+  .toast.success{background:#10b981}
+  .toast.error{background:#ef4444}
+  .toast.info{background:#3b82f6}
+
+  @media(max-width:1024px){
+    .main-content{grid-template-columns:1fr;padding:24px 20px}
+    .sidebar{position:static}
+    .how-steps{grid-template-columns:repeat(2,1fr)}
+  }
+  @media(max-width:768px){
+    .header{padding:0 20px}.nav{display:none}
+    .hero{padding:24px 20px 40px}
+    .hero-title{font-size:28px}
+    .hero-icon{width:48px;height:48px;font-size:22px}
+    .hero-title-row{flex-direction:column;align-items:flex-start;gap:12px}
+    .main-content{padding:20px 16px}
+    .workspace{padding:20px}
+    .dropzone{padding:32px 16px}
+    .how-steps{grid-template-columns:1fr}
+    .seo-content{padding:20px}
+    .footer-inner{grid-template-columns:1fr 1fr}
+    .toast{left:16px;right:16px;bottom:16px;max-width:none}
+    .mode-tabs{grid-template-columns:1fr}
+    .pages-preview{grid-template-columns:repeat(auto-fill,minmax(75px,1fr))}
+  }
+  @media(max-width:576px){
+    .header{padding:0 16px}.header-right .search-btn,.header-right .theme-btn{display:none}
+    .hero-title{font-size:24px}
+    .actions{flex-direction:column}
+    .btn{width:100%}
+    .btn-primary{flex:none}
+    .footer-inner{grid-template-columns:1fr}
+    .footer-bottom{flex-direction:column;text-align:center}
+  }
+
+  html[data-theme="dark"] body{background:#0f172a;color:#f1f5f9}
+  html[data-theme="dark"] .header,html[data-theme="dark"] .workspace,html[data-theme="dark"] .seo-content,html[data-theme="dark"] .sidebar{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .logo,html[data-theme="dark"] .hero-title,html[data-theme="dark"] .seo-content h2,html[data-theme="dark"] .seo-content h3,html[data-theme="dark"] .faq-question,html[data-theme="dark"] .sidebar-header,html[data-theme="dark"] .sidebar-title,html[data-theme="dark"] .pdf-info-name,html[data-theme="dark"] .page-thumb-num{color:#f1f5f9}
+  html[data-theme="dark"] .nav a{color:#cbd5e1}
+  html[data-theme="dark"] .dropzone{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .how-step,html[data-theme="dark"] .faq-item,html[data-theme="dark"] .pdf-info,html[data-theme="dark"] .options,html[data-theme="dark"] .mode-btn,html[data-theme="dark"] .page-thumb,html[data-theme="dark"] .preview-toolbar{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .mode-btn{color:#cbd5e1}
+  html[data-theme="dark"] .mode-btn.active{background:#ca8a04;color:#fff;border-color:#ca8a04}
+  html[data-theme="dark"] .page-thumb.selected{background:#422006;border-color:#eab308}
+  html[data-theme="dark"] .search-input{background:#0f172a;border-color:#334155;color:#f1f5f9}
+  html[data-theme="dark"] .match-info{background:#422006;border-color:#ca8a04;color:#fef3c7}
+  html[data-theme="dark"] .region-hint{background:#1e3a8a;border-color:#3b82f6;color:#dbeafe}
+  html[data-theme="dark"] .toolbar-btn{background:#1e293b;border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .seo-content p,html[data-theme="dark"] .seo-content ul li,html[data-theme="dark"] .faq-answer p,html[data-theme="dark"] .pdf-info-meta{color:#cbd5e1}
+  html[data-theme="dark"] .seo-content code{background:#020617;color:#94a3b8;border-color:#334155}
+  html[data-theme="dark"] .result-area{background:#064e3b;border-color:#10b981}
+  html[data-theme="dark"] .result-title,html[data-theme="dark"] .result-desc{color:#d1fae5}
+  html[data-theme="dark"] .slider-header .val{background:#0f172a;border-color:#334155;color:#facc15}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type": "SoftwareApplication", "name": "PDF Highlight Text", "url": "https://bigtoolz.com/tools/pdf-tools/visual-pdf/highlight-text/", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any (Web-based)", "description": "Free online tool to highlight text in PDF search by word or draw regions with 4 colors. Works in your browser.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.7", "ratingCount": "345"}},
+    {"@type": "HowTo", "name": "How to Highlight Text in PDF", "step": [
+      {"@type": "HowToStep", "name": "Upload PDF", "text": "Drag & drop or click to select a PDF file."},
+      {"@type": "HowToStep", "name": "Choose Method", "text": "Search for text OR draw highlight regions."},
+      {"@type": "HowToStep", "name": "Pick Color", "text": "Select highlight color and opacity."},
+      {"@type": "HowToStep", "name": "Download", "text": "Download the highlighted PDF."}
+    ]},
+    {"@type": "FAQPage", "mainEntity": [
+      {"@type": "Question", "name": "How do I highlight text in a PDF?", "acceptedAnswer": {"@type": "Answer", "text": "Upload your PDF, either search for specific text or draw highlight regions on the page, pick a color and opacity, then click Apply Highlights. Download the highlighted PDF."}},
+      {"@type": "Question", "name": "Can I search and auto-highlight all matches?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Enter a word or phrase in the search field. Our tool finds all matches across pages and highlights each occurrence in the selected color."}},
+      {"@type": "Question", "name": "Does highlighting modify the PDF content?", "acceptedAnswer": {"@type": "Answer", "text": "No. Highlights are drawn as semi-transparent overlays on top of the page content. The original text and images are unchanged."}},
+      {"@type": "Question", "name": "Can I use different colors for different highlights?", "acceptedAnswer": {"@type": "Answer", "text": "Currently, one color is applied per operation. For multiple colors, run the tool multiple times: first highlight some text in yellow, download, re-upload, then highlight other text in green, etc."}},
+      {"@type": "Question", "name": "Are my PDFs uploaded to a server?", "acceptedAnswer": {"@type": "Answer", "text": "No. All processing happens in your browser using pdf.js and pdf-lib. Your PDF never leaves your device."}}
+    ]},
+    {"@type": "BreadcrumbList", "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bigtoolz.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://bigtoolz.com/tools/"},
+      {"@type": "ListItem", "position": 3, "name": "PDF Tools", "item": "https://bigtoolz.com/tools/pdf-tools/"},
+      {"@type": "ListItem", "position": 4, "name": "Visual PDF", "item": "https://bigtoolz.com/tools/pdf-tools/visual-pdf/"},
+      {"@type": "ListItem", "position": 5, "name": "Highlight Text", "item": "https://bigtoolz.com/tools/pdf-tools/visual-pdf/highlight-text/"}
+    ]}
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-left">
+    <a href="/" class="logo"><div class="logo-icon">⚒</div>BigToolz</span></a>
+    <nav><ul class="nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/tools/" class="active">All Tools</a></li>
+      <li><a href="/tools/categories">Categories</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul></nav>
+  </div>
+  <div class="header-right">
+   
+    <button class="theme-btn" aria-label="Toggle theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
+   
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <nav class="breadcrumb">
+      <a href="/">Home</a><span class="sep">›</span>
+      <a href="/tools/">Tools</a><span class="sep">›</span>
+      <a href="/tools/pdf-tools/">PDF Tools</a><span class="sep">›</span>
+      <a href="/tools/pdf-tools/visual-pdf/">Visual PDF</a><span class="sep">›</span>
+      <span class="current">Highlight Text</span>
+    </nav>
+    <div class="hero-title-row">
+      <div class="hero-icon">🖍</div>
+      <h1 class="hero-title">Highlight <span class="blue">Text</span></h1>
+    </div>
+    <p class="hero-desc">
+      Search &amp; highlight text in PDF, or draw highlight regions manually. 4 preset colors + custom, adjustable opacity. Perfect for study, review, and annotation. No upload, 100% private.
+    </p>
+    <div class="hero-features">
+      <div class="hero-feature"><span class="check">✓</span> Search &amp; Highlight</div>
+      <div class="hero-feature"><span class="check">✓</span> Draw Regions</div>
+      <div class="hero-feature"><span class="check">✓</span> 4 Colors</div>
+      <div class="hero-feature"><span class="check">✓</span> No Upload</div>
+    </div>
+  </div>
+</section>
+
+<div class="main-content">
+
+  <div class="tool-content">
+
+    <div class="workspace">
+
+      <div class="dropzone" id="dropzone">
+        <div class="dropzone-icon">⬆</div>
+        <div class="dropzone-title">Drag &amp; drop your PDF here</div>
+        <div class="dropzone-sub">or <a href="#" id="browseLink">click to browse files</a></div>
+        <button class="choose-btn" id="chooseBtn" type="button">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/></svg>
+          Choose PDF File
+        </button>
+        <div class="dropzone-info">
+          <span>PDF files only</span>
+          <span class="divider">|</span>
+          <span>Single file at a time</span>
+        </div>
+        <input type="file" id="fileInput" class="file-input" accept=".pdf,application/pdf">
+      </div>
+
+      <div class="pdf-info" id="pdfInfo">
+        <div class="pdf-info-icon">📕</div>
+        <div class="pdf-info-details">
+          <div class="pdf-info-name" id="pdfName">document.pdf</div>
+          <div class="pdf-info-meta" id="pdfMeta">0 pages · 0 KB</div>
+        </div>
+      </div>
+
+      <!-- Mode tabs -->
+      <div class="mode-tabs" id="modeTabs">
+        <button class="mode-btn active" data-mode="search">
+          <span class="mode-btn-icon">🔍</span>
+          <div class="mode-btn-title">Search &amp; Highlight</div>
+          <div class="mode-btn-desc">Auto-find all matches</div>
+        </button>
+        <button class="mode-btn" data-mode="region">
+          <span class="mode-btn-icon">▭</span>
+          <div class="mode-btn-title">Draw Regions</div>
+          <div class="mode-btn-desc">Manual highlight</div>
+        </button>
+      </div>
+
+      <!-- Search Mode -->
+      <div class="mode-panel active" data-panel="search">
+        <div class="search-row">
+          <input type="text" class="search-input" id="searchInput" placeholder="Enter word or phrase to highlight (e.g. confidential, important)">
+          <button class="search-btn" id="searchBtn">Find All</button>
+        </div>
+        <div class="match-info" id="matchInfo">
+          <span>📌</span>
+          <span>Found <strong id="matchCount">0</strong> matches across <strong id="matchPages">0</strong> pages</span>
+        </div>
+      </div>
+
+      <!-- Region Mode -->
+      <div class="mode-panel" data-panel="region">
+        <div class="region-hint">
+          <strong>✏️ How to highlight</strong>
+          Click and drag on the preview canvas to draw a highlight rectangle. Release to confirm. You can add multiple regions per page.
+        </div>
+      </div>
+
+      <!-- Options -->
+      <div class="options">
+        <div class="options-title">⚙️ Highlight Options</div>
+
+        <div style="margin-bottom:16px;">
+          <div style="font-size:13px;font-weight:600;color:#4b5563;margin-bottom:10px;">Highlight Color</div>
+          <div class="color-row" id="colorRow">
+            <div class="color-swatch active" data-color="#facc15" style="background:#facc15;" title="Yellow"></div>
+            <div class="color-swatch" data-color="#4ade80" style="background:#4ade80;" title="Green"></div>
+            <div class="color-swatch" data-color="#60a5fa" style="background:#60a5fa;" title="Blue"></div>
+            <div class="color-swatch" data-color="#f472b6" style="background:#f472b6;" title="Pink"></div>
+            <div class="color-swatch" data-color="#a78bfa" style="background:#a78bfa;" title="Purple"></div>
+            <div class="color-swatch" data-color="#fb923c" style="background:#fb923c;" title="Orange"></div>
+          </div>
+        </div>
+
+        <div class="slider-group">
+          <div class="slider-header">
+            <label>Highlight Opacity</label>
+            <span class="val" id="opacityVal">35%</span>
+          </div>
+          <input type="range" id="opacitySlider" class="range-slider" min="10" max="100" value="35" step="5">
+        </div>
+      </div>
+
+      <!-- Page thumbnails -->
+      <div class="pages-preview" id="pagesPreview"></div>
+
+      <!-- Preview toolbar -->
+      <div class="preview-toolbar" id="previewToolbar" style="display:none;">
+        <span class="preview-toolbar-label">Page <span id="editingPageNum">1</span>:</span>
+        <button class="toolbar-btn" id="undoBtn">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 14L4 9l5-5"/><path d="M4 9h10.5a5.5 5.5 0 110 11H10"/></svg>
+          Undo
+        </button>
+        <button class="toolbar-btn" id="clearPageBtn">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 6h18M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6M8 6V4a2 2 0 012-2h4a2 2 0 012 2v2"/></svg>
+          Clear Page
+        </button>
+      </div>
+
+      <!-- Preview -->
+      <div class="preview-wrap" id="previewWrap">
+        <canvas id="previewCanvas" class="preview-canvas"></canvas>
+      </div>
+
+      <div class="actions">
+        <button class="btn btn-primary" id="applyBtn" disabled>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+          Apply Highlights
+        </button>
+        <button class="btn btn-secondary" id="clearBtn">Clear</button>
+      </div>
+
+      <div class="progress" id="progress">
+        <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+        <div class="progress-text" id="progressText">Processing...</div>
+      </div>
+
+      <div class="result-area" id="resultArea">
+        <div class="result-icon">✓</div>
+        <div class="result-title">Highlights Applied!</div>
+        <div class="result-desc" id="resultDesc">Your highlighted PDF is ready.</div>
+        <div class="result-actions">
+          <button class="btn btn-success" id="downloadBtn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+            Download PDF
+          </button>
+          <button class="btn btn-secondary" id="startOverBtn">Start Over</button>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="seo-content">
+
+      <h2>🖍 What is PDF Highlighting?</h2>
+      <p>
+        <strong>PDF highlighting</strong> adds a colored translucent overlay to text or regions of a PDF page. It's used for <strong>studying, document review, contract analysis, or calling attention to key information</strong>. Unlike annotations (which appear as separate comments), highlights visually integrate with the page content.
+      </p>
+      <p>
+        Unlike most online tools, BigToolz processes everything <strong>100% in your browser</strong> using <strong>pdf.js</strong> and <strong>pdf-lib</strong>. Your PDF <strong>never uploaded to any server</strong> complete privacy.
+      </p>
+
+      <h2>🚀 How to Highlight PDF Text</h2>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-step-num">1</div>
+          <div class="how-step-title">Upload PDF</div>
+          <div class="how-step-desc">Drag &amp; drop or click "Choose PDF File" to select a PDF.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">2</div>
+          <div class="how-step-title">Choose Method</div>
+          <div class="how-step-desc">Search for text OR draw highlight regions.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">3</div>
+          <div class="how-step-title">Pick Color</div>
+          <div class="how-step-desc">Select a color and adjust opacity.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">4</div>
+          <div class="how-step-title">Download</div>
+          <div class="how-step-desc">Download the highlighted PDF.</div>
+        </div>
+      </div>
+
+      <h2>🎯 The 2 Highlight Methods</h2>
+
+      <h3>1. Search &amp; Highlight</h3>
+      <p>Enter a word or phrase. Our tool finds <strong>all occurrences</strong> across every page and highlights each one in your chosen color. Perfect for:</p>
+      <ul>
+        <li><strong>Study material</strong> highlight all key terms (e.g., "definition", "important").</li>
+        <li><strong>Contract review</strong> highlight every mention of a party's name or a specific clause.</li>
+        <li><strong>Code documentation</strong> highlight all function names or parameters.</li>
+        <li><strong>Research</strong> highlight specific data points across a paper.</li>
+      </ul>
+
+      <h3>2. Draw Regions</h3>
+      <p>Click-drag on the preview canvas to draw a highlight rectangle over any area text, images, tables, or diagrams. Perfect for:</p>
+      <ul>
+        <li><strong>Highlighting images</strong> or charts that don't have selectable text.</li>
+        <li><strong>Scanned PDFs</strong> where text isn't machine-readable.</li>
+        <li><strong>Hand-drawn annotations</strong> mark up diagrams and figures.</li>
+        <li><strong>Precise control</strong> highlight exactly what you want, nothing more.</li>
+      </ul>
+
+      <h2>🎨 Color Guide</h2>
+      <ul>
+        <li><strong>Yellow (#facc15)</strong> the classic highlighter color. Best for general use.</li>
+        <li><strong>Green (#4ade80)</strong> for "approved", "good", or "verified" content.</li>
+        <li><strong>Blue (#60a5fa)</strong> for "info", "reference", or neutral callouts.</li>
+        <li><strong>Pink (#f472b6)</strong> for "action items" or "attention".</li>
+        <li><strong>Purple (#a78bfa)</strong> for "questions" or "uncertain" content.</li>
+        <li><strong>Orange (#fb923c)</strong> for "warnings" or "review needed".</li>
+      </ul>
+
+      <h2>✨ Key Features</h2>
+      <ul>
+        <li><strong>Search &amp; auto-highlight</strong> finds all matches across pages.</li>
+        <li><strong>Draw regions</strong> click-drag for manual highlighting.</li>
+        <li><strong>4 preset colors + custom</strong> yellow, green, blue, pink, purple, orange.</li>
+        <li><strong>Adjustable opacity</strong> 10% to 100% (default 35%).</li>
+        <li><strong>Per-page control</strong> undo/clear individual pages.</li>
+        <li><strong>Page thumbnails</strong> visual page navigation.</li>
+        <li><strong>Live preview</strong> see highlights before applying.</li>
+        <li><strong>100% browser-based</strong> no uploads, complete privacy.</li>
+      </ul>
+
+      <h2>💡 Tips for Best Results</h2>
+      <ul>
+        <li><strong>Start with 35% opacity</strong> text remains readable while the highlight is visible.</li>
+        <li><strong>Use yellow for most cases</strong> it's the most readable and familiar.</li>
+        <li><strong>Search is case-insensitive</strong> "IMPORTANT" and "important" both match.</li>
+        <li><strong>Partial matches work</strong> searching "conf" will match "confidential", "confirm", etc.</li>
+        <li><strong>For multiple colors, run the tool multiple times</strong> apply yellow first, save, re-upload, apply green, etc.</li>
+      </ul>
+
+      <h2>❓ Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-question">How do I highlight text in a PDF?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Upload your PDF, either search for specific text or draw highlight regions on the page, pick a color and opacity, then click "Apply Highlights". Download the highlighted PDF.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I search and auto-highlight all matches?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>Yes.</strong> Enter a word or phrase in the search field. Our tool finds all matches across pages and highlights each occurrence in the selected color.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Does highlighting modify the PDF content?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>No.</strong> Highlights are drawn as semi-transparent overlays on top of the page content. The original text and images are unchanged. You can also remove highlights later if needed (in Acrobat).</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I use different colors for different highlights?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Currently, one color is applied per operation. For multiple colors, run the tool multiple times: first highlight some text in yellow, download, re-upload, then highlight other text in green, etc.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Will highlights appear when printing?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>Yes.</strong> Highlights are drawn as PDF content and appear in both screen view and when printed. If you have a color printer, they'll print in color; on B&amp;W printers they'll appear as gray shading.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What if search doesn't find any matches?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Try: (1) checking the spelling, (2) using a shorter search term, (3) ensuring the PDF has selectable text (scanned PDFs may not), or (4) using the <strong>Draw Regions</strong> mode instead for scanned PDFs.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Are my PDFs uploaded to a server?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>No. All processing happens in your browser using pdf.js and pdf-lib. Your PDF never leaves your device.</p></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-header">🔗 Related Visual PDF Tools</div>
+    <div class="sidebar-list">
+      <a href="/tools/pdf-tools/visual-pdf/underline-text/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#3b82f6;">⎁</div>
+        <div class="sidebar-info"><div class="sidebar-title">Underline Text</div><div class="sidebar-desc">Underline in PDF</div></div>
+      </a>
+      <a href="/tools/pdf-tools/visual-pdf/strikethrough/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#ef4444;">⎄</div>
+        <div class="sidebar-info"><div class="sidebar-title">Strikethrough</div><div class="sidebar-desc">Cross out text</div></div>
+      </a>
+      <a href="/tools/pdf-tools/visual-pdf/annotate-pdf/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#8b5cf6;">💬</div>
+        <div class="sidebar-info"><div class="sidebar-title">Annotate PDF</div><div class="sidebar-desc">Add comments</div></div>
+      </a>
+      <a href="/tools/pdf-tools/visual-pdf/compress-pdf/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#10b981;">📉</div>
+        <div class="sidebar-info"><div class="sidebar-title">Compress PDF</div><div class="sidebar-desc">Reduce size</div></div>
+      </a>
+      <a href="/tools/pdf-tools/visual-pdf/optimizer-pdf/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#3b82f6;">⚡</div>
+        <div class="sidebar-info"><div class="sidebar-title">PDF Optimizer</div><div class="sidebar-desc">Optimize for web</div></div>
+      </a>
+      <a href="/tools/pdf-tools/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#64748b;">📕</div>
+        <div class="sidebar-info"><div class="sidebar-title">All PDF Tools →</div><div class="sidebar-desc">Browse 100+ tools</div></div>
+      </a>
+    </div>
+  </aside>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand"><div class="logo-icon">⚒</div>BigToolz</span></div>
+      <p class="footer-tagline">Your Ultimate Online Tools Hub</p>
+      <div class="footer-social">
+        <a href="https://facebook.com/bigtoolz" aria-label="Facebook">f</a>
+        <a href="https://twitter.com/bigtoolz" aria-label="Twitter">𝕏</a>
+        <a href="https://youtube.com/@bigtoolz" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+    <div>
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/tools/">All Tools</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Categories</h3>
+      <ul class="footer-links">
+        <li><a href="/tools/image-tools/">Image Tools</a></li>
+        <li><a href="/tools/pdf-tools/">PDF Tools</a></li>
+        <li><a href="/tools/text-tools/">Text Tools</a></li>
+        <li><a href="/tools/seo-tools/">SEO Tools</a></li>
+        <li><a href="/tools/categories">All Categories →</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Legal</h3>
+      <ul class="footer-links">
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left"><span>✓ 100% Free</span><span>✓ No Sign Up</span><span>✓ No Installation</span></div>
+    <div class="footer-bottom-right">© 2026 BigToolz. All rights reserved.</div>
+    <div class="footer-bottom-links"><a href="/privacy-policy">Privacy</a><a href="/terms">Terms</a><a href="/disclaimer">Disclaimer</a></div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<!-- Libraries -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+
+<script>
+'use strict';
+
+/* ===== THEME ===== */
+(function(){try{var t=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&d))document.documentElement.setAttribute('data-theme','dark');else if(t==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();
+document.querySelector('.theme-btn')?.addEventListener('click',()=>{const h=document.documentElement;const c=h.getAttribute('data-theme');const d=window.matchMedia('(prefers-color-scheme: dark)').matches;let n=c==='dark'?'light':c==='light'?'dark':(d?'light':'dark');h.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}});
+
+/* ===== HELPERS ===== */
+const $ = (s, p = document) => p.querySelector(s);
+const $$ = (s, p = document) => [...p.querySelectorAll(s)];
+
+function formatBytes(b) {
+  if (b === 0) return '0 B';
+  const k = 1024, sizes = ['B', 'KB', 'MB', 'GB'];
+  const i = Math.floor(Math.log(b) / Math.log(k));
+  return (b / Math.pow(k, i)).toFixed(i === 0 ? 0 : 1) + ' ' + sizes[i];
+}
+
+function showToast(msg, type = 'info', duration = 3000) {
+  const t = $('#toast');
+  if (!t) return;
+  t.className = 'toast visible' + (type !== 'info' ? ' ' + type : '');
+  t.textContent = msg;
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove('visible'), duration);
+}
+
+function escapeHtml(str) {
+  const div = document.createElement('div');
+  div.textContent = str;
+  return div.innerHTML;
+}
+
+/* ===== PDF.js Setup ===== */
+if (window.pdfjsLib) {
+  pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+}
+
+/* ===== STATE ===== */
+const state = {
+  pdfFile: null,
+  pdfDoc: null,
+  libDoc: null,
+  pdfName: '',
+  pdfPages: 0,
+  pdfSize: 0,
+  pdfArrayBuffer: null,
+  isProcessing: false,
+  resultBlob: null,
+  mode: 'search',
+  color: '#facc15',
+  opacity: 35,
+  // Search mode
+  searchQuery: '',
+  searchMatches: [], // {page, x, y, w, h, text}
+  // Region mode
+  regions: {}, // {pageNum: [{x,y,w,h}]}
+  editingPage: 1,
+  pageCanvases: {},
+  previewImageCache: {}
+};
+
+/* ===== DOM ===== */
+const dropzone = $('#dropzone');
+const fileInput = $('#fileInput');
+const chooseBtn = $('#chooseBtn');
+const browseLink = $('#browseLink');
+const applyBtn = $('#applyBtn');
+const clearBtn = $('#clearBtn');
+const progress = $('#progress');
+const progressFill = $('#progressFill');
+const progressText = $('#progressText');
+const pdfInfo = $('#pdfInfo');
+const pdfName = $('#pdfName');
+const pdfMeta = $('#pdfMeta');
+const searchInput = $('#searchInput');
+const searchBtn = $('#searchBtn');
+const matchInfo = $('#matchInfo');
+const matchCount = $('#matchCount');
+const matchPages = $('#matchPages');
+const opacitySlider = $('#opacitySlider');
+const opacityVal = $('#opacityVal');
+const pagesPreview = $('#pagesPreview');
+const previewWrap = $('#previewWrap');
+const previewCanvas = $('#previewCanvas');
+const previewToolbar = $('#previewToolbar');
+const editingPageNum = $('#editingPageNum');
+const undoBtn = $('#undoBtn');
+const clearPageBtn = $('#clearPageBtn');
+const resultArea = $('#resultArea');
+const resultDesc = $('#resultDesc');
+const downloadBtn = $('#downloadBtn');
+const startOverBtn = $('#startOverBtn');
+
+/* ===== MODE TABS ===== */
+$$('.mode-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    $$('.mode-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    state.mode = btn.dataset.mode;
+    $$('.mode-panel').forEach(p => p.classList.toggle('active', p.dataset.panel === state.mode));
+
+    if (state.mode === 'search') {
+      previewCanvas.classList.remove('region-mode');
+      previewCanvas.classList.add('search-mode');
+    } else {
+      previewCanvas.classList.remove('search-mode');
+      previewCanvas.classList.add('region-mode');
+    }
+
+    if (state.pdfDoc) {
+      renderPreview();
+    }
+  });
+});
+
+/* ===== COLOR SWATCHES ===== */
+$$('.color-swatch').forEach(swatch => {
+  swatch.addEventListener('click', () => {
+    $$('.color-swatch').forEach(s => s.classList.remove('active'));
+    swatch.classList.add('active');
+    state.color = swatch.dataset.color;
+    if (state.pdfDoc) renderPreview();
+  });
+});
+
+/* ===== OPACITY SLIDER ===== */
+opacitySlider.addEventListener('input', (e) => {
+  state.opacity = parseInt(e.target.value, 10);
+  opacityVal.textContent = state.opacity + '%';
+  if (state.pdfDoc) renderPreview();
+});
+
+/* ===== FILE SELECTION ===== */
+function triggerFileSelect() { fileInput.click(); }
+chooseBtn.addEventListener('click', (e) => { e.stopPropagation(); triggerFileSelect(); });
+browseLink.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); triggerFileSelect(); });
+dropzone.addEventListener('click', triggerFileSelect);
+
+fileInput.addEventListener('change', (e) => {
+  const f = e.target.files[0];
+  if (f && (f.type === 'application/pdf' || f.name.toLowerCase().endsWith('.pdf'))) loadPDF(f);
+  fileInput.value = '';
+});
+
+['dragenter', 'dragover'].forEach(evt => {
+  dropzone.addEventListener(evt, (e) => { e.preventDefault(); e.stopPropagation(); dropzone.classList.add('dragover'); });
+});
+['dragleave', 'drop'].forEach(evt => {
+  dropzone.addEventListener(evt, (e) => { e.preventDefault(); e.stopPropagation(); dropzone.classList.remove('dragover'); });
+});
+dropzone.addEventListener('drop', (e) => {
+  const f = e.dataTransfer.files[0];
+  if (f && (f.type === 'application/pdf' || f.name.toLowerCase().endsWith('.pdf'))) loadPDF(f);
+  else showToast('Please drop a PDF file', 'error');
+});
+
+/* ===== LOAD PDF ===== */
+async function loadPDF(file) {
+  if (!window.pdfjsLib || !window.PDFLib) {
+    showToast('PDF libraries not loaded. Check your internet.', 'error');
+    return;
+  }
+
+  state.pdfFile = file;
+  state.pdfName = file.name;
+  state.pdfSize = file.size;
+  state.searchMatches = [];
+  state.regions = {};
+  state.editingPage = 1;
+
+  showToast('Loading PDF...', 'info', 2000);
+
+  try {
+    const arrayBuffer = await file.arrayBuffer();
+    state.pdfArrayBuffer = arrayBuffer.slice(0);
+
+    const libDoc = await PDFLib.PDFDocument.load(arrayBuffer.slice(0), { ignoreEncryption: true });
+    state.libDoc = libDoc;
+
+    const loadingTask = pdfjsLib.getDocument({ data: arrayBuffer.slice(0) });
+    const pdf = await loadingTask.promise;
+    state.pdfDoc = pdf;
+    state.pdfPages = pdf.numPages;
+
+    pdfName.textContent = file.name;
+    pdfMeta.textContent = `${pdf.numPages} page${pdf.numPages > 1 ? 's' : ''} · ${formatBytes(file.size)}`;
+    pdfInfo.classList.add('visible');
+    dropzone.style.display = 'none';
+    previewWrap.classList.add('visible');
+    previewToolbar.style.display = 'flex';
+    applyBtn.disabled = false;
+    resultArea.classList.remove('visible');
+
+    await buildPagesPreview();
+    await selectPage(1);
+
+    showToast(`✅ PDF loaded: ${pdf.numPages} pages`, 'success');
+  } catch (err) {
+    console.error('PDF load failed:', err);
+    showToast('Failed to load PDF file may be corrupted', 'error', 5000);
+    state.libDoc = null;
+  }
+}
+
+/* ===== BUILD PAGE THUMBNAILS ===== */
+async function buildPagesPreview() {
+  pagesPreview.innerHTML = '';
+  const maxPreview = Math.min(state.pdfPages, 30);
+
+  for (let i = 1; i <= maxPreview; i++) {
+    const card = document.createElement('div');
+    card.className = 'page-thumb';
+    card.dataset.page = i;
+    card.innerHTML = `
+      <div class="page-thumb-img"><div style="font-size:9px;color:#9ca3af;">...</div></div>
+      <div class="page-thumb-num">Page ${i}</div>
+    `;
+    card.addEventListener('click', () => selectPage(i));
+    pagesPreview.appendChild(card);
+  }
+
+  // Render thumbs progressively
+  for (let i = 1; i <= maxPreview; i++) {
+    try {
+      const page = await state.pdfDoc.getPage(i);
+      const viewport = page.getViewport({ scale: 0.25 });
+
+      const canvas = document.createElement('canvas');
+      canvas.width = Math.round(viewport.width);
+      canvas.height = Math.round(viewport.height);
+      const ctx = canvas.getContext('2d');
+      ctx.fillStyle = '#ffffff';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      await page.render({ canvasContext: ctx, viewport }).promise;
+
+      const card = pagesPreview.querySelector(`[data-page="${i}"]`);
+      if (card) {
+        const thumb = card.querySelector('.page-thumb-img');
+        thumb.innerHTML = '';
+        const img = document.createElement('img');
+        img.src = canvas.toDataURL('image/jpeg', 0.7);
+        img.alt = 'Page ' + i;
+        thumb.appendChild(img);
+      }
+    } catch (e) {
+      console.warn('Thumb failed for page', i, e);
+    }
+  }
+}
+
+/* ===== SELECT PAGE ===== */
+async function selectPage(pageNum) {
+  if (!state.pdfDoc) return;
+
+  state.editingPage = pageNum;
+  editingPageNum.textContent = pageNum;
+
+  $$('.page-thumb').forEach(t => t.classList.toggle('selected', parseInt(t.dataset.page, 10) === pageNum));
+
+  await renderPreview();
+}
+
+/* ===== RENDER PREVIEW ===== */
+async function renderPreview() {
+  if (!state.pdfDoc) return;
+
+  try {
+    const page = await state.pdfDoc.getPage(state.editingPage);
+    const viewport = page.getViewport({ scale: 1.5 });
+
+    previewCanvas.width = Math.round(viewport.width);
+    previewCanvas.height = Math.round(viewport.height);
+    const ctx = previewCanvas.getContext('2d');
+
+    ctx.fillStyle = '#ffffff';
+    ctx.fillRect(0, 0, previewCanvas.width, previewCanvas.height);
+
+    await page.render({ canvasContext: ctx, viewport }).promise;
+
+    state.pageCanvases[state.editingPage] = {
+      width: viewport.width,
+      height: viewport.height,
+      scale: viewport.scale
+    };
+
+    // Draw existing highlights for this page
+    drawAllHighlights();
+
+  } catch (e) {
+    console.warn('Preview render failed:', e);
+  }
+}
+
+function drawAllHighlights() {
+  const ctx = previewCanvas.getContext('2d');
+  const [r, g, b] = hexToRgb(state.color);
+  const alpha = state.opacity / 100;
+
+  // Search matches on this page
+  if (state.mode === 'search') {
+    state.searchMatches
+      .filter(m => m.page === state.editingPage)
+      .forEach(m => {
+        const scale = state.pageCanvases[state.editingPage].scale;
+        ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${alpha})`;
+        ctx.fillRect(
+          m.x * scale,
+          m.y * scale,
+          m.w * scale,
+          m.h * scale
+        );
+      });
+  }
+
+  // Region highlights for this page
+  const regions = state.regions[state.editingPage] || [];
+  ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${alpha})`;
+  regions.forEach(reg => {
+    const scale = state.pageCanvases[state.editingPage].scale;
+    ctx.fillRect(
+      reg.x * scale,
+      reg.y * scale,
+      reg.w * scale,
+      reg.h * scale
+    );
+  });
+}
+
+function hexToRgb(hex) {
+  const m = hex.replace('#', '');
+  return [
+    parseInt(m.slice(0, 2), 16),
+    parseInt(m.slice(2, 4), 16),
+    parseInt(m.slice(4, 6), 16)
+  ];
+}
+
+/* ===== SEARCH & HIGHLIGHT ===== */
+searchBtn.addEventListener('click', performSearch);
+searchInput.addEventListener('keypress', (e) => {
+  if (e.key === 'Enter') { e.preventDefault(); performSearch(); }
+});
+
+async function performSearch() {
+  if (!state.pdfDoc) return;
+
+  const query = searchInput.value.trim();
+  if (!query) { showToast('Enter a word or phrase', 'error'); return; }
+
+  state.searchQuery = query;
+  state.searchMatches = [];
+
+  showToast('Searching all pages...', 'info', 2000);
+
+  const queryLower = query.toLowerCase();
+
+  for (let i = 1; i <= state.pdfPages; i++) {
+    try {
+      const page = await state.pdfDoc.getPage(i);
+      const textContent = await page.getTextContent();
+      const viewport = page.getViewport({ scale: 1 });  // PDF points
+
+      textContent.items.forEach(item => {
+        const text = (item.str || '').toLowerCase();
+        if (!text) return;
+
+        const idx = text.indexOf(queryLower);
+        if (idx !== -1) {
+          // item.transform = [a, b, c, d, e, f]
+          const x = item.transform[4];
+          const y = item.transform[5];
+          const w = item.width || 50;
+          const h = item.height || 12;
+
+          // Compute precise x-offset for the match inside the text run
+          // Approximate: proportional to character position
+          const charRatio = idx / Math.max(1, text.length);
+          const matchWidthRatio = query.length / Math.max(1, text.length);
+
+          const matchX = x + (w * charRatio);
+          const matchW = w * matchWidthRatio;
+
+          state.searchMatches.push({
+            page: i,
+            x: matchX,
+            y: y - 2,
+            w: Math.max(matchW, 10),
+            h: h + 2,
+            text: item.str
+          });
+        }
+      });
+    } catch (e) {
+      console.warn('Search failed on page', i, e);
+    }
+  }
+
+  // Update UI
+  const matchedPages = new Set(state.searchMatches.map(m => m.page));
+  matchCount.textContent = state.searchMatches.length;
+  matchPages.textContent = matchedPages.size;
+  matchInfo.classList.add('visible');
+
+  // Mark page thumbs
+  $$('.page-thumb').forEach(t => {
+    const pn = parseInt(t.dataset.page, 10);
+    t.classList.toggle('has-highlight', matchedPages.has(pn));
+  });
+
+  if (state.searchMatches.length === 0) {
+    showToast('No matches found', 'error');
+  } else {
+    showToast(`Found ${state.searchMatches.length} matches on ${matchedPages.size} pages`, 'success');
+    // Jump to first page with matches
+    const firstPage = Math.min(...matchedPages);
+    if (firstPage !== state.editingPage) {
+      await selectPage(firstPage);
+    } else {
+      renderPreview();
+    }
+  }
+}
+
+/* ===== REGION MODE DRAW HIGHLIGHTS ===== */
+let isDrawing = false;
+let startX = 0, startY = 0;
+
+previewCanvas.addEventListener('mousedown', (e) => {
+  if (state.mode !== 'region') return;
+
+  const rect = previewCanvas.getBoundingClientRect();
+  const scaleX = previewCanvas.width / rect.width;
+  const scaleY = previewCanvas.height / rect.height;
+  startX = (e.clientX - rect.left) * scaleX;
+  startY = (e.clientY - rect.top) * scaleY;
+  isDrawing = true;
+});
+
+previewCanvas.addEventListener('mousemove', (e) => {
+  if (!isDrawing || state.mode !== 'region') return;
+
+  const rect = previewCanvas.getBoundingClientRect();
+  const scaleX = previewCanvas.width / rect.width;
+  const scaleY = previewCanvas.height / rect.height;
+  const currentX = (e.clientX - rect.left) * scaleX;
+  const currentY = (e.clientY - rect.top) * scaleY;
+
+  redrawWithTemp(Math.min(startX, currentX), Math.min(startY, currentY),
+                 Math.abs(currentX - startX), Math.abs(currentY - startY));
+});
+
+previewCanvas.addEventListener('mouseup', (e) => {
+  if (!isDrawing || state.mode !== 'region') return;
+  isDrawing = false;
+
+  const rect = previewCanvas.getBoundingClientRect();
+  const scaleX = previewCanvas.width / rect.width;
+  const scaleY = previewCanvas.height / rect.height;
+  const currentX = (e.clientX - rect.left) * scaleX;
+  const currentY = (e.clientY - rect.top) * scaleY;
+
+  const x = Math.min(startX, currentX);
+  const y = Math.min(startY, currentY);
+  const w = Math.abs(currentX - startX);
+  const h = Math.abs(currentY - startY);
+
+  if (w > 5 && h > 5) {
+    const scale = state.pageCanvases[state.editingPage].scale;
+    if (!state.regions[state.editingPage]) state.regions[state.editingPage] = [];
+    state.regions[state.editingPage].push({
+      x: x / scale,
+      y: y / scale,
+      w: w / scale,
+      h: h / scale
+    });
+
+    // Mark thumb
+    const thumb = pagesPreview.querySelector(`[data-page="${state.editingPage}"]`);
+    if (thumb) thumb.classList.add('has-highlight');
+
+    renderPreview();
+    showToast(`Region added to page ${state.editingPage}`, 'success', 1500);
+  }
+});
+
+previewCanvas.addEventListener('mouseleave', () => {
+  if (isDrawing) {
+    isDrawing = false;
+    renderPreview();
+  }
+});
+
+// Touch support
+previewCanvas.addEventListener('touchstart', (e) => {
+  if (state.mode !== 'region') return;
+  e.preventDefault();
+  const touch = e.touches[0];
+  const rect = previewCanvas.getBoundingClientRect();
+  const scaleX = previewCanvas.width / rect.width;
+  const scaleY = previewCanvas.height / rect.height;
+  startX = (touch.clientX - rect.left) * scaleX;
+  startY = (touch.clientY - rect.top) * scaleY;
+  isDrawing = true;
+}, { passive: false });
+
+previewCanvas.addEventListener('touchmove', (e) => {
+  if (!isDrawing || state.mode !== 'region') return;
+  e.preventDefault();
+  const touch = e.touches[0];
+  const rect = previewCanvas.getBoundingClientRect();
+  const scaleX = previewCanvas.width / rect.width;
+  const scaleY = previewCanvas.height / rect.height;
+  const currentX = (touch.clientX - rect.left) * scaleX;
+  const currentY = (touch.clientY - rect.top) * scaleY;
+  redrawWithTemp(Math.min(startX, currentX), Math.min(startY, currentY),
+                 Math.abs(currentX - startX), Math.abs(currentY - startY));
+}, { passive: false });
+
+previewCanvas.addEventListener('touchend', (e) => {
+  if (!isDrawing || state.mode !== 'region') return;
+  isDrawing = false;
+  const touch = e.changedTouches[0];
+  const rect = previewCanvas.getBoundingClientRect();
+  const scaleX = previewCanvas.width / rect.width;
+  const scaleY = previewCanvas.height / rect.height;
+  const currentX = (touch.clientX - rect.left) * scaleX;
+  const currentY = (touch.clientY - rect.top) * scaleY;
+
+  const x = Math.min(startX, currentX);
+  const y = Math.min(startY, currentY);
+  const w = Math.abs(currentX - startX);
+  const h = Math.abs(currentY - startY);
+
+  if (w > 5 && h > 5) {
+    const scale = state.pageCanvases[state.editingPage].scale;
+    if (!state.regions[state.editingPage]) state.regions[state.editingPage] = [];
+    state.regions[state.editingPage].push({
+      x: x / scale, y: y / scale, w: w / scale, h: h / scale
+    });
+
+    const thumb = pagesPreview.querySelector(`[data-page="${state.editingPage}"]`);
+    if (thumb) thumb.classList.add('has-highlight');
+
+    renderPreview();
+  }
+});
+
+function redrawWithTemp(x, y, w, h) {
+  // Simple redraw: full re-render is expensive, but simpler
+  // Save current canvas image, draw temp rect on top
+  const ctx = previewCanvas.getContext('2d');
+  // Just render full (since we don't cache)
+  renderPreview().then(() => {
+    const ctx2 = previewCanvas.getContext('2d');
+    ctx2.fillStyle = 'rgba(234, 179, 8, 0.5)';
+    ctx2.fillRect(x, y, w, h);
+  });
+}
+
+/* ===== UNDO / CLEAR PAGE ===== */
+undoBtn.addEventListener('click', () => {
+  if (state.mode === 'search') {
+    // Remove last search match
+    if (state.searchMatches.length === 0) {
+      showToast('Nothing to undo', 'info');
+      return;
+    }
+    state.searchMatches.pop();
+    updateSearchInfo();
+    renderPreview();
+  } else {
+    // Remove last region on current page
+    const regions = state.regions[state.editingPage];
+    if (!regions || regions.length === 0) {
+      showToast('Nothing to undo', 'info');
+      return;
+    }
+    regions.pop();
+    if (regions.length === 0) {
+      delete state.regions[state.editingPage];
+      const thumb = pagesPreview.querySelector(`[data-page="${state.editingPage}"]`);
+      if (thumb) thumb.classList.remove('has-highlight');
+    }
+    renderPreview();
+  }
+});
+
+clearPageBtn.addEventListener('click', () => {
+  if (state.mode === 'search') {
+    state.searchMatches = state.searchMatches.filter(m => m.page !== state.editingPage);
+    updateSearchInfo();
+  } else {
+    delete state.regions[state.editingPage];
+    const thumb = pagesPreview.querySelector(`[data-page="${state.editingPage}"]`);
+    if (thumb) thumb.classList.remove('has-highlight');
+  }
+  renderPreview();
+  showToast(`Cleared page ${state.editingPage}`, 'success', 1500);
+});
+
+function updateSearchInfo() {
+  const matchedPages = new Set(state.searchMatches.map(m => m.page));
+  matchCount.textContent = state.searchMatches.length;
+  matchPages.textContent = matchedPages.size;
+}
+
+/* ===== APPLY HIGHLIGHTS ===== */
+applyBtn.addEventListener('click', applyHighlights);
+
+async function applyHighlights() {
+  if (state.isProcessing || !state.libDoc) return;
+
+  const totalHighlights = state.mode === 'search'
+    ? state.searchMatches.length
+    : Object.values(state.regions).reduce((s, arr) => s + arr.length, 0);
+
+  if (totalHighlights === 0) {
+    showToast('No highlights to apply', 'error');
+    return;
+  }
+
+  state.isProcessing = true;
+  applyBtn.disabled = true;
+  applyBtn.innerHTML = 'Applying...';
+  progress.classList.add('visible');
+  progressFill.style.width = '20%';
+  progressText.textContent = 'Preparing highlights...';
+  resultArea.classList.remove('visible');
+
+  try {
+    const doc = state.libDoc;
+    const { rgb } = PDFLib;
+
+    const [r, g, b] = hexToRgb(state.color);
+    const alpha = state.opacity / 100;
+
+    progressFill.style.width = '40%';
+    progressText.textContent = 'Drawing highlights...';
+
+    const pdfPages = doc.getPages();
+
+    if (state.mode === 'search') {
+      state.searchMatches.forEach(m => {
+        const page = pdfPages[m.page - 1];
+        if (!page) return;
+        try {
+          page.drawRectangle({
+            x: m.x,
+            y: m.y,
+            width: m.w,
+            height: m.h,
+            color: rgb(r / 255, g / 255, b / 255),
+            opacity: alpha
+          });
+        } catch (e) { console.warn('Draw failed:', e); }
+      });
+    } else {
+      Object.entries(state.regions).forEach(([pageStr, regionsArr]) => {
+        const pageNum = parseInt(pageStr, 10);
+        const page = pdfPages[pageNum - 1];
+        if (!page) return;
+
+        const canvasInfo = state.pageCanvases[pageNum];
+        const canvasHeight = canvasInfo ? canvasInfo.height / canvasInfo.scale : 0;
+
+        regionsArr.forEach(reg => {
+          try {
+            // Region coords are top-left based; PDF is bottom-left → flip Y
+            page.drawRectangle({
+              x: reg.x,
+              y: canvasHeight - reg.y - reg.h,
+              width: reg.w,
+              height: reg.h,
+              color: rgb(r / 255, g / 255, b / 255),
+              opacity: alpha
+            });
+          } catch (e) { console.warn('Region draw failed:', e); }
+        });
+      });
+    }
+
+    progressFill.style.width = '80%';
+    progressText.textContent = 'Saving PDF...';
+
+    const newBytes = await doc.save();
+    state.resultBlob = new Blob([newBytes], { type: 'application/pdf' });
+
+    progressFill.style.width = '100%';
+    progressText.textContent = 'Done!';
+
+    setTimeout(() => {
+      progress.classList.remove('visible');
+      resultArea.classList.add('visible');
+      resultDesc.textContent = `Applied ${totalHighlights} highlight${totalHighlights > 1 ? 's' : ''} · ${formatBytes(state.resultBlob.size)}`;
+      showToast('✅ Highlights applied!', 'success');
+    }, 400);
+
+  } catch (err) {
+    console.error('Apply failed:', err);
+    progress.classList.remove('visible');
+    showToast('Failed to apply highlights: ' + err.message, 'error', 5000);
+  } finally {
+    state.isProcessing = false;
+    applyBtn.disabled = false;
+    applyBtn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Apply Highlights';
+  }
+}
+
+/* ===== DOWNLOAD ===== */
+downloadBtn.addEventListener('click', () => {
+  if (!state.resultBlob) return;
+  const url = URL.createObjectURL(state.resultBlob);
+  const baseName = state.pdfName.replace(/\.[^.]+$/, '');
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `${baseName}-highlighted.pdf`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+  showToast('Download started!', 'success');
+});
+
+/* ===== START OVER / CLEAR ===== */
+startOverBtn.addEventListener('click', resetAll);
+clearBtn.addEventListener('click', resetAll);
+
+function resetAll() {
+  if (state.pdfDoc) {
+    try { state.pdfDoc.destroy(); } catch (e) {}
+  }
+  state.pdfDoc = null;
+  state.libDoc = null;
+  state.pdfFile = null;
+  state.pdfArrayBuffer = null;
+  state.resultBlob = null;
+  state.pdfPages = 0;
+  state.searchMatches = [];
+  state.searchQuery = '';
+  state.regions = {};
+
+  pdfInfo.classList.remove('visible');
+  previewWrap.classList.remove('visible');
+  previewToolbar.style.display = 'none';
+  resultArea.classList.remove('visible');
+  progress.classList.remove('visible');
+  matchInfo.classList.remove('visible');
+  pagesPreview.innerHTML = '';
+  dropzone.style.display = '';
+  applyBtn.disabled = true;
+  searchInput.value = '';
+
+  showToast('Cleared');
+}
+
+/* ===== FAQ ===== */
+$$('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    $$('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+</script>
+
+</body>
+</html>

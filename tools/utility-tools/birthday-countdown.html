@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2563eb">
+
+<title>Birthday Countdown - Days Until Your Birthday | BigToolz</title>
+<meta name="description" content="Free birthday countdown timer. See exact days, hours, minutes and seconds until your next birthday. Also calculates age, zodiac sign, and day of week.">
+<meta name="keywords" content="birthday countdown, days until birthday, birthday timer, birthday countdown clock, how many days until my birthday">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://bigtoolz.com/tools/utility-tools/birthday-countdown/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Birthday Countdown - Days Until Your Birthday | BigToolz">
+<meta property="og:description" content="Live countdown to your next birthday. Days, hours, minutes, seconds + age and zodiac.">
+<meta property="og:url" content="https://bigtoolz.com/tools/utility-tools/birthday-countdown/">
+<meta property="og:image" content="https://bigtoolz.com/assets/images/og-image.jpg">
+<meta property="og:site_name" content="BigToolz">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Birthday Countdown - BigToolz">
+<meta name="twitter:description" content="Live birthday countdown with age and zodiac sign.">
+<meta name="twitter:image" content="https://bigtoolz.com/assets/images/twitter-card.jpg">
+
+<link rel="icon" href="/assets/images/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/images/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#f8f9fc;color:#1a1a2e;overflow-x:hidden;line-height:1.5}
+
+  .header{background:#fff;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;position:sticky;top:0;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+  .header-left{display:flex;align-items:center;gap:40px}
+  .logo{display:flex;align-items:center;gap:8px;font-size:22px;font-weight:800;color:#1a1a2e;text-decoration:none}
+  .logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#3b82f6,#2563eb);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px}
+  .logo span{color:#2563eb}
+  .nav{display:flex;align-items:center;gap:28px;list-style:none}
+  .nav a{text-decoration:none;color:#4b5563;font-size:14px;font-weight:500;transition:color .2s}
+  .nav a:hover,.nav a.active{color:#2563eb}
+  .header-right{display:flex;align-items:center;gap:16px}
+  .search-btn,.theme-btn{width:36px;height:36px;border-radius:50%;border:none;background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#4b5563}
+  .search-btn:hover,.theme-btn:hover{background:#f3f4f6}
+  .bookmark-btn{display:flex;align-items:center;gap:8px;background:#2563eb;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
+  .bookmark-btn:hover{background:#1d4ed8}
+
+  .hero{background:linear-gradient(135deg,#0a0e27 0%,#1a1a4e 40%,#2d1b69 70%,#4c1d95 100%);padding:40px 40px 60px;position:relative;overflow:hidden;color:#fff}
+  .hero::before{content:'';position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(236,72,153,.35) 0%,transparent 70%);border-radius:50%}
+  .hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+  .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px;flex-wrap:wrap}
+  .breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none}
+  .breadcrumb a:hover{color:#fff}
+  .breadcrumb .sep{color:rgba(255,255,255,.4)}
+  .breadcrumb .current{color:#fff;font-weight:500}
+  .hero-title-row{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+  .hero-icon{width:60px;height:60px;background:#ec4899;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:28px;color:#fff;flex-shrink:0;box-shadow:0 8px 24px rgba(236,72,153,.4)}
+  .hero-title{font-size:42px;font-weight:800;line-height:1.15}
+  .hero-title .blue{color:#f472b6}
+  .hero-desc{font-size:15px;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:24px;max-width:560px}
+  .hero-features{display:flex;gap:24px;flex-wrap:wrap}
+  .hero-feature{display:flex;align-items:center;gap:6px;font-size:13px;color:#fff;font-weight:500}
+  .hero-feature .check{width:18px;height:18px;border-radius:50%;background:#ec4899;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;flex-shrink:0}
+
+  .main-content{max-width:1200px;margin:0 auto;padding:40px;display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start}
+  .tool-content{min-width:0}
+
+  .workspace{background:#fff;border-radius:16px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,.06);border:1px solid #e5e7eb;margin-bottom:24px}
+
+  /* Input section */
+  .input-section{background:#fdf2f8;border-radius:12px;padding:20px;border:1px solid #fbcfe8;margin-bottom:24px}
+  .input-title{font-size:13px;font-weight:800;color:#9d174d;text-transform:uppercase;letter-spacing:.5px;margin-bottom:14px;display:flex;align-items:center;gap:6px}
+  .input-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr auto;gap:10px;align-items:end}
+  .input-group label{display:block;font-size:11px;font-weight:700;color:#831843;margin-bottom:4px;text-transform:uppercase;letter-spacing:.3px}
+  .input-group input,.input-group select{width:100%;padding:11px 12px;border:1.5px solid #e5e7eb;border-radius:8px;font-size:14px;font-weight:600;font-family:inherit;color:#1a1a2e;background:#fff;outline:none;transition:border-color .2s}
+  .input-group input:focus,.input-group select:focus{border-color:#ec4899;box-shadow:0 0 0 3px rgba(236,72,153,.1)}
+  .save-btn{background:#ec4899;color:#fff;border:none;padding:11px 20px;border-radius:8px;font-size:13px;font-weight:800;cursor:pointer;font-family:inherit;transition:all .2s;white-space:nowrap;height:42px}
+  .save-btn:hover{background:#db2777}
+
+  /* Countdown display */
+  .countdown-wrap{background:linear-gradient(135deg,#ec4899,#8b5cf6);border-radius:20px;padding:32px 24px;text-align:center;color:#fff;margin-bottom:24px;position:relative;overflow:hidden}
+  .countdown-wrap::before{content:'';position:absolute;top:-50%;right:-10%;width:300px;height:300px;background:rgba(255,255,255,.1);border-radius:50%}
+  .countdown-badge{display:inline-block;background:rgba(255,255,255,.2);backdrop-filter:blur(10px);padding:6px 14px;border-radius:20px;font-size:12px;font-weight:700;margin-bottom:14px;letter-spacing:.5px}
+  .countdown-name{font-size:24px;font-weight:800;margin-bottom:6px;position:relative;z-index:2}
+  .countdown-sub{font-size:13px;color:rgba(255,255,255,.85);margin-bottom:24px;position:relative;z-index:2}
+
+  .countdown-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;max-width:600px;margin:0 auto;position:relative;z-index:2}
+  .countdown-cell{background:rgba(255,255,255,.15);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.25);border-radius:14px;padding:16px 8px;text-align:center}
+  .countdown-cell-value{font-size:36px;font-weight:800;font-family:'JetBrains Mono',monospace;line-height:1;letter-spacing:-1px}
+  .countdown-cell-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-top:6px;opacity:.85}
+
+  /* Progress bar */
+  .progress-wrap{margin-top:22px;position:relative;z-index:2}
+  .progress-label{display:flex;justify-content:space-between;font-size:11px;font-weight:700;margin-bottom:6px;opacity:.9}
+  .progress-track{height:8px;background:rgba(255,255,255,.2);border-radius:4px;overflow:hidden}
+  .progress-fill{height:100%;background:linear-gradient(90deg,#fff,#a78bfa);border-radius:4px;transition:width .5s}
+
+  /* Birthday is today */
+  .countdown-wrap.today{background:linear-gradient(135deg,#f97316,#ec4899)}
+  .countdown-wrap.today .countdown-cell-value{animation:pulse 1.5s ease-in-out infinite}
+  @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
+
+  /* Info cards */
+  .info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:24px}
+  .info-card{background:#fdf2f8;border-radius:12px;padding:16px;border:1px solid #fbcfe8;text-align:center}
+  .info-label{font-size:10px;font-weight:800;color:#9d174d;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+  .info-value{font-size:18px;font-weight:800;color:#1a1a2e;line-height:1.2}
+  .info-value .emoji{font-size:22px;display:block;margin-bottom:4px}
+
+  /* Wish message */
+  .wish-box{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:12px;padding:18px;margin-bottom:24px}
+  .wish-title{font-size:12px;font-weight:800;color:#166534;text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px;display:flex;align-items:center;gap:6px}
+  .wish-text{font-size:14px;color:#1a1a2e;line-height:1.7;font-style:italic;margin-bottom:12px}
+  .wish-actions{display:flex;gap:8px;flex-wrap:wrap}
+
+  /* Saved birthdays */
+  .saved-title{font-size:12px;font-weight:800;color:#6b7280;text-transform:uppercase;letter-spacing:.5px;margin-bottom:12px;display:flex;justify-content:space-between;align-items:center}
+  .saved-list{display:flex;flex-direction:column;gap:8px;margin-bottom:16px}
+  .saved-item{background:#f8fafc;border:1.5px solid #e5e7eb;border-radius:10px;padding:12px 14px;display:flex;justify-content:space-between;align-items:center;gap:12px;cursor:pointer;transition:all .2s}
+  .saved-item:hover{border-color:#ec4899;background:#fdf2f8}
+  .saved-item.active{border-color:#ec4899;background:#fdf2f8}
+  .saved-info{flex:1;min-width:0}
+  .saved-name{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:2px}
+  .saved-date{font-size:11px;color:#6b7280}
+  .saved-days{font-size:13px;font-weight:800;color:#ec4899;white-space:nowrap}
+  .saved-remove{background:none;border:none;font-size:14px;color:#d1d5db;cursor:pointer;padding:6px;border-radius:6px;transition:all .2s}
+  .saved-remove:hover{color:#ef4444;background:#fee2e2}
+
+  .empty-msg{padding:30px 20px;text-align:center;color:#9ca3af;font-size:13px;font-style:italic;background:#f8fafc;border-radius:10px;border:2px dashed #e5e7eb}
+
+  /* Buttons */
+  .mini-btn{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;background:#fff;border:1.5px solid #e5e7eb;border-radius:8px;font-size:12px;font-weight:700;color:#4b5563;cursor:pointer;font-family:inherit;transition:all .2s}
+  .mini-btn:hover{border-color:#ec4899;color:#ec4899;background:#fdf2f8}
+  .mini-btn.copied{background:#10b981;color:#fff;border-color:#10b981}
+  .mini-btn.primary{background:#ec4899;color:#fff;border-color:#ec4899}
+  .mini-btn.primary:hover{background:#db2777;border-color:#db2777;color:#fff}
+
+  /* SEO */
+  .seo-content{background:#fff;border-radius:16px;padding:32px;border:1px solid #e5e7eb;margin-bottom:24px}
+  .seo-content h2{font-size:22px;font-weight:800;color:#1a1a2e;margin-bottom:14px;margin-top:28px;display:flex;align-items:center;gap:10px}
+  .seo-content h2:first-child{margin-top:0}
+  .seo-content h3{font-size:16px;font-weight:700;color:#1a1a2e;margin:20px 0 10px}
+  .seo-content p{font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:14px}
+  .seo-content ul{list-style:none;padding-left:0;margin-bottom:16px}
+  .seo-content ul li{position:relative;padding-left:24px;font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:8px}
+  .seo-content ul li::before{content:'';position:absolute;left:6px;top:12px;width:6px;height:6px;background:#ec4899;border-radius:50%}
+  .seo-content a{color:#2563eb;text-decoration:none;font-weight:600}
+  .seo-content a:hover{text-decoration:underline}
+  .seo-content strong{color:#1a1a2e;font-weight:700}
+
+  .how-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:20px}
+  .how-step{background:#fdf2f8;border-radius:12px;padding:20px;border:1px solid #fbcfe8}
+  .how-step-num{width:36px;height:36px;border-radius:50%;background:#ec4899;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;margin-bottom:12px}
+  .how-step-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+  .how-step-desc{font-size:13px;color:#6b7280;line-height:1.6}
+
+  .faq-item{background:#fdf2f8;border:1px solid #fbcfe8;border-radius:12px;margin-bottom:10px;overflow:hidden;transition:border-color .2s}
+  .faq-item:hover{border-color:#ec4899}
+  .faq-question{width:100%;background:none;border:none;padding:18px 22px;font-size:15px;font-weight:700;color:#1a1a2e;text-align:left;cursor:pointer;font-family:inherit;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .faq-question .chev{font-size:12px;color:#ec4899;transition:transform .2s;flex-shrink:0}
+  .faq-item.open .faq-question .chev{transform:rotate(180deg)}
+  .faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 22px}
+  .faq-item.open .faq-answer{max-height:600px;padding-bottom:18px}
+  .faq-answer p{font-size:14px;color:#6b7280;line-height:1.7;margin:0}
+
+  .sidebar{background:#fff;border-radius:16px;padding:24px;border:1px solid #e5e7eb;position:sticky;top:80px;margin-bottom:24px}
+  .sidebar-header{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:800;color:#1a1a2e;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid #f3f4f6}
+  .sidebar-list{display:flex;flex-direction:column;gap:8px}
+  .sidebar-item{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;cursor:pointer;transition:background .2s;text-decoration:none;color:inherit;border:1px solid #f3f4f6}
+  .sidebar-item:hover{background:#fdf2f8;border-color:#fbcfe8}
+  .sidebar-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;flex-shrink:0}
+  .sidebar-info{flex:1;min-width:0}
+  .sidebar-title{font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:2px}
+  .sidebar-desc{font-size:11px;color:#9ca3af;line-height:1.4}
+
+  .footer{background:#0a0e27;padding:60px 40px 30px;color:#fff;margin-top:40px}
+  .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:40px}
+  .footer-brand{display:flex;align-items:center;gap:8px;font-size:20px;font-weight:800;margin-bottom:12px}
+  .footer-brand span{color:#60a5fa}
+  .footer-tagline{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px}
+  .footer-social{display:flex;gap:12px}
+  .footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:16px;transition:background .2s}
+  .footer-social a:hover{background:rgba(255,255,255,.2)}
+  .footer-heading{font-size:14px;font-weight:700;margin-bottom:20px;color:#fff}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .footer-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;transition:color .2s}
+  .footer-links a:hover{color:#60a5fa}
+  .footer-bottom{max-width:1200px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  .footer-bottom-left{display:flex;gap:20px;font-size:12px;color:rgba(255,255,255,.5)}
+  .footer-bottom-right,.footer-bottom-links a{font-size:12px;color:rgba(255,255,255,.5);text-decoration:none}
+  .footer-bottom-links{display:flex;gap:20px}
+
+  .toast{position:fixed;bottom:24px;right:24px;background:#1a1a2e;color:#fff;padding:14px 20px;border-radius:10px;font-size:13px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:3000;transform:translateY(200%);transition:transform .3s ease;max-width:320px}
+  .toast.visible{transform:translateY(0)}
+  .toast.success{background:#10b981}
+  .toast.error{background:#ef4444}
+
+  @media(max-width:1024px){
+    .main-content{grid-template-columns:1fr;padding:24px 20px}
+    .sidebar{position:static}
+    .how-steps{grid-template-columns:repeat(2,1fr)}
+  }
+  @media(max-width:768px){
+    .header{padding:0 20px}.nav{display:none}
+    .hero{padding:24px 20px 40px}
+    .hero-title{font-size:28px}
+    .hero-icon{width:48px;height:48px;font-size:22px}
+    .hero-title-row{flex-direction:column;align-items:flex-start;gap:12px}
+    .main-content{padding:20px 16px}
+    .workspace{padding:20px}
+    .how-steps{grid-template-columns:1fr}
+    .seo-content{padding:20px}
+    .footer-inner{grid-template-columns:1fr 1fr}
+    .toast{left:16px;right:16px;bottom:16px;max-width:none}
+    .input-grid{grid-template-columns:1fr 1fr;gap:10px}
+    .input-grid .input-group:first-child{grid-column:span 2}
+    .save-btn{grid-column:span 2;width:100%}
+    .countdown-cell-value{font-size:28px}
+    .countdown-cell-label{font-size:9px}
+    .info-grid{grid-template-columns:repeat(2,1fr)}
+  }
+  @media(max-width:576px){
+    .header{padding:0 16px}.header-right .search-btn,.header-right .theme-btn{display:none}
+    .hero-title{font-size:24px}
+    .footer-inner{grid-template-columns:1fr}
+    .footer-bottom{flex-direction:column;text-align:center}
+    .countdown-cell-value{font-size:22px}
+    .countdown-wrap{padding:24px 16px}
+    .countdown-name{font-size:20px}
+    .info-grid{grid-template-columns:1fr}
+  }
+
+  html[data-theme="dark"] body{background:#0f172a;color:#f1f5f9}
+  html[data-theme="dark"] .header,html[data-theme="dark"] .workspace,html[data-theme="dark"] .seo-content,html[data-theme="dark"] .sidebar{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .logo,html[data-theme="dark"] .hero-title,html[data-theme="dark"] .seo-content h2,html[data-theme="dark"] .seo-content h3,html[data-theme="dark"] .faq-question,html[data-theme="dark"] .sidebar-header,html[data-theme="dark"] .sidebar-title,html[data-theme="dark"] .saved-name,html[data-theme="dark"] .info-value{color:#f1f5f9}
+  html[data-theme="dark"] .nav a{color:#cbd5e1}
+  html[data-theme="dark"] .how-step,html[data-theme="dark"] .faq-item,html[data-theme="dark"] .input-section,html[data-theme="dark"] .saved-item,html[data-theme="dark"] .info-card,html[data-theme="dark"] .wish-box,html[data-theme="dark"] .empty-msg{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .input-group input,html[data-theme="dark"] .input-group select{background:#1e293b;border-color:#334155;color:#f1f5f9}
+  html[data-theme="dark"] .seo-content p,html[data-theme="dark"] .seo-content ul li,html[data-theme="dark"] .faq-answer p,html[data-theme="dark"] .wish-text{color:#cbd5e1}
+  html[data-theme="dark"] .mini-btn{background:#0f172a;border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .info-label,html[data-theme="dark"] .input-title,html[data-theme="dark"] .wish-title{color:#f472b6}
+  html[data-theme="dark"] .saved-date,html[data-theme="dark"] .input-group label{color:#94a3b8}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type": "SoftwareApplication", "name": "Birthday Countdown", "url": "https://bigtoolz.com/tools/utility-tools/birthday-countdown/", "applicationCategory": "UtilityApplication", "operatingSystem": "Any (Web-based)", "description": "Free birthday countdown timer. Live countdown to any birthday with days, hours, minutes and seconds. Also shows age and zodiac sign.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "876"}},
+    {"@type": "HowTo", "name": "How to Use Birthday Countdown", "step": [
+      {"@type": "HowToStep", "name": "Enter Name", "text": "Type the name of the person whose birthday you want to track."},
+      {"@type": "HowToStep", "name": "Enter Date", "text": "Pick the birthday (day, month, year)."},
+      {"@type": "HowToStep", "name": "Save", "text": "Click Save to add it to your saved birthdays."},
+      {"@type": "HowToStep", "name": "Watch Countdown", "text": "See live days, hours, minutes, seconds ticking down."}
+    ]},
+    {"@type": "FAQPage", "mainEntity": [
+      {"@type": "Question", "name": "How is the birthday countdown calculated?", "acceptedAnswer": {"@type": "Answer", "text": "The countdown shows the exact time remaining until the next occurrence of the birthday, updated every second. If today is the birthday, it shows 'Happy Birthday!' instead of a countdown."}},
+      {"@type": "Question", "name": "Does the countdown account for leap years?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Feb 29 birthdays are celebrated on Feb 28 in non-leap years by default. The countdown uses your device's local time and correctly handles leap years."}},
+      {"@type": "Question", "name": "Is my birthday data stored on a server?", "acceptedAnswer": {"@type": "Answer", "text": "No. All birthday data is stored locally in your browser. Nothing is uploaded, and no one else can see your saved birthdays."}},
+      {"@type": "Question", "name": "Can I save multiple birthdays?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Save as many as you like family, friends, colleagues. Click any saved birthday to see its countdown. Data persists across browser sessions."}}
+    ]},
+    {"@type": "BreadcrumbList", "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bigtoolz.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://bigtoolz.com/tools/"},
+      {"@type": "ListItem", "position": 3, "name": "Utility Tools", "item": "https://bigtoolz.com/tools/utility-tools/"},
+      {"@type": "ListItem", "position": 4, "name": "Birthday Countdown", "item": "https://bigtoolz.com/tools/utility-tools/birthday-countdown/"}
+    ]}
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-left">
+    <a href="/" class="logo"><div class="logo-icon">⚒</div>BigToolz</span></a>
+    <nav><ul class="nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/tools/" class="active">All Tools</a></li>
+      <li><a href="/tools/categories">Categories</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul></nav>
+  </div>
+  <div class="header-right">
+   
+    <button class="theme-btn" aria-label="Toggle theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
+    
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <nav class="breadcrumb">
+      <a href="/">Home</a><span class="sep">›</span>
+      <a href="/tools/">Tools</a><span class="sep">›</span>
+      <a href="/tools/utility-tools/">Utility Tools</a><span class="sep">›</span>
+      <span class="current">Birthday Countdown</span>
+    </nav>
+    <div class="hero-title-row">
+      <div class="hero-icon">🎂</div>
+      <h1 class="hero-title">Birthday <span class="blue">Countdown</span></h1>
+    </div>
+    <p class="hero-desc">
+      Live countdown to your next birthday days, hours, minutes and seconds. Also shows age you're turning, zodiac sign, and day of week. Save multiple birthdays.
+    </p>
+    <div class="hero-features">
+      <div class="hero-feature"><span class="check">✓</span> Live Countdown</div>
+      <div class="hero-feature"><span class="check">✓</span> Age Calculator</div>
+      <div class="hero-feature"><span class="check">✓</span> Zodiac Sign</div>
+      <div class="hero-feature"><span class="check">✓</span> Save Multiple</div>
+    </div>
+  </div>
+</section>
+
+<div class="main-content">
+
+  <div class="tool-content">
+
+    <div class="workspace">
+
+      <!-- Input -->
+      <div class="input-section">
+        <div class="input-title">➕ Add Birthday</div>
+        <div class="input-grid">
+          <div class="input-group">
+            <label>Name</label>
+            <input type="text" id="nameInput" placeholder="e.g. Mom, John, Me" maxlength="30">
+          </div>
+          <div class="input-group">
+            <label>Day</label>
+            <input type="number" id="dayInput" min="1" max="31" placeholder="DD">
+          </div>
+          <div class="input-group">
+            <label>Month</label>
+            <select id="monthInput">
+              <option value="">Select</option>
+              <option value="1">January</option>
+              <option value="2">February</option>
+              <option value="3">March</option>
+              <option value="4">April</option>
+              <option value="5">May</option>
+              <option value="6">June</option>
+              <option value="7">July</option>
+              <option value="8">August</option>
+              <option value="9">September</option>
+              <option value="10">October</option>
+              <option value="11">November</option>
+              <option value="12">December</option>
+            </select>
+          </div>
+          <div class="input-group">
+            <label>Year</label>
+            <input type="number" id="yearInput" min="1900" max="2100" placeholder="YYYY (optional)">
+          </div>
+          <button class="save-btn" id="saveBtn">Save</button>
+        </div>
+      </div>
+
+      <!-- Countdown -->
+      <div class="countdown-wrap" id="countdownWrap">
+        <div class="countdown-badge" id="countdownBadge">🎉 Counting Down</div>
+        <div class="countdown-name" id="countdownName">Your Birthday</div>
+        <div class="countdown-sub" id="countdownSub">Add a birthday to see the countdown</div>
+
+        <div class="countdown-grid">
+          <div class="countdown-cell">
+            <div class="countdown-cell-value" id="days">00</div>
+            <div class="countdown-cell-label">Days</div>
+          </div>
+          <div class="countdown-cell">
+            <div class="countdown-cell-value" id="hours">00</div>
+            <div class="countdown-cell-label">Hours</div>
+          </div>
+          <div class="countdown-cell">
+            <div class="countdown-cell-value" id="minutes">00</div>
+            <div class="countdown-cell-label">Minutes</div>
+          </div>
+          <div class="countdown-cell">
+            <div class="countdown-cell-value" id="seconds">00</div>
+            <div class="countdown-cell-label">Seconds</div>
+          </div>
+        </div>
+
+        <div class="progress-wrap">
+          <div class="progress-label">
+            <span id="progressLabel">Year Progress</span>
+            <span id="progressPercent">0%</span>
+          </div>
+          <div class="progress-track">
+            <div class="progress-fill" id="progressFill" style="width:0%"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Info cards -->
+      <div class="info-grid" id="infoGrid" style="display:none;">
+        <div class="info-card">
+          <div class="info-label">Turning Age</div>
+          <div class="info-value" id="ageValue"></div>
+        </div>
+        <div class="info-card">
+          <div class="info-label">Zodiac Sign</div>
+          <div class="info-value"><span class="emoji" id="zodiacEmoji">✨</span><span id="zodiacValue"></span></div>
+        </div>
+        <div class="info-card">
+          <div class="info-label">Day of Week</div>
+          <div class="info-value" id="dayOfWeekValue"></div>
+        </div>
+      </div>
+
+      <!-- Wish message -->
+      <div class="wish-box" id="wishBox" style="display:none;">
+        <div class="wish-title">💌 Birthday Wish Message</div>
+        <div class="wish-text" id="wishText"></div>
+        <div class="wish-actions">
+          <button class="mini-btn" id="copyWishBtn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+            Copy Wish
+          </button>
+          <button class="mini-btn primary" id="newWishBtn">🔄 New Wish</button>
+        </div>
+      </div>
+
+      <!-- Saved birthdays -->
+      <div class="saved-title">
+        <span>📋 Saved Birthdays</span>
+        <button class="mini-btn" id="clearAllBtn" style="padding:5px 10px;font-size:11px;">🗑 Clear All</button>
+      </div>
+      <div class="saved-list" id="savedList"></div>
+
+    </div>
+
+    <!-- SEO Content -->
+    <div class="seo-content">
+
+      <h2>🎂 What is a Birthday Countdown?</h2>
+      <p>
+        A <strong>birthday countdown</strong> is a live clock that shows the exact time remaining until your next birthday. It updates every second, so you can watch the days, hours, minutes and seconds tick down as your special day approaches. Perfect for building excitement, planning parties, or simply satisfying curiosity.
+      </p>
+      <p>
+        Our <strong>free birthday countdown</strong> goes beyond just showing days. It also calculates the <strong>age you're turning</strong>, your <strong>zodiac sign</strong>, the <strong>day of the week</strong> your birthday falls on, and even generates a <strong>birthday wish message</strong> you can copy and send. Save multiple birthdays for family and friends everything persists in your browser.
+      </p>
+
+      <h2>🚀 How to Use</h2>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-step-num">1</div>
+          <div class="how-step-title">Enter Name</div>
+          <div class="how-step-desc">Type "Me", "Mom", "John" or any label.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">2</div>
+          <div class="how-step-title">Pick Date</div>
+          <div class="how-step-desc">Choose day, month and year of birth.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">3</div>
+          <div class="how-step-title">Save</div>
+          <div class="how-step-desc">Click Save to add it to your list.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">4</div>
+          <div class="how-step-title">Watch Live</div>
+          <div class="how-step-desc">See countdown update every second.</div>
+        </div>
+      </div>
+
+      <h2>📅 What You Get</h2>
+      <ul>
+        <li><strong>Live countdown:</strong> Days, hours, minutes, seconds to the next birthday.</li>
+        <li><strong>Turning age:</strong> Automatically calculated from the year of birth.</li>
+        <li><strong>Zodiac sign:</strong> Western astrology sign based on birth date.</li>
+        <li><strong>Day of week:</strong> What day this year's birthday falls on (helps plan parties).</li>
+        <li><strong>Year progress bar:</strong> Visual bar showing how far through the year you are.</li>
+        <li><strong>Multiple birthdays:</strong> Save unlimited family, friends, colleagues.</li>
+        <li><strong>Wish generator:</strong> Ready-to-send birthday message, one click to copy.</li>
+      </ul>
+
+      <h2>♈ The 12 Zodiac Signs</h2>
+      <ul>
+        <li><strong>Aries (Mar 21 – Apr 19):</strong> Bold, ambitious, energetic</li>
+        <li><strong>Taurus (Apr 20 – May 20):</strong> Reliable, patient, devoted</li>
+        <li><strong>Gemini (May 21 – Jun 20):</strong> Curious, adaptable, expressive</li>
+        <li><strong>Cancer (Jun 21 – Jul 22):</strong> Compassionate, protective, intuitive</li>
+        <li><strong>Leo (Jul 23 – Aug 22):</strong> Confident, charismatic, generous</li>
+        <li><strong>Virgo (Aug 23 – Sep 22):</strong> Analytical, practical, kind</li>
+        <li><strong>Libra (Sep 23 – Oct 22):</strong> Diplomatic, social, fair-minded</li>
+        <li><strong>Scorpio (Oct 23 – Nov 21):</strong> Passionate, brave, resourceful</li>
+        <li><strong>Sagittarius (Nov 22 – Dec 21):</strong> Adventurous, honest, optimistic</li>
+        <li><strong>Capricorn (Dec 22 – Jan 19):</strong> Disciplined, responsible, patient</li>
+        <li><strong>Aquarius (Jan 20 – Feb 18):</strong> Independent, inventive, humanitarian</li>
+        <li><strong>Pisces (Feb 19 – Mar 20):</strong> Artistic, empathetic, wise</li>
+      </ul>
+
+      <h2>🎉 Fun Birthday Facts</h2>
+      <ul>
+        <li><strong>Same birthday?</strong> There's a 50% chance at least two people share a birthday in a group of only 23 people.</li>
+        <li><strong>Most common birthday:</strong> September 9 (US data) likely due to New Year's conceptions.</li>
+        <li><strong>Rarest birthday:</strong> February 29 only 1 in 1,461 people are leap-year babies.</li>
+        <li><strong>Most popular birth month:</strong> August, followed by July and September.</li>
+        <li><strong>Birthday paradox:</strong> In any random group of 23+ people, there's a >50% chance two share a birthday.</li>
+        <li><strong>Chinese zodiac:</strong> Repeats every 12 years, based on year of birth.</li>
+      </ul>
+
+      <h2>💡 Birthday Party Planning Tips</h2>
+      <ul>
+        <li><strong>Send invites 3-4 weeks ahead</strong> for weekend parties, 6-8 weeks for destination events.</li>
+        <li><strong>Pick a date wisely.</strong> Saturday evenings usually work best for adults; weekend afternoons for kids.</li>
+        <li><strong>Check the day of week</strong> using this tool a Tuesday birthday might be celebrated on the nearest weekend.</li>
+        <li><strong>Plan for weather</strong> if outdoors always have an indoor backup.</li>
+        <li><strong>Keep the guest list tight.</strong> Fewer, closer people always make better parties than huge crowds.</li>
+        <li><strong>Order cake 1 week in advance</strong> for custom designs; 2 days for standard cakes.</li>
+      </ul>
+
+      <h2>❓ Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-question">How is the birthday countdown calculated?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>The countdown shows the exact time remaining until the next occurrence of the birthday, <strong>updated every second</strong>. It uses your device's local time. If today is the birthday, it shows "Happy Birthday!" with a celebration message instead of a countdown.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Does the countdown account for leap years?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Yes. If the birthday is <strong>February 29</strong> (leap day), the countdown in non-leap years automatically uses February 28 for celebration purposes. The system correctly handles leap years for age calculation too.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Is my birthday data stored on a server?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>No. All birthday data is stored <strong>locally in your browser</strong> (localStorage). Nothing is uploaded, and no one else can see your saved birthdays. Clearing browser data will erase the list, so use "Copy Wish" for important reminders.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I save multiple birthdays?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Yes. Save as many as you like family, friends, colleagues, even celebrity birthdays. Click any saved birthday to see its live countdown. Data persists across browser sessions until you clear it.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Does the countdown work offline?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Yes. Once the page is loaded, the countdown works entirely offline. All calculations run in your browser using local time. No internet connection is needed after the initial page load.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I get reminders before the birthday?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>The tool shows the live countdown but doesn't send push notifications. For reminders, set a calendar alert 1-2 weeks before the birthday, or bookmark this page and check weekly. The "days remaining" number is your best reminder.</p></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-header">🔗 Related Utility Tools</div>
+    <div class="sidebar-list">
+      <a href="/tools/calculator-tools/age-calculator/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#ec4899;">🎂</div>
+        <div class="sidebar-info"><div class="sidebar-title">Age Calculator</div><div class="sidebar-desc">Exact age to days</div></div>
+      </a>
+      <a href="/tools/utility-tools/event-countdown/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#3b82f6;">📅</div>
+        <div class="sidebar-info"><div class="sidebar-title">Event Countdown</div><div class="sidebar-desc">Countdown to any event</div></div>
+      </a>
+      <a href="/tools/utility-tools/world-clock/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#06b6d4;">🕐</div>
+        <div class="sidebar-info"><div class="sidebar-title">World Clock</div><div class="sidebar-desc">Time in any city</div></div>
+      </a>
+      <a href="/tools/utility-tools/daily-quote/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#f59e0b;">💭</div>
+        <div class="sidebar-info"><div class="sidebar-title">Daily Quote</div><div class="sidebar-desc">Daily motivation</div></div>
+      </a>
+      <a href="/tools/utility-tools/todo-list/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#8b5cf6;">📋</div>
+        <div class="sidebar-info"><div class="sidebar-title">To-Do List</div><div class="sidebar-desc">Task manager</div></div>
+      </a>
+      <a href="/tools/utility-tools/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#64748b;">⚙️</div>
+        <div class="sidebar-info"><div class="sidebar-title">All Utility Tools →</div><div class="sidebar-desc">Browse 50+ tools</div></div>
+      </a>
+    </div>
+  </aside>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand"><div class="logo-icon">⚒</div>BigToolz</span></div>
+      <p class="footer-tagline">Your Ultimate Online Tools Hub</p>
+      <div class="footer-social">
+        <a href="https://facebook.com/bigtoolz" aria-label="Facebook">f</a>
+        <a href="https://twitter.com/bigtoolz" aria-label="Twitter">𝕏</a>
+        <a href="https://youtube.com/@bigtoolz" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+    <div>
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/tools/">All Tools</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Categories</h3>
+      <ul class="footer-links">
+        <li><a href="/tools/image-tools/">Image Tools</a></li>
+        <li><a href="/tools/pdf-tools/">PDF Tools</a></li>
+        <li><a href="/tools/text-tools/">Text Tools</a></li>
+        <li><a href="/tools/utility-tools/">Utility Tools</a></li>
+        <li><a href="/tools/categories">All Categories →</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Legal</h3>
+      <ul class="footer-links">
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left"><span>✓ 100% Free</span><span>✓ No Sign Up</span><span>✓ No Installation</span></div>
+    <div class="footer-bottom-right">© 2026 BigToolz. All rights reserved.</div>
+    <div class="footer-bottom-links"><a href="/privacy-policy">Privacy</a><a href="/terms">Terms</a><a href="/disclaimer">Disclaimer</a></div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+'use strict';
+
+/* ===== THEME ===== */
+(function(){try{var t=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&d))document.documentElement.setAttribute('data-theme','dark');else if(t==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();
+document.querySelector('.theme-btn')?.addEventListener('click',()=>{const h=document.documentElement;const c=h.getAttribute('data-theme');const d=window.matchMedia('(prefers-color-scheme: dark)').matches;let n=c==='dark'?'light':c==='light'?'dark':(d?'light':'dark');h.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}});
+
+/* ===== HELPERS ===== */
+const $ = (s, p = document) => p.querySelector(s);
+const $$ = (s, p = document) => [...p.querySelectorAll(s)];
+
+function showToast(msg, type = 'info', duration = 2500) {
+  const t = $('#toast');
+  if (!t) return;
+  t.className = 'toast visible' + (type !== 'info' ? ' ' + type : '');
+  t.textContent = msg;
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove('visible'), duration);
+}
+
+const STORAGE_KEY = 'bigtoolz_birthdays_v1';
+
+/* ===== ZODIAC ===== */
+const ZODIAC = [
+  { sign: 'Capricorn', emoji: '♑', start: [12, 22], end: [1, 19] },
+  { sign: 'Aquarius', emoji: '♒', start: [1, 20], end: [2, 18] },
+  { sign: 'Pisces', emoji: '♓', start: [2, 19], end: [3, 20] },
+  { sign: 'Aries', emoji: '♈', start: [3, 21], end: [4, 19] },
+  { sign: 'Taurus', emoji: '♉', start: [4, 20], end: [5, 20] },
+  { sign: 'Gemini', emoji: '♊', start: [5, 21], end: [6, 20] },
+  { sign: 'Cancer', emoji: '♋', start: [6, 21], end: [7, 22] },
+  { sign: 'Leo', emoji: '♌', start: [7, 23], end: [8, 22] },
+  { sign: 'Virgo', emoji: '♍', start: [8, 23], end: [9, 22] },
+  { sign: 'Libra', emoji: '♎', start: [9, 23], end: [10, 22] },
+  { sign: 'Scorpio', emoji: '♏', start: [10, 23], end: [11, 21] },
+  { sign: 'Sagittarius', emoji: '♐', start: [11, 22], end: [12, 21] }
+];
+
+function getZodiac(month, day) {
+  for (const z of ZODIAC) {
+    if (z.sign === 'Capricorn') {
+      if ((month === 12 && day >= 22) || (month === 1 && day <= 19)) return z;
+    } else {
+      if ((month === z.start[0] && day >= z.start[1]) || (month === z.end[0] && day <= z.end[1])) return z;
+    }
+  }
+  return ZODIAC[0];
+}
+
+/* ===== WISH MESSAGES ===== */
+const WISHES = [
+  "Happy Birthday, {name}! 🎂 May this year bring you joy, success, and everything you've been wishing for.",
+  "Wishing you the happiest birthday, {name}! 🎉 Another year of amazing moments make it count!",
+  "{name}, may your birthday be as wonderful as you are! 🎁 Here's to an incredible year ahead.",
+  "Happy Birthday, {name}! 🎈 May your day be filled with laughter, love, and cake. Lots of cake.",
+  "Cheers to you, {name}! 🥳 Another year wiser, stronger, and more awesome. Have an amazing birthday!",
+  "Happy Birthday, {name}! 🌟 Wishing you good health, big dreams, and the courage to chase them all.",
+  "{name}, today is all about you! 🎂 Hope it's filled with everything that makes you smile.",
+  "Happy Birthday, {name}! 💫 May this new year of your life be your best one yet!",
+  "Sending you the biggest birthday hug, {name}! 🤗 Have a fantastic day and an even better year ahead.",
+  "Happy Birthday, {name}! 🎊 May you be surrounded by people who love you and food that tastes amazing."
+];
+
+/* ===== STATE ===== */
+const state = {
+  birthdays: [],
+  activeId: null,
+  tickInterval: null
+};
+
+/* ===== DOM ===== */
+const nameInput = $('#nameInput');
+const dayInput = $('#dayInput');
+const monthInput = $('#monthInput');
+const yearInput = $('#yearInput');
+const saveBtn = $('#saveBtn');
+const countdownWrap = $('#countdownWrap');
+const countdownBadge = $('#countdownBadge');
+const countdownName = $('#countdownName');
+const countdownSub = $('#countdownSub');
+const daysEl = $('#days');
+const hoursEl = $('#hours');
+const minutesEl = $('#minutes');
+const secondsEl = $('#seconds');
+const progressFill = $('#progressFill');
+const progressPercent = $('#progressPercent');
+const progressLabel = $('#progressLabel');
+const infoGrid = $('#infoGrid');
+const ageValue = $('#ageValue');
+const zodiacEmoji = $('#zodiacEmoji');
+const zodiacValue = $('#zodiacValue');
+const dayOfWeekValue = $('#dayOfWeekValue');
+const wishBox = $('#wishBox');
+const wishText = $('#wishText');
+const copyWishBtn = $('#copyWishBtn');
+const newWishBtn = $('#newWishBtn');
+const savedList = $('#savedList');
+const clearAllBtn = $('#clearAllBtn');
+
+/* ===== SAVE BIRTHDAY ===== */
+saveBtn.addEventListener('click', saveBirthday);
+nameInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') dayInput.focus(); });
+yearInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') saveBirthday(); });
+
+function saveBirthday() {
+  const name = nameInput.value.trim();
+  const day = parseInt(dayInput.value, 10);
+  const month = parseInt(monthInput.value, 10);
+  const year = parseInt(yearInput.value, 10) || null;
+
+  if (!name) { showToast('Enter a name', 'error'); nameInput.focus(); return; }
+  if (!day || day < 1 || day > 31) { showToast('Enter valid day (1-31)', 'error'); dayInput.focus(); return; }
+  if (!month || month < 1 || month > 12) { showToast('Select a month', 'error'); monthInput.focus(); return; }
+  if (year && (year < 1900 || year > new Date().getFullYear() + 1)) {
+    showToast('Enter valid year (1900+)', 'error'); yearInput.focus(); return;
+  }
+
+  // Validate day for month
+  const maxDay = new Date(year || 2024, month, 0).getDate();
+  if (day > maxDay) {
+    showToast(`${monthName(month)} has only ${maxDay} days`, 'error');
+    return;
+  }
+
+  // Check duplicate
+  const exists = state.birthdays.find(b => b.name.toLowerCase() === name.toLowerCase() && b.day === day && b.month === month);
+  if (exists) { showToast('Birthday already saved', 'info'); return; }
+
+  const bd = {
+    id: Date.now() + Math.random(),
+    name: name,
+    day: day,
+    month: month,
+    year: year
+  };
+
+  state.birthdays.push(bd);
+  state.activeId = bd.id;
+  save();
+
+  nameInput.value = '';
+  dayInput.value = '';
+  monthInput.value = '';
+  yearInput.value = '';
+
+  render();
+  showToast('✅ Birthday saved!', 'success');
+}
+
+function monthName(m) {
+  return ['','January','February','March','April','May','June','July','August','September','October','November','December'][m] || '';
+}
+
+/* ===== SAVE / LOAD ===== */
+function save() {
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(state.birthdays));
+  } catch (e) {}
+}
+
+function load() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (!raw) return;
+    const data = JSON.parse(raw);
+    if (Array.isArray(data)) state.birthdays = data;
+  } catch (e) {}
+}
+
+/* ===== GET NEXT BIRTHDAY DATE ===== */
+function getNextBirthday(bd) {
+  const now = new Date();
+  const thisYear = now.getFullYear();
+  let next = new Date(thisYear, bd.month - 1, bd.day);
+
+  // For Feb 29 non-leap years, celebrate Feb 28
+  if (bd.month === 2 && bd.day === 29 && next.getMonth() !== 1) {
+    next = new Date(thisYear, 1, 28);
+  }
+
+  // If already passed this year, go to next year
+  const todayStart = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  if (next < todayStart) {
+    next = new Date(thisYear + 1, bd.month - 1, bd.day);
+    if (bd.month === 2 && bd.day === 29 && next.getMonth() !== 1) {
+      next = new Date(thisYear + 1, 1, 28);
+    }
+  }
+
+  return next;
+}
+
+function isToday(bd) {
+  const now = new Date();
+  return now.getMonth() + 1 === bd.month && now.getDate() === bd.day;
+}
+
+function isTomorrow(bd) {
+  const tomorrow = new Date();
+  tomorrow.setDate(tomorrow.getDate() + 1);
+  return tomorrow.getMonth() + 1 === bd.month && tomorrow.getDate() === bd.day;
+}
+
+/* ===== RENDER COUNTDOWN ===== */
+function renderCountdown() {
+  if (!state.activeId) {
+    countdownName.textContent = 'Your Birthday';
+    countdownSub.textContent = 'Add a birthday to see the countdown';
+    daysEl.textContent = hoursEl.textContent = minutesEl.textContent = secondsEl.textContent = '00';
+    return;
+  }
+
+  const bd = state.birthdays.find(b => b.id === state.activeId);
+  if (!bd) return;
+
+  const today = isToday(bd);
+  const next = getNextBirthday(bd);
+  const now = new Date();
+
+  countdownName.textContent = bd.name;
+  countdownWrap.classList.toggle('today', today);
+
+  if (today) {
+    countdownBadge.textContent = '🎉 Happy Birthday!';
+    countdownSub.textContent = `Today is ${bd.name}'s birthday celebrate big!`;
+    daysEl.textContent = hoursEl.textContent = minutesEl.textContent = secondsEl.textContent = '🎂';
+  } else {
+    const diff = next - now;
+
+    const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const m = Math.floor((diff / (1000 * 60)) % 60);
+    const s = Math.floor((diff / 1000) % 60);
+
+    daysEl.textContent = String(d).padStart(2, '0');
+    hoursEl.textContent = String(h).padStart(2, '0');
+    minutesEl.textContent = String(m).padStart(2, '0');
+    secondsEl.textContent = String(s).padStart(2, '0');
+
+    if (isTomorrow(bd)) {
+      countdownBadge.textContent = '🎈 Tomorrow!';
+      countdownSub.textContent = `${bd.name}'s birthday is tomorrow!`;
+    } else {
+      countdownBadge.textContent = '🎉 Counting Down';
+      const yearsWord = bd.year ? '' : '';
+      countdownSub.textContent = `${d} day${d !== 1 ? 's' : ''} until ${bd.name}'s next birthday on ${monthName(bd.month)} ${bd.day}`;
+    }
+  }
+
+  // Info cards
+  infoGrid.style.display = 'grid';
+
+  // Age
+  if (bd.year) {
+    const age = next.getFullYear() - bd.year;
+    ageValue.textContent = age + ' years';
+  } else {
+    ageValue.textContent = '';
+  }
+
+  // Zodiac
+  const z = getZodiac(bd.month, bd.day);
+  zodiacEmoji.textContent = z.emoji;
+  zodiacValue.textContent = z.sign;
+
+  // Day of week
+  const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  dayOfWeekValue.textContent = days[next.getDay()];
+
+  // Progress bar (year progress)
+  const startOfYear = new Date(next.getFullYear(), 0, 1);
+  const endOfYear = new Date(next.getFullYear() + 1, 0, 1);
+  const yearProgress = ((now - startOfYear) / (endOfYear - startOfYear)) * 100;
+  progressFill.style.width = yearProgress.toFixed(1) + '%';
+  progressPercent.textContent = yearProgress.toFixed(1) + '%';
+  progressLabel.textContent = 'Year Progress';
+
+  // Wish message
+  wishBox.style.display = 'block';
+  renderWish(bd.name);
+}
+
+/* ===== WISH GENERATOR ===== */
+function renderWish(name) {
+  const template = WISHES[Math.floor(Math.random() * WISHES.length)];
+  wishText.textContent = template.replace(/{name}/g, name);
+}
+
+newWishBtn.addEventListener('click', () => {
+  if (!state.activeId) return;
+  const bd = state.birthdays.find(b => b.id === state.activeId);
+  if (bd) renderWish(bd.name);
+});
+
+copyWishBtn.addEventListener('click', async () => {
+  const text = wishText.textContent;
+  if (!text) return;
+  try {
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(text);
+    } else {
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.cssText = 'position:fixed;opacity:0;';
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+    }
+    copyWishBtn.classList.add('copied');
+    const orig = copyWishBtn.innerHTML;
+    copyWishBtn.innerHTML = '✓ Copied!';
+    setTimeout(() => {
+      copyWishBtn.classList.remove('copied');
+      copyWishBtn.innerHTML = orig;
+    }, 2000);
+    showToast('Wish copied!', 'success');
+  } catch (e) {
+    showToast('Copy failed', 'error');
+  }
+});
+
+/* ===== RENDER SAVED LIST ===== */
+function renderSavedList() {
+  if (state.birthdays.length === 0) {
+    savedList.innerHTML = '<div class="empty-msg">No birthdays saved yet. Add your first one above 👆</div>';
+    return;
+  }
+
+  // Sort by days until
+  const now = new Date();
+  const todayStart = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  const sorted = [...state.birthdays].sort((a, b) => {
+    const aDate = getNextBirthday(a) - todayStart;
+    const bDate = getNextBirthday(b) - todayStart;
+    return aDate - bDate;
+  });
+
+  savedList.innerHTML = sorted.map(bd => {
+    const next = getNextBirthday(bd);
+    const diff = Math.ceil((next - todayStart) / (1000 * 60 * 60 * 24));
+    const isActive = bd.id === state.activeId;
+    const daysText = diff === 0 ? '🎉 Today!' : diff === 1 ? '🎈 Tomorrow' : `${diff} days`;
+
+    return `
+      <div class="saved-item ${isActive ? 'active' : ''}" data-id="${bd.id}">
+        <div class="saved-info">
+          <div class="saved-name">${escapeHtml(bd.name)}</div>
+          <div class="saved-date">${monthName(bd.month)} ${bd.day}${bd.year ? ', ' + bd.year : ''}</div>
+        </div>
+        <div class="saved-days">${daysText}</div>
+        <button class="saved-remove" data-remove="${bd.id}" aria-label="Remove">✕</button>
+      </div>
+    `;
+  }).join('');
+
+  // Attach handlers
+  $$('.saved-item').forEach(el => {
+    el.addEventListener('click', (e) => {
+      if (e.target.closest('[data-remove]')) return;
+      const id = parseFloat(el.dataset.id);
+      state.activeId = id;
+      render();
+    });
+  });
+
+  $$('[data-remove]').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const id = parseFloat(btn.dataset.remove);
+      state.birthdays = state.birthdays.filter(b => b.id !== id);
+      if (state.activeId === id) state.activeId = state.birthdays[0]?.id || null;
+      save();
+      render();
+      showToast('Removed', 'info');
+    });
+  });
+}
+
+function escapeHtml(str) {
+  const div = document.createElement('div');
+  div.textContent = str;
+  return div.innerHTML;
+}
+
+/* ===== CLEAR ALL ===== */
+clearAllBtn.addEventListener('click', () => {
+  if (state.birthdays.length === 0) return;
+  if (!confirm('Delete all saved birthdays?')) return;
+  state.birthdays = [];
+  state.activeId = null;
+  save();
+  render();
+  showToast('All birthdays cleared', 'info');
+});
+
+/* ===== RENDER ===== */
+function render() {
+  renderCountdown();
+  renderSavedList();
+}
+
+/* ===== TICK ===== */
+function startTick() {
+  if (state.tickInterval) clearInterval(state.tickInterval);
+  state.tickInterval = setInterval(renderCountdown, 1000);
+}
+
+/* ===== FAQ ===== */
+$$('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    $$('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+
+/* ===== INIT ===== */
+load();
+if (state.birthdays.length > 0 && !state.activeId) {
+  state.activeId = state.birthdays[0].id;
+}
+render();
+startTick();
+</script>
+
+</body>
+</html>

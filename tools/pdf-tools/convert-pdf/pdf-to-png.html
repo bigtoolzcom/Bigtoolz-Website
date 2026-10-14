@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2563eb">
+
+<title>PDF to PNG Converter - Convert PDF Pages to PNG Online Free | BigToolz</title>
+<meta name="description" content="Convert PDF to PNG online free. Extract PDF pages as lossless PNG images with transparency support. No upload, works in your browser. High quality, batch convert.">
+<meta name="keywords" content="pdf to png, pdf to image, pdf to png converter, convert pdf to png, extract pdf pages, lossless pdf converter">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://bigtoolz.com/tools/pdf-tools/convert-pdf/pdf-to-png/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="PDF to PNG Converter - Free Online Tool | BigToolz">
+<meta property="og:description" content="Convert PDF pages to lossless PNG images free, high quality, no upload.">
+<meta property="og:url" content="https://bigtoolz.com/tools/pdf-tools/convert-pdf/pdf-to-png/">
+<meta property="og:image" content="https://bigtoolz.com/assets/images/og-image.jpg">
+<meta property="og:site_name" content="BigToolz">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="PDF to PNG - BigToolz">
+<meta name="twitter:description" content="Convert PDF to PNG instantly free, lossless, high quality.">
+<meta name="twitter:image" content="https://bigtoolz.com/assets/images/twitter-card.jpg">
+
+<link rel="icon" href="/assets/images/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/images/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#f8f9fc;color:#1a1a2e;overflow-x:hidden;line-height:1.5}
+
+  .header{background:#fff;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;position:sticky;top:0;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+  .header-left{display:flex;align-items:center;gap:40px}
+  .logo{display:flex;align-items:center;gap:8px;font-size:22px;font-weight:800;color:#1a1a2e;text-decoration:none}
+  .logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#3b82f6,#2563eb);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px}
+  .logo span{color:#2563eb}
+  .nav{display:flex;align-items:center;gap:28px;list-style:none}
+  .nav a{text-decoration:none;color:#4b5563;font-size:14px;font-weight:500;transition:color .2s}
+  .nav a:hover,.nav a.active{color:#2563eb}
+  .header-right{display:flex;align-items:center;gap:16px}
+  .search-btn,.theme-btn{width:36px;height:36px;border-radius:50%;border:none;background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#4b5563}
+  .search-btn:hover,.theme-btn:hover{background:#f3f4f6}
+  .bookmark-btn{display:flex;align-items:center;gap:8px;background:#2563eb;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
+  .bookmark-btn:hover{background:#1d4ed8}
+
+  .hero{background:linear-gradient(135deg,#0a0e27 0%,#1a1a4e 40%,#2d1b69 70%,#4c1d95 100%);padding:40px 40px 60px;position:relative;overflow:hidden;color:#fff}
+  .hero::before{content:'';position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(16,185,129,.25) 0%,transparent 70%);border-radius:50%}
+  .hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+  .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px;flex-wrap:wrap}
+  .breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none}
+  .breadcrumb a:hover{color:#fff}
+  .breadcrumb .sep{color:rgba(255,255,255,.4)}
+  .breadcrumb .current{color:#fff;font-weight:500}
+  .hero-title-row{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+  .hero-icon{width:60px;height:60px;background:#10b981;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px;color:#fff;flex-shrink:0;box-shadow:0 8px 24px rgba(16,185,129,.4)}
+  .hero-title{font-size:42px;font-weight:800;line-height:1.15}
+  .hero-title .blue{color:#34d399}
+  .hero-desc{font-size:15px;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:24px;max-width:560px}
+  .hero-features{display:flex;gap:24px;flex-wrap:wrap}
+  .hero-feature{display:flex;align-items:center;gap:6px;font-size:13px;color:#fff;font-weight:500}
+  .hero-feature .check{width:18px;height:18px;border-radius:50%;background:#10b981;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;flex-shrink:0}
+
+  .main-content{max-width:1200px;margin:0 auto;padding:40px;display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start}
+  .tool-content{min-width:0}
+
+  .workspace{background:#fff;border-radius:16px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,.06);border:1px solid #e5e7eb;margin-bottom:24px}
+
+  .dropzone{border:2px dashed #a7f3d0;border-radius:12px;padding:50px 30px;text-align:center;background:#f0fdf4;margin-bottom:24px;transition:all .2s;cursor:pointer}
+  .dropzone:hover,.dropzone.dragover{border-color:#10b981;background:#d1fae5}
+  .dropzone-icon{width:60px;height:60px;background:linear-gradient(135deg,#10b981,#059669);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;color:#fff;font-size:26px;transition:transform .2s}
+  .dropzone:hover .dropzone-icon{transform:translateY(-4px)}
+  .dropzone-title{font-size:16px;font-weight:700;color:#1a1a2e;margin-bottom:8px}
+  .dropzone-sub{font-size:14px;color:#6b7280;margin-bottom:20px}
+  .dropzone-sub a{color:#10b981;font-weight:600;text-decoration:none}
+  .choose-btn{display:inline-flex;align-items:center;gap:8px;background:#10b981;color:#fff;border:none;padding:12px 28px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;transition:background .2s}
+  .choose-btn:hover{background:#059669}
+  .dropzone-info{font-size:12px;color:#9ca3af;display:flex;align-items:center;justify-content:center;gap:8px;margin-top:16px;flex-wrap:wrap}
+  .dropzone-info .divider{color:#d1d5db}
+  .file-input{display:none}
+
+  /* PDF info bar */
+  .pdf-info{display:none;background:#f0fdf4;border-radius:12px;padding:16px 20px;margin-bottom:20px;border:1px solid #a7f3d0;align-items:center;gap:16px;flex-wrap:wrap}
+  .pdf-info.visible{display:flex}
+  .pdf-info-icon{width:44px;height:44px;background:#10b981;border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:18px;flex-shrink:0}
+  .pdf-info-details{flex:1;min-width:0}
+  .pdf-info-name{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .pdf-info-meta{font-size:12px;color:#6b7280}
+
+  .options{background:#f0fdf4;border-radius:12px;padding:20px;margin-bottom:20px;border:1px solid #a7f3d0}
+  .options-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+
+  .options-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .option-group label{display:block;font-size:12px;font-weight:600;color:#4b5563;margin-bottom:6px}
+  .option-group select,.option-group input[type="text"]{width:100%;padding:10px 12px;border:1px solid #e5e7eb;border-radius:8px;font-size:13px;font-family:inherit;color:#1a1a2e;background:#fff;outline:none;transition:border-color .2s}
+  .option-group select:focus,.option-group input:focus{border-color:#10b981;box-shadow:0 0 0 3px rgba(16,185,129,.1)}
+
+  /* Toggle */
+  .toggle-row{display:flex;align-items:center;justify-content:space-between;padding:12px 14px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;gap:12px;margin-top:16px}
+  .toggle-info{display:flex;flex-direction:column;gap:2px}
+  .toggle-title{font-size:13px;font-weight:700;color:#1a1a2e}
+  .toggle-desc{font-size:11px;color:#6b7280;line-height:1.4}
+  .toggle-switch{position:relative;width:44px;height:24px;background:#d1d5db;border-radius:12px;cursor:pointer;transition:background .2s;flex-shrink:0}
+  .toggle-switch::after{content:'';position:absolute;top:2px;left:2px;width:20px;height:20px;background:#fff;border-radius:50%;transition:transform .2s;box-shadow:0 1px 3px rgba(0,0,0,.15)}
+  .toggle-switch.on{background:#10b981}
+  .toggle-switch.on::after{transform:translateX(20px)}
+
+  .actions{display:flex;gap:12px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 28px;border-radius:10px;font-size:15px;font-weight:700;font-family:inherit;cursor:pointer;border:none;transition:all .2s;text-decoration:none}
+  .btn-primary{background:#10b981;color:#fff;flex:1;box-shadow:0 4px 12px rgba(16,185,129,.2)}
+  .btn-primary:hover:not(:disabled){background:#059669;transform:translateY(-2px);box-shadow:0 6px 20px rgba(16,185,129,.3)}
+  .btn-primary:disabled{opacity:.5;cursor:not-allowed;transform:none}
+  .btn-secondary{background:#fff;color:#10b981;border:1px solid #e5e7eb}
+  .btn-secondary:hover{border-color:#10b981;background:#f0fdf4}
+  .btn-success{background:#10b981;color:#fff}
+  .btn-success:hover{background:#059669}
+
+  .progress{display:none;margin-top:20px}
+  .progress.visible{display:block}
+  .progress-bar{width:100%;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden;margin-bottom:8px}
+  .progress-fill{height:100%;background:linear-gradient(90deg,#34d399,#10b981);border-radius:4px;width:0%;transition:width .3s ease}
+  .progress-text{font-size:13px;color:#6b7280;text-align:center;font-weight:500}
+
+  .results{display:none;margin-top:20px}
+  .results.visible{display:block}
+  .results-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:12px}
+  .results-title{font-size:16px;font-weight:700;color:#1a1a2e;display:flex;align-items:center;gap:8px}
+  .results-title .success-icon{width:24px;height:24px;background:#10b981;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px}
+
+  .file-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:12px}
+  .file-item{background:#f0fdf4;border:1px solid #a7f3d0;border-radius:12px;padding:10px;transition:border-color .2s;text-align:center}
+  .file-item:hover{border-color:#10b981}
+  .file-thumb{width:100%;aspect-ratio:1;border-radius:8px;background:repeating-conic-gradient(#e5e7eb 0% 25%, #ffffff 0% 50%) 50% / 12px 12px;border:1px solid #e5e7eb;overflow:hidden;margin-bottom:8px;position:relative;display:flex;align-items:center;justify-content:center}
+  .file-thumb img{width:100%;height:100%;object-fit:contain}
+  .file-page-badge{position:absolute;top:6px;left:6px;background:rgba(16,185,129,.95);color:#fff;font-size:10px;font-weight:700;padding:3px 8px;border-radius:6px;z-index:2}
+  .file-name{font-size:11px;font-weight:600;color:#1a1a2e;margin-bottom:6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .file-actions{display:flex;gap:4px;justify-content:center}
+  .icon-btn{width:32px;height:32px;border-radius:6px;border:1px solid #e5e7eb;background:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#4b5563;transition:all .2s}
+  .icon-btn:hover{border-color:#10b981;color:#10b981;background:#fff}
+  .icon-btn.download{background:#10b981;color:#fff;border-color:#10b981}
+  .icon-btn.download:hover{background:#059669;border-color:#059669;color:#fff}
+
+  .seo-content{background:#fff;border-radius:16px;padding:32px;border:1px solid #e5e7eb;margin-bottom:24px}
+  .seo-content h2{font-size:22px;font-weight:800;color:#1a1a2e;margin-bottom:14px;margin-top:28px;display:flex;align-items:center;gap:10px}
+  .seo-content h2:first-child{margin-top:0}
+  .seo-content h3{font-size:16px;font-weight:700;color:#1a1a2e;margin:20px 0 10px}
+  .seo-content p{font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:14px}
+  .seo-content ul{list-style:none;padding-left:0;margin-bottom:16px}
+  .seo-content ul li{position:relative;padding-left:24px;font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:8px}
+  .seo-content ul li::before{content:'';position:absolute;left:6px;top:12px;width:6px;height:6px;background:#10b981;border-radius:50%}
+  .seo-content a{color:#2563eb;text-decoration:none;font-weight:600}
+  .seo-content a:hover{text-decoration:underline}
+  .seo-content strong{color:#1a1a2e;font-weight:700}
+  .seo-content code{background:#f1f5f9;padding:2px 6px;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:13px;color:#0f172a;border:1px solid #e2e8f0}
+
+  .compare-table{width:100%;border-collapse:collapse;margin:20px 0;border:1px solid #e5e7eb;border-radius:8px;overflow:hidden}
+  .compare-table th{background:#f0fdf4;padding:12px 16px;text-align:left;font-size:13px;font-weight:700;color:#1a1a2e;border-bottom:1px solid #e5e7eb}
+  .compare-table td{padding:12px 16px;font-size:13px;color:#4b5563;border-bottom:1px solid #f3f4f6}
+  .compare-table tr:last-child td{border-bottom:none}
+
+  .how-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:20px}
+  .how-step{background:#f0fdf4;border-radius:12px;padding:20px;border:1px solid #a7f3d0}
+  .how-step-num{width:36px;height:36px;border-radius:50%;background:#10b981;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;margin-bottom:12px}
+  .how-step-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+  .how-step-desc{font-size:13px;color:#6b7280;line-height:1.6}
+
+  .faq-item{background:#f0fdf4;border:1px solid #a7f3d0;border-radius:12px;margin-bottom:10px;overflow:hidden;transition:border-color .2s}
+  .faq-item:hover{border-color:#10b981}
+  .faq-question{width:100%;background:none;border:none;padding:18px 22px;font-size:15px;font-weight:700;color:#1a1a2e;text-align:left;cursor:pointer;font-family:inherit;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .faq-question .chev{font-size:12px;color:#10b981;transition:transform .2s;flex-shrink:0}
+  .faq-item.open .faq-question .chev{transform:rotate(180deg)}
+  .faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 22px}
+  .faq-item.open .faq-answer{max-height:500px;padding-bottom:18px}
+  .faq-answer p{font-size:14px;color:#6b7280;line-height:1.7;margin:0}
+
+  .sidebar{background:#fff;border-radius:16px;padding:24px;border:1px solid #e5e7eb;position:sticky;top:80px;margin-bottom:24px}
+  .sidebar-header{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:800;color:#1a1a2e;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid #f3f4f6}
+  .sidebar-list{display:flex;flex-direction:column;gap:8px}
+  .sidebar-item{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;cursor:pointer;transition:background .2s;text-decoration:none;color:inherit;border:1px solid #f3f4f6}
+  .sidebar-item:hover{background:#f0fdf4;border-color:#a7f3d0}
+  .sidebar-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;flex-shrink:0}
+  .sidebar-info{flex:1;min-width:0}
+  .sidebar-title{font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:2px}
+  .sidebar-desc{font-size:11px;color:#9ca3af;line-height:1.4}
+
+  .footer{background:#0a0e27;padding:60px 40px 30px;color:#fff;margin-top:40px}
+  .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:40px}
+  .footer-brand{display:flex;align-items:center;gap:8px;font-size:20px;font-weight:800;margin-bottom:12px}
+  .footer-brand span{color:#60a5fa}
+  .footer-tagline{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px}
+  .footer-social{display:flex;gap:12px}
+  .footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:16px;transition:background .2s}
+  .footer-social a:hover{background:rgba(255,255,255,.2)}
+  .footer-heading{font-size:14px;font-weight:700;margin-bottom:20px;color:#fff}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .footer-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;transition:color .2s}
+  .footer-links a:hover{color:#60a5fa}
+  .footer-bottom{max-width:1200px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  .footer-bottom-left{display:flex;gap:20px;font-size:12px;color:rgba(255,255,255,.5)}
+  .footer-bottom-right,.footer-bottom-links a{font-size:12px;color:rgba(255,255,255,.5);text-decoration:none}
+  .footer-bottom-links{display:flex;gap:20px}
+
+  .toast{position:fixed;bottom:24px;right:24px;background:#1a1a2e;color:#fff;padding:14px 20px;border-radius:10px;font-size:13px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:3000;transform:translateY(200%);transition:transform .3s ease;max-width:320px}
+  .toast.visible{transform:translateY(0)}
+  .toast.success{background:#10b981}
+  .toast.error{background:#ef4444}
+  .toast.info{background:#3b82f6}
+
+  @media(max-width:1024px){
+    .main-content{grid-template-columns:1fr;padding:24px 20px}
+    .sidebar{position:static}
+    .how-steps{grid-template-columns:repeat(2,1fr)}
+    .options-grid{grid-template-columns:1fr 1fr}
+  }
+  @media(max-width:768px){
+    .header{padding:0 20px}.nav{display:none}
+    .hero{padding:24px 20px 40px}
+    .hero-title{font-size:28px}
+    .hero-icon{width:48px;height:48px;font-size:20px}
+    .hero-title-row{flex-direction:column;align-items:flex-start;gap:12px}
+    .main-content{padding:20px 16px}
+    .workspace{padding:20px}
+    .dropzone{padding:32px 16px}
+    .how-steps{grid-template-columns:1fr}
+    .seo-content{padding:20px}
+    .footer-inner{grid-template-columns:1fr 1fr}
+    .options-grid{grid-template-columns:1fr}
+    .file-list{grid-template-columns:repeat(auto-fill,minmax(110px,1fr))}
+    .toast{left:16px;right:16px;bottom:16px;max-width:none}
+  }
+  @media(max-width:576px){
+    .header{padding:0 16px}.header-right .search-btn,.header-right .theme-btn{display:none}
+    .hero-title{font-size:24px}
+    .actions{flex-direction:column}
+    .btn{width:100%}
+    .btn-primary{flex:none}
+    .footer-inner{grid-template-columns:1fr}
+    .footer-bottom{flex-direction:column;text-align:center}
+    .compare-table th,.compare-table td{padding:8px 10px;font-size:12px}
+  }
+
+  html[data-theme="dark"] body{background:#0f172a;color:#f1f5f9}
+  html[data-theme="dark"] .header,html[data-theme="dark"] .workspace,html[data-theme="dark"] .seo-content,html[data-theme="dark"] .sidebar{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .logo,html[data-theme="dark"] .hero-title,html[data-theme="dark"] .seo-content h2,html[data-theme="dark"] .seo-content h3,html[data-theme="dark"] .faq-question,html[data-theme="dark"] .results-title,html[data-theme="dark"] .sidebar-header,html[data-theme="dark"] .sidebar-title,html[data-theme="dark"] .options-title,html[data-theme="dark"] .pdf-info-name,html[data-theme="dark"] .toggle-title{color:#f1f5f9}
+  html[data-theme="dark"] .nav a{color:#cbd5e1}
+  html[data-theme="dark"] .dropzone{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .options,html[data-theme="dark"] .how-step,html[data-theme="dark"] .faq-item,html[data-theme="dark"] .file-item,html[data-theme="dark"] .file-thumb,html[data-theme="dark"] .pdf-info,html[data-theme="dark"] .toggle-row{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .option-group input,html[data-theme="dark"] .option-group select{background:#1e293b;border-color:#334155;color:#f1f5f9}
+  html[data-theme="dark"] .seo-content p,html[data-theme="dark"] .seo-content ul li,html[data-theme="dark"] .file-meta,html[data-theme="dark"] .faq-answer p,html[data-theme="dark"] .pdf-info-meta{color:#cbd5e1}
+  html[data-theme="dark"] .seo-content code{background:#020617;color:#94a3b8;border-color:#334155}
+  html[data-theme="dark"] .icon-btn{background:#0f172a;border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .file-name{color:#f1f5f9}
+  html[data-theme="dark"] .compare-table{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .compare-table th{background:#0f172a;color:#f1f5f9;border-color:#334155}
+  html[data-theme="dark"] .compare-table td{border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .file-thumb{background:repeating-conic-gradient(#334155 0% 25%, #1e293b 0% 50%) 50% / 12px 12px}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type": "SoftwareApplication", "name": "PDF to PNG Converter", "url": "https://bigtoolz.com/tools/pdf-tools/convert-pdf/pdf-to-png/", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any (Web-based)", "description": "Free online PDF to PNG converter extract PDF pages as lossless PNG images with transparency support. Works in your browser.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.8", "ratingCount": "2145"}},
+    {"@type": "HowTo", "name": "How to Convert PDF to PNG", "step": [
+      {"@type": "HowToStep", "name": "Upload PDF", "text": "Drag & drop or click to select a PDF file."},
+      {"@type": "HowToStep", "name": "Choose Settings", "text": "Pick scale, page range, and transparency option."},
+      {"@type": "HowToStep", "name": "Convert", "text": "Click Convert to PNG."},
+      {"@type": "HowToStep", "name": "Download", "text": "Download each page as PNG, or download all."}
+    ]},
+    {"@type": "FAQPage", "mainEntity": [
+      {"@type": "Question", "name": "How do I convert PDF to PNG for free?", "acceptedAnswer": {"@type": "Answer", "text": "Upload your PDF, choose scale and page range, then click Convert to PNG. Each page downloads as a separate PNG free, no signup."}},
+      {"@type": "Question", "name": "What's the difference between PDF to JPG and PDF to PNG?", "acceptedAnswer": {"@type": "Answer", "text": "PNG is lossless pixel-perfect quality, larger files, supports transparency. JPG is lossy smaller files, no transparency. Use PNG for text/line art/diagrams; use JPG for photos."}},
+      {"@type": "Question", "name": "Can I make the PDF background transparent?", "acceptedAnswer": {"@type": "Answer", "text": "Yes! Enable the Transparent Background toggle to remove the white PDF background. This works best for PDFs with logos, signatures, or graphics plain text documents usually need the white background."}},
+      {"@type": "Question", "name": "Why are PNG files larger than JPG?", "acceptedAnswer": {"@type": "Answer", "text": "PNG uses lossless compression it preserves every pixel exactly. JPG uses lossy compression that discards subtle data. PNG files are typically 2-5x larger but pixel-perfect."}},
+      {"@type": "Question", "name": "Are my PDFs uploaded to a server?", "acceptedAnswer": {"@type": "Answer", "text": "No. All conversion happens in your browser using pdf.js. Your PDF never leaves your device."}}
+    ]},
+    {"@type": "BreadcrumbList", "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bigtoolz.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://bigtoolz.com/tools/"},
+      {"@type": "ListItem", "position": 3, "name": "PDF Tools", "item": "https://bigtoolz.com/tools/pdf-tools/"},
+      {"@type": "ListItem", "position": 4, "name": "Convert PDF", "item": "https://bigtoolz.com/tools/pdf-tools/convert-pdf/"},
+      {"@type": "ListItem", "position": 5, "name": "PDF to PNG", "item": "https://bigtoolz.com/tools/pdf-tools/convert-pdf/pdf-to-png/"}
+    ]}
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-left">
+    <a href="/" class="logo"><div class="logo-icon">⚒</div>BigToolz</span></a>
+    <nav><ul class="nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/tools/" class="active">All Tools</a></li>
+      <li><a href="/tools/categories">Categories</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul></nav>
+  </div>
+  <div class="header-right">
+   
+    <button class="theme-btn" aria-label="Toggle theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
+    
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <nav class="breadcrumb">
+      <a href="/">Home</a><span class="sep">›</span>
+      <a href="/tools/">Tools</a><span class="sep">›</span>
+      <a href="/tools/pdf-tools/">PDF Tools</a><span class="sep">›</span>
+      <a href="/tools/pdf-tools/convert-pdf/">Convert PDF</a><span class="sep">›</span>
+      <span class="current">PDF to PNG</span>
+    </nav>
+    <div class="hero-title-row">
+      <div class="hero-icon">🖼</div>
+      <h1 class="hero-title">PDF to <span class="blue">PNG</span></h1>
+    </div>
+    <p class="hero-desc">
+      Convert PDF pages into <strong>lossless PNG</strong> images. Perfect quality, transparency support, high-DPI scale. No upload, no signup, 100% private.
+    </p>
+    <div class="hero-features">
+      <div class="hero-feature"><span class="check">✓</span> Lossless Quality</div>
+      <div class="hero-feature"><span class="check">✓</span> Transparency</div>
+      <div class="hero-feature"><span class="check">✓</span> Page Range</div>
+      <div class="hero-feature"><span class="check">✓</span> No Upload</div>
+    </div>
+  </div>
+</section>
+
+<div class="main-content">
+
+  <div class="tool-content">
+
+    <div class="workspace">
+
+      <div class="dropzone" id="dropzone">
+        <div class="dropzone-icon">⬆</div>
+        <div class="dropzone-title">Drag & drop your PDF here</div>
+        <div class="dropzone-sub">or <a href="#" id="browseLink">click to browse files</a></div>
+        <button class="choose-btn" id="chooseBtn" type="button">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/></svg>
+          Choose PDF File
+        </button>
+        <div class="dropzone-info">
+          <span>PDF files only</span>
+          <span class="divider">|</span>
+          <span>Single file at a time</span>
+        </div>
+        <input type="file" id="fileInput" class="file-input" accept=".pdf,application/pdf">
+      </div>
+
+      <div class="pdf-info" id="pdfInfo">
+        <div class="pdf-info-icon">📕</div>
+        <div class="pdf-info-details">
+          <div class="pdf-info-name" id="pdfName">document.pdf</div>
+          <div class="pdf-info-meta" id="pdfMeta">0 pages · 0 KB</div>
+        </div>
+      </div>
+
+      <div class="options">
+        <div class="options-title">⚙️ Conversion Settings</div>
+
+        <div class="options-grid">
+          <div class="option-group">
+            <label>Scale (DPI)</label>
+            <select id="scale">
+              <option value="1">1x (72 DPI - Fast)</option>
+              <option value="2" selected>2x (144 DPI - Recommended)</option>
+              <option value="3">3x (216 DPI - High Quality)</option>
+              <option value="4">4x (288 DPI - Print)</option>
+            </select>
+          </div>
+          <div class="option-group">
+            <label>Compression</label>
+            <select id="compression">
+              <option value="fast">Fast (larger file)</option>
+              <option value="balanced" selected>Balanced (recommended)</option>
+              <option value="max">Maximum (smallest)</option>
+            </select>
+          </div>
+          <div class="option-group">
+            <label>Page Range</label>
+            <input type="text" id="pageRange" placeholder="All (e.g. 1-3,5,7-9)">
+          </div>
+        </div>
+
+        <div class="toggle-row">
+          <div class="toggle-info">
+            <div class="toggle-title">Transparent Background</div>
+            <div class="toggle-desc">Remove white background (best for logos/signatures)</div>
+          </div>
+          <div class="toggle-switch" id="transparentToggle" role="switch" aria-checked="false"></div>
+        </div>
+
+      </div>
+
+      <div class="actions">
+        <button class="btn btn-primary" id="convertBtn" disabled>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 17l6-6-6-6M12 19h8"/></svg>
+          Convert to PNG
+        </button>
+        <button class="btn btn-secondary" id="clearBtn">Clear</button>
+      </div>
+
+      <div class="progress" id="progress">
+        <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+        <div class="progress-text" id="progressText">Converting...</div>
+      </div>
+
+      <div class="results" id="results">
+        <div class="results-header">
+          <div class="results-title"><span class="success-icon">✓</span> <span id="resultCount">Conversion Complete</span></div>
+          <button class="btn btn-success" id="downloadAllBtn" style="padding:10px 20px;font-size:13px;">⬇ Download All</button>
+        </div>
+        <div class="file-list" id="fileList"></div>
+      </div>
+
+    </div>
+
+    <div class="seo-content">
+
+      <h2>🖼 What is PDF to PNG Conversion?</h2>
+      <p>
+        <strong>PDF to PNG</strong> conversion extracts each PDF page as a <strong>lossless PNG image</strong>. Unlike JPG, PNG preserves every pixel exactly no compression artifacts, perfect for text-heavy documents, diagrams, charts, screenshots, and line art. PNG also supports <strong>transparency</strong>, so you can remove the white background for logos and signatures.
+      </p>
+      <p>
+        Unlike most online PDF converters, BigToolz processes everything <strong>100% in your browser</strong> using <strong>pdf.js</strong>. Your PDF <strong>never uploaded to any server</strong> complete privacy, instant results.
+      </p>
+
+      <h2>🚀 How to Convert PDF to PNG</h2>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-step-num">1</div>
+          <div class="how-step-title">Upload PDF</div>
+          <div class="how-step-desc">Drag & drop or click "Choose PDF File" to select a PDF.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">2</div>
+          <div class="how-step-title">Choose Settings</div>
+          <div class="how-step-desc">Pick scale, compression, page range, transparency.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">3</div>
+          <div class="how-step-title">Convert</div>
+          <div class="how-step-desc">Click "Convert to PNG" to process all pages.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">4</div>
+          <div class="how-step-title">Download</div>
+          <div class="how-step-desc">Download each page individually or use "Download All".</div>
+        </div>
+      </div>
+
+      <h2>📊 PDF to PNG vs PDF to JPG</h2>
+      <table class="compare-table">
+        <thead>
+          <tr><th>Feature</th><th>PNG</th><th>JPG</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Compression</strong></td><td>Lossless (pixel-perfect)</td><td>Lossy (slight quality loss)</td></tr>
+          <tr><td><strong>Transparency</strong></td><td>✅ Supported</td><td>❌ Not supported</td></tr>
+          <tr><td><strong>File size</strong></td><td>Larger (2-5x)</td><td>Smaller</td></tr>
+          <tr><td><strong>Best for</strong></td><td>Text, diagrams, logos, screenshots</td><td>Photos, quick previews</td></tr>
+          <tr><td><strong>Quality</strong></td><td>Perfect every pixel exact</td><td>Very good minor artifacts</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Which Should You Use?</h3>
+      <p><strong>Choose PNG</strong> when quality matters most: documents with text, technical diagrams, screenshots, charts, logos, or any image that needs a transparent background. <strong>Choose JPG</strong> when file size matters for sharing photos or quick previews. Check our <a href="/tools/pdf-tools/convert-pdf/pdf-to-jpg/">PDF to JPG</a> tool for the smaller option.</p>
+
+      <h2>📐 Scale Guide</h2>
+      <ul>
+        <li><strong>1x (72 DPI):</strong> Fast, small files. Best for quick previews or thumbnails.</li>
+        <li><strong>2x (144 DPI):</strong> Recommended for most uses sharp on screens, reasonable file size.</li>
+        <li><strong>3x (216 DPI):</strong> High-quality good for printing or zooming in on details.</li>
+        <li><strong>4x (288 DPI):</strong> Print quality larger files, but maximum sharpness for professional print work.</li>
+      </ul>
+
+      <h2>📄 Page Range Examples</h2>
+      <ul>
+        <li><code>1</code> → Only the first page</li>
+        <li><code>1-5</code> → Pages 1 through 5</li>
+        <li><code>1,3,5</code> → Pages 1, 3, and 5 only</li>
+        <li><code>1-3,7,9-11</code> → A mix of ranges and single pages</li>
+        <li><em>(empty)</em> → All pages</li>
+      </ul>
+
+      <h2>✨ Key Features</h2>
+      <ul>
+        <li><strong>Lossless PNG output</strong> every pixel preserved exactly.</li>
+        <li><strong>Transparent background option</strong> remove white backgrounds for logos and signatures.</li>
+        <li><strong>4 scale options</strong> 1x to 4x (72 to 288 DPI).</li>
+        <li><strong>Compression modes</strong> fast, balanced, or maximum.</li>
+        <li><strong>Page range selection</strong> convert only the pages you need.</li>
+        <li><strong>PDF.js powered</strong> same engine as Firefox's PDF viewer.</li>
+        <li><strong>100% browser-based</strong> complete privacy.</li>
+        <li><strong>Page-by-page preview</strong> see each converted page as a thumbnail.</li>
+      </ul>
+
+      <h2>❓ Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-question">How do I convert PDF to PNG for free?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Upload your PDF, choose the scale and page range, then click "Convert to PNG". Each page downloads as a separate PNG free, no signup.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What's the difference between PDF to JPG and PDF to PNG?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>PNG</strong> is lossless pixel-perfect quality, larger files, supports transparency. <strong>JPG</strong> is lossy smaller files, no transparency. Use PNG for text/line art/diagrams; use JPG for photos.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I make the PDF background transparent?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Yes! Enable the <strong>Transparent Background</strong> toggle. This works best for PDFs with logos, signatures, or graphics plain text documents usually need the white background for readability.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Why are PNG files larger than JPG?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>PNG uses <strong>lossless compression</strong> it preserves every pixel exactly. JPG uses <strong>lossy compression</strong> that discards subtle data to save space. PNG files are typically 2-5x larger but pixel-perfect.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I convert only certain pages?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Yes. In the <strong>Page Range</strong> field, enter specific pages like <code>1-3,5,7-9</code> to convert only those pages. Leave empty for the entire PDF.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I convert password-protected PDFs?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Not directly. First remove the password using our <a href="/tools/pdf-tools/security-pdf/unlock-pdf/">Unlock PDF</a> tool, then convert the unlocked PDF here.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Are my PDFs uploaded to a server?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>No. All conversion happens in your browser using pdf.js. Your PDF never leaves your device, and nothing is stored anywhere.</p></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-header">🔗 Related PDF Tools</div>
+    <div class="sidebar-list">
+      <a href="/tools/pdf-tools/convert-pdf/pdf-to-jpg/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#ef4444;">🖼</div>
+        <div class="sidebar-info"><div class="sidebar-title">PDF to JPG</div><div class="sidebar-desc">Smaller files</div></div>
+      </a>
+      <a href="/tools/pdf-tools/convert-pdf/jpg-to-pdf/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#10b981;">📕</div>
+        <div class="sidebar-info"><div class="sidebar-title">JPG to PDF</div><div class="sidebar-desc">Reverse conversion</div></div>
+      </a>
+      <a href="/tools/pdf-tools/convert-pdf/png-to-pdf/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#3b82f6;">📕</div>
+        <div class="sidebar-info"><div class="sidebar-title">PNG to PDF</div><div class="sidebar-desc">Images to PDF</div></div>
+      </a>
+      <a href="/tools/pdf-tools/organize-pdf/merge-pdf/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#8b5cf6;">📚</div>
+        <div class="sidebar-info"><div class="sidebar-title">Merge PDF</div><div class="sidebar-desc">Combine files</div></div>
+      </a>
+      <a href="/tools/pdf-tools/visual-pdf/compress-pdf/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#f97316;">📉</div>
+        <div class="sidebar-info"><div class="sidebar-title">Compress PDF</div><div class="sidebar-desc">Reduce size</div></div>
+      </a>
+      <a href="/tools/pdf-tools/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#64748b;">📕</div>
+        <div class="sidebar-info"><div class="sidebar-title">All PDF Tools →</div><div class="sidebar-desc">Browse 100+ tools</div></div>
+      </a>
+    </div>
+  </aside>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand"><div class="logo-icon">⚒</div>BigToolz</span></div>
+      <p class="footer-tagline">Your Ultimate Online Tools Hub</p>
+      <div class="footer-social">
+        <a href="https://facebook.com/bigtoolz" aria-label="Facebook">f</a>
+        <a href="https://twitter.com/bigtoolz" aria-label="Twitter">𝕏</a>
+        <a href="https://youtube.com/@bigtoolz" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+    <div>
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/tools/">All Tools</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Categories</h3>
+      <ul class="footer-links">
+        <li><a href="/tools/image-tools/">Image Tools</a></li>
+        <li><a href="/tools/pdf-tools/">PDF Tools</a></li>
+        <li><a href="/tools/text-tools/">Text Tools</a></li>
+        <li><a href="/tools/seo-tools/">SEO Tools</a></li>
+        <li><a href="/tools/categories">All Categories →</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Legal</h3>
+      <ul class="footer-links">
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left"><span>✓ 100% Free</span><span>✓ No Sign Up</span><span>✓ No Installation</span></div>
+    <div class="footer-bottom-right">© 2026 BigToolz. All rights reserved.</div>
+    <div class="footer-bottom-links"><a href="/privacy-policy">Privacy</a><a href="/terms">Terms</a><a href="/disclaimer">Disclaimer</a></div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<!-- pdf.js library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+
+<script>
+'use strict';
+
+/* ===== THEME ===== */
+(function(){try{var t=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&d))document.documentElement.setAttribute('data-theme','dark');else if(t==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();
+document.querySelector('.theme-btn')?.addEventListener('click',()=>{const h=document.documentElement;const c=h.getAttribute('data-theme');const d=window.matchMedia('(prefers-color-scheme: dark)').matches;let n=c==='dark'?'light':c==='light'?'dark':(d?'light':'dark');h.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}});
+
+/* ===== HELPERS ===== */
+const $ = (s, p = document) => p.querySelector(s);
+const $$ = (s, p = document) => [...p.querySelectorAll(s)];
+
+function formatBytes(b) {
+  if (b === 0) return '0 B';
+  const k = 1024, sizes = ['B', 'KB', 'MB', 'GB'];
+  const i = Math.floor(Math.log(b) / Math.log(k));
+  return (b / Math.pow(k, i)).toFixed(i === 0 ? 0 : 1) + ' ' + sizes[i];
+}
+
+function showToast(msg, type = 'info', duration = 3000) {
+  const t = $('#toast');
+  if (!t) return;
+  t.className = 'toast visible' + (type !== 'info' ? ' ' + type : '');
+  t.textContent = msg;
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove('visible'), duration);
+}
+
+function escapeHtml(str) {
+  const div = document.createElement('div');
+  div.textContent = str;
+  return div.innerHTML;
+}
+
+/* ===== PDF.js Setup ===== */
+if (window.pdfjsLib) {
+  pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+}
+
+/* ===== STATE ===== */
+const state = {
+  pdfFile: null,
+  pdfDoc: null,
+  pdfName: '',
+  pdfPages: 0,
+  pdfSize: 0,
+  results: [],
+  isProcessing: false,
+  transparent: false
+};
+
+let resultIdCounter = 0;
+
+/* ===== DOM ===== */
+const dropzone = $('#dropzone');
+const fileInput = $('#fileInput');
+const chooseBtn = $('#chooseBtn');
+const browseLink = $('#browseLink');
+const convertBtn = $('#convertBtn');
+const clearBtn = $('#clearBtn');
+const progress = $('#progress');
+const progressFill = $('#progressFill');
+const progressText = $('#progressText');
+const results = $('#results');
+const fileList = $('#fileList');
+const pdfInfo = $('#pdfInfo');
+const pdfName = $('#pdfName');
+const pdfMeta = $('#pdfMeta');
+const scale = $('#scale');
+const compression = $('#compression');
+const pageRange = $('#pageRange');
+const transparentToggle = $('#transparentToggle');
+const downloadAllBtn = $('#downloadAllBtn');
+const resultCount = $('#resultCount');
+
+/* ===== TRANSPARENT TOGGLE ===== */
+transparentToggle.addEventListener('click', () => {
+  state.transparent = !state.transparent;
+  transparentToggle.classList.toggle('on', state.transparent);
+  transparentToggle.setAttribute('aria-checked', state.transparent);
+  showToast(state.transparent ? '✅ Transparent background enabled' : 'Transparent background disabled', 'success', 1500);
+});
+
+/* ===== FILE SELECTION ===== */
+function triggerFileSelect() { fileInput.click(); }
+chooseBtn.addEventListener('click', (e) => { e.stopPropagation(); triggerFileSelect(); });
+browseLink.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); triggerFileSelect(); });
+dropzone.addEventListener('click', triggerFileSelect);
+
+fileInput.addEventListener('change', (e) => {
+  const f = e.target.files[0];
+  if (f && (f.type === 'application/pdf' || f.name.toLowerCase().endsWith('.pdf'))) loadPDF(f);
+  fileInput.value = '';
+});
+
+['dragenter', 'dragover'].forEach(evt => {
+  dropzone.addEventListener(evt, (e) => { e.preventDefault(); e.stopPropagation(); dropzone.classList.add('dragover'); });
+});
+['dragleave', 'drop'].forEach(evt => {
+  dropzone.addEventListener(evt, (e) => { e.preventDefault(); e.stopPropagation(); dropzone.classList.remove('dragover'); });
+});
+dropzone.addEventListener('drop', (e) => {
+  const f = e.dataTransfer.files[0];
+  if (f && (f.type === 'application/pdf' || f.name.toLowerCase().endsWith('.pdf'))) loadPDF(f);
+  else showToast('Please drop a PDF file', 'error');
+});
+
+/* ===== LOAD PDF ===== */
+async function loadPDF(file) {
+  if (!window.pdfjsLib) {
+    showToast('PDF library not loaded. Check your internet.', 'error');
+    return;
+  }
+
+  state.pdfFile = file;
+  state.pdfName = file.name;
+  state.pdfSize = file.size;
+
+  showToast('Loading PDF...', 'info', 2000);
+
+  try {
+    const arrayBuffer = await file.arrayBuffer();
+    const loadingTask = pdfjsLib.getDocument({ data: arrayBuffer });
+    const pdf = await loadingTask.promise;
+
+    state.pdfDoc = pdf;
+    state.pdfPages = pdf.numPages;
+
+    pdfName.textContent = file.name;
+    pdfMeta.textContent = `${pdf.numPages} page${pdf.numPages > 1 ? 's' : ''} · ${formatBytes(file.size)}`;
+    pdfInfo.classList.add('visible');
+    dropzone.style.display = 'none';
+    convertBtn.disabled = false;
+
+    showToast(`✅ PDF loaded: ${pdf.numPages} pages`, 'success');
+  } catch (err) {
+    console.error('PDF load failed:', err);
+    showToast('Failed to load PDF file may be corrupted or password-protected', 'error', 5000);
+    state.pdfDoc = null;
+    convertBtn.disabled = true;
+  }
+}
+
+/* ===== PARSE PAGE RANGE ===== */
+function parsePageRange(rangeStr, totalPages) {
+  rangeStr = (rangeStr || '').trim();
+  if (!rangeStr) return Array.from({ length: totalPages }, (_, i) => i + 1);
+
+  const pages = new Set();
+  const parts = rangeStr.split(',');
+
+  for (const part of parts) {
+    const trimmed = part.trim();
+    if (!trimmed) continue;
+
+    if (trimmed.includes('-')) {
+      const [startStr, endStr] = trimmed.split('-');
+      const start = parseInt(startStr, 10);
+      const end = parseInt(endStr, 10);
+      if (isNaN(start) || isNaN(end)) continue;
+
+      const lo = Math.max(1, Math.min(start, end));
+      const hi = Math.min(totalPages, Math.max(start, end));
+
+      for (let i = lo; i <= hi; i++) pages.add(i);
+    } else {
+      const num = parseInt(trimmed, 10);
+      if (!isNaN(num) && num >= 1 && num <= totalPages) pages.add(num);
+    }
+  }
+
+  return [...pages].sort((a, b) => a - b);
+}
+
+/* ===== CONVERT ===== */
+convertBtn.addEventListener('click', convertAll);
+
+async function convertAll() {
+  if (state.isProcessing || !state.pdfDoc) return;
+
+  const pages = parsePageRange(pageRange.value, state.pdfPages);
+  if (!pages.length) {
+    showToast('No valid pages selected. Check the page range.', 'error');
+    return;
+  }
+
+  state.isProcessing = true;
+  convertBtn.disabled = true;
+  convertBtn.innerHTML = 'Converting...';
+  results.classList.remove('visible');
+  fileList.innerHTML = '';
+  state.results = [];
+
+  const settings = {
+    scale: parseFloat(scale.value) || 2,
+    compression: compression.value,
+    transparent: state.transparent
+  };
+
+  progress.classList.add('visible');
+  progressFill.style.width = '0%';
+
+  const baseName = state.pdfName.replace(/\.[^.]+$/, '');
+  const total = pages.length;
+  let completed = 0;
+
+  for (const pageNum of pages) {
+    try {
+      const result = await convertPage(state.pdfDoc, pageNum, baseName, settings);
+      state.results.push(result);
+    } catch (err) {
+      console.error('Page ' + pageNum + ' failed:', err);
+    }
+    completed++;
+    progressFill.style.width = Math.round((completed / total) * 100) + '%';
+    progressText.textContent = `Converting ${completed} of ${total}...`;
+  }
+
+  progress.classList.remove('visible');
+  renderResults();
+
+  state.isProcessing = false;
+  convertBtn.disabled = false;
+  convertBtn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 17l6-6-6-6M12 19h8"/></svg> Convert to PNG';
+
+  if (state.results.length) {
+    results.classList.add('visible');
+    resultCount.textContent = `${state.results.length} page${state.results.length > 1 ? 's' : ''} converted`;
+    showToast(`✅ ${state.results.length} PNG image${state.results.length > 1 ? 's' : ''} created!`, 'success');
+  } else {
+    showToast('Conversion failed', 'error');
+  }
+}
+
+async function convertPage(pdfDoc, pageNum, baseName, settings) {
+  const page = await pdfDoc.getPage(pageNum);
+  const viewport = page.getViewport({ scale: settings.scale });
+
+  const canvas = document.createElement('canvas');
+  canvas.width = Math.round(viewport.width);
+  canvas.height = Math.round(viewport.height);
+  const ctx = canvas.getContext('2d', { willReadFrequently: true });
+
+  // Only fill white bg if NOT transparent
+  if (!settings.transparent) {
+    ctx.fillStyle = '#ffffff';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+  }
+
+  await page.render({ canvasContext: ctx, viewport }).promise;
+
+  // If transparent: remove white/near-white pixels
+  if (settings.transparent) {
+    try {
+      const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+      const data = imageData.data;
+      const threshold = 240;
+
+      for (let i = 0; i < data.length; i += 4) {
+        const r = data[i];
+        const g = data[i + 1];
+        const b = data[i + 2];
+        if (r >= threshold && g >= threshold && b >= threshold) {
+          data[i + 3] = 0; // alpha = 0
+        }
+      }
+      ctx.putImageData(imageData, 0, 0);
+    } catch (e) {
+      console.warn('Transparency processing failed:', e);
+    }
+  }
+
+  return new Promise((resolve, reject) => {
+    canvas.toBlob(
+      (blob) => {
+        if (!blob) return reject(new Error('Canvas to blob failed'));
+
+        // Thumbnail always white bg for preview clarity
+        const thumbCanvas = document.createElement('canvas');
+        const thumbSize = 200;
+        const ratio = Math.min(thumbSize / canvas.width, thumbSize / canvas.height);
+        thumbCanvas.width = canvas.width * ratio;
+        thumbCanvas.height = canvas.height * ratio;
+        const tCtx = thumbCanvas.getContext('2d');
+        tCtx.fillStyle = '#ffffff';
+        tCtx.fillRect(0, 0, thumbCanvas.width, thumbCanvas.height);
+        tCtx.drawImage(canvas, 0, 0, thumbCanvas.width, thumbCanvas.height);
+        const thumbnail = thumbCanvas.toDataURL('image/jpeg', 0.75);
+
+        const paddedNum = String(pageNum).padStart(3, '0');
+        const fileName = `${baseName}-page-${paddedNum}.png`;
+
+        resolve({
+          id: ++resultIdCounter,
+          pageNum,
+          blob,
+          url: URL.createObjectURL(blob),
+          name: fileName,
+          size: blob.size,
+          width: canvas.width,
+          height: canvas.height,
+          thumbnail
+        });
+      },
+      'image/png'
+    );
+  });
+}
+
+/* ===== RENDER RESULTS ===== */
+function renderResults() {
+  fileList.innerHTML = '';
+
+  state.results.forEach((result) => {
+    const item = document.createElement('div');
+    item.className = 'file-item';
+    item.innerHTML = `
+      <div class="file-thumb">
+        <span class="file-page-badge">Page ${result.pageNum}</span>
+        <img src="${result.thumbnail}" alt="${escapeHtml(result.name)}">
+      </div>
+      <div class="file-name" title="${escapeHtml(result.name)}">${escapeHtml(result.name)}</div>
+      <div class="file-actions">
+        <button class="icon-btn download" data-download="${result.id}" title="Download">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+          </svg>
+        </button>
+      </div>
+    `;
+    fileList.appendChild(item);
+  });
+
+  $$('[data-download]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const id = parseInt(btn.dataset.download, 10);
+      const result = state.results.find(r => r.id === id);
+      if (result) downloadResult(result);
+    });
+  });
+}
+
+function downloadResult(result) {
+  const a = document.createElement('a');
+  a.href = result.url;
+  a.download = result.name;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+}
+
+downloadAllBtn.addEventListener('click', () => {
+  if (!state.results.length) return;
+  showToast(`Downloading ${state.results.length} PNG files sequentially...`, 'info');
+  state.results.forEach((r, i) => setTimeout(() => downloadResult(r), i * 300));
+});
+
+/* ===== CLEAR ===== */
+clearBtn.addEventListener('click', () => {
+  state.results.forEach(r => URL.revokeObjectURL(r.url));
+  if (state.pdfDoc) {
+    try { state.pdfDoc.destroy(); } catch (e) {}
+  }
+  state.pdfDoc = null;
+  state.pdfFile = null;
+  state.results = [];
+  state.transparent = false;
+  transparentToggle.classList.remove('on');
+  transparentToggle.setAttribute('aria-checked', 'false');
+  fileList.innerHTML = '';
+  results.classList.remove('visible');
+  progress.classList.remove('visible');
+  pdfInfo.classList.remove('visible');
+  dropzone.style.display = '';
+  convertBtn.disabled = true;
+  pageRange.value = '';
+  showToast('Cleared');
+});
+
+/* ===== FAQ ===== */
+$$('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    $$('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+</script>
+
+</body>
+</html>

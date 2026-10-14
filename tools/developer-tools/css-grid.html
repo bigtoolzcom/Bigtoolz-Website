@@ -1,0 +1,1218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2563eb">
+
+<title>CSS Grid Generator - Build CSS Grid Layouts Online Free | BigToolz</title>
+<meta name="description" content="Free online CSS Grid generator. Build grid layouts visually, adjust columns, rows, gap, track sizes. Copy generated CSS instantly. No signup, browser-based.">
+<meta name="keywords" content="css grid generator, css grid layout, css grid builder, grid template generator, css grid online, css grid tool">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://bigtoolz.com/tools/developer-tools/css-grid/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="CSS Grid Generator - Free Online Tool | BigToolz">
+<meta property="og:description" content="Build CSS Grid layouts visually columns, rows, gaps, copy CSS instantly.">
+<meta property="og:url" content="https://bigtoolz.com/tools/developer-tools/css-grid/">
+<meta property="og:image" content="https://bigtoolz.com/assets/images/og-image.jpg">
+<meta property="og:site_name" content="BigToolz">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="CSS Grid Generator - BigToolz">
+<meta name="twitter:description" content="Build CSS Grid layouts visually free, no signup.">
+<meta name="twitter:image" content="https://bigtoolz.com/assets/images/twitter-card.jpg">
+
+<link rel="icon" href="/assets/images/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/images/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#f8f9fc;color:#1a1a2e;overflow-x:hidden;line-height:1.5}
+
+  .header{background:#fff;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;position:sticky;top:0;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+  .header-left{display:flex;align-items:center;gap:40px}
+  .logo{display:flex;align-items:center;gap:8px;font-size:22px;font-weight:800;color:#1a1a2e;text-decoration:none}
+  .logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#3b82f6,#2563eb);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px}
+  .logo span{color:#2563eb}
+  .nav{display:flex;align-items:center;gap:28px;list-style:none}
+  .nav a{text-decoration:none;color:#4b5563;font-size:14px;font-weight:500;transition:color .2s}
+  .nav a:hover,.nav a.active{color:#2563eb}
+  .header-right{display:flex;align-items:center;gap:16px}
+  .search-btn,.theme-btn{width:36px;height:36px;border-radius:50%;border:none;background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#4b5563}
+  .search-btn:hover,.theme-btn:hover{background:#f3f4f6}
+  .bookmark-btn{display:flex;align-items:center;gap:8px;background:#2563eb;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
+  .bookmark-btn:hover{background:#1d4ed8}
+
+  .hero{background:linear-gradient(135deg,#0a0e27 0%,#1a1a4e 40%,#2d1b69 70%,#4c1d95 100%);padding:40px 40px 60px;position:relative;overflow:hidden;color:#fff}
+  .hero::before{content:'';position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(6,182,212,.25) 0%,transparent 70%);border-radius:50%}
+  .hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+  .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px;flex-wrap:wrap}
+  .breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none}
+  .breadcrumb a:hover{color:#fff}
+  .breadcrumb .sep{color:rgba(255,255,255,.4)}
+  .breadcrumb .current{color:#fff;font-weight:500}
+  .hero-title-row{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+  .hero-icon{width:60px;height:60px;background:#06b6d4;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px;color:#fff;flex-shrink:0;box-shadow:0 8px 24px rgba(6,182,212,.4)}
+  .hero-title{font-size:42px;font-weight:800;line-height:1.15}
+  .hero-title .blue{color:#22d3ee}
+  .hero-desc{font-size:15px;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:24px;max-width:560px}
+  .hero-features{display:flex;gap:24px;flex-wrap:wrap}
+  .hero-feature{display:flex;align-items:center;gap:6px;font-size:13px;color:#fff;font-weight:500}
+  .hero-feature .check{width:18px;height:18px;border-radius:50%;background:#06b6d4;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;flex-shrink:0}
+
+  .main-content{max-width:1200px;margin:0 auto;padding:40px;display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start}
+  .tool-content{min-width:0}
+
+  .workspace{background:#fff;border-radius:16px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,.06);border:1px solid #e5e7eb;margin-bottom:24px}
+
+  /* Presets */
+  .presets{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:20px}
+  .preset-btn{padding:12px 10px;background:#fff;border:2px solid #e5e7eb;border-radius:10px;font-size:12px;font-weight:600;color:#4b5563;cursor:pointer;font-family:inherit;transition:all .2s;text-align:center}
+  .preset-btn:hover{border-color:#06b6d4;background:#ecfeff;color:#0891b2}
+  .preset-btn.active{border-color:#06b6d4;background:#06b6d4;color:#fff}
+  .preset-icon{display:block;font-size:16px;margin-bottom:4px}
+
+  /* Preview */
+  .preview-label{font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:8px;display:flex;align-items:center;gap:6px}
+  .grid-preview{background:#0f172a;border-radius:12px;padding:20px;margin-bottom:20px;min-height:320px;display:flex;align-items:center;justify-content:center}
+  .grid-container{display:grid;width:100%;max-width:600px;aspect-ratio:16/10;background:#06b6d4;padding:8px;border-radius:8px;transition:all .2s}
+  .grid-item{background:rgba(255,255,255,0.9);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;color:#0891b2;font-family:'JetBrains Mono',monospace;cursor:pointer;transition:all .15s;user-select:none;min-height:30px}
+  .grid-item:hover{background:#fff;transform:scale(0.98)}
+  .grid-item.spanning{background:#fbbf24;color:#78350f}
+  .grid-item.spanning:hover{background:#fcd34d}
+
+  /* Cell controls */
+  .cell-hint{font-size:11px;color:#6b7280;text-align:center;margin-bottom:16px;font-style:italic}
+  .cell-hint strong{color:#0891b2;font-style:normal}
+
+  /* Controls */
+  .controls{background:#ecfeff;border-radius:12px;padding:20px;margin-bottom:20px;border:1px solid #a5f3fc}
+  .controls-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+
+  .controls-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-bottom:16px}
+  .control-group{display:flex;flex-direction:column;gap:6px}
+  .control-group label{font-size:12px;font-weight:700;color:#4b5563;text-transform:uppercase;letter-spacing:.5px}
+  .control-row{display:flex;align-items:center;gap:8px}
+  .number-input{width:60px;padding:8px 10px;border:1px solid #e5e7eb;border-radius:6px;font-size:13px;font-weight:600;font-family:inherit;color:#1a1a2e;background:#fff;outline:none;text-align:center}
+  .number-input:focus{border-color:#06b6d4;box-shadow:0 0 0 3px rgba(6,182,212,.1)}
+  .range-input{flex:1;-webkit-appearance:none;appearance:none;height:6px;background:#a5f3fc;border-radius:3px;outline:none}
+  .range-input::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:18px;height:18px;background:#06b6d4;border-radius:50%;cursor:pointer;border:2px solid #fff}
+  .range-input::-moz-range-thumb{width:18px;height:18px;background:#06b6d4;border:2px solid #fff;border-radius:50%;cursor:pointer}
+
+  /* Track editor */
+  .tracks-editor{background:#fff;border-radius:10px;padding:14px;border:1px solid #e5e7eb;margin-top:14px}
+  .tracks-title{font-size:11px;font-weight:700;color:#4b5563;text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px}
+  .track-list{display:flex;gap:6px;flex-wrap:wrap}
+  .track-item{display:flex;gap:2px;align-items:center;background:#f8fafc;border:1px solid #e5e7eb;border-radius:8px;padding:6px 8px}
+  .track-label{font-size:10px;font-weight:700;color:#9ca3af;margin-right:4px}
+  .track-input{width:50px;padding:4px 6px;border:none;background:transparent;font-size:12px;font-weight:600;font-family:'JetBrains Mono',monospace;color:#0891b2;outline:none;text-align:center}
+  .track-unit{font-size:10px;color:#9ca3af;font-family:'JetBrains Mono',monospace}
+  .track-select{padding:4px 6px;border:none;background:transparent;font-size:11px;font-weight:600;color:#4b5563;font-family:inherit;outline:none;cursor:pointer}
+
+  /* Layout select */
+  .layout-select{padding:8px 12px;border:1px solid #e5e7eb;border-radius:6px;font-size:12px;font-weight:600;font-family:inherit;color:#1a1a2e;background:#fff;outline:none;cursor:pointer;width:100%}
+  .layout-select:focus{border-color:#06b6d4}
+
+  /* Actions */
+  .actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:20px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 22px;border-radius:10px;font-size:14px;font-weight:700;font-family:inherit;cursor:pointer;border:none;transition:all .2s;text-decoration:none}
+  .btn-primary{background:#06b6d4;color:#fff;flex:1;box-shadow:0 4px 12px rgba(6,182,212,.2)}
+  .btn-primary:hover:not(:disabled){background:#0891b2;transform:translateY(-2px)}
+  .btn-secondary{background:#fff;color:#06b6d4;border:1px solid #e5e7eb}
+  .btn-secondary:hover{border-color:#06b6d4;background:#ecfeff}
+
+  /* Code output */
+  .code-section{margin-top:20px}
+  .code-tabs{display:flex;gap:4px;margin-bottom:0;border-bottom:none;flex-wrap:wrap}
+  .code-tab{padding:10px 18px;background:#f8fafc;border:1px solid #e5e7eb;border-bottom:none;border-radius:8px 8px 0 0;font-size:12px;font-weight:700;color:#6b7280;cursor:pointer;font-family:inherit;transition:all .2s;margin-bottom:-1px}
+  .code-tab:hover{color:#06b6d4}
+  .code-tab.active{background:#0f172a;color:#22d3ee;border-color:#0f172a}
+  .code-panel{background:#0f172a;border-radius:0 8px 8px 8px;padding:16px;position:relative;border:1px solid #0f172a;overflow:hidden}
+  .code-panel-textarea{width:100%;min-height:180px;background:transparent;border:none;outline:none;color:#e2e8f0;font-family:'JetBrains Mono','Fira Code',Consolas,monospace;font-size:13px;line-height:1.6;resize:vertical;white-space:pre;overflow-x:auto}
+  .code-panel-textarea::selection{background:rgba(34,211,238,.3)}
+  .code-copy-btn{position:absolute;top:10px;right:10px;padding:6px 12px;background:rgba(255,255,255,.1);color:#e2e8f0;border:1px solid rgba(255,255,255,.15);border-radius:6px;font-size:11px;font-weight:700;cursor:pointer;font-family:inherit;transition:all .2s;display:flex;align-items:center;gap:4px;z-index:2}
+  .code-copy-btn:hover{background:rgba(255,255,255,.2);color:#fff}
+  .code-copy-btn.copied{background:#10b981;color:#fff;border-color:#10b981}
+
+  /* SEO */
+  .seo-content{background:#fff;border-radius:16px;padding:32px;border:1px solid #e5e7eb;margin-bottom:24px}
+  .seo-content h2{font-size:22px;font-weight:800;color:#1a1a2e;margin-bottom:14px;margin-top:28px;display:flex;align-items:center;gap:10px}
+  .seo-content h2:first-child{margin-top:0}
+  .seo-content h3{font-size:16px;font-weight:700;color:#1a1a2e;margin:20px 0 10px}
+  .seo-content p{font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:14px}
+  .seo-content ul{list-style:none;padding-left:0;margin-bottom:16px}
+  .seo-content ul li{position:relative;padding-left:24px;font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:8px}
+  .seo-content ul li::before{content:'';position:absolute;left:6px;top:12px;width:6px;height:6px;background:#06b6d4;border-radius:50%}
+  .seo-content a{color:#2563eb;text-decoration:none;font-weight:600}
+  .seo-content a:hover{text-decoration:underline}
+  .seo-content strong{color:#1a1a2e;font-weight:700}
+  .seo-content code{background:#f1f5f9;padding:2px 6px;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:13px;color:#0891b2;border:1px solid #e2e8f0}
+
+  .code-block{background:#0f172a;color:#e2e8f0;padding:16px;border-radius:8px;font-family:'JetBrains Mono',Consolas,monospace;font-size:13px;line-height:1.6;overflow-x:auto;margin:14px 0}
+  .code-block .hl{color:#22d3ee}
+  .code-block .val{color:#fbbf24}
+  .code-block .comment{color:#64748b}
+
+  .how-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:20px}
+  .how-step{background:#ecfeff;border-radius:12px;padding:20px;border:1px solid #a5f3fc}
+  .how-step-num{width:36px;height:36px;border-radius:50%;background:#06b6d4;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;margin-bottom:12px}
+  .how-step-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+  .how-step-desc{font-size:13px;color:#6b7280;line-height:1.6}
+
+  .faq-item{background:#ecfeff;border:1px solid #a5f3fc;border-radius:12px;margin-bottom:10px;overflow:hidden;transition:border-color .2s}
+  .faq-item:hover{border-color:#06b6d4}
+  .faq-question{width:100%;background:none;border:none;padding:18px 22px;font-size:15px;font-weight:700;color:#1a1a2e;text-align:left;cursor:pointer;font-family:inherit;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .faq-question .chev{font-size:12px;color:#06b6d4;transition:transform .2s;flex-shrink:0}
+  .faq-item.open .faq-question .chev{transform:rotate(180deg)}
+  .faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 22px}
+  .faq-item.open .faq-answer{max-height:500px;padding-bottom:18px}
+  .faq-answer p{font-size:14px;color:#6b7280;line-height:1.7;margin:0}
+
+  .sidebar{background:#fff;border-radius:16px;padding:24px;border:1px solid #e5e7eb;position:sticky;top:80px;margin-bottom:24px}
+  .sidebar-header{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:800;color:#1a1a2e;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid #f3f4f6}
+  .sidebar-list{display:flex;flex-direction:column;gap:8px}
+  .sidebar-item{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;cursor:pointer;transition:background .2s;text-decoration:none;color:inherit;border:1px solid #f3f4f6}
+  .sidebar-item:hover{background:#ecfeff;border-color:#a5f3fc}
+  .sidebar-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:16px;color:#fff;flex-shrink:0;font-family:'JetBrains Mono',monospace;font-weight:700}
+  .sidebar-info{flex:1;min-width:0}
+  .sidebar-title{font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:2px}
+  .sidebar-desc{font-size:11px;color:#9ca3af;line-height:1.4}
+
+  .footer{background:#0a0e27;padding:60px 40px 30px;color:#fff;margin-top:40px}
+  .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:40px}
+  .footer-brand{display:flex;align-items:center;gap:8px;font-size:20px;font-weight:800;margin-bottom:12px}
+  .footer-brand span{color:#60a5fa}
+  .footer-tagline{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px}
+  .footer-social{display:flex;gap:12px}
+  .footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:16px;transition:background .2s}
+  .footer-social a:hover{background:rgba(255,255,255,.2)}
+  .footer-heading{font-size:14px;font-weight:700;margin-bottom:20px;color:#fff}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .footer-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;transition:color .2s}
+  .footer-links a:hover{color:#60a5fa}
+  .footer-bottom{max-width:1200px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  .footer-bottom-left{display:flex;gap:20px;font-size:12px;color:rgba(255,255,255,.5)}
+  .footer-bottom-right,.footer-bottom-links a{font-size:12px;color:rgba(255,255,255,.5);text-decoration:none}
+  .footer-bottom-links{display:flex;gap:20px}
+
+  .toast{position:fixed;bottom:24px;right:24px;background:#1a1a2e;color:#fff;padding:14px 20px;border-radius:10px;font-size:13px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:3000;transform:translateY(200%);transition:transform .3s ease;max-width:320px}
+  .toast.visible{transform:translateY(0)}
+  .toast.success{background:#10b981}
+  .toast.error{background:#ef4444}
+
+  @media(max-width:1024px){
+    .main-content{grid-template-columns:1fr;padding:24px 20px}
+    .sidebar{position:static}
+    .how-steps{grid-template-columns:repeat(2,1fr)}
+    .presets{grid-template-columns:repeat(2,1fr)}
+    .controls-grid{grid-template-columns:1fr}
+  }
+  @media(max-width:768px){
+    .header{padding:0 20px}.nav{display:none}
+    .hero{padding:24px 20px 40px}
+    .hero-title{font-size:28px}
+    .hero-icon{width:48px;height:48px;font-size:20px}
+    .hero-title-row{flex-direction:column;align-items:flex-start;gap:12px}
+    .main-content{padding:20px 16px}
+    .workspace{padding:20px}
+    .how-steps{grid-template-columns:1fr}
+    .seo-content{padding:20px}
+    .footer-inner{grid-template-columns:1fr 1fr}
+    .grid-item{font-size:11px}
+    .toast{left:16px;right:16px;bottom:16px;max-width:none}
+  }
+  @media(max-width:576px){
+    .header{padding:0 16px}.header-right .search-btn,.header-right .theme-btn{display:none}
+    .hero-title{font-size:24px}
+    .actions{flex-direction:column}
+    .btn{width:100%}
+    .btn-primary{flex:none}
+    .footer-inner{grid-template-columns:1fr}
+    .footer-bottom{flex-direction:column;text-align:center}
+    .presets{grid-template-columns:1fr}
+    .code-tab{font-size:11px;padding:8px 12px}
+  }
+
+  html[data-theme="dark"] body{background:#0f172a;color:#f1f5f9}
+  html[data-theme="dark"] .header,html[data-theme="dark"] .workspace,html[data-theme="dark"] .seo-content,html[data-theme="dark"] .sidebar{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .logo,html[data-theme="dark"] .hero-title,html[data-theme="dark"] .seo-content h2,html[data-theme="dark"] .seo-content h3,html[data-theme="dark"] .faq-question,html[data-theme="dark"] .sidebar-header,html[data-theme="dark"] .sidebar-title,html[data-theme="dark"] .controls-title,html[data-theme="dark"] .preview-label{color:#f1f5f9}
+  html[data-theme="dark"] .nav a{color:#cbd5e1}
+  html[data-theme="dark"] .controls,html[data-theme="dark"] .how-step,html[data-theme="dark"] .faq-item,html[data-theme="dark"] .tracks-editor,html[data-theme="dark"] .preset-btn{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .preset-btn{color:#cbd5e1}
+  html[data-theme="dark"] .preset-btn.active{background:#06b6d4;color:#fff;border-color:#06b6d4}
+  html[data-theme="dark"] .track-item{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .number-input,html[data-theme="dark"] .layout-select{background:#1e293b;border-color:#334155;color:#f1f5f9}
+  html[data-theme="dark"] .seo-content p,html[data-theme="dark"] .seo-content ul li,html[data-theme="dark"] .faq-answer p{color:#cbd5e1}
+  html[data-theme="dark"] .seo-content code{background:#020617;color:#22d3ee;border-color:#334155}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type": "SoftwareApplication", "name": "CSS Grid Generator", "url": "https://bigtoolz.com/tools/developer-tools/css-grid/", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any (Web-based)", "description": "Free online CSS Grid generator build grid layouts visually, adjust columns, rows, gaps and copy the CSS.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "1567"}},
+    {"@type": "HowTo", "name": "How to Generate CSS Grid Layouts", "step": [
+      {"@type": "HowToStep", "name": "Choose Layout", "text": "Start with a preset or build from scratch."},
+      {"@type": "HowToStep", "name": "Set Columns and Rows", "text": "Adjust the number of columns, rows and gap size."},
+      {"@type": "HowToStep", "name": "Customize Tracks", "text": "Fine-tune individual track sizes (fr, px, %, auto)."},
+      {"@type": "HowToStep", "name": "Copy CSS", "text": "Copy the generated CSS and HTML into your project."}
+    ]},
+    {"@type": "FAQPage", "mainEntity": [
+      {"@type": "Question", "name": "What is CSS Grid?", "acceptedAnswer": {"@type": "Answer", "text": "CSS Grid is a 2-dimensional layout system built into modern browsers. It lets you define rows and columns and place items anywhere on the grid much more powerful than flexbox for full-page layouts."}},
+      {"@type": "Question", "name": "What does 'fr' unit mean?", "acceptedAnswer": {"@type": "Answer", "text": "fr = fraction unit. It represents a fraction of the available space. 'grid-template-columns: 1fr 2fr' means the second column is twice as wide as the first."}},
+      {"@type": "Question", "name": "How do I make a responsive grid?", "acceptedAnswer": {"@type": "Answer", "text": "Use 'auto-fit' or 'auto-fill' with minmax(). Example: 'grid-template-columns: repeat(auto-fit, minmax(250px, 1fr))' creates a responsive grid without media queries."}},
+      {"@type": "Question", "name": "Can I use CSS Grid with flexbox?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, they work well together. Use Grid for page-level layout (rows and columns) and flexbox for alignment inside grid items or components."}},
+      {"@type": "Question", "name": "Is my data uploaded to a server?", "acceptedAnswer": {"@type": "Answer", "text": "No. All processing happens in your browser. Nothing is stored or sent anywhere."}}
+    ]},
+    {"@type": "BreadcrumbList", "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bigtoolz.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://bigtoolz.com/tools/"},
+      {"@type": "ListItem", "position": 3, "name": "Developer Tools", "item": "https://bigtoolz.com/tools/developer-tools/"},
+      {"@type": "ListItem", "position": 4, "name": "CSS Grid Generator", "item": "https://bigtoolz.com/tools/developer-tools/css-grid/"}
+    ]}
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-left">
+    <a href="/" class="logo"><div class="logo-icon">⚒</div>BigToolz</span></a>
+    <nav><ul class="nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/tools/" class="active">All Tools</a></li>
+      <li><a href="/tools/categories">Categories</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul></nav>
+  </div>
+  <div class="header-right">
+   
+    <button class="theme-btn" aria-label="Toggle theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
+   
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <nav class="breadcrumb">
+      <a href="/">Home</a><span class="sep">›</span>
+      <a href="/tools/">Tools</a><span class="sep">›</span>
+      <a href="/tools/developer-tools/">Developer Tools</a><span class="sep">›</span>
+      <span class="current">CSS Grid Generator</span>
+    </nav>
+    <div class="hero-title-row">
+      <div class="hero-icon">▦</div>
+      <h1 class="hero-title">CSS Grid <span class="blue">Generator</span></h1>
+    </div>
+    <p class="hero-desc">
+      Build CSS Grid layouts visually. Adjust columns, rows, gaps and track sizes in real time. Copy production-ready CSS instantly. No signup, 100% browser-based.
+    </p>
+    <div class="hero-features">
+      <div class="hero-feature"><span class="check">✓</span> Visual Builder</div>
+      <div class="hero-feature"><span class="check">✓</span> 4 Presets</div>
+      <div class="hero-feature"><span class="check">✓</span> Copy CSS + HTML</div>
+      <div class="hero-feature"><span class="check">✓</span> No Signup</div>
+    </div>
+  </div>
+</section>
+
+<div class="main-content">
+
+  <div class="tool-content">
+
+    <div class="workspace">
+
+      <!-- Presets -->
+      <div class="presets" id="presets">
+        <button class="preset-btn active" data-preset="custom">
+          <span class="preset-icon">🎨</span>Custom
+        </button>
+        <button class="preset-btn" data-preset="holy-grail">
+          <span class="preset-icon">🏰</span>Holy Grail
+        </button>
+        <button class="preset-btn" data-preset="dashboard">
+          <span class="preset-icon">📊</span>Dashboard
+        </button>
+        <button class="preset-btn" data-preset="gallery">
+          <span class="preset-icon">🖼️</span>Gallery
+        </button>
+      </div>
+
+      <!-- Preview -->
+      <div class="preview-label">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#06b6d4" stroke-width="2.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg>
+        Live Preview
+      </div>
+      <div class="grid-preview">
+        <div class="grid-container" id="gridContainer">
+          <!-- Grid items will be generated by JS -->
+        </div>
+      </div>
+      <div class="cell-hint">
+        💡 Click any cell to <strong>expand it</strong> (span 2 columns). Click again to reset.
+      </div>
+
+      <!-- Controls -->
+      <div class="controls">
+        <div class="controls-title">⚙️ Grid Settings</div>
+
+        <div class="controls-grid">
+          <div class="control-group">
+            <label>Columns</label>
+            <div class="control-row">
+              <input type="number" class="number-input" id="colsInput" value="3" min="1" max="12">
+              <input type="range" class="range-input" id="colsRange" value="3" min="1" max="12">
+            </div>
+          </div>
+          <div class="control-group">
+            <label>Rows</label>
+            <div class="control-row">
+              <input type="number" class="number-input" id="rowsInput" value="3" min="1" max="12">
+              <input type="range" class="range-input" id="rowsRange" value="3" min="1" max="12">
+            </div>
+          </div>
+          <div class="control-group">
+            <label>Column Gap</label>
+            <div class="control-row">
+              <input type="number" class="number-input" id="colGapInput" value="8" min="0" max="50">
+              <input type="range" class="range-input" id="colGapRange" value="8" min="0" max="50">
+            </div>
+          </div>
+          <div class="control-group">
+            <label>Row Gap</label>
+            <div class="control-row">
+              <input type="number" class="number-input" id="rowGapInput" value="8" min="0" max="50">
+              <input type="range" class="range-input" id="rowGapRange" value="8" min="0" max="50">
+            </div>
+          </div>
+        </div>
+
+        <!-- Track editor -->
+        <div class="tracks-editor">
+          <div class="tracks-title">Column Track Sizes</div>
+          <div class="track-list" id="colTracksList"></div>
+        </div>
+
+        <div class="tracks-editor">
+          <div class="tracks-title">Row Track Sizes</div>
+          <div class="track-list" id="rowTracksList"></div>
+        </div>
+
+        <!-- Layout options -->
+        <div class="controls-grid" style="margin-top:14px;">
+          <div class="control-group">
+            <label>Container Width</label>
+            <select class="layout-select" id="containerWidth">
+              <option value="100%" selected>100% (Full width)</option>
+              <option value="1200px">1200px</option>
+              <option value="960px">960px</option>
+              <option value="720px">720px</option>
+              <option value="600px">600px</option>
+            </select>
+          </div>
+          <div class="control-group">
+            <label>Place Items</label>
+            <select class="layout-select" id="placeItems">
+              <option value="stretch" selected>stretch</option>
+              <option value="start">start</option>
+              <option value="center">center</option>
+              <option value="end">end</option>
+            </select>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Actions -->
+      <div class="actions">
+        <button class="btn btn-primary" id="copyCssBtn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+          Copy CSS
+        </button>
+        <button class="btn btn-secondary" id="resetBtn">↺ Reset</button>
+      </div>
+
+      <!-- Code output -->
+      <div class="code-section">
+        <div class="code-tabs" id="codeTabs">
+          <button class="code-tab active" data-tab="css">CSS</button>
+          <button class="code-tab" data-tab="html">HTML</button>
+          <button class="code-tab" data-tab="react">React</button>
+        </div>
+        <div class="code-panel">
+          <button class="code-copy-btn" id="panelCopyBtn">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+            Copy
+          </button>
+          <textarea class="code-panel-textarea" id="codeOutput" readonly spellcheck="false"></textarea>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="seo-content">
+
+      <h2>▦ What is CSS Grid?</h2>
+      <p>
+        <strong>CSS Grid</strong> is a two-dimensional layout system built into every modern browser. Unlike flexbox (which is primarily 1D), Grid lets you define both <strong>rows and columns</strong> and place items anywhere on the grid with precise control. It's the recommended tool for <strong>full-page layouts, dashboards, galleries,</strong> and <strong>magazine-style designs</strong>.
+      </p>
+      <p>
+        This <strong>CSS Grid Generator</strong> lets you build layouts visually and copy production-ready CSS. No manual coding, no guesswork just click, adjust, and paste into your project.
+      </p>
+
+      <h2>🚀 How to Use the CSS Grid Generator</h2>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-step-num">1</div>
+          <div class="how-step-title">Start with a Preset</div>
+          <div class="how-step-desc">Holy Grail, Dashboard, Gallery, or Custom.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">2</div>
+          <div class="how-step-title">Adjust Columns & Rows</div>
+          <div class="how-step-desc">Use sliders or type numbers directly (1-12).</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">3</div>
+          <div class="how-step-title">Customize Tracks</div>
+          <div class="how-step-desc">Set each column/row to fr, px, %, auto, min/max-content.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">4</div>
+          <div class="how-step-title">Copy the Code</div>
+          <div class="how-step-desc">Get CSS, HTML or React (styled-components) output.</div>
+        </div>
+      </div>
+
+      <h2>📐 CSS Grid Units Explained</h2>
+      <h3>fr (Fraction)</h3>
+      <p>The <strong>fr unit</strong> represents a fraction of the free space. In <code>grid-template-columns: 1fr 2fr</code>, the second column is twice as wide as the first. This is the most common unit for responsive layouts.</p>
+
+      <h3>px (Pixels)</h3>
+      <p>Fixed size. Use for sidebars, toolbars, or elements that shouldn't grow/shrink. Example: <code>200px 1fr</code> sidebar + flexible content.</p>
+
+      <h3>% (Percentage)</h3>
+      <p>Percentage of the container width. Works but <code>fr</code> is often better because it accounts for gaps automatically.</p>
+
+      <h3>auto</h3>
+      <p>Sizes based on content. The track will be as wide as its widest child. Great for navigation or buttons.</p>
+
+      <h3>min-content / max-content</h3>
+      <p><strong>min-content</strong> smallest size that fits content without breaking. <strong>max-content</strong> largest natural size without wrapping.</p>
+
+      <h2>💡 Common Grid Patterns</h2>
+      <h3>Holy Grail Layout</h3>
+      <div class="code-block">
+.grid {<br>
+&nbsp;&nbsp;display: grid;<br>
+&nbsp;&nbsp;grid-template-columns: 200px 1fr 200px;<br>
+&nbsp;&nbsp;grid-template-rows: auto 1fr auto;<br>
+&nbsp;&nbsp;grid-template-areas:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="hl">"header header header"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="hl">"nav main aside"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="hl">"footer footer footer"</span>;<br>
+}
+      </div>
+
+      <h3>Responsive Gallery (No Media Queries)</h3>
+      <div class="code-block">
+.grid {<br>
+&nbsp;&nbsp;display: grid;<br>
+&nbsp;&nbsp;grid-template-columns: repeat(<span class="hl">auto-fit</span>, minmax(<span class="val">250px</span>, 1fr));<br>
+&nbsp;&nbsp;gap: <span class="val">16px</span>;<br>
+}
+      </div>
+
+      <h3>Dashboard Layout</h3>
+      <div class="code-block">
+.grid {<br>
+&nbsp;&nbsp;display: grid;<br>
+&nbsp;&nbsp;grid-template-columns: <span class="val">250px</span> 1fr 1fr;<br>
+&nbsp;&nbsp;grid-template-rows: <span class="val">60px</span> 1fr 1fr;<br>
+&nbsp;&nbsp;gap: <span class="val">16px</span>;<br>
+}
+      </div>
+
+      <h2>✨ Key Features</h2>
+      <ul>
+        <li><strong>Visual builder</strong> see changes in real time.</li>
+        <li><strong>4 presets</strong> Holy Grail, Dashboard, Gallery, Custom.</li>
+        <li><strong>1-12 columns and rows</strong> flexible for any layout.</li>
+        <li><strong>Track size editor</strong> fr, px, %, auto, min/max-content.</li>
+        <li><strong>Gap control</strong> separate column and row gaps.</li>
+        <li><strong>Click-to-span cells</strong> expand items across columns.</li>
+        <li><strong>3 output formats</strong> CSS, HTML, React (styled-components).</li>
+        <li><strong>100% browser-based</strong> no signup, no uploads.</li>
+      </ul>
+
+      <h2>❓ Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-question">What is CSS Grid?</button>
+        <div class="faq-answer"><p>CSS Grid is a 2-dimensional layout system built into modern browsers. It lets you define rows and columns and place items anywhere on the grid. It's more powerful than flexbox for full-page layouts, dashboards, and magazine-style designs.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What does the 'fr' unit mean?</button>
+        <div class="faq-answer"><p><code>fr</code> = fraction unit. It represents a fraction of the available space. <code>grid-template-columns: 1fr 2fr</code> means the second column is twice as wide as the first. This is the most useful unit for responsive grids.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">How do I make a responsive grid?</button>
+        <div class="faq-answer"><p>Use <code>repeat(auto-fit, minmax(250px, 1fr))</code> in <code>grid-template-columns</code>. This creates as many columns as will fit, each at least 250px wide, without any media queries. Resize the browser to see it in action.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I use CSS Grid with flexbox?</button>
+        <div class="faq-answer"><p>Yes they complement each other. Use <strong>Grid</strong> for page-level layout (rows and columns) and <strong>flexbox</strong> for alignment inside grid items. Example: grid for the overall layout, flexbox for centering content within a card.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What are grid-template-areas?</button>
+        <div class="faq-answer"><p>Named grid areas a visual way to define layout. Instead of numbering rows/columns, you write a "map" like <code>"header header" "nav main"</code>. Very readable. This generator outputs standard grid-template-columns but the output is easy to convert to areas if needed.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Is browser support good?</button>
+        <div class="faq-answer"><p>Yes CSS Grid is supported in <strong>all modern browsers</strong> (Chrome, Firefox, Safari, Edge) with over 97% global support. Safe for production use. Internet Explorer has an older prefixed syntax you can ignore.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Is my data uploaded to a server?</button>
+        <div class="faq-answer"><p>No. Everything happens in your browser. Your layout settings aren't stored or sent anywhere refreshing the page resets to defaults.</p></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-header">🔗 Related Developer Tools</div>
+    <div class="sidebar-list">
+      <a href="/tools/developer-tools/flexbox/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#10b981;">⇄</div>
+        <div class="sidebar-info"><div class="sidebar-title">Flexbox Playground</div><div class="sidebar-desc">1D layout tool</div></div>
+      </a>
+      <a href="/tools/developer-tools/box-shadow/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#1e293b;">◼</div>
+        <div class="sidebar-info"><div class="sidebar-title">Box Shadow Generator</div><div class="sidebar-desc">CSS shadows</div></div>
+      </a>
+      <a href="/tools/developer-tools/border-radius/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#3b82f6;">▢</div>
+        <div class="sidebar-info"><div class="sidebar-title">Border Radius</div><div class="sidebar-desc">Rounded corners</div></div>
+      </a>
+      <a href="/tools/developer-tools/css-gradient/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#8b5cf6;">🌈</div>
+        <div class="sidebar-info"><div class="sidebar-title">CSS Gradient</div><div class="sidebar-desc">Linear/radial gradients</div></div>
+      </a>
+      <a href="/tools/developer-tools/html-formatter/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#f97316;">&lt;/&gt;</div>
+        <div class="sidebar-info"><div class="sidebar-title">HTML Formatter</div><div class="sidebar-desc">Beautify HTML</div></div>
+      </a>
+      <a href="/tools/developer-tools/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#64748b;">&lt;/&gt;</div>
+        <div class="sidebar-info"><div class="sidebar-title">All Dev Tools →</div><div class="sidebar-desc">Browse 25+ tools</div></div>
+      </a>
+    </div>
+  </aside>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand"><div class="logo-icon">⚒</div>BigToolz</span></div>
+      <p class="footer-tagline">Your Ultimate Online Tools Hub</p>
+      <div class="footer-social">
+        <a href="https://facebook.com/bigtoolz" aria-label="Facebook">f</a>
+        <a href="https://twitter.com/bigtoolz" aria-label="Twitter">𝕏</a>
+        <a href="https://youtube.com/@bigtoolz" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+    <div>
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/tools/">All Tools</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Categories</h3>
+      <ul class="footer-links">
+        <li><a href="/tools/image-tools/">Image Tools</a></li>
+        <li><a href="/tools/developer-tools/">Developer Tools</a></li>
+        <li><a href="/tools/text-tools/">Text Tools</a></li>
+        <li><a href="/tools/seo-tools/">SEO Tools</a></li>
+        <li><a href="/tools/categories">All Categories →</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Legal</h3>
+      <ul class="footer-links">
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left"><span>✓ 100% Free</span><span>✓ No Sign Up</span><span>✓ No Installation</span></div>
+    <div class="footer-bottom-right">© 2026 BigToolz. All rights reserved.</div>
+    <div class="footer-bottom-links"><a href="/privacy-policy">Privacy</a><a href="/terms">Terms</a><a href="/disclaimer">Disclaimer</a></div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+'use strict';
+
+/* ===== THEME ===== */
+(function(){try{var t=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&d))document.documentElement.setAttribute('data-theme','dark');else if(t==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();
+document.querySelector('.theme-btn')?.addEventListener('click',()=>{const h=document.documentElement;const c=h.getAttribute('data-theme');const d=window.matchMedia('(prefers-color-scheme: dark)').matches;let n=c==='dark'?'light':c==='light'?'dark':(d?'light':'dark');h.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}});
+
+/* ===== HELPERS ===== */
+const $ = (s, p = document) => p.querySelector(s);
+const $$ = (s, p = document) => [...p.querySelectorAll(s)];
+
+function showToast(msg, type = 'info', duration = 2500) {
+  const t = $('#toast');
+  if (!t) return;
+  t.className = 'toast visible' + (type !== 'info' ? ' ' + type : '');
+  t.textContent = msg;
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove('visible'), duration);
+}
+
+async function copyText(text) {
+  try {
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(text);
+      return true;
+    }
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.cssText = 'position:fixed;opacity:0;';
+    document.body.appendChild(ta);
+    ta.select();
+    const ok = document.execCommand('copy');
+    document.body.removeChild(ta);
+    return ok;
+  } catch (e) { return false; }
+}
+
+/* ===== STATE ===== */
+const state = {
+  cols: 3,
+  rows: 3,
+  colGap: 8,
+  rowGap: 8,
+  colTracks: ['1fr', '1fr', '1fr'],
+  rowTracks: ['1fr', '1fr', '1fr'],
+  colUnits: ['fr', 'fr', 'fr'],
+  rowUnits: ['fr', 'fr', 'fr'],
+  colValues: [1, 1, 1],
+  rowValues: [1, 1, 1],
+  containerWidth: '100%',
+  placeItems: 'stretch',
+  spans: {}, // cell index -> span count
+  activeCodeTab: 'css'
+};
+
+/* ===== DOM ===== */
+const gridContainer = $('#gridContainer');
+const colsInput = $('#colsInput');
+const colsRange = $('#colsRange');
+const rowsInput = $('#rowsInput');
+const rowsRange = $('#rowsRange');
+const colGapInput = $('#colGapInput');
+const colGapRange = $('#colGapRange');
+const rowGapInput = $('#rowGapInput');
+const rowGapRange = $('#rowGapRange');
+const colTracksList = $('#colTracksList');
+const rowTracksList = $('#rowTracksList');
+const containerWidthSel = $('#containerWidth');
+const placeItemsSel = $('#placeItems');
+const codeOutput = $('#codeOutput');
+const panelCopyBtn = $('#panelCopyBtn');
+const copyCssBtn = $('#copyCssBtn');
+const resetBtn = $('#resetBtn');
+
+/* ===== PRESETS ===== */
+const PRESETS = {
+  custom: null,
+  'holy-grail': {
+    cols: 3, rows: 3,
+    colGap: 12, rowGap: 12,
+    colValues: [200, 1, 200], colUnits: ['px', 'fr', 'px'],
+    rowValues: [60, 1, 60], rowUnits: ['px', 'fr', 'px'],
+    spans: {}
+  },
+  dashboard: {
+    cols: 4, rows: 3,
+    colGap: 12, rowGap: 12,
+    colValues: [200, 1, 1, 1], colUnits: ['px', 'fr', 'fr', 'fr'],
+    rowValues: [60, 1, 1], rowUnits: ['px', 'fr', 'fr'],
+    spans: { 0: 4 } // header spans 4
+  },
+  gallery: {
+    cols: 4, rows: 3,
+    colGap: 8, rowGap: 8,
+    colValues: [1, 1, 1, 1], colUnits: ['fr', 'fr', 'fr', 'fr'],
+    rowValues: [1, 1, 1], rowUnits: ['fr', 'fr', 'fr'],
+    spans: {}
+  }
+};
+
+$$('.preset-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const preset = btn.dataset.preset;
+    $$('.preset-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+
+    if (preset === 'custom') {
+      // Leave settings as they are
+      return;
+    }
+
+    const p = PRESETS[preset];
+    if (!p) return;
+
+    state.cols = p.cols;
+    state.rows = p.rows;
+    state.colGap = p.colGap;
+    state.rowGap = p.rowGap;
+    state.colValues = [...p.colValues];
+    state.rowValues = [...p.rowValues];
+    state.colUnits = [...p.colUnits];
+    state.rowUnits = [...p.rowUnits];
+    state.spans = { ...p.spans };
+
+    syncInputsFromState();
+    rebuildTracks();
+    renderGrid();
+    updateCode();
+  });
+});
+
+/* ===== SYNC INPUTS ===== */
+function syncInputsFromState() {
+  colsInput.value = state.cols;
+  colsRange.value = state.cols;
+  rowsInput.value = state.rows;
+  rowsRange.value = state.rows;
+  colGapInput.value = state.colGap;
+  colGapRange.value = state.colGap;
+  rowGapInput.value = state.rowGap;
+  rowGapRange.value = state.rowGap;
+  containerWidthSel.value = state.containerWidth;
+  placeItemsSel.value = state.placeItems;
+}
+
+/* ===== HANDLE COL/ROW COUNT CHANGE ===== */
+function setCols(n) {
+  n = Math.max(1, Math.min(12, n));
+  state.cols = n;
+  // Adjust track arrays
+  while (state.colValues.length < n) {
+    state.colValues.push(1);
+    state.colUnits.push('fr');
+  }
+  state.colValues = state.colValues.slice(0, n);
+  state.colUnits = state.colUnits.slice(0, n);
+  colsInput.value = n;
+  colsRange.value = n;
+  rebuildTracks();
+  renderGrid();
+  updateCode();
+}
+
+function setRows(n) {
+  n = Math.max(1, Math.min(12, n));
+  state.rows = n;
+  while (state.rowValues.length < n) {
+    state.rowValues.push(1);
+    state.rowUnits.push('fr');
+  }
+  state.rowValues = state.rowValues.slice(0, n);
+  state.rowUnits = state.rowUnits.slice(0, n);
+  rowsInput.value = n;
+  rowsRange.value = n;
+  rebuildTracks();
+  renderGrid();
+  updateCode();
+}
+
+colsInput.addEventListener('input', (e) => setCols(parseInt(e.target.value, 10) || 1));
+colsRange.addEventListener('input', (e) => setCols(parseInt(e.target.value, 10)));
+
+rowsInput.addEventListener('input', (e) => setRows(parseInt(e.target.value, 10) || 1));
+rowsRange.addEventListener('input', (e) => setRows(parseInt(e.target.value, 10)));
+
+/* ===== GAPS ===== */
+function setColGap(v) {
+  state.colGap = Math.max(0, Math.min(50, v));
+  colGapInput.value = state.colGap;
+  colGapRange.value = state.colGap;
+  renderGrid();
+  updateCode();
+}
+
+function setRowGap(v) {
+  state.rowGap = Math.max(0, Math.min(50, v));
+  rowGapInput.value = state.rowGap;
+  rowGapRange.value = state.rowGap;
+  renderGrid();
+  updateCode();
+}
+
+colGapInput.addEventListener('input', (e) => setColGap(parseInt(e.target.value, 10) || 0));
+colGapRange.addEventListener('input', (e) => setColGap(parseInt(e.target.value, 10)));
+rowGapInput.addEventListener('input', (e) => setRowGap(parseInt(e.target.value, 10) || 0));
+rowGapRange.addEventListener('input', (e) => setRowGap(parseInt(e.target.value, 10)));
+
+/* ===== TRACK EDITORS ===== */
+function rebuildTracks() {
+  // Column tracks
+  colTracksList.innerHTML = '';
+  state.colValues.forEach((val, i) => {
+    const item = document.createElement('div');
+    item.className = 'track-item';
+    item.innerHTML = `
+      <span class="track-label">${i + 1}</span>
+      <input type="text" class="track-input" value="${val}" data-type="col" data-index="${i}">
+      <select class="track-select" data-type="col-unit" data-index="${i}">
+        <option value="fr"${state.colUnits[i] === 'fr' ? ' selected' : ''}>fr</option>
+        <option value="px"${state.colUnits[i] === 'px' ? ' selected' : ''}>px</option>
+        <option value="%"${state.colUnits[i] === '%' ? ' selected' : ''}>%</option>
+        <option value="auto"${state.colUnits[i] === 'auto' ? ' selected' : ''}>auto</option>
+        <option value="min-content"${state.colUnits[i] === 'min-content' ? ' selected' : ''}>min-content</option>
+        <option value="max-content"${state.colUnits[i] === 'max-content' ? ' selected' : ''}>max-content</option>
+      </select>
+    `;
+    colTracksList.appendChild(item);
+  });
+
+  // Row tracks
+  rowTracksList.innerHTML = '';
+  state.rowValues.forEach((val, i) => {
+    const item = document.createElement('div');
+    item.className = 'track-item';
+    item.innerHTML = `
+      <span class="track-label">${i + 1}</span>
+      <input type="text" class="track-input" value="${val}" data-type="row" data-index="${i}">
+      <select class="track-select" data-type="row-unit" data-index="${i}">
+        <option value="fr"${state.rowUnits[i] === 'fr' ? ' selected' : ''}>fr</option>
+        <option value="px"${state.rowUnits[i] === 'px' ? ' selected' : ''}>px</option>
+        <option value="%"${state.rowUnits[i] === '%' ? ' selected' : ''}>%</option>
+        <option value="auto"${state.rowUnits[i] === 'auto' ? ' selected' : ''}>auto</option>
+        <option value="min-content"${state.rowUnits[i] === 'min-content' ? ' selected' : ''}>min-content</option>
+        <option value="max-content"${state.rowUnits[i] === 'max-content' ? ' selected' : ''}>max-content</option>
+      </select>
+    `;
+    rowTracksList.appendChild(item);
+  });
+
+  // Attach listeners
+  colTracksList.querySelectorAll('.track-input').forEach(inp => {
+    inp.addEventListener('input', (e) => {
+      const idx = parseInt(e.target.dataset.index, 10);
+      state.colValues[idx] = e.target.value;
+      renderGrid();
+      updateCode();
+    });
+  });
+  colTracksList.querySelectorAll('.track-select').forEach(sel => {
+    sel.addEventListener('change', (e) => {
+      const idx = parseInt(e.target.dataset.index, 10);
+      state.colUnits[idx] = e.target.value;
+      renderGrid();
+      updateCode();
+    });
+  });
+  rowTracksList.querySelectorAll('.track-input').forEach(inp => {
+    inp.addEventListener('input', (e) => {
+      const idx = parseInt(e.target.dataset.index, 10);
+      state.rowValues[idx] = e.target.value;
+      renderGrid();
+      updateCode();
+    });
+  });
+  rowTracksList.querySelectorAll('.track-select').forEach(sel => {
+    sel.addEventListener('change', (e) => {
+      const idx = parseInt(e.target.dataset.index, 10);
+      state.rowUnits[idx] = e.target.value;
+      renderGrid();
+      updateCode();
+    });
+  });
+}
+
+/* ===== GET TRACK STRINGS ===== */
+function getColTrackString() {
+  return state.colValues.map((v, i) => {
+    const unit = state.colUnits[i];
+    if (unit === 'auto' || unit === 'min-content' || unit === 'max-content') return unit;
+    return `${v}${unit}`;
+  }).join(' ');
+}
+
+function getRowTrackString() {
+  return state.rowValues.map((v, i) => {
+    const unit = state.rowUnits[i];
+    if (unit === 'auto' || unit === 'min-content' || unit === 'max-content') return unit;
+    return `${v}${unit}`;
+  }).join(' ');
+}
+
+/* ===== RENDER GRID ===== */
+function renderGrid() {
+  gridContainer.innerHTML = '';
+  gridContainer.style.gridTemplateColumns = getColTrackString();
+  gridContainer.style.gridTemplateRows = getRowTrackString();
+  gridContainer.style.columnGap = state.colGap + 'px';
+  gridContainer.style.rowGap = state.rowGap + 'px';
+  gridContainer.style.maxWidth = state.containerWidth;
+  gridContainer.style.alignItems = state.placeItems;
+  gridContainer.style.justifyItems = state.placeItems;
+
+  const totalCells = state.cols * state.rows;
+
+  for (let i = 0; i < totalCells; i++) {
+    const cell = document.createElement('div');
+    cell.className = 'grid-item';
+    cell.textContent = i + 1;
+    cell.dataset.index = i;
+
+    // Apply span
+    if (state.spans[i]) {
+      const spanCount = state.spans[i];
+      cell.style.gridColumn = `span ${Math.min(spanCount, state.cols)}`;
+      cell.classList.add('spanning');
+    }
+
+    cell.addEventListener('click', () => {
+      // Cycle span: 1 → 2 → 3 → 1 (bounded by cols)
+      const currentSpan = state.spans[i] || 1;
+      const nextSpan = currentSpan >= Math.min(3, state.cols) ? 1 : currentSpan + 1;
+
+      if (nextSpan === 1) {
+        delete state.spans[i];
+      } else {
+        state.spans[i] = nextSpan;
+      }
+      renderGrid();
+      updateCode();
+    });
+
+    gridContainer.appendChild(cell);
+  }
+}
+
+/* ===== CODE GENERATION ===== */
+function generateCss() {
+  const lines = [];
+  lines.push('.grid-container {');
+  lines.push('  display: grid;');
+  lines.push(`  grid-template-columns: ${getColTrackString()};`);
+  lines.push(`  grid-template-rows: ${getRowTrackString()};`);
+  lines.push(`  gap: ${state.rowGap}px ${state.colGap}px;`);
+  if (state.containerWidth !== '100%') {
+    lines.push(`  max-width: ${state.containerWidth};`);
+  }
+  if (state.placeItems !== 'stretch') {
+    lines.push(`  place-items: ${state.placeItems};`);
+  }
+  lines.push('  padding: 8px;');
+  lines.push('  background: #06b6d4;');
+  lines.push('}');
+  lines.push('');
+  lines.push('.grid-item {');
+  lines.push('  background: rgba(255, 255, 255, 0.9);');
+  lines.push('  border-radius: 6px;');
+  lines.push('  padding: 20px;');
+  lines.push('  text-align: center;');
+  lines.push('}');
+
+  // Add span classes if any
+  const spanKeys = Object.keys(state.spans);
+  if (spanKeys.length) {
+    lines.push('');
+    lines.push('/* Custom spans */');
+    spanKeys.forEach(k => {
+      const n = state.spans[k];
+      lines.push(`.grid-item:nth-child(${parseInt(k, 10) + 1}) {`);
+      lines.push(`  grid-column: span ${n};`);
+      lines.push('}');
+    });
+  }
+
+  return lines.join('\n');
+}
+
+function generateHtml() {
+  const totalCells = state.cols * state.rows;
+  const lines = [];
+  lines.push('<div class="grid-container">');
+  for (let i = 0; i < totalCells; i++) {
+    lines.push(`  <div class="grid-item">${i + 1}</div>`);
+  }
+  lines.push('</div>');
+  return lines.join('\n');
+}
+
+function generateReact() {
+  const totalCells = state.cols * state.rows;
+  const cssString = generateCss()
+    .split('\n')
+    .map(l => '  ' + l)
+    .join('\n');
+
+  return `import React from 'react';
+import styled from 'styled-components';
+
+const GridContainer = styled.div\`
+${cssString
+  .replace(/\.grid-container \{/g, '')
+  .replace(/\}$/gm, '')
+  .replace(/\.grid-item \{[\s\S]*?\}/g, '')
+  .trim()}
+\`;
+
+const GridItem = styled.div\`
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 6px;
+  padding: 20px;
+  text-align: center;
+\`;
+
+export default function Grid() {
+  return (
+    <GridContainer>
+${Array.from({ length: totalCells }, (_, i) => `      <GridItem>${i + 1}</GridItem>`).join('\n')}
+    </GridContainer>
+  );
+}`;
+}
+
+function updateCode() {
+  if (state.activeCodeTab === 'css') {
+    codeOutput.value = generateCss();
+  } else if (state.activeCodeTab === 'html') {
+    codeOutput.value = generateHtml();
+  } else {
+    codeOutput.value = generateReact();
+  }
+}
+
+/* ===== CODE TABS ===== */
+$$('.code-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    $$('.code-tab').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    state.activeCodeTab = tab.dataset.tab;
+    updateCode();
+  });
+});
+
+/* ===== COPY ===== */
+async function copyCurrentCode() {
+  const text = codeOutput.value;
+  if (!text) return;
+  const ok = await copyText(text);
+  if (ok) {
+    panelCopyBtn.classList.add('copied');
+    const original = panelCopyBtn.innerHTML;
+    panelCopyBtn.innerHTML = '✓ Copied!';
+    setTimeout(() => {
+      panelCopyBtn.classList.remove('copied');
+      panelCopyBtn.innerHTML = original;
+    }, 1500);
+    showToast('Copied to clipboard!', 'success');
+  } else {
+    showToast('Copy failed', 'error');
+  }
+}
+
+panelCopyBtn.addEventListener('click', copyCurrentCode);
+copyCssBtn.addEventListener('click', async () => {
+  const ok = await copyText(generateCss());
+  if (ok) showToast('CSS copied!', 'success');
+  else showToast('Copy failed', 'error');
+});
+
+/* ===== OTHER SELECTS ===== */
+containerWidthSel.addEventListener('change', (e) => {
+  state.containerWidth = e.target.value;
+  renderGrid();
+  updateCode();
+});
+
+placeItemsSel.addEventListener('change', (e) => {
+  state.placeItems = e.target.value;
+  renderGrid();
+  updateCode();
+});
+
+/* ===== RESET ===== */
+resetBtn.addEventListener('click', () => {
+  state.cols = 3;
+  state.rows = 3;
+  state.colGap = 8;
+  state.rowGap = 8;
+  state.colValues = [1, 1, 1];
+  state.rowValues = [1, 1, 1];
+  state.colUnits = ['fr', 'fr', 'fr'];
+  state.rowUnits = ['fr', 'fr', 'fr'];
+  state.containerWidth = '100%';
+  state.placeItems = 'stretch';
+  state.spans = {};
+  state.activeCodeTab = 'css';
+
+  syncInputsFromState();
+  rebuildTracks();
+  renderGrid();
+  updateCode();
+
+  $$('.preset-btn').forEach(b => b.classList.toggle('active', b.dataset.preset === 'custom'));
+  $$('.code-tab').forEach(t => t.classList.toggle('active', t.dataset.tab === 'css'));
+
+  showToast('Reset to default', 'info');
+});
+
+/* ===== INIT ===== */
+function init() {
+  syncInputsFromState();
+  rebuildTracks();
+  renderGrid();
+  updateCode();
+}
+
+init();
+
+/* ===== FAQ ===== */
+$$('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    $$('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+</script>
+
+</body>
+</html>

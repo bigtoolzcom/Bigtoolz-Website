@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2563eb">
+
+<title>Domain Age Checker - Check Domain Age Online Free | BigToolz</title>
+<meta name="description" content="Free online domain age checker. Find any website's domain age, creation date, expiry date, and registrar instantly. Supports bulk check via RDAP.">
+<meta name="keywords" content="domain age checker, domain age, whois lookup, domain creation date, domain expiry, domain checker">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://bigtoolz.com/tools/seo-tools/domain-age/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Domain Age Checker - Free Online Tool | BigToolz">
+<meta property="og:description" content="Find any domain's age, creation date, and expiry instantly free.">
+<meta property="og:url" content="https://bigtoolz.com/tools/seo-tools/domain-age/">
+<meta property="og:image" content="https://bigtoolz.com/assets/images/og-image.jpg">
+<meta property="og:site_name" content="BigToolz">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Domain Age Checker - BigToolz">
+<meta name="twitter:description" content="Check any domain's age instantly free.">
+<meta name="twitter:image" content="https://bigtoolz.com/assets/images/twitter-card.jpg">
+
+<link rel="icon" href="/assets/images/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/images/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#f8f9fc;color:#1a1a2e;overflow-x:hidden;line-height:1.5}
+
+  .header{background:#fff;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;position:sticky;top:0;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+  .header-left{display:flex;align-items:center;gap:40px}
+  .logo{display:flex;align-items:center;gap:8px;font-size:22px;font-weight:800;color:#1a1a2e;text-decoration:none}
+  .logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#3b82f6,#2563eb);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px}
+  .logo span{color:#2563eb}
+  .nav{display:flex;align-items:center;gap:28px;list-style:none}
+  .nav a{text-decoration:none;color:#4b5563;font-size:14px;font-weight:500;transition:color .2s}
+  .nav a:hover,.nav a.active{color:#2563eb}
+  .header-right{display:flex;align-items:center;gap:16px}
+  .search-btn,.theme-btn{width:36px;height:36px;border-radius:50%;border:none;background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#4b5563}
+  .search-btn:hover,.theme-btn:hover{background:#f3f4f6}
+  .bookmark-btn{display:flex;align-items:center;gap:8px;background:#2563eb;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
+  .bookmark-btn:hover{background:#1d4ed8}
+
+  .hero{background:linear-gradient(135deg,#0a0e27 0%,#1a1a4e 40%,#2d1b69 70%,#4c1d95 100%);padding:40px 40px 60px;position:relative;overflow:hidden;color:#fff}
+  .hero::before{content:'';position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(139,92,246,.3) 0%,transparent 70%);border-radius:50%}
+  .hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+  .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px;flex-wrap:wrap}
+  .breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none}
+  .breadcrumb a:hover{color:#fff}
+  .breadcrumb .sep{color:rgba(255,255,255,.4)}
+  .breadcrumb .current{color:#fff;font-weight:500}
+  .hero-title-row{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+  .hero-icon{width:60px;height:60px;background:#8b5cf6;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px;color:#fff;flex-shrink:0;box-shadow:0 8px 24px rgba(139,92,246,.4)}
+  .hero-title{font-size:42px;font-weight:800;line-height:1.15}
+  .hero-title .blue{color:#a78bfa}
+  .hero-desc{font-size:15px;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:24px;max-width:560px}
+  .hero-features{display:flex;gap:24px;flex-wrap:wrap}
+  .hero-feature{display:flex;align-items:center;gap:6px;font-size:13px;color:#fff;font-weight:500}
+  .hero-feature .check{width:18px;height:18px;border-radius:50%;background:#8b5cf6;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;flex-shrink:0}
+
+  .main-content{max-width:1200px;margin:0 auto;padding:40px;display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start}
+  .tool-content{min-width:0}
+
+  .workspace{background:#fff;border-radius:16px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,.06);border:1px solid #e5e7eb;margin-bottom:24px}
+
+  /* Input */
+  .input-section{margin-bottom:20px}
+  .input-label{font-size:13px;font-weight:700;color:#4b5563;margin-bottom:8px;display:flex;justify-content:space-between;align-items:center;gap:8px}
+  .input-label .hint{font-size:11px;color:#9ca3af;font-weight:500}
+  .input-wrap{display:flex;gap:8px;flex-wrap:wrap}
+  .input-wrap input{flex:1;min-width:200px;padding:14px 16px;border:2px solid #e5e7eb;border-radius:10px;font-size:15px;font-weight:600;font-family:inherit;color:#1a1a2e;background:#fff;outline:none;transition:border-color .2s}
+  .input-wrap input:focus{border-color:#8b5cf6;box-shadow:0 0 0 3px rgba(139,92,246,.1)}
+  .input-wrap textarea{width:100%;padding:14px 16px;border:2px solid #e5e7eb;border-radius:10px;font-size:14px;font-weight:500;font-family:'JetBrains Mono','Courier New',monospace;color:#1a1a2e;background:#fff;outline:none;transition:border-color .2s;min-height:100px;resize:vertical;line-height:1.6}
+  .input-wrap textarea:focus{border-color:#8b5cf6;box-shadow:0 0 0 3px rgba(139,92,246,.1)}
+  .check-btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;background:#8b5cf6;color:#fff;border:none;border-radius:10px;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit;transition:background .2s;white-space:nowrap}
+  .check-btn:hover:not(:disabled){background:#7c3aed}
+  .check-btn:disabled{opacity:.5;cursor:not-allowed}
+  .check-btn.loading{pointer-events:none;opacity:.85}
+
+  /* Tabs */
+  .mode-tabs{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:16px;background:#faf5ff;padding:6px;border-radius:12px;border:1px solid #ede9fe}
+  .mode-tab{padding:12px;background:transparent;border:none;border-radius:8px;font-size:13px;font-weight:700;color:#6b7280;cursor:pointer;font-family:inherit;transition:all .2s}
+  .mode-tab:hover{background:#f3e8ff;color:#7c3aed}
+  .mode-tab.active{background:#8b5cf6;color:#fff}
+
+  /* Results */
+  .results{margin-top:24px}
+  .result-card{background:#faf5ff;border:1px solid #c4b5fd;border-radius:12px;padding:20px;margin-bottom:14px}
+  .result-header{display:flex;align-items:center;gap:12px;margin-bottom:14px;flex-wrap:wrap}
+  .result-favicon{width:40px;height:40px;border-radius:10px;background:#8b5cf6;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px;font-weight:800;flex-shrink:0}
+  .result-domain{font-size:16px;font-weight:800;color:#1a1a2e;word-break:break-all}
+  .result-status{font-size:11px;font-weight:700;padding:3px 10px;border-radius:12px;display:inline-block;margin-top:4px}
+  .result-status.available{background:#d1fae5;color:#065f46}
+  .result-status.taken{background:#fee2e2;color:#991b1b}
+  .result-status.error{background:#fef3c7;color:#92400e}
+
+  .age-display{background:#fff;border-radius:10px;padding:18px;text-align:center;margin-bottom:14px;border:1px solid #ede9fe}
+  .age-label{font-size:11px;font-weight:700;color:#7c3aed;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+  .age-value{font-size:32px;font-weight:800;color:#7c3aed;line-height:1;margin-bottom:6px}
+  .age-sub{font-size:12px;color:#6b7280;font-weight:500}
+
+  .info-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+  .info-item{background:#fff;border-radius:10px;padding:12px;border:1px solid #ede9fe}
+  .info-item-label{font-size:10px;font-weight:700;color:#9ca3af;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px}
+  .info-item-value{font-size:13px;font-weight:700;color:#1a1a2e;word-break:break-word}
+  .info-item-value.mono{font-family:'JetBrains Mono',monospace;font-size:12px}
+
+  /* Actions */
+  .result-actions{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
+  .mini-btn{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;font-size:12px;font-weight:600;color:#4b5563;cursor:pointer;font-family:inherit;transition:all .2s}
+  .mini-btn:hover{border-color:#8b5cf6;color:#8b5cf6;background:#faf5ff}
+  .mini-btn.copied{background:#10b981;color:#fff;border-color:#10b981}
+
+  /* Spinner */
+  .spinner{display:inline-block;width:16px;height:16px;border:2px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+
+  /* Loading overlay */
+  .loader-wrap{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 20px;gap:14px;color:#6b7280}
+  .loader-wrap .big-spinner{width:40px;height:40px;border:4px solid #ede9fe;border-top-color:#8b5cf6;border-radius:50%;animation:spin .8s linear infinite}
+  .loader-wrap p{font-size:13px;font-weight:600;color:#7c3aed}
+
+  /* Error */
+  .error-box{background:#fef2f2;border:1px solid #fecaca;border-radius:10px;padding:14px 18px;font-size:13px;color:#991b1b;margin-top:14px;display:flex;gap:10px;align-items:flex-start}
+  .error-box strong{font-weight:800}
+
+  /* History */
+  .history-section{margin-top:24px}
+  .history-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:12px;display:flex;justify-content:space-between;align-items:center}
+  .history-clear{background:none;border:none;font-size:11px;color:#8b5cf6;cursor:pointer;font-family:inherit;font-weight:600;text-decoration:underline}
+  .history-list{display:flex;flex-wrap:wrap;gap:8px}
+  .history-chip{background:#faf5ff;border:1px solid #ede9fe;border-radius:8px;padding:8px 14px;font-size:12px;font-weight:600;color:#4b5563;cursor:pointer;font-family:inherit;transition:all .2s}
+  .history-chip:hover{border-color:#8b5cf6;color:#7c3aed;background:#f3e8ff}
+
+  /* SEO */
+  .seo-content{background:#fff;border-radius:16px;padding:32px;border:1px solid #e5e7eb;margin-bottom:24px}
+  .seo-content h2{font-size:22px;font-weight:800;color:#1a1a2e;margin-bottom:14px;margin-top:28px;display:flex;align-items:center;gap:10px}
+  .seo-content h2:first-child{margin-top:0}
+  .seo-content h3{font-size:16px;font-weight:700;color:#1a1a2e;margin:20px 0 10px}
+  .seo-content p{font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:14px}
+  .seo-content ul{list-style:none;padding-left:0;margin-bottom:16px}
+  .seo-content ul li{position:relative;padding-left:24px;font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:8px}
+  .seo-content ul li::before{content:'';position:absolute;left:6px;top:12px;width:6px;height:6px;background:#8b5cf6;border-radius:50%}
+  .seo-content a{color:#2563eb;text-decoration:none;font-weight:600}
+  .seo-content a:hover{text-decoration:underline}
+  .seo-content strong{color:#1a1a2e;font-weight:700}
+  .seo-content code{background:#f1f5f9;padding:2px 6px;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:13px;color:#0f172a;border:1px solid #e2e8f0}
+
+  .how-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:20px}
+  .how-step{background:#faf5ff;border-radius:12px;padding:20px;border:1px solid #ede9fe}
+  .how-step-num{width:36px;height:36px;border-radius:50%;background:#8b5cf6;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;margin-bottom:12px}
+  .how-step-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+  .how-step-desc{font-size:13px;color:#6b7280;line-height:1.6}
+
+  .age-table{width:100%;border-collapse:collapse;margin:20px 0;border:1px solid #e5e7eb;border-radius:8px;overflow:hidden}
+  .age-table th{background:#faf5ff;padding:12px 16px;text-align:left;font-size:13px;font-weight:700;color:#1a1a2e;border-bottom:1px solid #e5e7eb}
+  .age-table td{padding:12px 16px;font-size:13px;color:#4b5563;border-bottom:1px solid #f3f4f6}
+  .age-table tr:last-child td{border-bottom:none}
+
+  .faq-item{background:#faf5ff;border:1px solid #ede9fe;border-radius:12px;margin-bottom:10px;overflow:hidden;transition:border-color .2s}
+  .faq-item:hover{border-color:#8b5cf6}
+  .faq-question{width:100%;background:none;border:none;padding:18px 22px;font-size:15px;font-weight:700;color:#1a1a2e;text-align:left;cursor:pointer;font-family:inherit;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .faq-question .chev{font-size:12px;color:#8b5cf6;transition:transform .2s;flex-shrink:0}
+  .faq-item.open .faq-question .chev{transform:rotate(180deg)}
+  .faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 22px}
+  .faq-item.open .faq-answer{max-height:500px;padding-bottom:18px}
+  .faq-answer p{font-size:14px;color:#6b7280;line-height:1.7;margin:0}
+
+  .sidebar{background:#fff;border-radius:16px;padding:24px;border:1px solid #e5e7eb;position:sticky;top:80px;margin-bottom:24px}
+  .sidebar-header{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:800;color:#1a1a2e;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid #f3f4f6}
+  .sidebar-list{display:flex;flex-direction:column;gap:8px}
+  .sidebar-item{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;cursor:pointer;transition:background .2s;text-decoration:none;color:inherit;border:1px solid #f3f4f6}
+  .sidebar-item:hover{background:#faf5ff;border-color:#ede9fe}
+  .sidebar-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;flex-shrink:0}
+  .sidebar-info{flex:1;min-width:0}
+  .sidebar-title{font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:2px}
+  .sidebar-desc{font-size:11px;color:#9ca3af;line-height:1.4}
+
+  .footer{background:#0a0e27;padding:60px 40px 30px;color:#fff;margin-top:40px}
+  .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:40px}
+  .footer-brand{display:flex;align-items:center;gap:8px;font-size:20px;font-weight:800;margin-bottom:12px}
+  .footer-brand span{color:#60a5fa}
+  .footer-tagline{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px}
+  .footer-social{display:flex;gap:12px}
+  .footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:16px;transition:background .2s}
+  .footer-social a:hover{background:rgba(255,255,255,.2)}
+  .footer-heading{font-size:14px;font-weight:700;margin-bottom:20px;color:#fff}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .footer-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;transition:color .2s}
+  .footer-links a:hover{color:#60a5fa}
+  .footer-bottom{max-width:1200px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  .footer-bottom-left{display:flex;gap:20px;font-size:12px;color:rgba(255,255,255,.5)}
+  .footer-bottom-right,.footer-bottom-links a{font-size:12px;color:rgba(255,255,255,.5);text-decoration:none}
+  .footer-bottom-links{display:flex;gap:20px}
+
+  .toast{position:fixed;bottom:24px;right:24px;background:#1a1a2e;color:#fff;padding:14px 20px;border-radius:10px;font-size:13px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:3000;transform:translateY(200%);transition:transform .3s ease;max-width:320px}
+  .toast.visible{transform:translateY(0)}
+  .toast.success{background:#10b981}
+  .toast.error{background:#ef4444}
+
+  @media(max-width:1024px){
+    .main-content{grid-template-columns:1fr;padding:24px 20px}
+    .sidebar{position:static}
+    .how-steps{grid-template-columns:repeat(2,1fr)}
+  }
+  @media(max-width:768px){
+    .header{padding:0 20px}.nav{display:none}
+    .hero{padding:24px 20px 40px}
+    .hero-title{font-size:28px}
+    .hero-icon{width:48px;height:48px;font-size:20px}
+    .hero-title-row{flex-direction:column;align-items:flex-start;gap:12px}
+    .main-content{padding:20px 16px}
+    .workspace{padding:20px}
+    .how-steps{grid-template-columns:1fr}
+    .seo-content{padding:20px}
+    .footer-inner{grid-template-columns:1fr 1fr}
+    .toast{left:16px;right:16px;bottom:16px;max-width:none}
+    .info-grid{grid-template-columns:1fr}
+    .age-value{font-size:26px}
+  }
+  @media(max-width:576px){
+    .header{padding:0 16px}.header-right .search-btn,.header-right .theme-btn{display:none}
+    .hero-title{font-size:24px}
+    .footer-inner{grid-template-columns:1fr}
+    .footer-bottom{flex-direction:column;text-align:center}
+    .mode-tabs{grid-template-columns:1fr}
+  }
+
+  html[data-theme="dark"] body{background:#0f172a;color:#f1f5f9}
+  html[data-theme="dark"] .header,html[data-theme="dark"] .workspace,html[data-theme="dark"] .seo-content,html[data-theme="dark"] .sidebar{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .logo,html[data-theme="dark"] .hero-title,html[data-theme="dark"] .seo-content h2,html[data-theme="dark"] .seo-content h3,html[data-theme="dark"] .faq-question,html[data-theme="dark"] .sidebar-header,html[data-theme="dark"] .sidebar-title,html[data-theme="dark"] .history-title,html[data-theme="dark"] .result-domain{color:#f1f5f9}
+  html[data-theme="dark"] .nav a{color:#cbd5e1}
+  html[data-theme="dark"] .how-step,html[data-theme="dark"] .faq-item,html[data-theme="dark"] .mode-tabs,html[data-theme="dark"] .result-card,html[data-theme="dark"] .history-chip{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .input-wrap input,html[data-theme="dark"] .input-wrap textarea{background:#0f172a;border-color:#334155;color:#f1f5f9}
+  html[data-theme="dark"] .age-display,html[data-theme="dark"] .info-item{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .info-item-value{color:#f1f5f9}
+  html[data-theme="dark"] .seo-content p,html[data-theme="dark"] .seo-content ul li,html[data-theme="dark"] .faq-answer p{color:#cbd5e1}
+  html[data-theme="dark"] .seo-content code{background:#0f172a;color:#94a3b8;border-color:#334155}
+  html[data-theme="dark"] .mini-btn{background:#0f172a;border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .mode-tab{color:#cbd5e1}
+  html[data-theme="dark"] .mode-tab.active{background:#8b5cf6;color:#fff}
+  html[data-theme="dark"] .age-table{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .age-table th{background:#0f172a;color:#f1f5f9;border-color:#334155}
+  html[data-theme="dark"] .age-table td{border-color:#334155;color:#cbd5e1}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type": "SoftwareApplication", "name": "Domain Age Checker", "url": "https://bigtoolz.com/tools/seo-tools/domain-age/", "applicationCategory": "SEOApplication", "operatingSystem": "Any (Web-based)", "description": "Free online domain age checker. Find any domain's age, creation date, expiry date, and registrar instantly using live RDAP data.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.8", "ratingCount": "1345"}},
+    {"@type": "HowTo", "name": "How to Check Domain Age", "step": [
+      {"@type": "HowToStep", "name": "Enter Domain", "text": "Type any domain name like example.com."},
+      {"@type": "HowToStep", "name": "Click Check", "text": "Click the Check Domain Age button."},
+      {"@type": "HowToStep", "name": "View Results", "text": "See creation date, age, and other domain info."},
+      {"@type": "HowToStep", "name": "Copy or Export", "text": "Copy the results or export as CSV."}
+    ]},
+    {"@type": "FAQPage", "mainEntity": [
+      {"@type": "Question", "name": "What is domain age?", "acceptedAnswer": {"@type": "Answer", "text": "Domain age is the time since a domain was first registered. It's calculated from the domain's creation date to today. Older domains are often viewed as more trustworthy by search engines."}},
+      {"@type": "Question", "name": "Does domain age affect SEO?", "acceptedAnswer": {"@type": "Answer", "text": "Domain age is a minor SEO factor. Google has stated age isn't a direct ranking factor, but older domains often have more backlinks, content, and trust indirectly helping rankings."}},
+      {"@type": "Question", "name": "How do I find a domain's age?", "acceptedAnswer": {"@type": "Answer", "text": "Look up the domain's WHOIS or RDAP record. The 'creation date' or 'registered on' field gives the first registration date. Our tool does this automatically."}},
+      {"@type": "Question", "name": "Can I check multiple domains at once?", "acceptedAnswer": {"@type": "Answer", "text": "Yes! Switch to Bulk mode and paste one domain per line. Our tool checks all of them and shows results in a table. You can export the results as CSV."}},
+      {"@type": "Question", "name": "Why does my domain show no data?", "acceptedAnswer": {"@type": "Answer", "text": "Some domains don't have public WHOIS data due to privacy protection (GDPR), ccTLD restrictions, or non-standard registrars. Try the bulk mode or check the registrar directly."}}
+    ]},
+    {"@type": "BreadcrumbList", "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bigtoolz.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://bigtoolz.com/tools/"},
+      {"@type": "ListItem", "position": 3, "name": "SEO Tools", "item": "https://bigtoolz.com/tools/seo-tools/"},
+      {"@type": "ListItem", "position": 4, "name": "Domain Age Checker", "item": "https://bigtoolz.com/tools/seo-tools/domain-age/"}
+    ]}
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-left">
+    <a href="/" class="logo"><div class="logo-icon">⚒</div>BigToolz</span></a>
+    <nav><ul class="nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/tools/" class="active">All Tools</a></li>
+      <li><a href="/tools/categories">Categories</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul></nav>
+  </div>
+  <div class="header-right">
+   
+    <button class="theme-btn" aria-label="Toggle theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
+    
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <nav class="breadcrumb">
+      <a href="/">Home</a><span class="sep">›</span>
+      <a href="/tools/">Tools</a><span class="sep">›</span>
+      <a href="/tools/seo-tools/">SEO Tools</a><span class="sep">›</span>
+      <span class="current">Domain Age Checker</span>
+    </nav>
+    <div class="hero-title-row">
+      <div class="hero-icon">⏳</div>
+      <h1 class="hero-title">Domain <span class="blue">Age Checker</span></h1>
+    </div>
+    <p class="hero-desc">
+      Find any domain's age, creation date, expiry date, and registrar. Real-time WHOIS data through RDAP. Perfect for SEO research, due diligence, and domain valuation.
+    </p>
+    <div class="hero-features">
+      <div class="hero-feature"><span class="check">✓</span> Live WHOIS Data</div>
+      <div class="hero-feature"><span class="check">✓</span> Bulk Check</div>
+      <div class="hero-feature"><span class="check">✓</span> CSV Export</div>
+      <div class="hero-feature"><span class="check">✓</span> No Signup</div>
+    </div>
+  </div>
+</section>
+
+<div class="main-content">
+
+  <div class="tool-content">
+
+    <div class="workspace">
+
+      <!-- Mode tabs -->
+      <div class="mode-tabs">
+        <button class="mode-tab active" data-mode="single">🔍 Single Domain</button>
+        <button class="mode-tab" data-mode="bulk">📋 Bulk Check (Up to 20)</button>
+      </div>
+
+      <!-- Single input -->
+      <div class="input-section" id="singleInput">
+        <label class="input-label">
+          Enter Domain <span class="hint">e.g. example.com</span>
+        </label>
+        <div class="input-wrap">
+          <input type="text" id="domainInput" placeholder="example.com" autocomplete="off" spellcheck="false">
+          <button class="check-btn" id="checkBtn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+            Check Domain Age
+          </button>
+        </div>
+        <div style="margin-top:10px;font-size:12px;color:#9ca3af;">
+          💡 Works with any TLD: .com, .net, .org, .io, .co, .in, .dev, .app, .xyz, and many more.
+        </div>
+      </div>
+
+      <!-- Bulk input -->
+      <div class="input-section" id="bulkInput" style="display:none;">
+        <label class="input-label">
+          Paste Domains <span class="hint">One per line, max 20</span>
+        </label>
+        <div class="input-wrap">
+          <textarea id="bulkDomains" placeholder="example.com&#10;google.com&#10;github.com"></textarea>
+        </div>
+        <div style="margin-top:10px;">
+          <button class="check-btn" id="bulkCheckBtn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+            Check All Domains
+          </button>
+        </div>
+      </div>
+
+      <!-- Results -->
+      <div id="resultsArea"></div>
+
+      <!-- History -->
+      <div class="history-section" id="historySection" style="display:none;">
+        <div class="history-title">
+          <span>📋 Recent Lookups</span>
+          <button class="history-clear" id="historyClear">Clear</button>
+        </div>
+        <div class="history-list" id="historyList"></div>
+      </div>
+
+    </div>
+
+    <!-- SEO Content -->
+    <div class="seo-content">
+
+      <h2>⏳ What is Domain Age?</h2>
+      <p>
+        <strong>Domain age</strong> is the amount of time that has passed since a domain name was first registered. It's calculated by comparing the domain's <strong>creation date</strong> (the day it was first registered) to today's date. For example, a domain registered on January 1, 2015 is roughly 11 years old as of January 2026.
+      </p>
+      <p>
+        Domain age is one of the many signals used by search engines, buyers, and SEO professionals to evaluate a website's <strong>credibility, history, and value</strong>. Older domains are often considered more trustworthy because they've had time to build backlinks, content, and reputation though domain age alone doesn't guarantee better rankings.
+      </p>
+
+      <h2>🚀 How to Use This Tool</h2>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-step-num">1</div>
+          <div class="how-step-title">Enter Domain</div>
+          <div class="how-step-desc">Type the domain name no need for http:// or www.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">2</div>
+          <div class="how-step-title">Click Check</div>
+          <div class="how-step-desc">Hit the Check button to fetch WHOIS data.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">3</div>
+          <div class="how-step-title">View Results</div>
+          <div class="how-step-desc">See age, creation date, expiry, registrar, and status.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">4</div>
+          <div class="how-step-title">Copy or Export</div>
+          <div class="how-step-desc">Copy the result or download bulk results as CSV.</div>
+        </div>
+      </div>
+
+      <h2>📊 Why Domain Age Matters</h2>
+
+      <h3>🔍 For SEO</h3>
+      <p>Google has stated domain age is <strong>not a direct ranking factor</strong>. However, older domains tend to have:</p>
+      <ul>
+        <li>More accumulated backlinks from years of content</li>
+        <li>Higher domain authority through age and trust signals</li>
+        <li>Longer content history (more indexed pages)</li>
+        <li>Better chances of ranking for competitive keywords</li>
+      </ul>
+
+      <h3>💼 For Buying a Domain</h3>
+      <p>When purchasing an aged domain, check its history carefully. A 15-year-old domain might have:</p>
+      <ul>
+        <li><strong>Positive history:</strong> Clean backlinks, quality content, good reputation</li>
+        <li><strong>Negative history:</strong> Spam, penalties, malware, or adult content in the past</li>
+      </ul>
+      <p>Age alone doesn't make a domain valuable you need to check its backlink profile and content history separately.</p>
+
+      <h3>💎 For Domain Valuation</h3>
+      <p>Aged domains with clean histories typically sell for higher prices. Two-year-old domains are common; 20-year-old domains with premium TLDs can be worth thousands to millions of dollars.</p>
+
+      <h2>📏 Domain Age Categories</h2>
+      <table class="age-table">
+        <thead>
+          <tr><th>Age</th><th>Category</th><th>Typical Use Case</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>0-6 months</strong></td><td>New domain</td><td>High risk often considered "untrusted" by search engines initially</td></tr>
+          <tr><td><strong>6-12 months</strong></td><td>Established</td><td>Passed Google's initial sandbox period</td></tr>
+          <tr><td><strong>1-3 years</strong></td><td>Mature</td><td>Common for successful blogs and small businesses</td></tr>
+          <tr><td><strong>3-10 years</strong></td><td>Aged</td><td>Strong history, established authority</td></tr>
+          <tr><td><strong>10+ years</strong></td><td>Premium aged</td><td>Highly valuable clean history is critical</td></tr>
+        </tbody>
+      </table>
+
+      <h2>💡 Pro Tips</h2>
+      <ul>
+        <li><strong>Check the wayback machine</strong> (web.archive.org) to see how the domain was used historically</li>
+        <li><strong>Verify backlinks</strong> with Ahrefs, SEMrush, or Moz to spot spammy link profiles</li>
+        <li><strong>Check expiry date:</strong> Domains expiring soon may have owners who forgot to renew</li>
+        <li><strong>Look for privacy protection:</strong> Hidden WHOIS can be legit (GDPR) or suspicious</li>
+        <li><strong>Compare age with content:</strong> A 10-year-old domain with only 5 pages is unusual</li>
+        <li><strong>Monitor drops:</strong> Expired aged domains can sometimes be registered at regular price</li>
+      </ul>
+
+      <h2>❓ Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-question">What is domain age?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>Domain age</strong> is the time since a domain was first registered calculated from the domain's <strong>creation date</strong> to today. Older domains are often seen as more trustworthy, though age alone doesn't determine rankings or value.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Does domain age affect SEO?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Domain age is a <strong>minor indirect SEO factor</strong>. Google has stated age isn't a direct ranking factor. However, older domains often have more backlinks, content, and trust indirectly helping rankings. Fresh domains typically face a "sandbox" period of 6-12 months.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">How do I find a domain's age?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Look up the domain's WHOIS or RDAP record. The <strong>"creation date"</strong> or <strong>"registered on"</strong> field gives the first registration date. Our tool does this automatically using live RDAP APIs.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I check multiple domains at once?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Yes! Switch to <strong>Bulk mode</strong> and paste one domain per line (up to 20). Our tool checks all of them and shows results in a table. You can export the results as CSV.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Why does my domain show no data?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Some domains don't have public WHOIS data due to <strong>privacy protection</strong> (GDPR), <strong>ccTLD restrictions</strong> (some country domains don't disclose), or <strong>non-standard registrars</strong>. Try checking directly with the registrar, or use a different TLD.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Is domain age a reliable indicator of quality?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>No. Age alone doesn't tell you if a domain is good or bad. An <strong>aged domain can carry negative history</strong> (spam, penalties, malware). Always check backlinks and content history separately using tools like Ahrefs, Moz, or the Wayback Machine.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Is my domain data stored?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>No. All lookups are done in your browser. We don't log or store domain search queries on our servers. The data comes from public RDAP APIs operated by domain registries.</p></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-header">🔗 Related SEO Tools</div>
+    <div class="sidebar-list">
+      <a href="/tools/seo-tools/domain-authority/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#f59e0b;">🏆</div>
+        <div class="sidebar-info"><div class="sidebar-title">Domain Authority</div><div class="sidebar-desc">DA/PA checker</div></div>
+      </a>
+      <a href="/tools/seo-tools/page-speed/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#3b82f6;">⚡</div>
+        <div class="sidebar-info"><div class="sidebar-title">Page Speed</div><div class="sidebar-desc">Site speed test</div></div>
+      </a>
+      <a href="/tools/seo-tools/mobile-friendly/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#10b981;">📱</div>
+        <div class="sidebar-info"><div class="sidebar-title">Mobile Friendly</div><div class="sidebar-desc">Responsive test</div></div>
+      </a>
+      <a href="/tools/seo-tools/serp-preview/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#8b5cf6;">🔍</div>
+        <div class="sidebar-info"><div class="sidebar-title">SERP Preview</div><div class="sidebar-desc">Google preview</div></div>
+      </a>
+      <a href="/tools/seo-tools/meta-description/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#ec4899;">📝</div>
+        <div class="sidebar-info"><div class="sidebar-title">Meta Description</div><div class="sidebar-desc">Generate meta tags</div></div>
+      </a>
+      <a href="/tools/seo-tools/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#64748b;">📈</div>
+        <div class="sidebar-info"><div class="sidebar-title">All SEO Tools →</div><div class="sidebar-desc">Browse 25+ tools</div></div>
+      </a>
+    </div>
+  </aside>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand"><div class="logo-icon">⚒</div>BigToolz</span></div>
+      <p class="footer-tagline">Your Ultimate Online Tools Hub</p>
+      <div class="footer-social">
+        <a href="https://facebook.com/bigtoolz" aria-label="Facebook">f</a>
+        <a href="https://twitter.com/bigtoolz" aria-label="Twitter">𝕏</a>
+        <a href="https://youtube.com/@bigtoolz" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+    <div>
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/tools/">All Tools</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Categories</h3>
+      <ul class="footer-links">
+        <li><a href="/tools/image-tools/">Image Tools</a></li>
+        <li><a href="/tools/pdf-tools/">PDF Tools</a></li>
+        <li><a href="/tools/text-tools/">Text Tools</a></li>
+        <li><a href="/tools/seo-tools/">SEO Tools</a></li>
+        <li><a href="/tools/categories">All Categories →</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Legal</h3>
+      <ul class="footer-links">
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left"><span>✓ 100% Free</span><span>✓ No Sign Up</span><span>✓ No Installation</span></div>
+    <div class="footer-bottom-right">© 2026 BigToolz. All rights reserved.</div>
+    <div class="footer-bottom-links"><a href="/privacy-policy">Privacy</a><a href="/terms">Terms</a><a href="/disclaimer">Disclaimer</a></div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+'use strict';
+
+/* ===== THEME ===== */
+(function(){try{var t=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&d))document.documentElement.setAttribute('data-theme','dark');else if(t==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();
+document.querySelector('.theme-btn')?.addEventListener('click',()=>{const h=document.documentElement;const c=h.getAttribute('data-theme');const d=window.matchMedia('(prefers-color-scheme: dark)').matches;let n=c==='dark'?'light':c==='light'?'dark':(d?'light':'dark');h.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}});
+
+/* ===== HELPERS ===== */
+const $ = (s, p = document) => p.querySelector(s);
+const $$ = (s, p = document) => [...p.querySelectorAll(s)];
+
+function showToast(msg, type = 'info', duration = 3000) {
+  const t = $('#toast');
+  if (!t) return;
+  t.className = 'toast visible' + (type !== 'info' ? ' ' + type : '');
+  t.textContent = msg;
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove('visible'), duration);
+}
+
+async function copyToClipboard(text) {
+  try {
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(text);
+      return true;
+    }
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.cssText = 'position:fixed;opacity:0;';
+    document.body.appendChild(ta);
+    ta.select();
+    const ok = document.execCommand('copy');
+    document.body.removeChild(ta);
+    return ok;
+  } catch (e) { return false; }
+}
+
+function escapeHtml(str) {
+  if (!str) return '';
+  const div = document.createElement('div');
+  div.textContent = str;
+  return div.innerHTML;
+}
+
+/* ===== STATE ===== */
+const state = {
+  mode: 'single',
+  history: []
+};
+
+/* ===== DOM ===== */
+const domainInput = $('#domainInput');
+const checkBtn = $('#checkBtn');
+const bulkDomains = $('#bulkDomains');
+const bulkCheckBtn = $('#bulkCheckBtn');
+const singleInput = $('#singleInput');
+const bulkInput = $('#bulkInput');
+const resultsArea = $('#resultsArea');
+const historySection = $('#historySection');
+const historyList = $('#historyList');
+const historyClear = $('#historyClear');
+
+/* ===== MODE TABS ===== */
+$$('.mode-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    $$('.mode-tab').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    state.mode = tab.dataset.mode;
+    if (state.mode === 'single') {
+      singleInput.style.display = 'block';
+      bulkInput.style.display = 'none';
+    } else {
+      singleInput.style.display = 'none';
+      bulkInput.style.display = 'block';
+    }
+    resultsArea.innerHTML = '';
+  });
+});
+
+/* ===== DOMAIN NORMALIZE ===== */
+function normalizeDomain(input) {
+  if (!input) return null;
+  let d = input.trim().toLowerCase();
+  // Remove protocol
+  d = d.replace(/^https?:\/\//, '');
+  // Remove www.
+  d = d.replace(/^www\./, '');
+  // Remove path/query
+  d = d.split('/')[0].split('?')[0].split('#')[0];
+  // Remove port
+  d = d.split(':')[0];
+  // Validate
+  if (!/^[a-z0-9][a-z0-9-]*(\.[a-z0-9][a-z0-9-]*)+$/.test(d)) return null;
+  return d;
+}
+
+/* ===== RDAP LOOKUP ===== */
+async function lookupDomain(domain) {
+  // Use RDAP.org which redirects to appropriate registry RDAP server
+  const url = `https://rdap.org/domain/${encodeURIComponent(domain)}`;
+  const res = await fetch(url, {
+    headers: { 'Accept': 'application/rdap+json' }
+  });
+  if (!res.ok) {
+    if (res.status === 404) throw new Error('NOT_FOUND');
+    throw new Error('LOOKUP_FAILED');
+  }
+  return res.json();
+}
+
+/* ===== CALCULATE AGE ===== */
+function calculateAge(creationDate) {
+  const created = new Date(creationDate);
+  const now = new Date();
+  const diffMs = now - created;
+  const days = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+
+  const years = Math.floor(days / 365.25);
+  const remainingDays = Math.floor(days - (years * 365.25));
+  const months = Math.floor(remainingDays / 30.44);
+  const remDays = Math.floor(remainingDays - (months * 30.44));
+
+  let humanText = '';
+  if (years > 0) humanText += `${years} year${years !== 1 ? 's' : ''}`;
+  if (months > 0) humanText += `, ${months} month${months !== 1 ? 's' : ''}`;
+  if (years === 0 && months === 0) humanText = `${days} day${days !== 1 ? 's' : ''}`;
+
+  return { days, years, months, remDays, humanText };
+}
+
+/* ===== EXTRACT RDAP DATA ===== */
+function extractDomainInfo(rdap, domain) {
+  const events = rdap.events || [];
+  const getEvent = (action) => {
+    const e = events.find(ev => ev.eventAction === action);
+    return e ? e.eventDate : null;
+  };
+
+  const creationDate = getEvent('registration');
+  const expiryDate = getEvent('expiration');
+  const lastChanged = getEvent('last changed');
+  const lastUpdated = getEvent('last update of RDAP database');
+
+  const status = rdap.status || [];
+  const nameservers = (rdap.nameservers || []).map(ns => ns.ldhName).filter(Boolean);
+
+  let registrar = null;
+  if (rdap.entities) {
+    const registrarEntity = rdap.entities.find(e =>
+      Array.isArray(e.roles) && e.roles.includes('registrar')
+    );
+    if (registrarEntity) {
+      const vcard = registrarEntity.vcardArray;
+      if (vcard && vcard[1]) {
+        const fn = vcard[1].find(v => v[0] === 'fn');
+        if (fn) registrar = fn[3];
+      }
+    }
+  }
+
+  return {
+    domain,
+    creationDate,
+    expiryDate,
+    lastChanged,
+    lastUpdated,
+    status,
+    nameservers,
+    registrar,
+    age: creationDate ? calculateAge(creationDate) : null
+  };
+}
+
+/* ===== FORMAT DATE ===== */
+function formatDate(dateStr) {
+  if (!dateStr) return '—';
+  try {
+    const d = new Date(dateStr);
+    if (isNaN(d)) return dateStr;
+    return d.toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric'
+    });
+  } catch (e) {
+    return dateStr;
+  }
+}
+
+/* ===== RENDER RESULT ===== */
+function renderResult(info, container) {
+  if (!info || !info.creationDate) {
+    container.innerHTML = `
+      <div class="error-box">
+        <strong>⚠️</strong>
+        <div>
+          <div>Could not retrieve WHOIS data for <strong>${escapeHtml(info?.domain || 'domain')}</strong>.</div>
+          <div style="margin-top:6px;font-size:12px;opacity:.8;">The domain may use privacy protection, or the registry may not publish RDAP data.</div>
+        </div>
+      </div>
+    `;
+    return;
+  }
+
+  const card = document.createElement('div');
+  card.className = 'result-card';
+
+  const firstLetter = info.domain.charAt(0).toUpperCase();
+  const ageDisplay = info.age ? info.age.humanText : 'Unknown';
+  const ageDays = info.age ? `${info.age.days.toLocaleString()} days` : '';
+
+  card.innerHTML = `
+    <div class="result-header">
+      <div class="result-favicon">${firstLetter}</div>
+      <div>
+        <div class="result-domain">${escapeHtml(info.domain)}</div>
+        <span class="result-status taken">✓ Registered</span>
+      </div>
+    </div>
+
+    <div class="age-display">
+      <div class="age-label">Domain Age</div>
+      <div class="age-value">${escapeHtml(ageDisplay)}</div>
+      <div class="age-sub">${ageDays} since first registration</div>
+    </div>
+
+    <div class="info-grid">
+      <div class="info-item">
+        <div class="info-item-label">Creation Date</div>
+        <div class="info-item-value">${formatDate(info.creationDate)}</div>
+      </div>
+      <div class="info-item">
+        <div class="info-item-label">Expiry Date</div>
+        <div class="info-item-value">${formatDate(info.expiryDate)}</div>
+      </div>
+      <div class="info-item">
+        <div class="info-item-label">Last Changed</div>
+        <div class="info-item-value">${formatDate(info.lastChanged)}</div>
+      </div>
+      <div class="info-item">
+        <div class="info-item-label">Registrar</div>
+        <div class="info-item-value">${escapeHtml(info.registrar || 'Not disclosed')}</div>
+      </div>
+      <div class="info-item" style="grid-column: span 2;">
+        <div class="info-item-label">Status</div>
+        <div class="info-item-value mono">${info.status.length ? info.status.join(', ') : '—'}</div>
+      </div>
+      ${info.nameservers.length ? `
+      <div class="info-item" style="grid-column: span 2;">
+        <div class="info-item-label">Nameservers</div>
+        <div class="info-item-value mono">${info.nameservers.map(ns => escapeHtml(ns)).join(' · ')}</div>
+      </div>` : ''}
+    </div>
+
+    <div class="result-actions">
+      <button class="mini-btn" data-copy-result>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+        Copy Result
+      </button>
+      <a class="mini-btn" href="https://web.archive.org/web/*/${encodeURIComponent(info.domain)}" target="_blank" rel="noopener noreferrer">
+        🌐 Wayback Machine
+      </a>
+    </div>
+  `;
+
+  // Copy handler
+  const copyBtn = card.querySelector('[data-copy-result]');
+  if (copyBtn) {
+    copyBtn.addEventListener('click', async () => {
+      const text = `Domain: ${info.domain}
+Age: ${ageDisplay} (${info.age?.days || 0} days)
+Created: ${formatDate(info.creationDate)}
+Expires: ${formatDate(info.expiryDate)}
+Registrar: ${info.registrar || 'N/A'}
+Status: ${info.status.join(', ') || 'N/A'}
+Nameservers: ${info.nameservers.join(', ') || 'N/A'}`;
+
+      const ok = await copyToClipboard(text);
+      if (ok) {
+        copyBtn.classList.add('copied');
+        const original = copyBtn.innerHTML;
+        copyBtn.innerHTML = '✓ Copied!';
+        setTimeout(() => {
+          copyBtn.classList.remove('copied');
+          copyBtn.innerHTML = original;
+        }, 2000);
+        showToast('Result copied!', 'success');
+      }
+    });
+  }
+
+  container.appendChild(card);
+}
+
+/* ===== SINGLE CHECK ===== */
+checkBtn.addEventListener('click', checkSingle);
+domainInput.addEventListener('keypress', (e) => {
+  if (e.key === 'Enter') checkSingle();
+});
+
+async function checkSingle() {
+  const raw = domainInput.value.trim();
+  if (!raw) {
+    showToast('Please enter a domain', 'error');
+    domainInput.focus();
+    return;
+  }
+
+  const domain = normalizeDomain(raw);
+  if (!domain) {
+    showToast('Invalid domain format', 'error');
+    return;
+  }
+
+  resultsArea.innerHTML = `
+    <div class="loader-wrap">
+      <div class="big-spinner"></div>
+      <p>Looking up ${escapeHtml(domain)}...</p>
+    </div>
+  `;
+
+  checkBtn.classList.add('loading');
+  checkBtn.innerHTML = '<span class="spinner"></span> Checking...';
+
+  try {
+    const rdap = await lookupDomain(domain);
+    const info = extractDomainInfo(rdap, domain);
+    resultsArea.innerHTML = '';
+    renderResult(info, resultsArea);
+    addToHistory(domain);
+  } catch (err) {
+    resultsArea.innerHTML = '';
+    const errorHtml = err.message === 'NOT_FOUND' ? `
+      <div class="error-box">
+        <strong>⚠️</strong>
+        <div>
+          <div>No WHOIS data found for <strong>${escapeHtml(domain)}</strong>.</div>
+          <div style="margin-top:6px;font-size:12px;opacity:.8;">This could mean the domain is available for registration, or the registry doesn't publish public RDAP data.</div>
+        </div>
+      </div>
+    ` : `
+      <div class="error-box">
+        <strong>❌</strong>
+        <div>
+          <div>Lookup failed for <strong>${escapeHtml(domain)}</strong>.</div>
+          <div style="margin-top:6px;font-size:12px;opacity:.8;">Try again in a moment, or verify the domain name. Network errors can also cause temporary failures.</div>
+        </div>
+      </div>
+    `;
+    resultsArea.innerHTML = errorHtml;
+  } finally {
+    checkBtn.classList.remove('loading');
+    checkBtn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg> Check Domain Age';
+  }
+}
+
+/* ===== BULK CHECK ===== */
+bulkCheckBtn.addEventListener('click', checkBulk);
+
+async function checkBulk() {
+  const raw = bulkDomains.value.trim();
+  if (!raw) {
+    showToast('Please enter at least one domain', 'error');
+    return;
+  }
+
+  const lines = raw.split('\n')
+    .map(l => normalizeDomain(l))
+    .filter(Boolean);
+
+  const unique = [...new Set(lines)].slice(0, 20);
+
+  if (unique.length === 0) {
+    showToast('No valid domains found', 'error');
+    return;
+  }
+
+  resultsArea.innerHTML = `
+    <div class="loader-wrap">
+      <div class="big-spinner"></div>
+      <p>Checking ${unique.length} domains...</p>
+    </div>
+  `;
+
+  bulkCheckBtn.classList.add('loading');
+  bulkCheckBtn.innerHTML = '<span class="spinner"></span> Checking...';
+
+  const results = [];
+
+  for (const domain of unique) {
+    try {
+      const rdap = await lookupDomain(domain);
+      const info = extractDomainInfo(rdap, domain);
+      results.push({ info, error: null });
+    } catch (err) {
+      results.push({ info: { domain }, error: err.message });
+    }
+  }
+
+  resultsArea.innerHTML = '';
+
+  // Download CSV
+  const csvBtn = document.createElement('button');
+  csvBtn.className = 'mini-btn';
+  csvBtn.style.marginBottom = '16px';
+  csvBtn.innerHTML = '📥 Download CSV';
+  csvBtn.addEventListener('click', () => {
+    const rows = [['Domain', 'Age (days)', 'Created', 'Expires', 'Registrar', 'Status']];
+    results.forEach(r => {
+      if (r.error) {
+        rows.push([r.info.domain, 'ERROR', '', '', '', r.error]);
+      } else {
+        rows.push([
+          r.info.domain,
+          r.info.age?.days || '',
+          formatDate(r.info.creationDate),
+          formatDate(r.info.expiryDate),
+          r.info.registrar || '',
+          (r.info.status || []).join('; ')
+        ]);
+      }
+    });
+    const csv = rows.map(row => row.map(cell => {
+      const s = String(cell || '').replace(/"/g, '""');
+      return s.includes(',') || s.includes('"') ? `"${s}"` : s;
+    }).join(',')).join('\n');
+
+    const blob = new Blob([csv], { type: 'text/csv' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'domain-age-results.csv';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+    showToast('CSV downloaded!', 'success');
+  });
+  resultsArea.appendChild(csvBtn);
+
+  // Render each result
+  results.forEach(r => {
+    if (r.error) {
+      const errorCard = document.createElement('div');
+      errorCard.className = 'result-card';
+      errorCard.innerHTML = `
+        <div class="result-header">
+          <div class="result-favicon" style="background:#9ca3af;">${escapeHtml(r.info.domain.charAt(0).toUpperCase())}</div>
+          <div>
+            <div class="result-domain">${escapeHtml(r.info.domain)}</div>
+            <span class="result-status error">${r.error === 'NOT_FOUND' ? 'No data' : 'Lookup failed'}</span>
+          </div>
+        </div>
+      `;
+      resultsArea.appendChild(errorCard);
+    } else {
+      renderResult(r.info, resultsArea);
+    }
+  });
+
+  bulkCheckBtn.classList.remove('loading');
+  bulkCheckBtn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Check All Domains';
+
+  showToast(`✅ Checked ${results.length} domains`, 'success');
+}
+
+/* ===== HISTORY ===== */
+function addToHistory(domain) {
+  state.history = state.history.filter(d => d !== domain);
+  state.history.unshift(domain);
+  if (state.history.length > 8) state.history = state.history.slice(0, 8);
+  renderHistory();
+}
+
+function renderHistory() {
+  if (state.history.length === 0) {
+    historySection.style.display = 'none';
+    return;
+  }
+  historySection.style.display = 'block';
+  historyList.innerHTML = '';
+  state.history.forEach(d => {
+    const chip = document.createElement('button');
+    chip.className = 'history-chip';
+    chip.textContent = d;
+    chip.addEventListener('click', () => {
+      // Ensure single mode
+      $$('.mode-tab').forEach(t => t.classList.toggle('active', t.dataset.mode === 'single'));
+      state.mode = 'single';
+      singleInput.style.display = 'block';
+      bulkInput.style.display = 'none';
+      domainInput.value = d;
+      checkSingle();
+    });
+    historyList.appendChild(chip);
+  });
+}
+
+historyClear.addEventListener('click', () => {
+  state.history = [];
+  renderHistory();
+  showToast('History cleared');
+});
+
+/* ===== FAQ ===== */
+$$('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    $$('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+</script>
+
+</body>
+</html>

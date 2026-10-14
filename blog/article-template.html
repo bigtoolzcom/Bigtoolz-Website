@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2563eb">
+
+<!-- ============================================
+     TEMPLATE INSTRUCTIONS (delete on publish):
+     Replace these tokens:
+       {{TITLE}}         → Post title
+       {{DESCRIPTION}}   → Meta description (150-160 chars)
+       {{SLUG}}          → URL slug e.g. "top-10-free-online-tools-2026"
+       {{DATE}}          → ISO date "2026-08-28"
+       {{DATE_DISPLAY}}  → Human date "August 28, 2026"
+       {{AUTHOR}}        → Author name
+       {{CATEGORY}}      → Post category
+       {{CATEGORY_SLUG}} → URL slug
+       {{IMAGE}}         → Featured image URL
+       {{READ_TIME}}     → Reading time in minutes
+     ============================================ -->
+
+<title>{{TITLE}} | BigToolz Blog</title>
+<meta name="description" content="{{DESCRIPTION}}">
+<meta name="keywords" content="bigtoolz blog, online tools, tutorial, guide, tips">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://bigtoolz.com/blog/posts/{{SLUG}}/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="{{TITLE}}">
+<meta property="og:description" content="{{DESCRIPTION}}">
+<meta property="og:url" content="https://bigtoolz.com/blog/posts/{{SLUG}}/">
+<meta property="og:image" content="{{IMAGE}}">
+<meta property="og:site_name" content="BigToolz">
+<meta property="article:published_time" content="{{DATE}}">
+<meta property="article:author" content="{{AUTHOR}}">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{TITLE}}">
+<meta name="twitter:description" content="{{DESCRIPTION}}">
+<meta name="twitter:image" content="{{IMAGE}}">
+
+<link rel="icon" href="/assets/images/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/images/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="alternate" type="application/rss+xml" title="BigToolz Blog RSS" href="/blog/rss.xml">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#f8f9fc;color:#1a1a2e;overflow-x:hidden;line-height:1.5}
+
+  /* Reading progress */
+  .progress-bar{position:fixed;top:0;left:0;right:0;height:3px;background:transparent;z-index:2000;pointer-events:none}
+  .progress-fill{height:100%;background:linear-gradient(90deg,#2563eb,#4f46e5);width:0%;transition:width 0.1s ease}
+
+  /* HEADER */
+  .header{background:#fff;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;position:sticky;top:3px;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+  .header-left{display:flex;align-items:center;gap:40px}
+  .logo{display:flex;align-items:center;gap:8px;font-size:22px;font-weight:800;color:#1a1a2e;text-decoration:none}
+  .logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#3b82f6,#2563eb);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px}
+  .logo span{color:#2563eb}
+  .nav{display:flex;align-items:center;gap:28px;list-style:none}
+  .nav a{text-decoration:none;color:#4b5563;font-size:14px;font-weight:500;transition:color .2s}
+  .nav a:hover,.nav a.active{color:#2563eb}
+  .header-right{display:flex;align-items:center;gap:16px}
+  .search-btn,.theme-btn{width:36px;height:36px;border-radius:50%;border:none;background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#4b5563}
+  .search-btn:hover,.theme-btn:hover{background:#f3f4f6}
+  .bookmark-btn{display:flex;align-items:center;gap:8px;background:#2563eb;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
+  .bookmark-btn:hover{background:#1d4ed8}
+
+  /* HERO */
+  .article-hero{background:linear-gradient(135deg,#0a0e27 0%,#1a1a4e 40%,#2d1b69 70%,#4c1d95 100%);padding:60px 40px 80px;color:#fff;position:relative;overflow:hidden}
+  .article-hero::before{content:'';position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(139,92,246,.3) 0%,transparent 70%);border-radius:50%}
+  .hero-inner{max-width:900px;margin:0 auto;position:relative;z-index:2}
+  .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.65);margin-bottom:24px;flex-wrap:wrap}
+  .breadcrumb a{color:rgba(255,255,255,.65);text-decoration:none}
+  .breadcrumb a:hover{color:#fff}
+  .breadcrumb .sep{color:rgba(255,255,255,.4)}
+  .breadcrumb .current{color:#fff;font-weight:500}
+  .article-cat{display:inline-block;background:rgba(255,255,255,.15);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.2);padding:6px 14px;border-radius:20px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:16px}
+  .article-title{font-size:44px;font-weight:800;line-height:1.2;margin-bottom:24px}
+  .article-meta{display:flex;align-items:center;gap:20px;flex-wrap:wrap;font-size:13px;color:rgba(255,255,255,.75)}
+  .meta-item{display:flex;align-items:center;gap:6px}
+  .author-avatar{width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,#60a5fa,#a78bfa);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:#fff;flex-shrink:0}
+
+  /* MAIN LAYOUT */
+  .article-main{max-width:1200px;margin:0 auto;padding:40px;display:grid;grid-template-columns:1fr 300px;gap:40px;align-items:start}
+
+  /* Article content */
+  .article-content{background:#fff;border-radius:16px;padding:40px;border:1px solid #e5e7eb;box-shadow:0 1px 3px rgba(0,0,0,.04);min-width:0}
+
+  /* Featured image */
+  .featured-image{width:100%;height:auto;border-radius:12px;margin-bottom:32px;display:block;background:#f3f4f6}
+
+  /* Article typography */
+  .article-content h1,
+  .article-content h2,
+  .article-content h3,
+  .article-content h4{color:#1a1a2e;line-height:1.3;font-weight:800;scroll-margin-top:100px}
+  .article-content h2{font-size:26px;margin:36px 0 16px;padding-bottom:10px;border-bottom:2px solid #f3f4f6;position:relative}
+  .article-content h2::before{content:'';position:absolute;left:0;bottom:-2px;width:60px;height:2px;background:#2563eb}
+  .article-content h3{font-size:20px;margin:28px 0 12px}
+  .article-content h4{font-size:17px;margin:22px 0 10px}
+  .article-content p{font-size:16px;color:#4b5563;line-height:1.85;margin-bottom:18px}
+  .article-content > p:first-of-type{font-size:17px;color:#374151;font-weight:500;line-height:1.75}
+  .article-content a{color:#2563eb;text-decoration:none;font-weight:600;border-bottom:1px solid transparent;transition:border-color .2s}
+  .article-content a:hover{border-bottom-color:#2563eb}
+  .article-content strong{color:#1a1a2e;font-weight:700}
+  .article-content em{font-style:italic;color:#1a1a2e}
+
+  .article-content ul,
+  .article-content ol{margin:16px 0 20px;padding-left:24px}
+  .article-content ul li,
+  .article-content ol li{font-size:16px;color:#4b5563;line-height:1.8;margin-bottom:8px}
+  .article-content ul li::marker{color:#2563eb}
+  .article-content ol li::marker{color:#2563eb;font-weight:700}
+
+  .article-content blockquote{background:#f8faff;border-left:4px solid #2563eb;padding:20px 24px;margin:24px 0;border-radius:0 8px 8px 0;font-style:italic;color:#374151}
+  .article-content blockquote p{margin-bottom:0;font-size:16px}
+
+  .article-content code{background:#f3f4f6;padding:2px 6px;border-radius:4px;font-family:'JetBrains Mono','Courier New',monospace;font-size:14px;color:#2563eb}
+  .article-content pre{background:#1a1a2e;color:#e2e8f0;padding:20px;border-radius:10px;overflow-x:auto;margin:20px 0;font-family:'JetBrains Mono','Courier New',monospace;font-size:14px;line-height:1.6}
+  .article-content pre code{background:transparent;color:inherit;padding:0;border:none;font-size:inherit}
+
+  .article-content img{max-width:100%;height:auto;border-radius:10px;margin:20px 0}
+  .article-content figure{margin:24px 0}
+  .article-content figcaption{text-align:center;font-size:13px;color:#9ca3af;margin-top:8px;font-style:italic}
+
+  .article-content table{width:100%;border-collapse:collapse;margin:24px 0;border:1px solid #e5e7eb;border-radius:8px;overflow:hidden}
+  .article-content th{background:#f8faff;padding:12px 16px;text-align:left;font-size:14px;font-weight:700;color:#1a1a2e;border-bottom:1px solid #e5e7eb}
+  .article-content td{padding:12px 16px;font-size:14px;color:#4b5563;border-bottom:1px solid #f3f4f6}
+  .article-content tr:last-child td{border-bottom:none}
+
+  .article-content hr{border:none;height:1px;background:#e5e7eb;margin:32px 0}
+
+  /* TOC inline box */
+  .toc-box{background:#f8faff;border:1px solid #e0e7ff;border-radius:12px;padding:20px 24px;margin-bottom:32px}
+  .toc-box-title{font-size:14px;font-weight:800;color:#1a1a2e;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+  .toc-box-list{list-style:none;padding:0;display:flex;flex-direction:column;gap:6px}
+  .toc-box-list a{font-size:14px;color:#4b5563;text-decoration:none;padding:4px 0;display:flex;align-items:center;gap:8px;transition:color .2s}
+  .toc-box-list a::before{content:'›';color:#2563eb;font-weight:700;font-size:16px}
+  .toc-box-list a:hover{color:#2563eb}
+  .toc-box-list a.active{color:#2563eb;font-weight:600}
+  .toc-box-list .sub{padding-left:20px;font-size:13px}
+
+  /* Share bar */
+  .share-bar{display:flex;align-items:center;gap:12px;padding:20px 0;border-top:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;margin:36px 0;flex-wrap:wrap}
+  .share-label{font-size:13px;font-weight:700;color:#1a1a2e}
+  .share-btn{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:15px;border:none;cursor:pointer;transition:transform .2s,opacity .2s;font-family:inherit}
+  .share-btn:hover{transform:translateY(-3px);opacity:.9}
+  .share-btn.facebook{background:#1877f2}
+  .share-btn.twitter{background:#000}
+  .share-btn.linkedin{background:#0077b5}
+  .share-btn.whatsapp{background:#25d366}
+  .share-btn.telegram{background:#0088cc}
+  .share-btn.copy{background:#2563eb}
+  .share-btn.copy.copied{background:#10b981}
+
+  /* Tags */
+  .article-tags{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0}
+  .article-tag{font-size:12px;font-weight:600;padding:6px 14px;border-radius:20px;background:#f8faff;color:#4b5563;text-decoration:none;border:1px solid #e5e7eb;transition:all .2s}
+  .article-tag:hover{background:#2563eb;color:#fff;border-color:#2563eb}
+
+  /* Author box */
+  .author-box{background:#f8faff;border-radius:12px;padding:24px;display:flex;gap:20px;align-items:flex-start;margin:32px 0;border:1px solid #e0e7ff}
+  .author-avatar-lg{width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,#2563eb,#4f46e5);display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:800;color:#fff;flex-shrink:0}
+  .author-info{flex:1}
+  .author-name{font-size:16px;font-weight:800;color:#1a1a2e;margin-bottom:4px}
+  .author-role{font-size:12px;font-weight:600;color:#2563eb;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}
+  .author-bio{font-size:14px;color:#6b7280;line-height:1.65}
+
+  /* Prev / Next */
+  .post-nav{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:32px 0}
+  .post-nav-item{background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:20px;text-decoration:none;color:inherit;transition:all .2s}
+  .post-nav-item:hover{border-color:#2563eb;box-shadow:0 4px 16px rgba(37,99,235,.1)}
+  .post-nav-item.next{text-align:right}
+  .post-nav-label{font-size:11px;font-weight:700;color:#9ca3af;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+  .post-nav-title{font-size:14px;font-weight:700;color:#1a1a2e;line-height:1.4}
+  .post-nav-item:hover .post-nav-title{color:#2563eb}
+
+  /* Related posts */
+  .related-section{margin:40px 0 32px}
+  .related-title{font-size:22px;font-weight:800;color:#1a1a2e;margin-bottom:20px;display:flex;align-items:center;gap:10px}
+  .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .related-card{background:#fff;border:1px solid #e5e7eb;border-radius:12px;overflow:hidden;text-decoration:none;color:inherit;transition:all .3s}
+  .related-card:hover{border-color:#2563eb;transform:translateY(-3px);box-shadow:0 8px 20px rgba(37,99,235,.1)}
+  .related-thumb{height:100px;display:flex;align-items:center;justify-content:center;font-size:36px;color:#fff}
+  .related-thumb.blue{background:linear-gradient(135deg,#2563eb,#1e40af)}
+  .related-thumb.dark{background:linear-gradient(135deg,#1e293b,#0f172a)}
+  .related-thumb.teal{background:linear-gradient(135deg,#0d9488,#115e59)}
+  .related-body{padding:14px}
+  .related-card-title{font-size:13px;font-weight:700;color:#1a1a2e;line-height:1.4;margin-bottom:8px;display:-webkit-box;-webkit-line-clamp-webkit-box-orient:vertical;overflow:hidden}
+  .related-card:hover .related-card-title{color:#2563eb}
+  .related-card-meta{font-size:11px;color:#9ca3af}
+
+  /* Comments */
+  .comments-section{margin-top:40px;padding-top:32px;border-top:1px solid #e5e7eb}
+  .comments-title{font-size:20px;font-weight:800;color:#1a1a2e;margin-bottom:20px}
+  .comment-form{background:#f8faff;border-radius:12px;padding:20px;margin-bottom:24px;border:1px solid #e0e7ff}
+  .comment-form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
+  .comment-form input,.comment-form textarea{width:100%;padding:12px 14px;border:1px solid #e5e7eb;border-radius:8px;font-size:14px;font-family:inherit;color:#1a1a2e;background:#fff;outline:none;transition:border-color .2s}
+  .comment-form input:focus,.comment-form textarea:focus{border-color:#2563eb;box-shadow:0 0 0 3px rgba(37,99,235,.1)}
+  .comment-form textarea{resize:vertical;min-height:100px;margin-bottom:12px}
+  .comment-form button{background:#2563eb;color:#fff;border:none;padding:12px 24px;border-radius:8px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;transition:background .2s}
+  .comment-form button:hover{background:#1d4ed8}
+
+  .comment-list{display:flex;flex-direction:column;gap:20px}
+  .comment{display:flex;gap:14px;padding-bottom:20px;border-bottom:1px solid #f3f4f6}
+  .comment:last-child{border-bottom:none;padding-bottom:0}
+  .comment-avatar{width:44px;height:44px;border-radius:50%;background:#eff6ff;color:#2563eb;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800;flex-shrink:0}
+  .comment-body{flex:1}
+  .comment-header{display:flex;align-items:center;gap:10px;margin-bottom:6px;flex-wrap:wrap}
+  .comment-author{font-size:14px;font-weight:700;color:#1a1a2e}
+  .comment-date{font-size:11px;color:#9ca3af}
+  .comment-text{font-size:14px;color:#4b5563;line-height:1.7}
+
+  /* Sidebar */
+  .article-sidebar{position:sticky;top:90px;display:flex;flex-direction:column;gap:20px}
+  .widget{background:#fff;border-radius:14px;padding:22px;border:1px solid #e5e7eb}
+  .widget-title{font-size:15px;font-weight:800;color:#1a1a2e;margin-bottom:16px;display:flex;align-items:center;gap:8px;padding-bottom:12px;border-bottom:2px solid #f3f4f6}
+  .widget-title::before{content:'';width:3px;height:16px;background:#2563eb;border-radius:2px}
+
+  /* Sticky TOC */
+  .toc-sticky{max-height:calc(100vh - 120px);overflow-y:auto}
+  .toc-list{list-style:none;padding:0;display:flex;flex-direction:column;gap:4px}
+  .toc-list a{font-size:13px;color:#6b7280;text-decoration:none;padding:6px 10px;border-radius:6px;display:block;transition:all .2s;border-left:2px solid transparent;line-height:1.4}
+  .toc-list a:hover{background:#f8faff;color:#2563eb}
+  .toc-list a.active{color:#2563eb;background:#eff6ff;border-left-color:#2563eb;font-weight:600}
+  .toc-list a.h3{padding-left:24px;font-size:12.5px}
+
+  /* Related tools widget */
+  .tool-link{display:flex;align-items:center;gap:12px;padding:10px;border-radius:8px;text-decoration:none;color:inherit;transition:background .2s;border:1px solid #f3f4f6;margin-bottom:6px}
+  .tool-link:hover{background:#f8faff;border-color:#e0e7ff}
+  .tool-link-icon{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px;flex-shrink:0}
+  .tool-link-title{font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:2px}
+  .tool-link-desc{font-size:11px;color:#9ca3af}
+
+  /* Newsletter widget */
+  .newsletter-widget{background:linear-gradient(135deg,#2563eb,#4f46e5);border-radius:14px;padding:24px 20px;text-align:center;color:#fff;position:relative;overflow:hidden}
+  .newsletter-widget::before{content:'';position:absolute;top:-30px;right:-30px;width:120px;height:120px;background:rgba(255,255,255,.1);border-radius:50%}
+  .newsletter-icon{font-size:32px;margin-bottom:10px;position:relative;z-index:2}
+  .newsletter-title{font-size:16px;font-weight:800;margin-bottom:6px;position:relative;z-index:2}
+  .newsletter-desc{font-size:12px;color:rgba(255,255,255,.85);line-height:1.5;margin-bottom:16px;position:relative;z-index:2}
+  .newsletter-form{display:flex;flex-direction:column;gap:8px;position:relative;z-index:2}
+  .newsletter-form input{padding:11px 14px;border-radius:8px;border:none;outline:none;font-size:13px;font-family:inherit;color:#1a1a2e}
+  .newsletter-form button{background:#1e40af;color:#fff;border:none;padding:11px;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit}
+  .newsletter-form button:hover{background:#1e3a8a}
+
+  /* FOOTER */
+  .footer{background:#0a0e27;padding:60px 40px 30px;color:#fff;margin-top:40px}
+  .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:40px}
+  .footer-brand{display:flex;align-items:center;gap:8px;font-size:20px;font-weight:800;margin-bottom:12px}
+  .footer-brand span{color:#60a5fa}
+  .footer-tagline{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px}
+  .footer-social{display:flex;gap:12px}
+  .footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:16px;transition:background .2s}
+  .footer-social a:hover{background:rgba(255,255,255,.2)}
+  .footer-heading{font-size:14px;font-weight:700;margin-bottom:20px;color:#fff}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .footer-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;transition:color .2s}
+  .footer-links a:hover{color:#60a5fa}
+  .footer-bottom{max-width:1200px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  .footer-bottom-left{display:flex;gap:20px;font-size:12px;color:rgba(255,255,255,.5)}
+  .footer-bottom-right,.footer-bottom-links a{font-size:12px;color:rgba(255,255,255,.5);text-decoration:none}
+  .footer-bottom-links{display:flex;gap:20px}
+  .footer-bottom-links a:hover{color:#60a5fa}
+
+  /* Toast */
+  .toast{position:fixed;bottom:24px;right:24px;background:#1a1a2e;color:#fff;padding:14px 20px;border-radius:10px;font-size:13px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:3000;transform:translateY(200%);transition:transform .3s ease;max-width:320px}
+  .toast.visible{transform:translateY(0)}
+  .toast.success{background:#10b981}
+
+  /* RESPONSIVE */
+  @media(max-width:1024px){
+    .article-main{grid-template-columns:1fr;padding:24px 20px}
+    .article-sidebar{position:static}
+    .related-grid{grid-template-columns:1fr}
+    .article-title{font-size:32px}
+  }
+  @media(max-width:768px){
+    .header{padding:0 20px}.nav{display:none}
+    .article-hero{padding:40px 20px 60px}
+    .article-title{font-size:26px}
+    .article-content{padding:24px}
+    .article-content h2{font-size:22px}
+    .article-content h3{font-size:18px}
+    .article-content p,.article-content ul li,.article-content ol li{font-size:15px}
+    .post-nav{grid-template-columns:1fr}
+    .post-nav-item.next{text-align:left}
+    .comment-form-row{grid-template-columns:1fr}
+    .footer-inner{grid-template-columns:1fr 1fr}
+  }
+  @media(max-width:576px){
+    .header{padding:0 16px}.header-right .search-btn,.header-right .theme-btn{display:none}
+    .article-title{font-size:22px}
+    .article-hero{padding:32px 16px 50px}
+    .article-main{padding:20px 16px}
+    .article-content{padding:20px;border-radius:12px}
+    .article-content h2{font-size:20px}
+    .author-box{flex-direction:column;text-align:center;align-items:center}
+    .share-bar{justify-content:center}
+    .footer-inner{grid-template-columns:1fr}
+    .footer-bottom{flex-direction:column;text-align:center}
+    .article-content table{font-size:12px}
+    .article-content th,.article-content td{padding:8px 10px}
+  }
+
+  /* DARK MODE */
+  html[data-theme="dark"] body{background:#0f172a;color:#f1f5f9}
+  html[data-theme="dark"] .header,html[data-theme="dark"] .article-content,html[data-theme="dark"] .widget,html[data-theme="dark"] .related-card,html[data-theme="dark"] .post-nav-item,html[data-theme="dark"] .comment-form{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .logo,html[data-theme="dark"] .article-title,html[data-theme="dark"] .article-content h1,html[data-theme="dark"] .article-content h2,html[data-theme="dark"] .article-content h3,html[data-theme="dark"] .article-content h4,html[data-theme="dark"] .widget-title,html[data-theme="dark"] .related-title,html[data-theme="dark"] .related-card-title,html[data-theme="dark"] .post-nav-title,html[data-theme="dark"] .author-name,html[data-theme="dark"] .tool-link-title,html[data-theme="dark"] .comment-author,html[data-theme="dark"] .comments-title,html[data-theme="dark"] .toc-box-title{color:#f1f5f9}
+  html[data-theme="dark"] .nav a{color:#cbd5e1}
+  html[data-theme="dark"] .article-content p,html[data-theme="dark"] .article-content ul li,html[data-theme="dark"] .article-content ol li,html[data-theme="dark"] .author-bio,html[data-theme="dark"] .comment-text,html[data-theme="dark"] .related-card-meta{color:#cbd5e1}
+  html[data-theme="dark"] .article-content code{background:#0f172a;color:#60a5fa}
+  html[data-theme="dark"] .article-content blockquote{background:#0f172a;border-color:#60a5fa;color:#cbd5e1}
+  html[data-theme="dark"] .article-content th{background:#0f172a;color:#f1f5f9;border-color:#334155}
+  html[data-theme="dark"] .article-content td{border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .toc-box,html[data-theme="dark"] .author-box,html[data-theme="dark"] .toc-list a:hover{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .toc-box-list a{color:#cbd5e1}
+  html[data-theme="dark"] .article-tag{background:#0f172a;border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .tool-link{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .comment-avatar{background:#1e3a8a;color:#93c5fd}
+  html[data-theme="dark"] .comment-form input,html[data-theme="dark"] .comment-form textarea{background:#0f172a;border-color:#334155;color:#f1f5f9}
+</style>
+
+<!-- ===== ARTICLE SCHEMA ===== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://bigtoolz.com/blog/posts/{{SLUG}}/#article",
+      "headline": "{{TITLE}}",
+      "description": "{{DESCRIPTION}}",
+      "image": "{{IMAGE}}",
+      "datePublished": "{{DATE}}",
+      "dateModified": "{{DATE}}",
+      "author": {
+        "@type": "Person",
+        "name": "{{AUTHOR}}"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "BigToolz",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://bigtoolz.com/assets/images/logo.png"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://bigtoolz.com/blog/posts/{{SLUG}}/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bigtoolz.com/"},
+        {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://bigtoolz.com/blog/"},
+        {"@type": "ListItem", "position": 3, "name": "{{TITLE}}", "item": "https://bigtoolz.com/blog/posts/{{SLUG}}/"}
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<!-- Reading progress -->
+<div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+
+<!-- ===== HEADER ===== -->
+<header class="header">
+  <div class="header-left">
+    <a href="/" class="logo"><div class="logo-icon">⚒</div>Big<span>Toolz</span></a>
+    <nav><ul class="nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/tools/">All Tools</a></li>
+      <li><a href="/tools/">Categories</a></li>
+      <li><a href="/blog/" class="active">Blog</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul></nav>
+  </div>
+  <div class="header-right">
+    <button class="search-btn" aria-label="Search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg></button>
+    <button class="theme-btn" aria-label="Toggle theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
+    <button class="bookmark-btn">🔖 Bookmark Us</button>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="article-hero">
+  <div class="hero-inner">
+    <nav class="breadcrumb">
+      <a href="/">Home</a><span class="sep">›</span>
+      <a href="/blog/">Blog</a><span class="sep">›</span>
+      <a href="/blog/categories/{{CATEGORY_SLUG}}/">{{CATEGORY}}</a><span class="sep">›</span>
+      <span class="current">Article</span>
+    </nav>
+    <div class="article-cat">{{CATEGORY}}</div>
+    <h1 class="article-title">{{TITLE}}</h1>
+    <div class="article-meta">
+      <div class="meta-item">
+        <div class="author-avatar">B</div>
+        <span>{{AUTHOR}}</span>
+      </div>
+      <span class="meta-item">📅 {{DATE_DISPLAY}}</span>
+      <span class="meta-item">⏱ {{READ_TIME}} min read</span>
+      <span class="meta-item">👁 <span id="viewCount">1,247</span> views</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== MAIN ===== -->
+<main class="article-main">
+
+  <!-- Article content -->
+  <article class="article-content" id="articleContent">
+
+    <!-- Featured image -->
+    <img src="{{IMAGE}}" alt="{{TITLE}}" class="featured-image" width="1200" height="675">
+
+    <!-- Inline TOC -->
+    <div class="toc-box">
+      <div class="toc-box-title">📋 Table of Contents</div>
+      <ul class="toc-box-list" id="inlineToc">
+        <!-- Auto-generated from H2/H3 -->
+      </ul>
+    </div>
+
+    <!-- ============ ARTICLE BODY STARTS ============ -->
+    <!-- Replace this entire section with the actual post content -->
+
+    <p>
+      Welcome to this in-depth guide on <strong>{{TITLE}}</strong>. In this article, we'll cover everything you need to know — from basics to advanced tips — with practical examples you can apply right away.
+    </p>
+
+    <h2 id="introduction">Introduction</h2>
+    <p>
+      If you're looking for a reliable way to handle this task, you've come to the right place. Whether you're a beginner or an experienced user, the tips in this guide will help you get better results in less time.
+    </p>
+    <p>
+      Let's dive into the details and explore how you can master this topic step by step.
+    </p>
+
+    <h2 id="why-it-matters">Why This Matters</h2>
+    <p>
+      In today's fast-paced digital world, <strong>efficiency is everything</strong>. The right approach can save you hours of manual work, reduce errors, and produce consistent results.
+    </p>
+
+    <h3 id="key-benefits">Key Benefits</h3>
+    <ul>
+      <li><strong>Save time</strong> — automate repetitive tasks in seconds.</li>
+      <li><strong>Save money</strong> — free tools instead of paid subscriptions.</li>
+      <li><strong>Improve quality</strong> — consistent, professional-grade output.</li>
+      <li><strong>Stay private</strong> — your data never leaves your device.</li>
+    </ul>
+
+    <h2 id="step-by-step">Step-by-Step Guide</h2>
+    <p>
+      Follow these steps to get started. Each step is designed to be completed in under a minute.
+    </p>
+
+    <h3 id="step-1">Step 1: Prepare Your Files</h3>
+    <p>
+      Gather the files you want to work with. Make sure they're in a supported format and check that you have enough disk space.
+    </p>
+
+    <h3 id="step-2">Step 2: Choose the Right Tool</h3>
+    <p>
+      Pick the tool that matches your specific task. If you're unsure, start with the most popular one and explore from there.
+    </p>
+
+    <blockquote>
+      <p><strong>Pro tip:</strong> Always keep a backup of your original files before processing them. This gives you a safety net if something goes wrong.</p>
+    </blockquote>
+
+    <h3 id="step-3">Step 3: Process and Download</h3>
+    <p>
+      Upload your files, apply the desired settings, and click the process button. The result downloads instantly — no waiting, no signup.
+    </p>
+
+    <h2 id="common-mistakes">Common Mistakes to Avoid</h2>
+    <ul>
+      <li><strong>Skipping backups</strong> — always keep the original.</li>
+      <li><strong>Using wrong settings</strong> — read the tool descriptions first.</li>
+      <li><strong>Ignoring quality</strong> — check the output before sharing.</li>
+      <li><strong>Forgetting file size limits</strong> — work with the recommended maximum.</li>
+    </ul>
+
+    <h2 id="comparison">Tool Comparison</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Feature</th>
+          <th>Free Tools</th>
+          <th>Paid Tools</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Cost</td><td>✅ Free</td><td>❌ Subscription</td></tr>
+        <tr><td>Signup required</td><td>✅ No</td><td>❌ Yes</td></tr>
+        <tr><td>Watermarks</td><td>✅ None</td><td>⚠️ Sometimes</td></tr>
+        <tr><td>File size limit</td><td>⚠️ Varies</td><td>✅ Higher</td></tr>
+        <tr><td>Privacy</td><td>✅ Browser-based</td><td>⚠️ Server-based</td></tr>
+      </tbody>
+    </table>
+
+    <h2 id="conclusion">Conclusion</h2>
+    <p>
+      By following the steps in this guide, you'll be able to handle this task confidently and efficiently. The tools and techniques here are free, fast, and reliable — perfect for everyday use.
+    </p>
+    <p>
+      Have questions or want to share your own tips? Drop a comment below — we'd love to hear from you.
+    </p>
+
+    <!-- ============ ARTICLE BODY ENDS ============ -->
+
+    <!-- Tags -->
+    <div class="article-tags">
+      <a href="/blog/categories/tool-guides/" class="article-tag">#Tools</a>
+      <a href="/blog/categories/how-to/" class="article-tag">#HowTo</a>
+      <a href="/blog/categories/tips/" class="article-tag">#Tips</a>
+      <a href="/blog/categories/productivity/" class="article-tag">#Productivity</a>
+    </div>
+
+    <!-- Share bar -->
+    <div class="share-bar">
+      <span class="share-label">Share this article:</span>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=" class="share-btn facebook" data-share="facebook" aria-label="Share on Facebook">f</a>
+      <a href="https://twitter.com/intent/tweet?url=&text=" class="share-btn twitter" data-share="twitter" aria-label="Share on Twitter">𝕏</a>
+      <a href="https://www.linkedin.com/sharing/share-offsite/?url=" class="share-btn linkedin" data-share="linkedin" aria-label="Share on LinkedIn">in</a>
+      <a href="https://api.whatsapp.com/send?text=" class="share-btn whatsapp" data-share="whatsapp" aria-label="Share on WhatsApp">💬</a>
+      <a href="https://t.me/share/url?url=" class="share-btn telegram" data-share="telegram" aria-label="Share on Telegram">✈</a>
+      <button class="share-btn copy" id="copyLinkBtn" aria-label="Copy link">🔗</button>
+    </div>
+
+    <!-- Author box -->
+    <div class="author-box">
+      <div class="author-avatar-lg">B</div>
+      <div class="author-info">
+        <div class="author-name">{{AUTHOR}}</div>
+        <div class="author-role">Content Writer & Developer</div>
+        <p class="author-bio">
+          Writes practical guides on web tools, productivity, and design. Part of the BigToolz team, building free online utilities used by millions worldwide.
+        </p>
+      </div>
+    </div>
+
+    <!-- Prev / Next -->
+    <div class="post-nav">
+      <a href="/blog/posts/previous-post/" class="post-nav-item">
+        <div class="post-nav-label">← Previous</div>
+        <div class="post-nav-title">Previous article title goes here</div>
+      </a>
+      <a href="/blog/posts/next-post/" class="post-nav-item next">
+        <div class="post-nav-label">Next →</div>
+        <div class="post-nav-title">Next article title goes here</div>
+      </a>
+    </div>
+
+    <!-- Related posts -->
+    <section class="related-section">
+      <h2 class="related-title">📚 Related Articles</h2>
+      <div class="related-grid">
+        <a href="/blog/posts/top-10-free-online-tools-2026/" class="related-card">
+          <div class="related-thumb blue">🚀</div>
+          <div class="related-body">
+            <div class="related-card-title">Top 10 Free Online Tools You Must Try in 2026</div>
+            <div class="related-card-meta">📅 Aug 28, 2026 · 8 min</div>
+          </div>
+        </a>
+        <a href="/blog/posts/complete-seo-guide-beginners-2026/" class="related-card">
+          <div class="related-thumb dark">🔍</div>
+          <div class="related-body">
+            <div class="related-card-title">Complete SEO Guide for Beginners (2026)</div>
+            <div class="related-card-meta">📅 Aug 25, 2026 · 12 min</div>
+          </div>
+        </a>
+        <a href="/blog/posts/best-image-compression-tools/" class="related-card">
+          <div class="related-thumb teal">🖼</div>
+          <div class="related-body">
+            <div class="related-card-title">Best Image Compression Tools Online</div>
+            <div class="related-card-meta">📅 Aug 18, 2026 · 7 min</div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- Comments -->
+    <section class="comments-section">
+      <h3 class="comments-title">💬 Comments (<span id="commentCount">2</span>)</h3>
+
+      <form class="comment-form" onsubmit="event.preventDefault(); showToast('Comment submitted! (Demo)','success');">
+        <div class="comment-form-row">
+          <input type="text" placeholder="Your name" required>
+          <input type="email" placeholder="Your email (won't be published)" required>
+        </div>
+        <textarea placeholder="Share your thoughts..." required></textarea>
+        <button type="submit">Post Comment</button>
+      </form>
+
+      <div class="comment-list">
+        <div class="comment">
+          <div class="comment-avatar">A</div>
+          <div class="comment-body">
+            <div class="comment-header">
+              <span class="comment-author">Alex Kumar</span>
+              <span class="comment-date">2 days ago</span>
+            </div>
+            <p class="comment-text">Great article! The step-by-step approach made it really easy to follow. Bookmarked for later reference.</p>
+          </div>
+        </div>
+        <div class="comment">
+          <div class="comment-avatar">S</div>
+          <div class="comment-body">
+            <div class="comment-header">
+              <span class="comment-author">Sara Patel</span>
+              <span class="comment-date">5 days ago</span>
+            </div>
+            <p class="comment-text">Thanks for sharing this. I've been looking for exactly this kind of guide. The comparison table is super helpful!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </article>
+
+  <!-- Sidebar -->
+  <aside class="article-sidebar">
+
+    <!-- Sticky TOC -->
+    <div class="widget toc-sticky">
+      <h3 class="widget-title">On This Page</h3>
+      <ul class="toc-list" id="stickyToc">
+        <!-- Auto-generated from H2/H3 -->
+      </ul>
+    </div>
+
+    <!-- Related tools -->
+    <div class="widget">
+      <h3 class="widget-title">Try These Tools</h3>
+      <a href="/tools/image-tools/image-compressor/" class="tool-link">
+        <div class="tool-link-icon" style="background:#10b981;">🖼</div>
+        <div>
+          <div class="tool-link-title">Image Compressor</div>
+          <div class="tool-link-desc">Reduce image size free</div>
+        </div>
+      </a>
+      <a href="/tools/pdf-tools/organize-pdf/merge-pdf/" class="tool-link">
+        <div class="tool-link-icon" style="background:#3b82f6;">📕</div>
+        <div>
+          <div class="tool-link-title">Merge PDF</div>
+          <div class="tool-link-desc">Combine PDFs online</div>
+        </div>
+      </a>
+      <a href="/tools/text-tools/word-counter/" class="tool-link">
+        <div class="tool-link-icon" style="background:#f97316;">T</div>
+        <div>
+          <div class="tool-link-title">Word Counter</div>
+          <div class="tool-link-desc">Count words instantly</div>
+        </div>
+      </a>
+    </div>
+
+    <!-- Newsletter -->
+    <div class="newsletter-widget">
+      <div class="newsletter-icon">✉️</div>
+      <h3 class="newsletter-title">Never Miss a Post</h3>
+      <p class="newsletter-desc">Get new articles delivered to your inbox. No spam, unsubscribe anytime.</p>
+      <form class="newsletter-form" onsubmit="event.preventDefault(); showToast('Subscribed!','success');">
+        <input type="email" placeholder="Your email" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+
+  </aside>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand"><div class="logo-icon">⚒</div>Big<span>Toolz</span></div>
+      <p class="footer-tagline">Your Ultimate Online Tools Hub</p>
+      <div class="footer-social">
+        <a href="https://facebook.com/bigtoolz" aria-label="Facebook">f</a>
+        <a href="https://twitter.com/bigtoolz" aria-label="Twitter">𝕏</a>
+        <a href="https://youtube.com/@bigtoolz" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+    <div>
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/tools/">All Tools</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Categories</h3>
+      <ul class="footer-links">
+        <li><a href="/tools/image-tools/">Image Tools</a></li>
+        <li><a href="/tools/pdf-tools/">PDF Tools</a></li>
+        <li><a href="/tools/text-tools/">Text Tools</a></li>
+        <li><a href="/tools/seo-tools/">SEO Tools</a></li>
+        <li><a href="/tools/">All Categories →</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Legal</h3>
+      <ul class="footer-links">
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left"><span>✓ 100% Free</span><span>✓ No Sign Up</span><span>✓ No Installation</span></div>
+    <div class="footer-bottom-right">© 2026 BigToolz. All rights reserved.</div>
+    <div class="footer-bottom-links"><a href="/privacy-policy">Privacy</a><a href="/terms">Terms</a><a href="/disclaimer">Disclaimer</a></div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+'use strict';
+
+/* ===== THEME ===== */
+(function(){try{var t=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&d))document.documentElement.setAttribute('data-theme','dark');else if(t==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();
+document.querySelector('.theme-btn')?.addEventListener('click',()=>{const h=document.documentElement;const c=h.getAttribute('data-theme');const d=window.matchMedia('(prefers-color-scheme: dark)').matches;let n=c==='dark'?'light':c==='light'?'dark':(d?'light':'dark');h.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}});
+
+/* ===== TOAST ===== */
+function showToast(msg, type = 'info', duration = 2500) {
+  const t = document.getElementById('toast');
+  if (!t) return;
+  t.className = 'toast visible' + (type !== 'info' ? ' ' + type : '');
+  t.textContent = msg;
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove('visible'), duration);
+}
+
+/* ===== READING PROGRESS ===== */
+const progressFill = document.getElementById('progressFill');
+const articleContent = document.getElementById('articleContent');
+
+function updateProgress() {
+  if (!articleContent) return;
+  const rect = articleContent.getBoundingClientRect();
+  const scrollTop = window.scrollY || document.documentElement.scrollTop;
+  const articleTop = rect.top + scrollTop;
+  const articleHeight = articleContent.offsetHeight;
+  const windowHeight = window.innerHeight;
+  const scrolled = scrollTop - articleTop + windowHeight * 0.2;
+  const percent = Math.max(0, Math.min(100, (scrolled / (articleHeight - windowHeight * 0.8)) * 100));
+  progressFill.style.width = percent + '%';
+}
+
+/* ===== AUTO-GENERATE TOC ===== */
+function generateTOC() {
+  const headings = articleContent.querySelectorAll('h2, h3');
+  const inlineToc = document.getElementById('inlineToc');
+  const stickyToc = document.getElementById('stickyToc');
+
+  inlineToc.innerHTML = '';
+  stickyToc.innerHTML = '';
+
+  headings.forEach((h, i) => {
+    if (!h.id) h.id = 'heading-' + i;
+
+    // Inline TOC
+    const li = document.createElement('li');
+    const a = document.createElement('a');
+    a.href = '#' + h.id;
+    a.textContent = h.textContent;
+    if (h.tagName === 'H3') a.className = 'sub';
+    li.appendChild(a);
+    inlineToc.appendChild(li);
+
+    // Sticky TOC
+    const li2 = document.createElement('li');
+    const a2 = document.createElement('a');
+    a2.href = '#' + h.id;
+    a2.textContent = h.textContent;
+    if (h.tagName === 'H3') a2.classList.add('h3');
+    a2.dataset.target = h.id;
+    li2.appendChild(a2);
+    stickyToc.appendChild(li2);
+  });
+
+  // Smooth scroll
+  document.querySelectorAll('.toc-list a, .toc-box-list a').forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const target = document.querySelector(link.getAttribute('href'));
+      if (target) {
+        const y = target.getBoundingClientRect().top + window.scrollY - 90;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      }
+    });
+  });
+}
+
+/* ===== ACTIVE TOC HIGHLIGHT ===== */
+function updateActiveTOC() {
+  const headings = articleContent.querySelectorAll('h2, h3');
+  const tocLinks = document.querySelectorAll('.toc-list a');
+  const scrollY = window.scrollY;
+
+  let current = null;
+  headings.forEach(h => {
+    if (h.getBoundingClientRect().top + scrollY - 120 <= scrollY) {
+      current = h.id;
+    }
+  });
+
+  tocLinks.forEach(a => {
+    a.classList.toggle('active', a.dataset.target === current);
+  });
+}
+
+/* ===== SCROLL LISTENER ===== */
+let scrollTimer;
+window.addEventListener('scroll', () => {
+  if (!scrollTimer) {
+    scrollTimer = requestAnimationFrame(() => {
+      updateProgress();
+      updateActiveTOC();
+      scrollTimer = null;
+    });
+  }
+}, { passive: true });
+
+/* ===== SHARE BUTTONS ===== */
+const pageUrl = window.location.href;
+const pageTitle = document.title;
+
+document.querySelectorAll('[data-share]').forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    const type = btn.dataset.share;
+    let url = '';
+
+    switch (type) {
+      case 'facebook':
+        url = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(pageUrl)}`;
+        break;
+      case 'twitter':
+        url = `https://twitter.com/intent/tweet?url=${encodeURIComponent(pageUrl)}&text=${encodeURIComponent(pageTitle)}`;
+        break;
+      case 'linkedin':
+        url = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(pageUrl)}`;
+        break;
+      case 'whatsapp':
+        url = `https://api.whatsapp.com/send?text=${encodeURIComponent(pageTitle + ' ' + pageUrl)}`;
+        break;
+      case 'telegram':
+        url = `https://t.me/share/url?url=${encodeURIComponent(pageUrl)}&text=${encodeURIComponent(pageTitle)}`;
+        break;
+    }
+
+    if (url) window.open(url, '_blank', 'width=600,height=500,noopener,noreferrer');
+  });
+});
+
+/* ===== COPY LINK ===== */
+document.getElementById('copyLinkBtn')?.addEventListener('click', async function() {
+  try {
+    await navigator.clipboard.writeText(pageUrl);
+    this.classList.add('copied');
+    this.textContent = '✓';
+    showToast('Link copied!', 'success');
+    setTimeout(() => {
+      this.classList.remove('copied');
+      this.textContent = '🔗';
+    }, 2000);
+  } catch (e) {
+    showToast('Copy failed', 'error');
+  }
+});
+
+/* ===== FAKE VIEW COUNTER (demo) ===== */
+document.addEventListener('DOMContentLoaded', () => {
+  const vc = document.getElementById('viewCount');
+  if (vc) {
+    const count = 1247 + Math.floor(Math.random() * 300);
+    vc.textContent = count.toLocaleString('en-US');
+  }
+});
+
+/* ===== INIT ===== */
+generateTOC();
+updateProgress();
+updateActiveTOC();
+</script>
+
+</body>
+</html>

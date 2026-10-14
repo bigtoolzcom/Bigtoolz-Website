@@ -1,0 +1,1442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2563eb">
+
+<title>Schema Markup Generator - Create JSON-LD Structured Data Free | BigToolz</title>
+<meta name="description" content="Free Schema Markup Generator. Create JSON-LD structured data for Article, Product, FAQ, HowTo, LocalBusiness, Recipe and 12+ types. Rich snippets ready.">
+<meta name="keywords" content="schema markup generator, json-ld generator, structured data, rich snippets, schema.org generator">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://bigtoolz.com/tools/seo-tools/schema-markup/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Schema Markup Generator - Free Online Tool | BigToolz">
+<meta property="og:description" content="Generate JSON-LD schema markup for 12+ types free, Rich Snippets ready.">
+<meta property="og:url" content="https://bigtoolz.com/tools/seo-tools/schema-markup/">
+<meta property="og:image" content="https://bigtoolz.com/assets/images/og-image.jpg">
+<meta property="og:site_name" content="BigToolz">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Schema Markup Generator - BigToolz">
+<meta name="twitter:description" content="Generate structured data instantly free.">
+<meta name="twitter:image" content="https://bigtoolz.com/assets/images/twitter-card.jpg">
+
+<link rel="icon" href="/assets/images/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/images/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#f8f9fc;color:#1a1a2e;overflow-x:hidden;line-height:1.5}
+
+  .header{background:#fff;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;position:sticky;top:0;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+  .header-left{display:flex;align-items:center;gap:40px}
+  .logo{display:flex;align-items:center;gap:8px;font-size:22px;font-weight:800;color:#1a1a2e;text-decoration:none}
+  .logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#3b82f6,#2563eb);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px}
+  .logo span{color:#2563eb}
+  .nav{display:flex;align-items:center;gap:28px;list-style:none}
+  .nav a{text-decoration:none;color:#4b5563;font-size:14px;font-weight:500;transition:color .2s}
+  .nav a:hover,.nav a.active{color:#2563eb}
+  .header-right{display:flex;align-items:center;gap:16px}
+  .search-btn,.theme-btn{width:36px;height:36px;border-radius:50%;border:none;background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#4b5563}
+  .search-btn:hover,.theme-btn:hover{background:#f3f4f6}
+  .bookmark-btn{display:flex;align-items:center;gap:8px;background:#2563eb;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
+  .bookmark-btn:hover{background:#1d4ed8}
+
+  .hero{background:linear-gradient(135deg,#0a0e27 0%,#1a1a4e 40%,#2d1b69 70%,#4c1d95 100%);padding:40px 40px 60px;position:relative;overflow:hidden;color:#fff}
+  .hero::before{content:'';position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(139,92,246,.3) 0%,transparent 70%);border-radius:50%}
+  .hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+  .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px;flex-wrap:wrap}
+  .breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none}
+  .breadcrumb a:hover{color:#fff}
+  .breadcrumb .sep{color:rgba(255,255,255,.4)}
+  .breadcrumb .current{color:#fff;font-weight:500}
+  .hero-title-row{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+  .hero-icon{width:60px;height:60px;background:#8b5cf6;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px;color:#fff;flex-shrink:0;box-shadow:0 8px 24px rgba(139,92,246,.4)}
+  .hero-title{font-size:42px;font-weight:800;line-height:1.15}
+  .hero-title .blue{color:#a78bfa}
+  .hero-desc{font-size:15px;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:24px;max-width:560px}
+  .hero-features{display:flex;gap:24px;flex-wrap:wrap}
+  .hero-feature{display:flex;align-items:center;gap:6px;font-size:13px;color:#fff;font-weight:500}
+  .hero-feature .check{width:18px;height:18px;border-radius:50%;background:#8b5cf6;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;flex-shrink:0}
+
+  .main-content{max-width:1200px;margin:0 auto;padding:40px;display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start}
+  .tool-content{min-width:0}
+
+  .workspace{background:#fff;border-radius:16px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,.06);border:1px solid #e5e7eb;margin-bottom:24px}
+
+  /* Schema type tabs */
+  .schema-tabs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px;background:#faf5ff;padding:8px;border-radius:12px;border:1px solid #ede9fe}
+  .schema-tab{padding:10px 14px;background:transparent;border:none;border-radius:8px;font-size:12px;font-weight:700;color:#6b7280;cursor:pointer;font-family:inherit;transition:all .2s;display:flex;align-items:center;gap:5px}
+  .schema-tab:hover{background:#f3e8ff;color:#7c3aed}
+  .schema-tab.active{background:#8b5cf6;color:#fff}
+
+  /* Form */
+  .section{background:#faf5ff;border-radius:12px;padding:20px;margin-bottom:20px;border:1px solid #ede9fe}
+  .section-title{font-size:13px;font-weight:800;color:#1a1a2e;margin-bottom:14px;display:flex;align-items:center;gap:8px;text-transform:uppercase;letter-spacing:.5px}
+  .section-title .badge{background:#8b5cf6;color:#fff;font-size:9px;padding:3px 8px;border-radius:10px;font-weight:700}
+  .section-title .badge.required{background:#ef4444}
+
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:12px}
+  .form-row.full{grid-template-columns:1fr}
+  .form-row.three{grid-template-columns:1fr 1fr 1fr}
+  .form-group label{display:flex;justify-content:space-between;align-items:center;font-size:12px;font-weight:700;color:#4b5563;margin-bottom:6px;gap:8px}
+  .form-group label .hint{font-size:10px;color:#9ca3af;font-weight:500}
+  .form-group input,.form-group textarea,.form-group select{width:100%;padding:10px 14px;border:1px solid #e5e7eb;border-radius:8px;font-size:13px;font-family:inherit;color:#1a1a2e;background:#fff;outline:none;transition:border-color .2s}
+  .form-group input:focus,.form-group textarea:focus,.form-group select:focus{border-color:#8b5cf6;box-shadow:0 0 0 3px rgba(139,92,246,.1)}
+  .form-group textarea{resize:vertical;min-height:70px;line-height:1.5}
+
+  /* Array input groups */
+  .array-item{background:#fff;border-radius:10px;padding:14px;border:1px solid #e5e7eb;margin-bottom:10px;position:relative}
+  .array-item-remove{position:absolute;top:8px;right:8px;width:24px;height:24px;border-radius:6px;background:transparent;border:none;cursor:pointer;color:#9ca3af;font-size:16px;display:flex;align-items:center;justify-content:center;transition:all .2s}
+  .array-item-remove:hover{background:#fef2f2;color:#dc2626}
+  .array-add-btn{display:inline-flex;align-items:center;gap:4px;padding:8px 14px;background:#8b5cf6;color:#fff;border:none;border-radius:8px;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit;transition:background .2s}
+  .array-add-btn:hover{background:#7c3aed}
+
+  /* Output */
+  .output-wrap{background:#0f172a;border-radius:12px;padding:20px;margin-top:16px;position:relative}
+  .output-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;gap:12px;flex-wrap:wrap}
+  .output-title{font-size:12px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.5px;display:flex;align-items:center;gap:8px}
+  .output-actions{display:flex;gap:6px;flex-wrap:wrap}
+  .copy-btn{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;background:#8b5cf6;color:#fff;border:none;border-radius:8px;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit;transition:all .2s}
+  .copy-btn:hover{background:#7c3aed}
+  .copy-btn.copied{background:#10b981}
+  .copy-btn.secondary{background:#334155;color:#e2e8f0}
+  .copy-btn.secondary:hover{background:#475569}
+  .output-code{font-family:'JetBrains Mono','Courier New',monospace;font-size:12px;color:#e2e8f0;line-height:1.6;white-space:pre-wrap;word-break:break-word;max-height:500px;overflow-y:auto}
+  .output-code .key{color:#60a5fa}
+  .output-code .str{color:#34d399}
+  .output-code .num{color:#fbbf24}
+  .output-code .bool{color:#f472b6}
+  .output-code .null{color:#94a3b8}
+  .output-code .punc{color:#94a3b8}
+
+  /* Actions */
+  .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 28px;border-radius:10px;font-size:15px;font-weight:700;font-family:inherit;cursor:pointer;border:none;transition:all .2s;text-decoration:none}
+  .btn-primary{background:#8b5cf6;color:#fff;flex:1;box-shadow:0 4px 12px rgba(139,92,246,.2)}
+  .btn-primary:hover:not(:disabled){background:#7c3aed;transform:translateY(-2px);box-shadow:0 6px 20px rgba(139,92,246,.3)}
+  .btn-secondary{background:#fff;color:#8b5cf6;border:1px solid #e5e7eb}
+  .btn-secondary:hover{border-color:#8b5cf6;background:#faf5ff}
+
+  /* Info box */
+  .info-box{background:#eff6ff;border:1px solid #bfdbfe;border-left:4px solid #3b82f6;border-radius:8px;padding:14px 18px;margin-bottom:16px;font-size:13px;color:#1e40af;line-height:1.6}
+  .info-box a{color:#1d4ed8;font-weight:700;text-decoration:none}
+  .info-box a:hover{text-decoration:underline}
+
+  /* SEO */
+  .seo-content{background:#fff;border-radius:16px;padding:32px;border:1px solid #e5e7eb;margin-bottom:24px}
+  .seo-content h2{font-size:22px;font-weight:800;color:#1a1a2e;margin-bottom:14px;margin-top:28px;display:flex;align-items:center;gap:10px}
+  .seo-content h2:first-child{margin-top:0}
+  .seo-content h3{font-size:16px;font-weight:700;color:#1a1a2e;margin:20px 0 10px}
+  .seo-content p{font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:14px}
+  .seo-content ul{list-style:none;padding-left:0;margin-bottom:16px}
+  .seo-content ul li{position:relative;padding-left:24px;font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:8px}
+  .seo-content ul li::before{content:'';position:absolute;left:6px;top:12px;width:6px;height:6px;background:#8b5cf6;border-radius:50%}
+  .seo-content a{color:#2563eb;text-decoration:none;font-weight:600}
+  .seo-content a:hover{text-decoration:underline}
+  .seo-content strong{color:#1a1a2e;font-weight:700}
+  .seo-content code{background:#f1f5f9;padding:2px 6px;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:13px;color:#0f172a;border:1px solid #e2e8f0}
+
+  .schema-table{width:100%;border-collapse:collapse;margin:20px 0;border:1px solid #e5e7eb;border-radius:8px;overflow:hidden}
+  .schema-table th{background:#faf5ff;padding:12px 16px;text-align:left;font-size:13px;font-weight:700;color:#1a1a2e;border-bottom:1px solid #e5e7eb}
+  .schema-table td{padding:12px 16px;font-size:13px;color:#4b5563;border-bottom:1px solid #f3f4f6}
+  .schema-table tr:last-child td{border-bottom:none}
+
+  .how-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:20px}
+  .how-step{background:#faf5ff;border-radius:12px;padding:20px;border:1px solid #ede9fe}
+  .how-step-num{width:36px;height:36px;border-radius:50%;background:#8b5cf6;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;margin-bottom:12px}
+  .how-step-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+  .how-step-desc{font-size:13px;color:#6b7280;line-height:1.6}
+
+  .faq-item{background:#faf5ff;border:1px solid #ede9fe;border-radius:12px;margin-bottom:10px;overflow:hidden;transition:border-color .2s}
+  .faq-item:hover{border-color:#8b5cf6}
+  .faq-question{width:100%;background:none;border:none;padding:18px 22px;font-size:15px;font-weight:700;color:#1a1a2e;text-align:left;cursor:pointer;font-family:inherit;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .faq-question .chev{font-size:12px;color:#8b5cf6;transition:transform .2s;flex-shrink:0}
+  .faq-item.open .faq-question .chev{transform:rotate(180deg)}
+  .faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 22px}
+  .faq-item.open .faq-answer{max-height:500px;padding-bottom:18px}
+  .faq-answer p{font-size:14px;color:#6b7280;line-height:1.7;margin:0}
+
+  .sidebar{background:#fff;border-radius:16px;padding:24px;border:1px solid #e5e7eb;position:sticky;top:80px;margin-bottom:24px}
+  .sidebar-header{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:800;color:#1a1a2e;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid #f3f4f6}
+  .sidebar-list{display:flex;flex-direction:column;gap:8px}
+  .sidebar-item{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;cursor:pointer;transition:background .2s;text-decoration:none;color:inherit;border:1px solid #f3f4f6}
+  .sidebar-item:hover{background:#faf5ff;border-color:#ede9fe}
+  .sidebar-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;flex-shrink:0}
+  .sidebar-info{flex:1;min-width:0}
+  .sidebar-title{font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:2px}
+  .sidebar-desc{font-size:11px;color:#9ca3af;line-height:1.4}
+
+  .footer{background:#0a0e27;padding:60px 40px 30px;color:#fff;margin-top:40px}
+  .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:40px}
+  .footer-brand{display:flex;align-items:center;gap:8px;font-size:20px;font-weight:800;margin-bottom:12px}
+  .footer-brand span{color:#60a5fa}
+  .footer-tagline{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px}
+  .footer-social{display:flex;gap:12px}
+  .footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:16px;transition:background .2s}
+  .footer-social a:hover{background:rgba(255,255,255,.2)}
+  .footer-heading{font-size:14px;font-weight:700;margin-bottom:20px;color:#fff}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .footer-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;transition:color .2s}
+  .footer-links a:hover{color:#60a5fa}
+  .footer-bottom{max-width:1200px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  .footer-bottom-left{display:flex;gap:20px;font-size:12px;color:rgba(255,255,255,.5)}
+  .footer-bottom-right,.footer-bottom-links a{font-size:12px;color:rgba(255,255,255,.5);text-decoration:none}
+  .footer-bottom-links{display:flex;gap:20px}
+
+  .toast{position:fixed;bottom:24px;right:24px;background:#1a1a2e;color:#fff;padding:14px 20px;border-radius:10px;font-size:13px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:3000;transform:translateY(200%);transition:transform .3s ease;max-width:320px}
+  .toast.visible{transform:translateY(0)}
+  .toast.success{background:#10b981}
+  .toast.error{background:#ef4444}
+
+  @media(max-width:1024px){
+    .main-content{grid-template-columns:1fr;padding:24px 20px}
+    .sidebar{position:static}
+    .how-steps{grid-template-columns:repeat(2,1fr)}
+    .form-row{grid-template-columns:1fr}
+    .form-row.three{grid-template-columns:1fr}
+  }
+  @media(max-width:768px){
+    .header{padding:0 20px}.nav{display:none}
+    .hero{padding:24px 20px 40px}
+    .hero-title{font-size:28px}
+    .hero-icon{width:48px;height:48px;font-size:20px}
+    .hero-title-row{flex-direction:column;align-items:flex-start;gap:12px}
+    .main-content{padding:20px 16px}
+    .workspace{padding:20px}
+    .how-steps{grid-template-columns:1fr}
+    .seo-content{padding:20px}
+    .footer-inner{grid-template-columns:1fr 1fr}
+    .toast{left:16px;right:16px;bottom:16px;max-width:none}
+  }
+  @media(max-width:576px){
+    .header{padding:0 16px}.header-right .search-btn,.header-right .theme-btn{display:none}
+    .hero-title{font-size:24px}
+    .footer-inner{grid-template-columns:1fr}
+    .footer-bottom{flex-direction:column;text-align:center}
+    .actions{flex-direction:column}
+    .btn{width:100%}
+    .btn-primary{flex:none}
+  }
+
+  html[data-theme="dark"] body{background:#0f172a;color:#f1f5f9}
+  html[data-theme="dark"] .header,html[data-theme="dark"] .workspace,html[data-theme="dark"] .seo-content,html[data-theme="dark"] .sidebar{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .logo,html[data-theme="dark"] .hero-title,html[data-theme="dark"] .seo-content h2,html[data-theme="dark"] .seo-content h3,html[data-theme="dark"] .faq-question,html[data-theme="dark"] .sidebar-header,html[data-theme="dark"] .sidebar-title,html[data-theme="dark"] .section-title{color:#f1f5f9}
+  html[data-theme="dark"] .nav a{color:#cbd5e1}
+  html[data-theme="dark"] .section,html[data-theme="dark"] .how-step,html[data-theme="dark"] .faq-item,html[data-theme="dark"] .schema-tabs,html[data-theme="dark"] .array-item{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .form-group input,html[data-theme="dark"] .form-group textarea,html[data-theme="dark"] .form-group select{background:#0f172a;border-color:#334155;color:#f1f5f9}
+  html[data-theme="dark"] .seo-content p,html[data-theme="dark"] .seo-content ul li,html[data-theme="dark"] .faq-answer p{color:#cbd5e1}
+  html[data-theme="dark"] .seo-content code{background:#0f172a;color:#94a3b8;border-color:#334155}
+  html[data-theme="dark"] .schema-tab{color:#cbd5e1}
+  html[data-theme="dark"] .schema-tab.active{background:#8b5cf6;color:#fff}
+  html[data-theme="dark"] .schema-table{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .schema-table th{background:#0f172a;color:#f1f5f9;border-color:#334155}
+  html[data-theme="dark"] .schema-table td{border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .info-box{background:#0f172a;border-color:#334155;color:#cbd5e1}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type": "SoftwareApplication", "name": "Schema Markup Generator", "url": "https://bigtoolz.com/tools/seo-tools/schema-markup/", "applicationCategory": "SEOApplication", "operatingSystem": "Any (Web-based)", "description": "Free Schema Markup Generator. Create JSON-LD structured data for 12+ schema types including Article, Product, FAQ, HowTo, Recipe, and more.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "2456"}},
+    {"@type": "HowTo", "name": "How to Generate Schema Markup", "step": [
+      {"@type": "HowToStep", "name": "Choose Schema Type", "text": "Pick from 12+ types like Article, Product, FAQ, HowTo."},
+      {"@type": "HowToStep", "name": "Fill Details", "text": "Enter required and optional fields."},
+      {"@type": "HowToStep", "name": "Generate", "text": "Click to generate JSON-LD structured data."},
+      {"@type": "HowToStep", "name": "Add to Site", "text": "Copy the JSON-LD and paste into your HTML head."}
+    ]},
+    {"@type": "FAQPage", "mainEntity": [
+      {"@type": "Question", "name": "What is schema markup?", "acceptedAnswer": {"@type": "Answer", "text": "Schema markup (structured data) is code you add to your website to help search engines understand your content better. It enables rich snippets in search results like star ratings, FAQs, recipes, and event details."}},
+      {"@type": "Question", "name": "What's the difference between JSON-LD, Microdata, and RDFa?", "acceptedAnswer": {"@type": "Answer", "text": "JSON-LD is JavaScript-based and placed in a script tag Google's recommended format. Microdata uses HTML attributes inline. RDFa is similar to Microdata. Google strongly prefers JSON-LD."}},
+      {"@type": "Question", "name": "Which schema types does Google support?", "acceptedAnswer": {"@type": "Answer", "text": "Google supports many types for rich results: Article, Product, FAQ, HowTo, Breadcrumb, Event, Recipe, Review, Video, LocalBusiness, Organization, Person, JobPosting, and more. Check Google's Search Gallery for the full list."}},
+      {"@type": "Question", "name": "How do I test my schema markup?", "acceptedAnswer": {"@type": "Answer", "text": "Use Google's Rich Results Test at search.google.com/test/rich-results to validate your schema. You can also use Schema.org Validator at validator.schema.org for a complete syntax check."}},
+      {"@type": "Question", "name": "Does schema markup improve rankings?", "acceptedAnswer": {"@type": "Answer", "text": "Schema doesn't directly boost rankings, but it enables rich snippets that improve click-through rates. Higher CTR can indirectly improve rankings over time. Rich results also increase visibility in search."}}
+    ]},
+    {"@type": "BreadcrumbList", "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bigtoolz.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://bigtoolz.com/tools/"},
+      {"@type": "ListItem", "position": 3, "name": "SEO Tools", "item": "https://bigtoolz.com/tools/seo-tools/"},
+      {"@type": "ListItem", "position": 4, "name": "Schema Markup Generator", "item": "https://bigtoolz.com/tools/seo-tools/schema-markup/"}
+    ]}
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-left">
+    <a href="/" class="logo"><div class="logo-icon">⚒</div>BigToolz</span></a>
+    <nav><ul class="nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/tools/" class="active">All Tools</a></li>
+      <li><a href="/tools/categories">Categories</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul></nav>
+  </div>
+  <div class="header-right">
+   
+    <button class="theme-btn" aria-label="Toggle theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
+   
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <nav class="breadcrumb">
+      <a href="/">Home</a><span class="sep">›</span>
+      <a href="/tools/">Tools</a><span class="sep">›</span>
+      <a href="/tools/seo-tools/">SEO Tools</a><span class="sep">›</span>
+      <span class="current">Schema Markup Generator</span>
+    </nav>
+    <div class="hero-title-row">
+      <div class="hero-icon">🏗</div>
+      <h1 class="hero-title">Schema <span class="blue">Markup</span></h1>
+    </div>
+    <p class="hero-desc">
+      Generate JSON-LD structured data for 12+ schema types. Get Rich Snippets with star ratings, FAQs, recipes, and more. Copy-ready markup instantly.
+    </p>
+    <div class="hero-features">
+      <div class="hero-feature"><span class="check">✓</span> 12+ Schema Types</div>
+      <div class="hero-feature"><span class="check">✓</span> JSON-LD Output</div>
+      <div class="hero-feature"><span class="check">✓</span> Google Validated</div>
+      <div class="hero-feature"><span class="check">✓</span> 100% Free</div>
+    </div>
+  </div>
+</section>
+
+<div class="main-content">
+
+  <div class="tool-content">
+
+    <div class="workspace">
+
+      <div class="info-box">
+        💡 After generating, test your markup at <a href="https://search.google.com/test/rich-results" target="_blank" rel="noopener">Google Rich Results Test</a> to confirm it's valid.
+      </div>
+
+      <!-- Schema Type Tabs -->
+      <div class="schema-tabs">
+        <button class="schema-tab active" data-type="Article">📄 Article</button>
+        <button class="schema-tab" data-type="Product">🛍️ Product</button>
+        <button class="schema-tab" data-type="FAQPage">❓ FAQ</button>
+        <button class="schema-tab" data-type="HowTo">🛠️ HowTo</button>
+        <button class="schema-tab" data-type="Recipe">🍳 Recipe</button>
+        <button class="schema-tab" data-type="Event">🎟️ Event</button>
+        <button class="schema-tab" data-type="LocalBusiness">🏪 Local Business</button>
+        <button class="schema-tab" data-type="Organization">🏢 Organization</button>
+        <button class="schema-tab" data-type="Person">👤 Person</button>
+        <button class="schema-tab" data-type="BreadcrumbList">🍞 Breadcrumb</button>
+        <button class="schema-tab" data-type="VideoObject">🎬 Video</button>
+        <button class="schema-tab" data-type="Review">⭐ Review</button>
+      </div>
+
+      <!-- Schema type label -->
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:10px;">
+        <div class="section-title" style="margin:0;">
+          <span id="currentTypeLabel">Article</span> Schema
+          <span class="badge required">REQUIRED FIELDS</span>
+        </div>
+        <span style="font-size:11px;color:#9ca3af;">* fields are required</span>
+      </div>
+
+      <!-- Dynamic form container -->
+      <div id="schemaForm"></div>
+
+      <!-- Actions -->
+      <div class="actions">
+        <button class="btn btn-primary" id="generateBtn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2v20M2 12h20"/></svg>
+          Generate Schema
+        </button>
+        <button class="btn btn-secondary" id="resetBtn">↺ Reset</button>
+      </div>
+
+      <!-- Output -->
+      <div class="output-wrap" id="outputWrap" style="display:none;">
+        <div class="output-header">
+          <div class="output-title">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
+            Generated JSON-LD
+          </div>
+          <div class="output-actions">
+            <button class="copy-btn secondary" id="downloadBtn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+              .json
+            </button>
+            <button class="copy-btn" id="copyBtn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+              Copy HTML
+            </button>
+          </div>
+        </div>
+        <div class="output-code" id="outputCode"></div>
+      </div>
+
+    </div>
+
+    <!-- SEO Content -->
+    <div class="seo-content">
+
+      <h2>🏗 What is Schema Markup?</h2>
+      <p>
+        <strong>Schema markup</strong> (also called <strong>structured data</strong>) is a standardized vocabulary that you add to your website's HTML to help search engines understand your content more precisely. When Google understands your content, it can display <strong>Rich Snippets</strong> in search results star ratings, FAQs, recipes, event dates, prices, and more.
+      </p>
+      <p>
+        The recommended format is <strong>JSON-LD</strong> (JavaScript Object Notation for Linked Data), placed inside a <code>&lt;script type="application/ld+json"&gt;</code> tag. Google, Bing, and other search engines all support JSON-LD.
+      </p>
+
+      <h2>🚀 How to Use This Generator</h2>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-step-num">1</div>
+          <div class="how-step-title">Pick Schema Type</div>
+          <div class="how-step-desc">Choose from 12+ types based on your content.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">2</div>
+          <div class="how-step-title">Fill Fields</div>
+          <div class="how-step-desc">Enter required + optional details.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">3</div>
+          <div class="how-step-title">Generate</div>
+          <div class="how-step-desc">Click to build valid JSON-LD.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">4</div>
+          <div class="how-step-title">Add to Site</div>
+          <div class="how-step-desc">Paste into your HTML &lt;head&gt;.</div>
+        </div>
+      </div>
+
+      <h2>🎴 Schema Types You Can Generate</h2>
+      <table class="schema-table">
+        <thead>
+          <tr><th>Schema Type</th><th>Rich Result</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Article</strong></td><td>News, blog posts, headlines</td></tr>
+          <tr><td><strong>Product</strong></td><td>Price, reviews, availability</td></tr>
+          <tr><td><strong>FAQPage</strong></td><td>FAQ dropdown in search results</td></tr>
+          <tr><td><strong>HowTo</strong></td><td>Step-by-step instructions</td></tr>
+          <tr><td><strong>Recipe</strong></td><td>Cooking time, ratings, ingredients</td></tr>
+          <tr><td><strong>Event</strong></td><td>Date, location, ticket info</td></tr>
+          <tr><td><strong>LocalBusiness</strong></td><td>Hours, address, phone number</td></tr>
+          <tr><td><strong>Organization</strong></td><td>Logo, social profiles</td></tr>
+          <tr><td><strong>Person</strong></td><td>Author info, bio, social</td></tr>
+          <tr><td><strong>BreadcrumbList</strong></td><td>Breadcrumb navigation path</td></tr>
+          <tr><td><strong>VideoObject</strong></td><td>Video thumbnail, duration, upload date</td></tr>
+          <tr><td><strong>Review</strong></td><td>Star ratings + review text</td></tr>
+        </tbody>
+      </table>
+
+      <h2>💡 Why Add Schema Markup?</h2>
+      <ul>
+        <li><strong>Better visibility</strong> Rich snippets stand out in search results.</li>
+        <li><strong>Higher CTR</strong> Star ratings and FAQs boost click-through rates significantly.</li>
+        <li><strong>Better understanding</strong> Helps Google index your content accurately.</li>
+        <li><strong>Voice search</strong> Structured data helps assistants understand content.</li>
+        <li><strong>Eligibility for rich features</strong> Some features require schema markup to appear at all.</li>
+      </ul>
+
+      <h2>📌 Best Practices</h2>
+      <ul>
+        <li><strong>Only mark up content that's visible on the page</strong> hidden markup can trigger penalties.</li>
+        <li><strong>Use JSON-LD format</strong> Google's recommended format.</li>
+        <li><strong>Validate before publishing</strong> Rich Results Test catches errors.</li>
+        <li><strong>Don't fake ratings</strong> Fake reviews/ratings lead to manual actions.</li>
+        <li><strong>Match schema to page content</strong> Don't mark up an Article as a Product.</li>
+        <li><strong>Update schema when content changes</strong> Old price/dates in markup confuse Google.</li>
+      </ul>
+
+      <h2>❓ Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-question">What is schema markup?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>Schema markup</strong> (structured data) is code you add to your website to help search engines understand your content better. It enables rich snippets in search results like star ratings, FAQs, recipes, and event details.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What's the difference between JSON-LD, Microdata, and RDFa?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>JSON-LD</strong> is JavaScript-based and placed in a <code>&lt;script&gt;</code> tag Google's recommended format. <strong>Microdata</strong> uses HTML attributes inline. <strong>RDFa</strong> is similar to Microdata. Google strongly prefers JSON-LD.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Which schema types does Google support?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Google supports many types for rich results: <strong>Article, Product, FAQ, HowTo, Breadcrumb, Event, Recipe, Review, Video, LocalBusiness, Organization, Person, JobPosting</strong>, and more. Check Google's Search Gallery for the full list.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">How do I test my schema markup?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Use Google's <strong>Rich Results Test</strong> at <a href="https://search.google.com/test/rich-results" target="_blank" rel="noopener">search.google.com/test/rich-results</a> to validate your schema. You can also use <strong>Schema.org Validator</strong> at validator.schema.org for a complete syntax check.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Does schema markup improve rankings?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Schema doesn't <strong>directly</strong> boost rankings, but it enables rich snippets that improve click-through rates. Higher CTR can indirectly improve rankings over time. Rich results also increase visibility in search.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I use multiple schema types on one page?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>Yes!</strong> You can add multiple schema types on the same page using <code>@graph</code> in JSON-LD. For example, a recipe page can have Recipe + Article + BreadcrumbList + Person schemas all together.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Will schema get my site penalized?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Not if used correctly. Schema markup is <strong>not a ranking factor</strong>, so it can't directly hurt you. However, marking up content that isn't visible, or using fake review data, can trigger <strong>manual actions</strong>. Stick to truthful, visible content.</p></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-header">🔗 Related SEO Tools</div>
+    <div class="sidebar-list">
+      <a href="/tools/seo-tools/open-graph/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#3b82f6;">📘</div>
+        <div class="sidebar-info"><div class="sidebar-title">Open Graph</div><div class="sidebar-desc">Facebook OG tags</div></div>
+      </a>
+      <a href="/tools/seo-tools/twitter-card/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#0f172a;">𝕏</div>
+        <div class="sidebar-info"><div class="sidebar-title">Twitter Card</div><div class="sidebar-desc">X/Twitter tags</div></div>
+      </a>
+      <a href="/tools/seo-tools/serp-preview/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#3b82f6;">🔍</div>
+        <div class="sidebar-info"><div class="sidebar-title">SERP Preview</div><div class="sidebar-desc">Google preview</div></div>
+      </a>
+      <a href="/tools/seo-tools/meta-description/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#10b981;">📝</div>
+        <div class="sidebar-info"><div class="sidebar-title">Meta Description</div><div class="sidebar-desc">SEO descriptions</div></div>
+      </a>
+      <a href="/tools/seo-tools/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#64748b;">📈</div>
+        <div class="sidebar-info"><div class="sidebar-title">All SEO Tools →</div><div class="sidebar-desc">Browse 25+ tools</div></div>
+      </a>
+    </div>
+  </aside>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand"><div class="logo-icon">⚒</div>BigToolz</span></div>
+      <p class="footer-tagline">Your Ultimate Online Tools Hub</p>
+      <div class="footer-social">
+        <a href="https://facebook.com/bigtoolz" aria-label="Facebook">f</a>
+        <a href="https://twitter.com/bigtoolz" aria-label="Twitter">𝕏</a>
+        <a href="https://youtube.com/@bigtoolz" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+    <div>
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/tools/">All Tools</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Categories</h3>
+      <ul class="footer-links">
+        <li><a href="/tools/image-tools/">Image Tools</a></li>
+        <li><a href="/tools/pdf-tools/">PDF Tools</a></li>
+        <li><a href="/tools/seo-tools/">SEO Tools</a></li>
+        <li><a href="/tools/developer-tools/">Developer Tools</a></li>
+        <li><a href="/tools/categories">All Categories →</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Legal</h3>
+      <ul class="footer-links">
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left"><span>✓ 100% Free</span><span>✓ No Sign Up</span><span>✓ No Installation</span></div>
+    <div class="footer-bottom-right">© 2026 BigToolz. All rights reserved.</div>
+    <div class="footer-bottom-links"><a href="/privacy-policy">Privacy</a><a href="/terms">Terms</a><a href="/disclaimer">Disclaimer</a></div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+'use strict';
+
+/* ===== THEME ===== */
+(function(){try{var t=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&d))document.documentElement.setAttribute('data-theme','dark');else if(t==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();
+document.querySelector('.theme-btn')?.addEventListener('click',()=>{const h=document.documentElement;const c=h.getAttribute('data-theme');const d=window.matchMedia('(prefers-color-scheme: dark)').matches;let n=c==='dark'?'light':c==='light'?'dark':(d?'light':'dark');h.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}});
+
+/* ===== HELPERS ===== */
+const $ = (s, p = document) => p.querySelector(s);
+const $$ = (s, p = document) => [...p.querySelectorAll(s)];
+
+function showToast(msg, type = 'info', duration = 3000) {
+  const t = $('#toast');
+  if (!t) return;
+  t.className = 'toast visible' + (type !== 'info' ? ' ' + type : '');
+  t.textContent = msg;
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove('visible'), duration);
+}
+
+async function copyToClipboard(text) {
+  try {
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(text);
+      return true;
+    }
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.cssText = 'position:fixed;opacity:0;';
+    document.body.appendChild(ta);
+    ta.select();
+    const ok = document.execCommand('copy');
+    document.body.removeChild(ta);
+    return ok;
+  } catch (e) { return false; }
+}
+
+function escapeHtml(str) {
+  const div = document.createElement('div');
+  div.textContent = str;
+  return div.innerHTML;
+}
+
+/* ===== SCHEMA DEFINITIONS ===== */
+const SCHEMAS = {
+  Article: {
+    label: 'Article',
+    fields: [
+      { name: 'headline', label: 'Headline', type: 'text', required: true, placeholder: 'e.g. How to Compress Images Online' },
+      { name: 'author', label: 'Author Name', type: 'text', required: true, placeholder: 'e.g. John Doe' },
+      { name: 'authorUrl', label: 'Author URL', type: 'url', placeholder: 'https://example.com/author' },
+      { name: 'datePublished', label: 'Date Published', type: 'date', required: true },
+      { name: 'dateModified', label: 'Date Modified', type: 'date' },
+      { name: 'image', label: 'Main Image URL', type: 'url', required: true, placeholder: 'https://example.com/image.jpg' },
+      { name: 'publisher', label: 'Publisher Name', type: 'text', required: true, placeholder: 'e.g. BigToolz' },
+      { name: 'publisherLogo', label: 'Publisher Logo URL', type: 'url', required: true, placeholder: 'https://example.com/logo.png' },
+      { name: 'description', label: 'Description', type: 'textarea', placeholder: 'Article description...' },
+      { name: 'url', label: 'Article URL', type: 'url', placeholder: 'https://example.com/article' }
+    ],
+    build: (data) => {
+      const obj = {
+        '@context': 'https://schema.org',
+        '@type': 'Article',
+        headline: data.headline,
+        image: [data.image],
+        datePublished: data.datePublished,
+        dateModified: data.dateModified || data.datePublished,
+        author: [{
+          '@type': 'Person',
+          name: data.author,
+          ...(data.authorUrl ? { url: data.authorUrl } : {})
+        }],
+        publisher: {
+          '@type': 'Organization',
+          name: data.publisher,
+          logo: {
+            '@type': 'ImageObject',
+            url: data.publisherLogo
+          }
+        },
+        ...(data.description ? { description: data.description } : {}),
+        ...(data.url ? { mainEntityOfPage: { '@type': 'WebPage', '@id': data.url } } : {})
+      };
+      return obj;
+    }
+  },
+
+  Product: {
+    label: 'Product',
+    fields: [
+      { name: 'name', label: 'Product Name', type: 'text', required: true, placeholder: 'e.g. Wireless Headphones' },
+      { name: 'image', label: 'Product Image URL', type: 'url', required: true },
+      { name: 'description', label: 'Description', type: 'textarea', placeholder: 'Product description...' },
+      { name: 'brand', label: 'Brand Name', type: 'text', placeholder: 'e.g. Sony' },
+      { name: 'sku', label: 'SKU', type: 'text', placeholder: 'e.g. WH-1000XM5' },
+      { name: 'price', label: 'Price', type: 'text', required: true, placeholder: 'e.g. 299.99' },
+      { name: 'currency', label: 'Currency', type: 'text', required: true, placeholder: 'e.g. USD', default: 'USD' },
+      { name: 'availability', label: 'Availability', type: 'select', options: ['InStock', 'OutOfStock', 'PreOrder', 'Discontinued'], default: 'InStock' },
+      { name: 'ratingValue', label: 'Rating (1-5)', type: 'text', placeholder: 'e.g. 4.5' },
+      { name: 'reviewCount', label: 'Review Count', type: 'text', placeholder: 'e.g. 128' },
+      { name: 'url', label: 'Product URL', type: 'url', placeholder: 'https://example.com/product' }
+    ],
+    build: (data) => {
+      const obj = {
+        '@context': 'https://schema.org',
+        '@type': 'Product',
+        name: data.name,
+        image: [data.image],
+        ...(data.description ? { description: data.description } : {}),
+        ...(data.brand ? { brand: { '@type': 'Brand', name: data.brand } } : {}),
+        ...(data.sku ? { sku: data.sku } : {}),
+        offers: {
+          '@type': 'Offer',
+          url: data.url || undefined,
+          priceCurrency: data.currency || 'USD',
+          price: data.price,
+          availability: `https://schema.org/${data.availability || 'InStock'}`,
+          itemCondition: 'https://schema.org/NewCondition'
+        }
+      };
+      if (data.ratingValue && data.reviewCount) {
+        obj.aggregateRating = {
+          '@type': 'AggregateRating',
+          ratingValue: data.ratingValue,
+          reviewCount: data.reviewCount
+        };
+      }
+      return obj;
+    }
+  },
+
+  FAQPage: {
+    label: 'FAQ',
+    fields: [
+      { name: 'faqs', label: 'Questions & Answers', type: 'faq-array', required: true, hint: 'Add at least 2 questions' }
+    ],
+    build: (data) => {
+      return {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: data.faqs.map(faq => ({
+          '@type': 'Question',
+          name: faq.question,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: faq.answer
+          }
+        }))
+      };
+    }
+  },
+
+  HowTo: {
+    label: 'HowTo',
+    fields: [
+      { name: 'name', label: 'HowTo Title', type: 'text', required: true, placeholder: 'e.g. How to Compress Images Online' },
+      { name: 'description', label: 'Short Description', type: 'textarea', placeholder: 'Brief summary...' },
+      { name: 'image', label: 'Main Image URL', type: 'url', placeholder: 'https://example.com/image.jpg' },
+      { name: 'totalTime', label: 'Total Time (ISO 8601)', type: 'text', placeholder: 'e.g. PT30M for 30 min' },
+      { name: 'estimatedCost', label: 'Estimated Cost', type: 'text', placeholder: 'e.g. Free' },
+      { name: 'supplies', label: 'Supplies (comma-separated)', type: 'text', placeholder: 'e.g. Image, Computer' },
+      { name: 'tools', label: 'Tools (comma-separated)', type: 'text', placeholder: 'e.g. Browser, Internet' },
+      { name: 'steps', label: 'Steps', type: 'howto-steps', required: true, hint: 'Add at least 2 steps' }
+    ],
+    build: (data) => {
+      const obj = {
+        '@context': 'https://schema.org',
+        '@type': 'HowTo',
+        name: data.name,
+        step: data.steps.map((step, i) => ({
+          '@type': 'HowToStep',
+          position: i + 1,
+          name: step.name,
+          text: step.text,
+          ...(step.url ? { url: step.url } : {}),
+          ...(step.image ? { image: step.image } : {})
+        }))
+      };
+      if (data.description) obj.description = data.description;
+      if (data.image) obj.image = { '@type': 'ImageObject', url: data.image };
+      if (data.totalTime) obj.totalTime = data.totalTime;
+      if (data.estimatedCost) obj.estimatedCost = { '@type': 'MonetaryAmount', currency: 'USD', value: data.estimatedCost };
+      if (data.supplies) obj.supply = data.supplies.split(',').map(s => ({ '@type': 'HowToSupply', name: s.trim() }));
+      if (data.tools) obj.tool = data.tools.split(',').map(s => ({ '@type': 'HowToTool', name: s.trim() }));
+      return obj;
+    }
+  },
+
+  Recipe: {
+    label: 'Recipe',
+    fields: [
+      { name: 'name', label: 'Recipe Name', type: 'text', required: true, placeholder: 'e.g. Chocolate Chip Cookies' },
+      { name: 'image', label: 'Dish Image URL', type: 'url', required: true },
+      { name: 'description', label: 'Description', type: 'textarea' },
+      { name: 'author', label: 'Author Name', type: 'text', required: true },
+      { name: 'datePublished', label: 'Date Published', type: 'date', required: true },
+      { name: 'prepTime', label: 'Prep Time (ISO 8601)', type: 'text', placeholder: 'e.g. PT15M' },
+      { name: 'cookTime', label: 'Cook Time (ISO 8601)', type: 'text', placeholder: 'e.g. PT30M' },
+      { name: 'totalTime', label: 'Total Time (ISO 8601)', type: 'text', placeholder: 'e.g. PT45M' },
+      { name: 'recipeYield', label: 'Yield/Servings', type: 'text', placeholder: 'e.g. 24 cookies' },
+      { name: 'recipeCategory', label: 'Category', type: 'text', placeholder: 'e.g. Dessert' },
+      { name: 'recipeCuisine', label: 'Cuisine', type: 'text', placeholder: 'e.g. American' },
+      { name: 'ingredients', label: 'Ingredients (one per line)', type: 'textarea', required: true, placeholder: '2 cups flour\n1 cup sugar\n...' },
+      { name: 'instructions', label: 'Instructions (one per line)', type: 'textarea', required: true, placeholder: 'Mix ingredients\nBake at 350F\n...' },
+      { name: 'ratingValue', label: 'Rating (1-5)', type: 'text' },
+      { name: 'reviewCount', label: 'Review Count', type: 'text' }
+    ],
+    build: (data) => {
+      const obj = {
+        '@context': 'https://schema.org',
+        '@type': 'Recipe',
+        name: data.name,
+        image: [data.image],
+        author: { '@type': 'Person', name: data.author },
+        datePublished: data.datePublished,
+        recipeIngredient: data.ingredients.split('\n').filter(l => l.trim()),
+        recipeInstructions: data.instructions.split('\n').filter(l => l.trim()).map((inst, i) => ({
+          '@type': 'HowToStep',
+          position: i + 1,
+          text: inst.trim()
+        }))
+      };
+      if (data.description) obj.description = data.description;
+      if (data.prepTime) obj.prepTime = data.prepTime;
+      if (data.cookTime) obj.cookTime = data.cookTime;
+      if (data.totalTime) obj.totalTime = data.totalTime;
+      if (data.recipeYield) obj.recipeYield = data.recipeYield;
+      if (data.recipeCategory) obj.recipeCategory = data.recipeCategory;
+      if (data.recipeCuisine) obj.recipeCuisine = data.recipeCuisine;
+      if (data.ratingValue && data.reviewCount) {
+        obj.aggregateRating = {
+          '@type': 'AggregateRating',
+          ratingValue: data.ratingValue,
+          reviewCount: data.reviewCount
+        };
+      }
+      return obj;
+    }
+  },
+
+  Event: {
+    label: 'Event',
+    fields: [
+      { name: 'name', label: 'Event Name', type: 'text', required: true },
+      { name: 'startDate', label: 'Start Date & Time', type: 'datetime-local', required: true },
+      { name: 'endDate', label: 'End Date & Time', type: 'datetime-local', required: true },
+      { name: 'description', label: 'Description', type: 'textarea' },
+      { name: 'image', label: 'Event Image URL', type: 'url' },
+      { name: 'location', label: 'Venue Name', type: 'text', required: true },
+      { name: 'address', label: 'Address', type: 'text', required: true },
+      { name: 'city', label: 'City', type: 'text', required: true },
+      { name: 'country', label: 'Country Code', type: 'text', required: true, placeholder: 'e.g. US', default: 'US' },
+      { name: 'url', label: 'Event URL', type: 'url' },
+      { name: 'price', label: 'Ticket Price', type: 'text', placeholder: 'e.g. 50' },
+      { name: 'currency', label: 'Currency', type: 'text', default: 'USD' }
+    ],
+    build: (data) => {
+      const obj = {
+        '@context': 'https://schema.org',
+        '@type': 'Event',
+        name: data.name,
+        startDate: data.startDate,
+        endDate: data.endDate,
+        location: {
+          '@type': 'Place',
+          name: data.location,
+          address: {
+            '@type': 'PostalAddress',
+            streetAddress: data.address,
+            addressLocality: data.city,
+            addressCountry: data.country
+          }
+        }
+      };
+      if (data.description) obj.description = data.description;
+      if (data.image) obj.image = [data.image];
+      if (data.url) obj.url = data.url;
+      if (data.price) {
+        obj.offers = {
+          '@type': 'Offer',
+          price: data.price,
+          priceCurrency: data.currency || 'USD',
+          availability: 'https://schema.org/InStock'
+        };
+      }
+      return obj;
+    }
+  },
+
+  LocalBusiness: {
+    label: 'LocalBusiness',
+    fields: [
+      { name: 'name', label: 'Business Name', type: 'text', required: true },
+      { name: 'image', label: 'Business Image URL', type: 'url' },
+      { name: 'phone', label: 'Phone', type: 'text', required: true, placeholder: '+1-555-123-4567' },
+      { name: 'streetAddress', label: 'Street Address', type: 'text', required: true },
+      { name: 'city', label: 'City', type: 'text', required: true },
+      { name: 'state', label: 'State/Region', type: 'text' },
+      { name: 'postalCode', label: 'Postal Code', type: 'text', required: true },
+      { name: 'country', label: 'Country Code', type: 'text', required: true, default: 'US' },
+      { name: 'latitude', label: 'Latitude', type: 'text', placeholder: 'e.g. 40.7128' },
+      { name: 'longitude', label: 'Longitude', type: 'text', placeholder: 'e.g. -74.0060' },
+      { name: 'openingHours', label: 'Opening Hours', type: 'text', placeholder: 'e.g. Mo-Fr 09:00-17:00' },
+      { name: 'priceRange', label: 'Price Range', type: 'text', placeholder: 'e.g. $$' },
+      { name: 'url', label: 'Website URL', type: 'url' }
+    ],
+    build: (data) => {
+      const obj = {
+        '@context': 'https://schema.org',
+        '@type': 'LocalBusiness',
+        name: data.name,
+        telephone: data.phone,
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: data.streetAddress,
+          addressLocality: data.city,
+          addressRegion: data.state || undefined,
+          postalCode: data.postalCode,
+          addressCountry: data.country
+        }
+      };
+      if (data.image) obj.image = data.image;
+      if (data.latitude && data.longitude) {
+        obj.geo = {
+          '@type': 'GeoCoordinates',
+          latitude: data.latitude,
+          longitude: data.longitude
+        };
+      }
+      if (data.openingHours) obj.openingHours = data.openingHours;
+      if (data.priceRange) obj.priceRange = data.priceRange;
+      if (data.url) obj.url = data.url;
+      return obj;
+    }
+  },
+
+  Organization: {
+    label: 'Organization',
+    fields: [
+      { name: 'name', label: 'Organization Name', type: 'text', required: true },
+      { name: 'url', label: 'Website URL', type: 'url', required: true },
+      { name: 'logo', label: 'Logo URL', type: 'url', required: true },
+      { name: 'description', label: 'Description', type: 'textarea' },
+      { name: 'email', label: 'Email', type: 'email' },
+      { name: 'phone', label: 'Phone', type: 'text' },
+      { name: 'sameAs', label: 'Social Profiles (one per line)', type: 'textarea', placeholder: 'https://facebook.com/example\nhttps://twitter.com/example' }
+    ],
+    build: (data) => {
+      const obj = {
+        '@context': 'https://schema.org',
+        '@type': 'Organization',
+        name: data.name,
+        url: data.url,
+        logo: data.logo
+      };
+      if (data.description) obj.description = data.description;
+      if (data.email) obj.email = data.email;
+      if (data.phone) obj.telephone = data.phone;
+      if (data.sameAs) obj.sameAs = data.sameAs.split('\n').map(s => s.trim()).filter(Boolean);
+      return obj;
+    }
+  },
+
+  Person: {
+    label: 'Person',
+    fields: [
+      { name: 'name', label: 'Full Name', type: 'text', required: true },
+      { name: 'jobTitle', label: 'Job Title', type: 'text', placeholder: 'e.g. Software Engineer' },
+      { name: 'url', label: 'Website URL', type: 'url' },
+      { name: 'image', label: 'Photo URL', type: 'url' },
+      { name: 'email', label: 'Email', type: 'email' },
+      { name: 'description', label: 'Bio', type: 'textarea' },
+      { name: 'sameAs', label: 'Social Profiles (one per line)', type: 'textarea' },
+      { name: 'worksFor', label: 'Works For (Company)', type: 'text' },
+      { name: 'alumniOf', label: 'Alumni Of (School)', type: 'text' }
+    ],
+    build: (data) => {
+      const obj = {
+        '@context': 'https://schema.org',
+        '@type': 'Person',
+        name: data.name
+      };
+      if (data.jobTitle) obj.jobTitle = data.jobTitle;
+      if (data.url) obj.url = data.url;
+      if (data.image) obj.image = data.image;
+      if (data.email) obj.email = data.email;
+      if (data.description) obj.description = data.description;
+      if (data.sameAs) obj.sameAs = data.sameAs.split('\n').map(s => s.trim()).filter(Boolean);
+      if (data.worksFor) obj.worksFor = { '@type': 'Organization', name: data.worksFor };
+      if (data.alumniOf) obj.alumniOf = { '@type': 'EducationalOrganization', name: data.alumniOf };
+      return obj;
+    }
+  },
+
+  BreadcrumbList: {
+    label: 'Breadcrumb',
+    fields: [
+      { name: 'items', label: 'Breadcrumb Items', type: 'breadcrumb-array', required: true, hint: 'Home → Category → Page' }
+    ],
+    build: (data) => {
+      return {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: data.items.map((item, i) => ({
+          '@type': 'ListItem',
+          position: i + 1,
+          name: item.name,
+          item: item.url
+        }))
+      };
+    }
+  },
+
+  VideoObject: {
+    label: 'Video',
+    fields: [
+      { name: 'name', label: 'Video Title', type: 'text', required: true },
+      { name: 'description', label: 'Description', type: 'textarea', required: true },
+      { name: 'thumbnailUrl', label: 'Thumbnail URL', type: 'url', required: true },
+      { name: 'uploadDate', label: 'Upload Date', type: 'datetime-local', required: true },
+      { name: 'duration', label: 'Duration (ISO 8601)', type: 'text', placeholder: 'e.g. PT5M30S' },
+      { name: 'contentUrl', label: 'Video File URL', type: 'url' },
+      { name: 'embedUrl', label: 'Embed URL', type: 'url', placeholder: 'https://www.youtube.com/embed/...' }
+    ],
+    build: (data) => {
+      const obj = {
+        '@context': 'https://schema.org',
+        '@type': 'VideoObject',
+        name: data.name,
+        description: data.description,
+        thumbnailUrl: [data.thumbnailUrl],
+        uploadDate: data.uploadDate
+      };
+      if (data.duration) obj.duration = data.duration;
+      if (data.contentUrl) obj.contentUrl = data.contentUrl;
+      if (data.embedUrl) obj.embedUrl = data.embedUrl;
+      return obj;
+    }
+  },
+
+  Review: {
+    label: 'Review',
+    fields: [
+      { name: 'itemName', label: 'Item/Product Name', type: 'text', required: true },
+      { name: 'itemType', label: 'Item Type', type: 'select', options: ['Product', 'Book', 'Movie', 'Restaurant', 'Course', 'SoftwareApplication'], default: 'Product' },
+      { name: 'ratingValue', label: 'Rating (1-5)', type: 'text', required: true, placeholder: 'e.g. 4.5' },
+      { name: 'bestRating', label: 'Best Rating', type: 'text', default: '5' },
+      { name: 'worstRating', label: 'Worst Rating', type: 'text', default: '1' },
+      { name: 'author', label: 'Reviewer Name', type: 'text', required: true },
+      { name: 'reviewBody', label: 'Review Text', type: 'textarea', required: true },
+      { name: 'datePublished', label: 'Review Date', type: 'date', required: true }
+    ],
+    build: (data) => {
+      return {
+        '@context': 'https://schema.org',
+        '@type': 'Review',
+        itemReviewed: {
+          '@type': data.itemType || 'Product',
+          name: data.itemName
+        },
+        reviewRating: {
+          '@type': 'Rating',
+          ratingValue: data.ratingValue,
+          bestRating: data.bestRating || '5',
+          worstRating: data.worstRating || '1'
+        },
+        author: {
+          '@type': 'Person',
+          name: data.author
+        },
+        reviewBody: data.reviewBody,
+        datePublished: data.datePublished
+      };
+    }
+  }
+};
+
+/* ===== STATE ===== */
+const state = {
+  currentType: 'Article',
+  generated: ''
+};
+
+/* ===== RENDER FORM ===== */
+function renderForm(type) {
+  const schema = SCHEMAS[type];
+  if (!schema) return;
+
+  $('#currentTypeLabel').textContent = schema.label;
+
+  const container = $('#schemaForm');
+  container.innerHTML = '';
+
+  const section = document.createElement('div');
+  section.className = 'section';
+  section.innerHTML = '<div class="section-title">Schema Fields <span class="badge required">REQUIRED *</span></div>';
+
+  let currentRow = null;
+  let fieldCount = 0;
+
+  schema.fields.forEach(field => {
+    if (field.type === 'faq-array') {
+      section.appendChild(createFAQArray(field));
+      return;
+    }
+    if (field.type === 'howto-steps') {
+      section.appendChild(createHowToSteps(field));
+      return;
+    }
+    if (field.type === 'breadcrumb-array') {
+      section.appendChild(createBreadcrumbArray(field));
+      return;
+    }
+
+    // Group 2 fields per row (or 1 for textarea)
+    if (field.type === 'textarea' || field.type === 'datetime-local') {
+      // New full row
+      currentRow = document.createElement('div');
+      currentRow.className = 'form-row full';
+      currentRow.appendChild(createField(field));
+      section.appendChild(currentRow);
+      currentRow = null;
+    } else {
+      if (!currentRow || currentRow.children.length >= 2) {
+        currentRow = document.createElement('div');
+        currentRow.className = 'form-row';
+        section.appendChild(currentRow);
+      }
+      currentRow.appendChild(createField(field));
+    }
+  });
+
+  container.appendChild(section);
+}
+
+function createField(field) {
+  const div = document.createElement('div');
+  div.className = 'form-group';
+
+  const label = document.createElement('label');
+  label.innerHTML = `${field.label}${field.required ? ' *' : ''}${field.hint ? ` <span class="hint">${field.hint}</span>` : ''}`;
+  div.appendChild(label);
+
+  if (field.type === 'textarea') {
+    const ta = document.createElement('textarea');
+    ta.name = field.name;
+    ta.placeholder = field.placeholder || '';
+    ta.dataset.field = field.name;
+    if (field.required) ta.required = true;
+    div.appendChild(ta);
+  } else if (field.type === 'select') {
+    const sel = document.createElement('select');
+    sel.name = field.name;
+    sel.dataset.field = field.name;
+    (field.options || []).forEach(opt => {
+      const o = document.createElement('option');
+      o.value = opt;
+      o.textContent = opt;
+      if (field.default === opt) o.selected = true;
+      sel.appendChild(o);
+    });
+    div.appendChild(sel);
+  } else {
+    const input = document.createElement('input');
+    input.type = field.type;
+    input.name = field.name;
+    input.placeholder = field.placeholder || '';
+    input.dataset.field = field.name;
+    if (field.default) input.value = field.default;
+    if (field.required) input.required = true;
+    div.appendChild(input);
+  }
+
+  return div;
+}
+
+function createFAQArray(field) {
+  const wrap = document.createElement('div');
+  wrap.className = 'form-group';
+  wrap.style.marginTop = '14px';
+  wrap.innerHTML = `
+    <label>${field.label} ${field.required ? '*' : ''}${field.hint ? ` <span class="hint">${field.hint}</span>` : ''}</label>
+    <div id="faqItems"></div>
+    <button type="button" class="array-add-btn" id="addFaqBtn">+ Add Question</button>
+  `;
+
+  setTimeout(() => {
+    const items = $('#faqItems');
+    let faqCount = 0;
+
+    function addFAQ() {
+      faqCount++;
+      const div = document.createElement('div');
+      div.className = 'array-item';
+      div.innerHTML = `
+        <button type="button" class="array-item-remove" aria-label="Remove">✕</button>
+        <div class="form-group" style="margin-bottom:8px;">
+          <label>Question ${faqCount}</label>
+          <input type="text" class="faq-q" placeholder="e.g. How do I compress images?">
+        </div>
+        <div class="form-group" style="margin-bottom:0;">
+          <label>Answer</label>
+          <textarea class="faq-a" placeholder="Detailed answer..."></textarea>
+        </div>
+      `;
+      div.querySelector('.array-item-remove').addEventListener('click', () => div.remove());
+      items.appendChild(div);
+    }
+
+    $('#addFaqBtn').addEventListener('click', addFAQ);
+    addFAQ();
+    addFAQ();
+  }, 0);
+
+  return wrap;
+}
+
+function createHowToSteps(field) {
+  const wrap = document.createElement('div');
+  wrap.className = 'form-group';
+  wrap.style.marginTop = '14px';
+  wrap.innerHTML = `
+    <label>${field.label} ${field.required ? '*' : ''}${field.hint ? ` <span class="hint">${field.hint}</span>` : ''}</label>
+    <div id="stepItems"></div>
+    <button type="button" class="array-add-btn" id="addStepBtn">+ Add Step</button>
+  `;
+
+  setTimeout(() => {
+    const items = $('#stepItems');
+    let stepCount = 0;
+
+    function addStep() {
+      stepCount++;
+      const div = document.createElement('div');
+      div.className = 'array-item';
+      div.innerHTML = `
+        <button type="button" class="array-item-remove" aria-label="Remove">✕</button>
+        <div class="form-group" style="margin-bottom:8px;">
+          <label>Step ${stepCount} Title</label>
+          <input type="text" class="step-name" placeholder="e.g. Upload your image">
+        </div>
+        <div class="form-group" style="margin-bottom:0;">
+          <label>Step Description</label>
+          <textarea class="step-text" placeholder="Describe this step..."></textarea>
+        </div>
+      `;
+      div.querySelector('.array-item-remove').addEventListener('click', () => div.remove());
+      items.appendChild(div);
+    }
+
+    $('#addStepBtn').addEventListener('click', addStep);
+    addStep();
+    addStep();
+  }, 0);
+
+  return wrap;
+}
+
+function createBreadcrumbArray(field) {
+  const wrap = document.createElement('div');
+  wrap.className = 'form-group';
+  wrap.style.marginTop = '14px';
+  wrap.innerHTML = `
+    <label>${field.label} ${field.required ? '*' : ''}${field.hint ? ` <span class="hint">${field.hint}</span>` : ''}</label>
+    <div id="crumbItems"></div>
+    <button type="button" class="array-add-btn" id="addCrumbBtn">+ Add Breadcrumb</button>
+  `;
+
+  setTimeout(() => {
+    const items = $('#crumbItems');
+    let crumbCount = 0;
+
+    function addCrumb() {
+      crumbCount++;
+      const div = document.createElement('div');
+      div.className = 'array-item';
+      div.innerHTML = `
+        <button type="button" class="array-item-remove" aria-label="Remove">✕</button>
+        <div class="form-row" style="margin-bottom:0;">
+          <div class="form-group" style="margin-bottom:0;">
+            <label>Name ${crumbCount}</label>
+            <input type="text" class="crumb-name" placeholder="e.g. Home">
+          </div>
+          <div class="form-group" style="margin-bottom:0;">
+            <label>URL</label>
+            <input type="url" class="crumb-url" placeholder="https://example.com/">
+          </div>
+        </div>
+      `;
+      div.querySelector('.array-item-remove').addEventListener('click', () => div.remove());
+      items.appendChild(div);
+    }
+
+    $('#addCrumbBtn').addEventListener('click', addCrumb);
+    addCrumb();
+    addCrumb();
+  }, 0);
+
+  return wrap;
+}
+
+/* ===== COLLECT DATA ===== */
+function collectData() {
+  const type = state.currentType;
+  const schema = SCHEMAS[type];
+  const data = {};
+
+  schema.fields.forEach(field => {
+    if (field.type === 'faq-array') {
+      const faqs = [];
+      $$('#faqItems .array-item').forEach(item => {
+        const q = item.querySelector('.faq-q').value.trim();
+        const a = item.querySelector('.faq-a').value.trim();
+        if (q && a) faqs.push({ question: q, answer: a });
+      });
+      data.faqs = faqs;
+    } else if (field.type === 'howto-steps') {
+      const steps = [];
+      $$('#stepItems .array-item').forEach(item => {
+        const name = item.querySelector('.step-name').value.trim();
+        const text = item.querySelector('.step-text').value.trim();
+        if (name && text) steps.push({ name, text });
+      });
+      data.steps = steps;
+    } else if (field.type === 'breadcrumb-array') {
+      const items = [];
+      $$('#crumbItems .array-item').forEach(item => {
+        const name = item.querySelector('.crumb-name').value.trim();
+        const url = item.querySelector('.crumb-url').value.trim();
+        if (name && url) items.push({ name, url });
+      });
+      data.items = items;
+    } else {
+      const el = document.querySelector(`[data-field="${field.name}"]`);
+      if (el) data[field.name] = el.value.trim();
+    }
+  });
+
+  return data;
+}
+
+/* ===== GENERATE ===== */
+$('#generateBtn').addEventListener('click', () => {
+  const type = state.currentType;
+  const schema = SCHEMAS[type];
+  const data = collectData();
+
+  // Validate required fields
+  const missing = [];
+  schema.fields.forEach(field => {
+    if (field.required) {
+      if (field.type === 'faq-array') {
+        if (!data.faqs || data.faqs.length < 2) missing.push(field.label + ' (min 2)');
+      } else if (field.type === 'howto-steps') {
+        if (!data.steps || data.steps.length < 2) missing.push(field.label + ' (min 2)');
+      } else if (field.type === 'breadcrumb-array') {
+        if (!data.items || data.items.length < 2) missing.push(field.label + ' (min 2)');
+      } else if (!data[field.name]) {
+        missing.push(field.label);
+      }
+    }
+  });
+
+  if (missing.length > 0) {
+    showToast('Missing required: ' + missing.slice(0, 3).join(', '), 'error', 4000);
+    return;
+  }
+
+  const obj = schema.build(data);
+  const json = JSON.stringify(obj, null, 2);
+  const html = `<script type="application/ld+json">\n${json}\n<\/script>`;
+
+  state.generated = html;
+
+  $('#outputCode').innerHTML = highlightJson(json);
+  $('#outputWrap').style.display = 'block';
+  showToast('✅ Schema markup generated!', 'success');
+});
+
+/* ===== RESET ===== */
+$('#resetBtn').addEventListener('click', () => {
+  renderForm(state.currentType);
+  $('#outputWrap').style.display = 'none';
+  showToast('Reset done', 'info');
+});
+
+/* ===== COPY ===== */
+$('#copyBtn').addEventListener('click', async () => {
+  if (!state.generated) return;
+  const ok = await copyToClipboard(state.generated);
+  if (ok) {
+    const btn = $('#copyBtn');
+    btn.classList.add('copied');
+    const orig = btn.innerHTML;
+    btn.innerHTML = '✓ Copied!';
+    setTimeout(() => {
+      btn.classList.remove('copied');
+      btn.innerHTML = orig;
+    }, 2000);
+    showToast('Copied to clipboard!', 'success');
+  } else {
+    showToast('Copy failed', 'error');
+  }
+});
+
+/* ===== DOWNLOAD JSON ===== */
+$('#downloadBtn').addEventListener('click', () => {
+  if (!state.generated) return;
+  // Extract just the JSON part
+  const match = state.generated.match(/<script[^>]*>\n([\s\S]*?)\n<\/script>/);
+  const json = match ? match[1] : state.generated;
+
+  const blob = new Blob([json], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `${state.currentType.toLowerCase()}-schema.json`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+  showToast('JSON downloaded!', 'success');
+});
+
+/* ===== JSON HIGHLIGHT ===== */
+function highlightJson(json) {
+  return escapeHtml(json)
+    .replace(/&quot;([^&]*?)&quot;(\s*:)/g, '<span class="key">&quot;$1&quot;</span>$2')
+    .replace(/:\s*&quot;([^&]*?)&quot;/g, ': <span class="str">&quot;$1&quot;</span>')
+    .replace(/:\s*(\d+\.?\d*)/g, ': <span class="num">$1</span>')
+    .replace(/:\s*(true|false)/g, ': <span class="bool">$1</span>')
+    .replace(/:\s*(null)/g, ': <span class="null">$1</span>');
+}
+
+/* ===== SCHEMA TABS ===== */
+$$('.schema-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    $$('.schema-tab').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    state.currentType = tab.dataset.type;
+    renderForm(state.currentType);
+    $('#outputWrap').style.display = 'none';
+  });
+});
+
+/* ===== FAQ ===== */
+$$('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    $$('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+
+/* ===== INIT ===== */
+renderForm('Article');
+</script>
+
+</body>
+</html>

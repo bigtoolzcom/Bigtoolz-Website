@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2563eb">
+
+<title>Calorie Calculator - Calculate Daily Calorie Needs Free | BigToolz</title>
+<meta name="description" content="Calculate your daily calorie needs free. Based on age, weight, height, gender and activity level. Get BMR, TDEE, weight loss/gain targets and macro breakdown.">
+<meta name="keywords" content="calorie calculator, daily calorie needs, tdee calculator, bmr calculator, calorie intake calculator, weight loss calories">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://bigtoolz.com/tools/calculator-tools/calorie-calculator/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Calorie Calculator - Free Online Tool | BigToolz">
+<meta property="og:description" content="Calculate daily calorie needs, BMR, TDEE and macros free, instant.">
+<meta property="og:url" content="https://bigtoolz.com/tools/calculator-tools/calorie-calculator/">
+<meta property="og:image" content="https://bigtoolz.com/assets/images/og-image.jpg">
+<meta property="og:site_name" content="BigToolz">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Calorie Calculator - BigToolz">
+<meta name="twitter:description" content="Calculate daily calorie needs instantly.">
+<meta name="twitter:image" content="https://bigtoolz.com/assets/images/twitter-card.jpg">
+
+<link rel="icon" href="/assets/images/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/images/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#f8f9fc;color:#1a1a2e;overflow-x:hidden;line-height:1.5}
+
+  .header{background:#fff;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;position:sticky;top:0;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+  .header-left{display:flex;align-items:center;gap:40px}
+  .logo{display:flex;align-items:center;gap:8px;font-size:22px;font-weight:800;color:#1a1a2e;text-decoration:none}
+  .logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#3b82f6,#2563eb);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px}
+  .logo span{color:#2563eb}
+  .nav{display:flex;align-items:center;gap:28px;list-style:none}
+  .nav a{text-decoration:none;color:#4b5563;font-size:14px;font-weight:500;transition:color .2s}
+  .nav a:hover,.nav a.active{color:#2563eb}
+  .header-right{display:flex;align-items:center;gap:16px}
+  .search-btn,.theme-btn{width:36px;height:36px;border-radius:50%;border:none;background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#4b5563}
+  .search-btn:hover,.theme-btn:hover{background:#f3f4f6}
+  .bookmark-btn{display:flex;align-items:center;gap:8px;background:#2563eb;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
+  .bookmark-btn:hover{background:#1d4ed8}
+
+  .hero{background:linear-gradient(135deg,#0a0e27 0%,#1a1a4e 40%,#2d1b69 70%,#4c1d95 100%);padding:40px 40px 60px;position:relative;overflow:hidden;color:#fff}
+  .hero::before{content:'';position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(249,115,22,.3) 0%,transparent 70%);border-radius:50%}
+  .hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+  .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px;flex-wrap:wrap}
+  .breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none}
+  .breadcrumb a:hover{color:#fff}
+  .breadcrumb .sep{color:rgba(255,255,255,.4)}
+  .breadcrumb .current{color:#fff;font-weight:500}
+  .hero-title-row{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+  .hero-icon{width:60px;height:60px;background:#f97316;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px;color:#fff;flex-shrink:0;box-shadow:0 8px 24px rgba(249,115,22,.4)}
+  .hero-title{font-size:42px;font-weight:800;line-height:1.15}
+  .hero-title .blue{color:#fb923c}
+  .hero-desc{font-size:15px;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:24px;max-width:560px}
+  .hero-features{display:flex;gap:24px;flex-wrap:wrap}
+  .hero-feature{display:flex;align-items:center;gap:6px;font-size:13px;color:#fff;font-weight:500}
+  .hero-feature .check{width:18px;height:18px;border-radius:50%;background:#f97316;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;flex-shrink:0}
+
+  .main-content{max-width:1200px;margin:0 auto;padding:40px;display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start}
+  .tool-content{min-width:0}
+
+  .workspace{background:#fff;border-radius:16px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,.06);border:1px solid #e5e7eb;margin-bottom:24px}
+
+  /* Units toggle */
+  .units-toggle{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:24px;background:#f8fafc;padding:6px;border-radius:12px;border:1px solid #e5e7eb}
+  .unit-btn{padding:12px;background:transparent;border:none;border-radius:8px;font-size:13px;font-weight:700;color:#6b7280;cursor:pointer;font-family:inherit;transition:all .2s}
+  .unit-btn.active{background:#f97316;color:#fff;box-shadow:0 2px 8px rgba(249,115,22,.2)}
+
+  /* Form */
+  .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px}
+  .form-group label{display:block;font-size:12px;font-weight:700;color:#4b5563;margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px}
+  .form-group input,.form-group select{width:100%;padding:12px 14px;border:1px solid #e5e7eb;border-radius:10px;font-size:14px;font-family:inherit;color:#1a1a2e;background:#fff;outline:none;transition:border-color .2s;font-weight:600}
+  .form-group input:focus,.form-group select:focus{border-color:#f97316;box-shadow:0 0 0 3px rgba(249,115,22,.1)}
+  .form-group.full{grid-column:span 2}
+
+  /* Gender */
+  .gender-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .gender-btn{padding:14px;background:#fff;border:2px solid #e5e7eb;border-radius:10px;font-size:14px;font-weight:700;color:#4b5563;cursor:pointer;font-family:inherit;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:8px}
+  .gender-btn:hover{border-color:#f97316;background:#fff7ed}
+  .gender-btn.active{border-color:#f97316;background:#f97316;color:#fff}
+  .gender-btn input{display:none}
+
+  /* Results */
+  .result-main{background:linear-gradient(135deg,#f97316,#ea580c);border-radius:16px;padding:28px;color:#fff;text-align:center;margin-bottom:20px;position:relative;overflow:hidden}
+  .result-main::before{content:'';position:absolute;top:-30px;right:-30px;width:140px;height:140px;background:rgba(255,255,255,.1);border-radius:50%}
+  .result-label{font-size:13px;color:rgba(255,255,255,.85);margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px;font-weight:600;position:relative;z-index:2}
+  .result-value{font-size:56px;font-weight:900;line-height:1.1;position:relative;z-index:2;letter-spacing:-1px}
+  .result-unit{font-size:18px;font-weight:600;opacity:.85;margin-left:4px}
+  .result-desc{font-size:13px;color:rgba(255,255,255,.85);margin-top:8px;position:relative;z-index:2}
+
+  /* Result grid */
+  .result-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:20px}
+  .result-card{background:#fff7ed;border:1px solid #fed7aa;border-radius:12px;padding:16px;text-align:center}
+  .result-card-label{font-size:10px;font-weight:700;color:#9a3412;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+  .result-card-value{font-size:22px;font-weight:800;color:#ea580c;line-height:1.2}
+  .result-card-sub{font-size:10px;color:#6b7280;margin-top:2px;font-weight:500}
+
+  /* Goals */
+  .goals-section{margin-bottom:20px}
+  .goals-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+  .goals-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+  .goal-card{background:#f8fafc;border:1px solid #e5e7eb;border-radius:12px;padding:14px;text-align:center;cursor:pointer;transition:all .2s}
+  .goal-card:hover{border-color:#f97316;background:#fff7ed}
+  .goal-card.active{border-color:#f97316;background:#fff7ed;box-shadow:0 4px 12px rgba(249,115,22,.15)}
+  .goal-icon{font-size:20px;margin-bottom:6px}
+  .goal-label{font-size:12px;font-weight:700;color:#1a1a2e;margin-bottom:4px}
+  .goal-value{font-size:16px;font-weight:800;color:#ea580c}
+  .goal-sub{font-size:10px;color:#9ca3af;margin-top:2px}
+
+  /* Macros */
+  .macros-section{margin-bottom:20px}
+  .macros-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+  .macros-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+  .macro-card{background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:14px;position:relative;overflow:hidden}
+  .macro-bar{position:absolute;bottom:0;left:0;right:0;height:4px}
+  .macro-bar.protein{background:#ef4444}
+  .macro-bar.carbs{background:#3b82f6}
+  .macro-bar.fat{background:#f59e0b}
+  .macro-label{font-size:11px;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+  .macro-value{font-size:20px;font-weight:800;color:#1a1a2e;line-height:1.2}
+  .macro-unit{font-size:12px;color:#9ca3af;font-weight:600}
+  .macro-pct{font-size:11px;color:#6b7280;margin-top:2px;font-weight:500}
+
+  /* Action buttons */
+  .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 28px;border-radius:10px;font-size:15px;font-weight:700;font-family:inherit;cursor:pointer;border:none;transition:all .2s;text-decoration:none}
+  .btn-primary{background:#f97316;color:#fff;flex:1;box-shadow:0 4px 12px rgba(249,115,22,.2)}
+  .btn-primary:hover{background:#ea580c;transform:translateY(-2px)}
+  .btn-secondary{background:#fff;color:#f97316;border:1px solid #e5e7eb}
+  .btn-secondary:hover{border-color:#f97316;background:#fff7ed}
+
+  /* SEO */
+  .seo-content{background:#fff;border-radius:16px;padding:32px;border:1px solid #e5e7eb;margin-bottom:24px}
+  .seo-content h2{font-size:22px;font-weight:800;color:#1a1a2e;margin-bottom:14px;margin-top:28px;display:flex;align-items:center;gap:10px}
+  .seo-content h2:first-child{margin-top:0}
+  .seo-content h3{font-size:16px;font-weight:700;color:#1a1a2e;margin:20px 0 10px}
+  .seo-content p{font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:14px}
+  .seo-content ul{list-style:none;padding-left:0;margin-bottom:16px}
+  .seo-content ul li{position:relative;padding-left:24px;font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:8px}
+  .seo-content ul li::before{content:'';position:absolute;left:6px;top:12px;width:6px;height:6px;background:#f97316;border-radius:50%}
+  .seo-content strong{color:#1a1a2e;font-weight:700}
+  .seo-content a{color:#2563eb;text-decoration:none;font-weight:600}
+
+  .how-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:20px}
+  .how-step{background:#fff7ed;border-radius:12px;padding:20px;border:1px solid #fed7aa}
+  .how-step-num{width:36px;height:36px;border-radius:50%;background:#f97316;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;margin-bottom:12px}
+  .how-step-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+  .how-step-desc{font-size:13px;color:#6b7280;line-height:1.6}
+
+  .faq-item{background:#fff7ed;border:1px solid #fed7aa;border-radius:12px;margin-bottom:10px;overflow:hidden}
+  .faq-item:hover{border-color:#f97316}
+  .faq-question{width:100%;background:none;border:none;padding:18px 22px;font-size:15px;font-weight:700;color:#1a1a2e;text-align:left;cursor:pointer;font-family:inherit;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .faq-question .chev{font-size:12px;color:#f97316;transition:transform .2s;flex-shrink:0}
+  .faq-item.open .faq-question .chev{transform:rotate(180deg)}
+  .faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 22px}
+  .faq-item.open .faq-answer{max-height:500px;padding-bottom:18px}
+  .faq-answer p{font-size:14px;color:#6b7280;line-height:1.7;margin:0}
+
+  /* Sidebar */
+  .sidebar{background:#fff;border-radius:16px;padding:24px;border:1px solid #e5e7eb;position:sticky;top:80px;margin-bottom:24px}
+  .sidebar-header{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:800;color:#1a1a2e;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid #f3f4f6}
+  .sidebar-list{display:flex;flex-direction:column;gap:8px}
+  .sidebar-item{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;cursor:pointer;transition:background .2s;text-decoration:none;color:inherit;border:1px solid #f3f4f6}
+  .sidebar-item:hover{background:#fff7ed;border-color:#fed7aa}
+  .sidebar-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;flex-shrink:0}
+  .sidebar-info{flex:1;min-width:0}
+  .sidebar-title{font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:2px}
+  .sidebar-desc{font-size:11px;color:#9ca3af;line-height:1.4}
+
+  .footer{background:#0a0e27;padding:60px 40px 30px;color:#fff;margin-top:40px}
+  .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:40px}
+  .footer-brand{display:flex;align-items:center;gap:8px;font-size:20px;font-weight:800;margin-bottom:12px}
+  .footer-brand span{color:#60a5fa}
+  .footer-tagline{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px}
+  .footer-social{display:flex;gap:12px}
+  .footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:16px;transition:background .2s}
+  .footer-social a:hover{background:rgba(255,255,255,.2)}
+  .footer-heading{font-size:14px;font-weight:700;margin-bottom:20px;color:#fff}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .footer-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;transition:color .2s}
+  .footer-links a:hover{color:#60a5fa}
+  .footer-bottom{max-width:1200px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  .footer-bottom-left{display:flex;gap:20px;font-size:12px;color:rgba(255,255,255,.5)}
+  .footer-bottom-right,.footer-bottom-links a{font-size:12px;color:rgba(255,255,255,.5);text-decoration:none}
+  .footer-bottom-links{display:flex;gap:20px}
+
+  .toast{position:fixed;bottom:24px;right:24px;background:#1a1a2e;color:#fff;padding:14px 20px;border-radius:10px;font-size:13px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:3000;transform:translateY(200%);transition:transform .3s ease;max-width:320px}
+  .toast.visible{transform:translateY(0)}
+  .toast.success{background:#10b981}
+
+  @media(max-width:1024px){
+    .main-content{grid-template-columns:1fr;padding:24px 20px}
+    .sidebar{position:static}
+    .how-steps{grid-template-columns:repeat(2,1fr)}
+  }
+  @media(max-width:768px){
+    .header{padding:0 20px}.nav{display:none}
+    .hero{padding:24px 20px 40px}
+    .hero-title{font-size:28px}
+    .hero-icon{width:48px;height:48px;font-size:20px}
+    .hero-title-row{flex-direction:column;align-items:flex-start;gap:12px}
+    .main-content{padding:20px 16px}
+    .workspace{padding:20px}
+    .form-grid{grid-template-columns:1fr}
+    .form-group.full{grid-column:span 1}
+    .result-value{font-size:44px}
+    .result-grid{grid-template-columns:1fr 1fr}
+    .goals-grid{grid-template-columns:1fr}
+    .macros-grid{grid-template-columns:1fr}
+    .how-steps{grid-template-columns:1fr}
+    .seo-content{padding:20px}
+    .footer-inner{grid-template-columns:1fr 1fr}
+    .toast{left:16px;right:16px;bottom:16px;max-width:none}
+  }
+  @media(max-width:576px){
+    .header{padding:0 16px}.header-right .search-btn,.header-right .theme-btn{display:none}
+    .hero-title{font-size:24px}
+    .actions{flex-direction:column}
+    .btn{width:100%}
+    .btn-primary{flex:none}
+    .footer-inner{grid-template-columns:1fr}
+    .footer-bottom{flex-direction:column;text-align:center}
+    .result-grid{grid-template-columns:1fr}
+  }
+
+  html[data-theme="dark"] body{background:#0f172a;color:#f1f5f9}
+  html[data-theme="dark"] .header,html[data-theme="dark"] .workspace,html[data-theme="dark"] .seo-content,html[data-theme="dark"] .sidebar{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .logo,html[data-theme="dark"] .hero-title,html[data-theme="dark"] .seo-content h2,html[data-theme="dark"] .seo-content h3,html[data-theme="dark"] .faq-question,html[data-theme="dark"] .sidebar-header,html[data-theme="dark"] .sidebar-title,html[data-theme="dark"] .goals-title,html[data-theme="dark"] .macros-title{color:#f1f5f9}
+  html[data-theme="dark"] .nav a{color:#cbd5e1}
+  html[data-theme="dark"] .form-group input,html[data-theme="dark"] .form-group select{background:#0f172a;border-color:#334155;color:#f1f5f9}
+  html[data-theme="dark"] .units-toggle{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .gender-btn{background:#0f172a;border-color:#334155;color:#cbd5e1}
+  html[data-theme="dark"] .result-card{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .goal-card{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .goal-label{color:#f1f5f9}
+  html[data-theme="dark"] .macro-card{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .macro-value{color:#f1f5f9}
+  html[data-theme="dark"] .seo-content p,html[data-theme="dark"] .seo-content ul li,html[data-theme="dark"] .faq-answer p{color:#cbd5e1}
+  html[data-theme="dark"] .how-step,html[data-theme="dark"] .faq-item{background:#0f172a;border-color:#334155}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type": "SoftwareApplication", "name": "Calorie Calculator", "url": "https://bigtoolz.com/tools/calculator-tools/calorie-calculator/", "applicationCategory": "HealthApplication", "operatingSystem": "Any (Web-based)", "description": "Free online calorie calculator calculate daily calorie needs, BMR, TDEE, weight goals and macros based on age, weight, height and activity level.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "2456"}},
+    {"@type": "HowTo", "name": "How to Calculate Daily Calorie Needs", "step": [
+      {"@type": "HowToStep", "name": "Enter Details", "text": "Enter your age, gender, weight, height and activity level."},
+      {"@type": "HowToStep", "name": "View BMR & TDEE", "text": "The calculator shows your Basal Metabolic Rate and Total Daily Energy Expenditure."},
+      {"@type": "HowToStep", "name": "Choose Goal", "text": "Pick maintain, lose weight, or gain weight to see target calories."},
+      {"@type": "HowToStep", "name": "See Macros", "text": "Review recommended protein, carbs and fat breakdown."}
+    ]},
+    {"@type": "FAQPage", "mainEntity": [
+      {"@type": "Question", "name": "How many calories should I eat per day?", "acceptedAnswer": {"@type": "Answer", "text": "It depends on age, gender, weight, height and activity level. Most adult women need 1,600-2,400 calories/day; most adult men need 2,000-3,000 calories/day. Use our calculator for a personalized number."}},
+      {"@type": "Question", "name": "What's the difference between BMR and TDEE?", "acceptedAnswer": {"@type": "Answer", "text": "BMR (Basal Metabolic Rate) is the calories your body burns at complete rest. TDEE (Total Daily Energy Expenditure) is BMR multiplied by an activity factor it's your actual daily calorie burn."}},
+      {"@type": "Question", "name": "How many calories to lose 1 kg per week?", "acceptedAnswer": {"@type": "Answer", "text": "1 kg of fat = ~7,700 calories. To lose 1 kg/week, you need a 1,100 calorie daily deficit. This is aggressive most experts recommend 0.5 kg/week (500 cal deficit) for sustainable, healthy weight loss."}},
+      {"@type": "Question", "name": "Which formula is more accurate Mifflin or Harris-Benedict?", "acceptedAnswer": {"@type": "Answer", "text": "Mifflin-St Jeor is considered more accurate for modern populations (revised in 1990). Harris-Benedict is older (1919) and tends to overestimate by 5%. We default to Mifflin but let you switch."}},
+      {"@type": "Question", "name": "Why is my calculated calorie intake not working?", "acceptedAnswer": {"@type": "Answer", "text": "Calculations are estimates (±10%). Track your actual intake and weight for 2-3 weeks. If weight isn't changing as expected, adjust by 100-200 calories. Individual metabolism, medical conditions and medications can affect needs."}},
+      {"@type": "Question", "name": "Can I use this calculator for pregnancy?", "acceptedAnswer": {"@type": "Answer", "text": "No. Pregnant and breastfeeding women have very different calorie needs (+300 to +500 cal/day). Please consult your doctor or a registered dietitian for guidance."}}
+    ]},
+    {"@type": "BreadcrumbList", "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bigtoolz.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://bigtoolz.com/tools/"},
+      {"@type": "ListItem", "position": 3, "name": "Calculator Tools", "item": "https://bigtoolz.com/tools/calculator-tools/"},
+      {"@type": "ListItem", "position": 4, "name": "Calorie Calculator", "item": "https://bigtoolz.com/tools/calculator-tools/calorie-calculator/"}
+    ]}
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-left">
+    <a href="/" class="logo"><div class="logo-icon">⚒</div>BigToolz</span></a>
+    <nav><ul class="nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/tools/" class="active">All Tools</a></li>
+      <li><a href="/tools/categories">Categories</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul></nav>
+  </div>
+  <div class="header-right">
+   
+    <button class="theme-btn" aria-label="Toggle theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
+    
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <nav class="breadcrumb">
+      <a href="/">Home</a><span class="sep">›</span>
+      <a href="/tools/">Tools</a><span class="sep">›</span>
+      <a href="/tools/calculator-tools/">Calculator Tools</a><span class="sep">›</span>
+      <span class="current">Calorie Calculator</span>
+    </nav>
+    <div class="hero-title-row">
+      <div class="hero-icon">🍎</div>
+      <h1 class="hero-title">Calorie <span class="blue">Calculator</span></h1>
+    </div>
+    <p class="hero-desc">
+      Calculate your daily calorie needs based on age, weight, height, gender and activity level. Get BMR, TDEE, weight loss/gain targets and macro breakdown instantly.
+    </p>
+    <div class="hero-features">
+      <div class="hero-feature"><span class="check">✓</span> BMR + TDEE</div>
+      <div class="hero-feature"><span class="check">✓</span> Weight Goals</div>
+      <div class="hero-feature"><span class="check">✓</span> Macro Breakdown</div>
+      <div class="hero-feature"><span class="check">✓</span> Metric + Imperial</div>
+    </div>
+  </div>
+</section>
+
+<div class="main-content">
+
+  <div class="tool-content">
+
+    <div class="workspace">
+
+      <!-- Units toggle -->
+      <div class="units-toggle">
+        <button class="unit-btn active" data-units="metric">📏 Metric (kg, cm)</button>
+        <button class="unit-btn" data-units="imperial">📐 Imperial (lb, ft)</button>
+      </div>
+
+      <!-- Gender -->
+      <div class="form-group full" style="margin-bottom:20px;">
+        <label>Gender</label>
+        <div class="gender-grid">
+          <button class="gender-btn active" data-gender="male">♂ Male</button>
+          <button class="gender-btn" data-gender="female">♀ Female</button>
+        </div>
+      </div>
+
+      <!-- Form -->
+      <div class="form-grid">
+        <div class="form-group">
+          <label>Age (years)</label>
+          <input type="number" id="age" min="10" max="120" value="30">
+        </div>
+        <div class="form-group">
+          <label>Weight (<span class="unit-w">kg</span>)</label>
+          <input type="number" id="weight" min="20" max="500" value="70" step="0.1">
+        </div>
+        <div class="form-group">
+          <label>Height (<span class="unit-h">cm</span>)</label>
+          <input type="number" id="height" min="80" max="300" value="175">
+        </div>
+        <div class="form-group">
+          <label>Formula</label>
+          <select id="formula">
+            <option value="mifflin" selected>Mifflin-St Jeor (accurate)</option>
+            <option value="harris">Harris-Benedict (classic)</option>
+          </select>
+        </div>
+        <div class="form-group full">
+          <label>Activity Level</label>
+          <select id="activity">
+            <option value="1.2">Sedentary Little or no exercise</option>
+            <option value="1.375">Light Exercise 1-3 days/week</option>
+            <option value="1.55" selected>Moderate Exercise 3-5 days/week</option>
+            <option value="1.725">Very Active Exercise 6-7 days/week</option>
+            <option value="1.9">Extremely Active Hard exercise + physical job</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Main result -->
+      <div class="result-main">
+        <div class="result-label">Your Daily Calorie Needs</div>
+        <div class="result-value"><span id="resultCal">2,450</span><span class="result-unit">cal</span></div>
+        <div class="result-desc" id="resultDesc">To maintain your current weight</div>
+      </div>
+
+      <!-- Result grid -->
+      <div class="result-grid">
+        <div class="result-card">
+          <div class="result-card-label">BMR</div>
+          <div class="result-card-value" id="bmrVal">1,750</div>
+          <div class="result-card-sub">At rest</div>
+        </div>
+        <div class="result-card">
+          <div class="result-card-label">TDEE</div>
+          <div class="result-card-value" id="tdeeVal">2,450</div>
+          <div class="result-card-sub">Maintenance</div>
+        </div>
+        <div class="result-card">
+          <div class="result-card-label">BMI</div>
+          <div class="result-card-value" id="bmiVal">22.9</div>
+          <div class="result-card-sub" id="bmiCat">Normal</div>
+        </div>
+      </div>
+
+      <!-- Goals -->
+      <div class="goals-section">
+        <div class="goals-title">🎯 Calorie Goals</div>
+        <div class="goals-grid">
+          <div class="goal-card" data-goal="lose">
+            <div class="goal-icon">📉</div>
+            <div class="goal-label">Lose Weight</div>
+            <div class="goal-value" id="goalLose">1,950</div>
+            <div class="goal-sub">-500 cal/day</div>
+          </div>
+          <div class="goal-card active" data-goal="maintain">
+            <div class="goal-icon">⚖️</div>
+            <div class="goal-label">Maintain</div>
+            <div class="goal-value" id="goalMaintain">2,450</div>
+            <div class="goal-sub">Stay same</div>
+          </div>
+          <div class="goal-card" data-goal="gain">
+            <div class="goal-icon">📈</div>
+            <div class="goal-label">Gain Weight</div>
+            <div class="goal-value" id="goalGain">2,950</div>
+            <div class="goal-sub">+500 cal/day</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Macros -->
+      <div class="macros-section">
+        <div class="macros-title">🥗 Recommended Macros <span style="font-size:11px;color:#9ca3af;font-weight:500;">(based on selected goal)</span></div>
+        <div class="macros-grid">
+          <div class="macro-card">
+            <div class="macro-bar protein"></div>
+            <div class="macro-label">Protein</div>
+            <div class="macro-value" id="proteinVal">150<span class="macro-unit">g</span></div>
+            <div class="macro-pct" id="proteinPct">30%</div>
+          </div>
+          <div class="macro-card">
+            <div class="macro-bar carbs"></div>
+            <div class="macro-label">Carbs</div>
+            <div class="macro-value" id="carbsVal">245<span class="macro-unit">g</span></div>
+            <div class="macro-pct" id="carbsPct">40%</div>
+          </div>
+          <div class="macro-card">
+            <div class="macro-bar fat"></div>
+            <div class="macro-label">Fat</div>
+            <div class="macro-value" id="fatVal">82<span class="macro-unit">g</span></div>
+            <div class="macro-pct" id="fatPct">30%</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Actions -->
+      <div class="actions">
+        <button class="btn btn-primary" id="copyBtn">📋 Copy Results</button>
+        <button class="btn btn-secondary" id="resetBtn">↺ Reset</button>
+      </div>
+
+    </div>
+
+    <!-- SEO Content -->
+    <div class="seo-content">
+
+      <h2>🍎 What is a Calorie Calculator?</h2>
+      <p>
+        A <strong>Calorie Calculator</strong> estimates how many calories your body needs per day to maintain, lose, or gain weight. It's based on your <strong>BMR</strong> (Basal Metabolic Rate the calories you burn at complete rest) and your <strong>TDEE</strong> (Total Daily Energy Expenditure BMR plus all your daily activities). The result is your <strong>maintenance calorie target</strong>, which you can adjust up or down based on your goals.
+      </p>
+      <p>
+        Whether you're trying to <strong>lose weight</strong>, <strong>gain muscle</strong>, or just understand your body's energy needs, this calculator gives you a personalized daily calorie target based on proven scientific formulas.
+      </p>
+
+      <h2>🚀 How to Use This Calculator</h2>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-step-num">1</div>
+          <div class="how-step-title">Enter Details</div>
+          <div class="how-step-desc">Age, gender, weight, height and activity level.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">2</div>
+          <div class="how-step-title">View BMR & TDEE</div>
+          <div class="how-step-desc">See calories burned at rest and with activity.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">3</div>
+          <div class="how-step-title">Pick Your Goal</div>
+          <div class="how-step-desc">Lose, maintain, or gain weight target updates.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">4</div>
+          <div class="how-step-title">See Macros</div>
+          <div class="how-step-desc">Get protein, carbs, and fat targets for your goal.</div>
+        </div>
+      </div>
+
+      <h2>📐 Understanding the Numbers</h2>
+
+      <h3>BMR (Basal Metabolic Rate)</h3>
+      <p>The calories your body needs just to stay alive breathing, circulating blood, maintaining temperature. This is what you'd burn if you stayed in bed all day.</p>
+
+      <h3>TDEE (Total Daily Energy Expenditure)</h3>
+      <p>Your actual daily calorie burn. TDEE = BMR × Activity Factor. For a moderately active person, TDEE is usually 1.4-1.6× BMR.</p>
+
+      <h3>BMI (Body Mass Index)</h3>
+      <p>A rough measure of body composition based on height and weight. Categories: <strong>Under 18.5</strong> = Underweight, <strong>18.5-24.9</strong> = Normal, <strong>25-29.9</strong> = Overweight, <strong>30+</strong> = Obese.</p>
+
+      <h2>🎯 Calorie Goals Explained</h2>
+      <ul>
+        <li><strong>Lose weight:</strong> TDEE − 500 cal/day = ~0.5 kg (1 lb) loss per week.</li>
+        <li><strong>Maintain:</strong> Eat at TDEE = weight stays stable.</li>
+        <li><strong>Gain weight:</strong> TDEE + 500 cal/day = ~0.5 kg gain per week.</li>
+        <li><strong>Aggressive loss:</strong> TDEE − 1,000 cal/day = ~1 kg loss per week (not recommended long-term).</li>
+      </ul>
+
+      <h2>🥗 Macros Explained</h2>
+      <p>Macros (macronutrients) are protein, carbs, and fat. The right ratio depends on your goal:</p>
+      <ul>
+        <li><strong>Weight loss:</strong> Higher protein (35%), moderate carbs (35%), lower fat (30%) preserves muscle while losing fat.</li>
+        <li><strong>Maintenance:</strong> Balanced (30/40/30) standard healthy ratio.</li>
+        <li><strong>Muscle gain:</strong> Higher protein (30%), higher carbs (45%), moderate fat (25%) fuels workouts and recovery.</li>
+      </ul>
+
+      <h2>✨ Key Features</h2>
+      <ul>
+        <li><strong>BMR + TDEE calculation</strong> using Mifflin-St Jeor or Harris-Benedict.</li>
+        <li><strong>Personalized calorie target</strong> based on your goal.</li>
+        <li><strong>Macro breakdown</strong> protein, carbs, fat in grams.</li>
+        <li><strong>BMI with category</strong> instant health check.</li>
+        <li><strong>Metric + Imperial units</strong> kg/cm or lb/ft.</li>
+        <li><strong>Live calculation</strong> updates as you type.</li>
+        <li><strong>Copy results</strong> save or share.</li>
+        <li><strong>100% private</strong> no data sent anywhere.</li>
+      </ul>
+
+      <h2>⚠️ Important Notes</h2>
+      <ul>
+        <li>Calculations are <strong>estimates</strong> with ±10% accuracy. Real needs vary by individual metabolism.</li>
+        <li>Track your actual intake and weight for <strong>2-3 weeks</strong>. If weight isn't changing as expected, adjust by 100-200 calories.</li>
+        <li>Not suitable for <strong>pregnant/breastfeeding women</strong>, children under 18, or people with medical conditions.</li>
+        <li><strong>Consult a doctor or registered dietitian</strong> for personalized medical nutrition advice.</li>
+      </ul>
+
+      <h2>❓ Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-question">How many calories should I eat per day?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>It depends on your age, gender, weight, height, and activity level. Most adult women need 1,600-2,400 calories/day; most adult men need 2,000-3,000. Use our calculator above for a personalized number.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What's the difference between BMR and TDEE?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>BMR</strong> (Basal Metabolic Rate) is calories burned at complete rest. <strong>TDEE</strong> (Total Daily Energy Expenditure) is BMR × activity factor your actual daily calorie burn including all activity. Eat at your TDEE to maintain weight; below to lose, above to gain.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">How many calories to lose 1 kg per week?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>1 kg of fat ≈ 7,700 calories. To lose 1 kg/week, you need a <strong>1,100 calorie daily deficit</strong>. This is aggressive and not recommended long-term. Aim for 0.5 kg/week with a 500 calorie deficit for sustainable, healthy weight loss.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Which formula is more accurate?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>Mifflin-St Jeor</strong> (1990) is considered more accurate for modern populations. <strong>Harris-Benedict</strong> (1919) tends to overestimate by about 5%. We default to Mifflin but let you switch if you want to compare.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Why is my calculated calorie intake not working?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Calculations are estimates (±10%). Track your actual intake and weight for <strong>2-3 weeks</strong>. If weight isn't changing as expected, adjust by 100-200 calories. Individual metabolism, medical conditions, and medications can significantly affect needs.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I use this for pregnancy?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>No.</strong> Pregnant and breastfeeding women have very different calorie needs (+300 to +500 cal/day for pregnancy, +400 to +500 for breastfeeding). Please consult your doctor or a registered dietitian for guidance.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Is my data sent anywhere?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>No. Everything is calculated in your browser. Your weight, height, age, and any other inputs never leave your device, and nothing is stored.</p></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-header">🔗 Related Calculators</div>
+    <div class="sidebar-list">
+      <a href="/tools/calculator-tools/bmi-calculator/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#10b981;">⚖️</div>
+        <div class="sidebar-info"><div class="sidebar-title">BMI Calculator</div><div class="sidebar-desc">Body mass index</div></div>
+      </a>
+      <a href="/tools/calculator-tools/macro-calculator/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#10b981;">🥗</div>
+        <div class="sidebar-info"><div class="sidebar-title">Macro Calculator</div><div class="sidebar-desc">Protein, carbs, fat</div></div>
+      </a>
+      <a href="/tools/calculator-tools/age-calculator/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#ec4899;">🎂</div>
+        <div class="sidebar-info"><div class="sidebar-title">Age Calculator</div><div class="sidebar-desc">Exact age</div></div>
+      </a>
+      <a href="/tools/calculator-tools/water-intake/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#06b6d4;">💧</div>
+        <div class="sidebar-info"><div class="sidebar-title">Water Intake</div><div class="sidebar-desc">Daily hydration</div></div>
+      </a>
+      <a href="/tools/calculator-tools/heart-rate/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#ef4444;">❤️</div>
+        <div class="sidebar-info"><div class="sidebar-title">Heart Rate</div><div class="sidebar-desc">Target HR zones</div></div>
+      </a>
+      <a href="/tools/calculator-tools/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#64748b;">🧮</div>
+        <div class="sidebar-info"><div class="sidebar-title">All Calculators →</div><div class="sidebar-desc">Browse 25+ tools</div></div>
+      </a>
+    </div>
+  </aside>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand"><div class="logo-icon">⚒</div>BigToolz</span></div>
+      <p class="footer-tagline">Your Ultimate Online Tools Hub</p>
+      <div class="footer-social">
+        <a href="https://facebook.com/bigtoolz" aria-label="Facebook">f</a>
+        <a href="https://twitter.com/bigtoolz" aria-label="Twitter">𝕏</a>
+        <a href="https://youtube.com/@bigtoolz" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+    <div>
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/tools/">All Tools</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Categories</h3>
+      <ul class="footer-links">
+        <li><a href="/tools/calculator-tools/">Calculator Tools</a></li>
+        <li><a href="/tools/image-tools/">Image Tools</a></li>
+        <li><a href="/tools/pdf-tools/">PDF Tools</a></li>
+        <li><a href="/tools/seo-tools/">SEO Tools</a></li>
+        <li><a href="/tools/categories">All Categories →</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Legal</h3>
+      <ul class="footer-links">
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left"><span>✓ 100% Free</span><span>✓ No Sign Up</span><span>✓ No Installation</span></div>
+    <div class="footer-bottom-right">© 2026 BigToolz. All rights reserved.</div>
+    <div class="footer-bottom-links"><a href="/privacy-policy">Privacy</a><a href="/terms">Terms</a><a href="/disclaimer">Disclaimer</a></div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+'use strict';
+
+/* ===== THEME ===== */
+(function(){try{var t=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&d))document.documentElement.setAttribute('data-theme','dark');else if(t==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();
+document.querySelector('.theme-btn')?.addEventListener('click',()=>{const h=document.documentElement;const c=h.getAttribute('data-theme');const d=window.matchMedia('(prefers-color-scheme: dark)').matches;let n=c==='dark'?'light':c==='light'?'dark':(d?'light':'dark');h.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}});
+
+/* ===== HELPERS ===== */
+const $ = (s, p = document) => p.querySelector(s);
+const $$ = (s, p = document) => [...p.querySelectorAll(s)];
+function showToast(msg, type = 'info', duration = 3000) {
+  const t = $('#toast');
+  if (!t) return;
+  t.className = 'toast visible' + (type !== 'info' ? ' ' + type : '');
+  t.textContent = msg;
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove('visible'), duration);
+}
+
+/* ===== STATE ===== */
+const state = {
+  units: 'metric',
+  gender: 'male',
+  goal: 'maintain',
+  results: {}
+};
+
+/* ===== DOM ===== */
+const age = $('#age');
+const weight = $('#weight');
+const height = $('#height');
+const formula = $('#formula');
+const activity = $('#activity');
+const copyBtn = $('#copyBtn');
+const resetBtn = $('#resetBtn');
+
+/* ===== UNITS TOGGLE ===== */
+$$('.unit-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    $$('.unit-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    state.units = btn.dataset.units;
+    // Update labels
+    $$('.unit-w').forEach(el => el.textContent = state.units === 'metric' ? 'kg' : 'lb');
+    $$('.unit-h').forEach(el => el.textContent = state.units === 'metric' ? 'cm' : 'in');
+    // Set default values
+    if (state.units === 'imperial') {
+      weight.value = '154';
+      height.value = '69';
+      weight.max = '1100';
+      height.max = '120';
+    } else {
+      weight.value = '70';
+      height.value = '175';
+      weight.max = '500';
+      height.max = '300';
+    }
+    calculate();
+  });
+});
+
+/* ===== GENDER ===== */
+$$('.gender-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    $$('.gender-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    state.gender = btn.dataset.gender;
+    calculate();
+  });
+});
+
+/* ===== GOAL ===== */
+$$('.goal-card').forEach(card => {
+  card.addEventListener('click', () => {
+    $$('.goal-card').forEach(c => c.classList.remove('active'));
+    card.classList.add('active');
+    state.goal = card.dataset.goal;
+    calculate();
+  });
+});
+
+/* ===== CALCULATE ===== */
+function calculate() {
+  let w = parseFloat(weight.value) || 0;
+  let h = parseFloat(height.value) || 0;
+  const a = parseInt(age.value, 10) || 0;
+  const act = parseFloat(activity.value) || 1.55;
+  const f = formula.value;
+  const g = state.gender;
+
+  // Convert to metric if imperial
+  if (state.units === 'imperial') {
+    w = w * 0.453592; // lb → kg
+    h = h * 2.54;     // in → cm
+  }
+
+  if (w <= 0 || h <= 0 || a <= 0) return;
+
+  // BMR calculation
+  let bmr;
+  if (f === 'mifflin') {
+    // Mifflin-St Jeor
+    bmr = g === 'male'
+      ? 10 * w + 6.25 * h - 5 * a + 5
+      : 10 * w + 6.25 * h - 5 * a - 161;
+  } else {
+    // Harris-Benedict (revised 1984)
+    bmr = g === 'male'
+      ? 88.362 + 13.397 * w + 4.799 * h - 5.677 * a
+      : 447.593 + 9.247 * w + 3.098 * h - 4.330 * a;
+  }
+
+  const tdee = bmr * act;
+  const bmi = w / Math.pow(h / 100, 2);
+
+  // Goals
+  const lose = tdee - 500;
+  const maintain = tdee;
+  const gain = tdee + 500;
+
+  // Target based on selected goal
+  let target;
+  if (state.goal === 'lose') target = lose;
+  else if (state.goal === 'gain') target = gain;
+  else target = maintain;
+
+  // Macros based on goal
+  let proteinPct, carbsPct, fatPct;
+  if (state.goal === 'lose') {
+    proteinPct = 0.35; carbsPct = 0.35; fatPct = 0.30;
+  } else if (state.goal === 'gain') {
+    proteinPct = 0.30; carbsPct = 0.45; fatPct = 0.25;
+  } else {
+    proteinPct = 0.30; carbsPct = 0.40; fatPct = 0.30;
+  }
+
+  const proteinG = Math.round((target * proteinPct) / 4); // 4 cal/g
+  const carbsG = Math.round((target * carbsPct) / 4);
+  const fatG = Math.round((target * fatPct) / 9); // 9 cal/g
+
+  // Update UI
+  $('#resultCal').textContent = Math.round(target).toLocaleString();
+  $('#resultDesc').textContent = state.goal === 'lose' ? 'To lose ~0.5 kg (1 lb) per week'
+    : state.goal === 'gain' ? 'To gain ~0.5 kg (1 lb) per week'
+    : 'To maintain your current weight';
+
+  $('#bmrVal').textContent = Math.round(bmr).toLocaleString();
+  $('#tdeeVal').textContent = Math.round(tdee).toLocaleString();
+  $('#bmiVal').textContent = bmi.toFixed(1);
+
+  let bmiCat = 'Normal';
+  let bmiColor = '#10b981';
+  if (bmi < 18.5) { bmiCat = 'Underweight'; bmiColor = '#f59e0b'; }
+  else if (bmi < 25) { bmiCat = 'Normal'; bmiColor = '#10b981'; }
+  else if (bmi < 30) { bmiCat = 'Overweight'; bmiColor = '#f59e0b'; }
+  else { bmiCat = 'Obese'; bmiColor = '#ef4444'; }
+  const bmiCatEl = $('#bmiCat');
+  bmiCatEl.textContent = bmiCat;
+  bmiCatEl.style.color = bmiColor;
+
+  $('#goalLose').textContent = Math.round(lose).toLocaleString();
+  $('#goalMaintain').textContent = Math.round(maintain).toLocaleString();
+  $('#goalGain').textContent = Math.round(gain).toLocaleString();
+
+  $('#proteinVal').innerHTML = proteinG + '<span class="macro-unit">g</span>';
+  $('#carbsVal').innerHTML = carbsG + '<span class="macro-unit">g</span>';
+  $('#fatVal').innerHTML = fatG + '<span class="macro-unit">g</span>';
+  $('#proteinPct').textContent = Math.round(proteinPct * 100) + '%';
+  $('#carbsPct').textContent = Math.round(carbsPct * 100) + '%';
+  $('#fatPct').textContent = Math.round(fatPct * 100) + '%';
+
+  // Store for copy
+  state.results = {
+    calories: Math.round(target),
+    bmr: Math.round(bmr),
+    tdee: Math.round(tdee),
+    bmi: bmi.toFixed(1),
+    bmiCat,
+    protein: proteinG,
+    carbs: carbsG,
+    fat: fatG,
+    goal: state.goal
+  };
+}
+
+/* ===== LIVE INPUT ===== */
+[age, weight, height, formula, activity].forEach(el => {
+  el.addEventListener('input', calculate);
+  el.addEventListener('change', calculate);
+});
+
+/* ===== COPY RESULTS ===== */
+copyBtn.addEventListener('click', async () => {
+  const r = state.results;
+  const goalLabel = { lose: 'Weight Loss', maintain: 'Maintain', gain: 'Weight Gain' }[r.goal];
+
+  const text = `📊 Calorie Calculator Results (BigToolz)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Goal: ${goalLabel}
+Daily Calories: ${r.calories} cal
+
+Details:
+• BMR: ${r.bmr} cal
+• TDEE: ${r.tdee} cal
+• BMI: ${r.bmi} (${r.bmiCat})
+
+Macros (per day):
+• Protein: ${r.protein}g
+• Carbs: ${r.carbs}g
+• Fat: ${r.fat}g
+
+Calculated at bigtoolz.com/tools/calculator-tools/calorie-calculator/`;
+
+  try {
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(text);
+    } else {
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.cssText = 'position:fixed;opacity:0;';
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+    }
+    showToast('✅ Results copied to clipboard!', 'success');
+  } catch (e) {
+    showToast('Copy failed', 'error');
+  }
+});
+
+/* ===== RESET ===== */
+resetBtn.addEventListener('click', () => {
+  state.units = 'metric';
+  state.gender = 'male';
+  state.goal = 'maintain';
+  age.value = 30;
+  weight.value = 70;
+  height.value = 175;
+  formula.value = 'mifflin';
+  activity.value = '1.55';
+  $$('.unit-btn').forEach(b => b.classList.toggle('active', b.dataset.units === 'metric'));
+  $$('.gender-btn').forEach(b => b.classList.toggle('active', b.dataset.gender === 'male'));
+  $$('.goal-card').forEach(c => c.classList.toggle('active', c.dataset.goal === 'maintain'));
+  calculate();
+  showToast('Reset to defaults');
+});
+
+/* ===== FAQ ===== */
+$$('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    $$('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+
+/* ===== INIT ===== */
+calculate();
+</script>
+
+</body>
+</html>

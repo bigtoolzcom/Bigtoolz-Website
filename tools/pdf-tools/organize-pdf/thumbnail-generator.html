@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2563eb">
+
+<title>PDF Thumbnail Generator - Generate PDF Page Previews Online Free | BigToolz</title>
+<meta name="description" content="Generate thumbnails from PDF pages online free. Custom size, JPG/PNG/WebP output, bulk ZIP download. No upload, works in your browser. Fast, private, accurate.">
+<meta name="keywords" content="pdf thumbnail generator, pdf preview, pdf to image, pdf page thumbnails, pdf preview images, generate pdf thumbnails">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://bigtoolz.com/tools/pdf-tools/organize-pdf/thumbnail-generator/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="PDF Thumbnail Generator - Free Online Tool | BigToolz">
+<meta property="og:description" content="Generate thumbnails from PDF pages custom size, bulk ZIP download.">
+<meta property="og:url" content="https://bigtoolz.com/tools/pdf-tools/organize-pdf/thumbnail-generator/">
+<meta property="og:image" content="https://bigtoolz.com/assets/images/og-image.jpg">
+<meta property="og:site_name" content="BigToolz">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="PDF Thumbnail Generator - BigToolz">
+<meta name="twitter:description" content="Generate PDF page thumbnails instantly free, no upload.">
+<meta name="twitter:image" content="https://bigtoolz.com/assets/images/twitter-card.jpg">
+
+<link rel="icon" href="/assets/images/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/images/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#f8f9fc;color:#1a1a2e;overflow-x:hidden;line-height:1.5}
+
+  .header{background:#fff;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;position:sticky;top:0;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+  .header-left{display:flex;align-items:center;gap:40px}
+  .logo{display:flex;align-items:center;gap:8px;font-size:22px;font-weight:800;color:#1a1a2e;text-decoration:none}
+  .logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#3b82f6,#2563eb);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px}
+  .logo span{color:#2563eb}
+  .nav{display:flex;align-items:center;gap:28px;list-style:none}
+  .nav a{text-decoration:none;color:#4b5563;font-size:14px;font-weight:500;transition:color .2s}
+  .nav a:hover,.nav a.active{color:#2563eb}
+  .header-right{display:flex;align-items:center;gap:16px}
+  .search-btn,.theme-btn{width:36px;height:36px;border-radius:50%;border:none;background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#4b5563}
+  .search-btn:hover,.theme-btn:hover{background:#f3f4f6}
+  .bookmark-btn{display:flex;align-items:center;gap:8px;background:#2563eb;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
+  .bookmark-btn:hover{background:#1d4ed8}
+
+  .hero{background:linear-gradient(135deg,#0a0e27 0%,#1a1a4e 40%,#2d1b69 70%,#4c1d95 100%);padding:40px 40px 60px;position:relative;overflow:hidden;color:#fff}
+  .hero::before{content:'';position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(236,72,153,.25) 0%,transparent 70%);border-radius:50%}
+  .hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+  .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px;flex-wrap:wrap}
+  .breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none}
+  .breadcrumb a:hover{color:#fff}
+  .breadcrumb .sep{color:rgba(255,255,255,.4)}
+  .breadcrumb .current{color:#fff;font-weight:500}
+  .hero-title-row{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+  .hero-icon{width:60px;height:60px;background:#ec4899;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px;color:#fff;flex-shrink:0;box-shadow:0 8px 24px rgba(236,72,153,.4)}
+  .hero-title{font-size:42px;font-weight:800;line-height:1.15}
+  .hero-title .blue{color:#f472b6}
+  .hero-desc{font-size:15px;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:24px;max-width:560px}
+  .hero-features{display:flex;gap:24px;flex-wrap:wrap}
+  .hero-feature{display:flex;align-items:center;gap:6px;font-size:13px;color:#fff;font-weight:500}
+  .hero-feature .check{width:18px;height:18px;border-radius:50%;background:#ec4899;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;flex-shrink:0}
+
+  .main-content{max-width:1200px;margin:0 auto;padding:40px;display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start}
+  .tool-content{min-width:0}
+
+  .workspace{background:#fff;border-radius:16px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,.06);border:1px solid #e5e7eb;margin-bottom:24px}
+
+  .dropzone{border:2px dashed #fbcfe8;border-radius:12px;padding:50px 30px;text-align:center;background:#fdf2f8;margin-bottom:24px;transition:all .2s;cursor:pointer}
+  .dropzone:hover,.dropzone.dragover{border-color:#ec4899;background:#fce7f3}
+  .dropzone-icon{width:60px;height:60px;background:linear-gradient(135deg,#ec4899,#db2777);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;color:#fff;font-size:26px;transition:transform .2s}
+  .dropzone:hover .dropzone-icon{transform:translateY(-4px)}
+  .dropzone-title{font-size:16px;font-weight:700;color:#1a1a2e;margin-bottom:8px}
+  .dropzone-sub{font-size:14px;color:#6b7280;margin-bottom:20px}
+  .dropzone-sub a{color:#ec4899;font-weight:600;text-decoration:none}
+  .choose-btn{display:inline-flex;align-items:center;gap:8px;background:#ec4899;color:#fff;border:none;padding:12px 28px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;transition:background .2s}
+  .choose-btn:hover{background:#db2777}
+  .dropzone-info{font-size:12px;color:#9ca3af;display:flex;align-items:center;justify-content:center;gap:8px;margin-top:16px;flex-wrap:wrap}
+  .dropzone-info .divider{color:#d1d5db}
+  .file-input{display:none}
+
+  .pdf-info{display:none;background:#fdf2f8;border-radius:12px;padding:16px 20px;margin-bottom:20px;border:1px solid #fbcfe8;align-items:center;gap:16px;flex-wrap:wrap}
+  .pdf-info.visible{display:flex}
+  .pdf-info-icon{width:44px;height:44px;background:#ec4899;border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:18px;flex-shrink:0}
+  .pdf-info-details{flex:1;min-width:0}
+  .pdf-info-name{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .pdf-info-meta{font-size:12px;color:#6b7280}
+
+  /* Options */
+  .options{background:#fdf2f8;border-radius:12px;padding:20px;margin-bottom:20px;border:1px solid #fbcfe8}
+  .options-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+
+  .options-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .option-group label{display:block;font-size:12px;font-weight:600;color:#4b5563;margin-bottom:6px}
+  .option-group select,.option-group input[type="number"],.option-group input[type="text"]{width:100%;padding:10px 12px;border:1px solid #e5e7eb;border-radius:8px;font-size:13px;font-family:inherit;color:#1a1a2e;background:#fff;outline:none;transition:border-color .2s}
+  .option-group select:focus,.option-group input:focus{border-color:#ec4899;box-shadow:0 0 0 3px rgba(236,72,153,.1)}
+
+  .quality-group{margin-top:16px}
+  .quality-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+  .quality-header label{font-size:12px;font-weight:600;color:#4b5563}
+  .quality-value{font-size:13px;font-weight:700;color:#db2777}
+  .range-slider{width:100%;-webkit-appearance:none;appearance:none;height:6px;background:#fbcfe8;border-radius:3px;outline:none}
+  .range-slider::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:20px;height:20px;background:#ec4899;border-radius:50%;cursor:pointer;box-shadow:0 2px 6px rgba(236,72,153,.4);transition:transform .15s;border:3px solid #fff}
+  .range-slider::-webkit-slider-thumb:hover{transform:scale(1.15)}
+  .range-slider::-moz-range-thumb{width:20px;height:20px;background:#ec4899;border:3px solid #fff;border-radius:50%;cursor:pointer}
+
+  /* Actions */
+  .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 28px;border-radius:10px;font-size:15px;font-weight:700;font-family:inherit;cursor:pointer;border:none;transition:all .2s;text-decoration:none}
+  .btn-primary{background:#ec4899;color:#fff;flex:1;box-shadow:0 4px 12px rgba(236,72,153,.2)}
+  .btn-primary:hover:not(:disabled){background:#db2777;transform:translateY(-2px);box-shadow:0 6px 20px rgba(236,72,153,.3)}
+  .btn-primary:disabled{opacity:.5;cursor:not-allowed;transform:none}
+  .btn-secondary{background:#fff;color:#ec4899;border:1px solid #e5e7eb}
+  .btn-secondary:hover{border-color:#ec4899;background:#fdf2f8}
+  .btn-success{background:#10b981;color:#fff}
+  .btn-success:hover{background:#059669}
+
+  .progress{display:none;margin-top:20px}
+  .progress.visible{display:block}
+  .progress-bar{width:100%;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden;margin-bottom:8px}
+  .progress-fill{height:100%;background:linear-gradient(90deg,#f472b6,#ec4899);border-radius:4px;width:0%;transition:width .3s ease}
+  .progress-text{font-size:13px;color:#6b7280;text-align:center;font-weight:500}
+
+  /* Results */
+  .results{display:none;margin-top:20px}
+  .results.visible{display:block}
+  .results-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:12px}
+  .results-title{font-size:16px;font-weight:700;color:#1a1a2e;display:flex;align-items:center;gap:8px}
+  .results-title .success-icon{width:24px;height:24px;background:#10b981;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px}
+  .results-count{font-size:12px;color:#6b7280;font-weight:600;background:#fdf2f8;padding:4px 12px;border-radius:10px}
+
+  .thumbs-result-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:12px}
+  .thumb-result-card{background:#fdf2f8;border:1px solid #fbcfe8;border-radius:10px;padding:8px;transition:all .2s;position:relative}
+  .thumb-result-card:hover{border-color:#ec4899;transform:translateY(-2px);box-shadow:0 4px 12px rgba(236,72,153,.15)}
+  .thumb-result-img{width:100%;aspect-ratio:0.707;background:#fff;border-radius:6px;overflow:hidden;margin-bottom:6px;display:flex;align-items:center;justify-content:center;border:1px solid #e5e7eb}
+  .thumb-result-img img{width:100%;height:100%;object-fit:contain}
+  .thumb-result-footer{display:flex;justify-content:space-between;align-items:center;gap:4px}
+  .thumb-result-num{font-size:11px;font-weight:700;color:#1a1a2e}
+  .thumb-result-dl{width:24px;height:24px;border-radius:6px;background:#10b981;color:#fff;border:none;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .2s;flex-shrink:0}
+  .thumb-result-dl:hover{background:#059669;transform:scale(1.1)}
+  .thumb-result-dl svg{width:12px;height:12px}
+
+  /* Result actions */
+  .result-actions-top{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+  .result-action-btn{display:inline-flex;align-items:center;gap:6px;padding:10px 16px;border-radius:8px;font-size:13px;font-weight:700;font-family:inherit;cursor:pointer;border:none;transition:all .2s}
+  .result-action-btn.download-zip{background:#10b981;color:#fff;box-shadow:0 4px 12px rgba(16,185,129,.2)}
+  .result-action-btn.download-zip:hover{background:#059669;transform:translateY(-2px);box-shadow:0 6px 20px rgba(16,185,129,.3)}
+  .result-action-btn.download-zip:disabled{opacity:.5;cursor:not-allowed;transform:none}
+  .result-action-btn.reset{background:#fff;color:#6b7280;border:1px solid #e5e7eb}
+  .result-action-btn.reset:hover{border-color:#ec4899;color:#db2777;background:#fdf2f8}
+
+  .seo-content{background:#fff;border-radius:16px;padding:32px;border:1px solid #e5e7eb;margin-bottom:24px}
+  .seo-content h2{font-size:22px;font-weight:800;color:#1a1a2e;margin-bottom:14px;margin-top:28px;display:flex;align-items:center;gap:10px}
+  .seo-content h2:first-child{margin-top:0}
+  .seo-content h3{font-size:16px;font-weight:700;color:#1a1a2e;margin:20px 0 10px}
+  .seo-content p{font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:14px}
+  .seo-content ul{list-style:none;padding-left:0;margin-bottom:16px}
+  .seo-content ul li{position:relative;padding-left:24px;font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:8px}
+  .seo-content ul li::before{content:'';position:absolute;left:6px;top:12px;width:6px;height:6px;background:#ec4899;border-radius:50%}
+  .seo-content a{color:#2563eb;text-decoration:none;font-weight:600}
+  .seo-content a:hover{text-decoration:underline}
+  .seo-content strong{color:#1a1a2e;font-weight:700}
+  .seo-content code{background:#f1f5f9;padding:2px 6px;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:13px;color:#0f172a;border:1px solid #e2e8f0}
+
+  .size-table{width:100%;border-collapse:collapse;margin:20px 0;border:1px solid #e5e7eb;border-radius:8px;overflow:hidden}
+  .size-table th{background:#fdf2f8;padding:12px 16px;text-align:left;font-size:13px;font-weight:700;color:#1a1a2e;border-bottom:1px solid #e5e7eb}
+  .size-table td{padding:12px 16px;font-size:13px;color:#4b5563;border-bottom:1px solid #f3f4f6}
+  .size-table tr:last-child td{border-bottom:none}
+
+  .how-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:20px}
+  .how-step{background:#fdf2f8;border-radius:12px;padding:20px;border:1px solid #fbcfe8}
+  .how-step-num{width:36px;height:36px;border-radius:50%;background:#ec4899;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;margin-bottom:12px}
+  .how-step-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:6px}
+  .how-step-desc{font-size:13px;color:#6b7280;line-height:1.6}
+
+  .faq-item{background:#fdf2f8;border:1px solid #fbcfe8;border-radius:12px;margin-bottom:10px;overflow:hidden;transition:border-color .2s}
+  .faq-item:hover{border-color:#ec4899}
+  .faq-question{width:100%;background:none;border:none;padding:18px 22px;font-size:15px;font-weight:700;color:#1a1a2e;text-align:left;cursor:pointer;font-family:inherit;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .faq-question .chev{font-size:12px;color:#ec4899;transition:transform .2s;flex-shrink:0}
+  .faq-item.open .faq-question .chev{transform:rotate(180deg)}
+  .faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 22px}
+  .faq-item.open .faq-answer{max-height:500px;padding-bottom:18px}
+  .faq-answer p{font-size:14px;color:#6b7280;line-height:1.7;margin:0}
+
+  .sidebar{background:#fff;border-radius:16px;padding:24px;border:1px solid #e5e7eb;position:sticky;top:80px;margin-bottom:24px}
+  .sidebar-header{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:800;color:#1a1a2e;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid #f3f4f6}
+  .sidebar-list{display:flex;flex-direction:column;gap:8px}
+  .sidebar-item{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;cursor:pointer;transition:background .2s;text-decoration:none;color:inherit;border:1px solid #f3f4f6}
+  .sidebar-item:hover{background:#fdf2f8;border-color:#fbcfe8}
+  .sidebar-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;flex-shrink:0}
+  .sidebar-info{flex:1;min-width:0}
+  .sidebar-title{font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:2px}
+  .sidebar-desc{font-size:11px;color:#9ca3af;line-height:1.4}
+
+  .footer{background:#0a0e27;padding:60px 40px 30px;color:#fff;margin-top:40px}
+  .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:40px}
+  .footer-brand{display:flex;align-items:center;gap:8px;font-size:20px;font-weight:800;margin-bottom:12px}
+  .footer-brand span{color:#60a5fa}
+  .footer-tagline{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px}
+  .footer-social{display:flex;gap:12px}
+  .footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:16px;transition:background .2s}
+  .footer-social a:hover{background:rgba(255,255,255,.2)}
+  .footer-heading{font-size:14px;font-weight:700;margin-bottom:20px;color:#fff}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .footer-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;transition:color .2s}
+  .footer-links a:hover{color:#60a5fa}
+  .footer-bottom{max-width:1200px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  .footer-bottom-left{display:flex;gap:20px;font-size:12px;color:rgba(255,255,255,.5)}
+  .footer-bottom-right,.footer-bottom-links a{font-size:12px;color:rgba(255,255,255,.5);text-decoration:none}
+  .footer-bottom-links{display:flex;gap:20px}
+
+  .toast{position:fixed;bottom:24px;right:24px;background:#1a1a2e;color:#fff;padding:14px 20px;border-radius:10px;font-size:13px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:3000;transform:translateY(200%);transition:transform .3s ease;max-width:320px}
+  .toast.visible{transform:translateY(0)}
+  .toast.success{background:#10b981}
+  .toast.error{background:#ef4444}
+  .toast.info{background:#3b82f6}
+
+  @media(max-width:1024px){
+    .main-content{grid-template-columns:1fr;padding:24px 20px}
+    .sidebar{position:static}
+    .how-steps{grid-template-columns:repeat(2,1fr)}
+    .options-grid{grid-template-columns:1fr 1fr}
+  }
+  @media(max-width:768px){
+    .header{padding:0 20px}.nav{display:none}
+    .hero{padding:24px 20px 40px}
+    .hero-title{font-size:28px}
+    .hero-icon{width:48px;height:48px;font-size:20px}
+    .hero-title-row{flex-direction:column;align-items:flex-start;gap:12px}
+    .main-content{padding:20px 16px}
+    .workspace{padding:20px}
+    .dropzone{padding:32px 16px}
+    .how-steps{grid-template-columns:1fr}
+    .seo-content{padding:20px}
+    .footer-inner{grid-template-columns:1fr 1fr}
+    .options-grid{grid-template-columns:1fr}
+    .thumbs-result-grid{grid-template-columns:repeat(auto-fill,minmax(100px,1fr))}
+    .toast{left:16px;right:16px;bottom:16px;max-width:none}
+  }
+  @media(max-width:576px){
+    .header{padding:0 16px}.header-right .search-btn,.header-right .theme-btn{display:none}
+    .hero-title{font-size:24px}
+    .actions{flex-direction:column}
+    .btn{width:100%}
+    .btn-primary{flex:none}
+    .footer-inner{grid-template-columns:1fr}
+    .footer-bottom{flex-direction:column;text-align:center}
+    .thumbs-result-grid{grid-template-columns:repeat(auto-fill,minmax(90px,1fr))}
+  }
+
+  html[data-theme="dark"] body{background:#0f172a;color:#f1f5f9}
+  html[data-theme="dark"] .header,html[data-theme="dark"] .workspace,html[data-theme="dark"] .seo-content,html[data-theme="dark"] .sidebar{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .logo,html[data-theme="dark"] .hero-title,html[data-theme="dark"] .seo-content h2,html[data-theme="dark"] .seo-content h3,html[data-theme="dark"] .faq-question,html[data-theme="dark"] .results-title,html[data-theme="dark"] .sidebar-header,html[data-theme="dark"] .sidebar-title,html[data-theme="dark"] .options-title,html[data-theme="dark"] .pdf-info-name,html[data-theme="dark"] .thumb-result-num{color:#f1f5f9}
+  html[data-theme="dark"] .nav a{color:#cbd5e1}
+  html[data-theme="dark"] .dropzone{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .how-step,html[data-theme="dark"] .faq-item,html[data-theme="dark"] .pdf-info,html[data-theme="dark"] .options,html[data-theme="dark"] .thumb-result-card{background:#0f172a;border-color:#334155}
+  html[data-theme="dark"] .option-group input,html[data-theme="dark"] .option-group select{background:#0f172a;border-color:#334155;color:#f1f5f9}
+  html[data-theme="dark"] .thumb-result-img{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .seo-content p,html[data-theme="dark"] .seo-content ul li,html[data-theme="dark"] .faq-answer p,html[data-theme="dark"] .pdf-info-meta{color:#cbd5e1}
+  html[data-theme="dark"] .seo-content code{background:#020617;color:#94a3b8;border-color:#334155}
+  html[data-theme="dark"] .size-table{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .size-table th{background:#0f172a;color:#f1f5f9;border-color:#334155}
+  html[data-theme="dark"] .size-table td{border-color:#334155;color:#cbd5e1}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type": "SoftwareApplication", "name": "PDF Thumbnail Generator", "url": "https://bigtoolz.com/tools/pdf-tools/organize-pdf/thumbnail-generator/", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any (Web-based)", "description": "Free online PDF thumbnail generator create image thumbnails from every PDF page. Custom size, JPG/PNG/WebP, bulk ZIP download.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "892"}},
+    {"@type": "HowTo", "name": "How to Generate PDF Thumbnails", "step": [
+      {"@type": "HowToStep", "name": "Upload PDF", "text": "Drag & drop or click to select a PDF file."},
+      {"@type": "HowToStep", "name": "Choose Settings", "text": "Pick thumbnail size, output format and quality."},
+      {"@type": "HowToStep", "name": "Generate", "text": "Click Generate Thumbnails."},
+      {"@type": "HowToStep", "name": "Download", "text": "Download individually or all as ZIP."}
+    ]},
+    {"@type": "FAQPage", "mainEntity": [
+      {"@type": "Question", "name": "How do I generate thumbnails from a PDF?", "acceptedAnswer": {"@type": "Answer", "text": "Upload your PDF, choose the thumbnail size (100px to 500px), output format (JPG/PNG/WebP), then click Generate Thumbnails. Each page becomes a separate image, and you can download them all in a ZIP."}},
+      {"@type": "Question", "name": "What thumbnail sizes are available?", "acceptedAnswer": {"@type": "Answer", "text": "Presets include Small (100px), Medium (200px), Large (300px), XL (500px), and Custom (any width). The height is auto-computed based on the page's aspect ratio."}},
+      {"@type": "Question", "name": "What's the best format for PDF thumbnails?", "acceptedAnswer": {"@type": "Answer", "text": "JPG gives the smallest files (best for web previews). PNG is lossless (best for crisp text). WebP offers the best balance of quality and size for modern websites."}},
+      {"@type": "Question", "name": "Can I generate thumbnails for specific pages only?", "acceptedAnswer": {"@type": "Answer", "text": "Yes! Use the Page Range field to specify pages like 1-5,7,10. Leave it empty to generate thumbnails for all pages."}},
+      {"@type": "Question", "name": "Are my PDFs uploaded to a server?", "acceptedAnswer": {"@type": "Answer", "text": "No. All processing happens in your browser using pdf.js and JSZip. Your PDF never leaves your device."}}
+    ]},
+    {"@type": "BreadcrumbList", "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bigtoolz.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://bigtoolz.com/tools/"},
+      {"@type": "ListItem", "position": 3, "name": "PDF Tools", "item": "https://bigtoolz.com/tools/pdf-tools/"},
+      {"@type": "ListItem", "position": 4, "name": "Organize PDF", "item": "https://bigtoolz.com/tools/pdf-tools/organize-pdf/"},
+      {"@type": "ListItem", "position": 5, "name": "Thumbnail Generator", "item": "https://bigtoolz.com/tools/pdf-tools/organize-pdf/thumbnail-generator/"}
+    ]}
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-left">
+    <a href="/" class="logo"><div class="logo-icon">⚒</div>BigToolz</span></a>
+    <nav><ul class="nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/tools/" class="active">All Tools</a></li>
+      <li><a href="/tools/categories">Categories</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul></nav>
+  </div>
+  <div class="header-right">
+   
+    <button class="theme-btn" aria-label="Toggle theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
+    
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <nav class="breadcrumb">
+      <a href="/">Home</a><span class="sep">›</span>
+      <a href="/tools/">Tools</a><span class="sep">›</span>
+      <a href="/tools/pdf-tools/">PDF Tools</a><span class="sep">›</span>
+      <a href="/tools/pdf-tools/organize-pdf/">Organize PDF</a><span class="sep">›</span>
+      <span class="current">Thumbnail Generator</span>
+    </nav>
+    <div class="hero-title-row">
+      <div class="hero-icon">🖼</div>
+      <h1 class="hero-title">PDF <span class="blue">Thumbnail Generator</span></h1>
+    </div>
+    <p class="hero-desc">
+      Generate image thumbnails from every PDF page instantly. Choose size, format, and quality then download individually or grab all as a ZIP. No upload, 100% private.
+    </p>
+    <div class="hero-features">
+      <div class="hero-feature"><span class="check">✓</span> Custom Sizes</div>
+      <div class="hero-feature"><span class="check">✓</span> JPG/PNG/WebP</div>
+      <div class="hero-feature"><span class="check">✓</span> Bulk ZIP Download</div>
+      <div class="hero-feature"><span class="check">✓</span> No Upload</div>
+    </div>
+  </div>
+</section>
+
+<div class="main-content">
+
+  <div class="tool-content">
+
+    <div class="workspace">
+
+      <div class="dropzone" id="dropzone">
+        <div class="dropzone-icon">⬆</div>
+        <div class="dropzone-title">Drag & drop your PDF here</div>
+        <div class="dropzone-sub">or <a href="#" id="browseLink">click to browse files</a></div>
+        <button class="choose-btn" id="chooseBtn" type="button">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/></svg>
+          Choose PDF File
+        </button>
+        <div class="dropzone-info">
+          <span>PDF files only</span>
+          <span class="divider">|</span>
+          <span>Single file at a time</span>
+        </div>
+        <input type="file" id="fileInput" class="file-input" accept=".pdf,application/pdf">
+      </div>
+
+      <!-- PDF Info Bar -->
+      <div class="pdf-info" id="pdfInfo">
+        <div class="pdf-info-icon">📕</div>
+        <div class="pdf-info-details">
+          <div class="pdf-info-name" id="pdfName">document.pdf</div>
+          <div class="pdf-info-meta" id="pdfMeta">0 pages · 0 KB</div>
+        </div>
+      </div>
+
+      <div class="options">
+        <div class="options-title">⚙️ Thumbnail Settings</div>
+        <div class="options-grid">
+          <div class="option-group">
+            <label>Thumbnail Size</label>
+            <select id="sizeSelect">
+              <option value="100">Small (100px wide)</option>
+              <option value="200" selected>Medium (200px wide)</option>
+              <option value="300">Large (300px wide)</option>
+              <option value="500">Extra Large (500px wide)</option>
+              <option value="custom">Custom Width…</option>
+            </select>
+          </div>
+          <div class="option-group">
+            <label>Custom Width (px)</label>
+            <input type="number" id="customWidth" value="200" min="50" max="2000" step="10">
+          </div>
+          <div class="option-group">
+            <label>Output Format</label>
+            <select id="formatSelect">
+              <option value="image/jpeg" selected>JPG (smaller files)</option>
+              <option value="image/png">PNG (lossless)</option>
+              <option value="image/webp">WebP (best balance)</option>
+            </select>
+          </div>
+          <div class="option-group">
+            <label>Page Range (empty = all)</label>
+            <input type="text" id="pageRange" placeholder="e.g. 1-5,7,10-12">
+          </div>
+          <div class="option-group" style="grid-column: span 2;">
+            <label>Filename Prefix</label>
+            <input type="text" id="filenamePrefix" placeholder="thumb" value="thumb">
+          </div>
+        </div>
+
+        <div class="quality-group" id="qualityGroup">
+          <div class="quality-header">
+            <label>Quality (for JPG/WebP)</label>
+            <span class="quality-value" id="qualityValue">85%</span>
+          </div>
+          <input type="range" id="qualitySlider" class="range-slider" min="50" max="100" value="85" step="1">
+        </div>
+      </div>
+
+      <div class="actions">
+        <button class="btn btn-primary" id="generateBtn" disabled>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 17l6-6-6-6M12 19h8"/></svg>
+          Generate Thumbnails
+        </button>
+        <button class="btn btn-secondary" id="clearBtn">Clear</button>
+      </div>
+
+      <div class="progress" id="progress">
+        <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+        <div class="progress-text" id="progressText">Generating...</div>
+      </div>
+
+      <div class="results" id="results">
+        <div class="results-header">
+          <div class="results-title">
+            <span class="success-icon">✓</span>
+            Thumbnails Ready
+            <span class="results-count" id="resultsCount">0 images</span>
+          </div>
+        </div>
+
+        <div class="result-actions-top">
+          <button class="result-action-btn download-zip" id="downloadAllBtn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+            Download All as ZIP
+          </button>
+          <button class="result-action-btn reset" id="resetBtn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 12a9 9 0 109-9 9.75 9.75 0 00-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+            Start Over
+          </button>
+        </div>
+
+        <div class="thumbs-result-grid" id="thumbsResultGrid"></div>
+      </div>
+
+    </div>
+
+    <div class="seo-content">
+
+      <h2>🖼 What is a PDF Thumbnail Generator?</h2>
+      <p>
+        A <strong>PDF Thumbnail Generator</strong> converts each page of a PDF into a small image a thumbnail. It's used for <strong>document previews on websites</strong>, <strong>e-commerce product galleries</strong>, <strong>Google Drive-style file viewers</strong>, <strong>course material previews</strong>, and any case where you need a visual glimpse of PDF content without loading the whole file.
+      </p>
+      <p>
+        Unlike most online tools, BigToolz processes everything <strong>100% in your browser</strong> using <strong>pdf.js</strong> and <strong>JSZip</strong>. Your PDF <strong>never uploaded to any server</strong> complete privacy, instant results. Thumbnails are generated at the exact resolution you choose.
+      </p>
+
+      <h2>🚀 How to Generate PDF Thumbnails</h2>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-step-num">1</div>
+          <div class="how-step-title">Upload PDF</div>
+          <div class="how-step-desc">Drag & drop or click "Choose PDF File" to select a PDF.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">2</div>
+          <div class="how-step-title">Choose Settings</div>
+          <div class="how-step-desc">Pick size, format, quality, and page range.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">3</div>
+          <div class="how-step-title">Generate</div>
+          <div class="how-step-desc">Click "Generate Thumbnails" to process each page.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">4</div>
+          <div class="how-step-title">Download</div>
+          <div class="how-step-desc">Download each thumbnail or all as ZIP.</div>
+        </div>
+      </div>
+
+      <h2>📏 Thumbnail Size Guide</h2>
+      <table class="size-table">
+        <thead>
+          <tr><th>Size</th><th>Width</th><th>Best For</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Small</strong></td><td>100px</td><td>Sidebar previews, file lists</td></tr>
+          <tr><td><strong>Medium</strong></td><td>200px</td><td>Document grids, course catalogs</td></tr>
+          <tr><td><strong>Large</strong></td><td>300px</td><td>Product galleries, detailed previews</td></tr>
+          <tr><td><strong>Extra Large</strong></td><td>500px</td><td>Hero images, full-screen previews</td></tr>
+          <tr><td><strong>Custom</strong></td><td>50-2000px</td><td>Any specific requirement</td></tr>
+        </tbody>
+      </table>
+
+      <h2>📄 Output Format Comparison</h2>
+      <ul>
+        <li><strong>JPG</strong> smallest files, great for photos. Use for previews where file size matters most.</li>
+        <li><strong>PNG</strong> lossless, sharp text, larger files. Use when thumbnail contains crisp text or logos.</li>
+        <li><strong>WebP</strong> best balance of quality and size (up to 30% smaller than JPG). Supported by all modern browsers.</li>
+      </ul>
+
+      <h2>💡 Common Use Cases</h2>
+      <ul>
+        <li><strong>E-commerce product previews</strong> show catalog/instruction PDFs.</li>
+        <li><strong>Document management systems</strong> visual browsing of stored files.</li>
+        <li><strong>Course platforms</strong> preview lecture notes and worksheets.</li>
+        <li><strong>Report dashboards</strong> show cover page thumbnails.</li>
+        <li><strong>Web portfolios</strong> display publications and case studies.</li>
+        <li><strong>Social media previews</strong> turn PDFs into shareable images.</li>
+        <li><strong>Legal/real estate listings</strong> show page previews in listings.</li>
+        <li><strong>Archive systems</strong> index files by visual preview.</li>
+      </ul>
+
+      <h2>✨ Key Features</h2>
+      <ul>
+        <li><strong>100% browser-based</strong> no uploads, complete privacy.</li>
+        <li><strong>5 size presets + custom</strong> 100px to 2000px wide.</li>
+        <li><strong>3 output formats</strong> JPG, PNG, WebP.</li>
+        <li><strong>Quality control</strong> 50-100% for JPG/WebP.</li>
+        <li><strong>Page range</strong> thumbnails for specific pages only.</li>
+        <li><strong>Custom filenames</strong> prefix-based naming.</li>
+        <li><strong>Bulk ZIP download</strong> all thumbnails in one archive.</li>
+        <li><strong>Individual download</strong> every thumbnail separately.</li>
+        <li><strong>Live preview grid</strong> see all thumbnails before downloading.</li>
+        <li><strong>Aspect ratio preserved</strong> height auto-computed.</li>
+      </ul>
+
+      <h2>❓ Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-question">How do I generate thumbnails from a PDF?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Upload your PDF, choose the thumbnail size (100px to 500px or custom), output format (JPG/PNG/WebP), then click "Generate Thumbnails". Each page becomes a separate image download individually or grab all as a ZIP. Free, no signup.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What thumbnail sizes are available?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Presets include <strong>Small</strong> (100px), <strong>Medium</strong> (200px), <strong>Large</strong> (300px), <strong>Extra Large</strong> (500px), and <strong>Custom</strong> (any width from 50-2000px). The height is auto-computed based on the page's aspect ratio so nothing gets distorted.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What's the best format for PDF thumbnails?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p><strong>JPG</strong> gives the smallest files (best for web previews). <strong>PNG</strong> is lossless (best for crisp text). <strong>WebP</strong> offers the best balance of quality and size for modern websites up to 30% smaller than JPG with equal quality.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I generate thumbnails for specific pages only?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Yes! Use the <strong>Page Range</strong> field. Enter something like <code>1-5,7,10-12</code> to generate thumbnails only for those pages. Leave it empty to generate for all pages.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">How do I download all thumbnails at once?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Click the green <strong>"Download All as ZIP"</strong> button at the top of the results. All thumbnails are bundled into a single ZIP file named after your PDF. Perfect for transferring a whole set at once.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I use these thumbnails for my website?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>Yes! The thumbnails you generate are yours to use however you want websites, apps, marketing materials, etc. The tool doesn't add watermarks or alter original content.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Are my PDFs uploaded to a server?<span class="chev">▼</span></button>
+        <div class="faq-answer"><p>No. All processing happens in your browser using pdf.js and JSZip. Your PDF never leaves your device, and nothing is stored anywhere not even temporarily.</p></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-header">🔗 Related PDF Tools</div>
+    <div class="sidebar-list">
+      <a href="/tools/pdf-tools/convert-pdf/pdf-to-jpg/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#ef4444;">🖼</div>
+        <div class="sidebar-info"><div class="sidebar-title">PDF to JPG</div><div class="sidebar-desc">Full-page images</div></div>
+      </a>
+      <a href="/tools/pdf-tools/convert-pdf/pdf-to-png/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#10b981;">🖼</div>
+        <div class="sidebar-info"><div class="sidebar-title">PDF to PNG</div><div class="sidebar-desc">Lossless images</div></div>
+      </a>
+      <a href="/tools/pdf-tools/organize-pdf/page-counter/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#3b82f6;">🔢</div>
+        <div class="sidebar-info"><div class="sidebar-title">Page Counter</div><div class="sidebar-desc">Count PDF pages</div></div>
+      </a>
+      <a href="/tools/pdf-tools/organize-pdf/pdf-reader/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#10b981;">📖</div>
+        <div class="sidebar-info"><div class="sidebar-title">PDF Reader</div><div class="sidebar-desc">Read PDF online</div></div>
+      </a>
+      <a href="/tools/pdf-tools/organize-pdf/crop-pdf/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#f97316;">✂️</div>
+        <div class="sidebar-info"><div class="sidebar-title">Crop PDF</div><div class="sidebar-desc">Trim margins</div></div>
+      </a>
+      <a href="/tools/pdf-tools/" class="sidebar-item">
+        <div class="sidebar-icon" style="background:#64748b;">📕</div>
+        <div class="sidebar-info"><div class="sidebar-title">All PDF Tools →</div><div class="sidebar-desc">Browse 100+ tools</div></div>
+      </a>
+    </div>
+  </aside>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand"><div class="logo-icon">⚒</div>BigToolz</span></div>
+      <p class="footer-tagline">Your Ultimate Online Tools Hub</p>
+      <div class="footer-social">
+        <a href="https://facebook.com/bigtoolz" aria-label="Facebook">f</a>
+        <a href="https://twitter.com/bigtoolz" aria-label="Twitter">𝕏</a>
+        <a href="https://youtube.com/@bigtoolz" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+    <div>
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/tools/">All Tools</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Categories</h3>
+      <ul class="footer-links">
+        <li><a href="/tools/image-tools/">Image Tools</a></li>
+        <li><a href="/tools/pdf-tools/">PDF Tools</a></li>
+        <li><a href="/tools/text-tools/">Text Tools</a></li>
+        <li><a href="/tools/seo-tools/">SEO Tools</a></li>
+        <li><a href="/tools/categories">All Categories →</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-heading">Legal</h3>
+      <ul class="footer-links">
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left"><span>✓ 100% Free</span><span>✓ No Sign Up</span><span>✓ No Installation</span></div>
+    <div class="footer-bottom-right">© 2026 BigToolz. All rights reserved.</div>
+    <div class="footer-bottom-links"><a href="/privacy-policy">Privacy</a><a href="/terms">Terms</a><a href="/disclaimer">Disclaimer</a></div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<!-- Libraries -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+
+<script>
+'use strict';
+
+/* ===== THEME ===== */
+(function(){try{var t=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&d))document.documentElement.setAttribute('data-theme','dark');else if(t==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();
+document.querySelector('.theme-btn')?.addEventListener('click',()=>{const h=document.documentElement;const c=h.getAttribute('data-theme');const d=window.matchMedia('(prefers-color-scheme: dark)').matches;let n=c==='dark'?'light':c==='light'?'dark':(d?'light':'dark');h.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}});
+
+/* ===== HELPERS ===== */
+const $ = (s, p = document) => p.querySelector(s);
+const $$ = (s, p = document) => [...p.querySelectorAll(s)];
+
+function formatBytes(b) {
+  if (b === 0) return '0 B';
+  const k = 1024, sizes = ['B', 'KB', 'MB', 'GB'];
+  const i = Math.floor(Math.log(b) / Math.log(k));
+  return (b / Math.pow(k, i)).toFixed(i === 0 ? 0 : 1) + ' ' + sizes[i];
+}
+
+function showToast(msg, type = 'info', duration = 3000) {
+  const t = $('#toast');
+  if (!t) return;
+  t.className = 'toast visible' + (type !== 'info' ? ' ' + type : '');
+  t.textContent = msg;
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove('visible'), duration);
+}
+
+/* ===== PDF.js Setup ===== */
+if (window.pdfjsLib) {
+  pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+}
+
+/* ===== STATE ===== */
+const state = {
+  pdfFile: null,
+  pdfDoc: null,
+  pdfName: '',
+  pdfPages: 0,
+  pdfSize: 0,
+  pdfArrayBuffer: null,
+  results: [], // [{ pageNum, blob, url, name, size, width, height }]
+  isProcessing: false
+};
+
+/* ===== DOM ===== */
+const dropzone = $('#dropzone');
+const fileInput = $('#fileInput');
+const chooseBtn = $('#chooseBtn');
+const browseLink = $('#browseLink');
+const generateBtn = $('#generateBtn');
+const clearBtn = $('#clearBtn');
+const progress = $('#progress');
+const progressFill = $('#progressFill');
+const progressText = $('#progressText');
+const results = $('#results');
+const resultsCount = $('#resultsCount');
+const thumbsResultGrid = $('#thumbsResultGrid');
+const pdfInfo = $('#pdfInfo');
+const pdfName = $('#pdfName');
+const pdfMeta = $('#pdfMeta');
+const sizeSelect = $('#sizeSelect');
+const customWidth = $('#customWidth');
+const formatSelect = $('#formatSelect');
+const pageRange = $('#pageRange');
+const filenamePrefix = $('#filenamePrefix');
+const qualitySlider = $('#qualitySlider');
+const qualityValue = $('#qualityValue');
+const qualityGroup = $('#qualityGroup');
+const downloadAllBtn = $('#downloadAllBtn');
+const resetBtn = $('#resetBtn');
+
+/* ===== SIZE / FORMAT / QUALITY HANDLERS ===== */
+sizeSelect.addEventListener('change', () => {
+  if (sizeSelect.value === 'custom') {
+    customWidth.focus();
+  }
+});
+
+formatSelect.addEventListener('change', () => {
+  if (formatSelect.value === 'image/png') {
+    qualityGroup.style.display = 'none';
+  } else {
+    qualityGroup.style.display = 'block';
+  }
+});
+
+qualitySlider.addEventListener('input', (e) => {
+  qualityValue.textContent = e.target.value + '%';
+});
+
+/* ===== FILE SELECTION ===== */
+function triggerFileSelect() { fileInput.click(); }
+chooseBtn.addEventListener('click', (e) => { e.stopPropagation(); triggerFileSelect(); });
+browseLink.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); triggerFileSelect(); });
+dropzone.addEventListener('click', triggerFileSelect);
+
+fileInput.addEventListener('change', (e) => {
+  const f = e.target.files[0];
+  if (f && (f.type === 'application/pdf' || f.name.toLowerCase().endsWith('.pdf'))) loadPDF(f);
+  fileInput.value = '';
+});
+
+['dragenter', 'dragover'].forEach(evt => {
+  dropzone.addEventListener(evt, (e) => { e.preventDefault(); e.stopPropagation(); dropzone.classList.add('dragover'); });
+});
+['dragleave', 'drop'].forEach(evt => {
+  dropzone.addEventListener(evt, (e) => { e.preventDefault(); e.stopPropagation(); dropzone.classList.remove('dragover'); });
+});
+dropzone.addEventListener('drop', (e) => {
+  const f = e.dataTransfer.files[0];
+  if (f && (f.type === 'application/pdf' || f.name.toLowerCase().endsWith('.pdf'))) loadPDF(f);
+  else showToast('Please drop a PDF file', 'error');
+});
+
+/* ===== LOAD PDF ===== */
+async function loadPDF(file) {
+  if (!window.pdfjsLib || !window.JSZip) {
+    showToast('Required libraries not loaded. Check your internet.', 'error');
+    return;
+  }
+
+  state.pdfFile = file;
+  state.pdfName = file.name;
+  state.pdfSize = file.size;
+
+  showToast('Loading PDF...', 'info', 2000);
+
+  try {
+    const arrayBuffer = await file.arrayBuffer();
+    state.pdfArrayBuffer = arrayBuffer.slice(0);
+
+    const loadingTask = pdfjsLib.getDocument({ data: arrayBuffer.slice(0) });
+    const pdf = await loadingTask.promise;
+
+    state.pdfDoc = pdf;
+    state.pdfPages = pdf.numPages;
+
+    pdfName.textContent = file.name;
+    pdfMeta.textContent = `${pdf.numPages} page${pdf.numPages > 1 ? 's' : ''} · ${formatBytes(file.size)}`;
+    pdfInfo.classList.add('visible');
+    dropzone.style.display = 'none';
+    results.classList.remove('visible');
+    generateBtn.disabled = false;
+
+    // Set default prefix from filename
+    if (!filenamePrefix.value || filenamePrefix.value === 'thumb') {
+      const base = file.name.replace(/\.[^.]+$/, '').substring(0, 20);
+      filenamePrefix.value = base || 'thumb';
+    }
+
+    showToast(`✅ PDF loaded: ${pdf.numPages} pages`, 'success');
+  } catch (err) {
+    console.error('PDF load failed:', err);
+    showToast('Failed to load PDF file may be corrupted or password-protected', 'error', 5000);
+    state.pdfDoc = null;
+    generateBtn.disabled = true;
+  }
+}
+
+/* ===== PARSE PAGE RANGE ===== */
+function parsePageRange(rangeStr, totalPages) {
+  const str = (rangeStr || '').trim();
+  if (!str) return Array.from({ length: totalPages }, (_, i) => i + 1);
+  const pages = new Set();
+  for (const part of str.split(',')) {
+    const trimmed = part.trim();
+    if (!trimmed) continue;
+    if (trimmed.includes('-')) {
+      const [s, e] = trimmed.split('-');
+      const start = parseInt(s, 10);
+      const end = parseInt(e, 10);
+      if (isNaN(start) || isNaN(end)) continue;
+      const lo = Math.max(1, Math.min(start, end));
+      const hi = Math.min(totalPages, Math.max(start, end));
+      for (let i = lo; i <= hi; i++) pages.add(i);
+    } else {
+      const num = parseInt(trimmed, 10);
+      if (!isNaN(num) && num >= 1 && num <= totalPages) pages.add(num);
+    }
+  }
+  return [...pages].sort((a, b) => a - b);
+}
+
+/* ===== GENERATE THUMBNAILS ===== */
+generateBtn.addEventListener('click', generateAll);
+
+async function generateAll() {
+  if (state.isProcessing || !state.pdfDoc) return;
+
+  const pages = parsePageRange(pageRange.value, state.pdfPages);
+  if (!pages.length) {
+    showToast('No valid pages selected', 'error');
+    return;
+  }
+
+  // Determine target width
+  let targetWidth;
+  if (sizeSelect.value === 'custom') {
+    targetWidth = parseInt(customWidth.value, 10) || 200;
+    targetWidth = Math.max(50, Math.min(2000, targetWidth));
+  } else {
+    targetWidth = parseInt(sizeSelect.value, 10);
+  }
+
+  const format = formatSelect.value;
+  const quality = parseInt(qualitySlider.value, 10) / 100;
+  const prefix = (filenamePrefix.value || 'thumb').trim().replace(/[^a-z0-9_-]/gi, '') || 'thumb';
+
+  state.isProcessing = true;
+  generateBtn.disabled = true;
+  generateBtn.innerHTML = 'Generating...';
+  results.classList.remove('visible');
+  thumbsResultGrid.innerHTML = '';
+
+  // Clean old URLs
+  state.results.forEach(r => URL.revokeObjectURL(r.url));
+  state.results = [];
+
+  progress.classList.add('visible');
+  progressFill.style.width = '0%';
+
+  const total = pages.length;
+  let completed = 0;
+  let failed = 0;
+
+  for (const pageNum of pages) {
+    try {
+      const page = await state.pdfDoc.getPage(pageNum);
+      const baseViewport = page.getViewport({ scale: 1 });
+
+      // Calculate scale so width = targetWidth
+      const scale = targetWidth / baseViewport.width;
+      const viewport = page.getViewport({ scale });
+
+      const canvas = document.createElement('canvas');
+      canvas.width = Math.round(viewport.width);
+      canvas.height = Math.round(viewport.height);
+      const ctx = canvas.getContext('2d');
+
+      // White background for transparent pages
+      ctx.fillStyle = '#ffffff';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      await page.render({ canvasContext: ctx, viewport }).promise;
+
+      // Convert to blob
+      const blob = await new Promise((resolve) => {
+        canvas.toBlob(
+          (b) => resolve(b),
+          format,
+          format === 'image/png' ? undefined : quality
+        );
+      });
+
+      if (!blob) { failed++; continue; }
+
+      const ext = format === 'image/jpeg' ? 'jpg' : format === 'image/png' ? 'png' : 'webp';
+      const pad = String(pageNum).padStart(3, '0');
+      const filename = `${prefix}-${pad}.${ext}`;
+
+      state.results.push({
+        pageNum,
+        blob,
+        url: URL.createObjectURL(blob),
+        name: filename,
+        size: blob.size,
+        width: canvas.width,
+        height: canvas.height,
+        dataUrl: canvas.toDataURL('image/jpeg', 0.6) // preview
+      });
+    } catch (err) {
+      console.error('Page ' + pageNum + ' failed:', err);
+      failed++;
+    }
+
+    completed++;
+    progressFill.style.width = Math.round((completed / total) * 100) + '%';
+    progressText.textContent = `Generating ${completed} of ${total}...`;
+  }
+
+  progress.classList.remove('visible');
+  renderResults();
+
+  state.isProcessing = false;
+  generateBtn.disabled = false;
+  generateBtn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 17l6-6-6-6M12 19h8"/></svg> Generate Thumbnails';
+
+  if (state.results.length) {
+    results.classList.add('visible');
+    resultsCount.textContent = `${state.results.length} image${state.results.length > 1 ? 's' : ''}`;
+    showToast(`✅ ${state.results.length} thumbnails generated!`, 'success');
+    if (failed > 0) showToast(`⚠️ ${failed} page(s) failed`, 'error', 4000);
+  } else {
+    showToast('Failed to generate thumbnails', 'error');
+  }
+}
+
+/* ===== RENDER RESULTS ===== */
+function renderResults() {
+  thumbsResultGrid.innerHTML = '';
+
+  state.results.forEach((r) => {
+    const card = document.createElement('div');
+    card.className = 'thumb-result-card';
+    card.innerHTML = `
+      <div class="thumb-result-img">
+        <img src="${r.dataUrl}" alt="Page ${r.pageNum}" loading="lazy">
+      </div>
+      <div class="thumb-result-footer">
+        <span class="thumb-result-num">Page ${r.pageNum}</span>
+        <button class="thumb-result-dl" data-download="${r.pageNum}" title="Download ${r.name}" aria-label="Download ${r.name}">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+        </button>
+      </div>
+    `;
+    thumbsResultGrid.appendChild(card);
+  });
+
+  // Attach download handlers
+  $$('[data-download]').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const pageNum = parseInt(btn.dataset.download, 10);
+      const result = state.results.find(r => r.pageNum === pageNum);
+      if (result) downloadSingle(result);
+    });
+  });
+}
+
+function downloadSingle(result) {
+  const a = document.createElement('a');
+  a.href = result.url;
+  a.download = result.name;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  showToast(`Downloaded ${result.name}`, 'success', 1500);
+}
+
+/* ===== DOWNLOAD ALL AS ZIP ===== */
+downloadAllBtn.addEventListener('click', async () => {
+  if (!state.results.length) return;
+
+  if (typeof JSZip === 'undefined') {
+    showToast('ZIP library not loaded downloading individually', 'info');
+    state.results.forEach((r, i) => setTimeout(() => downloadSingle(r), i * 200));
+    return;
+  }
+
+  downloadAllBtn.disabled = true;
+  downloadAllBtn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg> Building ZIP...';
+
+  try {
+    const zip = new JSZip();
+    const folder = zip.folder('thumbnails');
+
+    state.results.forEach(r => {
+      folder.file(r.name, r.blob);
+    });
+
+    const content = await zip.generateAsync({
+      type: 'blob',
+      compression: 'DEFLATE',
+      compressionOptions: { level: 6 }
+    });
+
+    const baseName = state.pdfName.replace(/\.[^.]+$/, '');
+    const zipName = `${baseName}-thumbnails.zip`;
+
+    const url = URL.createObjectURL(content);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = zipName;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    setTimeout(() => URL.revokeObjectURL(url), 1500);
+
+    showToast(`✅ Downloaded ${state.results.length} thumbnails as ZIP`, 'success');
+  } catch (err) {
+    console.error('ZIP creation failed:', err);
+    showToast('Failed to create ZIP downloading individually', 'error');
+    state.results.forEach((r, i) => setTimeout(() => downloadSingle(r), i * 200));
+  } finally {
+    downloadAllBtn.disabled = false;
+    downloadAllBtn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg> Download All as ZIP';
+  }
+});
+
+/* ===== RESET ===== */
+resetBtn.addEventListener('click', () => {
+  // Clean URLs
+  state.results.forEach(r => URL.revokeObjectURL(r.url));
+  state.results = [];
+  results.classList.remove('visible');
+  thumbsResultGrid.innerHTML = '';
+});
+
+/* ===== CLEAR (full reset) ===== */
+clearBtn.addEventListener('click', resetAll);
+
+function resetAll() {
+  if (state.pdfDoc) {
+    try { state.pdfDoc.destroy(); } catch (e) {}
+  }
+  state.results.forEach(r => URL.revokeObjectURL(r.url));
+  state.results = [];
+
+  state.pdfDoc = null;
+  state.pdfFile = null;
+  state.pdfArrayBuffer = null;
+  state.pdfPages = 0;
+
+  pdfInfo.classList.remove('visible');
+  results.classList.remove('visible');
+  progress.classList.remove('visible');
+  thumbsResultGrid.innerHTML = '';
+  dropzone.style.display = '';
+  generateBtn.disabled = true;
+  pageRange.value = '';
+
+  showToast('Cleared');
+}
+
+/* ===== FAQ ===== */
+$$('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    $$('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+</script>
+
+</body>
+</html>
