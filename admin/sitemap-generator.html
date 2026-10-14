@@ -8,22 +8,27 @@
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
   body{font-family:system-ui,-apple-system,sans-serif;background:#f8f9fc;color:#1a1a2e;padding:24px;line-height:1.6}
-  .container{max-width:900px;margin:0 auto}
+  .container{max-width:1000px;margin:0 auto}
   h1{font-size:26px;font-weight:800;margin-bottom:8px}
   .sub{color:#6b7280;font-size:14px;margin-bottom:24px}
   .card{background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:24px;margin-bottom:20px}
-  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:12px;margin-bottom:20px}
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:12px;margin-bottom:20px}
   .stat{background:#eff6ff;border:1px solid #bfdbfe;border-radius:10px;padding:14px;text-align:center}
   .stat-num{font-size:22px;font-weight:800;color:#2563eb}
   .stat-label{font-size:11px;color:#6b7280;font-weight:600;text-transform:uppercase;letter-spacing:.4px;margin-top:2px}
   .info{background:#fef3c7;border:1px solid #fde68a;border-radius:10px;padding:12px 16px;font-size:13px;color:#92400e;margin-bottom:16px}
+  .success-info{background:#d1fae5;border:1px solid #6ee7b7;border-radius:10px;padding:12px 16px;font-size:13px;color:#065f46;margin-bottom:16px;display:none}
+  .success-info.visible{display:block}
   button{background:#2563eb;color:#fff;border:none;padding:12px 22px;border-radius:8px;font-weight:700;font-size:14px;cursor:pointer;margin-right:8px;margin-bottom:12px;font-family:inherit;transition:background .2s}
   button:hover{background:#1d4ed8}
   button:disabled{opacity:.5;cursor:not-allowed}
   button.success{background:#10b981}
   button.success:hover{background:#059669}
   textarea{width:100%;height:400px;padding:16px;border:1px solid #e5e7eb;border-radius:8px;font-family:'Courier New',monospace;font-size:11px;background:#0a0e27;color:#e2e8f0;resize:vertical;outline:none;line-height:1.5}
-  .log{background:#0f172a;color:#86efac;font-family:monospace;font-size:12px;padding:14px;border-radius:8px;max-height:200px;overflow-y:auto;margin-top:12px;white-space:pre-wrap}
+  .log{background:#0f172a;color:#86efac;font-family:monospace;font-size:12px;padding:14px;border-radius:8px;max-height:280px;overflow-y:auto;margin-top:12px;white-space:pre-wrap;line-height:1.6}
+  .progress-bar{width:100%;height:6px;background:#e5e7eb;border-radius:3px;overflow:hidden;margin-bottom:16px;display:none}
+  .progress-bar.visible{display:block}
+  .progress-fill{height:100%;background:linear-gradient(90deg,#3b82f6,#2563eb);width:0%;transition:width .3s ease;border-radius:3px}
 </style>
 </head>
 <body>
@@ -31,10 +36,14 @@
 <div class="container">
 
   <h1>🗺️ Sitemap Generator</h1>
-  <p class="sub">Click "Generate" — poora sitemap.xml download ho jayega. Koi Node.js nahi, koi terminal nahi.</p>
+  <p class="sub">Ye tool <strong>300+ tools + blog posts + web stories + categories</strong> sab kuch ek hi baar mein sitemap.xml mein add kar dega. Koi Node.js nahi, koi terminal nahi.</p>
 
   <div class="info">
-    ⚠️ <strong>Note:</strong> Ye browser-based tool hai. Generate karne ke baad <code>sitemap.xml</code> download karo aur GitHub repo mein upload kar do.
+    ⚠️ <strong>Steps:</strong> (1) Generate click karo → (2) Download click karo → (3) <code>sitemap.xml</code> GitHub repo ke <strong>root folder</strong> mein upload karo → (4) Google Search Console mein submit karo.
+  </div>
+
+  <div class="success-info" id="successInfo">
+    ✅ <strong>Sitemap ready!</strong> Ab "Download sitemap.xml" click karke GitHub mein upload karo.
   </div>
 
   <div class="card">
@@ -42,6 +51,10 @@
       <div class="stat">
         <div class="stat-num" id="statStatic">0</div>
         <div class="stat-label">Static Pages</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num" id="statCategories">0</div>
+        <div class="stat-label">Categories</div>
       </div>
       <div class="stat">
         <div class="stat-num" id="statTools">0</div>
@@ -61,9 +74,13 @@
       </div>
     </div>
 
+    <div class="progress-bar" id="progressBar">
+      <div class="progress-fill" id="progressFill"></div>
+    </div>
+
     <button id="genBtn" onclick="generate()">🚀 Generate Sitemap</button>
     <button id="dlBtn" onclick="download()" disabled>⬇ Download sitemap.xml</button>
-    <button onclick="copyXml()" id="copyBtn" disabled>📋 Copy XML</button>
+    <button id="copyBtn" onclick="copyXml()" disabled>📋 Copy XML</button>
 
     <div class="log" id="log">Ready to generate...</div>
   </div>
@@ -83,10 +100,17 @@ const SUPABASE_URL = 'https://btmeygsirnyuzsubscde.supabase.co';
 const SUPABASE_KEY = 'sb_publishable_rncmFbKPlBLxkeIEXaFxfQ_rIbjebnJ';
 
 const logEl = document.getElementById('log');
+const progressBar = document.getElementById('progressBar');
+const progressFill = document.getElementById('progressFill');
 
 function log(msg) {
   logEl.textContent += '\n' + msg;
   logEl.scrollTop = logEl.scrollHeight;
+}
+
+function setProgress(percent) {
+  progressBar.classList.add('visible');
+  progressFill.style.width = percent + '%';
 }
 
 /* ===== STATIC PAGES ===== */
@@ -99,7 +123,8 @@ const STATIC_PAGES = [
   { url: '/contact.html', priority: 0.6, changefreq: 'monthly' },
   { url: '/privacy-policy.html', priority: 0.3, changefreq: 'yearly' },
   { url: '/terms.html', priority: 0.3, changefreq: 'yearly' },
-  { url: '/disclaimer.html', priority: 0.3, changefreq: 'yearly' }
+  { url: '/disclaimer.html', priority: 0.3, changefreq: 'yearly' },
+  { url: '/sitemap.xml', priority: 0.3, changefreq: 'weekly' }
 ];
 
 const CATEGORIES = [
@@ -323,7 +348,7 @@ const TOOLS = [
   { cat: 'utility-tools', slug: 'stopwatch', priority: 0.7 },
   { cat: 'utility-tools', slug: 'world-clock', priority: 0.7 },
 
-  // PDF Tools (100) — Sample (baaki add karo)
+  // PDF Tools (100)
   { cat: 'pdf-tools', slug: 'jpg-to-pdf', priority: 0.9 },
   { cat: 'pdf-tools', slug: 'png-to-pdf', priority: 0.8 },
   { cat: 'pdf-tools', slug: 'webp-to-pdf', priority: 0.7 },
@@ -451,28 +476,38 @@ function formatDate(d) {
   catch (e) { return new Date().toISOString().split('T')[0]; }
 }
 
-/* ===== FETCH FROM SUPABASE ===== */
-async function fetchSupabase(table) {
-  try {
-    const url = SUPABASE_URL + '/rest/v1/' + table + '?status=eq.published&select=slug,updated_at,published_at&order=published_at.desc';
-    const res = await fetch(url, {
-      headers: {
-        'apikey': SUPABASE_KEY,
-        'Authorization': 'Bearer ' + SUPABASE_KEY,
-        'Accept': 'application/json'
+/* ===== FETCH FROM SUPABASE (with retry) ===== */
+async function fetchSupabase(table, retries) {
+  retries = retries || 2;
+  for (let attempt = 0; attempt <= retries; attempt++) {
+    try {
+      const url = SUPABASE_URL + '/rest/v1/' + table + '?status=eq.published&select=slug,updated_at,published_at,category&order=published_at.desc';
+      const res = await fetch(url, {
+        headers: {
+          'apikey': SUPABASE_KEY,
+          'Authorization': 'Bearer ' + SUPABASE_KEY,
+          'Accept': 'application/json'
+        }
+      });
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      const data = await res.json();
+      return Array.isArray(data) ? data : [];
+    } catch (err) {
+      if (attempt === retries) {
+        log('   ⚠️ Failed to fetch ' + table + ': ' + err.message);
+        return [];
       }
-    });
-    if (!res.ok) throw new Error('HTTP ' + res.status);
-    return await res.json();
-  } catch (err) {
-    log('⚠️ Failed to fetch ' + table + ': ' + err.message);
-    return [];
+      await new Promise(r => setTimeout(r, 1000));
+    }
   }
+  return [];
 }
 
 /* ===== MAIN GENERATOR ===== */
 async function generate() {
   logEl.textContent = '🚀 Starting sitemap generation...';
+  document.getElementById('successInfo').classList.remove('visible');
+  setProgress(0);
 
   const btn = document.getElementById('genBtn');
   btn.disabled = true;
@@ -482,21 +517,24 @@ async function generate() {
   let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
   xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n\n';
 
-  // 1. Static pages
+  /* 1. STATIC PAGES */
   log('📄 Adding ' + STATIC_PAGES.length + ' static pages...');
   STATIC_PAGES.forEach(function(p) {
     xml += urlEntry(SITE_URL + p.url, today, p.changefreq, p.priority);
   });
   document.getElementById('statStatic').textContent = STATIC_PAGES.length;
+  setProgress(10);
 
-  // 2. Categories
-  log('📁 Adding ' + CATEGORIES.length + ' categories...');
+  /* 2. CATEGORIES */
+  log('📁 Adding ' + CATEGORIES.length + ' tool categories...');
   CATEGORIES.forEach(function(cat) {
     xml += urlEntry(SITE_URL + '/tools/' + cat + '/', today, 'weekly', 0.8);
   });
+  document.getElementById('statCategories').textContent = CATEGORIES.length;
+  setProgress(20);
 
-  // 3. Tools
-  log('🛠 Adding ' + TOOLS.length + ' tools...');
+  /* 3. TOOLS */
+  log('🛠 Adding ' + TOOLS.length + ' individual tools...');
   TOOLS.forEach(function(t) {
     xml += urlEntry(
       SITE_URL + '/tools/' + t.cat + '/' + t.slug + '/',
@@ -506,43 +544,96 @@ async function generate() {
     );
   });
   document.getElementById('statTools').textContent = TOOLS.length;
+  setProgress(50);
 
-  // 4. Blog posts
+  /* 4. BLOG POSTS + CATEGORIES */
   log('📝 Fetching blog posts from Supabase...');
   const posts = await fetchSupabase('posts');
-  const postsArr = Array.isArray(posts) ? posts : [];
-  log('   ✅ Found ' + postsArr.length + ' blog posts');
-  postsArr.forEach(function(p) {
+  log('   ✅ Found ' + posts.length + ' blog posts');
+  posts.forEach(function(p) {
     const lm = formatDate(p.updated_at || p.published_at);
-    xml += urlEntry(SITE_URL + '/blog/post.html?slug=' + p.slug, lm, 'monthly', 0.7);
+    xml += urlEntry(SITE_URL + '/blog/post.html?slug=' + encodeURIComponent(p.slug), lm, 'monthly', 0.7);
   });
-  document.getElementById('statBlog').textContent = postsArr.length;
+  document.getElementById('statBlog').textContent = posts.length;
 
-  // 5. Web stories
+  /* 4b. Blog categories */
+  const blogCats = {};
+  posts.forEach(function(p) { if (p.category) blogCats[p.category] = true; });
+  const blogCatList = Object.keys(blogCats);
+  if (blogCatList.length > 0) {
+    log('📁 Adding ' + blogCatList.length + ' blog categories...');
+    blogCatList.forEach(function(cat) {
+      xml += urlEntry(SITE_URL + '/blog/?category=' + encodeURIComponent(cat), today, 'weekly', 0.6);
+    });
+  }
+
+  /* 4c. Blog pagination pages */
+  const POSTS_PER_PAGE = 10;
+  const totalBlogPages = Math.ceil(posts.length / POSTS_PER_PAGE);
+  if (totalBlogPages > 1) {
+    log('📄 Adding ' + (totalBlogPages - 1) + ' blog pagination pages...');
+    for (let p = 2; p <= totalBlogPages; p++) {
+      xml += urlEntry(SITE_URL + '/blog/?page=' + p, today, 'weekly', 0.5);
+    }
+  }
+  setProgress(70);
+
+  /* 5. WEB STORIES + CATEGORIES */
   log('📖 Fetching web stories from Supabase...');
   const stories = await fetchSupabase('webstories');
-  const storiesArr = Array.isArray(stories) ? stories : [];
-  log('   ✅ Found ' + storiesArr.length + ' web stories');
-  storiesArr.forEach(function(s) {
+  log('   ✅ Found ' + stories.length + ' web stories');
+  stories.forEach(function(s) {
     const lm = formatDate(s.updated_at || s.published_at);
-    xml += urlEntry(SITE_URL + '/webstories/view.html?slug=' + s.slug, lm, 'monthly', 0.6);
+    xml += urlEntry(SITE_URL + '/webstories/view.html?slug=' + encodeURIComponent(s.slug), lm, 'monthly', 0.6);
   });
-  document.getElementById('statStories').textContent = storiesArr.length;
+  document.getElementById('statStories').textContent = stories.length;
+
+  /* 5b. Web story categories */
+  const storyCats = {};
+  stories.forEach(function(s) { if (s.category) storyCats[s.category] = true; });
+  const storyCatList = Object.keys(storyCats);
+  if (storyCatList.length > 0) {
+    log('📁 Adding ' + storyCatList.length + ' web story categories...');
+    storyCatList.forEach(function(cat) {
+      xml += urlEntry(SITE_URL + '/webstories/?category=' + encodeURIComponent(cat), today, 'weekly', 0.5);
+    });
+  }
+  setProgress(85);
 
   xml += '\n</urlset>\n';
 
-  // Count URLs
+  /* COUNT URLs */
   const urlCount = (xml.match(/<url>/g) || []).length;
   document.getElementById('statTotal').textContent = urlCount;
 
-  // Display
+  /* DISPLAY */
   document.getElementById('output').value = xml;
   document.getElementById('dlBtn').disabled = false;
   document.getElementById('copyBtn').disabled = false;
 
-  log('✅ DONE! Total URLs: ' + urlCount);
-  log('   File size: ' + (xml.length / 1024).toFixed(2) + ' KB');
-  log('   Ab "Download sitemap.xml" click karo.');
+  setProgress(100);
+
+  /* SUMMARY */
+  log('');
+  log('═══════════════════════════════════════');
+  log('✅ SITEMAP GENERATED SUCCESSFULLY!');
+  log('═══════════════════════════════════════');
+  log('   Static pages:    ' + STATIC_PAGES.length);
+  log('   Categories:      ' + CATEGORIES.length);
+  log('   Tools:           ' + TOOLS.length);
+  log('   Blog posts:      ' + posts.length);
+  log('   Blog categories: ' + blogCatList.length);
+  log('   Blog pages:      ' + (totalBlogPages > 1 ? totalBlogPages : 1));
+  log('   Web stories:     ' + stories.length);
+  log('   Story categories: ' + storyCatList.length);
+  log('   ─────────────────────────────────');
+  log('   TOTAL URLs:      ' + urlCount);
+  log('   File size:       ' + (xml.length / 1024).toFixed(2) + ' KB');
+  log('');
+  log('📥 Ab "Download sitemap.xml" click karo.');
+  log('📤 GitHub repo ke root folder mein upload karo.');
+
+  document.getElementById('successInfo').classList.add('visible');
 
   btn.disabled = false;
   btn.textContent = '🚀 Regenerate';
@@ -565,7 +656,7 @@ function download() {
   URL.revokeObjectURL(url);
 
   log('📥 sitemap.xml downloaded!');
-  log('   Ab is file ko GitHub repo mein upload karo (root folder mein).');
+  log('   GitHub repo ke root folder mein upload karo.');
 }
 
 /* ===== COPY XML ===== */
@@ -576,13 +667,13 @@ async function copyXml() {
     await navigator.clipboard.writeText(xml);
     log('📋 XML copied to clipboard!');
   } catch (e) {
-    log('❌ Copy failed');
+    log('❌ Copy failed — manually select and copy.');
   }
 }
 
 /* ===== AUTO RUN ON LOAD ===== */
 document.addEventListener('DOMContentLoaded', function() {
-  generate();
+  setTimeout(generate, 500);
 });
 </script>
 
