@@ -511,11 +511,11 @@ function timeAgo(dateStr) {
     const sessionResult = await sb.auth.getSession();
     const session = sessionResult.data && sessionResult.data.session;
 
-    if (!session) {
-      // Not logged in — redirect to login
-      window.location.href = '/admin/login.html';
-      return;
-    }
+   if (!session) {
+  // Show login form on same page (don't redirect)
+  showLoginScreen();
+  return;
+}
 
     // Show user info
     const email = session.user.email || 'Admin';
