@@ -25,13 +25,14 @@
     display:none;position:fixed;inset:0;
     background:linear-gradient(135deg,#0a0e27,#2d1b69);
     z-index:9999;align-items:center;justify-content:center;
-    padding:20px;
+    padding:20px;overflow-y:auto;
   }
   .login-screen.visible{display:flex}
   .login-card{
     background:#fff;border-radius:20px;padding:40px;
     max-width:420px;width:100%;
     box-shadow:0 20px 60px rgba(0,0,0,.3);
+    margin:auto;
   }
   .login-logo{text-align:center;margin-bottom:28px}
   .login-logo-icon{
@@ -50,13 +51,14 @@
     width:100%;padding:13px 16px;border:1px solid #e5e7eb;
     border-radius:10px;font-size:14px;font-family:inherit;
     outline:none;transition:border-color .2s;color:#1a1a2e;
+    background:#fff;
   }
   .form-group input:focus{border-color:#2563eb;box-shadow:0 0 0 3px rgba(37,99,235,.1)}
   .login-btn{
     width:100%;padding:14px;background:#2563eb;color:#fff;
     border:none;border-radius:10px;font-size:15px;font-weight:700;
     cursor:pointer;font-family:inherit;transition:background .2s;
-    margin-top:8px;
+    margin-top:8px;min-height:48px;
   }
   .login-btn:hover{background:#1d4ed8}
   .login-btn:disabled{opacity:.6;cursor:not-allowed}
@@ -120,7 +122,7 @@
 
   /* ========== STATS CARDS ========== */
   .stats-grid{
-    display:grid;grid-template-columns:repeat(2,1fr);
+    display:grid;grid-template-columns:repeat(3,1fr);
     gap:22px;margin-bottom:44px;
   }
   .stat-card{
@@ -139,8 +141,9 @@
     content:'';position:absolute;top:-40px;right:-40px;
     width:140px;height:140px;border-radius:50%;opacity:.08;
   }
-  .stat-card.blog::before{background:#3b82f6}
-  .stat-card.published::before{background:#10b981}
+  .stat-card.blue::before{background:#3b82f6}
+  .stat-card.green::before{background:#10b981}
+  .stat-card.orange::before{background:#f97316}
 
   .stat-header{
     display:flex;justify-content:space-between;align-items:flex-start;
@@ -152,8 +155,9 @@
     font-size:26px;color:#fff;flex-shrink:0;
     box-shadow:0 8px 20px rgba(0,0,0,.15);
   }
-  .stat-icon.blog{background:linear-gradient(135deg,#3b82f6,#1e40af)}
-  .stat-icon.published{background:linear-gradient(135deg,#10b981,#059669)}
+  .stat-icon.blue{background:linear-gradient(135deg,#3b82f6,#1e40af)}
+  .stat-icon.green{background:linear-gradient(135deg,#10b981,#059669)}
+  .stat-icon.orange{background:linear-gradient(135deg,#f97316,#ea580c)}
 
   .stat-label{
     font-size:13px;font-weight:700;color:#6b7280;
@@ -353,7 +357,7 @@
     <form id="loginForm">
       <div class="form-group">
         <label for="loginEmail">Email</label>
-        <input type="email" id="loginEmail" value="admin@bigtoolz.com" required autocomplete="username">
+        <input type="email" id="loginEmail" placeholder="admin@bigtoolz.com" required autocomplete="username">
       </div>
       <div class="form-group">
         <label for="loginPassword">Password</label>
@@ -385,57 +389,69 @@
 </header>
 
 <!-- ========== MAIN ========== -->
-<main class="admin-main">
+<main class="admin-main" id="adminMain" style="display:none;">
 
   <h1 class="page-title">📊 Dashboard</h1>
-  <p class="page-sub">Manage your blog posts and content in one place.</p>
+  <p class="page-sub">Manage your blog posts and content — all in one place.</p>
 
   <!-- ========== STATS CARDS ========== -->
   <div class="stats-grid">
 
-    <a href="/admin/editor.html" class="stat-card blog">
+    <a href="/admin/editor.html" class="stat-card blue">
       <div class="stat-header">
         <div>
           <div class="stat-label">Total Posts</div>
           <div class="stat-number" id="blogCount">—</div>
           <div class="stat-sublabel" id="blogSublabel">Loading...</div>
         </div>
-        <div class="stat-icon blog">📝</div>
+        <div class="stat-icon blue">📝</div>
       </div>
       <div class="stat-actions">
-        <a href="/admin/editor.html" class="stat-btn primary" onclick="event.stopPropagation()">
+        <span class="stat-btn primary">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
           New Post
-        </a>
-        <a href="/blog/" target="_blank" class="stat-btn secondary" onclick="event.stopPropagation()">View Blog</a>
+        </span>
       </div>
     </a>
 
-    <a href="/blog/" target="_blank" class="stat-card published">
+    <a href="/blog/" target="_blank" class="stat-card green">
       <div class="stat-header">
         <div>
           <div class="stat-label">Published</div>
           <div class="stat-number" id="publishedCount">—</div>
           <div class="stat-sublabel" id="publishedSublabel">Loading...</div>
         </div>
-        <div class="stat-icon published">✅</div>
+        <div class="stat-icon green">✅</div>
       </div>
       <div class="stat-actions">
-        <a href="/blog/" target="_blank" class="stat-btn primary" onclick="event.stopPropagation()">
-          🌐 View Live
-        </a>
+        <span class="stat-btn primary">🌐 View Live Blog</span>
+      </div>
+    </a>
+
+    <a href="/admin/editor.html" class="stat-card orange">
+      <div class="stat-header">
+        <div>
+          <div class="stat-label">Drafts</div>
+          <div class="stat-number" id="draftCount">—</div>
+          <div class="stat-sublabel" id="draftSublabel">Loading...</div>
+        </div>
+        <div class="stat-icon orange">✏️</div>
+      </div>
+      <div class="stat-actions">
+        <span class="stat-btn primary">✏️ Write Now</span>
       </div>
     </a>
 
   </div>
 
-  <!-- ========== RECENT ACTIVITY ========== -->
+  <!-- ========== RECENT POSTS ========== -->
   <section class="section">
     <div class="section-header">
       <div class="section-title">
         <div class="section-title-icon">🕐</div>
         Recent Posts
       </div>
+      <a href="/blog/" target="_blank" class="section-title-icon" style="text-decoration:none;">↗</a>
     </div>
     <div class="recent-list" id="recentList">
       <div class="loading-text">Loading recent posts...</div>
@@ -515,15 +531,17 @@ function timeAgo(dateStr) {
 /* ===== LOGIN SCREEN ===== */
 function showLoginScreen() {
   document.getElementById('loginScreen').classList.add('visible');
+  document.getElementById('adminMain').style.display = 'none';
   document.body.style.overflow = 'hidden';
 }
 
 function hideLoginScreen() {
   document.getElementById('loginScreen').classList.remove('visible');
+  document.getElementById('adminMain').style.display = 'block';
   document.body.style.overflow = '';
 }
 
-/* ===== LOGIN FORM ===== */
+/* ===== LOGIN FORM SUBMIT ===== */
 document.getElementById('loginForm').addEventListener('submit', async function(e) {
   e.preventDefault();
   const email = document.getElementById('loginEmail').value.trim();
@@ -542,7 +560,7 @@ document.getElementById('loginForm').addEventListener('submit', async function(e
     hideLoginScreen();
     initDashboard(data.session);
   } catch (err) {
-    errorBox.textContent = '❌ ' + (err.message || 'Login failed');
+    errorBox.textContent = '❌ ' + (err.message || 'Login failed. Check your email and password.');
     errorBox.classList.add('visible');
     btn.disabled = false;
     btn.textContent = 'Login';
@@ -587,21 +605,31 @@ function initDashboard(session) {
 /* ===== LOAD STATS ===== */
 async function loadStats() {
   try {
-    const { count: total } = await sb
+    const { count: total, error: err1 } = await sb
       .from('posts')
       .select('*', { count: 'exact', head: true });
 
-    const { count: published } = await sb
+    if (err1) throw err1;
+
+    const { count: published, error: err2 } = await sb
       .from('posts')
       .select('*', { count: 'exact', head: true })
       .eq('status', 'published');
 
-    document.getElementById('blogCount').textContent = total || 0;
-    document.getElementById('blogSublabel').textContent = (total || 0) + ' total';
+    if (err2) throw err2;
 
-    document.getElementById('publishedCount').textContent = published || 0;
-    document.getElementById('publishedSublabel').textContent =
-      ((total || 0) - (published || 0)) + ' drafts';
+    const totalNum = total || 0;
+    const publishedNum = published || 0;
+    const draftNum = totalNum - publishedNum;
+
+    document.getElementById('blogCount').textContent = totalNum;
+    document.getElementById('blogSublabel').textContent = totalNum + ' total posts';
+
+    document.getElementById('publishedCount').textContent = publishedNum;
+    document.getElementById('publishedSublabel').textContent = 'live on your blog';
+
+    document.getElementById('draftCount').textContent = draftNum;
+    document.getElementById('draftSublabel').textContent = draftNum + ' awaiting publish';
 
   } catch (err) {
     console.error('Stats error:', err);
@@ -609,6 +637,8 @@ async function loadStats() {
     document.getElementById('blogSublabel').textContent = 'Error loading';
     document.getElementById('publishedCount').textContent = '0';
     document.getElementById('publishedSublabel').textContent = 'Error loading';
+    document.getElementById('draftCount').textContent = '0';
+    document.getElementById('draftSublabel').textContent = 'Error loading';
   }
 }
 
@@ -626,7 +656,7 @@ async function loadRecentPosts() {
     if (error) throw error;
 
     if (!data || data.length === 0) {
-      container.innerHTML = '<div class="empty-text">No posts yet. Start by creating your first post!</div>';
+      container.innerHTML = '<div class="empty-text">No posts yet. Start by creating your first post! ✍️</div>';
       return;
     }
 
@@ -647,7 +677,7 @@ async function loadRecentPosts() {
 
   } catch (err) {
     console.error('Recent posts error:', err);
-    container.innerHTML = '<div class="empty-text">Could not load posts.</div>';
+    container.innerHTML = '<div class="empty-text">Could not load posts. Check Supabase connection.</div>';
   }
 }
 
@@ -658,12 +688,11 @@ document.getElementById('logoutBtn').addEventListener('click', async function() 
   try {
     await sb.auth.signOut();
     localStorage.removeItem('blog_admin_session');
-    window.location.href = '/admin/';
-    window.location.reload();
+    showLoginScreen();
+    document.getElementById('loginForm').reset();
   } catch (err) {
     console.error('Logout error:', err);
-    window.location.href = '/admin/';
-    window.location.reload();
+    showLoginScreen();
   }
 });
 </script>
