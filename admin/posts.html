@@ -71,7 +71,7 @@
     display:flex;justify-content:space-between;align-items:flex-start;
     margin-bottom:28px;flex-wrap:wrap;gap:16px;
   }
-  .page-header-left
+  .page-header-left{flex:1;min-width:0}
   .page-title{
     font-size:28px;font-weight:800;color:#0a0e27;
     margin-bottom:6px;letter-spacing:-.5px;
@@ -417,7 +417,7 @@
 <header class="admin-header">
   <a href="/admin/" class="admin-logo">
     <div class="admin-logo-icon">⚒</div>
-    BigToolz</span> Admin
+    Big<span>Toolz</span> Admin
   </a>
   <div class="admin-header-right">
     <a href="/admin/" class="admin-nav-btn">
@@ -641,13 +641,13 @@ const CATEGORY_EMOJI = {
     const sessionResult = await sb.auth.getSession();
     const session = sessionResult.data && sessionResult.data.session;
     if (!session) {
-      window.location.href = /admin/login';
+      window.location.href = '/admin/login.html';
       return;
     }
     loadPosts();
   } catch (err) {
     console.error('Auth error:', err);
-    window.location.href = /admin/login';
+    window.location.href = '/admin/login.html';
   }
 })();
 
@@ -705,7 +705,6 @@ function applyFilters() {
     return title.includes(q) || slug.includes(q) || excerpt.includes(q);
   });
 
-  // Sort
   if (state.sort === 'newest') {
     filtered.sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
   } else if (state.sort === 'oldest') {
@@ -797,7 +796,6 @@ function renderPosts() {
     postsList.appendChild(item);
   });
 
-  // Attach handlers
   postsList.querySelectorAll('.post-checkbox').forEach(cb => {
     cb.addEventListener('change', function() {
       const id = cb.dataset.id;
@@ -952,14 +950,12 @@ modalConfirmBtn.addEventListener('click', async function() {
 
   try {
     if (state.deleteAll && state.selected.size > 0) {
-      // Bulk delete
       const ids = Array.from(state.selected);
       const { error } = await sb.from('posts').delete().in('id', ids);
       if (error) throw error;
       showToast('✅ ' + ids.length + ' posts deleted', 'success');
       state.selected.clear();
     } else if (state.deleteTargetId) {
-      // Single delete
       const { error } = await sb.from('posts').delete().eq('id', state.deleteTargetId);
       if (error) throw error;
       state.selected.delete(state.deleteTargetId);
@@ -1015,9 +1011,9 @@ document.getElementById('logoutBtn').addEventListener('click', async function() 
   try {
     await sb.auth.signOut();
     localStorage.removeItem('blog_admin_session');
-    window.location.href = /admin/login';
+    window.location.href = '/admin/login.html';
   } catch (err) {
-    window.location.href = /admin/login';
+    window.location.href = '/admin/login.html';
   }
 });
 </script>
