@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#2563eb">
 <title>Admin Dashboard - BigToolz</title>
@@ -11,7 +11,6 @@
 
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
-
   *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
   html{-webkit-text-size-adjust:100%}
   body{
@@ -20,6 +19,53 @@
     min-height:100vh;-webkit-font-smoothing:antialiased;
     padding-bottom:env(safe-area-inset-bottom,0);
   }
+
+  /* ========== LOGIN SCREEN ========== */
+  .login-screen{
+    display:none;position:fixed;inset:0;
+    background:linear-gradient(135deg,#0a0e27,#2d1b69);
+    z-index:9999;align-items:center;justify-content:center;
+    padding:20px;
+  }
+  .login-screen.visible{display:flex}
+  .login-card{
+    background:#fff;border-radius:20px;padding:40px;
+    max-width:420px;width:100%;
+    box-shadow:0 20px 60px rgba(0,0,0,.3);
+  }
+  .login-logo{text-align:center;margin-bottom:28px}
+  .login-logo-icon{
+    width:64px;height:64px;
+    background:linear-gradient(135deg,#3b82f6,#2563eb);
+    border-radius:16px;display:flex;align-items:center;
+    justify-content:center;margin:0 auto 16px;
+    color:#fff;font-size:28px;
+    box-shadow:0 8px 24px rgba(37,99,235,.4);
+  }
+  .login-title{font-size:24px;font-weight:800;color:#0a0e27;margin-bottom:6px}
+  .login-sub{font-size:14px;color:#6b7280}
+  .form-group{margin-bottom:16px}
+  .form-group label{display:block;font-size:13px;font-weight:600;color:#4b5563;margin-bottom:6px}
+  .form-group input{
+    width:100%;padding:13px 16px;border:1px solid #e5e7eb;
+    border-radius:10px;font-size:14px;font-family:inherit;
+    outline:none;transition:border-color .2s;color:#1a1a2e;
+  }
+  .form-group input:focus{border-color:#2563eb;box-shadow:0 0 0 3px rgba(37,99,235,.1)}
+  .login-btn{
+    width:100%;padding:14px;background:#2563eb;color:#fff;
+    border:none;border-radius:10px;font-size:15px;font-weight:700;
+    cursor:pointer;font-family:inherit;transition:background .2s;
+    margin-top:8px;
+  }
+  .login-btn:hover{background:#1d4ed8}
+  .login-btn:disabled{opacity:.6;cursor:not-allowed}
+  .login-error{
+    display:none;background:#fef2f2;border:1px solid #fecaca;
+    border-radius:10px;padding:12px 16px;margin-bottom:16px;
+    font-size:13px;color:#991b1b;
+  }
+  .login-error.visible{display:block}
 
   /* ========== HEADER ========== */
   .admin-header{
@@ -43,10 +89,7 @@
     box-shadow:0 4px 12px rgba(37,99,235,.3);
   }
   .admin-logo span{color:#2563eb}
-
-  .admin-header-right{
-    display:flex;align-items:center;gap:12px;
-  }
+  .admin-header-right{display:flex;align-items:center;gap:12px}
   .user-info{
     display:flex;align-items:center;gap:8px;
     padding:8px 14px;background:#f3f4f6;border-radius:10px;
@@ -66,25 +109,18 @@
     transition:all .2s;font-family:inherit;min-height:40px;
   }
   .logout-btn:hover{border-color:#ef4444;background:#fef2f2}
-  .logout-btn:active{background:#fee2e2}
 
   /* ========== MAIN ========== */
-  .admin-main{
-    max-width:1280px;margin:0 auto;padding:40px 32px;
-  }
-
+  .admin-main{max-width:1280px;margin:0 auto;padding:40px 32px}
   .page-title{
     font-size:32px;font-weight:800;color:#0a0e27;
     margin-bottom:8px;letter-spacing:-.6px;
   }
-  .page-sub{
-    font-size:15px;color:#6b7280;margin-bottom:36px;
-    font-weight:500;
-  }
+  .page-sub{font-size:15px;color:#6b7280;margin-bottom:36px;font-weight:500}
 
   /* ========== STATS CARDS ========== */
   .stats-grid{
-    display:grid;grid-template-columns:repeat(3,1fr);
+    display:grid;grid-template-columns:repeat(2,1fr);
     gap:22px;margin-bottom:44px;
   }
   .stat-card{
@@ -104,8 +140,7 @@
     width:140px;height:140px;border-radius:50%;opacity:.08;
   }
   .stat-card.blog::before{background:#3b82f6}
-  .stat-card.news::before{background:#10b981}
-  .stat-card.story::before{background:#8b5cf6}
+  .stat-card.published::before{background:#10b981}
 
   .stat-header{
     display:flex;justify-content:space-between;align-items:flex-start;
@@ -118,8 +153,7 @@
     box-shadow:0 8px 20px rgba(0,0,0,.15);
   }
   .stat-icon.blog{background:linear-gradient(135deg,#3b82f6,#1e40af)}
-  .stat-icon.news{background:linear-gradient(135deg,#10b981,#059669)}
-  .stat-icon.story{background:linear-gradient(135deg,#8b5cf6,#6d28d9)}
+  .stat-icon.published{background:linear-gradient(135deg,#10b981,#059669)}
 
   .stat-label{
     font-size:13px;font-weight:700;color:#6b7280;
@@ -150,7 +184,6 @@
   }
   .stat-btn.primary{background:#2563eb;color:#fff}
   .stat-btn.primary:hover{background:#1d4ed8;transform:translateY(-1px)}
-  .stat-btn.primary:active{background:#1e40af}
   .stat-btn.secondary{
     background:#f3f4f6;color:#374151;flex:0.7;
   }
@@ -176,12 +209,6 @@
     display:flex;align-items:center;justify-content:center;
     background:#eff6ff;color:#2563eb;font-size:16px;
   }
-  .section-link{
-    font-size:13px;font-weight:700;color:#2563eb;
-    text-decoration:none;display:inline-flex;align-items:center;gap:4px;
-    transition:gap .2s;
-  }
-  .section-link:hover{gap:8px}
 
   /* ========== RECENT LIST ========== */
   .recent-list{display:flex;flex-direction:column;gap:2px}
@@ -196,10 +223,8 @@
     width:40px;height:40px;border-radius:10px;
     display:flex;align-items:center;justify-content:center;
     font-size:18px;color:#fff;flex-shrink:0;
+    background:#3b82f6;
   }
-  .recent-icon.blog{background:#3b82f6}
-  .recent-icon.news{background:#10b981}
-  .recent-icon.story{background:#8b5cf6}
   .recent-info{flex:1;min-width:0}
   .recent-title{
     font-size:14px;font-weight:700;color:#0a0e27;
@@ -219,11 +244,7 @@
   .recent-status.published{background:#d1fae5;color:#065f46}
   .recent-status.draft{background:#fef3c7;color:#92400e}
 
-  .loading-text{
-    text-align:center;padding:40px 20px;
-    font-size:14px;color:#9ca3af;font-weight:500;
-  }
-  .empty-text{
+  .loading-text,.empty-text{
     text-align:center;padding:40px 20px;
     font-size:14px;color:#9ca3af;font-weight:500;
   }
@@ -251,7 +272,6 @@
     .stats-grid{grid-template-columns:repeat(2,1fr)}
     .quick-links{grid-template-columns:repeat(2,1fr)}
   }
-
   @media(max-width:768px){
     .admin-header{padding:0 16px;height:64px}
     .admin-logo{font-size:17px;gap:8px}
@@ -259,30 +279,24 @@
     .user-info{display:none}
     .logout-btn{padding:8px 12px;font-size:12px}
     .logout-btn span{display:none}
-
     .admin-main{padding:24px 16px}
     .page-title{font-size:24px}
     .page-sub{font-size:14px;margin-bottom:24px}
-
     .stats-grid{grid-template-columns:1fr;gap:16px;margin-bottom:28px}
     .stat-card{padding:22px 20px}
     .stat-icon{width:48px;height:48px;font-size:22px;border-radius:14px}
     .stat-number{font-size:36px}
-    .stat-actions{gap:10px}
-    .stat-btn{min-height:46px;font-size:13px}
-
     .section{padding:22px 18px;border-radius:14px}
     .section-title{font-size:16px}
     .section-title-icon{width:28px;height:28px;font-size:14px}
-
     .recent-item{padding:12px 8px;gap:12px}
     .recent-icon{width:36px;height:36px;font-size:16px}
     .recent-title{font-size:13px}
     .recent-meta{font-size:11px}
-
     .quick-links{grid-template-columns:1fr;gap:10px}
+    .login-card{padding:28px 24px}
+    .login-title{font-size:20px}
   }
-
   @media(max-width:480px){
     .admin-main{padding:20px 14px}
     .page-title{font-size:22px}
@@ -318,15 +332,43 @@
   html[data-theme="dark"] .recent-status.draft{background:#78350f;color:#fcd34d}
   html[data-theme="dark"] .quick-link{background:#0f172a;border-color:#334155;color:#cbd5e1}
   html[data-theme="dark"] .quick-link:hover{background:#1e3a8a;color:#93c5fd}
+  html[data-theme="dark"] .login-card{background:#1e293b}
+  html[data-theme="dark"] .login-title{color:#f1f5f9}
+  html[data-theme="dark"] .login-sub{color:#94a3b8}
+  html[data-theme="dark"] .form-group label{color:#cbd5e1}
+  html[data-theme="dark"] .form-group input{background:#0f172a;border-color:#334155;color:#f1f5f9}
 </style>
 </head>
 <body>
+
+<!-- ========== LOGIN SCREEN ========== -->
+<div class="login-screen" id="loginScreen">
+  <div class="login-card">
+    <div class="login-logo">
+      <div class="login-logo-icon">⚒</div>
+      <div class="login-title">Admin Login</div>
+      <div class="login-sub">BigToolz Blog Management</div>
+    </div>
+    <div class="login-error" id="loginError"></div>
+    <form id="loginForm">
+      <div class="form-group">
+        <label for="loginEmail">Email</label>
+        <input type="email" id="loginEmail" value="admin@bigtoolz.com" required autocomplete="username">
+      </div>
+      <div class="form-group">
+        <label for="loginPassword">Password</label>
+        <input type="password" id="loginPassword" placeholder="Enter your password" required autocomplete="current-password">
+      </div>
+      <button type="submit" class="login-btn" id="loginBtn">Login</button>
+    </form>
+  </div>
+</div>
 
 <!-- ========== HEADER ========== -->
 <header class="admin-header">
   <a href="/admin/" class="admin-logo">
     <div class="admin-logo-icon">⚒</div>
-    BigToolz</span> Admin
+    Big<span>Toolz</span> Admin
   </a>
   <div class="admin-header-right">
     <div class="user-info" id="userInfo" style="display:none;">
@@ -346,16 +388,15 @@
 <main class="admin-main">
 
   <h1 class="page-title">📊 Dashboard</h1>
-  <p class="page-sub">Manage your blog, news and web stories all in one place.</p>
+  <p class="page-sub">Manage your blog posts and content in one place.</p>
 
   <!-- ========== STATS CARDS ========== -->
   <div class="stats-grid">
 
-    <!-- Blog Card -->
-    <a href="/admin/posts.html" class="stat-card blog">
+    <a href="/admin/editor.html" class="stat-card blog">
       <div class="stat-header">
         <div>
-          <div class="stat-label">Blog Posts</div>
+          <div class="stat-label">Total Posts</div>
           <div class="stat-number" id="blogCount">—</div>
           <div class="stat-sublabel" id="blogSublabel">Loading...</div>
         </div>
@@ -366,45 +407,23 @@
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
           New Post
         </a>
-        <a href="/admin/posts.html" class="stat-btn secondary" onclick="event.stopPropagation()">All Posts</a>
+        <a href="/blog/" target="_blank" class="stat-btn secondary" onclick="event.stopPropagation()">View Blog</a>
       </div>
     </a>
 
-    <!-- News Card -->
-    <a href="/admin/news-list.html" class="stat-card news">
+    <a href="/blog/" target="_blank" class="stat-card published">
       <div class="stat-header">
         <div>
-          <div class="stat-label">News Articles</div>
-          <div class="stat-number" id="newsCount">—</div>
-          <div class="stat-sublabel" id="newsSublabel">Loading...</div>
+          <div class="stat-label">Published</div>
+          <div class="stat-number" id="publishedCount">—</div>
+          <div class="stat-sublabel" id="publishedSublabel">Loading...</div>
         </div>
-        <div class="stat-icon news">📰</div>
+        <div class="stat-icon published">✅</div>
       </div>
       <div class="stat-actions">
-        <a href="/admin/news-editor.html" class="stat-btn primary" onclick="event.stopPropagation()">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
-          New News
+        <a href="/blog/" target="_blank" class="stat-btn primary" onclick="event.stopPropagation()">
+          🌐 View Live
         </a>
-        <a href="/admin/news-list.html" class="stat-btn secondary" onclick="event.stopPropagation()">All News</a>
-      </div>
-    </a>
-
-    <!-- Story Card -->
-    <a href="/admin/stories-list.html" class="stat-card story">
-      <div class="stat-header">
-        <div>
-          <div class="stat-label">Web Stories</div>
-          <div class="stat-number" id="storyCount">—</div>
-          <div class="stat-sublabel" id="storySublabel">Loading...</div>
-        </div>
-        <div class="stat-icon story">📱</div>
-      </div>
-      <div class="stat-actions">
-        <a href="/admin/story-editor.html" class="stat-btn primary" onclick="event.stopPropagation()">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
-          New Story
-        </a>
-        <a href="/admin/stories-list.html" class="stat-btn secondary" onclick="event.stopPropagation()">All Stories</a>
       </div>
     </a>
 
@@ -415,11 +434,11 @@
     <div class="section-header">
       <div class="section-title">
         <div class="section-title-icon">🕐</div>
-        Recent Activity
+        Recent Posts
       </div>
     </div>
     <div class="recent-list" id="recentList">
-      <div class="loading-text">Loading recent activity...</div>
+      <div class="loading-text">Loading recent posts...</div>
     </div>
   </section>
 
@@ -432,24 +451,12 @@
       </div>
     </div>
     <div class="quick-links">
-      <a href="/blog/" target="_blank" class="quick-link">
-        🌐 View Blog
-      </a>
-      <a href="/news/" target="_blank" class="quick-link">
-        📰 View News
-      </a>
-      <a href="/webstories/" target="_blank" class="quick-link">
-        📱 View Stories
-      </a>
-      <a href="/" target="_blank" class="quick-link">
-        ⚒ Main Site
-      </a>
-      <a href="/admin/posts.html" class="quick-link">
-        📋 All Posts
-      </a>
-      <a href="/admin/news-list.html" class="quick-link">
-        📋 All News
-      </a>
+      <a href="/admin/editor.html" class="quick-link">✏️ New Post</a>
+      <a href="/blog/" target="_blank" class="quick-link">🌐 View Blog</a>
+      <a href="/" target="_blank" class="quick-link">⚒ Main Site</a>
+      <a href="/sitemap.xml" target="_blank" class="quick-link">🗺️ Sitemap</a>
+      <a href="https://supabase.com/dashboard" target="_blank" class="quick-link">⚡ Supabase</a>
+      <a href="https://app.netlify.com" target="_blank" class="quick-link">🚀 Netlify</a>
     </div>
   </section>
 
@@ -464,7 +471,7 @@ const SUPABASE_KEY = 'sb_publishable_rncmFbKPlBLxkeIEXaFxfQ_rIbjebnJ';
 
 const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
-/* ===== THEME (sync with main site) ===== */
+/* ===== THEME ===== */
 (function(){
   try{
     var t = localStorage.getItem('theme');
@@ -505,191 +512,133 @@ function timeAgo(dateStr) {
   } catch(e) { return ''; }
 }
 
-/* ===== AUTH CHECK ===== */
+/* ===== LOGIN SCREEN ===== */
+function showLoginScreen() {
+  document.getElementById('loginScreen').classList.add('visible');
+  document.body.style.overflow = 'hidden';
+}
+
+function hideLoginScreen() {
+  document.getElementById('loginScreen').classList.remove('visible');
+  document.body.style.overflow = '';
+}
+
+/* ===== LOGIN FORM ===== */
+document.getElementById('loginForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const email = document.getElementById('loginEmail').value.trim();
+  const password = document.getElementById('loginPassword').value;
+  const btn = document.getElementById('loginBtn');
+  const errorBox = document.getElementById('loginError');
+
+  errorBox.classList.remove('visible');
+  btn.disabled = true;
+  btn.textContent = 'Logging in...';
+
+  try {
+    const { data, error } = await sb.auth.signInWithPassword({ email, password });
+    if (error) throw error;
+
+    hideLoginScreen();
+    initDashboard(data.session);
+  } catch (err) {
+    errorBox.textContent = '❌ ' + (err.message || 'Login failed');
+    errorBox.classList.add('visible');
+    btn.disabled = false;
+    btn.textContent = 'Login';
+  }
+});
+
+/* ===== AUTH CHECK + INIT ===== */
 (async function init() {
   try {
     const sessionResult = await sb.auth.getSession();
     const session = sessionResult.data && sessionResult.data.session;
 
-   if (!session) {
-  // Show login form on same page (don't redirect)
-  showLoginScreen();
-  return;
-}
+    if (!session) {
+      showLoginScreen();
+      return;
+    }
 
-    // Show user info
-    const email = session.user.email || 'Admin';
-    const userInfo = document.getElementById('userInfo');
-    const userEmail = document.getElementById('userEmail');
-    const userAvatar = document.getElementById('userAvatar');
-
-    userInfo.style.display = 'flex';
-    userEmail.textContent = email;
-    userAvatar.textContent = email.charAt(0).toUpperCase();
-
-    // Load stats + recent activity
-    loadStats();
-    loadRecentActivity();
-
+    hideLoginScreen();
+    initDashboard(session);
   } catch (err) {
     console.error('Auth error:', err);
-    window.location.href = '/admin/login.html';
+    showLoginScreen();
   }
 })();
+
+function initDashboard(session) {
+  // Show user info
+  const email = session.user.email || 'Admin';
+  const userInfo = document.getElementById('userInfo');
+  const userEmail = document.getElementById('userEmail');
+  const userAvatar = document.getElementById('userAvatar');
+
+  userInfo.style.display = 'flex';
+  userEmail.textContent = email;
+  userAvatar.textContent = email.charAt(0).toUpperCase();
+
+  // Load data
+  loadStats();
+  loadRecentPosts();
+}
 
 /* ===== LOAD STATS ===== */
 async function loadStats() {
   try {
-    // Blog posts
-    const { count: blogTotal } = await sb
+    const { count: total } = await sb
       .from('posts')
       .select('*', { count: 'exact', head: true });
 
-    const { count: blogPublished } = await sb
+    const { count: published } = await sb
       .from('posts')
       .select('*', { count: 'exact', head: true })
       .eq('status', 'published');
 
-    document.getElementById('blogCount').textContent = blogTotal || 0;
-    document.getElementById('blogSublabel').textContent =
-      (blogPublished || 0) + ' published';
+    document.getElementById('blogCount').textContent = total || 0;
+    document.getElementById('blogSublabel').textContent = (total || 0) + ' total';
+
+    document.getElementById('publishedCount').textContent = published || 0;
+    document.getElementById('publishedSublabel').textContent =
+      ((total || 0) - (published || 0)) + ' drafts';
 
   } catch (err) {
-    console.error('Blog stats error:', err);
+    console.error('Stats error:', err);
     document.getElementById('blogCount').textContent = '0';
     document.getElementById('blogSublabel').textContent = 'Error loading';
-  }
-
-  try {
-    // News
-    const { count: newsTotal } = await sb
-      .from('news')
-      .select('*', { count: 'exact', head: true });
-
-    const { count: newsPublished } = await sb
-      .from('news')
-      .select('*', { count: 'exact', head: true })
-      .eq('status', 'published');
-
-    document.getElementById('newsCount').textContent = newsTotal || 0;
-    document.getElementById('newsSublabel').textContent =
-      (newsPublished || 0) + ' published';
-
-  } catch (err) {
-    console.error('News stats error:', err);
-    document.getElementById('newsCount').textContent = '0';
-    document.getElementById('newsSublabel').textContent = 'Table not ready';
-  }
-
-  try {
-    // Stories
-    const { count: storyTotal } = await sb
-      .from('webstories')
-      .select('*', { count: 'exact', head: true });
-
-    const { count: storyPublished } = await sb
-      .from('webstories')
-      .select('*', { count: 'exact', head: true })
-      .eq('status', 'published');
-
-    document.getElementById('storyCount').textContent = storyTotal || 0;
-    document.getElementById('storySublabel').textContent =
-      (storyPublished || 0) + ' published';
-
-  } catch (err) {
-    console.error('Story stats error:', err);
-    document.getElementById('storyCount').textContent = '0';
-    document.getElementById('storySublabel').textContent = 'Table not ready';
+    document.getElementById('publishedCount').textContent = '0';
+    document.getElementById('publishedSublabel').textContent = 'Error loading';
   }
 }
 
-/* ===== LOAD RECENT ACTIVITY ===== */
-async function loadRecentActivity() {
+/* ===== LOAD RECENT POSTS ===== */
+async function loadRecentPosts() {
   const container = document.getElementById('recentList');
 
   try {
-    // Fetch last 4 from each table
-    const [postsRes, newsRes, storiesRes] = await Promise.all([
-      sb.from('posts')
-        .select('id, title, slug, status, created_at, category')
-        .order('created_at', { ascending: false })
-        .limit(4),
-      sb.from('news')
-        .select('id, title, slug, status, created_at, category')
-        .order('created_at', { ascending: false })
-        .limit(4)
-        .then(r => r)
-        .catch(() => ({ data: null, error: true })),
-      sb.from('webstories')
-        .select('id, title, slug, status, created_at, category')
-        .order('created_at', { ascending: false })
-        .limit(4)
-        .then(r => r)
-        .catch(() => ({ data: null, error: true }))
-    ]);
+    const { data, error } = await sb
+      .from('posts')
+      .select('id, title, slug, status, created_at, category')
+      .order('created_at', { ascending: false })
+      .limit(8);
 
-    const allItems = [];
+    if (error) throw error;
 
-    if (postsRes.data && !postsRes.error) {
-      postsRes.data.forEach(p => {
-        allItems.push({
-          type: 'blog',
-          title: p.title,
-          slug: p.slug,
-          status: p.status,
-          date: p.created_at,
-          icon: '📝',
-          url: '/blog/post.html?slug=' + encodeURIComponent(p.slug)
-        });
-      });
-    }
-
-    if (newsRes.data && !newsRes.error) {
-      newsRes.data.forEach(n => {
-        allItems.push({
-          type: 'news',
-          title: n.title,
-          slug: n.slug,
-          status: n.status,
-          date: n.created_at,
-          icon: '📰',
-          url: '/news/article.html?slug=' + encodeURIComponent(n.slug)
-        });
-      });
-    }
-
-    if (storiesRes.data && !storiesRes.error) {
-      storiesRes.data.forEach(s => {
-        allItems.push({
-          type: 'story',
-          title: s.title,
-          slug: s.slug,
-          status: s.status,
-          date: s.created_at,
-          icon: '📱',
-          url: '/webstories/view.html?slug=' + encodeURIComponent(s.slug)
-        });
-      });
-    }
-
-    // Sort by date desc
-    allItems.sort((a, b) => new Date(b.date) - new Date(a.date));
-    const recent = allItems.slice(0, 8);
-
-    if (recent.length === 0) {
-      container.innerHTML = '<div class="empty-text">No content yet. Start by creating your first post, news article or story!</div>';
+    if (!data || data.length === 0) {
+      container.innerHTML = '<div class="empty-text">No posts yet. Start by creating your first post!</div>';
       return;
     }
 
-    container.innerHTML = recent.map(item => `
-      <a href="${item.url}" class="recent-item" target="_blank">
-        <div class="recent-icon ${item.type}">${item.icon}</div>
+    container.innerHTML = data.map(item => `
+      <a href="/blog/post.html?slug=${encodeURIComponent(item.slug)}" class="recent-item" target="_blank">
+        <div class="recent-icon">📝</div>
         <div class="recent-info">
           <div class="recent-title">${escapeHtml(item.title || 'Untitled')}</div>
           <div class="recent-meta">
-            <span>${timeAgo(item.date)}</span>
+            <span>${timeAgo(item.created_at)}</span>
             <span>•</span>
-            <span>${item.type.charAt(0).toUpperCase() + item.type.slice(1)}</span>
+            <span>${escapeHtml(item.category || 'General')}</span>
           </div>
         </div>
         <span class="recent-status ${item.status}">${item.status}</span>
@@ -697,8 +646,8 @@ async function loadRecentActivity() {
     `).join('');
 
   } catch (err) {
-    console.error('Recent activity error:', err);
-    container.innerHTML = '<div class="empty-text">Could not load recent activity.</div>';
+    console.error('Recent posts error:', err);
+    container.innerHTML = '<div class="empty-text">Could not load posts.</div>';
   }
 }
 
@@ -709,10 +658,12 @@ document.getElementById('logoutBtn').addEventListener('click', async function() 
   try {
     await sb.auth.signOut();
     localStorage.removeItem('blog_admin_session');
-    window.location.href = '/admin/login.html';
+    window.location.href = '/admin/';
+    window.location.reload();
   } catch (err) {
     console.error('Logout error:', err);
-    window.location.href = '/admin/login.html';
+    window.location.href = '/admin/';
+    window.location.reload();
   }
 });
 </script>
