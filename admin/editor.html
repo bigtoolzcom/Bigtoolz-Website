@@ -344,7 +344,7 @@ let currentStatus = 'draft';
     const sessionResult = await sb.auth.getSession();
     const session = sessionResult.data && sessionResult.data.session;
     if (!session) {
-      window.location.href = /admin/';
+      window.location.href = '/admin/';
       return;
     }
     currentUser = session.user;
@@ -710,7 +710,7 @@ async function savePost(status) {
 
   const inputUrl = $('#imageUrl').value.trim();
   const finalImageUrl = inputUrl || featuredImageUrl || null;
-  const authorName = ($('#authorName')?.value || '').trim() || 'BigToolz Team';
+  const authorName = ($('#authorName') ? $('#authorName').value : '').trim() || 'BigToolz Team';
 
   console.log('📸 Save debug:');
   console.log('  - featuredImageUrl:', featuredImageUrl);
@@ -755,7 +755,7 @@ async function savePost(status) {
     showToast(status === 'published' ? '✅ Published!' : '💾 Draft saved!', 'success');
 
     if (status === 'published') {
-      setTimeout(function() { window.location.href = /admin/'; }, 1000);
+      setTimeout(function() { window.location.href = '/admin/'; }, 1000);
     }
   } catch (err) {
     showToast('Save failed: ' + err.message, 'error');
