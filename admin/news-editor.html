@@ -388,7 +388,7 @@ let currentStatus = 'draft';
     const session = sessionResult.data && sessionResult.data.session;
 
     if (!session) {
-      window.location.href = /admin/login';
+      window.location.href = '/admin/login.html';
       return;
     }
     currentUser = session.user;
@@ -433,7 +433,6 @@ async function loadNews(id) {
     $('#metaDesc').value = data.meta_description || '';
     $('#newsExcerpt').value = data.excerpt || '';
 
-    // ✅ Load author (default BigToolz Team)
     if ($('#authorName')) {
       $('#authorName').value = data.author || 'BigToolz Team';
     }
@@ -782,7 +781,6 @@ async function saveNews(status) {
   var inputUrl = $('#imageUrl').value.trim();
   var finalImageUrl = inputUrl || featuredImageUrl || null;
 
-  // ✅ Author from field (fallback to BigToolz Team)
   var authorName = ($('#authorName') && $('#authorName').value.trim()) || 'BigToolz Team';
 
   var payload = {
@@ -830,7 +828,7 @@ async function saveNews(status) {
     showToast(status === 'published' ? '✅ Published to /news/!' : '💾 Draft saved!', 'success');
 
     if (status === 'published') {
-      setTimeout(function() { window.location.href = /admin/'; }, 1200);
+      setTimeout(function() { window.location.href = '/admin/'; }, 1200);
     }
   } catch (err) {
     showToast('Save failed: ' + err.message, 'error');
