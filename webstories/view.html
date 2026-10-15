@@ -234,20 +234,10 @@
     opacity:0;
   }
   @keyframes floatUp{
-    0%{
-      transform:translateY(100vh) scale(0);
-      opacity:0;
-    }
-    10%{
-      opacity:1;
-    }
-    90%{
-      opacity:1;
-    }
-    100%{
-      transform:translateY(-100vh) scale(1);
-      opacity:0;
-    }
+    0%{transform:translateY(100vh) scale(0);opacity:0}
+    10%{opacity:1}
+    90%{opacity:1}
+    100%{transform:translateY(-100vh) scale(1);opacity:0}
   }
 
   /* ===== OVERLAY ===== */
@@ -274,7 +264,6 @@
   }
   .slide-content::-webkit-scrollbar{display:none}
 
-  /* Alignment */
   .slide-content.align-left{align-items:flex-start;text-align:left}
   .slide-content.align-left .slide-heading,
   .slide-content.align-left .slide-text{text-align:left;margin-left:0;margin-right:0}
@@ -287,7 +276,6 @@
   .slide-content.align-right .slide-heading,
   .slide-content.align-right .slide-text{text-align:right;margin-left:auto;margin-right:0}
 
-  /* Vertical position */
   .slide-content.pos-top{justify-content:flex-start;padding-top:110px;padding-bottom:60px}
   .slide-content.pos-center{justify-content:center;padding-top:60px;padding-bottom:110px}
   .slide-content.pos-bottom{justify-content:flex-end;padding-top:60px;padding-bottom:130px}
@@ -670,9 +658,6 @@ function normalizePosition(value) {
   return 'center';
 }
 
-/**
- * Get animated gradient background based on slide index
- */
 function getAnimatedGradient(index) {
   const gradients = [
     'linear-gradient(135deg,#2563eb,#1e40af,#7c3aed,#1e40af)',
@@ -687,9 +672,6 @@ function getAnimatedGradient(index) {
   return gradients[index % gradients.length];
 }
 
-/**
- * Create floating particles HTML
- */
 function createParticles() {
   const particlesEl = document.createElement('div');
   particlesEl.className = 'particles';
@@ -789,18 +771,15 @@ function renderStory() {
 
     // ===== BACKGROUND LAYER =====
     if (slide.image) {
-      // Image with Ken Burns effect
       const bgImage = document.createElement('div');
       bgImage.className = 'slide-bg-image';
       bgImage.style.backgroundImage = 'url("' + slide.image + '")';
       slideEl.appendChild(bgImage);
     } else if (slide.bgColor) {
-      // Solid color from admin
       const bgColor = document.createElement('div');
       bgColor.style.cssText = 'position:absolute;inset:0;z-index:0;background:' + slide.bgColor;
       slideEl.appendChild(bgColor);
     } else {
-      // Animated gradient
       const bgGradient = document.createElement('div');
       bgGradient.className = 'slide-gradient';
       bgGradient.style.background = getAnimatedGradient(i);
@@ -810,7 +789,7 @@ function renderStory() {
     // ===== FLOATING PARTICLES =====
     slideEl.appendChild(createParticles());
 
-    // ===== OVERLAY (custom opacity) =====
+    // ===== OVERLAY =====
     const overlayOpacity = typeof slide.overlay === 'number'
       ? Math.max(0, Math.min(1, slide.overlay))
       : 0.55;
@@ -1039,7 +1018,7 @@ function setupControls() {
       if (state.isPlaying) pauseStory();
       else resumeStory();
     }
-    else if (e.key === 'Escape') { window.location.href = /webstories/'; }
+    else if (e.key === 'Escape') { window.location.href = '/webstories/'; }
   });
 
   let touchStartX = 0, touchStartY = 0;
