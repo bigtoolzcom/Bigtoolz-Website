@@ -1,6 +1,6 @@
 # ===========================================
 # robots.txt for bigtoolz.com
-# Last updated: 2026-01-15
+# Last updated: 2026-10-16
 # ===========================================
 
 # ===== ALL MAJOR SEARCH ENGINES =====
@@ -112,22 +112,35 @@ Allow: /
 # ===========================================
 User-agent: AhrefsBot
 Allow: /
+Crawl-delay: 1
 
 User-agent: SemrushBot
 Allow: /
+Crawl-delay: 1
 
 User-agent: MJ12bot
 Allow: /
+Crawl-delay: 1
 
 User-agent: DotBot
 Allow: /
+Crawl-delay: 5
 
 # ===========================================
-# ===== AI CRAWLERS (YOUR CHOICE) =====
+# ===== BLOCK BAD BOTS =====
 # ===========================================
-# Allow AI crawlers for maximum visibility.
-# Comment out with "#" if you want to block them.
+User-agent: SemrushBot-OCOB
+Disallow: /
 
+User-agent: SemrushBot-FT
+Disallow: /
+
+User-agent: SemrushBot-SA
+Disallow: /
+
+# ===========================================
+# ===== AI CRAWLERS (ALLOW FOR MAXIMUM VISIBILITY) =====
+# ===========================================
 User-agent: GPTBot
 Allow: /
 
@@ -146,9 +159,6 @@ Allow: /
 User-agent: PerplexityBot
 Allow: /
 
-User-agent: Google-Extended
-Allow: /
-
 User-agent: Applebot-Extended
 Allow: /
 
@@ -156,31 +166,8 @@ User-agent: Bytespider
 Allow: /
 
 # ===========================================
-# ===== BLOCK BAD BOTS =====
-# ===========================================
-User-agent: AhrefsBot
-Crawl-delay: 1
-
-User-agent: SemrushBot
-Crawl-delay: 1
-
-User-agent: MJ12bot
-Crawl-delay: 1
-
-# Known scrapers and low-quality bots
-User-agent: SemrushBot-OCOB
-Disallow: /
-
-User-agent: SemrushBot-FT
-Disallow: /
-
-User-agent: SemrushBot-SA
-Disallow: /
-
-User-agent: DotBot
-Crawl-delay: 5
-
-# ===========================================
-# ===== SITEMAP =====
+# ===== SITEMAPS =====
 # ===========================================
 Sitemap: https://bigtoolz.com/sitemap.xml
+Sitemap: https://bigtoolz.com/sitemap-blog.xml
+Sitemap: https://bigtoolz.com/sitemap-index.xml
