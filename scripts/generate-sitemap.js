@@ -4,6 +4,7 @@
    BigToolz - Sitemap Generator
    Auto-generates sitemap.xml, sitemap-blog.xml,
    and sitemap-index.xml
+   Version: 2.0.0
    =========================================== */
 
 'use strict';
@@ -26,10 +27,10 @@ const STATIC_PAGES = [
   { url: '/terms.html',                priority: 0.3, changefreq: 'yearly' },
   { url: '/disclaimer.html',           priority: 0.3, changefreq: 'yearly' },
   { url: '/tools/',                    priority: 0.9, changefreq: 'weekly' },
-  { url: '/blog/',                     priority: 0.9, changefreq: 'daily' },
+  { url: '/blog/',                     priority: 0.9, changefreq: 'daily' }
 ];
 
-/* ===== CATEGORIES ===== */
+/* ===== CATEGORIES (main + PDF subcategories) ===== */
 const CATEGORIES = [
   { url: '/tools/image-tools/',        priority: 0.8, changefreq: 'weekly' },
   { url: '/tools/text-tools/',         priority: 0.8, changefreq: 'weekly' },
@@ -44,48 +45,54 @@ const CATEGORIES = [
   { url: '/tools/pdf-tools/security-pdf/',   priority: 0.7, changefreq: 'weekly' },
   { url: '/tools/pdf-tools/visual-pdf/',     priority: 0.7, changefreq: 'weekly' },
   { url: '/tools/pdf-tools/form-pdf/',       priority: 0.7, changefreq: 'weekly' },
-  { url: '/tools/pdf-tools/advanced-pdf/',   priority: 0.7, changefreq: 'weekly' },
+  { url: '/tools/pdf-tools/advanced-pdf/',   priority: 0.7, changefreq: 'weekly' }
 ];
+
+/* ===== CATEGORY URL SET (for filtering tools) ===== */
+const CATEGORY_URLS = new Set(CATEGORIES.map(c => c.url));
 
 /* ===== LOAD TOOLS FROM DATABASE ===== */
 function loadTools() {
   try {
     const dbPath = path.join(__dirname, '..', 'data', 'tools-database.js');
+
     if (!fs.existsSync(dbPath)) {
-      console.warn('⚠️ tools-database.js not found — skipping tools');
+      console.warn('⚠️  tools-database.js not found — skipping tools');
       return [];
     }
 
-    // Read and eval the file to get tools array
     const content = fs.readFileSync(dbPath, 'utf8');
+    const seen = new Set();
     const tools = [];
 
-    // Extract tool objects using regex (works without executing window code)
+    // Extract all `url: "..."` values using regex
     const urlRegex = /url:\s*['"`]([^'"`]+)['"`]/g;
-    const idRegex = /id:\s*(\d+)/g;
 
     let match;
-    const urls = [];
     while ((match = urlRegex.exec(content)) !== null) {
-      urls.push(match[1]);
+      const url = match[1];
+
+      // Skip non-tool URLs
+      if (!url || !url.startsWith('/tools/')) continue;
+
+      // Skip category-level URLs (already in CATEGORIES)
+      if (CATEGORY_URLS.has(url)) continue;
+
+      // Skip duplicates
+      if (seen.has(url)) continue;
+
+      // Only actual tool URLs (3 or more segments)
+      // /tools/image-tools/image-compressor/     → 3 segments ✅
+      // /tools/pdf-tools/convert-pdf/jpg-to-pdf/ → 4 segments ✅
+      // /tools/image-tools/                      → 2 segments ❌ (category)
+      const segments = url.split('/').filter(Boolean);
+      if (segments.length < 3) continue;
+
+      seen.add(url);
+      tools.push({ url, priority: 0.7, changefreq: 'monthly' });
     }
 
-    const ids = [];
-    while ((match = idRegex.exec(content)) !== null) {
-      ids.push(parseInt(match[1], 10));
-    }
-
-    // Combine and deduplicate
-    const seen = new Set();
-    for (let i = 0; i < Math.max(urls.length, ids.length); i++) {
-      const url = urls[i];
-      if (url && !seen.has(url) && url.startsWith('/tools/')) {
-        seen.add(url);
-        tools.push({ url, priority: 0.7, changefreq: 'monthly' });
-      }
-    }
-
-    console.log(`✅ Loaded ${tools.length} tools from tools-database.js`);
+    console.log(`✅ Loaded ${tools.length} unique tools from tools-database.js`);
     return tools;
   } catch (err) {
     console.error('❌ Error loading tools:', err.message);
@@ -112,14 +119,14 @@ async function fetchBlogPosts() {
 
     const posts = await response.json();
     console.log(`✅ Fetched ${posts.length} published blog posts from Supabase`);
-    return posts;
+    return Array.isArray(posts) ? posts : [];
   } catch (err) {
-    console.error('⚠️ Could not fetch blog posts:', err.message);
+    console.warn('⚠️  Could not fetch blog posts:', err.message);
     return [];
   }
 }
 
-/* ===== XML BUILDERS ===== */
+/* ===== XML HELPERS ===== */
 function escapeXml(str) {
   return String(str)
     .replace(/&/g, '&amp;')
@@ -134,7 +141,7 @@ function buildUrlEntry({ loc, lastmod, changefreq, priority, images }) {
   entry += `    <loc>${escapeXml(loc)}</loc>\n`;
   if (lastmod) entry += `    <lastmod>${lastmod}</lastmod>\n`;
   if (changefreq) entry += `    <changefreq>${changefreq}</changefreq>\n`;
-  if (priority !== undefined) entry += `    <priority>${priority.toFixed(1)}</priority>\n`;
+  if (priority !== undefined) entry += `    <priority>${Number(priority).toFixed(1)}</priority>\n`;
 
   if (images && images.length) {
     images.forEach(img => {
@@ -148,12 +155,14 @@ function buildUrlEntry({ loc, lastmod, changefreq, priority, images }) {
   return entry;
 }
 
+/* ===== GENERATE MAIN SITEMAP ===== */
 function generateMainSitemap(tools) {
   let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
   xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"\n';
   xml += '        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n\n';
 
   // Static pages
+  xml += '  <!-- Static Pages -->\n';
   STATIC_PAGES.forEach(page => {
     xml += buildUrlEntry({
       loc: SITE_URL + page.url,
@@ -163,6 +172,7 @@ function generateMainSitemap(tools) {
     });
   });
 
+  // Categories
   xml += '\n  <!-- Categories -->\n';
   CATEGORIES.forEach(cat => {
     xml += buildUrlEntry({
@@ -173,7 +183,8 @@ function generateMainSitemap(tools) {
     });
   });
 
-  xml += '\n  <!-- Tools -->\n';
+  // Tools
+  xml += `\n  <!-- Tools (${tools.length}) -->\n`;
   tools.forEach(tool => {
     xml += buildUrlEntry({
       loc: SITE_URL + tool.url,
@@ -187,13 +198,13 @@ function generateMainSitemap(tools) {
   return xml;
 }
 
+/* ===== GENERATE BLOG SITEMAP ===== */
 function generateBlogSitemap(posts) {
   let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
   xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"\n';
   xml += '        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n\n';
 
   if (posts.length === 0) {
-    // Still valid — just no posts yet
     xml += '  <!-- No published blog posts yet -->\n';
   } else {
     posts.forEach(post => {
@@ -214,6 +225,7 @@ function generateBlogSitemap(posts) {
   return xml;
 }
 
+/* ===== GENERATE SITEMAP INDEX ===== */
 function generateSitemapIndex() {
   let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
   xml += '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
@@ -250,12 +262,13 @@ async function main() {
   const blogUrls = posts.length;
 
   console.log('\n📊 Summary:');
-  console.log(`  Static pages:  ${STATIC_PAGES.length}`);
-  console.log(`  Categories:    ${CATEGORIES.length}`);
-  console.log(`  Tools:         ${tools.length}`);
-  console.log(`  Blog posts:    ${blogUrls}`);
-  console.log(`  ─────────────────────`);
-  console.log(`  Total URLs:    ${totalUrls + blogUrls}`);
+  console.log('  ─────────────────────');
+  console.log(`  Static pages:   ${STATIC_PAGES.length}`);
+  console.log(`  Categories:     ${CATEGORIES.length}`);
+  console.log(`  Tools:          ${tools.length}`);
+  console.log(`  Blog posts:     ${blogUrls}`);
+  console.log('  ─────────────────────');
+  console.log(`  Total URLs:     ${totalUrls + blogUrls}`);
   console.log('\n✅ Generated:');
   console.log('  - sitemap.xml');
   console.log('  - sitemap-blog.xml');
