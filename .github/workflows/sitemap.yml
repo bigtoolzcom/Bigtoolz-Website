@@ -1,59 +1,67 @@
-name: Auto Generate Sitemap
+name: Auto Update Sitemaps
 
 on:
-  # Har 6 hours mein auto-run
+  # Run daily at 2 AM IST (8:30 PM UTC)
   schedule:
-    - cron: '0 */6 * * *'
+    - cron: '30 20 * * *'
 
-  # Manual trigger
+  # Run manually from GitHub Actions tab
   workflow_dispatch:
 
-  # Push par bhi run karo (optional)
+  # Run when blog database or tools database changes
   push:
-    branches: [main]
-    paths-ignore:
-      - 'sitemap.xml'
+    paths:
+      - 'data/tools-database.js'
+      - 'scripts/generate-sitemap.js'
+      - '.github/workflows/sitemap.yml'
 
 jobs:
   generate-sitemap:
     runs-on: ubuntu-latest
+
     permissions:
       contents: write
 
     steps:
-      - name: Checkout repo
+      - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
 
-      - name: Generate sitemap
+      - name: Run sitemap generator
         run: node scripts/generate-sitemap.js
 
       - name: Check for changes
-        id: check
+        id: verify
         run: |
-          if git diff --quiet sitemap.xml; then
-            echo "changed=false" >> $GITHUB_OUTPUT
-          else
+          if [ -n "$(git status --porcelain)" ]; then
             echo "changed=true" >> $GITHUB_OUTPUT
+          else
+            echo "changed=false" >> $GITHUB_OUTPUT
           fi
 
-      - name: Commit and push
-        if: steps.check.outputs.changed == 'true'
+      - name: Commit and push changes
+        if: steps.verify.outputs.changed == 'true'
         run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "BigToolz Sitemap Bot"
-          git add sitemap.xml
-          git commit -m "🗺️ Auto-update sitemap [skip ci]"
+          git config user.name "BigToolz Bot"
+          git config user.email "bot@bigtoolz.com"
+          git add sitemap.xml sitemap-blog.xml sitemap-index.xml
+          git commit -m "🤖 Auto-update sitemaps [skip ci]" || echo "No changes"
           git push
 
-      - name: Summary
+      - name: Ping Google Search Console
         run: |
-          echo "### 🗺️ Sitemap Update Summary" >> $GITHUB_STEP_SUMMARY
-          echo "- **Changed:** ${{ steps.check.outputs.changed }}" >> $GITHUB_STEP_SUMMARY
-          echo "- **URLs:** $(grep -c '<url>' sitemap.xml)" >> $GITHUB_STEP_SUMMARY
+          curl -s "https://www.google.com/ping?sitemap=https://bigtoolz.com/sitemap.xml" || true
+          curl -s "https://www.google.com/ping?sitemap=https://bigtoolz.com/sitemap-blog.xml" || true
+          echo "✅ Pinged Google"
+
+      - name: Ping Bing
+        run: |
+          curl -s "https://www.bing.com/ping?sitemap=https://bigtoolz.com/sitemap.xml" || true
+          curl -s "https://www.bing.com/ping?sitemap=https://bigtoolz.com/sitemap-blog.xml" || true
+          echo "✅ Pinged Bing"
