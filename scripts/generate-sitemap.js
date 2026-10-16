@@ -5,7 +5,7 @@
    Auto-generates sitemap.xml, sitemap-blog.xml,
    and sitemap-index.xml
    Version: 2.0.0
-   =========================================== */
+   =========================================== */    
 
 'use strict';
 
