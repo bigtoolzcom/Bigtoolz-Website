@@ -54,13 +54,24 @@ jobs:
           git commit -m "🤖 Auto-update sitemaps [skip ci]" || echo "No changes"
           git push
 
+      - name: Trigger Netlify Deploy (Build Hook)
+        if: steps.verify.outputs.changed == 'true'
+        run: |
+          echo "🚀 Triggering Netlify deploy..."
+          curl -X POST -d '{}' "${{ secrets.NETLIFY_BUILD_HOOK }}" \
+            -w "\n✅ HTTP Status: %{http_code}\n" \
+            --fail-with-body
+          echo "✅ Netlify deploy triggered"
+
       - name: Ping Google Search Console
+        if: steps.verify.outputs.changed == 'true'
         run: |
           curl -s "https://www.google.com/ping?sitemap=https://bigtoolz.com/sitemap.xml" || true
           curl -s "https://www.google.com/ping?sitemap=https://bigtoolz.com/sitemap-blog.xml" || true
           echo "✅ Pinged Google"
 
       - name: Ping Bing
+        if: steps.verify.outputs.changed == 'true'
         run: |
           curl -s "https://www.bing.com/ping?sitemap=https://bigtoolz.com/sitemap.xml" || true
           curl -s "https://www.bing.com/ping?sitemap=https://bigtoolz.com/sitemap-blog.xml" || true
