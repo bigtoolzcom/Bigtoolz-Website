@@ -1,8 +1,20 @@
+# ===========================================
+# BigToolz - Netlify Configuration
+# ===========================================
+
 [build]
   publish = "."
 
+# ===========================================
+# MAIN PAGES
+# ===========================================
 [[redirects]]
   from = "/about"
+  to = "/about.html"
+  status = 200
+
+[[redirects]]
+  from = "/about/"
   to = "/about.html"
   status = 200
 
@@ -12,7 +24,17 @@
   status = 200
 
 [[redirects]]
+  from = "/contact/"
+  to = "/contact.html"
+  status = 200
+
+[[redirects]]
   from = "/privacy-policy"
+  to = "/privacy-policy.html"
+  status = 200
+
+[[redirects]]
+  from = "/privacy-policy/"
   to = "/privacy-policy.html"
   status = 200
 
@@ -22,31 +44,109 @@
   status = 200
 
 [[redirects]]
+  from = "/terms/"
+  to = "/terms.html"
+  status = 200
+
+[[redirects]]
   from = "/disclaimer"
   to = "/disclaimer.html"
   status = 200
 
+[[redirects]]
+  from = "/disclaimer/"
+  to = "/disclaimer.html"
+  status = 200
+
+# ===========================================
+# TOOLS INDEX
+# ===========================================
 [[redirects]]
   from = "/tools"
   to = "/tools/index.html"
   status = 200
 
 [[redirects]]
+  from = "/tools/"
+  to = "/tools/index.html"
+  status = 200
+
+# ===========================================
+# BLOG
+# ===========================================
+[[redirects]]
   from = "/blog"
   to = "/blog/index.html"
   status = 200
 
+[[redirects]]
+  from = "/blog/"
+  to = "/blog/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/post.html"
+  to = "/blog/post.html"
+  status = 200
+
+# Blog clean URL — /blog/my-post/ → /blog/post.html?slug=my-post
+[[redirects]]
+  from = "/blog/:slug/"
+  to = "/blog/post.html?slug=:slug"
+  status = 200
+
+[[redirects]]
+  from = "/blog/:slug"
+  to = "/blog/post.html?slug=:slug"
+  status = 200
+
+# ===========================================
+# ADMIN
+# ===========================================
 [[redirects]]
   from = "/admin"
   to = "/admin/index.html"
   status = 200
 
 [[redirects]]
+  from = "/admin/"
+  to = "/admin/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/admin/editor"
+  to = "/admin/editor.html"
+  status = 200
+
+[[redirects]]
+  from = "/admin/editor/"
+  to = "/admin/editor.html"
+  status = 200
+
+# ===========================================
+# SEARCH
+# ===========================================
+[[redirects]]
+  from = "/search"
+  to = "/search.html"
+  status = 200
+
+[[redirects]]
+  from = "/search/"
+  to = "/search.html"
+  status = 200
+
+# ===========================================
+# 404 FALLBACK (ALWAYS LAST)
+# ===========================================
+[[redirects]]
   from = "/*"
   to = "/404.html"
   status = 404
 
-# Security headers
+# ===========================================
+# SECURITY HEADERS
+# ===========================================
 [[headers]]
   for = "/*"
   [headers.values]
@@ -54,7 +154,9 @@
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
 
-# Cache static assets
+# ===========================================
+# CACHE STATIC ASSETS
+# ===========================================
 [[headers]]
   for = "/assets/*"
   [headers.values]
