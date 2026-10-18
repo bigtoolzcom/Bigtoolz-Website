@@ -273,17 +273,23 @@ function showToast(msg, type, duration) {
   t._timer = setTimeout(function(){ t.classList.remove('visible'); }, duration);
 }
 
-/* ===== HELPERS ===== */
 function generateSlug(text) {
   if (!text) return '';
-  return String(text)
+  let slug = String(text)
     .toLowerCase()
     .trim()
     .replace(/[^\w\s-]/g, '')
     .replace(/[\s_]+/g, '-')
     .replace(/-+/g, '-')
-    .replace(/^-|-$/g, '')
-    .slice(0, 80);
+    .replace(/^-|-$/g, '');
+
+  if (slug.length > 80) {
+    slug = slug.slice(0, 80);
+    const lastHyphen = slug.lastIndexOf('-');
+    if (lastHyphen > 40) slug = slug.slice(0, lastHyphen);
+  }
+
+  return slug;
 }
 
 function escapeHtml(str) {
