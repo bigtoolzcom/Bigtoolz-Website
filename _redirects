@@ -36,11 +36,30 @@
 /tools/pdf-tools         /tools/pdf-tools/index.html         200
 /tools/pdf-tools/        /tools/pdf-tools/index.html         200
 
+# ---------- PDF SUBCATEGORIES ----------
+/tools/pdf-tools/convert-pdf        /tools/pdf-tools/convert-pdf/index.html       200
+/tools/pdf-tools/convert-pdf/       /tools/pdf-tools/convert-pdf/index.html       200
+/tools/pdf-tools/organize-pdf       /tools/pdf-tools/organize-pdf/index.html      200
+/tools/pdf-tools/organize-pdf/      /tools/pdf-tools/organize-pdf/index.html      200
+/tools/pdf-tools/security-pdf       /tools/pdf-tools/security-pdf/index.html      200
+/tools/pdf-tools/security-pdf/      /tools/pdf-tools/security-pdf/index.html      200
+/tools/pdf-tools/visual-pdf         /tools/pdf-tools/visual-pdf/index.html        200
+/tools/pdf-tools/visual-pdf/        /tools/pdf-tools/visual-pdf/index.html        200
+/tools/pdf-tools/form-pdf           /tools/pdf-tools/form-pdf/index.html          200
+/tools/pdf-tools/form-pdf/          /tools/pdf-tools/form-pdf/index.html          200
+/tools/pdf-tools/advanced-pdf       /tools/pdf-tools/advanced-pdf/index.html      200
+/tools/pdf-tools/advanced-pdf/      /tools/pdf-tools/advanced-pdf/index.html      200
+
 # ---------- BLOG ----------
 /blog              /blog/index.html        200
 /blog/             /blog/index.html        200
-/blog/post         /blog/post.html         200
-/blog/post/        /blog/post.html         200
+
+# Blog post file — query string ke saath direct
+/blog/post.html    /blog/post.html         200
+
+# Blog clean URL — /blog/my-post/ → /blog/post.html?slug=my-post
+/blog/:slug/       /blog/post.html?slug=:slug    200
+/blog/:slug        /blog/post.html?slug=:slug    200
 
 # ---------- ADMIN ----------
 /admin             /admin/index.html       200
@@ -52,5 +71,5 @@
 /search            /search.html            200
 /search/           /search.html            200
 
-# ---------- 404 FALLBACK ----------
+# ---------- 404 FALLBACK (ALWAYS LAST) ----------
 /*                 /404.html               404
