@@ -1,15 +1,11 @@
 # ===========================================
 # robots.txt for bigtoolz.com
-# Last updated: 2026-10-23
+# Last updated: 2026-10-16
 # ===========================================
 
 # ===== ALL MAJOR SEARCH ENGINES =====
 User-agent: *
 Allow: /
-Allow: /assets/css/
-Allow: /assets/js/
-Allow: /assets/images/
-Allow: /assets/fonts/
 
 # Block admin, config, and internal paths
 Disallow: /admin/
@@ -18,14 +14,23 @@ Disallow: /private/
 Disallow: /tmp/
 Disallow: /cgi-bin/
 Disallow: /*?sessionid=
+Disallow: /*?utm_
 Disallow: /*?ref=
 Disallow: /search?
+Disallow: /404.html
+
+# Allow important assets
+Allow: /assets/css/
+Allow: /assets/js/
+Allow: /assets/images/
+Allow: /assets/fonts/
 
 # ===========================================
 # ===== GOOGLE =====
 # ===========================================
 User-agent: Googlebot
 Allow: /
+Disallow: /search?
 
 User-agent: Googlebot-Image
 Allow: /assets/images/
@@ -50,6 +55,7 @@ Allow: /
 # ===========================================
 User-agent: Bingbot
 Allow: /
+Disallow: /search?
 
 User-agent: msnbot
 Allow: /
@@ -65,9 +71,11 @@ Allow: /
 
 User-agent: Baiduspider
 Allow: /
+Disallow: /search?
 
 User-agent: YandexBot
 Allow: /
+Disallow: /search?
 
 User-agent: Slurp
 Allow: /
