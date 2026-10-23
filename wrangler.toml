@@ -1,8 +1,9 @@
 name = "bigtoolz-website"
-main = "./worker.js"  # Apni file ka sahi path daalo
+main = "./worker.js"
 compatibility_date = "2026-10-23"
 
 [assets]
-directory = "./dist"  # Apna build output folder check karlo
+directory = "./dist"
 binding = "ASSETS"
-not_found_handling = "single-page-application" # Admin panel ke liye zaroori
+not_found_handling = "404-page"
+run_worker_first = ["/admin/*", "/api/*"]
