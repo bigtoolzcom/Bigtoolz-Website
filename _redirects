@@ -1,9 +1,33 @@
-# Blog clean URLs
-/blog/:slug/       /blog/post.html?slug=:slug    200
-/blog/:slug        /blog/post.html?slug=:slug    200
+# ===========================================
+# BigToolz - Redirects (Cloudflare Pages)
+# Last updated: 2026-01-15
+# ===========================================
 
-# Admin
-/admin             /admin/index.html       200
-/admin/            /admin/index.html       200
-/admin/editor      /admin/editor.html      200
-/admin/editor/     /admin/editor.html      200
+# ---------- ADMIN PANEL ----------
+# Admin panel ko index.html par bhejo (kyunki /admin/ folder nahi hai)
+/admin/*  /index.html  200
+
+# ---------- TOOLS CLEAN URLS ----------
+# Category pages
+/tools                  /tools/index.html                 200
+/tools/image-tools      /tools/image-tools/index.html     200
+/tools/text-tools       /tools/text-tools/index.html      200
+/tools/developer-tools  /tools/developer-tools/index.html 200
+/tools/calculator-tools /tools/calculator-tools/index.html 200
+/tools/seo-tools        /tools/seo-tools/index.html       200
+/tools/social-tools     /tools/social-tools/index.html    200
+/tools/utility-tools    /tools/utility-tools/index.html   200
+/tools/pdf-tools        /tools/pdf-tools/index.html       200
+
+# Tool pages (with trailing slash)
+/tools/image-tools/image-compressor/  /tools/image-tools/image-compressor.html  200
+/tools/image-tools/png-to-jpg/        /tools/image-tools/png-to-jpg.html        200
+/tools/image-tools/jpg-to-png/        /tools/image-tools/jpg-to-png.html        200
+/tools/image-tools/image-resizer/     /tools/image-tools/image-resizer.html     200
+/tools/image-tools/image-crop/        /tools/image-tools/image-crop.html        200
+
+# ---------- BLOG CLEAN URLS ----------
+/blog          /blog/index.html  200
+
+# ---------- SEARCH ----------
+/search        /search.html     200
