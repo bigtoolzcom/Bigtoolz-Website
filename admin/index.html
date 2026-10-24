@@ -82,6 +82,38 @@
     font-weight:500;
   }
 
+  /* ========== LOGIN SCREEN ========== */
+  .login-wrap{
+    max-width:420px;margin:60px auto;padding:36px 32px;
+    background:#fff;border:1px solid #e5e7eb;border-radius:20px;
+    box-shadow:0 10px 40px rgba(37,99,235,.08);
+  }
+  .login-wrap h2{
+    font-size:26px;font-weight:800;color:#0a0e27;
+    margin-bottom:6px;letter-spacing:-.5px;
+  }
+  .login-wrap p{
+    font-size:14px;color:#6b7280;margin-bottom:26px;
+  }
+  .login-wrap input{
+    width:100%;padding:13px 16px;border:1px solid #e5e7eb;
+    border-radius:11px;font-family:inherit;font-size:14px;
+    margin-bottom:14px;outline:none;transition:border .2s;
+    background:#f9fafb;
+  }
+  .login-wrap input:focus{border-color:#2563eb;background:#fff}
+  .login-wrap button{
+    width:100%;padding:13px;background:#2563eb;color:#fff;
+    border:none;border-radius:11px;font-weight:700;
+    font-size:14px;cursor:pointer;font-family:inherit;
+    transition:background .2s;min-height:46px;
+  }
+  .login-wrap button:hover{background:#1d4ed8}
+  .login-error{
+    color:#ef4444;font-size:13px;margin-top:12px;display:none;
+    font-weight:500;
+  }
+
   /* ========== STATS CARDS ========== */
   .stats-grid{
     display:grid;grid-template-columns:repeat(3,1fr);
@@ -301,6 +333,10 @@
   html[data-theme="dark"] .logout-btn:hover{background:#7f1d1d;border-color:#ef4444}
   html[data-theme="dark"] .page-title{color:#f1f5f9}
   html[data-theme="dark"] .page-sub{color:#94a3b8}
+  html[data-theme="dark"] .login-wrap{background:#1e293b;border-color:#334155}
+  html[data-theme="dark"] .login-wrap h2{color:#f1f5f9}
+  html[data-theme="dark"] .login-wrap p{color:#94a3b8}
+  html[data-theme="dark"] .login-wrap input{background:#0f172a;border-color:#334155;color:#f1f5f9}
   html[data-theme="dark"] .stat-card{background:#1e293b;border-color:#334155}
   html[data-theme="dark"] .stat-number{color:#f1f5f9}
   html[data-theme="dark"] .stat-label{color:#94a3b8}
@@ -326,14 +362,14 @@
 <header class="admin-header">
   <a href="/admin/" class="admin-logo">
     <div class="admin-logo-icon">⚒</div>
-    BigToolz</span> Admin
+    BigToolz<span> Admin</span>
   </a>
   <div class="admin-header-right">
     <div class="user-info" id="userInfo" style="display:none;">
       <div class="user-avatar" id="userAvatar">A</div>
       <span id="userEmail">Admin</span>
     </div>
-    <button class="logout-btn" id="logoutBtn" aria-label="Logout">
+    <button class="logout-btn" id="logoutBtn" aria-label="Logout" style="display:none;">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
         <path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4M16 17l5-5-5-5M21 12H9"/>
       </svg>
@@ -343,7 +379,7 @@
 </header>
 
 <!-- ========== MAIN ========== -->
-<main class="admin-main">
+<main class="admin-main" id="adminMain">
 
   <h1 class="page-title">📊 Dashboard</h1>
   <p class="page-sub">Manage your blog, news and web stories all in one place.</p>
@@ -505,25 +541,69 @@ function timeAgo(dateStr) {
   } catch(e) { return ''; }
 }
 
+/* ===== LOGIN SCREEN (same page, no redirect) ===== */
+function showLoginScreen() {
+  const main = document.getElementById('adminMain');
+  main.innerHTML = `
+    <div class="login-wrap">
+      <h2>Admin Login</h2>
+      <p>Sign in to manage your content</p>
+      <input type="email" id="loginEmail" placeholder="Email address" autocomplete="email">
+      <input type="password" id="loginPassword" placeholder="Password" autocomplete="current-password">
+      <button id="loginSubmit">Sign In</button>
+      <p class="login-error" id="loginError"></p>
+    </div>
+  `;
+
+  document.getElementById('loginSubmit').addEventListener('click', async function() {
+    const email = document.getElementById('loginEmail').value.trim();
+    const password = document.getElementById('loginPassword').value;
+    const errEl = document.getElementById('loginError');
+    const btn = document.getElementById('loginSubmit');
+
+    if (!email || !password) {
+      errEl.textContent = 'Please enter email and password.';
+      errEl.style.display = 'block';
+      return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = 'Signing in...';
+    errEl.style.display = 'none';
+
+    const { error } = await sb.auth.signInWithPassword({ email, password });
+
+    if (error) {
+      errEl.textContent = error.message;
+      errEl.style.display = 'block';
+      btn.disabled = false;
+      btn.textContent = 'Sign In';
+    } else {
+      window.location.reload();
+    }
+  });
+}
+
 /* ===== AUTH CHECK ===== */
 (async function init() {
   try {
     const sessionResult = await sb.auth.getSession();
     const session = sessionResult.data && sessionResult.data.session;
 
-    
-      if (!session) {
-  // Show login form on same page (don't redirect)
-  showLoginScreen();
-  return;
-} 
-    // Show user info
+    if (!session) {
+      showLoginScreen();
+      return;
+    }
+
+    // Show user info + logout button
     const email = session.user.email || 'Admin';
     const userInfo = document.getElementById('userInfo');
     const userEmail = document.getElementById('userEmail');
     const userAvatar = document.getElementById('userAvatar');
+    const logoutBtn = document.getElementById('logoutBtn');
 
     userInfo.style.display = 'flex';
+    logoutBtn.style.display = 'flex';
     userEmail.textContent = email;
     userAvatar.textContent = email.charAt(0).toUpperCase();
 
@@ -533,14 +613,14 @@ function timeAgo(dateStr) {
 
   } catch (err) {
     console.error('Auth error:', err);
-    window.location.href = '/admin/login.html';
+    // Do NOT redirect — show login screen instead
+    showLoginScreen();
   }
 })();
 
 /* ===== LOAD STATS ===== */
 async function loadStats() {
   try {
-    // Blog posts
     const { count: blogTotal } = await sb
       .from('posts')
       .select('*', { count: 'exact', head: true });
@@ -561,7 +641,6 @@ async function loadStats() {
   }
 
   try {
-    // News
     const { count: newsTotal } = await sb
       .from('news')
       .select('*', { count: 'exact', head: true });
@@ -582,7 +661,6 @@ async function loadStats() {
   }
 
   try {
-    // Stories
     const { count: storyTotal } = await sb
       .from('webstories')
       .select('*', { count: 'exact', head: true });
@@ -608,7 +686,6 @@ async function loadRecentActivity() {
   const container = document.getElementById('recentList');
 
   try {
-    // Fetch last 4 from each table
     const [postsRes, newsRes, storiesRes] = await Promise.all([
       sb.from('posts')
         .select('id, title, slug, status, created_at, category')
@@ -672,7 +749,6 @@ async function loadRecentActivity() {
       });
     }
 
-    // Sort by date desc
     allItems.sort((a, b) => new Date(b.date) - new Date(a.date));
     const recent = allItems.slice(0, 8);
 
@@ -709,10 +785,10 @@ document.getElementById('logoutBtn').addEventListener('click', async function() 
   try {
     await sb.auth.signOut();
     localStorage.removeItem('blog_admin_session');
-    window.location.href = '/admin/login.html';
+    window.location.reload();
   } catch (err) {
     console.error('Logout error:', err);
-    window.location.href = '/admin/login.html';
+    window.location.reload();
   }
 });
 </script>
